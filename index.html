@@ -489,6 +489,16 @@ body{
   border:none; background:none; padding:0;
 }
 .back-link:hover{ color:var(--moss); }
+.back-home{ margin:56px 24px 0; }
+.back-home-link{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;
+  letter-spacing:.03em; text-transform:uppercase;
+  color:var(--ground); background:var(--moss);
+  padding:12px 19px; text-decoration:none;
+  transition:background .2s ease;
+}
+.back-home-link:hover{ background:var(--rust); }
 
 .hero{ padding:22px 24px 0; }
 .hero-chart{
@@ -724,6 +734,10 @@ footer b{ color:var(--ink); font-weight:600; }
     <span class="k">Para quién es</span>
     <h2>BTT y e-bike</h2>
     <p>Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin singletrack — apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se grabó con e-bike (1h 15min), así que el tiempo no sirve de referencia si vas sin asistencia.</p>
+  </div>
+
+  <div class="back-home">
+    <a class="back-home-link" href="#" onclick="parent.postMessage({view:'home'},'*');return false;">&amp;larr; Volver a inicio</a>
   </div>
 
   <footer>
