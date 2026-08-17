@@ -2,23 +2,27 @@
 """Rebuilds index.html from the source templates in this folder.
 
 Architecture:
-  - Each page (mallabia = home, trabakua = route) is written as a
-    <name>_head.html + <name>_tail.html pair, so they're small enough
+  - Each page (mallabia = home, trabakua/iturrizuri = routes) is written as
+    a <name>_head.html + <name>_tail.html pair, so they're small enough
     to edit directly even though the final assembled page has huge
     embedded base64 images/fonts.
   - fonts/inline_fonts.css holds the self-hosted @font-face rules
-    (Fraunces, Karla, IBM Plex Mono), shared by both pages.
+    (Fraunces, Karla, IBM Plex Mono), shared by all pages.
   - Each pair is concatenated into a full standalone HTML document.
-  - Both full documents get embedded (with & escaped to &amp;) inside
+  - All full documents get embedded (with & escaped to &amp;) inside
     <textarea> tags in an outer shell, which reads them out and
-    assigns them as srcdoc to two <iframe> elements. Only one iframe
+    assigns them as srcdoc to one <iframe> per page. Only one iframe
     is visible (class "active") at a time.
   - Navigation between views happens via window.postMessage({view:
-    'home'|'trabakua'}) posted from links inside the iframes; the
-    outer shell listens and toggles which iframe is active. This
-    exists because Claude Artifacts (where this started) block
-    navigation between separately published artifacts -- and it was
-    kept after moving to GitHub Pages because it already worked.
+    '<page-name>'}) posted from links inside the iframes; the outer
+    shell listens and toggles which iframe is active. This exists
+    because Claude Artifacts (where this started) block navigation
+    between separately published artifacts -- and it was kept after
+    moving to GitHub Pages because it already worked.
+  - To add a new route page: create <name>_head.html + <name>_tail.html,
+    add "<name>" to PAGES below (home stays first/default-active), and
+    link to it from wherever with
+    onclick="parent.postMessage({view:'<name>'},'*');return false;".
 
 IMPORTANT: any file with embedded base64 (fonts/inline_fonts.css,
 *_tail.html once photos are added) is huge -- do not open these with
@@ -46,16 +50,36 @@ def assemble_page(name):
     return read(f"{name}_head.html") + read("fonts", "inline_fonts.css") + read(f"{name}_tail.html")
 
 
-def main():
-    home_html = assemble_page("mallabia")
-    trabakua_html = assemble_page("trabakua")
+# First entry is the page shown by default (class "active").
+PAGES = ["mallabia", "trabakua", "iturrizuri"]
+VIEW_NAME = {"mallabia": "home"}  # page name -> postMessage view name, defaults to itself
 
-    for label, html in [("home", home_html), ("trabakua", trabakua_html)]:
+
+def view_of(page):
+    return VIEW_NAME.get(page, page)
+
+
+def main():
+    pages_html = {name: assemble_page(name) for name in PAGES}
+
+    for label, html in pages_html.items():
         if "</textarea" in html.lower():
             raise SystemExit(f"{label} page contains a literal </textarea> -- would break the outer shell")
 
-    home_esc = home_html.replace("&", "&amp;")
-    trabakua_esc = trabakua_html.replace("&", "&amp;")
+    iframes = "\n".join(
+        f'<iframe id="{view_of(name)}-frame" class="frame{" active" if i == 0 else ""}"></iframe>'
+        for i, name in enumerate(PAGES)
+    )
+    textareas = "\n".join(
+        f'<textarea id="{view_of(name)}-src" style="display:none">' + pages_html[name].replace("&", "&amp;") + "</textarea>"
+        for name in PAGES
+    )
+    frame_assignments = "\n  ".join(
+        f"var {view_of(name)}Frame = document.getElementById('{view_of(name)}-frame');\n  "
+        f"{view_of(name)}Frame.srcdoc = document.getElementById('{view_of(name)}-src').value;"
+        for name in PAGES
+    )
+    frames_map = ", ".join(f"{view_of(name)}: {view_of(name)}Frame" for name in PAGES)
 
     shell = """<!doctype html>
 <html lang="es">
@@ -76,20 +100,15 @@ def main():
 </style>
 </head>
 <body>
-<iframe id="home-frame" class="frame active"></iframe>
-<iframe id="trabakua-frame" class="frame"></iframe>
+""" + iframes + """
 
-<textarea id="home-src" style="display:none">""" + home_esc + """</textarea>
-<textarea id="trabakua-src" style="display:none">""" + trabakua_esc + """</textarea>
+""" + textareas + """
 
 <script>
 (function(){
-  var homeFrame = document.getElementById('home-frame');
-  var trabakuaFrame = document.getElementById('trabakua-frame');
-  homeFrame.srcdoc = document.getElementById('home-src').value;
-  trabakuaFrame.srcdoc = document.getElementById('trabakua-src').value;
+  """ + frame_assignments + """
 
-  var frames = { home: homeFrame, trabakua: trabakuaFrame };
+  var frames = { """ + frames_map + """ };
 
   function show(view){
     if(!frames[view]) return;
