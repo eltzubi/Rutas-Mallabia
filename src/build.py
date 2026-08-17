@@ -120,7 +120,27 @@ def main():
 
   window.addEventListener('message', function(e){
     if(e.data && e.data.view){ show(e.data.view); }
+    if(e.data && (e.data.theme === 'dark' || e.data.theme === 'light')){
+      try { localStorage.setItem('rutas-mallabia-theme', e.data.theme); } catch(err){}
+      Object.keys(frames).forEach(function(k){
+        frames[k].contentWindow.postMessage({ theme: e.data.theme }, '*');
+      });
+    }
   });
+
+  // Iframes get an opaque (null) origin via srcdoc, so each one's own
+  // localStorage is isolated -- theme choice is persisted here in the
+  // shell (real origin) instead, and pushed into each iframe once its
+  // srcdoc content has finished loading (so its message listener exists).
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('rutas-mallabia-theme'); } catch(err){}
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    Object.keys(frames).forEach(function(k){
+      frames[k].addEventListener('load', function(){
+        frames[k].contentWindow.postMessage({ theme: savedTheme }, '*');
+      });
+    });
+  }
 })();
 </script>
 </body>
