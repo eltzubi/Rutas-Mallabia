@@ -441,7 +441,20 @@ footer{
   }).addTo(map);
 
   var line = L.polyline(track, { color:accent, weight:3, opacity:0.55, lineJoin:'round' }).addTo(map);
-  map.fitBounds(line.getBounds(), { padding:[26,26] });
+  var hasFit = false;
+  function refreshMap(){
+    map.invalidateSize();
+    if (!hasFit &amp;&amp; el.clientWidth > 0 &amp;&amp; el.clientHeight > 0) {
+      map.fitBounds(line.getBounds(), { padding:[26,26] });
+      hasFit = true;
+    }
+  }
+  refreshMap();
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(refreshMap).observe(el);
+  } else {
+    window.addEventListener('resize', refreshMap);
+  }
 
   var dotIcon = L.divIcon({
     className:'',
@@ -901,7 +914,20 @@ footer b{ color:var(--ink); font-weight:600; }
   }).addTo(map);
 
   var line = L.polyline(track, { color:accent, weight:4, opacity:0.9, lineJoin:'round' }).addTo(map);
-  map.fitBounds(line.getBounds(), { padding:[20,20] });
+  var hasFit = false;
+  function refreshMap(){
+    map.invalidateSize();
+    if (!hasFit &amp;&amp; el.clientWidth > 0 &amp;&amp; el.clientHeight > 0) {
+      map.fitBounds(line.getBounds(), { padding:[20,20] });
+      hasFit = true;
+    }
+  }
+  refreshMap();
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(refreshMap).observe(el);
+  } else {
+    window.addEventListener('resize', refreshMap);
+  }
 
   function dot(color){
     return L.divIcon({
