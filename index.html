@@ -314,24 +314,21 @@ body{
   overflow:hidden;
 }
 @media (min-width:640px){ .map-box{ aspect-ratio:16/9; } }
-.map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
-.map-hint{
-  position:absolute; inset:0; z-index:500;
-  display:flex; align-items:center; justify-content:center;
-  background:rgba(20,23,15,.28);
-  cursor:pointer;
-  transition:opacity .25s ease;
-}
-.map-hint span{
-  font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
-  color:#fff; background:rgba(20,23,15,.72);
-  padding:9px 16px; border:1px solid rgba(255,255,255,.35);
-}
-.map-hint.hidden{ opacity:0; pointer-events:none; }
+.map-box iframe{ width:100%; height:100%; border:0; display:block; filter:grayscale(.15) contrast(1.02); }
 .map-note{
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
 }
+.directions-cta{
+  margin-top:14px;
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;
+  letter-spacing:.03em; text-transform:uppercase;
+  color:var(--ground); background:var(--teal);
+  padding:12px 19px; text-decoration:none;
+  transition:background .2s ease;
+}
+.directions-cta:hover{ background:var(--violet); }
 
 footer{
   margin:60px auto 0; max-width:820px; padding:22px 24px 0; border-top:1px solid var(--line);
@@ -459,6 +456,7 @@ footer{
           <div class="fact"><span class="v">+712 m</span><span class="k">Desnivel</span></div>
           <div class="fact"><span class="v">Pista</span><span class="k">Superficie</span></div>
           <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
+          <div class="fact"><span class="v">Bici</span><span class="k">Actividad</span></div>
         </div>
         <a class="feat-cta" href="#" onclick="parent.postMessage({view:'trabakua'},'*');return false;">Ver la ruta completa <span aria-hidden="true">&amp;rarr;</span></a>
       </div>
@@ -480,6 +478,7 @@ footer{
           <div class="fact"><span class="v">+627 m</span><span class="k">Desnivel</span></div>
           <div class="fact"><span class="v">Sendero</span><span class="k">Superficie</span></div>
           <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
+          <div class="fact"><span class="v">Senderismo</span><span class="k">Actividad</span></div>
         </div>
         <a class="feat-cta" href="#" onclick="parent.postMessage({view:'iturrizuri'},'*');return false;">Ver la ruta completa <span aria-hidden="true">&amp;rarr;</span></a>
       </div>
@@ -491,10 +490,10 @@ footer{
   <section class="map-section">
     <p class="eyebrow">D&amp;oacute;nde est&amp;aacute; esto</p>
     <div class="map-box">
-      <div id="localeMap" style="width:100%;height:100%;"></div>
-      <div class="map-hint" id="localeMapHint"><span>Toca para mover el mapa</span></div>
+      <iframe src="https://maps.google.com/maps?q=43.189064,-2.529836&amp;z=15&amp;output=embed" title="Mapa de Mallabia, Plaza Elizalde" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <p class="map-note">Mallabia &amp;middot; Plaza Elizalde &amp;middot; 43,1891&amp;deg; N, 2,5298&amp;deg; O</p>
+    <a class="directions-cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=43.189064,-2.529836" target="_blank" rel="noopener noreferrer">C&amp;oacute;mo llegar <span aria-hidden="true">&amp;rarr;</span></a>
   </section>
 
   <footer>
@@ -509,67 +508,6 @@ footer{
     <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&amp;#10005;</button>
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
-
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  var el = document.getElementById('localeMap');
-  if (!el || typeof L === 'undefined') return;
-  var center = [43.189064, -2.529836];
-  var accent = getComputedStyle(document.documentElement).getPropertyValue('--teal').trim() || '#007A9E';
-  var ground = getComputedStyle(document.documentElement).getPropertyValue('--ground').trim() || '#F5F3EC';
-
-  var map = L.map('localeMap', {
-    zoomControl:true,
-    dragging:false,
-    touchZoom:false,
-    scrollWheelZoom:false,
-    doubleClickZoom:false,
-    boxZoom:false,
-    keyboard:false
-  });
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:18,
-    attribution:'&amp;copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-  }).addTo(map);
-
-  var hasSized = false;
-  function refreshMap(){
-    map.invalidateSize();
-    if (!hasSized &amp;&amp; el.clientWidth > 0 &amp;&amp; el.clientHeight > 0) {
-      map.setView(center, 14);
-      hasSized = true;
-    }
-  }
-  refreshMap();
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(refreshMap).observe(el);
-  } else {
-    window.addEventListener('resize', refreshMap);
-  }
-
-  var dotIcon = L.divIcon({
-    className:'',
-    html:'<span style="display:block;width:14px;height:14px;border-radius:50%;background:'+accent+';border:3px solid '+ground+';box-shadow:0 0 0 1.5px '+accent+';"></span>',
-    iconSize:[14,14], iconAnchor:[7,7]
-  });
-  L.marker(center, { icon:dotIcon }).addTo(map);
-
-  var hint = document.getElementById('localeMapHint');
-  function activate(){
-    map.dragging.enable();
-    map.touchZoom.enable();
-    map.scrollWheelZoom.enable();
-    map.doubleClickZoom.enable();
-    map.boxZoom.enable();
-    map.keyboard.enable();
-    hint.classList.add('hidden');
-  }
-  hint.addEventListener('click', activate);
-  hint.addEventListener('touchstart', activate, { passive:true });
-})();
-</script>
 
 <script>
 (function(){
@@ -979,6 +917,7 @@ footer b{ color:var(--ink); font-weight:600; }
     <div class="fact"><span class="v">+712 m</span><span class="k">Desnivel +</span></div>
     <div class="fact"><span class="v">Pista</span><span class="k">Superficie</span></div>
     <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
+    <div class="fact"><span class="v">Bici</span><span class="k">Actividad</span></div>
     <div class="fact"><span class="v">Trabakua</span><span class="k">Salida</span></div>
   </div>
   <p class="facts-note">&amp;mdash; <b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.</p>
@@ -1458,14 +1397,15 @@ footer b{ color:var(--ink); font-weight:600; }
     <div class="fact"><span class="v">+627 m</span><span class="k">Desnivel +</span></div>
     <div class="fact"><span class="v">Sendero</span><span class="k">Superficie</span></div>
     <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
+    <div class="fact"><span class="v">Senderismo</span><span class="k">Actividad</span></div>
     <div class="fact"><span class="v">Trabakua</span><span class="k">Salida</span></div>
   </div>
   <p class="facts-note">&amp;mdash; <b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.</p>
 
   <div class="body-copy">
-    <p>Sale de Trabakua hacia el noreste y, tras cuarenta minutos largos de subida, llega a la primera parada: la <b>cascada de Gerena</b>. Sigue subiendo hasta la segunda cascada, la de arriba: ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia <b>7 Pago</b>, escondido entre la vegetación y fácil de perder si no se mira bien por dónde sigue. Ya en la zona de las siete hayas milenarias que dan nombre a la carrera de montaña de Mallabia, el camino vuelve a abrirse antes de llegar a la <b>fuente de Iturzuri</b> (km 4,3 · 831 m). Después de la fuente, ya en terreno abierto, aparecen los <b>túmulos de Iturzuri</b>: el camino gira con fuerza hacia el sureste y gana los últimos metros hasta el punto más alto de la ruta, el <b>túmulo de Probazelaiburu II</b> (854 m) —un dolmen prehistórico donde el horizonte se abre entero, con las crestas del Duranguesado extendiéndose hasta perderse de vista.</p>
+    <p>Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera parada: la <b>cascada de Gerena</b>. Sigue subiendo hasta la segunda cascada, la de arriba: ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia <b>7 Pago</b>, escondido entre la vegetación y fácil de perder si no se mira bien por dónde sigue. Ya en la zona de las siete hayas milenarias que dan nombre a la carrera de montaña de Mallabia, el camino vuelve a abrirse antes de llegar a la <b>fuente de Iturzuri</b> (km 4,3 · 831 m). Después de la fuente, ya en terreno abierto, aparecen los <b>túmulos de Iturzuri</b>: el camino gira con fuerza hacia el sureste y gana los últimos metros hasta el punto más alto de la ruta, el <b>túmulo de Probazelaiburu II</b> (854 m) —un dolmen prehistórico donde el horizonte se abre entero, con las crestas del Duranguesado extendiéndose hasta perderse de vista.</p>
     <p>Desde el túmulo, el camino sigue el <b>cresterio</b> hacia el este, con vistas abiertas a ambos lados de la loma, hasta la cima de <b>Zengotitagane</b> (km 5,6 · 801 m). Desde aquí se puede bajar directo a Trabakua y acortar bastante el día —pero esta vez decidimos seguir: rodear la montaña por el lado este y alargar la vuelta un poco más.</p>
-    <p>El descenso empieza hacia el sur, por un tramo escondido entre la vegetación que apenas conoce nadie, hasta una <b>borda abandonada</b> (km 6,1 · 768 m). Ahí el camino gira hacia el este para rodear la montaña, bajando hasta un <b>refugio de montaña</b> (km 6,6 · 675 m) y siguiendo después de forma sostenida hasta enlazar de nuevo con el camino de ida, ya muy cerca de Trabakua, para cerrar el círculo.</p>
+    <p>El descenso empieza hacia el sur, por un tramo escondido entre la vegetación que apenas conoce nadie, hasta una <b>borda abandonada</b> (km 6,1 · 768 m). Ahí el camino gira hacia el este para rodear la montaña, bajando hasta un <b>refugio de montaña</b> (km 6,6 · 675 m). Desde el refugio se sigue perdiendo altura hasta casi tocar la carretera general, ya en el barrio de Osma —pero justo antes de llegar, el camino gira bruscamente y enlaza, con menos desnivel a partir de ahí, con el camino de ida, ya muy cerca de Trabakua, para cerrar el círculo.</p>
   </div>
 
   <div class="parada">
