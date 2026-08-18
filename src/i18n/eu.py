@@ -183,30 +183,28 @@ TRABAKUA = {
     'solitario, alternando cemento y tramos de piedra. El primer repecho es el más duro de toda '
     'la ruta —se sube de un tirón y se nota en las piernas—, pero no engaña: no llega a los 300 m. '
     'Lo que viene después se lleva mejor.':
-        'Pista Trabakuako Altoan hasten da. Lehen metroak beherantz doaz —kilometro bat baino pixka '
-        'bat gehiago— ezkerrerako bidegurutze batera iritsi arte; puntu horretan uzten da asfaltua, '
-        'eta hemendik aurrera pista bakarrik da, zementua eta harrizko tarteak txandakatuz.</p>\n'
-        '    <p>Lehen aldapa da ibilbide osoaren gogorrena —tiraka igotzen da eta hanketan nabaritzen '
-        'da—, baina ez du tranparik: 300 metrora ere ez da iristen. Ondorengoa, berriz, askoz '
-        'eramangarriagoa da.',
+        'Ibilbidea Trabakuako mendatean hasten da. Lehen zatia beherantz doa — kilometro bat inguru — '
+        'ezkerrerako bidegurutze batera iritsi arte; puntu horretan uzten da asfaltua, eta hemendik '
+        'aurrera pista hutsa da, zementu eta harrizko tarteak txandakatuz.</p>\n'
+        '    <p>Lehen aldapa da ibilbideko gogorrena: etenik gabe igotzen da eta hanketan nabaritzen '
+        'da, baina laburra da — 300 metrora ere ez da iristen. Ondorengoa askoz eramangarriagoa da.',
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
     'Aginaga, sin perder mucha altura. Se sube de vuelta por esa misma pista de tierra hasta '
     'enlazar de nuevo con la pista principal. Es un tramo opcional: se puede evitar siguiendo '
     'recto, sin desviarse hacia él.':
-        'Aldapa horien ostean, beheraldi tekniko samarra dator —trebetasun pixka bat duenarentzat '
-        'arriskurik gabea—, eta hortik gora berriz hartzen da igoerako bidea, Aginaga auzoaren '
-        'inguruan, altuera handirik galdu gabe. Tarte hori aukerakoa da: saihestu daiteke zuzen '
-        'jarraituz, desbideratu gabe.',
+        'Aldapa horien ostean, beheraldi tekniko samarra dator — trebetasun pixka bat duenarentzat '
+        'erraza —, eta hortik berriz hartzen da igoerako bidea Aginaga auzoaren inguruan, altuera '
+        'handirik galdu gabe. Tarte hori aukerakoa da: nahi izanez gero, zuzen jarraituta saihestu '
+        'daiteke.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
     'Txiki y la parte alta de Berano, con vistas hacia el barrio de Goita y las montañas del '
     'Duranguesado, antes de remontar de nuevo hacia Trabakua — una vuelta rápida y con paisaje.':
-        'Pistak oso ondo rodatu egiten du hasieratik amaierara, ez dago bidezidor esturik, eta '
-        'beheraldietan nahikoa malda dago abiadura pixka bat hartzeko eta gozatzeko. Bidea Berano '
-        'Txiki eta Beranoko goiko partea zeharkatzen du, Goita auzorantz eta Durangaldeko '
-        'mendietaranzko ikuspegiekin, Trabakuarantz berriro igotzen hasi aurretik — buelta azkarra '
-        'eta paisaiaz betea.',
+        'Pistak oso ondo rodatu egiten du hasieratik amaierara, bidezidor esturik gabe, eta '
+        'beheraldietan nahikoa malda dago abiadura hartzeko eta gozatzeko. Bidea Berano Txiki eta '
+        'Beranoko goiko partea zeharkatzen du, Goita eta Durangaldeko mendietarako ikuspegiekin, '
+        'Trabakuarantz berriro igotzen hasi aurretik — buelta azkarra eta paisaiaz betea.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     'Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin sendero estrecho — '
     'apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se '
