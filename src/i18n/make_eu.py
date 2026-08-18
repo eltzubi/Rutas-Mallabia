@@ -23,8 +23,8 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza"]
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza"}
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma"]
+ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma"}
 
 # es filename -> eu filename, for the cross-language links
 EU_OF = {"index.html": "index.eu.html"}
@@ -70,9 +70,16 @@ def translate(text, shared, specific, page):
 
 
 def check_no_spanish(text, page):
-    """Catch anything the tables forgot: strip markup, look for Spanish."""
-    body = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S)
-    body = re.sub(r"<[^>]+>", " ", body)          # tags out, attribute text too
+    """Catch anything the tables forgot: strip markup, look for Spanish.
+
+    Checks attribute values (alt, title, data-marker-title...) too -- a
+    naive tag-strip would delete them along with the tag and miss exactly
+    the kind of string that's easy to forget (a marker tooltip found this
+    the hard way: "data-marker-title" survived untranslated once).
+    """
+    no_script = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S)
+    attr_values = " ".join(re.findall(r'="([^"]*)"', no_script))
+    body = re.sub(r"<[^>]+>", " ", no_script) + " " + attr_values
     body = re.sub(r"https?://\S+", " ", body)      # URLs are not prose
     found = sorted({w for w in SPANISH_TELLS if re.search(r"\b" + re.escape(w) + r"\b", body)})
     if found:
