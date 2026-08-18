@@ -415,7 +415,7 @@ OSMA = {
     'enlaza con el GR &mdash;la misma que se sigue buena parte de la subida&mdash;, camino de la '
     '<b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el barrio de Goierri, escondida entre '
     'robles. Se sigue ganando altura por esa pista hacia el sureste hasta dejarla, poco antes de la '
-    'presa de Aixola, para bajar por un tramo de piedra juget&oacute;n hasta la propia presa &mdash;'
+    'presa de Aixola, para bajar por un tramo de tierra juget&oacute;n hasta la propia presa &mdash;'
     'quien prefiera no perder desnivel puede seguir por la pista principal, que llega al mismo punto '
     'sin bajar. Despu&eacute;s de la presa, ya al empezar a subir hacia Elgeta, '
     'est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de ruta.':
@@ -424,7 +424,7 @@ OSMA = {
         'den baso-pista &mdash;igoeraren zati handi batean jarraitzen den bera&mdash;, '
         '<b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
         'haritzen artean ezkutatuta. Pista horretatik jarraitzen da altuera irabaziz hego-ekialderantz, '
-        'Aixolako presa baino pixka bat lehenago utzi arte, harrizko tarte jolasti batetik presaraino '
+        'Aixolako presa baino pixka bat lehenago utzi arte, lurrezko tarte jolasti batetik presaraino '
         'jaisteko &mdash;desnibela galdu nahi ez duenak pista nagusitik jarrai dezake, puntu berera '
         'iristen dena jaitsi gabe. Presaren ondoren, Elgetarantz igotzen hasita, '
         '<b>Larrosako Iturri</b> dago (11,9 km &middot; 355 m), ur-puntua ibilbidearen erdian.',
