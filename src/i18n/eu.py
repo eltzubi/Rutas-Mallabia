@@ -416,16 +416,16 @@ OSMA = {
     'barrio de Goierri, escondida entre robles. Sigue hacia el sureste ganando altura; poco antes de '
     'la presa de Aixola hay una pista de piedra que sube suave y luego baja jugetona hasta la propia '
     'presa, aunque quien prefiera no perder desnivel puede seguir por la pista principal, que llega '
-    'al mismo punto sin bajar. Ah&iacute; est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 '
-    'm), fuente y punto de agua a mitad de ruta.':
+    'al mismo punto sin bajar. Despu&eacute;s de la presa, ya al empezar a subir hacia Elgeta, '
+    'est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de ruta.':
         'Trabakuatik hego-mendebalderantz ateratzen da, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
         '&middot; 412 m), Zengotita auzoan &mdash;hemen hartzen da Areitiorantz doan GRa, baso-pistatik'
         '&mdash;, <b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
         'haritzen artean ezkutatuta. Hego-ekialderantz jarraitzen du altuera irabaziz; Aixolako presa '
         'baino pixka bat lehenago harrizko pista bat dago, leun igo eta gero presaraino jolasti behera '
         'egiten duena, desnibela galdu nahi ez duenak pista nagusitik jarrai dezakeen arren, puntu '
-        'berera iristen dena jaitsi gabe. Hor dago <b>Larrosako Iturri</b> (11,9 km &middot; 355 m), '
-        'iturria eta ur-puntua ibilbidearen erdian.',
+        'berera iristen dena jaitsi gabe. Presaren ondoren, Elgetarantz igotzen hasita, '
+        '<b>Larrosako Iturri</b> dago (11,9 km &middot; 355 m), ur-puntua ibilbidearen erdian.',
     'Desde ah&iacute; el camino gira hacia el suroeste y pierde altura de golpe hasta una segunda '
     '<b>Ermita de San Juan</b> (km 18,8 &middot; 286 m), ya cerca de Elorrio. Kil&oacute;metro y medio '
     'despu&eacute;s gira hacia el noroeste hasta la <b>Necr&oacute;polis de Argi&ntilde;eta</b> (km '
