@@ -411,7 +411,7 @@ OSMA = {
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
 
     'Sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
-    '412 m), en el barrio de Zengotitagane &mdash;donde se coge la pista forestal que enlaza con el GR '
+    '412 m), en el barrio de Zengotita &mdash;donde se coge la pista forestal que enlaza con el GR '
     'hacia Areitio&mdash;, camino de la <b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el '
     'barrio de Goierri, escondida entre robles. Sigue hacia el sureste ganando altura hasta '
     '<b>Larrosako Iturri</b> (km 11,9 &middot; 355 m) &mdash;fuente junto a la presa de Aixola, punto '
@@ -419,7 +419,7 @@ OSMA = {
     'jugetona hasta la propia presa; quien prefiera no perder desnivel puede seguir por la pista '
     'principal, que llega al mismo punto sin bajar.':
         'Trabakuatik hego-mendebalderantz ateratzen da, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
-        '&middot; 412 m), Zengotitagane auzoan &mdash;hemen hartzen da Areitiorantz doan GRa, baso-pistatik'
+        '&middot; 412 m), Zengotita auzoan &mdash;hemen hartzen da Areitiorantz doan GRa, baso-pistatik'
         '&mdash;, <b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
         'haritzen artean ezkutatuta. Hego-ekialderantz jarraitzen du altuera '
         'irabaziz <b>Larrosako Iturriraino</b> (11,9 km &middot; 355 m) &mdash;iturria Aixolako presaren '
