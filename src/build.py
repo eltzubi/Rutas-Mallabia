@@ -56,10 +56,33 @@ Usage:
 Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
+import html.entities
 import os
+import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+
+# Catches a real bug class: writing "case&riacute;os" instead of
+# "caser&iacute;os" (a letter from the word swallowed into the entity name)
+# produces a name with no such HTML5 entity, so the browser prints the
+# escape sequence literally instead of the accented letter. Python's own
+# entity table is the authoritative list of what actually decodes.
+_ENTITY_RE = re.compile(r"&(#?\w+);")
+
+
+def check_entities(html_text, label):
+    bad = sorted({
+        m.group(0) for m in _ENTITY_RE.finditer(html_text)
+        if not m.group(1).startswith("#") and (m.group(1) + ";") not in html.entities.html5
+    })
+    if bad:
+        raise SystemExit(
+            f"\n{label}: malformed/unknown HTML entities: {bad}\n"
+            "A nearby letter was probably swallowed into the entity name "
+            "(e.g. \"case&riacute;os\" instead of \"caser&iacute;os\") -- "
+            "fix the source file, not this generated one."
+        )
 
 
 def read(*parts):
@@ -105,11 +128,12 @@ def main():
 
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
-            html = assemble_page(name, src_suffix)
+            page_html = assemble_page(name, src_suffix)
+            check_entities(page_html, f"{name} [{lang}]")
             out_path = os.path.join(ROOT, out_name(name, out_suffix))
             with open(out_path, "w", encoding="utf-8") as f:
-                f.write(html)
-            print(f"wrote {out_path} ({len(html)} bytes) [{lang}]")
+                f.write(page_html)
+            print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
 
 
 if __name__ == "__main__":

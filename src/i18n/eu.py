@@ -161,9 +161,9 @@ HOME = {
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
         'alt="Aixolako presa, Larrosako Iturritik gertu, Osmako ibilbidean"',
-    '<h2>Osma, Argi&ntilde;eta<br><em>y Gerea</em></h2>':
-        '<h2>Osma, Argi&ntilde;eta<br><em>eta Gerea</em></h2>',
-    'Circuito desde Trabakua por ermitas y case&riacute;os del Duranguesado hasta la Necr&oacute;polis '
+    '<h2>Osma, Argi&ntilde;eta<br><em>y Trabakua</em></h2>':
+        '<h2>Osma, Argi&ntilde;eta<br><em>eta Trabakua</em></h2>',
+    'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis '
     'de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio. Grabada sobre el terreno, no '
     'propuesta desde un mapa.':
         'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako '
@@ -395,10 +395,10 @@ OSMA = {
     '<span>Pista y asfalto</span><span class="sep">/</span><span>Ermitas y necr&oacute;polis medieval</span>':
         '<span>Pista eta asfaltoa</span><span class="sep">/</span><span>Ermitak eta erdi aroko nekropolia</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Osma, Argi&ntilde;eta<br><em>y Gerea</em></h1>':
-        '<h1>Osma, Argi&ntilde;eta<br><em>eta Gerea</em></h1>',
-    'De Osma a Gerea por la Necr&oacute;polis de Argi&ntilde;eta':
-        'Osmatik Gerera, Argi&ntilde;etako Nekropolitik',
+    '<h1>Osma, Argi&ntilde;eta<br><em>y Trabakua</em></h1>':
+        '<h1>Osma, Argi&ntilde;eta<br><em>eta Trabakua</em></h1>',
+    'Circuito desde Trabakua por Osma y la Necr&oacute;polis de Argi&ntilde;eta':
+        'Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
 
     'alt="Sarc&oacute;fagos medievales de la Necr&oacute;polis de Argi&ntilde;eta, km 20,1 de la ruta"':
         'alt="Erdi Aroko hilobiak Argi&ntilde;etako Nekropolian, ibilbideko 20,1 km"',
@@ -409,13 +409,15 @@ OSMA = {
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
 
     'Sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
-    '412 m) camino de la <b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), escondida entre robles '
-    'cerca de los case&riacute;os de Egiraun y Elexpe. Sigue hacia el sureste ganando altura hasta '
-    '<b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), junto a la presa de Aixola.':
+    '412 m) camino de la <b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el barrio de '
+    'Goierri, escondida entre robles. Sigue hacia el sureste ganando altura hasta '
+    '<b>Larrosako Iturri</b> (km 11,9 &middot; 355 m) &mdash;fuente junto a la presa de Aixola, punto '
+    'de agua a mitad de ruta.':
         'Trabakuatik hego-mendebalderantz ateratzen da, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
-        '&middot; 412 m) <b>Santa Marina ermitarantz</b> (5,2 km &middot; 319 m), Egiraun eta Elexpe '
-        'baserrien inguruko haritzen artean ezkutatuta. Hego-ekialderantz jarraitzen du altuera '
-        'irabaziz <b>Larrosako Iturriraino</b> (11,9 km &middot; 355 m), Aixolako presatik gertu.',
+        '&middot; 412 m) <b>Santa Marina ermitarantz</b> (5,2 km &middot; 319 m), Goierri auzoan, '
+        'haritzen artean ezkutatuta. Hego-ekialderantz jarraitzen du altuera '
+        'irabaziz <b>Larrosako Iturriraino</b> (11,9 km &middot; 355 m) &mdash;iturria Aixolako presaren '
+        'ondoan, ur-puntua ibilbidearen erdian.',
     'Desde ah&iacute; el camino gira hacia el suroeste y pierde altura de golpe hasta una segunda '
     '<b>Ermita de San Juan</b> (km 18,8 &middot; 286 m), ya cerca de Elorrio. Kil&oacute;metro y medio '
     'despu&eacute;s gira hacia el noroeste hasta la <b>Necr&oacute;polis de Argi&ntilde;eta</b> (km '
@@ -423,38 +425,45 @@ OSMA = {
     'piedra y cinco estelas labradas en piedra del Oiz, de los siglos VII a IX &mdash;entre la '
     'epigraf&iacute;a cristiana m&aacute;s antigua encontrada en Bizkaia, Bien de Inter&eacute;s '
     'Cultural desde 1931. Las tumbas, repartidas originalmente por distintos barrios de Elorrio, se '
-    'agruparon aqu&iacute; en el siglo XIX por orden del p&aacute;rroco Retolaza.':
+    'agruparon aqu&iacute; en el siglo XIX por orden del p&aacute;rroco Retolaza. Hay tambi&eacute;n '
+    'una fuente junto a la necr&oacute;polis para llenar cantimploras.':
         'Handik bideak hego-mendebalderantz egiten du eta altuera bat-batean galtzen du bigarren '
         '<b>San Juan ermitaraino</b> (18,8 km &middot; 286 m), jada Elorriotik gertu. Kilometro eta '
         'erdi geroago ipar-mendebalderantz biratzen du <b>Argi&ntilde;etako Nekropoliraino</b> (20,1 km '
         '&middot; 247 m), San Adri&aacute;n ermitaren ondoan: hogei bat harrizko hilobi eta bost estela '
         'Oizeko harrian landuak, VII. eta IX. mendeen artekoak &mdash;Bizkaian aurkitutako kristau '
         'epigrafia zaharrenetakoa, Kultura Ondasun izendatua 1931tik. Hilobiak, jatorriz Elorrioko '
-        'hainbat auzotan sakabanatuta, XIX. mendean bildu ziren hemen Retolaza apaizaren aginduz.',
+        'hainbat auzotan sakabanatuta, XIX. mendean bildu ziren hemen Retolaza apaizaren aginduz. '
+        'Iturri bat ere badago nekropoliaren ondoan, kantinplorak betetzeko.',
     'El camino sigue hacia el noroeste encadenando varias ermitas: San Lorenzo (km 22,4 &middot; 312 '
-    'm), San Juan Bautista (km 24,3 &middot; 277 m) y San Antonio (km 25,8 &middot; 160 m), donde se '
-    'pierde altura de golpe. Gira despu&eacute;s hacia el este para subir hasta la <b>Ermita de San '
-    'Miguel</b> (km 28,4 &middot; 227 m) y baja de nuevo hasta <b>Berriz</b> (km 30,7 &middot; 187 m), '
-    'en el valle del Ibaizabal, al pie del Oiz.':
+    'm), San Juan Bautista de Murgoitio (km 24,3 &middot; 277 m) y San Antonio de Olakueta (km 25,8 '
+    '&middot; 160 m), donde se pierde altura de golpe. Gira despu&eacute;s hacia el este para subir '
+    'hasta la <b>Ermita de San Miguel de Okango</b> (km 28,4 &middot; 227 m) y baja de nuevo hasta '
+    '<b>Berriz</b> (km 30,7 &middot; 187 m), en el valle del Ibaizabal, al pie del Oiz.':
         'Bideak ipar-mendebalderantz jarraitzen du hainbat ermita kateatuz: San Lorentzo (22,4 km '
-        '&middot; 312 m), San Juan Bataiatzailea (24,3 km &middot; 277 m) eta San Antonio (25,8 km '
-        '&middot; 160 m), non altuera bat-batean galtzen den. Gero ekialderantz biratzen du <b>San '
-        'Migel ermitaraino</b> igotzeko (28,4 km &middot; 227 m) eta berriro jaisten da '
-        '<b>Berrizeraino</b> (30,7 km &middot; 187 m), Ibaizabal haranean, Oizen oinean.',
-    'Ya de vuelta, pasa por una segunda <b>Ermita de San Lorenzo</b> (km 32,1 &middot; 264 m), cerca de '
-    'la Casa Madre de las Mercedarias Misioneras de B&eacute;rriz, antes de subir sin parar los '
-    '&uacute;ltimos 4,7 km y 143 m de desnivel de vuelta hasta Trabakua, para cerrar el c&iacute;rculo.':
+        '&middot; 312 m), Murgoitioko San Juan Bataiatzailea (24,3 km &middot; 277 m) eta Olakuetako '
+        'San Antonio (25,8 km &middot; 160 m), non altuera bat-batean galtzen den. Gero ekialderantz '
+        'biratzen du <b>Okangoko San Migel ermitaraino</b> igotzeko (28,4 km &middot; 227 m) eta '
+        'berriro jaisten da <b>Berrizeraino</b> (30,7 km &middot; 187 m), Ibaizabal haranean, Oizen '
+        'oinean.',
+    'Ya de vuelta, pasa por una segunda <b>Ermita de San Lorenzo</b> (km 32,1 &middot; 264 m), en el '
+    'barrio de San Lorenzo (Mend&iacute;bil-Sallobente), cerca de la Casa Madre de las Mercedarias '
+    'Misioneras de B&eacute;rriz, antes de subir sin parar los &uacute;ltimos 4,7 km y 143 m de '
+    'desnivel de vuelta hasta Trabakua, para cerrar el c&iacute;rculo.':
         'Itzuli bidean, bigarren <b>San Lorentzo ermitatik</b> pasatzen da (32,1 km &middot; 264 m), '
-        'B&eacute;rrizko Mertzedarien Misiolarien Ama Etxetik gertu, azken 4,7 km-ak eta 143 m-ko '
-        'desnibela etenik gabe igo aurretik Trabakuara, zirkulua ixteko.',
+        'San Lorentzo auzoan (Mend&iacute;bil-Sallobente), B&eacute;rrizko Mertzedarien Misiolarien Ama '
+        'Etxetik gertu, azken 4,7 km-ak eta 143 m-ko desnibela etenik gabe igo aurretik Trabakuara, '
+        'zirkulua ixteko.',
 
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
-    '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y case&riacute;os del '
+    '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
     'Duranguesado. El track de esta ficha se grab&oacute; con e-bike (2h 50min), as&iacute; que el '
-    'tiempo no sirve de referencia si vas sin asistencia.</p>':
+    'tiempo no sirve de referencia si vas sin asistencia. Hay agua en Larrosako Iturri (km 11,9) y '
+    'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 20,1).</p>':
         '<p>36,8 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
         'artean. Fitxa honetako tracka e-bikearekin grabatu zen (2h 50min), beraz denbora ez da '
-        'erreferentzia laguntzarik gabe bazoaz.</p>',
+        'erreferentzia laguntzarik gabe bazoaz. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
+        'Nekropolitik gertu (20,1 km).</p>',
 }
 
 # <title> per page (head files)
@@ -463,7 +472,7 @@ TITLES = {
     'trabakua': 'Trabakua',
     'iturrizuri': 'Iturzuri · Zengotitagane',
     'zenarruza': 'Zenarruza · San Kristobal · Zengotitagane',
-    'osma': 'Osma · Argiñeta · Gerea',
+    'osma': 'Osma · Argiñeta · Trabakua',
 }
 
 PAGE_STRINGS = {
