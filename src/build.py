@@ -6,10 +6,14 @@ Architecture:
     written as a <name>_head.html + <name>_tail.html pair, so they're small
     enough to edit directly even though the final assembled page has huge
     embedded base64 images.
-  - fonts/inline_fonts.css holds the self-hosted @font-face rules
-    (Fraunces, Karla, IBM Plex Mono). It's written out once as a real
-    ../fonts.css file and linked from every page's <head>, so the browser
-    downloads and caches it once instead of duplicating it inline per page.
+  - Stylesheets live in css/ and are copied to the repo root as real files
+    linked from each page's <head>, so the browser downloads and caches
+    them once instead of duplicating them inline on every page:
+      fonts/inline_fonts.css -> fonts.css   (self-hosted @font-face rules)
+      css/home.css           -> home.css    (the home page)
+      css/route.css          -> route.css   (every route page; they share
+                                             one stylesheet, so a design
+                                             change lands in one place)
   - Each pair is concatenated into a full standalone HTML document and
     written to its own file at the repo root (OUT_NAME below) -- these are
     real, independently loadable pages, not iframes. Home is index.html so
@@ -62,12 +66,21 @@ def out_name(page):
     return OUT_NAME.get(page, f"{page}.html")
 
 
+# source stylesheet -> file written at the repo root
+STYLESHEETS = {
+    ("fonts", "inline_fonts.css"): "fonts.css",
+    ("css", "home.css"): "home.css",
+    ("css", "route.css"): "route.css",
+}
+
+
 def main():
-    fonts_css = read("fonts", "inline_fonts.css")
-    fonts_path = os.path.join(ROOT, "fonts.css")
-    with open(fonts_path, "w", encoding="utf-8") as f:
-        f.write(fonts_css)
-    print(f"wrote {fonts_path} ({len(fonts_css)} bytes)")
+    for parts, out in STYLESHEETS.items():
+        css = read(*parts)
+        out_path = os.path.join(ROOT, out)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(css)
+        print(f"wrote {out_path} ({len(css)} bytes)")
 
     for name in PAGES:
         html = assemble_page(name)
