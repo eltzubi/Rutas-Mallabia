@@ -412,7 +412,7 @@ OSMA = {
 
     'Esta ruta sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
     '412 m), en el barrio de Zengotita, donde se coge la pista forestal que llega desde Areitio y '
-    'enlaza con el GR &mdash;que va casi en llano hacia el monte Arietzu&mdash;, camino de la '
+    'enlaza con el GR &mdash;que va casi en llano, en paralelo al monte Arietzu&mdash;, camino de la '
     '<b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el barrio de Goierri, escondida entre '
     'robles. Se sigue ganando altura por esa pista hacia el sureste hasta dejarla, poco antes de la '
     'presa de Aixola, para bajar por un tramo de tierra juget&oacute;n hasta la propia presa &mdash;'
@@ -421,7 +421,7 @@ OSMA = {
     'est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de ruta.':
         'Ibilbide honek Trabakuatik hego-mendebalderantz egiten du, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
         '&middot; 412 m), Zengotita auzoan, hemen hartzen baita Areitiotik datorren eta GRarekin lotzen '
-        'den baso-pista &mdash;ia laua, Arietzu mendirantz&mdash;, '
+        'den baso-pista &mdash;ia laua, Arietzu mendiaren paraleloan&mdash;, '
         '<b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
         'haritzen artean ezkutatuta. Pista horretatik jarraitzen da altuera irabaziz hego-ekialderantz, '
         'Aixolako presa baino pixka bat lehenago utzi arte, lurrezko tarte jolasti batetik presaraino '
