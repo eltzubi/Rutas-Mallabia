@@ -113,6 +113,10 @@ def main():
       frames[k].classList.toggle('active', k === view);
     });
     window.scrollTo(0,0);
+    // The frame's srcdoc content finishes loading (and any Leaflet map
+    // inside it initializes) while display:none, when its container has
+    // zero size. Tell it once it's actually visible so it can resize/refit.
+    frames[view].contentWindow.postMessage({ shown: true }, '*');
   }
 
   window.addEventListener('message', function(e){

@@ -670,7 +670,7 @@ footer{
   var violet = getComputedStyle(document.documentElement).getPropertyValue('--violet').trim() || '#A6FF4D';
   var ground = getComputedStyle(document.documentElement).getPropertyValue('--ground').trim() || '#0A0F0A';
 
-  var map = L.map('trailheadMap', { zoomControl:true, scrollWheelZoom:false });
+  var map = L.map('trailheadMap', { zoomControl:true, scrollWheelZoom:false, center:trabakuaTrack[0], zoom:13 });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom:18,
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
@@ -688,16 +688,18 @@ footer{
   });
   L.marker([43.210466,-2.5460838], { icon:parkingIcon, title:'Puerto de Trabakua (aparcamiento)' }).addTo(map);
 
-  var hasSized = false;
   function refreshMap(){
     map.invalidateSize();
-    if (!hasSized) { map.fitBounds(bounds, { padding:[24,24] }); hasSized = true; }
+    map.fitBounds(bounds, { padding:[24,24] });
   }
   if ('ResizeObserver' in window) {
     new ResizeObserver(refreshMap).observe(el);
   } else {
     window.addEventListener('resize', refreshMap);
   }
+  window.addEventListener('message', function(e){
+    if (e.data && e.data.shown) { refreshMap(); }
+  });
 })();
 </script>
 <script>
