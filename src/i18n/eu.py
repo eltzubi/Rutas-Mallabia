@@ -411,15 +411,21 @@ OSMA = {
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
 
     'Sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
-    '412 m) camino de la <b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el barrio de '
-    'Goierri, escondida entre robles. Sigue hacia el sureste ganando altura hasta '
+    '412 m), en el barrio de Zengotitagane &mdash;donde se coge la pista forestal que enlaza con el GR '
+    'hacia Areitio&mdash;, camino de la <b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el '
+    'barrio de Goierri, escondida entre robles. Sigue hacia el sureste ganando altura hasta '
     '<b>Larrosako Iturri</b> (km 11,9 &middot; 355 m) &mdash;fuente junto a la presa de Aixola, punto '
-    'de agua a mitad de ruta.':
+    'de agua a mitad de ruta. Un poco antes hay una pista de piedra que sube suave y luego baja '
+    'jugetona hasta la propia presa; quien prefiera no perder desnivel puede seguir por la pista '
+    'principal, que llega al mismo punto sin bajar.':
         'Trabakuatik hego-mendebalderantz ateratzen da, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
-        '&middot; 412 m) <b>Santa Marina ermitarantz</b> (5,2 km &middot; 319 m), Goierri auzoan, '
+        '&middot; 412 m), Zengotitagane auzoan &mdash;hemen hartzen da Areitiorantz doan GRa, baso-pistatik'
+        '&mdash;, <b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
         'haritzen artean ezkutatuta. Hego-ekialderantz jarraitzen du altuera '
         'irabaziz <b>Larrosako Iturriraino</b> (11,9 km &middot; 355 m) &mdash;iturria Aixolako presaren '
-        'ondoan, ur-puntua ibilbidearen erdian.',
+        'ondoan, ur-puntua ibilbidearen erdian. Pixka bat lehenago harrizko pista bat dago, leun igo eta '
+        'gero presaraino jolasti behera egiten duena; desnibela galdu nahi ez duenak pista nagusitik '
+        'jarrai dezake, puntu berera iristen dena jaitsi gabe.',
     'Desde ah&iacute; el camino gira hacia el suroeste y pierde altura de golpe hasta una segunda '
     '<b>Ermita de San Juan</b> (km 18,8 &middot; 286 m), ya cerca de Elorrio. Kil&oacute;metro y medio '
     'despu&eacute;s gira hacia el noroeste hasta la <b>Necr&oacute;polis de Argi&ntilde;eta</b> (km '
