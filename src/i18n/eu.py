@@ -426,8 +426,9 @@ OSMA = {
         'egiten duena, desnibela galdu nahi ez duenak pista nagusitik jarrai dezakeen arren, puntu '
         'berera iristen dena jaitsi gabe. Presaren ondoren, Elgetarantz igotzen hasita, '
         '<b>Larrosako Iturri</b> dago (11,9 km &middot; 355 m), ur-puntua ibilbidearen erdian.',
-    'Desde ah&iacute; el camino gira hacia el suroeste y pierde altura de golpe hasta una segunda '
-    '<b>Ermita de San Juan</b> (km 18,8 &middot; 286 m), ya cerca de Elorrio. Kil&oacute;metro y medio '
+    'Desde ah&iacute; sigue subiendo hasta Elgeta, con un tramo recto de asfalto, antes de bajar de '
+    'golpe hacia Elorrio, donde est&aacute; la segunda <b>Ermita de San Juan</b> (km 18,8 &middot; '
+    '286 m). Kil&oacute;metro y medio '
     'despu&eacute;s gira hacia el noroeste hasta la <b>Necr&oacute;polis de Argi&ntilde;eta</b> (km '
     '20,1 &middot; 247 m), junto a la Ermita de San Adri&aacute;n: una veintena de sarc&oacute;fagos de '
     'piedra y cinco estelas labradas en piedra del Oiz, de los siglos VII a IX &mdash;entre la '
@@ -435,8 +436,9 @@ OSMA = {
     'Cultural desde 1931. Las tumbas, repartidas originalmente por distintos barrios de Elorrio, se '
     'agruparon aqu&iacute; en el siglo XIX por orden del p&aacute;rroco Retolaza. Hay tambi&eacute;n '
     'una fuente junto a la necr&oacute;polis para llenar cantimploras.':
-        'Handik bideak hego-mendebalderantz egiten du eta altuera bat-batean galtzen du bigarren '
-        '<b>San Juan ermitaraino</b> (18,8 km &middot; 286 m), jada Elorriotik gertu. Kilometro eta '
+        'Handik Elgetaraino igotzen jarraitzen du, asfaltozko tarte zuzen batetik, Elorriorantz '
+        'bat-batean jaitsi aurretik, non dagoen bigarren <b>San Juan ermita</b> (18,8 km &middot; '
+        '286 m). Kilometro eta '
         'erdi geroago ipar-mendebalderantz biratzen du <b>Argi&ntilde;etako Nekropoliraino</b> (20,1 km '
         '&middot; 247 m), San Adri&aacute;n ermitaren ondoan: hogei bat harrizko hilobi eta bost estela '
         'Oizeko harrian landuak, VII. eta IX. mendeen artekoak &mdash;Bizkaian aurkitutako kristau '
