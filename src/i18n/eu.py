@@ -151,8 +151,8 @@ HOME = {
         'Trabakuko mendatea &middot; 43,2105&deg; N, 2,5461&deg; M',
     'A 5,7 km de Mallabia pueblo, unos 7 min en coche &mdash; casi todas las rutas salen de aqu&iacute;, con buen aparcamiento.':
         'Mallabia herritik 5,7 km-ra, 7 minutu inguru autoz &mdash; ia ibilbide guztiak hemendik ateratzen dira, aparkaleku onarekin.',
-    'Justo al lado del aparcamiento hay un bar: caf&eacute; antes de salir, o cerveza y algo de comer al volver.':
-        'Aparkalekuaren ondoan bar bat dago: kafea irten aurretik, edo garagardoa eta zerbait jateko itzultzean.',
+    'Justo al lado del aparcamiento hay dos bares: caf&eacute; antes de salir, o cerveza y algo de comer al volver.':
+        'Aparkalekuaren ondoan bi taberna daude: kafea irten aurretik, edo garagardoa eta zerbait jateko itzultzean.',
     'C&oacute;mo llegar': 'Nola iritsi',
     '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Irteerak mendatetik</p>',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
