@@ -26,9 +26,23 @@ Architecture:
     inline script at the top of <head> applies the saved theme before first
     paint (avoids a flash of the wrong theme); the theme-toggle button's
     script (bottom of body) just flips it and writes back to localStorage.
+  - The site is bilingual (Spanish + Basque). Only the Spanish _head/_tail
+    files are written by hand; the Basque ones (*_head.eu.html /
+    *_tail.eu.html) are GENERATED from them by src/i18n/make_eu.py using
+    the string tables in src/i18n/eu.py. So the workflow after changing any
+    Spanish text is always:
+
+        python3 src/i18n/make_eu.py    # update Basque, fails if it's stale
+        python3 src/build.py           # write both languages
+
+    make_eu.py refuses to run when a Spanish string it knows has changed,
+    which is what stops the two languages from drifting apart. To reword
+    something in Basque, edit src/i18n/eu.py -- never the .eu.html files,
+    they are overwritten.
+
   - To add a new route page: create <name>_head.html + <name>_tail.html,
-    add "<name>" to PAGES below (home stays first), and link to it from
-    wherever with a plain <a href="<name>.html">.
+    add "<name>" to PAGES below (home stays first), link to it with a plain
+    <a href="<name>.html">, and add its strings to src/i18n/eu.py.
 
 IMPORTANT: any file with embedded base64 (fonts/inline_fonts.css,
 *_tail.html once photos are added) is huge -- do not open these with
@@ -53,17 +67,20 @@ def read(*parts):
         return f.read()
 
 
-def assemble_page(name):
-    return read(f"{name}_head.html") + read(f"{name}_tail.html")
+def assemble_page(name, suffix=""):
+    return read(f"{name}_head{suffix}.html") + read(f"{name}_tail{suffix}.html")
 
 
 # First entry is home; it's the one written to index.html.
 PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza"]
-OUT_NAME = {"mallabia": "index.html"}  # others default to "<name>.html"
+OUT_NAME = {"mallabia": "index"}  # others default to their own name
+
+# lang code -> (source-file suffix, output-file suffix)
+LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
 
-def out_name(page):
-    return OUT_NAME.get(page, f"{page}.html")
+def out_name(page, out_suffix):
+    return f"{OUT_NAME.get(page, page)}{out_suffix}.html"
 
 
 # source asset -> file written at the repo root
@@ -86,12 +103,13 @@ def main():
             f.write(body)
         print(f"wrote {out_path} ({len(body)} bytes)")
 
-    for name in PAGES:
-        html = assemble_page(name)
-        out_path = os.path.join(ROOT, out_name(name))
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(html)
-        print(f"wrote {out_path} ({len(html)} bytes)")
+    for lang, (src_suffix, out_suffix) in LANGS.items():
+        for name in PAGES:
+            html = assemble_page(name, src_suffix)
+            out_path = os.path.join(ROOT, out_name(name, out_suffix))
+            with open(out_path, "w", encoding="utf-8") as f:
+                f.write(html)
+            print(f"wrote {out_path} ({len(html)} bytes) [{lang}]")
 
 
 if __name__ == "__main__":
