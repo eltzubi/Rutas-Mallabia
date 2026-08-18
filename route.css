@@ -33,6 +33,7 @@ body{
 ::selection{ background:var(--teal); color:var(--ground); }
 
 .page{ max-width:760px; margin:0 auto; padding:0 0 90px; }
+@media (min-width:1024px){ .page{ max-width:1100px; } }
 
 .masthead{
   display:flex; align-items:baseline; justify-content:space-between;
