@@ -410,7 +410,7 @@ OSMA = {
     'alt="Fila de sarc&oacute;fagos bajo los &aacute;rboles, Necr&oacute;polis de Argi&ntilde;eta"':
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
 
-    'Sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
+    'Esta ruta sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
     '412 m), en el barrio de Zengotita, donde se coge la pista forestal que llega desde Areitio y '
     'enlaza con el GR &mdash;que va casi en llano hacia el monte Arietzu&mdash;, camino de la '
     '<b>Ermita de Santa Marina</b> (km 5,2 &middot; 319 m), en el barrio de Goierri, escondida entre '
@@ -419,7 +419,7 @@ OSMA = {
     'quien prefiera no perder desnivel puede seguir por la pista principal, que llega al mismo punto '
     'sin bajar. Despu&eacute;s de la presa, ya al empezar a subir hacia Elgeta, '
     'est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de ruta.':
-        'Trabakuatik hego-mendebalderantz ateratzen da, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
+        'Ibilbide honek Trabakuatik hego-mendebalderantz egiten du, lehen <b>San Juan ermitatik</b> pasatuz (1,3 km '
         '&middot; 412 m), Zengotita auzoan, hemen hartzen baita Areitiotik datorren eta GRarekin lotzen '
         'den baso-pista &mdash;ia laua, Arietzu mendirantz&mdash;, '
         '<b>Santa Marina ermitarantz</b> bidean (5,2 km &middot; 319 m), Goierri auzoan, '
@@ -486,7 +486,7 @@ TITLES = {
     'trabakua': 'Trabakua',
     'iturrizuri': 'Iturzuri · Zengotitagane',
     'zenarruza': 'Zenarruza · San Kristobal · Zengotitagane',
-    'osma': 'Osma · Argiñeta · Trabakua',
+    'osma': 'Argiñeta',
 }
 
 PAGE_STRINGS = {
