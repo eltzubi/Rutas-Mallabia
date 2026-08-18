@@ -117,6 +117,16 @@ body{
   transform:scale(1.04);
   animation: kenburns 24s ease-in-out infinite alternate;
 }
+@media (max-width:700px){
+  /* At 82vh tall and phone-narrow, the crop is width-bound: the visible
+     slice of the source photo is narrower than the bike itself, so no
+     object-position value can show it whole. Shorten the hero instead
+     (widens the visible slice) and drop the Ken Burns zoom (it only
+     shrinks that slice further), then centre the crop on the bike, which
+     sits right-of-centre in the source photo. */
+  .hero-photo{ min-height:58vh; }
+  .hero-photo-img{ object-position:64% 58%; transform:scale(1.02); animation:none; }
+}
 @keyframes kenburns{
   from{ transform:scale(1.04) translate3d(0,0,0); }
   to{ transform:scale(1.15) translate3d(-1.2%,-1%,0); }
