@@ -1,28 +1,30 @@
 #!/usr/bin/env python3
-"""Rebuilds index.html from the source templates in this folder.
+"""Rebuilds the site's HTML pages from the source templates in this folder.
 
 Architecture:
-  - Each page (mallabia = home, trabakua/iturrizuri = routes) is written as
-    a <name>_head.html + <name>_tail.html pair, so they're small enough
-    to edit directly even though the final assembled page has huge
-    embedded base64 images/fonts.
+  - Each page (mallabia = home, trabakua/iturrizuri/zenarruza = routes) is
+    written as a <name>_head.html + <name>_tail.html pair, so they're small
+    enough to edit directly even though the final assembled page has huge
+    embedded base64 images.
   - fonts/inline_fonts.css holds the self-hosted @font-face rules
-    (Fraunces, Karla, IBM Plex Mono), shared by all pages.
-  - Each pair is concatenated into a full standalone HTML document.
-  - All full documents get embedded (with & escaped to &amp;) inside
-    <textarea> tags in an outer shell, which reads them out and
-    assigns them as srcdoc to one <iframe> per page. Only one iframe
-    is visible (class "active") at a time.
-  - Navigation between views happens via window.postMessage({view:
-    '<page-name>'}) posted from links inside the iframes; the outer
-    shell listens and toggles which iframe is active. This exists
-    because Claude Artifacts (where this started) block navigation
-    between separately published artifacts -- and it was kept after
-    moving to GitHub Pages because it already worked.
+    (Fraunces, Karla, IBM Plex Mono). It's written out once as a real
+    ../fonts.css file and linked from every page's <head>, so the browser
+    downloads and caches it once instead of duplicating it inline per page.
+  - Each pair is concatenated into a full standalone HTML document and
+    written to its own file at the repo root (OUT_NAME below) -- these are
+    real, independently loadable pages, not iframes. Home is index.html so
+    GitHub Pages serves it at the site root; every other page keeps
+    navigating between real files (<a href="trabakua.html">), so URLs are
+    shareable/bookmarkable per route and each page only downloads its own
+    photos.
+  - Theme (light/dark) persists via localStorage directly -- every page
+    shares the same real origin, so no cross-page relay is needed. A tiny
+    inline script at the top of <head> applies the saved theme before first
+    paint (avoids a flash of the wrong theme); the theme-toggle button's
+    script (bottom of body) just flips it and writes back to localStorage.
   - To add a new route page: create <name>_head.html + <name>_tail.html,
-    add "<name>" to PAGES below (home stays first/default-active), and
-    link to it from wherever with
-    onclick="parent.postMessage({view:'<name>'},'*');return false;".
+    add "<name>" to PAGES below (home stays first), and link to it from
+    wherever with a plain <a href="<name>.html">.
 
 IMPORTANT: any file with embedded base64 (fonts/inline_fonts.css,
 *_tail.html once photos are added) is huge -- do not open these with
@@ -33,7 +35,8 @@ hand.
 
 Usage:
     python3 src/build.py
-Writes ../index.html (the repo root, which GitHub Pages serves).
+Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
+fonts.css to the repo root, which GitHub Pages serves.
 """
 import os
 
@@ -47,111 +50,31 @@ def read(*parts):
 
 
 def assemble_page(name):
-    return read(f"{name}_head.html") + read("fonts", "inline_fonts.css") + read(f"{name}_tail.html")
+    return read(f"{name}_head.html") + read(f"{name}_tail.html")
 
 
-# First entry is the page shown by default (class "active").
+# First entry is home; it's the one written to index.html.
 PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza"]
-VIEW_NAME = {"mallabia": "home"}  # page name -> postMessage view name, defaults to itself
+OUT_NAME = {"mallabia": "index.html"}  # others default to "<name>.html"
 
 
-def view_of(page):
-    return VIEW_NAME.get(page, page)
+def out_name(page):
+    return OUT_NAME.get(page, f"{page}.html")
 
 
 def main():
-    pages_html = {name: assemble_page(name) for name in PAGES}
+    fonts_css = read("fonts", "inline_fonts.css")
+    fonts_path = os.path.join(ROOT, "fonts.css")
+    with open(fonts_path, "w", encoding="utf-8") as f:
+        f.write(fonts_css)
+    print(f"wrote {fonts_path} ({len(fonts_css)} bytes)")
 
-    for label, html in pages_html.items():
-        if "</textarea" in html.lower():
-            raise SystemExit(f"{label} page contains a literal </textarea> -- would break the outer shell")
-
-    iframes = "\n".join(
-        f'<iframe id="{view_of(name)}-frame" class="frame{" active" if i == 0 else ""}"></iframe>'
-        for i, name in enumerate(PAGES)
-    )
-    textareas = "\n".join(
-        f'<textarea id="{view_of(name)}-src" style="display:none">' + pages_html[name].replace("&", "&amp;") + "</textarea>"
-        for name in PAGES
-    )
-    frame_assignments = "\n  ".join(
-        f"var {view_of(name)}Frame = document.getElementById('{view_of(name)}-frame');\n  "
-        f"{view_of(name)}Frame.srcdoc = document.getElementById('{view_of(name)}-src').value;"
-        for name in PAGES
-    )
-    frames_map = ", ".join(f"{view_of(name)}: {view_of(name)}Frame" for name in PAGES)
-
-    shell = """<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mallabia · Rutas del pueblo</title>
-<style>
-  html,body{ margin:0; padding:0; height:100%; background:#0A0F0A; }
-  .frame{
-    position:fixed; inset:0; width:100%; height:100%;
-    border:none; display:none;
-  }
-  .frame.active{ display:block; }
-</style>
-</head>
-<body>
-""" + iframes + """
-
-""" + textareas + """
-
-<script>
-(function(){
-  """ + frame_assignments + """
-
-  var frames = { """ + frames_map + """ };
-
-  function show(view){
-    if(!frames[view]) return;
-    Object.keys(frames).forEach(function(k){
-      frames[k].classList.toggle('active', k === view);
-    });
-    window.scrollTo(0,0);
-    // The frame's srcdoc content finishes loading (and any Leaflet map
-    // inside it initializes) while display:none, when its container has
-    // zero size. Tell it once it's actually visible so it can resize/refit.
-    frames[view].contentWindow.postMessage({ shown: true }, '*');
-  }
-
-  window.addEventListener('message', function(e){
-    if(e.data && e.data.view){ show(e.data.view); }
-    if(e.data && (e.data.theme === 'dark' || e.data.theme === 'light')){
-      try { localStorage.setItem('rutas-mallabia-theme', e.data.theme); } catch(err){}
-      Object.keys(frames).forEach(function(k){
-        frames[k].contentWindow.postMessage({ theme: e.data.theme }, '*');
-      });
-    }
-  });
-
-  // Iframes get an opaque (null) origin via srcdoc, so each one's own
-  // localStorage is isolated -- theme choice is persisted here in the
-  // shell (real origin) instead, and pushed into each iframe once its
-  // srcdoc content has finished loading (so its message listener exists).
-  var savedTheme = null;
-  try { savedTheme = localStorage.getItem('rutas-mallabia-theme'); } catch(err){}
-  if (savedTheme === 'dark' || savedTheme === 'light') {
-    Object.keys(frames).forEach(function(k){
-      frames[k].addEventListener('load', function(){
-        frames[k].contentWindow.postMessage({ theme: savedTheme }, '*');
-      });
-    });
-  }
-})();
-</script>
-</body>
-</html>
-"""
-
-    out_path = os.path.join(ROOT, "index.html")
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(shell)
-    print(f"wrote {out_path} ({len(shell)} bytes)")
+    for name in PAGES:
+        html = assemble_page(name)
+        out_path = os.path.join(ROOT, out_name(name))
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"wrote {out_path} ({len(html)} bytes)")
 
 
 if __name__ == "__main__":

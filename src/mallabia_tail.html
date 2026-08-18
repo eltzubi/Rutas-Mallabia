@@ -510,7 +510,7 @@ footer{
           <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
           <div class="fact"><span class="v">Bici</span><span class="k">Actividad</span></div>
         </div>
-        <a class="feat-cta" href="#" onclick="parent.postMessage({view:'trabakua'},'*');return false;">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
+        <a class="feat-cta" href="trabakua.html">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
     <div class="feat-panel" data-activity="senderismo" data-distance-km="10.76" data-desnivel-m="627">
@@ -532,7 +532,7 @@ footer{
           <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
           <div class="fact"><span class="v">Senderismo</span><span class="k">Actividad</span></div>
         </div>
-        <a class="feat-cta" href="#" onclick="parent.postMessage({view:'iturrizuri'},'*');return false;">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
+        <a class="feat-cta" href="iturrizuri.html">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
     <div class="feat-panel" data-activity="bici" data-distance-km="31.7" data-desnivel-m="1161">
@@ -554,7 +554,7 @@ footer{
           <div class="fact"><span class="v">Circuito</span><span class="k">Tipo</span></div>
           <div class="fact"><span class="v">Bici</span><span class="k">Actividad</span></div>
         </div>
-        <a class="feat-cta" href="#" onclick="parent.postMessage({view:'zenarruza'},'*');return false;">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
+        <a class="feat-cta" href="zenarruza.html">Ver la ruta completa <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
     <p class="filter-empty" id="filterEmpty">No hay rutas de este tipo todav&iacute;a.</p>
@@ -721,9 +721,6 @@ footer{
   } else {
     window.addEventListener('resize', refreshMap);
   }
-  window.addEventListener('message', function(e){
-    if (e.data && e.data.shown) { refreshMap(); }
-  });
 })();
 </script>
 <script>
@@ -733,7 +730,9 @@ footer{
   var root = document.documentElement;
 
   // Dark ("Sendero de noche") is the default identity regardless of the
-  // OS preference; data-theme="light" is the explicit opt-out.
+  // OS preference; data-theme="light" is the explicit opt-out. The initial
+  // choice (from localStorage) is applied synchronously in <head>, before
+  // this script runs, so there is no flash of the wrong theme.
   function effectiveTheme(){
     return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
@@ -752,17 +751,7 @@ footer{
   btn.addEventListener('click', function(){
     var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
     applyTheme(next);
-    // Each page lives in a srcdoc iframe with an opaque origin, so it
-    // can't persist to its own localStorage across iframes. The outer
-    // shell (real origin) owns persistence and re-broadcasts to every
-    // page -- see build.py.
-    parent.postMessage({ theme: next }, '*');
-  });
-
-  window.addEventListener('message', function(e){
-    if (e.data && (e.data.theme === 'dark' || e.data.theme === 'light')) {
-      applyTheme(e.data.theme);
-    }
+    try { localStorage.setItem('rutas-mallabia-theme', next); } catch(err){}
   });
 })();
 </script>
