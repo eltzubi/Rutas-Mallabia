@@ -88,10 +88,7 @@ def main():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mallabia · Rutas del pueblo</title>
 <style>
-  html,body{ margin:0; padding:0; height:100%; background:#F5F3EC; }
-  @media (prefers-color-scheme: dark){
-    html,body{ background:#20261A; }
-  }
+  html,body{ margin:0; padding:0; height:100%; background:#0A0F0A; }
   .frame{
     position:fixed; inset:0; width:100%; height:100%;
     border:none; display:none;

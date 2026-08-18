@@ -1,38 +1,26 @@
 
 :root{
-  --ground:#F5F3EC;
-  --ground-raised:#EAE6DA;
-  --ink:#22261E;
-  --ink-dim:#5B614E;
-  --teal:#007496;
-  --teal-soft:#CFE6ED;
-  --violet:#6D28D9;
-  --violet-soft:#E5DBFA;
-  --line: rgba(34,38,30,.14);
+  /* Sendero de noche: dark is the identity now, light is the opt-out. */
+  --ground:#0A0F0A;
+  --ground-raised:#131C10;
+  --ink:#EAF5E2;
+  --ink-dim:#8FA382;
+  --teal:#2FE0F5;
+  --teal-soft:rgba(47,224,245,.14);
+  --violet:#A6FF4D;
+  --violet-soft:rgba(166,255,77,.14);
+  --line: rgba(234,245,226,.16);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#20261A;
-    --ground-raised:#2A331F;
-    --ink:#EDEAE0;
-    --ink-dim:#9CA48C;
-    --teal:#00D2F0;
-    --teal-soft:#123A42;
-    --violet:#B79CFC;
-    --violet-soft:#2E2145;
-    --line: rgba(237,234,224,.16);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#20261A;
-  --ground-raised:#2A331F;
-  --ink:#EDEAE0;
-  --ink-dim:#9CA48C;
-  --teal:#00D2F0;
-  --teal-soft:#123A42;
-  --violet:#B79CFC;
-  --violet-soft:#2E2145;
-  --line: rgba(237,234,224,.16);
+:root[data-theme="light"]{
+  --ground:#F4F7EF;
+  --ground-raised:#E8EEE0;
+  --ink:#16210F;
+  --ink-dim:#57624A;
+  --teal:#006E86;
+  --teal-soft:#CFE9EF;
+  --violet:#3A6B15;
+  --violet-soft:#DEEFC9;
+  --line: rgba(22,33,15,.14);
 }
 
 *{box-sizing:border-box;}
@@ -62,13 +50,9 @@ body{
   cursor:pointer; flex-shrink:0; padding:0;
 }
 .theme-toggle:hover{ border-color:var(--teal); color:var(--teal); }
-.theme-toggle .icon-moon{ display:none; }
-:root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
-:root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:none; }
-  :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:block; }
-}
+.theme-toggle .icon-sun{ display:none; }
+:root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 .masthead-right{ display:flex; align-items:center; gap:10px; }
 .back-link{
   display:inline-flex; align-items:center; gap:5px;
@@ -283,6 +267,44 @@ footer b{ color:var(--ink); font-weight:600; }
 .to-top.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
 .to-top:hover{ background:var(--violet); }
 @media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
+
+/* ---- Sendero de noche: glow + rounded language ---- */
+.theme-toggle{ border-radius:50%; }
+.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
+
+.wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
+  border-radius:12px;
+  box-shadow:0 0 24px -10px var(--teal);
+}
+.wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover, .feat-cta:hover{
+  box-shadow:0 0 30px -8px var(--violet);
+}
+.wikiloc-link.ghost{ box-shadow:none; }
+.wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
+
+.feat-panel{ border-radius:22px; }
+.feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--teal); }
+.feat-panel[data-activity="senderismo"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--violet); }
+
+.fact{ border-radius:14px; }
+.fact .v{ text-shadow:0 0 14px currentColor; }
+.feat-facts .fact .v{ text-shadow:0 0 12px currentColor; }
+.readout-item .v{ text-shadow:0 0 18px currentColor; }
+.elev-tags .v{ text-shadow:0 0 14px currentColor; }
+
+.activity-chip.active{ box-shadow:0 0 18px -3px currentColor; }
+.range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
+.range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
+
+.photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
+.route-map-box, .map-box{ border-radius:20px; }
+.hero-chart{ border-radius:20px; }
+.hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
+.elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
+
+.parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }
 </style>
 </head>
 <body>
@@ -500,20 +522,18 @@ footer b{ color:var(--ink); font-weight:600; }
   if (!btn) return;
   var root = document.documentElement;
 
-  function systemIsDark(){
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+  // Dark ("Sendero de noche") is the default identity regardless of the
+  // OS preference; data-theme="light" is the explicit opt-out.
   function effectiveTheme(){
-    var attr = root.getAttribute('data-theme');
-    if (attr === 'dark' || attr === 'light') return attr;
-    return systemIsDark() ? 'dark' : 'light';
+    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
   function updateLabel(){
     var eff = effectiveTheme();
     btn.setAttribute('aria-label', eff === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
   }
   function applyTheme(theme){
-    if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
+    if (theme === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
     updateLabel();
   }
 
