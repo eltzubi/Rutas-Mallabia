@@ -51,7 +51,7 @@ def assemble_page(name):
 
 
 # First entry is the page shown by default (class "active").
-PAGES = ["mallabia", "trabakua", "iturrizuri"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza"]
 VIEW_NAME = {"mallabia": "home"}  # page name -> postMessage view name, defaults to itself
 
 
