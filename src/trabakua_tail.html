@@ -94,7 +94,9 @@
   <section class="map-section">
     <p class="eyebrow">Mapa de la ruta</p>
     <div class="route-map-box">
-      <div id="routeMap" style="width:100%;height:100%;"></div>
+      <div id="routeMap" style="width:100%;height:100%;"
+           data-map-src="data/trabakua.json"
+           data-marker-title="Trabakua (salida y llegada)"></div>
     </div>
     <p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> &middot; tambi&eacute;n en <a href="https://loc.wiki/t/280227399?h=a2zl5rbdm6&wa=sd&la=es" target="_blank" rel="noopener noreferrer">Wikiloc</a></p>
   </section>
@@ -115,105 +117,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  var el = document.getElementById('routeMap');
-  if (!el || typeof L === 'undefined') return;
-  var track = [[43.208568,-2.551419],[43.208681,-2.550811],[43.209043,-2.550258],[43.209465,-2.549109],[43.209323,-2.547939],[43.209248,-2.547074],[43.209438,-2.546334],[43.209853,-2.546081],[43.210378,-2.546073],[43.211192,-2.545126],[43.212432,-2.543955],[43.213261,-2.542325],[43.214254,-2.539844],[43.213507,-2.538657],[43.213565,-2.537756],[43.214001,-2.537525],[43.214366,-2.537145],[43.214666,-2.536699],[43.214974,-2.536268],[43.215347,-2.535979],[43.21562,-2.535722],[43.215653,-2.535298],[43.215707,-2.534845],[43.215764,-2.534473],[43.215834,-2.534137],[43.215919,-2.533829],[43.215977,-2.533518],[43.216093,-2.533234],[43.216195,-2.532917],[43.216285,-2.532576],[43.216372,-2.532226],[43.216458,-2.531852],[43.216467,-2.531473],[43.216447,-2.531005],[43.216467,-2.530531],[43.216466,-2.530079],[43.216358,-2.529563],[43.216184,-2.529048],[43.21612,-2.528547],[43.216035,-2.528088],[43.21611,-2.527783],[43.21641,-2.527693],[43.21653,-2.527101],[43.216682,-2.525735],[43.216214,-2.524052],[43.215451,-2.522694],[43.215203,-2.522152],[43.214996,-2.521791],[43.215142,-2.52135],[43.215191,-2.520846],[43.215289,-2.520405],[43.215364,-2.52006],[43.215471,-2.519707],[43.215598,-2.519378],[43.21568,-2.518956],[43.215852,-2.518563],[43.215987,-2.518053],[43.216057,-2.517477],[43.215863,-2.516855],[43.215637,-2.516175],[43.214965,-2.514875],[43.213704,-2.514939],[43.214284,-2.513768],[43.214829,-2.512865],[43.215348,-2.512206],[43.215776,-2.511683],[43.21647,-2.50979],[43.217242,-2.508453],[43.218394,-2.507668],[43.219841,-2.506958],[43.220305,-2.506601],[43.219861,-2.506386],[43.219054,-2.506135],[43.218199,-2.505879],[43.217155,-2.505508],[43.217532,-2.505219],[43.217837,-2.504832],[43.21832,-2.504424],[43.218601,-2.50411],[43.218809,-2.503819],[43.219014,-2.503487],[43.219353,-2.503072],[43.219618,-2.502561],[43.219318,-2.501718],[43.218969,-2.500782],[43.21913,-2.500442],[43.219432,-2.500391],[43.219779,-2.500298],[43.220167,-2.500236],[43.220541,-2.500201],[43.220917,-2.500177],[43.221387,-2.500009],[43.221987,-2.4995],[43.222152,-2.498058],[43.222661,-2.496896],[43.223604,-2.495849],[43.223479,-2.495507],[43.223177,-2.495479],[43.22284,-2.495512],[43.222433,-2.495556],[43.222035,-2.495701],[43.221632,-2.495752],[43.221255,-2.495742],[43.220825,-2.495839],[43.220308,-2.495795],[43.219963,-2.495842],[43.219641,-2.496022],[43.219299,-2.495876],[43.218952,-2.495759],[43.218564,-2.495684],[43.218217,-2.495629],[43.217862,-2.495485],[43.21755,-2.495195],[43.217238,-2.495103],[43.216926,-2.495135],[43.216625,-2.495178],[43.216337,-2.495322],[43.216068,-2.49551],[43.215793,-2.495712],[43.215751,-2.496041],[43.216072,-2.496027],[43.216487,-2.495909],[43.21679,-2.496129],[43.217051,-2.496478],[43.217342,-2.496657],[43.217618,-2.496812],[43.21788,-2.496986],[43.218108,-2.497226],[43.218372,-2.497351],[43.218355,-2.497611],[43.218098,-2.497801],[43.218096,-2.497801],[43.218096,-2.497801],[43.218096,-2.497801],[43.218096,-2.497801],[43.217807,-2.498039],[43.217438,-2.498545],[43.217042,-2.498965],[43.216688,-2.499354],[43.21628,-2.499797],[43.215947,-2.500374],[43.215748,-2.501158],[43.215883,-2.501805],[43.215531,-2.502327],[43.214695,-2.502673],[43.213504,-2.50317],[43.213204,-2.503887],[43.212808,-2.504191],[43.212423,-2.504306],[43.212542,-2.504684],[43.212464,-2.504954],[43.211814,-2.505967],[43.210465,-2.5073],[43.208419,-2.508112],[43.20627,-2.508691],[43.204954,-2.509316],[43.204301,-2.511064],[43.204956,-2.512106],[43.204409,-2.512567],[43.204088,-2.513606],[43.204021,-2.516011],[43.204109,-2.516717],[43.203562,-2.516443],[43.203046,-2.51602],[43.202654,-2.515935],[43.2024,-2.515617],[43.202365,-2.515535],[43.202365,-2.515535],[43.202365,-2.515535],[43.202365,-2.515535],[43.202351,-2.515504],[43.202205,-2.515011],[43.201917,-2.514697],[43.201731,-2.514765],[43.201728,-2.51476],[43.201728,-2.51476],[43.201897,-2.515296],[43.202123,-2.516204],[43.202824,-2.516728],[43.203231,-2.516916],[43.203547,-2.517365],[43.203677,-2.517959],[43.203827,-2.518316],[43.203965,-2.518729],[43.204168,-2.519251],[43.204405,-2.519774],[43.204564,-2.520365],[43.204808,-2.520927],[43.205043,-2.521395],[43.205425,-2.521727],[43.205741,-2.522216],[43.205741,-2.522881],[43.20617,-2.523617],[43.206425,-2.524211],[43.20665,-2.524568],[43.206696,-2.525051],[43.206671,-2.525585],[43.207004,-2.526125],[43.20784,-2.526445],[43.20842,-2.52739],[43.208803,-2.528225],[43.209176,-2.528896],[43.209716,-2.529751],[43.210275,-2.530122],[43.210744,-2.530332],[43.211256,-2.530544],[43.211749,-2.530531],[43.212189,-2.530293],[43.212216,-2.529721],[43.212146,-2.529328],[43.212071,-2.528919],[43.212052,-2.528475],[43.212038,-2.52807],[43.212,-2.527647],[43.212031,-2.52728],[43.212371,-2.527213],[43.212842,-2.527156],[43.213323,-2.52717],[43.21378,-2.527354],[43.21407,-2.527622],[43.214362,-2.527843],[43.214726,-2.528046],[43.215078,-2.527764],[43.215402,-2.52772],[43.215729,-2.527869],[43.216031,-2.528106],[43.216507,-2.530144],[43.216384,-2.532199],[43.215754,-2.534574],[43.214713,-2.536673],[43.213642,-2.538388],[43.214236,-2.539626],[43.214276,-2.540738],[43.213809,-2.541373],[43.213457,-2.541955],[43.213326,-2.5425],[43.213192,-2.543041],[43.212847,-2.543454],[43.212434,-2.544029],[43.211877,-2.544571],[43.211293,-2.545104],[43.210734,-2.545569],[43.210407,-2.546261],[43.21,-2.546254],[43.209535,-2.546267],[43.209279,-2.54741],[43.209576,-2.548787],[43.209306,-2.55001],[43.208773,-2.550716],[43.208405,-2.551678],[43.208177,-2.552261]];
-  var accent = getComputedStyle(document.documentElement).getPropertyValue('--teal').trim() || '#2FE0F5';
-  var violet = getComputedStyle(document.documentElement).getPropertyValue('--violet').trim() || '#A6FF4D';
-  var ground = getComputedStyle(document.documentElement).getPropertyValue('--ground').trim() || '#0A0F0A';
-
-  var map = L.map('routeMap', { zoomControl:true, scrollWheelZoom:false, center:track[0], zoom:13 });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:18,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-  }).addTo(map);
-
-  var line = L.polyline(track, { color:accent, weight:4, opacity:0.9, lineJoin:'round' }).addTo(map);
-  map.fitBounds(line.getBounds(), { padding:[24,24] });
-
-  var startIcon = L.divIcon({
-    className:'',
-    html:'<span style="display:block;width:14px;height:14px;border-radius:50%;background:'+violet+';border:3px solid '+ground+';box-shadow:0 0 0 1.5px '+violet+';"></span>',
-    iconSize:[14,14], iconAnchor:[7,7]
-  });
-  L.marker(track[0], { icon:startIcon, title:'Trabakua (salida y llegada)' }).addTo(map);
-
-  function refreshMap(){
-    map.invalidateSize();
-    map.fitBounds(line.getBounds(), { padding:[24,24] });
-  }
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(refreshMap).observe(el);
-  } else {
-    window.addEventListener('resize', refreshMap);
-  }
-})();
-</script>
-<script>
-(function(){
-  var box = document.getElementById('lightbox');
-  var boxImg = document.getElementById('lightboxImg');
-  var close = document.getElementById('lightboxClose');
-  var lastTrigger = null;
-  function open(src, trigger){ boxImg.src = src; lastTrigger = trigger; box.classList.add('open'); close.focus(); }
-  function shut(){ box.classList.remove('open'); boxImg.src=''; if(lastTrigger) lastTrigger.focus(); }
-  document.querySelectorAll('[data-lightbox-src]').forEach(function(el){
-    el.addEventListener('click', function(){ open(el.dataset.lightboxSrc, el); });
-  });
-  close.addEventListener('click', shut);
-  box.addEventListener('click', function(e){ if(e.target === box) shut(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) shut(); });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('toTop');
-  if (!btn) return;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function onScroll(){
-    if (window.scrollY > window.innerHeight * 0.6) btn.classList.add('visible');
-    else btn.classList.remove('visible');
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-  btn.addEventListener('click', function(){
-    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  var root = document.documentElement;
-
-  // Dark ("Sendero de noche") is the default identity regardless of the
-  // OS preference; data-theme="light" is the explicit opt-out. The initial
-  // choice (from localStorage) is applied synchronously in <head>, before
-  // this script runs, so there is no flash of the wrong theme.
-  function effectiveTheme(){
-    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  }
-  function updateLabel(){
-    var eff = effectiveTheme();
-    btn.setAttribute('aria-label', eff === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-  }
-  function applyTheme(theme){
-    if (theme === 'light') root.setAttribute('data-theme', 'light');
-    else root.removeAttribute('data-theme');
-    updateLabel();
-  }
-
-  updateLabel();
-
-  btn.addEventListener('click', function(){
-    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    try { localStorage.setItem('rutas-mallabia-theme', next); } catch(err){}
-  });
-})();
-</script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

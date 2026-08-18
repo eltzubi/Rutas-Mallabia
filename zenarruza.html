@@ -106,7 +106,9 @@
   <section class="map-section">
     <p class="eyebrow">Mapa de la ruta</p>
     <div class="route-map-box">
-      <div id="routeMap" style="width:100%;height:100%;"></div>
+      <div id="routeMap" style="width:100%;height:100%;"
+           data-map-src="data/zenarruza.json"
+           data-marker-title="Trabakua (salida y llegada)"></div>
     </div>
     <p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> &middot; tambi&eacute;n en <a href="https://www.wikiloc.com/ebike-trails/monasterio-de-zenarruza-ermita-san-kristobal-y-zengotitagane-desde-trabakua-249072765" target="_blank" rel="noopener noreferrer">Wikiloc</a></p>
   </section>
@@ -127,120 +129,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  var el = document.getElementById('routeMap');
-  if (!el || typeof L === 'undefined') return;
-  var track = [[43.208726,-2.550788],[43.209259,-2.549944],[43.209359,-2.548047],[43.209345,-2.54649],[43.210019,-2.546261],[43.21047,-2.546741],[43.210711,-2.547347],[43.210856,-2.548131],[43.211056,-2.547589],[43.211619,-2.548698],[43.212671,-2.550033],[43.213998,-2.550419],[43.214412,-2.552407],[43.215803,-2.553302],[43.216969,-2.552994],[43.217792,-2.55333],[43.218781,-2.554102],[43.219236,-2.555648],[43.218918,-2.557728],[43.218558,-2.559151],[43.219681,-2.560212],[43.2209,-2.561271],[43.222021,-2.559565],[43.222427,-2.561184],[43.222831,-2.561854],[43.223609,-2.56129],[43.224289,-2.561425],[43.224922,-2.562409],[43.225812,-2.562402],[43.226144,-2.563553],[43.224941,-2.565263],[43.225376,-2.566222],[43.226519,-2.566755],[43.227557,-2.567426],[43.227598,-2.567433],[43.227623,-2.567383],[43.227551,-2.567531],[43.227589,-2.568615],[43.228487,-2.569314],[43.229202,-2.568633],[43.230051,-2.569274],[43.230528,-2.568433],[43.23119,-2.568008],[43.231507,-2.567055],[43.231996,-2.566324],[43.232781,-2.566014],[43.232427,-2.56662],[43.232434,-2.567413],[43.232442,-2.568293],[43.23256,-2.569163],[43.232677,-2.570064],[43.232631,-2.571228],[43.232196,-2.573175],[43.235621,-2.572973],[43.237295,-2.572385],[43.239834,-2.569903],[43.240273,-2.566138],[43.241476,-2.563292],[43.242989,-2.561356],[43.244035,-2.560645],[43.244918,-2.559966],[43.245597,-2.55933],[43.246127,-2.55967],[43.246547,-2.56057],[43.24707,-2.561262],[43.247376,-2.56017],[43.247843,-2.559435],[43.248252,-2.560487],[43.248456,-2.561509],[43.248524,-2.562729],[43.247932,-2.56361],[43.247126,-2.564378],[43.246642,-2.564076],[43.246328,-2.563084],[43.245704,-2.562598],[43.245222,-2.563369],[43.244876,-2.564108],[43.244919,-2.565051],[43.245492,-2.565836],[43.246119,-2.566301],[43.246513,-2.566988],[43.246418,-2.567864],[43.246008,-2.568529],[43.245603,-2.569226],[43.245558,-2.570159],[43.245379,-2.569818],[43.244883,-2.569225],[43.244254,-2.569585],[43.243688,-2.570111],[43.242982,-2.570183],[43.242903,-2.570633],[43.243125,-2.57127],[43.243073,-2.571932],[43.242604,-2.572387],[43.242596,-2.572411],[43.242596,-2.572411],[43.242478,-2.573235],[43.242169,-2.574056],[43.241725,-2.574441],[43.241282,-2.574943],[43.240718,-2.575333],[43.240911,-2.575542],[43.241499,-2.575551],[43.24207,-2.575327],[43.24275,-2.575155],[43.243266,-2.574462],[43.243432,-2.574677],[43.243373,-2.575552],[43.243285,-2.576324],[43.243156,-2.577396],[43.242137,-2.579528],[43.24136,-2.581257],[43.239629,-2.5816],[43.238527,-2.582113],[43.237536,-2.582754],[43.236586,-2.58326],[43.236061,-2.585976],[43.235481,-2.588751],[43.236407,-2.590978],[43.237126,-2.59427],[43.238358,-2.595541],[43.237581,-2.598355],[43.237216,-2.599968],[43.236564,-2.601339],[43.236277,-2.601869],[43.236258,-2.601914],[43.236257,-2.601914],[43.236257,-2.601914],[43.236262,-2.601868],[43.23628,-2.601929],[43.236412,-2.602165],[43.238211,-2.603617],[43.23992,-2.606472],[43.240316,-2.607104],[43.240522,-2.608046],[43.240723,-2.609147],[43.240847,-2.610638],[43.241831,-2.611088],[43.242429,-2.611926],[43.242884,-2.613161],[43.243,-2.613895],[43.24236,-2.614184],[43.241957,-2.614823],[43.241618,-2.615569],[43.241253,-2.616199],[43.241399,-2.615378],[43.241247,-2.614507],[43.240831,-2.613945],[43.240398,-2.613509],[43.239966,-2.613084],[43.23952,-2.612665],[43.239036,-2.612396],[43.238546,-2.612165],[43.23806,-2.611803],[43.237593,-2.611286],[43.237135,-2.61083],[43.236692,-2.610247],[43.236232,-2.609491],[43.23571,-2.609035],[43.236077,-2.609859],[43.236324,-2.610851],[43.236536,-2.611687],[43.236668,-2.612544],[43.236903,-2.613305],[43.236822,-2.613783],[43.236822,-2.613783],[43.236822,-2.613783],[43.23664,-2.613551],[43.235955,-2.612074],[43.23514,-2.611226],[43.233103,-2.610751],[43.23016,-2.610793],[43.227455,-2.612387],[43.225847,-2.610202],[43.223121,-2.608773],[43.220384,-2.609472],[43.220371,-2.606781],[43.221151,-2.604356],[43.219417,-2.603057],[43.218184,-2.603909],[43.216936,-2.602541],[43.216316,-2.60159],[43.215137,-2.602346],[43.215625,-2.601578],[43.216116,-2.600794],[43.216451,-2.599765],[43.216548,-2.598447],[43.216307,-2.59698],[43.216935,-2.595529],[43.216692,-2.594581],[43.215479,-2.594825],[43.213668,-2.593634],[43.213609,-2.591585],[43.214023,-2.590167],[43.213214,-2.589061],[43.212608,-2.588356],[43.211976,-2.587722],[43.211358,-2.587049],[43.210636,-2.586629],[43.209886,-2.586294],[43.209181,-2.585871],[43.208648,-2.585294],[43.207873,-2.585149],[43.20713,-2.584798],[43.206594,-2.584172],[43.207273,-2.583844],[43.207946,-2.583276],[43.20859,-2.582393],[43.209311,-2.581576],[43.210006,-2.580877],[43.209324,-2.580361],[43.209544,-2.579747],[43.210627,-2.579049],[43.211739,-2.579133],[43.212858,-2.579569],[43.213958,-2.578911],[43.213728,-2.578209],[43.212603,-2.577146],[43.211607,-2.575391],[43.211059,-2.573709],[43.211785,-2.571796],[43.212698,-2.571185],[43.213361,-2.570396],[43.214272,-2.568909],[43.213323,-2.566392],[43.212548,-2.565169],[43.21216,-2.564023],[43.212289,-2.563701],[43.21182,-2.563145],[43.211695,-2.563036],[43.211695,-2.563036],[43.211695,-2.563036],[43.210942,-2.562741],[43.20842,-2.561446],[43.206124,-2.559654],[43.203062,-2.559931],[43.201852,-2.559504],[43.201117,-2.557394],[43.200049,-2.557366],[43.199174,-2.556214],[43.198376,-2.554521],[43.199028,-2.553094],[43.200379,-2.552935],[43.202171,-2.553728],[43.203878,-2.552566],[43.204466,-2.551079],[43.205864,-2.551166],[43.207414,-2.552588],[43.208957,-2.550769],[43.20854,-2.551562],[43.208255,-2.552034],[43.208209,-2.552238],[43.208207,-2.552201],[43.208192,-2.552227]];
-  var accent = getComputedStyle(document.documentElement).getPropertyValue('--teal').trim() || '#2FE0F5';
-  var violet = getComputedStyle(document.documentElement).getPropertyValue('--violet').trim() || '#A6FF4D';
-  var ground = getComputedStyle(document.documentElement).getPropertyValue('--ground').trim() || '#0A0F0A';
-
-  var map = L.map('routeMap', { zoomControl:true, scrollWheelZoom:false, center:track[0], zoom:12 });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:18,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-  }).addTo(map);
-
-  var line = L.polyline(track, { color:accent, weight:4, opacity:0.9, lineJoin:'round' }).addTo(map);
-  map.fitBounds(line.getBounds(), { padding:[24,24] });
-
-  var startIcon = L.divIcon({
-    className:'',
-    html:'<span style="display:block;width:14px;height:14px;border-radius:50%;background:'+violet+';border:3px solid '+ground+';box-shadow:0 0 0 1.5px '+violet+';"></span>',
-    iconSize:[14,14], iconAnchor:[7,7]
-  });
-  L.marker(track[0], { icon:startIcon, title:'Trabakua (salida y llegada)' }).addTo(map);
-
-  var waypoints = [
-    {lat:43.248236,lon:-2.560384,num:1,name:"Monasterio de Zenarruza"},
-    {lat:43.235689,lon:-2.611632,num:2,name:"Ermita San Kristobal"},
-    {lat:43.211066,lon:-2.573017,num:3,name:"Dolmen Iturzurigana"},
-    {lat:43.212051,lon:-2.563384,num:4,name:"Zengotitagane"}
-  ];
-  waypoints.forEach(function(w){
-    var icon = L.divIcon({
-      className:'',
-      html:'<span style="display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:'+accent+';border:2px solid '+ground+';color:'+ground+';font:700 9px \'IBM Plex Mono\',monospace;">'+w.num+'</span>',
-      iconSize:[18,18], iconAnchor:[9,9]
-    });
-    L.marker([w.lat, w.lon], { icon:icon, title:w.name }).addTo(map);
-  });
-
-  function refreshMap(){
-    map.invalidateSize();
-    map.fitBounds(line.getBounds(), { padding:[24,24] });
-  }
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(refreshMap).observe(el);
-  } else {
-    window.addEventListener('resize', refreshMap);
-  }
-})();
-</script>
-<script>
-(function(){
-  var box = document.getElementById('lightbox');
-  var boxImg = document.getElementById('lightboxImg');
-  var close = document.getElementById('lightboxClose');
-  var lastTrigger = null;
-  function open(src, trigger){ boxImg.src = src; lastTrigger = trigger; box.classList.add('open'); close.focus(); }
-  function shut(){ box.classList.remove('open'); boxImg.src=''; if(lastTrigger) lastTrigger.focus(); }
-  document.querySelectorAll('[data-lightbox-src]').forEach(function(el){
-    el.addEventListener('click', function(){ open(el.dataset.lightboxSrc, el); });
-  });
-  close.addEventListener('click', shut);
-  box.addEventListener('click', function(e){ if(e.target === box) shut(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) shut(); });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('toTop');
-  if (!btn) return;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function onScroll(){
-    if (window.scrollY > window.innerHeight * 0.6) btn.classList.add('visible');
-    else btn.classList.remove('visible');
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-  btn.addEventListener('click', function(){
-    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  var root = document.documentElement;
-
-  // Dark ("Sendero de noche") is the default identity regardless of the
-  // OS preference; data-theme="light" is the explicit opt-out. The initial
-  // choice (from localStorage) is applied synchronously in <head>, before
-  // this script runs, so there is no flash of the wrong theme.
-  function effectiveTheme(){
-    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  }
-  function updateLabel(){
-    var eff = effectiveTheme();
-    btn.setAttribute('aria-label', eff === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-  }
-  function applyTheme(theme){
-    if (theme === 'light') root.setAttribute('data-theme', 'light');
-    else root.removeAttribute('data-theme');
-    updateLabel();
-  }
-
-  updateLabel();
-
-  btn.addEventListener('click', function(){
-    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    try { localStorage.setItem('rutas-mallabia-theme', next); } catch(err){}
-  });
-})();
-</script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

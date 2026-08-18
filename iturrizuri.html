@@ -113,7 +113,9 @@
   <section class="map-section">
     <p class="eyebrow">Mapa de la ruta</p>
     <div class="route-map-box">
-      <div id="routeMap" style="width:100%;height:100%;"></div>
+      <div id="routeMap" style="width:100%;height:100%;"
+           data-map-src="data/iturzuri.json"
+           data-marker-title="Trabakua (salida y llegada)"></div>
     </div>
     <p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> &middot; tambi&eacute;n en <a href="https://www.wikiloc.com/hiking-trails/iturrizuri-tumulo-de-probazelaiburu-ii-y-zengotitagane-desde-trabakua-subida-por-las-cascadas-de-ge-270457288" target="_blank" rel="noopener noreferrer">Wikiloc</a></p>
   </section>
@@ -134,121 +136,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-(function(){
-  var el = document.getElementById('routeMap');
-  if (!el || typeof L === 'undefined') return;
-  var track = [[43.208647,-2.551095],[43.208854,-2.55062],[43.209126,-2.550188],[43.209438,-2.549721],[43.209575,-2.549123],[43.209564,-2.548487],[43.209458,-2.547879],[43.209441,-2.547235],[43.209587,-2.54666],[43.209897,-2.546455],[43.210165,-2.546789],[43.210467,-2.54676],[43.210676,-2.547059],[43.210701,-2.547475],[43.210793,-2.547942],[43.21079,-2.548353],[43.210802,-2.548778],[43.210718,-2.549252],[43.210662,-2.549659],[43.210588,-2.550091],[43.210608,-2.550472],[43.210816,-2.550733],[43.21089,-2.550662],[43.211049,-2.550974],[43.211254,-2.551328],[43.211297,-2.55169],[43.211286,-2.55203],[43.211297,-2.552373],[43.211304,-2.552678],[43.211369,-2.552974],[43.211442,-2.553325],[43.211537,-2.553672],[43.211609,-2.554007],[43.211855,-2.554392],[43.212038,-2.554825],[43.212226,-2.555297],[43.212311,-2.555797],[43.212427,-2.55631],[43.212617,-2.55685],[43.212831,-2.557394],[43.213051,-2.557759],[43.213285,-2.558278],[43.213424,-2.558864],[43.213586,-2.559307],[43.213938,-2.559331],[43.2143,-2.559386],[43.214621,-2.559352],[43.214909,-2.559327],[43.215008,-2.559416],[43.215254,-2.559898],[43.215419,-2.560439],[43.215513,-2.560819],[43.215519,-2.5609],[43.215696,-2.561453],[43.215797,-2.561981],[43.215659,-2.56246],[43.215561,-2.562885],[43.215594,-2.563386],[43.215804,-2.563683],[43.216166,-2.563942],[43.216484,-2.564046],[43.216897,-2.564108],[43.217138,-2.564349],[43.217231,-2.564753],[43.217239,-2.565112],[43.217253,-2.565493],[43.217238,-2.565939],[43.217199,-2.566385],[43.217145,-2.56685],[43.217093,-2.567395],[43.217034,-2.567983],[43.217126,-2.568517],[43.217059,-2.56893],[43.217049,-2.569344],[43.217016,-2.569738],[43.216934,-2.570127],[43.216852,-2.570549],[43.216733,-2.570965],[43.216745,-2.571051],[43.21674,-2.571059],[43.216747,-2.571078],[43.216738,-2.57108],[43.216783,-2.570677],[43.216796,-2.570132],[43.216707,-2.569944],[43.216681,-2.570377],[43.2166,-2.570859],[43.216682,-2.571226],[43.216864,-2.571365],[43.21716,-2.571467],[43.217324,-2.571588],[43.217467,-2.571698],[43.217352,-2.571742],[43.21721,-2.571896],[43.21724,-2.571994],[43.217216,-2.572131],[43.217119,-2.572303],[43.216981,-2.572528],[43.216929,-2.572904],[43.2169,-2.573247],[43.216822,-2.573542],[43.216787,-2.57394],[43.216568,-2.574402],[43.216209,-2.574629],[43.216308,-2.574817],[43.216452,-2.575079],[43.216637,-2.575324],[43.216753,-2.575535],[43.216338,-2.575663],[43.216344,-2.575845],[43.216306,-2.576125],[43.216173,-2.576374],[43.215797,-2.576326],[43.215436,-2.576153],[43.215103,-2.575836],[43.21486,-2.575456],[43.214424,-2.575475],[43.214057,-2.575414],[43.213894,-2.575334],[43.213533,-2.575256],[43.213146,-2.575012],[43.212907,-2.574886],[43.212809,-2.57488],[43.212597,-2.574831],[43.212315,-2.574409],[43.212012,-2.574046],[43.211727,-2.573604],[43.21147,-2.573112],[43.211251,-2.572617],[43.211644,-2.572159],[43.211804,-2.571827],[43.211916,-2.571796],[43.212157,-2.571538],[43.212565,-2.571313],[43.212782,-2.571171],[43.213128,-2.570988],[43.213372,-2.570514],[43.21366,-2.570073],[43.213924,-2.569592],[43.214291,-2.569087],[43.214344,-2.56841],[43.214173,-2.567795],[43.213871,-2.567257],[43.213588,-2.566719],[43.21337,-2.566157],[43.213137,-2.565685],[43.212865,-2.565261],[43.212733,-2.564707],[43.212535,-2.564158],[43.212263,-2.5637],[43.211936,-2.563303],[43.211717,-2.563055],[43.211669,-2.563051],[43.211276,-2.562661],[43.210891,-2.562303],[43.210509,-2.562183],[43.210364,-2.562613],[43.210289,-2.563068],[43.210362,-2.563546],[43.210045,-2.563675],[43.209741,-2.563981],[43.209344,-2.56413],[43.209038,-2.563757],[43.208634,-2.563536],[43.208192,-2.563235],[43.207751,-2.562858],[43.207295,-2.562567],[43.206888,-2.562276],[43.206484,-2.561979],[43.206087,-2.561585],[43.205591,-2.561447],[43.205067,-2.561315],[43.204578,-2.561097],[43.204073,-2.560914],[43.203595,-2.560813],[43.203065,-2.56084],[43.202558,-2.560856],[43.202038,-2.560957],[43.201698,-2.560614],[43.20186,-2.559932],[43.201819,-2.559286],[43.201792,-2.558673],[43.201745,-2.558059],[43.201488,-2.557791],[43.201117,-2.557429],[43.200903,-2.556907],[43.20058,-2.556612],[43.200224,-2.556981],[43.199997,-2.557488],[43.199911,-2.558055],[43.19961,-2.557508],[43.199387,-2.556873],[43.199169,-2.55625],[43.199047,-2.555664],[43.199312,-2.555109],[43.199733,-2.554765],[43.200201,-2.554716],[43.2005,-2.554453],[43.200906,-2.554728],[43.201335,-2.554869],[43.20168,-2.555222],[43.201983,-2.555675],[43.202213,-2.556179],[43.202622,-2.556446],[43.203069,-2.556265],[43.203282,-2.555699],[43.203583,-2.555158],[43.203975,-2.554782],[43.204495,-2.554873],[43.204856,-2.554419],[43.20489,-2.553748],[43.204914,-2.553506],[43.205,-2.553212],[43.20499,-2.552553],[43.20539,-2.552264],[43.205778,-2.552397],[43.206186,-2.552815],[43.206558,-2.553227],[43.206998,-2.553556],[43.207104,-2.553925],[43.207261,-2.554501],[43.20744,-2.555079],[43.20757,-2.555478],[43.207565,-2.555512],[43.2076,-2.555508],[43.2079,-2.555415],[43.208236,-2.555305],[43.208329,-2.555323],[43.208681,-2.555375],[43.209064,-2.555497],[43.20949,-2.555872],[43.209796,-2.555504],[43.209968,-2.55497],[43.21011,-2.554565],[43.210157,-2.55401],[43.210196,-2.553405],[43.210167,-2.552732],[43.210339,-2.552457],[43.210417,-2.55185],[43.210381,-2.551169],[43.210566,-2.550517],[43.210645,-2.549825],[43.210723,-2.549091],[43.210794,-2.548452],[43.210777,-2.547795],[43.210708,-2.547133],[43.210351,-2.546811],[43.210111,-2.546414],[43.209772,-2.545985],[43.209417,-2.546389],[43.209214,-2.546948]];
-  var accent = getComputedStyle(document.documentElement).getPropertyValue('--teal').trim() || '#2FE0F5';
-  var violet = getComputedStyle(document.documentElement).getPropertyValue('--violet').trim() || '#A6FF4D';
-  var ground = getComputedStyle(document.documentElement).getPropertyValue('--ground').trim() || '#0A0F0A';
-
-  var map = L.map('routeMap', { zoomControl:true, scrollWheelZoom:false, center:track[0], zoom:13 });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:18,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-  }).addTo(map);
-
-  var line = L.polyline(track, { color:accent, weight:4, opacity:0.9, lineJoin:'round' }).addTo(map);
-  map.fitBounds(line.getBounds(), { padding:[24,24] });
-
-  var startIcon = L.divIcon({
-    className:'',
-    html:'<span style="display:block;width:14px;height:14px;border-radius:50%;background:'+violet+';border:3px solid '+ground+';box-shadow:0 0 0 1.5px '+violet+';"></span>',
-    iconSize:[14,14], iconAnchor:[7,7]
-  });
-  L.marker(track[0], { icon:startIcon, title:'Trabakua (salida y llegada)' }).addTo(map);
-
-  var waypoints = [
-    {lat:43.213835,lon:-2.57532,num:1,name:"Fuente de Iturzuri"},
-    {lat:43.211253,lon:-2.572882,num:2,name:"T\u00famulo Probazelaiburu II"},
-    {lat:43.21282,lon:-2.56506,num:3,name:"Zengotitagane"},
-    {lat:43.210381,lon:-2.563376,num:4,name:"Borda abandonada"},
-    {lat:43.206689,lon:-2.56212,num:5,name:"Refugio de monta\u00f1a"}
-  ];
-  waypoints.forEach(function(w){
-    var icon = L.divIcon({
-      className:'',
-      html:'<span style="display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:'+accent+';border:2px solid '+ground+';color:'+ground+';font:700 9px \'IBM Plex Mono\',monospace;">'+w.num+'</span>',
-      iconSize:[18,18], iconAnchor:[9,9]
-    });
-    L.marker([w.lat, w.lon], { icon:icon, title:w.name }).addTo(map);
-  });
-
-  function refreshMap(){
-    map.invalidateSize();
-    map.fitBounds(line.getBounds(), { padding:[24,24] });
-  }
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(refreshMap).observe(el);
-  } else {
-    window.addEventListener('resize', refreshMap);
-  }
-})();
-</script>
-<script>
-(function(){
-  var box = document.getElementById('lightbox');
-  var boxImg = document.getElementById('lightboxImg');
-  var close = document.getElementById('lightboxClose');
-  var lastTrigger = null;
-  function open(src, trigger){ boxImg.src = src; lastTrigger = trigger; box.classList.add('open'); close.focus(); }
-  function shut(){ box.classList.remove('open'); boxImg.src=''; if(lastTrigger) lastTrigger.focus(); }
-  document.querySelectorAll('[data-lightbox-src]').forEach(function(el){
-    el.addEventListener('click', function(){ open(el.dataset.lightboxSrc, el); });
-  });
-  close.addEventListener('click', shut);
-  box.addEventListener('click', function(e){ if(e.target === box) shut(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) shut(); });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('toTop');
-  if (!btn) return;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function onScroll(){
-    if (window.scrollY > window.innerHeight * 0.6) btn.classList.add('visible');
-    else btn.classList.remove('visible');
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-  btn.addEventListener('click', function(){
-    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('themeToggle');
-  if (!btn) return;
-  var root = document.documentElement;
-
-  // Dark ("Sendero de noche") is the default identity regardless of the
-  // OS preference; data-theme="light" is the explicit opt-out. The initial
-  // choice (from localStorage) is applied synchronously in <head>, before
-  // this script runs, so there is no flash of the wrong theme.
-  function effectiveTheme(){
-    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  }
-  function updateLabel(){
-    var eff = effectiveTheme();
-    btn.setAttribute('aria-label', eff === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
-  }
-  function applyTheme(theme){
-    if (theme === 'light') root.setAttribute('data-theme', 'light');
-    else root.removeAttribute('data-theme');
-    updateLabel();
-  }
-
-  updateLabel();
-
-  btn.addEventListener('click', function(){
-    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    try { localStorage.setItem('rutas-mallabia-theme', next); } catch(err){}
-  });
-})();
-</script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

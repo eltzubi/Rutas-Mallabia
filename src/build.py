@@ -66,21 +66,25 @@ def out_name(page):
     return OUT_NAME.get(page, f"{page}.html")
 
 
-# source stylesheet -> file written at the repo root
-STYLESHEETS = {
+# source asset -> file written at the repo root
+ASSETS = {
     ("fonts", "inline_fonts.css"): "fonts.css",
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
+    ("js", "app.js"): "js/app.js",
+    ("js", "map.js"): "js/map.js",
+    ("js", "filters.js"): "js/filters.js",
 }
 
 
 def main():
-    for parts, out in STYLESHEETS.items():
-        css = read(*parts)
+    for parts, out in ASSETS.items():
+        body = read(*parts)
         out_path = os.path.join(ROOT, out)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
         with open(out_path, "w", encoding="utf-8") as f:
-            f.write(css)
-        print(f"wrote {out_path} ({len(css)} bytes)")
+            f.write(body)
+        print(f"wrote {out_path} ({len(body)} bytes)")
 
     for name in PAGES:
         html = assemble_page(name)
