@@ -261,22 +261,23 @@ ITURZURI = {
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia <b>7 Pago</b>, '
     'escondido entre la vegetación y fácil de perder si no se mira bien por dónde sigue. Ya en la '
     'zona de las siete hayas milenarias que dan nombre a la carrera de montaña de Mallabia, el '
-    'camino vuelve a abrirse antes de llegar a la <b>fuente de Iturzuri</b> (km 4,3 · 831 m). '
-    'Después de la fuente, ya en terreno abierto, aparecen los <b>túmulos de Iturzuri</b>: el '
-    'camino gira con fuerza hacia el sureste y gana los últimos metros hasta el punto más alto de '
-    'la ruta, el <b>túmulo de Probazelaiburu II</b> (854 m) —un dolmen prehistórico donde el '
-    'horizonte se abre entero, con las crestas del Duranguesado extendiéndose hasta perderse de vista.':
+    'camino vuelve a abrirse antes de llegar a la <b>fuente de Iturzuri</b> (km 4,3 · 831 m) —con '
+    'agua para llenar cantimploras. Después de la fuente, ya en terreno abierto, aparecen los '
+    '<b>túmulos de Iturzuri</b>: el camino gira con fuerza hacia el sureste y gana los últimos '
+    'metros hasta el punto más alto de la ruta, el <b>túmulo de Probazelaiburu II</b> (854 m) —un '
+    'dolmen prehistórico donde el horizonte se abre entero, con las crestas del Duranguesado '
+    'extendiéndose hasta perderse de vista.':
         'Trabakuatik ipar-ekialderantz ateratzen da eta, berrogei minutuko igoeraren ondoren, lehen '
         'geldialdira iristen da: <b>Gerenako ur-jauzia</b>. Bigarren ur-jauziraino igotzen jarraitzen '
         'du, goikoraino: han, eta han bakarrik, ura zeharkatzen da <b>7 Pago</b> alderantz igotzen den '
         'bidezidor bati heltzeko, landaretzaren artean ezkutatuta eta erraz galtzekoa non jarraitzen '
         'duen ondo begiratzen ez bada. Mallabiako mendi-lasterketari izena ematen dioten zazpi pago '
         'milaurtekoen inguruan, bidea berriro zabaltzen da <b>Iturzuriko iturrira</b> (4,3 km · 831 m) '
-        'iritsi aurretik. Iturriaren ondoren, jada eremu irekian, <b>Iturzuriko tumuluak</b> agertzen '
-        'dira: bideak indarrez egiten du hego-ekialderantz eta azken metroak irabazten ditu ibilbideko '
-        'punturik altueneraino, <b>Probazelaiburu II.a tumulua</b> (854 m) —historiaurreko trikuharri '
-        'bat, non zerumuga osorik zabaltzen den, Durangaldeko gailurrak begi-bistatik galdu arte '
-        'hedatzen direla.',
+        '—ura dago kantinplorak betetzeko. Iturriaren ondoren, jada eremu irekian, <b>Iturzuriko '
+        'tumuluak</b> agertzen dira: bideak indarrez egiten du hego-ekialderantz eta azken metroak '
+        'irabazten ditu ibilbideko punturik altueneraino, <b>Probazelaiburu II.a tumulua</b> (854 m) '
+        '—historiaurreko trikuharri bat, non zerumuga osorik zabaltzen den, Durangaldeko gailurrak '
+        'begi-bistatik galdu arte hedatzen direla.',
     'Desde el túmulo, el camino sigue el <b>cresterio</b> hacia el este, con vistas abiertas a '
     'ambos lados de la loma, hasta la cima de <b>Zengotitagane</b> (km 5,6 · 801 m). Desde aquí se '
     'puede bajar directo a Trabakua y acortar bastante el día —pero esta vez decidimos seguir: '
@@ -301,11 +302,13 @@ ITURZURI = {
     'Sendero de montaña, no apto para bici. Hay dos tramos que exigen ir atentos: el cruce en la '
     'segunda cascada de Gerena para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
     'desde Zengotitagane. Quien prefiera un día más corto puede bajar directo a Trabakua desde la '
-    'cima, sin rodear el lado este.':
+    'cima, sin rodear el lado este. Hay agua en la fuente de Iturzuri (km 4,3), único punto de la '
+    'ruta para llenar cantimploras.':
         'Mendiko bidezidorra, ez da bizikletarako egokia. Bi tartek adi ibiltzea eskatzen dute: '
         'Gerenako bigarren ur-jauziko igarobidea 7 Pago alderantz hartzeko, eta Zengotitagatik '
         'hegoalderantz doan markatu gabeko jaitsiera. Egun laburragoa nahi duenak zuzenean jaits '
-        'daiteke Trabakuara gailurretik, ekialdea inguratu gabe.',
+        'daiteke Trabakuara gailurretik, ekialdea inguratu gabe. Ura dago Iturzuriko iturrian (4,3 '
+        'km), ibilbideko kantinplorak betetzeko puntu bakarra.',
 }
 
 ZENARRUZA = {
