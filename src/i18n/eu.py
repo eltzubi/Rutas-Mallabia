@@ -102,7 +102,7 @@ HOME = {
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
-    '<h2>Sin marcar, con GPS</h2>': '<h2>Seinalatu gabe, GPSarekin</h2>',
+    '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
     'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
