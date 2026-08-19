@@ -526,11 +526,11 @@ OSMA = {
 }
 
 GEREA = {
-    '<title>Mirador de los aerogeneradores': '<title>Aerosorgailuen begiratokia',
-    '<span class="num">2</span>Mirador de los aerogeneradores':
-        '<span class="num">2</span>Aerosorgailuen begiratokia',
-    '<span>Sendero</span><span class="sep">/</span><span>Cascada, mirador y borda</span>':
-        '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, begiratokia eta borda</span>',
+    '<title>Vistas a Gerea': '<title>Gereako ikuspegiak',
+    '<span class="num">2</span>Vistas a Gerea':
+        '<span class="num">2</span>Gereako ikuspegiak',
+    '<span>Sendero</span><span class="sep">/</span><span>Cascada, aerogeneradores y borda</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, aerosorgailuak eta borda</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     'Circuito a la cascada de Gerea desde Trabakua':
         'Zirkuitua Trabakuatik Gereako ur-jauzira',
@@ -538,8 +538,8 @@ GEREA = {
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
     'alt="Foto ampliada del recorrido de Ur Jauziak-Gerea"':
         'alt="Ur Jauziak-Gerea ibilbidearen argazki handitua"',
-    'alt="Bicicleta de montaña junto a Ur Jauziak en primavera, con la cascada muy cargada de agua"':
-        'alt="Mendiko bizikleta Ur Jauziak ondoan udaberrian, ur-jauzia ur-emari handiarekin"',
+    'alt="Cartel de madera del recorrido, con indicaciones a Ur Jauzia y a Trabakua"':
+        'alt="Ibilbidearen egurrezko kartela, Ur Jauziarako eta Trabakuarako seinaleekin"',
     'alt="Ur Jauziak en invierno, con el caudal más bajo"':
         'alt="Ur Jauziak neguan, emari baxuagoarekin"',
     'alt="Aerogeneradores del parque eólico del Oiz vistos desde la ruta"':
@@ -556,27 +556,27 @@ GEREA = {
         'Berrogei bat minutuko igoeraren ondoren, lehen geldialdia dator: <b>Ur Jauziak</b>, '
         'harri eta goroldio artean mailaka jaisten den ur-jauzia, urte osoan ia beti '
         'urarekin —udan da ahulena, emaria jaisten denean.',
-    'El camino sigue subiendo hasta un mirador a 686 m (km 2,95), el punto más alto de la ruta: '
-    'a un lado se ve la antena de Movistar y, al otro, los aerogeneradores del parque eólico '
-    'del Oiz. Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde '
-    'conviene ir atento a la traza del GPS.':
-        'Bideak gora jarraitzen du 686 m-ko begiratoki batera iritsi arte (2,95 km), '
-        'ibilbideko punturik altuenera: alde batetik Movistarren antena ikusten da, eta '
-        'bestetik, Oizeko parke eolikoaren aerosorgailuak. Handik jaitsiera hasten da, '
-        'hainbat bide-gurutze jarraian dituela, GPSaren trazari adi egon behar zaiona.',
-    'De bajada se pasa junto a una borda abandonada, de tejado rojo medio hundido entre la '
-    'maleza, antes de cerrar el círculo de vuelta a Trabakua.':
-        'Jaisten ari dela, borda abandonatu baten ondotik pasatzen da, teilatu gorri erdi '
-        'hondoratua sasien artean duela, Trabakuara itzuliz zirkulua itxi aurretik.',
+    'Los aerogeneradores del parque eólico del Oiz acompañan casi toda la subida a un lado, con '
+    'vistas al barrio de Gerea al otro, y de camino se pasa junto a una borda abandonada, de '
+    'tejado rojo medio hundido entre la maleza. El camino sigue subiendo hasta el punto más '
+    'alto de la ruta, a 686 m (km 2,95).':
+        'Oizeko parke eolikoaren aerosorgailuek igoera ia osoan egiten dute konpainia alde '
+        'batetik, eta bestetik Gereako auzorako ikuspegiak zabaltzen dira, borda abandonatu '
+        'baten ondotik pasatuz —teilatu gorri erdi hondoratua sasien artean. Bideak gora '
+        'jarraitzen du ibilbideko punturik altuenera iritsi arte, 686 metrotara (2,95 km).',
+    'Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde conviene ir '
+    'atento a la traza del GPS, antes de cerrar el círculo de vuelta a Trabakua.':
+        'Handik jaitsiera hasten da, hainbat bide-gurutze jarraian dituela, GPSaren trazari adi '
+        'egon behar zaiona, Trabakuara itzuliz zirkulua itxi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     'Ruta válida para todos los niveles, niños mayores incluidos: 5,7 km y +415 m de desnivel '
-    'en un solo circuito, con un buen tramo de subida (unos 40 min) hasta la cascada y el '
-    'mirador. No está señalizada oficialmente más allá de esas pintadas verdes y blancas, así '
-    'que conviene llevar el track cargado.':
+    'en un solo circuito, con un buen tramo de subida (unos 40 min) hasta la cascada, con los '
+    'aerogeneradores de compañía casi todo el camino. No está señalizada oficialmente más allá '
+    'de esas pintadas verdes y blancas, así que conviene llevar el track cargado.':
         'Maila guztietarako baliozko ibilbidea, haur nagusiak barne: 5,7 km eta +415 m-ko '
-        'desnibela zirkuitu bakarrean, igoera-tarte on batekin (40 bat minutu) ur-jauzira eta '
-        'begiratokira iristeko. Ez dago ofizialki seinalizatuta pintura berde eta zuri horiez '
-        'haratago, beraz komeni da tracka kargatuta eramatea.',
+        'desnibela zirkuitu bakarrean, igoera-tarte on batekin (40 bat minutu) ur-jauziraino, '
+        'aerosorgailuak lagun ia bide osoan. Ez dago ofizialki seinalizatuta pintura berde eta '
+        'zuri horiez haratago, beraz komeni da tracka kargatuta eramatea.',
 }
 
 # <title> per page (head files)
