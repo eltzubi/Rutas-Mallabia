@@ -286,13 +286,15 @@ body{
 }
 .signpost-sign[data-activity="bici"]{ background:var(--teal); }
 .signpost-sign[data-activity="senderismo"]{ background:var(--violet); }
+.signpost-icon{ width:16px; height:16px; flex-shrink:0; }
 .signpost-name{ flex:1; overflow:hidden; text-overflow:ellipsis; text-transform:uppercase; letter-spacing:.02em; }
 .signpost-km{ font-weight:700; opacity:.75; }
 .signpost-sign.is-hidden{ display:none; }
 @media (max-width:480px){
-  .signpost-sign{ font-size:10.5px; width:min(88%,320px); padding:9px 16px; }
+  .signpost-sign{ font-size:10.5px; width:min(88%,320px); padding:9px 16px; gap:7px; }
   .signpost-sign.dir-a{ padding-right:24px; }
   .signpost-sign.dir-b{ padding-left:24px; }
+  .signpost-icon{ width:14px; height:14px; }
 }
 
 .feat-panel{
