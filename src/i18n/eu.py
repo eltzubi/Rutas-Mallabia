@@ -127,7 +127,7 @@ HOME = {
     # route cards
     'alt="Pista de cemento y piedra en la ruta de Trabakua"':
         'alt="Zementuzko eta harrizko pista Trabakuako ibilbidean"',
-    '<h2>Trabakua<br><em>bira</em></h2>': '<h2>Trabakua<br><em>bira</em></h2>',
+    '<h2>Asuntza<br><em>bira</em></h2>': '<h2>Asuntza<br><em>bira</em></h2>',
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, '
     'un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano. '
     'Grabada sobre el terreno, no propuesta desde un mapa.':
@@ -200,7 +200,7 @@ TRABAKUA = {
     '<span>Pista</span><span class="sep">/</span><span>Cemento, piedra y tierra</span>':
         '<span>Pista</span><span class="sep">/</span><span>Zementua, harria eta lurra</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Trabakua<br><em>bira</em></h1>': '<h1>Trabakua<br><em>bira</em></h1>',
+    '<h1>Asuntza<br><em>bira</em></h1>': '<h1>Asuntza<br><em>bira</em></h1>',
     'Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua':
         'Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik',
     'alt="Vistas desde el recorrido de Trabakua, con los montes del Duranguesado al fondo"':
