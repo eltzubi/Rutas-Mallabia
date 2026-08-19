@@ -169,7 +169,7 @@ HOME = {
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
     'Bici &middot; Trabakua, Zenarruza y Osma': 'Bizikleta &middot; Trabakua, Zenarruza eta Osma',
-    'Senderismo &middot; Iturzuri': 'Oinez &middot; Iturzuri',
+    'Senderismo &middot; Iturzuri y Gerea': 'Oinez &middot; Iturzuri eta Gerea',
 
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
@@ -181,6 +181,17 @@ HOME = {
     'propuesta desde un mapa.':
         'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako '
         'Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion. Bertatik bertara grabatua, ez mapa '
+        'batetik proposatua.',
+
+    # gerea card
+    'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
+        'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
+    '<h2>Ur Jauziak<br><em>Gerea</em></h2>': '<h2>Ur Jauziak<br><em>Gerea</em></h2>',
+    'Sendero corto y familiar hasta la cascada de Gerea, con un mirador entre la antena de '
+    'Movistar y los aerogeneradores del Oiz. Grabada sobre el terreno, no propuesta desde un '
+    'mapa.':
+        'Bidezidor laburra eta familiarra Gereako ur-jauziraino, Movistarren antenaren eta '
+        'Oizeko aerosorgailuen arteko begiratoki batekin. Bertatik bertara grabatua, ez mapa '
         'batetik proposatua.',
 }
 
@@ -514,6 +525,60 @@ OSMA = {
         'Nekropolitik gertu (20,1 km).</p>',
 }
 
+GEREA = {
+    '<title>Mirador de los aerogeneradores': '<title>Aerosorgailuen begiratokia',
+    '<span class="num">2</span>Mirador de los aerogeneradores':
+        '<span class="num">2</span>Aerosorgailuen begiratokia',
+    '<span>Sendero</span><span class="sep">/</span><span>Cascada, mirador y borda</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, begiratokia eta borda</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    'Circuito a la cascada de Gerea desde Trabakua':
+        'Zirkuitua Trabakuatik Gereako ur-jauzira',
+    'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
+        'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
+    'alt="Foto ampliada del recorrido de Ur Jauziak-Gerea"':
+        'alt="Ur Jauziak-Gerea ibilbidearen argazki handitua"',
+    'alt="Bicicleta de montaña junto a Ur Jauziak en primavera, con la cascada muy cargada de agua"':
+        'alt="Mendiko bizikleta Ur Jauziak ondoan udaberrian, ur-jauzia ur-emari handiarekin"',
+    'alt="Ur Jauziak en invierno, con el caudal más bajo"':
+        'alt="Ur Jauziak neguan, emari baxuagoarekin"',
+    'alt="Aerogeneradores del parque eólico del Oiz vistos desde la ruta"':
+        'alt="Oizeko parke eolikoaren aerosorgailuak ibilbidetik ikusita"',
+    'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
+        'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, aerosorgailuak '
+        'atzealdean"',
+    'Esta ruta sale de Trabakua y sube bordeando el barrio de Berano durante casi todo el '
+    'recorrido, marcada en parte con pintadas verdes y blancas. Tras unos 40 minutos de subida '
+    'llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada entre rocas y musgo, con '
+    'agua casi todo el año —más floja en verano, cuando baja el caudal.':
+        'Ibilbide honek Trabakuatik irten eta Berano auzoa bordeatuz igotzen du ibilbide ia '
+        'osoan zehar, tarte batean berde eta zuriz margotutako marken bidez seinalizatuta. '
+        'Berrogei bat minutuko igoeraren ondoren, lehen geldialdia dator: <b>Ur Jauziak</b>, '
+        'harri eta goroldio artean mailaka jaisten den ur-jauzia, urte osoan ia beti '
+        'urarekin —udan da ahulena, emaria jaisten denean.',
+    'El camino sigue subiendo hasta un mirador a 686 m (km 2,95), el punto más alto de la ruta: '
+    'a un lado se ve la antena de Movistar y, al otro, los aerogeneradores del parque eólico '
+    'del Oiz. Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde '
+    'conviene ir atento a la traza del GPS.':
+        'Bideak gora jarraitzen du 686 m-ko begiratoki batera iritsi arte (2,95 km), '
+        'ibilbideko punturik altuenera: alde batetik Movistarren antena ikusten da, eta '
+        'bestetik, Oizeko parke eolikoaren aerosorgailuak. Handik jaitsiera hasten da, '
+        'hainbat bide-gurutze jarraian dituela, GPSaren trazari adi egon behar zaiona.',
+    'De bajada se pasa junto a una borda abandonada, de tejado rojo medio hundido entre la '
+    'maleza, antes de cerrar el círculo de vuelta a Trabakua.':
+        'Jaisten ari dela, borda abandonatu baten ondotik pasatzen da, teilatu gorri erdi '
+        'hondoratua sasien artean duela, Trabakuara itzuliz zirkulua itxi aurretik.',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    'Ruta válida para todos los niveles, niños mayores incluidos: 5,7 km y +415 m de desnivel '
+    'en un solo circuito, con un buen tramo de subida (unos 40 min) hasta la cascada y el '
+    'mirador. No está señalizada oficialmente más allá de esas pintadas verdes y blancas, así '
+    'que conviene llevar el track cargado.':
+        'Maila guztietarako baliozko ibilbidea, haur nagusiak barne: 5,7 km eta +415 m-ko '
+        'desnibela zirkuitu bakarrean, igoera-tarte on batekin (40 bat minutu) ur-jauzira eta '
+        'begiratokira iristeko. Ez dago ofizialki seinalizatuta pintura berde eta zuri horiez '
+        'haratago, beraz komeni da tracka kargatuta eramatea.',
+}
+
 # <title> per page (head files)
 TITLES = {
     'mallabia': 'Mallabia',
@@ -521,6 +586,7 @@ TITLES = {
     'iturrizuri': 'Iturzuri · Zengotitagane',
     'zenarruza': 'Zenarruza · San Kristobal · Zengotitagane',
     'osma': 'Argiñeta',
+    'gerea': 'Gerea',
 }
 
 PAGE_STRINGS = {
@@ -529,4 +595,5 @@ PAGE_STRINGS = {
     'iturrizuri': ITURZURI,
     'zenarruza': ZENARRUZA,
     'osma': OSMA,
+    'gerea': GEREA,
 }
