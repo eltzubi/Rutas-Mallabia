@@ -547,15 +547,14 @@ GEREA = {
     'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
         'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, aerosorgailuak '
         'atzealdean"',
-    'Esta ruta sale de Trabakua y sube bordeando el barrio de Berano durante casi todo el '
-    'recorrido, marcada en parte con pintadas verdes y blancas. Tras unos 40 minutos de subida '
-    'llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada entre rocas y musgo, con '
-    'agua casi todo el año —más floja en verano, cuando baja el caudal.':
-        'Ibilbide honek Trabakuatik irten eta Berano auzoa bordeatuz igotzen du ibilbide ia '
-        'osoan zehar, tarte batean berde eta zuriz margotutako marken bidez seinalizatuta. '
-        'Berrogei bat minutuko igoeraren ondoren, lehen geldialdia dator: <b>Ur Jauziak</b>, '
-        'harri eta goroldio artean mailaka jaisten den ur-jauzia, urte osoan ia beti '
-        'urarekin —udan da ahulena, emaria jaisten denean.',
+    'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
+    '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
+    'entre rocas y musgo, con agua casi todo el año —más floja en verano, cuando baja el '
+    'caudal.':
+        'Ibilbide honek Trabakuatik irten eta gora egiten du, tarte batean berde eta zuriz '
+        'margotutako marken bidez seinalizatuta. Berrogei bat minutuko igoeraren ondoren, lehen '
+        'geldialdia dator: <b>Ur Jauziak</b>, harri eta goroldio artean mailaka jaisten den '
+        'ur-jauzia, urte osoan ia beti urarekin —udan da ahulena, emaria jaisten denean.',
     'Los aerogeneradores del parque eólico del Oiz acompañan casi toda la subida a un lado, con '
     'vistas al barrio de Gerea al otro, y de camino se pasa junto a una borda abandonada, de '
     'tejado rojo medio hundido entre la maleza. El camino sigue subiendo hasta el punto más '
