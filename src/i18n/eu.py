@@ -101,6 +101,17 @@ HOME = {
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
+    '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
+    '<h2>Sin marcar, con GPS</h2>': '<h2>Seinalatu gabe, GPSarekin</h2>',
+    'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
+    'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
+    'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
+    'vistas, fuentes de agua, alg&uacute;n cruce&mdash;, pero no sustituye al track cargado en el '
+    'dispositivo.':
+        'Ibilbideak bertan bertatik dokumentatuta daude, ez mapa batetik dise&ntilde;atuta, baina '
+        'informazioa oinarrizkoa da: ez daude seinalizatuta, beraz GPSa eramatea ia derrigorrezkoa '
+        'da. Bidean orientatzeko garrantzitsuena jasotzen da &mdash;ikuspegiak, ur-iturriak, noizbehinka '
+        'gurutze bat&mdash;, baina ez du ordezten gailuan kargatutako trackak.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '>Bici</button>': '>Bizikleta</button>',
     '>Senderismo</button>': '>Oinez</button>',
