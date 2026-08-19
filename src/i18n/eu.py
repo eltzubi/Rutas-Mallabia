@@ -358,14 +358,16 @@ ZENARRUZA = {
         'gora eta behera, altuera bat-batean galtzen du azken tartean <b>Zenarruzako monasterioraino</b> '
         '(9,4 km &middot; 287 m) &mdash;XI. mendean sortutako kolegiata zisterziarra, Bizkaiko kolegiata '
         'bakarra eta Iparraldeko Donejakue Bidearen geldialdi historikoa.',
-    'Desde el monasterio el camino gira hacia el oeste-suroeste y no deja de subir en casi 9 km '
-    'seguidos, ganando m&aacute;s de 500 m de desnivel por la ladera del Oiz &mdash;cruzando un '
-    'arroyo escondido entre el bosque a media subida (km 15,4 &middot; 553 m)&mdash; hasta la '
+    'Desde el monasterio el camino gira hacia el oeste-suroeste y sube por la ladera del Oiz durante '
+    'casi 9 km, ganando m&aacute;s de 500 m de desnivel &mdash;con un buen tramo llano a media subida '
+    'para recuperarse, cruzando un arroyo escondido entre el bosque (km 15,4 &middot; 553 m)&mdash; '
+    'hasta la '
     '<b>Ermita San Kristobal</b> (km 18,6 &middot; 797 m), antigua ermita-refugio de pastores con '
     'romer&iacute;a el domingo siguiente al 10 de julio.':
-        'Monasteriotik bideak mendebalde-hego-mendebalderantz egiten du eta ia 9 km jarraian igotzeari '
-        'utzi gabe, 500 m baino gehiagoko desnibela irabaziz Oizen hegaletik &mdash;basoan ezkutatutako '
-        'erreka bat zeharkatuz igoeraren erdian (15,4 km &middot; 553 m)&mdash; <b>San Kristobal '
+        'Monasteriotik bideak mendebalde-hego-mendebalderantz egiten du eta Oizen hegaletik igotzen da '
+        'ia 9 km-tan zehar, 500 m baino gehiagoko desnibela irabaziz &mdash;igoeraren erdian tarte '
+        'lau on bat du, indarrak berreskuratzeko, basoan ezkutatutako erreka bat zeharkatuz (15,4 km '
+        '&middot; 553 m)&mdash; <b>San Kristobal '
         'ermitaraino</b> (18,6 km &middot; 797 m), artzainen ermita-aterpe zaharra, uztailaren 10aren '
         'hurrengo igandean erromeria egiten duena.',
     'Tras la ermita el camino baja hacia el sur hasta un collado a 605 m (km 22,1) para remontar '
