@@ -215,13 +215,14 @@ TRABAKUA = {
         'da, baina laburra da — 300 metrora ere ez da iristen. Ondorengoa askoz eramangarriagoa da.',
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
-    'Aginaga, sin perder mucha altura. Se sube de vuelta por esa misma pista de tierra hasta '
-    'enlazar de nuevo con la pista principal. Es un tramo opcional: se puede evitar siguiendo '
-    'recto, sin desviarse hacia él.':
+    'Aginaga, sin perder mucha altura. Desde Aginaga se sube por un tramo de pista de cemento '
+    'hasta enlazar con el camino de tierra, de vuelta a la pista principal. Es un tramo opcional: '
+    'se puede evitar siguiendo recto, sin desviarse hacia él.':
         'Aldapa horien ostean, beheraldi tekniko samarra dator — trebetasun pixka bat duenarentzat '
         'erraza —, eta hortik berriz hartzen da igoerako bidea Aginaga auzoaren inguruan, altuera '
-        'handirik galdu gabe. Tarte hori aukerakoa da: nahi izanez gero, zuzen jarraituta saihestu '
-        'daiteke.',
+        'handirik galdu gabe. Aginagatik zementuzko pista-tarte batetik igotzen da lurrezko '
+        'bidearekin lotu arte, pista nagusira itzultzeko. Tarte hori aukerakoa da: nahi izanez '
+        'gero, zuzen jarraituta saihestu daiteke.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
     'Txiki y la parte alta de Berano, con vistas hacia el barrio de Goita y las montañas del '
