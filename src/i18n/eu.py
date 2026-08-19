@@ -547,6 +547,10 @@ GEREA = {
     'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
         'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, aerosorgailuak '
         'atzealdean"',
+    'alt="Ur Jauziak en otoño, con el agua cayendo entre musgo y rocas"':
+        'alt="Ur Jauziak udazkenean, ura goroldio eta harrien artetik erortzen"',
+    'alt="Vistas al barrio de Gerea desde la subida, entre caseríos y montañas"':
+        'alt="Gereako auzorako ikuspegiak igoeratik, baserrien eta mendien artean"',
     'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
     '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
     'entre rocas y musgo, con agua casi todo el año —más floja en verano, cuando baja el '
