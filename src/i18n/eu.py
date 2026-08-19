@@ -540,8 +540,6 @@ GEREA = {
         'alt="Ur Jauziak-Gerea ibilbidearen argazki handitua"',
     'alt="Cartel de madera del recorrido, con indicaciones a Ur Jauzia y a Trabakua"':
         'alt="Ibilbidearen egurrezko kartela, Ur Jauziarako eta Trabakuarako seinaleekin"',
-    'alt="Ur Jauziak en invierno, con el caudal más bajo"':
-        'alt="Ur Jauziak neguan, emari baxuagoarekin"',
     'alt="Aerogeneradores del parque eólico del Oiz vistos desde la ruta"':
         'alt="Oizeko parke eolikoaren aerosorgailuak ibilbidetik ikusita"',
     'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
@@ -551,6 +549,8 @@ GEREA = {
         'alt="Ur Jauziak udazkenean, ura goroldio eta harrien artetik erortzen"',
     'alt="Vistas al barrio de Gerea desde la subida, entre caseríos y montañas"':
         'alt="Gereako auzorako ikuspegiak igoeratik, baserrien eta mendien artean"',
+    'alt="Ur Jauziak en diciembre, con el agua cayendo con fuerza entre las rocas"':
+        'alt="Ur Jauziak abenduan, ura indarrez harrien artetik erortzen"',
     'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
     '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
     'entre rocas y musgo, con agua casi todo el año —más floja en verano, cuando baja el '
