@@ -233,11 +233,12 @@ TRABAKUA = {
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     'Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin sendero estrecho — '
     'apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se '
-    'grabó con e-bike (1h 15min), así que el tiempo no sirve de referencia si vas sin asistencia.':
+    'grabó con e-bike —una Orbea Rise— (1h 15min), así que el tiempo no sirve de referencia si vas '
+    'sin asistencia.':
         'Pista-terrenoa (zementua eta harria, eta lurrezko tarte aukerakoa), bidezidor esturik gabe — '
         'mendiko bizikleta arrunterako egokia, ez soilik elektrikorako. Fitxa honetako tracka e-bike '
-        'batekin grabatu zen (1h 15 min), beraz, denbora ez da erreferentzia egokia laguntzarik gabe '
-        'zoazenerako.',
+        'batekin grabatu zen —Orbea Rise bat— (1h 15 min), beraz, denbora ez da erreferentzia egokia '
+        'laguntzarik gabe zoazenerako.',
 }
 
 ITURZURI = {
@@ -381,11 +382,13 @@ ZENARRUZA = {
         'galduz 4 km pasatxotan, Trabakuan zirkulua itxi arte. Ibilbide luzea, aseraino pedalkatzeko.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '31,7 km y +1.161 m de desnivel en un solo circuito. El track de esta ficha se grab&oacute; con '
-    'e-bike (2h 06min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Sube '
+    'e-bike &mdash;una Orbea Rise&mdash; (2h 06min), as&iacute; que el tiempo no sirve de referencia '
+    'si vas sin asistencia. Sube '
     'casi sin descanso hasta San Kristobal y vuelve a subir despu&eacute;s del collado hasta el '
     'dolmen: dos tirones largos seguidos.':
         '31,7 km eta +1.161 m-ko desnibela zirkuitu bakarrean. Fitxa honetako tracka e-bikearekin '
-        'grabatu zen (2h 06min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz. Ia '
+        'grabatu zen &mdash;Orbea Rise batekin&mdash; (2h 06min), beraz denbora ez da erreferentzia '
+        'laguntzarik gabe bazoaz. Ia '
         'atsedenik gabe igotzen da San Kristobaleraino eta lepoaren ondoren berriro igotzen da '
         'trikuharriraino: bi tirada luze jarraian.',
 }
@@ -497,11 +500,13 @@ OSMA = {
 
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
-    'Duranguesado. El track de esta ficha se grab&oacute; con e-bike (2h 50min), as&iacute; que el '
+    'Duranguesado. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
+    '(2h 50min), as&iacute; que el '
     'tiempo no sirve de referencia si vas sin asistencia. Hay agua en Larrosako Iturri (km 11,9) y '
     'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 20,1).</p>':
         '<p>36,8 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
-        'artean. Fitxa honetako tracka e-bikearekin grabatu zen (2h 50min), beraz denbora ez da '
+        'artean. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea Rise batekin&mdash; '
+        '(2h 50min), beraz denbora ez da '
         'erreferentzia laguntzarik gabe bazoaz. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
         'Nekropolitik gertu (20,1 km).</p>',
 }
