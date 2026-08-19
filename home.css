@@ -245,6 +245,56 @@ body{
   padding:20px 0;
 }
 .filter-empty.visible{ display:block; }
+
+/* ---- signpost hub: all routes fork from the same trailhead ---- */
+.signpost{
+  position:relative;
+  margin:0 0 40px;
+  padding:34px 0;
+  display:flex; flex-direction:column; align-items:center;
+  gap:12px;
+}
+.signpost::before{
+  content:'';
+  position:absolute; top:0; bottom:0; left:50%;
+  width:3px; margin-left:-1.5px;
+  background:linear-gradient(180deg, transparent, var(--line) 10%, var(--line) 90%, transparent);
+}
+.signpost-hub{
+  position:relative; z-index:1;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ground); background:var(--ink);
+  padding:9px 18px; border-radius:100px;
+  box-shadow:0 0 0 5px var(--ground);
+}
+.signpost-sign{
+  position:relative; z-index:1;
+  display:flex; align-items:center; gap:10px;
+  width:min(78%, 360px);
+  padding:11px 22px;
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700;
+  text-decoration:none; color:var(--ground);
+  transition:transform .2s ease;
+  white-space:nowrap;
+}
+.signpost-sign:hover{ transform:scale(1.035); }
+.signpost-sign.dir-a{ align-self:flex-end; clip-path:polygon(0 0,88% 0,100% 50%,88% 100%,0 100%); padding-right:30px; }
+.signpost-sign.dir-b{
+  align-self:flex-start; flex-direction:row-reverse; text-align:right;
+  clip-path:polygon(100% 0,12% 0,0 50%,12% 100%,100% 100%); padding-left:30px;
+}
+.signpost-sign[data-activity="bici"]{ background:var(--teal); }
+.signpost-sign[data-activity="senderismo"]{ background:var(--violet); }
+.signpost-name{ flex:1; overflow:hidden; text-overflow:ellipsis; text-transform:uppercase; letter-spacing:.02em; }
+.signpost-km{ font-weight:700; opacity:.75; }
+.signpost-sign.is-hidden{ display:none; }
+@media (max-width:480px){
+  .signpost-sign{ font-size:10.5px; width:min(88%,320px); padding:9px 16px; }
+  .signpost-sign.dir-a{ padding-right:24px; }
+  .signpost-sign.dir-b{ padding-left:24px; }
+}
+
 .feat-panel{
   border:1px solid var(--line);
   background:var(--ground-raised);
@@ -254,6 +304,9 @@ body{
 .feat-panel + .feat-panel{ margin-top:20px; }
 @media (min-width:660px){
   .feat-panel{ grid-template-columns:1fr 1.15fr; }
+  .feat-panel--alt{ grid-template-columns:1.15fr 1fr; }
+  .feat-panel--alt .feat-photo{ order:2; }
+  .feat-panel--alt .feat-body{ order:1; }
 }
 .feat-photo{ position:relative; aspect-ratio:4/3; overflow:hidden; }
 @media (min-width:660px){ .feat-photo{ aspect-ratio:auto; } }

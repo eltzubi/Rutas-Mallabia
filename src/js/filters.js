@@ -3,6 +3,7 @@
 (function(){
   var chips = document.querySelectorAll('.activity-chip');
   var panels = document.querySelectorAll('.feat-panel[data-activity]');
+  var signs = document.querySelectorAll('.signpost-sign[data-activity]');
   var emptyMsg = document.getElementById('filterEmpty');
   var distanceRange = document.getElementById('distanceRange');
   var desnivelRange = document.getElementById('desnivelRange');
@@ -34,13 +35,15 @@
     if (desnivelVal) desnivelVal.textContent = (maxE >= maxDesnivel ? maxDesnivel + ' m ' + TXT_NO_LIMIT : '+' + Math.round(maxE) + ' m ' + TXT_APPROX);
 
     var anyVisible = false;
-    panels.forEach(function(p){
+    function filterOne(p){
       var km = parseFloat(p.dataset.distanceKm) || 0;
       var m = parseFloat(p.dataset.desnivelM) || 0;
       var show = active.indexOf(p.dataset.activity) !== -1 && km <= maxD && m <= maxE;
       p.classList.toggle('is-hidden', !show);
       if (show) anyVisible = true;
-    });
+    }
+    panels.forEach(filterOne);
+    signs.forEach(filterOne);
     if (emptyMsg) emptyMsg.classList.toggle('visible', !anyVisible);
   }
 
