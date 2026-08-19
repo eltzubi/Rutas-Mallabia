@@ -135,8 +135,8 @@ HOME = {
         'Beranotik. Ibilbidea terrenoan bertan grabatua dago, ez mapa baten gainean proposatua.',
     'alt="Vista panorámica desde la ruta de Iturzuri, con el valle cubierto de niebla"':
         'alt="Bista panoramikoa Iturzuriko ibilbidetik, harana lainoz estalita"',
-    '<h2>Iturzuri, Zengotitagane<br><em>subida por la cascada</em></h2>':
-        '<h2>Iturzuri, Zengotitagane<br><em>ur-jauzitik gora</em></h2>',
+    '<h2>Iturzuri, Zengotitagane<br><em>subida por la cascada de Gerea</em></h2>':
+        '<h2>Iturzuri, Zengotitagane<br><em>Gereako ur-jauzitik gora</em></h2>',
     'Sendero hasta el punto más alto de Mallabia: cascadas, un dolmen prehistórico y un cresterio '
     'con vistas a ambos lados antes de rodear Zengotitagane por el este. '
     'Grabada sobre el terreno, no propuesta desde un mapa.':
@@ -266,8 +266,8 @@ ITURZURI = {
     '<span>Sendero</span><span class="sep">/</span><span>Cascadas, dolmen y cresterio</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauziak, trikuharria eta gailurrerdia</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Iturzuri, Zengotitagane<br><em>subida por la cascada</em></h1>':
-        '<h1>Iturzuri, Zengotitagane<br><em>ur-jauzitik gora</em></h1>',
+    '<h1>Iturzuri, Zengotitagane<br><em>subida por la cascada de Gerea</em></h1>':
+        '<h1>Iturzuri, Zengotitagane<br><em>Gereako ur-jauzitik gora</em></h1>',
     'Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua':
         'Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
     'alt="Vista panorámica desde la ruta, con el valle cubierto de niebla y las crestas del Duranguesado al fondo"':
