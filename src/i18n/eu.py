@@ -228,12 +228,14 @@ TRABAKUA = {
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
     'Aginaga, sin perder mucha altura. Desde Aginaga se sube por un tramo de pista de cemento '
-    'hasta enlazar con el camino de tierra, de vuelta a la pista principal. Es un tramo opcional: '
+    'hasta enlazar con el camino de tierra, de vuelta a la pista principal, justo al collado de '
+    'Asuntza. Es un tramo opcional: '
     'se puede evitar siguiendo recto, sin desviarse hacia él.':
         'Aldapa horien ostean, beheraldi tekniko samarra dator — trebetasun pixka bat duenarentzat '
         'erraza —, eta hortik berriz hartzen da igoerako bidea Aginaga auzoaren inguruan, altuera '
         'handirik galdu gabe. Aginagatik zementuzko pista-tarte batetik igotzen da lurrezko '
-        'bidearekin lotu arte, pista nagusira itzultzeko. Tarte hori aukerakoa da: nahi izanez '
+        'bidearekin lotu arte, pista nagusira itzultzeko, Asuntzako lepoan bertan. Tarte hori '
+        'aukerakoa da: nahi izanez '
         'gero, zuzen jarraituta saihestu daiteke.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
