@@ -452,4 +452,14 @@ footer{
 .hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
 .elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
 
+.parada{
+  margin:0 0 24px;
+  background:var(--violet-soft);
+  border-left:3px solid var(--violet);
+  padding:22px 24px 24px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.parada .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
+.parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
+.parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
 .parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }
