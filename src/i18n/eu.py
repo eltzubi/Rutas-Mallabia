@@ -409,6 +409,10 @@ OSMA = {
         'alt="Aixolako presa, Larrosako Iturritik gertu, ibilbideko 11,9 km"',
     'alt="Fila de sarc&oacute;fagos bajo los &aacute;rboles, Necr&oacute;polis de Argi&ntilde;eta"':
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
+    'alt="Inscripci&oacute;n epigr&aacute;fica labrada en un sarc&oacute;fago, Necr&oacute;polis de Argi&ntilde;eta"':
+        'alt="Hilobi batean landutako inskripzio epigrafikoa, Argi&ntilde;etako Nekropolian"',
+    'alt="Sarc&oacute;fagos bajo los robles de la Necr&oacute;polis de Argi&ntilde;eta, con la ermita al fondo"':
+        'alt="Argi&ntilde;etako Nekropoliko hilobiak haritzen azpian, ermita atzealdean"',
 
     'Esta ruta sale de Trabakua hacia el suroeste, pasando por la primera <b>Ermita de San Juan</b> (km 1,3 &middot; '
     '412 m), en el barrio de Zengotita, donde se coge la pista forestal que llega desde Areitio y '
