@@ -723,11 +723,14 @@ OIZ = {
         'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m) '
         '&mdash;igoera oso gogorra, laburra izan arren. Handik aurrera, Oizerantz, malda '
         'asko leuntzen da eta oso eramangarria bihurtzen da.',
-    'Un poco m&aacute;s adelante pasamos por <b>Axmakur</b> (km 4, 888 m), un repecho de la '
+    'Continuamos por la cresta hasta meternos en el hayedo que nos lleva a la fuente de '
+    'Iturzuri y un refugio.':
+        'Gailur-bizkarretik jarraitzen dugu pagadira sartu arte, Iturzuriko iturrira eta '
+        'aterpe batera eramaten gaituena.',
+    '<b>Axmakur</b> (km 4, 888 m) viene justo despu&eacute;s de la fuente, un repecho de la '
     'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
-        'Apur bat aurrerago <b>Axmakur</b>retik pasatzen gara (4 km, 888 m), Oiz bertarekin '
-        'lotutako gailur-bizkarreko malda bat, Durangaldera, Urdaibaira eta Bilbora '
-        'ikuspegiekin.',
+        '<b>Axmakur</b> (4 km, 888 m) iturriaren ondoren dator, Oiz bertarekin lotutako '
+        'gailur-bizkarreko malda bat, Durangaldera, Urdaibaira eta Bilbora ikuspegiekin.',
     'La cresta cumbrera del <b>Oiz</b> (km 5,69, 1.025 m) est&aacute; ocupada por antenas y '
     'uno de los parques e&oacute;licos m&aacute;s extensos de Bizkaia &mdash;el primero que '
     'se instal&oacute; en el territorio. Desde ah&iacute; hay vistas a la costa '
