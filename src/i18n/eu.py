@@ -802,15 +802,16 @@ ARIETZU = {
     'data-marker-title="Ermita de San Juan (salida y llegada)"':
         'data-marker-title="San Juan ermita (irteera eta helmuga)"',
     '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
-    'Circuito corto desde la Ermita de San Juan hasta <b>Osmagain</b> (km 0,7, 527 m), con '
-    'una cruz en el alto y muy buenas vistas desde el cresterío: hacia Berriz y los montes '
-    'del Duranguesado a un lado, hacia los barrios de Zengotita y Osma al otro. Este tramo '
-    'coincide con parte del recorrido de la 7 Pago Mendi Lasterketa, la carrera de montaña '
-    'que se celebra en mayo.':
-        'Zirkuitu laburra San Juan ermitatik <b>Osmagain</b>eraino (0,7 km, 527 m), goian '
-        'gurutze batekin eta ikuspegi bikainekin gailurrerditik: Berriz eta Durangaldeko '
-        'mendiak alde batetik, eta bestetik Zengotita eta Osma auzoak. Ibilbidearen zati '
-        'hau 7 Pago Mendi Lasterketaren zatia da, maiatzean ospatzen den mendi lasterketa.',
+    'Circuito corto desde la Ermita de San Juan, en el barrio de Zengotita, hasta '
+    '<b>Osmagain</b> (km 0,7, 527 m), con una cruz en el alto y muy buenas vistas desde el '
+    'cresterío: hacia Berriz y los montes del Duranguesado a un lado, hacia los barrios de '
+    'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la 7 Pago '
+    'Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
+        'Zirkuitu laburra San Juan ermitatik, Zengotita auzoan, <b>Osmagain</b>eraino '
+        '(0,7 km, 527 m), goian gurutze batekin eta ikuspegi bikainekin gailurrerditik: '
+        'Berriz eta Durangaldeko mendiak alde batetik, eta bestetik Zengotita eta Osma '
+        'auzoak. Ibilbidearen zati hau 7 Pago Mendi Lasterketaren zatia da, maiatzean '
+        'ospatzen den mendi lasterketa.',
     'El cresterío sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre '
     'pinos, antes de cerrar el círculo de vuelta a la ermita.':
         'Gailurrerdiak <b>Arietzu</b>raino jarraitzen du (2,2 km, 479 m), harrizko beste '
