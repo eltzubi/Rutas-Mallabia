@@ -646,14 +646,14 @@ ZENGOTITAGANE = {
     'giramos a la izquierda para encarar una pista trialera corta pero intensa, hasta '
     'enganchar con la pista de piedra que sube desde Garai hasta la fuente de arriba, en lo '
     'alto. Desde ah&iacute; empezamos a bajar hasta la <b>Ermita de San Crist&oacute;bal '
-    'Txiki</b> (km 15,4, 495 m) &mdash;as&iacute; la llaman para distinguirla de la otra '
+    'Txiki</b> (km 15,4, 495 m) &mdash;as&iacute; se conoce, para distinguirla de la otra '
     'Ermita de San Crist&oacute;bal, la de arriba, junto a los aerogeneradores.':
         'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
         'harrizko batetik, ur-kanal batek bidea lagunduta. Handik pixka batera ezkerrera '
         'jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik igotzen den '
         'harrizko pistarekin lotu arte, goiko iturriraino, goi-goian. Handik behera hasten '
-        'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela deitzen '
-        'diote goian, aerosorgailuen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
+        'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
+        'da, aerosorgailuen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
     'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
     'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 19,6, 400 m), ya '
