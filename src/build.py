@@ -56,6 +56,7 @@ Usage:
 Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
+import hashlib
 import html.entities
 import os
 import re
@@ -117,19 +118,38 @@ ASSETS = {
 }
 
 
+def add_cache_busting(page_html, versions):
+    # fonts.css/home.css/route.css/js/*.js are real cached files (see the
+    # module docstring), referenced by a bare filename that never changes.
+    # Without this, a returning visitor can get fresh HTML paired with a
+    # stylesheet or script their browser cached before the last deploy --
+    # class names and markup drift apart and the page renders broken. A
+    # content hash in the query string invalidates the cache exactly when
+    # the file actually changes, and only then.
+    def repl(m):
+        attr, name = m.group(1), m.group(2)
+        return f'{attr}="{name}?v={versions[name]}"'
+
+    pattern = "|".join(re.escape(name) for name in versions)
+    return re.sub(rf'(href|src)="({pattern})"', repl, page_html)
+
+
 def main():
+    versions = {}
     for parts, out in ASSETS.items():
         body = read(*parts)
         out_path = os.path.join(ROOT, out)
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(body)
+        versions[out] = hashlib.sha256(body.encode("utf-8")).hexdigest()[:8]
         print(f"wrote {out_path} ({len(body)} bytes)")
 
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
             check_entities(page_html, f"{name} [{lang}]")
+            page_html = add_cache_busting(page_html, versions)
             out_path = os.path.join(ROOT, out_name(name, out_suffix))
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
