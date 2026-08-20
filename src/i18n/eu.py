@@ -659,14 +659,15 @@ ZENGOTITAGANE = {
         'ateratzen gara, hark ere Garaiko aldetik igotzen baitu &mdash;beste iturri batekin '
         'inguru horretan.',
     'Seguimos bajando un poco hasta la ermita y continuamos a toda velocidad cuesta abajo hasta '
-    'el barrio de San Jos&eacute;. Ya cerca de cerrar el c&iacute;rculo pasamos por la <b>Ermita '
-    'de San Juan</b> (km 19,6, 400 m), cruzamos la carretera general entre Trabakua y Berriz y '
-    'subimos por la carretera vieja hacia el barrio de Zengotitagane, de vuelta a Trabakua.':
+    'el barrio de San Jos&eacute;. Cruzamos la carretera general entre Trabakua y Berriz y '
+    'subimos por la carretera vieja hacia el barrio de Zengotitagane, donde est&aacute; la '
+    '<b>Ermita de San Juan</b> (km 19,6, 400 m), ya cerca de cerrar el c&iacute;rculo, antes de '
+    'bajar de vuelta a Trabakua.':
         'Apur bat gehiago jaitsi eta ermitara iristen gara, eta abiadura betean jarraitzen dugu '
-        'behera San Jos&eacute; auzoraino. Zirkulua ixteko zorian <b>San Juan ermita</b>tik '
-        'pasatzen gara (19,6 km, 400 m), Trabakua eta Berriz arteko errepide nagusia gurutzatzen '
-        'dugu eta errepide zaharretik gora egiten dugu Zengotitagane auzorantz, Trabakura '
-        'itzultzeko.',
+        'behera San Jos&eacute; auzoraino. Trabakua eta Berriz arteko errepide nagusia '
+        'gurutzatzen dugu eta errepide zaharretik gora egiten dugu Zengotitagane auzorantz, non '
+        'dagoen <b>San Juan ermita</b> (19,6 km, 400 m), zirkulua ixteko zorian, Trabakura '
+        'jaitsi aurretik.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
