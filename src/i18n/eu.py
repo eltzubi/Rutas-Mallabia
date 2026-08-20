@@ -31,6 +31,7 @@ COMMON = {
 
     # facts values
     '<span class="v">Circuito</span>': '<span class="v">Zirkuitua</span>',
+    '<span class="v">Ida y vuelta</span>': '<span class="v">Joan-etorria</span>',
     '<span class="v">Pista</span>': '<span class="v">Pista</span>',
     '<span class="v">Sendero</span>': '<span class="v">Bidezidorra</span>',
     '<span class="v">Mixta</span>': '<span class="v">Nahasia</span>',
@@ -174,7 +175,7 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma y Zengotitagane':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma eta Zengotitagane',
-    'Senderismo &middot; Iturzuri y Gerea': 'Oinez &middot; Iturzuri eta Gerea',
+    'Senderismo &middot; Iturzuri, Gerea y Oiz': 'Oinez &middot; Iturzuri, Gerea eta Oiz',
     'Toca una ruta en el mapa para abrir su p&aacute;gina.':
         'Sakatu ibilbide bat mapan, bere orria irekitzeko.',
 
@@ -212,6 +213,18 @@ HOME = {
     'de camino. Grabada sobre el terreno, no propuesta desde un mapa.':
         'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi '
         'ermitarekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+
+    # oiz card
+    'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al '
+    'fondo"':
+        'alt="Oizeko aerosorgailuak gailurreko putzu batean islatuta, antenak atzealdean"',
+    '<h2>Zengotitagane, Axmakur<br><em>y Oiz</em></h2>':
+        '<h2>Zengotitagane, Axmakur<br><em>eta Oiz</em></h2>',
+    'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa '
+    'cant&aacute;brica desde la cumbre. Grabada sobre el terreno, no propuesta desde un mapa.':
+        'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde '
+        'kantauriarrerako ikuspegiekin gailurretik. Bertatik bertara grabatua, ez mapa '
+        'batetik proposatua.',
 }
 
 TRABAKUA = {
@@ -679,6 +692,55 @@ ZENGOTITAGANE = {
     'Ermita de San Juan': 'San Juan ermita',
 }
 
+OIZ = {
+    'alt="Foto ampliada del recorrido del Oiz"':
+        'alt="Oizeko ibilbidearen argazki handitua"',
+    '<span>Sendero</span><span class="sep">/</span><span>Zengotitagane, Axmakur y Oiz</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Zengotitagane, Axmakur eta Oiz</span>',
+    '<span>Ida y vuelta</span></p>': '<span>Joan-etorria</span></p>',
+    '<h1>Zengotitagane, Axmakur<br><em>y Oiz</em></h1>':
+        '<h1>Zengotitagane, Axmakur<br><em>eta Oiz</em></h1>',
+    'Ida y vuelta desde Trabakua hasta el Oiz':
+        'Joan-etorria Trabakuatik Oizeraino',
+    'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al fondo"':
+        'alt="Oizeko aerosorgailuak gailurreko putzu batean islatuta, antenak atzealdean"',
+    'alt="Vistas panor&aacute;micas desde el Oiz, con los aerogeneradores y el sol de frente"':
+        'alt="Oizetiko ikuspegi panoramikoak, aerosorgailuekin eta eguzkia aurrez aurre"',
+    'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m), el mismo alto '
+    'de la ruta a San Crist&oacute;bal Txiki, para continuar por la cresta hacia el Oiz.':
+        'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m), San '
+        'Kristobal Txikirako ibilbideko goi bera, gailurraren bidetik Oizerantz jarraitzeko.',
+    'Un poco m&aacute;s adelante pasamos por <b>Axmakur</b> (km 4, 888 m), un repecho de la '
+    'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
+        'Apur bat aurrerago <b>Axmakur</b>retik pasatzen gara (4 km, 888 m), Oiz bertarekin '
+        'lotutako gailur-bizkarreko malda bat, Durangaldera, Urdaibaira eta Bilbora '
+        'ikuspegiekin.',
+    'La cresta cumbrera del <b>Oiz</b> (km 5,69, 1.025 m) est&aacute; ocupada por antenas y '
+    'uno de los parques e&oacute;licos m&aacute;s extensos de Bizkaia &mdash;el primero que '
+    'se instal&oacute; en el territorio. Desde ah&iacute; hay vistas a la costa '
+    'cant&aacute;brica y, en d&iacute;as claros, hasta los Pirineos. Es uno de los montes '
+    '&laquo;bocineros&raquo; de Bizkaia, usados antiguamente para convocar reuniones con el '
+    'sonido de una bocina que cruzaba los valles.':
+        '<b>Oiz</b>eko gailur-gerrikoa antenaz eta Bizkaiko parke eoliko zabalenetako batez '
+        'okupatuta dago &mdash;lurraldean instalatutako lehena. Handik kostalde '
+        'kantauriarrerako ikuspegiak daude, eta egun argietan Pirinioetaraino ere bai. '
+        'Bizkaiko mendi &laquo;bozinari&raquo; bat da, garai batean bilerak deitzeko '
+        'erabiltzen zena, haranetan zehar zabaltzen zen bozina baten soinuarekin.',
+    'La vuelta es por el mismo camino, de vuelta a Trabakua.':
+        'Itzulera bide beretik da, Trabakura bueltan.',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
+    '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m). El track de esta ficha se '
+    'grab&oacute; corriendo (1h 35min), as&iacute; que el tiempo no sirve de referencia si '
+    'vas andando.':
+        '11,1 km eta +752 m-ko desnibela joan-etorriko ibilbide batean, bidean bi goirekin '
+        '(Zengotitagane eta Axmakur) Oiz gailurreratu aurretik (1.025 m). Fitxa honetako '
+        'tracka lasterka grabatu zen (1 ordu 35 min), beraz denbora ez da erreferentzia '
+        'egokia oinez bazoaz.',
+    'Ida y vuelta &mdash; el mismo camino de ida y de vuelta':
+        'Joan-etorria &mdash; bide bera joan eta etorrian',
+}
+
 # <title> per page (head files)
 TITLES = {
     'mallabia': 'Mallabia',
@@ -688,6 +750,7 @@ TITLES = {
     'osma': 'Argiñeta',
     'gerea': 'Gerea',
     'zengotitagane': 'Zengotitagane',
+    'oiz': 'Oiz',
 }
 
 PAGE_STRINGS = {
@@ -698,4 +761,5 @@ PAGE_STRINGS = {
     'osma': OSMA,
     'gerea': GEREA,
     'zengotitagane': ZENGOTITAGANE,
+    'oiz': OIZ,
 }
