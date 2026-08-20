@@ -169,8 +169,13 @@ HOME = {
     '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Irteerak mendatetik</p>',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
+    'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
+    'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
+    'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza y Osma': 'Bizikleta &middot; Trabakua, Zenarruza eta Osma',
     'Senderismo &middot; Iturzuri y Gerea': 'Oinez &middot; Iturzuri eta Gerea',
+    'Toca una ruta en el mapa para abrir su p&aacute;gina.':
+        'Sakatu ibilbide bat mapan, bere orria irekitzeko.',
 
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
