@@ -73,12 +73,10 @@ HOME = {
     '<span>Rutas del pueblo</span>': '<span>Herriko ibilbideak</span>',
 
     # hero
-    'alt="Bicicleta de montaña junto a un poste de señales en el monte, al atardecer, con Mallabia iluminada al fondo"':
-        'alt="Mendiko bizikleta seinale-zutoin baten ondoan mendian, ilunabarrean, Mallabia argiztatuta atzealdean"',
-    'alt="Bicicleta de montaña con el foco encendido junto a un poste de señales, al '
-    'anochecer, con un refugio de montaña y el valle iluminado al fondo"':
-        'alt="Mendiko bizikleta fokua piztuta seinale-zutoin baten ondoan, ilunabarrean, '
-        'mendiko aterpe batekin eta harana argiztatuta atzealdean"',
+    'alt="Bicicleta de montaña junto a un poste de señales al anochecer, con el foco '
+    'delantero en rojo, un cielo azul intenso y las luces de Mallabia al fondo"':
+        'alt="Mendiko bizikleta seinale-zutoin baten ondoan ilunabarrean, aurreko fokua '
+        'gorriz, zeru urdin bizia eta Mallabiako argiak atzealdean"',
     '<span>Salida desde Mallabia</span>': '<span>Mallabiatik irtenda</span>',
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
