@@ -23,8 +23,8 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea"]
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea"}
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane"]
+ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane"}
 
 # es filename -> eu filename, for the cross-language links
 EU_OF = {"index.html": "index.eu.html"}

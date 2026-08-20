@@ -95,7 +95,7 @@ def assemble_page(name, suffix=""):
 
 
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane"]
 OUT_NAME = {"mallabia": "index"}  # others default to their own name
 
 # lang code -> (source-file suffix, output-file suffix)
