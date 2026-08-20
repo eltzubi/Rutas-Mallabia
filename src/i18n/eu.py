@@ -606,9 +606,9 @@ GEREA = {
 ZENGOTITAGANE = {
     'alt="Foto ampliada del recorrido de Zengotitagane"':
         'alt="Zengotitagane ibilbidearen argazki handitua"',
-    '<span>Carretera, pista y sendero</span><span class="sep">/</span>'
+    '<span>Carretera y pista</span><span class="sep">/</span>'
     '<span>Zengotitagane, Iturzurigana y ermitas</span>':
-        '<span>Errepidea, pista eta bidezidorra</span><span class="sep">/</span>'
+        '<span>Errepidea eta pista</span><span class="sep">/</span>'
         '<span>Zengotitagane, Iturzurigana eta ermitak</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     '<h1>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h1>':
@@ -642,24 +642,21 @@ ZENGOTITAGANE = {
         'ibilbideko punturik altuena. Ura hartu nahi duenak eskuinera desbideratu ditzake '
         'metro batzuk.',
     'Empieza entonces la bajada hacia Garai, primero por una pista de cemento y despu&eacute;s '
-    'por una de piedra, que se deja a media altura &mdash;justo en una curva&mdash; para coger '
-    'un sendero juguet&oacute;n hacia la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 15,4, '
-    '495 m) &mdash;as&iacute; la llaman para distinguirla de la otra Ermita de San '
-    'Crist&oacute;bal, la de arriba, junto a los aerogeneradores. Al acabar el sendero seguimos '
-    'bajando por la pista de piedra, casi hasta Garai, con un canal de agua acompa&ntilde;ando '
-    'el camino. Poco despu&eacute;s giramos a la izquierda para encarar una pista trialera '
+    'por una de piedra. En ella est&aacute; la <b>Ermita de San Crist&oacute;bal Txiki</b> '
+    '(km 15,4, 495 m) &mdash;as&iacute; la llaman para distinguirla de la otra Ermita de San '
+    'Crist&oacute;bal, la de arriba, junto a los aerogeneradores. Seguimos bajando por la '
+    'misma pista de piedra, casi hasta Garai, con un canal de agua acompa&ntilde;ando el '
+    'camino. Poco despu&eacute;s giramos a la izquierda para encarar una pista trialera '
     'corta pero intensa, hasta enganchar con la pista de piedra que sube desde Garai hasta la '
     'fuente de arriba &mdash;la misma de la que habl&aacute;bamos antes, cerca de San '
     'Crist&oacute;bal Txiki.':
         'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
-        'harrizko batetik, erdi parean uzten dena &mdash;bihurgune batean bertan&mdash; '
-        'bidezidor jostalari bat hartzeko <b>San Kristobal Txiki ermita</b>rantz (15,4 km, '
-        '495 m) &mdash;horrela deitzen diote goian, aerosorgailuen ondoan dagoen beste San '
-        'Kristobal ermitatik bereizteko. Bidezidorra amaitutakoan, harrizko pistatik jaisten '
-        'jarraitzen dugu, Garairaino ia, ur-kanal batek bidea lagunduta. Handik pixka batera '
-        'ezkerrera jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik '
-        'igotzen den harrizko pistarekin lotu arte, goiko iturriraino &mdash;lehen aipatzen '
-        'genuena, San Kristobal Txikitik gertu.',
+        'harrizko batetik. Bertan dago <b>San Kristobal Txiki ermita</b> (15,4 km, 495 m) '
+        '&mdash;horrela deitzen diote goian, aerosorgailuen ondoan dagoen beste San Kristobal '
+        'ermitatik bereizteko. Harrizko pista beretik jaisten jarraitzen dugu, Garairaino ia, '
+        'ur-kanal batek bidea lagunduta. Handik pixka batera ezkerrera jotzen dugu, trial-pista '
+        'labur baina bizi bati aurre egiteko, Garaitik igotzen den harrizko pistarekin lotu '
+        'arte, goiko iturriraino &mdash;lehen aipatzen genuena, San Kristobal Txikitik gertu.',
     'Seguimos bajando un poco hasta la ermita y continuamos a toda velocidad cuesta abajo hasta '
     'el barrio de San Jos&eacute;. Cruzamos la carretera general entre Trabakua y Berriz y '
     'subimos por la carretera vieja hacia el barrio de Zengotita, donde est&aacute; la '
