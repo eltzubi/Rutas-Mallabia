@@ -706,6 +706,17 @@ OIZ = {
         'alt="Oizeko aerosorgailuak gailurreko putzu batean islatuta, antenak atzealdean"',
     'alt="Vistas panor&aacute;micas desde el Oiz, con los aerogeneradores y el sol de frente"':
         'alt="Oizetiko ikuspegi panoramikoak, aerosorgailuekin eta eguzkia aurrez aurre"',
+    'alt="V&eacute;rtice geod&eacute;sico en el Oiz de noche, con las luces rojas de los '
+    'aerogeneradores al fondo"':
+        'alt="Vertize geodesikoa Oizen gauez, aerosorgailuen argi gorriak atzealdean"',
+    'alt="Atardecer en el Oiz, con la silueta de los aerogeneradores en la cresta"':
+        'alt="Ilunabarra Oizen, aerosorgailuen silueta gailur-gerrikoan"',
+    'alt="Un reba&ntilde;o de camino al Oiz de noche, con las luces de un pueblo al fondo"':
+        'alt="Artalde bat Oizerako bidean gauez, herri baten argiak atzealdean"',
+    'alt="Un aerogenerador del Oiz recortado contra la luna, al anochecer"':
+        'alt="Oizeko aerosorgailu bat ilargiaren kontra, ilunabarrean"',
+    'alt="Atardecer rojizo desde el Oiz"':
+        'alt="Ilunabar gorrixka Oiztik"',
     'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m), el mismo alto '
     'de la ruta a San Crist&oacute;bal Txiki, para continuar por la cresta hacia el Oiz.':
         'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m), San '
