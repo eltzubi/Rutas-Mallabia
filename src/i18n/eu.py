@@ -660,12 +660,12 @@ ZENGOTITAGANE = {
         'inguru horretan.',
     'Seguimos bajando un poco hasta la ermita y continuamos a toda velocidad cuesta abajo hasta '
     'el barrio de San Jos&eacute;. Cruzamos la carretera general entre Trabakua y Berriz y '
-    'subimos por la carretera vieja hacia el barrio de Zengotitagane, donde est&aacute; la '
+    'subimos por la carretera vieja hacia el barrio de Zengotita, donde est&aacute; la '
     '<b>Ermita de San Juan</b> (km 19,6, 400 m), ya cerca de cerrar el c&iacute;rculo, antes de '
     'bajar de vuelta a Trabakua.':
         'Apur bat gehiago jaitsi eta ermitara iristen gara, eta abiadura betean jarraitzen dugu '
         'behera San Jos&eacute; auzoraino. Trabakua eta Berriz arteko errepide nagusia '
-        'gurutzatzen dugu eta errepide zaharretik gora egiten dugu Zengotitagane auzorantz, non '
+        'gurutzatzen dugu eta errepide zaharretik gora egiten dugu Zengotita auzorantz, non '
         'dagoen <b>San Juan ermita</b> (19,6 km, 400 m), zirkulua ixteko zorian, Trabakura '
         'jaitsi aurretik.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
