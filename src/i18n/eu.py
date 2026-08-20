@@ -80,14 +80,13 @@ HOME = {
     'anochecer, con un refugio de montaña y el valle iluminado al fondo"':
         'alt="Mendiko bizikleta fokua piztuta seinale-zutoin baten ondoan, ilunabarrean, '
         'mendiko aterpe batekin eta harana argiztatuta atzealdean"',
-    '<span>Salida desde Mallabia</span>': '<span>Mallabiatik irtenda</span>',
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
     '<h1>Mallabia<br><em>a pie y en bici</em></h1>':
         '<h1>Mallabia<br><em>oinez eta bizikletaz</em></h1>',
-    'Rutas que salen de Mallabia y recorren los barrios, montes y pueblos de alrededor. '
+    'Rutas por los barrios, montes y pueblos del entorno de Mallabia. '
     'Documentadas sobre el terreno, con datos de verdad, no de folleto.':
-        'Mallabiatik irten eta inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
+        'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
 
     # readout
