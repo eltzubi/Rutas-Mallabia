@@ -175,7 +175,7 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma y Zengotitagane':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma eta Zengotitagane',
-    'Senderismo &middot; Iturzuri, Gerea y Oiz': 'Oinez &middot; Iturzuri, Gerea eta Oiz',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz y Arietzu': 'Oinez &middot; Iturzuri, Gerea, Oiz eta Arietzu',
     'Toca una ruta en el mapa para abrir su p&aacute;gina.':
         'Sakatu ibilbide bat mapan, bere orria irekitzeko.',
 
@@ -225,6 +225,17 @@ HOME = {
         'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde '
         'kantauriarrerako ikuspegiekin gailurretik. Bertatik bertara grabatua, ez mapa '
         'batetik proposatua.',
+
+    # arietzu card
+    'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
+    'pista serpenteando entre los montes"':
+        'alt="Haranaren ikuspegia ibilbidetik, baserriekin, zaldiak dituen larre batekin '
+        'eta mendien artean bihurgunez betetako pista batekin"',
+    '<h2>Osmagain<br><em>y Arietzu</em></h2>': '<h2>Osmagain<br><em>eta Arietzu</em></h2>',
+    'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de '
+    'piedra en cada uno. Grabada sobre el terreno, no propuesta desde un mapa.':
+        'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko '
+        'gurutze batekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
 }
 
 TRABAKUA = {
@@ -757,6 +768,52 @@ OIZ = {
         'Joan-etorria &mdash; bide bera joan eta etorrian',
 }
 
+ARIETZU = {
+    'alt="Foto ampliada del recorrido de Arietzu"':
+        'alt="Arietzuko ibilbidearen argazki handitua"',
+    '<span>Sendero</span><span class="sep">/</span><span>Osmagain y Arietzu</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Osmagain eta Arietzu</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Osmagain<br><em>y Arietzu</em></h1>': '<h1>Osmagain<br><em>eta Arietzu</em></h1>',
+    'Circuito desde la Ermita de San Juan': 'Zirkuitua San Juan ermitatik',
+    'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
+    'pista serpenteando entre los montes"':
+        'alt="Haranaren ikuspegia ibilbidetik, baserriekin, zaldiak dituen larre batekin '
+        'eta mendien artean bihurgunez betetako pista batekin"',
+    'alt="Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un '
+    'monte al fondo"':
+        'alt="Gurutze bat ibilbideko goi batean, belar lehorren artean eta mendi bat '
+        'atzealdean ikusten dela"',
+    'alt="El sendero subiendo entre hierba hacia una loma con &aacute;rboles"':
+        'alt="Bidezidorra belar artetik igotzen, arbolez betetako muino batera"',
+    'alt="Una cruz de piedra entre pinos, en uno de los altos de la ruta"':
+        'alt="Harrizko gurutze bat pinuen artean, ibilbideko goi batean"',
+    'alt="El sendero entre musgo y helechos, en un tramo de bosque"':
+        'alt="Bidezidorra goroldio eta iratzeen artean, baso-tarte batean"',
+    'alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano"':
+        'alt="Harrizko gurutze bat haranerako eta atzealdeko mendi baterako ikuspegiekin, '
+        'udan"',
+    'data-marker-title="Ermita de San Juan (salida y llegada)"':
+        'data-marker-title="San Juan ermita (irteera eta helmuga)"',
+    '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
+    'Circuito corto desde la Ermita de San Juan hasta <b>Osmagain</b> (km 0,7, 527 m), con '
+    'una cruz en el alto y vistas alrededor.':
+        'Zirkuitu laburra San Juan ermitatik <b>Osmagain</b>eraino (0,7 km, 527 m), goian '
+        'gurutze batekin eta inguruko ikuspegiekin.',
+    'Sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre pinos, antes de '
+    'cerrar el c&iacute;rculo de vuelta a la ermita.':
+        'Jarraitzen du <b>Arietzu</b>raino (2,2 km, 479 m), harrizko beste gurutze bat '
+        'pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '4,3 km y +235 m de desnivel en un circuito corto, con dos altos de camino (Osmagain y '
+    'Arietzu). El track de esta ficha se grab&oacute; corriendo (34 min), as&iacute; que el '
+    'tiempo no sirve de referencia si vas andando.':
+        '4,3 km eta +235 m-ko desnibela zirkuitu laburrean, bidean bi goirekin (Osmagain '
+        'eta Arietzu). Fitxa honetako tracka lasterka grabatu zen (34 min), beraz denbora '
+        'ez da erreferentzia egokia oinez bazoaz.',
+    '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
+}
+
 # <title> per page (head files)
 TITLES = {
     'mallabia': 'Mallabia',
@@ -767,6 +824,7 @@ TITLES = {
     'gerea': 'Gerea',
     'zengotitagane': 'Zengotitagane',
     'oiz': 'Oiz',
+    'arietzu': 'Arietzu',
 }
 
 PAGE_STRINGS = {
@@ -778,4 +836,5 @@ PAGE_STRINGS = {
     'gerea': GEREA,
     'zengotitagane': ZENGOTITAGANE,
     'oiz': OIZ,
+    'arietzu': ARIETZU,
 }
