@@ -130,7 +130,7 @@ body{
   position:relative; width:50%; height:100%; flex:1 1 50%;
   object-fit:cover; object-position:70% 55%;
   transform:scale(1.04);
-  filter:contrast(1.14) saturate(1.12);
+  filter:contrast(1.28) saturate(1.4) brightness(1.05);
   animation: kenburns 24s ease-in-out infinite alternate;
 }
 .hero-photo-duo .hero-photo-img:last-child{
