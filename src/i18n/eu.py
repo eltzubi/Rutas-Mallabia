@@ -206,8 +206,8 @@ HOME = {
     'de Zengotitagane"':
         'alt="Anboto eta Alluitzerako ikuspegiak, Durango atzealdean, Zengotitaganeko '
         'ibilbidearen goialdetik"',
-    '<h2>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal</em></h2>':
-        '<h2>Zengotitagane, Iturzurigana<br><em>eta San Kristobal</em></h2>',
+    '<h2>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h2>':
+        '<h2>Zengotitagane, Iturzurigana<br><em>eta San Kristobal Txiki</em></h2>',
     'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas '
     'de camino. Grabada sobre el terreno, no propuesta desde un mapa.':
         'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi '
@@ -611,10 +611,10 @@ ZENGOTITAGANE = {
         '<span>Errepidea, pista eta bidezidorra</span><span class="sep">/</span>'
         '<span>Zengotitagane, Iturzurigana eta ermitak</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal</em></h1>':
-        '<h1>Zengotitagane, Iturzurigana<br><em>eta San Kristobal</em></h1>',
-    'Circuito desde Trabakua, con las ermitas de San Crist&oacute;bal y San Juan':
-        'Zirkuitua Trabakuatik, San Kristobal eta San Juan ermitekin',
+    '<h1>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h1>':
+        '<h1>Zengotitagane, Iturzurigana<br><em>eta San Kristobal Txiki</em></h1>',
+    'Circuito desde Trabakua, con las ermitas de San Crist&oacute;bal Txiki y San Juan':
+        'Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
     'alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta"':
         'alt="Anboto eta Alluitzerako ikuspegiak, Durango atzealdean, ibilbidearen goialdetik"',
     'alt="V&eacute;rtice geod&eacute;sico en Iturzurigana, el punto m&aacute;s alto de la ruta, '
@@ -623,8 +623,6 @@ ZENGOTITAGANE = {
         'ikuspegiekin"',
     'alt="Una cruz en uno de los altos de la ruta, con el valle y una carretera al fondo"':
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
-    'alt="Vistas desde la ruta hacia los caser&iacute;os y montes del entorno"':
-        'alt="Ibilbidetik inguruko baserri eta mendietarako ikuspegiak"',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
@@ -645,19 +643,20 @@ ZENGOTITAGANE = {
         'metro batzuk.',
     'Empieza entonces la bajada hacia Garai, primero por una pista de cemento y despu&eacute;s '
     'por una de piedra, que se deja a media altura &mdash;justo en una curva&mdash; para coger '
-    'un sendero juguet&oacute;n hacia la <b>Ermita de San Crist&oacute;bal</b> (km 15,4, 495 m) '
-    '&mdash;no la que est&aacute; arriba, junto a los aerogeneradores, sino otra m&aacute;s '
-    'abajo&mdash;, con alg&uacute;n peque&ntilde;o bache donde puede que haya que bajar de la '
-    'bici, aunque nada destacable. Al acabar el sendero volvemos a salir a la misma pista de '
-    'piedra, que tambi&eacute;n sube desde la zona de Garai &mdash;con otra fuente por la zona.':
+    'un sendero juguet&oacute;n hacia la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 15,4, '
+    '495 m) &mdash;as&iacute; la llaman para distinguirla de la otra Ermita de San '
+    'Crist&oacute;bal, la de arriba, junto a los aerogeneradores&mdash;, con alg&uacute;n '
+    'peque&ntilde;o bache donde puede que haya que bajar de la bici, aunque nada destacable. '
+    'Al acabar el sendero volvemos a salir a la misma pista de piedra, que tambi&eacute;n sube '
+    'desde la zona de Garai &mdash;con otra fuente por la zona.':
         'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
         'harrizko batetik, erdi parean uzten dena &mdash;bihurgune batean bertan&mdash; '
-        'bidezidor jostalari bat hartzeko <b>San Kristobal ermita</b>rantz (15,4 km, 495 m) '
-        '&mdash;ez goian, aerosorgailuen ondoan dagoena, beste bat behe aldean&mdash;, '
-        'noizbehinka zulotxoren batekin, agian bizikletatik jaitsi behar izango den arren, '
-        'ezer nabarmenik gabe. Bidezidorra amaitutakoan berriz ere harrizko pista berera '
-        'ateratzen gara, hark ere Garaiko aldetik igotzen baitu &mdash;beste iturri batekin '
-        'inguru horretan.',
+        'bidezidor jostalari bat hartzeko <b>San Kristobal Txiki ermita</b>rantz (15,4 km, '
+        '495 m) &mdash;horrela deitzen diote goian, aerosorgailuen ondoan dagoen beste San '
+        'Kristobal ermitatik bereizteko&mdash;, noizbehinka zulotxoren batekin, agian '
+        'bizikletatik jaitsi behar izango den arren, ezer nabarmenik gabe. Bidezidorra '
+        'amaitutakoan berriz ere harrizko pista berera ateratzen gara, hark ere Garaiko '
+        'aldetik igotzen baitu &mdash;beste iturri batekin inguru horretan.',
     'Seguimos bajando un poco hasta la ermita y continuamos a toda velocidad cuesta abajo hasta '
     'el barrio de San Jos&eacute;. Cruzamos la carretera general entre Trabakua y Berriz y '
     'subimos por la carretera vieja hacia el barrio de Zengotita, donde est&aacute; la '
@@ -674,14 +673,14 @@ ZENGOTITAGANE = {
     'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
     '(1h 32min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
     'agua cerca de Iturzurigana (km 4,8) y en la zona de Garai, antes de la Ermita de San '
-    'Crist&oacute;bal.':
+    'Crist&oacute;bal Txiki.':
         '22,4 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea '
         'Rise batekin&mdash; (1 ordu 32 min), beraz denbora ez da erreferentzia egokia '
         'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko aldean, '
-        'San Kristobal ermitaren aurretik.',
-    'Ermita de San Crist&oacute;bal': 'San Kristobal ermita',
+        'San Kristobal Txiki ermitaren aurretik.',
+    'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
     'Ermita de San Juan': 'San Juan ermita',
 }
 
