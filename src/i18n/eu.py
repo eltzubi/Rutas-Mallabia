@@ -175,8 +175,8 @@ HOME = {
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
         'alt="Aixolako presa, Larrosako Iturritik gertu, Osmako ibilbidean"',
-    '<h2>Osma, Argi&ntilde;eta<br><em>y Trabakua</em></h2>':
-        '<h2>Osma, Argi&ntilde;eta<br><em>eta Trabakua</em></h2>',
+    '<h2>Trabakua, Elgeta<br><em>y Argi&ntilde;eta</em></h2>':
+        '<h2>Trabakua, Elgeta<br><em>eta Argi&ntilde;eta</em></h2>',
     'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis '
     'de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio. Grabada sobre el terreno, no '
     'propuesta desde un mapa.':
@@ -428,8 +428,8 @@ OSMA = {
     '<span>Pista y asfalto</span><span class="sep">/</span><span>Ermitas y necr&oacute;polis medieval</span>':
         '<span>Pista eta asfaltoa</span><span class="sep">/</span><span>Ermitak eta erdi aroko nekropolia</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Osma, Argi&ntilde;eta<br><em>y Trabakua</em></h1>':
-        '<h1>Osma, Argi&ntilde;eta<br><em>eta Trabakua</em></h1>',
+    '<h1>Trabakua, Elgeta<br><em>y Argi&ntilde;eta</em></h1>':
+        '<h1>Trabakua, Elgeta<br><em>eta Argi&ntilde;eta</em></h1>',
     'Circuito desde Trabakua por Osma y la Necr&oacute;polis de Argi&ntilde;eta':
         'Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
 
