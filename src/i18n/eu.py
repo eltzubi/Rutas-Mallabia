@@ -75,6 +75,10 @@ HOME = {
     # hero
     'alt="Bicicleta de montaña junto a un poste de señales en el monte, al atardecer, con Mallabia iluminada al fondo"':
         'alt="Mendiko bizikleta seinale-zutoin baten ondoan mendian, ilunabarrean, Mallabia argiztatuta atzealdean"',
+    'alt="Bicicleta de montaña con el foco encendido junto a un poste de señales, al '
+    'anochecer, con un refugio de montaña y el valle iluminado al fondo"':
+        'alt="Mendiko bizikleta fokua piztuta seinale-zutoin baten ondoan, ilunabarrean, '
+        'mendiko aterpe batekin eta harana argiztatuta atzealdean"',
     '<span>Salida desde Mallabia</span>': '<span>Mallabiatik irtenda</span>',
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
