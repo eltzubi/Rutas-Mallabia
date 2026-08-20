@@ -717,10 +717,12 @@ OIZ = {
         'alt="Oizeko aerosorgailu bat ilargiaren kontra, ilunabarrean"',
     'alt="Atardecer rojizo desde el Oiz"':
         'alt="Ilunabar gorrixka Oiztik"',
-    'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m), el mismo alto '
-    'de la ruta a San Crist&oacute;bal Txiki, para continuar por la cresta hacia el Oiz.':
-        'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m), San '
-        'Kristobal Txikirako ibilbideko goi bera, gailurraren bidetik Oizerantz jarraitzeko.',
+    'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m) &mdash;una '
+    'subida muy fuerte, aunque corta. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
+    'suaviza mucho y se hace muy llevadero.':
+        'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m) '
+        '&mdash;igoera oso gogorra, laburra izan arren. Handik aurrera, Oizerantz, malda '
+        'asko leuntzen da eta oso eramangarria bihurtzen da.',
     'Un poco m&aacute;s adelante pasamos por <b>Axmakur</b> (km 4, 888 m), un repecho de la '
     'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
         'Apur bat aurrerago <b>Axmakur</b>retik pasatzen gara (4 km, 888 m), Oiz bertarekin '
