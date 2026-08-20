@@ -811,10 +811,10 @@ ARIETZU = {
         'gurutze batekin eta ikuspegi bikainekin gailurrerditik: Berriz eta Durangaldeko '
         'mendiak alde batetik, eta bestetik Zengotita eta Osma auzoak. Ibilbidearen zati '
         'hau 7 Pago Mendi Lasterketaren zatia da, maiatzean ospatzen den mendi lasterketa.',
-    'Sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre pinos, antes de '
-    'cerrar el c&iacute;rculo de vuelta a la ermita.':
-        'Jarraitzen du <b>Arietzu</b>raino (2,2 km, 479 m), harrizko beste gurutze bat '
-        'pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
+    'El cresterío sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre '
+    'pinos, antes de cerrar el círculo de vuelta a la ermita.':
+        'Gailurrerdiak <b>Arietzu</b>raino jarraitzen du (2,2 km, 479 m), harrizko beste '
+        'gurutze bat pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '4,3 km y +235 m de desnivel en un circuito corto, con dos altos de camino (Osmagain y '
     'Arietzu). El track de esta ficha se grab&oacute; corriendo (34 min), as&iacute; que el '
