@@ -124,8 +124,8 @@ HOME = {
         '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
     '<span class="signpost-name">Osmagain y Arietzu</span>':
         '<span class="signpost-name">Osmagain eta Arietzu</span>',
-    '<span class="signpost-name">Arandomendi, Urko y Collado de Asuntza</span>':
-        '<span class="signpost-name">Arandomendi, Urko eta Asuntzako lepoa</span>',
+    '<span class="signpost-name">Trabakua, Asuntza y Urko</span>':
+        '<span class="signpost-name">Trabakua, Asuntza eta Urko</span>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
     'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
