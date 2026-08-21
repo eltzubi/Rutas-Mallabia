@@ -13,6 +13,7 @@ Fix eu.py, re-run, then run build.py.
 The Basque pages are generated, not hand-edited: to change Basque wording,
 edit src/i18n/eu.py and re-run this script.
 """
+import html
 import os
 import re
 import sys
@@ -145,6 +146,14 @@ def main():
         for es_file, eu_file in EU_OF.items():
             head = head.replace(f'"https://eltzubi.github.io/Rutas-Mallabia/{es_file}"',
                                  f'"https://eltzubi.github.io/Rutas-Mallabia/{eu_file}"')
+
+        # JSON-LD strings are unescaped (real UTF-8, not &ntilde; entities) --
+        # swap the plain-text forms too, so the structured data matches the
+        # visible page instead of staying in Spanish.
+        head = head.replace(f'"name": "{html.unescape(es_title)}"',
+                             f'"name": "{html.unescape(eu_title)}"')
+        head = head.replace(f'"description": "{html.unescape(es_desc)}"',
+                             f'"description": "{html.unescape(eu_desc)}"')
 
         with open(os.path.join(SRC, f"{page}_head.eu.html"), "w", encoding="utf-8") as f:
             f.write(head)

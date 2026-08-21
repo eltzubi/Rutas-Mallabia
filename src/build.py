@@ -102,6 +102,8 @@ OUT_NAME = {"mallabia": "index"}  # others default to their own name
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
+SITE_URL = "https://eltzubi.github.io/Rutas-Mallabia/"
+
 
 def out_name(page, out_suffix):
     return f"{OUT_NAME.get(page, page)}{out_suffix}.html"
@@ -154,6 +156,38 @@ def main():
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
             print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
+
+    write_sitemap()
+
+
+def write_sitemap():
+    # One <url> per page, with an xhtml:link alternate for every language --
+    # tells Google the es/eu pages are translations of each other rather
+    # than duplicate content.
+    urls = []
+    for name in PAGES:
+        alternates = {
+            lang: SITE_URL + out_name(name, out_suffix)
+            for lang, (_, out_suffix) in LANGS.items()
+        }
+        for loc in alternates.values():
+            links = "\n".join(
+                f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
+                for lang, href in alternates.items()
+            )
+            urls.append(f"  <url>\n    <loc>{loc}</loc>\n{links}\n  </url>")
+
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + "\n".join(urls) + "\n"
+        "</urlset>\n"
+    )
+    out_path = os.path.join(ROOT, "sitemap.xml")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(xml)
+    print(f"wrote {out_path} ({len(xml)} bytes)")
 
 
 if __name__ == "__main__":

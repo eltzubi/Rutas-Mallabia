@@ -194,6 +194,18 @@ body{
   max-width:50ch;
   text-shadow:0 1px 14px rgba(0,0,0,.4);
 }
+.hero-parking-link{
+  display:inline-flex; align-items:center; gap:6px;
+  margin-top:18px; padding:9px 16px;
+  border:1px solid rgba(245,243,236,.4); border-radius:100px;
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600;
+  letter-spacing:.02em; text-transform:uppercase;
+  color:#F7F5EF; text-decoration:none;
+  background:rgba(9,11,7,.25);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  transition:background .2s ease, border-color .2s ease;
+}
+.hero-parking-link:hover{ background:rgba(9,11,7,.45); border-color:var(--teal); }
 
 /* ---- readout strip ---- */
 .readout{ background:var(--ink-deep); }
