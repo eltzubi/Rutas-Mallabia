@@ -432,6 +432,8 @@ ZENARRUZA = {
         'alt="Ilargi betea adarren artean, Trabakuara itzultzean zirkuitua ixtean"',
     'alt="Vistas desde la zona alta de la ruta, cerca del Oiz (foto de otro d&iacute;a)"':
         'alt="Bistak ibilbidearen goiko aldetik, Oizetik gertu (beste egun bateko argazkia)"',
+    'alt="Bicicleta junto a un aerogenerador entre la niebla, cerca de Zengotitagane, km 27,7"':
+        'alt="Bizikleta haizezurrutari lotuta lainoetan, Zengotitaganetik gertu, 27,7 km"',
     'Sale de Trabakua hacia el norte y, subiendo y bajando por los altos entre Mallabia y '
     'Ziortza-Bolibar, pierde altura de golpe en el &uacute;ltimo tramo hasta el <b>Monasterio de '
     'Zenarruza</b> (km 9,4 &middot; 287 m) &mdash;colegiata cisterciense fundada en el siglo XI, la '
