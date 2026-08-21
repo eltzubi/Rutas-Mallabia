@@ -123,8 +123,12 @@ HOME = {
     '>Senderismo</button>': '>Oinez</button>',
     'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':
         'data-no-limit="(mugarik gabe)" data-approx="inguru"',
-    'Distancia hasta': 'Distantzia gehienez',
-    'Desnivel hasta': 'Desnibela gehienez',
+    'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
+    'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
+    'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
+    'aria-label="Desnivel m&aacute;ximo"': 'aria-label="Gehieneko desnibela"',
+    '<label>Distancia <b': '<label>Distantzia <b',
+    '<label>Desnivel <b': '<label>Desnibela <b',
     'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
     'Según vayamos documentando más rutas, se añaden aquí.':
         'Ibilbide gehiago dokumentatu ahala, hemen gehituko dira.',

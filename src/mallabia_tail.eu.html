@@ -78,12 +78,20 @@
     </div>
     <div class="range-filters" data-no-limit="(mugarik gabe)" data-approx="inguru">
       <div class="range-filter">
-        <label for="distanceRange">Distantzia gehienez <b id="distanceVal">&mdash;</b></label>
-        <input type="range" id="distanceRange" min="0" max="0" step="0.5" value="0">
+        <label>Distantzia <b id="distanceVal">&mdash;</b></label>
+        <div class="dual-range">
+          <div class="dual-range-track"><div class="dual-range-fill" id="distanceFill"></div></div>
+          <input type="range" class="range-min" id="distanceRangeMin" min="0" max="0" step="0.5" value="0" aria-label="Gutxieneko distantzia">
+          <input type="range" class="range-max" id="distanceRangeMax" min="0" max="0" step="0.5" value="0" aria-label="Gehieneko distantzia">
+        </div>
       </div>
       <div class="range-filter">
-        <label for="desnivelRange">Desnibela gehienez <b id="desnivelVal">&mdash;</b></label>
-        <input type="range" id="desnivelRange" min="0" max="0" step="25" value="0">
+        <label>Desnibela <b id="desnivelVal">&mdash;</b></label>
+        <div class="dual-range">
+          <div class="dual-range-track"><div class="dual-range-fill" id="desnivelFill"></div></div>
+          <input type="range" class="range-min" id="desnivelRangeMin" min="0" max="0" step="25" value="0" aria-label="Gutxieneko desnibela">
+          <input type="range" class="range-max" id="desnivelRangeMax" min="0" max="0" step="25" value="0" aria-label="Gehieneko desnibela">
+        </div>
       </div>
     </div>
 
