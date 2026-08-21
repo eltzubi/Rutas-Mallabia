@@ -531,8 +531,9 @@ OSMA = {
         'jaisteko &mdash;desnibela galdu nahi ez duenak pista nagusitik jarrai dezake, puntu berera '
         'iristen dena jaitsi gabe. Presaren ondoren, Elgetarantz igotzen hasita, '
         '<b>Larrosako Iturri</b> dago (11,9 km &middot; 355 m), ur-puntua ibilbidearen erdian.',
-    'Desde ah&iacute; sigue subiendo hasta Elgeta, ya en el Duranguesado, y contin&uacute;a en llano '
-    'por un tramo recto '
+    'Desde ah&iacute; sigue subiendo hasta Elgeta, ya en el Duranguesado, y contin&uacute;a entre '
+    'curvas '
+    'por un tramo '
     'de asfalto hasta el cruce de bajada hacia Elorrio, por el barrio Aldape, antes de bajar de golpe '
     '(km 18,8 &middot; '
     '286 m). Kil&oacute;metro y medio '
@@ -543,8 +544,9 @@ OSMA = {
     'Cultural desde 1931. Las tumbas, repartidas originalmente por distintos barrios de Elorrio, se '
     'agruparon aqu&iacute; en el siglo XIX por orden del p&aacute;rroco Retolaza. Hay tambi&eacute;n '
     'una fuente junto a la necr&oacute;polis para llenar cantimploras.':
-        'Handik Elgetaraino igotzen jarraitzen du, jada Durangaldean, eta laura jarraitzen du '
-        'asfaltozko tarte zuzen batetik '
+        'Handik Elgetaraino igotzen jarraitzen du, jada Durangaldean, eta bihurguneen artean '
+        'jarraitzen du '
+        'asfaltozko tarte batetik '
         'Elorriorantz jaisteko bidegurutzeraino, Aldape auzotik, bat-batean jaitsi aurretik (18,8 km '
         '&middot; 286 m). Kilometro eta '
         'erdi geroago ipar-mendebalderantz biratzen du <b>Argi&ntilde;etako Nekropoliraino</b> (20,1 km '
