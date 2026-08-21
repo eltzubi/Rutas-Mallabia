@@ -916,17 +916,14 @@ URKO = {
         'alt="Lainoak harana betetzen gailurren artean, hegazkinen aztarnekin zeruan"',
     'alt="Amanecer entre estelas de aviones, con el mar de nubes cubriendo el valle"':
         'alt="Egunsentia hegazkinen aztarnen artean, hodei-itsasoak harana estaltzen duela"',
-    'Salimos de Trabakua desde una explanada junto a la carretera hacia Mallabia, al '
-    'inicio de una pista forestal. El primer kil&oacute;metro sube fuerte por pista '
-    'cementada; despu&eacute;s la pendiente se suaviza, hasta dejar la pista para coger '
-    'un atajo empinado y con bastante vegetaci&oacute;n, camino de <b>Arandomendi</b> '
-    '(km 6,4 &middot; 686 m), con el valle cubierto de niebla en las ma&ntilde;anas de '
-    'oto&ntilde;o.':
-        'Trabakuatik atera eta Mallabiarako errepidearen ondoko esplanada batetik '
-        'abiatzen gara, baso-pista baten hasieran. Lehen kilometroak gogor egiten du gora zementuzko '
-        'pistatik; ondoren malda leunagoa da, pista utzi arte bide labur eta landaredi '
-        'ugariko atajo bat hartzeko, <b>Arandomendi</b>rantz (6,4 km &middot; 686 m), '
-        'harana lainoz estalita udazkeneko goizetan.',
+    'Salimos de Trabakua y el camino ondula entre subidas y bajadas suaves, con un '
+    'peque&ntilde;o descenso pasado el primer kil&oacute;metro, antes de empezar a subir '
+    'en serio hacia <b>Arandomendi</b> (km 6,4 &middot; 686 m), con el valle cubierto de '
+    'niebla en las ma&ntilde;anas de oto&ntilde;o.':
+        'Trabakuatik atera eta bidea igoera eta jaitsiera leunen artean uhinka doa, '
+        'lehen kilometroa pasata jaitsiera txiki batekin, <b>Arandomendi</b>rantz '
+        '(6,4 km &middot; 686 m) benetan igotzen hasi aurretik, harana lainoz estalita '
+        'udazkeneko goizetan.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
     '785 m), con su v&eacute;rtice geod&eacute;sico y vistas al mar de nubes y a las '
     'monta&ntilde;as del entorno. Es el punto m&aacute;s alto de los municipios de Ermua '
