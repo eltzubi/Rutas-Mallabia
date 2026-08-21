@@ -126,6 +126,8 @@ HOME = {
         '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
     '<span class="signpost-name">Osmagain y Arietzu</span>':
         '<span class="signpost-name">Osmagain eta Arietzu</span>',
+    '<span class="signpost-name">Arandomendi, Urko y Collado de Asuntza</span>':
+        '<span class="signpost-name">Arandomendi, Urko eta Asuntzako lepoa</span>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
     'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
@@ -200,7 +202,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma y Zengotitagane':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma eta Zengotitagane',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz y Arietzu': 'Oinez &middot; Iturzuri, Gerea, Oiz eta Arietzu',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu y Urko':
+        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu eta Urko',
     'Toca una ruta en el mapa para abrir su p&aacute;gina.':
         'Sakatu ibilbide bat mapan, bere orria irekitzeko.',
 
@@ -262,6 +265,18 @@ HOME = {
     'piedra en cada uno. Grabada sobre el terreno, no propuesta desde un mapa.':
         'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko '
         'gurutze batekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+
+    # urko card
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con un mar de nubes y las '
+    'monta&ntilde;as del entorno al fondo"':
+        'alt="Urkoko gailurreko bertize geodesikoa, hodei-itsasoarekin eta inguruko '
+        'mendiak atzealdean"',
+    '<h2>Trabakua<br><em>Urko</em></h2>': '<h2>Trabakua<br><em>Urko</em></h2>',
+    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza, con mar de '
+    'nubes en las ma&ntilde;anas de oto&ntilde;o. Grabada sobre el terreno, no propuesta '
+    'desde un mapa.':
+        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik, hodei-itsasoarekin '
+        'udazkeneko goizetan. Bertatik bertara grabatua, ez mapa batetik proposatua.',
 }
 
 TRABAKUA = {
@@ -861,6 +876,54 @@ ARIETZU = {
     '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
 }
 
+URKO = {
+    'alt="Foto ampliada del recorrido de Trabakua-Urko"':
+        'alt="Trabakua-Urko ibilbidearen argazki handitua"',
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con un mar de nubes y las '
+    'monta&ntilde;as del entorno al fondo"':
+        'alt="Urkoko gailurreko bertize geodesikoa, hodei-itsasoarekin eta inguruko '
+        'mendiak atzealdean"',
+    '<span>Sendero</span><span class="sep">/</span><span>Arandomendi, Urko y Collado de Asuntza</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Arandomendi, Urko eta '
+        'Asuntzako lepoa</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    'Circuito desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza':
+        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
+    '<span class="num">3</span>Collado de Asuntza': '<span class="num">3</span>Asuntzako lepoa',
+    'alt="Mar de nubes en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
+        'alt="Hodei-itsasoa haranean, pagadia udazkeneko koloreetan aurrean"',
+    'alt="Niebla llenando el valle entre las crestas, con estelas de aviones en el cielo"':
+        'alt="Lainoak harana betetzen gailurren artean, hegazkinen aztarnekin zeruan"',
+    'alt="Amanecer entre estelas de aviones, con el mar de nubes cubriendo el valle"':
+        'alt="Egunsentia hegazkinen aztarnen artean, hodei-itsasoak harana estaltzen duela"',
+    'Salimos de Trabakua y subimos por el hayedo hasta coronar <b>Arandomendi</b> (km 6,4 '
+    '&middot; 686 m), con el valle cubierto de niebla en las ma&ntilde;anas de oto&ntilde;o.':
+        'Trabakuatik atera eta pagadian gora igotzen gara <b>Arandomendi</b> gailurreraino '
+        '(6,4 km &middot; 686 m), harana lainoz estalita udazkeneko goizetan.',
+    'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
+    '785 m), con su v&eacute;rtice geod&eacute;sico y vistas al mar de nubes y a las '
+    'monta&ntilde;as del entorno.':
+        'Handik gutxira ibilbideko punturik altuenera iristen gara, <b>Urko</b>ra (8 km, '
+        '785 m), bere bertize geodesikoarekin eta hodei-itsasorako zein inguruko '
+        'mendietarako ikuspegiekin.',
+    'Bajamos hasta el <b>Collado de Asuntza</b> (km 10,8 &middot; 490 m) y volvemos a '
+    'Trabakua entre subidas y bajadas suaves, cerrando el c&iacute;rculo.':
+        '<b>Asuntzako lepora</b> jaisten gara (10,8 km &middot; 490 m) eta Trabakuara '
+        'itzultzen gara igoera eta jaitsiera leunen artean, zirkulua itxiz.',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
+    'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
+    'esta ficha se grab&oacute; corriendo, una ma&ntilde;ana de noviembre con mar de nubes '
+    'en el valle (2h 25min), as&iacute; que el tiempo no sirve de referencia si vas '
+    'andando.':
+        '15,3 km eta +873 m-ko desnibela zirkuitu batean, bidean bi goirekin (Arandomendi '
+        'eta Asuntzako lepoa) Urko gailurra (785 m) egin aurretik eta ondoren. Fitxa '
+        'honetako tracka lasterka grabatu zen, azaroko goiz batean haranean '
+        'hodei-itsasoarekin (2h 25min), beraz denbora ez da erreferentzia egokia oinez '
+        'bazoaz.',
+}
+
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
     'mallabia': 'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
@@ -873,6 +936,7 @@ DESCRIPTIONS = {
     'zengotitagane': 'Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
     'oiz': 'Joan-etorria Trabakuatik Oizeraino',
     'arietzu': 'Zirkuitua San Juan ermitatik',
+    'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
 }
 
 # <title> per page (head files)
@@ -886,6 +950,7 @@ TITLES = {
     'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
+    'urko': 'Trabakua-Urko · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 PAGE_STRINGS = {
@@ -898,4 +963,5 @@ PAGE_STRINGS = {
     'zengotitagane': ZENGOTITAGANE,
     'oiz': OIZ,
     'arietzu': ARIETZU,
+    'urko': URKO,
 }

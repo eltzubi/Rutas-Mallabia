@@ -91,4 +91,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/arietzu.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/arietzu.eu.html"/>
   </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/urko.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/urko.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/urko.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/urko.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/urko.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/urko.eu.html"/>
+  </url>
 </urlset>
