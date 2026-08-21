@@ -271,7 +271,8 @@ HOME = {
     'monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, hodei baxuekin eta inguruko '
         'mendiak atzealdean"',
-    '<h2>Trabakua<br><em>Urko</em></h2>': '<h2>Trabakua<br><em>Urko</em></h2>',
+    '<h2>Trabakua, Asuntza<br><em>y Urko</em></h2>':
+        '<h2>Trabakua, Asuntza<br><em>eta Urko</em></h2>',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza. Grabada '
     'sobre el terreno, no propuesta desde un mapa.':
         'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik. Bertatik bertara '
@@ -893,8 +894,10 @@ ARIETZU = {
 }
 
 URKO = {
-    'alt="Foto ampliada del recorrido de Trabakua-Urko"':
-        'alt="Trabakua-Urko ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Trabakua, Asuntza y Urko"':
+        'alt="Trabakua, Asuntza eta Urko ibilbidearen argazki handitua"',
+    '<h1>Trabakua, Asuntza<br><em>y Urko</em></h1>':
+        '<h1>Trabakua, Asuntza<br><em>eta Urko</em></h1>',
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las '
     'monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, hodei baxuekin eta inguruko '
@@ -988,7 +991,7 @@ TITLES = {
     'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
-    'urko': 'Trabakua-Urko · Oinezko ibilbidea — Herriko ibilbideak',
+    'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 PAGE_STRINGS = {
