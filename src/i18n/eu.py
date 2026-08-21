@@ -204,8 +204,8 @@ HOME = {
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane eta San Kristobal',
     'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu y Urko':
         'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu eta Urko',
-    'Toca una ruta en el mapa para abrir su p&aacute;gina.':
-        'Sakatu ibilbide bat mapan, bere orria irekitzeko.',
+    'Toca una ruta en el mapa para ver su informaci&oacute;n.':
+        'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':

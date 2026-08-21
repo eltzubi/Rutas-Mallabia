@@ -41,6 +41,29 @@
     function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); }
   );
 
+  // Compass direction the route heads out into: bearing from the start
+  // point to the point farthest from it (a loop's own "endpoint" isn't
+  // meaningful, but its farthest reach is).
+  var COMPASS = isEu ?
+    ['Ipar', 'Ipar-ekialde', 'Ekialde', 'Hego-ekialde', 'Hego', 'Hego-mendebalde', 'Mendebalde', 'Ipar-mendebalde'] :
+    ['Norte', 'Noreste', 'Este', 'Sureste', 'Sur', 'Suroeste', 'Oeste', 'Noroeste'];
+  function bearing(a, b) {
+    var p1 = a[0] * Math.PI / 180, p2 = b[0] * Math.PI / 180;
+    var dl = (b[1] - a[1]) * Math.PI / 180;
+    var y = Math.sin(dl) * Math.cos(p2);
+    var x = Math.cos(p1) * Math.sin(p2) - Math.sin(p1) * Math.cos(p2) * Math.cos(dl);
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  }
+  function directionLabel(points) {
+    var start = points[0], far = start, maxD = -1;
+    points.forEach(function(pt) {
+      var d = Math.pow(pt[0] - start[0], 2) + Math.pow(pt[1] - start[1], 2);
+      if (d > maxD) { maxD = d; far = pt; }
+    });
+    var deg = bearing(start, far);
+    return COMPASS[Math.round(deg / 45) % 8];
+  }
+
   fetch(el.dataset.mapSrc).then(function(r){ return r.json(); }).then(function(data){
     var map = L.map(el, {
       zoomControl: true,
@@ -65,7 +88,30 @@
 
       if (t.href) {
         var href = isEu ? t.href.replace(/\.html$/, '.eu.html') : t.href;
-        line.on('click', function(){ window.location.href = href; });
+        var sign = document.querySelector('.signpost-sign[href="' + t.href + '"]');
+        var name = sign ? sign.querySelector('.signpost-name').textContent.trim() : t.href;
+        var distanceKm = sign ? sign.dataset.distanceKm : null;
+        var desnivelM = sign ? sign.dataset.desnivelM : null;
+        var activity = sign ? sign.dataset.activity : null;
+        var activityLabel = activity === 'bici' ? (isEu ? 'Bizikleta' : 'Bici')
+          : activity === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : null;
+        var distLabel = isEu ? 'Distantzia' : 'Distancia';
+        var descLabel = isEu ? 'Desnibela' : 'Desnivel';
+        var actLabel = isEu ? 'Jarduera' : 'Actividad';
+        var dirLabel = isEu ? 'Norabide orokorra' : 'Dirección general';
+        var seeLabel = isEu ? 'Ikusi ibilbide osoa' : 'Ver ruta completa';
+        var facts = '';
+        if (distanceKm) facts += '<span>' + distLabel + ': <b>' +
+          distanceKm.replace('.', ',') + ' km</b></span>';
+        if (desnivelM) facts += '<span>' + descLabel + ': <b>+' +
+          desnivelM.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' m</b></span>';
+        if (activityLabel) facts += '<span>' + actLabel + ': <b>' + activityLabel + '</b></span>';
+        var html = '<div class="route-popup"><h3>' + name + '</h3>' +
+          '<div class="route-popup-facts">' + facts + '</div>' +
+          '<div class="route-popup-dir">' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></div>' +
+          '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
+        line.bindPopup(html);
+        line.on('click', function(e){ line.openPopup(e.latlng); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
         line.on('mouseout', function(){ line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
