@@ -847,11 +847,12 @@ ARIETZU = {
         'Gailurrerdiak <b>Arietzu</b>raino jarraitzen du (2,2 km, 479 m), harrizko beste '
         'gurutze bat pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
-    '4,3 km y +235 m de desnivel en un circuito corto, con dos altos de camino (Osmagain y '
-    'Arietzu). El track de esta ficha se grab&oacute; corriendo (34 min), as&iacute; que el '
-    'tiempo no sirve de referencia si vas andando.':
-        '4,3 km eta +235 m-ko desnibela zirkuitu laburrean, bidean bi goirekin (Osmagain '
-        'eta Arietzu). Fitxa honetako tracka lasterka grabatu zen (34 min), beraz denbora '
+    '4,3 km y +235 m de desnivel en un circuito corto, apta para ni&ntilde;os, con dos altos '
+    'de camino (Osmagain y Arietzu). El track de esta ficha se grab&oacute; corriendo '
+    '(34 min), as&iacute; que el tiempo no sirve de referencia si vas andando.':
+        '4,3 km eta +235 m-ko desnibela zirkuitu laburrean, haurrentzat egokia, bidean bi '
+        'goirekin (Osmagain eta Arietzu). Fitxa honetako tracka lasterka grabatu zen '
+        '(34 min), beraz denbora '
         'ez da erreferentzia egokia oinez bazoaz.',
     '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
 }
