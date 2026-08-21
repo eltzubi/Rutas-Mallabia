@@ -242,24 +242,37 @@ body{
   letter-spacing:.03em;
 }
 .range-filter label b{ color:var(--ink); font-weight:600; }
-.range-filter input[type="range"]{
-  -webkit-appearance:none; appearance:none;
-  width:100%; height:4px; border-radius:2px;
-  background:var(--line); outline:none; cursor:pointer;
+.dual-range{ position:relative; height:18px; }
+.dual-range-track{
+  position:absolute; top:50%; left:0; right:0; height:4px;
+  transform:translateY(-50%); border-radius:2px; background:var(--line);
 }
-.range-filter input[type="range"]::-webkit-slider-thumb{
+.dual-range-fill{ position:absolute; top:0; bottom:0; border-radius:2px; background:var(--teal); }
+.dual-range input[type="range"]{
   -webkit-appearance:none; appearance:none;
+  position:absolute; top:0; left:0; margin:0;
+  width:100%; height:18px; background:transparent; outline:none;
+  cursor:pointer; pointer-events:none;
+}
+.dual-range input[type="range"]::-webkit-slider-runnable-track{ background:transparent; }
+.dual-range input[type="range"]::-moz-range-track{ background:transparent; border:none; }
+.dual-range input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none; pointer-events:auto;
   width:18px; height:18px; border-radius:50%;
   background:var(--teal); border:3px solid var(--ground);
   box-shadow:0 0 0 1.5px var(--teal);
   cursor:pointer;
 }
-.range-filter input[type="range"]::-moz-range-thumb{
+.dual-range input[type="range"]::-moz-range-thumb{
+  pointer-events:auto;
   width:18px; height:18px; border-radius:50%;
   background:var(--teal); border:3px solid var(--ground);
   box-shadow:0 0 0 1.5px var(--teal);
   cursor:pointer;
 }
+.dual-range input[type="range"].range-min{ z-index:3; }
+.dual-range input[type="range"].range-max{ z-index:4; }
+.dual-range input[type="range"].range-top{ z-index:5; }
 .activity-chip{
   font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600;
   letter-spacing:.04em; text-transform:uppercase;

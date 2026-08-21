@@ -67,6 +67,9 @@ ROUTE = {
     'Circuito &mdash; vuelve casi al mismo punto': 'Zirkuitua &mdash; ia puntu berera itzultzen da',
     'data-marker-title="Trabakua (salida y llegada)"':
         'data-marker-title="Trabakua (irteera eta helmuga)"',
+    'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
+    'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
+    'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
 }
 
 HOME = {
@@ -123,8 +126,12 @@ HOME = {
     '>Senderismo</button>': '>Oinez</button>',
     'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':
         'data-no-limit="(mugarik gabe)" data-approx="inguru"',
-    'Distancia hasta': 'Distantzia gehienez',
-    'Desnivel hasta': 'Desnibela gehienez',
+    'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
+    'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
+    'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
+    'aria-label="Desnivel m&aacute;ximo"': 'aria-label="Gehieneko desnibela"',
+    '<label>Distancia <b': '<label>Distantzia <b',
+    '<label>Desnivel <b': '<label>Desnibela <b',
     'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
     'Según vayamos documentando más rutas, se añaden aquí.':
         'Ibilbide gehiago dokumentatu ahala, hemen gehituko dira.',
