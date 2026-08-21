@@ -112,6 +112,18 @@ HOME = {
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'aria-label="Rutas desde Trabakua"': 'aria-label="Trabakuatik abiatzen diren ibilbideak"',
+    '<span class="signpost-name">Iturzuri, Zengotitagane subida por la cascada de Gerea</span>':
+        '<span class="signpost-name">Iturzuri, Zengotitagane Gereako ur-jauzitik gora</span>',
+    '<span class="signpost-name">Zenarruza, San Kristobal y Zengotitagane</span>':
+        '<span class="signpost-name">Zenarruza, San Kristobal eta Zengotitagane</span>',
+    '<span class="signpost-name">Ur Jauziak Gerea</span>':
+        '<span class="signpost-name">Ur Jauziak Gerea</span>',
+    '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
+        '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
+    '<span class="signpost-name">Zengotitagane, Axmakur y Oiz</span>':
+        '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
+    '<span class="signpost-name">Osmagain y Arietzu</span>':
+        '<span class="signpost-name">Osmagain eta Arietzu</span>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
     'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
