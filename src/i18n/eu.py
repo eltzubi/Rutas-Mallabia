@@ -769,10 +769,11 @@ OIZ = {
         'aerosorgailuen artean ateratzen dena goian. Handik aurrera, Oizerantz, malda '
         'asko leuntzen da eta oso eramangarria bihurtzen da.',
     'Continuamos por la cresta, con unas vistas preciosas a ambos lados, hasta meternos en '
-    'el hayedo que nos lleva a la fuente de Iturzuri y, tras cruzarlo, a un refugio.':
+    'el hayedo que nos lleva a la fuente de Iturzuri; tras cruzarlo, se ve un refugio a un '
+    'lado, aunque no pasamos por &eacute;l.':
         'Gailur-bizkarretik jarraitzen dugu, bi aldeetara ikuspegi ederrekin, pagadira sartu '
-        'arte, Iturzuriko iturrira eramaten gaituena eta, hura zeharkatu ondoren, aterpe '
-        'batera.',
+        'arte, Iturzuriko iturrira eramaten gaituena; hura zeharkatu ondoren, aterpe bat '
+        'ikusten da alboan, nahiz eta ez garen bertatik pasatzen.',
     '<b>Axmakur</b> (km 4, 888 m) viene justo despu&eacute;s de la fuente, un repecho de la '
     'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
         '<b>Axmakur</b> (4 km, 888 m) iturriaren ondoren dator, Oiz bertarekin lotutako '
