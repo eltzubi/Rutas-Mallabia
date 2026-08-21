@@ -270,6 +270,12 @@ body{
   box-shadow:0 0 0 1.5px var(--teal);
   cursor:pointer;
 }
+.dual-range input[type="range"]:focus-visible::-webkit-slider-thumb{
+  box-shadow:0 0 0 1.5px var(--teal), 0 0 0 4px var(--ground), 0 0 0 6px var(--teal);
+}
+.dual-range input[type="range"]:focus-visible::-moz-range-thumb{
+  box-shadow:0 0 0 1.5px var(--teal), 0 0 0 4px var(--ground), 0 0 0 6px var(--teal);
+}
 .dual-range input[type="range"].range-min{ z-index:3; }
 .dual-range input[type="range"].range-max{ z-index:4; }
 .dual-range input[type="range"].range-top{ z-index:5; }

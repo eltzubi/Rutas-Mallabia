@@ -7,14 +7,31 @@
   var boxImg = document.getElementById('lightboxImg');
   var close = document.getElementById('lightboxClose');
   var lastTrigger = null;
-  function open(src, trigger){ boxImg.src = src; lastTrigger = trigger; box.classList.add('open'); close.focus(); }
-  function shut(){ box.classList.remove('open'); boxImg.src=''; if(lastTrigger) lastTrigger.focus(); }
+  function open(src, trigger){
+    boxImg.src = src;
+    lastTrigger = trigger;
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+  function shut(){
+    box.classList.remove('open');
+    boxImg.src='';
+    document.body.style.overflow = '';
+    if(lastTrigger) lastTrigger.focus();
+  }
   document.querySelectorAll('[data-lightbox-src]').forEach(function(el){
     el.addEventListener('click', function(){ open(el.dataset.lightboxSrc, el); });
   });
   close.addEventListener('click', shut);
   box.addEventListener('click', function(e){ if(e.target === box) shut(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) shut(); });
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') { shut(); return; }
+    // The close button is the only focusable control inside the dialog, so
+    // trapping focus just means Tab/Shift+Tab always lands back on it.
+    if (e.key === 'Tab') { e.preventDefault(); close.focus(); }
+  });
 })();
 
 // --- back-to-top button ---

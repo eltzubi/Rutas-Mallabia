@@ -121,8 +121,31 @@ def main():
         # ---- head ----
         with open(os.path.join(SRC, f"{page}_head.html"), encoding="utf-8") as f:
             head = f.read()
+        if page not in eu.DESCRIPTIONS:
+            raise SystemExit(f"\n{page}: missing eu.DESCRIPTIONS entry for the meta description.")
+        es_title_match = re.search(r"<title>(.*?)</title>", head)
+        es_title = es_title_match.group(1)
+        es_desc_match = re.search(r'<meta name="description" content="(.*?)">', head)
+        es_desc = es_desc_match.group(1)
+        eu_title = eu.TITLES[page]
+        eu_desc = eu.DESCRIPTIONS[page]
+
         head = head.replace('<html lang="es">', '<html lang="eu">')
-        head = re.sub(r"<title>.*?</title>", f"<title>{eu.TITLES[page]}</title>", head)
+        head = head.replace(f"<title>{es_title}</title>", f"<title>{eu_title}</title>")
+        head = head.replace(
+            f'<meta name="description" content="{es_desc}">',
+            f'<meta name="description" content="{eu_desc}">',
+        )
+        head = head.replace(f'<meta property="og:title" content="{es_title}">',
+                             f'<meta property="og:title" content="{eu_title}">')
+        head = head.replace(f'<meta property="og:description" content="{es_desc}">',
+                             f'<meta property="og:description" content="{eu_desc}">')
+        head = head.replace('<meta property="og:locale" content="es_ES">',
+                             '<meta property="og:locale" content="eu_ES">')
+        for es_file, eu_file in EU_OF.items():
+            head = head.replace(f'"https://eltzubi.github.io/Rutas-Mallabia/{es_file}"',
+                                 f'"https://eltzubi.github.io/Rutas-Mallabia/{eu_file}"')
+
         with open(os.path.join(SRC, f"{page}_head.eu.html"), "w", encoding="utf-8") as f:
             f.write(head)
         print(f"wrote {page}_head.eu.html")
