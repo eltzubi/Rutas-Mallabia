@@ -112,6 +112,18 @@ HOME = {
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'aria-label="Rutas desde Trabakua"': 'aria-label="Trabakuatik abiatzen diren ibilbideak"',
+    '<span class="signpost-name">Iturzuri, Zengotitagane subida por la cascada de Gerea</span>':
+        '<span class="signpost-name">Iturzuri, Zengotitagane Gereako ur-jauzitik gora</span>',
+    '<span class="signpost-name">Zenarruza, San Kristobal y Zengotitagane</span>':
+        '<span class="signpost-name">Zenarruza, San Kristobal eta Zengotitagane</span>',
+    '<span class="signpost-name">Ur Jauziak Gerea</span>':
+        '<span class="signpost-name">Ur Jauziak Gerea</span>',
+    '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
+        '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
+    '<span class="signpost-name">Zengotitagane, Axmakur y Oiz</span>':
+        '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
+    '<span class="signpost-name">Osmagain y Arietzu</span>':
+        '<span class="signpost-name">Osmagain eta Arietzu</span>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
     'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
@@ -830,6 +842,20 @@ ARIETZU = {
         'eta Arietzu). Fitxa honetako tracka lasterka grabatu zen (34 min), beraz denbora '
         'ez da erreferentzia egokia oinez bazoaz.',
     '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
+}
+
+# <meta name="description"> per page (head files)
+DESCRIPTIONS = {
+    'mallabia': 'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
+        'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
+    'trabakua': 'Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik',
+    'iturrizuri': 'Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
+    'zenarruza': 'Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik',
+    'osma': 'Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
+    'gerea': 'Zirkuitua Trabakuatik Gereako ur-jauzira',
+    'zengotitagane': 'Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
+    'oiz': 'Joan-etorria Trabakuatik Oizeraino',
+    'arietzu': 'Zirkuitua San Juan ermitatik',
 }
 
 # <title> per page (head files)
