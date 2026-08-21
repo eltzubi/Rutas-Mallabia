@@ -91,8 +91,6 @@ HOME = {
     'Documentadas sobre el terreno, con datos de verdad, no de folleto.':
         'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
-    '&iquest;D&oacute;nde aparco? <span aria-hidden="true">&darr;</span></a>':
-        'Non aparkatu? <span aria-hidden="true">&darr;</span></a>',
 
     # readout
     '<span class="k">Recorrido documentado</span>': '<span class="k">Dokumentatutako ibilbidea</span>',
@@ -269,16 +267,15 @@ HOME = {
         'gurutze batekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
 
     # urko card
-    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con un mar de nubes y las '
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las '
     'monta&ntilde;as del entorno al fondo"':
-        'alt="Urkoko gailurreko bertize geodesikoa, hodei-itsasoarekin eta inguruko '
+        'alt="Urkoko gailurreko bertize geodesikoa, hodei baxuekin eta inguruko '
         'mendiak atzealdean"',
     '<h2>Trabakua<br><em>Urko</em></h2>': '<h2>Trabakua<br><em>Urko</em></h2>',
-    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza, con mar de '
-    'nubes en las ma&ntilde;anas de oto&ntilde;o. Grabada sobre el terreno, no propuesta '
-    'desde un mapa.':
-        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik, hodei-itsasoarekin '
-        'udazkeneko goizetan. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza. Grabada '
+    'sobre el terreno, no propuesta desde un mapa.':
+        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik. Bertatik bertara '
+        'grabatua, ez mapa batetik proposatua.',
 }
 
 TRABAKUA = {
@@ -898,9 +895,9 @@ ARIETZU = {
 URKO = {
     'alt="Foto ampliada del recorrido de Trabakua-Urko"':
         'alt="Trabakua-Urko ibilbidearen argazki handitua"',
-    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con un mar de nubes y las '
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las '
     'monta&ntilde;as del entorno al fondo"':
-        'alt="Urkoko gailurreko bertize geodesikoa, hodei-itsasoarekin eta inguruko '
+        'alt="Urkoko gailurreko bertize geodesikoa, hodei baxuekin eta inguruko '
         'mendiak atzealdean"',
     '<span>Sendero</span><span class="sep">/</span><span>Arandomendi, Urko y Collado de Asuntza</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Arandomendi, Urko eta '
@@ -910,26 +907,22 @@ URKO = {
         'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
     '<span class="num">3</span>Collado de Asuntza': '<span class="num">3</span>Asuntzako lepoa',
-    'alt="Mar de nubes en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
-        'alt="Hodei-itsasoa haranean, pagadia udazkeneko koloreetan aurrean"',
+    'alt="Nubes bajas en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
+        'alt="Hodei baxuak haranean, pagadia udazkeneko koloreetan aurrean"',
     'alt="Niebla llenando el valle entre las crestas, con estelas de aviones en el cielo"':
         'alt="Lainoak harana betetzen gailurren artean, hegazkinen aztarnekin zeruan"',
-    'alt="Amanecer entre estelas de aviones, con el mar de nubes cubriendo el valle"':
-        'alt="Egunsentia hegazkinen aztarnen artean, hodei-itsasoak harana estaltzen duela"',
+    'alt="Amanecer entre estelas de aviones, con nubes bajas cubriendo el valle"':
+        'alt="Egunsentia hegazkinen aztarnen artean, hodei baxuek harana estaltzen dutela"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
     'atr&aacute;s: desde ah&iacute;, todo es pista en solitario, alternando cemento y '
-    'tramos de piedra. El primer repecho es el m&aacute;s duro de toda la ruta &mdash;se '
-    'sube de un tir&oacute;n y se nota en las piernas&mdash;, pero no enga&ntilde;a: no '
-    'llega a los 300 m. Lo que viene despu&eacute;s se lleva mejor, y el camino ondula '
+    'tramos de piedra. Lo que viene despu&eacute;s se lleva mejor, y el camino ondula '
     'entre subidas y bajadas suaves, hasta llegar a Asuntza.':
         'Trabakuako mendatetik ateratzen gara. Lehen zatia beherantz doa &mdash;kilometro '
         'bat inguru&mdash; ezkerrerako bidegurutze batera iritsi arte; puntu horretan '
         'uzten da asfaltua, eta hemendik aurrera pista hutsa da, zementu eta harrizko '
-        'tarteak txandakatuz. Lehen aldapa da ibilbideko gogorrena: etenik gabe igotzen '
-        'da eta hanketan nabaritzen da, baina laburra da &mdash;300 metrora ere ez da '
-        'iristen. Ondorengoa askoz eramangarriagoa da, eta bidea igoera eta jaitsiera '
-        'leunen artean uhinka doa, Asuntzara iritsi arte.',
+        'tarteak txandakatuz. Ondorengoa eramangarriagoa da, eta bidea igoera eta '
+        'jaitsiera leunen artean uhinka doa, Asuntzara iritsi arte.',
     'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), donde la '
     'pendiente da un respiro durante el siguiente kil&oacute;metro, antes de atacar la '
     'cuesta final hacia la cumbre del Urko.':
@@ -937,13 +930,13 @@ URKO = {
         'maldak arnasa hartzeko tartea ematen duen hurrengo kilometroan zehar, Urkoko '
         'gailurrerako azken aldapari heldu aurretik.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
-    '785 m), con su v&eacute;rtice geod&eacute;sico y vistas al mar de nubes y a las '
-    'monta&ntilde;as del entorno. Es el punto m&aacute;s alto de los municipios de Ermua '
-    'y Eibar, y su cumbre marca la frontera entre Bizkaia y Gipuzkoa.':
+    '785 m), con su v&eacute;rtice geod&eacute;sico y vistas a las monta&ntilde;as del '
+    'entorno. Es el punto m&aacute;s alto de los municipios de Ermua y Eibar, y su cumbre '
+    'marca la frontera entre Bizkaia y Gipuzkoa.':
         'Handik gutxira ibilbideko punturik altuenera iristen gara, <b>Urko</b>ra (8 km, '
-        '785 m), bere bertize geodesikoarekin eta hodei-itsasorako zein inguruko '
-        'mendietarako ikuspegiekin. Ermua eta Eibar udalerrien punturik altuena da, eta '
-        'bere gailurrak Bizkaia eta Gipuzkoaren arteko muga markatzen du.',
+        '785 m), bere bertize geodesikoarekin eta inguruko mendietarako ikuspegiekin. '
+        'Ermua eta Eibar udalerrien punturik altuena da, eta bere gailurrak Bizkaia eta '
+        'Gipuzkoaren arteko muga markatzen du.',
     'Bajamos por un bonito tramo de cresta hasta el <b>Collado de Asuntza</b> (km 10,8 '
     '&middot; 490 m), que separa el Urko del monte Mendibil (613 m), y cogemos la misma '
     'pista de la Asuntza, antes de remontar de nuevo hacia Trabakua.':
@@ -953,14 +946,16 @@ URKO = {
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
-    'esta ficha se grab&oacute; corriendo, una ma&ntilde;ana de noviembre con mar de nubes '
-    'en el valle (2h 25min), as&iacute; que el tiempo no sirve de referencia si vas '
-    'andando.':
+    'esta ficha se grab&oacute; corriendo, una ma&ntilde;ana de noviembre (2h 25min), '
+    'as&iacute; que el tiempo no sirve de referencia si vas andando. No hay fuentes en la '
+    'ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de arriba de '
+    'Trabakua, junto a los columpios.':
         '15,3 km eta +873 m-ko desnibela zirkuitu batean, bidean bi goirekin (Arandomendi '
         'eta Asuntzako lepoa) Urko gailurra (785 m) egin aurretik eta ondoren. Fitxa '
-        'honetako tracka lasterka grabatu zen, azaroko goiz batean haranean '
-        'hodei-itsasoarekin (2h 25min), beraz denbora ez da erreferentzia egokia oinez '
-        'bazoaz.',
+        'honetako tracka lasterka grabatu zen, azaroko goiz batean (2h 25min), beraz '
+        'denbora ez da erreferentzia egokia oinez bazoaz. Ez dago iturririk ibilbidean, '
+        'beraz komeni da ura eramatea &mdash;bat dago Trabakuko goiko tabernan, '
+        'kulunkaren ondoan.',
 }
 
 # <meta name="description"> per page (head files)
