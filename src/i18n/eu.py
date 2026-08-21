@@ -915,17 +915,18 @@ URKO = {
         'alt="Egunsentia hegazkinen aztarnen artean, hodei baxuek harana estaltzen dutela"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
-    'atr&aacute;s y empieza una cuesta intensa pero bastante corta; una vez arriba vemos '
-    'las indicaciones para el monte Mendibil, entre otras. Desde ah&iacute;, todo es '
-    'pista en solitario, alternando cemento y tramos de piedra. Lo que viene '
-    'despu&eacute;s se lleva mejor, y el camino ondula entre subidas y bajadas suaves, '
-    'hasta llegar a Asuntza.':
+    'atr&aacute;s y empieza una cuesta que por un momento se pone intensa, pero corta; '
+    'una vez arriba vemos las indicaciones para el monte Mendibil, entre otras. Desde '
+    'ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. Lo '
+    'que viene despu&eacute;s se lleva mejor, y el camino ondula entre subidas y bajadas '
+    'suaves, hasta llegar a Asuntza.':
         'Trabakuako mendatetik ateratzen gara. Lehen zatia beherantz doa &mdash;kilometro '
         'bat inguru&mdash; ezkerrerako bidegurutze batera iritsi arte, non asfaltua '
-        'uzten den eta aldapa bizi baina nahiko labur bat hasten den; goian, Mendibil '
-        'mendirako seinaleak ikusten ditugu, besteak beste. Hortik aurrera, pista hutsa '
-        'da, zementu eta harrizko tarteak txandakatuz. Ondorengoa eramangarriagoa da, '
-        'eta bidea igoera eta jaitsiera leunen artean uhinka doa, Asuntzara iritsi arte.',
+        'uzten den eta aldapa bat hasten den, uneren batean bizi baina laburra; goian, '
+        'Mendibil mendirako seinaleak ikusten ditugu, besteak beste. Hortik aurrera, '
+        'pista hutsa da, zementu eta harrizko tarteak txandakatuz. Ondorengoa '
+        'eramangarriagoa da, eta bidea igoera eta jaitsiera leunen artean uhinka doa, '
+        'Asuntzara iritsi arte.',
     'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), donde la '
     'pendiente da un respiro durante el siguiente kil&oacute;metro, antes de atacar la '
     'cuesta final hacia la cumbre del Urko.':
