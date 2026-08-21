@@ -930,10 +930,12 @@ URKO = {
         'da eta hanketan nabaritzen da, baina laburra da &mdash;300 metrora ere ez da '
         'iristen. Ondorengoa askoz eramangarriagoa da, eta bidea igoera eta jaitsiera '
         'leunen artean uhinka doa, Asuntzara iritsi arte.',
-    'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), con el valle '
-    'cubierto de niebla en las ma&ntilde;anas de oto&ntilde;o.':
-        'Bidean <b>Arandomendi</b> gailurra egiten dugu (6,4 km &middot; 686 m), harana '
-        'lainoz estalita udazkeneko goizetan.',
+    'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), donde la '
+    'pendiente da un respiro durante el siguiente kil&oacute;metro, antes de atacar la '
+    'cuesta final hacia la cumbre del Urko.':
+        'Bidean <b>Arandomendi</b> gailurra egiten dugu (6,4 km &middot; 686 m), non '
+        'maldak arnasa hartzeko tartea ematen duen hurrengo kilometroan zehar, Urkoko '
+        'gailurrerako azken aldapari heldu aurretik.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
     '785 m), con su v&eacute;rtice geod&eacute;sico y vistas al mar de nubes y a las '
     'monta&ntilde;as del entorno. Es el punto m&aacute;s alto de los municipios de Ermua '
