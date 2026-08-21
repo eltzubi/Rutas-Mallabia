@@ -73,8 +73,8 @@ ROUTE = {
 }
 
 HOME = {
-    '<span class="brand-name">Rutas del <em>pueblo</em></span>':
-        '<span class="brand-name">Herriko <em>ibilbideak</em></span>',
+    '<span class="brand-name">Rutas en torno al <em>pueblo</em></span>':
+        '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
     # hero
     'alt="Bicicleta de montaña junto a un poste de señales en el monte, al atardecer, con Mallabia iluminada al fondo"':
