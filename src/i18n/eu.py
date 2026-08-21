@@ -937,14 +937,10 @@ URKO = {
         'bere gailurrak Bizkaia eta Gipuzkoaren arteko muga markatzen du.',
     'Bajamos por un bonito tramo de cresta hasta el <b>Collado de Asuntza</b> (km 10,8 '
     '&middot; 490 m), que separa el Urko del monte Mendibil (613 m), y cogemos la misma '
-    'pista de la Asuntza bira de vuelta a Trabakua: cruzamos Berano Txiki y la parte alta '
-    'de Berano, con vistas hacia el barrio de Goita y las monta&ntilde;as del '
-    'Duranguesado, antes de remontar de nuevo hacia Trabakua.':
+    'pista de la Asuntza, antes de remontar de nuevo hacia Trabakua.':
         'Gailurrerdi eder batetik jaisten gara <b>Asuntzako lepora</b> (10,8 km &middot; '
-        '490 m), Urko eta Mendibil mendia (613 m) bereizten dituena, eta Asuntza biraren '
-        'pista bera hartzen dugu Trabakuara itzultzeko: Berano Txiki eta Beranoko goiko '
-        'partea zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin, '
-        'Trabakuarantz berriro igotzen hasi aurretik.',
+        '490 m), Urko eta Mendibil mendia (613 m) bereizten dituena, eta Asuntzako pista '
+        'bera hartzen dugu, Trabakuarantz berriro igotzen hasi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
