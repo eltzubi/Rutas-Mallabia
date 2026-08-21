@@ -624,20 +624,26 @@ GEREA = {
         'alt="Ur Jauziak abenduan, ura indarrez harrien artetik erortzen"',
     'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
     '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
-    'entre rocas y musgo, con agua casi todo el año —más floja en verano, cuando baja el '
-    'caudal.':
+    'entre rocas y musgo. En invierno el caudal es impresionante; en verano baja mucho y se '
+    'queda con poca agua y mucho musgo —sigue siendo bonita, pero merece más la pena el resto '
+    'del año.':
         'Ibilbide honek Trabakuatik irten eta gora egiten du, tarte batean berde eta zuriz '
         'margotutako marken bidez seinalizatuta. Berrogei bat minutuko igoeraren ondoren, lehen '
         'geldialdia dator: <b>Ur Jauziak</b>, harri eta goroldio artean mailaka jaisten den '
-        'ur-jauzia, urte osoan ia beti urarekin —udan da ahulena, emaria jaisten denean.',
+        'ur-jauzia. Neguan emaria ikaragarria da; udan asko jaisten da eta ur gutxirekin eta '
+        'goroldio askorekin geratzen da —hala ere polita da, baina gainerako urte-sasoietan '
+        'merezi du gehiago.',
     'Los aerogeneradores del parque eólico del Oiz acompañan casi toda la subida a un lado, con '
     'vistas al barrio de Gerea al otro, y de camino se pasa junto a una borda abandonada, de '
     'tejado rojo medio hundido entre la maleza. El camino sigue subiendo hasta el punto más '
-    'alto de la ruta, a 686 m (km 2,95).':
+    'alto de la ruta, a 686 m (km 2,95). La subida coincide en gran parte con el recorrido de '
+    'la 7 Pago Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
         'Oizeko parke eolikoaren aerosorgailuek igoera ia osoan egiten dute konpainia alde '
         'batetik, eta bestetik Gereako auzorako ikuspegiak zabaltzen dira, borda abandonatu '
         'baten ondotik pasatuz —teilatu gorri erdi hondoratua sasien artean. Bideak gora '
-        'jarraitzen du ibilbideko punturik altuenera iritsi arte, 686 metrotara (2,95 km).',
+        'jarraitzen du ibilbideko punturik altuenera iritsi arte, 686 metrotara (2,95 km). '
+        'Igoera honek bat egiten du neurri handi batean 7 Pago Mendi Lasterketaren '
+        'ibilbidearekin, maiatzean ospatzen den mendi lasterketa.',
     'Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde conviene ir '
     'atento a la traza del GPS, antes de cerrar el círculo de vuelta a Trabakua.':
         'Handik jaitsiera hasten da, hainbat bide-gurutze jarraian dituela, GPSaren trazari adi '
@@ -755,15 +761,18 @@ OIZ = {
     'alt="Atardecer rojizo desde el Oiz"':
         'alt="Ilunabar gorrixka Oiztik"',
     'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m) &mdash;una '
-    'subida muy fuerte, aunque corta. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
+    'subida muy fuerte, aunque corta, casi recta, que sale arriba entre el segundo y el '
+    'tercer aerogenerador. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
     'suaviza mucho y se hace muy llevadero.':
         'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m) '
-        '&mdash;igoera oso gogorra, laburra izan arren. Handik aurrera, Oizerantz, malda '
+        '&mdash;igoera oso gogorra, laburra izan arren, ia zuzena, bigarren eta hirugarren '
+        'aerosorgailuen artean ateratzen dena goian. Handik aurrera, Oizerantz, malda '
         'asko leuntzen da eta oso eramangarria bihurtzen da.',
-    'Continuamos por la cresta hasta meternos en el hayedo que nos lleva a la fuente de '
-    'Iturzuri y un refugio.':
-        'Gailur-bizkarretik jarraitzen dugu pagadira sartu arte, Iturzuriko iturrira eta '
-        'aterpe batera eramaten gaituena.',
+    'Continuamos por la cresta, con unas vistas preciosas a ambos lados, hasta meternos en '
+    'el hayedo que nos lleva a la fuente de Iturzuri y, tras cruzarlo, a un refugio.':
+        'Gailur-bizkarretik jarraitzen dugu, bi aldeetara ikuspegi ederrekin, pagadira sartu '
+        'arte, Iturzuriko iturrira eramaten gaituena eta, hura zeharkatu ondoren, aterpe '
+        'batera.',
     '<b>Axmakur</b> (km 4, 888 m) viene justo despu&eacute;s de la fuente, un repecho de la '
     'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
         '<b>Axmakur</b> (4 km, 888 m) iturriaren ondoren dator, Oiz bertarekin lotutako '
