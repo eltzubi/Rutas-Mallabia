@@ -91,6 +91,8 @@ HOME = {
     'Documentadas sobre el terreno, con datos de verdad, no de folleto.':
         'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
+    '&iquest;D&oacute;nde aparco? <span aria-hidden="true">&darr;</span></a>':
+        'Non aparkatu? <span aria-hidden="true">&darr;</span></a>',
 
     # readout
     '<span class="k">Recorrido documentado</span>': '<span class="k">Dokumentatutako ibilbidea</span>',
@@ -860,15 +862,15 @@ DESCRIPTIONS = {
 
 # <title> per page (head files)
 TITLES = {
-    'mallabia': 'Mallabia',
-    'trabakua': 'Trabakua',
-    'iturrizuri': 'Iturzuri · Zengotitagane',
-    'zenarruza': 'Zenarruza · San Kristobal · Zengotitagane',
-    'osma': 'Argiñeta',
-    'gerea': 'Gerea',
-    'zengotitagane': 'Zengotitagane',
-    'oiz': 'Oiz',
-    'arietzu': 'Arietzu',
+    'mallabia': 'Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
+    'trabakua': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
+    'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
+    'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
+    'osma': 'Trabakua, Elgeta eta Argiñeta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'gerea': 'Ur Jauziak, Gerea · Oinezko ibilbidea — Herriko ibilbideak',
+    'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
+    'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 PAGE_STRINGS = {
