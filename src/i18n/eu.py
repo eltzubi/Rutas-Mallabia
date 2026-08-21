@@ -916,14 +916,24 @@ URKO = {
         'alt="Lainoak harana betetzen gailurren artean, hegazkinen aztarnekin zeruan"',
     'alt="Amanecer entre estelas de aviones, con el mar de nubes cubriendo el valle"':
         'alt="Egunsentia hegazkinen aztarnen artean, hodei-itsasoak harana estaltzen duela"',
-    'Salimos de Trabakua y el camino ondula entre subidas y bajadas suaves, con un '
-    'peque&ntilde;o descenso pasado el primer kil&oacute;metro, antes de empezar a subir '
-    'en serio hacia <b>Arandomendi</b> (km 6,4 &middot; 686 m), con el valle cubierto de '
-    'niebla en las ma&ntilde;anas de oto&ntilde;o.':
-        'Trabakuatik atera eta bidea igoera eta jaitsiera leunen artean uhinka doa, '
-        'lehen kilometroa pasata jaitsiera txiki batekin, <b>Arandomendi</b>rantz '
-        '(6,4 km &middot; 686 m) benetan igotzen hasi aurretik, harana lainoz estalita '
-        'udazkeneko goizetan.',
+    'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
+    'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
+    'atr&aacute;s: desde ah&iacute;, todo es pista en solitario, alternando cemento y '
+    'tramos de piedra. El primer repecho es el m&aacute;s duro de toda la ruta &mdash;se '
+    'sube de un tir&oacute;n y se nota en las piernas&mdash;, pero no enga&ntilde;a: no '
+    'llega a los 300 m. Lo que viene despu&eacute;s se lleva mejor, y el camino ondula '
+    'entre subidas y bajadas suaves, hasta llegar a Asuntza.':
+        'Trabakuako mendatetik ateratzen gara. Lehen zatia beherantz doa &mdash;kilometro '
+        'bat inguru&mdash; ezkerrerako bidegurutze batera iritsi arte; puntu horretan '
+        'uzten da asfaltua, eta hemendik aurrera pista hutsa da, zementu eta harrizko '
+        'tarteak txandakatuz. Lehen aldapa da ibilbideko gogorrena: etenik gabe igotzen '
+        'da eta hanketan nabaritzen da, baina laburra da &mdash;300 metrora ere ez da '
+        'iristen. Ondorengoa askoz eramangarriagoa da, eta bidea igoera eta jaitsiera '
+        'leunen artean uhinka doa, Asuntzara iritsi arte.',
+    'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), con el valle '
+    'cubierto de niebla en las ma&ntilde;anas de oto&ntilde;o.':
+        'Bidean <b>Arandomendi</b> gailurra egiten dugu (6,4 km &middot; 686 m), harana '
+        'lainoz estalita udazkeneko goizetan.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
     '785 m), con su v&eacute;rtice geod&eacute;sico y vistas al mar de nubes y a las '
     'monta&ntilde;as del entorno. Es el punto m&aacute;s alto de los municipios de Ermua '
