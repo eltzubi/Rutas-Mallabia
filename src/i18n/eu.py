@@ -67,6 +67,9 @@ ROUTE = {
     'Circuito &mdash; vuelve casi al mismo punto': 'Zirkuitua &mdash; ia puntu berera itzultzen da',
     'data-marker-title="Trabakua (salida y llegada)"':
         'data-marker-title="Trabakua (irteera eta helmuga)"',
+    'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
+    'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
+    'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
 }
 
 HOME = {
