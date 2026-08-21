@@ -120,6 +120,8 @@ HOME = {
         '<span class="signpost-name">Ur Jauziak Gerea</span>',
     '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
         '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
+    '<span class="signpost-name">Zengotitagane, Astako Tontorra y San Crist&oacute;bal</span>':
+        '<span class="signpost-name">Zengotitagane, Astako Tontorra eta San Kristobal</span>',
     '<span class="signpost-name">Zengotitagane, Axmakur y Oiz</span>':
         '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
     '<span class="signpost-name">Osmagain y Arietzu</span>':
@@ -198,8 +200,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'Bici &middot; Trabakua, Zenarruza, Osma y Zengotitagane':
-        'Bizikleta &middot; Trabakua, Zenarruza, Osma eta Zengotitagane',
+    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane y San Crist&oacute;bal':
+        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane eta San Kristobal',
     'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu y Urko':
         'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu eta Urko',
     'Toca una ruta en el mapa para abrir su p&aacute;gina.':
@@ -236,12 +238,23 @@ HOME = {
         'ibilbidearen goialdetik"',
     '<h2>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h2>':
         '<h2>Zengotitagane, Iturzurigana<br><em>eta San Kristobal Txiki</em></h2>',
-    'Circuito largo en e-bike desde Trabakua a Zengotitagane, Iturzurigana y Astako '
-    'Tontorra, con dos ermitas de camino. Grabada sobre el terreno, no propuesta desde '
-    'un mapa.':
-        'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane, Iturzurigana eta Astako '
-        'Tontorraraino, bidean bi ermitarekin. Bertatik bertara grabatua, ez mapa '
-        'batetik proposatua.',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas '
+    'de camino. Grabada sobre el terreno, no propuesta desde un mapa.':
+        'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi '
+        'ermitarekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+
+    # sancristobal card
+    'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
+    'cresta"':
+        'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
+    '<h2>Zengotitagane, Astako Tontorra<br><em>y San Crist&oacute;bal</em></h2>':
+        '<h2>Zengotitagane, Astako Tontorra<br><em>eta San Kristobal</em></h2>',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Astako Tontorra, con las '
+    'ermitas de San Crist&oacute;bal Txiki y San Juan de camino. Grabada sobre el '
+    'terreno, no propuesta desde un mapa.':
+        'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Astako Tontorraraino, San '
+        'Kristobal Txiki eta San Juan ermitak bidean. Bertatik bertara grabatua, ez '
+        'mapa batetik proposatua.',
 
     # oiz card
     'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al '
@@ -698,75 +711,58 @@ ZENGOTITAGANE = {
         'ikuspegiekin"',
     'alt="Una cruz en uno de los altos de la ruta, con el valle y una carretera al fondo"':
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
-    'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
-    'cresta"':
-        'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
-    'alt="Pista de tierra con un poste de madera, y el valle del Duranguesado al fondo"':
-        'alt="Lur-pista zurezko poste batekin, eta Durangaldeko harana atzealdean"',
-    'alt="Un hayedo solitario en la cresta, con vistas al valle entre nubes"':
-        'alt="Pagadi bakarti bat gailurrean, haranerako ikuspegiekin hodeien artean"',
-    'alt="Descenso por un camino de piedra hacia Garai, con un paso canadiense entre la '
-    'niebla"':
-        'alt="Jaitsiera harrizko bide batetik Garairantz, pasabide kanadiar batekin '
-        'lainoen artean"',
-    'alt="Un banco de nubes cubriendo la ladera, cerca de Garai"':
-        'alt="Hodei-banku bat magala estaltzen, Garaitik gertu"',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
-    '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
+    '(km 3,7, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
     'duras, casi imposibles de subir con una bici normal &mdash;aunque en sentido contrario, '
     'con esta subida convertida en bajada, s&iacute; se puede hacer la ruta con una bici '
     'normal.':
         'Trabakuatik irten eta Osma norabidean egiten dugu errepidez. 2 km pasatxo geroago '
-        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (3,7 km, 810 m) igotzen duen pista '
+        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (3,7 km, 820 m) igotzen duen pista '
         'hartzeko, parke eolikoaren aerosorgailuen artean. Maldak oso gogorrak dira, ia '
         'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;alderantzizko norabidean, ordea, '
         'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
-    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
-    'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
-    'Un poco m&aacute;s adelante afrontamos el tramo de Astotail &mdash;parte del recorrido de '
-    'una carrera de monta&ntilde;a de la zona&mdash; hasta <b>Astako Tontorra</b> (km 5,7, '
-    '863 m), el punto m&aacute;s alto de toda la ruta.':
-        'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
-        'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
-        'desbideratu ditzake metro batzuk. Handik pixka batera Astotail tartea egiten dugu '
-        '&mdash;inguruko mendi lasterketa baten zatia&mdash; <b>Astako Tontorra</b>raino '
-        '(5,7 km, 863 m), ibilbide osoko punturik altuena.',
-    'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
-    'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
-    'izquierda, con agua durante todo el a&ntilde;o.':
-        'Orduan Garairantz jaisten gara pagadi eder batetik, ibilbide osoko jaitsiera '
-        'gozagarrienetako bat. Garaitik irten bezain laster iturri bat dago ezkerraldean, '
-        'urtean zehar beti urarekin.',
-    'La subida de Garai hasta la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 20,3, 493 m) '
-    'la hacemos por una pista de piedra &mdash;as&iacute; se conoce esta ermita, para '
-    'distinguirla de la otra Ermita de San Crist&oacute;bal, la de arriba, junto a los '
-    'aerogeneradores.':
-        'Garaitik <b>San Kristobal Txiki ermita</b>raino (20,3 km, 493 m) igotzeko harrizko '
-        'pista hartzen dugu &mdash;horrela ezagutzen da ermita hau, aerosorgailuen ondoan '
-        'dagoen beste San Kristobal ermitatik bereizteko.',
+    'Tras Zengotitagane seguimos por la cresta, con vistas a los dos lados &mdash;especialmente '
+    'bonitas hacia <b>Iturzurigana</b> (km 4,8, 859 m), el punto m&aacute;s alto de la ruta. '
+    'Quien quiera coger agua puede desviarse unos metros a la derecha.':
+        'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu, bi aldeetara '
+        'ikuspegiekin &mdash;bereziki ederrak <b>Iturzurigana</b>rantz (4,8 km, 859 m), '
+        'ibilbideko punturik altuena. Ura hartu nahi duenak eskuinera desbideratu ditzake '
+        'metro batzuk.',
+    'Empieza entonces la bajada hacia Garai, primero por una pista de cemento y despu&eacute;s '
+    'por una de piedra, con un canal de agua acompa&ntilde;ando el camino. Poco despu&eacute;s '
+    'giramos a la izquierda para encarar una pista trialera corta pero intensa, hasta '
+    'enganchar con la pista de piedra que sube desde Garai hasta la fuente de arriba, en lo '
+    'alto. Desde ah&iacute; empezamos a bajar hasta la <b>Ermita de San Crist&oacute;bal '
+    'Txiki</b> (km 15,4, 495 m) &mdash;as&iacute; se conoce, para distinguirla de la otra '
+    'Ermita de San Crist&oacute;bal, la de arriba, junto a los aerogeneradores.':
+        'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
+        'harrizko batetik, ur-kanal batek bidea lagunduta. Handik pixka batera ezkerrera '
+        'jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik igotzen den '
+        'harrizko pistarekin lotu arte, goiko iturriraino, goi-goian. Handik behera hasten '
+        'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
+        'da, aerosorgailuen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
     'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
-    'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 24,5, 404 m), ya '
+    'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 19,6, 400 m), ya '
     'cerca de cerrar el c&iacute;rculo, antes de bajar de vuelta a Trabakua.':
         'Abiadura betean jarraitzen dugu behera San Jos&eacute; auzoraino. Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatzen dugu eta errepide zaharretik gora egiten dugu '
-        'Zengotita auzorantz, non dagoen <b>San Juan ermita</b> (24,5 km, 404 m), zirkulua '
+        'Zengotita auzorantz, non dagoen <b>San Juan ermita</b> (19,6 km, 400 m), zirkulua '
         'ixteko zorian, Trabakura jaitsi aurretik.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
-    '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
-    '(2h 02min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
-    'agua cerca de Iturzurigana (km 4,8) y en una fuente a la salida de Garai, con agua todo '
-    'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
-        '26,9 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+    '(1h 32min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
+    'agua cerca de Iturzurigana (km 4,8) y en la zona de Garai, antes de la Ermita de San '
+    'Crist&oacute;bal Txiki.':
+        '22,4 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea '
-        'Rise batekin&mdash; (2 ordu 02 min), beraz denbora ez da erreferentzia egokia '
-        'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko '
-        'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
-        'aurretik.',
+        'Rise batekin&mdash; (1 ordu 32 min), beraz denbora ez da erreferentzia egokia '
+        'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko aldean, '
+        'San Kristobal Txiki ermitaren aurretik.',
     'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
     'Ermita de San Juan': 'San Juan ermita',
 }
@@ -965,6 +961,95 @@ URKO = {
         'kulunkaren ondoan.',
 }
 
+SANCRISTOBAL = {
+    'alt="Foto ampliada del recorrido de Zengotitagane, Astako Tontorra y San '
+    'Crist&oacute;bal"':
+        'alt="Zengotitagane, Astako Tontorra eta San Kristobal ibilbidearen argazki '
+        'handitua"',
+    '<span>Carretera y pista</span><span class="sep">/</span>'
+    '<span>Zengotitagane, Astako Tontorra y Garai</span>':
+        '<span>Errepidea eta pista</span><span class="sep">/</span>'
+        '<span>Zengotitagane, Astako Tontorra eta Garai</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Zengotitagane, Astako Tontorra<br><em>y San Crist&oacute;bal</em></h1>':
+        '<h1>Zengotitagane, Astako Tontorra<br><em>eta San Kristobal</em></h1>',
+    'Circuito desde Trabakua, por Zengotitagane y Astako Tontorra, con las ermitas de '
+    'San Crist&oacute;bal Txiki y San Juan':
+        'Zirkuitua Trabakuatik, Zengotitagane eta Astako Tontorratik, San Kristobal '
+        'Txiki eta San Juan ermitekin',
+    'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
+    'cresta"':
+        'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
+    'alt="Pista de tierra con un poste de madera, y el valle del Duranguesado al fondo"':
+        'alt="Lur-pista zurezko poste batekin, eta Durangaldeko harana atzealdean"',
+    'alt="Un hayedo solitario en la cresta, con vistas al valle entre nubes"':
+        'alt="Pagadi bakarti bat gailurrean, haranerako ikuspegiekin hodeien artean"',
+    'alt="Descenso por un camino de piedra hacia Garai, con un paso canadiense entre la '
+    'niebla"':
+        'alt="Jaitsiera harrizko bide batetik Garairantz, pasabide kanadiar batekin '
+        'lainoen artean"',
+    'alt="Un banco de nubes cubriendo la ladera, cerca de Garai"':
+        'alt="Hodei-banku bat magala estaltzen, Garaitik gertu"',
+    'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
+    'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
+    '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
+    'duras, casi imposibles de subir con una bici normal &mdash;aunque en sentido contrario, '
+    'con esta subida convertida en bajada, s&iacute; se puede hacer la ruta con una bici '
+    'normal.':
+        'Trabakuatik irten eta Osma norabidean egiten dugu errepidez. 2 km pasatxo geroago '
+        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (3,7 km, 810 m) igotzen duen pista '
+        'hartzeko, parke eolikoaren aerosorgailuen artean. Maldak oso gogorrak dira, ia '
+        'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;alderantzizko norabidean, ordea, '
+        'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
+    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
+    'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
+    'Un poco m&aacute;s adelante afrontamos el tramo de Astotail &mdash;parte del recorrido de '
+    'una carrera de monta&ntilde;a de la zona&mdash; hasta <b>Astako Tontorra</b> (km 5,7, '
+    '863 m), el punto m&aacute;s alto de toda la ruta.':
+        'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
+        'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
+        'desbideratu ditzake metro batzuk. Handik pixka batera Astotail tartea egiten dugu '
+        '&mdash;inguruko mendi lasterketa baten zatia&mdash; <b>Astako Tontorra</b>raino '
+        '(5,7 km, 863 m), ibilbide osoko punturik altuena.',
+    'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
+    'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
+    'izquierda, con agua durante todo el a&ntilde;o.':
+        'Orduan Garairantz jaisten gara pagadi eder batetik, ibilbide osoko jaitsiera '
+        'gozagarrienetako bat. Garaitik irten bezain laster iturri bat dago ezkerraldean, '
+        'urtean zehar beti urarekin.',
+    'La subida de Garai hasta la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 20,3, 493 m) '
+    'la hacemos por una pista de piedra &mdash;as&iacute; se conoce esta ermita, para '
+    'distinguirla de la otra Ermita de San Crist&oacute;bal, la de arriba, junto a los '
+    'aerogeneradores.':
+        'Garaitik <b>San Kristobal Txiki ermita</b>raino (20,3 km, 493 m) igotzeko harrizko '
+        'pista hartzen dugu &mdash;horrela ezagutzen da ermita hau, aerosorgailuen ondoan '
+        'dagoen beste San Kristobal ermitatik bereizteko.',
+    'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
+    'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
+    'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 24,5, 404 m), ya '
+    'cerca de cerrar el c&iacute;rculo, antes de bajar de vuelta a Trabakua.':
+        'Abiadura betean jarraitzen dugu behera San Jos&eacute; auzoraino. Trabakua eta Berriz '
+        'arteko errepide nagusia gurutzatzen dugu eta errepide zaharretik gora egiten dugu '
+        'Zengotita auzorantz, non dagoen <b>San Juan ermita</b> (24,5 km, 404 m), zirkulua '
+        'ixteko zorian, Trabakura jaitsi aurretik.',
+    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
+    '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
+    'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
+    '(2h 02min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
+    'agua cerca de Iturzurigana (km 4,8) y en una fuente a la salida de Garai, con agua todo '
+    'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
+        '26,9 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+        'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
+        'igotzeko norabide honetan. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea '
+        'Rise batekin&mdash; (2 ordu 02 min), beraz denbora ez da erreferentzia egokia '
+        'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko '
+        'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
+        'aurretik.',
+    'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
+    'Ermita de San Juan': 'San Juan ermita',
+}
+
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
     'mallabia': 'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
@@ -978,6 +1063,8 @@ DESCRIPTIONS = {
     'oiz': 'Joan-etorria Trabakuatik Oizeraino',
     'arietzu': 'Zirkuitua San Juan ermitatik',
     'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Astako Tontorratik, San '
+        'Kristobal Txiki eta San Juan ermitekin',
 }
 
 # <title> per page (head files)
@@ -992,6 +1079,8 @@ TITLES = {
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
+    'sancristobal': 'Zengotitagane, Astako Tontorra eta San Kristobal · Bizikleta '
+        'ibilbidea — Herriko ibilbideak',
 }
 
 PAGE_STRINGS = {
@@ -1005,4 +1094,5 @@ PAGE_STRINGS = {
     'oiz': OIZ,
     'arietzu': ARIETZU,
     'urko': URKO,
+    'sancristobal': SANCRISTOBAL,
 }
