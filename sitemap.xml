@@ -101,4 +101,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/urko.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/urko.eu.html"/>
   </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/sancristobal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/sancristobal.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.eu.html"/>
+  </url>
 </urlset>
