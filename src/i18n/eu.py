@@ -996,13 +996,18 @@ SANCRISTOBAL = {
         'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
     'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
-    'Un poco m&aacute;s adelante cruzamos <b>Astako</b> (km 5,7, 681 m) por un bonito sendero '
-    'casi oculto, parte del recorrido del AstoTrail, la carrera de trail de Garai.':
+    'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
+    'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
+    '<b>Astako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
+    'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
+    'monta&ntilde;a que organiza el municipio de Garai.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
         'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
-        'desbideratu ditzake metro batzuk. Handik pixka batera <b>Astako</b> (5,7 km, 681 m) '
-        'gurutzatzen dugu ia ezkutuko bidezidor eder batetik, Garaiko AstoTrail '
-        'lasterketaren ibilbidearen zati bat.',
+        'desbideratu ditzake metro batzuk. Handik pixka batera, aerosorgailuen paraleloan '
+        'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Astako '
+        'gailur-eremurako igoeraren bila (5,7 km, 681 m). Handik, landaretzak ia ezkutatzen '
+        'duen bidezidor eder batetik gurutzatzen dugu <b>Astako</b>, Garaiko udalak '
+        'antolatzen duen AstoTrail lasterketa gogorraren ibilbide klasikoaren zati denetik.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
     'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
     'izquierda, con agua durante todo el a&ntilde;o.':
