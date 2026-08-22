@@ -261,6 +261,8 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
 
 .body-copy{ margin:42px 24px 0; max-width:60ch; }
 .body-copy p{ font-family:'Karla',sans-serif; font-size:17px; line-height:1.7; color:var(--ink); margin:0 0 18px; }
+.body-copy a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+.body-copy a:hover{ color:var(--violet); }
 .body-copy p:first-of-type::first-letter{
   font-family:'Fraunces',serif; font-weight:900; font-size:3.1em; float:left; line-height:.78;
   padding:.05em .07em 0 0; color:var(--teal);
