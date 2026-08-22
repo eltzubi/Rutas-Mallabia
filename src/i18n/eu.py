@@ -353,6 +353,7 @@ TRABAKUA = {
 }
 
 ITURZURI = {
+    'download="Iturzuri, Zengotitagane subida por la cascada de Gerea.gpx"': 'download="Iturzuri, Zengotitagane Gereako ur-jauzitik gora.gpx"',
     '<title>Fuente de Iturzuri': '<title>Iturzuriko iturria',
     '<title>Túmulo Probazelaiburu II': '<title>Probazelaiburu II.a tumulua',
     '<title>Zengotitagane': '<title>Zengotitagane',
@@ -437,6 +438,7 @@ ITURZURI = {
 }
 
 ZENARRUZA = {
+    'download="Zenarruza, San Kristobal y Zengotitagane.gpx"': 'download="Zenarruza, San Kristobal eta Zengotitagane.gpx"',
     '<title>Monasterio de Zenarruza': '<title>Zenarruzako monasterioa',
     '<title>Ermita San Kristobal': '<title>San Kristobal ermita',
     '<title>Dolmen Iturzurigana': '<title>Iturzuriganako trikuharria',
@@ -509,6 +511,7 @@ ZENARRUZA = {
 }
 
 OSMA = {
+    'download="Trabakua, Elgeta y Argiñeta.gpx"': 'download="Trabakua, Elgeta eta Argiñeta.gpx"',
     # waypoint names -- one key covers both the elev-legend span and the
     # matching <title> tooltip, since both contain this exact substring.
     'Ermita de San Juan (1&ordf;)': 'San Juan ermita (1.a)',
@@ -692,6 +695,7 @@ GEREA = {
 }
 
 ZENGOTITAGANE = {
+    'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.gpx"',
     'alt="Foto ampliada del recorrido de Zengotitagane"':
         'alt="Zengotitagane ibilbidearen argazki handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
@@ -768,6 +772,7 @@ ZENGOTITAGANE = {
 }
 
 OIZ = {
+    'download="Zengotitagane, Axmakur y Oiz.gpx"': 'download="Zengotitagane, Axmakur eta Oiz.gpx"',
     'alt="Foto ampliada del recorrido del Oiz"':
         'alt="Oizeko ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Zengotitagane, Axmakur y Oiz</span>':
@@ -837,6 +842,7 @@ OIZ = {
 }
 
 ARIETZU = {
+    'download="Osmagain y Arietzu.gpx"': 'download="Osmagain eta Arietzu.gpx"',
     'alt="Foto ampliada del recorrido de Arietzu"':
         'alt="Arietzuko ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Osmagain y Arietzu</span>':
@@ -890,6 +896,7 @@ ARIETZU = {
 }
 
 URKO = {
+    'download="Trabakua, Asuntza y Urko.gpx"': 'download="Trabakua, Asuntza eta Urko.gpx"',
     'alt="Foto ampliada del recorrido de Trabakua, Asuntza y Urko"':
         'alt="Trabakua, Asuntza eta Urko ibilbidearen argazki handitua"',
     '<h1>Trabakua, Asuntza<br><em>y Urko</em></h1>':
@@ -962,6 +969,7 @@ URKO = {
 }
 
 SANCRISTOBAL = {
+    'download="Zengotitagane, Askako y San Cristóbal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
     'alt="Foto ampliada del recorrido de Zengotitagane, Askako y San '
     'Crist&oacute;bal"':
         'alt="Zengotitagane, Askako eta San Kristobal ibilbidearen argazki '
