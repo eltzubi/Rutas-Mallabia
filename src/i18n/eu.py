@@ -657,12 +657,14 @@ GEREA = {
     'vistas al barrio de Gerea al otro, y de camino se pasa junto a una borda abandonada, de '
     'tejado rojo medio hundido entre la maleza. El camino sigue subiendo hasta el punto más '
     'alto de la ruta, a 686 m (km 2,95). La subida coincide en gran parte con el recorrido de '
-    'la 7 Pago Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
+    'la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi '
+    'Lasterketa</a>, la carrera de montaña que se celebra en mayo.':
         'Oizeko parke eolikoaren aerosorgailuek igoera ia osoan egiten dute konpainia alde '
         'batetik, eta bestetik Gereako auzorako ikuspegiak zabaltzen dira, borda abandonatu '
         'baten ondotik pasatuz —teilatu gorri erdi hondoratua sasien artean. Bideak gora '
         'jarraitzen du ibilbideko punturik altuenera iritsi arte, 686 metrotara (2,95 km). '
-        'Igoera honek bat egiten du neurri handi batean 7 Pago Mendi Lasterketaren '
+        'Igoera honek bat egiten du neurri handi batean <a href="https://7pago.com" '
+        'target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren '
         'ibilbidearekin, maiatzean ospatzen den mendi lasterketa.',
     'Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde conviene ir '
     'atento a la traza del GPS, antes de cerrar el círculo de vuelta a Trabakua.':
@@ -858,12 +860,14 @@ ARIETZU = {
     'Circuito corto desde la Ermita de San Juan, en el barrio de Zengotita, hasta '
     '<b>Osmagain</b> (km 0,7, 527 m), con una cruz en el alto y muy buenas vistas desde el '
     'cresterío: hacia Berriz y los montes del Duranguesado a un lado, hacia los barrios de '
-    'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la 7 Pago '
-    'Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
+    'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la <a '
+    'href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi '
+    'Lasterketa</a>, la carrera de montaña que se celebra en mayo.':
         'Zirkuitu laburra San Juan ermitatik, Zengotita auzoan, <b>Osmagain</b>eraino '
         '(0,7 km, 527 m), goian gurutze batekin eta ikuspegi bikainekin gailurrerditik: '
         'Berriz eta Durangaldeko mendiak alde batetik, eta bestetik Zengotita eta Osma '
-        'auzoak. Ibilbidearen zati hau 7 Pago Mendi Lasterketaren zatia da, maiatzean '
+        'auzoak. Ibilbidearen zati hau <a href="https://7pago.com" target="_blank" '
+        'rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren zatia da, maiatzean '
         'ospatzen den mendi lasterketa.',
     'El cresterío sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre '
     'pinos, antes de cerrar el círculo de vuelta a la ermita.':
