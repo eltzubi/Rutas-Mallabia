@@ -106,7 +106,9 @@
         if (desnivelM) facts += '<span>' + descLabel + ': <b>+' +
           desnivelM.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' m</b></span>';
         if (activityLabel) facts += '<span>' + actLabel + ': <b>' + activityLabel + '</b></span>';
-        var html = '<div class="route-popup"><h3>' + name + '</h3>' +
+        var chart = t.chart ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
+          'preserveAspectRatio="none"><path d="' + t.chart + '" fill="var(--teal-soft)"/></svg>' : '';
+        var html = '<div class="route-popup">' + chart + '<h3>' + name + '</h3>' +
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<div class="route-popup-dir">' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
