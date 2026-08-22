@@ -96,7 +96,7 @@ def assemble_page(name, suffix=""):
 
 
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "historias"]
 OUT_NAME = {"mallabia": "index"}  # others default to their own name
 
 # lang code -> (source-file suffix, output-file suffix)
@@ -114,6 +114,7 @@ ASSETS = {
     ("fonts", "inline_fonts.css"): "fonts.css",
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
+    ("css", "historias.css"): "historias.css",
     ("js", "app.js"): "js/app.js",
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",

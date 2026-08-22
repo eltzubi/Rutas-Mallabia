@@ -6,6 +6,7 @@
   var box = document.getElementById('lightbox');
   var boxImg = document.getElementById('lightboxImg');
   var close = document.getElementById('lightboxClose');
+  if (!box || !boxImg || !close) return; // page has no photo gallery
   var lastTrigger = null;
   function open(src, trigger){
     boxImg.src = src;
