@@ -1,0 +1,142 @@
+/* "Rutas como historias" -- full-screen, one-route-per-scroll storytelling
+   view. Loaded alongside route.css, which already supplies the design
+   tokens (--ground, --ink, --teal, --violet...) and the shared masthead /
+   back-link / theme-toggle chrome, so this file only adds the story rail,
+   the trace cards and the map detail panel. */
+
+/* The rail is exactly one viewport tall per card, so the page itself must
+   not scroll -- only .story-rail should, or the snap points fight the
+   normal document scroll. Turning <body> into a column flexbox lets the
+   masthead keep its natural height while .story-app claims exactly what's
+   left, without hardcoding a masthead height that would drift out of sync
+   with route.css. */
+body.historias-page{ height:100svh; overflow:hidden; display:flex; flex-direction:column; }
+body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; width:100%; }
+@media (min-width:1024px){ body.historias-page .masthead{ max-width:1100px; } }
+
+.story-app{ position:relative; flex:1 1 auto; min-height:0; margin-top:6px; }
+.story-rail{
+  height:100%; overflow-y:auto; scroll-snap-type:y mandatory;
+  scrollbar-width:none; border-radius:20px;
+}
+.story-rail::-webkit-scrollbar{ display:none; }
+
+.story-card{
+  height:100%; scroll-snap-align:start; position:relative;
+  padding:22px 20px 118px; display:flex; flex-direction:column;
+  justify-content:flex-end; overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.story-card:before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 75% 18%, var(--violet-soft), transparent 45%),
+    linear-gradient(160deg, var(--ground-raised), var(--ground) 62%);
+  z-index:0;
+}
+.story-ghost{
+  position:absolute; top:6vh; left:-2vw; z-index:0;
+  font:900 clamp(7rem,38vw,17rem)/.75 'Fraunces',serif;
+  color:var(--ink); opacity:.035; letter-spacing:-.04em;
+}
+.story-trace{
+  position:absolute; inset:68px 8px auto; height:40vh; z-index:1;
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));
+}
+.story-trace path{
+  fill:none; stroke:var(--violet); stroke-width:5;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+.story-trace circle{ fill:var(--ink); }
+
+.story-copy{ position:relative; z-index:2; max-width:760px; }
+.story-num{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--violet);
+}
+.story-copy h1{
+  font:500 clamp(2.2rem,9vw,4.4rem)/.98 'Fraunces',serif;
+  letter-spacing:-.02em; margin:10px 0 14px; color:var(--ink);
+}
+.story-stats{ display:flex; gap:8px; flex-wrap:wrap; }
+.story-stat{
+  padding:9px 11px; border:1px solid var(--line); border-radius:999px;
+  font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink);
+  background:color-mix(in srgb, var(--ground) 65%, transparent);
+  backdrop-filter:blur(10px);
+}
+.story-hint{ margin:18px 0 0; color:var(--ink-dim); font-size:12.5px; }
+.story-open{
+  margin-top:16px; width:100%; border:0; border-radius:18px; padding:17px;
+  background:var(--ink); color:var(--ground); font-weight:800; font-size:14px;
+  font-family:inherit; cursor:pointer;
+}
+.story-open:hover{ background:var(--violet); }
+
+.story-progress{
+  position:absolute; z-index:35; right:14px; top:14px;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
+  background:color-mix(in srgb, var(--ground) 74%, transparent);
+  padding:7px 10px; border-radius:999px; border:1px solid var(--line);
+}
+.story-dock{
+  position:absolute; z-index:30; left:12px; right:12px; bottom:12px; height:60px;
+  border:1px solid var(--line); background:color-mix(in srgb, var(--ground) 90%, transparent);
+  backdrop-filter:blur(18px); border-radius:20px;
+  display:flex; align-items:center; justify-content:space-around;
+}
+.story-dock button{
+  border:0; background:none; color:var(--ink-dim); font-size:11px;
+  font-family:'IBM Plex Mono',monospace; cursor:pointer; padding:8px;
+}
+.story-dock button b{ display:block; color:var(--ink); font-size:16px; margin-bottom:2px; }
+.story-dock button:hover{ color:var(--teal); }
+.story-dock button:hover b{ color:var(--teal); }
+
+.story-detail{
+  position:fixed; inset:0; z-index:80; background:var(--ground); color:var(--ink);
+  transform:translateY(105%); transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  overflow:auto;
+}
+.story-detail.is-open{ transform:none; }
+.story-mapbox{ height:48svh; position:sticky; top:0; background:var(--ground-raised); }
+.story-map{ height:100%; }
+.story-close{
+  position:fixed; z-index:90; top:16px; left:16px; border:0; border-radius:999px;
+  padding:11px 15px; background:color-mix(in srgb, var(--ground) 65%, transparent);
+  color:var(--ink); font-weight:700; font-size:12.5px; backdrop-filter:blur(12px);
+  cursor:pointer; font-family:'IBM Plex Mono',monospace;
+}
+.story-read{
+  position:relative; background:var(--ground); border-radius:26px 26px 0 0;
+  margin-top:-26px; z-index:60; padding:26px 20px 60px; min-height:52svh;
+  border-top:1px solid var(--line);
+}
+.story-read .story-tag{
+  font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase;
+  letter-spacing:.14em; color:var(--ink-dim);
+}
+.story-read h2{
+  font:500 clamp(2rem,8vw,3.6rem)/.98 'Fraunces',serif; letter-spacing:-.02em;
+  margin:10px 0 18px; color:var(--ink);
+}
+.story-bigstats{ display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:0 0 22px; }
+.story-bigstat{ background:var(--ground-raised); border:1px solid var(--line); border-radius:16px; padding:14px; }
+.story-bigstat b{ display:block; font-size:19px; color:var(--ink); }
+.story-bigstat span{ font-size:10px; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.05em; }
+.story-read p{ font:400 16px/1.65 'Karla',sans-serif; color:var(--ink-dim); }
+.story-go{
+  display:block; text-align:center; text-decoration:none; background:var(--violet);
+  color:var(--ground); border-radius:16px; padding:16px; font-weight:800; margin-top:22px;
+}
+
+@media (min-width:800px){
+  .story-card{ padding:40px 8vw 118px; }
+  .story-trace{ left:44%; right:5%; top:10vh; height:58vh; }
+  .story-copy{ max-width:42%; }
+  .story-open{ width:auto; padding:17px 30px; }
+  .story-dock{ left:50%; right:auto; transform:translateX(-50%); width:380px; }
+  .story-detail{ display:grid; grid-template-columns:56% 44%; overflow:hidden; }
+  .story-mapbox{ height:100svh; }
+  .story-read{ margin:0; border-radius:0; border-top:0; border-left:1px solid var(--line); overflow:auto; padding:10vh 5vw; }
+}

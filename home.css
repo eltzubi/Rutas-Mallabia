@@ -402,6 +402,7 @@ body{
   transition:background .2s ease;
 }
 .feat-cta:hover{ background:var(--violet); }
+.story-mode-link{ margin:0 0 20px; }
 
 .soon{
   margin:40px auto 0; max-width:820px;
