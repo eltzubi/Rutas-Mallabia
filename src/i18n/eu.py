@@ -1086,8 +1086,8 @@ ITURRETA = {
     '<h2>BTT y e-bike</h2>':
         '<h2>BTT eta e-bike</h2>',
 
-    '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia.':
-        '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz.',
+    '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia. No hay fuentes de agua en el recorrido: en caso de necesidad, habría que desviarse hasta el pueblo de Barinaga.':
+        '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz. Ez dago ur-iturririk ibilbidean: beharrezkoa balitz, Barinaga herrira desbideratu beharko litzateke.',
 
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan hasta un cruce donde se deja el asfalto, y todo pasa a ser pista en solitario. El primer repecho —duro, poco más de 300 m— es el que más se nota. Después hay una bajada algo técnica hasta la zona de <b>Aginaga</b> (km 5).':
         'Ibilbidea Trabakuako mendatean hasten da. Lehen metroek behera egiten dute asfaltoa uzten den bidegurutze batera iritsi arte, eta hortik aurrera dena da pista bakarrik. Lehen malda —gogorra, 300 metrotik gutxixeago— da gehien nabaritzen dena. Ondoren jaitsiera teknikoxka bat dago <b>Aginagako</b> eremuraino (5 km).',
