@@ -1189,23 +1189,23 @@ EGOARBITZA = {
         'behar den.',
 
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
-    'pista. Justo al llegar al camino de la presa merece la pena desviarse hasta una fuente con agua '
-    'todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
+    'pista. Justo al llegar al camino de la presa merece la pena desviarse a la izquierda unos metros '
+    'hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
     'hacia <b>Santama&ntilde;esar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio.':
         '<b>Aixolako presarako</b> jaitsiera (19 km) oso ona da: lehenengo bidezidorra, gero pista. '
-        'Presaren bidera iritsi bezain laster, merezi du desbideratzea urte '
+        'Presaren bidera iritsi bezain laster, merezi du ezkerrera metro batzuetako desbideratzea urte '
         'osoan urez betetako iturri batera. Presaren aurrealdea zeharkatzen da eta '
         '<b>Santama&ntilde;esarrerantz</b> igotzen da (22,6 km &middot; 663 m), erabat pistan, '
         'inolako misteriorik gabe.',
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. De ah&iacute; la bajada es buena y toda en '
-    'pista, siguiendo la GR que lleva hacia Zengotita. Por Areitio se coge camino para acercarse a '
+    'pista. Por Areitio se coge camino para acercarse a '
     '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de Osmagain y Arietzu, pero '
     'llegando por el lado contrario.':
         'Gero <b>Santa Marinarantz</b> jaisten gara, non ermita bat dagoen eta berriro ur hornitu '
-        'daitekeen. Handik jaitsiera ona da eta erabat pistan, '
-        'Zengotitarantz daraman GRari jarraituz. Areitiotik <b>Arietxura</b> hurbiltzeko '
+        'daitekeen. Handik jaitsiera ona da eta erabat pistan. '
+        'Areitiotik <b>Arietxura</b> hurbiltzeko '
         'bidea hartzen da (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko gailur bera, baina '
         'kontrako aldetik iritsita.',
 
@@ -1213,13 +1213,13 @@ EGOARBITZA = {
     'barrio de Zengotita, donde hay una fuente con agua '
     'todo el a&ntilde;o. Despu&eacute;s de la fuente empieza la subida hacia <b>Zengotitagane</b> '
     '(km 32,5 &middot; 811 m): todo en pista, subir y subir sin apenas tregua, pero bastante llevadera. '
-    'Y de ah&iacute;, recto hacia Trabakua: la &uacute;ltima bajada tiene buena pendiente, unos 400 m de '
+    'Y de ah&iacute;, casi en vertical hacia Trabakua: la &uacute;ltima bajada tiene buena pendiente, unos 400 m de '
     'desnivel en poco m&aacute;s de 2 km, y se cierra el circuito.':
         'Arietxutik gailurretik jarraitzen dugu erdi bidera gutxi gorabehera, eta gero Zengotita '
         'auzorantz jaisten gara, non urte osoan urez betetako '
         'iturri bat dagoen. Iturriaren ondoren, <b>Zengotitaganerako</b> igoera hasten da (32,5 km '
         '&middot; 811 m): dena pistan, igo eta igo atsedenik gabe, baina nahiko eramangarria. Eta '
-        'handik, zuzenean Trabakuarantz: azken jaitsierak malda ona du, 2 km baino zertxobait '
+        'handik, ia bertikalean Trabakuarantz: azken jaitsierak malda ona du, 2 km baino zertxobait '
         'gehiagotan 400 m-ko desnibela, eta zirkuitua ixten da.',
 
     '34,1 km y +2.564 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
