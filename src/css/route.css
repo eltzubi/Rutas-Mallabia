@@ -166,7 +166,7 @@ body{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; letter-spacing:.13em; text-transform:uppercase;
   color:var(--ink-dim);
-  display:flex; gap:8px; align-items:center;
+  display:flex; flex-wrap:wrap; gap:8px; align-items:center;
   margin:0 0 10px;
 }
 .eyebrow .sep{ opacity:.5; }
@@ -183,7 +183,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
 .full-name{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; color:var(--ink-dim);
-  margin:10px 0 0; line-height:1.5; max-width:44ch;
+  margin:10px 0 0; line-height:1.5; max-width:60ch;
 }
 
 @keyframes rise{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }

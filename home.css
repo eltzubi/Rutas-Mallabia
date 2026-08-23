@@ -60,7 +60,11 @@ body{
   background:color-mix(in srgb, var(--ground) 74%, transparent);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
+  transition:padding .25s ease;
 }
+/* Past the hero, the brand photos are dead weight on a long scroll --
+   collapse them once the visitor has started reading. */
+.masthead.is-compact{ padding-top:8px; padding-bottom:8px; }
 .masthead .place{ color:var(--ink); font-weight:600; }
 /* Small phones: the masthead carries brand + place + language + theme, which
    stops fitting on one line once the language switch is there. */
@@ -98,7 +102,12 @@ body{
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 .masthead-right{ display:flex; align-items:center; gap:10px; }
-.brand{ display:flex; align-items:center; gap:14px; }
+.brand{
+  display:flex; align-items:center; gap:14px;
+  max-width:600px; max-height:120px; overflow:hidden;
+  transition:max-width .3s ease, max-height .3s ease, opacity .2s ease;
+}
+.masthead.is-compact .brand{ max-width:0; max-height:0; opacity:0; }
 .brand-name{
   font-family:'Fraunces',serif;
   font-size:16px; font-weight:700;
@@ -247,7 +256,11 @@ body{
   background:color-mix(in srgb, var(--ground) 74%, transparent);
   backdrop-filter:blur(14px) saturate(140%);
   -webkit-backdrop-filter:blur(14px) saturate(140%);
+  transition:top .25s ease;
 }
+/* The masthead is always compact by the time this filter bar can reach
+   its sticky position, so it can sit right under the shorter header. */
+.masthead.is-compact ~ .featured .activity-filter{ top:64px; }
 .range-filters{ display:flex; flex-wrap:wrap; gap:20px 32px; margin-bottom:24px; }
 .range-filter{ flex:1 1 200px; min-width:180px; }
 .range-filter label{
@@ -327,6 +340,7 @@ body{
 .signpost-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  align-items:start;
   gap:10px;
 }
 .signpost-sign{

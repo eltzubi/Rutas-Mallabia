@@ -76,6 +76,20 @@
   });
 })();
 
+// --- compact masthead on scroll (home page only -- the tall brand photos
+// aren't worth the sticky header space once the visitor is reading) ---
+(function(){
+  var masthead = document.querySelector('.masthead');
+  var brand = masthead && masthead.querySelector('.brand');
+  if (!masthead || !brand) return;
+  function onScroll(){
+    if (window.scrollY > 24) masthead.classList.add('is-compact');
+    else masthead.classList.remove('is-compact');
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+})();
+
 // --- light/dark theme toggle ---
 (function(){
   var btn = document.getElementById('themeToggle');
