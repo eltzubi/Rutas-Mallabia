@@ -109,6 +109,8 @@ HOME = {
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
+    'aria-label="Antes de salir y d&oacute;nde aparcar"':
+        'aria-label="Irten aurretik eta non aparkatu"',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'aria-label="Rutas desde Trabakua"': 'aria-label="Trabakuatik abiatzen diren ibilbideak"',
