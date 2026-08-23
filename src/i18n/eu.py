@@ -1199,15 +1199,13 @@ EGOARBITZA = {
         'inolako misteriorik gabe.',
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
-    'agua. De ah&iacute; la bajada es buena y toda en '
-    'pista. Por Areitio se coge camino para acercarse a '
+    'agua. En la ermita se coge la GR, que sube poco a poco hacia '
     '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de Osmagain y Arietzu, pero '
     'llegando por el lado contrario.':
         'Gero <b>Santa Marinarantz</b> jaisten gara, non ermita bat dagoen eta berriro ur hornitu '
-        'daitekeen. Handik jaitsiera ona da eta erabat pistan. '
-        'Areitiotik <b>Arietxura</b> hurbiltzeko '
-        'bidea hartzen da (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko gailur bera, baina '
-        'kontrako aldetik iritsita.',
+        'daitekeen. Ermitan GRa hartzen da, pixkanaka '
+        '<b>Arietxurantz</b> igotzen duena (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko '
+        'gailur bera, baina kontrako aldetik iritsita.',
 
     'Desde Arietxu seguimos por el cresterio hasta m&aacute;s o menos la mitad, y luego bajamos hacia el '
     'barrio de Zengotita, donde hay una fuente con agua '
