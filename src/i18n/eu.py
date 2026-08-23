@@ -109,6 +109,8 @@ HOME = {
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
+    'aria-label="Antes de salir y d&oacute;nde aparcar"':
+        'aria-label="Irten aurretik eta non aparkatu"',
     'Ver como historias &rarr;': 'Ikusi istorio gisa &rarr;',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
@@ -121,8 +123,8 @@ HOME = {
         '<span class="signpost-name">Ur Jauziak Gerea</span>',
     '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
         '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
-    '<span class="signpost-name">Zengotitagane, Astako y San Crist&oacute;bal</span>':
-        '<span class="signpost-name">Zengotitagane, Astako eta San Kristobal</span>',
+    '<span class="signpost-name">Zengotitagane, Askako y San Crist&oacute;bal</span>':
+        '<span class="signpost-name">Zengotitagane, Askako eta San Kristobal</span>',
     '<span class="signpost-name">Zengotitagane, Axmakur y Oiz</span>':
         '<span class="signpost-name">Zengotitagane, Axmakur eta Oiz</span>',
     '<span class="signpost-name">Osmagain y Arietzu</span>':
@@ -237,11 +239,11 @@ HOME = {
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
     'cresta"':
         'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
-    '<h2>Zengotitagane, Astako<br><em>y San Crist&oacute;bal</em></h2>':
-        '<h2>Zengotitagane, Astako<br><em>eta San Kristobal</em></h2>',
-    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Astako, con las '
+    '<h2>Zengotitagane, Askako<br><em>y San Crist&oacute;bal</em></h2>':
+        '<h2>Zengotitagane, Askako<br><em>eta San Kristobal</em></h2>',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las '
     'ermitas de San Crist&oacute;bal Txiki y San Juan de camino.':
-        'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Astakoraino, San '
+        'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Askakoraino, San '
         'Kristobal Txiki eta San Juan ermitak bidean.',
 
     # oiz card
@@ -972,21 +974,21 @@ URKO = {
 }
 
 SANCRISTOBAL = {
-    'download="Zengotitagane, Astako y San Cristóbal.gpx"': 'download="Zengotitagane, Astako eta San Kristobal.gpx"',
-    'alt="Foto ampliada del recorrido de Zengotitagane, Astako y San '
+    'download="Zengotitagane, Askako y San Cristóbal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
+    'alt="Foto ampliada del recorrido de Zengotitagane, Askako y San '
     'Crist&oacute;bal"':
-        'alt="Zengotitagane, Astako eta San Kristobal ibilbidearen argazki '
+        'alt="Zengotitagane, Askako eta San Kristobal ibilbidearen argazki '
         'handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
-    '<span>Zengotitagane, Astako y Garai</span>':
+    '<span>Zengotitagane, Askako y Garai</span>':
         '<span>Errepidea eta pista</span><span class="sep">/</span>'
-        '<span>Zengotitagane, Astako eta Garai</span>',
+        '<span>Zengotitagane, Askako eta Garai</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Zengotitagane, Astako<br><em>y San Crist&oacute;bal</em></h1>':
-        '<h1>Zengotitagane, Astako<br><em>eta San Kristobal</em></h1>',
-    'Circuito desde Trabakua, por Zengotitagane y Astako, con las ermitas de '
+    '<h1>Zengotitagane, Askako<br><em>y San Crist&oacute;bal</em></h1>':
+        '<h1>Zengotitagane, Askako<br><em>eta San Kristobal</em></h1>',
+    'Circuito desde Trabakua, por Zengotitagane y Askako, con las ermitas de '
     'San Crist&oacute;bal Txiki y San Juan':
-        'Zirkuitua Trabakuatik, Zengotitagane eta Astakotik, San Kristobal '
+        'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal '
         'Txiki eta San Juan ermitekin',
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
     'cresta"':
@@ -1016,15 +1018,15 @@ SANCRISTOBAL = {
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
     'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
     'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
-    '<b>Astako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
+    '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
     'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
     'monta&ntilde;a que organiza el municipio de Garai.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
         'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
         'desbideratu ditzake metro batzuk. Handik pixka batera, aerosorgailuen paraleloan '
-        'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Astako '
+        'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Askako '
         'gailur-eremurako igoeraren bila (5,7 km, 681 m). Handik, landaretzak ia ezkutatzen '
-        'duen bidezidor eder batetik gurutzatzen dugu <b>Astako</b>, Garaiko udalak '
+        'duen bidezidor eder batetik gurutzatzen dugu <b>Askako</b>, Garaiko udalak '
         'antolatzen duen AstoTrail lasterketa gogorraren ibilbide klasikoaren zati denetik.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
     'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
@@ -1146,7 +1148,7 @@ HISTORIAS = {
     'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
     'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
     'Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki': 'Zengotitagane, Iturzurigana eta San Kristobal Txiki',
-    'Zengotitagane, Astako y San Crist&oacute;bal': 'Zengotitagane, Astako eta San Kristobal',
+    'Zengotitagane, Askako y San Crist&oacute;bal': 'Zengotitagane, Askako eta San Kristobal',
     'Zengotitagane, Axmakur y Oiz': 'Zengotitagane, Axmakur eta Oiz',
     'Osmagain y Arietzu': 'Osmagain eta Arietzu',
     'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
@@ -1159,7 +1161,7 @@ HISTORIAS = {
     'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio.': 'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion.',
     'Sendero corto y familiar hasta la cascada de Gerea.': 'Bidezidor laburra eta familiarra Gereako ur-jauziraino.',
     'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi ermitarekin.',
-    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Astako, con las ermitas de San Crist&oacute;bal Txiki y San Juan de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Astakoraino, San Kristobal Txiki eta San Juan ermitak bidean.',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las ermitas de San Crist&oacute;bal Txiki y San Juan de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Askakoraino, San Kristobal Txiki eta San Juan ermitak bidean.',
     'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa cant&aacute;brica desde la cumbre.': 'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde kantauriarrerako ikuspegiekin gailurretik.',
     'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
@@ -1179,7 +1181,7 @@ DESCRIPTIONS = {
     'oiz': 'Joan-etorria Trabakuatik Oizeraino',
     'arietzu': 'Zirkuitua San Juan ermitatik',
     'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
-    'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Astakotik, San '
+    'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'historias': 'Mallabiako 10 ibilbideak, banan-banan: track bakoitzaren benetako '
@@ -1198,7 +1200,7 @@ TITLES = {
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
-    'sancristobal': 'Zengotitagane, Astako eta San Kristobal · Bizikleta '
+    'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
