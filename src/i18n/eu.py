@@ -99,7 +99,7 @@ HOME = {
     '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
 
     # mini gallery
-    '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
+    '<h2 class="eyebrow">Sobre el terreno</h2>': '<h2 class="eyebrow">Bertatik bertara</h2>',
     'alt="Vista desde un alto sobre los montes de alrededor de Mallabia, con una cruz de madera en primer plano"':
         'alt="Mallabia inguruko mendien gaineko bista goi batetik, egurrezko gurutze bat aurrealdean"',
     'alt="Grupo caminando por un sendero de piedra junto a un arroyo, entre bosque"':
@@ -108,7 +108,7 @@ HOME = {
         'alt="Mendiko bizikleta harrizko mugarri baten kontra, lainoarekin"',
 
     # filters
-    '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
+    '<h2 class="eyebrow">Rutas documentadas</h2>': '<h2 class="eyebrow">Dokumentatutako ibilbideak</h2>',
     'aria-label="Antes de salir y d&oacute;nde aparcar"':
         'aria-label="Irten aurretik eta non aparkatu"',
     'Ver como historias &rarr;': 'Ikusi istorio gisa &rarr;',
@@ -183,7 +183,7 @@ HOME = {
     'Ver la ruta completa': 'Ikusi ibilbide osoa',
 
     # parking + trailhead map
-    '<p class="eyebrow">D&oacute;nde aparcar</p>': '<p class="eyebrow">Non aparkatu</p>',
+    '<h2 class="eyebrow">D&oacute;nde aparcar</h2>': '<h2 class="eyebrow">Non aparkatu</h2>',
     'title="Mapa del puerto de Trabakua"': 'title="Trabakuko mendatearen mapa"',
     'Puerto de Trabakua &middot; 43,2105&deg; N, 2,5461&deg; O':
         'Trabakuko mendatea &middot; 43,2105&deg; N, 2,5461&deg; M',
@@ -192,7 +192,7 @@ HOME = {
     'Justo al lado del aparcamiento hay dos bares: caf&eacute; antes de salir, o cerveza y algo de comer al volver.':
         'Aparkalekuaren ondoan bi taberna daude: kafea irten aurretik, edo garagardoa eta zerbait jateko itzultzean.',
     'C&oacute;mo llegar': 'Nola iritsi',
-    '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Irteerak mendatetik</p>',
+    '<h2 class="eyebrow">Salidas desde el puerto</h2>': '<h2 class="eyebrow">Irteerak mendatetik</h2>',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
@@ -1170,8 +1170,8 @@ HISTORIAS = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'mallabia': 'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
-        'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
+    'mallabia': 'Mallabiako (Bizkaia) senderismo eta BTT ibilbideak, auzoetan, mendietan eta '
+        'herrietan. Bertatik bertara dokumentatuak, benetako track GPXarekin, ez liburuxka batekoak.',
     'trabakua': 'Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik',
     'iturrizuri': 'Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
     'zenarruza': 'Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik',
@@ -1190,7 +1190,7 @@ DESCRIPTIONS = {
 
 # <title> per page (head files)
 TITLES = {
-    'mallabia': 'Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
+    'mallabia': 'Senderismo eta BTT ibilbideak Mallabian, Bizkaia · GPX track erreala',
     'trabakua': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
