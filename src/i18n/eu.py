@@ -111,6 +111,7 @@ HOME = {
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
     'aria-label="Antes de salir y d&oacute;nde aparcar"':
         'aria-label="Irten aurretik eta non aparkatu"',
+    'Ver como historias &rarr;': 'Ikusi istorio gisa &rarr;',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'aria-label="Rutas desde Trabakua"': 'aria-label="Trabakuatik abiatzen diren ibilbideak"',
@@ -159,31 +160,26 @@ HOME = {
         'alt="Zementuzko eta harrizko pista Trabakuako ibilbidean"',
     '<h2>Asuntza<br><em>bira</em></h2>': '<h2>Asuntza<br><em>bira</em></h2>',
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, '
-    'un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano. '
-    'Grabada sobre el terreno, no propuesta desde un mapa.':
+    'un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.':
         'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, '
         'Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu '
-        'Beranotik. Ibilbidea terrenoan bertan grabatua dago, ez mapa baten gainean proposatua.',
+        'Beranotik.',
     'alt="Vista panorámica desde la ruta de Iturzuri, con el valle cubierto de niebla"':
         'alt="Bista panoramikoa Iturzuriko ibilbidetik, harana lainoz estalita"',
     '<h2>Iturzuri, Zengotitagane<br><em>subida por la cascada de Gerea</em></h2>':
         '<h2>Iturzuri, Zengotitagane<br><em>Gereako ur-jauzitik gora</em></h2>',
     'Sendero hasta el punto más alto de Mallabia: cascadas, un dolmen prehistórico y un cresterio '
-    'con vistas a ambos lados antes de rodear Zengotitagane por el este. '
-    'Grabada sobre el terreno, no propuesta desde un mapa.':
+    'con vistas a ambos lados antes de rodear Zengotitagane por el este.':
         'Bidezidorra Mallabiako punturik altueneraino: ur-jauziak, historiaurreko trikuharri bat '
-        'eta gailurrerdi bat bi aldeetara bistak dituena, Zengotitagane ekialdetik inguratu aurretik. '
-        'Bertatik bertara grabatua, ez mapa batetik proposatua.',
+        'eta gailurrerdi bat bi aldeetara bistak dituena, Zengotitagane ekialdetik inguratu aurretik.',
     'alt="Arroyo entre el bosque durante la subida hacia San Kristobal, ruta de Zenarruza"':
         'alt="Erreka basoan barrena San Kristobalerako igoeran, Zenarruzako ibilbidea"',
     '<h2>Zenarruza, San Kristobal<br><em>y Zengotitagane</em></h2>':
         '<h2>Zenarruza, San Kristobal<br><em>eta Zengotitagane</em></h2>',
     'Circuito largo desde Trabakua: la colegiata cisterciense de Zenarruza, una ermita de pastores '
-    'en la ladera del Oiz y el dolmen de Iturzurigana, con dos subidas largas seguidas. '
-    'Grabada sobre el terreno, no propuesta desde un mapa.':
+    'en la ladera del Oiz y el dolmen de Iturzurigana, con dos subidas largas seguidas.':
         'Zirkuitu luzea Trabakuatik: Zenarruzako kolegiata zisterziarra, artzainen ermita bat '
-        'Oizen hegalean eta Iturzuriganako trikuharria, bi igoera luze jarraian. '
-        'Bertatik bertara grabatua, ez mapa batetik proposatua.',
+        'Oizen hegalean eta Iturzuriganako trikuharria, bi igoera luze jarraian.',
     'Ver la ruta completa': 'Ikusi ibilbide osoa',
 
     # parking + trailhead map
@@ -216,22 +212,16 @@ HOME = {
         '<h2>Trabakua, Elgeta<br><em>eta Argi&ntilde;eta</em></h2>',
     'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
     'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis '
-    'de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio. Grabada sobre el terreno, no '
-    'propuesta desde un mapa.':
+    'de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio.':
         'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako '
-        'Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion. Bertatik bertara grabatua, ez mapa '
-        'batetik proposatua.',
+        'Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion.',
 
     # gerea card
     'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
     '<h2>Ur Jauziak<br><em>Gerea</em></h2>': '<h2>Ur Jauziak<br><em>Gerea</em></h2>',
-    'Sendero corto y familiar hasta la cascada de Gerea, con un mirador entre la antena de '
-    'Movistar y los aerogeneradores del Oiz. Grabada sobre el terreno, no propuesta desde un '
-    'mapa.':
-        'Bidezidor laburra eta familiarra Gereako ur-jauziraino, Movistarren antenaren eta '
-        'Oizeko aerosorgailuen arteko begiratoki batekin. Bertatik bertara grabatua, ez mapa '
-        'batetik proposatua.',
+    'Sendero corto y familiar hasta la cascada de Gerea.':
+        'Bidezidor laburra eta familiarra Gereako ur-jauziraino.',
 
     # zengotitagane card
     'alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta '
@@ -241,9 +231,9 @@ HOME = {
     '<h2>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h2>':
         '<h2>Zengotitagane, Iturzurigana<br><em>eta San Kristobal Txiki</em></h2>',
     'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas '
-    'de camino. Grabada sobre el terreno, no propuesta desde un mapa.':
+    'de camino.':
         'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi '
-        'ermitarekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+        'ermitarekin.',
 
     # sancristobal card
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
@@ -252,11 +242,9 @@ HOME = {
     '<h2>Zengotitagane, Askako<br><em>y San Crist&oacute;bal</em></h2>':
         '<h2>Zengotitagane, Askako<br><em>eta San Kristobal</em></h2>',
     'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las '
-    'ermitas de San Crist&oacute;bal Txiki y San Juan de camino. Grabada sobre el '
-    'terreno, no propuesta desde un mapa.':
+    'ermitas de San Crist&oacute;bal Txiki y San Juan de camino.':
         'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Askakoraino, San '
-        'Kristobal Txiki eta San Juan ermitak bidean. Bertatik bertara grabatua, ez '
-        'mapa batetik proposatua.',
+        'Kristobal Txiki eta San Juan ermitak bidean.',
 
     # oiz card
     'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al '
@@ -265,10 +253,9 @@ HOME = {
     '<h2>Zengotitagane, Axmakur<br><em>y Oiz</em></h2>':
         '<h2>Zengotitagane, Axmakur<br><em>eta Oiz</em></h2>',
     'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa '
-    'cant&aacute;brica desde la cumbre. Grabada sobre el terreno, no propuesta desde un mapa.':
+    'cant&aacute;brica desde la cumbre.':
         'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde '
-        'kantauriarrerako ikuspegiekin gailurretik. Bertatik bertara grabatua, ez mapa '
-        'batetik proposatua.',
+        'kantauriarrerako ikuspegiekin gailurretik.',
 
     # arietzu card
     'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
@@ -277,9 +264,9 @@ HOME = {
         'eta mendien artean bihurgunez betetako pista batekin"',
     '<h2>Osmagain<br><em>y Arietzu</em></h2>': '<h2>Osmagain<br><em>eta Arietzu</em></h2>',
     'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de '
-    'piedra en cada uno. Grabada sobre el terreno, no propuesta desde un mapa.':
+    'piedra en cada uno.':
         'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko '
-        'gurutze batekin. Bertatik bertara grabatua, ez mapa batetik proposatua.',
+        'gurutze batekin.',
 
     # urko card
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las '
@@ -288,10 +275,18 @@ HOME = {
         'mendiak atzealdean"',
     '<h2>Trabakua, Asuntza<br><em>y Urko</em></h2>':
         '<h2>Trabakua, Asuntza<br><em>eta Urko</em></h2>',
-    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza. Grabada '
-    'sobre el terreno, no propuesta desde un mapa.':
-        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik. Bertatik bertara '
-        'grabatua, ez mapa batetik proposatua.',
+    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.':
+        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
+
+    # iturreta card
+    '<span class="signpost-name">Trabakua, Barinaga y Iturreta</span>':
+        '<span class="signpost-name">Trabakua, Barinaga eta Iturreta</span>',
+    'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
+    '<h2>Trabakua, Barinaga<br><em>y Iturreta</em></h2>':
+        '<h2>Trabakua, Barinaga<br><em>eta Iturreta</em></h2>',
+    'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.':
+        'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
 }
 
 TRABAKUA = {
@@ -311,6 +306,8 @@ TRABAKUA = {
         'alt="Durangaldeko bistak igoeratik, aerosorgailuak atzealdean"',
     'alt="Manillar de la bici en marcha por la pista de Trabakua"':
         'alt="Bizikletaren manillarra Trabakuako pistan martxan"',
+    'alt="Vistas al Duranguesado desde Berano, con caseríos y prados en el valle"':
+        'alt="Durangaldeko bistak Beranotik, baserriak eta larreak haranean"',
     # The first Spanish paragraph becomes two in Basque -- the natural break
     # falls after the descent, so the </p><p> is part of the replacement.
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
@@ -674,12 +671,14 @@ GEREA = {
     'vistas al barrio de Gerea al otro, y de camino se pasa junto a una borda abandonada, de '
     'tejado rojo medio hundido entre la maleza. El camino sigue subiendo hasta el punto más '
     'alto de la ruta, a 686 m (km 2,95). La subida coincide en gran parte con el recorrido de '
-    'la 7 Pago Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
+    'la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi '
+    'Lasterketa</a>, la carrera de montaña que se celebra en mayo.':
         'Oizeko parke eolikoaren aerosorgailuek igoera ia osoan egiten dute konpainia alde '
         'batetik, eta bestetik Gereako auzorako ikuspegiak zabaltzen dira, borda abandonatu '
         'baten ondotik pasatuz —teilatu gorri erdi hondoratua sasien artean. Bideak gora '
         'jarraitzen du ibilbideko punturik altuenera iritsi arte, 686 metrotara (2,95 km). '
-        'Igoera honek bat egiten du neurri handi batean 7 Pago Mendi Lasterketaren '
+        'Igoera honek bat egiten du neurri handi batean <a href="https://7pago.com" '
+        'target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren '
         'ibilbidearekin, maiatzean ospatzen den mendi lasterketa.',
     'Desde ahí empieza el descenso, con varios cruces de caminos seguidos donde conviene ir '
     'atento a la traza del GPS, antes de cerrar el círculo de vuelta a Trabakua.':
@@ -875,12 +874,14 @@ ARIETZU = {
     'Circuito corto desde la Ermita de San Juan, en el barrio de Zengotita, hasta '
     '<b>Osmagain</b> (km 0,7, 527 m), con una cruz en el alto y muy buenas vistas desde el '
     'cresterío: hacia Berriz y los montes del Duranguesado a un lado, hacia los barrios de '
-    'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la 7 Pago '
-    'Mendi Lasterketa, la carrera de montaña que se celebra en mayo.':
+    'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la <a '
+    'href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi '
+    'Lasterketa</a>, la carrera de montaña que se celebra en mayo.':
         'Zirkuitu laburra San Juan ermitatik, Zengotita auzoan, <b>Osmagain</b>eraino '
         '(0,7 km, 527 m), goian gurutze batekin eta ikuspegi bikainekin gailurrerditik: '
         'Berriz eta Durangaldeko mendiak alde batetik, eta bestetik Zengotita eta Osma '
-        'auzoak. Ibilbidearen zati hau 7 Pago Mendi Lasterketaren zatia da, maiatzean '
+        'auzoak. Ibilbidearen zati hau <a href="https://7pago.com" target="_blank" '
+        'rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren zatia da, maiatzean '
         'ospatzen den mendi lasterketa.',
     'El cresterío sigue hasta <b>Arietzu</b> (km 2,2, 479 m), otra cruz de piedra entre '
     'pinos, antes de cerrar el círculo de vuelta a la ermita.':
@@ -921,6 +922,8 @@ URKO = {
         'alt="Lainoak harana betetzen gailurren artean, hegazkinen aztarnekin zeruan"',
     'alt="Amanecer entre estelas de aviones, con nubes bajas cubriendo el valle"':
         'alt="Egunsentia hegazkinen aztarnen artean, hodei baxuek harana estaltzen dutela"',
+    'alt="Vista panorámica de las montañas del entorno bajo un cielo despejado, con caseríos y prados en el valle en primer plano"':
+        'alt="Inguruko mendien ikuspegi panoramikoa zeru garbi baten azpian, baserriak eta larreak haranean lehen planoan"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
     'atr&aacute;s y empieza una cuesta que por un momento se pone intensa, pero corta; '
@@ -1013,13 +1016,18 @@ SANCRISTOBAL = {
         'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
     'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
-    'Un poco m&aacute;s adelante cruzamos <b>Askako</b> (km 5,7, 681 m) por un bonito sendero '
-    'casi oculto, parte del recorrido del AstoTrail, la carrera de trail de Garai.':
+    'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
+    'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
+    '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
+    'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
+    'monta&ntilde;a que organiza el municipio de Garai.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
         'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
-        'desbideratu ditzake metro batzuk. Handik pixka batera <b>Askako</b> (5,7 km, 681 m) '
-        'gurutzatzen dugu ia ezkutuko bidezidor eder batetik, Garaiko AstoTrail '
-        'lasterketaren ibilbidearen zati bat.',
+        'desbideratu ditzake metro batzuk. Handik pixka batera, aerosorgailuen paraleloan '
+        'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Askako '
+        'gailur-eremurako igoeraren bila (5,7 km, 681 m). Handik, landaretzak ia ezkutatzen '
+        'duen bidezidor eder batetik gurutzatzen dugu <b>Askako</b>, Garaiko udalak '
+        'antolatzen duen AstoTrail lasterketa gogorraren ibilbide klasikoaren zati denetik.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
     'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
     'izquierda, con agua durante todo el a&ntilde;o.':
@@ -1059,6 +1067,105 @@ SANCRISTOBAL = {
     'Ermita de San Juan': 'San Juan ermita',
 }
 
+ITURRETA = {
+    '<span>Cemento, piedra y tierra</span><span class="sep">/</span><span>Barinaga, el río e Iturreta</span>':
+        '<span>Zementua, harria eta lurra</span><span class="sep">/</span><span>Barinaga, ibaia eta Iturreta</span>',
+
+    '<span>Circuito</span></p>':
+        '<span>Zirkuitua</span></p>',
+
+    '<h1>Trabakua, Barinaga<br><em>y Iturreta</em></h1>':
+        '<h1>Trabakua, Barinaga<br><em>eta Iturreta</em></h1>',
+
+    'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Barinaga y Iturreta"':
+        'alt="Trabakua, Barinaga eta Iturretako ibilbidearen argazki handitua"',
+    'alt="Vista del valle desde la ruta, con caseríos y bordas entre prados y bosque"':
+        'alt="Haranaren ikuspegia ibilbidetik, baserriak eta bordak larre eta basoen artean"',
+    'alt="Pista de cemento en la ladera, con los aerogeneradores del Oiz al fondo"':
+        'alt="Zementuzko pista hegalean, Oizeko aerosorgailuak atzealdean"',
+    'alt="Pista de cemento entre árboles, con luz de otoño filtrándose entre las hojas"':
+        'alt="Zementuzko pista zuhaitzen artean, udazkeneko argia hostoen artetik sartzen"',
+    'alt="Vista panorámica del valle con un caserío blanco entre bosque y prados"':
+        'alt="Haranaren ikuspegi panoramikoa, baserri zuri bat basoaren eta larreen artean"',
+    'alt="Pista de tierra en una zona de monte recién talado, con vistas al valle"':
+        'alt="Lurrezko pista, berriki moztutako baso-eremu batean, haranerako ikuspegiekin"',
+
+    'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil':
+        'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
+
+    'download="Trabakua, Barinaga y Iturreta.gpx"':
+        'download="Trabakua, Barinaga eta Iturreta.gpx"',
+
+    '<title>El río':
+        '<title>Ibaia',
+
+    '<span class="num">2</span>El río</span>':
+        '<span class="num">2</span>Ibaia</span>',
+
+    '<h2>BTT y e-bike</h2>':
+        '<h2>BTT eta e-bike</h2>',
+
+    '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia. No hay fuentes de agua en el recorrido: en caso de necesidad, habría que desviarse hasta el pueblo de Barinaga.':
+        '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz. Ez dago ur-iturririk ibilbidean: beharrezkoa balitz, Barinaga herrira desbideratu beharko litzateke.',
+
+    'Se sale desde el Alto de Trabakua. Los primeros metros bajan hasta un cruce donde se deja el asfalto, y todo pasa a ser pista en solitario. El primer repecho —duro, poco más de 300 m— es el que más se nota. Después hay una bajada algo técnica hasta la zona de <b>Aginaga</b> (km 5).':
+        'Ibilbidea Trabakuako mendatean hasten da. Lehen metroek behera egiten dute asfaltoa uzten den bidegurutze batera iritsi arte, eta hortik aurrera dena da pista bakarrik. Lehen malda —gogorra, 300 metrotik gutxixeago— da gehien nabaritzen dena. Ondoren jaitsiera teknikoxka bat dago <b>Aginagako</b> eremuraino (5 km).',
+
+    'En Aginaga se coge la pista de la izquierda, bajando entre caseríos y prados con ganado hasta <b>el río</b> (km 9,2), en el fondo del valle. Ahí se gira a la izquierda y empieza la subida por cemento hacia <b>Iturreta</b> (km 12,5). Una vez arriba, coge otra pista de piedra —varios kilómetros para recuperar piernas— antes de la siguiente subida: corta pero intensa, por pista de tierra, difícil de subir con una bici normal —ahí se le pide a la eléctrica todo lo que da. La subida sigue hasta divisar <b>Mendibil</b> a la izquierda (km 14,5), señal de que se ha llegado a la parte más alta de la ruta.':
+        'Aginagan ezkerreko pista hartzen da, baserri eta abere-larreen artean behera eginez <b>ibaira</b> iritsi arte (9,2 km), haranaren hondoan. Han ezkerrera biratzen da eta zementuzko igoera hasten da <b>Iturretarantz</b> (12,5 km). Gainean, beste pista bat hartzen da, harrizkoa —kilometro batzuk hankak berreskuratzeko— hurrengo igoeraren aurretik: laburra baina bizia, lurrezko pistatik, zaila bizikleta arrunt batekin igotzeko —hor eskatzen zaio elektrikoari eman dezakeen guztia. Igoerak jarraitzen du <b>Mendibil</b> ezkerrera ikusi arte (14,5 km), ibilbideko puntu altuenera iritsi garenaren seinale.',
+
+    'Baja entonces una pista de tierra para estirar unos cuantos kilómetros más, seguida de un buen tramo de piedra donde se puede dar bastante tralla. Ya abajo del todo, la última subida vuelve hacia Trabakua, con los aerogeneradores del Oiz y el barrio de Gerea como paisaje de fondo, antes de llegar de vuelta a Trabakua, punto de salida y llegada.':
+        'Orduan lurrezko pista batean behera egiten da kilometro batzuk gehiago luzatzeko, eta ondoren harrizko tarte on bat dator, non tralla franko eman daitekeen. Erabat behean, azken igoerak Trabakuarantz egiten du, Oizeko aerosorgailuak eta Gereako auzoa atzealde gisa dituela, Trabakuara itzuli arte, irteera eta helmuga puntura.',
+}
+
+HISTORIAS = {
+    # dock + progress + hint + buttons (shared across every card)
+    'Anterior': 'Aurrekoa',
+    'Sorpréndeme': 'Harritu nazazu',
+    'Siguiente': 'Hurrengoa',
+    'Volver a rutas': 'Itzuli ibilbideetara',
+    'La forma del recorrido es la portada. Desliza para descubrir otra.': 'Ibilbidearen forma bera da azala. Irristatu beste bat ezagutzeko.',
+    'Entrar en esta ruta': 'Sartu ibilbide honetan',
+    'Abrir ruta completa': 'Ireki ibilbide osoa',
+
+    # per-card eyebrow ("Ruta 01")
+    'Ruta': 'Ibilbidea',
+
+    # per-card activity/type/surface tag
+    'Bici · Circuito · Pista': 'Bizikleta · Zirkuitua · Pista',
+    'Senderismo · Circuito · Sendero': 'Oinez · Zirkuitua · Bidezidorra',
+    'Bici · Circuito · Mixta': 'Bizikleta · Zirkuitua · Nahasia',
+    'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
+
+    # per-card surface badge (Pista is identical in both languages)
+    'Sendero': 'Bidezidorra',
+    'Mixta': 'Nahasia',
+
+    # route names
+    'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
+    'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
+    'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
+    'Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki': 'Zengotitagane, Iturzurigana eta San Kristobal Txiki',
+    'Zengotitagane, Askako y San Crist&oacute;bal': 'Zengotitagane, Askako eta San Kristobal',
+    'Zengotitagane, Axmakur y Oiz': 'Zengotitagane, Axmakur eta Oiz',
+    'Osmagain y Arietzu': 'Osmagain eta Arietzu',
+    'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
+
+    # route descriptions
+    'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
+    'Sendero hasta el punto más alto de Mallabia: cascadas, un dolmen prehistórico y un cresterio con vistas a ambos lados antes de rodear Zengotitagane por el este.': 'Bidezidorra Mallabiako punturik altueneraino: ur-jauziak, historiaurreko trikuharri bat eta gailurrerdi bat bi aldeetara bistak dituena, Zengotitagane ekialdetik inguratu aurretik.',
+    'Circuito largo desde Trabakua: la colegiata cisterciense de Zenarruza, una ermita de pastores en la ladera del Oiz y el dolmen de Iturzurigana, con dos subidas largas seguidas.': 'Zirkuitu luzea Trabakuatik: Zenarruzako kolegiata zisterziarra, artzainen ermita bat Oizen hegalean eta Iturzuriganako trikuharria, bi igoera luze jarraian.',
+    'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio.': 'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion.',
+    'Sendero corto y familiar hasta la cascada de Gerea.': 'Bidezidor laburra eta familiarra Gereako ur-jauziraino.',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi ermitarekin.',
+    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las ermitas de San Crist&oacute;bal Txiki y San Juan de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Askakoraino, San Kristobal Txiki eta San Juan ermitak bidean.',
+    'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa cant&aacute;brica desde la cumbre.': 'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde kantauriarrerako ikuspegiekin gailurretik.',
+    'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
+    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
+}
+
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
     'mallabia': 'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
@@ -1074,6 +1181,9 @@ DESCRIPTIONS = {
     'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
+    'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
+    'historias': 'Mallabiako 10 ibilbideak, banan-banan: track bakoitzaren benetako '
+        'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
 # <title> per page (head files)
@@ -1090,6 +1200,8 @@ TITLES = {
     'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
+    'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
 PAGE_STRINGS = {
@@ -1104,4 +1216,6 @@ PAGE_STRINGS = {
     'arietzu': ARIETZU,
     'urko': URKO,
     'sancristobal': SANCRISTOBAL,
+    'iturreta': ITURRETA,
+    'historias': HISTORIAS,
 }

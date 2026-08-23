@@ -111,4 +111,24 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/sancristobal.eu.html"/>
   </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/iturreta.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/iturreta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/iturreta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/iturreta.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/iturreta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/iturreta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/historias.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/historias.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/historias.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/historias.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/historias.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/historias.eu.html"/>
+  </url>
 </urlset>
