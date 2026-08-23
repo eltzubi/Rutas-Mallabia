@@ -1170,13 +1170,13 @@ EGOARBITZA = {
         'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
 
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
-    'Asuntza y Urko: pista de cemento y piedra, con un primer repecho duro. Desde la cima empieza la '
-    'bajada, coincidiendo con el primer tramo del acceso que sube desde Ermua &mdash;sendero primero, '
+    'Asuntza y Urko: pista de cemento y piedra. Desde la cima empieza la '
+    'bajada, coincidiendo con el &uacute;ltimo tramo del acceso que sube desde Ermua &mdash;sendero primero, '
     'luego un trozo de carretera, y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
     'bajando hasta el barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
         'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) Asuntza eta Urko fitxako berbera da: '
-        'zementuzko eta harrizko pista, hasierako malda gogor batekin. Gailurretik jaitsiera hasten da, '
-        'Ermuatik igotzeko sarbidearen lehen zatiarekin bat eginez &mdash;bidezidorra lehenengo, gero '
+        'zementuzko eta harrizko pista. Gailurretik jaitsiera hasten da, '
+        'Ermuatik igotzeko sarbidearen azken zatiarekin bat eginez &mdash;bidezidorra lehenengo, gero '
         'errepide zati bat, eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
         'auzoraino jaitsiz (12 km &middot; 171 m), Eibarren.',
 
@@ -1191,12 +1191,12 @@ EGOARBITZA = {
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
     'pista. Justo al llegar al camino de la presa merece la pena un desv&iacute;o de unos metros a la '
     'izquierda hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
-    'hacia <b>Santa Marina</b> de Aixola &mdash;tambi&eacute;n conocida como Santama&ntilde;esa&mdash; '
+    'hacia <b>Santa Marina</b> de Aixola &mdash;tambi&eacute;n conocida como Santama&ntilde;esar&mdash; '
     '(km 22,6 &middot; 663 m), entre sendero y pista.':
         '<b>Aixolako presarako</b> jaitsiera (19 km) oso ona da: lehenengo bidezidorra, gero pista. '
         'Presaren bidera iritsi bezain laster, merezi du ezkerrera metro batzuetako desbideratzea, urte '
         'osoan urez betetako iturri batera. Presaren aurrealdea zeharkatzen da eta Aixolako '
-        '<b>Santa Marinarantz</b> igotzen da &mdash;Santama&ntilde;esa izenez ere ezaguna&mdash; '
+        '<b>Santa Marinarantz</b> igotzen da &mdash;Santama&ntilde;esar izenez ere ezaguna&mdash; '
         '(22,6 km &middot; 663 m), bidezidor eta pista artean.',
 
     'De Santa Marina, la bajada es buena y toda en pista. Por Areitio se coge camino para acercarse a '

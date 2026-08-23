@@ -82,10 +82,11 @@
   if (!btn) return;
   var root = document.documentElement;
 
-  // Dark ("Sendero de noche") is the default identity regardless of the
-  // OS preference; data-theme="light" is the explicit opt-out. The initial
-  // choice (from localStorage) is applied synchronously in <head>, before
-  // this script runs, so there is no flash of the wrong theme.
+  // Light is the default regardless of OS preference; data-theme="dark"
+  // (i.e. no data-theme attribute) is the explicit opt-in, chosen via the
+  // toggle. The initial choice (from localStorage) is applied synchronously
+  // in <head>, before this script runs, so there is no flash of the wrong
+  // theme.
   function effectiveTheme(){
     return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
