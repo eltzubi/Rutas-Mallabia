@@ -291,8 +291,8 @@ HOME = {
     # egoarbitza card
     '<span class="signpost-name">Urko, Egoarbitza y Zengotitagane</span>':
         '<span class="signpost-name">Urko, Egoarbitza eta Zengotitagane</span>',
-    'alt="Vista de los montes entre Trabakua, Urko y Egoarbitza"':
-        'alt="Trabakua, Urko eta Egoarbitza arteko mendien ikuspegia"',
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
+        'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
     '<h2>Urko, Egoarbitza<br><em>y Zengotitagane</em></h2>':
         '<h2>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h2>',
     'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santa Marina de Aixola hasta Zengotitagane.':
@@ -1154,6 +1154,21 @@ EGOARBITZA = {
     '<h2>Trail de monta&ntilde;a</h2>':
         '<h2>Mendiko trail-a</h2>',
 
+    'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
+        'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
+    'alt="Foto ampliada del recorrido de Urko, Egoarbitza y Zengotitagane"':
+        'alt="Urko, Egoarbitza eta Zengotitaganeko ibilbidearen argazki handitua"',
+    'alt="Ascenso hacia Urko entre &aacute;rboles a contraluz, con el amanecer al fondo"':
+        'alt="Urkorako igoera zuhaitzen artean kontraargitan, egunsentia atzealdean"',
+    'alt="Amanecer con el sol asomando entre nubes, desde la zona de Urko"':
+        'alt="Egunsentia, eguzkia hodeien artetik agertzen, Urko inguruko eremutik"',
+    'alt="Vista desde Egoarbitza hacia el embalse de Aixola, entre bosque y pistas forestales"':
+        'alt="Egoarbitzatik Aixolako urtegirako ikuspegia, baso eta baso-pisten artean"',
+    'alt="Cruz de piedra en un mirador de Santa Marina, con el valle y los caser&iacute;os al fondo"':
+        'alt="Harrizko gurutzea Santa Marinako begiratoki batean, harana eta baserriak atzealdean"',
+    'alt="Cruz de piedra entre &aacute;rboles en Arietxu, con un perro junto a ella"':
+        'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
+
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
     'Asuntza y Urko: pista de cemento y piedra, con un primer repecho duro. Desde la cima empieza la '
     'bajada, coincidiendo con el primer tramo del acceso que sube desde Ermua &mdash;sendero primero, '
@@ -1191,23 +1206,27 @@ EGOARBITZA = {
         'bidea hartzen da (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko gailur bera, baina '
         'kontrako aldetik iritsita.',
 
-    'Desde Arietxu, media cresta lleva hacia <b>Zengotitagane</b> (km 32,5 &middot; 811 m), donde '
-    'tambi&eacute;n hay una fuente con agua todo el a&ntilde;o. Y de ah&iacute;, recto hacia Trabakua: '
-    'la &uacute;ltima bajada es dura pero corta, y se cierra el circuito.':
-        'Arietxutik, gailurraren erdiko bideak <b>Zengotitaganerantz</b> daraman (32,5 km &middot; 811 m), '
-        'non urte osoan urez betetako iturri bat ere badagoen. Eta handik, zuzenean Trabakuarantz: '
-        'azken jaitsiera gogorra baina laburra da, eta zirkuitua ixten da.',
+    'Desde Arietxu, media cresta lleva hacia el barrio de Zengotita, donde hay una fuente con agua '
+    'todo el a&ntilde;o. Despu&eacute;s de la fuente empieza la subida hacia <b>Zengotitagane</b> '
+    '(km 32,5 &middot; 811 m): todo en pista, subir y subir sin apenas tregua, pero bastante llevadera. '
+    'Y de ah&iacute;, recto hacia Trabakua: la &uacute;ltima bajada tiene buena pendiente, unos 400 m de '
+    'desnivel en poco m&aacute;s de 2 km, y se cierra el circuito.':
+        'Arietxutik, gailurraren erdiko bideak Zengotita auzorantz darama, non urte osoan urez betetako '
+        'iturri bat dagoen. Iturriaren ondoren, <b>Zengotitaganerako</b> igoera hasten da (32,5 km '
+        '&middot; 811 m): dena pistan, igo eta igo atsedenik gabe, baina nahiko eramangarria. Eta '
+        'handik, zuzenean Trabakuarantz: azken jaitsierak malda ona du, 2 km baino zertxobait '
+        'gehiagotan 400 m-ko desnibela, eta zirkuitua ixten da.',
 
     '34,1 km y +2.564 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
     'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. El track de esta ficha se '
     'grab&oacute; corriendo (5h 06min), as&iacute; que el tiempo no sirve de referencia si vas andando. '
     'Hay dos fuentes con agua todo el a&ntilde;o en el recorrido: una junto a la presa de Aixola y otra '
-    'en Zengotitagane.':
+    'en el barrio de Zengotita.':
         '34,1 km eta +2.564 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
         'Egoarbitza, Arietxu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Fitxa honetako '
         'tracka korrika grabatu zen (5h 06min), beraz denbora ez da erreferentzia oinez bazoaz. Bi '
         'iturri daude urte osoan urez ibilbidean: bat Aixolako presaren ondoan eta bestea '
-        'Zengotitaganen.',
+        'Zengotita auzoan.',
 }
 
 HISTORIAS = {
