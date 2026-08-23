@@ -24,7 +24,7 @@ COMMON = {
     '<span class="k">Distancia</span>': '<span class="k">Distantzia</span>',
     '<span class="k">Desnivel +</span>': '<span class="k">Desnibela +</span>',
     '<span class="k">Desnivel</span>': '<span class="k">Desnibela</span>',
-    '<span class="k">Superficie</span>': '<span class="k">Zorua</span>',
+    '<span class="k">Superficie</span>': '<span class="k">Azalera</span>',
     '<span class="k">Tipo</span>': '<span class="k">Mota</span>',
     '<span class="k">Actividad</span>': '<span class="k">Jarduera</span>',
     '<span class="k">Salida</span>': '<span class="k">Irteera</span>',
@@ -54,7 +54,7 @@ ROUTE = {
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
     '<b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
-        '<b>Zorua</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+        '<b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<span class="k">Para quién es</span>': '<span class="k">Norentzat</span>',
     '<span class="k">Para qui&eacute;n es</span>': '<span class="k">Norentzat</span>',
     '<p class="eyebrow">Mapa de la ruta</p>': '<p class="eyebrow">Ibilbidearen mapa</p>',
