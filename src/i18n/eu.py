@@ -279,8 +279,8 @@ HOME = {
     # iturreta card
     '<span class="signpost-name">Trabakua, Barinaga y Iturreta</span>':
         '<span class="signpost-name">Trabakua, Barinaga eta Iturreta</span>',
-    'alt="Vista de Mallabia y su entorno de montaña"':
-        'alt="Mallabia eta inguruko mendien ikuspegia"',
+    'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
     '<h2>Trabakua, Barinaga<br><em>y Iturreta</em></h2>':
         '<h2>Trabakua, Barinaga<br><em>eta Iturreta</em></h2>',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.':
@@ -1070,6 +1070,21 @@ ITURRETA = {
 
     '<h1>Trabakua, Barinaga<br><em>y Iturreta</em></h1>':
         '<h1>Trabakua, Barinaga<br><em>eta Iturreta</em></h1>',
+
+    'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Barinaga y Iturreta"':
+        'alt="Trabakua, Barinaga eta Iturretako ibilbidearen argazki handitua"',
+    'alt="Vista del valle desde la ruta, con caseríos y bordas entre prados y bosque"':
+        'alt="Haranaren ikuspegia ibilbidetik, baserriak eta bordak larre eta basoen artean"',
+    'alt="Pista de cemento en la ladera, con los aerogeneradores del Oiz al fondo"':
+        'alt="Zementuzko pista hegalean, Oizeko aerosorgailuak atzealdean"',
+    'alt="Pista de cemento entre árboles, con luz de otoño filtrándose entre las hojas"':
+        'alt="Zementuzko pista zuhaitzen artean, udazkeneko argia hostoen artetik sartzen"',
+    'alt="Vista panorámica del valle con un caserío blanco entre bosque y prados"':
+        'alt="Haranaren ikuspegi panoramikoa, baserri zuri bat basoaren eta larreen artean"',
+    'alt="Pista de tierra en una zona de monte recién talado, con vistas al valle"':
+        'alt="Lurrezko pista, berriki moztutako baso-eremu batean, haranerako ikuspegiekin"',
 
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil':
         'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
