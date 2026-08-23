@@ -17,6 +17,9 @@
       expandBtn.setAttribute('aria-label', expanded ?
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
+      if (expanded) {
+        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     });
   }
 
