@@ -81,8 +81,9 @@
 
     var bounds = null;
     data.tracks.forEach(function(t){
+      var baseColor = COLORS[t.color] || COLORS.teal;
       var line = L.polyline(t.points, {
-        color: COLORS[t.color] || COLORS.teal,
+        color: baseColor,
         weight: 4,
         opacity: data.tracks.length > 1 ? 0.85 : 0.9,
         lineJoin: 'round'
@@ -117,8 +118,14 @@
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
         line.bindPopup(html);
         line.on('click', function(e){ line.openPopup(e.latlng); });
+        // A clicked route turns red and thicker so it's clear which line the
+        // open popup belongs to, even where several routes overlap; it
+        // reverts to its own color when its popup closes (including when
+        // Leaflet closes it for us because another route was just clicked).
+        line.on('popupopen', function(){ line.setStyle({ color: COLORS.parking, weight: 6 }); });
+        line.on('popupclose', function(){ line.setStyle({ color: baseColor, weight: 4 }); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
-        line.on('mouseout', function(){ line.setStyle({ weight: 4 }); });
+        line.on('mouseout', function(){ if (!line.isPopupOpen()) line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
         if (pathEl) pathEl.style.cursor = 'pointer';
       }
