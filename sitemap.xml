@@ -122,6 +122,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/iturreta.eu.html"/>
   </url>
   <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.eu.html"/>
+  </url>
+  <url>
+    <loc>https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/egoarbitza.eu.html"/>
+  </url>
+  <url>
     <loc>https://eltzubi.github.io/Rutas-Mallabia/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://eltzubi.github.io/Rutas-Mallabia/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://eltzubi.github.io/Rutas-Mallabia/historias.eu.html"/>

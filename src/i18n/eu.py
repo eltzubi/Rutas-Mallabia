@@ -200,8 +200,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane y San Crist&oacute;bal':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane eta San Kristobal',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu y Urko':
-        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu eta Urko',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko y Egoarbitza':
+        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko eta Egoarbitza',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -287,6 +287,16 @@ HOME = {
         '<h2>Trabakua, Barinaga<br><em>eta Iturreta</em></h2>',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.':
         'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
+
+    # egoarbitza card
+    '<span class="signpost-name">Urko, Egoarbitza y Zengotitagane</span>':
+        '<span class="signpost-name">Urko, Egoarbitza eta Zengotitagane</span>',
+    'alt="Vista de los montes entre Trabakua, Urko y Egoarbitza"':
+        'alt="Trabakua, Urko eta Egoarbitza arteko mendien ikuspegia"',
+    '<h2>Urko, Egoarbitza<br><em>y Zengotitagane</em></h2>':
+        '<h2>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h2>',
+    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santa Marina de Aixola hasta Zengotitagane.':
+        'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Aixolako Santa Marinatik igarota Zengotitaganeraino.',
 }
 
 TRABAKUA = {
@@ -1120,6 +1130,86 @@ ITURRETA = {
         'Orduan lurrezko pista batean behera egiten da kilometro batzuk gehiago luzatzeko, eta ondoren harrizko tarte on bat dator, non tralla franko eman daitekeen. Erabat behean, azken igoerak Trabakuarantz egiten du, Oizeko aerosorgailuak eta Gereako auzoa atzealde gisa dituela, Trabakuara itzuli arte, irteera eta helmuga puntura.',
 }
 
+EGOARBITZA = {
+    '<span>Pista, sendero y cresta</span><span class="sep">/</span><span>Urko, Egoarbitza y Zengotitagane</span>':
+        '<span>Pista, bidezidorra eta gailurra</span><span class="sep">/</span><span>Urko, Egoarbitza eta Zengotitagane</span>',
+
+    '<span>Circuito</span></p>':
+        '<span>Zirkuitua</span></p>',
+
+    '<h1>Urko, Egoarbitza<br><em>y Zengotitagane</em></h1>':
+        '<h1>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h1>',
+
+    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santa Marina de Aixola hasta Zengotitagane':
+        'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Aixolako Santa Marinatik igarota Zengotitaganeraino',
+
+    'download="Urko, Egoarbitza y Zengotitagane.gpx"':
+        'download="Urko, Egoarbitza eta Zengotitagane.gpx"',
+
+    '<title>Presa de Aixola &middot; 19,0 km &middot; 312 m</title>':
+        '<title>Aixolako presa &middot; 19,0 km &middot; 312 m</title>',
+    '<span class="num">4</span>Presa de Aixola</span>':
+        '<span class="num">4</span>Aixolako presa</span>',
+
+    '<h2>Trail de monta&ntilde;a</h2>':
+        '<h2>Mendiko trail-a</h2>',
+
+    'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
+    'Asuntza y Urko: pista de cemento y piedra, con un primer repecho duro. Desde la cima empieza la '
+    'bajada, coincidiendo con el primer tramo del acceso que sube desde Ermua &mdash;sendero primero, '
+    'luego un trozo de carretera, y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
+    'bajando hasta el barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
+        'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) Asuntza eta Urko fitxako berbera da: '
+        'zementuzko eta harrizko pista, hasierako malda gogor batekin. Gailurretik jaitsiera hasten da, '
+        'Ermuatik igotzeko sarbidearen lehen zatiarekin bat eginez &mdash;bidezidorra lehenengo, gero '
+        'errepide zati bat, eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
+        'auzoraino jaitsiz (12 km &middot; 171 m), Eibarren.',
+
+    'Cruzado Ama&ntilde;a se sube hacia el pol&iacute;gono industrial, y de ah&iacute; arranca el sendero '
+    'hasta <b>Egoarbitza</b> (km 16,2 &middot; 722 m): pista al principio, despu&eacute;s media cresta, '
+    'empinada y dura, con un tramo final rocoso donde conviene ir con cuidado.':
+        'Ama&ntilde;a zeharkatu ondoren, industria-poligonorantz igotzen da, eta handik abiatzen da '
+        '<b>Egoarbitzarako</b> bidezidorra (16,2 km &middot; 722 m): hasieran pista, gero gailurraren '
+        'erdiko zatia, malda handikoa eta gogorra, amaierako tarte harritsu batekin non kontuz ibili '
+        'behar den.',
+
+    'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
+    'pista. Justo al llegar al camino de la presa merece la pena un desv&iacute;o de unos metros a la '
+    'izquierda hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
+    'hacia <b>Santa Marina</b> de Aixola &mdash;tambi&eacute;n conocida como Santama&ntilde;esa&mdash; '
+    '(km 22,6 &middot; 663 m), entre sendero y pista.':
+        '<b>Aixolako presarako</b> jaitsiera (19 km) oso ona da: lehenengo bidezidorra, gero pista. '
+        'Presaren bidera iritsi bezain laster, merezi du ezkerrera metro batzuetako desbideratzea, urte '
+        'osoan urez betetako iturri batera. Presaren aurrealdea zeharkatzen da eta Aixolako '
+        '<b>Santa Marinarantz</b> igotzen da &mdash;Santama&ntilde;esa izenez ere ezaguna&mdash; '
+        '(22,6 km &middot; 663 m), bidezidor eta pista artean.',
+
+    'De Santa Marina, la bajada es buena y toda en pista. Por Areitio se coge camino para acercarse a '
+    '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de Osmagain y Arietzu, pero '
+    'llegando por el lado contrario.':
+        'Santa Marinatik, jaitsiera ona da eta erabat pistan. Areitiotik <b>Arietxura</b> hurbiltzeko '
+        'bidea hartzen da (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko gailur bera, baina '
+        'kontrako aldetik iritsita.',
+
+    'Desde Arietxu, media cresta lleva hacia <b>Zengotitagane</b> (km 32,5 &middot; 811 m), donde '
+    'tambi&eacute;n hay una fuente con agua todo el a&ntilde;o. Y de ah&iacute;, recto hacia Trabakua: '
+    'la &uacute;ltima bajada es dura pero corta, y se cierra el circuito.':
+        'Arietxutik, gailurraren erdiko bideak <b>Zengotitaganerantz</b> daraman (32,5 km &middot; 811 m), '
+        'non urte osoan urez betetako iturri bat ere badagoen. Eta handik, zuzenean Trabakuarantz: '
+        'azken jaitsiera gogorra baina laburra da, eta zirkuitua ixten da.',
+
+    '34,1 km y +2.564 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
+    'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. El track de esta ficha se '
+    'grab&oacute; corriendo (5h 06min), as&iacute; que el tiempo no sirve de referencia si vas andando. '
+    'Hay dos fuentes con agua todo el a&ntilde;o en el recorrido: una junto a la presa de Aixola y otra '
+    'en Zengotitagane.':
+        '34,1 km eta +2.564 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
+        'Egoarbitza, Arietxu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Fitxa honetako '
+        'tracka korrika grabatu zen (5h 06min), beraz denbora ez da erreferentzia oinez bazoaz. Bi '
+        'iturri daude urte osoan urez ibilbidean: bat Aixolako presaren ondoan eta bestea '
+        'Zengotitaganen.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1138,6 +1228,7 @@ HISTORIAS = {
     'Senderismo · Circuito · Sendero': 'Oinez · Zirkuitua · Bidezidorra',
     'Bici · Circuito · Mixta': 'Bizikleta · Zirkuitua · Nahasia',
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
+    'Senderismo · Circuito · Mixta': 'Oinez · Zirkuitua · Nahasia',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
@@ -1153,6 +1244,7 @@ HISTORIAS = {
     'Osmagain y Arietzu': 'Osmagain eta Arietzu',
     'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
     'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
+    'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -1166,6 +1258,7 @@ HISTORIAS = {
     'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
+    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santa Marina de Aixola hasta Zengotitagane.': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Aixolako Santa Marinatik igarota Zengotitaganeraino.',
 }
 
 # <meta name="description"> per page (head files)
@@ -1184,7 +1277,9 @@ DESCRIPTIONS = {
     'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
-    'historias': 'Mallabiako 10 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'egoarbitza': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Aixolako Santa Marinatik '
+        'igarota Zengotitaganeraino',
+    'historias': 'Mallabiako 12 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -1203,6 +1298,7 @@ TITLES = {
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1219,5 +1315,6 @@ PAGE_STRINGS = {
     'urko': URKO,
     'sancristobal': SANCRISTOBAL,
     'iturreta': ITURRETA,
+    'egoarbitza': EGOARBITZA,
     'historias': HISTORIAS,
 }
