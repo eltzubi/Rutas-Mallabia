@@ -1171,14 +1171,14 @@ EGOARBITZA = {
 
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
     'Asuntza y Urko: pista de cemento y piedra. Desde la cima empieza la '
-    'bajada, coincidiendo con el &uacute;ltimo tramo del acceso que sube desde Ermua &mdash;sendero primero, '
-    'luego un trozo de carretera, y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
-    'bajando hasta el barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
+    'bajada, coincidiendo con el &uacute;ltimo tramo del acceso que sube desde Ermua: primero sendero, '
+    'luego un trozo de carretera y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
+    'hasta bajar al barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
         'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) Asuntza eta Urko fitxako berbera da: '
         'zementuzko eta harrizko pista. Gailurretik jaitsiera hasten da, '
-        'Ermuatik igotzeko sarbidearen azken zatiarekin bat eginez &mdash;bidezidorra lehenengo, gero '
-        'errepide zati bat, eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
-        'auzoraino jaitsiz (12 km &middot; 171 m), Eibarren.',
+        'Ermuatik igotzeko sarbidearen azken zatiarekin bat eginez: bidezidorra lehenengo, gero '
+        'errepide zati bat eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
+        'auzoraino jaitsi arte (12 km &middot; 171 m), Eibarren.',
 
     'Cruzado Ama&ntilde;a se sube hacia el pol&iacute;gono industrial, y de ah&iacute; arranca el sendero '
     'hasta <b>Egoarbitza</b> (km 16,2 &middot; 722 m): pista al principio, despu&eacute;s media cresta, '
