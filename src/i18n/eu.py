@@ -1170,12 +1170,12 @@ EGOARBITZA = {
         'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
 
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
-    'Asuntza y Urko: pista de cemento y piedra. Desde la cima empieza la '
+    '<a href="urko.html">Asuntza y Urko</a>: pista de cemento y piedra. Desde la cima empieza la '
     'bajada, coincidiendo con el &uacute;ltimo tramo del acceso que sube desde Ermua: primero sendero, '
     'luego un trozo de carretera y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
     'hasta bajar al barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
-        'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) Asuntza eta Urko fitxako berbera da: '
-        'zementuzko eta harrizko pista. Gailurretik jaitsiera hasten da, '
+        'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) <a href="urko.html">Asuntza eta Urko</a> '
+        'fitxako berbera da: zementuzko eta harrizko pista. Gailurretik jaitsiera hasten da, '
         'Ermuatik igotzeko sarbidearen azken zatiarekin bat eginez: bidezidorra lehenengo, gero '
         'errepide zati bat eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
         'auzoraino jaitsi arte (12 km &middot; 171 m), Eibarren.',
@@ -1200,12 +1200,12 @@ EGOARBITZA = {
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. En la ermita se coge la GR, que sube poco a poco hacia '
-    '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de Osmagain y Arietzu, pero '
-    'llegando por el lado contrario.':
+    '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de <a href="arietzu.html">Osmagain '
+    'y Arietzu</a>, pero llegando por el lado contrario.':
         'Gero <b>Santa Marinarantz</b> jaisten gara, non ermita bat dagoen eta berriro ur hornitu '
         'daitekeen. Ermitan GRa hartzen da, pixkanaka '
-        '<b>Arietxurantz</b> igotzen duena (28,8 km &middot; 483 m), Osmagain eta Arietzu ibilbideko '
-        'gailur bera, baina kontrako aldetik iritsita.',
+        '<b>Arietxurantz</b> igotzen duena (28,8 km &middot; 483 m), <a href="arietzu.html">Osmagain eta '
+        'Arietzu</a> ibilbideko gailur bera, baina kontrako aldetik iritsita.',
 
     'Desde Arietxu seguimos por el cresterio hasta m&aacute;s o menos la mitad, y luego bajamos hacia el '
     'barrio de Zengotita, donde hay una fuente con agua '

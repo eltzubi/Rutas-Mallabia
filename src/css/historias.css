@@ -40,7 +40,7 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
   color:var(--ink); opacity:.035; letter-spacing:-.04em;
 }
 .story-trace{
-  position:absolute; inset:68px 8px auto; height:40vh; z-index:1;
+  position:absolute; inset:68px 8px auto; width:calc(100% - 16px); height:40vh; z-index:1;
   filter:drop-shadow(0 18px 30px rgba(0,0,0,.5));
 }
 .story-trace path{
@@ -132,7 +132,7 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
 
 @media (min-width:800px){
   .story-card{ padding:40px 8vw 118px; }
-  .story-trace{ left:44%; right:5%; top:10vh; height:58vh; }
+  .story-trace{ left:44%; right:5%; top:10vh; width:51%; height:58vh; }
   .story-copy{ max-width:42%; }
   .story-open{ width:auto; padding:17px 30px; }
   .story-dock{ left:50%; right:auto; transform:translateX(-50%); width:380px; }
