@@ -1189,11 +1189,11 @@ EGOARBITZA = {
         'behar den.',
 
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
-    'pista. Justo al llegar al camino de la presa merece la pena un desv&iacute;o de unos metros a la '
-    'izquierda hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
+    'pista. Justo al llegar al camino de la presa merece la pena desviarse hasta una fuente con agua '
+    'todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
     'hacia <b>Santama&ntilde;esar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio.':
         '<b>Aixolako presarako</b> jaitsiera (19 km) oso ona da: lehenengo bidezidorra, gero pista. '
-        'Presaren bidera iritsi bezain laster, merezi du ezkerrera metro batzuetako desbideratzea, urte '
+        'Presaren bidera iritsi bezain laster, merezi du desbideratzea urte '
         'osoan urez betetako iturri batera. Presaren aurrealdea zeharkatzen da eta '
         '<b>Santama&ntilde;esarrerantz</b> igotzen da (22,6 km &middot; 663 m), erabat pistan, '
         'inolako misteriorik gabe.',
