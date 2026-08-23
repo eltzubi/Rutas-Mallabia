@@ -583,7 +583,11 @@ footer{
 .info-modal-card .parada{ margin:0 0 24px; }
 .info-modal-card > .eyebrow{ margin-bottom:14px; }
 .info-modal-close{
-  position:absolute; top:16px; right:16px;
+  /* Fixed to the viewport, not the card -- the card's content (map,
+     parking notes...) scrolls, and a merely-absolute close button would
+     scroll away with it, leaving no way to close the dialog on a short
+     screen where it fills the viewport and there's no backdrop to tap. */
+  position:fixed; top:20px; right:20px; z-index:110;
   width:32px; height:32px; border-radius:50%;
   background:var(--ground-raised); border:1px solid var(--line);
   color:var(--ink-dim); font-size:14px; cursor:pointer;
