@@ -1,31 +1,31 @@
 :root{
-  /* Minimalist dark: one warm accent family, muted and quiet. */
-  --ground:#0C0C0B;
-  --ground-raised:#171613;
-  --ink:#F3F1EC;
-  --ink-dim:#948C7F;
-  --teal:#D9973B;
-  --teal-soft:rgba(217,151,59,.13);
-  --violet:#C86446;
-  --violet-soft:rgba(200,100,70,.13);
-  --line: rgba(243,241,236,.13);
-  --ink-deep:#050504;
-  --readout-a:#D9973B;
-  --readout-b:#C86446;
+  /* Sendero de noche: dark is the identity now, light is the opt-out. */
+  --ground:#0A0F0A;
+  --ground-raised:#131C10;
+  --ink:#EAF5E2;
+  --ink-dim:#8FA382;
+  --teal:#2FE0F5;
+  --teal-soft:rgba(47,224,245,.14);
+  --violet:#A6FF4D;
+  --violet-soft:rgba(166,255,77,.14);
+  --line: rgba(234,245,226,.16);
+  --ink-deep:#050805;
+  --readout-a:#2FE0F5;
+  --readout-b:#A6FF4D;
 }
 :root[data-theme="light"]{
-  --ground:#FAF8F4;
-  --ground-raised:#F1ECE3;
-  --ink:#1B1914;
-  --ink-dim:#6E6759;
-  --teal:#A8631A;
-  --teal-soft:#F1E1C6;
-  --violet:#963527;
-  --violet-soft:#F1DAD2;
-  --line: rgba(27,25,20,.13);
-  --ink-deep:#14120D;
-  --readout-a:#A8631A;
-  --readout-b:#963527;
+  --ground:#F4F7EF;
+  --ground-raised:#E8EEE0;
+  --ink:#16210F;
+  --ink-dim:#57624A;
+  --teal:#006E86;
+  --teal-soft:#CFE9EF;
+  --violet:#3A6B15;
+  --violet-soft:#DEEFC9;
+  --line: rgba(22,33,15,.14);
+  --ink-deep:#14170F;
+  --readout-a:#0089A8;
+  --readout-b:#4E8F1C;
 }
 
 *{box-sizing:border-box;}
@@ -77,7 +77,7 @@ body{
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
   letter-spacing:.06em; flex-shrink:0;
 }
-.lang-switch:hover{ border-color:var(--teal); color:var(--teal); }
+.lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
 .info-chip{
   display:inline-flex; align-items:center; justify-content:center;
   min-width:26px; height:26px; padding:0 9px; border-radius:13px;
@@ -86,7 +86,7 @@ body{
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
   letter-spacing:.06em; flex-shrink:0;
 }
-.info-chip:hover{ border-color:var(--teal); color:var(--teal); }
+.info-chip:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
@@ -587,19 +587,41 @@ footer{
 .to-top:hover{ background:var(--violet); }
 @media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
 
-/* ---- quiet elevation: rounded corners, no glow ---- */
+/* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
-.logo-photo{ box-shadow:0 0 0 4px var(--ground); }
+.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
-.wikiloc-link, .directions-cta, .back-home-link, .feat-cta{ border-radius:12px; }
+.wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
+  border-radius:12px;
+  box-shadow:0 0 24px -10px var(--teal);
+}
+.wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover, .feat-cta:hover{
+  box-shadow:0 0 30px -8px var(--violet);
+}
+.wikiloc-link.ghost{ box-shadow:none; }
+.wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
 
 .feat-panel{ border-radius:22px; }
+.feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--teal); }
+.feat-panel[data-activity="senderismo"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--violet); }
 
 .fact{ border-radius:14px; }
+.fact .v{ text-shadow:0 0 14px currentColor; }
+.feat-facts .fact .v{ text-shadow:0 0 12px currentColor; }
+.readout-item .v{ text-shadow:0 0 18px currentColor; }
+.elev-tags .v{ text-shadow:0 0 14px currentColor; }
+
+.activity-chip.active{ box-shadow:0 0 18px -3px currentColor; }
+.range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
+.range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
 
 .photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
 .route-map-box, .map-box{ border-radius:20px; }
 .hero-chart{ border-radius:20px; }
+.hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
+.elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
 
 .parada{
   margin:0 0 24px;
@@ -611,4 +633,27 @@ footer{
 .parada .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
 .parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
 .parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
-.parada{ border-radius:0 16px 16px 0; }
+.parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }
+.parada{
+  background:var(--violet-soft);
+  background:color-mix(in srgb, var(--violet-soft) 90%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+
+/* ---- ambient fx: faint grid + soft glow behind the page ---- */
+.page{ position:relative; z-index:1; }
+.fx-world{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.fx-grid{
+  position:absolute; inset:0; opacity:.12;
+  background-image:
+    linear-gradient(rgba(234,245,226,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234,245,226,.06) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom, #000, transparent 75%);
+  -webkit-mask-image:linear-gradient(to bottom, #000, transparent 75%);
+}
+:root[data-theme="light"] .fx-grid{ opacity:.05; }
+.fx-glow{ position:absolute; width:60vw; height:60vw; border-radius:50%; filter:blur(90px); opacity:.14; }
+.fx-glow.a{ top:-22vw; left:-16vw; background:var(--teal); }
+.fx-glow.b{ top:8vw; right:-22vw; background:var(--violet); }
+:root[data-theme="light"] .fx-glow{ opacity:.10; }
