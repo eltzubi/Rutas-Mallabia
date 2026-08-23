@@ -275,6 +275,16 @@ HOME = {
         '<h2>Trabakua, Asuntza<br><em>eta Urko</em></h2>',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.':
         'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
+
+    # iturreta card
+    '<span class="signpost-name">Trabakua, Barinaga y Iturreta</span>':
+        '<span class="signpost-name">Trabakua, Barinaga eta Iturreta</span>',
+    'alt="Vista de Mallabia y su entorno de montaña"':
+        'alt="Mallabia eta inguruko mendien ikuspegia"',
+    '<h2>Trabakua, Barinaga<br><em>y Iturreta</em></h2>':
+        '<h2>Trabakua, Barinaga<br><em>eta Iturreta</em></h2>',
+    'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.':
+        'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
 }
 
 TRABAKUA = {
@@ -1051,6 +1061,44 @@ SANCRISTOBAL = {
     'Ermita de San Juan': 'San Juan ermita',
 }
 
+ITURRETA = {
+    '<span>Cemento, piedra y tierra</span><span class="sep">/</span><span>Barinaga, el río e Iturreta</span>':
+        '<span>Zementua, harria eta lurra</span><span class="sep">/</span><span>Barinaga, ibaia eta Iturreta</span>',
+
+    '<span>Circuito</span></p>':
+        '<span>Zirkuitua</span></p>',
+
+    '<h1>Trabakua, Barinaga<br><em>y Iturreta</em></h1>':
+        '<h1>Trabakua, Barinaga<br><em>eta Iturreta</em></h1>',
+
+    'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil':
+        'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
+
+    'download="Trabakua, Barinaga y Iturreta.gpx"':
+        'download="Trabakua, Barinaga eta Iturreta.gpx"',
+
+    '<title>El río':
+        '<title>Ibaia',
+
+    '<span class="num">2</span>El río</span>':
+        '<span class="num">2</span>Ibaia</span>',
+
+    '<h2>BTT y e-bike</h2>':
+        '<h2>BTT eta e-bike</h2>',
+
+    '20,42 km y +1.038 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia.':
+        '20,42 km eta +1.038 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz.',
+
+    'Se sale desde el Alto de Trabakua. Los primeros metros bajan hasta un cruce donde se deja el asfalto, y todo pasa a ser pista en solitario. El primer repecho —duro, poco más de 300 m— es el que más se nota. Después hay una bajada algo técnica hasta la zona de <b>Aginaga</b> (km 5).':
+        'Ibilbidea Trabakuako mendatean hasten da. Lehen metroek behera egiten dute asfaltoa uzten den bidegurutze batera iritsi arte, eta hortik aurrera dena da pista bakarrik. Lehen malda —gogorra, 300 metrotik gutxixeago— da gehien nabaritzen dena. Ondoren jaitsiera teknikoxka bat dago <b>Aginagako</b> eremuraino (5 km).',
+
+    'En Aginaga se coge la pista de la izquierda, bajando entre caseríos y prados con ganado hasta <b>el río</b> (km 10), en el fondo del valle. Ahí se gira a la izquierda y empieza la subida por cemento hacia <b>Iturreta</b> (km 12,5). Una vez arriba, coge otra pista de piedra —varios kilómetros para recuperar piernas— antes de la siguiente subida: corta pero intensa, por pista de tierra, difícil de subir con una bici normal —ahí se le pide a la eléctrica todo lo que da. La subida sigue hasta divisar <b>Mendibil</b> a la izquierda (km 15), señal de que se ha llegado a la parte más alta de la ruta.':
+        'Aginagan ezkerreko pista hartzen da, baserri eta abere-larreen artean behera eginez <b>ibaira</b> iritsi arte (10 km), haranaren hondoan. Han ezkerrera biratzen da eta zementuzko igoera hasten da <b>Iturretarantz</b> (12,5 km). Gainean, beste pista bat hartzen da, harrizkoa —kilometro batzuk hankak berreskuratzeko— hurrengo igoeraren aurretik: laburra baina bizia, lurrezko pistatik, zaila bizikleta arrunt batekin igotzeko —hor eskatzen zaio elektrikoari eman dezakeen guztia. Igoerak jarraitzen du <b>Mendibil</b> ezkerrera ikusi arte (15 km), ibilbideko puntu altuenera iritsi garenaren seinale.',
+
+    'Baja entonces una pista de tierra para estirar unos cuantos kilómetros más, seguida de un buen tramo de piedra donde se puede dar bastante tralla. Ya abajo del todo, la última subida vuelve hacia Trabakua, con los aerogeneradores del Oiz y el barrio de Gerea como paisaje de fondo, antes de llegar de vuelta a Trabakua, punto de salida y llegada.':
+        'Orduan lurrezko pista batean behera egiten da kilometro batzuk gehiago luzatzeko, eta ondoren harrizko tarte on bat dator, non tralla franko eman daitekeen. Erabat behean, azken igoerak Trabakuarantz egiten du, Oizeko aerosorgailuak eta Gereako auzoa atzealde gisa dituela, Trabakuara itzuli arte, irteera eta helmuga puntura.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1112,6 +1160,7 @@ DESCRIPTIONS = {
     'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Astakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
+    'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'historias': 'Mallabiako 10 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -1130,6 +1179,7 @@ TITLES = {
     'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Astako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
+    'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1145,5 +1195,6 @@ PAGE_STRINGS = {
     'arietzu': ARIETZU,
     'urko': URKO,
     'sancristobal': SANCRISTOBAL,
+    'iturreta': ITURRETA,
     'historias': HISTORIAS,
 }
