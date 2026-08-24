@@ -1415,20 +1415,22 @@ KALAMUA = {
         'Markinaraino.',
 
     'En la cumbre de <b>Kalamua</b> (km 12,4 &middot; 768 m) hay una torreta y muy buenas vistas hacia el '
-    'resto de las monta&ntilde;as. Bajamos hasta <b>Akarregi</b>, donde se cruza la carretera general '
-    'cerca del barrio de <b>San Migel</b> (km 13,7 &middot; 526 m). Tras cruzar la carretera subimos '
-    'primero por un camino de cemento y, al dejarlo, seguimos a la izquierda para pasar junto a un '
-    'caser&iacute;o y empezar una subida en condici&oacute;n. En este tramo coincidimos a veces con '
-    'peregrinos haciendo el Camino de Santiago hacia Markina, y compartimos un rato de camino con ellos, '
-    'hasta que el paisaje se abre en lo alto y empieza la bajada hacia Markina, ya sobre pista de tierra.':
+    'resto de las monta&ntilde;as. Bajamos hasta llegar a la altura de <b>Akarregi</b>, donde se cruza la '
+    'carretera general cerca del barrio de <b>San Migel</b> (km 13,7 &middot; 526 m).':
         '<b>Kalamuako</b> gailurrean (12,4 km &middot; 768 m) dorretxo bat dago eta oso ikuspegi onak '
-        'gainerako mendietarako. <b>Akarregira</b> jaisten gara, non errepide nagusia zeharkatzen den '
-        '<b>San Migel</b> auzotik gertu (13,7 km &middot; 526 m). Errepidea zeharkatu ondoren lehenengo '
-        'zementuzko bide batetik igotzen gara eta, hori utzitakoan, ezkerrera jarraitzen dugu baserri '
-        'baten ondotik pasatzeko eta benetako igoera bati ekiteko. Tarte honetan batzuetan Santiago '
-        'Bideko erromesekin topo egiten dugu, Markinarantz doazenak, eta haiekin batera egiten dugu '
-        'bidearen zati bat, paisaia goian zabaldu eta Markinarako jaitsiera hasten den arte, jada '
-        'lur-pista batetik.',
+        'gainerako mendietarako. <b>Akarregiren</b> parera iritsi arte jaisten gara, non errepide '
+        'nagusia zeharkatzen den <b>San Migel</b> auzotik gertu (13,7 km &middot; 526 m).',
+
+    'Tras cruzar la carretera empieza un tramo largo: primero un camino de cemento y, al dejarlo, '
+    'giramos a la izquierda para pasar junto a un caser&iacute;o y encarar una subida en '
+    'condici&oacute;n. A veces coincidimos aqu&iacute; con peregrinos que hacen el Camino de Santiago '
+    'rumbo a Markina, y compartimos un rato de camino con ellos. Poco a poco el paisaje se abre en lo '
+    'alto, ya sobre pista de tierra, hasta que empieza la bajada hacia Markina.':
+        'Errepidea zeharkatu ondoren tarte luze bat hasten da: lehenengo zementuzko bide bat, eta hori '
+        'utzitakoan, ezkerrera biratzen dugu baserri baten ondotik pasatzeko eta benetako igoera bati '
+        'ekiteko. Batzuetan hemen Santiago Bideko erromesekin topo egiten dugu, Markinarantz doazenak, '
+        'eta haiekin batera egiten dugu bidearen zati bat. Pixkanaka-pixkanaka paisaia goian zabaltzen '
+        'da, jada lur-pista batetik, Markinarako jaitsiera hasten den arte.',
 
     'Bajamos hasta <b>Markina</b> (km 24,3 &middot; 79 m), donde nos abastecemos de agua. Seguimos '
     'subiendo por el mismo corredor que la ruta de <a href="urregarai.html">Iturreta, Markina y '
