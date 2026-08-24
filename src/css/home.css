@@ -492,6 +492,25 @@ body{
   color:var(--teal); text-decoration:none;
 }
 .route-popup a:hover{ text-decoration:underline; }
+.route-info-panel{
+  position:absolute; left:0; right:0; bottom:0; z-index:500;
+  max-height:65%; overflow-y:auto;
+  background:var(--ground-raised); border-top:1px solid var(--line);
+  box-shadow:0 -8px 24px rgba(0,0,0,.35);
+  padding:16px 40px 16px 18px;
+  transform:translateY(100%);
+  transition:transform .25s ease;
+}
+.route-info-panel.open{ transform:translateY(0); }
+.route-info-panel-close{
+  position:absolute; top:10px; right:10px; z-index:1;
+  width:28px; height:28px; border-radius:50%;
+  background:var(--ground); border:1px solid var(--line); color:var(--ink-dim);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; cursor:pointer;
+}
+.route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
+.route-info-panel .route-popup h3{ padding-right:24px; }
 .map-expand-btn{
   position:absolute; z-index:400; top:10px; right:10px;
   display:flex; align-items:center; justify-content:center;

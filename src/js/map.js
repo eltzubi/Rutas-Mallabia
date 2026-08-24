@@ -79,6 +79,49 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
 
+    // On a page with several routes (the home overview), clicking one opens
+    // a bottom info panel instead of a Leaflet popup anchored to the click
+    // point -- a popup placed on the line itself covers the very route it
+    // describes, especially once we've zoomed in on it below. A fixed panel
+    // never does, and its own height feeds back into the zoom padding so
+    // the route never renders underneath it either.
+    var panel = null, panelBody = null, activeLine = null, activeBaseColor = null;
+    function ensurePanel(){
+      if (panel) return;
+      panel = document.createElement('div');
+      panel.className = 'route-info-panel';
+      var close = document.createElement('button');
+      close.type = 'button';
+      close.className = 'route-info-panel-close';
+      close.setAttribute('aria-label', isEu ? 'Itxi' : 'Cerrar');
+      close.innerHTML = '&#10005;';
+      close.addEventListener('click', closePanel);
+      panelBody = document.createElement('div');
+      panel.appendChild(close);
+      panel.appendChild(panelBody);
+      el.parentElement.appendChild(panel);
+    }
+    function closePanel(){
+      if (!panel) return;
+      panel.classList.remove('open');
+      if (activeLine) { activeLine.setStyle({ color: activeBaseColor, weight: 4 }); activeLine = null; }
+      map.flyToBounds(bounds, { padding: [24, 24] });
+    }
+    function openPanel(line, baseColor, html){
+      ensurePanel();
+      if (activeLine && activeLine !== line) activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+      activeLine = line; activeBaseColor = baseColor;
+      line.setStyle({ color: COLORS.parking, weight: 6 });
+      panelBody.innerHTML = html;
+      panel.classList.add('open');
+      var panelHeight = panel.getBoundingClientRect().height;
+      map.flyToBounds(line.getBounds(), {
+        paddingTopLeft: [24, 24],
+        paddingBottomRight: [24, panelHeight + 24],
+        maxZoom: 15
+      });
+    }
+
     var bounds = null;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
@@ -116,16 +159,9 @@
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<div class="route-popup-dir">' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
-        line.bindPopup(html);
-        line.on('click', function(e){ line.openPopup(e.latlng); });
-        // A clicked route turns red and thicker so it's clear which line the
-        // open popup belongs to, even where several routes overlap; it
-        // reverts to its own color when its popup closes (including when
-        // Leaflet closes it for us because another route was just clicked).
-        line.on('popupopen', function(){ line.setStyle({ color: COLORS.parking, weight: 6 }); });
-        line.on('popupclose', function(){ line.setStyle({ color: baseColor, weight: 4 }); });
+        line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, baseColor, html); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
-        line.on('mouseout', function(){ if (!line.isPopupOpen()) line.setStyle({ weight: 4 }); });
+        line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
         if (pathEl) pathEl.style.cursor = 'pointer';
       }
@@ -159,6 +195,8 @@
         })
       }).addTo(map);
     });
+
+    map.on('click', closePanel);
 
     function fit(){
       map.invalidateSize();
