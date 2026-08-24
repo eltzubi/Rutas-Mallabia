@@ -206,8 +206,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal y Urregarai':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal eta Urregarai',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza y Urregarai':
-        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza eta Urregarai',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai y Kalamua':
+        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai eta Kalamua',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -315,6 +315,16 @@ HOME = {
         '<h2>Iturreta, Markina<br><em>eta Urregarai</em></h2>',
     'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.':
         'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
+
+    # kalamua card
+    '<span class="signpost-name">Urko, Kalamua y Mendibil</span>':
+        '<span class="signpost-name">Urko, Kalamua eta Mendibil</span>',
+    'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
+        'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
+    '<h2>Urko, Kalamua<br><em>y Mendibil</em></h2>':
+        '<h2>Urko, Kalamua<br><em>eta Mendibil</em></h2>',
+    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
+        'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
 }
 
 TRABAKUA = {
@@ -1357,6 +1367,97 @@ URREGARAI = {
         'elizaren ondoan, eta hirugarren bat Urregairako aterpean.',
 }
 
+KALAMUA = {
+    '<span>Pista, asfalto y cemento</span><span class="sep">/</span><span>Urko, Kalamua y Mendibil</span>':
+        '<span>Pista, asfaltoa eta zementua</span><span class="sep">/</span><span>Urko, Kalamua eta Mendibil</span>',
+
+    '<span>Circuito</span></p>':
+        '<span>Zirkuitua</span></p>',
+
+    '<h1>Urko, Kalamua<br><em>y Mendibil</em></h1>':
+        '<h1>Urko, Kalamua<br><em>eta Mendibil</em></h1>',
+
+    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
+        'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
+
+    'download="Urko, Kalamua y Mendibil.gpx"':
+        'download="Urko, Kalamua eta Mendibil.gpx"',
+
+    '<h2>Trail de monta&ntilde;a</h2>':
+        '<h2>Mendiko trail-a</h2>',
+
+    'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
+        'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
+    'alt="Foto ampliada del recorrido de Urko, Kalamua y Mendibil"':
+        'alt="Urko, Kalamua eta Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Torreta de la cumbre de Kalamua bajo un cielo despejado, km 12,4"':
+        'alt="Kalamuako gailurreko dorretxoa zeru garbi baten azpian, 12,4 km"',
+    'alt="Vistas hacia las monta&ntilde;as desde la cumbre de Kalamua, km 12,4"':
+        'alt="Mendietarako ikuspegiak Kalamuako gailurretik, 12,4 km"',
+    'alt="Caser&iacute;o y antena vistos desde lo alto, entre San Migel y Markina, km 20,3"':
+        'alt="Baserria eta antena goitik ikusita, San Migel eta Markinaren artean, 20,3 km"',
+    'alt="Amanecer sobre un mar de nubes, cerca de Mendibil, km 32,7"':
+        'alt="Egunsentia hodei-itsaso baten gainean, Mendibiletik gertu, 32,7 km"',
+    'alt="Torreta de una cumbre entre colinas verdes, en un d&iacute;a despejado"':
+        'alt="Gailur bateko dorretxoa muino berdeen artean, egun garbi batean"',
+    'alt="Caser&iacute;o blanco y ovejas entre prados verdes, con los montes al fondo"':
+        'alt="Baserri zuria eta ardiak larre berdeen artean, mendiak atzealdean"',
+
+    'Subimos desde Trabakua hasta <b>Urko</b> (km 7,9 &middot; 791 m) por el mismo camino que la ruta de '
+    '<a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde ah&iacute; bajamos hacia Ixua para cruzar la '
+    'carretera general junto a un restaurante, y empezamos a subir hacia <b>Kalamua</b>: una subida muy '
+    'bonita, con varias fuentes por el camino donde abastecerse de agua &mdash;a partir de ah&iacute; no '
+    'hay mucha m&aacute;s hasta bien entrada la ruta.':
+        'Trabakuatik <b>Urkorantz</b> igotzen dugu (7,9 km &middot; 791 m), '
+        '<a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbidearen bide beretik. Handik Ixuarantz '
+        'jaisten gara errepide nagusia jatetxe baten ondoan zeharkatzeko, eta <b>Kalamuarantz</b> igotzen '
+        'hasten gara: igoera oso polita, bidean hainbat iturri ditu ura hartzeko &mdash;handik aurrera ez '
+        'dago ur asko ibilbidean asko aurreratu arte.',
+
+    'En la cumbre de <b>Kalamua</b> (km 12,4 &middot; 768 m) hay una torreta y muy buenas vistas hacia el '
+    'resto de las monta&ntilde;as. Bajamos hasta un alto donde se cruza la carretera general, con el '
+    'barrio de <b>San Migel</b> quedando a un lado (km 13,7 &middot; 526 m). Tras cruzar la carretera '
+    'subimos primero por un camino de cemento y, al dejarlo, seguimos a la izquierda para pasar junto a '
+    'un caser&iacute;o y empezar una subida en condici&oacute;n. En este tramo coincidimos a veces con '
+    'peregrinos haciendo el Camino de Santiago hacia Markina, y compartimos un rato de camino con ellos. '
+    'A la altura de la cumbre de Akarregi empieza la bajada hacia Markina, con el paisaje muy abierto en '
+    'lo alto y ya sobre pista de tierra.':
+        '<b>Kalamuako</b> gailurrean (12,4 km &middot; 768 m) dorretxo bat dago eta oso ikuspegi onak '
+        'gainerako mendietarako. Errepide nagusia zeharkatzen den alto batera jaisten gara, <b>San '
+        'Migel</b> auzoa albo batean geratzen dela (13,7 km &middot; 526 m). Errepidea zeharkatu ondoren '
+        'lehenengo zementuzko bide batetik igotzen gara eta, hori utzitakoan, ezkerrera jarraitzen dugu '
+        'baserri baten ondotik pasatzeko eta benetako igoera bati ekiteko. Tarte honetan batzuetan '
+        'Santiago Bideko erromesekin topo egiten dugu, Markinarantz doazenak, eta haiekin batera egiten '
+        'dugu bidearen zati bat. Akarregiko gailurraren parean hasten da Markinarako jaitsiera, '
+        'paisaia oso zabala goian eta jada lur-pista batetik.',
+
+    'Bajamos hasta <b>Markina</b> (km 24,3 &middot; 79 m), donde nos abastecemos de agua. Seguimos '
+    'subiendo por el mismo corredor que la ruta de <a href="urregarai.html">Iturreta, Markina y '
+    'Urregarai</a>, pero en sentido contrario, pasando de nuevo por la zona de <b>Iturreta</b> (km 28,4 '
+    '&middot; 415 m) camino de la &uacute;ltima subida importante del d&iacute;a.':
+        '<b>Markinaraino</b> jaisten gara (24,3 km &middot; 79 m), non ura hartzen dugun. '
+        '<a href="urregarai.html">Iturreta, Markina eta Urregarai</a> ibilbidearen korridore beretik '
+        'jarraitzen dugu igotzen, baina alderantzizko norabidean, berriro <b>Iturreta</b> aldetik '
+        'pasatuz (28,4 km &middot; 415 m) eguneko azken igoera garrantzitsurantz.',
+
+    'Esa &uacute;ltima subida lleva hasta <b>Mendibil</b> (km 32,8 &middot; 612 m). Desde ah&iacute; ya '
+    'solo queda bajar de vuelta hacia Trabakua para cerrar el circuito.':
+        'Azken igoera horrek <b>Mendibilerino</b> darama (32,8 km &middot; 612 m). Handik aurrera '
+        'Trabakuarantz jaistea besterik ez zaigu geratzen, zirkuitua ixteko.',
+
+    '36,0 km y +1.500 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
+    'Mendibil) y tramos de pista, asfalto y cemento. Hay varias fuentes en la subida a Kalamua para '
+    'abastecerse de agua; a partir de ah&iacute; escasea hasta Markina.':
+        '36,0 km eta +1.500 m-ko desnibela zirkuitu bakarrean, hiru igoera garrantzitsurekin (Urko, '
+        'Kalamua eta Mendibil) eta pista, asfalto eta zementu tarteekin. Hainbat iturri daude Kalamuarako '
+        'igoeran ura hartzeko; handik aurrera urria da Markinaraino.',
+
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
+    'el dispositivo. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackaren arabera kalkulatua. <b>Desnibela</b>, gailuak '
+        'markatutakoa. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1394,6 +1495,7 @@ HISTORIAS = {
     'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
     'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
     'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
+    'Urko, Kalamua y Mendibil': 'Urko, Kalamua eta Mendibil',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -1409,6 +1511,7 @@ HISTORIAS = {
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
     'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
     'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
+    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
 }
 
 # <meta name="description"> per page (head files)
@@ -1431,7 +1534,9 @@ DESCRIPTIONS = {
         'igarota Zengotitaganeraino',
     'urregarai': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik '
         'igarota Bolibarreraino',
-    'historias': 'Mallabiako 13 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'kalamua': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
+        'Iturreta eta Mendibiletik igarota',
+    'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -1452,6 +1557,7 @@ TITLES = {
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Trail ibilbidea — Herriko ibilbideak',
     'urregarai': 'Iturreta, Markina eta Urregarai · Trail ibilbidea — Herriko ibilbideak',
+    'kalamua': 'Urko, Kalamua eta Mendibil · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1470,5 +1576,6 @@ PAGE_STRINGS = {
     'iturreta': ITURRETA,
     'egoarbitza': EGOARBITZA,
     'urregarai': URREGARAI,
+    'kalamua': KALAMUA,
     'historias': HISTORIAS,
 }
