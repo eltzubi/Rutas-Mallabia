@@ -491,6 +491,12 @@ ZENARRUZA = {
         'alt="Bistak ibilbidearen goiko aldetik, Oizetik gertu (beste egun bateko argazkia)"',
     'alt="Bicicleta junto a un aerogenerador entre la niebla, cerca de Zengotitagane, km 27,7"':
         'alt="Bizikleta haizezurrutari lotuta lainoetan, Zengotitaganetik gertu, 27,7 km"',
+    'alt="Camino forestal cubierto de hojas de oto&ntilde;o, entre &aacute;rboles con las hojas amarillas y verdes"':
+        'alt="Basoko bidea udazkeneko hostoz estalita, hosto horiak eta berdeak dituzten zuhaitzen artean"',
+    'alt="Escalera de piedra junto a un &aacute;rbol grande, en la Colegiata de Zenarruza"':
+        'alt="Harrizko eskailera zuhaitz handi baten ondoan, Zenarruzako kolegiatan"',
+    'alt="Aerogeneradores sobre una cresta de monte, con el atardecer entre nubes al fondo"':
+        'alt="Haizezurrutariak mendi-gailurraren gainean, ilunabarra hodeien artean atzealdean"',
     'Sale de Trabakua hacia el norte y, subiendo y bajando por los altos entre Mallabia y '
     'Ziortza-Bolibar, pierde altura de golpe en el &uacute;ltimo tramo hasta el <b>Monasterio de '
     'Zenarruza</b> (km 9,4 &middot; 287 m) &mdash;colegiata cisterciense fundada en el siglo XI, la '
