@@ -1286,9 +1286,9 @@ URREGARAI = {
     'esa pista hasta un collado con una se&ntilde;al que marca &laquo;Markina&raquo;, con marcas blancas '
     'y amarillas. Ah&iacute; bajamos por un camino de tierra con la pendiente pronunciada, hasta llegar '
     'al camino de piedra que est&aacute; junto a un caser&iacute;o; a partir de ah&iacute; el camino no '
-    'sube ni baja apenas, con curvas e incluso alg&uacute;n tramo en bajada, y '
-    'giramos a la izquierda hacia '
-    '<b>Iturreta</b> (km 6 &middot; 361 m), donde pasamos junto a una '
+    'sube ni baja apenas, con curvas e incluso alg&uacute;n tramo en bajada. Junto al caser&iacute;o '
+    'giramos a la izquierda hacia la ermita de '
+    '<b>Iturreta</b> (km 6 &middot; 361 m); despu&eacute;s est&aacute; la '
     'fuente. Volvemos a subir un peque&ntilde;o tramo para bajar de nuevo hacia Markina, siguiendo las '
     'mismas marcas, con buenas vistas hacia el pueblo y varios caser&iacute;os de Iturreta.':
         'Trabakuatik irten eta, Ermua norabidean 1 km errepidez jaitsi ondoren, errepide hori utzi eta '
@@ -1299,10 +1299,10 @@ URREGARAI = {
         'hori utzi gabe jarraitzen dugu kolada batera arte, non &laquo;Markina&raquo; markatzen duen '
         'seinale bat aurkituko dugun, marka zuri eta horiekin. Han lur-bide batetik jaisten gara malda '
         'pikoarekin, harrizko bidera iritsi arte, baserri baten ondoan dagoena; hortik aurrera bideak '
-        'ez du ia igoerarik ez jaitsierarik, bihurguneekin eta jaisten den zatiren batekin ere bai, '
-        'eta ezkerrera jotzen '
-        'dugu <b>Iturretarantz</b> (6 km '
-        '&middot; 361 m), non iturri baten ondotik pasatzen garen. Berriro tarte labur batean igotzen gara Markinarantz '
+        'ez du ia igoerarik ez jaitsierarik, bihurguneekin eta jaisten den zatiren batekin ere bai. '
+        'Baserriaren ondoan ezkerrera jotzen '
+        'dugu <b>Iturretako ermitarantz</b> (6 km '
+        '&middot; 361 m); ondoren iturria dago. Berriro tarte labur batean igotzen gara Markinarantz '
         'berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat baserritarako '
         'ikuspegi onekin.',
 
