@@ -1406,30 +1406,29 @@ KALAMUA = {
     'Subimos desde Trabakua hasta <b>Urko</b> (km 7,9 &middot; 791 m) por el mismo camino que la ruta de '
     '<a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde ah&iacute; bajamos hacia Ixua para cruzar la '
     'carretera general junto a un restaurante, y empezamos a subir hacia <b>Kalamua</b>: una subida muy '
-    'bonita, con varias fuentes por el camino donde abastecerse de agua &mdash;a partir de ah&iacute; no '
-    'hay mucha m&aacute;s hasta bien entrada la ruta.':
+    'bonita, con varias fuentes por el camino donde abastecerse de agua &mdash;la &uacute;ltima hasta '
+    'Markina.':
         'Trabakuatik <b>Urkorantz</b> igotzen dugu (7,9 km &middot; 791 m), '
         '<a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbidearen bide beretik. Handik Ixuarantz '
         'jaisten gara errepide nagusia jatetxe baten ondoan zeharkatzeko, eta <b>Kalamuarantz</b> igotzen '
-        'hasten gara: igoera oso polita, bidean hainbat iturri ditu ura hartzeko &mdash;handik aurrera ez '
-        'dago ur asko ibilbidean asko aurreratu arte.',
+        'hasten gara: igoera oso polita, bidean hainbat iturri ditu ura hartzeko &mdash;azkena, '
+        'Markinaraino.',
 
     'En la cumbre de <b>Kalamua</b> (km 12,4 &middot; 768 m) hay una torreta y muy buenas vistas hacia el '
-    'resto de las monta&ntilde;as. Bajamos hasta un alto donde se cruza la carretera general, con el '
-    'barrio de <b>San Migel</b> quedando a un lado (km 13,7 &middot; 526 m). Tras cruzar la carretera '
-    'subimos primero por un camino de cemento y, al dejarlo, seguimos a la izquierda para pasar junto a '
-    'un caser&iacute;o y empezar una subida en condici&oacute;n. En este tramo coincidimos a veces con '
-    'peregrinos haciendo el Camino de Santiago hacia Markina, y compartimos un rato de camino con ellos. '
-    'A la altura de la cumbre de Akarregi empieza la bajada hacia Markina, con el paisaje muy abierto en '
-    'lo alto y ya sobre pista de tierra.':
+    'resto de las monta&ntilde;as. Bajamos hasta <b>Akarregi</b>, donde se cruza la carretera general '
+    'cerca del barrio de <b>San Migel</b> (km 13,7 &middot; 526 m). Tras cruzar la carretera subimos '
+    'primero por un camino de cemento y, al dejarlo, seguimos a la izquierda para pasar junto a un '
+    'caser&iacute;o y empezar una subida en condici&oacute;n. En este tramo coincidimos a veces con '
+    'peregrinos haciendo el Camino de Santiago hacia Markina, y compartimos un rato de camino con ellos, '
+    'hasta que el paisaje se abre en lo alto y empieza la bajada hacia Markina, ya sobre pista de tierra.':
         '<b>Kalamuako</b> gailurrean (12,4 km &middot; 768 m) dorretxo bat dago eta oso ikuspegi onak '
-        'gainerako mendietarako. Errepide nagusia zeharkatzen den alto batera jaisten gara, <b>San '
-        'Migel</b> auzoa albo batean geratzen dela (13,7 km &middot; 526 m). Errepidea zeharkatu ondoren '
-        'lehenengo zementuzko bide batetik igotzen gara eta, hori utzitakoan, ezkerrera jarraitzen dugu '
-        'baserri baten ondotik pasatzeko eta benetako igoera bati ekiteko. Tarte honetan batzuetan '
-        'Santiago Bideko erromesekin topo egiten dugu, Markinarantz doazenak, eta haiekin batera egiten '
-        'dugu bidearen zati bat. Akarregiko gailurraren parean hasten da Markinarako jaitsiera, '
-        'paisaia oso zabala goian eta jada lur-pista batetik.',
+        'gainerako mendietarako. <b>Akarregira</b> jaisten gara, non errepide nagusia zeharkatzen den '
+        '<b>San Migel</b> auzotik gertu (13,7 km &middot; 526 m). Errepidea zeharkatu ondoren lehenengo '
+        'zementuzko bide batetik igotzen gara eta, hori utzitakoan, ezkerrera jarraitzen dugu baserri '
+        'baten ondotik pasatzeko eta benetako igoera bati ekiteko. Tarte honetan batzuetan Santiago '
+        'Bideko erromesekin topo egiten dugu, Markinarantz doazenak, eta haiekin batera egiten dugu '
+        'bidearen zati bat, paisaia goian zabaldu eta Markinarako jaitsiera hasten den arte, jada '
+        'lur-pista batetik.',
 
     'Bajamos hasta <b>Markina</b> (km 24,3 &middot; 79 m), donde nos abastecemos de agua. Seguimos '
     'subiendo por el mismo corredor que la ruta de <a href="urregarai.html">Iturreta, Markina y '
