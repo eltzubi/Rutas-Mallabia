@@ -1415,11 +1415,11 @@ KALAMUA = {
         'Markinaraino.',
 
     'En la cumbre de <b>Kalamua</b> (km 12,4 &middot; 768 m) hay una torreta y muy buenas vistas hacia el '
-    'resto de las monta&ntilde;as. Bajamos hasta llegar a la altura de <b>Akarregi</b>, donde se cruza la '
-    'carretera general cerca del barrio de <b>San Migel</b> (km 13,7 &middot; 526 m).':
+    'resto de las monta&ntilde;as. Bajamos hasta llegar a la altura de <b>Urkarregi</b>, donde se cruza la '
+    'carretera de <b>San Migel</b> (km 13,7 &middot; 526 m).':
         '<b>Kalamuako</b> gailurrean (12,4 km &middot; 768 m) dorretxo bat dago eta oso ikuspegi onak '
-        'gainerako mendietarako. <b>Akarregiren</b> parera iritsi arte jaisten gara, non errepide '
-        'nagusia zeharkatzen den <b>San Migel</b> auzotik gertu (13,7 km &middot; 526 m).',
+        'gainerako mendietarako. <b>Urkarregiren</b> parera iritsi arte jaisten gara, non <b>San Migel</b>eko '
+        'errepidea zeharkatzen den (13,7 km &middot; 526 m).',
 
     'Tras cruzar la carretera empieza un tramo largo: primero un camino de cemento y, al dejarlo, '
     'giramos a la izquierda para pasar junto a un caser&iacute;o y encarar una subida en '
