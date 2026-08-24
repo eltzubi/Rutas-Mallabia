@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eltzubi.github.io/Rutas-Mallabia/sitemap.xml
+Sitemap: https://trabakutik.com/sitemap.xml
