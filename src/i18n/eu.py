@@ -1425,7 +1425,7 @@ DESCRIPTIONS = {
 
 # <title> per page (head files)
 TITLES = {
-    'mallabia': 'Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
+    'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
     'trabakua': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
