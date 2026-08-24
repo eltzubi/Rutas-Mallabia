@@ -1295,13 +1295,13 @@ URREGARAI = {
         'hartzen dugu. Txalet batzuen '
         'ondotik pasatzen gara eta berehala aldapa nahiko pikoa agertzen da, Urko eta Asuntzarako aurrez '
         'aurreko bidea eta guk hartzen dugun ezkerrekoa banatzen diren bidegurutze batera arte. Pista '
-        'hori utzi gabe jarraitzen dugu kolada batera arte, non &laquo;Markina&raquo; markatzen duen '
+        'hori utzi gabe jarraitzen dugu lepo batera arte, non &laquo;Markina&raquo; markatzen duen '
         'seinale bat aurkituko dugun, marka zuri eta horiekin. Han lur-bide batetik jaisten gara malda '
         'pikoarekin, harrizko bidera iritsi arte, baserri baten ondoan dagoena. '
         'Baserriaren ondoan ezkerrera jotzen '
         'dugu <b>Iturretako ermitarantz</b> (6 km '
         '&middot; 361 m). Iturri baten ondotik pasatzen gara, berriro igo aurretik tarte labur batean, '
-        'Markinarantz berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat '
+        'Markinarantz berriro jaisteko, marka berberei jarraituz, herrirako eta Iturretako hainbat '
         'baserritarako ikuspegi onekin.',
 
     'Ya en <b>Markina</b> (km 12 &middot; 79 m) volvemos a abastecernos de agua, en una fuente grande '
@@ -1310,10 +1310,10 @@ URREGARAI = {
     '&middot; 573 m), en los alrededores de Santa Eufemia. El &uacute;ltimo repecho es precioso, junto '
     'a un caser&iacute;o-granja con muchos pastos. Arriba est&aacute; el refugio de Urregarai, con una '
     'fuente y una bolera enfrente.':
-        '<b>Markinan</b> (12 km &middot; 79 m) berriro ur hornitzen gara, Carmen elizaren ondoko iturri '
+        '<b>Markinan</b> (12 km &middot; 79 m) berriro ur hornitzen gara, Karmen elizaren ondoko iturri '
         'handi batean. Herria zeharkatzen dugu irteera aldera, eskola batzuen ondotik pasatuz, eta '
         'berriro auzo-bide bat hartzen dugu, atsedenik gabe <b>Urregairantz</b> igotzen duena (16 km '
-        '&middot; 573 m), Santa Eufemia inguruan. Azken errepikea ederra da, larre asko dituen '
+        '&middot; 573 m), Santa Eufemia inguruan. Azken aldapa ederra da, larre asko dituen '
         'baserri-granja baten ondoan. Goian Urregairako aterpea dago, iturri batekin eta aurrean '
         'bolatoki bat.',
 
@@ -1331,7 +1331,7 @@ URREGARAI = {
         '<b>Muniozgurenerantz</b> igotzeko (25,5 km &middot; 496 m), Oiz mendiaren oinean.',
 
     'Ya solo queda bajar hacia Trabakua, por el barrio de Gerena, para cerrar el circuito.':
-        'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerena auzotik, zirkuitua isteko.',
+        'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerena auzotik, zirkuitua ixteko.',
 
     '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (Urregarai y '
     'Muniozguren) y tramos de pista, asfalto y cemento empinado. El track de esta ficha se '
@@ -1341,7 +1341,7 @@ URREGARAI = {
         '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregarai '
         'eta Muniozguren) eta pista, asfalto eta zementu pikoko tarteekin. Fitxa honetako tracka '
         'korrika grabatu zen (3h 44min), beraz denbora ez da erreferentzia oinez bazoaz. Hainbat '
-        'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Carmen '
+        'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Karmen '
         'elizaren ondoan, eta hirugarren bat Urregairako aterpean.',
 }
 
