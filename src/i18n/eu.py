@@ -317,12 +317,12 @@ HOME = {
         'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
 
     # kalamua card
-    '<span class="signpost-name">Urko, Kalamua y Mendibil</span>':
-        '<span class="signpost-name">Urko, Kalamua eta Mendibil</span>',
+    '<span class="signpost-name">Urko, Kalamua y San Migel, Mendibil</span>':
+        '<span class="signpost-name">Urko, Kalamua eta San Migel, Mendibil</span>',
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
-    '<h2>Urko, Kalamua<br><em>y Mendibil</em></h2>':
-        '<h2>Urko, Kalamua<br><em>eta Mendibil</em></h2>',
+    '<h2>Urko, Kalamua<br><em>y San Migel, Mendibil</em></h2>':
+        '<h2>Urko, Kalamua<br><em>eta San Migel, Mendibil</em></h2>',
     'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
         'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
 }
@@ -1368,28 +1368,28 @@ URREGARAI = {
 }
 
 KALAMUA = {
-    '<span>Pista, asfalto y cemento</span><span class="sep">/</span><span>Urko, Kalamua y Mendibil</span>':
-        '<span>Pista, asfaltoa eta zementua</span><span class="sep">/</span><span>Urko, Kalamua eta Mendibil</span>',
+    '<span>Pista, asfalto y cemento</span><span class="sep">/</span><span>Urko, Kalamua y San Migel, Mendibil</span>':
+        '<span>Pista, asfaltoa eta zementua</span><span class="sep">/</span><span>Urko, Kalamua eta San Migel, Mendibil</span>',
 
     '<span>Circuito</span></p>':
         '<span>Zirkuitua</span></p>',
 
-    '<h1>Urko, Kalamua<br><em>y Mendibil</em></h1>':
-        '<h1>Urko, Kalamua<br><em>eta Mendibil</em></h1>',
+    '<h1>Urko, Kalamua<br><em>y San Migel, Mendibil</em></h1>':
+        '<h1>Urko, Kalamua<br><em>eta San Migel, Mendibil</em></h1>',
 
     'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
         'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
 
-    'download="Urko, Kalamua y Mendibil.gpx"':
-        'download="Urko, Kalamua eta Mendibil.gpx"',
+    'download="Urko, Kalamua y San Migel, Mendibil.gpx"':
+        'download="Urko, Kalamua eta San Migel, Mendibil.gpx"',
 
     '<h2>Trail de monta&ntilde;a</h2>':
         '<h2>Mendiko trail-a</h2>',
 
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
-    'alt="Foto ampliada del recorrido de Urko, Kalamua y Mendibil"':
-        'alt="Urko, Kalamua eta Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Urko, Kalamua y San Migel, Mendibil"':
+        'alt="Urko, Kalamua eta San Migel, Mendibilgo ibilbidearen argazki handitua"',
     'alt="Torreta de la cumbre de Kalamua bajo un cielo despejado, km 12,4"':
         'alt="Kalamuako gailurreko dorretxoa zeru garbi baten azpian, 12,4 km"',
     'alt="Vistas hacia las monta&ntilde;as desde la cumbre de Kalamua, km 12,4"':
@@ -1496,7 +1496,7 @@ HISTORIAS = {
     'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
     'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
     'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
-    'Urko, Kalamua y Mendibil': 'Urko, Kalamua eta Mendibil',
+    'Urko, Kalamua y San Migel, Mendibil': 'Urko, Kalamua eta San Migel, Mendibil',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -1558,7 +1558,7 @@ TITLES = {
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Trail ibilbidea — Herriko ibilbideak',
     'urregarai': 'Iturreta, Markina eta Urregarai · Trail ibilbidea — Herriko ibilbideak',
-    'kalamua': 'Urko, Kalamua eta Mendibil · Trail ibilbidea — Herriko ibilbideak',
+    'kalamua': 'Urko, Kalamua eta San Migel, Mendibil · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
