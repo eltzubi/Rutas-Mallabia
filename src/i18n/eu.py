@@ -133,11 +133,11 @@ HOME = {
         '<span class="signpost-name">Trabakua, Asuntza eta Urko</span>',
     'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
     'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
-    'es casi obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
+    'es obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
     'vistas, fuentes de agua, alg&uacute;n cruce&mdash;, pero no sustituye al track cargado en el '
     'dispositivo.':
         'Ibilbideak bertan bertatik dokumentatuta daude, ez mapa batetik dise&ntilde;atuta, baina '
-        'informazioa oinarrizkoa da: ez daude seinalizatuta, beraz GPSa eramatea ia derrigorrezkoa '
+        'informazioa oinarrizkoa da: ez daude seinalizatuta, beraz GPSa eramatea derrigorrezkoa '
         'da. Bidean orientatzeko garrantzitsuena jasotzen da &mdash;ikuspegiak, ur-iturriak, noizbehinka '
         'gurutze bat&mdash;, baina ez du ordezten gailuan kargatutako trackak.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
