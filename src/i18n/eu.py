@@ -1287,7 +1287,7 @@ URREGARAI = {
     'y amarillas. Ah&iacute; bajamos por un camino de tierra con la pendiente pronunciada, hasta llegar '
     'al camino de piedra que est&aacute; junto a un caser&iacute;o; a partir de ah&iacute; llanea, y '
     'giramos a la izquierda hacia '
-    '<b>Iturreta</b> (km 6 &middot; 361 m), donde hay una '
+    '<b>Iturreta</b> (km 6 &middot; 361 m), donde pasamos junto a una '
     'fuente. Volvemos a subir un peque&ntilde;o tramo para bajar de nuevo hacia Markina, siguiendo las '
     'mismas marcas, con buenas vistas hacia el pueblo y varios caser&iacute;os de Iturreta.':
         'Trabakuatik irten eta, Ermua norabidean 1 km errepidez jaitsi ondoren, errepide hori utzi eta '
@@ -1300,7 +1300,7 @@ URREGARAI = {
         'pikoarekin, harrizko bidera iritsi arte, baserri baten ondoan dagoena; hortik aurrera laua da, '
         'eta ezkerrera jotzen '
         'dugu <b>Iturretarantz</b> (6 km '
-        '&middot; 361 m), non iturri bat dagoen. Berriro tarte labur batean igotzen gara Markinarantz '
+        '&middot; 361 m), non iturri baten ondotik pasatzen garen. Berriro tarte labur batean igotzen gara Markinarantz '
         'berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat baserritarako '
         'ikuspegi onekin.',
 
