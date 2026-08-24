@@ -83,8 +83,13 @@
   var brand = masthead && masthead.querySelector('.brand');
   if (!masthead || !brand) return;
   function onScroll(){
-    if (window.scrollY > 24) masthead.classList.add('is-compact');
-    else masthead.classList.remove('is-compact');
+    // A single threshold flips back and forth (and visibly judders the
+    // header, since collapsing it shifts the sticky layout underneath the
+    // scroll position) whenever scrollY hovers right at that pixel. Two
+    // thresholds with a dead zone between them fix that: once compact,
+    // scrolling back up has to clear a lower bar before it expands again.
+    if (window.scrollY > 60) masthead.classList.add('is-compact');
+    else if (window.scrollY < 20) masthead.classList.remove('is-compact');
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
