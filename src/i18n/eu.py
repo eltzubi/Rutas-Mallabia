@@ -1287,8 +1287,8 @@ URREGARAI = {
     'y amarillas. Ah&iacute; bajamos por un camino de tierra con la pendiente pronunciada, hasta llegar '
     'al camino de piedra que est&aacute; junto a un caser&iacute;o. Junto al caser&iacute;o '
     'giramos a la izquierda hacia la ermita de '
-    '<b>Iturreta</b> (km 6 &middot; 361 m); despu&eacute;s est&aacute; la '
-    'fuente. Volvemos a subir un peque&ntilde;o tramo para bajar de nuevo hacia Markina, siguiendo las '
+    '<b>Iturreta</b> (km 6 &middot; 361 m). Pasamos junto a una '
+    'fuente antes de volver a subir un peque&ntilde;o tramo para bajar de nuevo hacia Markina, siguiendo las '
     'mismas marcas, con buenas vistas hacia el pueblo y varios caser&iacute;os de Iturreta.':
         'Trabakuatik irten eta, Ermua norabidean 1 km errepidez jaitsi ondoren, errepide hori utzi eta '
         'ezkerrera jotzen dugu: <a href="urko.html">Asuntzarako edo Urkorako</a> igotzen den bide bera '
@@ -1300,9 +1300,9 @@ URREGARAI = {
         'pikoarekin, harrizko bidera iritsi arte, baserri baten ondoan dagoena. '
         'Baserriaren ondoan ezkerrera jotzen '
         'dugu <b>Iturretako ermitarantz</b> (6 km '
-        '&middot; 361 m); ondoren iturria dago. Berriro tarte labur batean igotzen gara Markinarantz '
-        'berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat baserritarako '
-        'ikuspegi onekin.',
+        '&middot; 361 m). Iturri baten ondotik pasatzen gara, berriro igo aurretik tarte labur batean, '
+        'Markinarantz berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat '
+        'baserritarako ikuspegi onekin.',
 
     'Ya en <b>Markina</b> (km 12 &middot; 79 m) volvemos a abastecernos de agua, en una fuente grande '
     'junto a la iglesia del Carmen. Cruzamos el pueblo hacia la salida, pasando junto a unas escuelas, '
