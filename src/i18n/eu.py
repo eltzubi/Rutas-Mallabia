@@ -1208,38 +1208,37 @@ EGOARBITZA = {
     'bajada, coincidiendo con el &uacute;ltimo tramo del acceso que sube desde Ermua: primero sendero, '
     'luego un trozo de carretera y despu&eacute;s un cruce escondido que cuesta encontrar la primera vez, '
     'hasta bajar al barrio de <b>Ama&ntilde;a</b> (km 12 &middot; 171 m), en Eibar.':
-        'Trabakuatik <b>Urkorako</b> igoera (8 km &middot; 785 m) <a href="urko.html">Asuntza eta Urko</a> '
-        'fitxako berbera da: zementuzko eta harrizko pista. Gailurretik jaitsiera hasten da, '
-        'Ermuatik igotzeko sarbidearen azken zatiarekin bat eginez: bidezidorra lehenengo, gero '
-        'errepide zati bat eta ondoren aurkitzen zaila den bidegurutze ezkutu bat, <b>Ama&ntilde;a</b> '
-        'auzoraino jaitsi arte (12 km &middot; 171 m), Eibarren.',
+        '<b>Urko</b>raino igoera (8. km &middot; 785 m) Trabakuatik igotzen den '
+        '<a href="urko.html">Asuntza-Urko</a> fitxako bide berbera da: hormigoizko eta harrizko pista. '
+        'Gailurrera iritsita hasten da jaitsiera, Ermutik datorren azken zatiarekin bat eginez: '
+        'lehenengo, bide estua; gero, errepide zati bat; eta ondoren, ezkutuan dagoen bidegurutze bat, '
+        'lehen aldian topatzea kostatzen dena, <b>Ama&ntilde;a</b>ko auzora jaitsi arte (12. km '
+        '&middot; 171 m), Eibarren.',
 
     'Cruzado Ama&ntilde;a se sube hacia el pol&iacute;gono industrial, y de ah&iacute; arranca el sendero '
     'hasta <b>Egoarbitza</b> (km 16,2 &middot; 722 m): pista al principio, despu&eacute;s media cresta, '
     'empinada y dura, con un tramo final rocoso donde conviene ir con cuidado.':
-        'Ama&ntilde;a zeharkatu ondoren, industria-poligonorantz igotzen da, eta handik abiatzen da '
-        '<b>Egoarbitzarako</b> bidezidorra (16,2 km &middot; 722 m): hasieran pista, gero gailurraren '
-        'erdiko zatia, malda handikoa eta gogorra, amaierako tarte harritsu batekin non kontuz ibili '
-        'behar den.',
+        'Ama&ntilde;a zeharkatuta, industrialdera igotzen da, eta handik hasten da <b>Egoarbitza</b>rako '
+        '(16,2 km &middot; 722 m) bidea: hasieran pista, gero media cresta gogorra eta tentea, eta '
+        'amaieran harritza duen zatia, kontu handiz ibiltzea komeni dena.',
 
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
     'pista. Justo al llegar al camino de la presa merece la pena desviarse a la izquierda unos metros '
     'hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
     'hacia <b>Santama&ntilde;esar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio.':
-        '<b>Aixolako presarako</b> jaitsiera (19 km) oso ona da: lehenengo bidezidorra, gero pista. '
-        'Presaren bidera iritsi bezain laster, merezi du ezkerrera metro batzuetako desbideratzea urte '
-        'osoan urez betetako iturri batera. Presaren aurrealdea zeharkatzen da eta '
-        '<b>Santama&ntilde;esarrerantz</b> igotzen da (22,6 km &middot; 663 m), erabat pistan, '
-        'inolako misteriorik gabe.',
+        '<b>Aixolako presa</b>ra jaitsiera (19. km) oso ona da: lehenengo bide estua, gero pista. '
+        'Presako bidera iritsi bezain pronto, ezkerretara metro gutxi batzuk egitea merezi du, urte '
+        'osoan ura duen iturri batera. Presaren aurrealdea zeharkatu, eta <b>Santama&ntilde;esar</b> '
+        'aldera igotzen da (22,6 km &middot; 663 m), dena pista, misteriorik gabe.',
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. En la ermita se coge la GR, que sube poco a poco hacia '
     '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de <a href="arietzu.html">Osmagain '
     'y Arietzu</a>, pero llegando por el lado contrario.':
-        'Gero <b>Santa Marinarantz</b> jaisten gara, non ermita bat dagoen eta berriro ur hornitu '
-        'daitekeen. Ermitan GRa hartzen da, pixkanaka '
-        '<b>Arietxurantz</b> igotzen duena (28,8 km &middot; 483 m), <a href="arietzu.html">Osmagain eta '
-        'Arietzu</a> ibilbideko gailur bera, baina kontrako aldetik iritsita.',
+        'Handik <b>Santa Marina</b>ra jaisten gara; han ermita dago eta ura berriz hartzeko aukera. '
+        'Ermitan GRa hartzen da, poliki-poliki <b>Arietxu</b>raino igotzen dena (28,8 km &middot; 483 m), '
+        '<a href="arietzu.html">Osmagain-Arietzu</a> ibilbideko gailur berbera, baina beste aldetik '
+        'iritsita.',
 
     'Desde Arietxu seguimos por el cresterio hasta m&aacute;s o menos la mitad, y luego bajamos hacia el '
     'barrio de Zengotita, donde hay una fuente con agua '
@@ -1247,12 +1246,11 @@ EGOARBITZA = {
     '(km 32,5 &middot; 811 m): todo en pista, subir y subir sin apenas tregua, pero bastante llevadera. '
     'Y de ah&iacute;, casi en vertical hacia Trabakua: la &uacute;ltima bajada tiene buena pendiente, unos 400 m de '
     'desnivel en poco m&aacute;s de 2 km, y se cierra el circuito.':
-        'Arietxutik gailurretik jarraitzen dugu erdi bidera gutxi gorabehera, eta gero Zengotita '
-        'auzorantz jaisten gara, non urte osoan urez betetako '
-        'iturri bat dagoen. Iturriaren ondoren, <b>Zengotitaganerako</b> igoera hasten da (32,5 km '
-        '&middot; 811 m): dena pistan, igo eta igo atsedenik gabe, baina nahiko eramangarria. Eta '
-        'handik, ia bertikalean Trabakuarantz: azken jaitsierak malda ona du, 2 km baino zertxobait '
-        'gehiagotan 400 m-ko desnibela, eta zirkuitua ixten da.',
+        'Arietxutik krestan jarraitzen da erdi aldera arte, eta gero Zengotita auzora jaisten da, urte '
+        'osoan ura duen iturri bat dagoen tokira. Iturriaren ondoren hasten da <b>Zengotitagane</b>rako '
+        'igoera (32,5 km &middot; 811 m): dena pista, etenik ia gabe, baina nahiko eramangarria. Eta '
+        'handik, ia bertikalki Trabakuara: azken jaitsierak malda handia dauka, 400 m desnibel 2 km '
+        'eskasetan, eta zirkuitua ixten da.',
 
     '34,1 km y +2.564 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
     'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. El track de esta ficha se '
