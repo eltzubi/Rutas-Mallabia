@@ -1408,50 +1408,50 @@ KALAMUA = {
     'carretera general junto a un restaurante, y empezamos a subir hacia <b>Kalamua</b>: una subida muy '
     'bonita, con varias fuentes por el camino donde abastecerse de agua &mdash;la &uacute;ltima hasta '
     'Markina.':
-        'Trabakuatik <b>Urkorantz</b> igotzen dugu (7,9 km &middot; 791 m), '
-        '<a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbidearen bide beretik. Handik Ixuarantz '
-        'jaisten gara errepide nagusia jatetxe baten ondoan zeharkatzeko, eta <b>Kalamuarantz</b> igotzen '
-        'hasten gara: igoera oso polita, bidean hainbat iturri ditu ura hartzeko &mdash;azkena, '
-        'Markinaraino.',
+        'Trabakuatik <b>Urkora</b> igotzen gara (7,9 km &middot; 791 m), '
+        '<a href="urko.html">Trabakua, Asuntza eta Urko</a>ko bide beretik. Handik Ixurantz jaisten gara '
+        'errepide nagusia jatetxe baten parean gurutzatzeko, eta <b>Kalamua</b>rako igoerari ekiten diogu: '
+        'igoera oso polita da, bidean ur hornidura egiteko hainbat iturrirekin &mdash;azkena Markinarako '
+        'bidean.',
 
     'En la cumbre de <b>Kalamua</b> (km 12,4 &middot; 768 m) hay una torreta y muy buenas vistas hacia el '
     'resto de las monta&ntilde;as. Bajamos hasta llegar a la altura de <b>Urkarregi</b>, donde se cruza la '
     'carretera de <b>San Migel</b> (km 13,7 &middot; 526 m).':
-        '<b>Kalamuako</b> gailurrean (12,4 km &middot; 768 m) dorretxo bat dago eta oso ikuspegi onak '
-        'gainerako mendietarako. <b>Urkarregiren</b> parera iritsi arte jaisten gara, non <b>San Migel</b>eko '
-        'errepidea zeharkatzen den (13,7 km &middot; 526 m).',
+        '<b>Kalamua</b>ko tontorrean (12,4 km &middot; 768 m) torreta bat dago eta oso ikuspegi onak '
+        'gainerako mendietara. <b>Urkarregi</b> pareraino jaisten gara, <b>San Migel</b>ko errepidea '
+        'gurutzatzeko (13,7 km &middot; 526 m).',
 
     'Tras cruzar la carretera empieza un tramo largo: primero un camino de cemento y, al dejarlo, '
     'giramos a la izquierda para pasar junto a un caser&iacute;o y encarar una subida en '
     'condici&oacute;n. A veces coincidimos aqu&iacute; con peregrinos que hacen el Camino de Santiago '
     'rumbo a Markina, y compartimos un rato de camino con ellos. Poco a poco el paisaje se abre en lo '
     'alto, ya sobre pista de tierra, hasta que empieza la bajada hacia Markina.':
-        'Errepidea zeharkatu ondoren tarte luze bat hasten da: lehenengo zementuzko bide bat, eta hori '
-        'utzitakoan, ezkerrera biratzen dugu baserri baten ondotik pasatzeko eta benetako igoera bati '
-        'ekiteko. Batzuetan hemen Santiago Bideko erromesekin topo egiten dugu, Markinarantz doazenak, '
-        'eta haiekin batera egiten dugu bidearen zati bat. Pixkanaka-pixkanaka paisaia goian zabaltzen '
-        'da, jada lur-pista batetik, Markinarako jaitsiera hasten den arte.',
+        'Errepidea gurutzatu eta gero tarte luzea hasiko da: lehenengo zementuzko bidea eta, hura '
+        'utzitakoan, ezkerrera biratzen dugu baserri baten paretik pasa eta benetako igoera bati '
+        'ekiteko. Batzuetan hemen Done Jakue bidea Markinarantz egiten duten erromesekin topo egiten '
+        'dugu, eta bidearen zati bat haiekin partekatzen dugu. Pixkanaka paisaia zabaldu egiten da '
+        'goian, lurrezko pistaren gainean jada, Markinarako jaitsiera hasi arte.',
 
     'Bajamos hasta <b>Markina</b> (km 24,3 &middot; 79 m), donde nos abastecemos de agua. Seguimos '
     'subiendo por el mismo corredor que la ruta de <a href="urregarai.html">Iturreta, Markina y '
     'Urregarai</a>, pero en sentido contrario, pasando de nuevo por la zona de <b>Iturreta</b> (km 28,4 '
     '&middot; 415 m) camino de la &uacute;ltima subida importante del d&iacute;a.':
-        '<b>Markinaraino</b> jaisten gara (24,3 km &middot; 79 m), non ura hartzen dugun. '
+        '<b>Markinaraino</b> jaisten gara (24,3 km &middot; 79 m), eta bertan urez hornitzen gara. '
         '<a href="urregarai.html">Iturreta, Markina eta Urregarai</a> ibilbidearen korridore beretik '
-        'jarraitzen dugu igotzen, baina alderantzizko norabidean, berriro <b>Iturreta</b> aldetik '
-        'pasatuz (28,4 km &middot; 415 m) eguneko azken igoera garrantzitsurantz.',
+        'gora jarraitzen dugu, baina alderantziz, <b>Iturreta</b>ko gunetik berriro pasatuz (28,4 km '
+        '&middot; 415 m) eguneko azken igoera garrantzitsuaren bidean.',
 
     'Esa &uacute;ltima subida lleva hasta <b>Mendibil</b> (km 32,8 &middot; 612 m). Desde ah&iacute; ya '
     'solo queda bajar de vuelta hacia Trabakua para cerrar el circuito.':
-        'Azken igoera horrek <b>Mendibilerino</b> darama (32,8 km &middot; 612 m). Handik aurrera '
-        'Trabakuarantz jaistea besterik ez zaigu geratzen, zirkuitua ixteko.',
+        'Azken igoera horrek <b>Mendibilera</b> eramaten gaitu (32,8 km &middot; 612 m). Hortik aurrera '
+        'Trabakuara itzultzeko jaitsiera besterik ez da geratzen zirkuitua ixteko.',
 
     '36,0 km y +1.500 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
     'Mendibil) y tramos de pista, asfalto y cemento. Hay varias fuentes en la subida a Kalamua para '
     'abastecerse de agua; a partir de ah&iacute; escasea hasta Markina.':
-        '36,0 km eta +1.500 m-ko desnibela zirkuitu bakarrean, hiru igoera garrantzitsurekin (Urko, '
-        'Kalamua eta Mendibil) eta pista, asfalto eta zementu tarteekin. Hainbat iturri daude Kalamuarako '
-        'igoeran ura hartzeko; handik aurrera urria da Markinaraino.',
+        '36,0 km eta +1.500 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
+        'Kalamua eta Mendibil) eta pista, asfalto eta zementuzko tarteekin. Kalamuarako igoeran hainbat '
+        'iturri daude urez hornitzeko; hortik aurrera ur urriagoa egon daiteke Markinaraino.',
 
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
     'el dispositivo. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
