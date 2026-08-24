@@ -92,7 +92,11 @@
     function filterOne(p){
       var km = parseFloat(p.dataset.distanceKm) || 0;
       var m = parseFloat(p.dataset.desnivelM) || 0;
-      var show = active.indexOf(p.dataset.activity) !== -1 && km >= minD && km <= maxD && m >= minE && m <= maxE;
+      // A route can list more than one activity (comma-separated, e.g. a
+      // route done both hiking and by bike) -- show it if any of them is active.
+      var activities = p.dataset.activity.split(',');
+      var matchesActivity = activities.some(function(a){ return active.indexOf(a) !== -1; });
+      var show = matchesActivity && km >= minD && km <= maxD && m >= minE && m <= maxE;
       p.classList.toggle('is-hidden', !show);
       if (show) anyVisible = true;
     }

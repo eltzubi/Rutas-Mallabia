@@ -198,10 +198,10 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane y San Crist&oacute;bal':
-        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane eta San Kristobal',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko y Egoarbitza':
-        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko eta Egoarbitza',
+    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal y Urregarai':
+        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal eta Urregarai',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza y Urregarai':
+        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza eta Urregarai',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -297,6 +297,18 @@ HOME = {
         '<h2>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h2>',
     'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.':
         'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
+
+    # urregarai card
+    '<span class="signpost-name">Iturreta, Markina y Urregarai</span>':
+        '<span class="signpost-name">Iturreta, Markina eta Urregarai</span>',
+    '<span class="v">Senderismo y bici</span>':
+        '<span class="v">Oinez eta bizikleta</span>',
+    'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
+        'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
+    '<h2>Iturreta, Markina<br><em>y Urregarai</em></h2>':
+        '<h2>Iturreta, Markina<br><em>eta Urregarai</em></h2>',
+    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.':
+        'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
 }
 
 TRABAKUA = {
@@ -1233,6 +1245,100 @@ EGOARBITZA = {
         'Santa Marinan, eta urte osoko iturri bat Zengotita auzoan.',
 }
 
+URREGARAI = {
+    '<span>Pista, asfalto y cemento</span><span class="sep">/</span><span>Iturreta, Markina y Urregarai</span>':
+        '<span>Pista, asfaltoa eta zementua</span><span class="sep">/</span><span>Iturreta, Markina eta Urregarai</span>',
+
+    '<span>Circuito</span></p>':
+        '<span>Zirkuitua</span></p>',
+
+    '<h1>Iturreta, Markina<br><em>y Urregarai</em></h1>':
+        '<h1>Iturreta, Markina<br><em>eta Urregarai</em></h1>',
+
+    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
+        'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
+
+    'download="Iturreta, Markina y Urregarai.gpx"':
+        'download="Iturreta, Markina eta Urregarai.gpx"',
+
+    '<h2>Trail de monta&ntilde;a</h2>':
+        '<h2>Mendiko trail-a</h2>',
+
+    '<span class="v">Senderismo y bici</span>':
+        '<span class="v">Oinez eta bizikleta</span>',
+
+    'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
+        'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
+    'alt="Foto ampliada del recorrido de Iturreta, Markina y Urregarai"':
+        'alt="Iturreta, Markina eta Urregaraiko ibilbidearen argazki handitua"',
+    'alt="Pista junto a un caser&iacute;o de tejado rojo, en el valle cerca de Iturreta"':
+        'alt="Pista teilatu gorriko baserri baten ondoan, Iturreta inguruko haranean"',
+    'alt="Cascada entre &aacute;rboles, en el bosque cerca de Iturreta"':
+        'alt="Ur-jauzia zuhaitzen artean, Iturreta inguruko basoan"',
+    'alt="Vista de Bolibar, con la iglesia de piedra y los caser&iacute;os del pueblo"':
+        'alt="Bolibarren ikuspegia, harrizko eliza eta herriko baserriak"',
+
+    'Salimos de Trabakua y, despu&eacute;s de bajar 1 km direcci&oacute;n Ermua, dejamos esa pista para '
+    'girar a la izquierda: cogemos el mismo camino que sube hacia Asuntza o hacia Urko. Pasamos junto a '
+    'unos chal&eacute;s y enseguida aparece una cuesta bastante pronunciada, hasta un cruce donde el '
+    'camino de frente va para Urko y Asuntza y nosotros cogemos el de la izquierda. Seguimos sin dejar '
+    'esa pista hasta un collado con una se&ntilde;al que marca &laquo;Markina&raquo;, con marcas blancas '
+    'y amarillas. Ah&iacute; bajamos por un camino de piedra junto a un caser&iacute;o, con la pendiente '
+    'pronunciada, y giramos a la izquierda hacia <b>Iturreta</b> (km 6 &middot; 361 m), donde hay una '
+    'fuente. Volvemos a subir un peque&ntilde;o tramo para bajar de nuevo hacia Markina, siguiendo las '
+    'mismas marcas, con buenas vistas hacia el pueblo y varios caser&iacute;os de Iturreta.':
+        'Trabakuatik irten eta, Ermua norabidean 1 km jaitsi ondoren, pista hori utzi eta ezkerrera '
+        'jotzen dugu: Asuntzarako edo Urkorako igotzen den bide bera hartzen dugu. Txalet batzuen '
+        'ondotik pasatzen gara eta berehala aldapa nahiko pikoa agertzen da, Urko eta Asuntzarako aurrez '
+        'aurreko bidea eta guk hartzen dugun ezkerrekoa banatzen diren bidegurutze batera arte. Pista '
+        'hori utzi gabe jarraitzen dugu kolada batera arte, non &laquo;Markina&raquo; markatzen duen '
+        'seinale bat aurkituko dugun, marka zuri eta horiekin. Han harrizko bide batetik jaisten gara '
+        'baserri baten ondotik, malda pikoarekin, eta ezkerrera jotzen dugu <b>Iturretarantz</b> (6 km '
+        '&middot; 361 m), non iturri bat dagoen. Berriro tarte labur batean igotzen gara Markinarantz '
+        'berriro jaisteko, marka berei jarraituz, herrirako eta Iturretako hainbat baserritarako '
+        'ikuspegi onekin.',
+
+    'Ya en <b>Markina</b> (km 12 &middot; 79 m) volvemos a abastecernos de agua, en una fuente grande '
+    'junto a la iglesia del Carmen. Cruzamos el pueblo hacia la salida, pasando junto a unas escuelas, '
+    'y cogemos de nuevo un camino de barrio que sube sin descanso hacia <b>Urregarai</b> (km 16 '
+    '&middot; 573 m), en los alrededores de Santa Eufemia. El &uacute;ltimo repecho es precioso, junto '
+    'a un caser&iacute;o-granja con muchos pastos. Arriba est&aacute; el refugio de Urregarai, con una '
+    'fuente y una bolera enfrente.':
+        '<b>Markinan</b> (12 km &middot; 79 m) berriro ur hornitzen gara, Carmen elizaren ondoko iturri '
+        'handi batean. Herria zeharkatzen dugu irteera aldera, eskola batzuen ondotik pasatuz, eta '
+        'berriro auzo-bide bat hartzen dugu, atsedenik gabe <b>Urregairantz</b> igotzen duena (16 km '
+        '&middot; 573 m), Santa Eufemia inguruan. Azken errepikea ederra da, larre asko dituen '
+        'baserri-granja baten ondoan. Goian Urregairako aterpea dago, iturri batekin eta aurrean '
+        'bolatoki bat.',
+
+    'Bajamos por el camino de asfalto que zigzaguea hasta la carretera general, la cruzamos y, un poco '
+    'm&aacute;s adelante, giramos a la derecha para seguir por una pista de tierra hacia el barrio de '
+    'Zeinka, desde donde se baja a <b>Bolibar</b> (km 22,3 &middot; 173 m) en un santiam&eacute;n. '
+    'Cogemos la carretera que va hacia la Colegiata de <a href="zenarruza.html">Zenarruza</a>, pero '
+    'antes de empezar a subir hacia ella dejamos el asfalto para subir por una cuesta empinada de '
+    'cemento hacia <b>Muniozguren</b> (km 25,5 &middot; 496 m), a los pies del monte Oiz.':
+        'Errepide nagusira bihurgune-bihurgunean jaisten den asfaltozko bidetik jaisten gara, '
+        'zeharkatu eta, pixka bat aurrerago, eskuinera jotzen dugu Zeinka auzorantz doan lur-pista '
+        'batetik jarraitzeko, handik <b>Bolibarrera</b> jaisten gara istant batean (22,3 km &middot; '
+        '173 m). <a href="zenarruza.html">Zenarruza</a>ko kolegiatarantz doan errepidea hartzen dugu, '
+        'baina hara igotzen hasi baino lehen, asfaltoa uzten dugu zementuzko aldapa pikotik '
+        '<b>Muniozgurenerantz</b> igotzeko (25,5 km &middot; 496 m), Oiz mendiaren oinean.',
+
+    'Ya solo queda bajar hacia Trabakua, por el barrio de Gerena, para cerrar el circuito.':
+        'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerena auzotik, zirkuitua isteko.',
+
+    '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (Urregarai y '
+    'Muniozguren) y tramos de pista, asfalto y cemento empinado. El track de esta ficha se '
+    'grab&oacute; corriendo (3h 44min), as&iacute; que el tiempo no sirve de referencia si vas andando. '
+    'Hay varios puntos para abastecerse de agua en el recorrido: una fuente en Iturreta, otra junto a '
+    'la iglesia del Carmen en Markina, y una tercera en el refugio de Urregarai.':
+        '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregarai '
+        'eta Muniozguren) eta pista, asfalto eta zementu pikoko tarteekin. Fitxa honetako tracka '
+        'korrika grabatu zen (3h 44min), beraz denbora ez da erreferentzia oinez bazoaz. Hainbat '
+        'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Carmen '
+        'elizaren ondoan, eta hirugarren bat Urregairako aterpean.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1252,6 +1358,7 @@ HISTORIAS = {
     'Bici · Circuito · Mixta': 'Bizikleta · Zirkuitua · Nahasia',
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
     'Senderismo · Circuito · Mixta': 'Oinez · Zirkuitua · Nahasia',
+    'Senderismo y bici · Circuito · Mixta': 'Oinez eta bizikleta · Zirkuitua · Nahasia',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
@@ -1268,6 +1375,7 @@ HISTORIAS = {
     'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
     'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
     'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
+    'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -1282,6 +1390,7 @@ HISTORIAS = {
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
     'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
+    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
 }
 
 # <meta name="description"> per page (head files)
@@ -1302,7 +1411,9 @@ DESCRIPTIONS = {
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'egoarbitza': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
         'igarota Zengotitaganeraino',
-    'historias': 'Mallabiako 12 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'urregarai': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik '
+        'igarota Bolibarreraino',
+    'historias': 'Mallabiako 13 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -1322,6 +1433,7 @@ TITLES = {
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Trail ibilbidea — Herriko ibilbideak',
+    'urregarai': 'Iturreta, Markina eta Urregarai · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1339,5 +1451,6 @@ PAGE_STRINGS = {
     'sancristobal': SANCRISTOBAL,
     'iturreta': ITURRETA,
     'egoarbitza': EGOARBITZA,
+    'urregarai': URREGARAI,
     'historias': HISTORIAS,
 }
