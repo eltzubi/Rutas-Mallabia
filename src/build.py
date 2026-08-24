@@ -102,7 +102,7 @@ OUT_NAME = {"mallabia": "index"}  # others default to their own name
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
-SITE_URL = "https://eltzubi.github.io/Rutas-Mallabia/"
+SITE_URL = "https://trabakutik.com/"
 
 
 def out_name(page, out_suffix):

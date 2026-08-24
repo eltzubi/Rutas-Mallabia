@@ -147,8 +147,8 @@ def main():
         head = head.replace('<meta property="og:locale" content="es_ES">',
                              '<meta property="og:locale" content="eu_ES">')
         for es_file, eu_file in EU_OF.items():
-            head = head.replace(f'"https://eltzubi.github.io/Rutas-Mallabia/{es_file}"',
-                                 f'"https://eltzubi.github.io/Rutas-Mallabia/{eu_file}"')
+            head = head.replace(f'"https://trabakutik.com/{es_file}"',
+                                 f'"https://trabakutik.com/{eu_file}"')
 
         # JSON-LD strings are unescaped (real UTF-8, not &ntilde; entities) --
         # swap the plain-text forms too, so the structured data matches the
