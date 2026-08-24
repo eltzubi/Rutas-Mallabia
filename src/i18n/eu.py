@@ -1451,7 +1451,7 @@ KALAMUA = {
     'abastecerse de agua; a partir de ah&iacute; escasea hasta Markina.':
         '36,0 km eta +1.500 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
         'Kalamua eta Mendibil) eta pista, asfalto eta zementuzko tarteekin. Kalamuarako igoeran hainbat '
-        'iturri daude urez hornitzeko; hortik aurrera ur urriagoa egon daiteke Markinaraino.',
+        'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
 
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
     'el dispositivo. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
