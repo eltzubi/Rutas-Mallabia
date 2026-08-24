@@ -131,15 +131,21 @@ HOME = {
         '<span class="signpost-name">Osmagain eta Arietzu</span>',
     '<span class="signpost-name">Trabakua, Asuntza y Urko</span>':
         '<span class="signpost-name">Trabakua, Asuntza eta Urko</span>',
-    'Las rutas est&aacute;n documentadas sobre el terreno, no dise&ntilde;adas desde un mapa, pero la '
-    'informaci&oacute;n es b&aacute;sica: no est&aacute;n se&ntilde;alizadas, as&iacute; que llevar GPS '
-    'es obligatorio. Se apunta lo m&aacute;s relevante para orientarte por el camino &mdash;'
-    'vistas, fuentes de agua, alg&uacute;n cruce&mdash;, pero no sustituye al track cargado en el '
-    'dispositivo.':
-        'Ibilbideak bertan bertatik dokumentatuta daude, ez mapa batetik dise&ntilde;atuta, baina '
-        'informazioa oinarrizkoa da: ez daude seinalizatuta, beraz GPSa eramatea derrigorrezkoa '
-        'da. Bidean orientatzeko garrantzitsuena jasotzen da &mdash;ikuspegiak, ur-iturriak, noizbehinka '
-        'gurutze bat&mdash;, baina ez du ordezten gailuan kargatutako trackak.',
+    'Las rutas est&aacute;n documentadas directamente sobre el terreno, recorri&eacute;ndolas paso a '
+    'paso. La informaci&oacute;n recoge lo m&aacute;s &uacute;til que encontrar&aacute;s por el camino '
+    '&mdash;vistas, fuentes de agua, cruces y algunos puntos de referencia&mdash; para ayudarte durante '
+    'el recorrido.':
+        'Ibilbideak zuzenean bertatik dokumentatuta daude, urratsez urrats eginez. Informazioak bidean '
+        'aurkituko duzun baliagarriena jasotzen du &mdash;ikuspegiak, ur-iturriak, bidegurutzeak eta '
+        'zenbait erreferentzia-puntu&mdash; ibilbidean zehar laguntzeko.',
+
+    'Las rutas no est&aacute;n se&ntilde;alizadas, por lo que es imprescindible llevar el track cargado '
+    'en un GPS, reloj o dispositivo de navegaci&oacute;n. La informaci&oacute;n que encontrar&aacute;s '
+    'aqu&iacute; sirve de apoyo y para conocer mejor la ruta, pero no sustituye al track durante el '
+    'recorrido.':
+        'Ibilbideak ez daude seinalizatuta, beraz ezinbestekoa da trackea GPS, erloju edo '
+        'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
+        'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '>Bici</button>': '>Bizikleta</button>',
     '>Senderismo</button>': '>Oinez</button>',
