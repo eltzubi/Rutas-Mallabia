@@ -450,11 +450,13 @@ ITURZURI = {
         'Durangaldeko gailurrak begi-bistatik galdu arte.',
     'Desde el túmulo, el camino sigue el <b>cresterio</b> hacia el este, con vistas abiertas a '
     'ambos lados de la loma, hasta la cima de <b>Zengotitagane</b> (km 5,6 · 801 m). Desde aquí se '
-    'puede bajar directo a Trabakua y acortar bastante el día, o rodear la montaña por el lado '
+    'puede bajar directo a Trabakua —el mismo camino que sube la ruta de <a href="oiz.html">'
+    'Zengotitagane, Axmakur y Oiz</a>— y acortar bastante el día, o rodear la montaña por el lado '
     'este para quien quiera alargar la ruta un poco más.':
         'Tumulutik, bideak <b>mendi-lerroan</b> jarraitzen du ekialderantz, bizkarraren bi aldeetara '
         'bistak zabal-zabalik, <b>Zengotitagane</b> gailurreraino (5,6 km · 801 m). Hemendik '
-        'zuzenean jaits daiteke Trabakuara eta eguna laburtu, edo mendia ekialdetik inguratzen '
+        'zuzenean jaits daiteke Trabakuara —<a href="oiz.html">Zengotitagane, Axmakur eta Oiz</a> '
+        'ibilbideak igotzen duen bide bera— eta eguna laburtu, edo mendia ekialdetik inguratzen '
         'jarraitu, bira pixka bat gehiago luzatu nahi duenarentzat.',
     'El descenso empieza hacia el sur, por un tramo escondido entre la vegetación que apenas conoce '
     'nadie, hasta una <b>borda abandonada</b> (km 6,1 · 768 m). Ahí el camino gira hacia el este '
