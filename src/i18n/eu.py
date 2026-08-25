@@ -977,31 +977,31 @@ URKO = {
     'suaves, hasta llegar a Asuntza.':
         'Trabakuako mendatetik ateratzen gara. Lehen zatia beherantz doa &mdash;kilometro '
         'bat inguru&mdash; ezkerrerako bidegurutze batera iritsi arte, non asfaltua '
-        'uzten den eta aldapa bat hasten den, uneren batean bizi baina laburra; goian, '
-        'Mendibil mendirako seinaleak ikusten ditugu, besteak beste. Hortik aurrera, '
-        'pista hutsa da, zementu eta harrizko tarteak txandakatuz. Ondorengoa '
+        'uzten den eta aldapa bat hasten den, une batean bizia baina laburra; goian, '
+        'besteak beste, Mendibil mendirako seinaleak ikusten ditugu. Handik aurrera, '
+        'pista hutsa da, zementuzko eta harrizko tarteak txandakatuz. Ondorengoa '
         'eramangarriagoa da, eta bidea igoera eta jaitsiera leunen artean uhinka doa, '
         'Asuntzara iritsi arte.',
     'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), donde la '
     'pendiente da un respiro durante el siguiente kil&oacute;metro, antes de atacar la '
     'cuesta final hacia la cumbre del Urko.':
-        'Bidean <b>Arandomendi</b> gailurra egiten dugu (6,4 km &middot; 686 m), non '
-        'maldak arnasa hartzeko tartea ematen duen hurrengo kilometroan zehar, Urkoko '
-        'gailurrerako azken aldapari heldu aurretik.',
+        'Bidean <b>Arandomendi</b> (6,4 km &middot; 686 m) koronatzen dugu, eta maldak '
+        'arnasa hartzeko tartea ematen du hurrengo kilometroan zehar, Urkoko '
+        'gailurrerako azken aldapari ekin aurretik.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
     '785 m), con su v&eacute;rtice geod&eacute;sico y vistas a las monta&ntilde;as del '
     'entorno. Es el punto m&aacute;s alto de los municipios de Ermua y Eibar, y su cumbre '
     'marca la frontera entre Bizkaia y Gipuzkoa.':
-        'Handik gutxira ibilbideko punturik altuenera iristen gara, <b>Urko</b>ra (8 km, '
-        '785 m), bere bertize geodesikoarekin eta inguruko mendietarako ikuspegiekin. '
-        'Ermua eta Eibar udalerrien punturik altuena da, eta bere gailurrak Bizkaia eta '
-        'Gipuzkoaren arteko muga markatzen du.',
+        'Handik gutxira iristen gara ibilbideko punturik altuenera, <b>Urko</b>ra (8 km '
+        '&middot; 785 m), bere bertize geodesikoarekin eta inguruko mendietarako '
+        'ikuspegiekin. Ermua eta Eibar udalerrien punturik altuena da, eta bere gailurrak '
+        'Bizkaia eta Gipuzkoaren arteko muga markatzen du.',
     'Bajamos por un bonito tramo de cresta hasta el <b>Collado de Asuntza</b> (km 10,8 '
     '&middot; 490 m), que separa el Urko del monte Mendibil (613 m), y cogemos la misma '
     'pista de la Asuntza, antes de remontar de nuevo hacia Trabakua.':
-        'Gailurrerdi eder batetik jaisten gara <b>Asuntzako lepora</b> (10,8 km &middot; '
-        '490 m), Urko eta Mendibil mendia (613 m) bereizten dituena, eta Asuntzako pista '
-        'bera hartzen dugu, Trabakuarantz berriro igotzen hasi aurretik.',
+        'Kresta eder batetik jaisten gara <b>Asuntzako lepo</b> aldera (10,8 km &middot; '
+        '490 m), Urko eta Mendibil (613 m) bereizten dituena, eta Asuntzako pista bera '
+        'hartzen dugu, Trabakuarantz berriro igotzen hasi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
