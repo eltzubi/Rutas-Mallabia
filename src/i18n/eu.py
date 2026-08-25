@@ -601,7 +601,7 @@ OSMA = {
         'alt="Argi&ntilde;etako Nekropoliko hilobiak haritzen azpian, ermita atzealdean"',
 
     'Esta ruta sale de Trabakua hacia el suroeste, hasta el barrio de Zengotita (km 1,3 &middot; 412 '
-    'm), donde se coge la pista forestal que llega desde Areitio y enlaza con el GR &mdash;que va casi '
+    'm), donde se coge la pista forestal que va hacia Areitio y enlaza con el GR &mdash;que va casi '
     'en llano, en paralelo al monte Arietzu&mdash;, camino del barrio de Goierri (km 5,2 &middot; 319 '
     'm), escondido entre robles. Se sigue ganando altura por esa pista hacia el sureste hasta '
     'dejarla, poco antes de la presa de Aixola, para bajar por un tramo de tierra juget&oacute;n hasta '
@@ -609,15 +609,15 @@ OSMA = {
     'que llega al mismo punto sin bajar. Despu&eacute;s de la presa, ya al empezar a subir hacia '
     'Elgeta, est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de '
     'ruta.':
-        'Ibilbide honek Trabakuatik hego-mendebalderantz egiten du, Zengotita auzoraino (1,3 km '
-        '&middot; 412 m), hemen hartzen baita Areitiotik datorren eta GRarekin lotzen '
-        'den baso-pista &mdash;ia laua, Arietzu mendiaren paraleloan&mdash;, '
-        'Goierri auzorantz bidean (5,2 km &middot; 319 m), '
-        'haritzen artean ezkutatuta. Pista horretatik jarraitzen da altuera irabaziz hego-ekialderantz, '
-        'Aixolako presa baino pixka bat lehenago utzi arte, lurrezko tarte jolasti batetik presaraino '
-        'jaisteko &mdash;desnibela galdu nahi ez duenak pista nagusitik jarrai dezake, puntu berera '
-        'iristen dena jaitsi gabe. Presaren ondoren, Elgetarantz igotzen hasita, '
-        '<b>Larrosako Iturri</b> dago (11,9 km &middot; 355 m), ur-puntua ibilbidearen erdian.',
+        'Trabakuatik hego-mendebalderantz ateratzen da bidea, Zengotita auzoraino (1,3 km &middot; '
+        '412 m), eta han hartzen da Areitiora doan pista forestala, GRarekin lotzen dena &mdash;ia '
+        'lauan doa, Arietzu mendia parez pare jarraituz&mdash;, Goierri auzorantz (5,2 km &middot; '
+        '319 m), hariztien artean ezkutatuta.</p>\n'
+        '    <p>Handik aurrera, pistak hego-ekialderantz egiten du eta altuera irabazten jarraitzen '
+        'da, Aixolako presatik gertu pista utzi arte. Tarte horretan, lurrezko jaitsiera jostagarri '
+        'bat dago presaraino &mdash;desnibela galdu nahi ez duenak pista nagusitik jarrai dezake, '
+        'puntu berera iristen baita. Presaren ondoren, Elgetarantz igotzen hasten denean, '
+        '<b>Larrosako Iturria</b> dago (11,9 km &middot; 355 m), ibilbidearen erdiko ur-puntua.',
     'Desde ah&iacute; sigue subiendo hasta Elgeta, ya en el Duranguesado, y contin&uacute;a entre '
     'curvas '
     'por un tramo '
@@ -631,17 +631,15 @@ OSMA = {
     'Cultural desde 1931. Las tumbas, repartidas originalmente por distintos barrios de Elorrio, se '
     'agruparon aqu&iacute; en el siglo XIX por orden del p&aacute;rroco Retolaza. Hay tambi&eacute;n '
     'una fuente junto a la necr&oacute;polis para llenar cantimploras.':
-        'Handik Elgetaraino igotzen jarraitzen du, jada Durangaldean, eta bihurguneen artean '
-        'jarraitzen du '
-        'asfaltozko tarte batetik '
-        'Elorriorantz jaisteko bidegurutzeraino, Aldape auzotik, bat-batean jaitsi aurretik (18,8 km '
-        '&middot; 286 m). Kilometro eta '
-        'erdi geroago ipar-mendebalderantz biratzen du <b>Argi&ntilde;etako Nekropoliraino</b> (20,1 km '
-        '&middot; 247 m): hogei bat harrizko hilobi eta bost estela '
-        'Oizeko harrian landuak, VII. eta IX. mendeen artekoak &mdash;Bizkaian aurkitutako kristau '
-        'epigrafia zaharrenetakoa, Kultura Ondasun izendatua 1931tik. Hilobiak, jatorriz Elorrioko '
-        'hainbat auzotan sakabanatuta, XIX. mendean bildu ziren hemen Retolaza apaizaren aginduz. '
-        'Iturri bat ere badago nekropoliaren ondoan, kantinplorak betetzeko.',
+        'Handik gora, bideak Elgetara igotzen jarraitzen du, Durangaldeko sarreran, eta bihurgune '
+        'artean jarraitzen du asfalto-tarte batean zehar, Aldape auzotik Elorrio aldera jaisten den '
+        'bidegurutzera iritsi arte (18,8 km &middot; 286 m).</p>\n'
+        '    <p>Kilometro eta erdi geroago, bideak ipar-mendebalderantz egiten du <b>Argi&ntilde;etako '
+        'Nekropolira</b> iristeko (20,1 km &middot; 247 m): hogei bat harri-sarkofago eta bost '
+        'estela, Oizko harrian landuak, VII&ndash;IX. mendekoak &mdash;Bizkaian aurkitutako epigrafia '
+        'kristau zaharrenetakoak, Kultura Ondasun izendatuak 1931tik. Tumbak, jatorriz Elorrioko '
+        'auzo desberdinetan sakabanatuta zeudenak, XIX. mendean bildu ziren hemen, Retolaza '
+        'parrokoaren aginduz. Nekropoliaren ondoan iturri bat dago kantinplorak betetzeko.',
     'Desde ah&iacute; sigue subiendo hacia el barrio de Mendraca, donde el paisaje se abre en una '
     'panor&aacute;mica amplia hacia Elorrio y varias cumbres, como el Udalaitz, y el camino deja el '
     'asfalto por sendero y pista de tierra (km 22,4 &middot; 312 m). Pasa por <b>San Juan Bautista de '
@@ -652,25 +650,24 @@ OSMA = {
     'Miguel de Okango</b> (km 28,4 &middot; 227 m), patrona del barrio y con fiestas el 29 de '
     'septiembre entre bolos y morcilla, y baja de nuevo hasta <b>Berriz</b> (km 30,7 &middot; 187 m), '
     'en el valle del Ibaizabal, al pie del Oiz.':
-        'Handik gora jarraitzen du Mendraca auzorantz, non paisaia ikuspegi zabal batean irekitzen '
-        'den, Elorriorantz eta Udalaitza bezalako gailurretara begira, eta bideak asfaltoa utzi eta '
-        'bidezidor eta lurrezko pista bihurtzen den (22,4 km &middot; 312 m). <b>Murgoitioko San Juan '
-        'Bataiatzailetik</b> pasatzen da (24,3 km &middot; 277 '
-        'm) &mdash;XVII. mendeko erregistroak ditu inoiz induskatu gabeko hilobi bikoitzei buruz, '
-        'Argi&ntilde;etakoen antzekoak&mdash; eta Olakueta auzotik (25,8 km &middot; 160 m), non '
-        'altuera bat-batean galtzen den. Gero ekialderantz biratzen du, Zaldibar herrira sartu gabe '
-        'bordeatuz, <b>Okangoko San Migel ermitaraino</b> igotzeko (28,4 km &middot; 227 m), auzoaren '
-        'zaindaria eta irailaren 29an jaiak dituena, bolo-jokoz eta odolkiz, eta berriro jaisten da '
-        '<b>Berrizeraino</b> (30,7 km &middot; 187 m), Ibaizabal haranean, Oizen oinean.',
+        'Handik gora, bideak Mendraca auzorantz igotzen jarraitzen du, eta paisaia zabaltzen da '
+        'Elorrio eta inguruko gailurretara &mdash;tartean Udalaitz&mdash;. Bideak asfaltoa uzten du '
+        'bidezidor eta lur-pista bihurtzeko (22,4 km &middot; 312 m). Aurrerago, <b>San Juan '
+        'Bautista de Murgoitio</b> (24,3 km &middot; 277 m) igarotzen da &mdash;XVII. mendeko '
+        'hilobi bikoitz dokumentatuak ditu, inoiz induskatu ez direnak, Argi&ntilde;etakoen '
+        'antzekoak&mdash; eta Olakueta auzotik pasatzen da (25,8 km &middot; 160 m), non altuera '
+        'galera handia dago.</p>\n'
+        '    <p>Ondoren, bideak ekialderantz egiten du, Zaldibar ingurutik herrira sartu gabe, eta '
+        '<b>Okangoko San Migel ermitaraino</b> igotzen da (28,4 km &middot; 227 m), auzoko '
+        'zaindaria, irailaren 29an ospatzen diren festekin (bolo-jokoa eta odolkia). Handik berriro '
+        'jaisten da <b>Berrizera</b> (30,7 km &middot; 187 m), Ibaizabal ibaiaren haranean, Oiz '
+        'mendiaren oinean.',
     'Ya de vuelta, pasa por el barrio de San Lorenzo (Mend&iacute;bil-Sallobente) (km 32,1 &middot; '
-    '264 m), cerca de la Casa Madre de las Mercedarias '
-    'Misioneras de B&eacute;rriz, antes de subir sin parar los &uacute;ltimos 4,7 km y 143 m de '
+    '264 m), antes de subir sin parar los &uacute;ltimos 4,7 km y 143 m de '
     'desnivel de vuelta hasta Trabakua, para cerrar el c&iacute;rculo.':
-        'Itzuli bidean, San Lorentzo auzotik pasatzen da (Mend&iacute;bil-Sallobente) (32,1 km '
-        '&middot; 264 m), '
-        'B&eacute;rrizko Mertzedarien Misiolarien Ama '
-        'Etxetik gertu, azken 4,7 km-ak eta 143 m-ko desnibela etenik gabe igo aurretik Trabakuara, '
-        'zirkulua ixteko.',
+        'Bueltan, bideak San Lorentzo auzotik igarotzen da (Mend&iacute;bil-Sallobente) (32,1 km '
+        '&middot; 264 m), eta azken 4,7 km-etan eta 143 m-ko desnibelean etenik gabe igotzen da '
+        'berriro Trabakuara, zirkuitua ixteko.',
 
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
