@@ -1300,8 +1300,7 @@ URREGARAI = {
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
 
-    '<h2>Trail de monta&ntilde;a</h2>':
-        '<h2>Mendiko trail-a</h2>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
     '<span class="v">Senderismo y bici</span>':
         '<span class="v">Oinez eta bizikleta</span>',
@@ -1400,8 +1399,7 @@ KALAMUA = {
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
 
-    '<h2>Trail de monta&ntilde;a</h2>':
-        '<h2>Mendiko trail-a</h2>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
