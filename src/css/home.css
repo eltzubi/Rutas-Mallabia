@@ -584,6 +584,18 @@ footer a:hover{ text-decoration:underline; }
   .map-section,
   footer,
   .mini-gallery{ max-width:1100px; }
+
+  /* Two cards per row instead of one full-width card per row -- with 16
+     routes, a single column made this section scroll forever. Each card
+     goes back to a stacked photo-then-body layout (like mobile) since a
+     half-width card is too narrow for the side-by-side split. */
+  .featured{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
+  .feat-panel{ grid-template-columns:1fr; }
+  .feat-panel + .feat-panel{ margin-top:0; }
+  .feat-panel--alt{ grid-template-columns:1fr; }
+  .feat-panel--alt .feat-photo{ order:initial; }
+  .feat-panel--alt .feat-body{ order:initial; }
+  .feat-photo{ aspect-ratio:4/3; }
 }
 
 /* ---- mini gallery (banner de acción) ---- */
