@@ -423,7 +423,8 @@ ITURZURI = {
         'alt="Hondarrak eoliko baten ondoan Zengotitagane inguruan"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
     'parada: la <b>cascada de Gerena</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
-    'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia <b>7 Pago</b>, '
+    'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia '
+    '<a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago</a>, '
     'escondido entre cipreses y fácil de perder si no se mira bien por dónde sigue. Después de '
     'unos minutos enganchados al sendero, ya es mucho más fácil seguirlo. Ya en la zona de las '
     'siete hayas milenarias que dan nombre a la carrera de montaña de Mallabia, el camino vuelve '
@@ -435,8 +436,9 @@ ITURZURI = {
     'extendiéndose hasta perderse de vista.':
         'Trabakuatik ipar-ekialderantz ateratzen da eta, berrogei minutuko igoeraren ondoren, lehen '
         'geldialdira iristen da: <b>Gerenako ur-jauzia</b>. Bigarren ur-jauziraino igotzen jarraitzen '
-        'du, goikoraino: han, eta han bakarrik, ura zeharkatzen da <b>7 Pago</b> alderantz igotzen den '
-        'bidezidor bati heltzeko, altzifreen artean ezkutatuta eta erraz galtzekoa non jarraitzen '
+        'du, goikoraino: han, eta han bakarrik, ura zeharkatzen da '
+        '<a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago</a> '
+        'alderantz igotzen den bidezidor bati heltzeko, altzifreen artean ezkutatuta eta erraz galtzekoa non jarraitzen '
         'duen ondo begiratzen ez bada. Bidezidorrari heldu eta minutu batzuetara, askoz errazagoa da '
         'jarraitzea. Mallabiako mendi-lasterketari izena ematen dioten zazpi pago milaurtekoen '
         'inguruan, bidea berriro zabaltzen da <b>Iturzuriko iturrira</b> (4,3 km · 831 m) —ura dago '
