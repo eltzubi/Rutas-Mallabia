@@ -1053,11 +1053,11 @@ SANCRISTOBAL = {
     'duras, casi imposibles de subir con una bici normal &mdash;aunque en sentido contrario, '
     'con esta subida convertida en bajada, s&iacute; se puede hacer la ruta con una bici '
     'normal.':
-        'Trabakuatik irten eta Osma norabidean egiten dugu errepidez. 2 km pasatxo geroago '
-        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (3,7 km, 810 m) igotzen duen pista '
-        'hartzeko, parke eolikoaren aerosorgailuen artean. Maldak oso gogorrak dira, ia '
-        'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;alderantzizko norabidean, ordea, '
-        'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
+        'Trabakua mendatetik Osmarantz ateratzen gara errepidetik. 2 km pasatxo egin ondoren, '
+        'eskuinera biratzen dugu <b>Zengotitagane</b>raino igotzen den pista hartzeko (3,7 km '
+        '&middot; 810 m), parke eolikoko haize-errotak artean. Malda oso gogorrak dira, ia '
+        'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;baina kontrako noranzkoan, hau '
+        'jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arruntarekin.',
     'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
     'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
@@ -1065,34 +1065,34 @@ SANCRISTOBAL = {
     '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
     'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
     'monta&ntilde;a que organiza el municipio de Garai.':
-        'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
-        'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
-        'desbideratu ditzake metro batzuk. Handik pixka batera, eolikoen paraleloan '
-        'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Askako '
-        'gailur-eremurako igoeraren bila (5,7 km, 681 m). Handik, landaretzak ia ezkutatzen '
-        'duen bidezidor eder batetik gurutzatzen dugu <b>Askako</b>, Garaiko udalak '
-        'antolatzen duen AstoTrail lasterketa gogorraren ibilbide klasikoaren zati denetik.',
+        'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigana</b>raino (4,8 km &middot; '
+        '858 m), bi aldeetara bistak dituela. Ura hartu nahi duenak eskuinera metro gutxi '
+        'batzuk desbideratu daiteke. Pixka bat aurrerago, haize-errotak paraleloan zeharkatuz '
+        'Oizko goialdea, zementuzko pista batera jaisten gara, <b>Askako</b> gailur-ingurura '
+        'igotzeko (5,7 km &middot; 681 m). Gailur-inguru hori sasipean ezkutatuta doan bide '
+        'zoragarri batez zeharkatzen da: AstoTrail lasterketa gogorraren ibilbide klasikoaren '
+        'parte, Garaiko udalerriak antolatzen duen mendiko proba ospetsua.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
     'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
     'izquierda, con agua durante todo el a&ntilde;o.':
-        'Orduan Garairantz jaisten gara pagadi eder batetik, ibilbide osoko jaitsiera '
-        'gozagarrienetako bat. Garaitik irten bezain laster iturri bat dago ezkerraldean, '
-        'urtean zehar beti urarekin.',
+        'Handik behera, Garaialdera jaisten gara pago-baso zoragarri baten bidez, ibilbideko '
+        'jaitsierarik gozagarrienetako batean. Garaitik irten bezain pronto, iturri bat dago '
+        'ezkerrean, urte osoan ura duena.',
     'La subida de Garai hasta la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 20,3, 493 m) '
     'la hacemos por una pista de piedra &mdash;as&iacute; se conoce esta ermita, para '
     'distinguirla de la otra Ermita de San Crist&oacute;bal, la de arriba, junto a los '
     'aerogeneradores.':
-        'Garaitik <b>San Kristobal Txiki ermita</b>raino (20,3 km, 493 m) igotzeko harrizko '
-        'pista hartzen dugu &mdash;horrela ezagutzen da ermita hau, eolikoen ondoan '
-        'dagoen beste San Kristobal ermitatik bereizteko.',
+        'Garaiko igoera <b>San Kristobal Txiki ermita</b>raino (20,3 km &middot; 493 m) '
+        'harrizko pista batetik egiten da, goiko San Kristobal ermitatik bereizteko '
+        '&mdash;Oiz aldeko haize-errotak inguruan dituen ermitarekin.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
     'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
     'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 24,5, 404 m), ya '
     'cerca de cerrar el c&iacute;rculo, antes de bajar de vuelta a Trabakua.':
-        'Abiadura betean jarraitzen dugu behera San Jos&eacute; auzoraino. Trabakua eta Berriz '
-        'arteko errepide nagusia gurutzatzen dugu eta errepide zaharretik gora egiten dugu '
-        'Zengotita auzorantz, non dagoen <b>San Juan ermita</b> (24,5 km, 404 m), zirkulua '
-        'ixteko zorian, Trabakura jaitsi aurretik.',
+        'Handik beherantz abiadura handian jaisten gara San Jos&eacute; auzoraino. Trabakua eta '
+        'Berriz lotzen dituen errepide nagusia zeharkatu, eta errepide zaharretik igotzen da '
+        'Zengotita auzoraino, <b>San Juan ermita</b> dagoen tokira (24,5 km &middot; 404 m), '
+        'zirkuitua ixteko puntura iritsi aurretik, Trabakuara berriro jaitsi baino lehen.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
