@@ -550,7 +550,7 @@ ZENARRUZA = {
     'Trabakua. Una ruta larga, para pedalear hasta saciarse.':
         'Zengotitagandik, azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 metroko desnibela '
         'galduz 4 kilometro pasatxotan, Trabakuan zirkuitua ixteko. Ibilbide luzea, baina ederra; '
-        'pedalei aseraino eragiteko modukoa.',
+        'pedalei gustura eragiteko modukoa.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '31,7 km y +1.161 m de desnivel en un solo circuito. El track de esta ficha se grab&oacute; con '
     'e-bike &mdash;una Orbea Rise&mdash; (2h 06min), as&iacute; que el tiempo no sirve de referencia '
