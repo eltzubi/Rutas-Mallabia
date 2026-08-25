@@ -255,7 +255,7 @@ HOME = {
     # oiz card
     'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al '
     'fondo"':
-        'alt="Oizeko aerosorgailuak gailurreko putzu batean islatuta, antenak atzealdean"',
+        'alt="Oizeko eolikoak gailurreko putzu batean islatuta, antenak atzealdean"',
     '<h2>Zengotitagane, Axmakur<br><em>y Oiz</em></h2>':
         '<h2>Zengotitagane, Axmakur<br><em>eta Oiz</em></h2>',
     'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa '
@@ -288,7 +288,7 @@ HOME = {
     '<span class="signpost-name">Trabakua, Barinaga y Iturreta</span>':
         '<span class="signpost-name">Trabakua, Barinaga eta Iturreta</span>',
     'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
-        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko eolikoak atzealdean"',
     '<h2>Trabakua, Barinaga<br><em>y Iturreta</em></h2>':
         '<h2>Trabakua, Barinaga<br><em>eta Iturreta</em></h2>',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.':
@@ -828,7 +828,7 @@ OIZ = {
     'Ida y vuelta desde Trabakua hasta el Oiz':
         'Joan-etorria Trabakuatik Oizeraino',
     'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al fondo"':
-        'alt="Oizeko aerosorgailuak gailurreko putzu batean islatuta, antenak atzealdean"',
+        'alt="Oizeko eolikoak gailurreko putzu batean islatuta, antenak atzealdean"',
     'alt="Vistas panor&aacute;micas desde el Oiz, con los aerogeneradores y el sol de frente"':
         'alt="Oizetiko ikuspegi panoramikoak, aerosorgailuekin eta eguzkia aurrez aurre"',
     'alt="V&eacute;rtice geod&eacute;sico en el Oiz de noche, con las luces rojas de los '
@@ -1122,13 +1122,13 @@ ITURRETA = {
         '<h1>Trabakua, Barinaga<br><em>eta Iturreta</em></h1>',
 
     'alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"':
-        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko aerosorgailuak atzealdean"',
+        'alt="Bizikleta elektrikoaren eskulekua sasi arteko bidezidor batean, Oizeko eolikoak atzealdean"',
     'alt="Foto ampliada del recorrido de Trabakua, Barinaga y Iturreta"':
         'alt="Trabakua, Barinaga eta Iturretako ibilbidearen argazki handitua"',
     'alt="Vista del valle desde la ruta, con caseríos y bordas entre prados y bosque"':
         'alt="Haranaren ikuspegia ibilbidetik, baserriak eta bordak larre eta basoen artean"',
     'alt="Pista de cemento en la ladera, con los aerogeneradores del Oiz al fondo"':
-        'alt="Zementuzko pista hegalean, Oizeko aerosorgailuak atzealdean"',
+        'alt="Zementuzko pista hegalean, Oizeko eolikoak atzealdean"',
     'alt="Pista de cemento entre árboles, con luz de otoño filtrándose entre las hojas"':
         'alt="Zementuzko pista zuhaitzen artean, udazkeneko argia hostoen artetik sartzen"',
     'alt="Vista panorámica del valle con un caserío blanco entre bosque y prados"':
@@ -1161,7 +1161,7 @@ ITURRETA = {
         'Aginagan ezkerreko pista hartzen da, baserri eta abere-larreen artean behera eginez <b>ibaira</b> iritsi arte (9,2 km), haranaren hondoan. Han ezkerrera biratzen da eta zementuzko igoera hasten da <b>Iturretarantz</b> (12,5 km). Gainean, beste pista bat hartzen da, harrizkoa —kilometro batzuk hankak berreskuratzeko— hurrengo igoeraren aurretik: laburra baina bizia, lurrezko pistatik, zaila bizikleta arrunt batekin igotzeko —hor eskatzen zaio elektrikoari eman dezakeen guztia. Igoerak jarraitzen du <b>Mendibil</b> ezkerrera ikusi arte (14,5 km), ibilbideko puntu altuenera iritsi garenaren seinale.',
 
     'Baja entonces una pista de tierra para estirar unos cuantos kilómetros más, seguida de un buen tramo de piedra donde se puede dar bastante tralla. Ya abajo del todo, la última subida vuelve hacia Trabakua, con los aerogeneradores del Oiz y el barrio de Gerea como paisaje de fondo, antes de llegar de vuelta a Trabakua, punto de salida y llegada.':
-        'Orduan lurrezko pista batean behera egiten da kilometro batzuk gehiago luzatzeko, eta ondoren harrizko tarte on bat dator, non tralla franko eman daitekeen. Erabat behean, azken igoerak Trabakuarantz egiten du, Oizeko aerosorgailuak eta Gereako auzoa atzealde gisa dituela, Trabakuara itzuli arte, irteera eta helmuga puntura.',
+        'Orduan lurrezko pista batean behera egiten da kilometro batzuk gehiago luzatzeko, eta ondoren harrizko tarte on bat dator, non tralla franko eman daitekeen. Erabat behean, azken igoerak Trabakuarantz egiten du, Oizeko eolikoak eta Gereako auzoa atzealde gisa dituela, Trabakuara itzuli arte, irteera eta helmuga puntura.',
 }
 
 EGOARBITZA = {
