@@ -518,6 +518,8 @@ ZENARRUZA = {
         'alt="Basoko bidea udazkeneko hostoz estalita, hosto horiak eta berdeak dituzten zuhaitzen artean"',
     'alt="Escalera de piedra junto a un &aacute;rbol grande, en la Colegiata de Zenarruza"':
         'alt="Harrizko eskailera zuhaitz handi baten ondoan, Zenarruzako kolegiatan"',
+    'alt="La Colegiata de Zenarruza vista desde el prado, con el caser&iacute;o anexo y los montes al fondo"':
+        'alt="Zenarruzako kolegiata belardi batetik ikusita, ondoko baserriarekin eta mendiak atzealdean"',
     'alt="Aerogeneradores sobre una cresta de monte, con el atardecer entre nubes al fondo"':
         'alt="Haizezurrutariak mendi-gailurraren gainean, ilunabarra hodeien artean atzealdean"',
     'Sale de Trabakua hacia el norte y, subiendo y bajando por los altos entre Mallabia y '
@@ -1067,6 +1069,10 @@ SANCRISTOBAL = {
         'lainoen artean"',
     'alt="Un banco de nubes cubriendo la ladera, cerca de Garai"':
         'alt="Hodei-banku bat magala estaltzen, Garaitik gertu"',
+    'alt="Vacas descansando en la loma, con el valle y las monta&ntilde;as al fondo"':
+        'alt="Behiak bizkarrean atseden hartzen, harana eta mendiak atzealdean"',
+    'alt="Caballos pastando entre &aacute;rboles, con los aerogeneradores del parque e&oacute;lico al fondo"':
+        'alt="Zaldiak zuhaitzen artean bazkatzen, parke eolikoaren aerosorgailuak atzealdean"',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
