@@ -1205,8 +1205,7 @@ EGOARBITZA = {
     '<span class="num">4</span>Presa de Aixola</span>':
         '<span class="num">4</span>Aixolako presa</span>',
 
-    '<h2>Trail de monta&ntilde;a</h2>':
-        '<h2>Mendiko trail-a</h2>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
