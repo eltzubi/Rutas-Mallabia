@@ -1530,7 +1530,8 @@ MUNDIOKOKOBA = {
     'agua, ya cerca de la cueva, es la mejor se&ntilde;al de que se est&aacute; en el sitio correcto.':
         'Lepotik, Urkurantz jarraitzen duen bidea alde batera utzi eta eskuinera egingo dugu, baratz '
         'batzuen ondotik apur bat jaitsiz, Berano Txiki auzoaren goialdean sartzen den lurrezko '
-        'bidea hartu arte, pinu-sail itxi eta jende gutxiko baten artean. Arreta GPSan jartzea '
+        'bidea hartu arte; bide hori pinu-sail itxi eta jende gutxik zapaltzen duen leku batetik '
+        'igarotzen da. Arreta GPSan jartzea '
         'komeni da: track-a kargatuta egon arren, kostatu egiten da pinu artean oso ondo ezkutatuta '
         'dagoen <b>Mundioko Koba</b>ren ahoa aurkitzea (6,3 km &middot; 492 m). Ur gutxiko errekatxo '
         'txiki bat, kobazulotik gertu, leku egokian gaudenaren seinalerik onena da.',
