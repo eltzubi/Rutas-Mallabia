@@ -1510,27 +1510,30 @@ MUNDIOKOKOBA = {
     'desde ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. El primer '
     'repecho es el m&aacute;s duro de toda la ruta &mdash;se sube de un tir&oacute;n&mdash;, pero no '
     'enga&ntilde;a: no llega a los 300 m de desnivel. La pista sigue hasta el <b>Collado de '
-    'Asuntza</b> (km 6,3 &middot; 492 m), con una casita a la izquierda.':
+    'Asuntza</b> (km 5 &middot; 494 m) &mdash;el mismo cruce de la ruta de <a href="urko.html">'
+    'Trabakua, Asuntza y Urko</a>&mdash;, con una casita a un lado, visible tanto de subida como de '
+    'bajada.':
         'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
         'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz, '
         'mendiko giro garbian. Lehen aldapa da ibilbide osoko gogorrena: tiraka igotzen da, etenik '
         'gabe. Baina ez du engainatzen: laburra da, ez da 300 metrora iristen. Pistak aurrera '
-        'jarraitzen du <b>Asuntzako lepo</b>raino (6,3 km &middot; 492 m), ezkerrean etxetxo bat '
-        'duena.',
-    'Desde el collado la pista empieza a bajar hacia el barrio de Berano Txiki, pero solo un '
-    'peque&ntilde;o tramo: a los pocos metros se gira a la izquierda, junto a unos huertos, para '
-    'coger una pista de tierra que se adentra en la parte alta del barrio, entre un pinar cerrado y '
-    'poco frecuentado. Conviene ir atentos al GPS, porque incluso con el track cargado cuesta '
-    'encontrar la boca de <b>Mundioko Koba</b>, bien escondida entre los pinos. Un peque&ntilde;o '
-    'riachuelo con poca agua, ya cerca de la cueva, es la mejor se&ntilde;al de que se est&aacute; '
-    'en el sitio correcto.':
-        'Lepotik pistak Berano Txiki auzorantz jaisten hasten da, baina tarte labur batez bakarrik: '
-        'metro gutxira ezkerrera biratzen da, baratze batzuen ondoan, lurrezko pista bat hartzeko, '
+        'jarraitzen du <b>Asuntzako lepo</b>raino (5 km &middot; 494 m) &mdash;<a href="urko.html">'
+        'Trabakua, Asuntza eta Urko</a> ibilbidearen bidegurutze bera&mdash;, alboan etxetxo bat '
+        'duena, igoeran zein jaitsieran ikusgai.',
+    'En el collado se deja a un lado el camino que sigue hacia Urko y se gira a la derecha, bajando '
+    'un poco junto a unos huertos, hasta coger una pista de tierra que se adentra en la parte alta '
+    'del barrio de Berano Txiki, entre un pinar cerrado y poco frecuentado. Conviene ir atentos al '
+    'GPS, porque incluso con el track cargado cuesta encontrar la boca de <b>Mundioko Koba</b> '
+    '(km 6,3 &middot; 492 m), bien escondida entre los pinos. Un peque&ntilde;o riachuelo con poca '
+    'agua, ya cerca de la cueva, es la mejor se&ntilde;al de que se est&aacute; en el sitio correcto.':
+        'Lepoan, Urkorantz jarraitzen duen bidea alde batera uzten da eta eskuinera biratzen da, '
+        'baratze batzuen ondotik apur bat jaitsiz, lurrezko pista bat hartu arte, Berano Txiki '
         'auzoaren goialdean barneratzen dena, pinudi itxi eta gutxi ibilitako batean. Komeni da '
         'GPSari erne begiratzea, tracka kargatuta izanda ere kosta egiten baita <b>Mundioko '
-        'Koba</b>ren sarrera aurkitzea, pinuen artean ondo ezkutatuta. Ur gutxiko erreka txiki bat, '
-        'kobatik gertu, koba ondo aurkitzen ari garenaren seinalerik onena da.',
+        'Koba</b>ren (6,3 km &middot; 492 m) sarrera aurkitzea, pinuen artean ondo ezkutatuta. Ur '
+        'gutxiko erreka txiki bat, kobatik gertu, koba ondo aurkitzen ari garenaren seinalerik onena '
+        'da.',
     'La entrada es peque&ntilde;a &mdash;hay que agacharse para pasar&mdash;, pero el interior se '
     'abre enseguida: tiene altura y algo de profundidad, y sorprende con solo asomarse. A partir de '
     'ah&iacute;, mucho cuidado: no conviene adentrarse m&aacute;s sin cuerda, porque hay un '
@@ -1547,15 +1550,15 @@ MUNDIOKOKOBA = {
         'harkaitzean, goian, erdi ezkutuko zulo batekin topo egin arte, handik ahal bezala sartu '
         'behar da: bigarren gangara ematen du, lehena bezain polita. Handik aurrera zailagoa da '
         'jarraitzea, baina ikusten den apurra ere ederra da.',
-    'Despu&eacute;s de la cueva se vuelve al mismo punto de salida, en el <b>Collado de '
-    'Asuntza</b>. Desde ah&iacute; se sigue por el mismo camino de ida durante un kil&oacute;metro, '
-    'hasta girar a la izquierda hacia bosque y pistas poco transitadas: un desv&iacute;o que hace la '
+    'Despu&eacute;s de la cueva se vuelve a pasar por el <b>Collado de Asuntza</b>, esta vez en el '
+    'km 7. Desde ah&iacute; se sigue por el mismo camino de ida durante un kil&oacute;metro, hasta '
+    'girar a la izquierda hacia bosque y pistas poco transitadas: un desv&iacute;o que hace la '
     'vuelta m&aacute;s entretenida que repetir todo el trayecto, y de paso se descubren zonas '
     'nuevas de la ruta.':
-        'Kobaren ondoren irteerako puntu berera itzultzen gara, <b>Asuntzako lepo</b>ra. Handik '
-        'joaneko bide beretik jarraitzen da kilometro batez, ezkerrera biratu arte baso eta gutxi '
-        'ibilitako pisten artera: bidea osorik errepikatzea baino itzulera dibertigarriagoa egiten '
-        'duen desbideratzea, eta bide batez ibilbidearen zona berriak ezagutzen dira.',
+        'Kobaren ondoren berriro pasatzen da <b>Asuntzako lepo</b>tik, oraingoan 7. kilometroan. '
+        'Handik joaneko bide beretik jarraitzen da kilometro batez, ezkerrera biratu arte baso eta '
+        'gutxi ibilitako pisten artera: bidea osorik errepikatzea baino itzulera dibertigarriagoa '
+        'egiten duen desbideratzea, eta bide batez ibilbidearen zona berriak ezagutzen dira.',
     'Ese desv&iacute;o enlaza con el tramo final de la ruta de <a href="trabakua.html">Trabakua '
     'bira</a>, aunque bastante m&aacute;s arriba &mdash;sin pasar por Berano Txiki ni la parte alta '
     'de Berano&mdash;, antes de remontar de nuevo hacia Trabakua, para cerrar el c&iacute;rculo.':
