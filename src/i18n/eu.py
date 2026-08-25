@@ -353,31 +353,33 @@ TRABAKUA = {
     'solitario, alternando cemento y tramos de piedra. El primer repecho es el más duro de toda '
     'la ruta —se sube de un tirón y se nota en las piernas—, pero no engaña: no llega a los 300 m. '
     'Lo que viene después se lleva mejor.':
-        'Trabakuako Altotik ateratzen gara. Lehen kilometro batean behera egiten dugu, ezkerrerako '
-        'bidegurutze batera iritsi arte: han uzten dugu asfaltoa, eta hortik aurrera pista hutsa da, '
-        'zementuzko eta harrizko tarteak txandakatuz.</p>\n'
-        '    <p>Lehen aldapa da ibilbide osoko gogorrena &mdash;etenik gabe igotzen da, eta hanketan '
-        'nabaritzen da&mdash;, baina ez du engainatzen: ez da 300 metrora iristen. Ondorengoa askoz '
-        'eramangarriagoa da.',
+        'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
+        'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
+        'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz, '
+        'mendiko giro garbian.</p>\n'
+        '    <p>Lehen aldapa da ibilbide osoko gogorrena: tiraka igotzen da, etenik gabe. Baina ez '
+        'du engainatzen: laburra da, ez da 300 metrora iristen. Behin gaindituta, ondorengoa askoz '
+        'eramangarriagoa da, eta gorputzak berehala hartzen du erritmoa.',
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
     'Aginaga, sin perder mucha altura. Desde Aginaga se sube por un tramo de pista de cemento '
     'hasta enlazar con el camino de tierra, de vuelta a la pista principal, justo al collado de '
     'Asuntza. Es un tramo opcional: '
     'se puede evitar siguiendo recto, sin desviarse hacia él.':
-        'Aldapa horien ondoren, jaitsiera tekniko samar bat dator &mdash;trebetasun pixka bat '
-        'duenarentzat arriskurik gabe&mdash;, eta handik berreskuratzen dugu igoerako bidea, Aginaga '
-        'auzoaren inguruan, altuera handirik galdu gabe. Aginagatik zementuzko pista-tarte batetik '
-        'igotzen gara, lurrezko bidearekin lotu arte, pista nagusira itzultzeko, Asuntzako lepoan '
-        'bertan. Tarte hori aukerakoa da: nahi izanez gero, zuzen jarraituta saihestu daiteke.',
+        'Aldapa horien ostean, jaitsiera tekniko samar bat dator &mdash;trebetasun pixka bat '
+        'duenarentzat arriskurik gabe&mdash;, eta oso gozagarria. Jaitsieraren amaieran berriro '
+        'berreskuratzen dugu igoeraren bidea, Aginaga auzoaren inguruan, altuera handirik galdu '
+        'gabe. Aginagatik zementuzko pista batetik igotzen gara, lurrezko bidearekin lotu arte, '
+        'pista nagusira itzultzeko, Asuntzako lepoan bertan. Tarte hori aukerakoa da: nahi izanez '
+        'gero, zuzen jarraituta saihestu daiteke.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
     'Txiki y la parte alta de Berano, con vistas hacia el barrio de Goita y las montañas del '
     'Duranguesado, antes de remontar de nuevo hacia Trabakua — una vuelta rápida y con paisaje.':
-        'Pistak oso ondo rodatzen du hasieratik amaieraraino, bidezidor esturik gabe, eta '
-        'jaitsieretan aski malda dago abiadura hartu eta gozatzeko. Berano Txiki eta Beranoko '
-        'goialdea zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin, '
-        'Trabakuarantz berriro igo aurretik &mdash;buelta azkarra eta paisaiaz betea.',
+        'Pistak oso ondo rodatzen du hasieratik amaieraraino: ez dago bidezidor esturik, eta '
+        'jaitsieretan malda nahikoa dago abiadura hartu eta gozatzeko. Bidean Berano Txiki eta '
+        'Beranoko goialdea zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin, '
+        'eta hortik Trabakuarantz berriro igotzen gara, buelta azkarra eta paisaiaz betea ixteko.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     'Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin sendero estrecho — '
     'apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se '
