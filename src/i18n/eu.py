@@ -244,7 +244,7 @@ HOME = {
     # sancristobal card
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
     'cresta"':
-        'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
+        'alt="Pista eolikoen ondoan, lainoak gailurra estaltzen duela"',
     '<h2>Zengotitagane, Askako<br><em>y San Crist&oacute;bal</em></h2>':
         '<h2>Zengotitagane, Askako<br><em>eta San Kristobal</em></h2>',
     'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las '
@@ -341,7 +341,7 @@ TRABAKUA = {
     'alt="La pista junto al muro de piedra, con tramos de tierra"':
         'alt="Pista harrizko hormaren ondoan, lurrezko tarteekin"',
     'alt="Vistas al Duranguesado desde la subida, con los aerogeneradores al fondo"':
-        'alt="Durangaldeko bistak igoeratik, aerosorgailuak atzealdean"',
+        'alt="Durangaldeko bistak igoeratik, eolikoak atzealdean"',
     'alt="Manillar de la bici en marcha por la pista de Trabakua"':
         'alt="Bizikletaren manillarra Trabakuako pistan martxan"',
     'alt="Vistas al Duranguesado desde Berano, con caseríos y prados en el valle"':
@@ -416,9 +416,9 @@ ITURZURI = {
         'alt="Probazelaiburu II.a historiaurreko tumuluaren plaka, ibilbideko punturik altuena"',
     'alt="Niebla entre los árboles cerca de la cima"': 'alt="Lainoa zuhaitzen artean gailurretik gertu"',
     'alt="El sendero por el cresterio, con los aerogeneradores al fondo"':
-        'alt="Bidezidorra gailurrerditik, aerosorgailuak atzealdean"',
+        'alt="Bidezidorra gailurrerditik, eolikoak atzealdean"',
     'alt="Restos junto a un aerogenerador cerca de Zengotitagane"':
-        'alt="Hondarrak aerosorgailu baten ondoan Zengotitagane inguruan"',
+        'alt="Hondarrak eoliko baten ondoan Zengotitagane inguruan"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
     'parada: la <b>cascada de Gerena</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia <b>7 Pago</b>, '
@@ -679,7 +679,7 @@ GEREA = {
     '<span class="num">2</span>Vistas a Gerea':
         '<span class="num">2</span>Gereako ikuspegiak',
     '<span>Sendero</span><span class="sep">/</span><span>Cascada, aerogeneradores y borda</span>':
-        '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, aerosorgailuak eta borda</span>',
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, eolikoak eta borda</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     'Circuito a la cascada de Gerea desde Trabakua':
         'Zirkuitua Trabakuatik Gereako ur-jauzira',
@@ -692,7 +692,7 @@ GEREA = {
     'alt="Aerogeneradores del parque eólico del Oiz vistos desde la ruta"':
         'alt="Oizeko parke eolikoaren aerosorgailuak ibilbidetik ikusita"',
     'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
-        'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, aerosorgailuak '
+        'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, eolikoak '
         'atzealdean"',
     'alt="Ur Jauziak en otoño, con el agua cayendo entre musgo y rocas"':
         'alt="Ur Jauziak udazkenean, ura goroldio eta harrien artetik erortzen"',
@@ -735,7 +735,7 @@ GEREA = {
     'de esas pintadas verdes y blancas, así que conviene llevar el track cargado.':
         'Maila guztietarako baliozko ibilbidea, haur nagusiak barne: 5,7 km eta +415 m-ko '
         'desnibela zirkuitu bakarrean, igoera-tarte on batekin (40 bat minutu) ur-jauziraino, '
-        'aerosorgailuak lagun ia bide osoan. Ez dago ofizialki seinalizatuta pintura berde eta '
+        'eolikoak lagun ia bide osoan. Ez dago ofizialki seinalizatuta pintura berde eta '
         'zuri horiez haratago, beraz komeni da tracka kargatuta eramatea.',
 }
 
@@ -790,7 +790,7 @@ ZENGOTITAGANE = {
         'jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik igotzen den '
         'harrizko pistarekin lotu arte, goiko iturriraino, goi-goian. Handik behera hasten '
         'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
-        'da, aerosorgailuen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
+        'da, eolikoen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
     'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
     'barrio de Zengotita, donde est&aacute; la <b>Ermita de San Juan</b> (km 19,6, 400 m), ya '
@@ -830,16 +830,16 @@ OIZ = {
     'alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al fondo"':
         'alt="Oizeko eolikoak gailurreko putzu batean islatuta, antenak atzealdean"',
     'alt="Vistas panor&aacute;micas desde el Oiz, con los aerogeneradores y el sol de frente"':
-        'alt="Oizetiko ikuspegi panoramikoak, aerosorgailuekin eta eguzkia aurrez aurre"',
+        'alt="Oizetiko ikuspegi panoramikoak, eolikoekin eta eguzkia aurrez aurre"',
     'alt="V&eacute;rtice geod&eacute;sico en el Oiz de noche, con las luces rojas de los '
     'aerogeneradores al fondo"':
-        'alt="Vertize geodesikoa Oizen gauez, aerosorgailuen argi gorriak atzealdean"',
+        'alt="Vertize geodesikoa Oizen gauez, eolikoen argi gorriak atzealdean"',
     'alt="Atardecer en el Oiz, con la silueta de los aerogeneradores en la cresta"':
-        'alt="Ilunabarra Oizen, aerosorgailuen silueta gailur-gerrikoan"',
+        'alt="Ilunabarra Oizen, eolikoen silueta gailur-gerrikoan"',
     'alt="Un reba&ntilde;o de camino al Oiz de noche, con las luces de un pueblo al fondo"':
         'alt="Artalde bat Oizerako bidean gauez, herri baten argiak atzealdean"',
     'alt="Un aerogenerador del Oiz recortado contra la luna, al anochecer"':
-        'alt="Oizeko aerosorgailu bat ilargiaren kontra, ilunabarrean"',
+        'alt="Oizeko eoliko bat ilargiaren kontra, ilunabarrean"',
     'alt="Atardecer rojizo desde el Oiz"':
         'alt="Ilunabar gorrixka Oiztik"',
     'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m) &mdash;una '
@@ -848,7 +848,7 @@ OIZ = {
     'suaviza mucho y se hace muy llevadero.':
         'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m) '
         '&mdash;igoera oso gogorra, laburra izan arren, ia zuzena, bigarren eta hirugarren '
-        'aerosorgailuen artean ateratzen dena goian. Handik aurrera, Oizerantz, malda '
+        'eolikoen artean ateratzen dena goian. Handik aurrera, Oizerantz, malda '
         'asko leuntzen da eta oso eramangarria bihurtzen da.',
     'Continuamos por la cresta, con unas vistas preciosas a ambos lados, hasta meternos en '
     'el hayedo que nos lleva a la fuente de Iturzuri; tras cruzarlo, se ve un refugio a un '
@@ -1036,7 +1036,7 @@ SANCRISTOBAL = {
         'Txiki eta San Juan ermitekin',
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
     'cresta"':
-        'alt="Pista aerosorgailuen ondoan, lainoak gailurra estaltzen duela"',
+        'alt="Pista eolikoen ondoan, lainoak gailurra estaltzen duela"',
     'alt="Pista de tierra con un poste de madera, y el valle del Duranguesado al fondo"':
         'alt="Lur-pista zurezko poste batekin, eta Durangaldeko harana atzealdean"',
     'alt="Un hayedo solitario en la cresta, con vistas al valle entre nubes"':
@@ -1067,7 +1067,7 @@ SANCRISTOBAL = {
     'monta&ntilde;a que organiza el municipio de Garai.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu <b>Iturzurigana</b>'
         'raino (4,8 km, 858 m), bi aldeetara ikuspegiekin. Ura hartu nahi duenak eskuinera '
-        'desbideratu ditzake metro batzuk. Handik pixka batera, aerosorgailuen paraleloan '
+        'desbideratu ditzake metro batzuk. Handik pixka batera, eolikoen paraleloan '
         'Oizeko goialdea zeharkatu ondoren, zementuzko pista batera jaisten gara, Askako '
         'gailur-eremurako igoeraren bila (5,7 km, 681 m). Handik, landaretzak ia ezkutatzen '
         'duen bidezidor eder batetik gurutzatzen dugu <b>Askako</b>, Garaiko udalak '
@@ -1083,7 +1083,7 @@ SANCRISTOBAL = {
     'distinguirla de la otra Ermita de San Crist&oacute;bal, la de arriba, junto a los '
     'aerogeneradores.':
         'Garaitik <b>San Kristobal Txiki ermita</b>raino (20,3 km, 493 m) igotzeko harrizko '
-        'pista hartzen dugu &mdash;horrela ezagutzen da ermita hau, aerosorgailuen ondoan '
+        'pista hartzen dugu &mdash;horrela ezagutzen da ermita hau, eolikoen ondoan '
         'dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute;. Cruzamos la '
     'carretera general entre Trabakua y Berriz y subimos por la carretera vieja hacia el '
