@@ -975,33 +975,36 @@ URKO = {
     'ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. Lo '
     'que viene despu&eacute;s se lleva mejor, y el camino ondula entre subidas y bajadas '
     'suaves, hasta llegar a Asuntza.':
-        'Trabakuako mendatetik ateratzen gara. Lehen zatia beherantz doa &mdash;kilometro '
-        'bat inguru&mdash; ezkerrerako bidegurutze batera iritsi arte, non asfaltua '
-        'uzten den eta aldapa bat hasten den, une batean bizia baina laburra; goian, '
-        'besteak beste, Mendibil mendirako seinaleak ikusten ditugu. Handik aurrera, '
-        'pista hutsa da, zementuzko eta harrizko tarteak txandakatuz. Ondorengoa '
-        'eramangarriagoa da, eta bidea igoera eta jaitsiera leunen artean uhinka doa, '
-        'Asuntzara iritsi arte.',
+        'Trabakuako Altoan hasten gara. Lehen metroek behera egiten dute, kilometro bat '
+        'pasatxo, ezkerrerako bidegurutze batera iritsi arte. Han asfaltua uzten dugu, eta '
+        'berehala hasten da aldapa: momenturen batean gogortu egiten da, baina laburra da. '
+        'Goiko puntura iristean, Mendibilerako seinaleak ageri dira, eta horrek ematen dio '
+        'ibilbideari mendiko giroa. Handik aurrera, pista hutsa da, tarteka zementua, '
+        'tarteka harria. Ondorengoa eramangarriagoa da, eta bidea uhinka doa, igoera eta '
+        'jaitsiera leunen artean, Asuntzara iritsi arte.',
     'Por el camino coronamos <b>Arandomendi</b> (km 6,4 &middot; 686 m), donde la '
     'pendiente da un respiro durante el siguiente kil&oacute;metro, antes de atacar la '
     'cuesta final hacia la cumbre del Urko.':
-        'Bidean <b>Arandomendi</b> (6,4 km &middot; 686 m) koronatzen dugu, eta maldak '
-        'arnasa hartzeko tartea ematen du hurrengo kilometroan zehar, Urkoko '
-        'gailurrerako azken aldapari ekin aurretik.',
+        'Bidean <b>Arandomendi</b> (6,4 km &middot; 686 m) koronatzen dugu. Gailur horrek '
+        'arnasa hartzeko tartea ematen du hurrengo kilometroan, eta gorputzak eskertzen '
+        'du, Urkoko azken aldapa gogorrari ekin aurretik.',
     'Poco despu&eacute;s llegamos al punto m&aacute;s alto de la ruta, <b>Urko</b> (km 8, '
     '785 m), con su v&eacute;rtice geod&eacute;sico y vistas a las monta&ntilde;as del '
     'entorno. Es el punto m&aacute;s alto de los municipios de Ermua y Eibar, y su cumbre '
     'marca la frontera entre Bizkaia y Gipuzkoa.':
-        'Handik gutxira iristen gara ibilbideko punturik altuenera, <b>Urko</b>ra (8 km '
-        '&middot; 785 m), bere bertize geodesikoarekin eta inguruko mendietarako '
-        'ikuspegiekin. Ermua eta Eibar udalerrien punturik altuena da, eta bere gailurrak '
-        'Bizkaia eta Gipuzkoaren arteko muga markatzen du.',
+        'Handik gutxira iristen gara ibilbideko punturik altuenera: <b>Urko</b> (8 km '
+        '&middot; 785 m). Bertan dago bertize geodesikoa, eta inguruko mendietara '
+        'zabaltzen diren ikuspegi zabalak. Urko da Ermua eta Eibar udalerrien punturik '
+        'altuena, eta bere gailurrak Bizkaia eta Gipuzkoaren arteko muga markatzen du. '
+        'Gailurrean beti sentitzen da zerbait berezia: haizea, isiltasuna, eta ingurua '
+        'begiratzeko gogoa.',
     'Bajamos por un bonito tramo de cresta hasta el <b>Collado de Asuntza</b> (km 10,8 '
     '&middot; 490 m), que separa el Urko del monte Mendibil (613 m), y cogemos la misma '
     'pista de la Asuntza, antes de remontar de nuevo hacia Trabakua.':
-        'Kresta eder batetik jaisten gara <b>Asuntzako lepo</b> aldera (10,8 km &middot; '
-        '490 m), Urko eta Mendibil (613 m) bereizten dituena, eta Asuntzako pista bera '
-        'hartzen dugu, Trabakuarantz berriro igotzen hasi aurretik.',
+        'Gailurretik kresta polit batetik jaisten gara <b>Asuntzako lepo</b>ra (10,8 km '
+        '&middot; 490 m), Urko eta Mendibil (613 m) bereizten dituen tartera. Lepoan '
+        'pista hartzen dugu berriro, Asuntzako bidea bera, eta hortik Trabakuarantz '
+        'igotzen hasten gara, ibilbideari buelta emateko.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
