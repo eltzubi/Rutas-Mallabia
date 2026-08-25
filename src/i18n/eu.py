@@ -848,33 +848,38 @@ OIZ = {
     'subida muy fuerte, aunque corta, casi recta, que sale arriba entre el segundo y el '
     'tercer aerogenerador. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
     'suaviza mucho y se hace muy llevadero.':
-        'Trabakuatik irten eta <b>Zengotitagane</b>raino igotzen gara (2,1 km, 810 m) '
-        '&mdash;igoera oso gogorra, laburra izan arren, ia zuzena, bigarren eta hirugarren '
-        'eolikoen artean ateratzen dena goian. Handik aurrera, Oizerantz, malda '
-        'asko leuntzen da eta oso eramangarria bihurtzen da.',
+        'Trabakua atzean utzita, bidea berehala hasten da gora. Lehen helburua '
+        '<b>Zengotitagane</b> da (2,1 km &middot; 810 m), eta tarte horretan igoera oso '
+        'zuzena eta gogorra da: laburra izan arren, gorputzak berehala nabaritzen du aldapa. '
+        'Gailurrera iristen gara bigarren eta hirugarren haize-errotaren artean, eta hortik '
+        'aurrera Oiz aldera dena da lasaiago; maldak leuntzen dira eta aurrera egitea '
+        'errazagoa da.',
     'Continuamos por la cresta, con unas vistas preciosas a ambos lados, hasta meternos en '
     'el hayedo que nos lleva a la fuente de Iturzuri; tras cruzarlo, se ve un refugio a un '
     'lado, aunque no pasamos por &eacute;l.':
-        'Gailur-bizkarretik jarraitzen dugu, bi aldeetara ikuspegi ederrekin, pagadira sartu '
-        'arte, Iturzuriko iturrira eramaten gaituena; hura zeharkatu ondoren, aterpe bat '
-        'ikusten da alboan, nahiz eta ez garen bertatik pasatzen.',
+        'Aurrera jarraitzen dugu mendi-lerroan, bi aldeetara zabaltzen diren ikuspegi '
+        'zabalekin. Pixkanaka pago artean sartzen gara, tarte atsegin batean, eta horrek '
+        'eramaten gaitu Iturzuriko iturrira. Iturria atzean utzita, aterpe bat ikusten da '
+        'alde batean, nahiz eta ibilbideak ez duen bertatik pasatzen.',
     '<b>Axmakur</b> (km 4, 888 m) viene justo despu&eacute;s de la fuente, un repecho de la '
     'cresta conectado con el propio Oiz, con vistas hacia el Duranguesado, Urdaibai y Bilbao.':
-        '<b>Axmakur</b> (4 km, 888 m) iturriaren ondoren dator, Oiz bertarekin lotutako '
-        'gailur-bizkarreko malda bat, Durangaldera, Urdaibaira eta Bilbora ikuspegiekin.',
+        'Handik gertu dator <b>Axmakur</b> (4 km &middot; 888 m), goragune txiki baina polit '
+        'bat, Oiz mendiarekin lotuta. Hemendik ikuspegi zabalak irekitzen dira: Durangaldea, '
+        'Urdaibai, eta eguna garbi badago, Bilbo ere bai.',
     'La cresta cumbrera del <b>Oiz</b> (km 5,69, 1.025 m) est&aacute; ocupada por antenas y '
     'uno de los parques e&oacute;licos m&aacute;s extensos de Bizkaia &mdash;el primero que '
     'se instal&oacute; en el territorio. Desde ah&iacute; hay vistas a la costa '
     'cant&aacute;brica y, en d&iacute;as claros, hasta los Pirineos. Es uno de los montes '
     '&laquo;bocineros&raquo; de Bizkaia, usados antiguamente para convocar reuniones con el '
     'sonido de una bocina que cruzaba los valles.':
-        '<b>Oiz</b>eko gailur-gerrikoa antenaz eta Bizkaiko parke eoliko zabalenetako batez '
-        'okupatuta dago &mdash;lurraldean instalatutako lehena. Handik kostalde '
-        'kantauriarrerako ikuspegiak daude, eta egun argietan Pirinioetaraino ere bai. '
-        'Bizkaiko mendi &laquo;bozinari&raquo; bat da, garai batean bilerak deitzeko '
-        'erabiltzen zena, haranetan zehar zabaltzen zen bozina baten soinuarekin.',
+        'Aurrerago iristen gara <b>Oiz</b>ko goialdera (5,69 km &middot; 1.025 m). Antenak '
+        'eta Bizkaiko parke eoliko handienetako bat daude bertan &mdash;lurraldean jarri zen '
+        'lehenengoa. Tontorretik Kantauri itsasoa ikusten da, eta egun garbi-garbian, '
+        'Pirinioak ere bai. Oiz da Bizkaiko mendi &laquo;bozinari&raquo;etako bat: garai '
+        'batean, bozina baten soinua haranetan zehar zabaltzen zen biltzarrak deitzeko.',
     'La vuelta es por el mismo camino, de vuelta a Trabakua.':
-        'Itzulera bide beretik da, Trabakura bueltan.',
+        'Bueltarako, bide bera hartzen dugu, pago artean berriro jaitsiz, Trabakuara '
+        'itzultzeko. Ibilbide osoa azkarra, argia eta paisaiaren poderioz oso gozagarria da.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
     '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m). El track de esta ficha se '
