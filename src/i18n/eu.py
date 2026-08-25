@@ -1486,7 +1486,7 @@ KALAMUA = {
 }
 
 MUNDIOKOKOBA = {
-    '<h2>Senderismo</h2>': '<h2>Mendizaletasuna</h2>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
     '<span class="num">1</span>Collado de Asuntza': '<span class="num">1</span>Asuntzako lepoa',
     '<span>Pista, tierra y cueva</span><span class="sep">/</span><span>Asuntza y Mundioko Koba</span><span class="sep">/</span><span>Circuito</span>':
