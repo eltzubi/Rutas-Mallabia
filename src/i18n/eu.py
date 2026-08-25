@@ -325,6 +325,10 @@ HOME = {
         '<h2>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h2>',
     'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
         'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+
+    # footer
+    'Para cualquier duda: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
+        'Edozein zalantzarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>',
 }
 
 TRABAKUA = {
