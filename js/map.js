@@ -111,7 +111,7 @@
       ensurePanel();
       if (activeLine && activeLine !== line) activeLine.setStyle({ color: activeBaseColor, weight: 4 });
       activeLine = line; activeBaseColor = baseColor;
-      line.setStyle({ color: COLORS.parking, weight: 6 });
+      line.setStyle({ color: isOverview ? COLORS.teal : COLORS.parking, weight: 6 });
       panelBody.innerHTML = html;
       panel.classList.add('open');
       var panelHeight = panel.getBoundingClientRect().height;
@@ -123,12 +123,13 @@
     }
 
     var bounds = null;
+    var isOverview = data.tracks.length > 1;
     data.tracks.forEach(function(t){
-      var baseColor = COLORS[t.color] || COLORS.teal;
+      var baseColor = isOverview ? COLORS.parking : (COLORS[t.color] || COLORS.teal);
       var line = L.polyline(t.points, {
         color: baseColor,
         weight: 4,
-        opacity: data.tracks.length > 1 ? 0.85 : 0.9,
+        opacity: isOverview ? 0.85 : 0.9,
         lineJoin: 'round'
       }).addTo(map);
       bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds();
