@@ -112,3 +112,26 @@ There's no automated test suite — verification is manual:
 - Cross-reference other routes by name where the text mentions them (e.g. "el mismo pico de la ruta de
   `<a href="arietzu.html">Osmagain y Arietzu</a>`") using a plain `.html` href, letting `make_eu.py`'s
   `EU_OF` swap handle the Basque variant.
+
+## Basque translation style
+
+The user has repeatedly rewritten machine-drafted Basque body text with their own preferred wording.
+When writing or revising Basque route text, favor their established tone and word choices over a
+literal/formal translation:
+
+- Natural, friendly, close-to-spoken register — not a stiff calque of the Spanish sentence structure.
+  It's fine to reorder a sentence or split/merge clauses if that reads better in Basque, as long as no
+  fact changes.
+- Preferred vocabulary: **"eolikoak"** as the standalone noun for wind turbines (not "aerosorgailuak"),
+  except inside a "parke eolikoaren aerosorgailuak/aerosorgailuek" construction, where "aerosorgailu"
+  is the correct head noun and "eoliko" already modifies "parke" — don't double up on "eoliko" there.
+  "Haize-errotak" is also an accepted alternative in some contexts, by the user's own choice. Always
+  **"zirkuitua"** for "circuito" (never "zirkulua").
+- Bold placement on inflected words: bold only the stem and leave the case suffix outside, e.g.
+  `<b>Egoarbitza</b>rako`, `<b>San Migel</b>eko`, `<b>Kalamua</b>ko`, matching the pattern already used
+  throughout `eu.py` — not `<b>Egoarbitzarako</b>`.
+- Use plain ASCII hyphens (`-`) and apostrophes; normalize any non-breaking hyphen (U+2011) or curly
+  punctuation that shows up in dictated text before it lands in `eu.py`.
+- When the user pastes a full replacement paragraph in Basque, treat it as close to final: reuse it
+  near-verbatim, re-inserting only the `<b>`/`<a>` tags at the equivalent spots and fixing the items
+  above — don't rewrite their phrasing back toward a more literal translation.
