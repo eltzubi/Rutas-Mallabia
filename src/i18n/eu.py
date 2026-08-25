@@ -1488,7 +1488,7 @@ KALAMUA = {
 MUNDIOKOKOBA = {
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
-    '<span class="num">2</span>Collado de Asuntza': '<span class="num">2</span>Asuntzako lepoa',
+    '<span class="num">1</span>Collado de Asuntza': '<span class="num">1</span>Asuntzako lepoa',
     '<span>Pista, tierra y cueva</span><span class="sep">/</span><span>Asuntza y Mundioko Koba</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista, lur eta koba</span><span class="sep">/</span><span>Asuntza eta Mundioko Koba</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<p class="full-name">Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza</p>':
@@ -1509,57 +1509,59 @@ MUNDIOKOKOBA = {
     'kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto atr&aacute;s: '
     'desde ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. El primer '
     'repecho es el m&aacute;s duro de toda la ruta &mdash;se sube de un tir&oacute;n&mdash;, pero no '
-    'enga&ntilde;a: no llega a los 300 m de desnivel. La pista sigue hasta un collado con una '
-    'casita a la izquierda, cerca del km 6.':
+    'enga&ntilde;a: no llega a los 300 m de desnivel. La pista sigue hasta el <b>Collado de '
+    'Asuntza</b> (km 6,3 &middot; 492 m), con una casita a la izquierda.':
         'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
         'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz, '
         'mendiko giro garbian. Lehen aldapa da ibilbide osoko gogorrena: tiraka igotzen da, etenik '
         'gabe. Baina ez du engainatzen: laburra da, ez da 300 metrora iristen. Pistak aurrera '
-        'jarraitzen du, ezkerrean etxetxo bat duen lepo batera iritsi arte, 6. kilometro inguruan.',
-    'Desde ese collado la pista empieza a bajar hacia el barrio de Berano, pero solo un peque&ntilde;o '
-    'tramo: a los pocos metros se gira a la izquierda, junto a unos huertos, para coger una pista de '
-    'tierra que se adentra en la zona de Mundio, algo cerrada y poco frecuentada. Conviene ir atentos '
-    'al GPS, porque incluso con el track cargado cuesta encontrar la boca de <b>Mundioko Koba</b> '
-    '(km 6,3 &middot; 492 m). Un peque&ntilde;o riachuelo con poca agua, ya cerca de la cueva, es la '
-    'mejor se&ntilde;al de que se est&aacute; en el sitio correcto.':
-        'Lepo horretatik pistak Berano auzorantz jaisten hasten da, baina tarte labur batez bakarrik: '
+        'jarraitzen du <b>Asuntzako lepo</b>raino (6,3 km &middot; 492 m), ezkerrean etxetxo bat '
+        'duena.',
+    'Desde el collado la pista empieza a bajar hacia el barrio de Berano Txiki, pero solo un '
+    'peque&ntilde;o tramo: a los pocos metros se gira a la izquierda, junto a unos huertos, para '
+    'coger una pista de tierra que se adentra en la parte alta del barrio, entre un pinar cerrado y '
+    'poco frecuentado. Conviene ir atentos al GPS, porque incluso con el track cargado cuesta '
+    'encontrar la boca de <b>Mundioko Koba</b>, bien escondida entre los pinos. Un peque&ntilde;o '
+    'riachuelo con poca agua, ya cerca de la cueva, es la mejor se&ntilde;al de que se est&aacute; '
+    'en el sitio correcto.':
+        'Lepotik pistak Berano Txiki auzorantz jaisten hasten da, baina tarte labur batez bakarrik: '
         'metro gutxira ezkerrera biratzen da, baratze batzuen ondoan, lurrezko pista bat hartzeko, '
-        'Mundio inguru itxi eta gutxi ibilitakoan barneratzen dena. Komeni da GPSari erne begiratzea, '
-        'tracka kargatuta izanda ere kosta egiten baita <b>Mundioko Koba</b>ren (6,3 km &middot; '
-        '492 m) sarrera aurkitzea. Ur gutxiko erreka txiki bat, kobatik gertu, koba ondo aurkitzen '
-        'ari garenaren seinalerik onena da.',
+        'auzoaren goialdean barneratzen dena, pinudi itxi eta gutxi ibilitako batean. Komeni da '
+        'GPSari erne begiratzea, tracka kargatuta izanda ere kosta egiten baita <b>Mundioko '
+        'Koba</b>ren sarrera aurkitzea, pinuen artean ondo ezkutatuta. Ur gutxiko erreka txiki bat, '
+        'kobatik gertu, koba ondo aurkitzen ari garenaren seinalerik onena da.',
     'La entrada es peque&ntilde;a &mdash;hay que agacharse para pasar&mdash;, pero el interior se '
     'abre enseguida: tiene altura y algo de profundidad, y sorprende con solo asomarse. A partir de '
-    'ah&iacute;, mucho cuidado: no conviene adentrarse m&aacute;s, porque hay un peque&ntilde;o '
-    'descenso que sin cuerda no se puede bajar &mdash;extremar la precauci&oacute;n si se va con '
-    'ni&ntilde;os. Con cuerda y preparaci&oacute;n se puede bajar hasta ese punto, donde un agujero '
-    'en la roca, medio oculto, da paso a una segunda b&oacute;veda, tan bonita como la primera, antes '
-    'de volver a subir. Tener una cueva as&iacute; tan cerca de casa sorprende de verdad.':
+    'ah&iacute;, mucho cuidado: no conviene adentrarse m&aacute;s sin cuerda, porque hay un '
+    'peque&ntilde;o descenso que sin ella no se puede bajar &mdash;extremar la precauci&oacute;n si '
+    'se va con ni&ntilde;os. Con cuerda se baja unos pocos metros y se avanza un poco m&aacute;s, '
+    'hasta toparse arriba, en la roca, con un agujero medio oculto por el que hay que colarse como '
+    'se puede: da paso a una segunda b&oacute;veda, tan bonita como la primera. M&aacute;s '
+    'all&aacute; la cosa se complica para seguir, pero lo poco que se alcanza a ver ya es precioso.':
         'Sarrera txikia da &mdash;makurtu egin behar da pasatzeko&mdash;, baina barrua berehala '
         'zabaltzen da: altuera eta sakonera pixka bat du, eta harritu egiten du burua sartu bezain '
-        'laster. Hortik aurrera, kontuz asko: ez da komeni gehiago barneratzea, soka gabe jaitsi '
-        'ezin den jaitsiera txiki bat baitago &mdash;kontuz handiz ibili haurrekin bazoaz. Soka eta '
-        'prestakuntzarekin puntu horretaraino jaitsi daiteke, non harkaitzean erdi ezkutuko zulo '
-        'batek bigarren gangara ematen duen, lehena bezain polita, berriro igo aurretik. Etxetik hain '
-        'gertu horrelako koba bat izatea benetan harritzen du.',
-    'Despu&eacute;s de la cueva se sube de nuevo hasta el <b>Collado de Asuntza</b> (km 7,3 '
-    '&middot; 492 m). Desde ah&iacute; se vuelve por el mismo camino de ida durante un '
-    'kil&oacute;metro, hasta girar a la izquierda hacia bosque y pistas poco transitadas: un '
-    'desv&iacute;o que hace la vuelta m&aacute;s entretenida que repetir todo el trayecto, y de paso '
-    'se descubren zonas nuevas de la ruta.':
-        'Kobaren ondoren berriro igotzen da <b>Asuntzako lepo</b>raino (7,3 km &middot; 492 m). '
-        'Handik joaneko bide beretik itzultzen da kilometro batez, ezkerrera biratu arte baso eta '
-        'gutxi ibilitako pisten artera: bidea osorik errepikatzea baino itzulera dibertigarriagoa '
-        'egiten duen desbideratzea, eta bide batez ibilbidearen zona berriak ezagutzen dira.',
+        'laster. Hortik aurrera, kontuz asko: ez da komeni sokarik gabe gehiago barneratzea, soka '
+        'gabe jaitsi ezin den jaitsiera txiki bat baitago &mdash;kontuz handiz ibili haurrekin '
+        'bazoaz. Sokarekin metro batzuk jaisten dira eta pixka bat gehiago aurreratzen da, '
+        'harkaitzean, goian, erdi ezkutuko zulo batekin topo egin arte, handik ahal bezala sartu '
+        'behar da: bigarren gangara ematen du, lehena bezain polita. Handik aurrera zailagoa da '
+        'jarraitzea, baina ikusten den apurra ere ederra da.',
+    'Despu&eacute;s de la cueva se vuelve al mismo punto de salida, en el <b>Collado de '
+    'Asuntza</b>. Desde ah&iacute; se sigue por el mismo camino de ida durante un kil&oacute;metro, '
+    'hasta girar a la izquierda hacia bosque y pistas poco transitadas: un desv&iacute;o que hace la '
+    'vuelta m&aacute;s entretenida que repetir todo el trayecto, y de paso se descubren zonas '
+    'nuevas de la ruta.':
+        'Kobaren ondoren irteerako puntu berera itzultzen gara, <b>Asuntzako lepo</b>ra. Handik '
+        'joaneko bide beretik jarraitzen da kilometro batez, ezkerrera biratu arte baso eta gutxi '
+        'ibilitako pisten artera: bidea osorik errepikatzea baino itzulera dibertigarriagoa egiten '
+        'duen desbideratzea, eta bide batez ibilbidearen zona berriak ezagutzen dira.',
     'Ese desv&iacute;o enlaza con el tramo final de la ruta de <a href="trabakua.html">Trabakua '
-    'bira</a>: el camino cruza Berano Txiki y la parte alta de Berano, con vistas hacia el barrio de '
-    'Goita y las monta&ntilde;as del Duranguesado, antes de remontar de nuevo hacia Trabakua, para '
-    'cerrar el c&iacute;rculo.':
+    'bira</a>, aunque bastante m&aacute;s arriba &mdash;sin pasar por Berano Txiki ni la parte alta '
+    'de Berano&mdash;, antes de remontar de nuevo hacia Trabakua, para cerrar el c&iacute;rculo.':
         'Desbideratze horrek <a href="trabakua.html">Trabakua bira</a> ibilbidearen azken '
-        'zatiarekin egiten du bat: bidean Berano Txiki eta Beranoko goialdea zeharkatzen ditugu, '
-        'Goita eta Durangaldeko mendietarako ikuspegiekin, eta hortik Trabakuarantz berriro igotzen '
-        'gara, zirkulua ixteko.',
+        'zatiarekin egiten du bat, nahiz eta askoz gorago &mdash;Berano Txikitik edo Beranoko '
+        'goialditik pasatu gabe&mdash;, Trabakuarantz berriro igo aurretik, zirkulua ixteko.',
     '13,0 km y +404 m de desnivel en un circuito corto pero con un desv&iacute;o especial: la '
     'entrada a la cueva de Mundioko Koba. Dentro hay un peque&ntilde;o descenso que sin cuerda no '
     'se puede bajar &mdash;no llevar ni&ntilde;os m&aacute;s all&aacute; de la entrada sin la '
