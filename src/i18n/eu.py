@@ -520,35 +520,37 @@ ZENARRUZA = {
     'Ziortza-Bolibar, pierde altura de golpe en el &uacute;ltimo tramo hasta el <b>Monasterio de '
     'Zenarruza</b> (km 9,4 &middot; 287 m) &mdash;colegiata cisterciense fundada en el siglo XI, la '
     '&uacute;nica colegiata de Bizkaia y parada hist&oacute;rica del Camino de Santiago del Norte.':
-        'Trabakuatik iparralderantz ateratzen da eta, Mallabia eta Ziortza-Bolibar arteko goietan '
-        'gora eta behera, altuera bat-batean galtzen du azken tartean <b>Zenarruzako monasterioraino</b> '
-        '(9,4 km &middot; 287 m) &mdash;XI. mendean sortutako kolegiata zisterziarra, Bizkaiko kolegiata '
-        'bakarra eta Iparraldeko Donejakue Bidearen geldialdi historikoa.',
+        'Trabakuatik iparralderantz ateratzen da bidea, eta Mallabia eta Ziortza-Bolibar arteko '
+        'goialdeetan gora eta behera ibili ondoren, altuera bat-batean galtzen du azken tartean '
+        '<b>Zenarruzako monasterioraino</b> (9,4 km &middot; 287 m) &mdash;XI. mendean sortutako '
+        'kolegiata zisterziarra, Bizkaiko kolegiata bakarra eta Iparraldeko Donejakue Bidearen '
+        'geldialdi historikoa.',
     'Desde el monasterio el camino gira hacia el oeste-suroeste y sube por la ladera del Oiz durante '
     'casi 9 km, ganando m&aacute;s de 500 m de desnivel &mdash;con un buen tramo llano a media subida '
     'para recuperarse, cruzando un arroyo escondido entre el bosque (km 15,4 &middot; 553 m)&mdash; '
     'hasta la '
     '<b>Ermita San Kristobal</b> (km 18,6 &middot; 797 m), antigua ermita-refugio de pastores con '
     'romer&iacute;a el domingo siguiente al 10 de julio.':
-        'Monasteriotik bideak mendebalde-hego-mendebalderantz egiten du eta Oizen hegaletik igotzen da '
-        'ia 9 km-tan zehar, 500 m baino gehiagoko desnibela irabaziz &mdash;igoeraren erdian tarte '
-        'lau on bat du, indarrak berreskuratzeko, basoan ezkutatutako erreka bat zeharkatuz (15,4 km '
-        '&middot; 553 m)&mdash; <b>San Kristobal '
-        'ermitaraino</b> (18,6 km &middot; 797 m), artzainen ermita-aterpe zaharra, uztailaren 10aren '
-        'hurrengo igandean erromeria egiten duena.',
+        'Monasteriotik, bideak mendebalde-hego-mendebaldera jotzen du eta Oizen hegaletik igotzen '
+        'hasten da ia 9 kilometroan zehar, 500 metro baino gehiagoko desnibela irabaziz. Igoeraren '
+        'erdian tarte lau polit bat dago indarrak berreskuratzeko, basoan ezkutatutako erreka baten '
+        'ondotik pasatuz (15,4 km &middot; 553 m). Handik gora, bideak <b>San Kristobal '
+        'ermitaraino</b> eramaten du (18,6 km &middot; 797 m): artzainen ermita-aterpe zaharra, '
+        'uztailaren 10aren hurrengo igandean erromeria egiten duena.',
     'Tras la ermita el camino baja hacia el sur hasta un collado a 605 m (km 22,1) para remontar '
     'despu&eacute;s hacia el este, ganando otra vez altura hasta el punto m&aacute;s alto de toda la '
     'ruta: el <b>Dolmen Iturzurigana</b> (km 26,6 &middot; 863 m). Un kil&oacute;metro m&aacute;s al '
     'este, ya dentro del parque e&oacute;lico del Oiz, se corona <b>Zengotitagane</b> (km 27,7 &middot; 822 m).':
-        'Ermitaren ondoren bidea hegoalderantz jaisten da 605 m-ko lepo bateraino (22,1 km) gero '
-        'ekialderantz igotzeko, berriro altuera irabaziz ibilbide osoko punturik altueneraino: '
+        'Ermitatik, bidea hegoalderantz jaisten da 605 metroko lepo bateraino (22,1 km), eta handik '
+        'ekialderantz berriro igotzen da, altuera irabaziz ibilbide osoko punturik altuenera: '
         '<b>Iturzuriganako trikuharria</b> (26,6 km &middot; 863 m). Kilometro bat ekialderago, jada '
         'Oizeko parke eolikoaren barruan, <b>Zengotitagane</b> koroatzen da (27,7 km &middot; 822 m).',
     'Desde Zengotitagane el descenso final va hacia el este-sureste, perdiendo los &uacute;ltimos '
     '400 m de desnivel en poco m&aacute;s de 4 km hasta cerrar el c&iacute;rculo de vuelta en '
     'Trabakua. Una ruta larga, para pedalear hasta saciarse.':
-        'Zengotitagatik azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 m-ko desnibela '
-        'galduz 4 km pasatxotan, Trabakuan zirkulua itxi arte. Ibilbide luzea, aseraino pedalkatzeko.',
+        'Zengotitagandik, azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 metroko desnibela '
+        'galduz 4 kilometro pasatxotan, Trabakuan zirkuitua ixteko. Ibilbide luzea, baina ederra; '
+        'pedalei gustora emateko ematen du.',
     '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '31,7 km y +1.161 m de desnivel en un solo circuito. El track de esta ficha se grab&oacute; con '
     'e-bike &mdash;una Orbea Rise&mdash; (2h 06min), as&iacute; que el tiempo no sirve de referencia '
