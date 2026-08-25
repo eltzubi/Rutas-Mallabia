@@ -1558,10 +1558,10 @@ MUNDIOKOKOBA = {
     'vuelta m&aacute;s entretenida que repetir todo el trayecto, y de paso se descubren zonas '
     'nuevas de la ruta.':
         'Koba ikusi ondoren, berriro igarotzen da <b>Asuntzako Lepo</b>a, oraingoan 7. kilometroan. '
-        'Handik aurrera, joaneko bide beretik jarraituko dugu kilometro batez, eta ezkerrera '
-        'desbideratuko gara basorantz eta ibiltze gutxiko pistetarantz: bueltari xarma ematen dion '
-        'bidea da, ibilbide osoa berriz egitea baino entretenigarriagoa, eta bide batez eremu '
-        'berriak ezagutzen dira.',
+        'Handik aurrera, joaneko bide beretik jarraituko dugu kilometro batez. Ezkerrera '
+        'desbideratuko gara basorantz, jende gutxik ibiltzen duen pista polit batera. Itzulera '
+        'askoz ere atseginagoa egiten du, joaneko bidea errepikatu beharrean, eta bide batez '
+        'ibilbideko txoko berriak ezagutzen dira.',
     'Ese desv&iacute;o enlaza con el tramo final de la ruta de <a href="trabakua.html">Trabakua '
     'bira</a>, aunque bastante m&aacute;s arriba &mdash;sin pasar por Berano Txiki ni la parte alta '
     'de Berano&mdash;, antes de remontar de nuevo hacia Trabakua, para cerrar el c&iacute;rculo.':
