@@ -355,7 +355,7 @@ TRABAKUA = {
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
     'hasta un cruce a la izquierda donde se deja el asfalto atrás: desde ahí, todo es pista en '
     'solitario, alternando cemento y tramos de piedra. El primer repecho es el más duro de toda '
-    'la ruta —se sube de un tirón y se nota en las piernas—, pero no engaña: no llega a los 300 m. '
+    'la ruta —se sube de un tirón—, pero no engaña: no llega a los 300 m. '
     'Lo que viene después se lleva mejor.':
         'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
