@@ -5,8 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 A static site of hiking/biking routes around Mallabia (Bizkaia), documented on the ground with real
-data (GPX tracks, own photos). Bilingual (Spanish + Basque). Published via GitHub Pages at
-https://eltzubi.github.io/Rutas-Mallabia/ from the repo root — every root-level `.html`/`.css`/`.js`
+data (GPX tracks, own photos). Bilingual (Spanish + Basque). Published via GitHub Pages (custom domain, see `CNAME`) at
+https://trabakutik.com/ from the repo root — every root-level `.html`/`.css`/`.js`
 file is a **build artifact**. Never hand-edit them; edit the sources in `src/` and rebuild.
 
 ## Build commands

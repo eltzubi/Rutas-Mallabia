@@ -2,7 +2,7 @@
 
 Sitio de rutas del pueblo de Mallabia (Bizkaia) — BTT y senderismo, documentadas sobre el terreno con datos reales (GPX, fotos propias).
 
-Publicado en: https://eltzubi.github.io/Rutas-Mallabia/
+Publicado en: https://trabakutik.com/
 
 ## Cómo está hecho
 
