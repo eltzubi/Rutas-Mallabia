@@ -440,7 +440,7 @@ ITURZURI = {
         '<a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago</a> '
         'alderantz igotzen den bidezidor bati heltzeko, altzifreen artean ezkutatuta eta erraz galtzekoa non jarraitzen '
         'duen ondo begiratzen ez bada. Bidezidorrari heldu eta minutu batzuetara, askoz errazagoa da '
-        'jarraitzea. Mallabiako mendi-lasterketari izena ematen dioten zazpi pago milaurtekoen '
+        'jarraitzea. Mallabiako mendi-lasterketari izena ematen dioten zazpi mila urteko pagoen '
         'inguruan, bidea berriro zabaltzen da <b>Iturzuriko iturrira</b> (4,3 km · 831 m) —ura dago '
         'kantinplorak betetzeko. Iturriaren ondoren, jada eremu irekian, <b>Iturzuriko tumuluak</b> '
         'agertzen dira: bideak indarrez egiten du hego-ekialderantz eta azken metroak irabazten '
