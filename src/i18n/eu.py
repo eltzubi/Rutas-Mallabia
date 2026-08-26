@@ -1657,20 +1657,17 @@ IRUZUBIETA = {
         'tarte beretik. Lehen bidegurutzean, aurrera jarraituz gero Urko eta Asuntzarako bidea '
         'delarik, hemen ezkerrekoa hartzen da.',
     'La pista sigue hasta un <b>collado</b> con un cartel que señala dirección Markina, con '
-    'marcas blancas y amarillas del PR-BI 140 —el mismo sendero que usan los peregrinos del '
-    'Camino de Santiago del Norte en la etapa entre Markina-Xemein y Gernika-Lumo (km 3,9 '
-    '&middot; 529 m), el punto más alto de todo el circuito. Desde ahí baja un tramo de tierra '
-    'con buena pendiente hasta enlazar con una pista de piedra junto a un caserío, donde se gira '
-    'a la izquierda hacia la <b>Ermita de Iturreta</b> (361 m) —aunque, un kilómetro antes de '
-    'llegar a ella, el camino vuelve a girar, esta vez hacia el norte, para atajar.':
+    'marcas blancas y amarillas del PR-BI 140 (km 3,9 &middot; 529 m), el punto más alto de todo '
+    'el circuito. Desde ahí baja un tramo de tierra con buena pendiente hasta enlazar con una '
+    'pista de piedra junto a un caserío, donde se gira a la izquierda hacia la <b>Ermita de '
+    'Iturreta</b> (361 m) —aunque, un kilómetro antes de llegar a ella, el camino vuelve a '
+    'girar, esta vez hacia el norte, para atajar.':
         'Pistak aurrera jarraitzen du <b>lepo</b> batera iritsi arte, Markina aldera seinale bat '
-        'duena, PR-BI 140 bidearen marka zuri-horiekin —Iparraldeko Donejakue Bidearen erromesek '
-        'erabiltzen duten bide bera, Markina-Xemein eta Gernika-Lumo arteko etapan (3,9 km '
-        '&middot; 529 m), zirkuitu osoko punturik gorena. Handik lurrezko tarte bat jaisten da '
-        'aldapa onarekin, baserri baten ondoko harrizko pista batekin bat egin arte, eta han '
-        'ezkerrera jotzen da <b>Iturretako ermita</b>rantz (361 m) —nahiz eta, iritsi baino '
-        'kilometro bat lehenago, bideak berriro bira egiten duen, oraingoan iparralderantz, '
-        'tarte bat mozteko.',
+        'duena, PR-BI 140 bidearen marka zuri-horiekin (3,9 km &middot; 529 m), zirkuitu osoko '
+        'punturik gorena. Handik lurrezko tarte bat jaisten da aldapa onarekin, baserri baten '
+        'ondoko harrizko pista batekin bat egin arte, eta han ezkerrera jotzen da <b>Iturretako '
+        'ermita</b>rantz (361 m) —nahiz eta, iritsi baino kilometro bat lehenago, bideak berriro '
+        'bira egiten duen, oraingoan iparralderantz, tarte bat mozteko.',
     'Sube entonces junto a unas casitas de fin de semana, antes de volver a bajar hacia '
     '<b>Iruzubieta</b>, entre caseríos, pastos y ganado —con la zona de Bolibar asomando a lo '
     'lejos hacia el suroeste y, más arriba, el Oiz con sus aerogeneradores y las antenas de la '
