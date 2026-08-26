@@ -1672,13 +1672,14 @@ IRUZUBIETA = {
         'kilometro bat lehenago, bideak berriro bira egiten duen, oraingoan iparralderantz, '
         'tarte bat mozteko.',
     'Sube entonces junto a unas casitas de fin de semana, antes de volver a bajar hacia '
-    '<b>Iruzubieta</b>, entre caseríos, pastos y ganado —con los aerogeneradores de la zona de '
-    'Bolibar asomando a lo lejos, hacia el este, nada más empezar la bajada. Ya abajo, se cruza '
-    'la carretera y se entra en el barrio, con un bar junto al camino.':
+    '<b>Iruzubieta</b>, entre caseríos, pastos y ganado —con la zona de Bolibar asomando a lo '
+    'lejos hacia el suroeste y, más arriba, el Oiz con sus aerogeneradores y las antenas de la '
+    'cima. Ya abajo, se cruza la carretera y se entra en el barrio, con un bar junto al camino.':
         'Orduan gora egiten du asteburuetako etxola batzuen ondotik, berriz ere '
-        '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta abereen artean —Bolibar aldeko '
-        'eolikoak urrunean agertzen direla, ekialdera, jaitsiera hasi bezain laster. Behean, '
-        'errepidea zeharkatu eta auzoan sartzen da, bidearen ondoan taberna bat dagoela.',
+        '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta abereen artean —Bolibar aldea '
+        'urrunean agertzen dela hego-mendebalderantz eta, gorago, Oiz eolikoekin eta gailurreko '
+        'antenekin. Behean, errepidea zeharkatu eta auzoan sartzen da, bidearen ondoan taberna '
+        'bat dagoela.',
     'Desde Iruzubieta el camino coincide un tramo con el que siguen los peregrinos del Camino de '
     'Santiago del Norte hacia Bolibar —pueblo de origen de los antepasados de Simón Bolívar, con '
     'un museo dedicado a él, camino ya de Ziortza y el Monasterio de Zenarruza, fuera de esta '
