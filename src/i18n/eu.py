@@ -1771,16 +1771,16 @@ MENDIBIL = {
         'aldera eta kostaldera ere bai &mdash;eguraldi onarekin itsasoa ere ikusten da. '
         'Itzulera bide beretik egiten da.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
-    '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, '
-    'coincidiendo el primer tramo con la ruta de <a href="urko.html">Trabakua, Asuntza y '
-    'Urko</a>. El track de esta ficha se grab&oacute; andando (1h 50min). No hay fuentes en la '
-    'ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de arriba de Trabakua, '
-    'junto a los columpios.':
-        '6,08 km eta +432 m-ko desnibela zirkuitu labur batean, Mendibilgo gailurreraino, lehen '
-        'tartea <a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbidearekin bat eginez. '
-        'Fitxa honetako tracka oinez grabatu zen (1 ordu 50 min). Ez dago iturririk '
-        'ibilbidean, beraz ura eramatea komeni da &mdash;bat dago Trabakuako goiko tabernan, '
-        'kulunken ondoan.',
+    '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, ideal '
+    'para ir con ni&ntilde;os, coincidiendo el primer tramo con la ruta de <a '
+    'href="urko.html">Trabakua, Asuntza y Urko</a>. El track de esta ficha se grab&oacute; '
+    'andando (1h 50min). No hay fuentes en la ruta, as&iacute; que conviene llevar agua '
+    '&mdash;hay una en el bar de arriba de Trabakua, junto a los columpios.':
+        '6,08 km eta +432 m-ko desnibela zirkuitu labur batean, Mendibilgo gailurreraino, '
+        'haurrekin joateko aproposa, lehen tartea <a href="urko.html">Trabakua, Asuntza eta '
+        'Urko</a> ibilbidearekin bat eginez. Fitxa honetako tracka oinez grabatu zen (1 ordu '
+        '50 min). Ez dago iturririk ibilbidean, beraz ura eramatea komeni da &mdash;bat dago '
+        'Trabakuako goiko tabernan, kulunken ondoan.',
 }
 
 HISTORIAS = {
