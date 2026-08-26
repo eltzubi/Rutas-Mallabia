@@ -35092,49 +35092,5 @@
         <ele>408.855</ele>
         <time>2025-06-29T08:40:41Z</time>
       </trkpt>
-      <trkpt lat="43.208092" lon="-2.553111">
-        <ele>408.207</ele>
-        <time>2025-06-29T08:40:42Z</time>
-      </trkpt>
-      <trkpt lat="43.208150" lon="-2.553009">
-        <ele>407.617</ele>
-        <time>2025-06-29T08:40:43Z</time>
-      </trkpt>
-      <trkpt lat="43.208197" lon="-2.552758">
-        <ele>406.809</ele>
-        <time>2025-06-29T08:40:44Z</time>
-      </trkpt>
-      <trkpt lat="43.208188" lon="-2.552630">
-        <ele>406.217</ele>
-        <time>2025-06-29T08:40:45Z</time>
-      </trkpt>
-      <trkpt lat="43.208179" lon="-2.552499">
-        <ele>405.676</ele>
-        <time>2025-06-29T08:40:46Z</time>
-      </trkpt>
-      <trkpt lat="43.208186" lon="-2.552377">
-        <ele>405.434</ele>
-        <time>2025-06-29T08:40:47Z</time>
-      </trkpt>
-      <trkpt lat="43.208195" lon="-2.552269">
-        <ele>405.224</ele>
-        <time>2025-06-29T08:40:48Z</time>
-      </trkpt>
-      <trkpt lat="43.208206" lon="-2.552214">
-        <ele>405.489</ele>
-        <time>2025-06-29T08:40:49Z</time>
-      </trkpt>
-      <trkpt lat="43.208210" lon="-2.552230">
-        <ele>406.053</ele>
-        <time>2025-06-29T08:40:50Z</time>
-      </trkpt>
-      <trkpt lat="43.208201" lon="-2.552250">
-        <ele>406.464</ele>
-        <time>2025-06-29T08:40:51Z</time>
-      </trkpt>
-      <trkpt lat="43.208200" lon="-2.552247">
-        <ele>406.675</ele>
-        <time>2025-06-29T08:40:52Z</time>
-      </trkpt>
-    </trkseg>
+                                                                      </trkseg>
   </trk></gpx>
