@@ -43,6 +43,9 @@ COMMON = {
 # Shared by the three route pages.
 ROUTE = {
     '&larr; Mallabia': '&larr; Mallabia',
+    '<span class="v">Senderismo y bici</span>':
+        '<span class="v">Oinez eta bizikleta</span>',
+    '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
     '<span class="k">Altitud mín.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud m&iacute;n.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud máx.</span>': '<span class="k">Altitudea max.</span>',
@@ -207,8 +210,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai e Iruzubieta':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai eta Iruzubieta',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba e Iruzubieta':
-        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba eta Iruzubieta',
+    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba e Iruzubieta':
+        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba eta Iruzubieta',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -398,7 +401,6 @@ TRABAKUA = {
         'jaitsieretan malda nahikoa dago abiadura hartu eta gozatzeko. Bidean Berano Txiki eta '
         'Beranoko goialdea zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin, '
         'eta hortik Trabakuarantz berriro igotzen gara, buelta azkarra eta paisaiaz betea ixteko.',
-    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     'Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin sendero estrecho — '
     'apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se '
     'grabó con e-bike —una Orbea Rise— (1h 15min), así que el tiempo no sirve de referencia si vas '
@@ -575,7 +577,6 @@ ZENARRUZA = {
         'Zengotitagandik, azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 metroko desnibela '
         'galduz 4 kilometro pasatxotan, Trabakuan zirkuitua ixteko. Ibilbide luzea, baina ederra; '
         'pedalei gustura eragiteko modukoa.',
-    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '31,7 km y +1.161 m de desnivel en un solo circuito. El track de esta ficha se grab&oacute; con '
     'e-bike &mdash;una Orbea Rise&mdash; (2h 06min), as&iacute; que el tiempo no sirve de referencia '
     'si vas sin asistencia. Sube '
@@ -695,7 +696,6 @@ OSMA = {
         '&middot; 264 m), eta azken 4,7 km-etan eta 143 m-ko desnibelean etenik gabe igotzen da '
         'berriro Trabakuara, zirkuitua ixteko.',
 
-    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
     'Duranguesado. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
     '(2h 50min), as&iacute; que el '
@@ -835,7 +835,6 @@ ZENGOTITAGANE = {
         'arteko errepide nagusia gurutzatzen dugu eta errepide zaharretik gora egiten dugu '
         'Zengotita auzorantz, non dagoen <b>San Juan ermita</b> (19,6 km, 400 m), zirkulua '
         'ixteko zorian, Trabakura jaitsi aurretik.',
-    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
@@ -1147,7 +1146,6 @@ SANCRISTOBAL = {
         'Berriz lotzen dituen errepide nagusia zeharkatu, eta errepide zaharretik igotzen da '
         'Zengotita auzoraino, <b>San Juan ermita</b> dagoen tokira (24,5 km &middot; 404 m), '
         'zirkuitua ixteko puntura iritsi aurretik, Trabakuara berriro jaitsi baino lehen.',
-    '<h2>BTT y e-bike</h2>': '<h2>BTT eta e-bike</h2>',
     '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
@@ -1202,8 +1200,6 @@ ITURRETA = {
     '<span class="num">2</span>El río</span>':
         '<span class="num">2</span>Ibaia</span>',
 
-    '<h2>BTT y e-bike</h2>':
-        '<h2>BTT eta e-bike</h2>',
 
     '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia. No hay fuentes de agua en el recorrido: en caso de necesidad, habría que desviarse hasta el pueblo de Barinaga.':
         '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz. Ez dago ur-iturririk ibilbidean: beharrezkoa balitz, Barinaga herrira desbideratu beharko litzateke.',
