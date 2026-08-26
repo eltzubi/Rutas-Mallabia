@@ -205,8 +205,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal y Urregarai':
-        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal eta Urregarai',
+    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai e Iruzubieta':
+        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai eta Iruzubieta',
     'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba e Iruzubieta':
         'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba eta Iruzubieta',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
@@ -238,8 +238,8 @@ HOME = {
         '<span class="signpost-name">Trabakua, Iturreta eta Iruzubieta</span>',
     '<h2>Trabakua, Iturreta<br><em>e Iruzubieta</em></h2>':
         '<h2>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h2>',
-    'Circuito de trail running desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.':
-        'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
+    'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.':
+        'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
     'alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo"':
         'alt="Ilunabarra landa-pista itxi batean, mendiak laranja kolorez atzealdean"',
 
@@ -1621,8 +1621,8 @@ IRUZUBIETA = {
         '<b>Azalera</b> eta <b>Mota</b>, orientagarriak.',
     '<h1>Trabakua, Iturreta<br><em>e Iruzubieta</em></h1>':
         '<h1>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h1>',
-    'Circuito de trail running desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea':
-        'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea':
+        'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo"':
         'alt="Ilunabarra landa-pista itxi batean, mendiak laranja kolorez atzealdean"',
     'alt="Foto ampliada del recorrido de Trabakua, Iturreta e Iruzubieta"':
@@ -1641,13 +1641,17 @@ IRUZUBIETA = {
     '<title>Desvío a Iturreta': '<title>Iturretarako desbideraketa',
     '<span class="num">2</span>Desvío a Iturreta</span>':
         '<span class="num">2</span>Iturretarako desbideraketa</span>',
-    '<h2>Correr</h2>': '<h2>Korrika</h2>',
-    '19,22 km y +769 m de desnivel en un solo circuito. El track de esta ficha está registrado '
-    'como ruta de trail running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia '
-    'para otro ritmo o actividad.':
-        '19,22 km eta +769 m desnibel zirkuitu bakar batean. Fitxa honetako track-a Wikiloc-en '
-        'trail lasterketako ibilbide gisa dago erregistratuta (2 ordu eta 3 minutu), beraz denbora '
-        'hori ez da erreferentzia fidagarria beste erritmo edo jarduera baterako.',
+    '<span class="v">Senderismo y bici</span>':
+        '<span class="v">Oinez eta bizikleta</span>',
+    '<h2>Senderismo y bicicleta</h2>': '<h2>Oinez eta bizikleta</h2>',
+    '19,22 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
+    'bicicleta. El track de esta ficha se grabó corriendo y está registrado como ruta de trail '
+    'running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia si vas caminando o '
+    'en bici.':
+        '19,22 km eta +769 m desnibel zirkuitu bakar batean, oinez zein bizikletaz egiteko '
+        'modukoa. Fitxa honetako track-a korrika grabatu zen eta Wikiloc-en trail lasterketako '
+        'ibilbide gisa dago erregistratuta (2 ordu eta 3 minutu), beraz denbora hori ez da '
+        'erreferentzia fidagarria oinez edo bizikletaz bazoaz.',
     'Sale de Trabakua bajando un kilómetro por la carretera general en dirección Ermua, hasta '
     'dejarla para girar a la izquierda y coger la misma pista que sube hacia Asuntza y Urko '
     '—pasando junto a unos chalés, con una cuesta bastante pronunciada— de la ruta de '
@@ -1777,7 +1781,7 @@ DESCRIPTIONS = {
     'kalamua': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
-    'iruzubieta': 'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
