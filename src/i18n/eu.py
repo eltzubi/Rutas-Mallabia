@@ -1814,6 +1814,10 @@ ARTETA = {
     'e&oacute;lico del Oiz al fondo entre nubes"':
         'alt="Gailur geodesikoa Olamendiko tontorrean, Oizeko parke eolikoa '
         'atzealdean hodeien artean"',
+    'alt="Un caser&iacute;o en lo alto de una loma, rodeado de prados y bosque, con '
+    'montes al fondo"':
+        'alt="Baserri bat muino baten gainean, larre eta basoz inguratuta, mendiak '
+        'atzealdean"',
     '<span>Mixta</span><span class="sep">/</span><span>Mendibil, Olamendi y Arteta</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Mendibil, Olamendi eta Arteta</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
