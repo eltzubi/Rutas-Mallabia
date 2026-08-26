@@ -1672,11 +1672,11 @@ IRUZUBIETA = {
         'kilometro bat lehenago, bideak berriro bira egiten duen, oraingoan iparralderantz, '
         'tarte bat mozteko.',
     'Sube entonces junto a unas casitas de fin de semana, antes de volver a bajar hacia '
-    '<b>Iruzubieta</b>, entre caseríos, pastos y garajes —con los aerogeneradores de la zona de '
+    '<b>Iruzubieta</b>, entre caseríos, pastos y ganado —con los aerogeneradores de la zona de '
     'Bolibar asomando a lo lejos, hacia el este, nada más empezar la bajada. Ya abajo, se cruza '
     'la carretera y se entra en el barrio, con un bar junto al camino.':
         'Orduan gora egiten du asteburuetako etxola batzuen ondotik, berriz ere '
-        '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta garajeen artean —Bolibar aldeko '
+        '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta abereen artean —Bolibar aldeko '
         'eolikoak urrunean agertzen direla, ekialdera, jaitsiera hasi bezain laster. Behean, '
         'errepidea zeharkatu eta auzoan sartzen da, bidearen ondoan taberna bat dagoela.',
     'Desde Iruzubieta el camino coincide un tramo con el que siguen los peregrinos del Camino de '
