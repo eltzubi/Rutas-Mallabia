@@ -342,6 +342,7 @@ body{
   transition:background .2s ease, color .2s ease, border-color .2s ease;
 }
 .activity-chip.active{ background:var(--teal); border-color:var(--teal); color:var(--ground); }
+.activity-chip.active[data-activity="senderismo"]{ background:var(--violet); border-color:var(--violet); }
 .activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); }
 .feat-panel.is-hidden{ display:none; }
 .filter-empty{
