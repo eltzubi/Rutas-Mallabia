@@ -527,6 +527,10 @@ ZENARRUZA = {
         'alt="Zenarruzako kolegiata belardi batetik ikusita, ondoko baserriarekin eta mendiak atzealdean"',
     'alt="Aerogeneradores sobre una cresta de monte, con el atardecer entre nubes al fondo"':
         'alt="Haizezurrutariak mendi-gailurraren gainean, ilunabarra hodeien artean atzealdean"',
+    'alt="Subida hacia el Oiz, con las antenas de la cima y aerogeneradores a la izquierda, junto a un caser&iacute;o"':
+        'alt="Oizerako igoera, gailurreko antenekin eta haizezurrutariak ezkerrean, baserri baten ondoan"',
+    'alt="La Ermita San Kristobal junto a los aerogeneradores del parque e&oacute;lico"':
+        'alt="San Kristobal ermita, parke eolikoaren haizezurrutarien ondoan"',
     'Sale de Trabakua hacia el norte y, subiendo y bajando por los altos entre Mallabia y '
     'Ziortza-Bolibar, pierde altura de golpe en el &uacute;ltimo tramo hasta el <b>Monasterio de '
     'Zenarruza</b> (km 9,4 &middot; 287 m) &mdash;colegiata cisterciense fundada en el siglo XI, la '
