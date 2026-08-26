@@ -1633,11 +1633,12 @@ IRUZUBIETA = {
         'alt="Ardiak hegalean bazkan, baserriak eta basoa haranean atzealdean"',
     'download="Trabakua, Iturreta e Iruzubieta.gpx"':
         'download="Trabakua, Iturreta eta Iruzubieta.gpx"',
-    '<title>Punto más alto': '<title>Puntu gorena',
-    '<span class="num">1</span>Punto más alto</span>':
-        '<span class="num">1</span>Puntu gorena</span>',
-    '<title>Iturreta': '<title>Iturreta',
-    '<span class="num">2</span>Iturreta</span>': '<span class="num">2</span>Iturreta</span>',
+    '<title>Collado, señal Markina': '<title>Lepoa, Markina seinalea',
+    '<span class="num">1</span>Collado, señal Markina</span>':
+        '<span class="num">1</span>Lepoa, Markina seinalea</span>',
+    '<title>Desvío a Iturreta': '<title>Iturretarako desbideraketa',
+    '<span class="num">2</span>Desvío a Iturreta</span>':
+        '<span class="num">2</span>Iturretarako desbideraketa</span>',
     '<h2>Correr</h2>': '<h2>Korrika</h2>',
     '19,22 km y +769 m de desnivel en un solo circuito. El track de esta ficha está registrado '
     'como ruta de trail running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia '
@@ -1645,19 +1646,55 @@ IRUZUBIETA = {
         '19,22 km eta +769 m desnibel zirkuitu bakar batean. Fitxa honetako track-a Wikiloc-en '
         'trail lasterketako ibilbide gisa dago erregistratuta (2 ordu eta 3 minutu), beraz denbora '
         'hori ez da erreferentzia fidagarria beste erritmo edo jarduera baterako.',
-    'Circuito de 19,22 km y +769 m de desnivel que sale de Trabakua. Los primeros kilómetros '
-    'coinciden en buena parte con el track de la ruta de <a href="iturreta.html">Trabakua, '
-    'Barinaga y Iturreta</a>, hasta llegar a <b>Iturreta</b> (km 6,2 &middot; 374 m).':
-        'Trabakuatik ateratzen den 19,22 km-ko eta +769 m desnibeleko zirkuitua. Lehen '
-        'kilometroek bat egiten dute, neurri handi batean, <a href="iturreta.html">Trabakua, '
-        'Barinaga eta Iturreta</a> ibilbidearen trackarekin, <b>Iturreta</b>raino iritsi arte '
-        '(6,2 km &middot; 374 m).',
-    'El punto más alto de todo el circuito se alcanza antes, a los 3,9 km (529 m). Desde '
-    'Iturreta el recorrido continúa hacia Iruzubieta, Arta y Gerea, antes de cerrar el círculo '
-    'de vuelta en Trabakua.':
-        'Zirkuitu osoko puntu gorenera lehenago iristen da, 3,9 km-ra (529 m). Iturretatik '
-        'aurrera ibilbideak Iruzubieta, Arta eta Gerea aldera jarraitzen du, Trabakuara itzuli '
-        'eta zirkulua itxi aurretik.',
+    'Sale de Trabakua bajando un kilómetro por la carretera general en dirección Ermua, hasta '
+    'dejarla para girar a la izquierda y coger la misma pista que sube hacia Asuntza y Urko '
+    '—pasando junto a unos chalés, con una cuesta bastante pronunciada— de la ruta de '
+    '<a href="urko.html">Trabakua, Asuntza y Urko</a>. En el primer cruce, donde el camino de '
+    'frente sigue hacia Urko y Asuntza, aquí se coge el de la izquierda.':
+        'Trabakuatik ateratzen da, errepide nagusitik kilometro bat Ermuarantz jaitsita, eta '
+        'ezkerrera jotzen du Asuntza eta Urkorako igoera hartzeko —txalet batzuen ondotik, '
+        'aldapa nahiko pikoan— <a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbideko '
+        'tarte beretik. Lehen bidegurutzean, aurrera jarraituz gero Urko eta Asuntzarako bidea '
+        'delarik, hemen ezkerrekoa hartzen da.',
+    'La pista sigue hasta un <b>collado</b> con un cartel que señala dirección Markina, con '
+    'marcas blancas y amarillas del PR-BI 140 —el mismo sendero que usan los peregrinos del '
+    'Camino de Santiago del Norte en la etapa entre Markina-Xemein y Gernika-Lumo (km 3,9 '
+    '&middot; 529 m), el punto más alto de todo el circuito. Desde ahí baja un tramo de tierra '
+    'con buena pendiente hasta enlazar con una pista de piedra junto a un caserío, donde se gira '
+    'a la izquierda hacia la <b>Ermita de Iturreta</b> (361 m) —aunque, un kilómetro antes de '
+    'llegar a ella, el camino vuelve a girar, esta vez hacia el norte, para atajar.':
+        'Pistak aurrera jarraitzen du <b>lepo</b> batera iritsi arte, Markina aldera seinale bat '
+        'duena, PR-BI 140 bidearen marka zuri-horiekin —Iparraldeko Donejakue Bidearen erromesek '
+        'erabiltzen duten bide bera, Markina-Xemein eta Gernika-Lumo arteko etapan (3,9 km '
+        '&middot; 529 m), zirkuitu osoko punturik gorena. Handik lurrezko tarte bat jaisten da '
+        'aldapa onarekin, baserri baten ondoko harrizko pista batekin bat egin arte, eta han '
+        'ezkerrera jotzen da <b>Iturretako ermita</b>rantz (361 m) —nahiz eta, iritsi baino '
+        'kilometro bat lehenago, bideak berriro bira egiten duen, oraingoan iparralderantz, '
+        'tarte bat mozteko.',
+    'Sube entonces junto a unas casitas de fin de semana, antes de volver a bajar hacia '
+    '<b>Iruzubieta</b>, entre caseríos, pastos y garajes —con los aerogeneradores de la zona de '
+    'Bolibar asomando a lo lejos, hacia el este, nada más empezar la bajada. Ya abajo, se cruza '
+    'la carretera y se entra en el barrio, con un bar junto al camino.':
+        'Orduan gora egiten du asteburuetako etxola batzuen ondotik, berriz ere '
+        '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta garajeen artean —Bolibar aldeko '
+        'eolikoak urrunean agertzen direla, ekialdera, jaitsiera hasi bezain laster. Behean, '
+        'errepidea zeharkatu eta auzoan sartzen da, bidearen ondoan taberna bat dagoela.',
+    'Desde Iruzubieta el camino coincide un tramo con el que siguen los peregrinos del Camino de '
+    'Santiago del Norte hacia Bolibar —pueblo de origen de los antepasados de Simón Bolívar, con '
+    'un museo dedicado a él, camino ya de Ziortza y el Monasterio de Zenarruza, fuera de esta '
+    'ruta. Baja primero por una zona bonita entre pastos, con bastante ganado y alguna puerta '
+    'que hay que dejar cerrada al pasar. Sin llegar a Bolibar, se deja ese camino para coger el '
+    'que sube, a la izquierda, hacia el barrio de <b>Arta</b>. Desde ahí, una pista entre '
+    'bosque, en ascenso, lleva hasta el barrio de <b>Gerea</b>, antes de cerrar el círculo de '
+    'vuelta en Trabakua.':
+        'Iruzubietatik aurrera bideak tarte batean bat egiten du Iparraldeko Donejakue Bideko '
+        'erromesek Bolibar aldera jarraitzen dutenarekin —Simon Bolivarren arbasoen jaioterria, '
+        'harentzako museo batekin, jada Ziortza eta Zenarruzako Monasteriorako bidean, ibilbide '
+        'honetatik kanpo. Larre artean jaisten da lehenik, eremu polit batetik, abere ugarirekin '
+        'eta bidean itxi behar den atetxoren batekin. Bolibarrera iritsi gabe, bide hori uzten '
+        'da ezkerretara <b>Arta</b> auzorantz igotzen denari heltzeko. Handik, basoan barrena '
+        'doan pista batek, gora eginez, <b>Gerea</b> auzoraino garamatza, Trabakuara itzuli eta '
+        'zirkulua itxi aurretik.',
 }
 
 HISTORIAS = {
