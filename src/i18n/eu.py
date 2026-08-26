@@ -83,10 +83,10 @@ HOME = {
     # hero
     'alt="Bicicleta de montaña junto a un poste de señales en el monte, al atardecer, con Mallabia iluminada al fondo"':
         'alt="Mendiko bizikleta seinale-zutoin baten ondoan mendian, ilunabarrean, Mallabia argiztatuta atzealdean"',
-    'alt="Bicicleta de montaña con el foco encendido junto a un poste de señales, al '
-    'anochecer, con un refugio de montaña y el valle iluminado al fondo"':
-        'alt="Mendiko bizikleta fokua piztuta seinale-zutoin baten ondoan, ilunabarrean, '
-        'mendiko aterpe batekin eta harana argiztatuta atzealdean"',
+    'alt="Persona con los brazos en alto en la cima de un monte al amanecer, con el foco '
+    'frontal encendido y el mar al fondo"':
+        'alt="Pertsona bat besoak gora dituela mendi baten gailurrean egunsentian, aurreko '
+        'fokua piztuta eta itsasoa atzealdean"',
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
     '<h1>Mallabia<br><em>a pie y en bici</em></h1>':
