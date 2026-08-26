@@ -1735,15 +1735,14 @@ MENDIBIL = {
     'principal, de piedra, que sigue de frente hacia Asuntza y Urko &mdash;con la que se puede '
     'montar tambi&eacute;n la circular de <a href="urko.html">Trabakua, Asuntza y Urko</a>'
     '&mdash;, mientras que a la derecha se baja hacia Berano, Berano Txiki y, m&aacute;s lejos, '
-    'Ermua o Amorebieta.':
+    'Ermua.':
         'Trabakuko Goitik ateratzen da. Lehen metroek behera egiten dute &mdash;kilometro bat '
         'baino gehixeago&mdash; ezkerreko bidegurutze batera arte, non asfaltoa atzean utzi eta '
         'aldapa bati ekiten zaion, tarte batez gogorra baina laburra. Goian, 2,5 kilometrotan '
         'dagoen bidegurutzean, Mendibil menditarako lehen seinaleak agertzen dira: harrizko '
         'pista nagusi bera da, aurrera jarraitzen duena Asuntza eta Urkorantz &mdash;horrekin '
         '<a href="urko.html">Trabakua, Asuntza eta Urko</a> zirkuitua ere egin daiteke&mdash;, '
-        'eskuinera berriz Berano, Berano Txiki eta, urrutixeago, Ermua edo Amorebietarantz '
-        'jaisten da.',
+        'eskuinera berriz Berano, Berano Txiki eta, urrutixeago, Ermuarantz jaisten da.',
     'Se sigue esa pista principal unos metros hacia la izquierda hasta un roble gigante, con '
     'marcas blancas y amarillas en el tronco: ah&iacute;, justo detr&aacute;s del &aacute;rbol, '
     'se deja la pista de piedra para coger un camino de tierra. Sin abandonarlo en '
