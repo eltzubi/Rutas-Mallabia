@@ -992,6 +992,8 @@ URKO = {
         'alt="Egunsentia hegazkinen aztarnen artean, hodei baxuek harana estaltzen dutela"',
     'alt="Vista panorámica de las montañas del entorno bajo un cielo despejado, con caseríos y prados en el valle en primer plano"':
         'alt="Inguruko mendien ikuspegi panoramikoa zeru garbi baten azpian, baserriak eta larreak haranean lehen planoan"',
+    'alt="Poste de señales y mojón en la cima, con el mar al fondo entre nubes bajas"':
+        'alt="Seinaleztapen-zutoina eta mugarria gailurrean, itsasoa atzealdean hodei baxuen artean"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
     'atr&aacute;s y empieza una cuesta que por un momento se pone intensa, pero corta; '
@@ -1428,6 +1430,8 @@ KALAMUA = {
         'alt="Gailur bateko dorretxoa muino berdeen artean, egun garbi batean"',
     'alt="Caser&iacute;o blanco y ovejas entre prados verdes, con los montes al fondo"':
         'alt="Baserri zuria eta ardiak larre berdeen artean, mendiak atzealdean"',
+    'alt="Moj&oacute;n en la cima con vistas a un pueblo en el valle al fondo"':
+        'alt="Mugarria gailurrean, haraneko herri baten ikuspegiarekin atzealdean"',
 
     'Subimos desde Trabakua hasta <b>Urko</b> (km 7,9 &middot; 791 m) por el mismo camino que la ruta de '
     '<a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde ah&iacute; bajamos hacia Ixua para cruzar la '
