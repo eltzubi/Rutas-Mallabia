@@ -140,6 +140,12 @@ HOME = {
     '<h2>Trabakua<br><em>Mendibil</em></h2>': '<h2>Trabakua<br><em>Mendibil</em></h2>',
     'Circuito desde Trabakua hasta la cima del Mendibil.':
         'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
+    '<span class="signpost-name">Trabakua, Mendibil, Olamendi y Arteta</span>':
+        '<span class="signpost-name">Trabakua, Mendibil, Olamendi eta Arteta</span>',
+    '<h2>Trabakua, Mendibil,<br><em>Olamendi y Arteta</em></h2>':
+        '<h2>Trabakua, Mendibil,<br><em>Olamendi eta Arteta</em></h2>',
+    'Circuito desde Trabakua por Mendibil, Olamendi y Arteta.':
+        'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota.',
     'Las rutas est&aacute;n documentadas directamente sobre el terreno, recorri&eacute;ndolas paso a '
     'paso. La informaci&oacute;n recoge lo m&aacute;s &uacute;til que encontrar&aacute;s por el camino '
     '&mdash;vistas, fuentes de agua, cruces y algunos puntos de referencia&mdash; para ayudarte durante '
@@ -215,8 +221,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai e Iruzubieta':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai eta Iruzubieta',
-    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta y Mendibil':
-        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta eta Mendibil',
+    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil y Arteta':
+        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil eta Arteta',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -1783,6 +1789,61 @@ MENDIBIL = {
         'Trabakuako goiko tabernan, kulunken ondoan.',
 }
 
+ARTETA = {
+    'download="Trabakua, Mendibil, Olamendi y Arteta.gpx"':
+        'download="Trabakua, Mendibil, Olamendi eta Arteta.gpx"',
+    'alt="Foto ampliada del recorrido de Trabakua, Mendibil, Olamendi y Arteta"':
+        'alt="Trabakua, Mendibil, Olamendi eta Artetako ibilbidearen argazki handitua"',
+    'alt="Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el '
+    'valle con caser&iacute;os en primer plano, entre pinos j&oacute;venes"':
+        'alt="Inguruko mendien ikuspegia, Oizeko eolikoak atzealdean eta harana '
+        'baserriekin aurrealdean, pinu gazteen artean"',
+    'alt="Nubes iluminadas al atardecer sobre las monta&ntilde;as del entorno"':
+        'alt="Ilunabarrean argiztatutako hodeiak inguruko mendien gainean"',
+    'alt="V&eacute;rtice geod&eacute;sico en la cima de Olamendi, con el parque '
+    'e&oacute;lico del Oiz al fondo entre nubes"':
+        'alt="Gailur geodesikoa Olamendiko tontorrean, Oizeko parke eolikoa '
+        'atzealdean hodeien artean"',
+    '<span>Mixta</span><span class="sep">/</span><span>Mendibil, Olamendi y Arteta</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Mendibil, Olamendi eta Arteta</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Trabakua, Mendibil,<br><em>Olamendi y Arteta</em></h1>':
+        '<h1>Trabakua, Mendibil,<br><em>Olamendi eta Arteta</em></h1>',
+    'Circuito desde Trabakua por Mendibil, Olamendi y Arteta':
+        'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
+    'Sale del Alto de Trabakua y sigue, hasta la cima del <b>Mendibil</b> (km 3,45 &middot; '
+    '612 m), el mismo trazado que la ruta de <a href="mendibil.html">Trabakua '
+    'Mendibil</a>.':
+        'Trabakuko Goitik ateratzen da, eta <b>Mendibil</b>go gailurreraino (3,45 km '
+        '&middot; 612 m) <a href="mendibil.html">Trabakua Mendibil</a> ibilbidearen '
+        'trazadu bera jarraitzen du.',
+    'Desde ah&iacute; contin&uacute;a hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), y '
+    'baja despu&eacute;s hacia Arteta dejando atr&aacute;s las pistas m&aacute;s '
+    'conocidas de la zona, para meterse por caminos y sendas menos transitados.':
+        'Handik <b>Olamendi</b>raino jarraitzen du (3,88 km &middot; 596 m), eta gero '
+        'Artetarantz jaisten da, inguruko pista ezagunenak atzean utzita, gutxiago '
+        'ibilitako bide eta bidezidorretan sartzeko.',
+    'De camino se pasa junto a la <b>Fuente de Arteta</b> (km 5,1 &middot; 458 m), antes '
+    'de llegar al propio barrio de <b>Arteta</b> (km 5,7 &middot; 505 m). El regreso '
+    'completa el c&iacute;rculo de vuelta a Trabakua.':
+        'Bidean, <b>Artetako iturri</b>aren ondotik pasatzen da (5,1 km &middot; 458 m), '
+        '<b>Arteta</b> auzora bertara iritsi aurretik (5,7 km &middot; 505 m). Itzulerak '
+        'Trabakuara bueltan ixten du zirkulua.',
+    '<title>Fuente de Arteta': '<title>Artetako iturria',
+    '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '11,38 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
+    'conocer rincones escondidos y pistas o caminos distintos de los habituales por la '
+    'zona de Mendibil y Arteta. La Fuente de Arteta sirve de punto de agua a mitad de '
+    'recorrido. El track de esta ficha se grab&oacute; corriendo (1h 49min), as&iacute; '
+    'que el tiempo no sirve de referencia si vas andando.':
+        '11,38 km eta +565 m-ko desnibela zirkuitu luze batean, ohikoak ez diren txoko '
+        'ezkutuak eta pista edo bide ezberdinak ezagutu nahi dituenarentzat, Mendibil '
+        'eta Arteta inguruan. Artetako iturriak ur-puntu gisa balio du ibilbidearen '
+        'erdialdean. Fitxa honetako tracka lasterka grabatu zen (1 ordu 49 min), beraz '
+        'denbora ez da erreferentzia egokia oinez bazoaz.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1864,6 +1925,7 @@ DESCRIPTIONS = {
     'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
     'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'mendibil': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
+    'arteta': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -1889,6 +1951,7 @@ TITLES = {
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
     'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Trail ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
+    'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1911,5 +1974,6 @@ PAGE_STRINGS = {
     'mundiokokoba': MUNDIOKOKOBA,
     'iruzubieta': IRUZUBIETA,
     'mendibil': MENDIBIL,
+    'arteta': ARTETA,
     'historias': HISTORIAS,
 }

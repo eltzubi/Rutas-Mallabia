@@ -182,6 +182,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/mendibil.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/arteta.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/arteta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/arteta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/arteta.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/arteta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/arteta.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
