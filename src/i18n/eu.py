@@ -1722,6 +1722,10 @@ MENDIBIL = {
         'alt="Haraneko baserri baten ikuspegia, larreen eta basoen artean"',
     'alt="Vacas pastando junto al moj&oacute;n de la cima del Mendibil"':
         'alt="Behiak bazkan Mendibilgo gailurreko mugarriaren ondoan"',
+    'alt="Un adulto y un ni&ntilde;o posando con una bota de vino en la cima del Mendibil, con '
+    'las monta&ntilde;as del entorno al fondo"':
+        'alt="Heldu bat eta haur bat ardo-zahato batekin posatzen Mendibilgo gailurrean, '
+        'inguruko mendiak atzealdean"',
     '<span>Sendero</span><span class="sep">/</span><span>Mendibil</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Mendibil</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
