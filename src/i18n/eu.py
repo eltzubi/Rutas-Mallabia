@@ -37,6 +37,7 @@ COMMON = {
     '<span class="v">Mixta</span>': '<span class="v">Nahasia</span>',
     '<span class="v">Bici</span>': '<span class="v">Bizikleta</span>',
     '<span class="v">Senderismo</span>': '<span class="v">Oinez</span>',
+    '<span class="v">Correr</span>': '<span class="v">Korrika</span>',
 }
 
 # Shared by the three route pages.
@@ -206,8 +207,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal y Urregarai':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal eta Urregarai',
-    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua y Mundioko Koba':
-        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua eta Mundioko Koba',
+    'Senderismo &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba e Iruzubieta':
+        'Oinez &middot; Iturzuri, Gerea, Oiz, Arietzu, Urko, Egoarbitza, Urregarai, Kalamua, Mundioko Koba eta Iruzubieta',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -233,6 +234,14 @@ HOME = {
     '<h2>Mundioko<br><em>Koba</em></h2>': '<h2>Mundioko<br><em>Koba</em></h2>',
     'Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza.':
         'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota.',
+    '<span class="signpost-name">Trabakua, Iturreta e Iruzubieta</span>':
+        '<span class="signpost-name">Trabakua, Iturreta eta Iruzubieta</span>',
+    '<h2>Trabakua, Iturreta<br><em>e Iruzubieta</em></h2>':
+        '<h2>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h2>',
+    'Circuito de trail running desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.':
+        'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
+    'alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo"':
+        'alt="Ilunabarra landa-pista itxi batean, mendiak laranja kolorez atzealdean"',
 
     # zengotitagane card
     'alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta '
@@ -785,6 +794,8 @@ ZENGOTITAGANE = {
         'ikuspegiekin"',
     'alt="Una cruz en uno de los altos de la ruta, con el valle y una carretera al fondo"':
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
+    'alt="Aerogeneradores en fila sobre una cresta de monte, con un cielo tormentoso al fondo"':
+        'alt="Eoliko ilara mendi-gailurraren gainean, zeru ekaiztsua atzealdean"',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
@@ -1598,6 +1609,57 @@ MUNDIOKOKOBA = {
         'beraz denbora ez da erreferentzia fidagarria geldialdirik egiten ez bada.',
 }
 
+IRUZUBIETA = {
+    '<span>Mixta</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta y Gerea</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta eta Gerea</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
+    '<b>Superficie</b> y <b>Tipo</b>, orientativos.':
+        '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
+        '<b>Azalera</b> eta <b>Mota</b>, orientagarriak.',
+    '<h1>Trabakua, Iturreta<br><em>e Iruzubieta</em></h1>':
+        '<h1>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h1>',
+    'Circuito de trail running desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea':
+        'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo"':
+        'alt="Ilunabarra landa-pista itxi batean, mendiak laranja kolorez atzealdean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Iturreta e Iruzubieta"':
+        'alt="Trabakua, Iturreta eta Iruzubietako ibilbidearen argazki handitua"',
+    'alt="Nubes iluminadas por el sol al atardecer sobre los montes del recorrido"':
+        'alt="Eguzkiak ilunabarrean argiztatutako hodeiak ibilbideko mendien gainean"',
+    'alt="Montones de hierba seca junto a un seto, durante el recorrido"':
+        'alt="Belar lehorrezko pilak hesi baten ondoan, ibilbidean zehar"',
+    'alt="Ovejas pastando en una ladera, con caseríos y bosque en el valle al fondo"':
+        'alt="Ardiak hegalean bazkan, baserriak eta basoa haranean atzealdean"',
+    'download="Trabakua, Iturreta e Iruzubieta.gpx"':
+        'download="Trabakua, Iturreta eta Iruzubieta.gpx"',
+    '<title>Punto más alto': '<title>Puntu gorena',
+    '<span class="num">1</span>Punto más alto</span>':
+        '<span class="num">1</span>Puntu gorena</span>',
+    '<title>Iturreta': '<title>Iturreta',
+    '<span class="num">2</span>Iturreta</span>': '<span class="num">2</span>Iturreta</span>',
+    '<h2>Correr</h2>': '<h2>Korrika</h2>',
+    '19,22 km y +769 m de desnivel en un solo circuito. El track de esta ficha está registrado '
+    'como ruta de trail running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia '
+    'para otro ritmo o actividad.':
+        '19,22 km eta +769 m desnibel zirkuitu bakar batean. Fitxa honetako track-a Wikiloc-en '
+        'trail lasterketako ibilbide gisa dago erregistratuta (2 ordu eta 3 minutu), beraz denbora '
+        'hori ez da erreferentzia fidagarria beste erritmo edo jarduera baterako.',
+    'Circuito de 19,22 km y +769 m de desnivel que sale de Trabakua. Los primeros kilómetros '
+    'coinciden en buena parte con el track de la ruta de <a href="iturreta.html">Trabakua, '
+    'Barinaga y Iturreta</a>, hasta llegar a <b>Iturreta</b> (km 6,2 &middot; 374 m).':
+        'Trabakuatik ateratzen den 19,22 km-ko eta +769 m desnibeleko zirkuitua. Lehen '
+        'kilometroek bat egiten dute, neurri handi batean, <a href="iturreta.html">Trabakua, '
+        'Barinaga eta Iturreta</a> ibilbidearen trackarekin, <b>Iturreta</b>raino iritsi arte '
+        '(6,2 km &middot; 374 m).',
+    'El punto más alto de todo el circuito se alcanza antes, a los 3,9 km (529 m). Desde '
+    'Iturreta el recorrido continúa hacia Iruzubieta, Arta y Gerea, antes de cerrar el círculo '
+    'de vuelta en Trabakua.':
+        'Zirkuitu osoko puntu gorenera lehenago iristen da, 3,9 km-ra (529 m). Iturretatik '
+        'aurrera ibilbideak Iruzubieta, Arta eta Gerea aldera jarraitzen du, Trabakuara itzuli '
+        'eta zirkulua itxi aurretik.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1677,6 +1739,7 @@ DESCRIPTIONS = {
     'kalamua': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
+    'iruzubieta': 'Zirkuitua trailez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -1700,6 +1763,7 @@ TITLES = {
     'urregarai': 'Iturreta, Markina eta Urregarai · Trail ibilbidea — Herriko ibilbideak',
     'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Trail ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
+    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1720,5 +1784,6 @@ PAGE_STRINGS = {
     'urregarai': URREGARAI,
     'kalamua': KALAMUA,
     'mundiokokoba': MUNDIOKOKOBA,
+    'iruzubieta': IRUZUBIETA,
     'historias': HISTORIAS,
 }

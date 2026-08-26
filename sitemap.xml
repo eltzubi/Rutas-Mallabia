@@ -162,6 +162,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/mundiokokoba.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/iruzubieta.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/iruzubieta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/iruzubieta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/iruzubieta.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/iruzubieta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/iruzubieta.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
