@@ -1738,6 +1738,10 @@ MENDIBIL = {
     'las monta&ntilde;as del entorno al fondo"':
         'alt="Heldu bat eta haur bat ardo-zahato batekin posatzen Mendibilgo gailurrean, '
         'inguruko mendiak atzealdean"',
+    'alt="Niebla entre los montes del entorno, con el parque e&oacute;lico del Oiz '
+    'asomando entre las nubes"':
+        'alt="Lainoa inguruko mendien artean, Oizeko parke eolikoa hodeien artetik '
+        'ageri dela"',
     '<span>Sendero</span><span class="sep">/</span><span>Mendibil</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Mendibil</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
