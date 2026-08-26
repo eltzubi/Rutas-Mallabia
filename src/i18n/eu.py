@@ -614,6 +614,8 @@ OSMA = {
         'alt="Hilobi batean landutako inskripzio epigrafikoa, Argi&ntilde;etako Nekropolian"',
     'alt="Sarc&oacute;fagos bajo los robles de la Necr&oacute;polis de Argi&ntilde;eta, con la ermita al fondo"':
         'alt="Argi&ntilde;etako Nekropoliko hilobiak haritzen azpian, ermita atzealdean"',
+    'alt="Sarc&oacute;fagos de piedra de la Necr&oacute;polis de Argi&ntilde;eta, entre el c&eacute;sped y los &aacute;rboles"':
+        'alt="Harrizko hilobiak Argi&ntilde;etako Nekropolian, belarraren eta zuhaitzen artean"',
 
     'Esta ruta sale de Trabakua hacia el suroeste, hasta el barrio de Zengotita (km 1,3 &middot; 412 '
     'm), donde se coge la pista forestal que va hacia Areitio y enlaza con el GR &mdash;que va casi '
@@ -865,6 +867,8 @@ OIZ = {
         'alt="Oizeko eoliko bat ilargiaren kontra, ilunabarrean"',
     'alt="Atardecer rojizo desde el Oiz"':
         'alt="Ilunabar gorrixka Oiztik"',
+    'alt="Caballo junto a una charca de piedras en la cima del Oiz"':
+        'alt="Zaldia Oizko gailurreko harrizko putzu baten ondoan"',
     'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m) &mdash;una '
     'subida muy fuerte, aunque corta, casi recta, que sale arriba entre el segundo y el '
     'tercer aerogenerador. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
@@ -998,6 +1002,8 @@ URKO = {
         'alt="Inguruko mendien ikuspegi panoramikoa zeru garbi baten azpian, baserriak eta larreak haranean lehen planoan"',
     'alt="Poste de señales y mojón en la cima, con el mar al fondo entre nubes bajas"':
         'alt="Seinaleztapen-zutoina eta mugarria gailurrean, itsasoa atzealdean hodei baxuen artean"',
+    'alt="Ovejas y vacas pastando en un prado, con un montón de estiércol y un caserío al fondo"':
+        'alt="Ardiak eta behiak larre batean bazkan, simaur-pila batekin eta baserri bat atzealdean"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
     'atr&aacute;s y empieza una cuesta que por un momento se pone intensa, pero corta; '
@@ -1238,6 +1244,8 @@ EGOARBITZA = {
         'alt="Harrizko gurutzea Santama&ntilde;esarreko begiratoki batean, harana eta baserriak atzealdean"',
     'alt="Cruz de piedra entre &aacute;rboles en Arietxu, con un perro junto a ella"':
         'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
+    'alt="Embalse de Aixola, con la caseta sobre el agua y el bosque alrededor"':
+        'alt="Aixolako urtegia, etxola urearen gainean eta basoa inguruan"',
 
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
     '<a href="urko.html">Asuntza y Urko</a>: pista de cemento y piedra. Desde la cima empieza la '
