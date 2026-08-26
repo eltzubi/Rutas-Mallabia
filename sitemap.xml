@@ -172,6 +172,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/iruzubieta.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/mendibil.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/mendibil.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/mendibil.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/mendibil.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/mendibil.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/mendibil.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>

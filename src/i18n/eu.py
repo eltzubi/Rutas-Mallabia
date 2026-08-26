@@ -135,6 +135,11 @@ HOME = {
         '<span class="signpost-name">Osmagain eta Arietzu</span>',
     '<span class="signpost-name">Trabakua, Asuntza y Urko</span>':
         '<span class="signpost-name">Trabakua, Asuntza eta Urko</span>',
+    '<span class="signpost-name">Trabakua Mendibil</span>':
+        '<span class="signpost-name">Trabakua Mendibil</span>',
+    '<h2>Trabakua<br><em>Mendibil</em></h2>': '<h2>Trabakua<br><em>Mendibil</em></h2>',
+    'Circuito desde Trabakua hasta la cima del Mendibil.':
+        'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
     'Las rutas est&aacute;n documentadas directamente sobre el terreno, recorri&eacute;ndolas paso a '
     'paso. La informaci&oacute;n recoge lo m&aacute;s &uacute;til que encontrar&aacute;s por el camino '
     '&mdash;vistas, fuentes de agua, cruces y algunos puntos de referencia&mdash; para ayudarte durante '
@@ -210,8 +215,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai e Iruzubieta':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai eta Iruzubieta',
-    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba e Iruzubieta':
-        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba eta Iruzubieta',
+    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta y Mendibil':
+        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta eta Mendibil',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -1705,6 +1710,76 @@ IRUZUBIETA = {
         'zirkulua itxi aurretik.',
 }
 
+MENDIBIL = {
+    'download="Trabakua Mendibil.gpx"': 'download="Trabakua Mendibil.gpx"',
+    'alt="Foto ampliada del recorrido de Trabakua Mendibil"':
+        'alt="Trabakua Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Moj&oacute;n en la cima del Mendibil, con el parque e&oacute;lico y el pueblo al fondo"':
+        'alt="Mendibilgo gailurreko mugarria, parke eolikoa eta herria atzealdean"',
+    'alt="Otra vista del moj&oacute;n de la cima, con los aerogeneradores del parque e&oacute;lico al fondo"':
+        'alt="Gailurreko mugarriaren beste ikuspegi bat, parke eolikoaren aerosorgailuak atzealdean"',
+    'alt="Vista de un caser&iacute;o en el valle, rodeado de prados y bosque"':
+        'alt="Haraneko baserri baten ikuspegia, larreen eta basoen artean"',
+    'alt="Vacas pastando junto al moj&oacute;n de la cima del Mendibil"':
+        'alt="Behiak bazkan Mendibilgo gailurreko mugarriaren ondoan"',
+    '<span>Sendero</span><span class="sep">/</span><span>Mendibil</span>':
+        '<span>Bidezidorra</span><span class="sep">/</span><span>Mendibil</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Trabakua<br><em>Mendibil</em></h1>': '<h1>Trabakua<br><em>Mendibil</em></h1>',
+    'Circuito desde Trabakua hasta la cima del Mendibil':
+        'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
+    'Sale del Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de un '
+    'kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto atr&aacute;s '
+    'y arranca una cuesta que por un momento se pone intensa, pero corta. Arriba, en un cruce a '
+    'los 2,5 km, aparecen las primeras indicaciones hacia el monte Mendibil: es la misma pista '
+    'principal, de piedra, que sigue de frente hacia Asuntza y Urko &mdash;con la que se puede '
+    'montar tambi&eacute;n la circular de <a href="urko.html">Trabakua, Asuntza y Urko</a>'
+    '&mdash;, mientras que a la derecha se baja hacia Berano, Berano Txiki y, m&aacute;s lejos, '
+    'Ermua o Amorebieta.':
+        'Trabakuko Goitik ateratzen da. Lehen metroek behera egiten dute &mdash;kilometro bat '
+        'baino gehixeago&mdash; ezkerreko bidegurutze batera arte, non asfaltoa atzean utzi eta '
+        'aldapa bati ekiten zaion, tarte batez gogorra baina laburra. Goian, 2,5 kilometrotan '
+        'dagoen bidegurutzean, Mendibil menditarako lehen seinaleak agertzen dira: harrizko '
+        'pista nagusi bera da, aurrera jarraitzen duena Asuntza eta Urkorantz &mdash;horrekin '
+        '<a href="urko.html">Trabakua, Asuntza eta Urko</a> zirkuitua ere egin daiteke&mdash;, '
+        'eskuinera berriz Berano, Berano Txiki eta, urrutixeago, Ermua edo Amorebietarantz '
+        'jaisten da.',
+    'Se sigue esa pista principal unos metros hacia la izquierda hasta un roble gigante, con '
+    'marcas blancas y amarillas en el tronco: ah&iacute;, justo detr&aacute;s del &aacute;rbol, '
+    'se deja la pista de piedra para coger un camino de tierra. Sin abandonarlo en '
+    'ning&uacute;n momento, ese camino lleva hasta la parte m&aacute;s alta, entre un grupo de '
+    'eucaliptos.':
+        'Pista nagusi horri jarraitzen zaio metro batzuk ezkerrera, haritz erraldoi batera '
+        'arte, enborrean marka zuri-horiak dituena: han, zuhaitzaren atzean bertan, harrizko '
+        'pista utzi eta lur-bide bati heltzen zaio. Bidea inoiz utzi gabe, lur-bide horrek '
+        'gorenera eramaten gaitu, eukalipto talde baten artetik.',
+    'En medio del eucaliptal se toma un sendero a la izquierda que baja ligeramente, con el '
+    '<b>Mendibil</b> ya de frente, asomando como una peque&ntilde;a cumbre entre los pastos. '
+    'M&aacute;s adelante se cruza una puerta de hierro, y apenas cinco minutos despu&eacute;s '
+    'se corona la cima (km 2,98 &middot; 616 m).':
+        'Eukaliptodian, ezkerreko bidezidor bati heltzen zaio, apur bat behera egiten duena, '
+        '<b>Mendibil</b> aurrez aurre dugularik, larreen artean altxatzen den tontor txiki '
+        'gisa. Aurrerago, burdinazko ate bat zeharkatzen da, eta bost minutu eskasera gailurra '
+        'hartzen da (2,98 km &middot; 616 m).',
+    'Desde arriba hay vistas al Oiz y a los montes del Duranguesado, hasta el Urko, y hacia la '
+    'zona de Markina y la costa &mdash;con buen tiempo llega a verse el mar. La vuelta se hace '
+    'por el mismo camino.':
+        'Goitik Oizerako eta Durangaldeko mendietarako ikuspegiak daude, Urkoraino, eta Markina '
+        'aldera eta kostaldera ere bai &mdash;eguraldi onarekin itsasoa ere ikusten da. '
+        'Itzulera bide beretik egiten da.',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, '
+    'coincidiendo el primer tramo con la ruta de <a href="urko.html">Trabakua, Asuntza y '
+    'Urko</a>. El track de esta ficha se grab&oacute; andando (1h 50min). No hay fuentes en la '
+    'ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de arriba de Trabakua, '
+    'junto a los columpios.':
+        '6,08 km eta +432 m-ko desnibela zirkuitu labur batean, Mendibilgo gailurreraino, lehen '
+        'tartea <a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbidearekin bat eginez. '
+        'Fitxa honetako tracka oinez grabatu zen (1 ordu 50 min). Ez dago iturririk '
+        'ibilbidean, beraz ura eramatea komeni da &mdash;bat dago Trabakuako goiko tabernan, '
+        'kulunken ondoan.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1785,6 +1860,7 @@ DESCRIPTIONS = {
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
     'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'mendibil': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -1809,6 +1885,7 @@ TITLES = {
     'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Trail ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
     'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Trail ibilbidea — Herriko ibilbideak',
+    'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -1830,5 +1907,6 @@ PAGE_STRINGS = {
     'kalamua': KALAMUA,
     'mundiokokoba': MUNDIOKOKOBA,
     'iruzubieta': IRUZUBIETA,
+    'mendibil': MENDIBIL,
     'historias': HISTORIAS,
 }
