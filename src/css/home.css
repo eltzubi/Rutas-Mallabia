@@ -334,16 +334,28 @@ body{
 .dual-range input[type="range"].range-max{ z-index:4; }
 .dual-range input[type="range"].range-top{ z-index:5; }
 .activity-chip{
-  font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600;
+  display:inline-flex; align-items:center; gap:7px;
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:8px 14px; border-radius:100px;
+  padding:9px 16px; border-radius:100px;
   border:1px solid var(--line); background:var(--ground);
   color:var(--ink-dim); cursor:pointer;
-  transition:background .2s ease, color .2s ease, border-color .2s ease;
+  transition:background .2s ease, color .2s ease, border-color .2s ease,
+             transform .15s ease, box-shadow .2s ease;
 }
-.activity-chip.active{ background:var(--teal); border-color:var(--teal); color:var(--ground); }
-.activity-chip.active[data-activity="senderismo"]{ background:var(--violet); border-color:var(--violet); }
-.activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); }
+.chip-icon{ flex-shrink:0; opacity:.85; }
+.activity-chip.active{
+  background:var(--teal); border-color:var(--teal); color:var(--ground);
+  transform:scale(1.05);
+  box-shadow:0 3px 12px -3px var(--teal);
+}
+.activity-chip.active .chip-icon{ opacity:1; }
+.activity-chip.active[data-activity="senderismo"]{
+  background:var(--violet); border-color:var(--violet);
+  box-shadow:0 3px 12px -3px var(--violet);
+}
+.activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); transform:translateY(-1px); }
+.activity-chip:active{ transform:scale(.97); }
 .feat-panel.is-hidden{ display:none; }
 .filter-empty{
   display:none;
@@ -706,7 +718,8 @@ footer a:hover{ text-decoration:underline; }
 .readout-item .v{ text-shadow:0 0 18px currentColor; }
 .elev-tags .v{ text-shadow:0 0 14px currentColor; }
 
-.activity-chip.active{ box-shadow:0 0 18px -3px currentColor; }
+.activity-chip.active{ box-shadow:0 0 18px -3px var(--teal); }
+.activity-chip.active[data-activity="senderismo"]{ box-shadow:0 0 18px -3px var(--violet); }
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
 .range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
 

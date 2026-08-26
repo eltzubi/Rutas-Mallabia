@@ -151,8 +151,8 @@ HOME = {
         'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
-    '>Bici</button>': '>Bizikleta</button>',
-    '>Senderismo</button>': '>Oinez</button>',
+    '<span>Bici</span>': '<span>Bizikleta</span>',
+    '<span>Senderismo</span>': '<span>Oinez</span>',
     'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':
         'data-no-limit="(mugarik gabe)" data-approx="inguru"',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
