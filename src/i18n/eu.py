@@ -1679,7 +1679,7 @@ IRUZUBIETA = {
     '<b>Iruzubieta</b>, entre caseríos, pastos y ganado —con la zona de Bolibar asomando a lo '
     'lejos hacia el suroeste y, más arriba, el Oiz con sus aerogeneradores y las antenas de la '
     'cima. Ya abajo, se cruza la carretera y se entra en el barrio, con un bar junto al camino.':
-        'Orduan gora egiten du asteburuetako etxola batzuen ondotik, berriz ere '
+        'Orduan gora egiten du asteburuko etxetxoen ondotik, berriz ere '
         '<b>Iruzubieta</b>rantz jaisteko, baserri, larre eta abereen artean —Bolibar aldea '
         'urrunean agertzen dela hego-mendebalderantz eta, gorago, Oiz eolikoekin eta gailurreko '
         'antenekin. Behean, errepidea zeharkatu eta auzoan sartzen da, bidearen ondoan taberna '
