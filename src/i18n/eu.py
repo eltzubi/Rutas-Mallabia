@@ -1642,6 +1642,12 @@ IRUZUBIETA = {
         'alt="Belar lehorrezko pilak hesi baten ondoan, ibilbidean zehar"',
     'alt="Ovejas pastando en una ladera, con caseríos y bosque en el valle al fondo"':
         'alt="Ardiak hegalean bazkan, baserriak eta basoa haranean atzealdean"',
+    'alt="Una cancela de madera junto a un prado con ganado, con niebla entre los montes '
+    'al fondo"':
+        'alt="Zurezko atetxo bat larre baten ondoan abereekin, lainoa mendien artean '
+        'atzealdean"',
+    'alt="Camino hundido entre helechos y árboles, cubierto de hojas secas"':
+        'alt="Bide hondoratua iratzeen eta zuhaitzen artean, hosto lehorrez estalia"',
     'download="Trabakua, Iturreta e Iruzubieta.gpx"':
         'download="Trabakua, Iturreta eta Iruzubieta.gpx"',
     '<title>Collado, señal Markina': '<title>Lepoa, Markina seinalea',
