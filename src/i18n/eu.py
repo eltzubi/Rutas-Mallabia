@@ -1647,11 +1647,13 @@ IRUZUBIETA = {
     '19,22 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
     'bicicleta. El track de esta ficha se grabó corriendo y está registrado como ruta de trail '
     'running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia si vas caminando o '
-    'en bici.':
+    'en bici. Los únicos puntos de agua son el bar de arriba de Trabakua, en la misma salida, y '
+    'el bar del barrio de Iruzubieta.':
         '19,22 km eta +769 m desnibel zirkuitu bakar batean, oinez zein bizikletaz egiteko '
         'modukoa. Fitxa honetako track-a korrika grabatu zen eta Wikiloc-en trail lasterketako '
         'ibilbide gisa dago erregistratuta (2 ordu eta 3 minutu), beraz denbora hori ez da '
-        'erreferentzia fidagarria oinez edo bizikletaz bazoaz.',
+        'erreferentzia fidagarria oinez edo bizikletaz bazoaz. Uraren bi puntu bakarrak dira '
+        'Trabakuako goiko taberna, irteera puntuan bertan, eta Iruzubietako auzoko taberna.',
     'Sale de Trabakua bajando un kilómetro por la carretera general en dirección Ermua, hasta '
     'dejarla para girar a la izquierda y coger la misma pista que sube hacia Asuntza y Urko '
     '—pasando junto a unos chalés, con una cuesta bastante pronunciada— de la ruta de '
