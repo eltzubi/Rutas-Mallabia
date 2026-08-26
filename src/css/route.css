@@ -1,14 +1,14 @@
 :root{
   /* Sendero de noche: dark is the identity now, light is the opt-out. */
-  --ground:#0A0E18;
-  --ground-raised:#131B2E;
-  --ink:#E5EAF5;
-  --ink-dim:#8B93AE;
+  --ground:#0A0F0A;
+  --ground-raised:#131C10;
+  --ink:#EAF5E2;
+  --ink-dim:#8FA382;
   --teal:#2FE0F5;
   --teal-soft:rgba(47,224,245,.14);
   --violet:#A6FF4D;
   --violet-soft:rgba(166,255,77,.14);
-  --line: rgba(229,234,245,.16);
+  --line: rgba(234,245,226,.16);
 }
 :root[data-theme="light"]{
   --ground:#F4F7EF;
