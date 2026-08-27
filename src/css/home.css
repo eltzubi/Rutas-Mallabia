@@ -30,6 +30,7 @@
 
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
+html{ overscroll-behavior-y:none; }
 /* Without this, <picture> (an unstyled inline box) sits between an <img>
    and its flex/grid/absolute-positioning parent, breaking every layout
    that depends on the img being a direct child (the hero flex split,
@@ -61,6 +62,7 @@ body{
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
   transition:padding .25s ease;
+  transform:translateZ(0); will-change:transform;
 }
 /* Past the hero, the brand photos are dead weight on a long scroll --
    collapse them once the visitor has started reading. */
@@ -202,7 +204,7 @@ body{
 .hero-scrim{
   position:absolute; inset:0;
   background:
-    linear-gradient(180deg, rgba(9,11,7,.35) 0%, rgba(9,11,7,.22) 20%, rgba(9,11,7,.38) 42%, rgba(9,11,7,.55) 66%, rgba(9,11,7,.78) 100%);
+    linear-gradient(180deg, rgba(9,11,7,.35) 0%, rgba(9,11,7,.22) 20%, rgba(9,11,7,.38) 42%, rgba(9,11,7,.55) 66%, rgba(9,11,7,.5) 100%);
 }
 .hero-photo-content{
   position:relative; z-index:1;
