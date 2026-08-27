@@ -1831,12 +1831,20 @@ ARTETA = {
         'Trabakuko Goitik ateratzen da, eta <b>Mendibil</b>go gailurreraino (3,45 km '
         '&middot; 612 m) <a href="mendibil.html">Trabakua Mendibil</a> ibilbidearen '
         'trazadu bera jarraitzen du.',
-    'Desde ah&iacute; contin&uacute;a hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), y '
-    'baja despu&eacute;s hacia Arteta dejando atr&aacute;s las pistas m&aacute;s '
-    'conocidas de la zona, para meterse por caminos y sendas menos transitados.':
-        'Handik <b>Olamendi</b>raino jarraitzen du (3,88 km &middot; 596 m), eta gero '
-        'Artetarantz jaisten da, inguruko pista ezagunenak atzean utzita, gutxiago '
-        'ibilitako bide eta bidezidorretan sartzeko.',
+    'Desde ah&iacute; contin&uacute;a hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), '
+    'donde hay dos formas de volver a Trabakua: hacia el sureste, bajando hacia Arteta '
+    'y su fuente &mdash;la que sigue esta ruta, dejando atr&aacute;s las pistas '
+    'm&aacute;s conocidas de la zona para meterse por caminos y sendas menos '
+    'transitados&mdash;, o hacia el noreste, bordeando la monta&ntilde;a por la misma '
+    'pista que une Trabakua con Iturreta, de la ruta de <a href="iturreta.html">Trabakua, '
+    'Barinaga y Iturreta</a>, pero en sentido contrario.':
+        'Handik <b>Olamendi</b>raino jarraitzen du (3,88 km &middot; 596 m), eta hortik '
+        'Trabakuara itzultzeko bi bide daude: hego-ekialdera, Arteta eta bere iturrira '
+        'jaisten dena &mdash;ibilbide honek jarraitzen duena, inguruko pista ezagunenak '
+        'atzean utzita, gutxiago ibilitako bide eta bidezidorretan sartzeko&mdash;, edo '
+        'ipar-ekialdera, mendia inguratuz, Trabakua eta Iturreta lotzen dituen pista '
+        'beretik, <a href="iturreta.html">Trabakua, Barinaga eta Iturreta</a> '
+        'ibilbidekoa, baina alderantziz.',
     'De camino se pasa junto a la <b>Fuente de Arteta</b> (km 5,1 &middot; 458 m), antes '
     'de llegar a la propia zona de <b>Arteta</b> (km 5,7 &middot; 505 m), donde una '
     'ermita en ruinas queda escondida entre el bosque que la ha ido cubriendo. El '
