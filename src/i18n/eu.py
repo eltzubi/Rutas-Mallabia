@@ -1782,10 +1782,15 @@ MENDIBIL = {
         'hartzen da (2,98 km &middot; 616 m).',
     'Desde arriba hay vistas al Oiz y a los montes del Duranguesado, hasta el Urko, y hacia la '
     'zona de Markina y la costa &mdash;con buen tiempo llega a verse el mar. La vuelta se hace '
-    'por el mismo camino.':
+    'por el mismo camino, aunque desde la cima tambi&eacute;n se puede bajar hacia el noreste, '
+    'bordeando la monta&ntilde;a por la misma pista que une Trabakua con Iturreta, de la ruta '
+    'de <a href="iturreta.html">Trabakua, Barinaga y Iturreta</a>, pero en sentido contrario.':
         'Goitik Oizerako eta Durangaldeko mendietarako ikuspegiak daude, Urkoraino, eta Markina '
         'aldera eta kostaldera ere bai &mdash;eguraldi onarekin itsasoa ere ikusten da. '
-        'Itzulera bide beretik egiten da.',
+        'Itzulera bide beretik egiten da, nahiz eta gailurretik ipar-ekialdera ere jaits '
+        'daitekeen, mendia inguratuz, Trabakua eta Iturreta lotzen dituen pista beretik, '
+        '<a href="iturreta.html">Trabakua, Barinaga eta Iturreta</a> ibilbidekoa, baina '
+        'alderantziz.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, ideal '
     'para ir con ni&ntilde;os, coincidiendo el primer tramo con la ruta de <a '
@@ -1827,24 +1832,24 @@ ARTETA = {
         'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'Sale del Alto de Trabakua y sigue, hasta la cima del <b>Mendibil</b> (km 3,45 &middot; '
     '612 m), el mismo trazado que la ruta de <a href="mendibil.html">Trabakua '
-    'Mendibil</a>.':
+    'Mendibil</a>. Desde ah&iacute; hay dos formas de volver a Trabakua: hacia el '
+    'sureste, bajando hacia Arteta y su fuente &mdash;la que sigue esta ruta&mdash;, o '
+    'hacia el noreste, bordeando la monta&ntilde;a por la misma pista que une Trabakua '
+    'con Iturreta, de la ruta de <a href="iturreta.html">Trabakua, Barinaga y '
+    'Iturreta</a>, pero en sentido contrario.':
         'Trabakuko Goitik ateratzen da, eta <b>Mendibil</b>go gailurreraino (3,45 km '
         '&middot; 612 m) <a href="mendibil.html">Trabakua Mendibil</a> ibilbidearen '
-        'trazadu bera jarraitzen du.',
-    'Desde ah&iacute; contin&uacute;a hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), '
-    'donde hay dos formas de volver a Trabakua: hacia el sureste, bajando hacia Arteta '
-    'y su fuente &mdash;la que sigue esta ruta, dejando atr&aacute;s las pistas '
-    'm&aacute;s conocidas de la zona para meterse por caminos y sendas menos '
-    'transitados&mdash;, o hacia el noreste, bordeando la monta&ntilde;a por la misma '
-    'pista que une Trabakua con Iturreta, de la ruta de <a href="iturreta.html">Trabakua, '
-    'Barinaga y Iturreta</a>, pero en sentido contrario.':
-        'Handik <b>Olamendi</b>raino jarraitzen du (3,88 km &middot; 596 m), eta hortik '
-        'Trabakuara itzultzeko bi bide daude: hego-ekialdera, Arteta eta bere iturrira '
-        'jaisten dena &mdash;ibilbide honek jarraitzen duena, inguruko pista ezagunenak '
-        'atzean utzita, gutxiago ibilitako bide eta bidezidorretan sartzeko&mdash;, edo '
-        'ipar-ekialdera, mendia inguratuz, Trabakua eta Iturreta lotzen dituen pista '
-        'beretik, <a href="iturreta.html">Trabakua, Barinaga eta Iturreta</a> '
-        'ibilbidekoa, baina alderantziz.',
+        'trazadu bera jarraitzen du. Hortik Trabakuara itzultzeko bi bide daude: '
+        'hego-ekialdera, Arteta eta bere iturrira jaisten dena &mdash;ibilbide honek '
+        'jarraitzen duena&mdash;, edo ipar-ekialdera, mendia inguratuz, Trabakua eta '
+        'Iturreta lotzen dituen pista beretik, <a href="iturreta.html">Trabakua, '
+        'Barinaga eta Iturreta</a> ibilbidekoa, baina alderantziz.',
+    'Baja hacia el sureste hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), dejando '
+    'atr&aacute;s las pistas m&aacute;s conocidas de la zona para meterse por caminos '
+    'y sendas menos transitados.':
+        'Hego-ekialdera jaisten da <b>Olamendi</b>raino (3,88 km &middot; 596 m), '
+        'inguruko pista ezagunenak atzean utzita, gutxiago ibilitako bide eta '
+        'bidezidorretan sartzeko.',
     'De camino se pasa junto a la <b>Fuente de Arteta</b> (km 5,1 &middot; 458 m), antes '
     'de llegar a la propia zona de <b>Arteta</b> (km 5,7 &middot; 505 m), donde una '
     'ermita en ruinas queda escondida entre el bosque que la ha ido cubriendo. El '
