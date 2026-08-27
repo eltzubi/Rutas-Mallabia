@@ -1923,6 +1923,12 @@ GOITA = {
     'los aerogeneradores del Oiz al fondo"':
         'alt="Apoitako San Martin ermita, harrizko espadaina txikiarekin, eta Oizeko '
         'aerosorgailuak atzealdean"',
+    'alt="Vistas amplias sobre los valles del entorno, con una monta&ntilde;a de doble pico al '
+    'fondo y nubes alargadas en el cielo"':
+        'alt="Inguruko haranen ikuspegi zabalak, bi tontorreko mendi bat atzealdean eta '
+        'hodei luzatuak zeruan"',
+    'alt="Casas del valle entre prados y bosque, con nubes de tormenta acerc&aacute;ndose"':
+        'alt="Haraneko etxeak belardi eta basoen artean, ekaitz-hodeiak hurbiltzen"',
     'download="Trabakua paseo barrio Goita.gpx"':
         'download="Trabakua, Goita auzoko paseoa.gpx"',
     '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
