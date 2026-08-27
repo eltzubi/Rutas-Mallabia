@@ -1838,11 +1838,13 @@ ARTETA = {
         'Artetarantz jaisten da, inguruko pista ezagunenak atzean utzita, gutxiago '
         'ibilitako bide eta bidezidorretan sartzeko.',
     'De camino se pasa junto a la <b>Fuente de Arteta</b> (km 5,1 &middot; 458 m), antes '
-    'de llegar al propio barrio de <b>Arteta</b> (km 5,7 &middot; 505 m). El regreso '
-    'completa el c&iacute;rculo de vuelta a Trabakua.':
+    'de llegar a la propia zona de <b>Arteta</b> (km 5,7 &middot; 505 m), donde una '
+    'ermita en ruinas queda escondida entre el bosque que la ha ido cubriendo. El '
+    'regreso completa el c&iacute;rculo de vuelta a Trabakua.':
         'Bidean, <b>Artetako iturri</b>aren ondotik pasatzen da (5,1 km &middot; 458 m), '
-        '<b>Arteta</b> auzora bertara iritsi aurretik (5,7 km &middot; 505 m). Itzulerak '
-        'Trabakuara bueltan ixten du zirkulua.',
+        '<b>Arteta</b>ko eremura bertara iritsi aurretik (5,7 km &middot; 505 m), non '
+        'ermita hondatu bat basoak estalita ezkutatzen den. Itzulerak Trabakuara '
+        'bueltan ixten du zirkulua.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
