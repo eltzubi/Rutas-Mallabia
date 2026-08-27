@@ -720,9 +720,10 @@ OSMA = {
 }
 
 GEREA = {
-    '<title>Vistas a Gerea': '<title>Gereako ikuspegiak',
-    '<span class="num">2</span>Vistas a Gerea':
-        '<span class="num">2</span>Gereako ikuspegiak',
+    '<title>Primera señal, empiezan las vistas':
+        '<title>Lehen seinalea, ikuspegiak hasten dira',
+    '<span class="num">1</span>Primera señal, empiezan las vistas':
+        '<span class="num">1</span>Lehen seinalea, ikuspegiak hasten dira',
     '<span>Sendero</span><span class="sep">/</span><span>Cascada, aerogeneradores y borda</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia, eolikoak eta borda</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
