@@ -125,6 +125,8 @@ HOME = {
         '<span class="signpost-name">Zenarruza, San Kristobal eta Zengotitagane</span>',
     '<span class="signpost-name">Ur Jauziak Gerea</span>':
         '<span class="signpost-name">Ur Jauziak Gerea</span>',
+    '<span class="signpost-name">Trabakua, paseo por el barrio Goita</span>':
+        '<span class="signpost-name">Trabakua, Goita auzoko paseoa</span>',
     '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
         '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
     '<span class="signpost-name">Zengotitagane, Askako y San Crist&oacute;bal</span>':
@@ -226,10 +228,10 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai e Iruzubieta':
-        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai eta Iruzubieta',
-    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil y Arteta':
-        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil eta Arteta',
+    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
+        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
+    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta y Goita':
+        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta eta Goita',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -1888,6 +1890,65 @@ ARTETA = {
         'denbora ez da erreferentzia egokia oinez bazoaz.',
 }
 
+GOITA = {
+    '<title>Polígono de Anbre · 2,39 km · 229 m</title>':
+        '<title>Anbre industrialdea · 2,39 km · 229 m</title>',
+    '<span class="num">1</span>Polígono de Anbre':
+        '<span class="num">1</span>Anbre industrialdea',
+    '<span>Carretera y pista</span><span class="sep">/</span><span>Goita</span>':
+        '<span>Errepidea eta pista</span><span class="sep">/</span><span>Goita</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Trabakua<br><em>paseo por el barrio Goita</em></h1>':
+        '<h1>Trabakua<br><em>Goita auzoko paseoa</em></h1>',
+    'Paseo circular por el barrio Goita desde Trabakua':
+        'Ibilbide zirkularra Goita auzotik, Trabakuatik',
+    'alt="Vistas al atardecer sobre los valles y montes del entorno, con un mont&oacute;n de '
+    'piedras en primer plano"':
+        'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
+        'batekin"',
+    'alt="Foto ampliada del recorrido de Trabakua, paseo por el barrio Goita"':
+        'alt="Trabakua, Goita auzoko paseo ibilbidearen argazki handitua"',
+    'alt="Pista de cemento entre &aacute;rboles, en un tramo con sombra"':
+        'alt="Porlanezko pista zuhaitzen artean, itzalpeko tarte batean"',
+    'alt="Ermita de piedra con espada&ntilde;a y tejado de teja, junto a la carretera"':
+        'alt="Harrizko ermita espadaina eta teilatu gorriarekin, errepidearen ondoan"',
+    'alt="Camino junto a una valla, con un caser&iacute;o al fondo entre &aacute;rboles"':
+        'alt="Bidea hesi baten ondoan, atzealdean baserri bat zuhaitzen artean"',
+    'alt="Vista del barrio de Goita, con caser&iacute;os y prados entre el bosque"':
+        'alt="Goita auzoaren ikuspegia, baserri eta belardiekin basoaren artean"',
+    'alt="Una vaca junto a una valla de alambre de espino, con monta&ntilde;as al fondo"':
+        'alt="Behi bat arantzazko hesi baten ondoan, mendiak atzealdean dituela"',
+    'download="Trabakua paseo barrio Goita.gpx"':
+        'download="Trabakua, Goita auzoko paseoa.gpx"',
+    '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
+    'Salimos del bar de Trabakua y cruzamos el puente de madera que pasa sobre la autovía. Nada más cruzarlo, comenzamos a bajar por la carretera asfaltada en dirección al barrio de <b>Goita</b>, donde empiezan a aparecer las primeras vistas de la ruta.':
+        'Trabakuko tabernatik abiatuko gara eta autobidearen gainetik igarotzen den egurrezko zubia zeharkatuko dugu. Zubia igaro bezain laster, asfaltatutako errepidetik jaisten hasiko gara <b>Goita</b> auzorantz. Bertan hasiko gara ibilbideko lehen bistak ikusten.',
+    'A nuestra derecha podemos ver la zona de <b>Osma</b>, con sus barrios y caseríos. De frente empezamos a distinguir la ermita de <b>San Juan de Goita</b>, hacia la que nos dirigimos. Junto a ella se conservan restos de una antigua necrópolis medieval, documentada en el siglo XI. La ermita ha estado siempre muy ligada a los vecinos del barrio, que tradicionalmente se han organizado en auzolan para cuidarla y mantener también sus alrededores.':
+        'Gure eskuinean <b>Osma</b> ingurua ikusiko dugu, bertako auzo eta baserriekin. Aurrez aurre <b>Goitako San Juan</b> ermita ikusten hasiko gara, harantz baikaramatza bideak. Ermitaren inguruan Erdi Aroko nekropoli baten aztarnak daude, XI. mendean dokumentatuak. Betidanik egon da ermita auzoko bizilagunei lotuta, eta tradizioz auzolanean aritu izan dira ermita eta ingurua zaintzen eta mantentzen.',
+    'A nuestra izquierda tenemos la zona de Arteta, con sus caseríos y prados. Continuamos bajando por la carretera, disfrutando tranquilamente del paisaje.':
+        'Ezkerrean, berriz, Arteta ingurua izango dugu, bertako baserri eta belardiekin. Errepidean behera jarraituko dugu, paisaiaz lasai gozatzen.',
+    'Tras aproximadamente 2,5 kilómetros, llegamos a la parte más baja del recorrido, junto al polígono de <b>Anbre</b>. Aquí debemos estar atentos: giramos a la derecha y continuamos por el polígono durante unos 300 metros.':
+        'Gutxi gorabehera 2,5 kilometro egin ondoren, ibilbideko punturik baxuenera iritsiko gara, <b>Anbre</b> industrialdearen ondoan. Hemen adi egon behar dugu: eskuinera biratu eta industrialdetik jarraituko dugu 300 metro inguru.',
+    'En plena curva encontraremos, también a nuestra derecha, una carretera de barrio más estrecha. El cruce está señalizado con indicaciones hacia varios caseríos, entre ellos <b>Amesti</b> y <b>Boliña</b>. Tomamos esta carretera y avanzamos unos 200 metros.':
+        'Bihurgune betean, gure eskuinean, auzoko errepide estuago bat aurkituko dugu. Bidegurutzea hainbat baserritara joateko seinaleekin markatuta dago, besteak beste <b>Amesti</b> eta <b>Boliña</b>. Errepide hori hartu eta 200 metro inguru egingo ditugu.',
+    'Llegamos a un nuevo cruce, donde tomamos el camino de la izquierda. El asfalto deja paso a una pista de gravilla que nos lleva hasta el caserío Amesti. Pasamos junto a él y continuamos hacia arriba hasta encontrarnos de nuevo con una carretera de barrio.':
+        'Beste bidegurutze batera iristean, ezkerreko bidea hartuko dugu. Asfaltoa amaitu eta hartxintxarrezko pista batean sartuko gara. Pista horrek Amesti baserrira eramango gaitu. Baserriaren ondotik igaro eta gorantz jarraituko dugu, berriro auzoko errepide batekin topo egin arte.',
+    'Cuando llevamos unos 3,2 kilómetros, llegamos a una carretera de barrio que viene de Mallabia y sube hacia Trabakua. Giramos a la derecha y continuamos por esta carretera de cemento en dirección a Trabakua.':
+        'Gutxi gorabehera 3,2 kilometro daramatzagunean, Mallabitik datorren eta Trabakurantz igotzen den auzoko errepide batera iritsiko gara. Eskuinerantz biratu eta porlanezko errepide horretatik jarraituko dugu, Trabaku norabidean.',
+    'Mientras subimos, a nuestra derecha volvemos a tener vistas hacia el barrio de Goita, por donde hemos bajado anteriormente hacia el polígono. Ahora lo vemos desde otra perspectiva, con sus caseríos, sus prados y todo el paisaje que los rodea.':
+        'Igotzen goazen bitartean, eskuinean Goita auzoa ikusiko dugu berriro, lehenago industrialderantz jaisteko zeharkatu dugun ingurua. Oraingoan beste ikuspegi batetik ikusiko dugu, bertako baserri, belardi eta inguruko paisaiarekin.',
+    'Continuamos subiendo por la zona de <b>Apoita</b>, pasando junto a la ermita de <b>San Martín de Apoita</b>, situada en una pequeña loma junto al caserío San Martín. Una pequeña ermita con siglos de historia, en la que antiguamente también se celebraban romerías.':
+        '<b>Apoita</b> ingurutik gora jarraituko dugu, <b>Apoitako San Martin</b> ermitaren ondotik igaroz. Muino txiki batean dago ermita, San Martin baserriaren ondoan. Mendeetako historia duen ermita txiki bat da, eta garai batean erromeriak ere egiten ziren bertan.',
+    'Seguimos ascendiendo hasta salir finalmente a la carretera general, ya cerca de Trabakua.':
+        'Gorantz jarraituko dugu, azkenean errepide nagusira atera arte, Trabakutik nahiko gertu.',
+    'Al llegar a la carretera general, giramos a la derecha y continuamos por el arcén, con mucha precaución, durante aproximadamente un kilómetro y poco hasta regresar a Trabakua.':
+        'Errepide nagusira iristean, eskuinera biratu eta bazterbidetik jarraituko dugu, kontu handiz, kilometro bat pasatxo eginez Trabakura itzuli arte.',
+    'Este último tramo nos permite echar la vista atrás y ver, a nuestra derecha, buena parte de todo lo que hemos recorrido. Se abren ante nosotros los dos valles y, al fondo, montañas como Aizkorri, <a href="egoarbitza.html">Egoarbitza</a> y <a href="urko.html">Urko</a>, que completan unas bonitas vistas antes de terminar.':
+        'Azken zati honetan atzera begiratu eta gure eskuinean egin dugun ibilbidearen zati handi bat ikusteko aukera izango dugu. Bi haranak ikusiko ditugu eta, urrunean, Aizkorri, <a href="egoarbitza.html">Egoarbitza</a> eta <a href="urko.html">Urko</a> bezalako mendiak, ibilbidea amaitu aurretik ikuspegi ederra eskainiz.',
+    'Es una ruta corta y sencilla, apta para prácticamente todo el mundo: ideal para dar un paseo, disfrutar del paisaje y conocer un poco mejor la zona. Se puede hacer tanto andando como en bici (incluida e-bike), pero mejor a pie, para disfrutar de las vistas con calma. Buena excusa, además, para terminar donde se empieza: en el bar de Trabakua, con un buen pintxo.':
+        'Ibilbide laburra, erraza eta ia edonork egiteko modukoa da, paseotxo bat eman, paisaiaz gozatu eta ingurua pixka bat hobeto ezagutzeko aproposa. Oinez zein bizikletaz egin daiteke (e-bikez barne), baina hobe oinez, ikuspegiez lasaiago gozatzeko. Eta, bide batez, gosea egiteko eta amaieran hasierako lekura itzultzeko aitzakia ezin hobea: Trabakuko tabernan pintxo eder bat jatera.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -1970,6 +2031,7 @@ DESCRIPTIONS = {
     'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'mendibil': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
     'arteta': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
+    'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -1996,6 +2058,7 @@ TITLES = {
     'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Trail ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
+    'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2019,5 +2082,6 @@ PAGE_STRINGS = {
     'iruzubieta': IRUZUBIETA,
     'mendibil': MENDIBIL,
     'arteta': ARTETA,
+    'goita': GOITA,
     'historias': HISTORIAS,
 }
