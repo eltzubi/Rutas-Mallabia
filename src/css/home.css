@@ -57,12 +57,22 @@ body{
   max-width:820px; margin:12px auto 0;
   position:sticky; top:10px; z-index:70;
   border:1px solid var(--line); border-radius:16px;
+  transition:padding .25s ease;
+  transform:translateZ(0); will-change:transform;
+  isolation:isolate;
+}
+/* The blurred glass background lives on its own layer, behind the masthead's
+   content, instead of directly on the sticky element -- Chrome on Android
+   flickers a position:sticky element that itself carries backdrop-filter
+   while it's being repositioned during scroll. Splitting the two keeps the
+   sticky element's own paint simple and the flicker goes away. */
+.masthead::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  border-radius:inherit;
   background:var(--ground);
   background:color-mix(in srgb, var(--ground) 74%, transparent);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
-  transition:padding .25s ease;
-  transform:translateZ(0); will-change:transform;
 }
 /* Past the hero, the brand photos are dead weight on a long scroll --
    collapse them once the visitor has started reading. */
