@@ -136,6 +136,16 @@ body{
   animation: rise .9s .1s cubic-bezier(.2,.7,.2,1) forwards;
 }
 .hero-chart svg{ display:block; width:100%; height:auto; }
+.hero-activity-badge{
+  position:absolute; top:14px; right:14px; z-index:2;
+  display:flex; gap:6px; align-items:center;
+  padding:7px 9px; border-radius:20px;
+  background:var(--ground);
+  background:color-mix(in srgb, var(--ground) 70%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--line);
+}
+.hero-activity-badge svg{ display:block; width:18px; height:18px; color:var(--ink); stroke-width:2.4; }
 .elev-tags{
   display:flex; justify-content:space-between; align-items:flex-start;
   padding:10px 20px 0;
