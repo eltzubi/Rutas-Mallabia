@@ -136,16 +136,23 @@ body{
   animation: rise .9s .1s cubic-bezier(.2,.7,.2,1) forwards;
 }
 .hero-chart svg{ display:block; width:100%; height:auto; }
+/* Positioning context for the activity badge -- scoped to just the chart
+   graphic (not the whole hero-chart card, which also holds the title text
+   underneath), so a bottom-anchored badge still sits over the chart. */
+.chart-visual{ position:relative; }
 .hero-activity-badge{
-  position:absolute; top:14px; right:14px; z-index:2;
+  position:absolute; z-index:2;
   display:flex; gap:6px; align-items:center;
-  padding:7px 9px; border-radius:20px;
+  padding:8px 10px; border-radius:20px;
   background:var(--ground);
   background:color-mix(in srgb, var(--ground) 70%, transparent);
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   border:1px solid var(--line);
 }
-.hero-activity-badge svg{ display:block; width:18px; height:18px; color:var(--ink); stroke-width:2.4; }
+.hero-activity-badge svg{ display:block; width:22px; height:22px; color:var(--ink); stroke-width:2.1; }
+/* top/bottom/left are set per page as an inline style -- wherever the
+   elevation profile leaves the most clearance, so the badge never overlaps
+   the plotted line underneath it. */
 .elev-tags{
   display:flex; justify-content:space-between; align-items:flex-start;
   padding:10px 20px 0;
