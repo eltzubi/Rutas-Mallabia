@@ -97,6 +97,7 @@ body{
 .back-home-link:hover{ background:var(--violet); }
 .map-section{ margin:56px 24px 0; }
 .map-section > .eyebrow{ margin-bottom:14px; }
+.map-section .elev-legend{ padding:0 0 16px; }
 .route-map-box{
   position:relative;
   border:1px solid var(--line);
