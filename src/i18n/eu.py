@@ -383,14 +383,14 @@ TRABAKUA = {
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
     'hasta un cruce a la izquierda donde se deja el asfalto atrás: desde ahí, todo es pista en '
     'solitario, alternando cemento y tramos de piedra. El primer repecho es el más duro de toda '
-    'la ruta —se sube de un tirón—, pero engaña: no llega a los 300 m. '
+    'la ruta —se sube de un tirón—, pero engaña: no llega a los 300 m de distancia. '
     'Lo que viene después se lleva mejor.':
         'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
         'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz, '
         'mendiko giro garbian.</p>\n'
         '    <p>Lehen aldapa da ibilbide osoko gogorrena: tiraka igotzen da, etenik gabe. Tranpa '
-        'egiten du, ordea: ez da 300 metrora iristen. Behin gaindituta, ondorengoa askoz '
+        'egiten du, ordea: ez da 300 metroko luzerara iristen. Behin gaindituta, ondorengoa askoz '
         'eramangarriagoa da, eta gorputzak berehala hartzen du erritmoa.',
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
@@ -1548,7 +1548,7 @@ MUNDIOKOKOBA = {
     'kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto atr&aacute;s: '
     'desde ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. El primer '
     'repecho es el m&aacute;s duro de toda la ruta &mdash;se sube de un tir&oacute;n&mdash;, pero '
-    'enga&ntilde;a: no llega a los 300 m de desnivel. La pista sigue hasta el <b>Collado de '
+    'enga&ntilde;a: no llega a los 300 m de distancia. La pista sigue hasta el <b>Collado de '
     'Asuntza</b> (km 5 &middot; 494 m) &mdash;el mismo cruce de la ruta de <a href="urko.html">'
     'Trabakua, Asuntza y Urko</a>&mdash;, con una casita a un lado, visible tanto de subida como de '
     'bajada.':
@@ -1557,7 +1557,7 @@ MUNDIOKOKOBA = {
         'eta hortik aurrera pista bakartia da nagusi, hormigoizko eta harrizko tarteak '
         'txandakatuz.</p>\n'
         '    <p>Lehen aldapa da ibilbide osoko gogorrena: kolpean igotzen da, baina tranpa egiten '
-        'du: ez da 300 metroko desnibelera iristen. Pistak <b>Asuntzako Lepo</b>raino '
+        'du: ez da 300 metroko luzerara iristen. Pistak <b>Asuntzako Lepo</b>raino '
         'jarraitzen du (5. km &middot; 494 m), <a href="urko.html">Trabakua, Asuntza eta '
         'Urko</a> ibilbideko bidegurutze ezagunera. Lepoan bada etxe txiki bat, igoeran zein '
         'jaitsieran beti ikusgai geratzen dena.',
