@@ -161,6 +161,13 @@ HOME = {
         'Ibilbideak ez daude seinalizatuta, beraz ezinbestekoa da trackea GPS, erloju edo '
         'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
+
+    'Antes de salir, lo b&aacute;sico: agua de sobra y algo de comer, la previsi&oacute;n del tiempo y '
+    'la hora de puesta de sol, y avisar a alguien de qu&eacute; ruta har&aacute;s y a qu&eacute; hora '
+    'esperas volver. Para emergencias en el monte, el 112.':
+        'Irten aurretik, oinarrizkoa: ur eta jaki nahikoa eraman, eguraldiaren iragarpena eta eguzkia '
+        'noiz sartuko den begiratu, eta norbaiti zein ibilbide egingo duzun eta noiz bueltatzeko asmoa '
+        'duzun esan. Mendiko larrialdietarako, 112.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '<span>Bici</span>': '<span>Bizikleta</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
