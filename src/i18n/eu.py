@@ -254,6 +254,13 @@ HOME = {
     '<h2>Ur Jauziak<br><em>Gerea</em></h2>': '<h2>Ur Jauziak<br><em>Gerea</em></h2>',
     'Sendero corto y familiar hasta la cascada de Gerea.':
         'Bidezidor laburra eta familiarra Gereako ur-jauziraino.',
+
+    # goita card
+    '<h2>Trabakua<br><em>paseo por el barrio Goita</em></h2>':
+        '<h2>Trabakua<br><em>Goita auzoko paseoa</em></h2>',
+    'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.':
+        'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
+    '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
     '<span class="signpost-name">Asuntza y Mundioko Koba</span>':
         '<span class="signpost-name">Asuntza eta Mundioko Koba</span>',
     '<h2>Mundioko<br><em>Koba</em></h2>': '<h2>Mundioko<br><em>Koba</em></h2>',
