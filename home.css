@@ -157,6 +157,7 @@ body{
   filter:contrast(1.34) saturate(1.55) brightness(1.05);
   animation: kenburns 24s ease-in-out infinite alternate;
 }
+.hero-photo-img--bike{ filter:contrast(1.45) saturate(2.1) brightness(1.12); }
 /* The two photos overlap in the middle instead of butting against a hard
    seam; the left one fades out over that overlap (mask, not opacity, so
    its own pixels are still fully saturated right up to the blend) and the
