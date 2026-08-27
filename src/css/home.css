@@ -30,7 +30,6 @@
 
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
-html{ overscroll-behavior-y:none; }
 /* Without this, <picture> (an unstyled inline box) sits between an <img>
    and its flex/grid/absolute-positioning parent, breaking every layout
    that depends on the img being a direct child (the hero flex split,
