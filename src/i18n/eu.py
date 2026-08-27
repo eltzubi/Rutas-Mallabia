@@ -164,14 +164,6 @@ HOME = {
         'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
-    'En las rutas m&aacute;s largas &mdash;a partir de unos 200 m de desnivel&mdash;, agua de sobra, '
-    'algo de comer y un ojo a la previsi&oacute;n y a la hora de puesta de sol: la oscuridad no pide '
-    'permiso. Tambi&eacute;n conviene avisar a alguien de qu&eacute; ruta har&aacute;s y cu&aacute;ndo '
-    'esperas volver. Para emergencias en el monte, el 112.':
-        'Ibilbide luzeenetan &mdash;200 bat metroko desnibeletik gora&mdash;, ur eta jaki nahikoa, eta '
-        'begi bat eguraldiaren iragarpenari eta eguzkia noiz sartuko den: iluntasunak ez du baimenik '
-        'eskatzen. Komeni da, gainera, norbaiti zein ibilbide egingo duzun eta noiz itzultzeko asmoa '
-        'duzun esatea. Mendiko larrialdietarako, 112.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '<span>Bici</span>': '<span>Bizikleta</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
