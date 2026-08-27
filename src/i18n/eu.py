@@ -42,7 +42,7 @@ COMMON = {
 
 # Shared by the three route pages.
 ROUTE = {
-    '&larr; Mallabia': '&larr; Mallabia',
+    '&larr; Rutas': '&larr; Ibilbideak',
     '<span class="v">Senderismo y bici</span>':
         '<span class="v">Oinez eta bizikleta</span>',
     '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
@@ -64,7 +64,7 @@ ROUTE = {
     '<p class="eyebrow">Mapa de la ruta</p>': '<p class="eyebrow">Ibilbidearen mapa</p>',
     'Track GPX real sobre': 'Benetako GPX tracka',
     '&middot; tambi&eacute;n en': 'gainean &middot; Wikilocen ere bai:',
-    '&larr; Volver a inicio': '&larr; Itzuli hasierara',
+    '&larr; Volver a rutas': '&larr; Itzuli ibilbideetara',
     '<b>· Puerto de Trabakua</b>': '<b>· Trabakuko mendatea</b>',
     '<b>&middot; Puerto de Trabakua</b>': '<b>&middot; Trabakuko mendatea</b>',
     'Circuito — vuelve casi al mismo punto': 'Zirkuitua — ia puntu berera itzultzen da',
