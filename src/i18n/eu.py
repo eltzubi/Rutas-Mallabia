@@ -1835,18 +1835,17 @@ ARTETA = {
         'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'Sale del Alto de Trabakua y sigue, hasta la cima del <b>Mendibil</b> (km 3,45 &middot; '
     '612 m), el mismo trazado que la ruta de <a href="mendibil.html">Trabakua '
-    'Mendibil</a>. Desde ah&iacute; hay dos formas de volver a Trabakua: hacia el '
-    'sureste, bajando hacia Arteta y su fuente &mdash;la que sigue esta ruta&mdash;, o '
-    'hacia el noreste, bordeando la monta&ntilde;a por la misma pista que une Trabakua '
-    'con Iturreta, de la ruta de <a href="iruzubieta.html">Trabakua, Iturreta e '
-    'Iruzubieta</a>, pero en sentido contrario.':
+    'Mendibil</a>. Desde la cima hay dos formas de bajar de vuelta a Trabakua '
+    '&mdash;hacia el sureste, por Arteta y su fuente, o hacia el noreste, bordeando la '
+    'monta&ntilde;a por la misma pista que la ruta de <a href="iruzubieta.html">Trabakua, '
+    'Iturreta e Iruzubieta</a>, en sentido contrario&mdash;, y esta ruta las enlaza las dos.':
         'Trabakuko Goitik ateratzen da, eta <b>Mendibil</b>go gailurreraino (3,45 km '
         '&middot; 612 m) <a href="mendibil.html">Trabakua Mendibil</a> ibilbidearen '
-        'trazadu bera jarraitzen du. Hortik Trabakuara itzultzeko bi bide daude: '
-        'hego-ekialdera, Arteta eta bere iturrira jaisten dena &mdash;ibilbide honek '
-        'jarraitzen duena&mdash;, edo ipar-ekialdera, mendia inguratuz, Trabakua eta '
-        'Iturreta lotzen dituen pista beretik, <a href="iruzubieta.html">Trabakua, '
-        'Iturreta eta Iruzubieta</a> ibilbidekoa, baina alderantziz.',
+        'trazadu bera jarraitzen du. Gailurretik Trabakuara jaisteko bi bide daude '
+        '&mdash;hego-ekialdera, Arteta eta bere iturritik, edo ipar-ekialdera, mendia '
+        'inguratuz, <a href="iruzubieta.html">Trabakua, Iturreta eta Iruzubieta</a> '
+        'ibilbidearen pista beretik, alderantziz&mdash;, eta ibilbide honek biak lotzen '
+        'ditu.',
     'Baja hacia el sureste hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), dejando '
     'atr&aacute;s las pistas m&aacute;s conocidas de la zona para meterse por caminos '
     'y sendas menos transitados.':
@@ -1855,12 +1854,17 @@ ARTETA = {
         'bidezidorretan sartzeko.',
     'De camino se pasa junto a la <b>Fuente de Arteta</b> (km 5,1 &middot; 458 m), antes '
     'de llegar a la propia zona de <b>Arteta</b> (km 5,7 &middot; 505 m), donde una '
-    'ermita en ruinas queda escondida entre el bosque que la ha ido cubriendo. El '
-    'regreso completa el c&iacute;rculo de vuelta a Trabakua.':
+    'ermita en ruinas queda escondida entre el bosque que la ha ido cubriendo. Desde '
+    'ah&iacute; se vuelve a subir hasta la cima del Mendibil, y esta vez se baja por el '
+    'otro lado, por la misma pista que la ruta de <a href="iruzubieta.html">Trabakua, '
+    'Iturreta e Iruzubieta</a>, pero en sentido contrario, hasta cerrar el '
+    'c&iacute;rculo de vuelta a Trabakua.':
         'Bidean, <b>Artetako iturri</b>aren ondotik pasatzen da (5,1 km &middot; 458 m), '
         '<b>Arteta</b>ko eremura bertara iritsi aurretik (5,7 km &middot; 505 m), non '
-        'ermita hondatu bat basoak estalita ezkutatzen den. Itzulerak Trabakuara '
-        'bueltan ixten du zirkulua.',
+        'ermita hondatu bat basoak estalita ezkutatzen den. Hortik berriro igotzen da '
+        'Mendibilgo gailurreraino, eta oraingoan beste aldetik jaisten da, '
+        '<a href="iruzubieta.html">Trabakua, Iturreta eta Iruzubieta</a> ibilbidearen '
+        'pista beretik, alderantziz, Trabakuara bueltan zirkulua itxi arte.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
