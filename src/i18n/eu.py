@@ -164,12 +164,14 @@ HOME = {
         'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
-    'Antes de salir merece la pena llevar agua de sobra y algo de comer, consultar la previsi&oacute;n '
-    'y la hora de puesta de sol, y avisar a alguien de qu&eacute; ruta vas a hacer y cu&aacute;ndo '
+    'En las rutas m&aacute;s largas &mdash;a partir de unos 200 m de desnivel&mdash;, agua de sobra, '
+    'algo de comer y un ojo a la previsi&oacute;n y a la hora de puesta de sol: la oscuridad no pide '
+    'permiso. Tambi&eacute;n conviene avisar a alguien de qu&eacute; ruta har&aacute;s y cu&aacute;ndo '
     'esperas volver. Para emergencias en el monte, el 112.':
-        'Irten aurretik komeni da ur eta jaki nahikoa eramatea, eguraldiaren iragarpena eta eguzkia '
-        'noiz sartuko den begiratzea, eta norbaiti zein ibilbide egingo duzun eta noiz itzuliko zaren '
-        'esatea. Mendiko larrialdietarako, 112.',
+        'Ibilbide luzeenetan &mdash;200 bat metroko desnibeletik gora&mdash;, ur eta jaki nahikoa, eta '
+        'begi bat eguraldiaren iragarpenari eta eguzkia noiz sartuko den: iluntasunak ez du baimenik '
+        'eskatzen. Komeni da, gainera, norbaiti zein ibilbide egingo duzun eta noiz itzultzeko asmoa '
+        'duzun esatea. Mendiko larrialdietarako, 112.',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '<span>Bici</span>': '<span>Bizikleta</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
@@ -1918,6 +1920,10 @@ GOITA = {
         'alt="Goita auzoaren ikuspegia, baserri eta belardiekin basoaren artean"',
     'alt="Una vaca junto a una valla de alambre de espino, con monta&ntilde;as al fondo"':
         'alt="Behi bat arantzazko hesi baten ondoan, mendiak atzealdean dituela"',
+    'alt="Ermita de San Mart&iacute;n de Apoita, con su peque&ntilde;a espada&ntilde;a de piedra, y '
+    'los aerogeneradores del Oiz al fondo"':
+        'alt="Apoitako San Martin ermita, harrizko espadaina txikiarekin, eta Oizeko '
+        'aerosorgailuak atzealdean"',
     'download="Trabakua paseo barrio Goita.gpx"':
         'download="Trabakua, Goita auzoko paseoa.gpx"',
     '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
