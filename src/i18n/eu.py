@@ -1784,12 +1784,12 @@ MENDIBIL = {
     'zona de Markina y la costa &mdash;con buen tiempo llega a verse el mar. La vuelta se hace '
     'por el mismo camino, aunque desde la cima tambi&eacute;n se puede bajar hacia el noreste, '
     'bordeando la monta&ntilde;a por la misma pista que une Trabakua con Iturreta, de la ruta '
-    'de <a href="iturreta.html">Trabakua, Barinaga y Iturreta</a>, pero en sentido contrario.':
+    'de <a href="iruzubieta.html">Trabakua, Iturreta e Iruzubieta</a>, pero en sentido contrario.':
         'Goitik Oizerako eta Durangaldeko mendietarako ikuspegiak daude, Urkoraino, eta Markina '
         'aldera eta kostaldera ere bai &mdash;eguraldi onarekin itsasoa ere ikusten da. '
         'Itzulera bide beretik egiten da, nahiz eta gailurretik ipar-ekialdera ere jaits '
         'daitekeen, mendia inguratuz, Trabakua eta Iturreta lotzen dituen pista beretik, '
-        '<a href="iturreta.html">Trabakua, Barinaga eta Iturreta</a> ibilbidekoa, baina '
+        '<a href="iruzubieta.html">Trabakua, Iturreta eta Iruzubieta</a> ibilbidekoa, baina '
         'alderantziz.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, ideal '
@@ -1835,15 +1835,15 @@ ARTETA = {
     'Mendibil</a>. Desde ah&iacute; hay dos formas de volver a Trabakua: hacia el '
     'sureste, bajando hacia Arteta y su fuente &mdash;la que sigue esta ruta&mdash;, o '
     'hacia el noreste, bordeando la monta&ntilde;a por la misma pista que une Trabakua '
-    'con Iturreta, de la ruta de <a href="iturreta.html">Trabakua, Barinaga y '
-    'Iturreta</a>, pero en sentido contrario.':
+    'con Iturreta, de la ruta de <a href="iruzubieta.html">Trabakua, Iturreta e '
+    'Iruzubieta</a>, pero en sentido contrario.':
         'Trabakuko Goitik ateratzen da, eta <b>Mendibil</b>go gailurreraino (3,45 km '
         '&middot; 612 m) <a href="mendibil.html">Trabakua Mendibil</a> ibilbidearen '
         'trazadu bera jarraitzen du. Hortik Trabakuara itzultzeko bi bide daude: '
         'hego-ekialdera, Arteta eta bere iturrira jaisten dena &mdash;ibilbide honek '
         'jarraitzen duena&mdash;, edo ipar-ekialdera, mendia inguratuz, Trabakua eta '
-        'Iturreta lotzen dituen pista beretik, <a href="iturreta.html">Trabakua, '
-        'Barinaga eta Iturreta</a> ibilbidekoa, baina alderantziz.',
+        'Iturreta lotzen dituen pista beretik, <a href="iruzubieta.html">Trabakua, '
+        'Iturreta eta Iruzubieta</a> ibilbidekoa, baina alderantziz.',
     'Baja hacia el sureste hasta <b>Olamendi</b> (km 3,88 &middot; 596 m), dejando '
     'atr&aacute;s las pistas m&aacute;s conocidas de la zona para meterse por caminos '
     'y sendas menos transitados.':
