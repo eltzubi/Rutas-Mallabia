@@ -309,7 +309,7 @@ body{
 /* The masthead is always compact by the time this filter bar can reach
    its sticky position, so it can sit right under the shorter header. */
 .masthead.is-compact ~ .featured .activity-filter{ top:64px; }
-.range-filters{ display:flex; flex-wrap:wrap; gap:20px 32px; margin-bottom:24px; }
+.range-filters{ display:flex; flex-wrap:wrap; gap:20px 32px; margin-bottom:10px; }
 .range-filter{ flex:1 1 200px; min-width:180px; }
 .range-filter label{
   display:block; margin-bottom:8px;
@@ -407,7 +407,7 @@ body{
 .signpost{
   position:relative;
   margin:0 0 40px;
-  padding:8px 0 0;
+  padding:0;
 }
 .signpost-hub-row{ display:flex; justify-content:center; margin-bottom:18px; }
 .signpost-hub{
