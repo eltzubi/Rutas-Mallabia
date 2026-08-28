@@ -40,19 +40,14 @@ COMMON = {
     '<span class="v">Correr</span>': '<span class="v">Korrika</span>',
     '<span class="v">Senderismo &middot; Trail running</span>':
         '<span class="v">Oinez &middot; Trail running</span>',
-    '<span class="v">Senderismo y BTT/e-bike</span>':
-        '<span class="v">Oinez eta BTT/e-bike</span>',
 }
 
 # Shared by the three route pages.
 ROUTE = {
     '&larr; Rutas': '&larr; Ibilbideak',
-    '<span class="v">Senderismo y BTT/e-bike</span>':
-        '<span class="v">Oinez eta BTT/e-bike</span>',
     '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
     '<h2>Senderismo &middot; Trail running</h2>':
         '<h2>Oinez &middot; Trail running</h2>',
-    '<h2>Senderismo y BTT/e-bike</h2>': '<h2>Oinez eta BTT/e-bike</h2>',
     '<span class="k">Altitud mín.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud m&iacute;n.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud máx.</span>': '<span class="k">Altitudea max.</span>',
@@ -236,8 +231,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
-    'Senderismo &middot; Trail running &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita y Hiru Txikiak':
-        'Oinez &middot; Trail running &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita eta Hiru Txikiak',
+    'Senderismo &middot; Trail running &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta y Hiru Txikiak':
+        'Oinez &middot; Trail running &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -363,8 +358,6 @@ HOME = {
     # urregarai card
     '<span class="signpost-name">Iturreta, Markina y Urregarai</span>':
         '<span class="signpost-name">Iturreta, Markina eta Urregarai</span>',
-    '<span class="v">Senderismo y BTT/e-bike</span>':
-        '<span class="v">Oinez eta BTT/e-bike</span>',
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     '<h2>Iturreta, Markina<br><em>y Urregarai</em></h2>':
@@ -1374,8 +1367,6 @@ URREGARAI = {
 
     '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
-    '<span class="v">Senderismo y BTT/e-bike</span>':
-        '<span class="v">Oinez eta BTT/e-bike</span>',
 
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
@@ -1685,9 +1676,6 @@ IRUZUBIETA = {
     '<title>Desvío a Iturreta': '<title>Iturretarako desbideraketa',
     '<span class="num">2</span>Desvío a Iturreta</span>':
         '<span class="num">2</span>Iturretarako desbideraketa</span>',
-    '<span class="v">Senderismo y BTT/e-bike</span>':
-        '<span class="v">Oinez eta BTT/e-bike</span>',
-    '<h2>Senderismo y BTT/e-bike</h2>': '<h2>Oinez eta BTT/e-bike</h2>',
     '19,22 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
     'bicicleta. El track de esta ficha se grabó corriendo y está registrado como ruta de trail '
     'running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia si vas caminando o '
@@ -2069,8 +2057,7 @@ HISTORIAS = {
     'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
     'Senderismo · Trail running · Ida y vuelta · Sendero': 'Oinez · Trail running · Joan-etorria · Bidezidorra',
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
-    'Senderismo y BTT/e-bike · Circuito · Mixta': 'Oinez eta BTT/e-bike · Zirkuitua · Nahasia',
-    'Senderismo y BTT/e-bike · Circuito · Carretera y pista': 'Oinez eta BTT/e-bike · Zirkuitua · Errepidea eta pista',
+    'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',

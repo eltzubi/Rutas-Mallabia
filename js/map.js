@@ -177,7 +177,6 @@
         // names, which read the same in both languages except the joiner.
         var activityLabel = activity === 'bici' ? 'BTT/e-bike'
           : activity === 'senderismo' ? (isEu ? 'Oinez &middot; Trail running' : 'Senderismo &middot; Trail running')
-          : activity === 'senderismo,bici' ? (isEu ? 'Oinez eta BTT/e-bike' : 'Senderismo y BTT/e-bike')
           : null;
         var distLabel = isEu ? 'Distantzia' : 'Distancia';
         var descLabel = isEu ? 'Desnibela' : 'Desnivel';
