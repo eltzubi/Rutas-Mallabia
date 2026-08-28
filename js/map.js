@@ -23,6 +23,21 @@
     });
   }
 
+  // The home page's "Explorar en el mapa" button (js/mallabia_tail.html)
+  // jumps straight to an already-expanded map instead of a plain anchor
+  // scroll to the small, collapsed default view.
+  var exploreLink = document.getElementById('exploreMapLink');
+  if (exploreLink && expandBtn) {
+    exploreLink.addEventListener('click', function(e){
+      e.preventDefault();
+      if (el.parentElement.classList.contains('is-expanded')) {
+        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        expandBtn.click();
+      }
+    });
+  }
+
   if (typeof L === 'undefined') return;
 
   var isEu = document.documentElement.lang === 'eu';

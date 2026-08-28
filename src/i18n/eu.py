@@ -124,6 +124,8 @@ HOME = {
         'aria-label="Irten aurretik eta non aparkatu"',
     'GPS &middot; Importante': 'GPS &middot; Garrantzitsua',
     'Ver como historias &rarr;': 'Ikusi istorio gisa &rarr;',
+    '<b>Explorar en el mapa</b><small>Todas las rutas, de un vistazo</small>':
+        '<b>Ikusi mapan</b><small>Ibilbide guztiak, begirada batean</small>',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     'aria-label="Rutas desde Trabakua"': 'aria-label="Trabakuatik abiatzen diren ibilbideak"',
