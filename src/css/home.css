@@ -782,8 +782,8 @@ footer a:hover{ text-decoration:underline; }
 
 .activity-chip.active{ box-shadow:0 0 18px -3px var(--teal); }
 .activity-chip.active[data-activity="senderismo"]{ box-shadow:0 0 18px -3px var(--violet); }
-.range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
-.range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
+.range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
+.range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 
 .photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
 .route-map-box, .map-box{ border-radius:20px; }

@@ -194,8 +194,8 @@ HOME = {
     'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
     'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
     'aria-label="Desnivel m&aacute;ximo"': 'aria-label="Gehieneko desnibela"',
-    '<label>Distancia &mdash; <b': '<label>Distantzia &mdash; <b',
-    '<label>Desnivel &mdash; <b': '<label>Desnibela &mdash; <b',
+    '<label>Distancia &middot; <b': '<label>Distantzia &middot; <b',
+    '<label>Desnivel &middot; <b': '<label>Desnibela &middot; <b',
     'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
     'Según vayamos documentando más rutas, se añaden aquí.':
         'Ibilbide gehiago dokumentatu ahala, hemen gehituko dira.',
