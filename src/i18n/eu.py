@@ -186,7 +186,7 @@ HOME = {
     '<span>Dif&iacute;cil</span>': '<span>Zaila</span>',
     '<span>BTT/e-bike</span>': '<span>BTT/e-bike</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
-    'data-all-distance="Todas" data-all-desnivel="Todos" data-approx="aprox."':
+    'data-all-distance="Todos" data-all-desnivel="Todos" data-approx="aprox."':
         'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
     '<div class="signpost-hub">Zona de salida &middot; Trabakua</div>':
         '<div class="signpost-hub">Irteera-gunea &middot; Trabakua</div>',
