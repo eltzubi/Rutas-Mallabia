@@ -258,8 +258,8 @@ HOME = {
         '<h2>Hiru Txikiak<br><em>Urko, Oiz eta Egoarbitza</em></h2>',
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.':
         'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
-    'alt="Amanecer sobre un mar de nubes, con el cielo te&ntilde;ido de rosa y morado"':
-        'alt="Hodei-itsaso baten gaineko egunsentia, zerua arrosa eta more koloreztatuta"',
+    'alt="Cruz de hierro y v&eacute;rtice geod&eacute;sico en una cima, con aerogeneradores cerca y un banco de nubes al fondo"':
+        'alt="Burdinazko gurutzea eta bertize geodesikoa gailur batean, aerosorgailuak gertu eta hodei-banku bat atzealdean"',
     '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
     '<span class="signpost-name">Asuntza y Mundioko Koba</span>':
         '<span class="signpost-name">Asuntza eta Mundioko Koba</span>',
@@ -1987,8 +1987,8 @@ HIRUTXIKIAK = {
         '<title>Trabakua (1. hornidura-postua) &middot; 10,69 km &middot; 411 m</title>',
 
     # hero + gallery photos
-    'alt="Amanecer sobre un mar de nubes, con el cielo te&ntilde;ido de rosa y morado"':
-        'alt="Hodei-itsaso baten gaineko egunsentia, zerua arrosa eta more koloreztatuta"',
+    'alt="Cruz de hierro y v&eacute;rtice geod&eacute;sico en una cima, con aerogeneradores cerca y un banco de nubes al fondo"':
+        'alt="Burdinazko gurutzea eta bertize geodesikoa gailur batean, aerosorgailuak gertu eta hodei-banku bat atzealdean"',
     'alt="Se&ntilde;al de la cima de Urko (791 m), con aves volando y las monta&ntilde;as al fondo entre la calima"':
         'alt="Urko gailurreko seinalea (791 m), hegaztiak hegan eta mendiak atzealdean, lausotasunaren artean"',
     'alt="Corredor con dorsal de carrera en una cresta herbosa, con el cielo nuboso al fondo"':
@@ -2001,6 +2001,8 @@ HIRUTXIKIAK = {
         'alt="Kresta berdea, Oizeko parke eolikoaren aerosorgailuekin atzealdean"',
     'alt="Llegada a meta por la alfombra roja entre confeti, de la mano de un ni&ntilde;o, con el p&uacute;blico animando a los lados"':
         'alt="Helmugara alfonbra gorritik iristen, konfetien artean, haur bat eskutik hartuta, jendea alboetan animatzen"',
+    'alt="Baliza verde de sendero entre rocas, con una hilera de aerogeneradores en la cresta y el valle al fondo"':
+        'alt="Bidearen baliza berdea harkaitzen artean, kresta-lerroan aerosorgailu ilara batekin eta harana atzealdean"',
     'alt="Foto ampliada del recorrido de Hiru Txikiak"':
         'alt="Hiru Txikiak ibilbidearen argazki handitua"',
 
