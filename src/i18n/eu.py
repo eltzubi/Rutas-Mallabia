@@ -180,6 +180,10 @@ HOME = {
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
+    'aria-label="Filtrar por dificultad"': 'aria-label="Iragazi zailtasunaren arabera"',
+    '<span>F&aacute;cil</span>': '<span>Erraza</span>',
+    '<span>Media</span>': '<span>Ertaina</span>',
+    '<span>Dif&iacute;cil</span>': '<span>Zaila</span>',
     '<span>BTT/e-bike</span>': '<span>BTT/e-bike</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
     'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':

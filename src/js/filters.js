@@ -2,6 +2,7 @@
 // Language-independent -- the labels it writes come from the page itself.
 (function(){
   var chips = document.querySelectorAll('.activity-chip');
+  var difficultyChips = document.querySelectorAll('.difficulty-chip');
   var panels = document.querySelectorAll('.feat-panel[data-activity]');
   var signs = document.querySelectorAll('.signpost-sign[data-activity]');
   var emptyMsg = document.getElementById('filterEmpty');
@@ -79,6 +80,8 @@
   function apply(){
     var active = Array.prototype.filter.call(chips, function(c){ return c.classList.contains('active'); })
       .map(function(c){ return c.dataset.activity; });
+    var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
+      .map(function(c){ return c.dataset.difficulty; });
     var minD = distanceMin ? parseFloat(distanceMin.value) : 0;
     var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
     var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
@@ -96,7 +99,8 @@
       // route done both hiking and by bike) -- show it if any of them is active.
       var activities = p.dataset.activity.split(',');
       var matchesActivity = activities.some(function(a){ return active.indexOf(a) !== -1; });
-      var show = matchesActivity && km >= minD && km <= maxD && m >= minE && m <= maxE;
+      var matchesDifficulty = !difficultyChips.length || activeDifficulty.indexOf(p.dataset.difficulty) !== -1;
+      var show = matchesActivity && matchesDifficulty && km >= minD && km <= maxD && m >= minE && m <= maxE;
       p.classList.toggle('is-hidden', !show);
       if (show) anyVisible = true;
       return show;
@@ -116,6 +120,12 @@
   }
 
   chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chip.classList.toggle('active');
+      apply();
+    });
+  });
+  difficultyChips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chip.classList.toggle('active');
       apply();
