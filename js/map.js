@@ -172,12 +172,8 @@
         var distanceKm = sign ? sign.dataset.distanceKm : null;
         var desnivelM = sign ? sign.dataset.desnivelM : null;
         var activity = sign ? sign.dataset.activity : null;
-        // "senderismo"/"bici" are the machine keys used for filtering (see
-        // js/filters.js); the display labels are the site's actual activity
-        // names, which read the same in both languages except the joiner.
         var activityLabel = activity === 'bici' ? 'BTT/e-bike'
-          : activity === 'senderismo' ? (isEu ? 'Oinez &middot; Trail running' : 'Senderismo &middot; Trail running')
-          : null;
+          : activity === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : null;
         var distLabel = isEu ? 'Distantzia' : 'Distancia';
         var descLabel = isEu ? 'Desnibela' : 'Desnivel';
         var actLabel = isEu ? 'Jarduera' : 'Actividad';
