@@ -352,8 +352,8 @@ HOME = {
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
     '<h2>Urko, Egoarbitza<br><em>y Zengotitagane</em></h2>':
         '<h2>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h2>',
-    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.':
-        'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
+    'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.':
+        'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
 
     # urregarai card
     '<span class="signpost-name">Iturreta, Markina y Urregarai</span>':
@@ -362,8 +362,8 @@ HOME = {
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     '<h2>Iturreta, Markina<br><em>y Urregarai</em></h2>':
         '<h2>Iturreta, Markina<br><em>eta Urregarai</em></h2>',
-    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.':
-        'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
+    'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.':
+        'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
 
     # kalamua card
     '<span class="signpost-name">Urko, Kalamua, San Migel y Mendibil</span>':
@@ -372,8 +372,8 @@ HOME = {
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
     '<h2>Urko, Kalamua, San Migel<br><em>y Mendibil</em></h2>':
         '<h2>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h2>',
-    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
-        'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+    'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
+        'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
 
     # footer
     'Para cualquier duda: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
@@ -434,13 +434,9 @@ TRABAKUA = {
         'Beranoko goialdea zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin, '
         'eta hortik Trabakuarantz berriro igotzen gara, buelta azkarra eta paisaiaz betea ixteko.',
     'Terreno de pista (cemento y piedra, con un tramo opcional de tierra), sin sendero estrecho — '
-    'apta para bici de montaña convencional, no solo para eléctrica. El track de esta ficha se '
-    'grabó con e-bike —una Orbea Rise— (1h 15min), así que el tiempo no sirve de referencia si vas '
-    'sin asistencia.':
+    'apta para bici de montaña convencional, no solo para eléctrica.':
         'Pista-terrenoa (zementua eta harria, eta lurrezko tarte aukerakoa), bidezidor esturik gabe — '
-        'mendiko bizikleta arrunterako egokia, ez soilik elektrikorako. Fitxa honetako tracka e-bike '
-        'batekin grabatu zen —Orbea Rise bat— (1h 15 min), beraz, denbora ez da erreferentzia egokia '
-        'laguntzarik gabe zoazenerako.',
+        'mendiko bizikleta arrunterako egokia, ez soilik elektrikorako.',
 }
 
 ITURZURI = {
@@ -609,14 +605,10 @@ ZENARRUZA = {
         'Zengotitagandik, azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 metroko desnibela '
         'galduz 4 kilometro pasatxotan, Trabakuan zirkuitua ixteko. Ibilbide luzea, baina ederra; '
         'pedalei gustura eragiteko modukoa.',
-    '31,7 km y +1.161 m de desnivel en un solo circuito. El track de esta ficha se grab&oacute; con '
-    'e-bike &mdash;una Orbea Rise&mdash; (2h 06min), as&iacute; que el tiempo no sirve de referencia '
-    'si vas sin asistencia. Sube '
+    '31,7 km y +1.161 m de desnivel en un solo circuito. Sube '
     'casi sin descanso hasta San Kristobal y vuelve a subir despu&eacute;s del collado hasta el '
     'dolmen: dos tirones largos seguidos.':
-        '31,7 km eta +1.161 m-ko desnibela zirkuitu bakarrean. Fitxa honetako tracka e-bikearekin '
-        'grabatu zen &mdash;Orbea Rise batekin&mdash; (2h 06min), beraz denbora ez da erreferentzia '
-        'laguntzarik gabe bazoaz. Ia '
+        '31,7 km eta +1.161 m-ko desnibela zirkuitu bakarrean. Ia '
         'atsedenik gabe igotzen da San Kristobaleraino eta lepoaren ondoren berriro igotzen da '
         'trikuharriraino: bi tirada luze jarraian.',
 }
@@ -729,14 +721,10 @@ OSMA = {
         'berriro Trabakuara, zirkuitua ixteko.',
 
     '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
-    'Duranguesado. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
-    '(2h 50min), as&iacute; que el '
-    'tiempo no sirve de referencia si vas sin asistencia. Hay agua en Larrosako Iturri (km 11,9) y '
+    'Duranguesado. Hay agua en Larrosako Iturri (km 11,9) y '
     'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 20,1).</p>':
         '<p>36,8 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
-        'artean. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea Rise batekin&mdash; '
-        '(2h 50min), beraz denbora ez da '
-        'erreferentzia laguntzarik gabe bazoaz. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
+        'artean. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
         'Nekropolitik gertu (20,1 km).</p>',
 }
 
@@ -870,15 +858,12 @@ ZENGOTITAGANE = {
         'ixteko zorian, Trabakura jaitsi aurretik.',
     '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
-    'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
-    '(1h 32min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
+    'sentido. Hay '
     'agua cerca de Iturzurigana (km 4,8) y en la zona de Garai, antes de la Ermita de San '
     'Crist&oacute;bal Txiki.':
         '22,4 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea '
-        'Rise batekin&mdash; (1 ordu 32 min), beraz denbora ez da erreferentzia egokia '
-        'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko aldean, '
+        'igotzeko norabide honetan. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko aldean, '
         'San Kristobal Txiki ermitaren aurretik.',
     'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
     'Ermita de San Juan': 'San Juan ermita',
@@ -1004,12 +989,9 @@ ARIETZU = {
         'gurutze bat pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '4,3 km y +235 m de desnivel en un circuito corto, apta para ni&ntilde;os, con dos altos '
-    'de camino (Osmagain y Arietzu). El track de esta ficha se grab&oacute; corriendo '
-    '(34 min), as&iacute; que el tiempo no sirve de referencia si vas andando.':
+    'de camino (Osmagain y Arietzu).':
         '4,3 km eta +235 m-ko desnibela zirkuitu laburrean, haurrentzat egokia, bidean bi '
-        'goirekin (Osmagain eta Arietzu). Fitxa honetako tracka lasterka grabatu zen '
-        '(34 min), beraz denbora '
-        'ez da erreferentzia egokia oinez bazoaz.',
+        'goirekin (Osmagain eta Arietzu).',
     '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
 }
 
@@ -1173,15 +1155,12 @@ SANCRISTOBAL = {
         'zirkuitua ixteko puntura iritsi aurretik, Trabakuara berriro jaitsi baino lehen.',
     '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
-    'sentido. El track de esta ficha se grab&oacute; con e-bike &mdash;una Orbea Rise&mdash; '
-    '(2h 02min), as&iacute; que el tiempo no sirve de referencia si vas sin asistencia. Hay '
+    'sentido. Hay '
     'agua cerca de Iturzurigana (km 4,8) y en una fuente a la salida de Garai, con agua todo '
     'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
         '26,9 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Fitxa honetako tracka e-bikearekin grabatu zen &mdash;Orbea '
-        'Rise batekin&mdash; (2 ordu 02 min), beraz denbora ez da erreferentzia egokia '
-        'laguntzarik gabe bazoaz. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko '
+        'igotzeko norabide honetan. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko '
         'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
         'aurretik.',
     'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
@@ -1226,8 +1205,8 @@ ITURRETA = {
         '<span class="num">2</span>Ibaia</span>',
 
 
-    '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. El track de esta ficha se grabó con bicicleta eléctrica (1h 35min), así que el tiempo no sirve de referencia si vas sin asistencia. No hay fuentes de agua en el recorrido: en caso de necesidad, habría que desviarse hasta el pueblo de Barinaga.':
-        '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Fitxa honetako tracka bizikleta elektrikoarekin grabatu zen (1h 35min), beraz denbora ez da erreferentzia laguntzarik gabe bazoaz. Ez dago ur-iturririk ibilbidean: beharrezkoa balitz, Barinaga herrira desbideratu beharko litzateke.',
+    '19,65 km y +975 m de desnivel en un solo circuito, con una rampa corta pero intensa después de Iturreta —difícil de subir con una bici normal en ese tramo. No hay fuentes de agua en el recorrido: en caso de necesidad, habría que desviarse hasta el pueblo de Barinaga.':
+        '19,65 km eta +975 m-ko desnibela zirkuitu bakarrean, Iturreta ondoren malda labur baina bizi batekin —zaila bizikleta arrunt batekin igotzeko tarte horretan. Ez dago ur-iturririk ibilbidean: beharrezkoa balitz, Barinaga herrira desbideratu beharko litzateke.',
 
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan hasta un cruce donde se deja el asfalto, y todo pasa a ser pista en solitario. El primer repecho —duro, poco más de 300 m— es el que más se nota. Después hay una bajada algo técnica hasta la zona de <b>Aginaga</b> (km 5).':
         'Ibilbidea Trabakuako mendatean hasten da. Lehen metroek behera egiten dute asfaltoa uzten den bidegurutze batera iritsi arte, eta hortik aurrera dena da pista bakarrik. Lehen malda —gogorra, 300 metrotik gutxixeago— da gehien nabaritzen dena. Ondoren, jaitsiera teknikoxka bat dago <b>Aginagako</b> eremuraino (5 km).',
@@ -1249,8 +1228,8 @@ EGOARBITZA = {
     '<h1>Urko, Egoarbitza<br><em>y Zengotitagane</em></h1>':
         '<h1>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h1>',
 
-    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane':
-        'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino',
+    'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane':
+        'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino',
 
     'download="Urko, Egoarbitza y Zengotitagane.gpx"':
         'download="Urko, Egoarbitza eta Zengotitagane.gpx"',
@@ -1349,8 +1328,8 @@ URREGARAI = {
     '<h1>Iturreta, Markina<br><em>y Urregarai</em></h1>':
         '<h1>Iturreta, Markina<br><em>eta Urregarai</em></h1>',
 
-    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
-        'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
+    'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
+        'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
 
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
@@ -1448,8 +1427,8 @@ KALAMUA = {
     '<h1>Urko, Kalamua, San Migel<br><em>y Mendibil</em></h1>':
         '<h1>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h1>',
 
-    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
-        'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
+    'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
+        'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
 
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
@@ -1617,15 +1596,10 @@ MUNDIOKOKOBA = {
     '13,0 km y +404 m de desnivel en un circuito corto pero con un desv&iacute;o especial: la '
     'entrada a la cueva de Mundioko Koba. Dentro hay un peque&ntilde;o descenso que sin cuerda no '
     'se puede bajar &mdash;no llevar ni&ntilde;os m&aacute;s all&aacute; de la entrada sin la '
-    'preparaci&oacute;n adecuada. El track de esta ficha se grab&oacute; caminando (3h 14min, '
-    'incluyendo unos 44 minutos dentro de la cueva), as&iacute; que el tiempo no sirve de referencia '
-    'si no se para tanto.':
+    'preparaci&oacute;n adecuada.':
         '13,0 km eta +404 m desnibela, zirkuitu labur batean baina desbideratze berezi batekin: '
         'Mundioko Kobaren sarrera. Barruan jaitsiera txiki bat dago, eta sokarik gabe ez da '
-        'jaisteko modukoa &mdash;haurrak ez eramatea gomendatzen da, sarreratik harago ez bada. '
-        'Fitxa honetako track-a oinez grabatu zen (3 ordu eta 14 minutu, horietatik 44 minutu '
-        'koban), '
-        'beraz denbora ez da erreferentzia fidagarria geldialdirik egiten ez bada.',
+        'jaisteko modukoa &mdash;haurrak ez eramatea gomendatzen da, sarreratik harago ez bada.',
 }
 
 IRUZUBIETA = {
@@ -1798,13 +1772,11 @@ MENDIBIL = {
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, ideal '
     'para ir con ni&ntilde;os, coincidiendo el primer tramo con la ruta de <a '
-    'href="urko.html">Trabakua, Asuntza y Urko</a>. El track de esta ficha se grab&oacute; '
-    'andando (1h 50min). No hay fuentes en la ruta, as&iacute; que conviene llevar agua '
+    'href="urko.html">Trabakua, Asuntza y Urko</a>. No hay fuentes en la ruta, as&iacute; que conviene llevar agua '
     '&mdash;hay una en el bar de arriba de Trabakua, junto a los columpios.':
         '6,08 km eta +432 m-ko desnibela zirkuitu labur batean, Mendibilgo gailurreraino, '
         'haurrekin joateko aproposa, lehen tartea <a href="urko.html">Trabakua, Asuntza eta '
-        'Urko</a> ibilbidearekin bat eginez. Fitxa honetako tracka oinez grabatu zen (1 ordu '
-        '50 min). Ez dago iturririk ibilbidean, beraz ura eramatea komeni da &mdash;bat dago '
+        'Urko</a> ibilbidearekin bat eginez. Ez dago iturririk ibilbidean, beraz ura eramatea komeni da &mdash;bat dago '
         'Trabakuako goiko tabernan, kulunken ondoan.',
 }
 
@@ -2077,9 +2049,9 @@ HISTORIAS = {
     'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
-    'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
-    'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
-    'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+    'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
+    'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
+    'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
     'Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza.': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota.',
     'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
     'Circuito desde Trabakua hasta la cima del Mendibil.': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
@@ -2104,11 +2076,11 @@ DESCRIPTIONS = {
     'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
-    'egoarbitza': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
+    'egoarbitza': 'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
         'igarota Zengotitaganeraino',
-    'urregarai': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik '
+    'urregarai': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik '
         'igarota Bolibarreraino',
-    'kalamua': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
+    'kalamua': 'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
     'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
@@ -2135,11 +2107,11 @@ TITLES = {
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
-    'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Trail ibilbidea — Herriko ibilbideak',
-    'urregarai': 'Iturreta, Markina eta Urregarai · Trail ibilbidea — Herriko ibilbideak',
-    'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Trail ibilbidea — Herriko ibilbideak',
+    'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'urregarai': 'Iturreta, Markina eta Urregarai · Bizikleta ibilbidea — Herriko ibilbideak',
+    'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Bizikleta ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
-    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Trail ibilbidea — Herriko ibilbideak',
+    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Bizikleta ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
