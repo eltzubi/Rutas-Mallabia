@@ -38,14 +38,21 @@ COMMON = {
     '<span class="v">Bici</span>': '<span class="v">Bizikleta</span>',
     '<span class="v">Senderismo</span>': '<span class="v">Oinez</span>',
     '<span class="v">Correr</span>': '<span class="v">Korrika</span>',
+    '<span class="v">Senderismo &middot; Trail running</span>':
+        '<span class="v">Oinez &middot; Trail running</span>',
+    '<span class="v">Senderismo y BTT/e-bike</span>':
+        '<span class="v">Oinez eta BTT/e-bike</span>',
 }
 
 # Shared by the three route pages.
 ROUTE = {
     '&larr; Rutas': '&larr; Ibilbideak',
-    '<span class="v">Senderismo y bici</span>':
-        '<span class="v">Oinez eta bizikleta</span>',
+    '<span class="v">Senderismo y BTT/e-bike</span>':
+        '<span class="v">Oinez eta BTT/e-bike</span>',
     '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>':
+        '<h2>Oinez &middot; Trail running</h2>',
+    '<h2>Senderismo y BTT/e-bike</h2>': '<h2>Oinez eta BTT/e-bike</h2>',
     '<span class="k">Altitud mín.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud m&iacute;n.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud máx.</span>': '<span class="k">Altitudea max.</span>',
@@ -168,8 +175,8 @@ HOME = {
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
-    '<span>Bici</span>': '<span>Bizikleta</span>',
-    '<span>Senderismo</span>': '<span>Oinez</span>',
+    '<span>BTT/e-bike</span>': '<span>BTT/e-bike</span>',
+    '<span>Senderismo &middot; Trail running</span>': '<span>Oinez &middot; Trail running</span>',
     'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':
         'data-no-limit="(mugarik gabe)" data-approx="inguru"',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
@@ -225,10 +232,10 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
-        'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
-    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita y Hiru Txikiak':
-        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita eta Hiru Txikiak',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
+    'Senderismo &middot; Trail running &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita y Hiru Txikiak':
+        'Oinez &middot; Trail running &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -354,8 +361,8 @@ HOME = {
     # urregarai card
     '<span class="signpost-name">Iturreta, Markina y Urregarai</span>':
         '<span class="signpost-name">Iturreta, Markina eta Urregarai</span>',
-    '<span class="v">Senderismo y bici</span>':
-        '<span class="v">Oinez eta bizikleta</span>',
+    '<span class="v">Senderismo y BTT/e-bike</span>':
+        '<span class="v">Oinez eta BTT/e-bike</span>',
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     '<h2>Iturreta, Markina<br><em>y Urregarai</em></h2>':
@@ -520,7 +527,7 @@ ITURZURI = {
         'Aterpetik behera jarraitzen du altuera galtzen, errepide nagusia ia ukitu arte, jada Osma '
         'auzoan. Baina iritsi aurretik, bideak bat-batean biratzen du, eta iparralderantz itzultzen '
         'gara joaneko bidearekin berriro lotu arte, Trabakuatik oso gertu, zirkuitua ixteko.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     'Sendero de montaña, no apto para bici. Hay dos tramos que exigen ir atentos: el cruce en la '
     'segunda cascada de Gerena para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
     'desde Zengotitagane. Quien prefiera un día más corto puede bajar directo a Trabakua desde la '
@@ -793,7 +800,7 @@ GEREA = {
     'atento a la traza del GPS, antes de cerrar el círculo de vuelta a Trabakua.':
         'Handik jaitsiera hasten da, hainbat bide-gurutze jarraian dituela, GPSaren trazari adi '
         'egon behar zaiona, Trabakuara itzuliz zirkulua itxi aurretik.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     'Ruta válida para todos los niveles, niños mayores incluidos: 5,7 km y +415 m de desnivel '
     'en un solo circuito, con un buen tramo de subida (unos 40 min) hasta la cascada, con los '
     'aerogeneradores de compañía casi todo el camino. No está señalizada oficialmente más allá '
@@ -946,7 +953,7 @@ OIZ = {
     'La vuelta es por el mismo camino, de vuelta a Trabakua.':
         'Bueltarako, bide bera hartzen dugu, pago artean berriro jaitsiz, Trabakuara '
         'itzultzeko. Ibilbide osoa azkarra, argia eta paisaiaren poderioz oso gozagarria da.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
     '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m). El track de esta ficha se '
     'grab&oacute; corriendo (1h 35min), as&iacute; que el tiempo no sirve de referencia si '
@@ -1004,7 +1011,7 @@ ARIETZU = {
     'pinos, antes de cerrar el círculo de vuelta a la ermita.':
         'Gailurrerdiak <b>Arietzu</b>raino jarraitzen du (2,2 km, 479 m), harrizko beste '
         'gurutze bat pinuen artean, ermitara bueltan zirkulua itxi aurretik.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '4,3 km y +235 m de desnivel en un circuito corto, apta para ni&ntilde;os, con dos altos '
     'de camino (Osmagain y Arietzu). El track de esta ficha se grab&oacute; corriendo '
     '(34 min), as&iacute; que el tiempo no sirve de referencia si vas andando.':
@@ -1082,7 +1089,7 @@ URKO = {
         '&middot; 490 m), Urko eta Mendibil (613 m) bereizten dituen tartera. Lepoan '
         'pista hartzen dugu berriro, Asuntzako bidea bera, eta hortik Trabakuarantz '
         'igotzen hasten gara, ibilbideari buelta emateko.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). El track de '
     'esta ficha se grab&oacute; corriendo, una ma&ntilde;ana de noviembre (2h 25min), '
@@ -1266,7 +1273,7 @@ EGOARBITZA = {
     '<span class="num">4</span>Presa de Aixola</span>':
         '<span class="num">4</span>Aixolako presa</span>',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
@@ -1363,10 +1370,10 @@ URREGARAI = {
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
-    '<span class="v">Senderismo y bici</span>':
-        '<span class="v">Oinez eta bizikleta</span>',
+    '<span class="v">Senderismo y BTT/e-bike</span>':
+        '<span class="v">Oinez eta BTT/e-bike</span>',
 
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
@@ -1466,7 +1473,7 @@ KALAMUA = {
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
@@ -1544,7 +1551,7 @@ KALAMUA = {
 }
 
 MUNDIOKOKOBA = {
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
     '<span class="num">1</span>Collado de Asuntza': '<span class="num">1</span>Asuntzako lepoa',
     '<span>Pista, tierra y cueva</span><span class="sep">/</span><span>Asuntza y Mundioko Koba</span><span class="sep">/</span><span>Circuito</span>':
@@ -1676,9 +1683,9 @@ IRUZUBIETA = {
     '<title>Desvío a Iturreta': '<title>Iturretarako desbideraketa',
     '<span class="num">2</span>Desvío a Iturreta</span>':
         '<span class="num">2</span>Iturretarako desbideraketa</span>',
-    '<span class="v">Senderismo y bici</span>':
-        '<span class="v">Oinez eta bizikleta</span>',
-    '<h2>Senderismo y bicicleta</h2>': '<h2>Oinez eta bizikleta</h2>',
+    '<span class="v">Senderismo y BTT/e-bike</span>':
+        '<span class="v">Oinez eta BTT/e-bike</span>',
+    '<h2>Senderismo y BTT/e-bike</h2>': '<h2>Oinez eta BTT/e-bike</h2>',
     '19,22 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
     'bicicleta. El track de esta ficha se grabó corriendo y está registrado como ruta de trail '
     'running en Wikiloc (2h 3min), así que ese tiempo no sirve de referencia si vas caminando o '
@@ -1814,7 +1821,7 @@ MENDIBIL = {
         'Mendibil, Olamendi eta Arteta</a> ibilbidekoa, edo ipar-ekialdera, mendia inguratuz, '
         'Trabakua eta Iturreta lotzen dituen pista beretik, <a href="iruzubieta.html">Trabakua, '
         'Iturreta eta Iruzubieta</a> ibilbidekoa, baina alderantziz.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '6,08 km y +432 m de desnivel en un circuito corto hasta la cima del Mendibil, ideal '
     'para ir con ni&ntilde;os, coincidiendo el primer tramo con la ruta de <a '
     'href="urko.html">Trabakua, Asuntza y Urko</a>. El track de esta ficha se grab&oacute; '
@@ -1887,7 +1894,7 @@ ARTETA = {
         'pista beretik, alderantziz, Trabakuara bueltan zirkulua itxi arte.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,38 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
     'conocer rincones escondidos y pistas o caminos distintos de los habituales por la '
     'zona de Mendibil y Arteta. La Fuente de Arteta sirve de punto de agua a mitad de '
@@ -1974,7 +1981,7 @@ HIRUTXIKIAK = {
     '<span>Sendero y pista</span><span class="sep">/</span><span>Urko, Oiz y Egoarbitza</span>':
         '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Urko, Oiz eta Egoarbitza</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '<h1>Hiru Txikiak<br><em>Urko, Oiz y Egoarbitza</em></h1>':
         '<h1>Hiru Txikiak<br><em>Urko, Oiz eta Egoarbitza</em></h1>',
     '<p class="full-name">Urko, Oiz y Egoarbitza desde Ermua</p>':
@@ -2055,13 +2062,13 @@ HISTORIAS = {
     'Ruta': 'Ibilbidea',
 
     # per-card activity/type/surface tag
-    'Bici · Circuito · Pista': 'Bizikleta · Zirkuitua · Pista',
-    'Senderismo · Circuito · Sendero': 'Oinez · Zirkuitua · Bidezidorra',
-    'Bici · Circuito · Mixta': 'Bizikleta · Zirkuitua · Nahasia',
-    'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
-    'Senderismo · Circuito · Mixta': 'Oinez · Zirkuitua · Nahasia',
-    'Senderismo y bici · Circuito · Mixta': 'Oinez eta bizikleta · Zirkuitua · Nahasia',
-    'Senderismo y bici · Circuito · Carretera y pista': 'Oinez eta bizikleta · Zirkuitua · Errepidea eta pista',
+    'BTT/e-bike · Circuito · Pista': 'BTT/e-bike · Zirkuitua · Pista',
+    'Senderismo · Trail running · Circuito · Sendero': 'Oinez · Trail running · Zirkuitua · Bidezidorra',
+    'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
+    'Senderismo · Trail running · Ida y vuelta · Sendero': 'Oinez · Trail running · Joan-etorria · Bidezidorra',
+    'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
+    'Senderismo y BTT/e-bike · Circuito · Mixta': 'Oinez eta BTT/e-bike · Zirkuitua · Nahasia',
+    'Senderismo y BTT/e-bike · Circuito · Carretera y pista': 'Oinez eta BTT/e-bike · Zirkuitua · Errepidea eta pista',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
