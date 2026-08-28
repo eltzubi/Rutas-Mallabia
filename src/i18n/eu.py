@@ -2003,6 +2003,8 @@ HIRUTXIKIAK = {
         'alt="Durangaldeko mendi kararrien ikuspegia, herri bat haranean atzealdean"',
     'alt="Cresta verde con los aerogeneradores del parque e&oacute;lico del Oiz al fondo"':
         'alt="Kresta berdea, Oizeko parke eolikoaren aerosorgailuekin atzealdean"',
+    'alt="Llegada a meta por la alfombra roja entre confeti, de la mano de un ni&ntilde;o, con el p&uacute;blico animando a los lados"':
+        'alt="Helmugara alfonbra gorritik iristen, konfetien artean, haur bat eskutik hartuta, jendea alboetan animatzen"',
     'alt="Foto ampliada del recorrido de Hiru Txikiak"':
         'alt="Hiru Txikiak ibilbidearen argazki handitua"',
 
