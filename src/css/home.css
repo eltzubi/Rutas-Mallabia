@@ -286,6 +286,11 @@ body{
   letter-spacing:.07em; text-transform:uppercase;
   color:rgba(237,234,224,.5);
 }
+.readout-note{
+  max-width:820px; margin:-16px auto 0; padding:0 24px 30px;
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px;
+  color:rgba(237,234,224,.45); text-align:center;
+}
 
 /* ---- featured route panel ---- */
 .featured{ max-width:820px; margin:64px auto 0; padding:0 24px; }

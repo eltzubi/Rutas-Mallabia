@@ -28,6 +28,7 @@ COMMON = {
     '<span class="k">Tipo</span>': '<span class="k">Mota</span>',
     '<span class="k">Actividad</span>': '<span class="k">Jarduera</span>',
     '<span class="k">Salida</span>': '<span class="k">Irteera</span>',
+    '<span class="k">Dificultad</span>': '<span class="k">Zailtasuna</span>',
 
     # facts values
     '<span class="v">Circuito</span>': '<span class="v">Zirkuitua</span>',
@@ -38,6 +39,9 @@ COMMON = {
     '<span class="v">Bici</span>': '<span class="v">Bizikleta</span>',
     '<span class="v">Senderismo</span>': '<span class="v">Oinez</span>',
     '<span class="v">Correr</span>': '<span class="v">Korrika</span>',
+    '<span class="v">Fácil</span>': '<span class="v">Erraza</span>',
+    '<span class="v">Media</span>': '<span class="v">Ertaina</span>',
+    '<span class="v">Difícil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Senderismo &middot; Trail running</span>':
         '<span class="v">Oinez &middot; Trail running</span>',
 }
@@ -58,8 +62,10 @@ ROUTE = {
     'Ver ruta completa en Wikiloc': 'Ikusi ibilbide osoa Wikilocen',
     'Descargar GPX': 'Deskargatu GPX',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
+    '<b>Dificultad</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
+        '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<span class="k">Para quién es</span>': '<span class="k">Norentzat</span>',
     '<span class="k">Para qui&eacute;n es</span>': '<span class="k">Norentzat</span>',
@@ -103,6 +109,8 @@ HOME = {
     '<span class="k">Desnivel acumulado</span>': '<span class="k">Metatutako desnibela</span>',
     '<span class="k">Track GPX real</span>': '<span class="k">Benetako GPX tracka</span>',
     '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
+    '&Uacute;ltima revisi&oacute;n sobre el terreno: agosto de 2026':
+        'Azken berrikuspena bertan: 2026ko abuztuan',
 
     # mini gallery
     '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
@@ -1505,9 +1513,9 @@ KALAMUA = {
         'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
 
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
-    'el dispositivo. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+    'el dispositivo. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackaren arabera kalkulatua. <b>Desnibela</b>, gailuak '
-        'markatutakoa. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
+        'markatutakoa. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
 }
 
 MUNDIOKOKOBA = {
@@ -1607,8 +1615,10 @@ IRUZUBIETA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta eta Gerea</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
+    '<b>Dificultad</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, orientativos.':
         '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
+        '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, orientagarriak.',
     '<h1>Trabakua, Iturreta<br><em>e Iruzubieta</em></h1>':
         '<h1>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h1>',
