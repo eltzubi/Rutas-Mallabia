@@ -1985,10 +1985,6 @@ HIRUTXIKIAK = {
     'Presa de Aixola': 'Aixolako presa',
     '<title>Trabakua (1&#170; avituallamiento) &middot; 10,69 km &middot; 411 m</title>':
         '<title>Trabakua (1. hornidura-postua) &middot; 10,69 km &middot; 411 m</title>',
-    '<title>Zengotitagane (2&#170; avituallamiento) &middot; 20,04 km &middot; 738 m</title>':
-        '<title>Zengotitagane (2. hornidura-postua) &middot; 20,04 km &middot; 738 m</title>',
-    '<span class="num">6</span>Zengotitagane (2º avituallamiento)':
-        '<span class="num">6</span>Zengotitagane (2. hornidura-postua)',
 
     # hero + gallery photos
     'alt="Amanecer sobre un mar de nubes, con el cielo te&ntilde;ido de rosa y morado"':
