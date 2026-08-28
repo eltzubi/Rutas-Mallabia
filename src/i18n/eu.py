@@ -2060,10 +2060,12 @@ HISTORIAS = {
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
     'Senderismo · Circuito · Mixta': 'Oinez · Zirkuitua · Nahasia',
     'Senderismo y bici · Circuito · Mixta': 'Oinez eta bizikleta · Zirkuitua · Nahasia',
+    'Senderismo y bici · Circuito · Carretera y pista': 'Oinez eta bizikleta · Zirkuitua · Errepidea eta pista',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
     'Mixta': 'Nahasia',
+    'Carretera y pista': 'Errepidea eta pista',
 
     # route names
     'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
@@ -2078,6 +2080,10 @@ HISTORIAS = {
     'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
     'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
     'Urko, Kalamua, San Migel y Mendibil': 'Urko, Kalamua, San Migel eta Mendibil',
+    'Trabakua, Iturreta e Iruzubieta': 'Trabakua, Iturreta eta Iruzubieta',
+    'Trabakua, Mendibil, Olamendi y Arteta': 'Trabakua, Mendibil, Olamendi eta Arteta',
+    'Trabakua paseo por el barrio Goita': 'Trabakua Goita auzoko paseoa',
+    'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -2094,6 +2100,12 @@ HISTORIAS = {
     'Circuito de trail desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua trailez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
     'Circuito de trail desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua trailez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
     'Circuito de trail desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua trailez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+    'Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza.': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota.',
+    'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
+    'Circuito desde Trabakua hasta la cima del Mendibil.': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
+    'Circuito desde Trabakua por Mendibil, Olamendi y Arteta.': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota.',
+    'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.': 'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
+    'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
 }
 
 # <meta name="description"> per page (head files)
