@@ -67,6 +67,19 @@
     return COMPASS[Math.round(deg / 45) % 8];
   }
 
+  // js/filters.js (only present on the home page) announces its current
+  // visible-routes set on every change. Registered before the fetch below
+  // resolves, since the two scripts' load order isn't guaranteed relative
+  // to each other -- whichever fires first, the other picks up the latest
+  // state once it's ready (onRouteFilterChange is wired up once the map's
+  // lines exist).
+  var pendingVisibleHrefs = null;
+  var onRouteFilterChange = null;
+  document.addEventListener('routefilters:apply', function(e){
+    pendingVisibleHrefs = e.detail.visibleHrefs;
+    if (onRouteFilterChange) onRouteFilterChange(pendingVisibleHrefs);
+  });
+
   fetch(el.dataset.mapSrc).then(function(r){ return r.json(); }).then(function(data){
     var map = L.map(el, {
       zoomControl: true,
@@ -123,19 +136,23 @@
     }
 
     var bounds = null;
+    var hrefToLine = {};
+    var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
       var line = L.polyline(t.points, {
         color: baseColor,
         weight: 4,
-        opacity: data.tracks.length > 1 ? 0.85 : 0.9,
+        opacity: baseOpacity,
         lineJoin: 'round'
       }).addTo(map);
       bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds();
 
       if (t.href) {
         var href = isEu ? t.href.replace(/\.html$/, '.eu.html') : t.href;
-        var sign = document.querySelector('.signpost-sign[href="' + t.href + '"]');
+        // Signpost hrefs are .eu.html on the Basque page, but t.href is
+        // always the language-independent .html name -- compare normalized.
+        var sign = document.querySelector('.signpost-sign[href="' + t.href + '"], .signpost-sign[href="' + href + '"]');
         var name = sign ? sign.querySelector('.signpost-name').textContent.trim() : t.href;
         var distanceKm = sign ? sign.dataset.distanceKm : null;
         var desnivelM = sign ? sign.dataset.desnivelM : null;
@@ -164,8 +181,32 @@
         line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
         if (pathEl) pathEl.style.cursor = 'pointer';
+        hrefToLine[t.href] = { line: line, baseColor: baseColor };
       }
     });
+
+    // Fades out routes that the home page's activity/distance/desnivel
+    // filters (js/filters.js) have hidden, instead of the map staying
+    // stuck showing every route regardless of the filter state.
+    function applyRouteFilter(visibleHrefs){
+      var hrefs = Object.keys(hrefToLine);
+      if (!hrefs.length) return;
+      var visible = null;
+      if (visibleHrefs) {
+        visible = {};
+        visibleHrefs.forEach(function(h){ visible[h] = true; });
+      }
+      hrefs.forEach(function(href){
+        var entry = hrefToLine[href];
+        var show = !visible || visible[href];
+        if (!show && entry.line === activeLine) closePanel();
+        entry.line.setStyle({ opacity: show ? baseOpacity : 0.06 });
+        var pathEl = entry.line.getElement();
+        if (pathEl) pathEl.style.pointerEvents = show ? '' : 'none';
+      });
+    }
+    applyRouteFilter(pendingVisibleHrefs);
+    onRouteFilterChange = applyRouteFilter;
 
     if (data.marker) {
       var c = COLORS[data.marker.color] || COLORS.violet;

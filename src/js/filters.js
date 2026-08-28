@@ -99,10 +99,20 @@
       var show = matchesActivity && km >= minD && km <= maxD && m >= minE && m <= maxE;
       p.classList.toggle('is-hidden', !show);
       if (show) anyVisible = true;
+      return show;
     }
     panels.forEach(filterOne);
-    signs.forEach(filterOne);
+    var visibleHrefs = [];
+    signs.forEach(function(s){
+      // Normalized to the Spanish filename -- on the Basque page these
+      // hrefs end in .eu.html, but js/map.js keys its tracks by the
+      // language-independent .html name from data/trailhead.json.
+      if (filterOne(s)) visibleHrefs.push(s.getAttribute('href').replace(/\.eu\.html$/, '.html'));
+    });
     if (emptyMsg) emptyMsg.classList.toggle('visible', !anyVisible);
+    // Lets the overview map (js/map.js) fade out routes that don't match
+    // the current filters, instead of the two staying out of sync.
+    document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
   }
 
   chips.forEach(function(chip){
