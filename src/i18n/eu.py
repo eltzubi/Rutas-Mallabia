@@ -115,6 +115,7 @@ HOME = {
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
     'aria-label="Antes de salir y d&oacute;nde aparcar"':
         'aria-label="Irten aurretik eta non aparkatu"',
+    'GPS &middot; Importante': 'GPS &middot; Garrantzitsua',
     'Ver como historias &rarr;': 'Ikusi istorio gisa &rarr;',
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
