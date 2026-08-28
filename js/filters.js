@@ -18,8 +18,9 @@
 
   // Wording lives in the HTML so each language supplies its own.
   var filters = document.querySelector('.range-filters') || document.body;
-  var TXT_NO_LIMIT = filters.dataset.noLimit || '(sin límite)';
   var TXT_APPROX = filters.dataset.approx || 'aprox.';
+  var TXT_ALL_DISTANCE = filters.dataset.allDistance || 'Todas';
+  var TXT_ALL_DESNIVEL = filters.dataset.allDesnivel || 'Todos';
 
   function niceCeil(n, step){ return Math.ceil(n / step) * step; }
 
@@ -71,8 +72,8 @@
     fillEl.style.right = (100 - hiPct) + '%';
   }
 
-  function fmtRange(minV, maxV, max, isElevation){
-    if (minV <= 0 && maxV >= max) return max + (isElevation ? ' m ' : ' km ') + TXT_NO_LIMIT;
+  function fmtRange(minV, maxV, max, isElevation, allWord){
+    if (minV <= 0 && maxV >= max) return allWord;
     var fmt = function(n){ return isElevation ? Math.round(n) : n.toFixed(1).replace('.0',''); };
     return fmt(minV) + '–' + fmt(maxV) + (isElevation ? ' m ' : ' km ') + TXT_APPROX;
   }
@@ -86,8 +87,8 @@
     var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
     var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
     var maxE = desnivelMax ? parseFloat(desnivelMax.value) : Infinity;
-    if (distanceVal) distanceVal.textContent = fmtRange(minD, maxD, maxDistance, false);
-    if (desnivelVal) desnivelVal.textContent = fmtRange(minE, maxE, maxDesnivel, true);
+    if (distanceVal) distanceVal.textContent = fmtRange(minD, maxD, maxDistance, false, TXT_ALL_DISTANCE);
+    if (desnivelVal) desnivelVal.textContent = fmtRange(minE, maxE, maxDesnivel, true, TXT_ALL_DESNIVEL);
     fillPair(distanceMin, distanceMax, distanceFill, maxDistance);
     fillPair(desnivelMin, desnivelMax, desnivelFill, maxDesnivel);
 

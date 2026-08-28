@@ -186,8 +186,10 @@ HOME = {
     '<span>Dif&iacute;cil</span>': '<span>Zaila</span>',
     '<span>BTT/e-bike</span>': '<span>BTT/e-bike</span>',
     '<span>Senderismo</span>': '<span>Oinez</span>',
-    'data-no-limit="(sin l&iacute;mite)" data-approx="aprox."':
-        'data-no-limit="(mugarik gabe)" data-approx="inguru"',
+    'data-all-distance="Todas" data-all-desnivel="Todos" data-approx="aprox."':
+        'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
+    '<div class="signpost-hub">Zona de salida &middot; Trabakua</div>':
+        '<div class="signpost-hub">Irteera-gunea &middot; Trabakua</div>',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
     'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
     'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
