@@ -127,6 +127,8 @@ HOME = {
         '<span class="signpost-name">Ur Jauziak Gerea</span>',
     '<span class="signpost-name">Trabakua, paseo por el barrio Goita</span>':
         '<span class="signpost-name">Trabakua, Goita auzoko paseoa</span>',
+    '<span class="signpost-name">Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua</span>':
+        '<span class="signpost-name">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</span>',
     '<span class="signpost-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</span>':
         '<span class="signpost-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</span>',
     '<span class="signpost-name">Zengotitagane, Askako y San Crist&oacute;bal</span>':
@@ -224,8 +226,8 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'Bici &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
         'Bizikleta &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
-    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta y Goita':
-        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta eta Goita',
+    'Senderismo &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Crist&oacute;bal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita y Hiru Txikiak':
+        'Oinez &middot; Kalamua, Urregarai, Egoarbitza, Iturreta, San Kristobal, Urko, Arietzu, Oiz, Zengotitagane, Trabakua, Iturzuri, Zenarruza, Osma, Gerea, Mundioko Koba, Iruzubieta, Mendibil, Arteta, Goita eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
 
@@ -252,6 +254,12 @@ HOME = {
         '<h2>Trabakua<br><em>Goita auzoko paseoa</em></h2>',
     'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.':
         'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
+    '<h2>Hiru Txikiak<br><em>Urko, Oiz y Egoarbitza</em></h2>':
+        '<h2>Hiru Txikiak<br><em>Urko, Oiz eta Egoarbitza</em></h2>',
+    'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.':
+        'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
+    'alt="Amanecer sobre un mar de nubes, con el cielo te&ntilde;ido de rosa y morado"':
+        'alt="Hodei-itsaso baten gaineko egunsentia, zerua arrosa eta more koloreztatuta"',
     '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
     '<span class="signpost-name">Asuntza y Mundioko Koba</span>':
         '<span class="signpost-name">Asuntza eta Mundioko Koba</span>',
@@ -1960,6 +1968,78 @@ GOITA = {
         'Ibilbide laburra, erraza eta ia edonork egiteko modukoa da, paseotxo bat eman, paisaiaz gozatu eta ingurua pixka bat hobeto ezagutzeko aproposa. Oinez zein bizikletaz egin daiteke (e-bikez barne), baina hobe oinez, ikuspegiez lasaiago gozatzeko. Eta, bide batez, gosea egiteko eta amaieran hasierako lekura itzultzeko aitzakia ezin hobea: Trabakuko tabernan pintxo eder bat jatera.',
 }
 
+HIRUTXIKIAK = {
+    # eyebrow / h1 / full-name
+    '<span>Sendero y pista</span><span class="sep">/</span><span>Urko, Oiz y Egoarbitza</span>':
+        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Urko, Oiz eta Egoarbitza</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h1>Hiru Txikiak<br><em>Urko, Oiz y Egoarbitza</em></h1>':
+        '<h1>Hiru Txikiak<br><em>Urko, Oiz eta Egoarbitza</em></h1>',
+    '<p class="full-name">Urko, Oiz y Egoarbitza desde Ermua</p>':
+        '<p class="full-name">Urko, Oiz eta Egoarbitza Ermuatik</p>',
+
+    # elev markers / legend (place names are shared elsewhere; only the
+    # Spanish words need translating here)
+    'Collado de Asuntza': 'Asuntzako lepoa',
+    'Presa de Aixola': 'Aixolako presa',
+    '<title>Trabakua (1&#170; avituallamiento) &middot; 10,69 km &middot; 411 m</title>':
+        '<title>Trabakua (1. hornidura-postua) &middot; 10,69 km &middot; 411 m</title>',
+    '<title>Zengotitagane (2&#170; avituallamiento) &middot; 20,04 km &middot; 738 m</title>':
+        '<title>Zengotitagane (2. hornidura-postua) &middot; 20,04 km &middot; 738 m</title>',
+    '<span class="num">6</span>Zengotitagane (2º avituallamiento)':
+        '<span class="num">6</span>Zengotitagane (2. hornidura-postua)',
+
+    # hero + gallery photos
+    'alt="Amanecer sobre un mar de nubes, con el cielo te&ntilde;ido de rosa y morado"':
+        'alt="Hodei-itsaso baten gaineko egunsentia, zerua arrosa eta more koloreztatuta"',
+    'alt="Se&ntilde;al de la cima de Urko (791 m), con aves volando y las monta&ntilde;as al fondo entre la calima"':
+        'alt="Urko gailurreko seinalea (791 m), hegaztiak hegan eta mendiak atzealdean, lausotasunaren artean"',
+    'alt="Corredor con dorsal de carrera en una cresta herbosa, con el cielo nuboso al fondo"':
+        'alt="Lasterketako dortsala daraman korrikalaria kresta belartsu batean, zeru hodeitsua atzealdean"',
+    'alt="V&eacute;rtice geod&eacute;sico en una cima, con bastones de trekking apoyados en las rocas y monta&ntilde;as al fondo"':
+        'alt="Bertize geodesikoa gailur batean, trekking bastoiak harkaitzen kontra bermatuta eta mendiak atzealdean"',
+    'alt="Vistas a las monta&ntilde;as calizas del Duranguesado, con un pueblo en el valle al fondo"':
+        'alt="Durangaldeko mendi kararrien ikuspegia, herri bat haranean atzealdean"',
+    'alt="Cresta verde con los aerogeneradores del parque e&oacute;lico del Oiz al fondo"':
+        'alt="Kresta berdea, Oizeko parke eolikoaren aerosorgailuekin atzealdean"',
+    'alt="Foto ampliada del recorrido de Hiru Txikiak"':
+        'alt="Hiru Txikiak ibilbidearen argazki handitua"',
+
+    # body copy
+    'La Hiru Txikiak Trail es una carrera de monte organizada por el club Korrikazaleak, con salida y meta en Ermua, que sube a tres cumbres muy conocidas de la zona: <b><a href="urko.html">Urko</a></b>, <b><a href="oiz.html">Oiz</a></b> y <b><a href="egoarbitza.html">Egoarbitza</a></b>. Es una carrera dura y exigente &mdash;m&aacute;s de 40 km y m&aacute;s de 2.000 m de desnivel positivo&mdash; en la que, desde casi el principio, toca subir.':
+        'Hiru Txikiak Trail lasterketa gogor eta zorrotza da, Korrikazaleak klubak antolatua, Ermuan hasi eta amaitzen dena, eskualdeko hiru gailur ezagunetara igotzen gaituena: <b><a href="urko.html">Urko</a></b>, <b><a href="oiz.html">Oiz</a></b> eta <b><a href="egoarbitza.html">Egoarbitza</a></b>. 40 km baino gehiagoko eta 2.000 m-tik gorako desnibel positiboa duen lasterketa da, eta ia hasieratik gorantz egin behar da.',
+    'Desde Ermua, el primer objetivo es <b>Urko</b> (km 3,38 &middot; 792 m), la primera cima del d&iacute;a. Una vez arriba empieza el descenso, pasando por el <b>Collado de Asuntza</b> (km 6,14 &middot; 497 m), para continuar hacia <b>Trabakua</b> (km 10,69), donde se encuentra el primer avituallamiento.':
+        'Ermutik irteten gara, eta eguneko lehen helburua <b>Urko</b> da (km 3,38 &middot; 792 m), lehen gailurra. Behin goian, jaitsierari ekiten diogu <b>Asuntzako Lepo</b>tik igarota (km 6,14 &middot; 497 m), <b>Trabakua</b>rantz jarraitzeko (10,69. km), non baitago lehen hornidura-postua.',
+    'Y aqu&iacute; empieza una de las partes serias del recorrido. Desde Trabakua se ataca la subida hacia <b>Zengotitagane</b> (km 12,32 &middot; 809 m), una subida durísima en la que toca encontrar un ritmo y no quemarse, porque queda much&iacute;simo por delante. Superada esta parte, se contin&uacute;a hacia <b>Oiz</b> (km 15,78 &middot; 1.027 m) pasando por Iturzuri.':
+        'Eta hemen hasten da ibilbideko zatirik serioenetako bat. Trabakuatik <b>Zengotitagane</b>rako igoerari ekiten diogu (km 12,32 &middot; 809 m); igoera oso gogorra da, erritmoa aurkitu eta gehiegi ez behartzeko modukoa, oraindik bide luzea baitago aurretik. Zati hori gaindituta, <b>Oiz</b>erantz jarraitzen dugu (km 15,78 &middot; 1.027 m), Iturzuritik igaroz.',
+    'Llegar a Oiz da una sensaci&oacute;n especial: segunda cima completada, y por un momento parece que la carrera ya est&aacute; dominada. Nada m&aacute;s lejos de la realidad.':
+        'Oizera iristeak sentsazio berezia ematen du: bigarren gailurra eginda dago, eta une batez badirudi lasterketa kontrolpean dugula. Baina ezer ez dago errealitatetik urrunago.',
+    'Desde Oiz toca bajar de nuevo hacia la zona de <b>Zengotitagane</b> (km 20,04 &middot; 738 m), donde est&aacute; el segundo avituallamiento, para continuar despu&eacute;s en direcci&oacute;n a Areitio y la <b>Presa de Aixola</b> (km 30,30 &middot; 311 m).':
+        'Oizetik berriz <b>Zengotitagane</b> aldera jaitsi behar da (km 20,04 &middot; 738 m); han dago bigarren hornidura-postua. Ondoren, Areitio eta <b>Aixolako presa</b>ren norabidean jarraitzen dugu (km 30,30 &middot; 311 m).',
+    'Sobre el papel puede parecer un tramo m&aacute;s llevadero, al no tener las grandes subidas anteriores, pero enga&ntilde;a: se hace muy largo. Los kil&oacute;metros empiezan a pesar, y es aqu&iacute; donde se empieza a notar de verdad el estado f&iacute;sico. No hay una subida brutal que pare en seco, pero el terreno va desgastando poco a poco.':
+        'Paperean tarte eramangarriagoa dirudi, aurreko igoera handirik ez duelako, baina engainagarria da: oso luzea egiten da. Kilometroak nabaritzen hasten dira, eta hemen hasten da benetan norberaren egoera fisikoa agerian geratzen. Ez dago bat-batean geldiarazten zaituen igoera bortitzik, baina lurrak pixkanaka higatzen zaitu.',
+    'En la Presa de Aixola est&aacute; el tercer avituallamiento, y toca afrontar la &uacute;ltima gran subida del d&iacute;a: <b>Egoarbitza</b> (km 33,17 &middot; 731 m).':
+        '<b>Aixolako presa</b>n dago hirugarren hornidura-postua, eta eguneko azken igoera handiari aurre egitea tokatzen da: <b>Egoarbitza</b> (km 33,17 &middot; 731 m).',
+    'Arriba, mucha alegr&iacute;a: las tres cimas de la Hiru Txikiak est&aacute;n completadas &mdash;Urko, Oiz y Egoarbitza&mdash;. La cabeza empieza a decir que ya est&aacute;, que solo queda bajar hasta Ermua. Pero todav&iacute;a no.':
+        'Goian, poza handia: Hiru Txikiak-eko hiru gailurrak osatuta daude &mdash;Urko, Oiz eta Egoarbitza&mdash;. Buruak esaten hasten dizu amaitu dela, Ermura jaistea besterik ez dela geratzen. Baina oraindik ez.',
+    'Hay que descender de nuevo hacia la presa y, desde all&iacute;, tirar hacia Ermua con lo que queden de piernas. Despu&eacute;s de tantos kil&oacute;metros y desnivel, cualquier peque&ntilde;o repecho se nota mucho m&aacute;s de lo que deber&iacute;a. Y todav&iacute;a queda una &uacute;ltima sorpresa: pasada la zona del barrio de Eitzaga, aparece una peque&ntilde;a subida final que, a estas alturas, tiene poco de peque&ntilde;a.':
+        'Berriro presarantz jaitsi behar da, eta handik Ermurantz abiatu, hanketan geratzen zaigun guztiarekin. Hainbeste kilometro eta desnibel egin ondoren, edozein aldapatxo askoz gehiago nabaritzen da. Eta oraindik azken sorpresa bat geratzen da: Eitzaga auzoaren ingurua igaro ondoren, azken igoera txiki hori agertzen da, eta une horretan txikia baino gutxiago du.',
+    'Superada esa &uacute;ltima subida, solo queda apretar los dientes y tirar para abajo hasta la meta, en Ermua.':
+        'Gaindituta, orain bai: Ermua usaintzen dugu, helmuga gertu dagoela badakigu, eta hortzak estutu eta daukagun guztiarekin beherantz egitea besterik ez da geratzen.',
+    '<b>Urko. Oiz. Egoarbitza.</b> Tres cumbres y un recorrido que no termina hasta que cruzas la meta.':
+        '<b>Urko. Oiz. Egoarbitza.</b> Hiru gailur eta helmuga zeharkatu arte amaitzen ez den ibilbidea.',
+
+    # parada
+    '43,91 km y +2.291 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Oiz y Egoarbitza) y salida y llegada en Ermua, en vez de Trabakua como el resto de rutas de esta web. Es el recorrido real de la carrera de monta&ntilde;a Hiru Txikiak Trail, organizada por el club Korrikazaleak, as&iacute; que tambi&eacute;n sirve como referencia para quien quiera prepararla. Los avituallamientos de Trabakua, Zengotitagane y la presa de Aixola solo existen el d&iacute;a de la carrera; fuera de ella conviene llevar agua propia.':
+        '43,91 km eta +2.291 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, Oiz eta Egoarbitza) eta Ermuan irten eta amaituz, webgune honetako gainerako ibilbideetan bezala Trabakuan izan beharrean. Hiru Txikiak Trail mendi-lasterketaren benetako ibilbidea da, Korrikazaleak klubak antolatua, beraz prestatu nahi duenarentzat erreferentzia ere bada. Trabakuako, Zengotitaganeko eta Aixolako presako hornidura-postuak lasterketa egunean bakarrik daude; kanpotik joanez gero, komeni da ura eramatea.',
+
+    # map + footer
+    'data-marker-title="Ermua (salida y llegada)"':
+        'data-marker-title="Ermua (irteera eta helmuga)"',
+    'Circuito — vuelve al mismo punto': 'Zirkuitua — puntu berera itzultzen da',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2043,6 +2123,7 @@ DESCRIPTIONS = {
     'mendibil': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
     'arteta': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
+    'hirutxikiak': 'Urko, Oiz eta Egoarbitza Ermuatik',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2070,6 +2151,7 @@ TITLES = {
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
+    'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2094,5 +2176,6 @@ PAGE_STRINGS = {
     'mendibil': MENDIBIL,
     'arteta': ARTETA,
     'goita': GOITA,
+    'hirutxikiak': HIRUTXIKIAK,
     'historias': HISTORIAS,
 }
