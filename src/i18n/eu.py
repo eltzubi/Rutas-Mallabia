@@ -1281,6 +1281,10 @@ EGOARBITZA = {
         'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
     'alt="Embalse de Aixola, con la caseta sobre el agua y el bosque alrededor"':
         'alt="Aixolako urtegia, etxola urearen gainean eta basoa inguruan"',
+    'alt="Corredores subiendo un sendero entre helechos y un &aacute;rbol cubierto de musgo"':
+        'alt="Lasterkariak goraka, sendero batetik iratzeen artean eta goroldioz estalitako zuhaitz baten ondotik"',
+    'alt="Corredores subiendo una cresta herbosa y rocosa bajo un cielo despejado"':
+        'alt="Lasterkariak gandor belartsu eta harritsu batean gora, zeru garbi baten azpian"',
 
     'La subida hasta <b>Urko</b> (km 8 &middot; 785 m) es la misma que sube desde Trabakua en la ficha de '
     '<a href="urko.html">Asuntza y Urko</a>: pista de cemento y piedra. Desde la cima empieza la '
