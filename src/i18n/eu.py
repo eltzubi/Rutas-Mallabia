@@ -2056,6 +2056,8 @@ ZALDIBAR = {
         'alt="Farol piztua auzoko kale baten ondoan, gauean"',
     'alt="Zona deportiva y parque infantil iluminados de noche, junto a un colegio"':
         'alt="Kirol-gunea eta haurren parkea gauean argiztatuta, ikastetxe baten ondoan"',
+    'alt="La presa de Aixola en un d&iacute;a soleado, con la torre de la toma de agua asomando sobre el embalse"':
+        'alt="Aixolako presa egun eguzkitsu batean, ur-hartuneko dorrea urtegiaren gainean ageri dela"',
 
     # wikiloc / gpx
     'download="Trabakua, Aixola y Berriz.gpx"':
