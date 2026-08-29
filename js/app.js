@@ -1,6 +1,17 @@
 // Shared behaviour for every page (both languages).
 // Built from src/js/app.js by src/build.py -- edit there, not in app.js.
 
+// --- language switch: remember an explicit choice, sitewide -- so index.html's
+// redirect to the Basque homepage (see mallabia_head.html) doesn't bounce
+// someone straight back after they've picked castellano on purpose ---
+(function(){
+  var link = document.querySelector('.lang-switch');
+  if (!link || !link.hreflang) return;
+  link.addEventListener('click', function(){
+    try { localStorage.setItem('rutas-mallabia-lang', link.hreflang); } catch(err){}
+  });
+})();
+
 // --- photo lightbox ---
 (function(){
   var box = document.getElementById('lightbox');
