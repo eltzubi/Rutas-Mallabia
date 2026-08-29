@@ -243,8 +243,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta y Goita':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta eta Goita',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita y Zaldibar':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita eta Zaldibar',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta y Hiru Txikiak':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
@@ -388,6 +388,16 @@ HOME = {
         '<h2>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h2>',
     'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
         'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+
+    # zaldibar card
+    '<span class="signpost-name">Trabakua, Aixola y Berriz</span>':
+        '<span class="signpost-name">Trabakua, Aixola eta Berriz</span>',
+    'alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"':
+        'alt="Aixolako presa zuhaitzen artean, lainoa uraren gainean agertzen"',
+    '<h2>Trabakua, Aixola<br><em>y Berriz</em></h2>':
+        '<h2>Trabakua, Aixola<br><em>eta Berriz</em></h2>',
+    'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.':
+        'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
 
     # footer
     'Para cualquier duda: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
@@ -2008,6 +2018,87 @@ HIRUTXIKIAK = {
     'Circuito — vuelve al mismo punto': 'Zirkuitua — puntu berera itzultzen da',
 }
 
+ZALDIBAR = {
+    # hero
+    '<span>Carretera, pista y sendero</span><span class="sep">/</span><span>Aixola, Elgeta y Zaldibar</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Errepidea, pista eta bidezidorra</span><span class="sep">/</span><span>Aixola, Elgeta eta Zaldibar</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Aixola<br><em>y Berriz</em></h1>':
+        '<h1>Trabakua, Aixola<br><em>eta Berriz</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Aixola, Elgeta y Zaldibar hasta Berriz</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino</p>',
+
+    # elevation profile markers + legend (used twice: hero chart and map section)
+    '<title>Collado de Asuntza &middot; 5,2 km &middot; 499 m</title>':
+        '<title>Asuntzako lepoa &middot; 5,2 km &middot; 499 m</title>',
+    '<title>Presa de Aixola &middot; 13,1 km &middot; 308 m</title>':
+        '<title>Aixolako presa &middot; 13,1 km &middot; 308 m</title>',
+    '<title>Ermita de San Juan &middot; 40,0 km &middot; 412 m</title>':
+        '<title>San Juan ermita &middot; 40,0 km &middot; 412 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Collado de Asuntza</span> '
+    '<span class="elev-legend-item"><span class="num">2</span>Presa de Aixola</span> '
+    '<span class="elev-legend-item"><span class="num">3</span>Elgeta</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Berriz</span> '
+    '<span class="elev-legend-item"><span class="num">5</span>Ermita de San Juan</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Asuntzako lepoa</span> '
+        '<span class="elev-legend-item"><span class="num">2</span>Aixolako presa</span> '
+        '<span class="elev-legend-item"><span class="num">3</span>Elgeta</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>Berriz</span> '
+        '<span class="elev-legend-item"><span class="num">5</span>San Juan ermita</span>',
+
+    # photos
+    'alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"':
+        'alt="Aixolako presa zuhaitzen artean, lainoa uraren gainean agertzen"',
+    'alt="Foto ampliada del recorrido de Trabakua, Aixola y Berriz"':
+        'alt="Trabakua, Aixola eta Berriz ibilbidearen argazki handitua"',
+    'alt="Ovejas pastando en un prado, con un pueblo del valle al fondo, al atardecer"':
+        'alt="Ardiak larrean, haranaren erdiko herria atzealdean, ilunabarrean"',
+    'alt="Farola encendida junto a una calle de un barrio, ya de noche"':
+        'alt="Farol piztua auzoko kale baten ondoan, gauean"',
+    'alt="Zona deportiva y parque infantil iluminados de noche, junto a un colegio"':
+        'alt="Kirol-gunea eta haurren parkea gauean argiztatuta, ikastetxe baten ondoan"',
+
+    # wikiloc / gpx
+    'download="Trabakua, Aixola y Berriz.gpx"':
+        'download="Trabakua, Aixola eta Berriz.gpx"',
+
+    # body copy
+    'Salimos de <b>Trabakua</b> y comenzamos bajando, como tantas otras veces, en direcci&oacute;n Urko &ndash; Asuntza &ndash; Iturreta. Este primer tramo coincide con otras rutas de la zona y seguimos el recorrido habitual hasta llegar a <b>Asuntza</b> (5,2 km &middot; 499 m).':
+        '<b>Trabakua</b>tik irtengo gara eta, ohiko bidetik, beherantz hasiko gara Urko &ndash; Asuntza &ndash; Iturreta norabidean. Lehen zati hau inguruko beste ibilbide batzuekin bat dator, eta ohiko bideari jarraituko diogu <b>Asuntza</b>ra iritsi arte (5,2 km &middot; 499 m).',
+    'Aqu&iacute; dejamos el camino conocido. Junto a los huertos giramos a la derecha y comenzamos a bajar hacia el barrio de <b>Berano Txiki</b>. Al llegar a los caser&iacute;os de Berano, esta vez giramos a la izquierda y continuamos perdiendo altura en direcci&oacute;n a Ermua, pasando por la zona de la cantera.':
+        'Hemen utziko dugu ezagutzen dugun bidea. Baratzeen ondoan eskuinera hartu eta <b>Berano Txiki</b> auzorantz jaisten hasiko gara. Beranoko baserrietara iristean, oraingoan ezkerrera egingo dugu eta Ermua aldera jaisten jarraituko dugu, harrobiaren ingurutik igaroz.',
+    'Un poco m&aacute;s adelante de la cantera salimos a la carretera general, donde giramos a la izquierda para atravesar pr&aacute;cticamente todo <b>Ermua</b>. Ya a la salida del pueblo, cerca de San Lorenzo, giramos a la derecha y comenzamos a subir en direcci&oacute;n a Eitzaga.':
+        'Harrobia pasa eta pixka bat aurrerago errepide nagusira irtengo gara. Han ezkerrera hartu eta ia <b>Ermua</b> osoa zeharkatuko dugu. Herriaren irteeran, San Lorentzo inguruan, eskuinera hartu eta Eitzaga aldera igotzen hasiko gara.',
+    'Al llegar a <b>Eitzaga</b> encontramos la primera fuente de la ruta, un buen punto para aprovechar y coger agua antes de continuar hacia la presa de Aixola.':
+        '<b>Eitzaga</b>ra iristean ibilbideko lehen iturria aurkituko dugu. Leku aproposa da ura hartzeko, Aixolako urtegirantz jarraitu aurretik.',
+    'Un poco m&aacute;s adelante, despu&eacute;s de atravesar el t&uacute;nel, subimos unos metros y tomamos, a mano derecha, una pista de cemento que poco a poco se convierte en un peque&ntilde;o camino de piedra. De esta manera evitamos continuar por la carretera general. Es un camino lateral, utilizado habitualmente por paseantes y ciclistas, que nos lleva directamente hasta la <b>presa de Aixola</b> (13,1 km &middot; 308 m).':
+        'Pixka bat aurrerago, tunela zeharkatu ondoren, metro batzuk igo eta eskuinean porlanezko pista bat hartuko dugu. Aurrera egin ahala, pista harrizko bidexka bihurtzen da. Horrela, errepide nagusitik igotzea saihestuko dugu. Oinezkoek eta txirrindulariek sarri erabiltzen duten alboko bidea da, eta zuzenean <b>Aixolako urtegi</b>ra eramango gaitu (13,1 km &middot; 308 m).',
+    'Una vez en la presa de Aixola, comenzamos a bordearla dej&aacute;ndola a nuestra derecha. A los pocos metros encontramos otra fuente. Cruzamos la presa y comenzamos la subida hacia Elgeta. Nada m&aacute;s afrontar las primeras rampas, a mano izquierda, encontraremos una nueva fuente que sale directamente de la pared de la monta&ntilde;a, un buen punto para volver a coger agua antes de continuar la subida.':
+        'Aixolako urtegira iristean, urtegia gure eskuinean utzita inguratzen hasiko gara. Metro gutxira beste iturri bat aurkituko dugu. Presa zeharkatu eta Elgeta aldera igotzen hasiko gara. Lehen aldapak hartzearekin batera, ezkerrean, mendi-hegaleko hormatik zuzenean ateratzen den beste iturri bat aurkituko dugu. Leku ona da berriro ura hartzeko, igoerarekin jarraitu aurretik.',
+    'Seguimos ganando altura en direcci&oacute;n a <b>Elgeta</b>, aunque unos metros antes de alcanzar el pueblo giramos a la izquierda. La intenci&oacute;n es alargar un poco el recorrido y, de paso, disfrutar de uno de los tramos m&aacute;s bonitos de la ruta.':
+        '<b>Elgeta</b> aldera altuera irabazten jarraituko dugu, baina herrira iritsi baino metro batzuk lehenago ezkerrera egingo dugu. Helburua ibilbidea pixka bat luzatzea da eta, bide batez, ibilbideko zatirik politenetako batez gozatzea.',
+    'Damos la vuelta por la zona de <b>Goiko Mendia</b>, enlazando peque&ntilde;os senderos muy agradables, antes de bajar finalmente hacia Elgeta (20,4 km &middot; 474 m). Atravesamos el pueblo y podemos aprovechar nuevamente para coger agua en la fuente situada junto al polideportivo y el front&oacute;n.':
+        '<b>Goiko Mendia</b> ingurutik bira egingo dugu, bidexka politak lotuz, eta ondoren Elgeta aldera jaitsiko gara (20,4 km &middot; 474 m). Herria zeharkatuko dugu, eta berriro ura hartzeko aukera izango dugu kiroldegiaren eta frontoiaren ondoan dagoen iturrian.',
+    'Desde Elgeta continuamos por carretera durante aproximadamente 1,5&ndash;2 kil&oacute;metros. Despu&eacute;s de varias curvas llegaremos a una zona m&aacute;s recta, donde giramos a la derecha para tomar una pista de piedra que nos conduce hasta <b>Goierri</b>.':
+        'Elgetatik errepidez jarraituko dugu gutxi gorabehera 1,5-2 kilometroz. Hainbat bihurgune igaro ondoren, zuzenagoa den tarte batera iritsiko gara. Han eskuinera egingo dugu eta harrizko pista bat hartuko dugu, <b>Goierri</b>raino eramango gaituena.',
+    'Al llegar a Goierri, nuestra ruta gira a la izquierda y comienza a bajar hacia <b>Zaldibar</b> por una tranquila carretera de barrio, evitando la carretera general.':
+        'Goierrira iristean, gure ibilbideak ezkerrera egiten du eta <b>Zaldibar</b> aldera jaisten hasten da auzo-errepide lasai batetik, errepide nagusia saihestuz.',
+    'En este punto tenemos tambi&eacute;n una alternativa por si no queremos alargar tanto la vuelta ni sumar m&aacute;s desnivel. En lugar de girar a la izquierda, podemos continuar de frente hacia la ermita y enlazar con el GR, que nos llevar&aacute; hacia Zengotita. Es una buena opci&oacute;n para recortar la ruta, evitando la bajada hacia Zaldibar y Berriz y la posterior subida.':
+        'Puntu honetan beste aukera bat ere badugu, ibilbidea hainbeste luzatu edo desnibel gehiago pilatu nahi ez badugu. Ezkerrera hartu beharrean, zuzen jarrai dezakegu ermitarantz eta GRarekin bat egin. GRak Zengotita aldera eramango gaitu. Aukera ona da ibilbidea laburtzeko, Zaldibar eta Berriz aldera jaistea eta ondorengo igoera saihestuz.',
+    'Siguiendo con el recorrido principal, atravesamos Zaldibar y, junto a la estaci&oacute;n, continuamos en direcci&oacute;n a <b>Berriz</b> (36,3 km &middot; 184 m). Vamos perdiendo altura poco a poco y, ya a la entrada de Berriz, tomamos el bidegorri que discurre por un lateral del pueblo, junto al riachuelo.':
+        'Ibilbide nagusiarekin jarraituz, Zaldibar zeharkatu eta, geltokiaren ondoan, <b>Berriz</b> aldera jarraituko dugu (36,3 km &middot; 184 m). Pixkanaka altuera galtzen joango gara eta, Berrizko sarreran bertan, herriaren albo batetik, Erreka bazterretik doan bidegorria hartuko dugu.',
+    'El bidegorri nos deja en la parte alta de Berriz, donde salimos nuevamente a la carretera y comenzamos la subida en direcci&oacute;n a Zengotita y, despu&eacute;s, Trabakua. Pero estaremos muy poco tiempo en la carretera principal: a la altura del barrio de <b>San Juan</b> (40,0 km &middot; 412 m), tomamos a mano derecha la antigua carretera que sube hacia Zengotita.':
+        'Bidegorriak Berrizko goialdean utziko gaitu; han, berriro errepidera irten eta Zengotita eta, ondoren, Trabakua aldera igotzen hasiko gara. Hala ere, oso denbora gutxian egongo gara errepide nagusian: <b>San Juan</b> auzoaren parean (40,0 km &middot; 412 m), eskuinetara hartuko dugu Zengotita aldera igotzen den antzinako errepidea.',
+    'Superada esta &uacute;ltima parte de la subida, ya solo nos queda continuar hacia Trabakua, punto de inicio y final de la ruta.':
+        'Igoeraren azken zati hau gaindituta, Trabakua aldera jarraitzea besterik ez zaigu geratuko; ibilbidearen hasiera eta amaiera puntua da.',
+    'Una vuelta larga y muy variada, combinando carreteras secundarias, pistas, senderos y bidegorri. El paso por Aixola, Elgeta y Goiko Mendia aporta algunos de los tramos m&aacute;s agradables del recorrido, mientras que la bajada hacia Zaldibar y Berriz nos permite alargar la vuelta antes de afrontar el regreso por Zengotita. Adem&aacute;s, encontramos varias fuentes bien repartidas a lo largo del recorrido, algo especialmente &uacute;til en una ruta de esta longitud.':
+        'Ibilbide luzea da, bide desberdinetik, auzo-errepideak, pistak, bidexkak eta bidegorria uztartzen dituena. Aixola, Elgeta eta Goiko Mendia inguruko pasabideek ibilbideko zatirik atseginenetako batzuk eskaintzen dituzte; Zaldibar eta Berriz aldera egindako jaitsierak, berriz, itzulia luzatzeko aukera ematen digu, Zengotitatik Trabakuara itzuli aurretik.'
+        '</p>\n    <p>Gainera, ibilbidean zehar hainbat iturri aurkituko ditugu, nahiko ondo banatuta; oso baliagarriak horrelako luzera duen ibilbide batean.',
+
+    # para quién es
+    '<h2>Una vuelta larga en e-bike, para rodar muchas horas</h2>':
+        '<h2>Bira luzea e-bikez, ordu asko pedalean emateko</h2>',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2029,13 +2120,16 @@ HISTORIAS = {
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
+    'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
     'Mixta': 'Nahasia',
     'Carretera y pista': 'Errepidea eta pista',
+    'Carretera, pista y sendero': 'Errepidea, pista eta bidezidorra',
 
     # route names
+    'Trabakua, Aixola y Berriz': 'Trabakua, Aixola eta Berriz',
     'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
     'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
     'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
@@ -2074,6 +2168,7 @@ HISTORIAS = {
     'Circuito desde Trabakua por Mendibil, Olamendi y Arteta.': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota.',
     'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.': 'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
+    'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
 }
 
 # <meta name="description"> per page (head files)
@@ -2104,6 +2199,7 @@ DESCRIPTIONS = {
     'arteta': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
     'hirutxikiak': 'Urko, Oiz eta Egoarbitza Ermuatik',
+    'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2132,6 +2228,7 @@ TITLES = {
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
+    'zaldibar': 'Trabakua, Aixola eta Berriz · Bizikleta ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2157,5 +2254,6 @@ PAGE_STRINGS = {
     'arteta': ARTETA,
     'goita': GOITA,
     'hirutxikiak': HIRUTXIKIAK,
+    'zaldibar': ZALDIBAR,
     'historias': HISTORIAS,
 }
