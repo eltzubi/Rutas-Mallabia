@@ -2095,8 +2095,8 @@ ZALDIBAR = {
         '</p>\n    <p>Gainera, ibilbidean zehar hainbat iturri aurkituko ditugu, nahiko ondo banatuta; oso baliagarriak horrelako luzera duen ibilbide batean.',
 
     # para quién es
-    '<h2>Una vuelta larga en e-bike, para rodar muchas horas</h2>':
-        '<h2>Bira luzea e-bikez, ordu asko pedalean emateko</h2>',
+    '<h2>Una vuelta larga en e-bike</h2>':
+        '<h2>Bira luzea e-bikez</h2>',
 }
 
 HISTORIAS = {
