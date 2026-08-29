@@ -212,6 +212,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/hirutxikiak.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/zaldibar.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zaldibar.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zaldibar.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/zaldibar.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zaldibar.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zaldibar.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
