@@ -2261,6 +2261,8 @@ PAGO7 = {
     # body copy
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del <b>Oiz</b>. Carrera de monta&ntilde;a que se celebra cada mayo en Mallabia.':
         '7 Pago Mendi Lasterketaren benetako ibilbidea, <b>Oiz</b>ko gailurretik igarota. Maiatzero Mallabian jokatzen den mendi lasterketa da.',
+    'Saliendo de <b>Trabakua</b>, en unos 15 minutos se puede entrar en el circuito de la carrera siguiendo la ruta de <a href="gerea.html">Ur Jauziak</a>, una forma r&aacute;pida y apa&ntilde;ada de enlazar con el recorrido.':
+        '<b>Trabakua</b>tik abiatuta, 15 bat minutuan lasterketaren zirkuituan sar daiteke <a href="gerea.html">Ur Jauziak</a> ibilbidetik, ibilbidearekin lotzeko modu azkar eta erosoa.',
     'El recorrido pasa por <b>Zengotita</b> (km 3,8 &middot; 416 m), la cascada de <b>Ur Jauziak</b> (km 9,7 &middot; 689 m), la cima del Oiz (km 13,3 &middot; 1.020 m), el <b>Dolmen de Iturzurigana</b> (km 16,5 &middot; 855 m), <b>Osmagain</b> (km 20,3 &middot; 524 m) y <b>Arietzu</b> (km 21,8 &middot; 476 m), antes de volver a Mallabia.':
         'Ibilbideak <b>Zengotita</b>tik igarotzen da (3,8 km &middot; 416 m), baita <b>Ur Jauziak</b> ur-jauzitik ere (9,7 km &middot; 689 m), Oizko gailurretik (13,3 km &middot; 1.020 m), <b>Iturzuriganako Trikuharri</b>tik (16,5 km &middot; 855 m), <b>Osmagain</b>etik (20,3 km &middot; 524 m) eta <b>Arietzu</b>tik (21,8 km &middot; 476 m), Mallabiara itzuli aurretik.',
     'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
