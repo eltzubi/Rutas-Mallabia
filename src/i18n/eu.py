@@ -243,8 +243,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita y Zaldibar':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita eta Zaldibar',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta y Hiru Txikiak':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
@@ -388,16 +388,6 @@ HOME = {
         '<h2>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h2>',
     'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
         'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
-
-    # maguna card
-    '<span class="signpost-name">Trabakua, Zengotitagane y Maguna</span>':
-        '<span class="signpost-name">Trabakua, Zengotitagane eta Maguna</span>',
-    'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
-        'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
-    '<h2>Trabakua, Zengotitagane<br><em>y Maguna</em></h2>':
-        '<h2>Trabakua, Zengotitagane<br><em>eta Maguna</em></h2>',
-    'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.':
-        'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
 
     # zaldibar card
     '<span class="signpost-name">Trabakua, Aixola y Berriz</span>':
@@ -2199,17 +2189,14 @@ HISTORIAS = {
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
-    'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
     'Mixta': 'Nahasia',
     'Carretera y pista': 'Errepidea eta pista',
     'Carretera, pista y sendero': 'Errepidea, pista eta bidezidorra',
-    'Pista y carretera': 'Pista eta errepidea',
 
     # route names
-    'Trabakua, Zengotitagane y Maguna': 'Trabakua, Zengotitagane eta Maguna',
     'Trabakua, Aixola y Berriz': 'Trabakua, Aixola eta Berriz',
     'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
     'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
@@ -2250,7 +2237,6 @@ HISTORIAS = {
     'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.': 'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
-    'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
 }
 
 # <meta name="description"> per page (head files)
@@ -2284,7 +2270,7 @@ DESCRIPTIONS = {
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
         'Trikuharritik igarota Magunaraino',
-    'historias': 'Mallabiako 22 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'historias': 'Mallabiako 21 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
