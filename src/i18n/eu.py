@@ -2221,17 +2221,15 @@ PAGO7 = {
         '<p class="full-name">7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota</p>',
 
     # elev markers / legend (used twice: hero chart and map section)
-    '<title>Ermita de San Juan &middot; 3,8 km &middot; 416 m</title>':
-        '<title>San Juan ermita &middot; 3,8 km &middot; 416 m</title>',
     '<title>Dolmen de Iturzurigana &middot; 16,5 km &middot; 855 m</title>':
         '<title>Iturzuriganako Trikuharria &middot; 16,5 km &middot; 855 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Ermita de San Juan</span> '
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> '
     '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
     '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
     '<span class="elev-legend-item"><span class="num">4</span>Dolmen de Iturzurigana</span> '
     '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
     '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>San Juan ermita</span> '
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> '
         '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
         '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
         '<span class="elev-legend-item"><span class="num">4</span>Iturzuriganako Trikuharria</span> '
@@ -2263,8 +2261,8 @@ PAGO7 = {
     # body copy
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del <b>Oiz</b>. Carrera de monta&ntilde;a que se celebra cada mayo en Mallabia.':
         '7 Pago Mendi Lasterketaren benetako ibilbidea, <b>Oiz</b>ko gailurretik igarota. Maiatzero Mallabian jokatzen den mendi lasterketa da.',
-    'El recorrido pasa por la <b>Ermita de San Juan</b> (km 3,8 &middot; 416 m), la cascada de <b>Ur Jauziak</b> (km 9,7 &middot; 689 m), la cima del Oiz (km 13,3 &middot; 1.020 m), el <b>Dolmen de Iturzurigana</b> (km 16,5 &middot; 855 m), <b>Osmagain</b> (km 20,3 &middot; 524 m) y <b>Arietzu</b> (km 21,8 &middot; 476 m), antes de volver a Mallabia.':
-        'Ibilbideak <b>San Juan ermita</b>tik igarotzen da (3,8 km &middot; 416 m), baita <b>Ur Jauziak</b> ur-jauzitik ere (9,7 km &middot; 689 m), Oizko gailurretik (13,3 km &middot; 1.020 m), <b>Iturzuriganako Trikuharri</b>tik (16,5 km &middot; 855 m), <b>Osmagain</b>etik (20,3 km &middot; 524 m) eta <b>Arietzu</b>tik (21,8 km &middot; 476 m), Mallabiara itzuli aurretik.',
+    'El recorrido pasa por <b>Zengotita</b> (km 3,8 &middot; 416 m), la cascada de <b>Ur Jauziak</b> (km 9,7 &middot; 689 m), la cima del Oiz (km 13,3 &middot; 1.020 m), el <b>Dolmen de Iturzurigana</b> (km 16,5 &middot; 855 m), <b>Osmagain</b> (km 20,3 &middot; 524 m) y <b>Arietzu</b> (km 21,8 &middot; 476 m), antes de volver a Mallabia.':
+        'Ibilbideak <b>Zengotita</b>tik igarotzen da (3,8 km &middot; 416 m), baita <b>Ur Jauziak</b> ur-jauzitik ere (9,7 km &middot; 689 m), Oizko gailurretik (13,3 km &middot; 1.020 m), <b>Iturzuriganako Trikuharri</b>tik (16,5 km &middot; 855 m), <b>Osmagain</b>etik (20,3 km &middot; 524 m) eta <b>Arietzu</b>tik (21,8 km &middot; 476 m), Mallabiara itzuli aurretik.',
     'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
         'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
 
