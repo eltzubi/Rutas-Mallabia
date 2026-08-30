@@ -2268,6 +2268,10 @@ PAGO7 = {
     'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
         'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
 
+    # parada
+    'A&ntilde;ado esta ruta por ser de Mallabia y porque buena parte de su recorrido coincide con tramos de otras rutas que salen de Trabakua y alrededores: sube al mismo <a href="oiz.html">Oiz</a> y pasa por los mismos altos de <a href="arietzu.html">Osmagain y Arietzu</a>, con tramos de bosque, la cascada de Ur Jauziak y buenas vistas desde el cordal.':
+        'Ibilbide hau gehitzen dut Mallabiakoa delako, eta bere ibilbidearen zati handi bat Trabakuatik eta inguruetatik ateratzen diren beste ibilbide batzuen zatiekin bat datorrelako: <a href="oiz.html">Oiz</a> mendi bera igotzen du eta <a href="arietzu.html">Osmagain eta Arietzu</a>ko goi berberetatik igarotzen da, baso-zatiekin, Ur Jauziak ur-jauziarekin eta gailurreko ikuspegi ederrekin.',
+
     # map + footer
     'data-marker-title="Mallabia (salida y llegada)"':
         'data-marker-title="Mallabia (irteera eta helmuga)"',
