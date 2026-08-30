@@ -243,8 +243,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita y Zaldibar':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita eta Zaldibar',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta y Hiru Txikiak':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
@@ -388,6 +388,16 @@ HOME = {
         '<h2>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h2>',
     'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.':
         'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+
+    # maguna card
+    '<span class="signpost-name">Trabakua, Zengotitagane y Maguna</span>':
+        '<span class="signpost-name">Trabakua, Zengotitagane eta Maguna</span>',
+    'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
+        'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
+    '<h2>Trabakua, Zengotitagane<br><em>y Maguna</em></h2>':
+        '<h2>Trabakua, Zengotitagane<br><em>eta Maguna</em></h2>',
+    'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.':
+        'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
 
     # zaldibar card
     '<span class="signpost-name">Trabakua, Aixola y Berriz</span>':
@@ -2105,6 +2115,68 @@ ZALDIBAR = {
         '<h2>Bira luzea e-bikez</h2>',
 }
 
+MAGUNA = {
+    # hero
+    '<span>Pista y carretera</span><span class="sep">/</span><span>Zengotitagane, Iturzurigana y Maguna</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zengotitagane, Iturzurigana eta Maguna</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Zengotitagane<br><em>y Maguna</em></h1>':
+        '<h1>Trabakua, Zengotitagane<br><em>eta Maguna</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigana y Maguna</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako Trikuharritik igarota Magunaraino</p>',
+
+    # elevation profile markers + legend (used twice: hero chart and map section)
+    '<title>Dolmen de Iturzurigana &middot; 4,6 km &middot; 843 m</title>':
+        '<title>Iturzuriganako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigana</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzuriganako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span>',
+
+    # photos
+    'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
+        'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
+    'alt="Foto ampliada del recorrido de Trabakua, Zengotitagane y Maguna"':
+        'alt="Trabakua, Zengotitagane eta Maguna ibilbidearen argazki handitua"',
+    'alt="Nubes al atardecer sobre la ladera del parque e&oacute;lico, con los aerogeneradores en la cresta"':
+        'alt="Ilunabarreko hodeiak parke eolikoaren magalean, aerosorgailuak gandorrean dituela"',
+    'alt="Atardecer sobre las monta&ntilde;as, con el sol asom&aacute;ndose entre capas de nubes"':
+        'alt="Ilunabarra mendien gainean, eguzkia hodei-geruzen artetik agertzen"',
+    'alt="Bosque de repoblaci&oacute;n con los aerogeneradores del Oiz asomando sobre la loma"':
+        'alt="Birlandatutako basoa, Oizko aerosorgailuak muinoaren gainetik agertzen direla"',
+    'alt="Vista desde el manillar de la e-bike hacia un prado con rocas y las monta&ntilde;as al fondo, bajo un cielo nuboso"':
+        'alt="E-bikearen eskulekutik ikusitako larrea, harriekin eta mendiak atzealdean, zeru hodeitsu baten azpian"',
+    'alt="Vista del valle con niebla entre las monta&ntilde;as y un pueblo al fondo"':
+        'alt="Harana lainoarekin mendien artean eta herri bat atzealdean"',
+    'alt="Bicicleta apoyada en un pino, en un pinar"':
+        'alt="Bizikleta pinu baten kontra jarrita, pinudi batean"',
+    'alt="Vista del valle con niebla y un banco de nubes bajo un cielo cubierto"':
+        'alt="Harana lainoarekin eta hodei-banku batekin, zeru estali baten azpian"',
+    'alt="Aerogenerador junto a una pista de grava, con el parque e&oacute;lico al fondo bajo un cielo nuboso"':
+        'alt="Aerosorgailua legarrezko pista baten ondoan, parke eolikoa atzealdean zeru hodeitsu baten azpian"',
+
+    # wikiloc / gpx
+    'download="Trabakua, Zengotitagane y Maguna.gpx"':
+        'download="Trabakua, Zengotitagane eta Maguna.gpx"',
+
+    # body copy
+    'Salimos de <b>Trabakua</b> en direcci&oacute;n Osma por carretera. Poco despu&eacute;s giramos para coger la pista que sube hasta <b>Zengotitagane</b> (km 3,6 &middot; 788 m), entre los aerogeneradores del parque e&oacute;lico del Oiz.':
+        '<b>Trabakua</b>tik irtengo gara Osma norabidean errepidez. Handik gutxira <b>Zengotitagane</b>raino igotzen den pista hartuko dugu (3,6 km &middot; 788 m), Oizko parke eolikoaren aerosorgailuen artetik.',
+    'Desde Zengotitagane seguimos por la cresta hasta el <b>Dolmen de Iturzurigana</b> (km 4,6 &middot; 843 m), el punto m&aacute;s alto de toda la ruta, con vistas a los dos lados.':
+        'Zengotitaganetik gailurrez jarraituko dugu <b>Iturzuriganako Trikuharri</b>raino (4,6 km &middot; 843 m), ibilbide osoko punturik altuenera, bi aldeetara bista ederrak dituela.',
+    'A partir de aqu&iacute; la ruta se separa del trazado habitual de las rutas de Zengotitagane y San Crist&oacute;bal: en vez de bajar hacia Garai, seguimos de frente para encarar un largo descenso de m&aacute;s de 10 km hasta <b>Maguna</b> (km 15 &middot; 413 m), perdiendo m&aacute;s de 400 m de desnivel.':
+        'Hemendik aurrera ibilbideak Zengotitagane eta San Kristobalgo ibilbideen ohiko bidea uzten du: Garairantz jaitsi ordez, zuzen jarraituko dugu 10 km baino gehiagoko jaitsiera luze bati aurre egiteko, <b>Maguna</b>raino (15 km &middot; 413 m), 400 m baino gehiagoko desnibela galduz.',
+    '<i>[Pendiente de completar con el detalle real del recorrido entre Iturzurigana y Maguna &mdash;esta parte de la ruta no coincide con ninguna otra ficha ya publicada de la web.]</i>':
+        '<i>[Iturzurigana eta Maguna arteko ibilbidearen benetako xehetasunekin osatzeko dago &mdash;ibilbidearen zati hau ez dator bat webguneko beste inongo fitxarekin.]</i>',
+    'Tras Maguna, la ruta remonta de nuevo hasta unos 600 m antes de bajar al punto m&aacute;s bajo de todo el recorrido, sobre los 280 m, y volver a subir pasando cerca de <b>Garai</b> camino de Trabakua, donde se cierra el c&iacute;rculo.':
+        'Magunaren ondoren, ibilbideak berriro gora egiten du 600 m ingururaino, ibilbide osoko punturik baxuenera jaitsi aurretik, 280 m inguruan, eta berriz igotzen da, <b>Garai</b>tik gertu igarota, Trabakua aldera, zirkulua itxiz.',
+    '<i>[Pendiente de completar con el detalle real de la vuelta por la zona de Garai hasta Trabakua.]</i>':
+        '<i>[Garai inguruko itzuliaren benetako xehetasunekin osatzeko dago, Trabakuara arte.]</i>',
+
+    # para quién es
+    '<h2>Un circuito largo en e-bike</h2>':
+        '<h2>Zirkuitu luzea e-bikez</h2>',
+    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz.':
+        '33,44 km eta +1.215 m-ko desnibela zirkuitu bakarrean, igoerarik gogorrena irten bezain laster Zengotitaganerantz, eta Oiz inguruko gainerako ibilbideak baino nabarmen luzeagoa.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2127,14 +2199,17 @@ HISTORIAS = {
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
+    'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
     'Mixta': 'Nahasia',
     'Carretera y pista': 'Errepidea eta pista',
     'Carretera, pista y sendero': 'Errepidea, pista eta bidezidorra',
+    'Pista y carretera': 'Pista eta errepidea',
 
     # route names
+    'Trabakua, Zengotitagane y Maguna': 'Trabakua, Zengotitagane eta Maguna',
     'Trabakua, Aixola y Berriz': 'Trabakua, Aixola eta Berriz',
     'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
     'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
@@ -2175,6 +2250,7 @@ HISTORIAS = {
     'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.': 'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
+    'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
 }
 
 # <meta name="description"> per page (head files)
@@ -2206,7 +2282,9 @@ DESCRIPTIONS = {
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
     'hirutxikiak': 'Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
-    'historias': 'Mallabiako 14 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
+        'Trikuharritik igarota Magunaraino',
+    'historias': 'Mallabiako 22 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -2235,6 +2313,7 @@ TITLES = {
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
     'zaldibar': 'Trabakua, Aixola eta Berriz · Bizikleta ibilbidea — Herriko ibilbideak',
+    'maguna': 'Trabakua, Zengotitagane eta Maguna · Bizikleta ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2261,5 +2340,6 @@ PAGE_STRINGS = {
     'goita': GOITA,
     'hirutxikiak': HIRUTXIKIAK,
     'zaldibar': ZALDIBAR,
+    'maguna': MAGUNA,
     'historias': HISTORIAS,
 }
