@@ -2262,37 +2262,37 @@ PAGO7 = {
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del <b>Oiz</b>. Carrera de monta&ntilde;a que se celebra cada mayo en Mallabia.':
         '7 Pago Mendi Lasterketaren benetako ibilbidea, <b>Oiz</b>ko gailurretik igarota. Maiatzero Mallabian jokatzen den mendi lasterketa da.',
     'La 25K de la 7 Pago Mendi Lasterketa enga&ntilde;a un poco sobre el papel. Son 25 kil&oacute;metros, pero sus cerca de 1.400 metros de desnivel y un recorrido con pocos tramos para relajarse hacen que se terminen notando.':
-        '7 Pago Mendi Lasterketaren 25K-ak apur bat engainatzen du paperean. 25 kilometro dira, baina 1.400 bat metroko desnibelak eta erlaxatzeko tarte gutxi dituen ibilbideak azkenean nabaritzen dira.',
-    'Adem&aacute;s, se puede acceder al circuito desde <b>Trabakua</b> en apenas 15 minutos. Al tratarse de una ruta de Mallabia y teniendo en cuenta que muchas de las rutas que salen de Trabakua discurren por tramos de carretera, este recorrido tiene aqu&iacute; su sitio.':
-        'Gainera, <b>Trabakua</b>tik zirkuituan sar daiteke 15 minutu eskasean. Mallabiako ibilbidea izanik, eta Trabakuatik ateratzen diren ibilbide askok errepide-zatiak dituztela kontuan hartuta, ibilbide honek hemen bere lekua du.',
+        '7 Pago Mendi Lasterketako 25K ibilbideak paperean dirudiena baino gehiago dauka. 25 kilometro dira, baina ia 1.400 metroko desnibel positiboarekin eta atseden hartzeko tarte gutxirekin, kilometroak nabaritzen joaten dira.',
+    'Adem&aacute;s, se puede acceder al circuito desde <b>Trabakua</b> en apenas 15 minutos. Al tratarse de una ruta de Mallabia y teniendo en cuenta que muchas de las rutas que salen de Trabakua discurren por tramos de carrera, este recorrido tiene aqu&iacute; su sitio.':
+        'Gainera, <b>Trabaku</b>tik 15 minutu eskasean iritsi daiteke zirkuitura. Mallabiko ibilbidea izanik, eta Trabakutik ateratzen diren ibilbide askok tramo zati berdinak dituztela kontuan hartuta, ibilbide honek ere badu hemen bere lekua.',
     'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por <b>San Juan</b> y continuando hacia <b>Zengotitagane</b>.':
-        '<b>Mallabia</b>ko plazatik irten eta laster utziko dugu herria atzean, auzo, baserri eta mendiko bideen artean sartzeko. Lehen kilometroek pixkanaka altuera irabazten dute, <b>San Juan</b>etik igarota eta <b>Zengotitagane</b>rantz jarraituz.',
-    'Despu&eacute;s de Zengotitagane toca bajar, y bastante. Al principio se puede correr bien, pero seg&uacute;n vamos perdiendo altura la bajada se vuelve m&aacute;s t&eacute;cnica y hay que estar atentos. Abajo cambia de nuevo el terreno y comenzamos a subir de forma m&aacute;s suave hacia las cascadas.':
-        'Zengotitagane igaro ondoren jaitsi egin behar da, eta ez gutxi. Hasieran ondo korri daiteke, baina altuera galtzen goazen heinean jaitsiera teknikoagoa bihurtzen da eta kontuz ibili behar da. Behean lurra berriz aldatzen da eta ur-jauzien aldera igotzen hasten gara, modu leunagoan.',
+        '<b>Mallabi</b>ko plazatik ateratzen gara eta berehala uzten dugu herria atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabazten dugu altuera, <b>San Juan</b> ingurutik igaro eta <b>Zengotitagane</b> aldera jarraituz.',
+    'Despu&eacute;s de Zengotitagane toca bajar, y bastante. Al principio se puede correr bien, pero seg&uacute;n vamos perdiendo altura la bajada se vuelve m&aacute;s t&eacute;cnica y hay que estar atentos. Abajo cambia de nuevo el terreno y comenzamos a subir de forma m&aacute;s suave hacia <a href="gerea.html">Ur Jauziak</a>.':
+        'Zengotitagane pasatu ondoren jaitsiera gogorra dator, eta ez da motza. Hasieran ondo korrika egin daiteke, baina behera egin ahala gero eta teknikoagoa bihurtzen da eta adi ibili behar da. Behean, lurra berriro aldatzen da eta igoera lasaiago bati ekiten diogu <a href="gerea.html">Ur Jauziak</a> aldera.',
     'A partir de ah&iacute; ponemos rumbo a <b>Oiz</b>.':
-        'Handik aurrera <b>Oiz</b>erantz jotzen dugu.',
+        'Handik aurrera, <b>Oiz</b> dugu jomugan.',
     'La subida se va haciendo notar y, seg&uacute;n ganamos altura, dejamos atr&aacute;s el bosque y el paisaje empieza a abrirse. Oiz, con sus m&aacute;s de 1.000 metros, es el punto m&aacute;s alto de la carrera y uno de los lugares que m&aacute;s marca el recorrido. Si el d&iacute;a est&aacute; despejado, merece la pena levantar un momento la cabeza y mirar alrededor. Si aparece viento, niebla o lluvia, la historia puede ser bastante diferente.':
-        'Igoera nabaritzen joango da eta, altuera irabazi ahala, basoa atzean utzi eta paisaia zabaltzen hasten da. Oiz, 1.000 metrotik gorakoa, lasterketako punturik altuena da eta ibilbidea gehien markatzen duen lekuetako bat. Eguna garbi badago, merezi du une batez burua altxatu eta inguruari begiratzea. Haizea, lainoa edo euria agertzen bada, kontua nahiko bestelakoa izan daiteke.',
+        'Igoera pixkanaka nabaritzen hasten da eta, altuera irabazi ahala, basoa atzean utzi eta paisaia zabaltzen hasten da. Oiz, 1.000 metrotik gorako garaierarekin, lasterketako punturik altuena da eta ibilbidea gehien markatzen duen lekuetako bat. Eguna garbi badago, merezi du une batez burua altxatu eta ingurura begiratzea. Haizea, lainoa edo euria agertzen badira, ordea, kontua dezente alda daiteke.',
     'Llegar arriba da alegr&iacute;a. Tambi&eacute;n puede dar una falsa sensaci&oacute;n de que lo peor ya ha pasado.':
-        'Goraino iristeak poza ematen du. Baita okerrena pasata dagoelako sentsazio faltsua ere.',
+        'Gora iristeak poza ematen du. Baita zailena eginda dagoela pentsatzeko sentsazioa ere.',
     'Todav&iacute;a queda carrera.':
-        'Oraindik lasterketa geratzen da.',
+        'Baina oraindik lasterketa geratzen da.',
     'Desde Oiz comenzamos a bajar hacia <b>Iturzurigana</b>, pero el regreso a Mallabia no es simplemente dejarse caer. Hay cambios de terreno, alg&uacute;n repecho y kil&oacute;metros en los que las piernas empiezan a recordar todo lo que llevan acumulado.':
-        'Oizetik <b>Iturzurigana</b>rantz jaisten hasten gara, baina Mallabiarako itzulera ez da soilik behera erortzea. Lur-aldaketak daude, noizbehinkako aldapatxoren bat eta hankek metatutako guztia gogorarazten hasten diren kilometroak.',
+        'Oiztik <b>Iturzurigana</b> aldera jaisten hasten gara, baina Mallabirako itzulera ez da beherantz joatea besterik. Lur aldaketak, aldapatxoren bat eta ordurako pilatutako guztia hanketan nabaritzen hasten diren kilometroak datoz.',
     'Seguimos hacia <b>Osmagain</b> y <b>Arietzu</b>. A estas alturas ya pasamos de los veinte kil&oacute;metros y cualquier peque&ntilde;a subida parece bastante m&aacute;s grande que al principio.':
-        '<b>Osmagain</b> eta <b>Arietzu</b>rantz jarraitzen dugu. Ordurako hogei kilometrotik gora daramagu, eta edozein aldapatxo hasieran baino askoz handiagoa iruditzen zaigu.',
+        '<b>Osmagain</b> eta <b>Arietzu</b> aldera jarraitzen dugu. Puntu honetan hogei kilometro baino gehiago daramatzagu eta hasieran ia konturatu gabe igaroko genukeen aldapa txiki batek ere bestelako itxura hartzen du.',
     'Desde Arietzu s&iacute; empezamos a mirar definitivamente hacia Mallabia. Si quedan piernas, es una zona donde todav&iacute;a se puede correr y disfrutar de los &uacute;ltimos kil&oacute;metros.':
-        'Arietzutik aurrera bai, Mallabiarantz begiratzen hasten gara benetan. Hankarik geratzen bazaigu, azken kilometroez korrika gozatzeko moduko zonaldea da.',
+        'Arietzutik aurrera bai, Mallabira begira jartzen gara. Hanketan oraindik indarra badago, korrika egiteko eta azken kilometroez gozatzeko aukera ematen duen zatia da.',
     'Poco a poco vuelve a aparecer el pueblo y terminamos entrando de nuevo en la plaza, justo donde empez&oacute; todo.':
-        'Pixkanaka herria berriz agertzen da, eta guztia hasi zen leku berean, plazan, sartuz amaitzen dugu.',
+        'Pixkanaka herria berriro agertzen da eta azkenean Mallabiko plazara itzultzen gara, dena hasi den leku berera.',
     'Son 25 km y alrededor de +1.400 m, con pistas, senderos, bosque, alguna bajada t&eacute;cnica y Oiz esperando aproximadamente a mitad de camino.':
-        '25 km eta +1.400 m inguru dira, pistekin, bidezidorrekin, basoarekin, jaitsiera tekniko batekin eta Oiz erdi bidean zain.',
+        'Guztira, 25 km inguru eta +1.400 m, pistak, bidezidorrak, basoa, jaitsiera tekniko batzuk eta Oiz, gutxi gorabehera ibilbidearen erdialdean zain.',
     'No hace falta complicarlo mucho m&aacute;s.':
-        'Ez dago gehiago konplikatu beharrik.',
+        'Ez dago askoz gehiago konplikatu beharrik.',
     'Hay que salir con cabeza, guardar algo para Oiz y no pensar que al llegar arriba est&aacute; todo hecho.':
-        'Buruz irten behar da, zerbait gorde Oizerako, eta ez pentsatu goraino iristean dena eginda dagoenik.',
+        'Buruz atera, Oizerako zerbait gorde eta, batez ere, gora iristean dena eginda dagoela ez pentsatu.',
     'Porque todav&iacute;a hay que volver a Mallabia.':
-        'Zeren eta oraindik Mallabiara itzuli behar baita.',
+        'Oraindik Mallabira itzuli behar da eta.',
     'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
         'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
 
