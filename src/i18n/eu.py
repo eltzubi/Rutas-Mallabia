@@ -2199,8 +2199,8 @@ MAGUNA = {
     # para quién es
     '<h2>Un circuito largo en e-bike</h2>':
         '<h2>Zirkuitu luzea e-bikez</h2>',
-    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua en Maguna (km 15) y en una fuente junto a la Ermita de San Crist&oacute;bal Txiki (km 26,8).':
-        '33,44 km eta +1.215 m-ko desnibela zirkuitu bakarrean, igoerarik gogorrena irten bezain laster Zengotitaganerantz, eta Oiz inguruko gainerako ibilbideak baino nabarmen luzeagoa. Ura badago Magunan (15 km) eta San Kristobal Txiki ermitaren ondoko iturri batean (26,8 km).',
+    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigana (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Crist&oacute;bal Txiki (km 26,8).':
+        '33,44 km eta +1.215 m-ko desnibela zirkuitu bakarrean, igoerarik gogorrena irten bezain laster Zengotitaganerantz, eta Oiz inguruko gainerako ibilbideak baino nabarmen luzeagoa. Ura badago Iturzuriganatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren ondoko iturri batean (26,8 km).',
 }
 
 HISTORIAS = {
