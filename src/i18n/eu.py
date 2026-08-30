@@ -245,8 +245,14 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
-    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta y Hiru Txikiak':
-        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
+    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak y 7 Pago':
+        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak eta 7 Pago',
+    '<span class="signpost-name">7 Pago Mendi Lasterketa</span>':
+        '<span class="signpost-name">7 Pago Mendi Lasterketa</span>',
+    '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>':
+        '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>',
+    '<p>El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.</p>':
+        '<p>7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.</p>',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
     'download="Rutas Mallabia - todos los tracks.zip"':
@@ -2207,6 +2213,67 @@ MAGUNA = {
         '33,44 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzuriganatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
 }
 
+PAGO7 = {
+    # hero
+    '<span>Mixta</span><span class="sep">/</span><span>Oiz</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Oiz</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<p class="full-name">El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz</p>':
+        '<p class="full-name">7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota</p>',
+
+    # elev markers / legend (used twice: hero chart and map section)
+    '<title>Ermita de San Juan &middot; 3,8 km &middot; 416 m</title>':
+        '<title>San Juan ermita &middot; 3,8 km &middot; 416 m</title>',
+    '<title>Dolmen de Iturzurigana &middot; 16,5 km &middot; 855 m</title>':
+        '<title>Iturzuriganako Trikuharria &middot; 16,5 km &middot; 855 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Ermita de San Juan</span> '
+    '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
+    '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Dolmen de Iturzurigana</span> '
+    '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
+    '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>San Juan ermita</span> '
+        '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
+        '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>Iturzuriganako Trikuharria</span> '
+        '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
+        '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>',
+
+    # photos
+    'alt="Corredores subiendo una cresta con los aerogeneradores del Oiz al fondo, dorsal 63 en primer plano"':
+        'alt="Korrikalariak kresta batean gora, Oizeko aerosorgailuak atzealdean, 63 dortsala aurrealdean"',
+    'alt="Foto ampliada del recorrido de la 7 Pago Mendi Lasterketa"':
+        'alt="7 Pago Mendi Lasterketaren ibilbidearen argazki handitua"',
+    'alt="Corredores en un tramo de bosque, junto a una bandera oficial de la 7 Pago Mendi Lasterketa, dorsales 27 y 28"':
+        'alt="Korrikalariak baso-zati batean, 7 Pago Mendi Lasterketaren bandera ofizial baten ondoan, 27 eta 28 dortsalak"',
+    'alt="V&eacute;rtice geod&eacute;sico en una cima, entre niebla"':
+        'alt="Bertize geodesikoa gailur batean, lainoaren artean"',
+    'alt="Cascada de Ur Jauziak, con el agua cayendo entre las rocas del bosque"':
+        'alt="Ur Jauziak ur-jauzia, ura basoko harrien artetik erortzen"',
+    'alt="Pista forestal entre niebla, con troncos apilados a un lado"':
+        'alt="Baso-pista lainoaren artean, enborrak alde batean pilatuta"',
+    'alt="Hayas junto al camino, en un tramo de bosque"':
+        'alt="Pagoak bidearen ondoan, baso-zati batean"',
+    'alt="Sendero entre &aacute;rboles cubiertos de musgo"':
+        'alt="Bidezidorra goroldioz estalitako zuhaitzen artean"',
+
+    # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+
+    # body copy
+    'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del <b>Oiz</b>. Carrera de monta&ntilde;a que se celebra cada mayo en Mallabia.':
+        '7 Pago Mendi Lasterketaren benetako ibilbidea, <b>Oiz</b>ko gailurretik igarota. Maiatzero Mallabian jokatzen den mendi lasterketa da.',
+    'El recorrido pasa por la <b>Ermita de San Juan</b> (km 3,8 &middot; 416 m), la cascada de <b>Ur Jauziak</b> (km 9,7 &middot; 689 m), la cima del Oiz (km 13,3 &middot; 1.020 m), el <b>Dolmen de Iturzurigana</b> (km 16,5 &middot; 855 m), <b>Osmagain</b> (km 20,3 &middot; 524 m) y <b>Arietzu</b> (km 21,8 &middot; 476 m), antes de volver a Mallabia.':
+        'Ibilbideak <b>San Juan ermita</b>tik igarotzen da (3,8 km &middot; 416 m), baita <b>Ur Jauziak</b> ur-jauzitik ere (9,7 km &middot; 689 m), Oizko gailurretik (13,3 km &middot; 1.020 m), <b>Iturzuriganako Trikuharri</b>tik (16,5 km &middot; 855 m), <b>Osmagain</b>etik (20,3 km &middot; 524 m) eta <b>Arietzu</b>tik (21,8 km &middot; 476 m), Mallabiara itzuli aurretik.',
+    'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
+        'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
+
+    # map + footer
+    'data-marker-title="Mallabia (salida y llegada)"':
+        'data-marker-title="Mallabia (irteera eta helmuga)"',
+    'Circuito &mdash; vuelve al mismo punto': 'Zirkuitua &mdash; puntu berera itzultzen da',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2281,6 +2348,7 @@ HISTORIAS = {
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
+    'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
 }
 
 # <meta name="description"> per page (head files)
@@ -2314,7 +2382,8 @@ DESCRIPTIONS = {
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
         'Trikuharritik igarota Magunaraino',
-    'historias': 'Mallabiako 22 ibilbideak, banan-banan: track bakoitzaren benetako '
+    '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota',
+    'historias': 'Mallabiako 23 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -2344,6 +2413,7 @@ TITLES = {
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
     'zaldibar': 'Trabakua, Aixola eta Berriz · Bizikleta ibilbidea — Herriko ibilbideak',
     'maguna': 'Trabakua, Zengotitagane eta Maguna · Bizikleta ibilbidea — Herriko ibilbideak',
+    '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2371,5 +2441,6 @@ PAGE_STRINGS = {
     'hirutxikiak': HIRUTXIKIAK,
     'zaldibar': ZALDIBAR,
     'maguna': MAGUNA,
+    '7pago': PAGO7,
     'historias': HISTORIAS,
 }
