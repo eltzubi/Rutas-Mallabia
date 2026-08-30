@@ -2253,6 +2253,16 @@ PAGO7 = {
         'alt="Pagoak bidearen ondoan, baso-zati batean"',
     'alt="Sendero entre &aacute;rboles cubiertos de musgo"':
         'alt="Bidezidorra goroldioz estalitako zuhaitzen artean"',
+    'alt="Corredor con mochila de trail haci&eacute;ndose una foto en una cima, junto a un v&eacute;rtice geod&eacute;sico y una cruz de hierro, con aerogeneradores al fondo"':
+        'alt="Korrikalari bat trail-motxilarekin argazkia ateratzen gailur batean, bertize geodesiko eta burdinazko gurutze baten ondoan, aerosorgailuak atzealdean"',
+    'alt="Camino de grava que se bifurca en una loma, con aerogeneradores y monta&ntilde;as al fondo"':
+        'alt="Grabazko bidea bitan banatzen den loma batean, aerosorgailuak eta mendiak atzealdean"',
+    'alt="Fila de aerogeneradores en una loma, con un prado y una valla en primer plano"':
+        'alt="Aerosorgailu ilara loma batean, larre bat eta hesi bat aurrealdean"',
+    'alt="&Aacute;rbol solitario en una ladera de hierba, con niebla y un camino junto a &eacute;l"':
+        'alt="Zuhaitz bakartia belar-hegal batean, lainoarekin eta bide bat ondoan"',
+    'alt="Caballos pastando en un claro del bosque, con aerogeneradores al fondo en una loma"':
+        'alt="Zaldiak basoko soilgune batean bazkan, aerosorgailuak atzealdean loma batean"',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
