@@ -249,10 +249,10 @@ HOME = {
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta eta Hiru Txikiak',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
-    'download="Rutas Mallabia - todos los tracks.gpx"':
-        'download="Herriko ibilbideak - track guztiak.gpx"',
-    'Descargar todos los tracks (GPX)':
-        'Deskargatu track guztiak (GPX)',
+    'download="Rutas Mallabia - todos los tracks.zip"':
+        'download="Herriko ibilbideak - track guztiak.zip"',
+    'Descargar todos los tracks (ZIP, un GPX por ruta)':
+        'Deskargatu track guztiak (ZIP, GPX bat ibilbide bakoitzeko)',
 
     # osma card
     'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
