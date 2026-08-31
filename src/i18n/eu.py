@@ -61,6 +61,7 @@ ROUTE = {
     '&#10530; Ampliar': '&#10530; Handitu',
     'Ver ruta completa en Wikiloc': 'Ikusi ibilbide osoa Wikilocen',
     'Descargar GPX': 'Deskargatu GPX',
+    'Descargar KML': 'Deskargatu KML',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
     '<b>Dificultad</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
@@ -512,6 +513,7 @@ TRABAKUA = {
 
 ITURZURI = {
     'download="Iturzuri, Zengotitagane subida por la cascada de Gerea.gpx"': 'download="Iturzuri, Zengotitagane Gereako ur-jauzitik gora.gpx"',
+    'download="Iturzuri, Zengotitagane subida por la cascada de Gerea.kml"': 'download="Iturzuri, Zengotitagane Gereako ur-jauzitik gora.kml"',
     '<title>Fuente de Iturzuri': '<title>Iturzuriko iturria',
     '<title>Túmulo Probazelaiburu II': '<title>Probazelaiburu II.a tumulua',
     '<title>Zengotitagane': '<title>Zengotitagane',
@@ -604,6 +606,7 @@ ITURZURI = {
 
 ZENARRUZA = {
     'download="Zenarruza, San Kristobal y Zengotitagane.gpx"': 'download="Zenarruza, San Kristobal eta Zengotitagane.gpx"',
+    'download="Zenarruza, San Kristobal y Zengotitagane.kml"': 'download="Zenarruza, San Kristobal eta Zengotitagane.kml"',
     '<title>Monasterio de Zenarruza': '<title>Zenarruzako monasterioa',
     '<title>Ermita San Kristobal': '<title>San Kristobal ermita',
     '<title>Dolmen Iturzurigana': '<title>Iturzuriganako trikuharria',
@@ -686,6 +689,7 @@ ZENARRUZA = {
 
 OSMA = {
     'download="Trabakua, Elgeta y Argiñeta.gpx"': 'download="Trabakua, Elgeta eta Argiñeta.gpx"',
+    'download="Trabakua, Elgeta y Argiñeta.kml"': 'download="Trabakua, Elgeta eta Argiñeta.kml"',
     # waypoint names -- one key covers both the elev-legend span and the
     # matching <title> tooltip, since both contain this exact substring.
     'Ermita de San Juan (1&ordf;)': 'San Juan ermita (1.a)',
@@ -867,6 +871,7 @@ GEREA = {
 
 ZENGOTITAGANE = {
     'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.gpx"',
+    'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.kml"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.kml"',
     'alt="Foto ampliada del recorrido de Zengotitagane"':
         'alt="Zengotitagane ibilbidearen argazki handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
@@ -942,6 +947,7 @@ ZENGOTITAGANE = {
 
 OIZ = {
     'download="Zengotitagane, Axmakur y Oiz.gpx"': 'download="Zengotitagane, Axmakur eta Oiz.gpx"',
+    'download="Zengotitagane, Axmakur y Oiz.kml"': 'download="Zengotitagane, Axmakur eta Oiz.kml"',
     'alt="Foto ampliada del recorrido del Oiz"':
         'alt="Oizeko ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Zengotitagane, Axmakur y Oiz</span>':
@@ -1015,6 +1021,7 @@ OIZ = {
 
 ARIETZU = {
     'download="Osmagain y Arietzu.gpx"': 'download="Osmagain eta Arietzu.gpx"',
+    'download="Osmagain y Arietzu.kml"': 'download="Osmagain eta Arietzu.kml"',
     'alt="Foto ampliada del recorrido de Arietzu"':
         'alt="Arietzuko ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Osmagain y Arietzu</span>':
@@ -1068,6 +1075,7 @@ ARIETZU = {
 
 URKO = {
     'download="Trabakua, Asuntza y Urko.gpx"': 'download="Trabakua, Asuntza eta Urko.gpx"',
+    'download="Trabakua, Asuntza y Urko.kml"': 'download="Trabakua, Asuntza eta Urko.kml"',
     'alt="Foto ampliada del recorrido de Trabakua, Asuntza y Urko"':
         'alt="Trabakua, Asuntza eta Urko ibilbidearen argazki handitua"',
     '<h1>Trabakua, Asuntza<br><em>y Urko</em></h1>':
@@ -1146,6 +1154,7 @@ URKO = {
 
 SANCRISTOBAL = {
     'download="Zengotitagane, Askako y San Cristóbal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
+    'download="Zengotitagane, Askako y San Cristóbal.kml"': 'download="Zengotitagane, Askako eta San Kristobal.kml"',
     'alt="Foto ampliada del recorrido de Zengotitagane, Askako y San '
     'Crist&oacute;bal"':
         'alt="Zengotitagane, Askako eta San Kristobal ibilbidearen argazki '
@@ -1268,6 +1277,8 @@ ITURRETA = {
 
     'download="Trabakua, Barinaga y Iturreta.gpx"':
         'download="Trabakua, Barinaga eta Iturreta.gpx"',
+    'download="Trabakua, Barinaga y Iturreta.kml"':
+        'download="Trabakua, Barinaga eta Iturreta.kml"',
 
     '<title>El río':
         '<title>Ibaia',
@@ -1304,6 +1315,8 @@ EGOARBITZA = {
 
     'download="Urko, Egoarbitza y Zengotitagane.gpx"':
         'download="Urko, Egoarbitza eta Zengotitagane.gpx"',
+    'download="Urko, Egoarbitza y Zengotitagane.kml"':
+        'download="Urko, Egoarbitza eta Zengotitagane.kml"',
 
     '<title>Presa de Aixola &middot; 19,0 km &middot; 312 m</title>':
         '<title>Aixolako presa &middot; 19,0 km &middot; 312 m</title>',
@@ -1408,6 +1421,8 @@ URREGARAI = {
 
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
+    'download="Iturreta, Markina y Urregarai.kml"':
+        'download="Iturreta, Markina eta Urregarai.kml"',
 
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
@@ -1507,6 +1522,8 @@ KALAMUA = {
 
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
+    'download="Urko, Kalamua, San Migel y Mendibil.kml"':
+        'download="Urko, Kalamua, San Migel eta Mendibil.kml"',
 
     '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
@@ -1709,6 +1726,8 @@ IRUZUBIETA = {
         'alt="Bide hondoratua iratzeen eta zuhaitzen artean, hosto lehorrez estalia"',
     'download="Trabakua, Iturreta e Iruzubieta.gpx"':
         'download="Trabakua, Iturreta eta Iruzubieta.gpx"',
+    'download="Trabakua, Iturreta e Iruzubieta.kml"':
+        'download="Trabakua, Iturreta eta Iruzubieta.kml"',
     '<title>Collado, señal Markina': '<title>Lepoa, Markina seinalea',
     '<span class="num">1</span>Collado, señal Markina</span>':
         '<span class="num">1</span>Lepoa, Markina seinalea</span>',
@@ -1776,6 +1795,7 @@ IRUZUBIETA = {
 
 MENDIBIL = {
     'download="Trabakua Mendibil.gpx"': 'download="Trabakua Mendibil.gpx"',
+    'download="Trabakua Mendibil.kml"': 'download="Trabakua Mendibil.kml"',
     'alt="Foto ampliada del recorrido de Trabakua Mendibil"':
         'alt="Trabakua Mendibilgo ibilbidearen argazki handitua"',
     'alt="Moj&oacute;n en la cima del Mendibil, con el parque e&oacute;lico y el pueblo al fondo"':
@@ -1860,6 +1880,8 @@ MENDIBIL = {
 ARTETA = {
     'download="Trabakua, Mendibil, Olamendi y Arteta.gpx"':
         'download="Trabakua, Mendibil, Olamendi eta Arteta.gpx"',
+    'download="Trabakua, Mendibil, Olamendi y Arteta.kml"':
+        'download="Trabakua, Mendibil, Olamendi eta Arteta.kml"',
     'alt="Foto ampliada del recorrido de Trabakua, Mendibil, Olamendi y Arteta"':
         'alt="Trabakua, Mendibil, Olamendi eta Artetako ibilbidearen argazki handitua"',
     'alt="Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el '
@@ -1968,6 +1990,8 @@ GOITA = {
         'alt="Haraneko etxeak belardi eta basoen artean, ekaitz-hodeiak hurbiltzen"',
     'download="Trabakua paseo barrio Goita.gpx"':
         'download="Trabakua, Goita auzoko paseoa.gpx"',
+    'download="Trabakua paseo barrio Goita.kml"':
+        'download="Trabakua, Goita auzoko paseoa.kml"',
     '<span class="v">Carretera y pista</span>': '<span class="v">Errepidea eta pista</span>',
     'Salimos del bar de Trabakua y cruzamos el puente de madera que pasa sobre la autovía. Nada más cruzarlo, comenzamos a bajar por la carretera asfaltada en dirección al barrio de <b>Goita</b>, donde empiezan a aparecer las primeras vistas de la ruta.':
         'Trabakuko tabernatik abiatuko gara eta autobidearen gainetik igarotzen den egurrezko zubia zeharkatuko dugu. Zubia igaro bezain laster, asfaltatutako errepidetik jaisten hasiko gara <b>Goita</b> auzorantz. Bertan hasiko gara ibilbideko lehen bistak ikusten.',
@@ -2113,6 +2137,8 @@ ZALDIBAR = {
     # wikiloc / gpx
     'download="Trabakua, Aixola y Berriz.gpx"':
         'download="Trabakua, Aixola eta Berriz.gpx"',
+    'download="Trabakua, Aixola y Berriz.kml"':
+        'download="Trabakua, Aixola eta Berriz.kml"',
 
     # body copy
     'Salimos de <b>Trabakua</b> y comenzamos bajando, como tantas otras veces, en direcci&oacute;n Urko &ndash; Asuntza &ndash; Iturreta. Este primer tramo coincide con otras rutas de la zona y seguimos el recorrido habitual hasta llegar a <b>Asuntza</b> (5,2 km &middot; 499 m).':
@@ -2196,6 +2222,8 @@ MAGUNA = {
     # wikiloc / gpx
     'download="Trabakua, Zengotitagane y Maguna.gpx"':
         'download="Trabakua, Zengotitagane eta Maguna.gpx"',
+    'download="Trabakua, Zengotitagane y Maguna.kml"':
+        'download="Trabakua, Zengotitagane eta Maguna.kml"',
 
     # body copy
     'Salimos de <b>Trabakua</b> en direcci&oacute;n a Osma por carretera. Algo m&aacute;s de 2 km despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> (km 3,6 &middot; 788 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy duras, casi imposibles de subir con una bici normal.':
@@ -2440,6 +2468,8 @@ BARINAGA = {
 
     'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil.gpx"':
         'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil.gpx"',
+    'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil.kml"':
+        'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil.kml"',
 
     '<span class="mid">perfil real del track &middot; 27,0 km</span>':
         '<span class="mid">trackaren benetako profila &middot; 27,0 km</span>',
