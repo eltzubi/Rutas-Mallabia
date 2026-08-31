@@ -586,7 +586,7 @@ ITURZURI = {
         'Aterpetik behera jarraitzen du altuera galtzen, errepide nagusia ia ukitu arte, jada Osma '
         'auzoan. Baina iritsi aurretik, bideak bat-batean biratzen du, eta iparralderantz itzultzen '
         'gara joaneko bidearekin berriro lotu arte, Trabakuatik oso gertu, zirkuitua ixteko.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     'Sendero de montaña, no apto para bici. Hay dos tramos que exigen ir atentos: el cruce en la '
     'segunda cascada de Gerena para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
     'desde Zengotitagane. Quien prefiera un día más corto puede bajar directo a Trabakua desde la '
@@ -1001,7 +1001,7 @@ OIZ = {
     'La vuelta es por el mismo camino, de vuelta a Trabakua.':
         'Bueltarako, bide bera hartzen dugu, pago artean berriro jaitsiz, Trabakuara '
         'itzultzeko. Ibilbide osoa azkarra, argia eta paisaiaren poderioz oso gozagarria da.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
     '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m).':
         '11,1 km eta +752 m-ko desnibela joan-etorriko ibilbide batean, bidean bi goirekin '
@@ -1130,7 +1130,7 @@ URKO = {
         '&middot; 490 m), Urko eta Mendibil (613 m) bereizten dituen tartera. Lepoan '
         'pista hartzen dugu berriro, Asuntzako bidea bera, eta hortik Trabakuarantz '
         'igotzen hasten gara, ibilbideari buelta emateko.',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). No hay '
     'fuentes en la ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de '
@@ -1307,7 +1307,7 @@ EGOARBITZA = {
     '<span class="num">4</span>Presa de Aixola</span>':
         '<span class="num">4</span>Aixolako presa</span>',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
@@ -1505,7 +1505,7 @@ KALAMUA = {
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
@@ -1914,7 +1914,7 @@ ARTETA = {
         'pista beretik, alderantziz, Trabakuara bueltan zirkulua itxi arte.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,38 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
     'conocer rincones escondidos y pistas o caminos distintos de los habituales por la '
     'zona de Mendibil y Arteta. La Fuente de Arteta sirve de punto de agua a mitad de '
