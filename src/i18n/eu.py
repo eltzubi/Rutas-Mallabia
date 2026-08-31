@@ -88,6 +88,12 @@ HOME = {
     '<span class="brand-name">Rutas en torno al <em>pueblo</em></span>':
         '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
+    # feat-panel photos (7 Pago)
+    'alt="Corredores subiendo una cresta con los aerogeneradores del Oiz al fondo, dorsal 63 en primer plano"':
+        'alt="Korrikalariak kresta batean gora, Oizeko aerosorgailuak atzealdean, 63 dortsala aurrealdean"',
+    'alt="Corredor con dorsal de la 7 Pago dando el pulgar hacia arriba en un tramo de bosque, con otro corredor detr&aacute;s y las monta&ntilde;as al fondo, dorsal 37"':
+        'alt="Korrikalari bat 7 Pagoko dortsalarekin hatz lodia gora eginez baso-zati batean, beste korrikalari bat atzean eta mendiak atzealdean, 37 dortsala"',
+
     # hero
     'alt="Bicicleta de montaña junto a un poste de señales en el monte, al atardecer, con Mallabia iluminada al fondo"':
         'alt="Mendiko bizikleta seinale-zutoin baten ondoan mendian, ilunabarrean, Mallabia argiztatuta atzealdean"',
@@ -245,14 +251,20 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
-    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak y 7 Pago':
-        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak eta 7 Pago',
+    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K y 7 Pago 16K':
+        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K eta 7 Pago 16K',
     '<span class="signpost-name">7 Pago Mendi Lasterketa</span>':
         '<span class="signpost-name">7 Pago Mendi Lasterketa</span>',
+    '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>':
+        '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>',
     '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>':
         '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>',
+    '<h2>7 Pago<br><em>Mendi Lasterketa 16K</em></h2>':
+        '<h2>7 Pago<br><em>Mendi Lasterketa 16K</em></h2>',
     '<p>El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.</p>':
         '<p>7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.</p>',
+    '<p>El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.</p>':
+        '<p>7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.</p>',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
         'Sakatu ibilbide bat mapan, bere informazioa ikusteko.',
     'download="Rutas Mallabia - todos los tracks.zip"':
@@ -2321,6 +2333,26 @@ PAGO16 = {
     '<p class="full-name">El trazado real de la 7 Pago Mendi Lasterketa 16K, la versi&oacute;n corta de la carrera</p>':
         '<p class="full-name">7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, lasterketaren bertsio laburra</p>',
 
+    # photos
+    'alt="Corredor con dorsal de la 7 Pago dando el pulgar hacia arriba en un tramo de bosque, con otro corredor detr&aacute;s y las monta&ntilde;as al fondo, dorsal 37"':
+        'alt="Korrikalari bat 7 Pagoko dortsalarekin hatz lodia gora eginez baso-zati batean, beste korrikalari bat atzean eta mendiak atzealdean, 37 dortsala"',
+    'alt="Foto ampliada del recorrido de la 7 Pago Mendi Lasterketa 16K"':
+        'alt="7 Pago Mendi Lasterketa 16K ibilbidearen argazki handitua"',
+    'alt="Aerogenerador visto desde abajo, con helechos y monta&ntilde;as al fondo"':
+        'alt="Aerosorgailua behetik ikusita, garoak eta mendiak atzealdean"',
+    'alt="Vista panor&aacute;mica de un valle con caser&iacute;os, monta&ntilde;as y el mar al fondo"':
+        'alt="Harana ikuspegi panoramikoan, baserriak, mendiak eta itsasoa atzealdean"',
+    'alt="Amanecer desde una cima, con un v&eacute;rtice geod&eacute;sico en primer plano y valles entre niebla"':
+        'alt="Egunsentia gailur batetik, bertize geodesikoa aurrealdean eta haranak lainoaren artean"',
+    'alt="Sendero entre &aacute;rboles y musgo, en un tramo de bosque"':
+        'alt="Bidezidorra zuhaitz eta goroldioaren artean, baso-zati batean"',
+    'alt="Hayedo con hojas nuevas brotando, en un d&iacute;a de niebla"':
+        'alt="Pagadia hosto berriekin, laino-egun batean"',
+    'alt="Cruz de piedra sobre un pedestal, con aerogeneradores al fondo"':
+        'alt="Harrizko gurutzea oinarri baten gainean, aerosorgailuak atzealdean"',
+    'alt="Corredoras y corredores junto a un muro de piedra antiguo, con dorsales de la carrera"':
+        'alt="Korrikalariak harrizko horma zahar baten ondoan, lasterketako dortsalekin"',
+
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
@@ -2434,6 +2466,7 @@ HISTORIAS = {
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
+    'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
 }
 
 # <meta name="description"> per page (head files)
@@ -2469,7 +2502,7 @@ DESCRIPTIONS = {
         'Trikuharritik igarota Magunaraino',
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota',
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena',
-    'historias': 'Mallabiako 23 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'historias': 'Mallabiako 24 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
