@@ -115,8 +115,8 @@ HOME = {
     '<span class="k">Desnivel acumulado</span>': '<span class="k">Metatutako desnibela</span>',
     '<span class="k">Track GPX real</span>': '<span class="k">Benetako GPX tracka</span>',
     '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
-    '&Uacute;ltima entrada sobre el terreno: agosto de 2026':
-        'Azken sarrera bertatik bertara: 2026ko abuztuan',
+    '&Uacute;ltima entrada: agosto de 2026':
+        'Azken sarrera: 2026ko abuztuan',
 
     # mini gallery
     '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
@@ -239,6 +239,21 @@ HOME = {
     'Justo al lado del aparcamiento hay dos bares: caf&eacute; antes de salir, o cerveza y algo de comer al volver.':
         'Aparkalekuaren ondoan bi taberna daude: kafea irten aurretik, edo garagardoa eta zerbait jateko itzultzean.',
     'C&oacute;mo llegar': 'Nola iritsi',
+    '<p class="eyebrow">Alojamiento cercano</p>': '<p class="eyebrow">Gertuko ostatua</p>',
+    'Si quieres quedarte a dormir por la zona, hay casas rurales muy cerca: '
+    '<a href="https://www.euskadi.eus/gobierno-vasco/-/es/alojamientos/casa-rural-trabaku-goiko/" target="_blank" rel="noopener noreferrer">Trabaku Goiko</a>, '
+    'junto al propio puerto de Trabakua; '
+    '<a href="https://www.nekatur.net/longa" target="_blank" rel="noopener noreferrer">Longa Nagusia</a>, '
+    'en el barrio de Geria; y '
+    '<a href="https://www.turismo.euskadi.eus/es/alojamientos/casa-rural-zelai-baserria/aa30-12375/es/" target="_blank" rel="noopener noreferrer">Zelai Baserria</a>, '
+    'en el barrio de Goita.':
+        'Inguruan lo egin nahi baduzu, oso gertu daude landetxe batzuk: '
+        '<a href="https://www.euskadi.eus/gobierno-vasco/-/es/alojamientos/casa-rural-trabaku-goiko/" target="_blank" rel="noopener noreferrer">Trabaku Goiko</a>, '
+        'Trabakuko mendatean bertan; '
+        '<a href="https://www.nekatur.net/longa" target="_blank" rel="noopener noreferrer">Longa Nagusia</a>, '
+        'Geria auzoan; eta '
+        '<a href="https://www.turismo.euskadi.eus/es/alojamientos/casa-rural-zelai-baserria/aa30-12375/es/" target="_blank" rel="noopener noreferrer">Zelai Baserria</a>, '
+        'Goita auzoan.',
     '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Irteerak mendatetik</p>',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
