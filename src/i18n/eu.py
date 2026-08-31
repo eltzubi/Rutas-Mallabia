@@ -253,12 +253,12 @@ HOME = {
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K y 7 Pago 16K':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K eta 7 Pago 16K',
-    '<span class="signpost-name">7 Pago Mendi Lasterketa</span>':
-        '<span class="signpost-name">7 Pago Mendi Lasterketa</span>',
+    '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>':
+        '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>',
     '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>':
         '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>',
-    '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>':
-        '<h2>7 Pago<br><em>Mendi Lasterketa</em></h2>',
+    '<h2>7 Pago<br><em>Mendi Lasterketa 25km</em></h2>':
+        '<h2>7 Pago<br><em>Mendi Lasterketa 25km</em></h2>',
     '<h2>7 Pago<br><em>Mendi Lasterketa 16K</em></h2>':
         '<h2>7 Pago<br><em>Mendi Lasterketa 16K</em></h2>',
     '<p>El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.</p>':
@@ -2370,20 +2370,22 @@ PAGO16 = {
         'Mallabiko ibilbidea izanik, eta Trabakutik ateratzen diren hainbat ibilbidek 7 Pagoko 16K eta 25K-ko trazatuetako zatiak erabiltzen dituztela kontuan hartuta, ibilbide honek ere hemen bere lekua izan behar zuen.',
     'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por la <b>Ermita de San Juan</b>, en el barrio de <b>Zengotita</b>, antes de afrontar la subida hacia <b>Zengotitagane</b>.':
         '<b>Mallabi</b>ko plazatik abiatuko gara, eta berehala utziko dugu herrigunea atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabaziko dugu altuera, <b>Zengotita</b> auzoko <b>San Juan ermita</b>tik igaroz, <b>Zengotitagane</b>rako igoerari ekin aurretik.',
-    'Despu&eacute;s de Zengotitagane continuamos por la parte alta, cresteando y con buenas vistas a ambos lados. A nuestra derecha se abre el valle de Gerea, mientras que a la izquierda tenemos las monta&ntilde;as que rodean esta parte de Mallabia.':
-        'Zengotitagane atzean utzita, goiko aldetik jarraituko dugu, bizkarretik aurrera eginez eta bi aldeetara ikuspegi ederrak izanez. Eskuinean Gerea harana zabaltzen da, eta ezkerrean Mallabiko inguru hau inguratzen duten mendiak izango ditugu.',
-    'Seguimos hacia <b>Iturzurigana</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles y, poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigana, el punto m&aacute;s alto de la carrera.':
-        '<b>Iturzurigana</b> aldera jarraituko dugu. Zuhaitz artean tarte labur batean sartu eta, handik gutxira, ezkerrera egingo dugu, trikuharrien ingurura eramango gaituen igoerari ekiteko. Metro batzuk gehiago egin ondoren Iturzuriganera iritsiko gara, lasterketako punturik altuenera.',
+    'Despu&eacute;s de Zengotitagane continuamos por la parte alta, cresteando y con buenas vistas a ambos lados. A nuestra derecha se abre el valle de Gerea, mientras que a la izquierda tenemos las monta&ntilde;as del Duranguesado.':
+        'Zengotitagane atzean utzita, goiko aldetik jarraituko dugu, bizkarretik aurrera eginez eta bi aldeetara ikuspegi ederrak izanez. Eskuinean Gerea harana zabaltzen da, eta ezkerrean Durangaldeko mendiak izango ditugu.',
+    'Seguimos hacia <b>Iturzurigana</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles, en un hayedo, y poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigana, el punto m&aacute;s alto de la carrera.':
+        '<b>Iturzurigana</b> aldera jarraituko dugu. Zuhaitz artean tarte labur batean sartu eta, pagadi batean, handik gutxira ezkerrera egingo dugu, trikuharrien ingurura eramango gaituen igoerari ekiteko. Metro batzuk gehiago egin ondoren Iturzuriganera iritsiko gara, lasterketako punturik altuenera.',
     'A partir de aqu&iacute; comienza el regreso. M&aacute;s adelante giramos a la izquierda y, junto a una cruz de piedra, cogemos un sendero que nos hace perder altura en direcci&oacute;n al caser&iacute;o <b>Betzuen</b>. Es una bajada r&aacute;pida y entretenida en la que se pierde bastante altura en poco tiempo.':
         'Hemendik aurrera itzulerako bidea hasten da. Aurrerago ezkerrera egingo dugu eta, harrizko gurutze baten ondoan, <b>Betzuen</b> baserriaren norabidean jaisten den bidezidorra hartuko dugu. Jaitsiera azkar eta entretenigarria da, eta denbora gutxian altuera dezente galtzen da.',
     'Antes de llegar abajo del todo giramos de nuevo a la izquierda y cogemos un camino bastante menos conocido que nos lleva de vuelta hacia el barrio de Zengotita.':
         'Beheraino iritsi baino lehen, berriro ezkerrera egingo dugu eta hain ezaguna ez den bide bat hartuko dugu, Zengotita auzora bueltan eramango gaituena.',
-    'Tras pasar de nuevo por la parte baja del barrio de Zengotita, cerca de la ermita de San Juan, todav&iacute;a quedan las dos &uacute;ltimas subidas de la carrera. Primero afrontamos la subida a <b>Osmagain</b>, coronada por una cruz, y despu&eacute;s continuamos hacia <b>Arietzu</b>, donde encontramos otra cruz en la cima.':
-        'Zengotita auzoko beheko aldetik berriro igaro ondoren, San Juan ermitaren ingurutik, lasterketako azken bi igoerak geratzen zaizkigu oraindik. Lehenengo <b>Osmagain</b>era igoko gara, tontorreko gurutzeraino, eta ondoren <b>Arietzu</b> aldera jarraituko dugu, han ere tontorrean beste gurutze bat aurkituko dugularik.',
+    'Tras pasar de nuevo por la parte baja del barrio de Zengotita, cerca de la ermita de San Juan, todav&iacute;a quedan las dos &uacute;ltimas subidas de la carrera. Primero afrontamos la subida a <a href="arietzu.html">Osmagain</a>, coronada por una cruz, y despu&eacute;s continuamos hacia <a href="arietzu.html">Arietzu</a>, donde encontramos otra cruz en la cima.':
+        'Zengotita auzoko beheko aldetik berriro igaro ondoren, San Juan ermitaren ingurutik, lasterketako azken bi igoerak geratzen zaizkigu oraindik. Lehenengo <a href="arietzu.html">Osmagain</a>era igoko gara, tontorreko gurutzeraino, eta ondoren <a href="arietzu.html">Arietzu</a> aldera jarraituko dugu, han ere tontorrean beste gurutze bat aurkituko dugularik.',
     'Superado Arietzu, ya s&iacute; comienza el descenso definitivo hacia Mallabia. Bajamos hasta alcanzar la zona del r&iacute;o y, desde all&iacute;, el terreno se suaviza. Continuamos junto al agua, pr&aacute;cticamente llaneando y con alg&uacute;n peque&ntilde;o repecho, hasta regresar al pueblo y completar los 16 kil&oacute;metros.':
         'Arietzu gaindituta, orain bai, Mallabiarako azken jaitsiera hasiko dugu. Erreka ingurura jaitsi eta, handik aurrera, ibilbidea nabarmen leuntzen da. Uraren ondotik eta ia lauan jarraituko dugu, tarteka aldapatxo txikiren batekin, Mallabiara itzuli eta 16 kilometroko ibilbidea osatu arte.',
     'No es una carrera especialmente t&eacute;cnica ni tiene desniveles exagerados, pero tampoco conviene confiarse. Es una carrera r&aacute;pida, y ser r&aacute;pida no significa que sea f&aacute;cil. Se puede correr durante buena parte del recorrido, las subidas se hacen a buen ritmo y apenas hay momentos para recuperar del todo. Si se aprieta demasiado al principio, Osmagain, Arietzu y los &uacute;ltimos kil&oacute;metros de regreso a Mallabia pueden terminar haci&eacute;ndose bastante largos.':
         'Ez da bereziki lasterketa teknikoa, eta desnibelak ere ez dira ikaragarriak, baina ez da komeni gehiegi fidatzea. Lasterketa azkarra da, eta azkarra izateak ez du esan nahi erraza denik. Ibilbidearen zati handi batean korrika egin daiteke, igoerak erritmo onean egiten dira eta atseden hartzeko aukera gutxi dago. Hasieran gehiegi estutuz gero, Osmagain, Arietzu eta Mallabiarako azken kilometroak espero baino luzeagoak egin daitezke.',
+    'Este es el trazado oficial de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa 16K</a>, que se corre cada mayo en Mallabia. Buen track para reconocer el recorrido antes de la pr&oacute;xima edici&oacute;n.':
+        'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa 16K</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
 
     # map + footer
     'data-marker-title="Mallabia (salida y llegada)"':
