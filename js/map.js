@@ -102,10 +102,33 @@
       center: data.tracks[0].points[0],
       zoom: 13
     });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
+
+    // Layer switcher (topographic view): only on the home page's overview
+    // map, which plots every route at once -- a single route's own map
+    // stays on the plain street layer.
+    if (data.tracks.length > 1) {
+      var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 17,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
+      });
+      var isTopo = false;
+      var layersBtn = document.createElement('button');
+      layersBtn.type = 'button';
+      layersBtn.className = 'map-layers-btn';
+      layersBtn.setAttribute('aria-label', isEu ? 'Aldatu mapa mota' : 'Cambiar tipo de mapa');
+      layersBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>';
+      layersBtn.addEventListener('click', function(){
+        isTopo = !isTopo;
+        if (isTopo) { map.removeLayer(osmLayer); topoLayer.addTo(map); }
+        else { map.removeLayer(topoLayer); osmLayer.addTo(map); }
+        layersBtn.classList.toggle('is-active', isTopo);
+      });
+      el.parentElement.appendChild(layersBtn);
+    }
 
     // On a page with several routes (the home overview), clicking one opens
     // a bottom info panel instead of a Leaflet popup anchored to the click

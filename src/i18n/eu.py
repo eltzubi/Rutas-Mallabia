@@ -176,6 +176,9 @@ HOME = {
         'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
+    'Las rutas en bici est&aacute;n hechas con asistencia el&eacute;ctrica est&aacute;ndar; la dificultad real puede variar seg&uacute;n la bici y el ciclista.':
+        'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira; benetako zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
+
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     'aria-label="Filtrar por dificultad"': 'aria-label="Iragazi zailtasunaren arabera"',
     '<span>F&aacute;cil</span>': '<span>Erraza</span>',
