@@ -2314,6 +2314,51 @@ PAGO7 = {
     'Circuito &mdash; vuelve al mismo punto': 'Zirkuitua &mdash; puntu berera itzultzen da',
 }
 
+PAGO16 = {
+    # hero
+    '<span>Mixta</span><span class="sep">/</span><span>Iturzurigana</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Iturzurigana</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<p class="full-name">El trazado real de la 7 Pago Mendi Lasterketa 16K, la versi&oacute;n corta de la carrera</p>':
+        '<p class="full-name">7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, lasterketaren bertsio laburra</p>',
+
+    # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+
+    # body copy
+    'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.':
+        '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
+    'Son 16 kil&oacute;metros y alrededor de 750 metros de desnivel positivo. Sobre el papel puede parecer un recorrido relativamente corto, pero es una carrera r&aacute;pida, con bastante terreno para correr y pocos tramos donde relajarse. Y precisamente por eso tambi&eacute;n termina siendo exigente.':
+        '16 kilometro eta 750 metro inguruko desnibel positiboa ditu. Paperean ez dirudi ibilbide oso luzea, baina lasterketa azkarra da, korrika egiteko tarte askokoa eta lasaitzeko aukera gutxikoa. Eta, hain zuzen ere, horrek egiten du uste baino gogorragoa.',
+    'Aunque la carrera sale y termina en Mallabia, desde <b>Trabakua</b> tambi&eacute;n tenemos un acceso bastante c&oacute;modo al recorrido. En unos 40 minutos podemos llegar hasta <a href="zengotitagane.html">Zengotitagane</a> y enlazar directamente con el trazado de esta 16K.':
+        'Lasterketa Mallabian hasi eta amaitzen den arren, <b>Trabaku</b>tik ere nahiko erraz sar gaitezke ibilbidean. 40 minutu inguruan <a href="zengotitagane.html">Zengotitagane</a>ra iritsi eta 16K-ko trazatuarekin zuzenean bat egin dezakegu.',
+    'Adem&aacute;s, desde Trabakua tenemos todav&iacute;a m&aacute;s cerca el recorrido de la <a href="7pago.html">7 Pago Mendi Lasterketa 25K</a>. En apenas 15 minutos podemos enlazar con la subida que utiliza la carrera larga en direcci&oacute;n a las cascadas de <a href="gerea.html">Gerea</a>. A partir de ah&iacute; podemos seguir parte de su recorrido o utilizarlo para conectar con otras rutas de la zona.':
+        'Gainera, Trabakutik are gertuago daukagu <a href="7pago.html">7 Pago Mendi Lasterketa</a>ko 25K-ko ibilbidea. 15 minutu inguruan lasterketa luzeko trazatuarekin bat egin dezakegu, <a href="gerea.html">Gerea</a> ur-jauzietara doan igoeratik. Handik aurrera, lasterketako ibilbidearen zati bat jarrai dezakegu edo inguruko beste ibilbide batzuekin lotzeko erabili.',
+    'Al tratarse de una ruta de Mallabia y teniendo en cuenta que muchas de las rutas que parten de Trabakua coinciden en alg&uacute;n momento con los recorridos de la 16K y la 25K de la 7 Pago, este trazado tambi&eacute;n ten&iacute;a que tener aqu&iacute; su sitio.':
+        'Mallabiko ibilbidea izanik, eta Trabakutik ateratzen diren hainbat ibilbidek 7 Pagoko 16K eta 25K-ko trazatuetako zatiak erabiltzen dituztela kontuan hartuta, ibilbide honek ere hemen bere lekua izan behar zuen.',
+    'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por la <b>Ermita de San Juan</b>, en el barrio de <b>Zengotita</b>, antes de afrontar la subida hacia <b>Zengotitagane</b>.':
+        '<b>Mallabi</b>ko plazatik abiatuko gara, eta berehala utziko dugu herrigunea atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabaziko dugu altuera, <b>Zengotita</b> auzoko <b>San Juan ermita</b>tik igaroz, <b>Zengotitagane</b>rako igoerari ekin aurretik.',
+    'Despu&eacute;s de Zengotitagane continuamos por la parte alta, cresteando y con buenas vistas a ambos lados. A nuestra derecha se abre el valle de Gerea, mientras que a la izquierda tenemos las monta&ntilde;as que rodean esta parte de Mallabia.':
+        'Zengotitagane atzean utzita, goiko aldetik jarraituko dugu, bizkarretik aurrera eginez eta bi aldeetara ikuspegi ederrak izanez. Eskuinean Gerea harana zabaltzen da, eta ezkerrean Mallabiko inguru hau inguratzen duten mendiak izango ditugu.',
+    'Seguimos hacia <b>Iturzurigana</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles y, poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigana, el punto m&aacute;s alto de la carrera.':
+        '<b>Iturzurigana</b> aldera jarraituko dugu. Zuhaitz artean tarte labur batean sartu eta, handik gutxira, ezkerrera egingo dugu, trikuharrien ingurura eramango gaituen igoerari ekiteko. Metro batzuk gehiago egin ondoren Iturzuriganera iritsiko gara, lasterketako punturik altuenera.',
+    'A partir de aqu&iacute; comienza el regreso. M&aacute;s adelante giramos a la izquierda y, junto a una cruz de piedra, cogemos un sendero que nos hace perder altura en direcci&oacute;n al caser&iacute;o <b>Betzuen</b>. Es una bajada r&aacute;pida y entretenida en la que se pierde bastante altura en poco tiempo.':
+        'Hemendik aurrera itzulerako bidea hasten da. Aurrerago ezkerrera egingo dugu eta, harrizko gurutze baten ondoan, <b>Betzuen</b> baserriaren norabidean jaisten den bidezidorra hartuko dugu. Jaitsiera azkar eta entretenigarria da, eta denbora gutxian altuera dezente galtzen da.',
+    'Antes de llegar abajo del todo giramos de nuevo a la izquierda y cogemos un camino bastante menos conocido que nos lleva de vuelta hacia el barrio de Zengotita.':
+        'Beheraino iritsi baino lehen, berriro ezkerrera egingo dugu eta hain ezaguna ez den bide bat hartuko dugu, Zengotita auzora bueltan eramango gaituena.',
+    'Tras pasar de nuevo por la parte baja del barrio de Zengotita, cerca de la ermita de San Juan, todav&iacute;a quedan las dos &uacute;ltimas subidas de la carrera. Primero afrontamos la subida a <b>Osmagain</b>, coronada por una cruz, y despu&eacute;s continuamos hacia <b>Arietzu</b>, donde encontramos otra cruz en la cima.':
+        'Zengotita auzoko beheko aldetik berriro igaro ondoren, San Juan ermitaren ingurutik, lasterketako azken bi igoerak geratzen zaizkigu oraindik. Lehenengo <b>Osmagain</b>era igoko gara, tontorreko gurutzeraino, eta ondoren <b>Arietzu</b> aldera jarraituko dugu, han ere tontorrean beste gurutze bat aurkituko dugularik.',
+    'Superado Arietzu, ya s&iacute; comienza el descenso definitivo hacia Mallabia. Bajamos hasta alcanzar la zona del r&iacute;o y, desde all&iacute;, el terreno se suaviza. Continuamos junto al agua, pr&aacute;cticamente llaneando y con alg&uacute;n peque&ntilde;o repecho, hasta regresar al pueblo y completar los 16 kil&oacute;metros.':
+        'Arietzu gaindituta, orain bai, Mallabiarako azken jaitsiera hasiko dugu. Erreka ingurura jaitsi eta, handik aurrera, ibilbidea nabarmen leuntzen da. Uraren ondotik eta ia lauan jarraituko dugu, tarteka aldapatxo txikiren batekin, Mallabiara itzuli eta 16 kilometroko ibilbidea osatu arte.',
+    'No es una carrera especialmente t&eacute;cnica ni tiene desniveles exagerados, pero tampoco conviene confiarse. Es una carrera r&aacute;pida, y ser r&aacute;pida no significa que sea f&aacute;cil. Se puede correr durante buena parte del recorrido, las subidas se hacen a buen ritmo y apenas hay momentos para recuperar del todo. Si se aprieta demasiado al principio, Osmagain, Arietzu y los &uacute;ltimos kil&oacute;metros de regreso a Mallabia pueden terminar haci&eacute;ndose bastante largos.':
+        'Ez da bereziki lasterketa teknikoa, eta desnibelak ere ez dira ikaragarriak, baina ez da komeni gehiegi fidatzea. Lasterketa azkarra da, eta azkarra izateak ez du esan nahi erraza denik. Ibilbidearen zati handi batean korrika egin daiteke, igoerak erritmo onean egiten dira eta atseden hartzeko aukera gutxi dago. Hasieran gehiegi estutuz gero, Osmagain, Arietzu eta Mallabiarako azken kilometroak espero baino luzeagoak egin daitezke.',
+
+    # map + footer
+    'data-marker-title="Mallabia (salida y llegada)"':
+        'data-marker-title="Mallabia (irteera eta helmuga)"',
+    'Circuito &mdash; vuelve al mismo punto': 'Zirkuitua &mdash; puntu berera itzultzen da',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2423,6 +2468,7 @@ DESCRIPTIONS = {
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
         'Trikuharritik igarota Magunaraino',
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota',
+    '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena',
     'historias': 'Mallabiako 23 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2454,6 +2500,7 @@ TITLES = {
     'zaldibar': 'Trabakua, Aixola eta Berriz · Bizikleta ibilbidea — Herriko ibilbideak',
     'maguna': 'Trabakua, Zengotitagane eta Maguna · Bizikleta ibilbidea — Herriko ibilbideak',
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
+    '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2482,5 +2529,6 @@ PAGE_STRINGS = {
     'zaldibar': ZALDIBAR,
     'maguna': MAGUNA,
     '7pago': PAGO7,
+    '7pago16': PAGO16,
     'historias': HISTORIAS,
 }
