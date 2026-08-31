@@ -1395,12 +1395,12 @@ EGOARBITZA = {
         'handik, ia bertikalki Trabakuara: azken jaitsierak malda handia dauka, 400 m desnibel 2 km '
         'eskasetan, eta zirkuitua ixten da.',
 
-    '34,1 km y +2.564 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
+    '34,1 km y +2.201 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
     'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente junto a '
     'la presa de Aixola, otro en Santa Marina, y una fuente en el barrio de '
     'Zengotita.':
-        '34,1 km eta +2.564 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
+        '34,1 km eta +2.201 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
         'Egoarbitza, Arietxu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Aixolako presaren ondoan, beste bat '
         'Santa Marinan, eta iturri bat Zengotita auzoan.',
