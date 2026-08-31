@@ -578,9 +578,10 @@ body{
   aspect-ratio:4/3;
   background:var(--ground-raised);
   overflow:hidden;
+  scroll-margin-top:100px; /* clears the sticky masthead when scrolled into view */
 }
 @media (min-width:640px){ .route-map-box{ aspect-ratio:16/9; } }
-.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; }
+.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; height:80dvh; }
 .route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
 .leaflet-popup-content-wrapper{
   background:var(--ground-raised) !important; color:var(--ink) !important;

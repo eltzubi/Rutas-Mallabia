@@ -18,7 +18,7 @@
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
@@ -31,7 +31,7 @@
     exploreLink.addEventListener('click', function(e){
       e.preventDefault();
       if (el.parentElement.classList.contains('is-expanded')) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
         expandBtn.click();
       }
