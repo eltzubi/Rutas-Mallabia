@@ -257,8 +257,14 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
-    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K y 7 Pago 16K':
-        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K eta 7 Pago 16K',
+    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K y Barinaga':
+        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K eta Barinaga',
+    '<span class="signpost-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil</span>':
+        '<span class="signpost-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil</span>',
+    '<h2>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta y Mendibil</em></h2>':
+        '<h2>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta eta Mendibil</em></h2>',
+    '<p>Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.</p>':
+        '<p>Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.</p>',
     '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>':
         '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>',
     '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>':
@@ -2399,6 +2405,73 @@ PAGO16 = {
     'Circuito &mdash; vuelve al mismo punto': 'Zirkuitua &mdash; puntu berera itzultzen da',
 }
 
+BARINAGA = {
+    '<span>Cemento, piedra y tierra</span><span class="sep">/</span><span>Urko, Kalamua, Barinaga, Iturreta y Mendibil</span>':
+        '<span>Zementua, harria eta lurra</span><span class="sep">/</span><span>Urko, Kalamua, Barinaga, Iturreta eta Mendibil</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+
+    '<h1>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta y Mendibil</em></h1>':
+        '<h1>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta eta Mendibil</em></h1>',
+
+    'Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil':
+        'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
+
+    'alt="V&eacute;rtice geod&eacute;sico a contraluz al atardecer, con una marca roja en primer plano"':
+        'alt="Bertize geodesikoa kontraargitan arratsaldean, marka gorri batekin aurrealdean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil"':
+        'alt="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Monte solitario entre nubes, visto desde una loma cubierta de hierba"':
+        'alt="Mendi bakartia hodeien artean, belarrez estalitako gandor batetik ikusia"',
+    'alt="Se&ntilde;al de madera en una loma, con aerogeneradores y el mar al fondo"':
+        'alt="Zurezko seinalea gandor batean, haize-errotak eta itsasoa atzealdean"',
+    'alt="Camino de tierra entre alerces, con la luz del sol filtr&aacute;ndose entre los &aacute;rboles"':
+        'alt="Lurrezko bidea alertzeen artean, eguzki-argia zuhaitzen artetik sartzen dela"',
+    'alt="Construcci&oacute;n de piedra y hormig&oacute;n en una cima rocosa, bajo un cielo despejado"':
+        'alt="Harrizko eta hormigoizko eraikina gailur harritsu batean, zeru garbi baten azpian"',
+    'alt="Grupo de caballos pastando en una loma verde"':
+        'alt="Zaldi talde bat gandor berde batean bazkatzen"',
+    'alt="Mar de nubes visto desde una loma, con las monta&ntilde;as asomando entre la niebla"':
+        'alt="Hodei itsasoa gandor batetik ikusia, mendiak lainoartean agertzen direla"',
+    'alt="Moj&oacute;n de piedra en un prado, con aerogeneradores en las monta&ntilde;as al fondo"':
+        'alt="Harrizko mugarria larre batean, haize-errotak mendietan atzealdean"',
+
+    'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil.gpx"':
+        'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil.gpx"',
+
+    '<span class="mid">perfil real del track &middot; 27,0 km</span>':
+        '<span class="mid">trackaren benetako profila &middot; 27,0 km</span>',
+
+    '<span class="v">27,0 km</span>': '<span class="v">27,0 km</span>',
+    '<span class="v">+1.453 m</span>': '<span class="v">+1.453 m</span>',
+
+    'Subimos desde <b>Trabakua</b> hasta <b>Urko</b> (km 7,9 &middot; 790 m) siguiendo el mismo recorrido que la ruta de <a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde la cima comenzamos el descenso por el cordal en direcci&oacute;n a Ixua, con Eibar al otro lado de la monta&ntilde;a, hasta alcanzar el puerto. All&iacute; cruzamos la carretera general junto a un restaurante y comenzamos la subida hacia <b>Kalamua</b>.':
+        'Trabakutik <b>Urko</b>ra (7,9 km &middot; 790 m) igotzen gara, <a href="urko.html">Trabakua, Asuntza eta Urko</a> ibilbideko bide beretik. Gailurretik, ipar-ekialderantz doan gandorretik Ixuarantz jaisten hasten gara, Eibar mendiaren beste aldean dugula, mendatera iritsi arte. Ixuan errepide nagusia zeharkatzen dugu, jatetxe baten ondoan, eta <b>Kalamua</b>rako igoerari ekiten diogu.',
+
+    'Es una subida muy bonita, con varias fuentes por el camino donde podemos abastecernos de agua. Conviene tenerlo en cuenta, porque ser&aacute;n las &uacute;ltimas que encontraremos hasta llegar a Barinaga.':
+        'Igoera oso polita da, eta bidean hainbat iturri aurkituko ditugu ura hartzeko. Kontuan hartzekoa da, hemendik Barinagara iritsi arte ez baitugu beste iturririk aurkituko.',
+
+    'Alcanzamos la cima de <b>Kalamua</b> (km 12,4 &middot; 765 m), donde encontramos una torreta y muy buenas vistas hacia las monta&ntilde;as de alrededor. Aqu&iacute; dejamos a un lado la bajada hacia San Miguel, que queda hacia el este, y giramos a la izquierda para continuar por una bonita loma, abierta y con grandes vistas.':
+        '<b>Kalamua</b> (12,4 km &middot; 765 m) gailurrera iristen gara. Bertan dorretxo bat dago, eta inguruko mendietara bista ederrak zabaltzen dira. Hemen, ekialderantz San Migelera jaisten den bidea alde batera utzi, ezkerrera egin eta gandor polit batetik jarraitzen dugu, ikuspegi zabalekin.',
+
+    'Poco a poco vamos perdiendo altura hasta encontrar, unos kil&oacute;metros m&aacute;s adelante, un camino de cemento. Lo seguimos en descenso entre prados y caser&iacute;os y, ya en la parte baja, llegamos a <b>Barinaga</b> (km 18 &middot; 149 m).':
+        'Pixkanaka altuera galtzen joango gara, kilometro batzuk aurrerago porlanezko bide batekin topo egin arte. Bertatik jaisten jarraitzen dugu, zelai eta baserrien artean, eta behealdera iristean <b>Barinaga</b>ra (18. km &middot; 149 m) heltzen gara.',
+
+    'Atravesamos este peque&ntilde;o pueblo hasta su centro y, junto a la iglesia, giramos a la izquierda para coger un camino de barrio que vuelve a acompa&ntilde;ar al r&iacute;o. Por &eacute;l continuamos hasta enlazar con la pista que sube hacia Iturreta. En Barinaga podemos coger agua junto al front&oacute;n.':
+        'Herri txiki hau erdiguneraino zeharkatzen dugu eta, elizaren ondoan, ezkerrera egiten dugu auzo-bide bat hartzeko. Bideak berriro ere ibaiaren ondotik eramango gaitu, Iturretara igotzen den pistarekin bat egin arte. Barinagan ura hartu daiteke, frontoiaren ondoan.',
+
+    'Aqu&iacute; comienza la subida por cemento hasta <a href="iturreta.html"><b>Iturreta</b></a> (km 21,3 &middot; 354 m). Una vez arriba, continuamos por una pista de piedra durante varios kil&oacute;metros, un tramo que viene bien para recuperar piernas antes de afrontar la siguiente subida. No es larga, pero s&iacute; intensa, y asciende por pista de tierra hasta la base de <a href="mendibil.html"><b>Mendibil</b></a>.':
+        'Hemendik porlanezko bidetik hasten da <a href="iturreta.html"><b>Iturreta</b>rako</a> (21,3 km &middot; 354 m) igoera. Behin goian, harrizko pista batetik jarraitzen dugu hainbat kilometroz. Hurrengo igoeraren aurretik hankak zertxobait lasaitzeko tarte ona da. Hurrengo igoera ez da luzea, baina bai gogorra: lurrezko pistatik <a href="mendibil.html"><b>Mendibil</b>en</a> magalera igotzen gara.',
+
+    'Llegamos a un cruce con un cartel que indica, entre otros destinos, Markina. Mendibil lo tenemos ah&iacute; mismo, a nuestra izquierda. Cogemos el camino, que a partir de aqu&iacute; tiene m&aacute;s de sendero que de pista, y seguimos el track para rodear la monta&ntilde;a y acceder a Mendibil por su parte trasera hasta alcanzar la cima.':
+        'Besteak beste Markinarako norabidea adierazten duen seinale batera iristen gara. Mendibil hortxe bertan daukagu, gure ezkerrean. Bidea hartzen dugu &mdash;hemendik aurrera pista baino gehiago bidezidorra da&mdash; eta trackari jarraituz Mendibil inguratu eta atzealdetik igotzen gara gailurrera.',
+
+    'Desde <b>Mendibil</b> (km 24,1 &middot; 613 m) solo queda iniciar el regreso. Bajamos por el camino normal, sin complicaciones especiales, y continuamos el descenso de vuelta hacia Trabakua, donde cerramos la ruta.':
+        '<b>Mendibil</b>etik (24,1 km &middot; 613 m) itzulerari ekitea besterik ez zaigu geratzen. Ohiko bidetik jaisten gara, zailtasun berezirik gabe, eta Trabakua aldera jaisten jarraitzen dugu, bertan ibilbidea amaitzeko.',
+
+    '27 km y +1.453 m de desnivel en un solo circuito, con dos subidas largas (Urko y Kalamua) y una tercera, m&aacute;s corta pero intensa, hasta Mendibil. Hay fuentes de agua hasta Kalamua y de nuevo en Barinaga, junto al front&oacute;n &mdash;entre medias no hay d&oacute;nde abastecerse.':
+        '27 km eta +1.453 m-ko desnibela zirkuitu bakarrean, bi igoera luzerekin (Urko eta Kalamua) eta hirugarren bat, laburragoa baina bizia, Mendibileraino. Ur-iturriak daude Kalamuara arte eta berriro Barinagan, frontoiaren ondoan &mdash;bitartean ez dago non hornitu.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2449,6 +2522,7 @@ HISTORIAS = {
     'Trabakua, Mendibil, Olamendi y Arteta': 'Trabakua, Mendibil, Olamendi eta Arteta',
     'Trabakua paseo por el barrio Goita': 'Trabakua Goita auzoko paseoa',
     'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
+    'Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -2473,6 +2547,7 @@ HISTORIAS = {
     'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
+    'Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
 }
@@ -2510,7 +2585,8 @@ DESCRIPTIONS = {
         'Trikuharritik igarota Magunaraino',
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota',
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena',
-    'historias': 'Mallabiako 24 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'barinaga': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
+    'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -2542,6 +2618,7 @@ TITLES = {
     'maguna': 'Trabakua, Zengotitagane eta Maguna · Bizikleta ibilbidea — Herriko ibilbideak',
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
+    'barinaga': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2571,5 +2648,6 @@ PAGE_STRINGS = {
     'maguna': MAGUNA,
     '7pago': PAGO7,
     '7pago16': PAGO16,
+    'barinaga': BARINAGA,
     'historias': HISTORIAS,
 }
