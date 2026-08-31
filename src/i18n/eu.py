@@ -1589,10 +1589,10 @@ KALAMUA = {
         'Azken igoera horrek <b>Mendibilera</b> eramaten gaitu (32,8 km &middot; 612 m). Hortik aurrera '
         'Trabakuara itzultzeko jaitsiera besterik ez da geratzen zirkuitua ixteko.',
 
-    '36,0 km y +1.500 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
+    '36,0 km y +1.676 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
     'Mendibil) y tramos de pista, asfalto y cemento. Hay varias fuentes en la subida a Kalamua para '
     'abastecerse de agua; a partir de ah&iacute; escasea hasta Markina.':
-        '36,0 km eta +1.500 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
+        '36,0 km eta +1.676 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
         'Kalamua eta Mendibil) eta pista, asfalto eta zementuzko tarteekin. Kalamuarako igoeran hainbat '
         'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
 
