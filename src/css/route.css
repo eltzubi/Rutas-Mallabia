@@ -119,6 +119,17 @@ body{
 }
 .map-expand-btn:hover{ opacity:1; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
+.map-layers-btn{
+  position:absolute; z-index:400; top:10px; right:52px;
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
+  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
+  transition:opacity .2s ease, color .2s ease;
+  background:color-mix(in srgb, var(--ground) 72%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.map-layers-btn:hover{ opacity:1; }
+.map-layers-btn.is-active{ color:var(--teal); opacity:1; }
 .wikiloc-credit{
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
