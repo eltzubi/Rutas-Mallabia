@@ -206,6 +206,8 @@ h1{
   line-height:.94;
   letter-spacing:-.01em;
   text-wrap:balance;
+  hyphens:auto;
+  overflow-wrap:anywhere;
   margin:0;
 }
 h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
