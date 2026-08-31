@@ -115,8 +115,8 @@ HOME = {
     '<span class="k">Desnivel acumulado</span>': '<span class="k">Metatutako desnibela</span>',
     '<span class="k">Track GPX real</span>': '<span class="k">Benetako GPX tracka</span>',
     '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
-    '&Uacute;ltima revisi&oacute;n sobre el terreno: agosto de 2026':
-        'Azken berrikuspena bertan: 2026ko abuztuan',
+    '&Uacute;ltima vez sobre el terreno: agosto de 2026':
+        'Azken aldiz bertan: 2026ko abuztuan',
 
     # mini gallery
     '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',

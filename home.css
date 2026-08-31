@@ -684,7 +684,7 @@ footer a:hover{ text-decoration:underline; }
   position:relative; aspect-ratio:1/1; overflow:hidden;
   border:1px solid var(--line); padding:0; background:none; cursor:zoom-in;
 }
-.mini-gallery .gallery-item--wide{ aspect-ratio:2400/1100; border-color:transparent; background:var(--ground); }
+.mini-gallery .gallery-item--wide{ aspect-ratio:2400/760; border-color:transparent; background:var(--ground); }
 .mini-gallery .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.2,.7,.2,1); filter:contrast(1.1) saturate(1.28); }
 .mini-gallery .gallery-item--wide img{ filter:none; }
 .mini-gallery .gallery-item:hover img{ transform:scale(1.06); }
