@@ -559,6 +559,8 @@ body{
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
 }
+.map-note a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+.map-note a:hover{ color:var(--violet); }
 .directions-cta{
   margin-top:14px;
   display:inline-flex; align-items:center; gap:8px;
@@ -724,11 +726,11 @@ footer a:hover{ text-decoration:underline; }
   width:100%; max-width:480px; max-height:calc(100vh - 48px);
   overflow-y:auto; border-radius:20px;
   background:var(--ground); border:1px solid var(--line);
-  padding:28px 24px 24px;
+  padding:28px 24px 36px;
   box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 @media (min-width:640px){
-  .info-modal-card{ max-width:600px; max-height:min(720px, calc(100vh - 96px)); padding:32px 36px 28px; }
+  .info-modal-card{ max-width:600px; max-height:min(720px, calc(100vh - 96px)); padding:32px 36px 40px; }
 }
 .info-modal-card .parada{ margin:0 0 24px; }
 .info-modal-card > .eyebrow{ margin-bottom:14px; }
