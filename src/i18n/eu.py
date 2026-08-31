@@ -119,9 +119,14 @@ HOME = {
         'Azken sarrera: 2026ko abuztuan',
 
     # mini gallery
-    '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
-    'alt="Composición con tres momentos de las rutas: vista de los montes de Mallabia con una cruz en primer plano, un grupo caminando por un sendero de piedra entre bosque, y una bicicleta de montaña con el foco encendido en una cima de noche"':
-        'alt="Ibilbideetako hiru une biltzen dituen konposizioa: Mallabia inguruko mendien bista gurutze bat aurrealdean, taldea harrizko bidezidorretik basoan barrena, eta mendiko bizikleta aurreko fokua piztuta gailur batean gauean"',
+    'alt="Pantalla de un reloj GPS con la altitud acumulada de una ruta, 791 m de subida y 793 m de bajada, y el perfil del recorrido"':
+        'alt="Erloju GPS baten pantaila, ibilbide baten metatutako altitudearekin, 791 m igoera eta 793 m jaitsiera, eta ibilbidearen profila"',
+    'alt="Cielo al amanecer con nubes iluminadas en tonos naranjas y rojos"':
+        'alt="Egunsentiko zerua, laranja eta gorri tonuetan argiztatutako hodeiekin"',
+    'alt="Pantalla de un reloj GPS con el mapa topográfico de una ruta y la flecha de dirección del track"':
+        'alt="Erloju GPS baten pantaila, ibilbide baten mapa topografikoarekin eta trackaren norabide-geziarekin"',
+    'alt="Bicicleta de montaña con el foco delantero encendido en una cima de noche, con la luna asomando al fondo"':
+        'alt="Mendiko bizikleta aurreko fokua piztuta gailur batean gauean, ilargia atzealdean ageri dela"',
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
