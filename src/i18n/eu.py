@@ -120,12 +120,8 @@ HOME = {
 
     # mini gallery
     '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
-    'alt="Vista desde un alto sobre los montes de alrededor de Mallabia, con una cruz de madera en primer plano"':
-        'alt="Mallabia inguruko mendien gaineko bista goi batetik, egurrezko gurutze bat aurrealdean"',
-    'alt="Grupo caminando por un sendero de piedra junto a un arroyo, entre bosque"':
-        'alt="Taldea harrizko bidezidorretik oinez, erreka baten ondoan, basoan barrena"',
-    'alt="Bicicleta de montaña con el foco delantero encendido en una cima de noche, con la luna asomando al fondo"':
-        'alt="Mendiko bizikleta aurreko fokua piztuta gailur batean gauean, ilargia atzealdean ageri dela"',
+    'alt="Composición con tres momentos de las rutas: vista de los montes de Mallabia con una cruz en primer plano, un grupo caminando por un sendero de piedra entre bosque, y una bicicleta de montaña con el foco encendido en una cima de noche"':
+        'alt="Ibilbideetako hiru une biltzen dituen konposizioa: Mallabia inguruko mendien bista gurutze bat aurrealdean, taldea harrizko bidezidorretik basoan barrena, eta mendiko bizikleta aurreko fokua piztuta gailur batean gauean"',
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
