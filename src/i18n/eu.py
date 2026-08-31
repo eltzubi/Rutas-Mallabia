@@ -119,7 +119,6 @@ HOME = {
         'Azken sarrera: 2026ko abuztuan',
 
     # mini gallery
-    '<p class="eyebrow">Sobre el terreno</p>': '<p class="eyebrow">Bertatik bertara</p>',
     'alt="Pantalla de un reloj GPS con la altitud acumulada de una ruta, 791 m de subida y 793 m de bajada, y el perfil del recorrido"':
         'alt="Erloju GPS baten pantaila, ibilbide baten metatutako altitudearekin, 791 m igoera eta 793 m jaitsiera, eta ibilbidearen profila"',
     'alt="Cielo al amanecer con nubes iluminadas en tonos naranjas y rojos"':
