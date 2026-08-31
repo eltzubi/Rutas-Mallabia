@@ -124,8 +124,8 @@ HOME = {
         'alt="Mallabia inguruko mendien gaineko bista goi batetik, egurrezko gurutze bat aurrealdean"',
     'alt="Grupo caminando por un sendero de piedra junto a un arroyo, entre bosque"':
         'alt="Taldea harrizko bidezidorretik oinez, erreka baten ondoan, basoan barrena"',
-    'alt="Bicicleta de montaña apoyada en un mojón de piedra, con niebla"':
-        'alt="Mendiko bizikleta harrizko mugarri baten kontra, lainoarekin"',
+    'alt="Bicicleta de montaña con el foco delantero encendido en una cima de noche, con la luna asomando al fondo"':
+        'alt="Mendiko bizikleta aurreko fokua piztuta gailur batean gauean, ilargia atzealdean ageri dela"',
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
