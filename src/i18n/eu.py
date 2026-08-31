@@ -2589,16 +2589,16 @@ HISTORIAS = {
 DESCRIPTIONS = {
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia eta Durangaldeko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
-    'trabakua': 'Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik',
-    'iturrizuri': 'Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
-    'zenarruza': 'Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik',
-    'osma': 'Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
-    'gerea': 'Zirkuitua Trabakuatik Gereako ur-jauzira',
-    'zengotitagane': 'Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
-    'oiz': 'Joan-etorria Trabakuatik Oizeraino',
-    'arietzu': 'Zirkuitua San Juan ermitatik',
-    'urko': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
-    'sancristobal': 'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San '
+    'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
+    'iturrizuri': 'Oinezko zirkuitua: Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
+    'zenarruza': 'Zirkuitua e-bikez: Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik',
+    'osma': 'Zirkuitua e-bikez Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
+    'gerea': 'Oinezko zirkuitua Trabakuatik Gereako ur-jauzira',
+    'zengotitagane': 'Zirkuitua e-bikez Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
+    'oiz': 'Oinezko joan-etorria Trabakuatik Oizko gailurreraino',
+    'arietzu': 'Oinezko zirkuitua San Juan ermitatik',
+    'urko': 'Oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    'sancristobal': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'egoarbitza': 'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
@@ -2607,17 +2607,17 @@ DESCRIPTIONS = {
         'igarota Bolibarreraino',
     'kalamua': 'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
-    'mundiokokoba': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
-    'iruzubieta': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
-    'mendibil': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino',
-    'arteta': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
+    'mundiokokoba': 'Oinezko zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
+    'iruzubieta': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'mendibil': 'Oinezko zirkuitua Trabakuatik Mendibilgo gailurreraino',
+    'arteta': 'Oinezko zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
-    'hirutxikiak': 'Urko, Oiz eta Egoarbitza Ermuatik',
+    'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
         'Trikuharritik igarota Magunaraino',
-    '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota',
-    '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena',
+    '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea (trail running), Oizko gailurretik igarota',
+    '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea (trail running), Mallabiko mendi eta auzoetan barrena',
     'barinaga': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
     'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
