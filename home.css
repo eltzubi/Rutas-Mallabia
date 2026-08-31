@@ -571,6 +571,7 @@ body{
   transition:background .2s ease;
 }
 .directions-cta:hover{ background:var(--violet); }
+.directions-cta + .eyebrow{ margin-top:28px; }
 .route-map-box{
   position:relative;
   border:1px solid var(--line);
