@@ -398,12 +398,12 @@ HOME = {
         'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
 
     # egoarbitza card
-    '<span class="signpost-name">Urko, Egoarbitza y Zengotitagane</span>':
-        '<span class="signpost-name">Urko, Egoarbitza eta Zengotitagane</span>',
+    '<span class="signpost-name">Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane</span>':
+        '<span class="signpost-name">Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane</span>',
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
-    '<h2>Urko, Egoarbitza<br><em>y Zengotitagane</em></h2>':
-        '<h2>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h2>',
+    '<h2>Urko, Egoarbitza, Santama&ntilde;esar<br><em>y Zengotitagane</em></h2>':
+        '<h2>Urko, Egoarbitza, Santama&ntilde;esar<br><em>eta Zengotitagane</em></h2>',
     'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.':
         'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
 
@@ -1301,22 +1301,22 @@ ITURRETA = {
 }
 
 EGOARBITZA = {
-    '<span>Pista, sendero y cresta</span><span class="sep">/</span><span>Urko, Egoarbitza y Zengotitagane</span>':
-        '<span>Pista, bidezidorra eta gailurra</span><span class="sep">/</span><span>Urko, Egoarbitza eta Zengotitagane</span>',
+    '<span>Pista, sendero y cresta</span><span class="sep">/</span><span>Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane</span>':
+        '<span>Pista, bidezidorra eta gailurra</span><span class="sep">/</span><span>Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane</span>',
 
     '<span>Circuito</span></p>':
         '<span>Zirkuitua</span></p>',
 
-    '<h1>Urko, Egoarbitza<br><em>y Zengotitagane</em></h1>':
-        '<h1>Urko, Egoarbitza<br><em>eta Zengotitagane</em></h1>',
+    '<h1>Urko, Egoarbitza, Santama&ntilde;esar<br><em>y Zengotitagane</em></h1>':
+        '<h1>Urko, Egoarbitza, Santama&ntilde;esar<br><em>eta Zengotitagane</em></h1>',
 
     'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane':
         'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino',
 
-    'download="Urko, Egoarbitza y Zengotitagane.gpx"':
-        'download="Urko, Egoarbitza eta Zengotitagane.gpx"',
-    'download="Urko, Egoarbitza y Zengotitagane.kml"':
-        'download="Urko, Egoarbitza eta Zengotitagane.kml"',
+    'download="Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane.gpx"':
+        'download="Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane.gpx"',
+    'download="Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane.kml"':
+        'download="Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane.kml"',
 
     '<title>Presa de Aixola &middot; 19,0 km &middot; 312 m</title>':
         '<title>Aixolako presa &middot; 19,0 km &middot; 312 m</title>',
@@ -1327,8 +1327,8 @@ EGOARBITZA = {
 
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
-    'alt="Foto ampliada del recorrido de Urko, Egoarbitza y Zengotitagane"':
-        'alt="Urko, Egoarbitza eta Zengotitaganeko ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane"':
+        'alt="Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitaganeko ibilbidearen argazki handitua"',
     'alt="Ascenso hacia Urko entre &aacute;rboles a contraluz, con el amanecer al fondo"':
         'alt="Urkorako igoera zuhaitzen artean kontraargitan, egunsentia atzealdean"',
     'alt="Amanecer con el sol asomando entre nubes, desde la zona de Urko"':
@@ -2548,7 +2548,7 @@ HISTORIAS = {
     'Osmagain y Arietzu': 'Osmagain eta Arietzu',
     'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
     'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
-    'Urko, Egoarbitza y Zengotitagane': 'Urko, Egoarbitza eta Zengotitagane',
+    'Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane': 'Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane',
     'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
     'Urko, Kalamua, San Migel y Mendibil': 'Urko, Kalamua, San Migel eta Mendibil',
     'Trabakua, Iturreta e Iruzubieta': 'Trabakua, Iturreta eta Iruzubieta',
@@ -2638,7 +2638,7 @@ TITLES = {
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
-    'egoarbitza': 'Urko, Egoarbitza eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'egoarbitza': 'Urko, Egoarbitza, Santamañesar eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'urregarai': 'Iturreta, Markina eta Urregarai · Bizikleta ibilbidea — Herriko ibilbideak',
     'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Bizikleta ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',

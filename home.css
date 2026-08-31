@@ -481,6 +481,8 @@ body{
   font-family:'Fraunces',serif; font-weight:900;
   font-size:clamp(1.9rem, 6vw, 2.6rem);
   line-height:.98; margin:0; text-wrap:balance;
+  hyphens:auto;
+  overflow-wrap:anywhere;
 }
 .feat-body h2 em{ font-style:italic; font-weight:600; color:var(--violet); }
 .feat-body > p{

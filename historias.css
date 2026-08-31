@@ -57,6 +57,8 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
 .story-copy h1{
   font:500 clamp(2.2rem,9vw,4.4rem)/.98 'Fraunces',serif;
   letter-spacing:-.02em; margin:10px 0 14px; color:var(--ink);
+  hyphens:auto;
+  overflow-wrap:anywhere;
 }
 .story-stats{ display:flex; gap:8px; flex-wrap:wrap; }
 .story-stat{
