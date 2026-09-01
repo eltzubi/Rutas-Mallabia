@@ -296,14 +296,24 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
         'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
-    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K y Barinaga':
-        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K eta Barinaga',
+    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga y Muniozguren':
+        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga eta Muniozguren',
     '<span class="signpost-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil</span>':
         '<span class="signpost-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil</span>',
     '<h2>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta y Mendibil</em></h2>':
         '<h2>Trabakua, Urko, Kalamua<br><em>Barinaga, Iturreta eta Mendibil</em></h2>',
     '<p>Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.</p>':
         '<p>Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.</p>',
+    '<span class="signpost-name">Trabakua, Longa, Muniozguren</span>':
+        '<span class="signpost-name">Trabakua, Longa, Muniozguren</span>',
+    '<h2>Trabakua, Longa<br><em>y Muniozguren</em></h2>':
+        '<h2>Trabakua, Longa<br><em>eta Muniozguren</em></h2>',
+    '<p>Circuito desde Trabakua por Gerea, Longa y Muniozguren.</p>':
+        '<p>Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota.</p>',
+    '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
+        '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
+    'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
+        'alt="Gailur harritsua atzealdean, alanbre-hesi baten ondoko lurrezko bide batetik ikusia, baserri sakabanatuekin magalean"',
     '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>':
         '<span class="signpost-name">7 Pago Mendi Lasterketa 25km</span>',
     '<span class="signpost-name">7 Pago Mendi Lasterketa 16K</span>':
@@ -2544,6 +2554,78 @@ BARINAGA = {
         '27 km eta +1.453 m-ko desnibela zirkuitu bakarrean, bi igoera luzerekin (Urko eta Kalamua) eta hirugarren bat, laburragoa baina bizia, Mendibileraino. Ur-iturriak daude Kalamuara arte eta berriro Barinagan, frontoiaren ondoan &mdash;bitartean ez dago non hornitu.',
 }
 
+MUNIOZGUREN = {
+    '<span>Asfalto, cemento y piedra</span><span class="sep">/</span><span>Longa y Muniozguren</span>':
+        '<span>Asfaltoa, porlana eta harria</span><span class="sep">/</span><span>Longa eta Muniozguren</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+
+    '<h1>Trabakua, Longa<br><em>y Muniozguren</em></h1>':
+        '<h1>Trabakua, Longa<br><em>eta Muniozguren</em></h1>',
+
+    'Circuito desde Trabakua por Gerea, Longa y Muniozguren':
+        'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
+
+    'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
+        'alt="Gailur harritsua atzealdean, alanbre-hesi baten ondoko lurrezko bide batetik ikusia, baserri sakabanatuekin magalean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Longa, Muniozguren"':
+        'alt="Trabakua, Longa, Muniozguren ibilbidearen argazki handitua"',
+    'alt="Caballos y vacas pastando en una campa, con montes boscosos y aerogeneradores al fondo entre la bruma"':
+        'alt="Zaldiak eta behiak zelai batean bazkatzen, mendi basotsuak eta haize-errotak atzealdean lainoartean"',
+    'alt="Grupo de caballos pastando junto al bosque, con una alambrada en primer plano"':
+        'alt="Zaldi talde bat basoaren ondoan bazkatzen, alanbre-hesi batekin aurrealdean"',
+    'alt="Arco&iacute;ris sobre un valle verde con caser&iacute;os de tejado rojo y montes al fondo"':
+        'alt="Ostadarra haran berde baten gainean, teilatu gorriko baserriekin eta mendiekin atzealdean"',
+    'alt="&Aacute;rbol sin hojas recortado contra un cielo azul con nubes, con montes y aerogeneradores al fondo"':
+        'alt="Hostorik gabeko zuhaitz bat zeru urdin hodeitsuaren kontra, mendiak eta haize-errotak atzealdean"',
+    'alt="Vista de un valle cubierto de niebla desde lo alto, con el sol asomando entre los &aacute;rboles y montes boscosos alrededor"':
+        'alt="Lainoz estalitako haran baten ikuspegia goitik, eguzkia zuhaitzen artetik agertzen dela eta mendi basotsuak inguruan"',
+    'alt="Reba&ntilde;o de cabras en una ladera verde, mirando hacia la c&aacute;mara"':
+        'alt="Ahuntz talde bat magal berde batean, kamerari begira"',
+    'alt="Campa verde con una puerta de madera y alambrada, pinos dispersos y un monte al fondo"':
+        'alt="Zelai berdea, egurrezko atea eta alanbre-hesia, pinu sakabanatuak eta mendi bat atzealdean"',
+
+    '<span class="mid">perfil real del track &middot; 12,23 km</span>':
+        '<span class="mid">trackaren benetako profila &middot; 12,23 km</span>',
+
+    '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
+        '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
+    '<h2>Senderismo &middot; Trail running &middot; BTT/e-bike</h2>':
+        '<h2>Oinez &middot; Trail running &middot; BTT/e-bike</h2>',
+
+    'Salimos desde el <b>puerto de Trabakua</b>. Entre los dos bares parte una peque&ntilde;a carretera asfaltada que se dirige hacia el barrio de <b>Gerea</b>, en direcci&oacute;n noroeste. La seguimos tranquilamente y, tras unos kil&oacute;metros, llegamos al barrio.':
+        '<b>Trabakuko mendatetik</b> abiatuko gara. Bi tabernen artetik <b>Gerea</b> auzorantz, ipar-mendebalderantz, doan asfaltozko errepide txiki bat ateratzen da. Bide horri lasai jarraituz, kilometro gutxiren buruan auzora iritsiko gara.',
+
+    'Continuamos por la misma carretera, atravesando un paisaje abierto, entre campas, caser&iacute;os y ganado, hasta alcanzar la zona de <b>Longa</b>, donde se encuentra el agroturismo. A partir de aqu&iacute; el asfalto deja paso al cemento. Conviene fijarse en este punto porque, a la vuelta, bajaremos desde las campas que vemos a nuestra izquierda y volveremos a enlazar aqu&iacute; con la carretera.':
+        'Errepide beretik jarraituko dugu, zelai, baserri eta ganadu artean, <b>Longa</b> ingurura iritsi arte, bertan baitago nekazalturismoa. Hemendik aurrera asfaltoa amaitu eta porlanezko bidea hasten da. Komeni da puntu honi erreparatzea: bueltan, ezkerrean ikusten ditugun zelaietatik jaitsita, berriro hemen egingo dugu bat errepidearekin.',
+
+    'Seguimos por el camino de cemento, subiendo suavemente al principio, mientras vamos dejando atr&aacute;s alg&uacute;n caser&iacute;o disperso entre las campas. Poco a poco ganamos altura y, en el &uacute;ltimo kil&oacute;metro, la pendiente se hace m&aacute;s pronunciada hasta alcanzar <b>Muniozguren</b> (km 6,5 &middot; 561 m), el punto m&aacute;s alto de la ruta.':
+        'Porlanezko bidetik jarraituko dugu, hasieran aldapa leunean, zelaien artean sakabanatutako baserriren bat atzean utziz. Pixkanaka altuera hartzen joango gara eta, azken kilometroan, aldapa gogortu egiten da <b>Muniozguren</b> baserrira (6,5 km &middot; 561 m) iritsi arte, ibilbide honetan altuen dagoen baserria.',
+
+    'Al llegar a Muniozguren, a nuestra derecha veremos <b>Astarloko Atxa</b>, un peque&ntilde;o pero llamativo picacho al que merece la pena subir. Desde arriba se tienen muy buenas vistas sobre todo Gerea y, justo enfrente, se extiende el cordal del Oiz.':
+        'Muniozgurenera iristean, eskuinean <b>Astarloko Atxa</b> ikusiko dugu. Tontor txiki baina nabarmena da, eta bertara igotzea merezi du: goitik Gerea inguru osoaren ikuspegi ederra zabaltzen da, eta aurrez aurre Oizko mendilerroa dugu.',
+
+    'Continuamos y, poco m&aacute;s adelante, el camino hace un giro brusco a la derecha y comienza a bajar. Este es el camino que utilizamos habitualmente para enlazar con la <a href="zenarruza.html">ruta de Zenarruza</a> o para subir desde la zona de Bolibar. En esta ocasi&oacute;n no bajamos por ah&iacute; y seguimos de frente.':
+        'Aurrera jarraituko dugu eta, handik gutxira, bideak eskuinera bira itxia egiten du eta beherantz hasten da. Bide hori erabili ohi dugu <a href="zenarruza.html">Zenarruzako ibilbidearekin</a> lotzeko edo Bolibar aldetik igotzeko. Oraingoan, ordea, ez dugu hartuko eta zuzen jarraituko dugu.',
+
+    'Un poco despu&eacute;s encontramos dos pistas. Dejamos la de la derecha y tomamos la de la izquierda, que enseguida se convierte en una pista de piedra. Subimos un poco y, a partir de ah&iacute;, avanzamos por un terreno entretenido de continuos sube y baja hasta aproximadamente el km 7,3.':
+        'Aurrerago bi pista aurkituko ditugu. Eskuinekoa utzi eta ezkerrekoa hartuko dugu; berehala harrizko pista bihurtzen da. Pixka bat igo eta, hortik aurrera, gora-behera artean jarraituko dugu 7,3. km ingurura iritsi arte.',
+
+    'En plena curva veremos una pista que sale hacia la derecha. La dejamos y continuamos de frente, comenzando ya el descenso hacia Longa.':
+        'Bihurgune bete-betean eskuinera ateratzen den pista bat ikusiko dugu. Hura alde batera utzi eta zuzen jarraituko dugu, Longarantz jaisten hasteko.',
+
+    'Aqu&iacute; hay que prestar algo de atenci&oacute;n. Un poco m&aacute;s abajo podemos encontrarnos una alambrada atravesando parte del camino. Se ve con suficiente antelaci&oacute;n, pero conviene llegar despacio. Es baja y se puede pasar la bicicleta por encima sin demasiada dificultad.':
+        'Tarte honetan kontu pixka batekin ibili behar da. Beherago, baliteke alanbre-hesi bat bidearen zati bat zeharkatzen aurkitzea. Aldez aurretik ondo ikusten da, baina komeni da poliki hurbiltzea. Ez da oso altua eta bizikleta gainetik pasatu daiteke arazo handirik gabe.',
+
+    'Continuamos bajando y, poco despu&eacute;s, encontramos una puerta de hierro. La atravesamos y seguimos descendiendo por las campas, normalmente entre caballos y ganado. Al llegar al km 9 &middot; 419 m, encontramos una nueva puerta de madera. La atravesamos y llegamos de nuevo a <b>Longa</b>.':
+        'Beherantz jarraituta, handik gutxira burdinazko ate bat aurkituko dugu. Bertatik igaro eta zelaietan behera jarraituko dugu, normalean zaldi eta ganadu artean. 9,0 km &middot; 419 m puntura iristean, beste egurrezko ate bat aurkituko dugu. Hura zeharkatu eta berriro <b>Longa</b>ra iritsiko gara.',
+
+    'Aqu&iacute; conectamos con la carretera por la que hab&iacute;amos pasado al principio. Giramos a la derecha y regresamos a Trabakua por el mismo camino de ida.':
+        'Hemen hasieran erabili dugun errepidearekin egingo dugu bat. Eskuinera hartu eta bide beretik itzuliko gara Trabakuko mendatera.',
+
+    '12,23 km y +532 m de desnivel en un solo circuito. Es una ruta corta y r&aacute;pida, pero con suficiente recorrido para disfrutarla en bicicleta, perfecta para esos d&iacute;as en los que no tenemos demasiado tiempo pero queremos salir un rato. Tambi&eacute;n es una buena opci&oacute;n para correr o simplemente caminar, con bastante paisaje abierto y sin necesidad de alejarse demasiado de Trabakua.':
+        '12,23 km eta +532 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2564,6 +2646,7 @@ HISTORIAS = {
     'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
+    'Senderismo · Trail running · BTT/e-bike · Circuito · Mixta': 'Oinez · Trail running · BTT/e-bike · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
     'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
@@ -2595,6 +2678,7 @@ HISTORIAS = {
     'Trabakua paseo por el barrio Goita': 'Trabakua Goita auzoko paseoa',
     'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
     'Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil',
+    'Trabakua, Longa y Muniozguren': 'Trabakua, Longa eta Muniozguren',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -2620,6 +2704,7 @@ HISTORIAS = {
     'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
     'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
     'Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.',
+    'Circuito desde Trabakua por Gerea, Longa y Muniozguren.': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
 }
@@ -2658,6 +2743,7 @@ DESCRIPTIONS = {
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea (trail running), Oizko gailurretik igarota',
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea (trail running), Mallabiko mendi eta auzoetan barrena',
     'barinaga': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
+    'muniozguren': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
     'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2691,6 +2777,7 @@ TITLES = {
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
     'barinaga': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
+    'muniozguren': 'Trabakua, Longa, Muniozguren · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2721,5 +2808,6 @@ PAGE_STRINGS = {
     '7pago': PAGO7,
     '7pago16': PAGO16,
     'barinaga': BARINAGA,
+    'muniozguren': MUNIOZGUREN,
     'historias': HISTORIAS,
 }

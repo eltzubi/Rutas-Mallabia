@@ -262,6 +262,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/barinaga.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/muniozguren.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/muniozguren.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/muniozguren.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/muniozguren.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/muniozguren.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/muniozguren.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
