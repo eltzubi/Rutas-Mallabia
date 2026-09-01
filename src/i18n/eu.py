@@ -225,7 +225,7 @@ HOME = {
     'data-all-distance="Todos" data-all-desnivel="Todos" data-approx="aprox."':
         'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
     '<div class="signpost-hub">Zona de salida &middot; Trabakua</div>':
-        '<div class="signpost-hub">Irteera-gunea &middot; Trabakua</div>',
+        '<div class="signpost-hub">Mendatetik irteerak</div>',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
     'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
     'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
