@@ -198,6 +198,8 @@ HOME = {
     '<summary>Antes de salir</summary>': '<summary>Irten aurretik</summary>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
+    '<p class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</p>':
+        '<p class="eyebrow latest-routes-label">Azken ibilbide gehituak</p>',
 
     # route-card photos for routes without a former feat-panel (redesign)
     'alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo"':
