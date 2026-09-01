@@ -93,29 +93,6 @@ body{
   letter-spacing:.06em; flex-shrink:0;
 }
 .lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
-.info-chip{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-width:26px; height:26px; padding:0 9px; border-radius:13px;
-  border:1px solid var(--violet); background:none;
-  color:var(--violet); cursor:pointer;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
-  letter-spacing:.06em; flex-shrink:0;
-}
-.info-chip:hover{ box-shadow:0 0 14px -2px var(--violet); }
-@keyframes info-chip-pulse{
-  0%, 100%{
-    box-shadow:0 0 0 0 color-mix(in srgb, var(--violet) 38%, transparent), 0 0 5px 1px color-mix(in srgb, var(--violet) 30%, transparent);
-    background:color-mix(in srgb, var(--violet) 11%, transparent);
-    transform:scale(1);
-  }
-  50%{
-    box-shadow:0 0 0 6px color-mix(in srgb, var(--violet) 0%, transparent), 0 0 5px 1px color-mix(in srgb, var(--violet) 0%, transparent);
-    background:none;
-    transform:scale(1.04);
-  }
-}
-.info-chip{ animation:info-chip-pulse 1.3s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce){ .info-chip{ animation:none; } }
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
@@ -165,79 +142,7 @@ body{
   z-index:2;
 }
 
-/* ---- hero photo ---- */
-.hero-photo{
-  position:relative;
-  margin-top:26px;
-  min-height:82vh;
-  overflow:hidden;
-  display:flex;
-  isolation:isolate;
-}
-.hero-photo-duo{ position:absolute; inset:0; z-index:0; isolation:isolate; background:var(--ground); }
-.hero-photo-img{
-  position:absolute; top:0; height:100%;
-  object-fit:cover;
-  transform:scale(1.04);
-  filter:contrast(1.34) saturate(1.55) brightness(1.05);
-  animation: kenburns 24s ease-in-out infinite alternate;
-}
-.hero-photo-img--bike{ filter:contrast(1.45) saturate(2.1) brightness(1.12); }
-/* The two photos overlap in the middle instead of butting against a hard
-   seam; the left one fades out over that overlap (mask, not opacity, so
-   its own pixels are still fully saturated right up to the blend) and the
-   right one sits underneath, showing through as the fade progresses. */
-@media (min-width:701px){
-  .hero-photo-duo picture:first-child .hero-photo-img{
-    left:0; width:58%; z-index:2;
-    -webkit-mask-image:linear-gradient(to right, #000 55%, transparent 100%);
-            mask-image:linear-gradient(to right, #000 55%, transparent 100%);
-  }
-  .hero-photo-duo picture:last-child .hero-photo-img{
-    right:0; width:58%; z-index:1;
-    animation-direction:alternate-reverse;
-  }
-  .hero-photo-img--bike{ object-position:70% 55%; }
-  .hero-photo-img--runner{ object-position:62% 48%; }
-}
-@media (max-width:700px){
-  /* Side by side, two narrow vertical slices lose the bike in both
-     photos. Stack them instead -- each keeps its full width, so the
-     crop only has to solve one dimension (height) per photo. */
-  .hero-photo{ min-height:72vh; }
-  .hero-photo-img{
-    left:0; width:100%; height:62%;
-    transform:scale(1.02); animation:none;
-  }
-  .hero-photo-duo picture:first-child .hero-photo-img{
-    top:0; bottom:auto; z-index:2;
-    -webkit-mask-image:linear-gradient(to bottom, #000 55%, transparent 100%);
-            mask-image:linear-gradient(to bottom, #000 55%, transparent 100%);
-  }
-  .hero-photo-duo picture:last-child .hero-photo-img{
-    top:auto; bottom:0; z-index:1;
-  }
-  .hero-photo-img--bike{ object-position:64% 58%; }
-  .hero-photo-img--runner{ object-position:66% 42%; }
-}
-@keyframes kenburns{
-  from{ transform:scale(1.04) translate3d(0,0,0); }
-  to{ transform:scale(1.15) translate3d(-1.2%,-1%,0); }
-}
-.hero-scrim{
-  position:absolute; inset:0;
-  background:
-    linear-gradient(180deg, rgba(9,11,7,.35) 0%, rgba(9,11,7,.22) 20%, rgba(9,11,7,.38) 42%, rgba(9,11,7,.55) 66%, rgba(9,11,7,.5) 100%);
-}
-.hero-photo-content{
-  position:relative; z-index:1;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  width:100%; max-width:820px; margin:0 auto;
-  padding:32px 24px 44px;
-}
-@media (max-width:700px){
-  .hero-photo-content{ margin-bottom:130px; }
-}
+/* ---- compact hero ---- */
 .eyebrow{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; letter-spacing:.13em; text-transform:uppercase;
@@ -246,84 +151,110 @@ body{
   margin:0 0 14px;
 }
 .eyebrow .sep{ opacity:.5; }
-.eyebrow-light{
-  color:rgba(245,243,236,.95);
-  font-size:13px; font-weight:700;
-  text-shadow:0 1px 12px rgba(0,0,0,.55);
-  margin-bottom:18px;
+.hero-compact-content .eyebrow{ color:rgba(245,243,236,.75); text-shadow:0 1px 8px rgba(0,0,0,.5); }
+.hero-compact{
+  position:relative; overflow:hidden;
+  margin:14px auto 0; max-width:820px;
+  border-radius:20px;
+  min-height:38vh; max-height:420px;
+  display:flex;
 }
-.hero-photo h1{
-  font-family:'Fraunces',serif;
-  font-weight:900;
-  font-size:clamp(2.9rem, 11vw, 5.6rem);
-  line-height:.92;
-  letter-spacing:-.015em;
-  text-wrap:balance;
-  margin:0 0 18px;
-  color:#F7F5EF;
-  text-shadow:
-    0 0 2px rgba(0,0,0,.95), 0 0 8px rgba(0,0,0,.85),
-    0 2px 6px rgba(0,0,0,.75), 0 6px 30px rgba(0,0,0,.6);
-  -webkit-text-stroke:1px rgba(0,0,0,.55);
+@media (min-width:1024px){ .hero-compact{ max-width:1100px; } }
+.hero-compact picture{ position:absolute; inset:0; }
+.hero-compact img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter:contrast(1.3) saturate(1.5) brightness(1.03);
 }
-.hero-photo h1 em{ font-style:italic; font-weight:600; color:var(--readout-a); }
-.hero-lead{
-  font-family:'Karla',sans-serif;
-  font-size:17.5px; line-height:1.6;
-  color:rgba(245,243,236,.9);
-  margin:0;
-  max-width:50ch;
+.hero-compact-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(9,11,7,.25) 0%, rgba(9,11,7,.35) 55%, rgba(9,11,7,.65) 100%);
+}
+.hero-compact-content{
+  position:relative; z-index:1;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  width:100%; padding:28px 22px 26px;
+}
+.hero-compact h1{
+  font-family:'Fraunces',serif; font-weight:900;
+  font-size:clamp(2.1rem, 8vw, 3.2rem);
+  line-height:.96; letter-spacing:-.01em;
+  text-wrap:balance; margin:0 0 8px; color:#F7F5EF;
+  text-shadow:0 0 2px rgba(0,0,0,.95), 0 0 8px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.75);
+}
+.hero-compact h1 em{ font-style:italic; font-weight:600; color:var(--readout-a); }
+.hero-compact-lead{
+  font-family:'Karla',sans-serif; font-size:15.5px; line-height:1.5;
+  color:rgba(245,243,236,.92); margin:0 0 10px; max-width:46ch;
   text-shadow:0 1px 14px rgba(0,0,0,.4);
 }
-/* ---- readout strip ---- */
-.readout{ background:var(--ink-deep); }
-.readout-inner{
-  max-width:820px; margin:0 auto;
-  display:grid; grid-template-columns:repeat(2,1fr); gap:26px 18px;
-  padding:34px 24px;
+.hero-compact-stats{
+  display:flex; flex-wrap:wrap; gap:14px 22px; margin:0;
+  color:rgba(245,243,236,.92);
 }
-@media (min-width:640px){
-  .readout-inner{ grid-template-columns:repeat(4,1fr); }
-}
-.readout-item .v{
-  font-family:'IBM Plex Mono',monospace; font-weight:600;
-  font-size:clamp(1.55rem, 5vw, 2.05rem);
+.hero-compact-stat{ display:flex; align-items:center; gap:7px; }
+.hero-compact-stat svg{ flex-shrink:0; opacity:.85; filter:drop-shadow(0 1px 4px rgba(0,0,0,.5)); }
+.hero-compact-stat b{
+  font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:700;
   font-variant-numeric:tabular-nums;
-  color:var(--readout-a);
-  display:block;
+  text-shadow:0 1px 10px rgba(0,0,0,.5);
 }
-.readout-item .v small{ font-size:.55em; font-weight:500; opacity:.75; }
-.readout-item:nth-child(2n) .v{ color:var(--readout-b); }
-.readout-item .k{
-  display:block; margin-top:5px;
-  font-family:'IBM Plex Mono',monospace; font-size:10px;
-  letter-spacing:.07em; text-transform:uppercase;
-  color:rgba(237,234,224,.5);
-}
-.readout-note{
-  max-width:820px; margin:-16px auto 0; padding:0 24px 18px;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px;
-  color:rgba(237,234,224,.45); text-align:center;
+.hero-compact-stat span{
+  font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.03em;
+  text-transform:uppercase; color:rgba(245,243,236,.65);
 }
 
-/* ---- featured route panel ---- */
-.featured{ max-width:820px; margin:64px auto 0; padding:0 24px; }
-.featured > .eyebrow{ color:var(--ink-dim); margin-bottom:16px; }
-.activity-filter{
-  display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;
-  width:max-content; max-width:100%;
-  position:sticky; top:76px; z-index:60;
-  padding:8px; border:1px solid var(--line); border-radius:14px;
-  background:var(--ground);
-  background:color-mix(in srgb, var(--ground) 74%, transparent);
-  backdrop-filter:blur(14px) saturate(140%);
-  -webkit-backdrop-filter:blur(14px) saturate(140%);
-  transition:top .25s ease;
+/* ---- finder: activity picker + filters + results ---- */
+.finder{ max-width:820px; margin:44px auto 0; padding:0 24px; }
+@media (min-width:1024px){ .finder{ max-width:1100px; } }
+.finder > .eyebrow{ color:var(--ink-dim); }
+.activity-picker{ display:flex; gap:12px; margin-bottom:28px; }
+.activity-big-btn{
+  flex:1 1 0; display:flex; flex-direction:column; align-items:center; gap:10px;
+  padding:24px 16px; border-radius:18px;
+  border:1px solid var(--line); background:var(--ground-raised);
+  color:var(--ink); cursor:pointer;
+  font-family:'Fraunces',serif; font-size:1.15rem; font-weight:700;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
 }
-/* The masthead is always compact by the time this filter bar can reach
-   its sticky position, so it can sit right under the shorter header. */
-.masthead.is-compact ~ .featured .activity-filter{ top:64px; }
-.range-filters{ display:flex; flex-wrap:wrap; gap:20px 32px; margin-bottom:10px; }
+.activity-big-btn svg{ width:28px; height:28px; color:var(--ink-dim); transition:color .2s ease; }
+.activity-big-btn:hover{ transform:translateY(-2px); border-color:var(--teal); }
+.activity-big-btn.active{
+  background:var(--teal); border-color:var(--teal); color:var(--ground);
+  box-shadow:0 6px 24px -8px var(--teal);
+}
+.activity-big-btn.active svg{ color:var(--ground); }
+.activity-big-btn[data-activity="senderismo"].active{
+  background:var(--violet); border-color:var(--violet); color:var(--ground);
+  box-shadow:0 6px 24px -8px var(--violet);
+}
+.activity-big-btn:active{ transform:scale(.98); }
+
+.finder-filters[hidden]{ display:none; }
+.distance-filter{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:10px; }
+.distance-chip{
+  display:inline-flex; align-items:center; white-space:nowrap;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700;
+  letter-spacing:.03em;
+  padding:7px 13px; border-radius:100px;
+  border:1px solid var(--line); background:none;
+  color:var(--ink-dim); cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+}
+.distance-chip:hover{ border-color:var(--ink-dim); color:var(--ink); }
+.distance-chip.active{ background:var(--ground-raised); border-color:var(--teal); color:var(--ink); box-shadow:0 0 14px -4px var(--teal); }
+.distance-chip:active{ transform:scale(.95); }
+.more-filters-toggle{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
+  letter-spacing:.04em; text-transform:uppercase;
+  color:var(--ink-dim); background:none; border:none; cursor:pointer;
+  padding:6px 0; margin-bottom:14px;
+}
+.more-filters-toggle:hover{ color:var(--teal); }
+.more-filters-toggle::after{ content:'▾'; font-size:9px; }
+.more-filters-toggle[aria-expanded="true"]::after{ content:'▴'; }
+.range-filters[hidden]{ display:none; }
+.range-filters{ display:flex; flex-wrap:wrap; gap:20px 32px; margin:0 0 18px; padding:16px; border:1px solid var(--line); border-radius:14px; background:var(--ground-raised); }
 .range-filter{ flex:1 1 200px; min-width:180px; }
 .range-filter label{
   display:block; margin-bottom:8px;
@@ -368,30 +299,7 @@ body{
 .dual-range input[type="range"].range-min{ z-index:3; }
 .dual-range input[type="range"].range-max{ z-index:4; }
 .dual-range input[type="range"].range-top{ z-index:5; }
-.activity-chip{
-  display:inline-flex; align-items:center; gap:7px; white-space:nowrap;
-  font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700;
-  letter-spacing:.04em; text-transform:uppercase;
-  padding:9px 16px; border-radius:100px;
-  border:1px solid var(--line); background:var(--ground);
-  color:var(--ink-dim); cursor:pointer;
-  transition:background .2s ease, color .2s ease, border-color .2s ease,
-             transform .15s ease, box-shadow .2s ease;
-}
-.chip-icon{ flex-shrink:0; opacity:.85; }
-.activity-chip.active{
-  background:var(--teal); border-color:var(--teal); color:var(--ground);
-  transform:scale(1.05);
-  box-shadow:0 3px 12px -3px var(--teal);
-}
-.activity-chip.active .chip-icon{ opacity:1; }
-.activity-chip.active[data-activity="senderismo"]{
-  background:var(--violet); border-color:var(--violet);
-  box-shadow:0 3px 12px -3px var(--violet);
-}
-.activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); transform:translateY(-1px); }
-.activity-chip:active{ transform:scale(.97); }
-.difficulty-filter{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:24px; }
+.difficulty-filter{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
 .difficulty-chip{
   display:inline-flex; align-items:center; gap:6px; white-space:nowrap;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
@@ -409,7 +317,6 @@ body{
 .difficulty-chip.active{ background:var(--ground-raised); border-color:var(--ink-dim); color:var(--ink); opacity:1; }
 .difficulty-chip:not(.active):hover{ opacity:.8; border-color:var(--ink-dim); }
 .difficulty-chip:active{ transform:scale(.95); }
-.feat-panel.is-hidden{ display:none; }
 .filter-empty{
   display:none;
   font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);
@@ -417,148 +324,120 @@ body{
 }
 .filter-empty.visible{ display:block; }
 
-/* ---- signpost hub: all routes fork from the same trailhead ---- */
-.signpost{
-  position:relative;
-  margin:0 0 40px;
-  padding:0;
+/* ---- view toggle: list or map, same filters either way ---- */
+.view-toggle-row{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-bottom:18px; border-bottom:1px solid var(--line);
 }
-.signpost-hub-row{ display:flex; justify-content:center; margin-bottom:18px; }
-.signpost-hub{
-  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700;
-  letter-spacing:.1em; text-transform:uppercase;
-  color:var(--ground); background:var(--ink);
-  padding:9px 18px; border-radius:100px;
+.view-toggle{ display:flex; gap:20px; }
+.view-toggle-btn{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:700;
+  letter-spacing:.04em; text-transform:uppercase;
+  padding:10px 2px; border:none; border-bottom:2px solid transparent;
+  background:none; color:var(--ink-dim); cursor:pointer;
+  transition:color .2s ease, border-color .2s ease;
 }
-.signpost-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
-  align-items:start;
-  gap:6px;
-}
-.signpost-sign{
-  position:relative;
-  display:flex; align-items:center; gap:9px;
-  padding:9px 14px 9px 17px;
-  border-radius:8px;
-  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600;
-  text-decoration:none; color:var(--ink);
-  background:var(--ground-raised);
-  border:1px solid var(--line);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.signpost-sign::before{
-  content:""; position:absolute; left:7px; top:8px; bottom:8px; width:3px;
-  border-radius:2px; background:var(--teal);
-}
-.signpost-sign:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.18); border-color:var(--line); }
-.signpost-sign[data-activity="bici"] .signpost-icon{ color:var(--teal); }
-.signpost-sign[data-activity="senderismo"]::before{ background:var(--violet); }
-.signpost-sign[data-activity="senderismo"] .signpost-icon{ color:var(--violet); }
-.signpost-sign[data-activity="senderismo,bici"]::before{ background:linear-gradient(180deg, var(--violet) 50%, var(--teal) 50%); }
-.signpost-icon{ width:14px; height:14px; flex-shrink:0; color:var(--ink-dim); }
-.signpost-name{ flex:1; text-transform:uppercase; letter-spacing:.01em; line-height:1.25; }
-.signpost-km{ font-weight:600; color:var(--ink-dim); white-space:nowrap; }
-.signpost-sign.is-hidden{ display:none; }
-@media (max-width:480px){
-  .signpost-grid{ grid-template-columns:1fr; }
-  .signpost-sign{ font-size:10.5px; padding:8px 12px 8px 15px; gap:7px; }
-  .signpost-icon{ width:13px; height:13px; }
+.view-toggle-btn:hover{ color:var(--ink); }
+.view-toggle-btn.active{ color:var(--teal); border-color:var(--teal); }
+.result-count{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+  white-space:nowrap;
 }
 
-.feat-panel{
-  border:1px solid var(--line);
+/* ---- route cards: compact, scannable ---- */
+.route-card-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+@media (min-width:660px){ .route-card-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .route-card-grid{ grid-template-columns:repeat(3,1fr); } }
+.route-card{
+  display:flex; gap:14px; align-items:stretch;
+  border:1px solid var(--line); border-radius:16px;
   background:var(--ground-raised);
-  display:grid; grid-template-columns:1fr;
+  text-decoration:none; color:var(--ink);
   overflow:hidden;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .15s ease;
 }
-.feat-panel + .feat-panel{ margin-top:20px; }
-@media (min-width:660px){
-  .feat-panel{ grid-template-columns:1fr 1.15fr; }
-  .feat-panel--alt{ grid-template-columns:1.15fr 1fr; }
-  .feat-panel--alt .feat-photo{ order:2; }
-  .feat-panel--alt .feat-body{ order:1; }
-}
-.feat-photo{ position:relative; aspect-ratio:4/3; overflow:hidden; }
-@media (min-width:660px){ .feat-photo{ aspect-ratio:auto; } }
-.feat-photo img{
+.route-card:hover{ transform:translateY(-2px); box-shadow:0 10px 26px -10px rgba(0,0,0,.4); }
+.route-card:active{ transform:scale(.99); }
+.route-card.is-hidden{ display:none; }
+.route-card-photo{ position:relative; flex:0 0 108px; overflow:hidden; }
+@media (min-width:660px){ .route-card-photo{ flex-basis:100%; aspect-ratio:16/10; } }
+.route-card-photo img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  transition:transform .6s cubic-bezier(.2,.7,.2,1);
-  filter:contrast(1.1) saturate(1.28);
+  filter:contrast(1.1) saturate(1.25);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
 }
-.feat-panel:hover .feat-photo img{ transform:scale(1.045); }
-.feat-body{
-  padding:30px 26px 32px;
-  display:flex; flex-direction:column; gap:16px;
+.route-card:hover .route-card-photo img{ transform:scale(1.06); }
+.route-card-body{ flex:1; min-width:0; padding:10px 14px 10px 0; display:flex; flex-direction:column; justify-content:center; gap:5px; }
+@media (min-width:660px){ .route-card-body{ padding:14px 16px 16px; } }
+.route-card-name{
+  font-family:'Fraunces',serif; font-weight:700; font-style:italic;
+  font-size:15px; line-height:1.22; margin:0;
+  text-wrap:balance; overflow-wrap:anywhere;
 }
-.feat-body h2{
-  font-family:'Fraunces',serif; font-weight:900;
-  font-size:clamp(1.9rem, 6vw, 2.6rem);
-  line-height:.98; margin:0; text-wrap:balance;
-  hyphens:auto;
-  overflow-wrap:anywhere;
+.route-card-stats{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600;
+  color:var(--ink-dim); margin:0; font-variant-numeric:tabular-nums;
 }
-.feat-body h2 em{ font-style:italic; font-weight:600; color:var(--violet); }
-.feat-body > p{
-  font-family:'Karla',sans-serif; font-size:15.5px; line-height:1.6;
-  color:var(--ink-dim); margin:0; max-width:44ch;
-}
-.feat-chart{ height:56px; margin-top:2px; }
-.feat-chart svg{ width:100%; height:100%; display:block; }
-.feat-facts{ display:flex; flex-wrap:wrap; gap:8px; }
-.feat-facts .fact{
-  border:1px solid var(--line); padding:9px 13px; min-width:84px;
-  background:var(--ground);
-}
-.feat-facts .fact .v{
-  font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:16px;
-  font-variant-numeric:tabular-nums; display:block; color:var(--ink);
-}
-.feat-facts .fact .k{
-  font-family:'IBM Plex Mono',monospace; font-size:9.5px;
-  letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim);
-}
-.feat-cta{
-  align-self:flex-start;
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;
+.route-card-tags{ font-size:11px; margin:0; }
+.route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
+.route-card-tags .v:first-child{ color:var(--teal); }
+.route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
+.show-all-btn{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; margin-top:14px; padding:15px;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:700;
   letter-spacing:.03em; text-transform:uppercase;
-  color:var(--ground); background:var(--teal);
-  padding:12px 19px; text-decoration:none;
-  margin-top:4px;
+  color:var(--ground); background:var(--ink);
+  border:none; border-radius:14px; cursor:pointer;
+  transition:background .2s ease, transform .15s ease;
+}
+.show-all-btn[hidden]{ display:none; }
+.show-all-btn:hover{ background:var(--teal); }
+.show-all-btn:active{ transform:scale(.99); }
+
+/* ---- quick help: not sure which route ---- */
+.quick-help{ max-width:820px; margin:48px auto 0; padding:0 24px; }
+@media (min-width:1024px){ .quick-help{ max-width:1100px; } }
+.quick-help > .eyebrow{ color:var(--ink-dim); }
+.quick-help-grid{
+  display:grid; grid-template-columns:1fr; gap:0;
+  border:1px solid var(--line); border-radius:16px; overflow:hidden;
+  background:var(--ground-raised);
+}
+@media (min-width:660px){ .quick-help-grid{ grid-template-columns:repeat(3,1fr); } }
+.quick-help-btn{
+  display:flex; flex-direction:column; gap:4px; align-items:flex-start;
+  padding:18px 20px;
+  border:none; border-top:1px solid var(--line);
+  background:none;
+  color:var(--ink); cursor:pointer; text-align:left;
   transition:background .2s ease;
 }
-.feat-cta:hover{ background:var(--violet); }
-.story-mode-link{ margin:0 0 20px; }
-.story-mode-link[hidden]{ display:none; }
-.map-cta{
-  display:flex; align-items:center; gap:14px;
-  width:max-content; max-width:100%;
-  padding:16px 22px 16px 18px; border-radius:18px;
-  background:var(--teal); color:var(--ground);
-  text-decoration:none; margin:0 0 20px;
-  box-shadow:0 4px 18px -4px var(--teal);
-  transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+.quick-help-grid > .quick-help-btn:first-child{ border-top:none; }
+@media (min-width:660px){
+  .quick-help-btn{ border-top:none; border-left:1px solid var(--line); }
+  .quick-help-grid > .quick-help-btn:first-child{ border-left:none; }
 }
-.map-cta:hover{ background:var(--violet); transform:translateY(-2px); box-shadow:0 10px 26px -6px var(--violet); }
-.map-cta:active{ transform:scale(.98); }
-.map-cta-icon{ flex-shrink:0; }
-.map-cta-text{ display:flex; flex-direction:column; gap:2px; }
-.map-cta-text b{
-  font-size:15px; font-weight:700; letter-spacing:.01em;
-  font-family:'Fraunces',serif;
-}
-.map-cta-text small{
-  font-size:11px; font-weight:600; opacity:.75;
-  font-family:'IBM Plex Mono',monospace; letter-spacing:.02em;
-}
-.map-cta-arrow{ margin-left:2px; font-size:19px; font-weight:700; flex-shrink:0; }
+.quick-help-btn:hover{ background:var(--ground); }
+.quick-help-btn b{ font-family:'Fraunces',serif; font-size:15px; font-weight:700; }
+.quick-help-btn span{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); }
 
-.soon{
-  margin:40px auto 0; max-width:820px;
-  font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-dim);
-  border-top:1px solid var(--line); padding:16px 24px 0;
+/* ---- info accordion: before you leave, parking, sleeping nearby ---- */
+.info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }
+@media (min-width:1024px){ .info-accordion{ max-width:1100px; } }
+.info-details{ border-top:1px solid var(--line); }
+.info-details:last-child{ border-bottom:1px solid var(--line); }
+.info-details summary{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 4px; cursor:pointer; list-style:none;
+  font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:700;
+  letter-spacing:.03em; text-transform:uppercase; color:var(--ink);
 }
+.info-details summary::-webkit-details-marker{ display:none; }
+.info-details summary::after{ content:'+'; font-size:18px; color:var(--ink-dim); transition:transform .2s ease; }
+.info-details[open] summary::after{ content:'−'; }
+.info-details-body{ padding:0 4px 24px; }
+
 
 .map-section{ max-width:820px; margin:56px auto 0; padding:0 24px; }
 .map-section > .eyebrow{ margin-bottom:14px; }
@@ -676,32 +555,11 @@ footer{
 footer a{ color:var(--teal); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 
-@media (prefers-reduced-motion: reduce){
-  .hero-photo-img{ animation:none; }
-}
-
 @media (min-width:1024px){
   .wrap,
   .masthead,
-  .hero-photo-content,
-  .readout-inner,
-  .featured,
-  .soon,
-  .map-section,
   footer,
   .mini-gallery{ max-width:1100px; }
-
-  /* Two cards per row instead of one full-width card per row -- with 16
-     routes, a single column made this section scroll forever. Each card
-     goes back to a stacked photo-then-body layout (like mobile) since a
-     half-width card is too narrow for the side-by-side split. */
-  .featured{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start; }
-  .feat-panel{ grid-template-columns:1fr; }
-  .feat-panel + .feat-panel{ margin-top:0; }
-  .feat-panel--alt{ grid-template-columns:1fr; }
-  .feat-panel--alt .feat-photo{ order:initial; }
-  .feat-panel--alt .feat-body{ order:initial; }
-  .feat-photo{ aspect-ratio:4/3; }
 }
 
 /* ---- mini gallery (banner de acción) ---- */
@@ -748,38 +606,6 @@ footer a:hover{ text-decoration:underline; }
   color:#fff; font-size:16px; cursor:pointer;
 }
 
-.info-modal{
-  position:fixed; inset:0; z-index:100;
-  background:rgba(10,12,8,.8);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  display:none; align-items:center; justify-content:center;
-  padding:16px 12px;
-}
-.info-modal.open{ display:flex; }
-.info-modal-card{
-  position:relative;
-  width:100%; max-width:480px; max-height:calc(100vh - 32px);
-  overflow-y:auto; border-radius:20px;
-  background:var(--ground); border:1px solid var(--line);
-  padding:28px 18px 36px;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-@media (min-width:640px){
-  .info-modal-card{ max-width:600px; max-height:min(720px, calc(100vh - 96px)); padding:32px 36px 40px; }
-}
-.info-modal-card .parada{ margin:0 0 24px; }
-.info-modal-card > .eyebrow{ margin-bottom:14px; }
-.info-modal-close{
-  /* Fixed to the viewport, not the card -- the card's content (map,
-     parking notes...) scrolls, and a merely-absolute close button would
-     scroll away with it, leaving no way to close the dialog on a short
-     screen where it fills the viewport and there's no backdrop to tap. */
-  position:fixed; top:20px; right:20px; z-index:110;
-  width:32px; height:32px; border-radius:50%;
-  background:var(--ground-raised); border:1px solid var(--line);
-  color:var(--ink-dim); font-size:14px; cursor:pointer;
-}
-.info-modal-close:hover{ border-color:var(--teal); color:var(--teal); }
 .to-top{
   position:fixed; right:18px; bottom:18px; z-index:60;
   width:46px; height:46px; border-radius:50%;
@@ -799,29 +625,20 @@ footer a:hover{ text-decoration:underline; }
 .to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
 .logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
-.wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
+.wikiloc-link, .directions-cta, .back-home-link{
   border-radius:12px;
   box-shadow:0 0 24px -10px var(--teal);
 }
-.wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover, .feat-cta:hover{
+.wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover{
   box-shadow:0 0 30px -8px var(--violet);
 }
 .wikiloc-link.ghost{ box-shadow:none; }
 .wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
 
-.feat-panel{ border-radius:22px; }
-.feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--teal); }
-.feat-panel[data-activity="senderismo"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--violet); }
-.feat-panel[data-activity="senderismo,bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--violet), 0 0 40px -16px var(--teal); }
-
 .fact{ border-radius:14px; }
 .fact .v{ text-shadow:0 0 14px currentColor; }
-.feat-facts .fact .v{ text-shadow:0 0 12px currentColor; }
-.readout-item .v{ text-shadow:0 0 18px currentColor; }
 .elev-tags .v{ text-shadow:0 0 14px currentColor; }
 
-.activity-chip.active{ box-shadow:0 0 18px -3px var(--teal); }
-.activity-chip.active[data-activity="senderismo"]{ box-shadow:0 0 18px -3px var(--violet); }
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 .range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 

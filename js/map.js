@@ -187,8 +187,8 @@
         var href = isEu ? t.href.replace(/\.html$/, '.eu.html') : t.href;
         // Signpost hrefs are .eu.html on the Basque page, but t.href is
         // always the language-independent .html name -- compare normalized.
-        var sign = document.querySelector('.signpost-sign[href="' + t.href + '"], .signpost-sign[href="' + href + '"]');
-        var name = sign ? sign.querySelector('.signpost-name').textContent.trim() : t.href;
+        var sign = document.querySelector('.route-card[href="' + t.href + '"], .route-card[href="' + href + '"]');
+        var name = sign ? sign.querySelector('.route-card-name').textContent.trim() : t.href;
         var distanceKm = sign ? sign.dataset.distanceKm : null;
         var desnivelM = sign ? sign.dataset.desnivelM : null;
         var activity = sign ? sign.dataset.activity : null;
