@@ -158,10 +158,7 @@
 
 // --- incident report modal (route pages: fallen trees, cut paths, etc.) ---
 (function(){
-  // TODO: replace with the real Formspree endpoint (formspree.io -> new
-  // form -> "Integration" tab gives a URL like https://formspree.io/f/xxxxxxxx).
-  // Until then the form shows an inline message instead of submitting.
-  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqpkprpz';
 
   var trigger = document.getElementById('reportTrigger');
   var box = document.getElementById('reportModal');
@@ -200,11 +197,6 @@
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    if (FORMSPREE_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
-      status.textContent = 'Formulario todavía sin configurar — avísame y lo activo.';
-      status.className = 'report-status error';
-      return;
-    }
     submitBtn.disabled = true;
     status.textContent = 'Enviando…';
     status.className = 'report-status';
