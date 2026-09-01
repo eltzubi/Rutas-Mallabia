@@ -316,8 +316,8 @@ HOME = {
         '<h2>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz eta Zengotitagane</em></h2>',
     '<p>Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.</p>':
         '<p>Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota.</p>',
-    'alt="Ciclista con la bicicleta el&eacute;ctrica en un alto de la ruta, con las monta&ntilde;as del Duranguesado al fondo en el atardecer"':
-        'alt="Txirrindularia bizikleta elektrikoarekin ibilbideko gune batean, Durangaldeko mendiak atzealdean ilunabarrean"',
+    'alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"':
+        'alt="Bizikleta argia piztuta seinale-poste baten ondoan, Oizko gailurreko antenetatik gertu ilunabarrean"',
     '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
         '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
     'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
@@ -2667,6 +2667,18 @@ EXIGENTE = {
 
     'Aerogeneradores del parque e&oacute;lico del Oiz al anochecer, vistos desde las rocas':
         'Oizko parke eolikoaren aerosorgailuak ilunabarrean, harrietatik ikusita',
+
+    'Bicicleta apoyada en el moj&oacute;n de la cima del Oiz al atardecer, con un mar de nubes y monta&ntilde;as al fondo':
+        'Bizikleta Oizko gailurreko mugarrian bermatuta ilunabarrean, hodei-itsaso bat eta mendiak atzealdean',
+
+    'Camino asfaltado que se adentra en un pinar, con dos paneles informativos junto a la entrada':
+        'Pinudi batean sartzen den asfaltozko bidea, sarreran bi panel informatibo dituela',
+
+    'Aerogeneradores sobre un mar de nubes desde la cima, con el sol asomando entre las nubes':
+        'Aerosorgailuak hodei-itsaso baten gainetik gailurretik ikusita, eguzkia hodeien artetik agertzen',
+
+    'Moj&oacute;n de la cima del Oiz (1.026 m) junto a una cruz de piedra, con los aerogeneradores y las monta&ntilde;as al atardecer':
+        'Oizko gailurreko mugarria (1.026 m) harrizko gurutze baten ondoan, aerosorgailuak eta mendiak ilunabarrean',
 
     'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
         'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
