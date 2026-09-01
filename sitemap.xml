@@ -272,6 +272,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/muniozguren.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/exigente.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/exigente.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/exigente.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/exigente.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/exigente.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/exigente.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
