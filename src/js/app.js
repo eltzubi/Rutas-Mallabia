@@ -46,31 +46,6 @@
   });
 })();
 
-// --- "before you leave" info modal (home page only) ---
-(function(){
-  var trigger = document.getElementById('infoTrigger');
-  var box = document.getElementById('infoModal');
-  var close = document.getElementById('infoModalClose');
-  if (!trigger || !box || !close) return;
-  function open(){
-    box.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    close.focus();
-  }
-  function shut(){
-    box.classList.remove('open');
-    document.body.style.overflow = '';
-    trigger.focus();
-  }
-  trigger.addEventListener('click', open);
-  close.addEventListener('click', shut);
-  box.addEventListener('click', function(e){ if(e.target === box) shut(); });
-  document.addEventListener('keydown', function(e){
-    if (!box.classList.contains('open')) return;
-    if (e.key === 'Escape') shut();
-  });
-})();
-
 // --- back-to-top button ---
 (function(){
   var btn = document.getElementById('toTop');
@@ -80,7 +55,7 @@
   // sitting on top of it hides route info while scrolling through -- so
   // it stays hidden for that stretch and only reappears near the bottom
   // of the page, past the list.
-  var list = document.querySelector('.signpost');
+  var list = document.querySelector('.route-card-grid');
   var listTop = 0, listBottom = 0;
   function measureList(){
     if (!list) return;
