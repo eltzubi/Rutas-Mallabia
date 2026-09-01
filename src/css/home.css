@@ -360,11 +360,20 @@ body{
   overflow:hidden;
   transition:transform .15s ease, box-shadow .2s ease, border-color .15s ease;
 }
+@media (min-width:660px){ .route-card{ flex-direction:column; gap:0; } }
 .route-card:hover{ transform:translateY(-2px); box-shadow:0 10px 26px -10px rgba(0,0,0,.4); }
 .route-card:active{ transform:scale(.99); }
 .route-card.is-hidden{ display:none; }
 .route-card-photo{ position:relative; flex:0 0 108px; overflow:hidden; background:var(--ground); }
-@media (min-width:660px){ .route-card-photo{ flex-basis:100%; aspect-ratio:16/10; } }
+@media (min-width:660px){
+  /* Percentage flex-basis fights for height (not width) once the card is a
+     column, inside a container whose own height is auto -- the photo would
+     claim ~100% of an undefined height and push the body out past the
+     card's overflow:hidden edge, hiding the text entirely. Natural sizing
+     (aspect-ratio for the photo, content height for the body) avoids that
+     circular dependency. */
+  .route-card-photo{ flex:0 0 auto; aspect-ratio:16/10; }
+}
 .route-card-photo img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   filter:contrast(1.1) saturate(1.25);
@@ -372,6 +381,7 @@ body{
 }
 .route-card:hover .route-card-photo img{ transform:scale(1.06); }
 .route-card-body{ flex:1; min-width:0; padding:10px 14px 10px 0; display:flex; flex-direction:column; justify-content:center; gap:5px; }
+@media (min-width:660px){ .route-card-body{ flex:0 0 auto; } }
 @media (min-width:660px){ .route-card-body{ padding:14px 16px 16px; } }
 .route-card-name{
   font-family:'Fraunces',serif; font-weight:700; font-style:italic;
