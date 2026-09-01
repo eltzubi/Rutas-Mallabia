@@ -62,10 +62,12 @@ ROUTE = {
     'Ver ruta completa en Wikiloc': 'Ikusi ibilbide osoa Wikilocen',
     'Descargar GPX': 'Deskargatu GPX',
     'Descargar KML': 'Deskargatu KML',
-    '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
+    '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real '
+    '(puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
     '<b>Dificultad</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
+        '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak '
+        '(beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
         '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<span class="k">Para quién es</span>': '<span class="k">Norentzat</span>',
@@ -1597,9 +1599,11 @@ KALAMUA = {
         'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
 
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
-    'el dispositivo. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+    'el dispositivo (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
+    '<b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackaren arabera kalkulatua. <b>Desnibela</b>, gailuak '
-        'markatutakoa. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
+        'markatutakoa (beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
+        '<b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
 }
 
 MUNDIOKOKOBA = {
@@ -1698,10 +1702,12 @@ IRUZUBIETA = {
     '<span>Mixta</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta y Gerea</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta eta Gerea</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real. '
+    '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real '
+    '(puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
     '<b>Dificultad</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, orientativos.':
-        '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak. '
+        '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak '
+        '(beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
         '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, orientagarriak.',
     '<h1>Trabakua, Iturreta<br><em>e Iruzubieta</em></h1>':
