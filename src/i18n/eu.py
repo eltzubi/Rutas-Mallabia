@@ -86,7 +86,6 @@ ROUTE = {
     '<span>Descripci&oacute;n</span>': '<span>Deskribapena</span>',
     'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente" required':
         'placeholder="Kontaidazu zer ikusi duzun eta non zehazki" required',
-    'Foto (opcional)': 'Argazkia (aukerakoa)',
     'Tu email (opcional, por si necesito preguntarte algo)':
         'Zure emaila (aukerakoa, zerbait galdetu behar badizut)',
     '>Enviar reporte<': '>Bidali jakinarazpena<',
