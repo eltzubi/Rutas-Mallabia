@@ -294,8 +294,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar y Maguna':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar eta Maguna',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna y Bolibar':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna eta Bolibar',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga y Muniozguren':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga eta Muniozguren',
     '<span class="signpost-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil</span>':
@@ -310,6 +310,14 @@ HOME = {
         '<h2>Trabakua, Longa<br><em>eta Muniozguren</em></h2>',
     '<p>Circuito desde Trabakua por Gerea, Longa y Muniozguren.</p>':
         '<p>Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota.</p>',
+    '<span class="signpost-name">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane</span>':
+        '<span class="signpost-name">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane</span>',
+    '<h2>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz y Zengotitagane</em></h2>':
+        '<h2>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz eta Zengotitagane</em></h2>',
+    '<p>Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.</p>':
+        '<p>Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota.</p>',
+    'alt="Ciclista con la bicicleta el&eacute;ctrica en un alto de la ruta, con las monta&ntilde;as del Duranguesado al fondo en el atardecer"':
+        'alt="Txirrindularia bizikleta elektrikoarekin ibilbideko gune batean, Durangaldeko mendiak atzealdean ilunabarrean"',
     '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
         '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
     'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
@@ -2630,6 +2638,197 @@ MUNIOZGUREN = {
         '12,23 km eta +250 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
 }
 
+
+EXIGENTE = {
+
+    '<span>Asfalto, cemento, piedra y tierra</span><span class="sep">/</span><span>Barinaga, Bolibar, Zenarruza y Oiz</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Asfaltoa, porlana, harria eta lurra</span><span class="sep">/</span><span>Barinaga, Bolibar, Zenarruza eta Oiz</span><span class="sep">/</span><span>Zirkuitua</span>',
+
+    '<h1>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz y Zengotitagane</em></h1>':
+        '<h1>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz eta Zengotitagane</em></h1>',
+
+    'Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
+        'Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota',
+
+    'Plaza de Bolibar al amanecer, con un monumento de piedra en el centro y el sol asomando entre los edificios':
+        'Bolibarko plaza egunsentian, harrizko monumentu bat erdian eta eguzkia eraikinen artetik agertzen',
+
+    'Ruinas del monasterio de Zenarruza con un &aacute;rbol centenario y una escalinata de piedra':
+        'Zenarruzako monasterioaren hondakinak, mende askoko zuhaitz batekin eta harrizko eskailera batekin',
+
+    'Pista de tierra entre &aacute;rboles en oto&ntilde;o, cubierta de hojas ca&iacute;das':
+        'Lurrezko pista zuhaitzen artean udazkenean, erorritako hostoz estalia',
+
+    'Ciclista con la bicicleta el&eacute;ctrica en un alto de la ruta, con las monta&ntilde;as del Duranguesado al fondo en el atardecer':
+        'Txirrindularia bizikleta elektrikoarekin ibilbideko gune batean, Durangaldeko mendiak atzealdean ilunabarrean',
+
+    'Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer':
+        'Bizikleta argia piztuta seinale-poste baten ondoan, Oizko gailurreko antenetatik gertu ilunabarrean',
+
+    'Aerogeneradores del parque e&oacute;lico del Oiz al anochecer, vistos desde las rocas':
+        'Oizko parke eolikoaren aerosorgailuak ilunabarrean, harrietatik ikusita',
+
+    'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
+        'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
+
+    'San Kristobal baseliza &middot; 12,3 km &middot; 366 m':
+        'San Kristobal baseliza &middot; 12,3 km &middot; 366 m',
+
+    '<span class="num">1</span>San Kristobal baseliza':
+        '<span class="num">1</span>San Kristobal baseliza',
+
+    'Iglesia de Santo Tom&aacute;s &middot; 18,7 km &middot; 172 m':
+        'Santo Tomas eliza &middot; 18,7 km &middot; 172 m',
+
+    '<span class="num">2</span>Iglesia de Santo Tom&aacute;s':
+        '<span class="num">2</span>Santo Tomas eliza',
+
+    'Monasterio de Zenarruza &middot; 20,7 km &middot; 300 m':
+        'Zenarruzako monasterioa &middot; 20,7 km &middot; 300 m',
+
+    '<span class="num">3</span>Monasterio de Zenarruza':
+        '<span class="num">3</span>Zenarruzako monasterioa',
+
+    'Ermita San Krist&oacute;bal &middot; 29,9 km &middot; 797 m':
+        'San Kristobal ermita &middot; 29,9 km &middot; 797 m',
+
+    '<span class="num">4</span>Ermita San Krist&oacute;bal':
+        '<span class="num">4</span>San Kristobal ermita',
+
+    'Oiz &middot; 32,0 km &middot; 1.020 m':
+        'Oiz &middot; 32,0 km &middot; 1.020 m',
+
+    '<span class="num">5</span>Oiz':
+        '<span class="num">5</span>Oiz',
+
+    'Dolmen Iturzurigana &middot; 34,8 km &middot; 852 m':
+        'Iturzuriganako trikuharria &middot; 34,8 km &middot; 852 m',
+
+    '<span class="num">6</span>Dolmen Iturzurigana':
+        '<span class="num">6</span>Iturzuriganako trikuharria',
+
+    'Zengotitagane &middot; 36,0 km &middot; 806 m':
+        'Zengotitagane &middot; 36,0 km &middot; 806 m',
+
+    '<span class="num">7</span>Zengotitagane':
+        '<span class="num">7</span>Zengotitagane',
+
+    '<span class="v">Dif&iacute;cil</span>':
+        '<span class="v">Zaila</span>',
+
+    '39,87 km y +1.700 m de desnivel en un solo circuito, combinando tramos de varias rutas ya publicadas. Es una ruta exigente, con subidas duras y descensos t&eacute;cnicos, pensada para quien busca un recorrido largo y completo por el Oiz y sus alrededores.':
+        '39,87 km eta +1.700 m-ko desnibela zirkuitu bakarrean, dagoeneko argitaratutako hainbat ibilbideren zatiak konbinatuz. Ibilbide eskatzailea da, aldapa gogorrekin eta jaitsiera teknikoekin, Oiz eta bere inguruko ibilbide luze eta oso bat bilatzen duenarentzat pentsatua.',
+
+    'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.gpx"':
+        'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane.gpx"',
+
+    'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.kml"':
+        'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane.kml"',
+
+    'En esta ruta combinamos tramos de diferentes recorridos publicados en la web, enlaz&aacute;ndolos para crear un itinerario completo y variado.':
+        'Ibilbide honetan, webgunean argitaratutako hainbat bideren zatiak lotu ditugu, ibilbide oso eta aberatsa sortzeko.',
+
+    'Salimos desde el <b>Alto de Trabakua</b>. Los primeros metros son de bajada por asfalto, poco m&aacute;s de un kil&oacute;metro, hasta llegar a un cruce donde giramos a la izquierda y dejamos atr&aacute;s la carretera. A partir de aqu&iacute; iremos pr&aacute;cticamente solos, alternando caminos de cemento, piedra y tierra.':
+        '<b>Trabakuako gainetik</b> abiatuko gara. Lehen metroetan asfaltotik beherantz egingo dugu, kilometro bat pasatxo, bidegurutze batera iritsi arte. Han ezkerrera egingo dugu eta errepidea atzean utziko dugu. Hemendik aurrera ia bakarrik ibiliko gara, zementuzko, harrizko eta lurrezko bideak txandakatuz.',
+
+    'Nada m&aacute;s empezar nos encontramos con el repecho m&aacute;s duro de esta primera parte. Se sube casi del tir&oacute;n y, aunque al verlo pueda impresionar, apenas llega a los 300 metros. Una vez superado, el terreno se vuelve bastante m&aacute;s llevadero.':
+        'Hasi bezain laster, lehen zati honetako aldaparik gogorrenarekin egingo dugu topo. Ia etenik gabe igotzen da eta, ikustean beldurra eman badezake ere, 300 metro ingurukoa baino ez da. Behin gaindituta, lurra askoz ere eramangarriagoa bihurtzen da.',
+
+    'Justo despu&eacute;s de esas primeras cuestas llega una buena bajada por pista de tierra, algo t&eacute;cnica en algunos puntos, pero sin demasiado riesgo si tienes un poco de soltura con la bici. Abajo enlazamos con un camino de piedra que nos lleva entre caser&iacute;os hasta el fondo del valle, ya muy cerca de <b><a href="barinaga.html">Barinaga</a></b>, aunque esta vez no llegaremos hasta el barrio. Al llegar junto al r&iacute;o giramos a la izquierda y empezamos la subida hacia <b><a href="iturreta.html">Iturreta</a></b>.':
+        'Lehen aldapa horien ondoren, lurrezko pistatik beherakada polita dator. Zenbait puntutan teknikoa da, baina arrisku handirik gabe, bizikletarekin nolabaiteko trebetasuna baduzu. Behean, harrizko bide batekin egingo dugu bat; honek baserrien artean haranaren hondoraino eramango gaituena, <b><a href="barinaga.html">Barinaga</a></b>tik oso gertu, oraingoan bertara iritsi gabe. Ibaiaren ondora iristean, ezkerrera egin eta <b><a href="iturreta.html">Iturreta</a></b>rako igoerari ekingo diogu.',
+
+    'Una vez arriba, en lugar de desviarnos a la izquierda hacia la zona de <b><a href="mendibil.html">Mendibil</a></b>, seguimos por la derecha, pasando junto a la ermita (km 12,3 &middot; 366 m). Apenas unos metros despu&eacute;s giramos a la izquierda junto a una peque&ntilde;a casa y entramos en un sendero. Un poco m&aacute;s adelante encontraremos una fuente de agua, un buen sitio para tener localizado antes de seguir.':
+        'Goian, <b><a href="mendibil.html">Mendibil</a></b> aldera ezkerrera desbideratu beharrean, eskuinetik jarraituko dugu, ermita ondotik igaroz (12,3 km &middot; 366 m). Metro gutxi batzuk aurrerago ezkerrera egingo dugu, etxe txiki baten ondoan, eta bidezidor batean sartuko gara. Aurrerago, ur-iturri bat aurkituko dugu; jarraitu aurretik kokatuta egoteko leku ona da.',
+
+    'Continuamos y enseguida volvemos a ganar altura por un camino de cemento. Cruzamos hacia la vertiente de <b><a href="iruzubieta.html">Iruzubieta</a></b>, en direcci&oacute;n norte. Esta parte es especialmente bonita, con un tramo muy entretenido que combina peque&ntilde;as subidas, bajadas y cambios de terreno. Despu&eacute;s de una buena bajada llegamos a la zona donde enlazamos con el Camino de Santiago, junto al bar.':
+        'Aurrera jarraituko dugu eta, berehala, berriro garaiera irabaziko dugu zementuzko bide batetik. <b><a href="iruzubieta.html">Iruzubieta</a></b>ko isurialdera igaroko gara, iparralderantz. Zati hau bereziki ederra da, igoera txikiak, jaitsierak eta lur-aldaketak konbinatzen dituen tarte oso entretenigarriarekin. Beherakada on baten ondoren, Donejakue Bidearekin bat egiten dugun gunera iritsiko gara, tabernaren ondoan.',
+
+    'Tomamos el Camino en direcci&oacute;n a <b>Bolibar</b>. Es un tramo agradable, entre pastos, alg&uacute;n caser&iacute;o aislado y zonas de ganado, as&iacute; que tendremos que abrir y cerrar alg&uacute;n cable o peque&ntilde;a puerta que encontremos por el camino.':
+        'Bidea hartuko dugu <b>Bolibar</b>rerantz. Tarte atsegina da, larre, baserri bakartiren bat eta abere-guneen artean; beraz, bidean aurkitzen dugun kable edo ate txikiren bat ireki eta itxi beharko dugu.',
+
+    'Al llegar a <b>Bolibar</b> buscamos la parte alta del pueblo y empezamos a subir por asfalto en direcci&oacute;n a Ziortza. Seguimos sin desviarnos hasta llegar al <b><a href="zenarruza.html">monasterio de Ziortza</a></b> (km 20,7 &middot; 300 m).':
+        '<b>Bolibar</b>rera iristean, herriaren goiko aldea bilatuko dugu eta asfaltotik igotzen hasiko gara Ziortzarako norabidean. Desbideratu gabe jarraituko dugu <b><a href="zenarruza.html">Ziortzako monasterioa</a></b> iritsi arte (20,7 km &middot; 300 m).',
+
+    'Por detr&aacute;s del monasterio tomamos una pista de piedra que vuelve a hacernos ganar altura. Al principio la subida es bastante suave, pero poco a poco la pendiente aumenta y toca apretar un poco m&aacute;s hasta llegar, aproximadamente a media ladera, al caser&iacute;o y granja de <b>Kortaun</b>. Desde aqu&iacute; ya tenemos buenas vistas hacia las lomas del <b><a href="oiz.html">Oiz</a></b>.':
+        'Monasterioaren atzean harrizko pista hartuko dugu, berriro garaiera irabazteko. Hasieran igoera nahiko leuna da, baina pixkanaka aldapa handitzen da eta gehiago estutu beharko dugu, gutxi gorabehera mendi-hegalaren erdialdean dagoen <b>Kortaun</b> baserri eta granjara iritsi arte. Hemendik <b><a href="oiz.html">Oiz</a></b>ko muinoetarako ikuspegi ederrak ditugu.',
+
+    'A partir de Kortaun llegan unos kil&oacute;metros de relativo descanso. Seguimos por caminos de cemento, enlazando peque&ntilde;as subidas y bajadas, hasta encontrarnos con el camino que sube desde Munitibar.':
+        'Kortaunetik aurrera atseden erlatiboko kilometro batzuk datoz. Zementuzko bideetatik jarraituko dugu, igoera eta jaitsiera txikiak lotuz, Munitibarretik gora datorren bidearekin topo egin arte.',
+
+    'Aqu&iacute; giramos a la izquierda y afrontamos una subida bastante dura hacia la <b>ermita de San Crist&oacute;bal</b> (km 29,9 &middot; 797 m). Una vez arriba merece la pena parar un momento y echar un vistazo: hacia un lado se abre buena parte de las monta&ntilde;as del Duranguesado y, si miramos hacia atr&aacute;s, la vista llega hasta la zona de Gernika y la costa.':
+        'Hemen ezkerrera egingo dugu eta <b>San Kristobal ermita</b>rako igoera nahiko gogorrari ekingo diogu (29,9 km &middot; 797 m). Behin goian, merezi du une batez gelditzea eta ingurura begiratzea: alde batera Durangaldeko mendi ugariak zabaltzen dira eta, atzera begiratuz gero, ikuspegia Gernika eta kostalderaino iristen da.',
+
+    'Continuamos junto a la ermita en direcci&oacute;n al <b><a href="oiz.html">Oiz</a></b> y seguimos subiendo. Ya queda poco para alcanzar el punto m&aacute;s alto de la ruta.':
+        'Ermitaren ondotik jarraituko dugu <b><a href="oiz.html">Oiz</a></b>erantz, eta igotzen jarraituko dugu. Ibilbideko punturik garaienera iristeko gutxi falta da.',
+
+    'Finalmente llegamos a la zona de las antenas, en la cumbre del <b>Oiz</b> (km 32,0 &middot; 1.020 m). Las vistas de 360 grados son espectaculares y permiten reconocer buena parte de las monta&ntilde;as que nos rodean.':
+        'Azkenik, <b>Oiz</b>ko gailurreko antenen gunera iritsiko gara (32,0 km &middot; 1.020 m). 360 graduko ikuspegiak ikusgarriak dira, eta inguruko mendi ugari identifikatzeko aukera ematen dute.',
+
+    'Para bajar utilizamos el camino habitual que llega al Oiz desde <b><a href="iturrizuri.html">Iturzuri</a></b>. Desde la cumbre descendemos hacia los aerogeneradores que vemos m&aacute;s abajo. Este primer tramo es corto, pero tiene bastante roca, as&iacute; que lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano hasta llegar abajo.':
+        'Jaisteko, <b><a href="iturrizuri.html">Iturzuri</a></b>tik Oizera iristen den ohiko bidea erabiliko dugu. Gailurretik beherantz egingo dugu, behean ikusten ditugun haize-sorgailuetarantz. Lehen tarte hau laburra da, baina harri asko ditu; beraz, gomendagarriena bizikletatik jaitsi eta eskuz eramatea da, behealdera iritsi arte.',
+
+    'Una vez abajo seguimos la l&iacute;nea de los aerogeneradores en direcci&oacute;n sur, acerc&aacute;ndonos a <b>Iturzurigaina</b> (km 34,8 &middot; 852 m). En esta zona veremos un refugio a nuestra izquierda y, cerca de &eacute;l, tambi&eacute;n una fuente de agua que conviene tener localizada.':
+        'Behin behean, haize-sorgailuen lerroari jarraituko diogu hegoalderantz, <b>Iturzurigaina</b>ra hurbilduz (34,8 km &middot; 852 m). Inguru honetan aterpe bat ikusiko dugu ezkerrean eta, handik gertu, ur-iturri bat ere bai; komeni da hau non dagoen kokatzea.',
+
+    'Seguimos bajando hasta <b><a href="zengotitagane.html">Zengotitagaina</a></b> (km 36,0 &middot; 806 m), donde enlazamos con la pista de cemento que baja hacia el barrio de Osma. La pendiente es considerable y permite coger mucha velocidad, pero no conviene confiarse: sobre todo en la segunda parte del descenso, los frenos pueden calentarse bastante.':
+        '<b><a href="zengotitagane.html">Zengotitagaina</a></b>ra jaitsi arte jarraituko dugu (36,0 km &middot; 806 m). Han, Osma auzorantz jaisten den zementuzko pistarekin bat egingo dugu. Aldapa handia da eta abiadura handia har daiteke, baina ez da komeni gehiegi fidatzea: batez ere jaitsieraren bigarren zatian, balaztak nahiko berotu daitezke.',
+
+    'Ya en <b><a href="osma.html">Osma</a></b> salimos de nuevo a la carretera general. Aqu&iacute; pr&aacute;cticamente hemos terminado la ruta. Giramos a la izquierda y, despu&eacute;s de unos dos kil&oacute;metros de subida por carretera, volvemos al Alto de Trabakua, donde cerramos el recorrido.':
+        '<b><a href="osma.html">Osma</a></b>n, berriro errepide nagusira aterako gara. Hemen ibilbidea ia amaituta izango dugu. Ezkerrera egingo dugu eta, errepidetik bi kilometro inguruko igoera egin ondoren, berriro Trabakuako gainera iritsiko gara, ibilbidea itxiz.',
+
+    'En esta ruta combinamos tramos de diferentes recorridos publicados en la web, enlaz&aacute;ndolos para crear un itinerario completo y variado.':
+        'Ibilbide honetan, webgunean argitaratutako hainbat bideren zatiak lotu ditugu, ibilbide oso eta aberatsa sortzeko.',
+
+    'Salimos desde el <b>Alto de Trabakua</b>. Los primeros metros son de bajada por asfalto, poco m&aacute;s de un kil&oacute;metro, hasta llegar a un cruce donde giramos a la izquierda y dejamos atr&aacute;s la carretera. A partir de aqu&iacute; iremos pr&aacute;cticamente solos, alternando caminos de cemento, piedra y tierra.':
+        '<b>Trabakuako gainetik</b> abiatuko gara. Lehen metroetan asfaltotik beherantz egingo dugu, kilometro bat pasatxo, bidegurutze batera iritsi arte. Han ezkerrera egingo dugu eta errepidea atzean utziko dugu. Hemendik aurrera ia bakarrik ibiliko gara, zementuzko, harrizko eta lurrezko bideak txandakatuz.',
+
+    'Nada m&aacute;s empezar nos encontramos con el repecho m&aacute;s duro de esta primera parte. Se sube casi del tir&oacute;n y, aunque al verlo pueda impresionar, apenas llega a los 300 metros. Una vez superado, el terreno se vuelve bastante m&aacute;s llevadero.':
+        'Hasi bezain laster, lehen zati honetako aldaparik gogorrenarekin egingo dugu topo. Ia etenik gabe igotzen da eta, ikustean beldurra eman badezake ere, 300 metro ingurukoa baino ez da. Behin gaindituta, lurra askoz ere eramangarriagoa bihurtzen da.',
+
+    'Justo despu&eacute;s de esas primeras cuestas llega una buena bajada por pista de tierra, algo t&eacute;cnica en algunos puntos, pero sin demasiado riesgo si tienes un poco de soltura con la bici. Abajo enlazamos con un camino de piedra que nos lleva entre caser&iacute;os hasta el fondo del valle, ya muy cerca de <b><a href="barinaga.html">Barinaga</a></b>, aunque esta vez no llegaremos hasta el barrio. Al llegar junto al r&iacute;o giramos a la izquierda y empezamos la subida hacia <b><a href="iturreta.html">Iturreta</a></b>.':
+        'Lehen aldapa horien ondoren, lurrezko pistatik beherakada polita dator. Zenbait puntutan teknikoa da, baina arrisku handirik gabe, bizikletarekin nolabaiteko trebetasuna baduzu. Behean, harrizko bide batekin egingo dugu bat; honek baserrien artean haranaren hondoraino eramango gaituena, <b><a href="barinaga.html">Barinaga</a></b>tik oso gertu, oraingoan bertara iritsi gabe. Ibaiaren ondora iristean, ezkerrera egin eta <b><a href="iturreta.html">Iturreta</a></b>rako igoerari ekingo diogu.',
+
+    'Una vez arriba, en lugar de desviarnos a la izquierda hacia la zona de <b><a href="mendibil.html">Mendibil</a></b>, seguimos por la derecha, pasando junto a la ermita (km 12,3 &middot; 366 m). Apenas unos metros despu&eacute;s giramos a la izquierda junto a una peque&ntilde;a casa y entramos en un sendero. Un poco m&aacute;s adelante encontraremos una fuente de agua, un buen sitio para tener localizado antes de seguir.':
+        'Goian, <b><a href="mendibil.html">Mendibil</a></b> aldera ezkerrera desbideratu beharrean, eskuinetik jarraituko dugu, ermita ondotik igaroz (12,3 km &middot; 366 m). Metro gutxi batzuk aurrerago ezkerrera egingo dugu, etxe txiki baten ondoan, eta bidezidor batean sartuko gara. Aurrerago, ur-iturri bat aurkituko dugu; jarraitu aurretik kokatuta egoteko leku ona da.',
+
+    'Continuamos y enseguida volvemos a ganar altura por un camino de cemento. Cruzamos hacia la vertiente de <b><a href="iruzubieta.html">Iruzubieta</a></b>, en direcci&oacute;n norte. Esta parte es especialmente bonita, con un tramo muy entretenido que combina peque&ntilde;as subidas, bajadas y cambios de terreno. Despu&eacute;s de una buena bajada llegamos a la zona donde enlazamos con el Camino de Santiago, junto al bar.':
+        'Aurrera jarraituko dugu eta, berehala, berriro garaiera irabaziko dugu zementuzko bide batetik. <b><a href="iruzubieta.html">Iruzubieta</a></b>ko isurialdera igaroko gara, iparralderantz. Zati hau bereziki ederra da, igoera txikiak, jaitsierak eta lur-aldaketak konbinatzen dituen tarte oso entretenigarriarekin. Beherakada on baten ondoren, Donejakue Bidearekin bat egiten dugun gunera iritsiko gara, tabernaren ondoan.',
+
+    'Tomamos el Camino en direcci&oacute;n a <b>Bolibar</b>. Es un tramo agradable, entre pastos, alg&uacute;n caser&iacute;o aislado y zonas de ganado, as&iacute; que tendremos que abrir y cerrar alg&uacute;n cable o peque&ntilde;a puerta que encontremos por el camino.':
+        'Bidea hartuko dugu <b>Bolibar</b>rerantz. Tarte atsegina da, larre, baserri bakartiren bat eta abere-guneen artean; beraz, bidean aurkitzen dugun kable edo ate txikiren bat ireki eta itxi beharko dugu.',
+
+    'Al llegar a <b>Bolibar</b> buscamos la parte alta del pueblo y empezamos a subir por asfalto en direcci&oacute;n a Ziortza. Seguimos sin desviarnos hasta llegar al <b><a href="zenarruza.html">monasterio de Ziortza</a></b> (km 20,7 &middot; 300 m).':
+        '<b>Bolibar</b>rera iristean, herriaren goiko aldea bilatuko dugu eta asfaltotik igotzen hasiko gara Ziortzarako norabidean. Desbideratu gabe jarraituko dugu <b><a href="zenarruza.html">Ziortzako monasterioa</a></b> iritsi arte (20,7 km &middot; 300 m).',
+
+    'Por detr&aacute;s del monasterio tomamos una pista de piedra que vuelve a hacernos ganar altura. Al principio la subida es bastante suave, pero poco a poco la pendiente aumenta y toca apretar un poco m&aacute;s hasta llegar, aproximadamente a media ladera, al caser&iacute;o y granja de <b>Kortaun</b>. Desde aqu&iacute; ya tenemos buenas vistas hacia las lomas del <b><a href="oiz.html">Oiz</a></b>.':
+        'Monasterioaren atzean harrizko pista hartuko dugu, berriro garaiera irabazteko. Hasieran igoera nahiko leuna da, baina pixkanaka aldapa handitzen da eta gehiago estutu beharko dugu, gutxi gorabehera mendi-hegalaren erdialdean dagoen <b>Kortaun</b> baserri eta granjara iritsi arte. Hemendik <b><a href="oiz.html">Oiz</a></b>ko muinoetarako ikuspegi ederrak ditugu.',
+
+    'A partir de Kortaun llegan unos kil&oacute;metros de relativo descanso. Seguimos por caminos de cemento, enlazando peque&ntilde;as subidas y bajadas, hasta encontrarnos con el camino que sube desde Munitibar.':
+        'Kortaunetik aurrera atseden erlatiboko kilometro batzuk datoz. Zementuzko bideetatik jarraituko dugu, igoera eta jaitsiera txikiak lotuz, Munitibarretik gora datorren bidearekin topo egin arte.',
+
+    'Aqu&iacute; giramos a la izquierda y afrontamos una subida bastante dura hacia la <b>ermita de San Crist&oacute;bal</b> (km 29,9 &middot; 797 m). Una vez arriba merece la pena parar un momento y echar un vistazo: hacia un lado se abre buena parte de las monta&ntilde;as del Duranguesado y, si miramos hacia atr&aacute;s, la vista llega hasta la zona de Gernika y la costa.':
+        'Hemen ezkerrera egingo dugu eta <b>San Kristobal ermita</b>rako igoera nahiko gogorrari ekingo diogu (29,9 km &middot; 797 m). Behin goian, merezi du une batez gelditzea eta ingurura begiratzea: alde batera Durangaldeko mendi ugariak zabaltzen dira eta, atzera begiratuz gero, ikuspegia Gernika eta kostalderaino iristen da.',
+
+    'Continuamos junto a la ermita en direcci&oacute;n al <b><a href="oiz.html">Oiz</a></b> y seguimos subiendo. Ya queda poco para alcanzar el punto m&aacute;s alto de la ruta.':
+        'Ermitaren ondotik jarraituko dugu <b><a href="oiz.html">Oiz</a></b>erantz, eta igotzen jarraituko dugu. Ibilbideko punturik garaienera iristeko gutxi falta da.',
+
+    'Finalmente llegamos a la zona de las antenas, en la cumbre del <b>Oiz</b> (km 32,0 &middot; 1.020 m). Las vistas de 360 grados son espectaculares y permiten reconocer buena parte de las monta&ntilde;as que nos rodean.':
+        'Azkenik, <b>Oiz</b>ko gailurreko antenen gunera iritsiko gara (32,0 km &middot; 1.020 m). 360 graduko ikuspegiak ikusgarriak dira, eta inguruko mendi ugari identifikatzeko aukera ematen dute.',
+
+    'Para bajar utilizamos el camino habitual que llega al Oiz desde <b><a href="iturrizuri.html">Iturzuri</a></b>. Desde la cumbre descendemos hacia los aerogeneradores que vemos m&aacute;s abajo. Este primer tramo es corto, pero tiene bastante roca, as&iacute; que lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano hasta llegar abajo.':
+        'Jaisteko, <b><a href="iturrizuri.html">Iturzuri</a></b>tik Oizera iristen den ohiko bidea erabiliko dugu. Gailurretik beherantz egingo dugu, behean ikusten ditugun haize-sorgailuetarantz. Lehen tarte hau laburra da, baina harri asko ditu; beraz, gomendagarriena bizikletatik jaitsi eta eskuz eramatea da, behealdera iritsi arte.',
+
+    'Una vez abajo seguimos la l&iacute;nea de los aerogeneradores en direcci&oacute;n sur, acerc&aacute;ndonos a <b>Iturzurigaina</b> (km 34,8 &middot; 852 m). En esta zona veremos un refugio a nuestra izquierda y, cerca de &eacute;l, tambi&eacute;n una fuente de agua que conviene tener localizada.':
+        'Behin behean, haize-sorgailuen lerroari jarraituko diogu hegoalderantz, <b>Iturzurigaina</b>ra hurbilduz (34,8 km &middot; 852 m). Inguru honetan aterpe bat ikusiko dugu ezkerrean eta, handik gertu, ur-iturri bat ere bai; komeni da hau non dagoen kokatzea.',
+
+    'Seguimos bajando hasta <b><a href="zengotitagane.html">Zengotitagaina</a></b> (km 36,0 &middot; 806 m), donde enlazamos con la pista de cemento que baja hacia el barrio de Osma. La pendiente es considerable y permite coger mucha velocidad, pero no conviene confiarse: sobre todo en la segunda parte del descenso, los frenos pueden calentarse bastante.':
+        '<b><a href="zengotitagane.html">Zengotitagaina</a></b>ra jaitsi arte jarraituko dugu (36,0 km &middot; 806 m). Han, Osma auzorantz jaisten den zementuzko pistarekin bat egingo dugu. Aldapa handia da eta abiadura handia har daiteke, baina ez da komeni gehiegi fidatzea: batez ere jaitsieraren bigarren zatian, balaztak nahiko berotu daitezke.',
+
+    'Ya en <b><a href="osma.html">Osma</a></b> salimos de nuevo a la carretera general. Aqu&iacute; pr&aacute;cticamente hemos terminado la ruta. Giramos a la izquierda y, despu&eacute;s de unos dos kil&oacute;metros de subida por carretera, volvemos al Alto de Trabakua, donde cerramos el recorrido.':
+        '<b><a href="osma.html">Osma</a></b>n, berriro errepide nagusira aterako gara. Hemen ibilbidea ia amaituta izango dugu. Ezkerrera egingo dugu eta, errepidetik bi kilometro inguruko igoera egin ondoren, berriro Trabakuako gainera iritsiko gara, ibilbidea itxiz.',
+
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'Anterior': 'Aurrekoa',
@@ -2651,6 +2850,7 @@ HISTORIAS = {
     'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
     'Senderismo · Trail running · BTT/e-bike · Circuito · Mixta': 'Oinez · Trail running · BTT/e-bike · Zirkuitua · Nahasia',
+    'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
     'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
@@ -2683,6 +2883,8 @@ HISTORIAS = {
     'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
     'Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil',
     'Trabakua, Longa y Muniozguren': 'Trabakua, Longa eta Muniozguren',
+    'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
+        'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane',
 
     # route descriptions
     'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
@@ -2709,6 +2911,8 @@ HISTORIAS = {
     'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
     'Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.',
     'Circuito desde Trabakua por Gerea, Longa y Muniozguren.': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota.',
+    'Circuito exigente de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.':
+        'Zirkuitu eskatzailea BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
     'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
 }
@@ -2748,6 +2952,8 @@ DESCRIPTIONS = {
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea (trail running), Mallabiko mendi eta auzoetan barrena',
     'barinaga': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
     'muniozguren': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
+    'exigente': 'Zirkuitu eskatzailea BTT/e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
+        'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
     'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2782,6 +2988,8 @@ TITLES = {
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
     'barinaga': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'muniozguren': 'Trabakua, Longa, Muniozguren · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
+    'exigente': 'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane · '
+        'BTT ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2813,5 +3021,6 @@ PAGE_STRINGS = {
     '7pago16': PAGO16,
     'barinaga': BARINAGA,
     'muniozguren': MUNIOZGUREN,
+    'exigente': EXIGENTE,
     'historias': HISTORIAS,
 }
