@@ -753,15 +753,15 @@ footer a:hover{ text-decoration:underline; }
   background:rgba(10,12,8,.8);
   backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
   display:none; align-items:center; justify-content:center;
-  padding:24px;
+  padding:16px 12px;
 }
 .info-modal.open{ display:flex; }
 .info-modal-card{
   position:relative;
-  width:100%; max-width:480px; max-height:calc(100vh - 48px);
+  width:100%; max-width:480px; max-height:calc(100vh - 32px);
   overflow-y:auto; border-radius:20px;
   background:var(--ground); border:1px solid var(--line);
-  padding:28px 24px 36px;
+  padding:28px 18px 36px;
   box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 @media (min-width:640px){
