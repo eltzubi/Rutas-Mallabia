@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
-<link rel="stylesheet" href="home.css?v=28d67a5b">
+<link rel="stylesheet" href="home.css?v=b3a02b3a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,7 +46,7 @@
 </div>
 <div class="page">
 
-  <div class="masthead">
+  <header class="masthead">
     <div class="brand">
       <span class="logo-mark">
         <picture><source srcset="img/mallabia-01.webp" type="image/webp"><img class="logo-photo logo-photo-a" src="img/mallabia-01.jpg" alt=""></picture>
@@ -62,8 +62,9 @@
       <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
     </div>
-  </div>
+  </header>
 
+  <main>
   <section class="hero-compact">
     <picture><source srcset="img/mallabia-10.webp" type="image/webp"><img src="img/mallabia-10.jpg" alt="Persona con los brazos en alto en la cima de un monte al amanecer, con el foco frontal encendido y el mar al fondo"></picture>
     <div class="hero-compact-scrim"></div>
@@ -89,7 +90,7 @@
   </section>
 
   <section class="finder">
-    <p class="eyebrow">&iquest;Qu&eacute; quieres hacer?</p>
+    <h2 class="eyebrow">&iquest;Qu&eacute; quieres hacer?</h2>
     <div class="activity-picker" role="group" aria-label="Elegir actividad">
       <button type="button" class="activity-big-btn" data-activity="senderismo">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5v7.3c0 .7-.3 1.4-.8 1.9L3.5 14.4c-.6.5-.9 1.3-.9 2v2.6a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1.6c0-1-.7-1.9-1.7-2.1l-6.4-1.5a2 2 0 0 1-1.5-1.9V2.5"/><path d="M7 2.5h6.5"/><path d="M9.5 6h4M9.5 8.7h4"/></svg>
@@ -449,7 +450,7 @@
   </section>
 
   <section class="quick-help">
-    <p class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</p>
+    <h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>
     <div class="quick-help-grid">
       <button type="button" class="quick-help-btn" data-quick-preset="corto">
         <b>Algo corto</b><span>Menos de 10 km</span>
@@ -461,7 +462,7 @@
         <b>Una buena vuelta</b><span>M&aacute;s de 30 km</span>
       </button>
     </div>
-    <p class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</p>
+    <h3 class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</h3>
     <div class="route-card-grid">
       <a class="route-card" href="exigente.html">
         <div class="route-card-photo">
@@ -529,10 +530,11 @@
       </div>
     </details>
   </section>
+  </main>
 
   <footer>
     <span>Mallabia · Bizkaia</span>
-    <span>Para cualquier duda: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a></span>
+    <span>Para cualquier duda: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a></span>
   </footer>
 </div>
 

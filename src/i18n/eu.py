@@ -175,8 +175,8 @@ HOME = {
         '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
     # finder (redesign)
-    '<p class="eyebrow">&iquest;Qu&eacute; quieres hacer?</p>':
-        '<p class="eyebrow">&iquest;Zer egin nahi duzu?</p>',
+    '<h2 class="eyebrow">&iquest;Qu&eacute; quieres hacer?</h2>':
+        '<h2 class="eyebrow">&iquest;Zer egin nahi duzu?</h2>',
     'aria-label="Elegir actividad"': 'aria-label="Aukeratu jarduera"',
     '<span>A pie</span>': '<span>Oinez</span>',
     '<span>En bici</span>': '<span>Bizikletaz</span>',
@@ -188,8 +188,8 @@ HOME = {
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
     'hidden>Ver todas las rutas</button>': 'hidden>Ikusi ibilbide guztiak</button>',
-    '<p class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</p>':
-        '<p class="eyebrow">&iquest;Ez dakizu zein aukeratu?</p>',
+    '<h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>':
+        '<h2 class="eyebrow">&iquest;Ez dakizu zein aukeratu?</h2>',
     '<b>Algo corto</b>': '<b>Zerbait laburra</b>',
     '<span>Menos de 10 km</span>': '<span>10 km baino gutxiago</span>',
     '<b>Un par de horas</b>': '<b>Ordu pare bat</b>',
@@ -198,8 +198,8 @@ HOME = {
     '<summary>Antes de salir</summary>': '<summary>Irten aurretik</summary>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
-    '<p class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</p>':
-        '<p class="eyebrow latest-routes-label">Azken ibilbide gehituak</p>',
+    '<h3 class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</h3>':
+        '<h3 class="eyebrow latest-routes-label">Azken ibilbide gehituak</h3>',
 
     # route-card photos for routes without a former feat-panel (redesign)
     'alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo"':
@@ -414,8 +414,8 @@ HOME = {
         'alt="Aixolako presa zuhaitzen artean, lainoa uraren gainean agertzen"',
 
     # footer
-    'Para cualquier duda: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
-        'Edozein zalantzarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>',
+    'Para cualquier duda: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
+        'Edozein zalantzarako: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>',
 }
 
 TRABAKUA = {
