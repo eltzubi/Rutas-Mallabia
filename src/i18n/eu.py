@@ -2671,17 +2671,17 @@ EXIGENTE = {
     'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
         'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
 
-    'San Kristobal baseliza &middot; 12,3 km &middot; 366 m':
-        'San Kristobal baseliza &middot; 12,3 km &middot; 366 m',
+    'Iturreta &middot; 12,3 km &middot; 366 m':
+        'Iturreta &middot; 12,3 km &middot; 366 m',
 
-    '<span class="num">1</span>San Kristobal baseliza':
-        '<span class="num">1</span>San Kristobal baseliza',
+    '<span class="num">1</span>Iturreta':
+        '<span class="num">1</span>Iturreta',
 
-    'Iglesia de Santo Tom&aacute;s &middot; 18,7 km &middot; 172 m':
-        'Santo Tomas eliza &middot; 18,7 km &middot; 172 m',
+    'Bolibar &middot; 18,7 km &middot; 172 m':
+        'Bolibar &middot; 18,7 km &middot; 172 m',
 
-    '<span class="num">2</span>Iglesia de Santo Tom&aacute;s':
-        '<span class="num">2</span>Santo Tomas eliza',
+    '<span class="num">2</span>Bolibar':
+        '<span class="num">2</span>Bolibar',
 
     'Monasterio de Zenarruza &middot; 20,7 km &middot; 300 m':
         'Zenarruzako monasterioa &middot; 20,7 km &middot; 300 m',
