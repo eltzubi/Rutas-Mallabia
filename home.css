@@ -102,6 +102,12 @@ body{
   letter-spacing:.06em; flex-shrink:0;
 }
 .info-chip:hover{ box-shadow:0 0 14px -2px var(--violet); }
+@keyframes info-chip-pulse{
+  0%, 100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--violet) 45%, transparent); }
+  50%{ box-shadow:0 0 0 6px color-mix(in srgb, var(--violet) 0%, transparent); }
+}
+.info-chip{ animation:info-chip-pulse 2.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce){ .info-chip{ animation:none; } }
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
