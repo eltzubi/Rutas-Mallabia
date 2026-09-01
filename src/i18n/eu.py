@@ -288,7 +288,7 @@ HOME = {
         'Geria auzoan; eta '
         '<a href="https://www.turismo.euskadi.eus/es/alojamientos/casa-rural-zelai-baserria/aa30-12375/es/" target="_blank" rel="noopener noreferrer">Zelai Baserria</a>, '
         'Goita auzoan.',
-    '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Irteerak mendatetik</p>',
+    '<p class="eyebrow">Salidas desde el puerto</p>': '<p class="eyebrow">Mendatetik irteerak</p>',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
