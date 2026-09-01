@@ -155,3 +155,77 @@
     try { localStorage.setItem('rutas-mallabia-theme', next); } catch(err){}
   });
 })();
+
+// --- incident report modal (route pages: fallen trees, cut paths, etc.) ---
+(function(){
+  // TODO: replace with the real Formspree endpoint (formspree.io -> new
+  // form -> "Integration" tab gives a URL like https://formspree.io/f/xxxxxxxx).
+  // Until then the form shows an inline message instead of submitting.
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  var trigger = document.getElementById('reportTrigger');
+  var box = document.getElementById('reportModal');
+  var close = document.getElementById('reportModalClose');
+  var form = document.getElementById('reportForm');
+  if (!trigger || !box || !close || !form) return; // page has no report form
+
+  var status = document.getElementById('reportStatus');
+  var submitBtn = form.querySelector('.report-submit');
+  var routeNameEl = document.querySelector('h1');
+  var routeField = form.querySelector('input[name="route"]');
+  var subjectField = form.querySelector('input[name="_subject"]');
+
+  function open(){
+    // innerText (not textContent) so a <br> inside the <h1> (route names
+    // wrap onto a second line) becomes a space instead of vanishing.
+    var routeName = routeNameEl ? (routeNameEl.innerText || routeNameEl.textContent).replace(/\s+/g, ' ').trim() : document.title;
+    if (routeField) routeField.value = routeName;
+    if (subjectField) subjectField.value = 'Incidencia en ruta: ' + routeName;
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+  function shut(){
+    box.classList.remove('open');
+    document.body.style.overflow = '';
+    trigger.focus();
+  }
+  trigger.addEventListener('click', open);
+  close.addEventListener('click', shut);
+  box.addEventListener('click', function(e){ if (e.target === box) shut(); });
+  document.addEventListener('keydown', function(e){
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') shut();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (FORMSPREE_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
+      status.textContent = 'Formulario todavía sin configurar — avísame y lo activo.';
+      status.className = 'report-status error';
+      return;
+    }
+    submitBtn.disabled = true;
+    status.textContent = 'Enviando…';
+    status.className = 'report-status';
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.';
+        status.className = 'report-status success';
+      } else {
+        status.textContent = 'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.';
+        status.className = 'report-status error';
+      }
+    }).catch(function(){
+      status.textContent = 'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.';
+      status.className = 'report-status error';
+    }).then(function(){
+      submitBtn.disabled = false;
+    });
+  });
+})();

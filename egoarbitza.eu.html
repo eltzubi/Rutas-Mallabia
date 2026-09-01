@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
-<link rel="stylesheet" href="route.css?v=14ea949c">
+<link rel="stylesheet" href="route.css?v=755d843f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -154,6 +154,51 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
       Deskargatu KML
     </a>
+    <button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Arazoa jakinarazi
+    </button>
+  </div>
+
+  <div class="report-modal" id="reportModal" role="dialog" aria-modal="true" aria-label="Arazo bat jakinarazi">
+    <div class="report-modal-card">
+      <button type="button" class="report-modal-close" id="reportModalClose" aria-label="Itxi">&#10005;</button>
+      <span class="k">Jakinarazi</span>
+      <h2>Arazo bat jakinarazi</h2>
+      <p class="report-modal-intro">Zuhaitz bat erorita, bidea moztuta edo ibilbide honetan zerbait aldatuta ikusi duzu? Kontaidazu, eta neuk gainbegiratuko dut fitxa eguneratu aurretik.</p>
+      <form id="reportForm">
+        <input type="hidden" name="route">
+        <input type="hidden" name="_subject">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <label class="report-field">
+          <span>Arazo mota</span>
+          <select name="tipo" required>
+            <option value="Zuhaitza edo adarra erorita">Zuhaitza edo adarra erorita</option>
+            <option value="Bidea moztuta edo desbideratuta">Bidea moztuta edo desbideratuta</option>
+            <option value="Seinaleztapena hondatuta edo lausotuta">Seinaleztapena hondatuta edo lausotuta</option>
+            <option value="Beste bat">Beste bat</option>
+          </select>
+        </label>
+        <label class="report-field">
+          <span>Kokapen gutxi gorabeherakoa</span>
+          <input type="text" name="ubicacion" placeholder="adib. 8. km, iturritik gertu..." required>
+        </label>
+        <label class="report-field">
+          <span>Deskribapena</span>
+          <textarea name="descripcion" rows="4" placeholder="Kontaidazu zer ikusi duzun eta non zehazki" required></textarea>
+        </label>
+        <label class="report-field">
+          <span>Argazkia (aukerakoa)</span>
+          <input type="file" name="foto" accept="image/*">
+        </label>
+        <label class="report-field">
+          <span>Zure emaila (aukerakoa, zerbait galdetu behar badizut)</span>
+          <input type="email" name="email" placeholder="tu@email.com">
+        </label>
+        <button type="submit" class="report-submit">Bidali jakinarazpena</button>
+        <p class="report-status" id="reportStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
 
   <div class="facts">
@@ -213,6 +258,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/map.js?v=431d6f35"></script>
-<script src="js/app.js?v=1155adf4"></script>
+<script src="js/app.js?v=9f16b49b"></script>
 </body>
 </html>

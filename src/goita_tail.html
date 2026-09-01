@@ -98,6 +98,51 @@
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
       Descargar KML
     </a>
+    <button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Reportar incidencia
+    </button>
+  </div>
+
+  <div class="report-modal" id="reportModal" role="dialog" aria-modal="true" aria-label="Reportar una incidencia">
+    <div class="report-modal-card">
+      <button type="button" class="report-modal-close" id="reportModalClose" aria-label="Cerrar">&#10005;</button>
+      <span class="k">Reportar</span>
+      <h2>Reportar una incidencia</h2>
+      <p class="report-modal-intro">&iquest;Has visto un &aacute;rbol ca&iacute;do, un sendero cortado o algo que haya cambiado en esta ruta? Cu&eacute;ntamelo y lo reviso en persona antes de actualizar la ficha.</p>
+      <form id="reportForm">
+        <input type="hidden" name="route">
+        <input type="hidden" name="_subject">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <label class="report-field">
+          <span>Tipo de incidencia</span>
+          <select name="tipo" required>
+            <option value="&Aacute;rbol o rama ca&iacute;da">&Aacute;rbol o rama ca&iacute;da</option>
+            <option value="Sendero cortado o desviado">Sendero cortado o desviado</option>
+            <option value="Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa">Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </label>
+        <label class="report-field">
+          <span>Ubicaci&oacute;n aproximada</span>
+          <input type="text" name="ubicacion" placeholder="p. ej. km 8, cerca de la fuente..." required>
+        </label>
+        <label class="report-field">
+          <span>Descripci&oacute;n</span>
+          <textarea name="descripcion" rows="4" placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente" required></textarea>
+        </label>
+        <label class="report-field">
+          <span>Foto (opcional)</span>
+          <input type="file" name="foto" accept="image/*">
+        </label>
+        <label class="report-field">
+          <span>Tu email (opcional, por si necesito preguntarte algo)</span>
+          <input type="email" name="email" placeholder="tu@email.com">
+        </label>
+        <button type="submit" class="report-submit">Enviar reporte</button>
+        <p class="report-status" id="reportStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
 
   <div class="facts">

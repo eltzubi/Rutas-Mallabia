@@ -62,6 +62,34 @@ ROUTE = {
     'Ver ruta completa en Wikiloc': 'Ikusi ibilbide osoa Wikilocen',
     'Descargar GPX': 'Deskargatu GPX',
     'Descargar KML': 'Deskargatu KML',
+
+    # incident report modal
+    '<span class="k">Reportar</span>': '<span class="k">Jakinarazi</span>',
+    'aria-label="Reportar una incidencia"': 'aria-label="Arazo bat jakinarazi"',
+    '<h2>Reportar una incidencia</h2>': '<h2>Arazo bat jakinarazi</h2>',
+    'Reportar incidencia': 'Arazoa jakinarazi',
+    '&iquest;Has visto un &aacute;rbol ca&iacute;do, un sendero cortado o algo que haya '
+    'cambiado en esta ruta? Cu&eacute;ntamelo y lo reviso en persona antes de actualizar la ficha.':
+        'Zuhaitz bat erorita, bidea moztuta edo ibilbide honetan zerbait aldatuta ikusi duzu? '
+        'Kontaidazu, eta neuk gainbegiratuko dut fitxa eguneratu aurretik.',
+    'Tipo de incidencia': 'Arazo mota',
+    'value="&Aacute;rbol o rama ca&iacute;da">&Aacute;rbol o rama ca&iacute;da<':
+        'value="Zuhaitza edo adarra erorita">Zuhaitza edo adarra erorita<',
+    'value="Sendero cortado o desviado">Sendero cortado o desviado<':
+        'value="Bidea moztuta edo desbideratuta">Bidea moztuta edo desbideratuta<',
+    'value="Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa">Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa<':
+        'value="Seinaleztapena hondatuta edo lausotuta">Seinaleztapena hondatuta edo lausotuta<',
+    'value="Otro">Otro<': 'value="Beste bat">Beste bat<',
+    'Ubicaci&oacute;n aproximada': 'Kokapen gutxi gorabeherakoa',
+    'placeholder="p. ej. km 8, cerca de la fuente..." required':
+        'placeholder="adib. 8. km, iturritik gertu..." required',
+    '<span>Descripci&oacute;n</span>': '<span>Deskribapena</span>',
+    'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente" required':
+        'placeholder="Kontaidazu zer ikusi duzun eta non zehazki" required',
+    'Foto (opcional)': 'Argazkia (aukerakoa)',
+    'Tu email (opcional, por si necesito preguntarte algo)':
+        'Zure emaila (aukerakoa, zerbait galdetu behar badizut)',
+    '>Enviar reporte<': '>Bidali jakinarazpena<',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real '
     '(puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
     '<b>Dificultad</b>, estimada a partir de ambos. '
