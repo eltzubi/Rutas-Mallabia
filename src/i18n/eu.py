@@ -208,6 +208,12 @@ HOME = {
 
     'Las rutas en bici est&aacute;n hechas con asistencia el&eacute;ctrica est&aacute;ndar; la dificultad real puede variar seg&uacute;n la bici y el ciclista.':
         'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira; benetako zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
+    'Si te encuentras algo que haya cambiado &mdash;un &aacute;rbol ca&iacute;do, un tramo cortado, '
+    'se&ntilde;alizaci&oacute;n da&ntilde;ada&mdash;, av&iacute;same con el bot&oacute;n &laquo;Reportar incidencia&raquo; '
+    'que hay en cada ficha de ruta.':
+        'Zerbait aldatuta aurkitzen baduzu &mdash;zuhaitz bat erorita, tarte bat moztuta, seinaleztapena '
+        'hondatuta&mdash;, jakinarazidazu ibilbide bakoitzaren fitxan dagoen &laquo;Arazoa jakinarazi&raquo; '
+        'botoiaren bidez.',
 
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     'aria-label="Filtrar por dificultad"': 'aria-label="Iragazi zailtasunaren arabera"',
