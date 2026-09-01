@@ -104,14 +104,14 @@ body{
 .info-chip:hover{ box-shadow:0 0 14px -2px var(--violet); }
 @keyframes info-chip-pulse{
   0%, 100%{
-    box-shadow:0 0 0 0 color-mix(in srgb, var(--violet) 75%, transparent), 0 0 10px 1px color-mix(in srgb, var(--violet) 60%, transparent);
-    background:color-mix(in srgb, var(--violet) 22%, transparent);
+    box-shadow:0 0 0 0 color-mix(in srgb, var(--violet) 38%, transparent), 0 0 5px 1px color-mix(in srgb, var(--violet) 30%, transparent);
+    background:color-mix(in srgb, var(--violet) 11%, transparent);
     transform:scale(1);
   }
   50%{
-    box-shadow:0 0 0 12px color-mix(in srgb, var(--violet) 0%, transparent), 0 0 10px 1px color-mix(in srgb, var(--violet) 0%, transparent);
+    box-shadow:0 0 0 6px color-mix(in srgb, var(--violet) 0%, transparent), 0 0 5px 1px color-mix(in srgb, var(--violet) 0%, transparent);
     background:none;
-    transform:scale(1.08);
+    transform:scale(1.04);
   }
 }
 .info-chip{ animation:info-chip-pulse 1.3s ease-in-out infinite; }
