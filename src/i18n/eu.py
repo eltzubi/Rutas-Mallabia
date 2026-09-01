@@ -145,8 +145,8 @@ HOME = {
     '<span class="k">Desnivel acumulado</span>': '<span class="k">Metatutako desnibela</span>',
     '<span class="k">Track GPX real</span>': '<span class="k">Benetako GPX tracka</span>',
     '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
-    '&Uacute;ltima entrada: agosto de 2026':
-        'Azken sarrera: 2026ko abuztuan',
+    '&Uacute;ltima entrada: septiembre de 2026':
+        'Azken sarrera: 2026ko irailean',
 
     # filters
     '<p class="eyebrow">Rutas documentadas</p>': '<p class="eyebrow">Dokumentatutako ibilbideak</p>',
