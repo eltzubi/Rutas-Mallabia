@@ -875,6 +875,10 @@ GEREA = {
         'alt="Gereako auzorako ikuspegiak igoeratik, baserrien eta mendien artean"',
     'alt="Ur Jauziak en diciembre, con el agua cayendo con fuerza entre las rocas"':
         'alt="Ur Jauziak abenduan, ura indarrez harrien artetik erortzen"',
+    'alt="Sendero estrecho entre helechos y árboles, en un tramo umbrío del recorrido"':
+        'alt="Bide-zidor estua garo eta zuhaitzen artean, ibilbideko tarte itzaltsu batean"',
+    'alt="Marca verde y blanca de sendero pintada en el tronco de un árbol"':
+        'alt="Bide-marka berde eta zuria zuhaitz baten enborrean margotuta"',
     'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
     '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
     'entre rocas y musgo. En invierno el caudal es impresionante; en verano baja mucho y se '
@@ -2622,8 +2626,8 @@ MUNIOZGUREN = {
     'Aqu&iacute; conectamos con la carretera por la que hab&iacute;amos pasado al principio. Giramos a la derecha y regresamos a Trabakua por el mismo camino de ida.':
         'Hemen hasieran erabili dugun errepidearekin egingo dugu bat. Eskuinera hartu eta bide beretik itzuliko gara Trabakuko mendatera.',
 
-    '12,23 km y +532 m de desnivel en un solo circuito. Es una ruta corta y r&aacute;pida, pero con suficiente recorrido para disfrutarla en bicicleta, perfecta para esos d&iacute;as en los que no tenemos demasiado tiempo pero queremos salir un rato. Tambi&eacute;n es una buena opci&oacute;n para correr o simplemente caminar, con bastante paisaje abierto y sin necesidad de alejarse demasiado de Trabakua.':
-        '12,23 km eta +532 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
+    '12,23 km y +250 m de desnivel en un solo circuito. Es una ruta corta y r&aacute;pida, pero con suficiente recorrido para disfrutarla en bicicleta, perfecta para esos d&iacute;as en los que no tenemos demasiado tiempo pero queremos salir un rato. Tambi&eacute;n es una buena opci&oacute;n para correr o simplemente caminar, con bastante paisaje abierto y sin necesidad de alejarse demasiado de Trabakua.':
+        '12,23 km eta +250 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
 }
 
 HISTORIAS = {
