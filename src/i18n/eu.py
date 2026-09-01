@@ -2601,6 +2601,9 @@ MUNIOZGUREN = {
     'Seguimos por el camino de cemento, subiendo suavemente al principio, mientras vamos dejando atr&aacute;s alg&uacute;n caser&iacute;o disperso entre las campas. Poco a poco ganamos altura y, en el &uacute;ltimo kil&oacute;metro, la pendiente se hace m&aacute;s pronunciada hasta alcanzar <b>Muniozguren</b> (km 6,5 &middot; 561 m), el punto m&aacute;s alto de la ruta.':
         'Porlanezko bidetik jarraituko dugu, hasieran aldapa leunean, zelaien artean sakabanatutako baserriren bat atzean utziz. Pixkanaka altuera hartzen joango gara eta, azken kilometroan, aldapa gogortu egiten da <b>Muniozguren</b> baserrira (6,5 km &middot; 561 m) iritsi arte, ibilbide honetan altuen dagoen baserria.',
 
+    'Al llegar a Muniozguren, a nuestra derecha veremos <b>Astarloko Atxa</b>, un peque&ntilde;o pero llamativo picacho al que merece la pena subir. Desde arriba se tienen muy buenas vistas sobre todo Gerea y, justo enfrente, se extiende el cordal del Oiz.':
+        'Muniozgurenera iristean, eskuinean <b>Astarloko Atxa</b> ikusiko dugu. Tontor txiki baina nabarmena da, eta bertara igotzea merezi du: goitik Gerea inguru osoaren ikuspegi ederra zabaltzen da, eta aurrez aurre Oizko mendilerroa dugu.',
+
     'Continuamos y, poco m&aacute;s adelante, el camino hace un giro brusco a la derecha y comienza a bajar. Este es el camino que utilizamos habitualmente para enlazar con la <a href="zenarruza.html">ruta de Zenarruza</a> o para subir desde la zona de Bolibar. En esta ocasi&oacute;n no bajamos por ah&iacute; y seguimos de frente.':
         'Aurrera jarraituko dugu eta, handik gutxira, bideak eskuinera bira itxia egiten du eta beherantz hasten da. Bide hori erabili ohi dugu <a href="zenarruza.html">Zenarruzako ibilbidearekin</a> lotzeko edo Bolibar aldetik igotzeko. Oraingoan, ordea, ez dugu hartuko eta zuzen jarraituko dugu.',
 
