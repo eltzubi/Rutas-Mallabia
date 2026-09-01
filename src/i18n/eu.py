@@ -2659,9 +2659,6 @@ EXIGENTE = {
     'Pista de tierra entre &aacute;rboles en oto&ntilde;o, cubierta de hojas ca&iacute;das':
         'Lurrezko pista zuhaitzen artean udazkenean, erorritako hostoz estalia',
 
-    'Ciclista con la bicicleta el&eacute;ctrica en un alto de la ruta, con las monta&ntilde;as del Duranguesado al fondo en el atardecer':
-        'Txirrindularia bizikleta elektrikoarekin ibilbideko gune batean, Durangaldeko mendiak atzealdean ilunabarrean',
-
     'Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer':
         'Bizikleta argia piztuta seinale-poste baten ondoan, Oizko gailurreko antenetatik gertu ilunabarrean',
 
