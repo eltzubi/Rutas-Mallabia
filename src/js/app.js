@@ -75,7 +75,20 @@
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
   btn.addEventListener('click', function(){
+    // Collapse-on-scroll (below) fights a smooth scroll-to-top: it re-adds
+    // is-compact on every scroll tick while scrollY is still high, so the
+    // header would stay collapsed/empty through nearly the whole animation
+    // and only pop back at the very end -- reads as stuck/broken. The
+    // scrolling-to-top flag on <html> tells that handler to stand down
+    // until we've actually reached the top.
+    var root = document.documentElement;
+    var masthead = document.querySelector('.masthead');
+    root.classList.add('scrolling-to-top');
+    if (masthead) masthead.classList.remove('is-compact');
     window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    var stop = function(){ root.classList.remove('scrolling-to-top'); };
+    window.addEventListener('scrollend', stop, { once:true });
+    setTimeout(stop, 1000); // fallback where scrollend isn't supported
   });
 })();
 
@@ -86,6 +99,7 @@
   var brand = masthead && masthead.querySelector('.brand');
   if (!masthead || !brand) return;
   function onScroll(){
+    if (document.documentElement.classList.contains('scrolling-to-top')) return;
     // A single threshold flips back and forth (and visibly judders the
     // header, since collapsing it shifts the sticky layout underneath the
     // scroll position) whenever scrollY hovers right at that pixel. Two
