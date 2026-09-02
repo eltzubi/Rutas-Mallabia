@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
-<link rel="stylesheet" href="route.css?v=755d843f">
+<link rel="stylesheet" href="route.css?v=7df0ff6f">
 <link rel="stylesheet" href="historias.css?v=14d09d72">
 <script type="application/ld+json">
 {
@@ -46,7 +46,7 @@
 </script>
 </head>
 <body class="historias-page">
-  <div class="masthead">
+  <header class="masthead">
     <a class="back-link" href="index.html">&larr; Rutas</a>
     <div class="masthead-right">
       <span class="place">Mallabia · Bizkaia</span>
@@ -56,8 +56,9 @@
       <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
     </div>
-  </div>
+  </header>
 
+  <main>
   <div class="story-app">
     <div class="story-rail" id="storyRail">
 
@@ -484,7 +485,7 @@
     </div>
     <article class="story-read">
       <div class="story-tag" id="dTag"></div>
-      <h2 id="dName"></h2>
+      <h2 id="dName" aria-hidden="true"></h2>
       <div class="story-bigstats">
         <div class="story-bigstat"><b id="dDist"></b><span class="k">Distancia</span></div>
         <div class="story-bigstat"><b id="dElev"></b><span class="k">Desnivel</span></div>
@@ -493,6 +494,7 @@
       <a class="story-go" id="dGo">Abrir ruta completa &rarr;</a>
     </article>
   </section>
+  </main>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -593,6 +595,7 @@
     var stats = card.querySelectorAll('.story-stat');
     document.getElementById('dTag').textContent = card.dataset.tag;
     document.getElementById('dName').innerHTML = card.querySelector('h1').innerHTML;
+    document.getElementById('dName').removeAttribute('aria-hidden');
     document.getElementById('dDesc').innerHTML = descEl ? descEl.innerHTML : '';
     document.getElementById('dDist').textContent = stats[0] ? stats[0].textContent : '';
     document.getElementById('dElev').textContent = stats[1] ? stats[1].textContent : '';

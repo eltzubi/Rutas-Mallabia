@@ -134,8 +134,7 @@ body{
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
 }
-.wikiloc-credit a{ color:var(--teal); text-decoration:none; }
-.wikiloc-credit a:hover{ text-decoration:underline; }
+.wikiloc-credit a{ color:var(--teal); text-decoration:underline; }
 
 .hero{ padding:22px 24px 0; }
 .hero-chart{

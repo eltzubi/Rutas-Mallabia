@@ -118,6 +118,7 @@ ASSETS = {
     ("js", "app.js"): "js/app.js",
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",
+    ("js", "webmcp.js"): "js/webmcp.js",
 }
 
 
