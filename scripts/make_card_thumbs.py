@@ -58,8 +58,15 @@ SATURACION = 1.25
 # No se llega hasta el objetivo (FUERZA) ni se pasa del TOPE, para nivelar sin
 # aplanar: una foto con su intencion tiene que conservarla.
 OBJETIVO = 112
-FUERZA = 0.45
-TOPE = (0.80, 1.35)
+
+# La correccion es asimetrica a proposito. Subir una foto oscura la mejora casi
+# siempre: estaba subexpuesta. Bajar una clara le quita fuerza, y las claras son
+# justo las verdes y azules que tiran del listado -- con la misma fuerza en los
+# dos sentidos perdian hasta un 12% de contraste y el conjunto se veia soso.
+# Asi que las oscuras suben como antes y las claras apenas se mueven.
+FUERZA_SUBIR = 0.45
+FUERZA_BAJAR = 0.20
+TOPE = (0.92, 1.35)
 
 # Por debajo de esta luminancia la foto es de noche o a contraluz. Ahi no se
 # toca el brillo: el primer intento le metia azul al amanecer de la ermita y la
@@ -100,7 +107,8 @@ def igualar_tono(im):
     else:
         im = Image.blend(im, ImageOps.autocontrast(im, cutoff=1, preserve_tone=True), 0.5)
         actual = max(luminancia(im), 1)
-        deseada = actual + (OBJETIVO - actual) * FUERZA
+        fuerza = FUERZA_SUBIR if actual < OBJETIVO else FUERZA_BAJAR
+        deseada = actual + (OBJETIVO - actual) * fuerza
         factor = min(max(deseada / actual, TOPE[0]), TOPE[1])
         im = ImageEnhance.Brightness(im).enhance(factor)
     im = ImageEnhance.Color(im).enhance(SATURACION)
