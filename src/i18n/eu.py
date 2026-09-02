@@ -241,6 +241,8 @@ HOME = {
     ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
         ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
+    '<h2 class="sr-only" id="latestRoutesLabel">&Uacute;ltimas rutas a&ntilde;adidas</h2>':
+        '<h2 class="sr-only" id="latestRoutesLabel">Azken ibilbide gehituak</h2>',
     '<b id="distanceVal">Todos</b>': '<b id="distanceVal">Guztiak</b>',
     '<b id="desnivelVal">Todos</b>': '<b id="desnivelVal">Guztiak</b>',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
@@ -267,8 +269,6 @@ HOME = {
     '<summary>Antes de salir</summary>': '<summary>Irten aurretik</summary>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
-    '<h3 class="eyebrow latest-routes-label">&Uacute;ltimas rutas a&ntilde;adidas</h3>':
-        '<h3 class="eyebrow latest-routes-label">Azken ibilbide gehituak</h3>',
 
     # route-card photos for routes without a former feat-panel (redesign)
     'alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo"':
