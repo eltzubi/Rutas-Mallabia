@@ -125,12 +125,37 @@
     });
   }
 
+  // Deja la fila de pestanas justo debajo de la cabecera y de la barra de
+  // actividad, que van fijas arriba y taparian el principio del mapa.
+  var STICKY_H = 132;
+
+  function scrollToMap(){
+    var anchor = document.querySelector('.view-toggle-row') || mapWrap;
+    if (!anchor) return;
+    // En dos pasos: el primero cuando ya se ha ocultado la lista, y el
+    // segundo cuando el mapa termina de montarse y la pagina deja de
+    // moverse bajo los pies.
+    var go = function(smooth){
+      var y = window.pageYOffset + anchor.getBoundingClientRect().top - STICKY_H;
+      window.scrollTo({ top: Math.max(y, 0), behavior: smooth ? 'smooth' : 'auto' });
+    };
+    requestAnimationFrame(function(){ go(true); });
+    setTimeout(function(){ go(false); }, 700);
+  }
+
   viewBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
       view = btn.dataset.view;
       viewBtns.forEach(function(b){ b.classList.toggle('active', b === btn); });
       if (resultsList) resultsList.hidden = (view !== 'list');
       if (mapWrap) mapWrap.hidden = (view !== 'map');
+      // Al pedir el mapa, llevar la vista hasta el; se salta a la fila de
+      // pestanas (no al mapa) porque con la lista oculta la pagina se queda
+      // corta y el scroll toparia con el final, dejando el mapa medio tapado
+      // por la cabecera.
+      if (view === 'map' && mapWrap) {
+        scrollToMap();
+      }
     });
   });
 
