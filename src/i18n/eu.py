@@ -241,6 +241,12 @@ HOME = {
     ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
         ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
+    '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</h3>':
+        '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
+        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+    'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
+        'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
     '<b id="distanceVal">Todos</b>': '<b id="distanceVal">Guztiak</b>',
     '<b id="desnivelVal">Todos</b>': '<b id="desnivelVal">Guztiak</b>',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
@@ -2743,6 +2749,74 @@ EXIGENTE = {
 
 }
 
+POTRERA = {
+    # hero
+    '<span>Mixta</span><span class="sep">/</span><span>Oiz y San Kristobal Txiki</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Oiz eta San Kristobal Txiki</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Muniozguren<br><em>Oiz y San Kristobal Txiki</em></h1>':
+        '<h1>Trabakua, Muniozguren<br><em>Oiz eta San Kristobal Txiki</em></h1>',
+    '<p class="full-name">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
+        '<p class="full-name">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+
+    # elevation profile markers + legend
+    '<title>El repecho &middot; 10,3 km &middot; 754 m</title>':
+        '<title>Aldapa gogorra &middot; 10,3 km &middot; 754 m</title>',
+    '<title>Cordal de Oiz &middot; 11,6 km &middot; 927 m</title>':
+        '<title>Oizko gailurra &middot; 11,6 km &middot; 927 m</title>',
+    '<title>La Potrera &middot; 14 km &middot; 714 m</title>':
+        '<title>Potrera &middot; 14 km &middot; 714 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Muniozguren</span> <span class="elev-legend-item"><span class="num">2</span>El repecho</span> <span class="elev-legend-item"><span class="num">3</span>Cordal de Oiz</span> <span class="elev-legend-item"><span class="num">4</span>La Potrera</span> <span class="elev-legend-item"><span class="num">5</span>San Kristobal Txiki</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Muniozguren</span> <span class="elev-legend-item"><span class="num">2</span>Aldapa gogorra</span> <span class="elev-legend-item"><span class="num">3</span>Oizko gailurra</span> <span class="elev-legend-item"><span class="num">4</span>Potrera</span> <span class="elev-legend-item"><span class="num">5</span>San Kristobal Txiki</span>',
+
+    # photos
+    'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
+        'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Muniozguren, Oiz y San Kristobal Txiki"':
+        'alt="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki ibilbidearen argazki handitua"',
+    'alt="La bicicleta junto al abrevadero de piedra, entre margaritas y dientes de le&oacute;n, con los aerogeneradores del Oiz detr&aacute;s"':
+        'alt="Bizikleta harrizko askaren ondoan, bitxilore eta txikorien artean, Oizko eolikoak atzean dituela"',
+    'alt="Vacas pastando en el cordal, bajo dos aerogeneradores, con nubes y cielo azul"':
+        'alt="Behiak bazkan gailurrean, bi eolikoren azpian, hodeiak eta zeru urdina dituztela"',
+    'alt="Campa de hierba en lo alto, con rayos de sol entre las nubes sobre los valles y montes del entorno"':
+        'alt="Belardia goialdean, eguzki-izpiak hodeien artetik inguruko haran eta mendien gainean"',
+    'alt="Pista de tierra entre hayas, en una curva del bosque"':
+        'alt="Lurrezko pista pagoen artean, basoko bihurgune batean"',
+
+    # wikiloc / gpx
+    'download="Trabakua, Muniozguren, Oiz y San Kristobal Txiki.gpx"':
+        'download="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki.gpx"',
+    'download="Trabakua, Muniozguren, Oiz y San Kristobal Txiki.kml"':
+        'download="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki.kml"',
+
+    # body copy
+    'Salimos de <b>Trabakua</b>, entre los dos bares del puerto, tomando la carretera que sube en direcci&oacute;n a Gerea. Continuamos por ella sin desviarnos, avanzando tranquilamente entre caser&iacute;os y prados hasta llegar a <b>Muniozguren</b>.':
+        '<b>Trabakua</b>tik abiatuko gara, mendateko bi tabernen artetik, Gerea aldera igotzen den errepidea hartuta. Desbideratu gabe jarraituko dugu, baserri eta zelai artean lasai igoz, <b>Muniozguren</b>era iritsi arte.',
+    'En Muniozguren termina el cemento. Al fondo cogemos la pista de piedra que sale a la izquierda y continuamos subiendo por ella, ganando altura poco a poco. Seguimos siempre por la pista principal, sin desviarnos, en una subida bastante suave y llevadera.':
+        'Muniozgurenen porlana amaitzen da. Amaieran, ezkerretara ateratzen den harrizko pista hartuko dugu, eta handik gora jarraituko dugu, pixkanaka altuera irabaziz. Pista nagusitik jarraituko dugu beti, desbideratu gabe, igoera nahiko leun eta eramangarri batean.',
+    'As&iacute; llegamos aproximadamente al <b>kil&oacute;metro 10,3</b>, donde alcanzamos el punto m&aacute;s alto de esta primera subida. A nuestra izquierda nace un peque&ntilde;o sendero. Apenas son unos 200 metros, pero aqu&iacute; cambia completamente el terreno: aparece una cuesta muy fuerte en la que resulta pr&aacute;cticamente imposible subir montado en la BTT y, en algunos puntos, incluso cuesta avanzar empujando la bicicleta.':
+        'Horrela, gutxi gorabehera <b>10,3. kilometro</b>ra iritsiko gara, lehen igoera honetako punturik altuenera. Bertan, ezkerretara bidezidor txiki bat ateratzen da. 200 metro inguru baino ez dira, baina hemen bidea erabat aldatzen da: aldapa oso gogorra aurkituko dugu, BTTarekin gainean igotzea ia ezinezkoa dena, eta tarte batzuetan bizikleta bultzaka eramatea ere kostatzen da.',
+    'Es un tramo corto pero intenso. Este antiguo camino lleg&oacute; a quedar pr&aacute;cticamente abandonado durante a&ntilde;os, aunque recientemente se ha recuperado gracias, entre otras cosas, al paso de la <a href="7pago.html">7 Pago Mendi Lasterketa</a> de Mallabia.':
+        'Tarte laburra da, baina gogorra. Bide zahar hau urte luzez ia abandonatuta egon zen, baina azken urteotan berriro berreskuratu da, besteak beste, Mallabiko <a href="7pago.html">7 Pago Mendi Lasterketa</a> bertatik igarotzen delako.',
+    'Superado este repecho salimos a una preciosa campa. Continuamos subiendo junto a una borda y el paisaje empieza a abrirse de verdad. De frente aparecen los aerogeneradores del cordal de <b>Oiz</b> y, si miramos hacia atr&aacute;s, las vistas alcanzan buena parte de las monta&ntilde;as y valles que hemos ido dejando atr&aacute;s.':
+        'Aldapa gogor hori gaindituta, landa zabal eta eder batera aterako gara. Borda baten ondotik gora jarraituko dugu, eta hemendik aurrera paisaia benetan zabaltzen hasten da. Aurrean <b>Oiz</b>ko eolikoak ikusiko ditugu, eta atzera begiratuz gero, ordura arte atzean utzitako mendi eta haranen ikuspegi ederrak izango ditugu.',
+    'Atravesamos la campa siguiendo el camino hasta alcanzar la parte alta, donde cruzamos un vallado y accedemos a la pista de los aerogeneradores. Aqu&iacute; giramos a la izquierda y comenzamos a bajar.':
+        'Landa zeharkatuz gora jarraituko dugu goiko aldera iritsi arte. Bertan, hesi bat zeharkatu eta eolikoen pistara aterako gara. Ezkerretara hartu eta jaisten hasiko gara.',
+    'Continuamos por esta pista, que baja desde los e&oacute;licos hasta la potrera y forma parte del camino que desciende hacia Garai, aunque nosotros lo abandonaremos m&aacute;s adelante. Llegamos aproximadamente al <b>kil&oacute;metro 14</b> y, junto a una potrera, giramos a la izquierda para afrontar una bajada conocida precisamente como <b>la Potrera</b>.':
+        'Pista horretatik jarraituko dugu, eolikoetatik jaisten den eta Garai aldera doan bidearen zati bat eginez, nahiz eta aurrerago utziko dugun. Gutxi gorabehera <b>14. kilometro</b>ra iristean, potrera baten ondoan ezkerretara joko dugu, <b>Potrera</b> izenez ezagutzen den jaitsiera hartzeko.',
+    'Es alrededor de un kil&oacute;metro de descenso, con bastante piedra y roca suelta. Es una bajada especialmente t&eacute;cnica, con algunos tramos complicados en los que puede ser necesario bajarse de la bici. Aun as&iacute;, merece la pena: junto con la subida anterior, permite conocer dos caminos bastante escondidos y poco habituales de esta zona.':
+        'Kilometro inguruko jaitsiera da, harri eta harri solte askokoa, eta nahiko teknikoa. Tarte batzuk konplikatuak dira eta baliteke bizikletatik jaitsi behar izatea. Hala ere, merezi du: aurreko igoerarekin batera, inguru honetako bide ezkutu eta gutxi erabiltzen diren pare bat ezagutzeko aukera ematen digu.',
+    'Al terminar la bajada llegamos junto a una fuente, ya muy cerca de <b>San Kristobal Txiki</b>. Seguimos descendiendo y, poco antes de alcanzar la <a href="sancristobal.html">ermita</a>, giramos a la izquierda para volver a ganar altura.':
+        'Jaitsiera amaitzean iturri baten ondora iritsiko gara, <b>San Kristobal Txiki</b>tik oso gertu. Beherantz jarraituko dugu eta, <a href="sancristobal.html">ermita</a>ra iritsi baino pixka bat lehenago, ezkerretara joko dugu berriro ere igotzen hasteko.',
+    'Esta nueva subida nos lleva hasta enlazar con el GR que viene desde Zengotita. Lo seguimos, cruzando con cuidado un peque&ntilde;o r&iacute;o, y algo m&aacute;s adelante pasamos junto al caser&iacute;o <b>Betzuen</b>.':
+        'Igoera horrek Zengotitatik datorren GRarekin bat egitera eramango gaitu. GRari jarraituko diogu, erreka txiki bat kontu handiz zeharkatuz, eta aurrerago <b>Betzuen</b> baserriaren ondotik pasatuko gara.',
+    'Desde aqu&iacute; seguimos bajando hasta llegar al barrio de <b>Zengotita</b>. Ya tenemos pr&aacute;cticamente todo el trabajo hecho y solo nos quedan unos 2,5 kil&oacute;metros para terminar la ruta en Trabakua. Un &uacute;ltimo tramo para soltar un poco las piernas y disfrutar de los &uacute;ltimos kil&oacute;metros antes de volver al punto de partida.':
+        'Hemendik aurrera beherantz jarraituko dugu <b>Zengotita</b> auzora iritsi arte. Lan handiena eginda izango dugu ordurako, eta 2,5 kilometro inguru baino ez zaizkigu geratuko Trabakuan ibilbidea amaitzeko. Azken tarte lasaiagoa, hankak pixka bat askatu eta azken kilometroez gozatzeko, berriro abiapuntura iritsi aurretik.',
+
+    # para quién es
+    '20,43 km y +811 m que funcionan especialmente bien como <b>entrenamiento de trail running</b>: hay kil&oacute;metros de pista para hacer base, una subida larga y llevadera donde meter ritmo, un repecho corto y muy fuerte para apretar de verdad, y la bajada de la Potrera para soltarse en terreno t&eacute;cnico. En bici tambi&eacute;n es una gran ruta, pero pide paciencia: ese repecho es pr&aacute;cticamente impedaleable y en la Potrera hay tramos rotos y alg&uacute;n bache que obligan a echar pie a tierra.':
+        '20,43 km eta +811 m, <b>trail running entrenamendu</b>rako bereziki ondo datozenak: pista-kilometroak oinarria egiteko, igoera luze eta eramangarri bat erritmoa hartzeko, aldapa labur eta oso gogor bat benetan estutzeko, eta Potrerako jaitsiera lur teknikoan askatzeko. Bizikletaz ere ibilbide ederra da, baina pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zuloren bat daude, oinez jaistera behartzen dutenak.',
+}
+
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
     'aria-label="Navegar por las rutas"': 'aria-label="Ibilbideetan nabigatu"',
@@ -2769,6 +2843,7 @@ HISTORIAS = {
     'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
     'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
+    'Trail running · BTT/e-bike · Circuito · Mixta': 'Trail running · BTT/e-bike · Zirkuitua · Nahasia',
 
     # per-card surface badge (Pista is identical in both languages)
     'Sendero': 'Bidezidorra',
@@ -2798,6 +2873,10 @@ HISTORIAS = {
     'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
     'Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil',
     'Trabakua, Longa y Muniozguren': 'Trabakua, Longa eta Muniozguren',
+    'Trabakua, Muniozguren, Oiz y San Kristobal Txiki':
+        'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki',
+    'Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki.':
+        'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota.',
     'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
         'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane',
 
@@ -2869,6 +2948,7 @@ DESCRIPTIONS = {
     'muniozguren': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
     'exigente': 'Zirkuitu eskatzailea BTT/e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
         'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
+    'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
@@ -2905,6 +2985,7 @@ TITLES = {
     'muniozguren': 'Trabakua, Longa, Muniozguren · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
     'exigente': 'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane · '
         'BTT ibilbidea — Herriko ibilbideak',
+    'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
@@ -2937,5 +3018,6 @@ PAGE_STRINGS = {
     'barinaga': BARINAGA,
     'muniozguren': MUNIOZGUREN,
     'exigente': EXIGENTE,
+    'potrera': POTRERA,
     'historias': HISTORIAS,
 }
