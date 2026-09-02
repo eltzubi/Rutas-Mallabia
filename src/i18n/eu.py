@@ -2781,6 +2781,12 @@ POTRERA = {
         'alt="Belardia goialdean, eguzki-izpiak hodeien artetik inguruko haran eta mendien gainean"',
     'alt="Pista de tierra entre hayas, en una curva del bosque"':
         'alt="Lurrezko pista pagoen artean, basoko bihurgune batean"',
+    'alt="Vista a&eacute;rea de la campa de lo alto, con dos personas caminando por ella, el pinar en la ladera y los aerogeneradores en la cresta al fondo"':
+        'alt="Goiko landaren airetiko ikuspegia, bi lagun bertan oinez, pinudia magalean eta eolikoak gandorrean atzealdean"',
+    'alt="La borda de piedra en la campa, con los aerogeneradores del cordal justo encima y el ganado alrededor"':
+        'alt="Harrizko borda landan, gailurreko eolikoak justu gainean eta ganadua inguruan"',
+    'alt="Vacas en la campa de la parte alta, con el tejado de la borda a la derecha y los valles del entorno al fondo"':
+        'alt="Behiak goialdeko landan, bordaren teilatua eskuinean eta inguruko haranak atzealdean"',
 
     # wikiloc / gpx
     'download="Trabakua, Muniozguren, Oiz y San Kristobal Txiki.gpx"':
