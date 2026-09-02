@@ -241,8 +241,6 @@ HOME = {
     ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
         ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
-    '<h2 class="sr-only" id="latestRoutesLabel">&Uacute;ltimas rutas a&ntilde;adidas</h2>':
-        '<h2 class="sr-only" id="latestRoutesLabel">Azken ibilbide gehituak</h2>',
     '<b id="distanceVal">Todos</b>': '<b id="distanceVal">Guztiak</b>',
     '<b id="desnivelVal">Todos</b>': '<b id="desnivelVal">Guztiak</b>',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
