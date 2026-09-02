@@ -1841,6 +1841,10 @@ MENDIBIL = {
     'download="Trabakua Mendibil.kml"': 'download="Trabakua Mendibil.kml"',
     'alt="Foto ampliada del recorrido de Trabakua Mendibil"':
         'alt="Trabakua Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Salida del eucaliptal a una loma pelada, con helechos y una alambrada al borde del camino"':
+        'alt="Eukaliptaditik magal soilera irteera, iratzeak eta hesi bat bidearen ertzean"',
+    'alt="Bifurcaci&oacute;n de la pista junto a un roble grande con las ra&iacute;ces al aire, rodeada de bosque"':
+        'alt="Pistaren bidegurutzea haritz handi baten ondoan, sustraiak agerian, basoz inguratuta"',
     'alt="Moj&oacute;n en la cima del Mendibil, con el parque e&oacute;lico y el pueblo al fondo"':
         'alt="Mendibilgo gailurreko mugarria, parke eolikoa eta herria atzealdean"',
     'alt="Otra vista del moj&oacute;n de la cima, con los aerogeneradores del parque e&oacute;lico al fondo"':
