@@ -22,7 +22,7 @@
 
   document.modelContext.registerTool({
     name: 'search_mallabia_routes',
-    description: 'Search the hiking and biking routes around Mallabia (Bizkaia, Spain) documented on trabakutik.com. All 27 routes are personally walked/ridden and GPS-tracked -- distance and elevation gain are real, measured values. Filter by activity, distance range and/or difficulty; omit a filter to leave it unrestricted.',
+    description: 'Search the hiking and biking routes around Mallabia (Bizkaia, Spain) documented on trabakutik.com. Every route is personally walked/ridden and GPS-tracked -- distance and elevation gain are real, measured values. Filter by activity, distance range and/or difficulty; omit a filter to leave it unrestricted.',
     inputSchema: {
       type: 'object',
       properties: {

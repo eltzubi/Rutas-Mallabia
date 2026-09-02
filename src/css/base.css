@@ -1,0 +1,90 @@
+/* Lo que comparten la portada y las fichas: reinicio, tokens de color,
+   cabecera, cambio de idioma, tema y navegacion. Estaba escrito dos veces,
+   identico, en home.css y en route.css: reglas que habia que tocar en dos
+   sitios y que el dia que se tocaran en uno solo dejarian de coincidir.
+
+   Se carga antes que home.css o route.css, que siguen mandando encima. Aqui
+   solo entran reglas cuyo selector no se repite en ninguno de los dos
+   ficheros: las que alguien vuelve a tocar mas abajo (.logo-photo, .to-top,
+   .theme-toggle...) se quedan donde estan, porque moverlas cambiaria quien
+   gana la cascada. */
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+picture{display:contents;}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:'Karla',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{ background:var(--teal); color:var(--ground); }
+.masthead .place{ color:var(--ink); font-weight:600; }
+.lang-switch{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:26px; height:26px; padding:0 7px; border-radius:13px;
+  border:1px solid var(--line); background:none;
+  color:var(--ink-dim); text-decoration:none;
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
+  letter-spacing:.06em; flex-shrink:0;
+}
+.lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
+.theme-toggle .icon-sun{ display:none; }
+:root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
+.lang-switch, .theme-toggle, .back-link{ position:relative; }
+.lang-switch::after, .theme-toggle::after{
+  content:''; position:absolute; inset:-9px -7px;
+}
+.back-link::after{
+  content:''; position:absolute; inset:-15px -10px;
+}
+.map-section > .eyebrow{ margin-bottom:14px; }
+.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; height:80dvh; }
+.route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
+.map-expand-btn{
+  position:absolute; z-index:400; top:10px; right:10px;
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
+  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
+  transition:opacity .2s ease, transform .2s ease;
+  background:color-mix(in srgb, var(--ground) 72%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.map-expand-btn:hover{ opacity:1; }
+.map-unavailable{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:24px; color:var(--ink-dim); font-size:13px; line-height:1.6;
+}
+.map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
+.map-expand-btn.is-active svg{ transform:rotate(180deg); }
+.map-layers-btn{
+  position:absolute; z-index:400; top:10px; right:52px;
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
+  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
+  transition:opacity .2s ease, color .2s ease;
+  background:color-mix(in srgb, var(--ground) 72%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.map-layers-btn:hover{ opacity:1; }
+.map-layers-btn.is-active{ color:var(--teal); opacity:1; }
+.eyebrow .sep{ opacity:.5; }
+.lightbox.open{ display:flex; }
+.lightbox-close{
+  position:absolute; top:18px; right:18px;
+  width:38px; height:38px; border-radius:50%;
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
+  color:#fff; font-size:16px; cursor:pointer;
+}
+.parada .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
+.parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
+.parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
+.to-top.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
+.to-top:hover{ background:var(--violet); }
+.wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
+.elev-tags .v{ text-shadow:0 0 14px currentColor; }
+.photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
+.route-map-box, .map-box{ border-radius:20px; }
+.hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
+.elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }

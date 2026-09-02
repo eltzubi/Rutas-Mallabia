@@ -18,6 +18,13 @@
   var el = document.querySelector('[data-map-src]');
   if (!el) return;
 
+  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
+  // cambiar con la sesion abierta.
+  function scrollOpts(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return { behavior: reduce ? 'auto' : 'smooth', block: 'start' };
+  }
+
   // Leaflet viene de un CDN externo. Cuando no llega, lo que quedaba era una
   // caja gris vacia sin ninguna explicacion -- y el boton de ampliar seguia
   // funcionando, asi que se podia ampliar la nada a 80vh. Mejor decirlo y
@@ -50,7 +57,7 @@
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.parentElement.scrollIntoView(scrollOpts());
       } else if (resetView) {
         // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
         // la vista pequena; y asi queda una forma clara de reencuadrar.
@@ -68,7 +75,7 @@
     exploreLink.addEventListener('click', function(e){
       e.preventDefault();
       if (el.parentElement.classList.contains('is-expanded')) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.parentElement.scrollIntoView(scrollOpts());
       } else {
         expandBtn.click();
       }
@@ -89,8 +96,13 @@
   var ground = token('--ground', '#0A0F0A');
 
   // Waypoint labels come from the elevation legend, in the same order.
+  // Acotado a la leyenda del mapa: una ficha lleva dos leyendas iguales (la
+  // del perfil y la del mapa), asi que buscando en todo el documento salian
+  // el doble de items que waypoints y la correspondencia se sostenia de puro
+  // milagro -- el dia que las dos dejasen de coincidir, etiquetas cambiadas.
+  var legendScope = el.closest('.map-section') || document;
   var wpNames = Array.prototype.map.call(
-    document.querySelectorAll('.elev-legend-item'),
+    legendScope.querySelectorAll('.elev-legend-item'),
     function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); }
   );
 

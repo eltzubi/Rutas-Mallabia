@@ -50,7 +50,9 @@
 (function(){
   var btn = document.getElementById('toTop');
   if (!btn) return;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function reduceMotion(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
   // Antes se escondia mientras se recorria el listado de rutas, para no
   // taparlas; el resultado era que justo donde mas se baja no habia forma
   // de volver arriba. Ahora aparece en cuanto se ha bajado algo y se queda.
@@ -71,7 +73,7 @@
     var masthead = document.querySelector('.masthead');
     root.classList.add('scrolling-to-top');
     if (masthead) masthead.classList.remove('is-compact');
-    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    window.scrollTo({ top:0, behavior: reduceMotion() ? 'auto' : 'smooth' });
     var stop = function(){ root.classList.remove('scrolling-to-top'); };
     window.addEventListener('scrollend', stop, { once:true });
     setTimeout(stop, 1000); // fallback where scrollend isn't supported

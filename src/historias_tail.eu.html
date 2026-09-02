@@ -468,7 +468,7 @@
 
 <script src="js/app.js"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function(){
@@ -479,6 +479,12 @@
   var tracks = {};
 
   function pad2(n){ return String(n).padStart(2, '0'); }
+
+  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
+  // cambiar con la sesion abierta.
+  function reduceMotion(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
 
   function traceSvg(points){
     var minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
@@ -549,13 +555,13 @@
 
   function jump(delta){
     var n = Math.max(0, Math.min(total - 1, current + delta));
-    cards[n].scrollIntoView({ behavior: 'smooth' });
+    cards[n].scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth' });
   }
   function randomCard(){
     if (total < 2) return;
     var n = current;
     while (n === current) n = Math.floor(Math.random() * total);
-    cards[n].scrollIntoView({ behavior: 'smooth' });
+    cards[n].scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth' });
   }
   document.getElementById('storyPrev').addEventListener('click', function(){ jump(-1); });
   document.getElementById('storyNext').addEventListener('click', function(){ jump(1); });

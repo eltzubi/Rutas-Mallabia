@@ -29,6 +29,12 @@
 
   var view = 'list';
 
+  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
+  // cambiar con la sesion abierta.
+  function reduceMotion(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+
   var filters = document.querySelector('.range-filters') || document.body;
   var TXT_APPROX = filters.dataset.approx || 'aprox.';
   var TXT_ALL_DISTANCE = filters.dataset.allDistance || 'Todas';
@@ -138,7 +144,7 @@
     // moverse bajo los pies.
     var go = function(smooth){
       var y = window.pageYOffset + anchor.getBoundingClientRect().top - STICKY_H;
-      window.scrollTo({ top: Math.max(y, 0), behavior: smooth ? 'smooth' : 'auto' });
+      window.scrollTo({ top: Math.max(y, 0), behavior: (smooth && !reduceMotion()) ? 'smooth' : 'auto' });
     };
     requestAnimationFrame(function(){ go(true); });
     setTimeout(function(){ go(false); }, 700);
@@ -255,7 +261,7 @@
         distanceMax.value = Math.min(range[1], maxDistance);
       }
       apply();
-      if (resultsList) resultsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
     });
   });
 
