@@ -10,7 +10,7 @@
    masthead keep its natural height while .story-app claims exactly what's
    left, without hardcoding a masthead height that would drift out of sync
    with route.css. */
-body.historias-page{ height:100svh; overflow:hidden; display:flex; flex-direction:column; }
+body.historias-page{ height:100vh; height:100svh; overflow:hidden; display:flex; flex-direction:column; }
 body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; width:100%; }
 @media (min-width:1024px){ body.historias-page .masthead{ max-width:1100px; } }
 
@@ -54,16 +54,26 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
   font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.18em;
   text-transform:uppercase; color:var(--violet);
 }
-.story-copy h1{
+.story-copy h2{
   font:500 clamp(2.2rem,9vw,4.4rem)/.98 'Fraunces',serif;
   letter-spacing:-.02em; margin:10px 0 14px; color:var(--ink);
+  text-wrap:balance;   /* lo daba la regla h1 de route.css, que ya no aplica */
   hyphens:auto;
   overflow-wrap:anywhere;
 }
+/* Un <h1> por pagina: las 28 tarjetas llevaban uno cada una, asi que la
+   navegacion por encabezados de un lector de pantalla no servia para
+   orientarse y la pagina no declaraba de que iba. Este no se ve. */
+.visually-hidden{
+  position:absolute; width:1px; height:1px; margin:-1px; padding:0;
+  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
+}
+
 .story-stats{ display:flex; gap:8px; flex-wrap:wrap; }
 .story-stat{
   padding:9px 11px; border:1px solid var(--line); border-radius:999px;
   font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink);
+  background:var(--ground);
   background:color-mix(in srgb, var(--ground) 65%, transparent);
   backdrop-filter:blur(10px);
 }
@@ -78,12 +88,14 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
 .story-progress{
   position:absolute; z-index:35; right:14px; top:14px;
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
+  background:var(--ground);
   background:color-mix(in srgb, var(--ground) 74%, transparent);
   padding:7px 10px; border-radius:999px; border:1px solid var(--line);
 }
 .story-dock{
   position:absolute; z-index:30; left:12px; right:12px; bottom:12px; height:60px;
-  border:1px solid var(--line); background:color-mix(in srgb, var(--ground) 90%, transparent);
+  border:1px solid var(--line); background:var(--ground);
+  background:color-mix(in srgb, var(--ground) 90%, transparent);
   backdrop-filter:blur(18px); border-radius:20px;
   display:flex; align-items:center; justify-content:space-around;
 }
@@ -101,17 +113,18 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
   overflow:auto;
 }
 .story-detail.is-open{ transform:none; }
-.story-mapbox{ height:48svh; position:sticky; top:0; background:var(--ground-raised); }
+.story-mapbox{ height:48vh; height:48svh; position:sticky; top:0; background:var(--ground-raised); }
 .story-map{ height:100%; }
 .story-close{
   position:fixed; z-index:90; top:16px; left:16px; border:0; border-radius:999px;
-  padding:11px 15px; background:color-mix(in srgb, var(--ground) 65%, transparent);
+  padding:11px 15px; background:var(--ground);
+  background:color-mix(in srgb, var(--ground) 65%, transparent);
   color:var(--ink); font-weight:700; font-size:12.5px; backdrop-filter:blur(12px);
   cursor:pointer; font-family:'IBM Plex Mono',monospace;
 }
 .story-read{
   position:relative; background:var(--ground); border-radius:26px 26px 0 0;
-  margin-top:-26px; z-index:60; padding:26px 20px 60px; min-height:52svh;
+  margin-top:-26px; z-index:60; padding:26px 20px 60px; min-height:52vh; min-height:52svh;
   border-top:1px solid var(--line);
 }
 .story-read .story-tag{
@@ -139,6 +152,6 @@ body.historias-page .masthead{ flex:0 0 auto; max-width:760px; margin:0 auto; wi
   .story-open{ width:auto; padding:17px 30px; }
   .story-dock{ left:50%; right:auto; transform:translateX(-50%); width:380px; }
   .story-detail{ display:grid; grid-template-columns:56% 44%; overflow:hidden; }
-  .story-mapbox{ height:100svh; }
+  .story-mapbox{ height:100vh; height:100svh; }
   .story-read{ margin:0; border-radius:0; border-top:0; border-left:1px solid var(--line); overflow:auto; padding:10vh 5vw; }
 }

@@ -1,0 +1,18 @@
+# GitHub Pages publica el repositorio entero tal cual, y eso dejaba en produccion
+# una copia indexable de cada pagina (los fragmentos src/*_tail.html, con el mismo
+# texto y las mismas fotos que la pagina de verdad, sin canonical y sin titulo),
+# ademas de las tablas de traduccion y las notas del proyecto. Aqui se quedan
+# fuera de la publicacion.
+#
+# Lo que NO se excluye de src/ son las descargas: los .gpx, los .kml y el .zip
+# cuelgan de ahi y estan enlazados desde las fichas de ruta.
+exclude:
+  - src/build.py
+  - src/*.html
+  - src/css
+  - src/js
+  - src/fonts
+  - src/i18n
+  - scripts
+  - CLAUDE.md
+  - README.md

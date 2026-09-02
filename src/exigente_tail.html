@@ -73,35 +73,35 @@
 
   <div class="gallery-grid">
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-01.jpg">
-      <picture><source srcset="img/exigente-01.webp" type="image/webp"><img src="img/exigente-01.jpg" alt="Plaza de Bolibar al amanecer, con un monumento de piedra en el centro y el sol asomando entre los edificios"></picture>
+      <picture><source srcset="img/exigente-01.webp" type="image/webp"><img src="img/exigente-01.jpg" alt="Plaza de Bolibar al amanecer, con un monumento de piedra en el centro y el sol asomando entre los edificios" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-02.jpg">
-      <picture><source srcset="img/exigente-02.webp" type="image/webp"><img src="img/exigente-02.jpg" alt="Ruinas del monasterio de Zenarruza con un &aacute;rbol centenario y una escalinata de piedra"></picture>
+      <picture><source srcset="img/exigente-02.webp" type="image/webp"><img src="img/exigente-02.jpg" alt="Ruinas del monasterio de Zenarruza con un &aacute;rbol centenario y una escalinata de piedra" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-03.jpg">
-      <picture><source srcset="img/exigente-03.webp" type="image/webp"><img src="img/exigente-03.jpg" alt="Pista de tierra entre &aacute;rboles en oto&ntilde;o, cubierta de hojas ca&iacute;das"></picture>
+      <picture><source srcset="img/exigente-03.webp" type="image/webp"><img src="img/exigente-03.jpg" alt="Pista de tierra entre &aacute;rboles en oto&ntilde;o, cubierta de hojas ca&iacute;das" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-06.jpg">
-      <picture><source srcset="img/exigente-06.webp" type="image/webp"><img src="img/exigente-06.jpg" alt="Aerogeneradores del parque e&oacute;lico del Oiz al anochecer, vistos desde las rocas"></picture>
+      <picture><source srcset="img/exigente-06.webp" type="image/webp"><img src="img/exigente-06.jpg" alt="Aerogeneradores del parque e&oacute;lico del Oiz al anochecer, vistos desde las rocas" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-07.jpg">
-      <picture><source srcset="img/exigente-07.webp" type="image/webp"><img src="img/exigente-07.jpg" alt="Bicicleta apoyada en el moj&oacute;n de la cima del Oiz al atardecer, con un mar de nubes y monta&ntilde;as al fondo"></picture>
+      <picture><source srcset="img/exigente-07.webp" type="image/webp"><img src="img/exigente-07.jpg" alt="Bicicleta apoyada en el moj&oacute;n de la cima del Oiz al atardecer, con un mar de nubes y monta&ntilde;as al fondo" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-08.jpg">
-      <picture><source srcset="img/exigente-08.webp" type="image/webp"><img src="img/exigente-08.jpg" alt="Camino asfaltado que se adentra en un pinar, con dos paneles informativos junto a la entrada"></picture>
+      <picture><source srcset="img/exigente-08.webp" type="image/webp"><img src="img/exigente-08.jpg" alt="Camino asfaltado que se adentra en un pinar, con dos paneles informativos junto a la entrada" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-09.jpg">
-      <picture><source srcset="img/exigente-09.webp" type="image/webp"><img src="img/exigente-09.jpg" alt="Aerogeneradores sobre un mar de nubes desde la cima, con el sol asomando entre las nubes"></picture>
+      <picture><source srcset="img/exigente-09.webp" type="image/webp"><img src="img/exigente-09.jpg" alt="Aerogeneradores sobre un mar de nubes desde la cima, con el sol asomando entre las nubes" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-10.jpg">
-      <picture><source srcset="img/exigente-10.webp" type="image/webp"><img src="img/exigente-10.jpg" alt="Moj&oacute;n de la cima del Oiz (1.026 m) junto a una cruz de piedra, con los aerogeneradores y las monta&ntilde;as al atardecer"></picture>
+      <picture><source srcset="img/exigente-10.webp" type="image/webp"><img src="img/exigente-10.jpg" alt="Moj&oacute;n de la cima del Oiz (1.026 m) junto a una cruz de piedra, con los aerogeneradores y las monta&ntilde;as al atardecer" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
   </div>
@@ -202,9 +202,10 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<script src="js/app.js"></script>
+<!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/map.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>

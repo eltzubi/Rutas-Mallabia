@@ -74,7 +74,18 @@ body{
 .theme-toggle .icon-sun{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
-.masthead-right{ display:flex; align-items:center; gap:10px; }
+.masthead-right{ display:flex; align-items:center; gap:14px; }
+/* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
+   de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
+   agranda la zona sensible al dedo; el aspecto no cambia. */
+.lang-switch, .theme-toggle, .back-link{ position:relative; }
+.lang-switch::after, .theme-toggle::after{
+  content:''; position:absolute; inset:-9px -7px;
+}
+.back-link::after{
+  content:''; position:absolute; inset:-15px -10px;
+}
+
 .back-link{
   display:inline-flex; align-items:center; gap:5px;
   color:var(--ink-dim);
@@ -118,6 +129,15 @@ body{
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
 }
 .map-expand-btn:hover{ opacity:1; }
+/* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
+   menos que diga por que, y que los botones que ya no mandan sobre nada
+   desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
+.map-unavailable{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:24px; color:var(--ink-dim); font-size:13px; line-height:1.6;
+}
+.map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
+
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
 .map-layers-btn{
   position:absolute; z-index:400; top:10px; right:52px;

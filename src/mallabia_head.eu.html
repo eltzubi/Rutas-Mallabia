@@ -3,7 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{if(document.documentElement.lang==='es'&&localStorage.getItem('rutas-mallabia-lang')!=='es')location.replace('index.eu.html');}catch(e){}})();</script>
+<script>
+/* Antes bastaba con no tener nada guardado para acabar en euskera, y nadie llega
+   con algo guardado la primera vez: toda visita nueva aterrizaba en la version
+   que no habia pedido, viniera de donde viniera. Y con el idioma ya guardado en
+   euskera, el boton Atras volvia aqui y rebotaba otra vez, una y otra vez.
+   Ahora solo se redirige a quien lo ha elegido o trae el navegador en euskera,
+   y nunca cuando se llega por el boton Atras. */
+(function(){try{
+  if(document.documentElement.lang!=='es')return;
+  var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+  if(nav&&nav.type==='back_forward')return;
+  var saved=localStorage.getItem('rutas-mallabia-lang');
+  if(saved==='es')return;
+  if(saved!=='eu'){
+    var l=navigator.languages||[navigator.language||''],eu=false,i=0;
+    for(;i<l.length;i++)if(/^eu\b/i.test(l[i]))eu=true;
+    if(!eu)return;
+  }
+  location.replace('index.eu.html');
+}catch(e){}})();
+</script>
 <script>(function(){try{if(localStorage.getItem('rutas-mallabia-theme')!=='dark')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <title>Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian</title>
 <meta name="description" content="Oinezko eta BTT ibilbideak Mallabia eta Durangaldeko auzo, mendi eta herrietan. Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.">

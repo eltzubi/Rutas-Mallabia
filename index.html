@@ -3,7 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>(function(){try{if(document.documentElement.lang==='es'&&localStorage.getItem('rutas-mallabia-lang')!=='es')location.replace('index.eu.html');}catch(e){}})();</script>
+<script>
+/* Antes bastaba con no tener nada guardado para acabar en euskera, y nadie llega
+   con algo guardado la primera vez: toda visita nueva aterrizaba en la version
+   que no habia pedido, viniera de donde viniera. Y con el idioma ya guardado en
+   euskera, el boton Atras volvia aqui y rebotaba otra vez, una y otra vez.
+   Ahora solo se redirige a quien lo ha elegido o trae el navegador en euskera,
+   y nunca cuando se llega por el boton Atras. */
+(function(){try{
+  if(document.documentElement.lang!=='es')return;
+  var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+  if(nav&&nav.type==='back_forward')return;
+  var saved=localStorage.getItem('rutas-mallabia-lang');
+  if(saved==='es')return;
+  if(saved!=='eu'){
+    var l=navigator.languages||[navigator.language||''],eu=false,i=0;
+    for(;i<l.length;i++)if(/^eu\b/i.test(l[i]))eu=true;
+    if(!eu)return;
+  }
+  location.replace('index.eu.html');
+}catch(e){}})();
+</script>
 <script>(function(){try{if(localStorage.getItem('rutas-mallabia-theme')!=='dark')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <title>Trabakutik · Rutas Mallabia · Senderismo y BTT en Bizkaia</title>
 <meta name="description" content="Rutas de senderismo y BTT por los barrios, montes y pueblos de Mallabia y el Duranguesado. Documentadas sobre el terreno, con datos de verdad, no de folleto.">
@@ -23,7 +43,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
-<link rel="stylesheet" href="home.css?v=9b526bcc">
+<link rel="stylesheet" href="home.css?v=42e9a4ef">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,13 +160,16 @@
         <button type="button" class="view-toggle-btn active" data-view="list">lista</button>
         <button type="button" class="view-toggle-btn" data-view="map">mapa</button>
       </div>
-      <p class="result-count" id="resultCount"></p>
+      <div class="result-line">
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <button type="button" class="filter-reset" data-filter-reset hidden>Quitar filtros</button>
+      </div>
     </div>
 
     <div class="route-card-grid" id="routeResults">
       <a class="route-card" href="potrera.html" data-activity="senderismo,bici" data-distance-km="20.43" data-desnivel-m="660" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/potrera-01.webp" type="image/webp"><img src="img/potrera-01.jpg" alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"></picture>
+          <picture><source srcset="img/potrera-01-card.webp" type="image/webp"><img src="img/potrera-01-card.jpg" alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</h3>
@@ -160,7 +183,7 @@
       </a>
       <a class="route-card" href="exigente.html" data-activity="bici" data-distance-km="39.87" data-desnivel-m="1700" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/exigente-05.webp" type="image/webp"><img src="img/exigente-05.jpg" alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"></picture>
+          <picture><source srcset="img/exigente-05-card.webp" type="image/webp"><img src="img/exigente-05-card.jpg" alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane</h3>
@@ -174,7 +197,7 @@
       </a>
       <a class="route-card" href="muniozguren.html" data-activity="senderismo,bici" data-distance-km="12.23" data-desnivel-m="250" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/muniozguren-02.webp" type="image/webp"><img src="img/muniozguren-02.jpg" alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"></picture>
+          <picture><source srcset="img/muniozguren-02-card.webp" type="image/webp"><img src="img/muniozguren-02-card.jpg" alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Longa, Muniozguren</h3>
@@ -188,7 +211,7 @@
       </a>
       <a class="route-card" href="barinaga.html" data-activity="senderismo" data-distance-km="27.0" data-desnivel-m="1453" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/barinaga-02.webp" type="image/webp"><img src="img/barinaga-02.jpg" alt="Se&ntilde;al de madera en una loma, con aerogeneradores y el mar al fondo"></picture>
+          <picture><source srcset="img/barinaga-02-card.webp" type="image/webp"><img src="img/barinaga-02-card.jpg" alt="Se&ntilde;al de madera en una loma, con aerogeneradores y el mar al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil</h3>
@@ -202,7 +225,7 @@
       </a>
       <a class="route-card" href="7pago16.html" data-activity="senderismo" data-distance-km="16" data-desnivel-m="750" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/7pago16-01.webp" type="image/webp"><img src="img/7pago16-01.jpg" alt="Corredor con dorsal de la 7 Pago dando el pulgar hacia arriba en un tramo de bosque, con otro corredor detr&aacute;s y las monta&ntilde;as al fondo, dorsal 37"></picture>
+          <picture><source srcset="img/7pago16-01-card.webp" type="image/webp"><img src="img/7pago16-01-card.jpg" alt="Corredor con dorsal de la 7 Pago dando el pulgar hacia arriba en un tramo de bosque, con otro corredor detr&aacute;s y las monta&ntilde;as al fondo, dorsal 37" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">7 Pago Mendi Lasterketa 16K</h3>
@@ -216,7 +239,7 @@
       </a>
       <a class="route-card" href="7pago.html" data-activity="senderismo" data-distance-km="25.5" data-desnivel-m="1400" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/7pago-01.webp" type="image/webp"><img src="img/7pago-01.jpg" alt="Corredores subiendo una cresta con los aerogeneradores del Oiz al fondo, dorsal 63 en primer plano"></picture>
+          <picture><source srcset="img/7pago-01-card.webp" type="image/webp"><img src="img/7pago-01-card.jpg" alt="Corredores subiendo una cresta con los aerogeneradores del Oiz al fondo, dorsal 63 en primer plano" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">7 Pago Mendi Lasterketa 25km</h3>
@@ -230,7 +253,7 @@
       </a>
       <a class="route-card" href="maguna.html" data-activity="bici" data-distance-km="33.44" data-desnivel-m="1215" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/maguna-01.webp" type="image/webp"><img src="img/maguna-01.jpg" alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"></picture>
+          <picture><source srcset="img/maguna-01-card.webp" type="image/webp"><img src="img/maguna-01-card.jpg" alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Zengotitagane y Maguna</h3>
@@ -244,7 +267,7 @@
       </a>
       <a class="route-card" href="zaldibar.html" data-activity="bici" data-distance-km="42.35" data-desnivel-m="1115" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/zaldibar-01.webp" type="image/webp"><img src="img/zaldibar-01.jpg" alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"></picture>
+          <picture><source srcset="img/zaldibar-01-card.webp" type="image/webp"><img src="img/zaldibar-01-card.jpg" alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Aixola y Berriz</h3>
@@ -258,7 +281,7 @@
       </a>
       <a class="route-card" href="hirutxikiak.html" data-activity="senderismo" data-distance-km="43.91" data-desnivel-m="2291" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/hirutxikiak-01.webp" type="image/webp"><img src="img/hirutxikiak-01.jpg" alt="Cruz de hierro y v&eacute;rtice geod&eacute;sico en una cima, con aerogeneradores cerca y un banco de nubes al fondo"></picture>
+          <picture><source srcset="img/hirutxikiak-01-card.webp" type="image/webp"><img src="img/hirutxikiak-01-card.jpg" alt="Cruz de hierro y v&eacute;rtice geod&eacute;sico en una cima, con aerogeneradores cerca y un banco de nubes al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua</h3>
@@ -272,7 +295,7 @@
       </a>
       <a class="route-card" href="goita.html" data-activity="bici" data-distance-km="5.34" data-desnivel-m="200" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/goita-01.webp" type="image/webp"><img src="img/goita-01.jpg" alt="Vistas al atardecer sobre los valles y montes del entorno, con un mont&oacute;n de piedras en primer plano"></picture>
+          <picture><source srcset="img/goita-01-card.webp" type="image/webp"><img src="img/goita-01-card.jpg" alt="Vistas al atardecer sobre los valles y montes del entorno, con un mont&oacute;n de piedras en primer plano" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, paseo por el barrio Goita</h3>
@@ -286,7 +309,7 @@
       </a>
       <a class="route-card" href="arteta.html" data-activity="senderismo" data-distance-km="11.38" data-desnivel-m="565" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/arteta-01.webp" type="image/webp"><img src="img/arteta-01.jpg" alt="Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el valle con caseríos en primer plano, entre pinos jóvenes"></picture>
+          <picture><source srcset="img/arteta-01-card.webp" type="image/webp"><img src="img/arteta-01-card.jpg" alt="Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el valle con caseríos en primer plano, entre pinos jóvenes" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Mendibil, Olamendi y Arteta</h3>
@@ -300,7 +323,7 @@
       </a>
       <a class="route-card" href="mendibil.html" data-activity="senderismo" data-distance-km="6.08" data-desnivel-m="432" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/mendibil-01.webp" type="image/webp"><img src="img/mendibil-01.jpg" alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo"></picture>
+          <picture><source srcset="img/mendibil-01-card.webp" type="image/webp"><img src="img/mendibil-01-card.jpg" alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua Mendibil</h3>
@@ -314,7 +337,7 @@
       </a>
       <a class="route-card" href="iruzubieta.html" data-activity="bici" data-distance-km="19.22" data-desnivel-m="769" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/iruzubieta-01.webp" type="image/webp"><img src="img/iruzubieta-01.jpg" alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo"></picture>
+          <picture><source srcset="img/iruzubieta-01-card.webp" type="image/webp"><img src="img/iruzubieta-01-card.jpg" alt="Atardecer sobre una pista rural cercada, con montes iluminados de naranja al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Iturreta e Iruzubieta</h3>
@@ -328,7 +351,7 @@
       </a>
       <a class="route-card" href="mundiokokoba.html" data-activity="senderismo" data-distance-km="13.0" data-desnivel-m="404" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/mundiokokoba-05.webp" type="image/webp"><img src="img/mundiokokoba-05.jpg" alt="Entrada de la cueva de Mundioko Koba, escondida entre helechos y rocas en el bosque"></picture>
+          <picture><source srcset="img/mundiokokoba-05-card.webp" type="image/webp"><img src="img/mundiokokoba-05-card.jpg" alt="Entrada de la cueva de Mundioko Koba, escondida entre helechos y rocas en el bosque" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Asuntza y Mundioko Koba</h3>
@@ -342,7 +365,7 @@
       </a>
       <a class="route-card" href="kalamua.html" data-activity="senderismo" data-distance-km="35.98" data-desnivel-m="1676" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/kalamua-01.webp" type="image/webp"><img src="img/kalamua-01.jpg" alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"></picture>
+          <picture><source srcset="img/kalamua-01-card.webp" type="image/webp"><img src="img/kalamua-01-card.jpg" alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Urko, Kalamua, San Migel y Mendibil</h3>
@@ -356,7 +379,7 @@
       </a>
       <a class="route-card" href="urregarai.html" data-activity="bici" data-distance-km="30.49" data-desnivel-m="1163" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/urregarai-01.webp" type="image/webp"><img src="img/urregarai-01.jpg" alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"></picture>
+          <picture><source srcset="img/urregarai-01-card.webp" type="image/webp"><img src="img/urregarai-01-card.jpg" alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Iturreta, Markina y Urregarai</h3>
@@ -370,7 +393,7 @@
       </a>
       <a class="route-card" href="egoarbitza.html" data-activity="senderismo" data-distance-km="34.1" data-desnivel-m="2201" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/egoarbitza-02.webp" type="image/webp"><img src="img/egoarbitza-02.jpg" alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"></picture>
+          <picture><source srcset="img/egoarbitza-02-card.webp" type="image/webp"><img src="img/egoarbitza-02-card.jpg" alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane</h3>
@@ -384,7 +407,7 @@
       </a>
       <a class="route-card" href="iturreta.html" data-activity="bici" data-distance-km="19.65" data-desnivel-m="975" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/iturreta-01.webp" type="image/webp"><img src="img/iturreta-01.jpg" alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo"></picture>
+          <picture><source srcset="img/iturreta-01-card.webp" type="image/webp"><img src="img/iturreta-01-card.jpg" alt="Manillar de la bicicleta eléctrica en un sendero entre matorral, con los aerogeneradores del Oiz al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Barinaga y Iturreta</h3>
@@ -398,7 +421,7 @@
       </a>
       <a class="route-card" href="sancristobal.html" data-activity="bici" data-distance-km="26.9" data-desnivel-m="1248" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/sancristobal-01.webp" type="image/webp"><img src="img/sancristobal-01.jpg" alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la cresta"></picture>
+          <picture><source srcset="img/sancristobal-01-card.webp" type="image/webp"><img src="img/sancristobal-01-card.jpg" alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la cresta" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Zengotitagane, Askako y San Crist&oacute;bal</h3>
@@ -412,7 +435,7 @@
       </a>
       <a class="route-card" href="urko.html" data-activity="senderismo" data-distance-km="15.3" data-desnivel-m="873" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/urko-02.webp" type="image/webp"><img src="img/urko-02.jpg" alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las monta&ntilde;as del entorno al fondo"></picture>
+          <picture><source srcset="img/urko-02-card.webp" type="image/webp"><img src="img/urko-02-card.jpg" alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con nubes bajas y las monta&ntilde;as del entorno al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Asuntza y Urko</h3>
@@ -426,7 +449,7 @@
       </a>
       <a class="route-card" href="arietzu.html" data-activity="senderismo" data-distance-km="4.3" data-desnivel-m="235" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/arietzu-01.webp" type="image/webp"><img src="img/arietzu-01.jpg" alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una pista serpenteando entre los montes"></picture>
+          <picture><source srcset="img/arietzu-01-card.webp" type="image/webp"><img src="img/arietzu-01-card.jpg" alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una pista serpenteando entre los montes" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Osmagain y Arietzu</h3>
@@ -440,7 +463,7 @@
       </a>
       <a class="route-card" href="oiz.html" data-activity="senderismo" data-distance-km="11.1" data-desnivel-m="752" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/oiz-01.webp" type="image/webp"><img src="img/oiz-01.jpg" alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al fondo"></picture>
+          <picture><source srcset="img/oiz-01-card.webp" type="image/webp"><img src="img/oiz-01-card.jpg" alt="Aerogeneradores del Oiz reflejados en un charco de la cumbre, con las antenas al fondo" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Zengotitagane, Axmakur y Oiz</h3>
@@ -454,7 +477,7 @@
       </a>
       <a class="route-card" href="zengotitagane.html" data-activity="bici" data-distance-km="22.4" data-desnivel-m="1029" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/zengotitagane-01.webp" type="image/webp"><img src="img/zengotitagane-01.jpg" alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta de Zengotitagane"></picture>
+          <picture><source srcset="img/zengotitagane-01-card.webp" type="image/webp"><img src="img/zengotitagane-01-card.jpg" alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta de Zengotitagane" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</h3>
@@ -468,7 +491,7 @@
       </a>
       <a class="route-card" href="trabakua.html" data-activity="bici" data-distance-km="16.5" data-desnivel-m="712" data-difficulty="media">
         <div class="route-card-photo">
-          <picture><source srcset="img/trabakua-08.webp" type="image/webp"><img src="img/trabakua-08.jpg" alt="Pista de cemento y piedra en la ruta de Trabakua"></picture>
+          <picture><source srcset="img/trabakua-08-card.webp" type="image/webp"><img src="img/trabakua-08-card.jpg" alt="Pista de cemento y piedra en la ruta de Trabakua" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Asuntza bira</h3>
@@ -482,7 +505,7 @@
       </a>
       <a class="route-card" href="iturrizuri.html" data-activity="senderismo" data-distance-km="10.76" data-desnivel-m="627" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/iturzuri-06.webp" type="image/webp"><img src="img/iturzuri-06.jpg" alt="Vista panorámica desde la ruta de Iturzuri, con el valle cubierto de niebla"></picture>
+          <picture><source srcset="img/iturzuri-06-card.webp" type="image/webp"><img src="img/iturzuri-06-card.jpg" alt="Vista panorámica desde la ruta de Iturzuri, con el valle cubierto de niebla" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Iturzuri, Zengotitagane subida por la cascada de Gerea</h3>
@@ -496,7 +519,7 @@
       </a>
       <a class="route-card" href="zenarruza.html" data-activity="bici" data-distance-km="31.7" data-desnivel-m="1161" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/zenarruza-04.webp" type="image/webp"><img src="img/zenarruza-04.jpg" alt="Arroyo entre el bosque durante la subida hacia San Kristobal, ruta de Zenarruza"></picture>
+          <picture><source srcset="img/zenarruza-04-card.webp" type="image/webp"><img src="img/zenarruza-04-card.jpg" alt="Arroyo entre el bosque durante la subida hacia San Kristobal, ruta de Zenarruza" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Zenarruza, San Kristobal y Zengotitagane</h3>
@@ -510,7 +533,7 @@
       </a>
       <a class="route-card" href="osma.html" data-activity="bici" data-distance-km="36.8" data-desnivel-m="1002" data-difficulty="dificil">
         <div class="route-card-photo">
-          <picture><source srcset="img/osma-02.webp" type="image/webp"><img src="img/osma-02.jpg" alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"></picture>
+          <picture><source srcset="img/osma-02-card.webp" type="image/webp"><img src="img/osma-02-card.jpg" alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Trabakua, Elgeta y Argi&ntilde;eta</h3>
@@ -524,7 +547,7 @@
       </a>
       <a class="route-card" href="gerea.html" data-activity="senderismo" data-distance-km="5.66" data-desnivel-m="415" data-difficulty="facil">
         <div class="route-card-photo">
-          <picture><source srcset="img/gerea-01.webp" type="image/webp"><img src="img/gerea-01.jpg" alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"></picture>
+          <picture><source srcset="img/gerea-01-card.webp" type="image/webp"><img src="img/gerea-01-card.jpg" alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas" loading="lazy" decoding="async"></picture>
         </div>
         <div class="route-card-body">
           <h3 class="route-card-name">Ur Jauziak Gerea</h3>
@@ -537,7 +560,7 @@
         </div>
       </a>
     </div>
-    <p class="filter-empty" id="filterEmpty">No hay rutas de este tipo todav&iacute;a.</p>
+    <p class="filter-empty" id="filterEmpty" role="status">No hay rutas de este tipo todav&iacute;a. <button type="button" class="filter-reset" data-filter-reset>Quitar filtros</button></p>
 
     <div class="map-section" id="routeMapWrap" hidden>
       <div class="route-map-box">
@@ -550,7 +573,7 @@
         </button>
       </div>
       <div class="map-legend">
-        <span class="map-legend-item"><span class="dot bici"></span>BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna y Bolibar</span>
+        <span class="map-legend-item"><span class="dot bici"></span>BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna, Iturreta y Bolibar</span>
         <span class="map-legend-item"><span class="dot senderismo"></span>Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga, Muniozguren y la Potrera</span>
       </div>
       <p class="map-note">Toca una ruta en el mapa para ver su informaci&oacute;n.</p>
@@ -625,11 +648,12 @@
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
 
+<script src="js/filters.js?v=5f36dda9"></script>
+<script src="js/app.js?v=e735156f"></script>
+<script src="js/webmcp.js?v=02065729"></script>
+<!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/filters.js?v=45a15947"></script>
-<script src="js/map.js?v=6523c9bc"></script>
-<script src="js/app.js?v=80f16072"></script>
-<script src="js/webmcp.js?v=02065729"></script>
+<script src="js/map.js?v=696108a7"></script>
 </body>
 </html>

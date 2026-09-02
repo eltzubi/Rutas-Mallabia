@@ -1,5 +1,13 @@
 // One map implementation for every page and both languages.
 //
+// Orden de carga: en los *_tail.html Leaflet va al final, DETRAS de filters.js,
+// app.js y webmcp.js, y este fichero es el ultimo de todos. Estaba al reves, y
+// eso ataba toda la interactividad de la web a un CDN ajeno: una hoja de estilos
+// dentro del body bloquea el pintado, y un script clasico bloquea el parser, asi
+// que los filtros, el cambio de tema y el visor de fotos no despertaban hasta que
+// jsdelivr contestaba. Solo este fichero necesita Leaflet: si se vuelve a mover,
+// que sea sin poner nada ajeno por delante de lo propio.
+//
 // The page supplies only what is page- or language-specific, as data
 // attributes on the map container:
 //   data-map-src      geometry (tracks / start marker / waypoints), from data/
@@ -9,6 +17,24 @@
 (function(){
   var el = document.querySelector('[data-map-src]');
   if (!el) return;
+
+  // Leaflet viene de un CDN externo. Cuando no llega, lo que quedaba era una
+  // caja gris vacia sin ninguna explicacion -- y el boton de ampliar seguia
+  // funcionando, asi que se podia ampliar la nada a 80vh. Mejor decirlo y
+  // retirar los botones que ya no mandan sobre nada.
+  if (typeof L === 'undefined') {
+    el.classList.add('map-unavailable');
+    el.textContent = document.documentElement.lang === 'eu' ?
+      'Ezin izan da mapa kargatu. Ibilbidearen trazua GPX fitxategian duzu.' :
+      'No se ha podido cargar el mapa. El trazado de la ruta está en el GPX.';
+    var box = el.parentElement;
+    if (box) {
+      box.classList.remove('is-expanded');
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers-btn'),
+        function(b){ b.hidden = true; });
+    }
+    return;
+  }
 
   // Se pone a true en cuanto el visitante mueve el mapa (zoom o arrastre).
   // A partir de ahi el mapa ya no vuelve solo al encuadre general: la vista
@@ -48,8 +74,6 @@
       }
     });
   }
-
-  if (typeof L === 'undefined') return;
 
   var isEu = document.documentElement.lang === 'eu';
 

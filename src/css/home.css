@@ -103,7 +103,18 @@ body{
 .theme-toggle .icon-sun{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
-.masthead-right{ display:flex; align-items:center; gap:10px; }
+.masthead-right{ display:flex; align-items:center; gap:14px; }
+/* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
+   de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
+   agranda la zona sensible al dedo; el aspecto no cambia. */
+.lang-switch, .theme-toggle, .back-link{ position:relative; }
+.lang-switch::after, .theme-toggle::after{
+  content:''; position:absolute; inset:-9px -7px;
+}
+.back-link::after{
+  content:''; position:absolute; inset:-15px -10px;
+}
+
 .brand{
   display:flex; align-items:center; gap:14px;
   max-width:600px; max-height:120px; overflow:hidden;
@@ -327,6 +338,7 @@ body{
   display:flex; justify-content:center; gap:6px;
   width:100%; max-width:var(--filter-col); margin:0 auto 10px;
   padding:6px; border:1px solid var(--line); border-radius:14px;
+  background:var(--ground-raised);
   background:color-mix(in srgb, var(--ground-raised) 55%, transparent);
 }
 .difficulty-chip{
@@ -360,7 +372,10 @@ body{
 
 /* ---- view toggle: list or map, same filters either way ---- */
 .view-toggle-row{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  /* con el boton de quitar filtros dentro, en un movil estrecho no caben las
+     tres cosas en una linea: que baje el contador, no que se salga */
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap; row-gap:10px;
   margin-bottom:18px; border-bottom:1px solid var(--line);
   /* hueco para la cabecera y la barra de actividad al saltar aqui */
   scroll-margin-top:132px;
@@ -379,6 +394,20 @@ body{
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
   white-space:nowrap;
 }
+.result-line{ display:flex; align-items:center; gap:10px; margin-left:auto; min-width:0; }
+
+/* Salir de un filtro que no deja ninguna ruta: aparece solo cuando hay algo
+   que quitar, y va tambien dentro del mensaje de vacio, que es donde de
+   verdad hace falta. */
+.filter-reset{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
+  color:var(--ink-dim); background:none; border:1px solid var(--line);
+  border-radius:999px; padding:8px 12px; cursor:pointer; white-space:nowrap;
+  transition:color .2s ease, border-color .2s ease;
+}
+.filter-reset:hover{ color:var(--teal); border-color:var(--teal); }
+.filter-reset[hidden]{ display:none; }
+.filter-empty .filter-reset{ margin-left:6px; }
 
 /* ---- route cards: compact, scannable ---- */
 .route-card-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
@@ -564,6 +593,15 @@ body{
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
 }
 .map-expand-btn:hover{ opacity:1; }
+/* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
+   menos que diga por que, y que los botones que ya no mandan sobre nada
+   desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
+.map-unavailable{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:24px; color:var(--ink-dim); font-size:13px; line-height:1.6;
+}
+.map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
+
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
 .map-layers-btn{
   position:absolute; z-index:400; top:10px; right:52px;

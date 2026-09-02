@@ -24,6 +24,7 @@
   var desnivelVal = document.getElementById('desnivelVal');
   var distanceFill = document.getElementById('distanceFill');
   var desnivelFill = document.getElementById('desnivelFill');
+  var resetBtns = document.querySelectorAll('[data-filter-reset]');
   if (!activityChips.length || !cards.length) return;
 
   var view = 'list';
@@ -193,6 +194,14 @@
     });
     if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
     if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
+
+    // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
+    // antes no habia forma de salir de ahi sin recolocarlos a mano o recargar.
+    // El boton solo aparece cuando hay algo que quitar.
+    var filtrado = activeActivities.length !== activityChips.length ||
+                   activeDifficulty.length !== difficultyChips.length ||
+                   minD > 0 || maxD < maxDistance || minE > 0 || maxE < maxDesnivel;
+    resetBtns.forEach(function(b){ b.hidden = !filtrado; });
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
   }
 
@@ -213,6 +222,18 @@
     chip.classList.toggle('active');
     apply();
   }
+
+  function resetFilters(){
+    activityChips.forEach(function(c){ c.classList.add('active'); });
+    difficultyChips.forEach(function(c){ c.classList.add('active'); });
+    setActiveDistanceChip(null);
+    if (distanceMin) distanceMin.value = 0;
+    if (distanceMax) distanceMax.value = maxDistance;
+    if (desnivelMin) desnivelMin.value = 0;
+    if (desnivelMax) desnivelMax.value = maxDesnivel;
+    apply();
+  }
+  resetBtns.forEach(function(b){ b.addEventListener('click', resetFilters); });
 
   activityChips.forEach(function(chip){
     chip.addEventListener('click', function(){ toggleChip(chip, activityChips); });

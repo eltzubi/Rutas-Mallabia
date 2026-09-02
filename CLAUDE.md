@@ -9,6 +9,12 @@ data (GPX tracks, own photos). Bilingual (Spanish + Basque). Published via GitHu
 https://trabakutik.com/ from the repo root — every root-level `.html`/`.css`/`.js`
 file is a **build artifact**. Never hand-edit them; edit the sources in `src/` and rebuild.
 
+GitHub Pages would otherwise publish the repo verbatim, so `_config.yml` keeps the sources out of the site
+(`src/*.html`, `src/css|js|fonts|i18n`, `scripts/`, `CLAUDE.md`, `README.md`) and `robots.txt` says the same to
+crawlers. What stays published from `src/` are the **downloads** — `src/*.gpx`, `src/*.kml` and
+`src/todas-las-rutas.zip` are linked from every route page — so don't add anything to those exclusion lists
+without checking nothing links to it.
+
 ## Build commands
 
 After editing any Spanish source text, always run both, in this order:
@@ -31,9 +37,15 @@ Other scripts:
 
 ```
 python3 scripts/optimize_images.py   # resize img/*.jpg to MAX_SIDE=1600px, recompress, write .webp
+python3 scripts/make_card_thumbs.py  # img/<name>-card.{jpg,webp}: the home page's card photos
 ```
 
-This walks and rewrites the **entire** `img/` directory every run, so after running it, `git checkout --`
+`make_card_thumbs.py` is the one to re-run when a route joins the home page: the card `<picture>` points at
+`img/<name>-card.webp` (an 800 px, 16:10 centre crop — the same crop `object-fit:cover` was doing in the
+browser), not at the full 1600 px photo. Without it the new card has no image. Everything below the first two
+cards is `loading="lazy"`, so the home page loads ~0.6 MB instead of ~6.6 MB.
+
+`optimize_images.py` walks and rewrites the **entire** `img/` directory every run, so after running it, `git checkout --`
 any images you didn't intend to touch before committing.
 
 There is no test suite, linter, or package manifest — this is plain Python (stdlib only) + hand-written
