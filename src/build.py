@@ -60,9 +60,13 @@ import hashlib
 import html.entities
 import os
 import re
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+
+sys.path.insert(0, os.path.join(HERE, "i18n"))
+import eu  # noqa: E402  -- el texto en euskera vive ahi, no aqui
 
 # Catches a real bug class: writing "case&riacute;os" instead of
 # "caser&iacute;os" (a letter from the word swallowed into the entity name)
@@ -142,6 +146,69 @@ def add_cache_busting(page_html, versions):
 _data_versions = {}
 
 
+def home_cards(src_suffix):
+    """Los datos de cada ruta, leidos de las tarjetas de la portada.
+
+    Se leen de ahi y no de un listado aparte para que no haya dos verdades: la
+    tarjeta ya tiene el nombre, la actividad, la distancia y el desnivel, en el
+    idioma que toca, y es lo unico que hay que tocar al anadir una ruta.
+    """
+    html_text = read(f"mallabia_tail{src_suffix}.html")
+    cards = {}
+    pattern = re.compile(
+        r'<a class="route-card" href="([^"]+)" data-activity="([^"]*)"'
+        r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"'
+        r'[\s\S]*?<h3 class="route-card-name">(.*?)</h3>'
+        r'[\s\S]*?<p class="route-card-stats">(.*?)</p>')
+    for href, activity, km, desnivel, name, stats in pattern.findall(html_text):
+        slug = href.replace(".eu.html", "").replace(".html", "")
+        cards[slug] = {
+            "href": href,
+            "activities": set(activity.split(",")),
+            "km": float(km or 0),
+            "name": name.strip(),
+            "stats": stats.strip(),
+        }
+    return cards
+
+
+def similar_routes(slug, cards, count=2):
+    """Las rutas mas parecidas: misma actividad, y las mas cercanas en distancia.
+
+    Sin inventar nada -- la semejanza sale de los datos reales del GPX que ya
+    llevan las tarjetas.
+    """
+    me = cards.get(slug)
+    if not me:
+        return []
+    otras = [c for s, c in cards.items() if s != slug]
+    misma_actividad = [c for c in otras if c["activities"] & me["activities"]]
+    candidatas = misma_actividad or otras
+    candidatas.sort(key=lambda c: abs(c["km"] - me["km"]))
+    return candidatas[:count]
+
+
+def add_similar_routes(page_html, page, cards, lang):
+    """Cierra la ficha con dos rutas parecidas en vez de con un enlace al indice."""
+    vecinas = similar_routes(page, cards)
+    anchor = '  <div class="back-home">'
+    if not vecinas or anchor not in page_html:
+        return page_html
+    titulo = "Rutas parecidas"
+    if lang == "eu":
+        titulo = eu.COMMON[titulo]
+    tarjetas = "\n".join(
+        f'      <a class="next-route" href="{c["href"]}">\n'
+        f'        <span class="next-route-name">{c["name"]}</span>\n'
+        f'        <span class="next-route-stats">{c["stats"]}</span>\n'
+        f'      </a>' for c in vecinas)
+    bloque = (f'  <section class="next-routes">\n'
+              f'    <p class="eyebrow">{titulo}</p>\n'
+              f'    <div class="next-route-list">\n{tarjetas}\n    </div>\n'
+              f'  </section>\n\n')
+    return page_html.replace(anchor, bloque + anchor, 1)
+
+
 def add_data_cache_busting(page_html):
     # Lo mismo para los tracks (data-map-src en las fichas, data-track en
     # historias). Un GPX corregido conserva el nombre del fichero, asi que
@@ -168,10 +235,13 @@ def main():
         versions[out] = hashlib.sha256(body.encode("utf-8")).hexdigest()[:8]
         print(f"wrote {out_path} ({len(body)} bytes)")
 
+    cards = {lang: home_cards(src_suffix) for lang, (src_suffix, _) in LANGS.items()}
+
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
             check_entities(page_html, f"{name} [{lang}]")
+            page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
             out_path = os.path.join(ROOT, out_name(name, out_suffix))

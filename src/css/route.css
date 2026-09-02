@@ -68,6 +68,30 @@
   border:none; background:none; padding:0;
 }
 .back-link:hover{ color:var(--teal); }
+/* Rutas parecidas: hasta ahora una ficha terminaba en "volver a rutas" y ahi
+   se acababa la visita. Las elige build.py por actividad y distancia, con los
+   datos reales de las tarjetas de la portada. */
+.next-routes{ margin:56px 24px 0; }   /* el mismo margen lateral que .map-section y .back-home */
+.next-routes + .back-home{ margin-top:28px; }
+.next-route-list{ display:grid; gap:10px; }
+@media (min-width:640px){ .next-route-list{ grid-template-columns:1fr 1fr; } }
+.next-route{
+  display:flex; flex-direction:column; gap:7px;
+  padding:16px 18px; border:1px solid var(--line); border-radius:14px;
+  background:var(--ground-raised); color:var(--ink); text-decoration:none;
+  transition:border-color .2s ease, color .2s ease;
+}
+.next-route:hover{ border-color:var(--teal); }
+.next-route:hover .next-route-name{ color:var(--teal); }
+.next-route-name{
+  font-family:'Fraunces',serif; font-size:17px; line-height:1.22;
+  letter-spacing:-.01em; transition:color .2s ease;
+}
+.next-route-stats{
+  font-family:'IBM Plex Mono',monospace; font-size:11px;
+  letter-spacing:.06em; color:var(--ink-dim);
+}
+
 .back-home{ margin:56px 24px 0; }
 .back-home-link{
   display:inline-flex; align-items:center; gap:8px;

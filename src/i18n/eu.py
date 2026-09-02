@@ -12,6 +12,10 @@ already Basque and stay as they are.
 
 # Shared across every page.
 COMMON = {
+    # El bloque de "rutas parecidas" del final de cada ficha lo genera
+    # src/build.py, que lee esta pareja de aqui: es texto de la web y le toca
+    # vivir en este fichero como todo lo demas.
+    'Rutas parecidas': 'Antzeko ibilbideak',
     # masthead / chrome
     'Cambiar a tema oscuro': 'Aldatu gai ilunera',
     '<span class="place">Mallabia · Bizkaia</span>':
