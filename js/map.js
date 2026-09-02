@@ -10,6 +10,12 @@
   var el = document.querySelector('[data-map-src]');
   if (!el) return;
 
+  // Se pone a true en cuanto el visitante mueve el mapa (zoom o arrastre).
+  // A partir de ahi el mapa ya no vuelve solo al encuadre general: la vista
+  // es suya. Volver a cerrar el mapa grande la reinicia.
+  var userMoved = false;
+  var resetView = null;   // lo rellena el bloque del mapa, mas abajo
+
   var expandBtn = el.parentElement && el.parentElement.querySelector('.map-expand-btn');
   if (expandBtn) {
     expandBtn.addEventListener('click', function(){
@@ -19,6 +25,11 @@
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
         el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (resetView) {
+        // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
+        // la vista pequena; y asi queda una forma clara de reencuadrar.
+        userMoved = false;
+        resetView();
       }
     });
   }
@@ -150,10 +161,12 @@
       el.parentElement.appendChild(panel);
     }
     function closePanel(){
-      if (!panel) return;
+      if (!panel || !panel.classList.contains('open')) return;
       panel.classList.remove('open');
       if (activeLine) { activeLine.setStyle({ color: activeBaseColor, weight: 4 }); activeLine = null; }
-      map.flyToBounds(bounds, { padding: [24, 24] });
+      // Antes esto reencuadraba el mapa entero al cerrar la ficha (y como
+      // cualquier toque en el mapa cierra la ficha, se salia del zoom sin
+      // querer). Ahora la vista se queda donde el visitante la ha dejado.
     }
     function openPanel(line, baseColor, html){
       ensurePanel();
@@ -274,10 +287,25 @@
 
     map.on('click', closePanel);
 
+    // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
+    // el movil, o la barra del navegador que aparece y desaparece al hacer
+    // scroll) disparaba un fitBounds y devolvia el mapa al encuadre general.
+    // Ahora solo se recalcula el tamano; el encuadre se rehace unicamente
+    // mientras nadie haya tocado el mapa.
+    // Solo cuenta lo que hace el visitante: 'zoomstart' saltaria tambien con
+    // los encuadres automaticos (el primero, sin ir mas lejos), asi que se
+    // escuchan el arrastre y los gestos de zoom sobre el propio contenedor.
+    function markMoved(){ userMoved = true; }
+    map.on('dragstart', markMoved);
+    ['wheel', 'touchstart', 'dblclick', 'pointerdown'].forEach(function(ev){
+      map.getContainer().addEventListener(ev, markMoved, { passive: true });
+    });
+
     function fit(){
       map.invalidateSize();
-      map.fitBounds(bounds, { padding: [24, 24] });
+      if (!userMoved) map.fitBounds(bounds, { padding: [24, 24] });
     }
+    resetView = function(){ map.invalidateSize(); map.fitBounds(bounds, { padding: [24, 24] }); };
     fit();
     if ('ResizeObserver' in window) new ResizeObserver(fit).observe(el);
     else window.addEventListener('resize', fit);
