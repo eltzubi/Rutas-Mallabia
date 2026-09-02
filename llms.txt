@@ -8,7 +8,7 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 
 ## Rutas
 
-- [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +811 m, dificultad difícil, trail running y BTT/e-bike
+- [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +660 m, dificultad difícil, trail running y BTT/e-bike
 - [Asuntza bira](https://trabakutik.com/trabakua.html): 16,5 km, desnivel +712 m, dificultad media, BTT/e-bike
 - [Iturzuri, Zengotitagane subida por la cascada de Gerea](https://trabakutik.com/iturrizuri.html): 10,76 km, desnivel +627 m, dificultad fácil, Senderismo · Trail running
 - [Zenarruza, San Kristobal y Zengotitagane](https://trabakutik.com/zenarruza.html): 31,7 km, desnivel +1.161 m, dificultad difícil, BTT/e-bike
