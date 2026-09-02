@@ -28,21 +28,11 @@
   --readout-b:#4E8F1C;
 }
 
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
 /* Without this, <picture> (an unstyled inline box) sits between an <img>
    and its flex/grid/absolute-positioning parent, breaking every layout
    that depends on the img being a direct child (the hero flex split,
    percentage heights, etc). display:contents removes the wrapper from
    the box tree so the img behaves exactly as if picture weren't there. */
-picture{display:contents;}
-body{
-  background:var(--ground);
-  color:var(--ink);
-  font-family:'Karla',system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{ background:var(--teal); color:var(--ground); }
 
 .page{ padding:0 0 90px; }
 .wrap{ max-width:820px; margin:0 auto; }
@@ -76,7 +66,7 @@ body{
 /* Past the hero, the brand photos are dead weight on a long scroll --
    collapse them once the visitor has started reading. */
 .masthead.is-compact{ padding-top:8px; padding-bottom:8px; }
-.masthead .place{ color:var(--ink); font-weight:600; }
+
 /* Small phones: the masthead carries brand + place + language + theme, which
    stops fitting on one line once the language switch is there. */
 @media (max-width:480px){
@@ -84,15 +74,6 @@ body{
   .masthead-right{ margin-left:auto; }
 }
 
-.lang-switch{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-width:26px; height:26px; padding:0 7px; border-radius:13px;
-  border:1px solid var(--line); background:none;
-  color:var(--ink-dim); text-decoration:none;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
-  letter-spacing:.06em; flex-shrink:0;
-}
-.lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
@@ -100,10 +81,12 @@ body{
   cursor:pointer; flex-shrink:0; padding:0;
 }
 .theme-toggle:hover{ border-color:var(--teal); color:var(--teal); }
-.theme-toggle .icon-sun{ display:none; }
-:root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
-:root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
-.masthead-right{ display:flex; align-items:center; gap:10px; }
+
+.masthead-right{ display:flex; align-items:center; gap:14px; }
+/* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
+   de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
+   agranda la zona sensible al dedo; el aspecto no cambia. */
+
 .brand{
   display:flex; align-items:center; gap:14px;
   max-width:600px; max-height:120px; overflow:hidden;
@@ -150,7 +133,7 @@ body{
   display:flex; gap:8px; align-items:center; flex-wrap:wrap;
   margin:0 0 14px;
 }
-.eyebrow .sep{ opacity:.5; }
+
 .underline-link{ text-decoration:underline; }
 .hero-compact-content .eyebrow{ color:rgba(245,243,236,.75); text-shadow:0 1px 8px rgba(0,0,0,.5); }
 .hero-compact{
@@ -327,6 +310,7 @@ body{
   display:flex; justify-content:center; gap:6px;
   width:100%; max-width:var(--filter-col); margin:0 auto 10px;
   padding:6px; border:1px solid var(--line); border-radius:14px;
+  background:var(--ground-raised);
   background:color-mix(in srgb, var(--ground-raised) 55%, transparent);
 }
 .difficulty-chip{
@@ -360,7 +344,10 @@ body{
 
 /* ---- view toggle: list or map, same filters either way ---- */
 .view-toggle-row{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  /* con el boton de quitar filtros dentro, en un movil estrecho no caben las
+     tres cosas en una linea: que baje el contador, no que se salga */
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap; row-gap:10px;
   margin-bottom:18px; border-bottom:1px solid var(--line);
   /* hueco para la cabecera y la barra de actividad al saltar aqui */
   scroll-margin-top:132px;
@@ -379,6 +366,20 @@ body{
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
   white-space:nowrap;
 }
+.result-line{ display:flex; align-items:center; gap:10px; margin-left:auto; min-width:0; }
+
+/* Salir de un filtro que no deja ninguna ruta: aparece solo cuando hay algo
+   que quitar, y va tambien dentro del mensaje de vacio, que es donde de
+   verdad hace falta. */
+.filter-reset{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
+  color:var(--ink-dim); background:none; border:1px solid var(--line);
+  border-radius:999px; padding:8px 12px; cursor:pointer; white-space:nowrap;
+  transition:color .2s ease, border-color .2s ease;
+}
+.filter-reset:hover{ color:var(--teal); border-color:var(--teal); }
+.filter-reset[hidden]{ display:none; }
+.filter-empty .filter-reset{ margin-left:6px; }
 
 /* ---- route cards: compact, scannable ---- */
 .route-card-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
@@ -469,10 +470,9 @@ body{
 .info-details[open] summary::after{ content:'−'; }
 .info-details-body{ padding:0 4px 24px; }
 
-
 /* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
 .map-section{ max-width:820px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
-.map-section > .eyebrow{ margin-bottom:14px; }
+
 .map-box{
   position:relative;
   border:1px solid var(--line);
@@ -511,8 +511,7 @@ body{
   scroll-margin-top:100px; /* clears the sticky masthead when scrolled into view */
 }
 @media (min-width:640px){ .route-map-box{ aspect-ratio:16/9; } }
-.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; height:80dvh; }
-.route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
+
 .leaflet-popup-content-wrapper{
   background:var(--ground-raised) !important; color:var(--ink) !important;
   border:1px solid var(--line); border-radius:10px;
@@ -554,28 +553,11 @@ body{
 }
 .route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
 .route-info-panel .route-popup h3{ padding-right:24px; }
-.map-expand-btn{
-  position:absolute; z-index:400; top:10px; right:10px;
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  transition:opacity .2s ease, transform .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-}
-.map-expand-btn:hover{ opacity:1; }
-.map-expand-btn.is-active svg{ transform:rotate(180deg); }
-.map-layers-btn{
-  position:absolute; z-index:400; top:10px; right:52px;
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  transition:opacity .2s ease, color .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-}
-.map-layers-btn:hover{ opacity:1; }
-.map-layers-btn.is-active{ color:var(--teal); opacity:1; }
+
+/* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
+   menos que diga por que, y que los botones que ya no mandan sobre nada
+   desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
+
 .map-legend{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.55; color:var(--ink-dim); }
 .map-legend-item{ display:inline-flex; align-items:center; gap:6px; }
 .map-legend-item .dot{ width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
@@ -632,14 +614,8 @@ footer a:hover{ text-decoration:underline; }
   display:none; align-items:center; justify-content:center;
   padding:24px;
 }
-.lightbox.open{ display:flex; }
+
 .lightbox img{ max-width:100%; max-height:100%; box-shadow:0 20px 60px rgba(0,0,0,.5); }
-.lightbox-close{
-  position:absolute; top:18px; right:18px;
-  width:38px; height:38px; border-radius:50%;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
-  color:#fff; font-size:16px; cursor:pointer;
-}
 
 .to-top{
   position:fixed; right:18px; bottom:18px; z-index:60;
@@ -650,8 +626,7 @@ footer a:hover{ text-decoration:underline; }
   opacity:0; transform:translateY(8px); pointer-events:none;
   transition:opacity .25s ease, transform .25s ease, background .2s ease;
 }
-.to-top.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
-.to-top:hover{ background:var(--violet); }
+
 @media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
@@ -668,20 +643,14 @@ footer a:hover{ text-decoration:underline; }
   box-shadow:0 0 30px -8px var(--violet);
 }
 .wikiloc-link.ghost{ box-shadow:none; }
-.wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
 
 .fact{ border-radius:14px; }
 .fact .v{ text-shadow:0 0 14px currentColor; }
-.elev-tags .v{ text-shadow:0 0 14px currentColor; }
 
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 .range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 
-.photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
-.route-map-box, .map-box{ border-radius:20px; }
 .hero-chart{ border-radius:20px; }
-.hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
-.elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
 
 .parada{
   margin:0 0 24px;
@@ -690,9 +659,7 @@ footer a:hover{ text-decoration:underline; }
   padding:22px 24px 24px;
   display:flex; flex-direction:column; gap:8px;
 }
-.parada .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
-.parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
-.parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
+
 .parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }
 .parada{
   background:var(--violet-soft);

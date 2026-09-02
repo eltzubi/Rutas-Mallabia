@@ -17,12 +17,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="es" href="arietzu.html">
 <link rel="alternate" hreflang="eu" href="arietzu.eu.html">
+<link rel="alternate" hreflang="x-default" href="arietzu.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
-<link rel="stylesheet" href="route.css?v=7df0ff6f">
+<link rel="stylesheet" href="base.css?v=9021b60f">
+<link rel="stylesheet" href="route.css?v=55e14a5d">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,23 +129,23 @@
 
   <div class="gallery-grid">
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-02.jpg">
-      <picture><source srcset="img/arietzu-02.webp" type="image/webp"><img src="img/arietzu-02.jpg" alt="Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un monte al fondo"></picture>
+      <picture><source srcset="img/arietzu-02.webp" type="image/webp"><img src="img/arietzu-02.jpg" alt="Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un monte al fondo" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-03.jpg">
-      <picture><source srcset="img/arietzu-03.webp" type="image/webp"><img src="img/arietzu-03.jpg" alt="El sendero subiendo entre hierba hacia una loma con &aacute;rboles"></picture>
+      <picture><source srcset="img/arietzu-03.webp" type="image/webp"><img src="img/arietzu-03.jpg" alt="El sendero subiendo entre hierba hacia una loma con &aacute;rboles" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-04.jpg">
-      <picture><source srcset="img/arietzu-04.webp" type="image/webp"><img src="img/arietzu-04.jpg" alt="Una cruz de piedra entre pinos, en uno de los altos de la ruta"></picture>
+      <picture><source srcset="img/arietzu-04.webp" type="image/webp"><img src="img/arietzu-04.jpg" alt="Una cruz de piedra entre pinos, en uno de los altos de la ruta" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-05.jpg">
-      <picture><source srcset="img/arietzu-05.webp" type="image/webp"><img src="img/arietzu-05.jpg" alt="El sendero entre musgo y helechos, en un tramo de bosque"></picture>
+      <picture><source srcset="img/arietzu-05.webp" type="image/webp"><img src="img/arietzu-05.jpg" alt="El sendero entre musgo y helechos, en un tramo de bosque" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-06.jpg">
-      <picture><source srcset="img/arietzu-06.webp" type="image/webp"><img src="img/arietzu-06.jpg" alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano"></picture>
+      <picture><source srcset="img/arietzu-06.webp" type="image/webp"><img src="img/arietzu-06.jpg" alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
   </div>
@@ -214,7 +216,7 @@
     <div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Osmagain</span> <span class="elev-legend-item"><span class="num">2</span>Arietzu</span></div>
     <div class="route-map-box">
       <div id="routeMap" style="width:100%;height:100%;"
-           data-map-src="data/arietzu.json"
+           data-map-src="data/arietzu.json?v=c2fe0995"
            data-marker-title="Ermita de San Juan (salida y llegada)"></div>
       <button type="button" class="map-expand-btn" aria-label="Ampliar mapa"
               data-label-expand="Ampliar mapa" data-label-collapse="Reducir mapa">
@@ -239,9 +241,10 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<script src="js/app.js?v=ea0e4251"></script>
+<!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="js/map.js?v=6523c9bc"></script>
-<script src="js/app.js?v=80f16072"></script>
+<script src="js/map.js?v=a205e41c"></script>
 </body>
 </html>

@@ -72,23 +72,23 @@
 
   <div class="gallery-grid">
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-02.jpg">
-      <picture><source srcset="img/arietzu-02.webp" type="image/webp"><img src="img/arietzu-02.jpg" alt="Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un monte al fondo"></picture>
+      <picture><source srcset="img/arietzu-02.webp" type="image/webp"><img src="img/arietzu-02.jpg" alt="Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un monte al fondo" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-03.jpg">
-      <picture><source srcset="img/arietzu-03.webp" type="image/webp"><img src="img/arietzu-03.jpg" alt="El sendero subiendo entre hierba hacia una loma con &aacute;rboles"></picture>
+      <picture><source srcset="img/arietzu-03.webp" type="image/webp"><img src="img/arietzu-03.jpg" alt="El sendero subiendo entre hierba hacia una loma con &aacute;rboles" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-04.jpg">
-      <picture><source srcset="img/arietzu-04.webp" type="image/webp"><img src="img/arietzu-04.jpg" alt="Una cruz de piedra entre pinos, en uno de los altos de la ruta"></picture>
+      <picture><source srcset="img/arietzu-04.webp" type="image/webp"><img src="img/arietzu-04.jpg" alt="Una cruz de piedra entre pinos, en uno de los altos de la ruta" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-05.jpg">
-      <picture><source srcset="img/arietzu-05.webp" type="image/webp"><img src="img/arietzu-05.jpg" alt="El sendero entre musgo y helechos, en un tramo de bosque"></picture>
+      <picture><source srcset="img/arietzu-05.webp" type="image/webp"><img src="img/arietzu-05.jpg" alt="El sendero entre musgo y helechos, en un tramo de bosque" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/arietzu-06.jpg">
-      <picture><source srcset="img/arietzu-06.webp" type="image/webp"><img src="img/arietzu-06.jpg" alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano"></picture>
+      <picture><source srcset="img/arietzu-06.webp" type="image/webp"><img src="img/arietzu-06.jpg" alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
   </div>
@@ -184,9 +184,10 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<script src="js/app.js"></script>
+<!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/map.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>

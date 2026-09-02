@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# src/ guarda las fuentes (los fragmentos _head/_tail son la misma pagina otra
+# vez) y ademas las descargas. Fuera lo primero, dentro lo segundo.
+Disallow: /src/
+Allow: /src/*.gpx
+Allow: /src/*.kml
+Allow: /src/*.zip
+Disallow: /scripts/
+Disallow: /CLAUDE.md
+Disallow: /README.md
+
 Sitemap: https://trabakutik.com/sitemap.xml

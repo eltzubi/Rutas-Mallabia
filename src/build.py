@@ -112,6 +112,7 @@ def out_name(page, out_suffix):
 # source asset -> file written at the repo root
 ASSETS = {
     ("fonts", "inline_fonts.css"): "fonts.css",
+    ("css", "base.css"): "base.css",
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
     ("css", "historias.css"): "historias.css",
@@ -138,6 +139,24 @@ def add_cache_busting(page_html, versions):
     return re.sub(rf'(href|src)="({pattern})"', repl, page_html)
 
 
+_data_versions = {}
+
+
+def add_data_cache_busting(page_html):
+    # Lo mismo para los tracks (data-map-src en las fichas, data-track en
+    # historias). Un GPX corregido conserva el nombre del fichero, asi que
+    # quien ya lo tuviera en cache podia seguir viendo el trazado viejo dentro
+    # de una pagina ya actualizada, sin forma de enterarse.
+    def repl(m):
+        attr, path = m.group(1), m.group(2)
+        if path not in _data_versions:
+            with open(os.path.join(ROOT, path), "rb") as f:
+                _data_versions[path] = hashlib.sha256(f.read()).hexdigest()[:8]
+        return f'{attr}="{path}?v={_data_versions[path]}"'
+
+    return re.sub(r'(data-map-src|data-track)="(data/[\w.\-]+\.json)"', repl, page_html)
+
+
 def main():
     versions = {}
     for parts, out in ASSETS.items():
@@ -154,6 +173,7 @@ def main():
             page_html = assemble_page(name, src_suffix)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_cache_busting(page_html, versions)
+            page_html = add_data_cache_busting(page_html)
             out_path = os.path.join(ROOT, out_name(name, out_suffix))
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)

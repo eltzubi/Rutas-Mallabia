@@ -24,9 +24,16 @@
   var desnivelVal = document.getElementById('desnivelVal');
   var distanceFill = document.getElementById('distanceFill');
   var desnivelFill = document.getElementById('desnivelFill');
+  var resetBtns = document.querySelectorAll('[data-filter-reset]');
   if (!activityChips.length || !cards.length) return;
 
   var view = 'list';
+
+  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
+  // cambiar con la sesion abierta.
+  function reduceMotion(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
 
   var filters = document.querySelector('.range-filters') || document.body;
   var TXT_APPROX = filters.dataset.approx || 'aprox.';
@@ -137,7 +144,7 @@
     // moverse bajo los pies.
     var go = function(smooth){
       var y = window.pageYOffset + anchor.getBoundingClientRect().top - STICKY_H;
-      window.scrollTo({ top: Math.max(y, 0), behavior: smooth ? 'smooth' : 'auto' });
+      window.scrollTo({ top: Math.max(y, 0), behavior: (smooth && !reduceMotion()) ? 'smooth' : 'auto' });
     };
     requestAnimationFrame(function(){ go(true); });
     setTimeout(function(){ go(false); }, 700);
@@ -193,6 +200,14 @@
     });
     if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
     if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
+
+    // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
+    // antes no habia forma de salir de ahi sin recolocarlos a mano o recargar.
+    // El boton solo aparece cuando hay algo que quitar.
+    var filtrado = activeActivities.length !== activityChips.length ||
+                   activeDifficulty.length !== difficultyChips.length ||
+                   minD > 0 || maxD < maxDistance || minE > 0 || maxE < maxDesnivel;
+    resetBtns.forEach(function(b){ b.hidden = !filtrado; });
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
   }
 
@@ -214,6 +229,18 @@
     apply();
   }
 
+  function resetFilters(){
+    activityChips.forEach(function(c){ c.classList.add('active'); });
+    difficultyChips.forEach(function(c){ c.classList.add('active'); });
+    setActiveDistanceChip(null);
+    if (distanceMin) distanceMin.value = 0;
+    if (distanceMax) distanceMax.value = maxDistance;
+    if (desnivelMin) desnivelMin.value = 0;
+    if (desnivelMax) desnivelMax.value = maxDesnivel;
+    apply();
+  }
+  resetBtns.forEach(function(b){ b.addEventListener('click', resetFilters); });
+
   activityChips.forEach(function(chip){
     chip.addEventListener('click', function(){ toggleChip(chip, activityChips); });
   });
@@ -234,7 +261,7 @@
         distanceMax.value = Math.min(range[1], maxDistance);
       }
       apply();
-      if (resultsList) resultsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
     });
   });
 

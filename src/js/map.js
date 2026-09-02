@@ -1,5 +1,13 @@
 // One map implementation for every page and both languages.
 //
+// Orden de carga: en los *_tail.html Leaflet va al final, DETRAS de filters.js,
+// app.js y webmcp.js, y este fichero es el ultimo de todos. Estaba al reves, y
+// eso ataba toda la interactividad de la web a un CDN ajeno: una hoja de estilos
+// dentro del body bloquea el pintado, y un script clasico bloquea el parser, asi
+// que los filtros, el cambio de tema y el visor de fotos no despertaban hasta que
+// jsdelivr contestaba. Solo este fichero necesita Leaflet: si se vuelve a mover,
+// que sea sin poner nada ajeno por delante de lo propio.
+//
 // The page supplies only what is page- or language-specific, as data
 // attributes on the map container:
 //   data-map-src      geometry (tracks / start marker / waypoints), from data/
@@ -9,6 +17,31 @@
 (function(){
   var el = document.querySelector('[data-map-src]');
   if (!el) return;
+
+  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
+  // cambiar con la sesion abierta.
+  function scrollOpts(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    return { behavior: reduce ? 'auto' : 'smooth', block: 'start' };
+  }
+
+  // Leaflet viene de un CDN externo. Cuando no llega, lo que quedaba era una
+  // caja gris vacia sin ninguna explicacion -- y el boton de ampliar seguia
+  // funcionando, asi que se podia ampliar la nada a 80vh. Mejor decirlo y
+  // retirar los botones que ya no mandan sobre nada.
+  if (typeof L === 'undefined') {
+    el.classList.add('map-unavailable');
+    el.textContent = document.documentElement.lang === 'eu' ?
+      'Ezin izan da mapa kargatu. Ibilbidearen trazua GPX fitxategian duzu.' :
+      'No se ha podido cargar el mapa. El trazado de la ruta está en el GPX.';
+    var box = el.parentElement;
+    if (box) {
+      box.classList.remove('is-expanded');
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers-btn'),
+        function(b){ b.hidden = true; });
+    }
+    return;
+  }
 
   // Se pone a true en cuanto el visitante mueve el mapa (zoom o arrastre).
   // A partir de ahi el mapa ya no vuelve solo al encuadre general: la vista
@@ -24,7 +57,7 @@
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.parentElement.scrollIntoView(scrollOpts());
       } else if (resetView) {
         // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
         // la vista pequena; y asi queda una forma clara de reencuadrar.
@@ -42,14 +75,12 @@
     exploreLink.addEventListener('click', function(e){
       e.preventDefault();
       if (el.parentElement.classList.contains('is-expanded')) {
-        el.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.parentElement.scrollIntoView(scrollOpts());
       } else {
         expandBtn.click();
       }
     });
   }
-
-  if (typeof L === 'undefined') return;
 
   var isEu = document.documentElement.lang === 'eu';
 
@@ -65,8 +96,13 @@
   var ground = token('--ground', '#0A0F0A');
 
   // Waypoint labels come from the elevation legend, in the same order.
+  // Acotado a la leyenda del mapa: una ficha lleva dos leyendas iguales (la
+  // del perfil y la del mapa), asi que buscando en todo el documento salian
+  // el doble de items que waypoints y la correspondencia se sostenia de puro
+  // milagro -- el dia que las dos dejasen de coincidir, etiquetas cambiadas.
+  var legendScope = el.closest('.map-section') || document;
   var wpNames = Array.prototype.map.call(
-    document.querySelectorAll('.elev-legend-item'),
+    legendScope.querySelectorAll('.elev-legend-item'),
     function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); }
   );
 

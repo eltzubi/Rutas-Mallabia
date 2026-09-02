@@ -50,7 +50,9 @@
 (function(){
   var btn = document.getElementById('toTop');
   if (!btn) return;
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function reduceMotion(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
   // Antes se escondia mientras se recorria el listado de rutas, para no
   // taparlas; el resultado era que justo donde mas se baja no habia forma
   // de volver arriba. Ahora aparece en cuanto se ha bajado algo y se queda.
@@ -71,7 +73,7 @@
     var masthead = document.querySelector('.masthead');
     root.classList.add('scrolling-to-top');
     if (masthead) masthead.classList.remove('is-compact');
-    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    window.scrollTo({ top:0, behavior: reduceMotion() ? 'auto' : 'smooth' });
     var stop = function(){ root.classList.remove('scrolling-to-top'); };
     window.addEventListener('scrollend', stop, { once:true });
     setTimeout(stop, 1000); // fallback where scrollend isn't supported
@@ -165,9 +167,28 @@
   trigger.addEventListener('click', open);
   close.addEventListener('click', shut);
   box.addEventListener('click', function(e){ if (e.target === box) shut(); });
+  // El dialogo se declara aria-modal, que le dice al lector de pantalla que lo
+  // de detras esta inerte -- pero con el tabulador si se llegaba: quedaban 31
+  // enlaces alcanzables por debajo del modal, invisibles y activables. Aqui el
+  // recorrido del tabulador da la vuelta dentro del dialogo.
+  var FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), ' +
+                  'select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  function focusables(){
+    return Array.prototype.filter.call(box.querySelectorAll(FOCUSABLE), function(el){
+      var r = el.getBoundingClientRect();
+      return r.width > 0 || r.height > 0;   // fuera el señuelo antispam, que va oculto
+    });
+  }
   document.addEventListener('keydown', function(e){
     if (!box.classList.contains('open')) return;
-    if (e.key === 'Escape') shut();
+    if (e.key === 'Escape') { shut(); return; }
+    if (e.key !== 'Tab') return;
+    var items = focusables();
+    if (!items.length) return;
+    var first = items[0], last = items[items.length - 1];
+    if (!box.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
   form.addEventListener('submit', function(e){

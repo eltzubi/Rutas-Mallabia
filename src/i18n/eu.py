@@ -365,6 +365,7 @@ HOME = {
     '<label>Distancia &middot; <b': '<label>Distantzia &middot; <b',
     '<label>Desnivel &middot; <b': '<label>Desnibela &middot; <b',
     'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
+    'Quitar filtros': 'Iragazkiak kendu',
 
     # route cards
     'alt="Pista de cemento y piedra en la ruta de Trabakua"':
@@ -402,8 +403,8 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna y Bolibar':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna eta Bolibar',
+    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna, Iturreta y Bolibar':
+        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna, Iturreta eta Bolibar',
     'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga, Muniozguren y la Potrera':
         'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga, Muniozguren eta Potrera',
     'alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"':
@@ -2824,6 +2825,7 @@ POTRERA = {
 }
 
 HISTORIAS = {
+    'Rutas de Mallabia, una a una': 'Mallabiako ibilbideak, banan-banan',
     # dock + progress + hint + buttons (shared across every card)
     'aria-label="Navegar por las rutas"': 'aria-label="Ibilbideetan nabigatu"',
     'Anterior': 'Aurrekoa',

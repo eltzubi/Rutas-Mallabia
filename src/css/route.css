@@ -22,20 +22,10 @@
   --line: rgba(22,33,15,.14);
 }
 
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
 /* Without this, <picture> (an unstyled inline box) sits between an <img>
    and its flex/grid/absolute-positioning parent, breaking every layout
    that depends on the img being a direct child. display:contents removes
    the wrapper from the box tree so the img behaves as if picture weren't there. */
-picture{display:contents;}
-body{
-  background:var(--ground);
-  color:var(--ink);
-  font-family:'Karla',system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{ background:var(--teal); color:var(--ground); }
 
 .page{ max-width:760px; margin:0 auto; padding:0 0 90px; }
 @media (min-width:1024px){ .page{ max-width:1100px; } }
@@ -47,7 +37,7 @@ body{
   font-size:11px; letter-spacing:.1em; text-transform:uppercase;
   color:var(--ink-dim);
 }
-.masthead .place{ color:var(--ink); font-weight:600; }
+
 /* Small phones: the masthead carries brand + place + language + theme, which
    stops fitting on one line once the language switch is there. */
 @media (max-width:400px){
@@ -55,15 +45,6 @@ body{
   .masthead-right{ margin-left:auto; }
 }
 
-.lang-switch{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-width:26px; height:26px; padding:0 7px; border-radius:13px;
-  border:1px solid var(--line); background:none;
-  color:var(--ink-dim); text-decoration:none;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
-  letter-spacing:.06em; flex-shrink:0;
-}
-.lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
@@ -71,10 +52,12 @@ body{
   cursor:pointer; flex-shrink:0; padding:0;
 }
 .theme-toggle:hover{ border-color:var(--teal); color:var(--teal); }
-.theme-toggle .icon-sun{ display:none; }
-:root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
-:root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
-.masthead-right{ display:flex; align-items:center; gap:10px; }
+
+.masthead-right{ display:flex; align-items:center; gap:14px; }
+/* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
+   de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
+   agranda la zona sensible al dedo; el aspecto no cambia. */
+
 .back-link{
   display:inline-flex; align-items:center; gap:5px;
   color:var(--ink-dim);
@@ -96,7 +79,7 @@ body{
 }
 .back-home-link:hover{ background:var(--violet); }
 .map-section{ margin:56px 24px 0; }
-.map-section > .eyebrow{ margin-bottom:14px; }
+
 .map-section .elev-legend{ padding:0 0 16px; }
 .route-map-box{
   position:relative;
@@ -106,30 +89,11 @@ body{
   overflow:hidden;
 }
 @media (min-width:640px){ .route-map-box{ aspect-ratio:16/9; } }
-.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; height:80dvh; }
-.route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
-.map-expand-btn{
-  position:absolute; z-index:400; top:10px; right:10px;
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  transition:opacity .2s ease, transform .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-}
-.map-expand-btn:hover{ opacity:1; }
-.map-expand-btn.is-active svg{ transform:rotate(180deg); }
-.map-layers-btn{
-  position:absolute; z-index:400; top:10px; right:52px;
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  transition:opacity .2s ease, color .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-}
-.map-layers-btn:hover{ opacity:1; }
-.map-layers-btn.is-active{ color:var(--teal); opacity:1; }
+
+/* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
+   menos que diga por que, y que los botones que ya no mandan sobre nada
+   desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
+
 .wikiloc-credit{
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
@@ -197,7 +161,7 @@ body{
   display:flex; flex-wrap:wrap; gap:8px; align-items:center;
   margin:0 0 10px;
 }
-.eyebrow .sep{ opacity:.5; }
+
 h1{
   font-family:'Fraunces',serif;
   font-weight:900;
@@ -244,7 +208,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   display:none; align-items:center; justify-content:center;
   padding:24px;
 }
-.lightbox.open{ display:flex; }
+
 .lightbox img{
   max-width:100%; max-height:100%;
   border-radius:6px;
@@ -252,12 +216,6 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
     0 1px 3px rgba(0,0,0,.45),
     0 32px 80px -20px rgba(0,0,0,.75),
     0 0 130px -30px var(--teal);
-}
-.lightbox-close{
-  position:absolute; top:18px; right:18px;
-  width:38px; height:38px; border-radius:50%;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
-  color:#fff; font-size:16px; cursor:pointer;
 }
 
 .gallery-grid{
@@ -312,9 +270,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   padding:22px 24px 24px;
   display:flex; flex-direction:column; gap:8px;
 }
-.parada .k{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--violet); }
-.parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
-.parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
+
 .parada a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
 
 footer{
@@ -337,8 +293,7 @@ footer b{ color:var(--ink); font-weight:600; }
   opacity:0; transform:translateY(8px); pointer-events:none;
   transition:opacity .25s ease, transform .25s ease, background .2s ease;
 }
-.to-top.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
-.to-top:hover{ background:var(--violet); }
+
 @media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
@@ -355,7 +310,6 @@ footer b{ color:var(--ink); font-weight:600; }
   box-shadow:0 0 30px -8px var(--violet);
 }
 .wikiloc-link.ghost{ box-shadow:none; }
-.wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
 
 .feat-panel{ border-radius:22px; }
 .feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--teal); }
@@ -423,16 +377,11 @@ footer b{ color:var(--ink); font-weight:600; }
 .fact .v{ text-shadow:0 0 14px currentColor; }
 .feat-facts .fact .v{ text-shadow:0 0 12px currentColor; }
 .readout-item .v{ text-shadow:0 0 18px currentColor; }
-.elev-tags .v{ text-shadow:0 0 14px currentColor; }
 
 .activity-chip.active{ box-shadow:0 0 18px -3px currentColor; }
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
 .range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
 
-.photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }
-.route-map-box, .map-box{ border-radius:20px; }
 .hero-chart{ border-radius:20px; }
-.hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
-.elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
 
 .parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }

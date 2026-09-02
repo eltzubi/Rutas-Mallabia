@@ -73,35 +73,35 @@
 
   <div class="gallery-grid">
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-01.jpg">
-      <picture><source srcset="img/exigente-01.webp" type="image/webp"><img src="img/exigente-01.jpg" alt="Bolibarko plaza egunsentian, harrizko monumentu bat erdian eta eguzkia eraikinen artetik agertzen"></picture>
+      <picture><source srcset="img/exigente-01.webp" type="image/webp"><img src="img/exigente-01.jpg" alt="Bolibarko plaza egunsentian, harrizko monumentu bat erdian eta eguzkia eraikinen artetik agertzen" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-02.jpg">
-      <picture><source srcset="img/exigente-02.webp" type="image/webp"><img src="img/exigente-02.jpg" alt="Zenarruzako monasterioaren hondakinak, mende askoko zuhaitz batekin eta harrizko eskailera batekin"></picture>
+      <picture><source srcset="img/exigente-02.webp" type="image/webp"><img src="img/exigente-02.jpg" alt="Zenarruzako monasterioaren hondakinak, mende askoko zuhaitz batekin eta harrizko eskailera batekin" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-03.jpg">
-      <picture><source srcset="img/exigente-03.webp" type="image/webp"><img src="img/exigente-03.jpg" alt="Lurrezko pista zuhaitzen artean udazkenean, erorritako hostoz estalia"></picture>
+      <picture><source srcset="img/exigente-03.webp" type="image/webp"><img src="img/exigente-03.jpg" alt="Lurrezko pista zuhaitzen artean udazkenean, erorritako hostoz estalia" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-06.jpg">
-      <picture><source srcset="img/exigente-06.webp" type="image/webp"><img src="img/exigente-06.jpg" alt="Oizko parke eolikoaren aerosorgailuak ilunabarrean, harrietatik ikusita"></picture>
+      <picture><source srcset="img/exigente-06.webp" type="image/webp"><img src="img/exigente-06.jpg" alt="Oizko parke eolikoaren aerosorgailuak ilunabarrean, harrietatik ikusita" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-07.jpg">
-      <picture><source srcset="img/exigente-07.webp" type="image/webp"><img src="img/exigente-07.jpg" alt="Bizikleta Oizko gailurreko mugarrian bermatuta ilunabarrean, hodei-itsaso bat eta mendiak atzealdean"></picture>
+      <picture><source srcset="img/exigente-07.webp" type="image/webp"><img src="img/exigente-07.jpg" alt="Bizikleta Oizko gailurreko mugarrian bermatuta ilunabarrean, hodei-itsaso bat eta mendiak atzealdean" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-08.jpg">
-      <picture><source srcset="img/exigente-08.webp" type="image/webp"><img src="img/exigente-08.jpg" alt="Pinudi batean sartzen den asfaltozko bidea, sarreran bi panel informatibo dituela"></picture>
+      <picture><source srcset="img/exigente-08.webp" type="image/webp"><img src="img/exigente-08.jpg" alt="Pinudi batean sartzen den asfaltozko bidea, sarreran bi panel informatibo dituela" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-09.jpg">
-      <picture><source srcset="img/exigente-09.webp" type="image/webp"><img src="img/exigente-09.jpg" alt="Aerosorgailuak hodei-itsaso baten gainetik gailurretik ikusita, eguzkia hodeien artetik agertzen"></picture>
+      <picture><source srcset="img/exigente-09.webp" type="image/webp"><img src="img/exigente-09.jpg" alt="Aerosorgailuak hodei-itsaso baten gainetik gailurretik ikusita, eguzkia hodeien artetik agertzen" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
     <button type="button" class="gallery-item" data-lightbox-src="img/exigente-10.jpg">
-      <picture><source srcset="img/exigente-10.webp" type="image/webp"><img src="img/exigente-10.jpg" alt="Oizko gailurreko mugarria (1.026 m) harrizko gurutze baten ondoan, aerosorgailuak eta mendiak ilunabarrean"></picture>
+      <picture><source srcset="img/exigente-10.webp" type="image/webp"><img src="img/exigente-10.jpg" alt="Oizko gailurreko mugarria (1.026 m) harrizko gurutze baten ondoan, aerosorgailuak eta mendiak ilunabarrean" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom">⤢</span>
     </button>
   </div>
@@ -202,9 +202,10 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<script src="js/app.js"></script>
+<!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="js/map.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>
