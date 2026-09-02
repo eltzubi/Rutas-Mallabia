@@ -40,11 +40,19 @@ for _p in ROUTE_PAGES:
 # words with no Basque homograph, so a hit is always a real miss.
 SPANISH_TELLS = [
     "Distancia", "Desnivel", "Superficie", "Actividad", "Salida", "Circuito",
-    "Sendero", "Senderismo", "Bici", "Mixta", "Ampliar", "Cerrar", "Volver",
-    "Descargar", "ruta", "Ruta", "camino", "hacia", "desde", "sobre el terreno",
+    "Sendero", "sendero", "Senderismo", "Bici", "Mixta", "Ampliar", "Cerrar",
+    "Volver", "Descargar", "ruta", "Ruta", "rutas", "camino", "hacia", "desde",
+    "sobre el terreno",
     "Mapa", "Puerto", "aparcamiento", "aparcar", "cascada", "Fuente",
     "Monasterio", "Ermita", "Dolmen", "Refugio", "Borda abandonada",
     "Altitud", "perfil real", "tema oscuro", "tema claro",
+    # Dificultades y filtros: se colaron en las fichas de la portada.
+    "Difícil", "Fácil", "Media", "Todos", "Todas",
+    # Textos de fotos y de navegación.
+    "Foto", "Fotos", "Vista", "Vistas", "Señal", "Corredores", "Navegar",
+    "recorrido", "subiendo", "aerogeneradores", "montes", "valle", "entre",
+    "sobre", "paseo", "corto", "corta", "accesible", "cualquiera",
+    "carretera", "izquierda", "derecha",
 ]
 
 
@@ -82,9 +90,17 @@ def check_no_spanish(text, page):
     the hard way: "data-marker-title" survived untranslated once).
     """
     no_script = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S)
-    attr_values = " ".join(re.findall(r'="([^"]*)"', no_script))
+    # Solo los atributos que lee una persona (o un lector de pantalla): mirar
+    # tambien href/class/data-* de uso interno llenaba esto de falsos avisos
+    # ("data-quick-preset=corto" no es texto, es una clave para el JS).
+    attr_values = " ".join(re.findall(
+        r'\b(?:alt|title|aria-label|placeholder|summary|content|'
+        r'data-marker-title|data-all-[a-z]+|data-approx|data-count-[a-z]+)'
+        r'="([^"]*)"', no_script))
     body = re.sub(r"<[^>]+>", " ", no_script) + " " + attr_values
     body = re.sub(r"https?://\S+", " ", body)      # URLs are not prose
+    # Sin esto, "Dif&iacute;cil" se escapaba del control por escrito en entidades.
+    body = html.unescape(body)
     found = sorted({w for w in SPANISH_TELLS if re.search(r"\b" + re.escape(w) + r"\b", body)})
     if found:
         raise SystemExit(
@@ -142,6 +158,10 @@ def main():
         )
         head = head.replace(f'<meta property="og:title" content="{es_title}">',
                              f'<meta property="og:title" content="{eu_title}">')
+        # Alguna pagina (la portada) lleva un og:title propio, distinto del
+        # <title>: sin esto se quedaba en castellano al compartir el enlace.
+        head = re.sub(r'<meta property="og:title" content="[^"]*">',
+                      f'<meta property="og:title" content="{eu_title}">', head)
         head = head.replace(f'<meta property="og:description" content="{es_desc}">',
                              f'<meta property="og:description" content="{eu_desc}">')
         head = head.replace('<meta property="og:locale" content="es_ES">',
