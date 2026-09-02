@@ -420,16 +420,6 @@ body{
 .route-card-tags .v:first-child{ color:var(--teal); }
 .route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
 
-/* ---- ultimas rutas anadidas: lo primero tras el heroe ---- */
-.latest-routes{ max-width:820px; margin:40px auto 0; padding:0 24px; }
-@media (min-width:1024px){ .latest-routes{ max-width:1100px; } }
-/* Sin titulo a la vista, pero con un encabezado para lectores de pantalla:
-   asi la seccion sigue teniendo nombre y no se salta un nivel de titulo. */
-.sr-only{
-  position:absolute; width:1px; height:1px; margin:-1px; padding:0;
-  overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
-}
-
 /* ---- quick help: not sure which route ---- */
 .quick-help{ max-width:820px; margin:48px auto 0; padding:0 24px; }
 @media (min-width:1024px){ .quick-help{ max-width:1100px; } }
@@ -456,7 +446,6 @@ body{
 .quick-help-btn:hover{ background:var(--ground); }
 .quick-help-btn b{ font-family:'Fraunces',serif; font-size:15px; font-weight:700; }
 .quick-help-btn span{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); }
-.quick-help .latest-routes-label{ color:var(--ink-dim); margin-top:28px; }
 
 /* ---- info accordion: before you leave, parking, sleeping nearby ---- */
 .info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }
