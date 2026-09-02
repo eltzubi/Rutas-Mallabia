@@ -51,25 +51,11 @@
   var btn = document.getElementById('toTop');
   if (!btn) return;
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // On the home page the route list (.signpost) is long, and the button
-  // sitting on top of it hides route info while scrolling through -- so
-  // it stays hidden for that stretch and only reappears near the bottom
-  // of the page, past the list.
-  var list = document.querySelector('.route-card-grid');
-  var listTop = 0, listBottom = 0;
-  function measureList(){
-    if (!list) return;
-    listTop = list.offsetTop;
-    listBottom = listTop + list.offsetHeight;
-  }
-  measureList();
-  window.addEventListener('resize', measureList);
+  // Antes se escondia mientras se recorria el listado de rutas, para no
+  // taparlas; el resultado era que justo donde mas se baja no habia forma
+  // de volver arriba. Ahora aparece en cuanto se ha bajado algo y se queda.
   function onScroll(){
-    var y = window.scrollY;
-    var pastThreshold = y > window.innerHeight * 0.6;
-    var inList = list && (y + window.innerHeight * 0.5) > listTop && y < listBottom;
-    var nearBottom = (document.documentElement.scrollHeight - (y + window.innerHeight)) < window.innerHeight * 0.5;
-    if (pastThreshold && (!inList || nearBottom)) btn.classList.add('visible');
+    if (window.scrollY > window.innerHeight * 0.6) btn.classList.add('visible');
     else btn.classList.remove('visible');
   }
   window.addEventListener('scroll', onScroll, { passive:true });

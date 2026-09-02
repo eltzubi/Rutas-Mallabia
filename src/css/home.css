@@ -254,6 +254,12 @@ body{
 }
 .activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); }
 .activity-chip:active{ transform:scale(.97); }
+/* Pulso al intentar apagar el unico chip que queda encendido. */
+@keyframes chip-locked{ 0%,100%{ transform:scale(1); } 45%{ transform:scale(1.06); } }
+.activity-chip.is-locked, .difficulty-chip.is-locked{ animation:chip-locked .35s ease; }
+@media (prefers-reduced-motion:reduce){
+  .activity-chip.is-locked, .difficulty-chip.is-locked{ animation:none; }
+}
 .more-filters-toggle{
 
   display:flex; align-items:center; gap:6px; width:max-content;

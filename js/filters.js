@@ -196,18 +196,30 @@
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
   }
 
+  // Apagar el ultimo chip encendido dejaba los botones apagados y la lista
+  // entera igual ("sin filtro"), que no dice nada: mejor no dejar apagarlo.
+  function toggleChip(chip, group){
+    var activos = 0;
+    group.forEach(function(c){ if (c.classList.contains('active')) activos++; });
+    if (chip.classList.contains('active') && activos === 1) {
+      // Un clic que no hace nada parece que la pagina se ha colgado: un
+      // pulso corto deja claro que ese es el unico que queda encendido.
+      chip.classList.remove('is-locked');
+      void chip.offsetWidth;
+      chip.classList.add('is-locked');
+      setTimeout(function(){ chip.classList.remove('is-locked'); }, 400);
+      return;
+    }
+    chip.classList.toggle('active');
+    apply();
+  }
+
   activityChips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      chip.classList.toggle('active');
-      apply();
-    });
+    chip.addEventListener('click', function(){ toggleChip(chip, activityChips); });
   });
 
   difficultyChips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      chip.classList.toggle('active');
-      apply();
-    });
+    chip.addEventListener('click', function(){ toggleChip(chip, difficultyChips); });
   });
 
   quickBtns.forEach(function(btn){
