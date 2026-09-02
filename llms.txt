@@ -2,7 +2,7 @@
 
 > Rutas de senderismo y BTT por los barrios, montes y pueblos de Mallabia (Bizkaia) y el Duranguesado. Documentadas sobre el terreno por su autor, con tracks GPX reales, fotos propias y datos verificados — no generadas ni copiadas de un folleto. Sitio bilingüe (castellano / euskera).
 
-Casi todas las rutas salen (o pasan) por Trabakua, el puerto/collado que hace de punto de encuentro de la red de senderos, a 5,7 km del pueblo de Mallabia. Cada ficha de ruta incluye: distancia y desnivel reales medidos sobre el track (no estimados), perfil de elevación, waypoints numerados con nombre y ubicación, fotos propias del recorrido, un track GPX descargable y un mapa interactivo. La portada permite filtrar las 27 rutas por actividad (a pie / en bici), distancia y dificultad.
+Casi todas las rutas salen (o pasan) por Trabakua, el puerto/collado que hace de punto de encuentro de la red de senderos, a 5,7 km del pueblo de Mallabia. Cada ficha de ruta incluye: distancia y desnivel reales medidos sobre el track (no estimados), perfil de elevación, waypoints numerados con nombre y ubicación, fotos propias del recorrido, un track GPX descargable y un mapa interactivo. La portada permite filtrar las 28 rutas por actividad (a pie / en bici), distancia y dificultad.
 
 Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre.eu.html`), generada automáticamente a partir de la versión en castellano — el contenido es equivalente en ambos idiomas.
 
@@ -40,7 +40,7 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 ## Otras páginas
 
 - [Portada · buscador de rutas](https://trabakutik.com/index.html): filtro por actividad, distancia y dificultad; mapa conjunto de todas las salidas.
-- [Rutas como historias](https://trabakutik.com/historias.html): las mismas 27 rutas en formato de scroll vertical de pantalla completa, una por ruta, con su trazado dibujado y mapa bajo demanda.
+- [Rutas como historias](https://trabakutik.com/historias.html): las mismas 28 rutas en formato de scroll vertical de pantalla completa, una por ruta, con su trazado dibujado y mapa bajo demanda.
 - [Todos los tracks GPX (ZIP)](https://trabakutik.com/src/todas-las-rutas.zip): descarga de un track GPX real por ruta.
 
 ## Optional

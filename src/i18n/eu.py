@@ -2955,7 +2955,7 @@ DESCRIPTIONS = {
     'exigente': 'Zirkuitu eskatzailea BTT/e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
         'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
-    'historias': 'Mallabiako 25 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'historias': 'Mallabiako 28 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
