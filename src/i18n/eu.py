@@ -1736,6 +1736,8 @@ MUNDIOKOKOBA = {
 }
 
 IRUZUBIETA = {
+    'alt="Cruce de pistas de hormig&oacute;n con una se&ntilde;al de prohibido el paso, con las repoblaciones de pino al fondo"':
+        'alt="Hormigoizko pisten bidegurutzea, sarrera debekatuaren seinale batekin, pinu-birlandaketak atzealdean"',
     '<span>Mixta</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta y Gerea</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Iturreta, Iruzubieta, Arta eta Gerea</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
@@ -1845,6 +1847,8 @@ MENDIBIL = {
         'alt="Eukaliptaditik magal soilera irteera, iratzeak eta hesi bat bidearen ertzean"',
     'alt="Bifurcaci&oacute;n de la pista junto a un roble grande con las ra&iacute;ces al aire, rodeada de bosque"':
         'alt="Pistaren bidegurutzea haritz handi baten ondoan, sustraiak agerian, basoz inguratuta"',
+    'alt="Senda estrecha subiendo entre helechos y zarzas, con el pinar al fondo"':
+        'alt="Bidezidor estua gora, iratzeen eta sasien artean, pinudia atzealdean"',
     'alt="Moj&oacute;n en la cima del Mendibil, con el parque e&oacute;lico y el pueblo al fondo"':
         'alt="Mendibilgo gailurreko mugarria, parke eolikoa eta herria atzealdean"',
     'alt="Otra vista del moj&oacute;n de la cima, con los aerogeneradores del parque e&oacute;lico al fondo"':
@@ -1857,10 +1861,6 @@ MENDIBIL = {
     'las monta&ntilde;as del entorno al fondo"':
         'alt="Heldu bat eta haur bat ardo-zahato batekin posatzen Mendibilgo gailurrean, '
         'inguruko mendiak atzealdean"',
-    'alt="Niebla entre los montes del entorno, con el parque e&oacute;lico del Oiz '
-    'asomando entre las nubes"':
-        'alt="Lainoa inguruko mendien artean, Oizeko parke eolikoa hodeien artetik '
-        'ageri dela"',
     '<span>Sendero</span><span class="sep">/</span><span>Mendibil</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Mendibil</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
