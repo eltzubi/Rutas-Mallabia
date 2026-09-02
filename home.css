@@ -401,7 +401,10 @@
 .route-card-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--ground); }
 .route-card-photo img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  filter:contrast(1.1) saturate(1.25);
+  /* El contraste y la saturacion van grabados en el propio fichero
+     (scripts/make_card_thumbs.py), junto con el igualado de tono entre las 28:
+     un filtro de CSS es el mismo para todas y aqui hace falta ajustar foto a
+     foto. Si se vuelve a poner aqui, se aplicaria dos veces. */
   transition:transform .5s cubic-bezier(.2,.7,.2,1);
 }
 .route-card:hover .route-card-photo img{ transform:scale(1.06); }
