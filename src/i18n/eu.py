@@ -154,6 +154,7 @@ COMMON = {
     '<span class="v">F&aacute;cil</span>': '<span class="v">Erraza</span>',
     '<span class="v">Media</span>': '<span class="v">Ertaina</span>',
     '<span class="v">Difícil</span>': '<span class="v">Zaila</span>',
+    '<span class="v">Dif&iacute;cil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Senderismo &middot; Trail running</span>':
         '<span class="v">Oinez &middot; Trail running</span>',
     '<span class="v">BTT/e-bike</span>': '<span class="v">BTT/e-bike</span>',
@@ -240,6 +241,20 @@ HOME = {
     ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
         ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
+    '<b id="distanceVal">Todos</b>': '<b id="distanceVal">Guztiak</b>',
+    '<b id="desnivelVal">Todos</b>': '<b id="desnivelVal">Guztiak</b>',
+    'alt="Foto ampliada"': 'alt="Argazki handitua"',
+    # alt de las fotos de las fichas (mismo texto que en su propia pagina)
+    'alt="Se&ntilde;al de madera en una loma, con aerogeneradores y el mar al fondo"':
+        'alt="Zurezko seinalea gandor batean, haize-errotak eta itsasoa atzealdean"',
+    'alt="Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el '
+    'valle con caseríos en primer plano, entre pinos jóvenes"':
+        'alt="Inguruko mendien ikuspegia, Oizeko eolikoak atzealdean eta harana '
+        'baserriekin aurrealdean, pinu gazteen artean"',
+    'alt="Vistas al atardecer sobre los valles y montes del entorno, con un mont&oacute;n de '
+    'piedras en primer plano"':
+        'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
+        'batekin"',
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
     '<h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>':
@@ -1366,7 +1381,7 @@ EGOARBITZA = {
     'alt="Embalse de Aixola, con la caseta sobre el agua y el bosque alrededor"':
         'alt="Aixolako urtegia, etxola urearen gainean eta basoa inguruan"',
     'alt="Corredores subiendo un sendero entre helechos y un &aacute;rbol cubierto de musgo"':
-        'alt="Lasterkariak goraka, sendero batetik iratzeen artean eta goroldioz estalitako zuhaitz baten ondotik"',
+        'alt="Lasterkariak goraka, bidezidor batetik iratzeen artean eta goroldioz estalitako zuhaitz baten ondotik"',
     'alt="Corredores subiendo una cresta herbosa y rocosa bajo un cielo despejado"':
         'alt="Lasterkariak gandor belartsu eta harritsu batean gora, zeru garbi baten azpian"',
 
@@ -1826,6 +1841,10 @@ MENDIBIL = {
     'download="Trabakua Mendibil.kml"': 'download="Trabakua Mendibil.kml"',
     'alt="Foto ampliada del recorrido de Trabakua Mendibil"':
         'alt="Trabakua Mendibilgo ibilbidearen argazki handitua"',
+    'alt="Salida del eucaliptal a una loma pelada, con helechos y una alambrada al borde del camino"':
+        'alt="Eukaliptaditik magal soilera irteera, iratzeak eta hesi bat bidearen ertzean"',
+    'alt="Bifurcaci&oacute;n de la pista junto a un roble grande con las ra&iacute;ces al aire, rodeada de bosque"':
+        'alt="Pistaren bidegurutzea haritz handi baten ondoan, sustraiak agerian, basoz inguratuta"',
     'alt="Moj&oacute;n en la cima del Mendibil, con el parque e&oacute;lico y el pueblo al fondo"':
         'alt="Mendibilgo gailurreko mugarria, parke eolikoa eta herria atzealdean"',
     'alt="Otra vista del moj&oacute;n de la cima, con los aerogeneradores del parque e&oacute;lico al fondo"':
@@ -1979,6 +1998,8 @@ ARTETA = {
 }
 
 GOITA = {
+    '<h2>Un paseo corto y accesible para (casi) cualquiera</h2>':
+        '<h2>Paseo labur eta erraza (ia) edonorentzat</h2>',
     '<title>Polígono de Anbre · 2,39 km · 229 m</title>':
         '<title>Anbre industrialdea · 2,39 km · 229 m</title>',
     '<span class="num">1</span>Polígono de Anbre':
@@ -1995,7 +2016,7 @@ GOITA = {
         'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
         'batekin"',
     'alt="Foto ampliada del recorrido de Trabakua, paseo por el barrio Goita"':
-        'alt="Trabakua, Goita auzoko paseo ibilbidearen argazki handitua"',
+        'alt="Trabakua, Goita auzoko paseoaren argazki handitua"',
     'alt="Pista de cemento entre &aacute;rboles, en un tramo con sombra"':
         'alt="Porlanezko pista zuhaitzen artean, itzalpeko tarte batean"',
     'alt="Ermita de piedra con espada&ntilde;a y tejado de teja, junto a la carretera"':
@@ -2726,6 +2747,7 @@ EXIGENTE = {
 
 HISTORIAS = {
     # dock + progress + hint + buttons (shared across every card)
+    'aria-label="Navegar por las rutas"': 'aria-label="Ibilbideetan nabigatu"',
     'Anterior': 'Aurrekoa',
     'Sorpréndeme': 'Harritu nazazu',
     'Siguiente': 'Hurrengoa',
