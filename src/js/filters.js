@@ -1,9 +1,10 @@
-// Home page finder: pick an activity, then filter/browse routes as a
-// compact list or a map. Language-independent -- the labels it writes
-// come from the page itself (data-* attributes carry the per-language text).
+// Home page route list: every route is on the page from the start; the
+// activity/difficulty chips and the range sliders just narrow it down, and
+// the same selection drives the map view. Language-independent -- the labels
+// it writes come from the page itself (data-* attributes carry the
+// per-language text).
 (function(){
-  var activityBtns = document.querySelectorAll('.activity-big-btn');
-  var finderFilters = document.getElementById('finderFilters');
+  var activityChips = document.querySelectorAll('.activity-chip');
   var difficultyChips = document.querySelectorAll('.difficulty-chip');
   var distanceChips = document.querySelectorAll('.distance-chip');
   var moreFiltersToggle = document.getElementById('moreFiltersToggle');
@@ -13,7 +14,6 @@
   var mapWrap = document.getElementById('routeMapWrap');
   var cards = document.querySelectorAll('.route-card[data-activity]');
   var emptyMsg = document.getElementById('filterEmpty');
-  var showAllBtn = document.getElementById('showAllBtn');
   var resultCount = document.getElementById('resultCount');
   var quickBtns = document.querySelectorAll('.quick-help-btn');
   var distanceMin = document.getElementById('distanceRangeMin');
@@ -24,11 +24,8 @@
   var desnivelVal = document.getElementById('desnivelVal');
   var distanceFill = document.getElementById('distanceFill');
   var desnivelFill = document.getElementById('desnivelFill');
-  if (!activityBtns.length || !cards.length) return;
+  if (!activityChips.length || !cards.length) return;
 
-  var INITIAL_COUNT = 6;
-  var expanded = false;
-  var activeActivity = null; // null = none chosen yet
   var view = 'list';
 
   var filters = document.querySelector('.range-filters') || document.body;
@@ -115,7 +112,6 @@
         distanceMin.value = range[0];
         distanceMax.value = Math.min(range[1], maxDistance);
       }
-      expanded = false;
       apply();
     });
   });
@@ -150,36 +146,35 @@
     fillPair(distanceMin, distanceMax, distanceFill, maxDistance);
     fillPair(desnivelMin, desnivelMax, desnivelFill, maxDesnivel);
 
+    var activeActivities = Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); })
+      .map(function(c){ return c.dataset.activity; });
+
     var visibleHrefs = [];
     var shown = 0;
     cards.forEach(function(card){
       var km = parseFloat(card.dataset.distanceKm) || 0;
       var m = parseFloat(card.dataset.desnivelM) || 0;
       var activities = card.dataset.activity.split(',');
-      var matchesActivity = !activeActivity || activities.indexOf(activeActivity) !== -1;
+      var matchesActivity = !activeActivities.length || activities.some(function(a){
+        return activeActivities.indexOf(a) !== -1;
+      });
       var matchesDifficulty = !activeDifficulty.length || activeDifficulty.indexOf(card.dataset.difficulty) !== -1;
       var matches = matchesActivity && matchesDifficulty && km >= minD && km <= maxD && m >= minE && m <= maxE;
-      var show = matches && (expanded || shown < INITIAL_COUNT);
       if (matches) {
         shown++;
         visibleHrefs.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
       }
-      card.classList.toggle('is-hidden', !show);
+      card.classList.toggle('is-hidden', !matches);
     });
-    if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0 && !!activeActivity);
-    if (showAllBtn) showAllBtn.hidden = expanded || shown <= INITIAL_COUNT;
+    if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
     if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
   }
 
-  activityBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var already = btn.classList.contains('active');
-      activeActivity = already ? null : btn.dataset.activity;
-      activityBtns.forEach(function(b){ b.classList.toggle('active', b === btn && !already); });
-      if (finderFilters) finderFilters.hidden = !activeActivity;
-      expanded = false;
-      if (activeActivity) apply();
+  activityChips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chip.classList.toggle('active');
+      apply();
     });
   });
 
@@ -190,20 +185,8 @@
     });
   });
 
-  if (showAllBtn) {
-    showAllBtn.addEventListener('click', function(){
-      expanded = true;
-      apply();
-    });
-  }
-
   quickBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
-      if (!activeActivity) {
-        activeActivity = null; // both activities allowed
-        activityBtns.forEach(function(b){ b.classList.remove('active'); });
-      }
-      if (finderFilters) finderFilters.hidden = false;
       var preset = btn.dataset.quickPreset;
       var range = DISTANCE_PRESETS[preset];
       var chip = null;
@@ -213,9 +196,8 @@
         distanceMin.value = range[0];
         distanceMax.value = Math.min(range[1], maxDistance);
       }
-      expanded = false;
       apply();
-      if (finderFilters) finderFilters.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (resultsList) resultsList.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 

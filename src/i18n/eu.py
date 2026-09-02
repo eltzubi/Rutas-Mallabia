@@ -30,6 +30,65 @@ COMMON = {
     '<span class="k">Salida</span>': '<span class="k">Irteera</span>',
     '<span class="k">Dificultad</span>': '<span class="k">Zailtasuna</span>',
 
+    # route list header + per-card descriptions (método antiguo)
+    '<h2 class="eyebrow">Rutas documentadas</h2>':
+        '<h2 class="eyebrow">Dokumentatutako ibilbideak</h2>',
+    'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
+    '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
+        '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
+    '<p class="route-card-desc">Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua</p>':
+        '<p class="route-card-desc">Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik</p>',
+    '<p class="route-card-desc">Monasterio de Zenarruza, Ermita San Kristobal y Zengotitagane desde Trabakua</p>':
+        '<p class="route-card-desc">Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua por Osma y la Necr&oacute;polis de Argi&ntilde;eta</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik</p>',
+    '<p class="route-card-desc">Circuito a la cascada de Gerea desde Trabakua</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik Gereako ur-jauzira</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua, con las ermitas de San Crist&oacute;bal Txiki y San Juan</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin</p>',
+    '<p class="route-card-desc">Ida y vuelta desde Trabakua hasta el Oiz</p>':
+        '<p class="route-card-desc">Joan-etorria Trabakuatik Oizeraino</p>',
+    '<p class="route-card-desc">Circuito desde la Ermita de San Juan</p>':
+        '<p class="route-card-desc">Zirkuitua San Juan ermitatik</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua, por Zengotitagane y Askako, con las ermitas de San Crist&oacute;bal Txiki y San Juan</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal Txiki eta San Juan ermitekin</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua hasta la cima del Mendibil</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik Mendibilgo gailurreraino</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua por Mendibil, Olamendi y Arteta</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota</p>',
+    '<p class="route-card-desc">Paseo circular por el barrio Goita desde Trabakua</p>':
+        '<p class="route-card-desc">Ibilbide zirkularra Goita auzotik, Trabakuatik</p>',
+    '<p class="route-card-desc">Urko, Oiz y Egoarbitza desde Ermua</p>':
+        '<p class="route-card-desc">Urko, Oiz eta Egoarbitza Ermuatik</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Aixola, Elgeta y Zaldibar hasta Berriz</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigana y Maguna</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako Trikuharritik igarota Magunaraino</p>',
+    '<p class="route-card-desc">El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz</p>':
+        '<p class="route-card-desc">7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota</p>',
+    '<p class="route-card-desc">El trazado real de la 7 Pago Mendi Lasterketa 16K, la versi&oacute;n corta de la carrera</p>':
+        '<p class="route-card-desc">7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, lasterketaren bertsio laburra</p>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil</p>':
+        '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua por Gerea, Longa y Muniozguren</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota</p>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane</p>':
+        '<p class="route-card-desc">Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota</p>',
+
     # route-card names (redesign)
     '<h3 class="route-card-name">Iturzuri, Zengotitagane subida por la cascada de Gerea</h3>':
         '<h3 class="route-card-name">Iturzuri, Zengotitagane Gereako ur-jauzitik gora</h3>',
@@ -175,19 +234,14 @@ HOME = {
         '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
     # finder (redesign)
-    '<h2 class="eyebrow">&iquest;Qu&eacute; quieres hacer?</h2>':
-        '<h2 class="eyebrow">&iquest;Zer egin nahi duzu?</h2>',
-    'aria-label="Elegir actividad"': 'aria-label="Aukeratu jarduera"',
     '<span>A pie</span>': '<span>Oinez</span>',
     '<span>En bici</span>': '<span>Bizikletaz</span>',
-    'aria-label="Filtrar por distancia"': 'aria-label="Iragazi distantziaren arabera"',
     '>M&aacute;s filtros</button>': '>Iragazki gehiago</button>',
     ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
         ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
-    'hidden>Ver todas las rutas</button>': 'hidden>Ikusi ibilbide guztiak</button>',
     '<h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>':
         '<h2 class="eyebrow">&iquest;Ez dakizu zein aukeratu?</h2>',
     '<b>Algo corto</b>': '<b>Zerbait laburra</b>',
