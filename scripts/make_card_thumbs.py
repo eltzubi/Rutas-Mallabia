@@ -11,9 +11,13 @@ una pantalla grande: servirle la de 1600 px son medio mega por tarjeta, y hay
 
 Este script escribe, junto a cada foto de tarjeta, un img/<nombre>-card.jpg y un
 img/<nombre>-card.webp de CARD_WIDTH px de ancho, que es lo que consume el
-srcset de src/mallabia_tail.html. Nunca amplia una foto que ya sea menor, y no
-toca ningun otro fichero de img/ (a diferencia de optimize_images.py, que
+<picture> de src/mallabia_tail.html. Nunca amplia una foto que ya sea menor, y
+no toca ningun otro fichero de img/ (a diferencia de optimize_images.py, que
 reescribe el directorio entero).
+
+CARD_WIDTH sale de medir el hueco: 340 px en un movil de 390, pero 517 px en
+una ventana de 1440. A 1100 px la foto cubre el doble de ese hueco, que es lo
+que necesita una pantalla Retina grande; con 800 se quedaba corta justo ahi.
 
 Hay que volver a pasarlo cuando entre una ruta nueva a la portada.
 """
@@ -28,7 +32,7 @@ ROOT = os.path.dirname(HERE)
 IMG_DIR = os.path.join(ROOT, "img")
 HOME_TAIL = os.path.join(ROOT, "src", "mallabia_tail.html")
 
-CARD_WIDTH = 800          # 2x del hueco real de la tarjeta (~350-380 px)
+CARD_WIDTH = 1100         # 2x del hueco mas grande de la tarjeta (517 px a 1440)
 CARD_RATIO = 16 / 10      # el mismo aspect-ratio que .route-card-photo
 JPEG_QUALITY = 78
 WEBP_QUALITY = 72
@@ -36,15 +40,21 @@ SUFFIX = "-card"
 
 
 def card_photos():
-    """Los .jpg que usan las tarjetas de la portada, en orden de aparicion."""
+    """Las fotos de origen de las tarjetas, en orden de aparicion.
+
+    El marcado ya apunta a la version pequena (img/<nombre>-card.jpg), asi que
+    hay que quitarle el sufijo para volver a la foto grande: si no, la segunda
+    vez que se pasa el script no encuentra nada que hacer.
+    """
     html = open(HOME_TAIL, encoding="utf-8").read()
     names = []
     for block in re.findall(r'<div class="route-card-photo">.*?</div>', html, re.S):
         for m in re.finditer(r'img/([A-Za-z0-9._-]+)\.jpg', block):
-            if m.group(1).endswith(SUFFIX):
-                continue
-            if m.group(1) not in names:
-                names.append(m.group(1))
+            name = m.group(1)
+            if name.endswith(SUFFIX):
+                name = name[:-len(SUFFIX)]
+            if name not in names:
+                names.append(name)
     return names
 
 
