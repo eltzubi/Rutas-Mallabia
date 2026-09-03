@@ -534,6 +534,8 @@ TRABAKUA = {
         'alt="Bizikletaren manillarra Trabakuako pistan martxan"',
     'alt="Vistas al Duranguesado desde Berano, con caseríos y prados en el valle"':
         'alt="Durangaldeko bistak Beranotik, baserriak eta larreak haranean"',
+    'alt="Reba&ntilde;o de ovejas en un prado en pendiente, con el valle y sus caser&iacute;os abajo y las monta&ntilde;as del Duranguesado al fondo entre nubes"':
+        'alt="Ardi-taldea aldapako belardi batean, harana eta bere baserriak behean eta Durangaldeko mendiak hondoan hodeien artean"',
     # The first Spanish paragraph becomes two in Basque -- the natural break
     # falls after the descent, so the </p><p> is part of the replacement.
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
