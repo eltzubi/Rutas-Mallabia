@@ -486,6 +486,12 @@
 .leaflet-popup-tip{ background:var(--ground-raised) !important; border:1px solid var(--line); }
 .leaflet-popup-content{ margin:12px 14px; font-family:'Karla',sans-serif; min-width:180px; }
 .leaflet-popup-close-button{ color:var(--ink-dim) !important; }
+/* La foto va a sangre en la cabecera del panel: los margenes negativos son
+   los rellenos del propio panel (16 arriba, 18 a la izquierda, 40 a la
+   derecha por el boton de cerrar). */
+.route-popup-photo{ margin:-16px -40px 10px -18px; height:88px; overflow:hidden; }
+.route-popup-photo img{ width:100%; height:100%; object-fit:cover; display:block;
+  filter:contrast(1.06) saturate(1.12); }
 .route-popup-chart{ display:block; width:100%; height:52px; margin-bottom:8px; }
 .route-popup h3{ font-family:'Fraunces',serif; font-size:16px; margin:0 0 8px; color:var(--ink) !important; }
 .route-popup .route-popup-facts{
@@ -502,7 +508,7 @@
 .route-popup a:hover{ text-decoration:underline; }
 .route-info-panel{
   position:absolute; left:0; right:0; bottom:0; z-index:500;
-  max-height:65%; overflow-y:auto;
+  max-height:85%; overflow-y:auto;
   background:var(--ground-raised); border-top:1px solid var(--line);
   box-shadow:0 -8px 24px rgba(0,0,0,.35);
   padding:16px 40px 16px 18px;
@@ -519,6 +525,15 @@
 }
 .route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
 .route-info-panel .route-popup h3{ padding-right:24px; }
+/* En el movil la caja del mapa es cuadrada y pequena (~294 px de alto): con la
+   foto dentro, el nombre largo de una ruta hacia que el boton "Ver ruta" se
+   saliera del panel. Foto mas baja, titulo mas apretado y menos relleno. */
+@media (max-width:520px){
+  .route-info-panel{ padding:11px 40px 11px 16px; }
+  .route-popup-photo{ margin:-11px -40px 8px -16px; height:64px; }
+  .route-popup h3{ font-size:13.5px; line-height:1.25; margin:0 0 6px; }
+  .route-popup .route-popup-facts{ gap:10px; margin-bottom:7px; }
+}
 
 /* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
    menos que diga por que, y que los botones que ya no mandan sobre nada
