@@ -1506,6 +1506,8 @@ URREGARAI = {
         'alt="Ur-jauzia zuhaitzen artean, Iturreta inguruko basoan"',
     'alt="Vista de Bolibar, con la iglesia de piedra y los caser&iacute;os del pueblo"':
         'alt="Bolibarren ikuspegia, harrizko eliza eta herriko baserriak"',
+    'alt="Camino de tierra que baja entre prados hacia un caser&iacute;o de piedra, con vacas pastando en la ladera y una cresta caliza cerrando el fondo"':
+        'alt="Lurrezko bidea zelaien artetik harrizko baserri baterantz jaisten, behiak magalean bazkan eta kareharrizko gandor bat hondoan"',
 
     'Salimos de Trabakua y, despu&eacute;s de bajar 1 km direcci&oacute;n Ermua por carretera general, '
     'dejamos esa carretera para girar a la izquierda: cogemos el mismo camino que sube hacia '
