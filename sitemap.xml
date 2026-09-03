@@ -292,6 +292,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/potrera.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/aixola.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aixola.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aixola.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/aixola.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aixola.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aixola.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/historias.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
