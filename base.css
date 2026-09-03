@@ -40,7 +40,19 @@ body{
   content:''; position:absolute; inset:-15px -10px;
 }
 .map-section > .eyebrow{ margin-bottom:14px; }
-.route-map-box.is-expanded{ aspect-ratio:auto; height:80vh; height:80dvh; }
+/* Ampliado: alto de pantalla y de borde a borde. Antes solo crecia de alto y
+   se quedaba con el ancho de su columna, asi que en un movil salia un mapa
+   alto y estrecho. El margen negativo saca la caja de los rellenos de sus
+   padres hasta los bordes de la ventana; con width:auto no hace falta 100vw,
+   que en escritorio se cuela por debajo de la barra de desplazamiento. */
+.route-map-box.is-expanded{
+  aspect-ratio:auto;
+  height:80vh; height:80dvh;
+  width:auto;
+  max-width:none;
+  margin-inline:calc(50% - 50vw);
+  border-left:0; border-right:0; border-radius:0;
+}
 .route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
 .map-expand-btn{
   position:absolute; z-index:400; top:10px; right:10px;
