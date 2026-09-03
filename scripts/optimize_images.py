@@ -16,7 +16,7 @@ at the same resolution.
 import os
 import sys
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -32,7 +32,12 @@ def process(path):
     before = os.path.getsize(path)
 
     im = Image.open(path)
-    im = im.convert("RGB")  # drops any stray alpha/EXIF orientation surprises
+    # exif_transpose PRIMERO: convert("RGB") tira la etiqueta de orientacion pero
+    # no gira los pixeles, asi que una foto hecha en vertical con el movil (EXIF
+    # orientation 6) acababa tumbada en la web. Aqui se aplica de verdad y luego
+    # ya se puede tirar la etiqueta.
+    im = ImageOps.exif_transpose(im)
+    im = im.convert("RGB")  # drops any stray alpha
     w, h = im.size
     scale = MAX_SIDE / max(w, h)
     resized = scale < 1

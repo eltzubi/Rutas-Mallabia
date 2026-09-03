@@ -235,6 +235,8 @@ ROUTE = {
 }
 
 HOME = {
+    'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
+        'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
     '<span class="brand-name">Rutas en torno al <em>pueblo</em></span>':
         '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
@@ -2978,6 +2980,20 @@ DESCRIPTIONS = {
 
 # <title> per page (head files)
 AIXOLA = {
+    'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
+        'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
+    'alt="Ciclista subiendo por la carretera a la entrada del pueblo, con la torre de piedra de la iglesia a la izquierda"':
+        'alt="Txirrindularia errepidetik gora, herriaren sarreran, elizaren harrizko dorrea ezkerrean"',
+    'alt="Pista de grava que sale de la carretera junto a un panel informativo, con pilas de troncos cortados y la ladera del monte detr&aacute;s"':
+        'alt="Errepidetik ateratzen den legarrezko pista, panel informatibo baten ondoan, egur-pilekin eta mendi-hegala atzean"',
+    'alt="Edificio de piedra junto a la carretera, en una curva, entre arbolado"':
+        'alt="Harrizko eraikina errepide ondoan, bihurgune batean, zuhaitzen artean"',
+    'alt="Ladera de monte con caser&iacute;os y prados entre pinares, bajo un cielo despejado"':
+        'alt="Mendi-hegala baserri eta zelaiekin, pinudien artean, zeru garbiaren azpian"',
+    'alt="El pueblo visto desde la carretera, con la iglesia de piedra en lo alto y el front&oacute;n cubierto delante"':
+        'alt="Herria errepidetik ikusita, harrizko eliza goian eta frontoi estalia aurrean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Goierri, Aixola y Eitzaga"':
+        'alt="Trabakua, Goierri, Aixola eta Eitzaga ibilbidearen argazkia handituta"',
     '<span>Mixta</span><span class="sep">/</span><span>Aixola y Eitzaga</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Aixola eta Eitzaga</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Goierri<br><em>Aixola y Eitzaga</em></h1>':
@@ -2992,8 +3008,8 @@ AIXOLA = {
     # --- relato ---
     'Salimos de <b>Trabakua</b> en direcci&oacute;n a <b>Zengotita</b> y, tras aproximadamente 2 kil&oacute;metros, llegamos a la zona de la ermita. Junto a ella cogemos la pista por la que discurre la GR, que seguiremos en direcci&oacute;n a <b>Goierri</b>. En este primer tramo pasamos junto a la ermita de Goierri y una fuente de agua, un buen punto para llenar los bidones antes de continuar.':
         '<b>Trabakua</b>tik abiatuko gara <b>Zengotita</b> aldera eta, 2 kilometro inguru egin ondoren, ermita ingurura iritsiko gara. Bertan GRaren bidetik jarraituko dugu, <b>Goierri</b> aldera. Lehen zati honetan Goierriko ermitaren ondotik pasatuko gara, eta bertan ur-iturria ere badago, bidoiak betetzeko toki aproposa.',
-    'Un poco m&aacute;s adelante llegamos a una central el&eacute;ctrica. Aqu&iacute; dejamos el camino que llev&aacute;bamos y cogemos la pista de la derecha. Comienza entonces un tramo largo y tranquilo, de unos 8 kil&oacute;metros, por el que avanzaremos sin grandes complicaciones hasta salir a la carretera general, en una larga recta.':
-        'Aurrerago zentral elektriko batera iritsiko gara. Bertan, bide hori utzi eta eskuineko pista hartuko dugu. Hemendik aurrera 8 kilometro inguruko zati luze eta lasaia izango dugu aurretik. Pista horretatik jarraituko dugu, aparteko zailtasunik gabe, errepide nagusira iritsi arte.',
+    'Un poco m&aacute;s adelante llegamos a una central el&eacute;ctrica. Aqu&iacute; dejamos el camino que llev&aacute;bamos y cogemos la pista del medio, la que arranca en ascenso. Comienza entonces un tramo largo y tranquilo, de unos 8 kil&oacute;metros, por el que avanzaremos sin grandes complicaciones hasta salir a la carretera general, en una larga recta.':
+        'Aurrerago zentral elektriko batera iritsiko gara. Bertan, bide hori utzi eta erdiko pista hartuko dugu, igoeran hasten dena. Hemendik aurrera 8 kilometro inguruko zati luze eta lasaia izango dugu aurretik. Pista horretatik jarraituko dugu, aparteko zailtasunik gabe, errepide nagusira iritsi arte.',
     'Al llegar a la carretera giramos a la izquierda y continuamos en direcci&oacute;n a <b>Elgeta</b> durante aproximadamente un par de kil&oacute;metros. Al llegar al front&oacute;n del pueblo, cogemos por detr&aacute;s un camino de cemento en descenso que nos llevar&aacute; directamente hacia la <b>presa de Aixola</b>.':
         'Errepidera iristean ezkerrera egingo dugu eta <b>Elgeta</b> aldera jarraituko dugu pare bat kilometroz. Herriko frontoira iristean, haren atzetik ateratzen den porlanezko bidea hartuko dugu beherantz. Bide horrek <b>Aixola</b>ko urtegira eramango gaitu.',
     'Poco antes de llegar al embalse encontramos otra fuente a nuestra derecha, con el agua saliendo directamente de la pared de la monta&ntilde;a. Seguimos bajando hasta alcanzar la presa y cruzamos por encima del muro hasta el otro lado.':
