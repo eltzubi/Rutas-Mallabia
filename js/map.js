@@ -254,11 +254,24 @@
         if (desnivelM) facts += '<span>' + descLabel + ': <b>+' +
           desnivelM.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' m</b></span>';
         if (activityLabel) facts += '<span>' + actLabel + ': <b>' + activityLabel + '</b></span>';
-        var chart = t.chart ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
+        // La orientacion va en la misma fila que el resto de datos, no en una
+        // linea aparte: en un movil la ficha mide 250 px y cada linea suelta
+        // empujaba el boton fuera de la vista.
+        facts += '<span>' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></span>';
+        // La foto sale de la propia tarjeta de la portada, clonada tal cual:
+        // asi no hay que deducir el nombre del fichero del href (que en la
+        // pagina en euskera acaba en .eu.html), el alt viene ya en el idioma
+        // correcto, y el navegador no descarga nada nuevo porque esa miniatura
+        // ya esta en la pagina.
+        var pic = sign && sign.querySelector('.route-card-photo picture');
+        var photo = pic ? '<div class="route-popup-photo">' + pic.outerHTML + '</div>' : '';
+        // El perfil solo cuando no hay foto. Los dos juntos no caben: la ficha
+        // mide como mucho el 78% del mapa, y en un movil eso son 229 px, que
+        // con foto y perfil dejaban el nombre y el boton fuera de vista.
+        var chart = (!photo && t.chart) ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
           'preserveAspectRatio="none"><path d="' + t.chart + '" fill="var(--teal-soft)"/></svg>' : '';
-        var html = '<div class="route-popup">' + chart + '<h3>' + name + '</h3>' +
+        var html = '<div class="route-popup">' + photo + chart + '<h3>' + name + '</h3>' +
           '<div class="route-popup-facts">' + facts + '</div>' +
-          '<div class="route-popup-dir">' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, baseColor, html); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
