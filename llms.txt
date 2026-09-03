@@ -42,7 +42,6 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 ## Otras páginas
 
 - [Portada · buscador de rutas](https://trabakutik.com/index.html): filtro por actividad, distancia y dificultad; mapa conjunto de todas las salidas.
-- [Rutas como historias](https://trabakutik.com/historias.html): las mismas 30 rutas en formato de scroll vertical de pantalla completa, una por ruta, con su trazado dibujado y mapa bajo demanda.
 - [Todos los tracks GPX (ZIP)](https://trabakutik.com/src/todas-las-rutas.zip): descarga de un track GPX real por ruta.
 
 ## Optional

@@ -100,7 +100,7 @@ def assemble_page(name, suffix=""):
 
 
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "historias"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta"]
 OUT_NAME = {"mallabia": "index"}  # others default to their own name
 
 # lang code -> (source-file suffix, output-file suffix)
@@ -119,7 +119,6 @@ ASSETS = {
     ("css", "base.css"): "base.css",
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
-    ("css", "historias.css"): "historias.css",
     ("js", "app.js"): "js/app.js",
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",
@@ -235,8 +234,8 @@ def map_legend(cards, lang):
 
 
 def add_data_cache_busting(page_html):
-    # Lo mismo para los tracks (data-map-src en las fichas, data-track en
-    # historias). Un GPX corregido conserva el nombre del fichero, asi que
+    # Lo mismo para los tracks (data-map-src en las fichas y en el mapa
+    # general). Un GPX corregido conserva el nombre del fichero, asi que
     # quien ya lo tuviera en cache podia seguir viendo el trazado viejo dentro
     # de una pagina ya actualizada, sin forma de enterarse.
     def repl(m):

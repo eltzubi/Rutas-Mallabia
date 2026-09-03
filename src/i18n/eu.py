@@ -2877,111 +2877,6 @@ POTRERA = {
         '20,43 km eta +660 m, <b>trail running entrenamendu</b>rako bereziki ondo datozenak: pista-kilometroak oinarria egiteko, igoera luze eta eramangarri bat erritmoa hartzeko, aldapa labur eta oso gogor bat benetan estutzeko, eta Potrerako jaitsiera lur teknikoan askatzeko. Bizikletaz ere ibilbide ederra da, baina pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zuloren bat daude, oinez jaistera behartzen dutenak.',
 }
 
-HISTORIAS = {
-    '<h2>Trabakua, Goierri, Aixola y Eitzaga</h2>':
-        '<h2>Trabakua, Goierri, Aixola eta Eitzaga</h2>',
-    '<h2>Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h2>':
-        '<h2>Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h2>',
-    'Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza.':
-        'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota.',
-    'data-tag="Senderismo &middot; Circuito &middot; Mixta"':
-        'data-tag="Oinez &middot; Zirkuitua &middot; Nahasia"',
-    'Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz.':
-        'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota.',
-    'Rutas de Mallabia, una a una': 'Mallabiako ibilbideak, banan-banan',
-    # dock + progress + hint + buttons (shared across every card)
-    'aria-label="Navegar por las rutas"': 'aria-label="Ibilbideetan nabigatu"',
-    'Anterior': 'Aurrekoa',
-    'Sorpréndeme': 'Harritu nazazu',
-    'Siguiente': 'Hurrengoa',
-    'Volver a rutas': 'Itzuli ibilbideetara',
-    'La forma del recorrido es la portada. Desliza para descubrir otra.': 'Ibilbidearen forma bera da azala. Irristatu beste bat ezagutzeko.',
-    'Entrar en esta ruta': 'Sartu ibilbide honetan',
-    'Abrir ruta completa': 'Ireki ibilbide osoa',
-
-    # per-card eyebrow ("Ruta 01")
-    'Ruta': 'Ibilbidea',
-
-    # per-card activity/type/surface tag
-    'BTT/e-bike · Circuito · Pista': 'BTT/e-bike · Zirkuitua · Pista',
-    'Senderismo · Circuito · Sendero': 'Oinez · Zirkuitua · Bidezidorra',
-    'Senderismo · Circuito · Mixta': 'Oinez · Zirkuitua · Nahasia',
-    'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
-    'Senderismo · Ida y vuelta · Sendero': 'Oinez · Joan-etorria · Bidezidorra',
-    'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
-    'Senderismo · Trail running · BTT/e-bike · Circuito · Mixta': 'Oinez · Trail running · BTT/e-bike · Zirkuitua · Nahasia',
-    'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
-    'Senderismo · BTT/e-bike · Circuito · Carretera y pista': 'Oinez · BTT/e-bike · Zirkuitua · Errepidea eta pista',
-    'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
-    'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
-    'Trail running · BTT/e-bike · Circuito · Mixta': 'Trail running · BTT/e-bike · Zirkuitua · Nahasia',
-
-    # per-card surface badge (Pista is identical in both languages)
-    'Sendero': 'Bidezidorra',
-    'Mixta': 'Nahasia',
-    'Carretera y pista': 'Errepidea eta pista',
-    'Carretera, pista y sendero': 'Errepidea, pista eta bidezidorra',
-    'Pista y carretera': 'Pista eta errepidea',
-
-    # route names
-    'Trabakua, Zengotitagane y Maguna': 'Trabakua, Zengotitagane eta Maguna',
-    'Trabakua, Aixola y Berriz': 'Trabakua, Aixola eta Berriz',
-    'Iturzuri, Zengotitagane subida por la cascada de Gerea': 'Iturzuri, Zengotitagane Gereako ur-jauzitik gora',
-    'Zenarruza, San Kristobal y Zengotitagane': 'Zenarruza, San Kristobal eta Zengotitagane',
-    'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
-    'Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki': 'Zengotitagane, Iturzurigana eta San Kristobal Txiki',
-    'Zengotitagane, Askako y San Crist&oacute;bal': 'Zengotitagane, Askako eta San Kristobal',
-    'Zengotitagane, Axmakur y Oiz': 'Zengotitagane, Axmakur eta Oiz',
-    'Osmagain y Arietzu': 'Osmagain eta Arietzu',
-    'Trabakua, Asuntza y Urko': 'Trabakua, Asuntza eta Urko',
-    'Trabakua, Barinaga y Iturreta': 'Trabakua, Barinaga eta Iturreta',
-    'Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane': 'Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane',
-    'Iturreta, Markina y Urregarai': 'Iturreta, Markina eta Urregarai',
-    'Urko, Kalamua, San Migel y Mendibil': 'Urko, Kalamua, San Migel eta Mendibil',
-    'Trabakua, Iturreta e Iruzubieta': 'Trabakua, Iturreta eta Iruzubieta',
-    'Trabakua, Mendibil, Olamendi y Arteta': 'Trabakua, Mendibil, Olamendi eta Arteta',
-    'Trabakua paseo por el barrio Goita': 'Trabakua Goita auzoko paseoa',
-    'Hiru Txikiak Urko, Oiz y Egoarbitza': 'Hiru Txikiak Urko, Oiz eta Egoarbitza',
-    'Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil',
-    'Trabakua, Longa y Muniozguren': 'Trabakua, Longa eta Muniozguren',
-    'Trabakua, Muniozguren, Oiz y San Kristobal Txiki':
-        'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki',
-    'Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki.':
-        'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota.',
-    'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
-        'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane',
-
-    # route descriptions
-    'Pista entre cemento, piedra y tierra, con un repecho duro al principio —no llega a 300 m—, un desvío técnico opcional a Aginaga y vistas al Duranguesado desde Berano.': 'Pista zementu, harri eta lur artean; hasieran 300 metro baino gutxiagoko aldapa gogorra du, Aginagara desbideratze tekniko aukerakoa, eta Durangaldeko ikuspegi zabalak eskaintzen ditu Beranotik.',
-    'Sendero hasta el punto más alto de Mallabia: cascadas, un dolmen prehistórico y un cresterio con vistas a ambos lados antes de rodear Zengotitagane por el este.': 'Bidezidorra Mallabiako punturik altueneraino: ur-jauziak, historiaurreko trikuharri bat eta gailurrerdi bat bi aldeetara bistak dituena, Zengotitagane ekialdetik inguratu aurretik.',
-    'Circuito largo desde Trabakua: la colegiata cisterciense de Zenarruza, una ermita de pastores en la ladera del Oiz y el dolmen de Iturzurigana, con dos subidas largas seguidas.': 'Zirkuitu luzea Trabakuatik: Zenarruzako kolegiata zisterziarra, artzainen ermita bat Oizen hegalean eta Iturzuriganako trikuharria, bi igoera luze jarraian.',
-    'Circuito desde Trabakua por ermitas y caser&iacute;os del Duranguesado hasta la Necr&oacute;polis de Argi&ntilde;eta, veinte sarc&oacute;fagos medievales en Elorrio.': 'Zirkuitua Trabakuatik, Durangaldeko ermita eta baserrien artean, Argi&ntilde;etako Nekropoliraino, hogei bat Erdi Aroko hilobi Elorrion.',
-    'Sendero corto y familiar hasta la cascada de Gerea.': 'Bidezidor laburra eta familiarra Gereako ur-jauziraino.',
-    'Circuito largo en e-bike desde Trabakua a Zengotitagane e Iturzurigana, con dos ermitas de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Iturzuriganaraino, bidean bi ermitarekin.',
-    'Circuito largo en e-bike desde Trabakua a Zengotitagane y Askako, con las ermitas de San Crist&oacute;bal Txiki y San Juan de camino.': 'Zirkuitu luzea e-bikez Trabakuatik Zengotitagane eta Askakoraino, San Kristobal Txiki eta San Juan ermitak bidean.',
-    'Ida y vuelta desde Trabakua hasta el Oiz, con dos altos de camino y vistas a la costa cant&aacute;brica desde la cumbre.': 'Joan-etorria Trabakuatik Oizeraino, bidean bi goirekin eta kostalde kantauriarrerako ikuspegiekin gailurretik.',
-    'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
-    'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
-    'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
-    'Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
-    'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
-    'Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
-    'Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza.': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota.',
-    'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
-    'Circuito desde Trabakua hasta la cima del Mendibil.': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
-    'Circuito desde Trabakua por Mendibil, Olamendi y Arteta.': 'Zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota.',
-    'Paseo corto y llano por el barrio Goita, con vistas y dos ermitas de camino.': 'Ibilbide laburra eta laua Goita auzotik, ikuspegiekin eta bi ermitarekin bidean.',
-    'El recorrido real de la carrera Hiru Txikiak Trail, con salida y meta en Ermua.': 'Hiru Txikiak Trail lasterketaren benetako ibilbidea, Ermuan irten eta amaituz.',
-    'Circuito muy largo en e-bike desde Trabakua, con paso por Aixola, Elgeta y Zaldibar antes de volver por Berriz.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota, Berriztik itzuli aurretik.',
-    'Circuito muy largo en e-bike desde Trabakua, con paso por Zengotitagane, el Dolmen de Iturzurigana y Maguna.': 'Zirkuitu oso luzea e-bikez Trabakuatik, Zengotitagane, Iturzuriganako Trikuharria eta Magunatik igarota.',
-    'Circuito de senderismo desde Trabakua por Urko, Kalamua, Barinaga, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota.',
-    'Circuito desde Trabakua por Gerea, Longa y Muniozguren.': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota.',
-    'Circuito exigente de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.':
-        'Zirkuitu eskatzailea BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota.',
-    'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz.': '7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota.',
-    'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, Mallabiko mendi eta auzoetan barrena.',
-}
-
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia eta Durangaldeko auzo, mendi eta herrietan. '
@@ -3022,8 +2917,6 @@ DESCRIPTIONS = {
     'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
-    'historias': 'Mallabiako 30 ibilbideak, banan-banan: track bakoitzaren benetako '
-        'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
 # <title> per page (head files)
@@ -3128,7 +3021,6 @@ TITLES = {
     'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · Bizikleta ibilbidea — Herriko ibilbideak',
     'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
-    'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3253,5 +3145,4 @@ PAGE_STRINGS = {
     'aixola': AIXOLA,
     'potrera': POTRERA,
     'intxorta': INTXORTA,
-    'historias': HISTORIAS,
 }
