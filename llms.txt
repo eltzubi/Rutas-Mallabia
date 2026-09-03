@@ -2,12 +2,13 @@
 
 > Rutas de senderismo y BTT por los barrios, montes y pueblos de Mallabia (Bizkaia) y el Duranguesado. Documentadas sobre el terreno por su autor, con tracks GPX reales, fotos propias y datos verificados — no generadas ni copiadas de un folleto. Sitio bilingüe (castellano / euskera).
 
-Casi todas las rutas salen (o pasan) por Trabakua, el puerto/collado que hace de punto de encuentro de la red de senderos, a 5,7 km del pueblo de Mallabia. Cada ficha de ruta incluye: distancia y desnivel reales medidos sobre el track (no estimados), perfil de elevación, waypoints numerados con nombre y ubicación, fotos propias del recorrido, un track GPX descargable y un mapa interactivo. La portada permite filtrar las 29 rutas por actividad (a pie / en bici), distancia y dificultad.
+Casi todas las rutas salen (o pasan) por Trabakua, el puerto/collado que hace de punto de encuentro de la red de senderos, a 5,7 km del pueblo de Mallabia. Cada ficha de ruta incluye: distancia y desnivel reales medidos sobre el track (no estimados), perfil de elevación, waypoints numerados con nombre y ubicación, fotos propias del recorrido, un track GPX descargable y un mapa interactivo. La portada permite filtrar las 30 rutas por actividad (a pie / en bici), distancia y dificultad.
 
 Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre.eu.html`), generada automáticamente a partir de la versión en castellano — el contenido es equivalente en ambos idiomas.
 
 ## Rutas
 
+- [Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza](https://trabakutik.com/intxorta.html): 36,31 km, desnivel +1.750 m, dificultad difícil, Senderismo · Trail running
 - [Trabakua, Goierri, Aixola y Eitzaga](https://trabakutik.com/aixola.html): 36,24 km, desnivel +829 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +660 m, dificultad difícil, trail running y BTT/e-bike
 - [Asuntza bira](https://trabakutik.com/trabakua.html): 16,5 km, desnivel +712 m, dificultad media, BTT/e-bike
