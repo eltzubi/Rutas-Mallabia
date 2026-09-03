@@ -473,7 +473,7 @@
 .info-details-body{ padding:0 4px 24px; }
 
 /* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
-.map-section{ max-width:820px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
+.map-section{ max-width:1400px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
 
 .map-box{
   position:relative;
@@ -504,15 +504,25 @@
 }
 .directions-cta:hover{ background:var(--violet); }
 .directions-cta + .eyebrow{ margin-top:28px; }
+/* La caja del mapa general es cuadrada, y del tamano que quepa.
+   Las 30 rutas ocupan 17,2 km de ancho por 16,9 de alto: una huella
+   cuadrada. Leaflet encaja eso por el lado corto de la caja, asi que en una
+   caja apaisada el dibujo lo fijaba la altura y el ancho sobrante quedaba en
+   blanco: la de 16:9 desperdiciaba el 44% y dibujaba las rutas a 434 px.
+   Cuadrada no sobra nada y el dibujo es tan grande como permita la pantalla:
+   el lado es el menor entre el ancho disponible y el 80% del alto de la
+   ventana. Si algun dia entra una ruta lejos y la huella deja de ser
+   cuadrada, esta regla deja de ser la buena. */
 .route-map-box{
   position:relative;
   border:1px solid var(--line);
-  aspect-ratio:4/3;
+  aspect-ratio:1/1;
+  width:min(100%, 80svh);
+  margin-inline:auto;
   background:var(--ground-raised);
   overflow:hidden;
   scroll-margin-top:100px; /* clears the sticky masthead when scrolled into view */
 }
-@media (min-width:640px){ .route-map-box{ aspect-ratio:16/9; } }
 
 .leaflet-popup-content-wrapper{
   background:var(--ground-raised) !important; color:var(--ink) !important;
