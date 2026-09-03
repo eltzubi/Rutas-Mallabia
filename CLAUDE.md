@@ -133,6 +133,12 @@ There's no automated test suite — verification is manual:
   plainly, with the evidence, and let him decide — don't quietly fix a *fact* and don't quietly let
   it pass. Verify against a primary source first (the GPX itself, OpenStreetMap by coordinates,
   the built output) so the report is a finding and not a hunch.
+- **Never reword text he didn't ask you to touch.** Adding a photo means: process it, add the
+  gallery item, write its `alt` in both languages. It does *not* mean improving the neighbouring
+  alts, retitling anything, or rewriting a paragraph because you now know more — he has asked for
+  this explicitly. Same for a route text: change the sentence he pointed at, nothing else. When a
+  nearby text looks wrong or improvable, say so and let him decide (see the rule above); don't
+  fold the edit into an unrelated change.
 - Cross-reference other routes by name where the text mentions them (e.g. "el mismo pico de la ruta de
   `<a href="arietzu.html">Osmagain y Arietzu</a>`") using a plain `.html` href, letting `make_eu.py`'s
   `EU_OF` swap handle the Basque variant.
