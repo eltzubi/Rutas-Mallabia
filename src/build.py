@@ -209,6 +209,31 @@ def add_similar_routes(page_html, page, cards, lang):
     return page_html.replace(anchor, bloque + anchor, 1)
 
 
+def map_legend(cards, lang):
+    """El resumen bajo el mapa, contado de las tarjetas.
+
+    Antes eran dos parrafos con los nombres de las 30 rutas, escritos a mano:
+    320 caracteres que en un movil son ocho o nueve lineas, y que se quedaban
+    viejos cada vez que entraba una ruta. Contarlos aqui es mas corto de leer
+    y no se puede desfasar.
+    """
+    bici = sum(1 for c in cards.values() if "bici" in c["activities"])
+    pie = sum(1 for c in cards.values() if "senderismo" in c["activities"])
+    ambas = sum(1 for c in cards.values()
+                if {"bici", "senderismo"} <= c["activities"])
+    t = lambda s: eu.COMMON[s] if lang == "eu" else s
+    partes = [
+        f'<p class="map-summary"><b>{len(cards)} {t("rutas en el mapa")}</b></p>',
+        '<p class="map-legend-line">',
+        f'<span class="map-legend-item"><span class="dot bici"></span>{bici} {t("en bici")}</span>',
+        f'<span class="map-legend-item"><span class="dot senderismo"></span>{pie} {t("a pie")}</span>',
+    ]
+    if ambas:
+        partes.append(f'<span class="map-legend-item">{ambas} {t("en ambas")}</span>')
+    partes.append("</p>")
+    return "".join(partes)
+
+
 def add_data_cache_busting(page_html):
     # Lo mismo para los tracks (data-map-src en las fichas, data-track en
     # historias). Un GPX corregido conserva el nombre del fichero, asi que
@@ -242,6 +267,9 @@ def main():
             page_html = assemble_page(name, src_suffix)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
+            page_html = page_html.replace(
+                '<div class="map-legend" data-map-legend></div>',
+                f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
             out_path = os.path.join(ROOT, out_name(name, out_suffix))
