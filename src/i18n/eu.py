@@ -3030,10 +3030,20 @@ AIXOLA = {
         'Hemendik aurrera ibilbidea ixten hasiko gara, eta hasieran egin dugun bidearekin elkartuko gara berriro. Trabakuara itzultzeko 2 kilometro inguru besterik ez zaizkigu geratuko.',
 
     # --- para quien es ---
-    'Es una ruta larga, pero bastante llevadera, con una buena combinaci&oacute;n de caminos de cemento, pistas y algunos tramos de monte mucho menos transitados. No presenta grandes dificultades t&eacute;cnicas, aunque la distancia y las continuas subidas y bajadas terminan sumando kil&oacute;metros y desnivel.':
-        'Ibilbide luzea da, baina nahiko eroso egiten da. Porlanezko bideak, pistak eta gutxiago erabiltzen diren mendiko tarte batzuk uztartzen ditu. Ez dauka zailtasun tekniko handirik, baina kilometroek eta etengabeko igoera-jaitsierek beren lana egiten dute.',
-    'Se puede hacer perfectamente con una BTT convencional o una e-bike, y resulta especialmente interesante para quien quiera conocer caminos menos habituales y enlazar en una misma vuelta las zonas de Trabakua, Goierri, Aixola, Eitzaga, Zaldibar, Berriz y Zengotita.':
-        'BTT arruntarekin zein e-bikearekin egiteko moduko ibilbidea da, eta aukera polita da ohiko bideetatik pixka bat atera eta Trabakua, Goierri, Aixola, Eitzaga, Zaldibar, Berriz eta Zengotita inguruak buelta berean ezagutzeko.',
+    'Es una ruta larga, pero bastante llevadera, con una buena combinaci&oacute;n de caminos de cemento, pistas y algunos tramos de monte. En general son caminos bastante transitados, salvo la pista que baja hacia <b>Olabe</b>, que es la m&aacute;s solitaria de toda la vuelta. No presenta grandes dificultades t&eacute;cnicas, aunque la distancia y las continuas subidas y bajadas terminan sumando kil&oacute;metros y desnivel.':
+        'Ibilbide luzea da, baina nahiko eroso egiten da. Porlanezko bideak, pistak eta mendiko tarte batzuk uztartzen ditu. Oro har, nahiko ibiliak dira bide guztiak, <b>Olabe</b>rantz jaisten den pista izan ezik, buelta osoko bakartiena baita. Ez dauka zailtasun tekniko handirik, baina kilometroek eta etengabeko igoera-jaitsierek beren lana egiten dute.',
+    'Se puede hacer perfectamente con una BTT convencional o una e-bike, y resulta especialmente interesante para quien quiera enlazar en una misma vuelta las zonas de Trabakua, Goierri, Elgeta, Aixola, Eitzaga, Zaldibar, Berriz y Zengotita.':
+        'BTT arruntarekin zein e-bikearekin egiteko moduko ibilbidea da, eta aukera polita da Trabakua, Goierri, Elgeta, Aixola, Eitzaga, Zaldibar, Berriz eta Zengotita inguruak buelta berean lotzeko.',
+
+    # --- perfil: marcadores y leyenda ---
+    '<title>Ermita de Zengotita &middot; 2,4 km &middot; 411 m</title>':
+        '<title>Zengotitako ermita &middot; 2,4 km &middot; 411 m</title>',
+    '<title>Presa de Aixola &middot; 20 km &middot; 313 m</title>':
+        '<title>Aixolako presa &middot; 20 km &middot; 313 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Ermita de Zengotita</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotitako ermita</span>',
+    '<span class="elev-legend-item"><span class="num">4</span>Presa de Aixola</span>':
+        '<span class="elev-legend-item"><span class="num">4</span>Aixolako presa</span>',
 }
 
 TITLES = {
