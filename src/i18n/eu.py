@@ -232,6 +232,13 @@ ROUTE = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
+
+    # La misma foto del cordal del Oiz cuelga de las cuatro fichas que pasan
+    # por la cima, asi que su alt vive aqui y no repetido en cuatro tablas.
+    'alt="La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, '
+    'con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo"':
+        'alt="Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, '
+        'ganadua larreetan eta inguruko mendiak hondoan"',
 }
 
 HOME = {
