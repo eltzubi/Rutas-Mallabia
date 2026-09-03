@@ -62,12 +62,12 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal Txiki eta San Juan ermitekin</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota</p>',
-    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane</p>':
-        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino</p>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane</p>':
+        '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
-    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil</p>':
-        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota</p>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil</p>':
+        '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota</p>',
     '<p class="route-card-desc">Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea</p>':
@@ -1393,8 +1393,8 @@ EGOARBITZA = {
     '<h1>Urko, Egoarbitza, Santama&ntilde;esar<br><em>y Zengotitagane</em></h1>':
         '<h1>Urko, Egoarbitza, Santama&ntilde;esar<br><em>eta Zengotitagane</em></h1>',
 
-    'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane':
-        'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino',
+    'Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane':
+        'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino',
 
     'download="Urko, Egoarbitza, Santama&ntilde;esar y Zengotitagane.gpx"':
         'download="Urko, Egoarbitza, Santama&ntilde;esar eta Zengotitagane.gpx"',
@@ -1606,8 +1606,8 @@ KALAMUA = {
     '<h1>Urko, Kalamua, San Migel<br><em>y Mendibil</em></h1>':
         '<h1>Urko, Kalamua, San Migel<br><em>eta Mendibil</em></h1>',
 
-    'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
-        'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
+    'Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil':
+        'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota',
 
     'download="Urko, Kalamua, San Migel y Mendibil.gpx"':
         'download="Urko, Kalamua, San Migel eta Mendibil.gpx"',
@@ -2961,9 +2961,9 @@ HISTORIAS = {
     'Circuito corto desde la Ermita de San Juan, con dos altos de camino y una cruz de piedra en cada uno.': 'Zirkuitu laburra San Juan ermitatik, bidean bi goirekin eta bakoitzean harrizko gurutze batekin.',
     'Circuito desde Trabakua por Arandomendi, Urko y el Collado de Asuntza.': 'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik.',
     'Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota.',
-    'Circuito en e-bike desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
+    'Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santamañesar hasta Zengotitagane.': 'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik igarota Zengotitaganeraino.',
     'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar.': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino.',
-    'Circuito en e-bike desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
+    'Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil.': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota.',
     'Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza.': 'Zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota.',
     'Circuito desde Trabakua por Iturreta, Iruzubieta, Arta y Gerea.': 'Zirkuitua Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota.',
     'Circuito desde Trabakua hasta la cima del Mendibil.': 'Zirkuitua Trabakuatik Mendibilgo gailurreraino.',
@@ -2996,11 +2996,11 @@ DESCRIPTIONS = {
     'sancristobal': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki eta San Juan ermitekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
-    'egoarbitza': 'Zirkuitua e-bikez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
+    'egoarbitza': 'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
         'igarota Zengotitaganeraino',
     'urregarai': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik '
         'igarota Bolibarreraino',
-    'kalamua': 'Zirkuitua e-bikez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
+    'kalamua': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Oinezko zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
     'iruzubieta': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
@@ -3106,9 +3106,9 @@ TITLES = {
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
-    'egoarbitza': 'Urko, Egoarbitza, Santamañesar eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'egoarbitza': 'Urko, Egoarbitza, Santamañesar eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'urregarai': 'Iturreta, Markina eta Urregarai · Bizikleta ibilbidea — Herriko ibilbideak',
-    'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Bizikleta ibilbidea — Herriko ibilbideak',
+    'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
     'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Bizikleta ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
