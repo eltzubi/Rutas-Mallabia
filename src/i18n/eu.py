@@ -16,6 +16,10 @@ COMMON = {
     # src/build.py, que lee esta pareja de aqui: es texto de la web y le toca
     # vivir en este fichero como todo lo demas.
     'Rutas parecidas': 'Antzeko ibilbideak',
+    'rutas en el mapa': 'ibilbide mapan',
+    'en bici': 'bizikletaz',
+    'a pie': 'oinez',
+    'en ambas': 'bietan',
     # masthead / chrome
     'Cambiar a tema oscuro': 'Aldatu gai ilunera',
     '<span class="place">Mallabia · Bizkaia</span>':
@@ -422,10 +426,6 @@ HOME = {
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
     'data-label-expand="Ampliar mapa"': 'data-label-expand="Handitu mapa"',
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
-    'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Crist&oacute;bal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna, Iturreta, Aixola y Bolibar':
-        'BTT/e-bike &middot; Trabakua, Zenarruza, Osma, Zengotitagane, San Kristobal, Urregarai, Iruzubieta, Goita, Zaldibar, Maguna, Iturreta, Aixola eta Bolibar',
-    'Senderismo &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga, Muniozguren y la Potrera':
-        'Oinez &middot; Kalamua, Egoarbitza, Urko, Arietzu, Oiz, Iturzuri, Gerea, Mundioko Koba, Mendibil, Arteta, Hiru Txikiak, 7 Pago 25K, 7 Pago 16K, Barinaga, Muniozguren eta Potrera',
     'alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"':
         'alt="Bizikleta argia piztuta seinale-poste baten ondoan, Oizko gailurreko antenetatik gertu ilunabarrean"',
     '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':

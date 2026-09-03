@@ -570,7 +570,9 @@
    menos que diga por que, y que los botones que ya no mandan sobre nada
    desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
 
-.map-legend{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.55; color:var(--ink-dim); }
+.map-legend{ margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.55; color:var(--ink-dim); }
+.map-summary{ margin:0 0 6px; color:var(--ink); font-size:14px; }
+.map-legend-line{ display:flex; flex-wrap:wrap; gap:6px 16px; margin:0; }
 .map-legend-item{ display:inline-flex; align-items:center; gap:6px; }
 .map-legend-item .dot{ width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
 .map-legend-item .dot.bici{ background:var(--teal); }
