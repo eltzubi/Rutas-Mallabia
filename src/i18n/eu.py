@@ -64,8 +64,8 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santama&ntilde;esar hasta Zengotitagane</p>':
         '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;esarretik igarota Zengotitaganeraino</p>',
-    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
-        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
+        '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil</p>':
         '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza</p>':
@@ -1501,15 +1501,14 @@ URREGARAI = {
     '<h1>Iturreta, Markina<br><em>y Urregarai</em></h1>':
         '<h1>Iturreta, Markina<br><em>eta Urregarai</em></h1>',
 
-    'Circuito en e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
-        'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
+    'Circuito de senderismo desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
+        'Zirkuitua oinez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
 
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
     'download="Iturreta, Markina y Urregarai.kml"':
         'download="Iturreta, Markina eta Urregarai.kml"',
 
-    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
 
     'alt="Amanecer con bancos de niebla deshaci&eacute;ndose sobre los prados, con una borda de piedra entre el arbolado en primer plano y los caser&iacute;os repartidos por las lomas"':
@@ -1686,13 +1685,6 @@ KALAMUA = {
         '36,0 km eta +1.676 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
         'Kalamua eta Mendibil) eta pista, asfalto eta zementuzko tarteekin. Kalamuarako igoeran hainbat '
         'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
-
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, el que marc&oacute; '
-    'el dispositivo (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
-    '<b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '&mdash; <b>Distantzia</b>, benetako GPX trackaren arabera kalkulatua. <b>Desnibela</b>, gailuak '
-        'markatutakoa (beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
-        '<b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, lurrean bertan behatuak.',
 }
 
 MUNDIOKOKOBA = {
@@ -2421,7 +2413,7 @@ PAGO7 = {
         'alt="Zaldiak basoko soilgune batean bazkan, aerosorgailuak atzealdean loma batean"',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
 
     # body copy
@@ -2500,7 +2492,7 @@ PAGO16 = {
         'alt="Korrikalariak harrizko horma zahar baten ondoan, lasterketako dortsalekin"',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
 
     # body copy
@@ -2895,12 +2887,12 @@ DESCRIPTIONS = {
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'egoarbitza': 'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santamañesarretik '
         'igarota Zengotitaganeraino',
-    'urregarai': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik '
+    'urregarai': 'Zirkuitua oinez Trabakuatik, Iturreta, Markina eta Urregaraitik '
         'igarota Bolibarreraino',
     'kalamua': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Oinezko zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
-    'iruzubieta': 'Zirkuitua e-bikez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'iruzubieta': 'Zirkuitua oinez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'mendibil': 'Oinezko zirkuitua Trabakuatik Mendibilgo gailurreraino',
     'arteta': 'Oinezko zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
@@ -3002,10 +2994,10 @@ TITLES = {
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza, Santamañesar eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
-    'urregarai': 'Iturreta, Markina eta Urregarai · Bizikleta ibilbidea — Herriko ibilbideak',
+    'urregarai': 'Iturreta, Markina eta Urregarai · Oinezko ibilbidea — Herriko ibilbideak',
     'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
-    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Oinezko ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
