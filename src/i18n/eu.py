@@ -235,10 +235,6 @@ ROUTE = {
 
     # La misma foto del cordal del Oiz cuelga de las cuatro fichas que pasan
     # por la cima, asi que su alt vive aqui y no repetido en cuatro tablas.
-    # La misma foto del rebaño en el cordal cuelga de tres fichas, asi que su alt
-    # tambien vive aqui y no repetido en tres tablas.
-    'alt="Reba&ntilde;o de ovejas caminando en fila junto a la alambrada, por la pista que recorre el cordal, con las antenas de la cima recortadas al fondo"':
-        'alt="Ardi-taldea ilaran, hesiaren ondotik, gandorra zeharkatzen duen pistan, gailurreko antenak hondoan"',
     'alt="La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, '
     'con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo"':
         'alt="Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, '
@@ -1025,6 +1021,8 @@ ZENGOTITAGANE = {
 OIZ = {
     'download="Zengotitagane, Axmakur y Oiz.gpx"': 'download="Zengotitagane, Axmakur eta Oiz.gpx"',
     'download="Zengotitagane, Axmakur y Oiz.kml"': 'download="Zengotitagane, Axmakur eta Oiz.kml"',
+    'alt="Reba&ntilde;o de ovejas caminando en fila junto a la alambrada, por la pista que recorre el cordal, con las antenas de la cima recortadas al fondo"':
+        'alt="Ardi-taldea ilaran, hesiaren ondotik, gandorra zeharkatzen duen pistan, gailurreko antenak hondoan"',
     'alt="Foto ampliada del recorrido del Oiz"':
         'alt="Oizeko ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Zengotitagane, Axmakur y Oiz</span>':
