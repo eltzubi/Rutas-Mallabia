@@ -945,6 +945,8 @@ GEREA = {
 ZENGOTITAGANE = {
     'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.gpx"',
     'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.kml"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.kml"',
+    'alt="Caballos pastando en un prado cercado en lo alto, con los aerogeneradores del cordal recortados al fondo y el arbolado dando sombra a un lado"':
+        'alt="Zaldiak hesitutako belardi batean goialdean, gandorreko eolikoak hondoan eta zuhaitzak alde batean itzala ematen"',
     'alt="Foto ampliada del recorrido de Zengotitagane"':
         'alt="Zengotitagane ibilbidearen argazki handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
