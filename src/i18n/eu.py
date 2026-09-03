@@ -235,6 +235,10 @@ ROUTE = {
 
     # La misma foto del cordal del Oiz cuelga de las cuatro fichas que pasan
     # por la cima, asi que su alt vive aqui y no repetido en cuatro tablas.
+    # La misma foto del rebaño en el cordal cuelga de tres fichas, asi que su alt
+    # tambien vive aqui y no repetido en tres tablas.
+    'alt="Reba&ntilde;o de ovejas caminando en fila junto a la alambrada, por la pista que recorre el cordal, con las antenas de la cima recortadas al fondo"':
+        'alt="Ardi-taldea ilaran, hesiaren ondotik, gandorra zeharkatzen duen pistan, gailurreko antenak hondoan"',
     'alt="La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, '
     'con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo"':
         'alt="Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, '
@@ -595,6 +599,8 @@ ITURZURI = {
         '<h1>Iturzuri, Zengotitagane<br><em>Gereako ur-jauzitik gora</em></h1>',
     'Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua':
         'Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
+    'alt="El hayedo en la niebla, en blanco y negro: los troncos desnudos a los lados y el camino cubierto de hojarasca subiendo hasta perderse en la bruma"':
+        'alt="Pagadia lainoartean, zuri-beltzean: enbor biluziak alboetan eta orbelez estalitako bidea gora, lanbroan galdu arte"',
     'alt="Vista panorámica desde la ruta, con el valle cubierto de niebla y las crestas del Duranguesado al fondo"':
         'alt="Bista panoramikoa ibilbidetik, harana lainoz estalita eta Durangaldeko gailurrak atzealdean"',
     'alt="Foto ampliada del recorrido de Iturzuri"': 'alt="Iturzuriko ibilbidearen argazki handitua"',
@@ -878,6 +884,8 @@ GEREA = {
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     'Circuito a la cascada de Gerea desde Trabakua':
         'Zirkuitua Trabakuatik Gereako ur-jauzira',
+    'alt="Mar de lomas verdes con caser&iacute;os y prados repartidos por las laderas, vistas por encima de las copas de unos abetos, con el mar asomando en el horizonte"':
+        'alt="Muino berdeen itsasoa, baserriak eta zelaiak magaletan barreiatuta, izeien adaburuen gainetik ikusita, eta itsasoa zerumugan agertzen"',
     'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
     'alt="Foto ampliada del recorrido de Ur Jauziak-Gerea"':
@@ -2373,6 +2381,8 @@ PAGO7 = {
         '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>',
 
     # photos
+    'alt="La loma boscosa que sube hacia los aerogeneradores del cordal, con robles y helechos en tonos de oto&ntilde;o en primer plano y el valle abri&eacute;ndose a la izquierda"':
+        'alt="Gandorreko eolikoetarantz igotzen den muino basotsua, haritzak eta iratzeak udazkeneko koloreetan lehen planoan eta harana ezkerrean zabaltzen"',
     'alt="Corredores subiendo una cresta con los aerogeneradores del Oiz al fondo, dorsal 63 en primer plano"':
         'alt="Korrikalariak kresta batean gora, Oizeko aerosorgailuak atzealdean, 63 dortsala aurrealdean"',
     'alt="Foto ampliada del recorrido de la 7 Pago Mendi Lasterketa"':
@@ -2597,6 +2607,8 @@ MUNIOZGUREN = {
     'Circuito desde Trabakua por Gerea, Longa y Muniozguren':
         'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
 
+    'alt="Astarloko Atxa, el picacho de roca rojiza sobre Muniozguren, con un caser&iacute;o de tejado rojo a media ladera, prados y arbolado por debajo y un cierre de alambre en primer plano"':
+        'alt="Astarloko Atxa, Muniozguren gaineko harkaitz gorrixkako tontorra, teilatu gorriko baserri bat magalaren erdian, zelaiak eta zuhaitzak azpian eta alanbrezko hesi bat lehen planoan"',
     'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
         'alt="Gailur harritsua atzealdean, alanbre-hesi baten ondoko lurrezko bide batetik ikusia, baserri sakabanatuekin magalean"',
     'alt="Foto ampliada del recorrido de Trabakua, Longa, Muniozguren"':
@@ -3129,10 +3141,14 @@ INTXORTA = {
         'alt="Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza ibilbidearen argazki handitua"',
     'alt="Aerogenerador entre la niebla sobre una loma de hierba, con un monolito de piedra y una cruz met&aacute;lica en primer plano"':
         'alt="Eolikoa lainoartean belarrezko muino baten gainean, harrizko monolito bat eta metalezko gurutze bat lehen planoan"',
-    'alt="Hayedo en lo alto de una loma, con el suelo alfombrado de hojarasca, rocas cubiertas de musgo y un peque&ntilde;o poste de se&ntilde;alizaci&oacute;n entre los troncos"':
-        'alt="Pagadia muino baten goialdean, lurra orbelez estalita, goroldiozko harriak eta seinale-zutoin txiki bat enborren artean"',
-    'alt="Caseta blanca con pintadas y una torreta met&aacute;lica entre la niebla, con una piedra tallada con un lauburu y unos bastones apoyados en primer plano"':
-        'alt="Etxola zuria pintadekin eta metalezko dorretxo bat lainoartean, lauburu bat landutako harri bat eta makilak lehen planoan"',
+    'alt="La cima de Erdella, una loma rocosa en pleno hayedo, con el suelo alfombrado de hojarasca y el poste de la cumbre entre los troncos"':
+        'alt="Erdellako tontorra, harrizko muino bat pagadi betean, lurra orbelez estalita eta gailurreko zutoina enborren artean"',
+    'alt="La cima de Intxorta entre la niebla, con su caseta pintada y la torreta met&aacute;lica, una piedra tallada con un lauburu y unos bastones apoyados en primer plano"':
+        'alt="Intxortako tontorra lainoartean, bere etxola pintatua eta metalezko dorretxoa, lauburu bat landutako harri bat eta makilak lehen planoan"',
+    'alt="Erdella de noche: el poste de la cima, rematado con la silueta de un piolet, sobre la loma rocosa, con el hayedo cerrado alrededor"':
+        'alt="Erdella gauez: gailurreko zutoina, piolet baten siluetarekin errematatua, harrizko muinoaren gainean, pagadi itxia inguruan"',
+    'alt="Intxorta de noche: la torreta met&aacute;lica con su paleta y la caseta con pintadas, con las luces de los pueblos del valle al fondo"':
+        'alt="Intxorta gauez: metalezko dorretxoa bere palarekin eta etxola pintatua, haraneko herrien argiak hondoan"',
     'alt="V&eacute;rtice geod&eacute;sico sobre su base de hormig&oacute;n en la cima, entre roca caliza, con el cordal de hierba perdi&eacute;ndose en la niebla"':
         'alt="Erpin geodesikoa hormigoizko oinarriaren gainean tontorrean, kareharrien artean, eta belarrezko gandorra lainoartean galtzen"',
     'alt="Zapatillas de trail sobre el barro seco y agrietado de una rampa muy empinada, vista desde arriba"':
