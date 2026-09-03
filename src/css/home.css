@@ -218,7 +218,7 @@
   flex:1 1 0; min-width:0;
   font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:10px 12px; border-radius:100px;
+  padding:10px 12px; border-radius:9px;   /* 16 del marco menos sus 7 de relleno: esquinas concentricas */
   border:1px solid var(--line); background:var(--ground);
   color:var(--ink-dim); cursor:pointer;
   transition:background .2s ease, color .2s ease, border-color .2s ease,
@@ -318,7 +318,7 @@
   flex:1 1 0; min-width:0;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:7px 8px; border-radius:100px;
+  padding:7px 8px; border-radius:8px;   /* 14 del marco menos sus 6 de relleno */
   border:1px solid var(--line); background:none;
   color:var(--ink-dim); cursor:pointer; opacity:.5;
   transition:background .2s ease, color .2s ease, border-color .2s ease,
