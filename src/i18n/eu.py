@@ -1502,6 +1502,10 @@ URREGARAI = {
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
 
 
+    'alt="Amanecer con bancos de niebla deshaci&eacute;ndose sobre los prados, con una borda de piedra entre el arbolado en primer plano y los caser&iacute;os repartidos por las lomas"':
+        'alt="Egunsentia, lainoak zelaien gainean desegiten, harrizko borda bat zuhaitzen artean lehen planoan eta baserriak muinoetan barreiatuta"',
+    'alt="El pueblo en el fondo del valle al amanecer, visto desde lo alto, con los montes encadenados detr&aacute;s en tonos cada vez m&aacute;s claros"':
+        'alt="Herria haranaren hondoan egunsentian, goitik ikusita, mendiak kateatuta atzean gero eta tonu argiagoetan"',
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     'alt="Foto ampliada del recorrido de Iturreta, Markina y Urregarai"':
