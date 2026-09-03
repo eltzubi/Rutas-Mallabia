@@ -25,9 +25,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(ROOT, "src")
 
-SIGNPOST_RE = re.compile(
-    r'<a class="signpost-sign" href="(\w+)\.html"[^>]*>.*?'
-    r'<span class="signpost-name">(.*?)</span>',
+# Las tarjetas de la portada son la lista de rutas: el antiguo bloque de
+# "signpost" desaparecio del diseno hace tiempo y este patron dejo de encontrar
+# nada, asi que el ZIP y los KML se quedaron congelados sin avisar.
+CARD_RE = re.compile(
+    r'<a class="route-card" href="([\w]+)\.html"[^>]*>.*?'
+    r'<h3 class="route-card-name">(.*?)</h3>',
     re.S,
 )
 
@@ -40,7 +43,7 @@ def route_list():
     with open(os.path.join(SRC, "mallabia_tail.html"), encoding="utf-8") as f:
         home = f.read()
     routes = []
-    for m in SIGNPOST_RE.finditer(home):
+    for m in CARD_RE.finditer(home):
         slug, name = m.group(1), html.unescape(m.group(2))
         gpx_path = os.path.join(SRC, f"{slug}.gpx")
         if os.path.exists(gpx_path):
