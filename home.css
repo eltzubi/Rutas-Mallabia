@@ -178,21 +178,21 @@
 .hero-compact-stats{
   margin:10px 0 0;
   font-family:'IBM Plex Mono',monospace; font-weight:600;
-  font-size:clamp(1.05rem, 4.6vw, 1.55rem);
+  /* El limite lo pone el euskera, que es mas largo: "30 ibilbide" frente a
+     "30 rutas". A 320 px caben 32 caracteres de monoespaciada en 276, o sea
+     14,4 px como mucho; por encima de eso la linea se parte y deja el "m+"
+     colgando solo. */
+  font-size:clamp(.85rem, 4.3vw, 1.55rem);
   font-variant-numeric:tabular-nums;
   letter-spacing:.01em;
   color:var(--readout-a);
   text-shadow:0 1px 12px rgba(0,0,0,.5);
 }
-.hero-compact-stat span{
-  font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.03em;
-  text-transform:uppercase; color:rgba(245,243,236,.65);
-}
 
 /* ---- finder: activity picker + filters + results ---- */
 /* All the controls share one width so the two chip rows and the "más filtros"
    panel line up edge to edge as a single block instead of three loose rows. */
-.finder{ --filter-col:420px; max-width:820px; margin:44px auto 0; padding:0 24px; }
+.finder{ --filter-col:420px; max-width:820px; margin:20px auto 0; padding:0 24px; }
 @media (min-width:1024px){ .finder{ max-width:1100px; } }
 .finder > .eyebrow{ color:var(--ink-dim); justify-content:center; }
 /* The activity chips follow you down the list: with every route on the page
