@@ -3186,7 +3186,7 @@ INTXORTA = {
     'Son 36,31 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
         '36,31 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
     'Funciona bien como salida larga de <b>trail running</b> o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
-        '<b>Trail running</b> irteera luze gisa zein oinezko egun osoko mendi-ibilaldi gisa ondo funtzionatzen du. Hiru iturri daude bidean zehar &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horrek beharrezkoa baino gehiago kargatu gabe ateratzeko aukera ematen du.',
+        'Ibilbidea <b>trail running</b> irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker ur gutxirekin abiatu eta bidean bertan berriz hornitu daiteke, motxila gehiegi kargatu beharrik gabe.',
 }
 
 PAGE_STRINGS = {
