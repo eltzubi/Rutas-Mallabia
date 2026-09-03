@@ -35,8 +35,6 @@ COMMON = {
     '<span class="k">Dificultad</span>': '<span class="k">Zailtasuna</span>',
 
     # route list header + per-card descriptions (método antiguo)
-    '<h2 class="eyebrow">Rutas documentadas</h2>':
-        '<h2 class="eyebrow">Dokumentatutako ibilbideak</h2>',
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
         '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
@@ -242,6 +240,8 @@ ROUTE = {
 }
 
 HOME = {
+    '<p class="hero-compact-stats">30 rutas &middot; 690 km &middot; 29.852 m+</p>':
+        '<p class="hero-compact-stats">30 ibilbide &middot; 690 km &middot; 29.852 m+</p>',
     'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
     '<span class="brand-name">Rutas en torno al <em>pueblo</em></span>':
@@ -342,10 +342,6 @@ HOME = {
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
 
     # readout
-    '<span class="k">Recorrido documentado</span>': '<span class="k">Dokumentatutako ibilbidea</span>',
-    '<span class="k">Desnivel acumulado</span>': '<span class="k">Metatutako desnibela</span>',
-    '<span class="k">Track GPX real</span>': '<span class="k">Benetako GPX tracka</span>',
-    '<span class="k">Rutas documentadas</span>': '<span class="k">Dokumentatutako ibilbideak</span>',
 
     # filters
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
