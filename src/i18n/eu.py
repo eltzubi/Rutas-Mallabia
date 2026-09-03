@@ -163,6 +163,8 @@ COMMON = {
     '<span class="v">Dif&iacute;cil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Senderismo &middot; Trail running</span>':
         '<span class="v">Oinez &middot; Trail running</span>',
+    '<span class="v">Senderismo &middot; BTT/e-bike</span>':
+        '<span class="v">Oinez &middot; BTT/e-bike</span>',
     '<span class="v">BTT/e-bike</span>': '<span class="v">BTT/e-bike</span>',
     '<span class="v">Pista y carretera</span>': '<span class="v">Pista eta errepidea</span>',
     '<span class="v">Carretera, pista y sendero</span>': '<span class="v">Errepidea, pista eta bidezidorra</span>',
@@ -2909,7 +2911,7 @@ HISTORIAS = {
     'Senderismo · Trail running · Circuito · Mixta': 'Oinez · Trail running · Zirkuitua · Nahasia',
     'Senderismo · Trail running · BTT/e-bike · Circuito · Mixta': 'Oinez · Trail running · BTT/e-bike · Zirkuitua · Nahasia',
     'BTT/e-bike · Circuito · Mixta': 'BTT/e-bike · Zirkuitua · Nahasia',
-    'BTT/e-bike · Circuito · Carretera y pista': 'BTT/e-bike · Zirkuitua · Errepidea eta pista',
+    'Senderismo · BTT/e-bike · Circuito · Carretera y pista': 'Oinez · BTT/e-bike · Zirkuitua · Errepidea eta pista',
     'BTT/e-bike · Circuito · Carretera, pista y sendero': 'BTT/e-bike · Zirkuitua · Errepidea, pista eta bidezidorra',
     'BTT/e-bike · Circuito · Pista y carretera': 'BTT/e-bike · Zirkuitua · Pista eta errepidea',
     'Trail running · BTT/e-bike · Circuito · Mixta': 'Trail running · BTT/e-bike · Zirkuitua · Nahasia',

@@ -29,7 +29,7 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 - [Trabakua, Iturreta e Iruzubieta](https://trabakutik.com/iruzubieta.html): 19,22 km, desnivel +769 m, dificultad media, BTT/e-bike
 - [Trabakua Mendibil](https://trabakutik.com/mendibil.html): 6,08 km, desnivel +432 m, dificultad fácil, Senderismo
 - [Trabakua, Mendibil, Olamendi y Arteta](https://trabakutik.com/arteta.html): 11,38 km, desnivel +565 m, dificultad fácil, Senderismo · Trail running
-- [Trabakua, paseo por el barrio Goita](https://trabakutik.com/goita.html): 5,34 km, desnivel +200 m, dificultad fácil, BTT/e-bike
+- [Trabakua, paseo por el barrio Goita](https://trabakutik.com/goita.html): 5,34 km, desnivel +200 m, dificultad fácil, Senderismo · BTT/e-bike
 - [Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua](https://trabakutik.com/hirutxikiak.html): 43,91 km, desnivel +2.291 m, dificultad difícil, Senderismo · Trail running
 - [Trabakua, Aixola y Berriz](https://trabakutik.com/zaldibar.html): 42,35 km, desnivel +1.115 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Zengotitagane y Maguna](https://trabakutik.com/maguna.html): 33,44 km, desnivel +1.215 m, dificultad difícil, BTT/e-bike
