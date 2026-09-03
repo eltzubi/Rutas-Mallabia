@@ -1117,6 +1117,18 @@ ARIETZU = {
     'alt="Una cruz de piedra con vistas al valle y a un monte al fondo, en verano"':
         'alt="Harrizko gurutze bat haranerako eta atzealdeko mendi baterako ikuspegiekin, '
         'udan"',
+    'alt="La pista de tierra subiendo junto a una alambrada de postes de madera, con la '
+    'ladera de hierba a un lado y el pinar arriba"':
+        'alt="Lur-pista igotzen, egurrezko zutoinen hesiaren ondotik, belardia alde batera '
+        'eta pinudia goian"',
+    'alt="Vista del valle con el pueblo abajo y una sierra rocosa al fondo, desde '
+    'detr&aacute;s de los helechos"':
+        'alt="Haranaren ikuspegia, herria behean eta harkaitzezko mendilerroa atzealdean, '
+        'iratzeen atzetik"',
+    'alt="El sendero por la cresta entre helechos, con un corredor al fondo y las pistas '
+    'serpenteando por la ladera de enfrente"':
+        'alt="Bidezidorra gailurrean iratzeen artean, korrikalari bat atzealdean eta pistak '
+        'aurreko hegalean bihurgunez"',
     'data-marker-title="Ermita de San Juan (salida y llegada)"':
         'data-marker-title="San Juan ermita (irteera eta helmuga)"',
     '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
