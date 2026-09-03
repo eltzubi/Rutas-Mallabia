@@ -256,8 +256,14 @@ HOME = {
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
-    '<p class="route-card-desc">Circuito largo de BTT desde Trabakua por Goierri, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
-        '<p class="route-card-desc">BTT zirkuitu luzea Trabakuatik, Goierri, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
+    '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h3>':
+        '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h3>',
+    '<p class="route-card-desc">Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
+        '<p class="route-card-desc">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
+    'alt="Cruz de piedra sobre su pedestal en lo alto, junto a un monolito de roca y una ikurri&ntilde;a ondeando al fondo, entre hierba alta y pinar"':
+        'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
+    '<p class="route-card-desc">Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
+        '<p class="route-card-desc">BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
     '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</h3>':
         '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
@@ -2846,8 +2852,14 @@ POTRERA = {
 HISTORIAS = {
     '<h2>Trabakua, Goierri, Aixola y Eitzaga</h2>':
         '<h2>Trabakua, Goierri, Aixola eta Eitzaga</h2>',
-    'Circuito largo de BTT desde Trabakua por Goierri, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz.':
-        'BTT zirkuitu luzea Trabakuatik, Goierri, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota.',
+    '<h2>Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h2>':
+        '<h2>Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h2>',
+    'Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza.':
+        'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota.',
+    'data-tag="Senderismo &middot; Circuito &middot; Mixta"':
+        'data-tag="Oinez &middot; Zirkuitua &middot; Nahasia"',
+    'Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz.':
+        'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota.',
     'Rutas de Mallabia, una a una': 'Mallabiako ibilbideak, banan-banan',
     # dock + progress + hint + buttons (shared across every card)
     'aria-label="Navegar por las rutas"': 'aria-label="Ibilbideetan nabigatu"',
@@ -2979,9 +2991,10 @@ DESCRIPTIONS = {
     'muniozguren': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
     'exigente': 'Zirkuitu eskatzailea BTT/e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
         'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
-    'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
+    'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
-    'historias': 'Mallabiako 28 ibilbideak, banan-banan: track bakoitzaren benetako '
+    'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
+    'historias': 'Mallabiako 30 ibilbideak, banan-banan: track bakoitzaren benetako '
         'forma da bere azala. Irristatu, konparatu eta sartu ibilbide bakoitzaren mapan.',
 }
 
@@ -3005,8 +3018,8 @@ AIXOLA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Aixola eta Eitzaga</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Goierri<br><em>Aixola y Eitzaga</em></h1>':
         '<h1>Trabakua, Goierri<br><em>Aixola eta Eitzaga</em></h1>',
-    '<p class="full-name">Circuito largo de BTT desde Trabakua por Goierri, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
-        '<p class="full-name">BTT zirkuitu luzea Trabakuatik, Goierri, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
+    '<p class="full-name">Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
+        '<p class="full-name">BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
     'download="Trabakua, Goierri, Aixola y Eitzaga.gpx"':
         'download="Trabakua, Goierri, Aixola eta Eitzaga.gpx"',
     'download="Trabakua, Goierri, Aixola y Eitzaga.kml"':
@@ -3086,7 +3099,94 @@ TITLES = {
         'BTT ibilbidea — Herriko ibilbideak',
     'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · Bizikleta ibilbidea — Herriko ibilbideak',
     'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
+    'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
     'historias': 'Ibilbideak istorio gisa · Herriko ibilbideak',
+}
+
+INTXORTA = {
+    # hero
+    '<span>Mixta</span><span class="sep">/</span><span>Cinco cimas</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Bost tontor</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta y Egoarbitza</em></h1>':
+        '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta eta Egoarbitza</em></h1>',
+    '<p class="full-name">Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
+        '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
+
+    # perfil: marcadores y leyenda
+    '<title>Presa de Aixola &middot; 25,5 km &middot; 314 m</title>':
+        '<title>Aixolako presa &middot; 25,5 km &middot; 314 m</title>',
+    '<span class="elev-legend-item"><span class="num">6</span>Presa de Aixola</span>':
+        '<span class="elev-legend-item"><span class="num">6</span>Aixolako presa</span>',
+
+    # fotos
+    'alt="Cruz de piedra sobre su pedestal en lo alto, junto a un monolito de roca y una ikurri&ntilde;a ondeando al fondo, entre hierba alta y pinar"':
+        'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza"':
+        'alt="Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza ibilbidearen argazki handitua"',
+    'alt="Aerogenerador entre la niebla sobre una loma de hierba, con un monolito de piedra y una cruz met&aacute;lica en primer plano"':
+        'alt="Eolikoa lainoartean belarrezko muino baten gainean, harrizko monolito bat eta metalezko gurutze bat lehen planoan"',
+    'alt="Hayedo en lo alto de una loma, con el suelo alfombrado de hojarasca, rocas cubiertas de musgo y un peque&ntilde;o poste de se&ntilde;alizaci&oacute;n entre los troncos"':
+        'alt="Pagadia muino baten goialdean, lurra orbelez estalita, goroldiozko harriak eta seinale-zutoin txiki bat enborren artean"',
+    'alt="Caseta blanca con pintadas y una torreta met&aacute;lica entre la niebla, con una piedra tallada con un lauburu y unos bastones apoyados en primer plano"':
+        'alt="Etxola zuria pintadekin eta metalezko dorretxo bat lainoartean, lauburu bat landutako harri bat eta makilak lehen planoan"',
+    'alt="V&eacute;rtice geod&eacute;sico sobre su base de hormig&oacute;n en la cima, entre roca caliza, con el cordal de hierba perdi&eacute;ndose en la niebla"':
+        'alt="Erpin geodesikoa hormigoizko oinarriaren gainean tontorrean, kareharrien artean, eta belarrezko gandorra lainoartean galtzen"',
+    'alt="Zapatillas de trail sobre el barro seco y agrietado de una rampa muy empinada, vista desde arriba"':
+        'alt="Trail zapatilak aldapa oso gogor bateko lokatz lehor eta pitzatuaren gainean, goitik ikusita"',
+
+    # wikiloc / gpx
+    'download="Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza.gpx"':
+        'download="Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza.gpx"',
+    'download="Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza.kml"':
+        'download="Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza.kml"',
+
+    # --- relato ---
+    'Salimos de <b>Trabakua</b> en direcci&oacute;n noroeste y comenzamos directamente la subida hacia <b>Zengotitagane</b>. Tenemos por delante unos 2 kil&oacute;metros pr&aacute;cticamente continuos de subida, unos 40 minutos en los que la direcci&oacute;n est&aacute; bastante clara: subir y seguir subiendo, ganando altura r&aacute;pidamente desde el puerto.':
+        '<b>Trabakua</b>tik abiatuko gara ipar-mendebalderantz, <b>Zengotitagane</b>rako bidea hartuta. Hasieratik maldan gora jarriko gara: 2 kilometro inguruko igoera jarraitua dugu aurretik, 40 minutu ingurukoa. Ez dago galtzeko arrisku handirik; zuzen jarraitu eta gora egitea da kontua.',
+    'Al llegar a <a href="zengotitagane.html">Zengotitagane</a> giramos a la derecha y continuamos por la cresta. Avanzamos por la parte alta hasta que el cordal comienza a terminarse y encontramos una pista que baja a nuestra izquierda. La cogemos y comenzamos el descenso hacia el barrio de <b>Zengotita</b>.':
+        '<a href="zengotitagane.html">Zengotitagane</a>ra iristean eskuinera egingo dugu, gandorra hartuz. Bertatik jarraituko dugu, gora-behera txikien artean, gandorra amaitzen den arte. Han ezkerrera jaisten den pista hartuko dugu, <b>Zengotita</b> auzorantz.',
+    'A la entrada del barrio encontraremos una buena fuente de agua. Continuamos bajando atravesando Zengotita hasta llegar a la parte baja del barrio, donde se encuentra la ermita.':
+        'Auzoaren sarreran iturri eder bat aurkituko dugu, ura hartzeko leku aproposa. Zengotita zeharkatu eta beherantz jarraituko dugu, auzoaren beheko aldean dagoen ermitara iritsi arte.',
+    'Desde la zona de la ermita continuamos por la pista por la que discurre la GR, que seguiremos en direcci&oacute;n a <b>Goierri</b>. Durante este tramo pasamos junto a la ermita de Goierri y otra fuente de agua, un buen punto para volver a llenar los bidones.':
+        'Ermitaren ingurutik GRaren bidea hartuko dugu <b>Goierri</b> aldera. Tarte erosoa da, eta Goierriko ermita ondotik pasatuko gara; bertan beste iturri bat ere badago.',
+    'Un poco m&aacute;s adelante llegamos a la central el&eacute;ctrica. Seguimos unos metros por la misma pista y enseguida nos desviamos a la derecha para comenzar la subida hacia <b>Santama&ntilde;azar</b>.':
+        'Aurrerago zentral elektrikora iritsiko gara. Metro batzuk aurrera egin eta eskuinera joko dugu, <b>Santama&ntilde;azar</b>rerako igoerari ekiteko.',
+    'La pista va ganando altura poco a poco hasta acercarnos a la parte alta. All&iacute; alcanzamos Santama&ntilde;azar, primera cima del recorrido, donde encontraremos una ikurri&ntilde;a, una cruz y varios elementos conmemorativos. Es un buen lugar para detenerse un momento antes de continuar, con bonitas vistas hacia el Duranguesado.':
+        'Pixkanaka altuera hartuz, eguneko lehen tontorrera iritsiko gara. Goian ikurrina, gurutzea eta hainbat oroigarri aurkituko ditugu, baita Durangalde aldera ikuspegi ederrak ere.',
+    'Seguimos por el cordal en direcci&oacute;n a <b>Erdella</b>. El terreno alterna peque&ntilde;os repechos con tramos bastante m&aacute;s c&oacute;modos y nos permite avanzar sin perder demasiada altura. Poco a poco nos vamos acercando a nuestra segunda cima del d&iacute;a, Erdella (683 m), una cima bastante m&aacute;s cerrada y rodeada de bosque.':
+        'Santama&ntilde;azar atzean utzi eta gandorretik <b>Erdella</b> aldera jarraituko dugu. Tarte honetan aldapa motzak eta zati lasaiagoak tartekatzen dira, altuera handirik galdu gabe. Horrela iritsiko gara eguneko bigarren tontorrera, Erdellara (683 m), basoz inguratutako tontor itxiago batera.',
+    'Desde Erdella comenzamos a bajar por la vertiente contraria. Perdemos altura entre pistas y caminos hasta alcanzar la carretera general que une Elorrio con Elgeta. La cruzamos con cuidado y comenzamos directamente la subida hacia <b>Intxorta</b>.':
+        'Erdellatik behera egingo dugu, pista eta bideetatik, Elorrio eta Elgeta lotzen dituen errepide nagusira iritsi arte. Errepidea kontuz gurutzatu eta <b>Intxorta</b>rako igoerari ekingo diogu.',
+    'Al principio la pendiente es bastante llevadera, pero seg&uacute;n ganamos altura el camino se va poniendo m&aacute;s serio. El &uacute;ltimo tramo concentra buena parte del esfuerzo, con una subida fuerte antes de alcanzar la zona alta.':
+        'Hasierako zatia nahiko eramangarria da, baina gora egin ahala malda gogortzen joango da. Azken zatian hankak estutzea tokatuko zaigu, tontorrera iritsi aurretik aldapa sendoa baitugu.',
+    'Llegamos finalmente a la cima de Intxorta. Adem&aacute;s de las buenas vistas hacia Udalatx, Anboto y buena parte de las monta&ntilde;as del Duranguesado, este lugar conserva una importante huella de la Guerra Civil. Sus laderas fueron escenario de duros combates durante 1936 y 1937 y todav&iacute;a pueden verse en la propia zona de la cima restos de trincheras y antiguas posiciones defensivas.':
+        'Intxortako tontorretik Udalatx, Anboto eta Durangaldeko mendien ikuspegi ederrak izango ditugu. Inguru honek, gainera, Gerra Zibilaren aztarna nabarmena gordetzen du. 1936 eta 1937 artean borroka gogorrak izan ziren hemen, eta tontorraren inguruan oraindik ikus daitezke garai hartako lubaki eta defentsa-posizioen arrastoak.',
+    'Desde Intxorta comenzamos el descenso por sendero en direcci&oacute;n a <b>Elgeta</b>. Vamos perdiendo altura poco a poco hasta pasar junto a la ermita de San Salvador, donde encontraremos tambi&eacute;n una fuente de agua, un buen punto para rellenar los bidones.':
+        'Intxorta utzi eta <b>Elgeta</b> aldera jaisten hasiko gara, bidezidorretik. Bidean San Salbador ermitaren ondotik pasatuko gara; bertan iturri bat ere aurkituko dugu, ura hartzeko aukera ona.',
+    'Continuamos bajando hasta entrar en Elgeta. Atravesamos el pueblo y salimos por la carretera en direcci&oacute;n a Eibar. Poco despu&eacute;s de pasar la zona del cementerio volvemos a abandonar el asfalto. Cruzamos la carretera y cogemos la pista que nos llevar&aacute; hacia <b>Egoarbitza</b>.':
+        'Beherantz jarraituz Elgetara iritsiko gara. Herria zeharkatu eta Eibar aldera aterako gara. Hilerria pasatu ondoren, pixka bat aurrerago, errepidea utzi, gurutzatu eta <b>Egoarbitza</b>ra eramango gaituen pista hartuko dugu.',
+    'Aqu&iacute; comienza otra de las grandes subidas de la ruta. La pista va ganando altura de forma constante, meti&eacute;ndose poco a poco en un entorno m&aacute;s monta&ntilde;oso. Es una subida bonita y sostenida, sin demasiadas complicaciones para seguir el camino, aunque a estas alturas los kil&oacute;metros y las cimas anteriores empiezan ya a notarse en las piernas.':
+        'Hemen hasten da eguneko beste igoera politetako bat. Pistak etengabe egiten du gora, erritmoa hartzeko moduko aldapa batean. Ez du zailtasun berezirik, baina ordurako egindako kilometroak eta aurreko igoerak hanketan nabarituko ditugu.',
+    'Seg&uacute;n nos acercamos a la parte alta aparece la caracter&iacute;stica silueta rocosa de <a href="egoarbitza.html">Egoarbitza</a>. Dejamos la pista para afrontar el &uacute;ltimo tramo hacia la cima, algo m&aacute;s monta&ntilde;ero que todo lo anterior.':
+        '<a href="egoarbitza.html">Egoarbitza</a>ra hurbildu ahala, bere harkaitz-forma berezia ikusiko dugu aurrean. Pista utzi eta azken zatia egingo dugu tontorreraino, aurrekoa baino menditsuagoa den bidetik.',
+    'Una vez arriba merece la pena detenerse. Egoarbitza ofrece una panor&aacute;mica muy amplia, pr&aacute;cticamente de 360 grados, y desde la cima podemos reconocer buena parte de las monta&ntilde;as de los alrededores y del terreno que llevamos recorrido. Abajo queda ya la zona de <b>Aixola</b>, nuestro siguiente objetivo.':
+        'Egoarbitzako tontorrean merezi du geldialditxo bat egitea. Ia 360 graduko panoramika zabala dugu bertatik, inguruko mendiak eta ordura arte egindako ibilbidearen zati handi bat ikusteko. Behealdean <b>Aixola</b>ko urtegia ere ikusiko dugu, gure hurrengo helmuga.',
+    'Rodeamos la cima por detr&aacute;s y comenzamos el largo descenso hacia el embalse. Vamos perdiendo altura entre bosque y pistas, en una bajada bonita y bastante continua que nos lleva finalmente hasta la <a href="aixola.html">presa de Aixola</a>.':
+        'Tontorra atzeko aldetik inguratu eta Aixolarantz jaisten hasiko gara. Baso eta pistetatik behera egingo dugu, jaitsiera luze eta polit batean, <a href="aixola.html">Aixolako presa</a>ra iritsi arte.',
+    'Cruzamos la presa por su parte baja y continuamos por el camino que bordea el embalse. Apenas unos 300 metros despu&eacute;s encontramos a mano derecha un sendero de tierra. Dejamos aqu&iacute; el camino del embalse y comenzamos una nueva subida.':
+        'Presa beheko aldetik gurutzatu eta urtegiaren ertzeko bidetik jarraituko dugu. 300 metro inguru egin ondoren, eskuinean lurrezko bidezidor bat hartuko dugu. Hemendik berriro gora egitea tokatuko zaigu.',
+    'El sendero va ganando altura hasta desembocar en una pista que nos resultar&aacute; muy conocida: es la misma que comunica Goierri con Elgeta y por la que hemos pasado en otras rutas.':
+        'Bidezidorrak goiko pista ezagun batera eramango gaitu, Goierri eta Elgeta lotzen dituen pista berera.',
+    'Al llegar a ella giramos a la derecha. A partir de aqu&iacute; ya no hay demasiadas complicaciones y seguimos la pista hasta regresar a Goierri.':
+        'Bertara iristean eskuinera egingo dugu eta Goierri aldera joko dugu. Hemendik aurrera bidea erraza da, eta pistari jarraituz Goierrira iritsiko gara.',
+    'Desde Goierri continuamos por la GR en direcci&oacute;n a Zengotita. Al llegar nuevamente al barrio solo nos queda afrontar el tramo final hasta Trabakua para completar la vuelta.':
+        'Goierritik GRa hartuko dugu berriro Zengotita aldera. Zengotita zeharkatu ondoren, Trabakuara itzultzeko azken zatia egingo dugu, bertan ibilbideari amaiera emanez.',
+
+    # --- para quien es ---
+    'Son 36,31 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
+        '36,31 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
+    'Funciona bien como salida larga de <b>trail running</b> o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
+        '<b>Trail running</b> irteera luze gisa zein oinezko egun osoko mendi-ibilaldi gisa ondo funtzionatzen du. Hiru iturri daude bidean zehar &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horrek beharrezkoa baino gehiago kargatu gabe ateratzeko aukera ematen du.',
 }
 
 PAGE_STRINGS = {
@@ -3120,5 +3220,6 @@ PAGE_STRINGS = {
     'exigente': EXIGENTE,
     'aixola': AIXOLA,
     'potrera': POTRERA,
+    'intxorta': INTXORTA,
     'historias': HISTORIAS,
 }
