@@ -171,20 +171,19 @@
   color:rgba(245,243,236,.92); margin:0 0 10px; max-width:46ch;
   text-shadow:0 1px 14px rgba(0,0,0,.4);
 }
+/* Las tres cifras en una sola linea. Antes eran cuatro fichas en rejilla de
+   2x2, que en un movil se comian 98 px justo por encima del listado: la
+   primera tarjeta empezaba en el pixel 834 de una pantalla de 844 y no se
+   veia ni una ruta sin desplazar. */
 .hero-compact-stats{
-  display:grid; grid-template-columns:repeat(2,1fr); gap:14px 18px; margin:6px 0 0;
-}
-@media (min-width:480px){ .hero-compact-stats{ grid-template-columns:repeat(4,1fr); } }
-.hero-compact-stat{ display:flex; flex-direction:column; gap:2px; }
-.hero-compact-stat b{
+  margin:10px 0 0;
   font-family:'IBM Plex Mono',monospace; font-weight:600;
-  font-size:clamp(1.3rem, 5vw, 1.75rem);
+  font-size:clamp(.95rem, 3.6vw, 1.15rem);
   font-variant-numeric:tabular-nums;
+  letter-spacing:.01em;
   color:var(--readout-a);
   text-shadow:0 1px 12px rgba(0,0,0,.5);
 }
-.hero-compact-stat b small{ font-size:.55em; font-weight:500; opacity:.85; }
-.hero-compact-stat:nth-child(2n) b{ color:var(--readout-b); }
 .hero-compact-stat span{
   font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.03em;
   text-transform:uppercase; color:rgba(245,243,236,.65);
@@ -219,7 +218,7 @@
   flex:1 1 0; min-width:0;
   font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:10px 12px; border-radius:100px;
+  padding:10px 12px; border-radius:9px;   /* 16 del marco menos sus 7 de relleno: esquinas concentricas */
   border:1px solid var(--line); background:var(--ground);
   color:var(--ink-dim); cursor:pointer;
   transition:background .2s ease, color .2s ease, border-color .2s ease,
@@ -319,7 +318,7 @@
   flex:1 1 0; min-width:0;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
   letter-spacing:.04em; text-transform:uppercase;
-  padding:7px 8px; border-radius:100px;
+  padding:7px 8px; border-radius:8px;   /* 14 del marco menos sus 6 de relleno */
   border:1px solid var(--line); background:none;
   color:var(--ink-dim); cursor:pointer; opacity:.5;
   transition:background .2s ease, color .2s ease, border-color .2s ease,
