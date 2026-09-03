@@ -126,6 +126,13 @@ There's no automated test suite — verification is manual:
 
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
+- **Always tell the user about missing data or factual errors you notice, even when they didn't ask
+  and even when it's outside the task at hand.** He has asked for this explicitly: a page missing
+  something every other page has (numbered waypoints, a card photo, an `og:image`), a figure that
+  doesn't match the GPX, a place name that doesn't match the map, a stale generated file. Say it
+  plainly, with the evidence, and let him decide — don't quietly fix a *fact* and don't quietly let
+  it pass. Verify against a primary source first (the GPX itself, OpenStreetMap by coordinates,
+  the built output) so the report is a finding and not a hunch.
 - Cross-reference other routes by name where the text mentions them (e.g. "el mismo pico de la ruta de
   `<a href="arietzu.html">Osmagain y Arietzu</a>`") using a plain `.html` href, letting `make_eu.py`'s
   `EU_OF` swap handle the Basque variant.
