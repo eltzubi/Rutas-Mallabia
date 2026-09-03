@@ -248,8 +248,6 @@ HOME = {
         '<p class="hero-compact-stats">30 ibilbide &middot; 690 km &middot; 29.852 m+</p>',
     'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
-    '<span class="brand-name">Rutas en torno al <em>pueblo</em></span>':
-        '<span class="brand-name">Herri inguruko <em>ibilbideak</em></span>',
 
     # finder (redesign)
     '<span>A pie</span>': '<span>Oinez</span>',

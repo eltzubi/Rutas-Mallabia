@@ -39,7 +39,7 @@
 
 .masthead{
   display:flex; align-items:center; justify-content:space-between;
-  padding:14px 20px;
+  padding:9px 18px;
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; letter-spacing:.1em; text-transform:uppercase;
   color:var(--ink-dim);
@@ -63,16 +63,9 @@
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
 }
-/* Past the hero, the brand photos are dead weight on a long scroll --
-   collapse them once the visitor has started reading. */
-.masthead.is-compact{ padding-top:8px; padding-bottom:8px; }
-
-/* Small phones: the masthead carries brand + place + language + theme, which
-   stops fitting on one line once the language switch is there. */
-@media (max-width:480px){
-  .masthead{ flex-wrap:wrap; gap:10px 12px; }
-  .masthead-right{ margin-left:auto; }
-}
+/* La barra ya no lleva marca: los dos circulos y el rotulo se comian 165 px
+   justo encima del listado, y decian lo mismo que el hero de debajo. Los
+   circulos siguen siendo el favicon y la imagen al compartir. */
 
 .theme-toggle{
   display:inline-flex; align-items:center; justify-content:center;
@@ -86,44 +79,6 @@
 /* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
    de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
    agranda la zona sensible al dedo; el aspecto no cambia. */
-
-.brand{
-  display:flex; align-items:center; gap:14px;
-  max-width:600px; max-height:120px; overflow:hidden;
-  transition:max-width .3s ease, max-height .3s ease, opacity .2s ease;
-}
-.masthead.is-compact .brand{ max-width:0; max-height:0; opacity:0; }
-.brand-name{
-  font-family:'Fraunces',serif;
-  font-size:16px; font-weight:700;
-  letter-spacing:0; text-transform:none;
-  color:var(--ink);
-}
-.brand-name em{ font-style:italic; font-weight:600; color:var(--readout-a); }
-.logo-mark{
-  position:relative;
-  width:120px; height:99px;
-  flex-shrink:0;
-}
-.logo-photo{
-  position:absolute;
-  border-radius:50%;
-  object-fit:cover;
-  filter:contrast(1.18) saturate(1.35);
-  box-shadow:0 0 0 4px var(--ground);
-}
-.logo-photo-a{
-  width:84px; height:84px;
-  left:0; top:6px;
-  border:3px solid var(--teal);
-  z-index:1;
-}
-.logo-photo-b{
-  width:66px; height:66px;
-  left:54px; top:27px;
-  border:3px solid var(--violet);
-  z-index:2;
-}
 
 /* ---- compact hero ---- */
 .eyebrow{
@@ -201,7 +156,7 @@
 .activity-filter{
   display:flex; justify-content:center; gap:8px;
   width:100%; max-width:var(--filter-col); margin:0 auto 8px;
-  position:sticky; top:76px; z-index:60;
+  position:sticky; top:56px; z-index:60;
   padding:7px; border:1px solid var(--line); border-radius:16px;
   background:var(--ground);
   background:color-mix(in srgb, var(--ground) 90%, transparent);
@@ -211,7 +166,6 @@
 }
 /* The masthead is always compact by the time this filter bar can reach
    its sticky position, so it can sit right under the shorter header. */
-.masthead.is-compact ~ main .activity-filter{ top:64px; }
 .activity-chip{
   display:inline-flex; align-items:center; justify-content:center;
   gap:7px; white-space:nowrap;
