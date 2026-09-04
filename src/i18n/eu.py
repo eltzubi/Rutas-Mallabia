@@ -264,8 +264,8 @@ HOME = {
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
-    'alt="Vista del valle desde un muro de piedra, con caser&iacute;os entre prados y bosque y una sierra rocosa al fondo"':
-        'alt="Haranaren ikuspegia harrizko horma batetik, baserriak larre eta basoen artean eta harkaitzezko mendilerroa atzealdean"',
+    'alt="La e-bike apoyada junto a un puente de piedra de un solo arco, sobre el cauce cubierto de hojas secas"':
+        'alt="E-bikea arku bakarreko harrizko zubi baten ondoan bermatuta, hosto lehorrez estalitako ibilguaren gainean"',
     '<h3 class="route-card-name">Arteta, Asuntza y los pasos entre ambos</h3>':
         '<h3 class="route-card-name">Arteta, Asuntza eta bien arteko pasabideak</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza</p>':
