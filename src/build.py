@@ -57,6 +57,7 @@ Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
 import hashlib
+import json
 import html.entities
 import os
 import re
@@ -248,6 +249,36 @@ def add_data_cache_busting(page_html):
     return re.sub(r'(data-map-src|data-track)="(data/[\w.\-]+\.json)"', repl, page_html)
 
 
+def sync_trailhead_colors(cards):
+    """El color de cada trazado del mapa general, sacado de su tarjeta.
+
+    En el mapa de la portada, teal es "en bici" y violeta es "a pie", y la
+    leyenda pinta sus dos puntos con esos mismos colores. Pero el color vivia
+    escrito a mano en data/trailhead.json, asi que cambiar la actividad de una
+    ruta en su tarjeta dejaba el trazado del color de antes -- una ruta a pie
+    dibujada en azul, sin que nada avisara. Se deriva aqui de data-activity,
+    que es la misma fuente que cuenta la leyenda, y ya no puede desfasarse.
+    """
+    path = os.path.join(ROOT, "data", "trailhead.json")
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    cambios = []
+    for track in data.get("tracks", []):
+        slug = track.get("href", "").replace(".eu.html", "").replace(".html", "")
+        card = cards.get(slug)
+        if not card:
+            continue
+        color = "teal" if "bici" in card["activities"] else "violet"
+        if track.get("color") != color:
+            cambios.append(f"{slug}: {track.get('color')} -> {color}")
+            track["color"] = color
+    if cambios:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, separators=(",", ":"))
+        print("data/trailhead.json: color corregido en " + ", ".join(cambios))
+    return len(cambios)
+
+
 def main():
     versions = {}
     for parts, out in ASSETS.items():
@@ -260,6 +291,7 @@ def main():
         print(f"wrote {out_path} ({len(body)} bytes)")
 
     cards = {lang: home_cards(src_suffix) for lang, (src_suffix, _) in LANGS.items()}
+    sync_trailhead_colors(cards["es"])
 
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
