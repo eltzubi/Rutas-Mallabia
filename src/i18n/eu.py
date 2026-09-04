@@ -250,8 +250,8 @@ ROUTE = {
 }
 
 HOME = {
-    '<p class="hero-compact-stats">30 rutas &middot; 690 km &middot; 29.852 m+</p>':
-        '<p class="hero-compact-stats">30 ibilbide &middot; 690 km &middot; 29.852 m+</p>',
+    '<p class="hero-compact-stats">31 rutas &middot; 712 km &middot; 30.814 m+</p>':
+        '<p class="hero-compact-stats">31 ibilbide &middot; 712 km &middot; 30.814 m+</p>',
     'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
 
@@ -264,6 +264,12 @@ HOME = {
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
+    'alt="Vista del valle desde un muro de piedra, con caser&iacute;os entre prados y bosque y una sierra rocosa al fondo"':
+        'alt="Haranaren ikuspegia harrizko horma batetik, baserriak larre eta basoen artean eta harkaitzezko mendilerroa atzealdean"',
+    '<h3 class="route-card-name">Arteta, Asuntza y los pasos entre ambos</h3>':
+        '<h3 class="route-card-name">Arteta, Asuntza eta bien arteko pasabideak</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik</p>',
     '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h3>':
         '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h3>',
     '<p class="route-card-desc">Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
@@ -2920,6 +2926,7 @@ DESCRIPTIONS = {
         'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
     'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
+    'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
 }
 
@@ -3024,6 +3031,7 @@ TITLES = {
         'BTT ibilbidea — Herriko ibilbideak',
     'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · Bizikleta ibilbidea — Herriko ibilbideak',
     'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
+    'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · Bizikleta ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
@@ -3117,6 +3125,79 @@ INTXORTA = {
         'Ibilbidea <b>trail running</b> irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker beharrezkoa baino gehiago kargatu gabe atera daiteke.',
 }
 
+ARTETAASUNTZA = {
+    '<span>Mixta</span><span class="sep">/</span><span>Los pasos entre Arteta y Asuntza</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Arteta eta Asuntza arteko pasabideak</span>',
+    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
+    '<h1>Arteta, Asuntza<br><em>y los pasos entre ambos</em></h1>':
+        '<h1>Arteta, Asuntza<br><em>eta bien arteko pasabideak</em></h1>',
+    'Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza, recorriendo los pasos que unen los dos caminos':
+        'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
+    '<title>Ermita de San Juan &middot; 3,4 km &middot; 448 m</title>':
+        '<title>San Juan ermita &middot; 3,4 km &middot; 448 m</title>',
+    '<title>Collado de Asuntza &middot; 16,4 km &middot; 479 m</title>':
+        '<title>Asuntzako lepoa &middot; 16,4 km &middot; 479 m</title>',
+    '<span class="elev-legend-item"><span class="num">2</span>Ermita de San Juan</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>San Juan ermita</span>',
+    '<span class="elev-legend-item"><span class="num">3</span>Collado de Asuntza</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Asuntzako lepoa</span>',
+    'download="Arteta, Asuntza y los pasos entre ambos.gpx"':
+        'download="Arteta, Asuntza eta bien arteko pasabideak.gpx"',
+    'download="Arteta, Asuntza y los pasos entre ambos.kml"':
+        'download="Arteta, Asuntza eta bien arteko pasabideak.kml"',
+    'alt="Foto ampliada del recorrido de Arteta, Asuntza y los pasos entre ambos"':
+        'alt="Arteta, Asuntza eta bien arteko pasabideen ibilbidearen argazki handitua"',
+    'data-marker-title="Trabakua (salida y llegada)"':
+        'data-marker-title="Trabakua (irteera eta helmuga)"',
+
+    # -- para quien es --
+    '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
+    '21,78 km y +962 m que no van de encadenar cimas, sino de conocer el terreno: los pasos peque&ntilde;os que unen el camino alto de Asuntza y Arteta con el de abajo, hacia Berano Txiki. Se sube por unos y se baja por otros, cruzando la zona varias veces.':
+        '21,78 km eta +962 m, gailurrak kateatzeko baino, ingurua ezagutzeko: Asuntza eta Artetako goiko bidea behekoarekin, Berano Txiki aldera, lotzen duten pasabide txikiak. Batzuetatik gora eta besteetatik behera, ingurua behin baino gehiagotan zeharkatuz.',
+    'Pide algo de manejo con la bici: por estos pasos hay que tener cierta soltura, no es una vuelta para iniciarse. Va bien para quien ya conoce la circular habitual y quiere sacarle m&aacute;s partido, porque una vez localizados estos pasos se pueden acortar, alargar o darle la vuelta a la ruta de muchas maneras. Por el camino se pasa por la <b>fuente de Arteta</b>, uno de los pocos puntos de agua de la zona.':
+        'Bizikletarekin trebetasun pixka bat eskatzen du: pasabide hauetan eskarmentua komeni da, ez da hasiberrientzako buelta. Ohiko zirkularra ezagutzen duenarentzat da egokia, hari etekin gehiago atera nahi badio: pasabide horiek behin ezagututa, ibilbidea laburtu, luzatu edo buelta eman daiteke modu askotan. Bidean <b>Artetako iturria</b>tik pasatzen gara, inguruko ur-puntu bakanetako bat.',
+
+    # -- el texto del cuerpo --
+    'Salimos desde <b>Trabakua</b> siguiendo el recorrido habitual en direcci&oacute;n a <b>Asuntza</b>. Durante estos primeros kil&oacute;metros avanzamos por los caminos que ya conocemos, hasta llegar al cruce de <b>Arteta</b>. Es aqu&iacute; donde realmente empieza esta ruta y donde comenzaremos a explorar la zona.':
+        '<b>Trabakua</b>tik abiatuko gara, <b>Asuntza</b>rako ohiko bidetik. Lehen kilometro hauetan ezagunak ditugun bideetatik joango gara, <b>Arteta</b>ko bidegurutzera iritsi arte. Hementxe hasten da benetan ibilbide honen zatirik bereziena.',
+    'La zona de Arteta y Asuntza es bastante conocida entre la gente que suele andar por aqu&iacute;, sobre todo porque se utiliza habitualmente para hacer una ruta circular. Se puede acceder desde Trabakua, Berano Txiki, Berano o Ermua, y es una vuelta muy utilizada tanto para dar un paseo como para enlazar con otros recorridos de monta&ntilde;a.':
+        'Arteta eta Asuntza ingurua nahiko ezaguna da bertan ibiltzen den jendearen artean, batez ere ohiko ibilbide zirkularra egiteko erabiltzen delako. Trabakutik, Berano Txikitik, Beranotik edo Ermutik sar daiteke bertara, eta jende askok erabiltzen du bai buelta bat emateko, bai inguruko beste ibilbide batzuekin lotzeko.',
+    'La mayor&iacute;a de la gente suele moverse por los caminos principales de piedra: por la parte alta, pasando por Asuntza y Arteta, o por la parte baja, desde la zona de Berano Txiki hacia Arteta. Estos caminos tambi&eacute;n sirven como zona de paso para continuar hacia <a href="barinaga.html">Barinaga</a> y <a href="mendibil.html">Mendibil</a> o, en sentido contrario, dirigirse hacia Trabakua y desde all&iacute; enlazar con las diferentes subidas hacia <a href="oiz.html">Oiz</a>. Tambi&eacute;n es una buena opci&oacute;n para alargar una salida despu&eacute;s de bajar de <a href="urko.html">Urko</a>.':
+        'Gehienek harrizko bide nagusiak erabiltzen dituzte: goiko aldetik, Asuntza eta Arteta zeharkatuz, edo beheko aldetik, Berano Txiki eta Arteta arteko bidetik. Inguru hau pasabide ona da <a href="barinaga.html">Barinaga</a> eta <a href="mendibil.html">Mendibil</a> aldera jarraitzeko ere; kontrako noranzkoan, berriz, Trabakua aldera joan eta handik <a href="oiz.html">Oiz</a>era igotzeko bideekin lotu daiteke. <a href="urko.html">Urko</a>tik jaitsi ondoren ibilbidea luzatzeko aukera ona ere bada.',
+    'Pero entre esos dos recorridos principales hay bastante m&aacute;s de lo que parece. Y precisamente eso es lo que queremos ense&ntilde;ar con esta ruta.':
+        'Baina ohiko bi bide horien artean, lehen begiratuan dirudiena baino aukera gehiago daude. Eta horixe da, hain zuzen ere, ibilbide honekin erakutsi nahi duguna.',
+    'A partir del cruce de Arteta dejaremos de seguir simplemente la circular habitual y empezaremos a movernos entre la parte alta y la parte baja. Iremos entrando por peque&ntilde;os senderos, pistas y caminos menos utilizados, cruzando de un lado al otro y buscando los diferentes pasos que comunican ambos recorridos.':
+        'Artetako bidegurutzetik aurrera, ohiko buelta alde batera utzi eta goiko eta beheko bideen artean ibiliko gara. Gutxiago erabiltzen diren bidezidor, pista eta bideetan sartuko gara, alde batetik bestera gurutzatuz eta bi ibilbide nagusiak lotzen dituzten pasabideak ezagutuz.',
+    'Subiremos por unos, bajaremos por otros y atravesaremos la zona varias veces. Algunos nos servir&aacute;n como atajos y otros simplemente como alternativas para cambiar completamente una vuelta. La intenci&oacute;n es recorrer todos los pasos que conocemos entre Arteta y Asuntza, para que despu&eacute;s cada uno pueda utilizarlos como mejor le venga: acortar una ruta, alargarla, cambiar de direcci&oacute;n o crear nuevas combinaciones.':
+        'Bide batzuetatik gora egingo dugu, beste batzuetatik behera, eta ingurua hainbat aldiz zeharkatuko dugu. Batzuk lasterbide moduan erabil daitezke; beste batzuek, berriz, ohiko buelta aldatu edo beste aukera batzuk sortzeko balio dute. Helburua Arteta eta Asuntza artean ezagutzen ditugun pasabideak erakustea da, gero bakoitzak nahi duen moduan erabili ahal izateko: ibilbidea laburtzeko, luzatzeko, norabidea aldatzeko edo beste buelta batzuk osatzeko.',
+    'M&aacute;s que seguir una &uacute;nica vuelta cerrada, esta ruta sirve para conocer de verdad la red de caminos y senderos que se esconde entre los recorridos habituales de Arteta y Asuntza. Una vez conocidos, las posibilidades para montar diferentes rutas por esta zona aumentan bastante.':
+        'Beraz, ohiko ibilbide zirkular bat egitea baino gehiago, Arteta eta Asuntza arteko bide eta bidezidor txikiak ezagutzeko ibilbidea da hau. Behin bide horiek ezagututa, aukera asko zabaltzen dira inguru honetan ibilbide desberdinak egiteko.',
+    'Durante el recorrido tambi&eacute;n pasaremos por la <b>fuente de Arteta</b>, un punto de agua que merece la pena tener localizado, ya que es una de las pocas fuentes que encontraremos por esta zona.':
+        'Bidean <b>Artetako iturria</b>tik ere pasatuko gara. Kontuan hartzeko ur-puntua da, inguru honetan ez baitago iturri askorik.',
+    'Despu&eacute;s de recorrer las diferentes alternativas, volveremos a enlazar con los caminos habituales para regresar hacia <b>Trabakua</b> y cerrar la ruta.':
+        'Aukera eta pasabide desberdinak ezagutu ondoren, berriro ohiko bidearekin bat egingo dugu eta <b>Trabakua</b> aldera itzuliko gara, ibilbidea amaitzeko.',
+
+    # -- alt de las fotos --
+    'alt="Vista del valle desde un muro de piedra, con caser&iacute;os entre prados y bosque y una sierra rocosa al fondo"':
+        'alt="Haranaren ikuspegia harrizko horma batetik, baserriak larre eta basoen artean eta harkaitzezko mendilerroa atzealdean"',
+    'alt="Pista de cemento subiendo entre el arbolado, con una se&ntilde;al de prohibido el paso al fondo"':
+        'alt="Zementuzko pista zuhaitzen artetik gora, sarrera debekatua dagoela dioen seinale batekin atzealdean"',
+    'alt="Camino de tierra atravesando el bosque a contraluz, con la sombra del ciclista proyectada sobre el suelo"':
+        'alt="Lurrezko bidea basoa zeharkatzen argiaren kontra, txirrindulariaren itzala lurrean marraztuta"',
+    'alt="La e-bike apoyada junto a un puente de piedra de un solo arco, sobre el cauce cubierto de hojas secas"':
+        'alt="E-bikea arku bakarreko harrizko zubi baten ondoan bermatuta, hosto lehorrez estalitako ibilguaren gainean"',
+    'alt="Camino de piedra entre un muro y la ladera, con el cielo despejado y los aerogeneradores al fondo"':
+        'alt="Harrizko bidea horma baten eta hegalaren artean, zerua garbi eta eolikoak atzealdean"',
+    'alt="Cruce de caminos en pleno pinar, con la bicicleta tumbada al borde de la pista"':
+        'alt="Bideen arteko gurutzea pinudi betean, bizikleta pistaren ertzean etzanda"',
+    'alt="Poste indicador de madera hacia la fuente de Arteta, con el bosque y la campa al fondo"':
+        'alt="Egurrezko seinale-zutoina Artetako iturrirantz, basoa eta zelaia atzealdean"',
+    'alt="La fuente de Arteta brotando entre la roca, al pie de un afloramiento cubierto de musgo y helechos"':
+        'alt="Artetako iturria harkaitzen artetik sortzen, goroldio eta iratzez estalitako harkaitz-multzo baten oinean"',
+    'alt="El manillar de la e-bike en primer plano sobre la pista, con la ladera del monte al fondo"':
+        'alt="E-bikearen manillarra lehen planoan pistaren gainean, mendiaren hegala atzealdean"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3149,4 +3230,5 @@ PAGE_STRINGS = {
     'aixola': AIXOLA,
     'potrera': POTRERA,
     'intxorta': INTXORTA,
+    'artetaasuntza': ARTETAASUNTZA,
 }
