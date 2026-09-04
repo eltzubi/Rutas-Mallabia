@@ -44,6 +44,8 @@
   var TXT_ALL_DESNIVEL = filters.dataset.allDesnivel || 'Todos';
   var TXT_COUNT_ONE = filters.dataset.countOne || 'ruta encontrada';
   var TXT_COUNT_MANY = filters.dataset.countMany || 'rutas encontradas';
+  var TXT_IMPOSSIBLE_DISTANCE = filters.dataset.impossibleDistance || '(rango de distancia imposible)';
+  var TXT_IMPOSSIBLE_DESNIVEL = filters.dataset.impossibleDesnivel || '(rango de desnivel imposible)';
 
   function niceCeil(n, step){ return Math.ceil(n / step) * step; }
 
@@ -51,6 +53,10 @@
   var desniveles = Array.prototype.map.call(cards, function(c){ return parseFloat(c.dataset.desnivelM) || 0; });
   var maxDistance = niceCeil(Math.max.apply(null, distances), 5) || 5;
   var maxDesnivel = niceCeil(Math.max.apply(null, desniveles), 100) || 100;
+  var minActualDistance = Math.min.apply(null, distances);
+  var maxActualDistance = Math.max.apply(null, distances);
+  var minActualDesnivel = Math.min.apply(null, desniveles);
+  var maxActualDesnivel = Math.max.apply(null, desniveles);
 
   function setupPair(minEl, maxEl, max, step){
     if (!minEl || !maxEl) return;
@@ -251,9 +257,20 @@
       }
       card.classList.toggle('is-hidden', !matches);
     });
+    // Detect impossible filter ranges (no routes can match even without activity/difficulty filters)
+    var impossibleDistance = maxD < minActualDistance || minD > maxActualDistance;
+    var impossibleDesnivel = maxE < minActualDesnivel || minE > maxActualDesnivel;
+    var impossibleRange = impossibleDistance || impossibleDesnivel;
+
     if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
     if (filterSuggestions) filterSuggestions.hidden = (shown > 0);
-    if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
+    if (resultCount) {
+      var msg = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
+      if (impossibleRange && shown === 0) {
+        msg += ' ' + (impossibleDistance ? TXT_IMPOSSIBLE_DISTANCE : TXT_IMPOSSIBLE_DESNIVEL);
+      }
+      resultCount.textContent = msg;
+    }
 
     // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
     // antes no habia forma de salir de ahi sin recolocarlos a mano o recargar.

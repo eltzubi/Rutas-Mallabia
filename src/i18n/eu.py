@@ -403,6 +403,9 @@ HOME = {
     'Ampliar rango de distancia': 'Distantzia-barrutia zabaldu',
     'Ampliar rango de desnivel': 'Desnibel-barrutia zabaldu',
 
+    'data-impossible-distance="(rango de distancia imposible)" data-impossible-desnivel="(rango de desnivel imposible)"':
+        'data-impossible-distance="(distantzia-barrutia ezinezkoa)" data-impossible-desnivel="(desnibel-barrutia ezinezkoa)"',
+
     'data-all-distance="Todos" data-all-desnivel="Todos" data-approx="aprox."':
         'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
