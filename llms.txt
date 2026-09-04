@@ -9,35 +9,35 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 ## Rutas
 
 - [Arteta, Asuntza y los pasos entre ambos](https://trabakutik.com/artetaasuntza.html): 21,78 km, desnivel +962 m, dificultad difícil, BTT/e-bike
-- [Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza](https://trabakutik.com/intxorta.html): 36,31 km, desnivel +1.750 m, dificultad difícil, Senderismo · Trail running
+- [Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza](https://trabakutik.com/intxorta.html): 36,31 km, desnivel +1.750 m, dificultad difícil, Senderismo
 - [Trabakua, Goierri, Aixola y Eitzaga](https://trabakutik.com/aixola.html): 36,24 km, desnivel +829 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +660 m, dificultad difícil, BTT/e-bike
 - [Asuntza bira](https://trabakutik.com/trabakua.html): 16,5 km, desnivel +712 m, dificultad media, BTT/e-bike
-- [Iturzuri, Zengotitagane subida por la cascada de Gerea](https://trabakutik.com/iturrizuri.html): 10,76 km, desnivel +627 m, dificultad fácil, Senderismo · Trail running
+- [Iturzuri, Zengotitagane subida por la cascada de Gerea](https://trabakutik.com/iturrizuri.html): 10,76 km, desnivel +627 m, dificultad fácil, Senderismo
 - [Zenarruza, San Kristobal y Zengotitagane](https://trabakutik.com/zenarruza.html): 31,7 km, desnivel +1.161 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Elgeta y Argiñeta](https://trabakutik.com/osma.html): 36,8 km, desnivel +1.002 m, dificultad difícil, BTT/e-bike
 - [Ur Jauziak Gerea](https://trabakutik.com/gerea.html): 5,7 km, desnivel +415 m, dificultad fácil, Senderismo
 - [Zengotitagane, Iturzurigana y San Cristóbal Txiki](https://trabakutik.com/zengotitagane.html): 22,4 km, desnivel +1.029 m, dificultad media, BTT/e-bike
-- [Zengotitagane, Axmakur y Oiz](https://trabakutik.com/oiz.html): 11,1 km, desnivel +752 m, dificultad media, Senderismo · Trail running
+- [Zengotitagane, Axmakur y Oiz](https://trabakutik.com/oiz.html): 11,1 km, desnivel +752 m, dificultad media, Senderismo
 - [Osmagain y Arietzu](https://trabakutik.com/arietzu.html): 4,3 km, desnivel +235 m, dificultad fácil, Senderismo
-- [Trabakua, Asuntza y Urko](https://trabakutik.com/urko.html): 15,3 km, desnivel +873 m, dificultad media, Senderismo · Trail running
+- [Trabakua, Asuntza y Urko](https://trabakutik.com/urko.html): 15,3 km, desnivel +873 m, dificultad media, Senderismo
 - [Zengotitagane, Askako y San Cristóbal](https://trabakutik.com/sancristobal.html): 26,9 km, desnivel +1.248 m, dificultad media, BTT/e-bike
 - [Trabakua, Barinaga y Iturreta](https://trabakutik.com/iturreta.html): 19,65 km, desnivel +975 m, dificultad media, BTT/e-bike
-- [Urko, Egoarbitza, Santamañesar y Zengotitagane](https://trabakutik.com/egoarbitza.html): 34,1 km, desnivel +2.201 m, dificultad difícil, Senderismo · Trail running
-- [Iturreta, Markina y Urregarai](https://trabakutik.com/urregarai.html): 30,5 km, desnivel +1.163 m, dificultad difícil, Senderismo · Trail running · BTT/e-bike
-- [Urko, Kalamua, San Migel y Mendibil](https://trabakutik.com/kalamua.html): 36,0 km, desnivel +1.676 m, dificultad difícil, Senderismo · Trail running
+- [Urko, Egoarbitza, Santamañesar y Zengotitagane](https://trabakutik.com/egoarbitza.html): 34,1 km, desnivel +2.201 m, dificultad difícil, Senderismo
+- [Iturreta, Markina y Urregarai](https://trabakutik.com/urregarai.html): 30,5 km, desnivel +1.163 m, dificultad difícil, Senderismo · BTT/e-bike
+- [Urko, Kalamua, San Migel y Mendibil](https://trabakutik.com/kalamua.html): 36,0 km, desnivel +1.676 m, dificultad difícil, Senderismo
 - [Asuntza y Mundioko Koba](https://trabakutik.com/mundiokokoba.html): 13,0 km, desnivel +404 m, dificultad fácil, Senderismo
-- [Trabakua, Iturreta e Iruzubieta](https://trabakutik.com/iruzubieta.html): 19,22 km, desnivel +769 m, dificultad media, Senderismo · Trail running · BTT/e-bike
+- [Trabakua, Iturreta e Iruzubieta](https://trabakutik.com/iruzubieta.html): 19,22 km, desnivel +769 m, dificultad media, Senderismo · BTT/e-bike
 - [Trabakua Mendibil](https://trabakutik.com/mendibil.html): 6,08 km, desnivel +432 m, dificultad fácil, Senderismo
-- [Trabakua, Mendibil, Olamendi y Arteta](https://trabakutik.com/arteta.html): 11,38 km, desnivel +565 m, dificultad fácil, Senderismo · Trail running
+- [Trabakua, Mendibil, Olamendi y Arteta](https://trabakutik.com/arteta.html): 11,38 km, desnivel +565 m, dificultad fácil, Senderismo
 - [Trabakua, paseo por el barrio Goita](https://trabakutik.com/goita.html): 5,34 km, desnivel +200 m, dificultad fácil, Senderismo · BTT/e-bike
 - [Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua](https://trabakutik.com/hirutxikiak.html): 43,91 km, desnivel +2.291 m, dificultad difícil, Senderismo · Trail running
 - [Trabakua, Aixola y Berriz](https://trabakutik.com/zaldibar.html): 42,35 km, desnivel +1.115 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Zengotitagane y Maguna](https://trabakutik.com/maguna.html): 33,44 km, desnivel +1.215 m, dificultad difícil, BTT/e-bike
 - [7 Pago Mendi Lasterketa 25km](https://trabakutik.com/7pago.html): 25,5 km, desnivel +1.400 m, dificultad difícil, Senderismo · Trail running
 - [7 Pago Mendi Lasterketa 16K](https://trabakutik.com/7pago16.html): 16 km, desnivel +750 m, dificultad media, Senderismo · Trail running
-- [Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil](https://trabakutik.com/barinaga.html): 27,0 km, desnivel +1.453 m, dificultad difícil, Senderismo · Trail running
-- [Trabakua, Longa, Muniozguren](https://trabakutik.com/muniozguren.html): 12,23 km, desnivel +250 m, dificultad fácil, Senderismo · Trail running · BTT/e-bike
+- [Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil](https://trabakutik.com/barinaga.html): 27,0 km, desnivel +1.453 m, dificultad difícil, Senderismo
+- [Trabakua, Longa, Muniozguren](https://trabakutik.com/muniozguren.html): 12,23 km, desnivel +250 m, dificultad fácil, Senderismo · BTT/e-bike
 - [Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane](https://trabakutik.com/exigente.html): 39,87 km, desnivel +1.700 m, dificultad difícil, BTT/e-bike
 
 ## Otras páginas

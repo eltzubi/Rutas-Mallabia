@@ -176,6 +176,8 @@ COMMON = {
 ROUTE = {
     '&larr; Rutas': '&larr; Ibilbideak',
     '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    '<h2>Senderismo &middot; BTT/e-bike</h2>': '<h2>Oinez &middot; BTT/e-bike</h2>',
     '<h2>Senderismo &middot; Trail running &middot; BTT/e-bike</h2>':
         '<h2>Oinez &middot; Trail running &middot; BTT/e-bike</h2>',
     '<h2>Senderismo &middot; Trail running</h2>':
@@ -272,7 +274,7 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik</p>',
     '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h3>':
         '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h3>',
-    '<p class="route-card-desc">Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
+    '<p class="route-card-desc">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
         '<p class="route-card-desc">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
     'alt="Cruz de piedra sobre su pedestal en lo alto, junto a un monolito de roca y una ikurri&ntilde;a ondeando al fondo, entre hierba alta y pinar"':
         'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
@@ -438,8 +440,6 @@ HOME = {
     'data-label-collapse="Reducir mapa"': 'data-label-collapse="Txikitu mapa"',
     'alt="Bicicleta con el faro encendido junto a un poste de se&ntilde;alizaci&oacute;n, cerca de las antenas de la cumbre del Oiz al anochecer"':
         'alt="Bizikleta argia piztuta seinale-poste baten ondoan, Oizko gailurreko antenetatik gertu ilunabarrean"',
-    '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
-        '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
     'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
         'alt="Gailur harritsua atzealdean, alanbre-hesi baten ondoko lurrezko bide batetik ikusia, baserri sakabanatuekin magalean"',
     'Toca una ruta en el mapa para ver su informaci&oacute;n.':
@@ -664,7 +664,6 @@ ITURZURI = {
         'Aterpetik behera jarraitzen du altuera galtzen, errepide nagusia ia ukitu arte, jada Osma '
         'auzoan. Baina iritsi aurretik, bideak bat-batean biratzen du, eta iparralderantz itzultzen '
         'gara joaneko bidearekin berriro lotu arte, Trabakuatik oso gertu, zirkuitua ixteko.',
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     'Sendero de montaña, no apto para bici. Hay dos tramos que exigen ir atentos: el cruce en la '
     'segunda cascada de Gerena para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
     'desde Zengotitagane. Quien prefiera un día más corto puede bajar directo a Trabakua desde la '
@@ -1093,7 +1092,6 @@ OIZ = {
     'La vuelta es por el mismo camino, de vuelta a Trabakua.':
         'Bueltarako, bide bera hartzen dugu, pago artean berriro jaitsiz, Trabakuara '
         'itzultzeko. Ibilbide osoa azkarra, argia eta paisaiaren poderioz oso gozagarria da.',
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
     '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m).':
         '11,1 km eta +752 m-ko desnibela joan-etorriko ibilbide batean, bidean bi goirekin '
@@ -1236,7 +1234,6 @@ URKO = {
         '&middot; 490 m), Urko eta Mendibil (613 m) bereizten dituen tartera. Lepoan '
         'pista hartzen dugu berriro, Asuntzako bidea bera, eta hortik Trabakuarantz '
         'igotzen hasten gara, ibilbideari buelta emateko.',
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). No hay '
     'fuentes en la ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de '
@@ -1418,7 +1415,6 @@ EGOARBITZA = {
     '<span class="num">4</span>Presa de Aixola</span>':
         '<span class="num">4</span>Aixolako presa</span>',
 
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="V&eacute;rtice geod&eacute;sico en la cumbre del Urko, con bastones de trekking apoyados y las monta&ntilde;as del entorno al fondo"':
         'alt="Urkoko gailurreko bertize geodesikoa, trekking bastoiak bermatuta eta inguruko mendiak atzealdean"',
@@ -1625,7 +1621,6 @@ KALAMUA = {
     'download="Urko, Kalamua, San Migel y Mendibil.kml"':
         'download="Urko, Kalamua, San Migel eta Mendibil.kml"',
 
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
 
     'alt="Amanecer entre nubes junto al moj&oacute;n de la cumbre de Urko, km 7,9 de la ruta"':
         'alt="Egunsentia hodeien artean, Urkoko gailurreko mugarriaren ondoan, ibilbideko 7,9 km"',
@@ -2048,7 +2043,6 @@ ARTETA = {
         'pista beretik, alderantziz, Trabakuara bueltan zirkulua itxi arte.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
-    '<h2>Senderismo &middot; Trail running</h2>': '<h2>Oinez &middot; Trail running</h2>',
     '11,38 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
     'conocer rincones escondidos y pistas o caminos distintos de los habituales por la '
     'zona de Mendibil y Arteta. La Fuente de Arteta sirve de punto de agua a mitad de '
@@ -2653,10 +2647,6 @@ MUNIOZGUREN = {
     '<span class="mid">perfil real del track &middot; 12,23 km</span>':
         '<span class="mid">trackaren benetako profila &middot; 12,23 km</span>',
 
-    '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
-        '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
-    '<h2>Senderismo &middot; Trail running &middot; BTT/e-bike</h2>':
-        '<h2>Oinez &middot; Trail running &middot; BTT/e-bike</h2>',
 
     'Salimos desde el <b>puerto de Trabakua</b>. Entre los dos bares parte una peque&ntilde;a carretera asfaltada que se dirige hacia el barrio de <b>Gerea</b>, en direcci&oacute;n noroeste. La seguimos tranquilamente y, tras unos kil&oacute;metros, llegamos al barrio.':
         '<b>Trabakuko mendatetik</b> abiatuko gara. Bi tabernen artetik <b>Gerea</b> auzorantz, ipar-mendebalderantz, doan asfaltozko errepide txiki bat ateratzen da. Bide horri lasai jarraituz, kilometro gutxiren buruan auzora iritsiko gara.',
@@ -3041,7 +3031,7 @@ INTXORTA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Bost tontor</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta y Egoarbitza</em></h1>':
         '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta eta Egoarbitza</em></h1>',
-    '<p class="full-name">Circuito largo de trail running desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
+    '<p class="full-name">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
         '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
 
     # perfil: marcadores y leyenda
@@ -3121,8 +3111,8 @@ INTXORTA = {
     # --- para quien es ---
     'Son 36,31 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
         '36,31 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
-    'Funciona bien como salida larga de <b>trail running</b> o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
-        'Ibilbidea <b>trail running</b> irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker beharrezkoa baino gehiago kargatu gabe atera daiteke.',
+    'Funciona bien como salida larga o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
+        'Ibilbidea irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker beharrezkoa baino gehiago kargatu gabe atera daiteke.',
 }
 
 ARTETAASUNTZA = {
