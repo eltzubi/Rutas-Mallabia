@@ -3123,14 +3123,18 @@ ARTETAASUNTZA = {
         '<h1>Arteta, Asuntza<br><em>eta bien arteko pasabideak</em></h1>',
     'Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza, recorriendo los pasos que unen los dos caminos':
         'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
+    '<span class="elev-legend-item"><span class="num">3</span>Fuente de Arteta</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Artetako iturria</span>',
+    '<title>Fuente de Arteta &middot; 8,0 km &middot; 464 m</title>':
+        '<title>Artetako iturria &middot; 8,0 km &middot; 464 m</title>',
     '<title>Ermita de San Juan &middot; 3,4 km &middot; 448 m</title>':
         '<title>San Juan ermita &middot; 3,4 km &middot; 448 m</title>',
     '<title>Collado de Asuntza &middot; 16,4 km &middot; 479 m</title>':
         '<title>Asuntzako lepoa &middot; 16,4 km &middot; 479 m</title>',
     '<span class="elev-legend-item"><span class="num">2</span>Ermita de San Juan</span>':
         '<span class="elev-legend-item"><span class="num">2</span>San Juan ermita</span>',
-    '<span class="elev-legend-item"><span class="num">3</span>Collado de Asuntza</span>':
-        '<span class="elev-legend-item"><span class="num">3</span>Asuntzako lepoa</span>',
+    '<span class="elev-legend-item"><span class="num">4</span>Collado de Asuntza</span>':
+        '<span class="elev-legend-item"><span class="num">4</span>Asuntzako lepoa</span>',
     'download="Arteta, Asuntza y los pasos entre ambos.gpx"':
         'download="Arteta, Asuntza eta bien arteko pasabideak.gpx"',
     'download="Arteta, Asuntza y los pasos entre ambos.kml"':
