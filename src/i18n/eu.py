@@ -1993,6 +1993,14 @@ ARTETA = {
     'montes al fondo"':
         'alt="Baserri bat muino baten gainean, larre eta basoz inguratuta, mendiak '
         'atzealdean"',
+    'alt="El sol entrando entre los &aacute;rboles en un tramo de bosque, con troncos '
+    'ca&iacute;dos y roca cubierta de musgo al borde del camino"':
+        'alt="Eguzkia zuhaitzen artetik sartzen baso-tarte batean, enbor eroriak eta '
+        'goroldioz estalitako harkaitza bidearen ertzean"',
+    'alt="Una pista de cemento subiendo entre el arbolado, con una se&ntilde;al de '
+    'prohibido el paso al fondo"':
+        'alt="Zementuzko pista bat zuhaitzen artetik gora, sarrera debekatua dagoela '
+        'dioen seinale batekin atzealdean"',
     '<span>Mixta</span><span class="sep">/</span><span>Mendibil, Olamendi y Arteta</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Mendibil, Olamendi eta Arteta</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
