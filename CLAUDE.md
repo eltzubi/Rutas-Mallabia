@@ -74,7 +74,7 @@ plus a per-page dict such as `EGOARBITZA`, wired up via `PAGE_STRINGS`, `TITLES`
 counterpart (`href="urko.eu.html"`) by `EU_OF` in `make_eu.py` — write plain `.html` hrefs in both
 the Spanish source and the `eu.py` translation values, never the `.eu.html` form by hand.
 
-**Shared assets, not embedded per-page.** `css/home.css`, `css/route.css`, `css/historias.css`,
+**Shared assets, not embedded per-page.** `css/home.css`, `css/route.css`,
 `fonts/inline_fonts.css` (self-hosted `@font-face`, base64) and `js/{app,map,filters}.js` live once
 in `src/` and are copied to the repo root by `build.py`, referenced by every page via a real `<link>`/
 `<script src>` (not inlined), so browsers cache them once across pages. `build.py` appends a content
@@ -94,12 +94,6 @@ them automatically; distance/elevation-gain figures in `.facts` are meant to ref
 invented numbers. `data/trailhead.json` holds every route's track for the home-page overview map.
 `src/js/map.js` reads waypoint labels straight from the page's already-rendered `.elev-legend` items
 (not duplicated in the JSON), and derives the route's compass heading itself.
-
-**"Historias" page** (`historias_head/tail.html`) is a full-screen, one-route-per-scroll story view,
-sharing the same masthead/back-link/theme-toggle chrome as a route page (hence riding along in
-`ROUTE_PAGES` in `make_eu.py` despite not being one). Each `.story-card` carries
-`data-track="data/<name>.json"` and draws a standalone traced-shape SVG of the route client-side (see
-the inline `<script>` in `historias_tail.html`) plus an on-demand Leaflet detail map.
 
 **Huge generated files.** Once a route page has embedded photos, `*_tail.html` and
 `fonts/inline_fonts.css` contain very long base64 lines. **Do not open these with a plain read/edit

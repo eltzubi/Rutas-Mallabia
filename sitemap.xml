@@ -311,14 +311,4 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/intxorta.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/intxorta.eu.html"/>
   </url>
-  <url>
-    <loc>https://trabakutik.com/historias.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
-  </url>
-  <url>
-    <loc>https://trabakutik.com/historias.eu.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/historias.html"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/historias.eu.html"/>
-  </url>
 </urlset>
