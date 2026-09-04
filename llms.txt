@@ -11,7 +11,7 @@ Idiomas: cada página existe en castellano (`nombre.html`) y en euskera (`nombre
 - [Arteta, Asuntza y los pasos entre ambos](https://trabakutik.com/artetaasuntza.html): 21,78 km, desnivel +962 m, dificultad difícil, BTT/e-bike
 - [Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza](https://trabakutik.com/intxorta.html): 36,31 km, desnivel +1.750 m, dificultad difícil, Senderismo · Trail running
 - [Trabakua, Goierri, Aixola y Eitzaga](https://trabakutik.com/aixola.html): 36,24 km, desnivel +829 m, dificultad difícil, BTT/e-bike
-- [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +660 m, dificultad difícil, trail running y BTT/e-bike
+- [Trabakua, Muniozguren, Oiz y San Kristobal Txiki](https://trabakutik.com/potrera.html): 20,43 km, desnivel +660 m, dificultad difícil, BTT/e-bike
 - [Asuntza bira](https://trabakutik.com/trabakua.html): 16,5 km, desnivel +712 m, dificultad media, BTT/e-bike
 - [Iturzuri, Zengotitagane subida por la cascada de Gerea](https://trabakutik.com/iturrizuri.html): 10,76 km, desnivel +627 m, dificultad fácil, Senderismo · Trail running
 - [Zenarruza, San Kristobal y Zengotitagane](https://trabakutik.com/zenarruza.html): 31,7 km, desnivel +1.161 m, dificultad difícil, BTT/e-bike

@@ -2883,8 +2883,8 @@ POTRERA = {
         'Hemendik aurrera beherantz jarraituko dugu <b>Zengotita</b> auzora iritsi arte. Lan handiena eginda izango dugu ordurako, eta 2,5 kilometro inguru baino ez zaizkigu geratuko Trabakuan ibilbidea amaitzeko. Azken tarte lasaiagoa, hankak pixka bat askatu eta azken kilometroez gozatzeko, berriro abiapuntura iritsi aurretik.',
 
     # para quién es
-    '20,43 km y +660 m que funcionan especialmente bien como <b>entrenamiento de trail running</b>: hay kil&oacute;metros de pista para hacer base, una subida larga y llevadera donde meter ritmo, un repecho corto y muy fuerte para apretar de verdad, y la bajada de la Potrera para soltarse en terreno t&eacute;cnico. En bici tambi&eacute;n es una gran ruta, pero pide paciencia: ese repecho es pr&aacute;cticamente impedaleable y en la Potrera hay tramos rotos y alg&uacute;n bache que obligan a echar pie a tierra.':
-        '20,43 km eta +660 m, <b>trail running entrenamendu</b>rako bereziki ondo datozenak: pista-kilometroak oinarria egiteko, igoera luze eta eramangarri bat erritmoa hartzeko, aldapa labur eta oso gogor bat benetan estutzeko, eta Potrerako jaitsiera lur teknikoan askatzeko. Bizikletaz ere ibilbide ederra da, baina pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zuloren bat daude, oinez jaistera behartzen dutenak.',
+    '20,43 km y +660 m con kil&oacute;metros de pista, una subida larga y llevadera, un repecho corto y muy fuerte, y la bajada de la Potrera en terreno t&eacute;cnico. Pide paciencia: ese repecho es pr&aacute;cticamente impedaleable y en la Potrera hay tramos rotos y alg&uacute;n bache que obligan a echar pie a tierra.':
+        '20,43 km eta +660 m, pista-kilometroekin, igoera luze eta eramangarri batekin, aldapa labur eta oso gogor batekin, eta Potrerako jaitsierarekin lur teknikoan. Pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zulo batzuk daude, oinez jaitsi beharra ematen dutenak.',
 }
 
 # <meta name="description"> per page (head files)
