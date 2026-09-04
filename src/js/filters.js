@@ -16,6 +16,8 @@
   var emptyMsg = document.getElementById('filterEmpty');
   var resultCount = document.getElementById('resultCount');
   var activeFiltersDisplay = document.getElementById('activeFilters');
+  var filterSuggestions = document.getElementById('filterSuggestions');
+  var suggestionBtns = document.querySelectorAll('.suggestion-btn');
   var quickBtns = document.querySelectorAll('.quick-help-btn');
   var distanceMin = document.getElementById('distanceRangeMin');
   var distanceMax = document.getElementById('distanceRangeMax');
@@ -235,6 +237,7 @@
       card.classList.toggle('is-hidden', !matches);
     });
     if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
+    if (filterSuggestions) filterSuggestions.hidden = (shown > 0);
     if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
 
     // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
@@ -354,6 +357,26 @@
 
   difficultyChips.forEach(function(chip){
     chip.addEventListener('click', function(){ toggleChip(chip, difficultyChips); });
+  });
+
+  suggestionBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.dataset.suggestion;
+      if (type === 'activities') {
+        activityChips.forEach(function(c){ c.classList.add('active'); });
+      } else if (type === 'difficulties') {
+        difficultyChips.forEach(function(c){ c.classList.add('active'); });
+      } else if (type === 'distance') {
+        if (distanceMin) distanceMin.value = 0;
+        if (distanceMax) distanceMax.value = maxDistance;
+        setActiveDistanceChip(null);
+      } else if (type === 'desnivel') {
+        if (desnivelMin) desnivelMin.value = 0;
+        if (desnivelMax) desnivelMax.value = maxDesnivel;
+      }
+      apply();
+      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+    });
   });
 
   quickBtns.forEach(function(btn){

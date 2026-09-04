@@ -294,6 +294,29 @@
   padding:20px 0;
 }
 .filter-empty.visible{ display:block; }
+.filter-suggestions{
+  padding:16px; background:var(--bg-hover); border-radius:8px; margin-top:12px;
+}
+.suggestion-text{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+  margin:0 0 10px;
+}
+.suggestion-buttons{
+  display:flex; flex-direction:column; gap:8px;
+}
+.suggestion-btn{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
+  color:var(--ink-dim); background:var(--bg); border:1px solid var(--line);
+  border-radius:4px; padding:8px 12px; cursor:pointer; text-align:left;
+  transition:color .2s ease, border-color .2s ease, background .2s ease;
+}
+.suggestion-btn:hover{
+  color:var(--teal); border-color:var(--teal); background:var(--bg);
+}
+@media(min-width:600px){
+  .suggestion-buttons{ flex-direction:row; flex-wrap:wrap; }
+  .suggestion-btn{ flex:1; min-width:120px; }
+}
 
 /* ---- view toggle: list or map, same filters either way ---- */
 .view-toggle-row{

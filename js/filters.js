@@ -15,6 +15,9 @@
   var cards = document.querySelectorAll('.route-card[data-activity]');
   var emptyMsg = document.getElementById('filterEmpty');
   var resultCount = document.getElementById('resultCount');
+  var activeFiltersDisplay = document.getElementById('activeFilters');
+  var filterSuggestions = document.getElementById('filterSuggestions');
+  var suggestionBtns = document.querySelectorAll('.suggestion-btn');
   var quickBtns = document.querySelectorAll('.quick-help-btn');
   var distanceMin = document.getElementById('distanceRangeMin');
   var distanceMax = document.getElementById('distanceRangeMax');
@@ -163,8 +166,43 @@
       if (view === 'map' && mapWrap) {
         scrollToMap();
       }
+      saveFiltersToStorage();
     });
   });
+
+  function updateActiveFiltersDisplay(){
+    if (!activeFiltersDisplay) return;
+    var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
+      .map(function(c){ return c.dataset.difficulty; });
+    var activeActivities = Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); })
+      .map(function(c){ return c.dataset.activity; });
+    var minD = distanceMin ? parseFloat(distanceMin.value) : 0;
+    var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
+    var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
+    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : Infinity;
+
+    var parts = [];
+    if (activeActivities.length !== activityChips.length) {
+      parts.push(activeActivities.join(' + '));
+    }
+    if (activeDifficulty.length !== difficultyChips.length) {
+      parts.push(activeDifficulty.join(' + '));
+    }
+    if (minD > 0 || maxD < maxDistance) {
+      parts.push(fmtRange(minD, maxD, maxDistance, false, ''));
+    }
+    if (minE > 0 || maxE < maxDesnivel) {
+      parts.push(fmtRange(minE, maxE, maxDesnivel, true, ''));
+    }
+
+    if (parts.length > 0) {
+      activeFiltersDisplay.textContent = parts.join(' · ');
+      activeFiltersDisplay.style.display = 'block';
+    } else {
+      activeFiltersDisplay.textContent = '';
+      activeFiltersDisplay.style.display = 'none';
+    }
+  }
 
   function apply(){
     var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
@@ -199,6 +237,7 @@
       card.classList.toggle('is-hidden', !matches);
     });
     if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
+    if (filterSuggestions) filterSuggestions.hidden = (shown > 0);
     if (resultCount) resultCount.textContent = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
 
     // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
@@ -209,6 +248,8 @@
                    minD > 0 || maxD < maxDistance || minE > 0 || maxE < maxDesnivel;
     resetBtns.forEach(function(b){ b.hidden = !filtrado; });
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
+    saveFiltersToStorage();
+    updateActiveFiltersDisplay();
   }
 
   // Apagar el ultimo chip encendido dejaba los botones apagados y la lista
@@ -229,6 +270,70 @@
     apply();
   }
 
+  function saveFiltersToStorage(){
+    try {
+      var state = {
+        activities: Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.activity; }),
+        difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
+        distance: [distanceMin ? parseFloat(distanceMin.value) : 0, distanceMax ? parseFloat(distanceMax.value) : maxDistance],
+        desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : 0, desnivelMax ? parseFloat(desnivelMax.value) : maxDesnivel],
+        view: view
+      };
+      localStorage.setItem('trabakutik_filters', JSON.stringify(state));
+    } catch (e) {
+      // localStorage might be disabled or full; silently continue
+    }
+  }
+
+  function restoreFiltersFromStorage(){
+    try {
+      var saved = localStorage.getItem('trabakutik_filters');
+      if (!saved) return;
+      var state = JSON.parse(saved);
+
+      // Restore activities
+      if (state.activities && state.activities.length > 0) {
+        activityChips.forEach(function(c){
+          c.classList.toggle('active', state.activities.indexOf(c.dataset.activity) !== -1);
+        });
+      }
+
+      // Restore difficulties
+      if (state.difficulties && state.difficulties.length > 0) {
+        difficultyChips.forEach(function(c){
+          c.classList.toggle('active', state.difficulties.indexOf(c.dataset.difficulty) !== -1);
+        });
+      }
+
+      // Restore distance range
+      if (state.distance && state.distance.length === 2) {
+        if (distanceMin) distanceMin.value = state.distance[0];
+        if (distanceMax) distanceMax.value = state.distance[1];
+        setActiveDistanceChip(null);
+      }
+
+      // Restore desnivel range
+      if (state.desnivel && state.desnivel.length === 2) {
+        if (desnivelMin) desnivelMin.value = state.desnivel[0];
+        if (desnivelMax) desnivelMax.value = state.desnivel[1];
+      }
+
+      // Restore view preference
+      if (state.view && state.view !== 'list') {
+        viewBtns.forEach(function(btn){
+          btn.classList.toggle('active', btn.dataset.view === state.view);
+        });
+        if (resultsList) resultsList.hidden = (state.view !== 'list');
+        if (mapWrap) mapWrap.hidden = (state.view !== 'map');
+        view = state.view;
+      }
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function resetFilters(){
     activityChips.forEach(function(c){ c.classList.add('active'); });
     difficultyChips.forEach(function(c){ c.classList.add('active'); });
@@ -237,7 +342,12 @@
     if (distanceMax) distanceMax.value = maxDistance;
     if (desnivelMin) desnivelMin.value = 0;
     if (desnivelMax) desnivelMax.value = maxDesnivel;
+    view = 'list';
+    viewBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view === 'list'); });
+    if (resultsList) resultsList.hidden = false;
+    if (mapWrap) mapWrap.hidden = true;
     apply();
+    saveFiltersToStorage();
   }
   resetBtns.forEach(function(b){ b.addEventListener('click', resetFilters); });
 
@@ -247,6 +357,26 @@
 
   difficultyChips.forEach(function(chip){
     chip.addEventListener('click', function(){ toggleChip(chip, difficultyChips); });
+  });
+
+  suggestionBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.dataset.suggestion;
+      if (type === 'activities') {
+        activityChips.forEach(function(c){ c.classList.add('active'); });
+      } else if (type === 'difficulties') {
+        difficultyChips.forEach(function(c){ c.classList.add('active'); });
+      } else if (type === 'distance') {
+        if (distanceMin) distanceMin.value = 0;
+        if (distanceMax) distanceMax.value = maxDistance;
+        setActiveDistanceChip(null);
+      } else if (type === 'desnivel') {
+        if (desnivelMin) desnivelMin.value = 0;
+        if (desnivelMax) desnivelMax.value = maxDesnivel;
+      }
+      apply();
+      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+    });
   });
 
   quickBtns.forEach(function(btn){
@@ -265,5 +395,12 @@
     });
   });
 
-  apply();
+  // Restore filters from localStorage and apply them
+  if (!restoreFiltersFromStorage()) {
+    // If no saved filters, just apply defaults
+    apply();
+  } else {
+    // If restored, apply the restored state
+    apply();
+  }
 })();
