@@ -127,11 +127,26 @@
   });
 
   if (moreFiltersToggle && moreFiltersPanel) {
+    function closePanel(){
+      moreFiltersPanel.setAttribute('hidden', '');
+      moreFiltersToggle.setAttribute('aria-expanded', 'false');
+    }
+    function openPanel(){
+      moreFiltersPanel.removeAttribute('hidden');
+      moreFiltersToggle.setAttribute('aria-expanded', 'true');
+    }
     moreFiltersToggle.addEventListener('click', function(){
       var open = moreFiltersPanel.hasAttribute('hidden');
-      if (open) moreFiltersPanel.removeAttribute('hidden');
-      else moreFiltersPanel.setAttribute('hidden', '');
-      moreFiltersToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) openPanel();
+      else closePanel();
+    });
+    // Close drawer on backdrop click (mobile drawer modal)
+    moreFiltersPanel.addEventListener('click', function(e){
+      if (e.target === moreFiltersPanel) closePanel();
+    });
+    // Close drawer on escape key
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !moreFiltersPanel.hasAttribute('hidden')) closePanel();
     });
   }
 
