@@ -319,6 +319,11 @@
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
   white-space:nowrap;
 }
+.result-info{ min-width:0; flex:1; }
+.active-filters{
+  font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--ink-dim);
+  margin:4px 0 0; white-space:normal; word-break:break-word;
+}
 .result-line{ display:flex; align-items:center; gap:10px; margin-left:auto; min-width:0; }
 
 /* Salir de un filtro que no deja ninguna ruta: aparece solo cuando hay algo

@@ -81,7 +81,10 @@
         <button type="button" class="view-toggle-btn" data-view="map">mapa</button>
       </div>
       <div class="result-line">
-        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <div class="result-info">
+          <p class="result-count" id="resultCount" aria-live="polite"></p>
+          <p class="active-filters" id="activeFilters" aria-live="polite" aria-atomic="true"></p>
+        </div>
         <button type="button" class="filter-reset" data-filter-reset hidden>Quitar filtros</button>
       </div>
     </div>
