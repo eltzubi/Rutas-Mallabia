@@ -391,6 +391,18 @@ HOME = {
     '<span>F&aacute;cil</span>': '<span>Erraza</span>',
     '<span>Media</span>': '<span>Ertaina</span>',
     '<span>Dif&iacute;cil</span>': '<span>Zaila</span>',
+
+    'aria-label="Filtrar por distancia"': 'aria-label="Iragazi distantzaren arabera"',
+    'data-distance-preset="corto">\n        <span>Corto</span>': 'data-distance-preset="corto">\n        <span>Labur</span>',
+    'data-distance-preset="media1">\n        <span>Medio</span>': 'data-distance-preset="media1">\n        <span>Ertaina</span>',
+    'data-distance-preset="media2">\n        <span>Largo</span>': 'data-distance-preset="media2">\n        <span>Luzea</span>',
+    'data-distance-preset="larga">\n        <span>Muy largo</span>': 'data-distance-preset="larga">\n        <span>Oso luzea</span>',
+
+    'Ver todas las actividades': 'Jarduera guztiak ikusi',
+    'Ver todas las dificultades': 'Zailtasun guztiak ikusi',
+    'Ampliar rango de distancia': 'Distantzia-barrutia zabaldu',
+    'Ampliar rango de desnivel': 'Desnibel-barrutia zabaldu',
+
     'data-all-distance="Todos" data-all-desnivel="Todos" data-approx="aprox."':
         'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
     'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',

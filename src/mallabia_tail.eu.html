@@ -55,6 +55,20 @@
         <span>Zaila</span>
       </button>
     </div>
+    <div class="distance-filter" role="group" aria-label="Iragazi distantzaren arabera">
+      <button type="button" class="distance-chip" data-distance-preset="corto">
+        <span>Labur</span>
+      </button>
+      <button type="button" class="distance-chip" data-distance-preset="media1">
+        <span>Ertaina</span>
+      </button>
+      <button type="button" class="distance-chip" data-distance-preset="media2">
+        <span>Luzea</span>
+      </button>
+      <button type="button" class="distance-chip" data-distance-preset="larga">
+        <span>Oso luzea</span>
+      </button>
+    </div>
     <button type="button" class="more-filters-toggle" id="moreFiltersToggle" aria-expanded="false" aria-controls="moreFiltersPanel">Iragazki gehiago</button>
     <div class="range-filters" id="moreFiltersPanel" hidden data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru" data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta">
       <div class="range-filter">
@@ -81,7 +95,10 @@
         <button type="button" class="view-toggle-btn" data-view="map">mapa</button>
       </div>
       <div class="result-line">
-        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <div class="result-info">
+          <p class="result-count" id="resultCount" aria-live="polite"></p>
+          <p class="active-filters" id="activeFilters" aria-live="polite" aria-atomic="true"></p>
+        </div>
         <button type="button" class="filter-reset" data-filter-reset hidden>Iragazkiak kendu</button>
       </div>
     </div>
@@ -523,6 +540,16 @@
       </a>
     </div>
     <p class="filter-empty" id="filterEmpty" role="status">Oraindik ez dago mota honetako ibilbiderik. <button type="button" class="filter-reset" data-filter-reset>Iragazkiak kendu</button></p>
+
+    <div class="filter-suggestions" id="filterSuggestions" hidden>
+      <p class="suggestion-text">Intenta relajar los filtros:</p>
+      <div class="suggestion-buttons">
+        <button type="button" class="suggestion-btn" data-suggestion="activities">Jarduera guztiak ikusi</button>
+        <button type="button" class="suggestion-btn" data-suggestion="difficulties">Zailtasun guztiak ikusi</button>
+        <button type="button" class="suggestion-btn" data-suggestion="distance">Distantzia-barrutia zabaldu</button>
+        <button type="button" class="suggestion-btn" data-suggestion="desnivel">Desnibel-barrutia zabaldu</button>
+      </div>
+    </div>
 
     <div class="map-section" id="routeMapWrap" hidden>
       <div class="route-map-box">
