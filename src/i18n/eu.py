@@ -567,18 +567,11 @@ TRABAKUA = {
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
         'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz. '
         'Lehen aldaparekin hasten gara, gogorra baina labur.',
-    'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
-    'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
-    'Aginaga, sin perder mucha altura. Desde Aginaga se sube por un tramo de pista de cemento '
-    'hasta enlazar con el camino de tierra, de vuelta a la pista principal, justo al collado de '
-    'Asuntza. Es un tramo opcional: '
-    'se puede evitar siguiendo recto, sin desviarse hacia él.':
-        'Aldapa horien ostean, jaitsiera tekniko samar bat dator &mdash;trebetasun pixka bat '
-        'duenarentzat arriskurik gabe&mdash;, eta oso gozagarria. Jaitsieraren amaieran berriro '
-        'berreskuratzen dugu igoeraren bidea, Aginaga auzoaren inguruan, altuera handirik galdu '
-        'gabe. Aginagatik zementuzko pista batetik igotzen gara, lurrezko bidearekin lotu arte, '
-        'pista nagusira itzultzeko, Asuntzako lepoan bertan. Tarte hori aukerakoa da: nahi izanez '
-        'gero, zuzen jarraituta saihestu daiteke.',
+    'La bajada técnica viene más adelante, a 1 kilómetro antes de Asuntza. Nos desviamos a la '
+    'izquierda, donde empiezan las bajadas técnicas. Pero hasta entonces la pista es suave.':
+        'Jaitsiera teknikoa aurrera datorren, Asuntza baino 1 kilometro lehenago. Ezkerrera '
+        'desbiatzen gara, jaitsiera teknikoak hasten diren tokian. Baina arte hartaraino pistak '
+        'lasaia da.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
     'Txiki y la parte alta de Berano, con vistas hacia el barrio de Goita y las montañas del '
