@@ -225,6 +225,7 @@
     opacity:1; pointer-events:auto;
   }
   .range-filters{
+    display:flex;
     position:fixed; bottom:0; left:0; right:0; z-index:40;
     width:100%; max-width:none; margin:0;
     padding:20px 18px;
