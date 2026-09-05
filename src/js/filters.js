@@ -120,13 +120,15 @@
     chip.addEventListener('click', function(){
       var already = chip.classList.contains('active');
       setActiveDistanceChip(already ? null : chip);
-      var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
-      if (already || !range) {
-        distanceMin.value = 0;
-        distanceMax.value = maxDistance;
-      } else {
-        distanceMin.value = range[0];
-        distanceMax.value = Math.min(range[1], maxDistance);
+      if (distanceMin && distanceMax) {
+        var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
+        if (already || !range) {
+          distanceMin.value = 0;
+          distanceMax.value = maxDistance;
+        } else {
+          distanceMin.value = range[0];
+          distanceMax.value = Math.min(range[1], maxDistance);
+        }
       }
       apply();
     });
