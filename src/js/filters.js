@@ -291,7 +291,10 @@
     var filtrado = activeActivities.length !== activityChips.length ||
                    activeDifficulty.length !== difficultyChips.length ||
                    minD > 0 || maxD < maxDistance || minE > 0 || maxE < maxDesnivel;
-    resetBtns.forEach(function(b){ b.hidden = !filtrado; });
+    resetBtns.forEach(function(b){
+      if (filtrado) b.removeAttribute('hidden');
+      else b.setAttribute('hidden', '');
+    });
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
     saveFiltersToStorage();
     updateActiveFiltersDisplay();
