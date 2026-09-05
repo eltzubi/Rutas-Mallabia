@@ -234,9 +234,10 @@
     max-height:80vh; overflow-y:auto;
     transform:translateY(100%);
     transition:transform .3s ease-out;
+    visibility:hidden;
   }
   .range-filters:not([hidden]){
-    visibility:visible;
+    visibility:visible !important;
     pointer-events:auto;
     transform:translateY(0);
   }
