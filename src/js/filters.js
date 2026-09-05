@@ -197,10 +197,10 @@
       .map(function(c){ return c.dataset.difficulty; });
     var activeActivities = Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); })
       .map(function(c){ return c.dataset.activity; });
-    var minD = distanceMin ? parseFloat(distanceMin.value) : 0;
-    var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
-    var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
-    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : Infinity;
+    var minD = distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin;
+    var maxD = distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax;
+    var minE = desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin;
+    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax;
 
     var parts = [];
     if (activeActivities.length !== activityChips.length) {
@@ -307,8 +307,8 @@
       var state = {
         activities: Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.activity; }),
         difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
-        distance: [distanceMin ? parseFloat(distanceMin.value) : 0, distanceMax ? parseFloat(distanceMax.value) : maxDistance],
-        desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : 0, desnivelMax ? parseFloat(desnivelMax.value) : maxDesnivel],
+        distance: [distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin, distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax],
+        desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin, desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax],
         view: view
       };
       localStorage.setItem('trabakutik_filters', JSON.stringify(state));
@@ -340,14 +340,18 @@
       // Restore distance range
       if (state.distance && state.distance.length === 2) {
         if (distanceMin) distanceMin.value = state.distance[0];
+        else filterState.distanceMin = state.distance[0];
         if (distanceMax) distanceMax.value = state.distance[1];
+        else filterState.distanceMax = state.distance[1];
         setActiveDistanceChip(null);
       }
 
       // Restore desnivel range
       if (state.desnivel && state.desnivel.length === 2) {
         if (desnivelMin) desnivelMin.value = state.desnivel[0];
+        else filterState.desnivelMin = state.desnivel[0];
         if (desnivelMax) desnivelMax.value = state.desnivel[1];
+        else filterState.desnivelMax = state.desnivel[1];
       }
 
       // Restore view preference
@@ -371,9 +375,13 @@
     difficultyChips.forEach(function(c){ c.classList.add('active'); });
     setActiveDistanceChip(null);
     if (distanceMin) distanceMin.value = 0;
+    else filterState.distanceMin = 0;
     if (distanceMax) distanceMax.value = maxDistance;
+    else filterState.distanceMax = Infinity;
     if (desnivelMin) desnivelMin.value = 0;
+    else filterState.desnivelMin = 0;
     if (desnivelMax) desnivelMax.value = maxDesnivel;
+    else filterState.desnivelMax = Infinity;
     view = 'list';
     viewBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view === 'list'); });
     if (resultsList) resultsList.hidden = false;
@@ -419,8 +427,13 @@
       distanceChips.forEach(function(c){ if (c.dataset.distancePreset === preset) chip = c; });
       setActiveDistanceChip(chip);
       if (range) {
-        distanceMin.value = range[0];
-        distanceMax.value = Math.min(range[1], maxDistance);
+        if (distanceMin && distanceMax) {
+          distanceMin.value = range[0];
+          distanceMax.value = Math.min(range[1], maxDistance);
+        } else {
+          filterState.distanceMin = range[0];
+          filterState.distanceMax = Math.min(range[1], maxDistance);
+        }
       }
       apply();
       if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
