@@ -572,12 +572,11 @@ TRABAKUA = {
     'por un tramo de pista de cemento hasta enlazar con el camino de tierra, de vuelta a la pista '
     'principal, justo al collado de Asuntza. Es un tramo opcional: se puede evitar siguiendo recto, '
     'sin desviarse hacia él. Pero hasta entonces la pista es suave.':
-        'Jaitsiera teknikoa aurrera datorren, Asuntza baino 1 kilometro lehenago. Ezkerrera '
-        'desbiatzen gara Aginaga auzoaren aldera, jaitsiera teknikoak hasten diren tokian. Aginagatik '
-        'zementuzko pista batetik igotzen gara, lurrezko bidearekin lotu arte, pista nagusira '
-        'itzultzeko, Asuntzako lepoan bertan. Tarte hori aukerakoa da: nahi izanez gero ekiditzea da '
-        'gezia, zuzen aurrera segi gabe, bidegrutzetik aldendu gabe. Baina arte hartaraino pistak '
-        'lasaia da.',
+        'Jaitsiera teknikoa aurrerago dator, Asuntzatik kilometro 1 baino lehen. Ezkerretara '
+        'desbideratzen gara Aginaga auzorantz, non jaitsiera teknikoak hasten diren. Aginagatik '
+        'hormigoizko pista batetik igotzen da, Asuntza lepoan dagoen pista nagusiarekin bat egin arte. '
+        'Aukerako zatia da: zuzen jarraituz saihestu daiteke, bertara desbideratu gabe. Baina ordura '
+        'arte pista leuna da.',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas '
     'hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano '
     'Txiki y la parte alta de Berano, con vistas hacia el barrio de Goita y las montañas del '
