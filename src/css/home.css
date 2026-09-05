@@ -235,6 +235,7 @@
     transition:transform .3s ease-out;
   }
   .range-filters:not([hidden]){
+    display:flex;
     transform:translateY(0);
   }
 }
