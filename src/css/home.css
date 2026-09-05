@@ -207,7 +207,7 @@
 .more-filters-toggle:hover{ color:var(--teal); }
 .more-filters-toggle::after{ content:'▾'; font-size:9px; }
 .more-filters-toggle[aria-expanded="true"]::after{ content:'▴'; }
-.range-filters[hidden]{ display:none; }
+.range-filters[hidden]{ visibility:hidden; pointer-events:none; height:0; }
 .range-filters{
   display:flex; flex-wrap:wrap; gap:20px 32px;
   width:100%; max-width:var(--filter-col); margin:0 auto 18px;
@@ -236,7 +236,9 @@
     transition:transform .3s ease-out;
   }
   .range-filters:not([hidden]){
-    display:flex;
+    visibility:visible;
+    pointer-events:auto;
+    height:auto;
     transform:translateY(0);
   }
 }
