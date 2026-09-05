@@ -40,6 +40,8 @@ COMMON = {
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
+    'placeholder="Buscar (ej: cascada, cueva, monasterio)"': 'placeholder="Bilatu (adib: ur-jauzia, koba, monasterioa)"',
+    'aria-label="Buscar rutas"': 'aria-label="Ibilbideak bilatu"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
         '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
     '<p class="route-card-desc">Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua</p>':

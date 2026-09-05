@@ -31,6 +31,12 @@
   if (!activityChips.length || !cards.length) return;
 
   var view = 'list';
+  var filterState = {
+    distanceMin: 0,
+    distanceMax: Infinity,
+    desnivelMin: 0,
+    desnivelMax: Infinity
+  };
 
   // Se consulta en cada salto, no una vez al cargar: la preferencia puede
   // cambiar con la sesion abierta.
@@ -250,7 +256,14 @@
         return activeActivities.indexOf(a) !== -1;
       });
       var matchesDifficulty = !activeDifficulty.length || activeDifficulty.indexOf(card.dataset.difficulty) !== -1;
-      var matches = matchesActivity && matchesDifficulty && km >= minD && km <= maxD && m >= minE && m <= maxE;
+      var matchesSearch = !searchQuery || (function(){
+        var nameEl = card.querySelector('.route-card-name');
+        var descEl = card.querySelector('.route-card-desc');
+        var name = nameEl ? nameEl.textContent.toLowerCase() : '';
+        var desc = descEl ? descEl.textContent.toLowerCase() : '';
+        return name.includes(searchQuery) || desc.includes(searchQuery);
+      })();
+      var matches = matchesActivity && matchesDifficulty && km >= minD && km <= maxD && m >= minE && m <= maxE && matchesSearch;
       if (matches) {
         shown++;
         visibleHrefs.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
@@ -309,7 +322,8 @@
         difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
         distance: [distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin, distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax],
         desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin, desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax],
-        view: view
+        view: view,
+        search: searchQuery
       };
       localStorage.setItem('trabakutik_filters', JSON.stringify(state));
     } catch (e) {
@@ -364,6 +378,12 @@
         view = state.view;
       }
 
+      // Restore search query
+      if (state.search && state.search.length > 0) {
+        searchQuery = state.search;
+        if (searchInput) searchInput.value = state.search;
+      }
+
       return true;
     } catch (e) {
       return false;
@@ -382,6 +402,8 @@
     else filterState.desnivelMin = 0;
     if (desnivelMax) desnivelMax.value = maxDesnivel;
     else filterState.desnivelMax = Infinity;
+    searchQuery = '';
+    if (searchInput) searchInput.value = '';
     view = 'list';
     viewBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view === 'list'); });
     if (resultsList) resultsList.hidden = false;
@@ -439,6 +461,16 @@
       if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
     });
   });
+
+  // Search functionality
+  var searchInput = document.getElementById('searchInput');
+  var searchQuery = '';
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      searchQuery = (e.target.value || '').toLowerCase().trim();
+      apply();
+    });
+  }
 
   // Restore filters from localStorage and apply them
   if (!restoreFiltersFromStorage()) {
