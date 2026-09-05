@@ -40,6 +40,8 @@ COMMON = {
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
+    'placeholder="Buscar (ej: cascada, cueva, monasterio)"': 'placeholder="Bilatu (adib: ur-jauzia, koba, monasterioa)"',
+    'aria-label="Buscar rutas"': 'aria-label="Ibilbideak bilatu"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
         '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
     '<p class="route-card-desc">Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua</p>':
@@ -932,11 +934,11 @@ GEREA = {
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
     'Ruta válida para todos los niveles, niños mayores incluidos: 5,7 km y +415 m de desnivel '
     'en un solo circuito, con un buen tramo de subida (unos 40 min) hasta la cascada, con los '
-    'aerogeneradores de compañía casi todo el camino. No está señalizada oficialmente más allá '
+    'aerogeneradores visibles casi todo el camino. No está señalizada oficialmente más allá '
     'de esas pintadas verdes y blancas, así que conviene llevar el track cargado.':
         'Maila guztietarako baliozko ibilbidea, haur nagusiak barne: 5,7 km eta +415 m-ko '
         'desnibela zirkuitu bakarrean, igoera-tarte on batekin (40 bat minutu) ur-jauziraino, '
-        'eolikoak lagun ia bide osoan. Ez dago ofizialki seinalizatuta pintura berde eta '
+        'eolikoak ikus ia bide osoan. Ez dago ofizialki seinalizatuta pintura berde eta '
         'zuri horiez haratago, beraz komeni da tracka kargatuta eramatea.',
 }
 

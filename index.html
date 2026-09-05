@@ -45,7 +45,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
 <link rel="stylesheet" href="base.css?v=d84b2678">
-<link rel="stylesheet" href="home.css?v=ff6a43bd">
+<link rel="stylesheet" href="home.css?v=f09cdd87">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,6 +92,9 @@
   </section>
 
   <section class="finder">
+    <div class="search-box" role="search">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar (ej: cascada, cueva, monasterio)" aria-label="Buscar rutas">
+    </div>
     <div class="activity-filter" role="group" aria-label="Filtrar por actividad">
       <button type="button" class="activity-chip active" data-activity="senderismo">
         <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5v7.3c0 .7-.3 1.4-.8 1.9L3.5 14.4c-.6.5-.9 1.3-.9 2v2.6a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1.6c0-1-.7-1.9-1.7-2.1l-6.4-1.5a2 2 0 0 1-1.5-1.9V2.5"/><path d="M7 2.5h6.5"/><path d="M9.5 6h4M9.5 8.7h4"/></svg>
@@ -676,7 +679,7 @@
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
 
-<script src="js/filters.js?v=0369f6f5"></script>
+<script src="js/filters.js?v=53b9d7bd"></script>
 <script src="js/app.js?v=ea0e4251"></script>
 <script src="js/webmcp.js?v=ed4e6132"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
