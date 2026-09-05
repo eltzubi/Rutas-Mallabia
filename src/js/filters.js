@@ -31,6 +31,7 @@
   if (!activityChips.length || !cards.length) return;
 
   var view = 'list';
+  var filterState = { distanceMin: 0, distanceMax: Infinity, desnivelMin: 0, desnivelMax: Infinity };
 
   // Se consulta en cada salto, no una vez al cargar: la preferencia puede
   // cambiar con la sesion abierta.
@@ -68,15 +69,28 @@
   setupPair(distanceMin, distanceMax, maxDistance, 0.5);
   setupPair(desnivelMin, desnivelMax, maxDesnivel, 25);
 
-  function linkPair(minEl, maxEl, onChange){
+  function linkPair(minEl, maxEl, onChange, stateKey){
     if (!minEl || !maxEl) return;
     function clamp(){
       if (parseFloat(minEl.value) > parseFloat(maxEl.value)) minEl.value = maxEl.value;
     }
-    minEl.addEventListener('input', function(){ clamp(); onChange(); apply(); });
+    minEl.addEventListener('input', function(){
+      clamp();
+      if (stateKey) {
+        filterState[stateKey + 'Min'] = parseFloat(minEl.value);
+        filterState[stateKey + 'Max'] = parseFloat(maxEl.value);
+      }
+      onChange();
+      apply();
+    });
     maxEl.addEventListener('input', function(){
       if (parseFloat(maxEl.value) < parseFloat(minEl.value)) maxEl.value = minEl.value;
-      onChange(); apply();
+      if (stateKey) {
+        filterState[stateKey + 'Min'] = parseFloat(minEl.value);
+        filterState[stateKey + 'Max'] = parseFloat(maxEl.value);
+      }
+      onChange();
+      apply();
     });
     [minEl, maxEl].forEach(function(el){
       ['mousedown', 'touchstart'].forEach(function(evt){
@@ -88,8 +102,8 @@
       });
     });
   }
-  linkPair(distanceMin, distanceMax, function(){ setActiveDistanceChip(null); });
-  linkPair(desnivelMin, desnivelMax, function(){});
+  linkPair(distanceMin, distanceMax, function(){ setActiveDistanceChip(null); }, 'distance');
+  linkPair(desnivelMin, desnivelMax, function(){}, 'desnivel');
 
   function fillPair(minEl, maxEl, fillEl, max){
     if (!minEl || !maxEl || !fillEl || !max) return;
@@ -120,15 +134,17 @@
     chip.addEventListener('click', function(){
       var already = chip.classList.contains('active');
       setActiveDistanceChip(already ? null : chip);
-      if (distanceMin && distanceMax) {
-        var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
-        if (already || !range) {
-          distanceMin.value = 0;
-          distanceMax.value = maxDistance;
-        } else {
-          distanceMin.value = range[0];
-          distanceMax.value = Math.min(range[1], maxDistance);
-        }
+      var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
+      if (already || !range) {
+        filterState.distanceMin = 0;
+        filterState.distanceMax = Infinity;
+        if (distanceMin) distanceMin.value = 0;
+        if (distanceMax) distanceMax.value = maxDistance;
+      } else {
+        filterState.distanceMin = range[0];
+        filterState.distanceMax = Math.min(range[1], maxDistance);
+        if (distanceMin) distanceMin.value = range[0];
+        if (distanceMax) distanceMax.value = Math.min(range[1], maxDistance);
       }
       apply();
     });
@@ -230,10 +246,10 @@
   function apply(){
     var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
       .map(function(c){ return c.dataset.difficulty; });
-    var minD = distanceMin ? parseFloat(distanceMin.value) : 0;
-    var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
-    var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
-    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : Infinity;
+    var minD = distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin;
+    var maxD = distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax;
+    var minE = desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin;
+    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax;
     if (distanceVal) distanceVal.textContent = fmtRange(minD, maxD, maxDistance, false, TXT_ALL_DISTANCE);
     if (desnivelVal) desnivelVal.textContent = fmtRange(minE, maxE, maxDesnivel, true, TXT_ALL_DESNIVEL);
     fillPair(distanceMin, distanceMax, distanceFill, maxDistance);
