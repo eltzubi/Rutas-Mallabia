@@ -561,16 +561,12 @@ TRABAKUA = {
     # falls after the descent, so the </p><p> is part of the replacement.
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
     'hasta un cruce a la izquierda donde se deja el asfalto atrás: desde ahí, todo es pista en '
-    'solitario, alternando cemento y tramos de piedra. El primer repecho es el más duro de toda '
-    'la ruta —se sube de un tirón—, pero engaña: no llega a los 300 m de distancia. '
-    'Lo que viene después se lleva mejor.':
+    'solitario, alternando cemento y tramos de piedra. Empezamos con el primer repecho algo duro '
+    'pero corto.':
         'Trabakuako Altotik abiatzen gara. Lehen metroek behera egiten dute, kilometro bat pasatxo, '
         'eta berehala iristen gara ezkerrerako bidegurutze batera: han asfaltoa uzten dugu, eta '
-        'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz, '
-        'mendiko giro garbian.</p>\n'
-        '    <p>Lehen aldapa da ibilbide osoko gogorrena: tiraka igotzen da, etenik gabe. Tranpa '
-        'egiten du, ordea: ez da 300 metroko luzerara iristen. Behin gaindituta, ondorengoa askoz '
-        'eramangarriagoa da, eta gorputzak berehala hartzen du erritmoa.',
+        'hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz. '
+        'Lehen aldaparekin hasten gara, gogorra baina labur.',
     'Justo después de esas primeras cuestas hay una buena bajada algo técnica —sin riesgo para '
     'quien tenga algo de soltura— hasta hacernos con el camino de subida, en la zona del barrio '
     'Aginaga, sin perder mucha altura. Desde Aginaga se sube por un tramo de pista de cemento '
