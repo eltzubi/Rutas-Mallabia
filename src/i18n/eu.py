@@ -260,9 +260,6 @@ HOME = {
     # finder (redesign)
     '<span>A pie</span>': '<span>Oinez</span>',
     '<span>En bici</span>': '<span>Bizikletaz</span>',
-    '>M&aacute;s filtros</button>': '>Iragazki gehiago</button>',
-    ' data-count-one="ruta encontrada" data-count-many="rutas encontradas"':
-        ' data-count-one="ibilbide aurkituta" data-count-many="ibilbide aurkituta"',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
@@ -286,8 +283,6 @@ HOME = {
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
         'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
-    '<b id="distanceVal">Todos</b>': '<b id="distanceVal">Guztiak</b>',
-    '<b id="desnivelVal">Todos</b>': '<b id="desnivelVal">Guztiak</b>',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
     # alt de las fotos de las fichas (mismo texto que en su propia pagina)
     'alt="Se&ntilde;al de madera en una loma, con aerogeneradores y el mar al fondo"':
@@ -403,17 +398,6 @@ HOME = {
     'Ampliar rango de distancia': 'Distantzia-barrutia zabaldu',
     'Ampliar rango de desnivel': 'Desnibel-barrutia zabaldu',
 
-    'data-impossible-distance="(rango de distancia imposible)" data-impossible-desnivel="(rango de desnivel imposible)"':
-        'data-impossible-distance="(distantzia-barrutia ezinezkoa)" data-impossible-desnivel="(desnibel-barrutia ezinezkoa)"',
-
-    'data-all-distance="Todos" data-all-desnivel="Todos" data-approx="aprox."':
-        'data-all-distance="Guztiak" data-all-desnivel="Guztiak" data-approx="inguru"',
-    'aria-label="Distancia m&iacute;nima"': 'aria-label="Gutxieneko distantzia"',
-    'aria-label="Distancia m&aacute;xima"': 'aria-label="Gehieneko distantzia"',
-    'aria-label="Desnivel m&iacute;nimo"': 'aria-label="Gutxieneko desnibela"',
-    'aria-label="Desnivel m&aacute;ximo"': 'aria-label="Gehieneko desnibela"',
-    '<label>Distancia &middot; <b': '<label>Distantzia &middot; <b',
-    '<label>Desnivel &middot; <b': '<label>Desnibela &middot; <b',
     'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
     'Quitar filtros': 'Iragazkiak kendu',
 
