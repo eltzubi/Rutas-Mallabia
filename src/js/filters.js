@@ -128,13 +128,15 @@
       var already = chip.classList.contains('active');
       setActiveDistanceChip(already ? null : chip);
       var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
-      if (already || !range) {
-        distanceMin.value = 0;
-        distanceMax.value = maxDistance;
-      } else {
-        distanceMin.value = range[0];
-        distanceMax.value = Math.min(range[1], maxDistance);
+      var lo = 0, hi = maxDistance;
+      if (!already && range) {
+        lo = range[0];
+        hi = Math.min(range[1], maxDistance);
       }
+      if (distanceMin) distanceMin.value = lo;
+      else filterState.distanceMin = lo;
+      if (distanceMax) distanceMax.value = hi;
+      else filterState.distanceMax = hi;
       apply();
     });
   });
@@ -235,10 +237,10 @@
   function apply(){
     var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
       .map(function(c){ return c.dataset.difficulty; });
-    var minD = distanceMin ? parseFloat(distanceMin.value) : 0;
-    var maxD = distanceMax ? parseFloat(distanceMax.value) : Infinity;
-    var minE = desnivelMin ? parseFloat(desnivelMin.value) : 0;
-    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : Infinity;
+    var minD = distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin;
+    var maxD = distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax;
+    var minE = desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin;
+    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax;
     if (distanceVal) distanceVal.textContent = fmtRange(minD, maxD, maxDistance, false, TXT_ALL_DISTANCE);
     if (desnivelVal) desnivelVal.textContent = fmtRange(minE, maxE, maxDesnivel, true, TXT_ALL_DESNIVEL);
     fillPair(distanceMin, distanceMax, distanceFill, maxDistance);
