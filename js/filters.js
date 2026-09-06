@@ -326,8 +326,6 @@
       var state = {
         activities: Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.activity; }),
         difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
-        distance: [distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin, distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax],
-        desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin, desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax],
         view: view
       };
       localStorage.setItem('trabakutik_filters', JSON.stringify(state));
@@ -354,23 +352,6 @@
         difficultyChips.forEach(function(c){
           c.classList.toggle('active', state.difficulties.indexOf(c.dataset.difficulty) !== -1);
         });
-      }
-
-      // Restore distance range
-      if (state.distance && state.distance.length === 2) {
-        if (distanceMin) distanceMin.value = state.distance[0];
-        else filterState.distanceMin = state.distance[0];
-        if (distanceMax) distanceMax.value = state.distance[1];
-        else filterState.distanceMax = state.distance[1];
-        setActiveDistanceChip(null);
-      }
-
-      // Restore desnivel range
-      if (state.desnivel && state.desnivel.length === 2) {
-        if (desnivelMin) desnivelMin.value = state.desnivel[0];
-        else filterState.desnivelMin = state.desnivel[0];
-        if (desnivelMax) desnivelMax.value = state.desnivel[1];
-        else filterState.desnivelMax = state.desnivel[1];
       }
 
       // Restore view preference
