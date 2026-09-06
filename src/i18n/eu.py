@@ -40,12 +40,6 @@ COMMON = {
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
-    'Distancia (km)': 'Distantzia (km)',
-    'Desnivel (m)': 'Desberdintza (m)',
-    'data-all-distance="Todas"': 'data-all-distance="Denak"',
-    'data-all-desnivel="Todos"': 'data-all-desnivel="Denak"',
-    'data-count-one="ruta encontrada"': 'data-count-one="ibilbide bat"',
-    'data-count-many="rutas encontradas"': 'data-count-many="ibilbideak"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
         '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
     '<p class="route-card-desc">Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua</p>':
