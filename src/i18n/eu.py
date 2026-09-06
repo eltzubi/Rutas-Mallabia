@@ -287,6 +287,10 @@ HOME = {
         '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+    '<p class="route-card-desc">Circuito de BTT exigente desde Trabakua, con ascensos técnicos y vistas del Duranguesado</p>':
+        '<p class="route-card-desc">Zirkuitu teknikoa BTT-ean Trabakuatik, igoerak eta Duranguesadoko ikuspegiarekin</p>',
+    'alt="Tramo del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
+        'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen zatia"',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
         'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
@@ -2917,6 +2921,7 @@ DESCRIPTIONS = {
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
+    'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Duranguesadoko ikuspegiarekin',
 }
 
 # <title> per page (head files)
@@ -3022,6 +3027,7 @@ TITLES = {
     'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
     'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · Bizikleta ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
+    'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3115,77 +3121,129 @@ INTXORTA = {
 }
 
 ARTETAASUNTZA = {
-    '<span>Mixta</span><span class="sep">/</span><span>Los pasos entre Arteta y Asuntza</span>':
-        '<span>Nahasia</span><span class="sep">/</span><span>Arteta eta Asuntza arteko pasabideak</span>',
-    '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Arteta, Asuntza<br><em>y los pasos entre ambos</em></h1>':
-        '<h1>Arteta, Asuntza<br><em>eta bien arteko pasabideak</em></h1>',
-    'Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza, recorriendo los pasos que unen los dos caminos':
-        'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
-    '<span class="elev-legend-item"><span class="num">3</span>Fuente de Arteta</span>':
-        '<span class="elev-legend-item"><span class="num">3</span>Artetako iturria</span>',
-    '<title>Fuente de Arteta &middot; 8,0 km &middot; 464 m</title>':
-        '<title>Artetako iturria &middot; 8,0 km &middot; 464 m</title>',
-    '<title>Ermita de San Juan &middot; 3,4 km &middot; 448 m</title>':
-        '<title>San Juan ermita &middot; 3,4 km &middot; 448 m</title>',
-    '<title>Collado de Asuntza &middot; 16,4 km &middot; 479 m</title>':
-        '<title>Asuntzako lepoa &middot; 16,4 km &middot; 479 m</title>',
-    '<span class="elev-legend-item"><span class="num">2</span>Ermita de San Juan</span>':
-        '<span class="elev-legend-item"><span class="num">2</span>San Juan ermita</span>',
-    '<span class="elev-legend-item"><span class="num">4</span>Collado de Asuntza</span>':
-        '<span class="elev-legend-item"><span class="num">4</span>Asuntzako lepoa</span>',
-    'download="Arteta, Asuntza y los pasos entre ambos.gpx"':
-        'download="Arteta, Asuntza eta bien arteko pasabideak.gpx"',
-    'download="Arteta, Asuntza y los pasos entre ambos.kml"':
-        'download="Arteta, Asuntza eta bien arteko pasabideak.kml"',
-    'alt="Foto ampliada del recorrido de Arteta, Asuntza y los pasos entre ambos"':
-        'alt="Arteta, Asuntza eta bien arteko pasabideen ibilbidearen argazki handitua"',
-    'data-marker-title="Trabakua (salida y llegada)"':
-        'data-marker-title="Trabakua (irteera eta helmuga)"',
+    '<h1>Arteta,<br><em>Asuntza y Trabakua</em></h1>':
+        '<h1>Arteta,<br><em>Asuntza eta Trabakua</em></h1>',
+    'Collado de Asuntza, Ermita de San Juan de Arteta y Trabakua desde Trabakua':
+        'Asuntzako lepoa, San Juan Artetako ermita eta Trabakua Trabakuatik',
+    '<p>Este circuito combina la subida técnica hacia el <b>Collado de Asuntza</b>, la visita a la <b>Ermita de San Juan de Arteta</b> —perdida entre las montañas— y un retorno que aprovecha las pistas de la zona para completar los 21,78 km. Es una ruta larga, pensada para ciclistas con experiencia en BTT y buena forma física.</p>':
+        '<p>Zirkuitu honek <b>Asuntzako lepora</b> igotzeari dagozkion teknikaren ondoren, <b>San Juan Artetako ermita</b>aren bisita —mendietan baxean dago— eta ibilbidea osatzeko gunearen pistei eutsi du. 21,78 km bateko ibilbidea luzea da, BTT-en trebetasun eta entzunaldi fisiko duten txirrindubitsuentzako.</p>',
+    'Vistas desde el recorrido de Arteta, Asuntza y Trabakua, con los montes del Duranguesado al fondo':
+        'Arteta, Asuntza eta Trabakua ibilbidearen ikuspegia, Duranguesadoko mendietan atzealdean',
+    '<span class="elev-text"><b>Arteta</b>, km 2,8 · 509 m</span>':
+        '<span class="elev-text"><b>Arteta</b>, 2,8 km · 509 m</span>',
+    '<span class="elev-text"><b>Ermita de San Juan</b>, km 3,4 · 448 m</span>':
+        '<span class="elev-text"><b>San Juan ermita</b>, 3,4 km · 448 m</span>',
+    '<span class="elev-text"><b>Collado de Asuntza</b>, km 16,4 · 479 m</span>':
+        '<span class="elev-text"><b>Asuntzako lepoa</b>, 16,4 km · 479 m</span>',
+    '<span>Circuito</span>':
+        '<span>Zirkuitua</span>',
+    'alt="Foto ampliada del recorrido de Arteta, Asuntza y Trabakua"':
+        'alt="Arzetaasuntza ibilbidearen argazki handia"',
+    '<span class="v">Circuito</span>':
+        '<span class="v">Zirkuitua</span>',
+    'Terreno de pista (cemento y piedra, con tramos de tierra), sin sendero estrecho — apta para bici de montaña convencional o e-bike. Ruta larga, se recomienda para ciclistas habituados a hacer distancia.':
+        'Pistako lurrean (zementua eta harria, lurrezko tarteekin), bidexkarik gabea — txirrindu-lurreko bisiklarako edo e-bikerako egokia. Ibilbide luzea, distantziak egiten dituzten txirrindubitsuentzako gomendagarria.',
+    'download="Arteta, Asuntza y Trabakua.gpx"':
+        'download="Arteta, Asuntza eta Trabakua.gpx"',
+    'download="Arteta, Asuntza y Trabakua.kml"':
+        'download="Arteta, Asuntza eta Trabakua.kml"',
+    'alt="Vistas desde el recorrido de Arteta, Asuntza y Trabakua, con los montes del Duranguesado al fondo"':
+        'alt="Arteta, Asuntza eta Trabakua ibilbidearen ikuspegia, Duranguesadoko mendietan atzealdean"',
+    'Ver ruta completa en Wikiloc':
+        'Ibilbide osoa WikLocen',
+    'La pista de Arteta con vistas a los montes de Bizkaia':
+        'Artetako pista Bizkaiko mendien ikuspegiarekin',
+    'Vistas amplias desde la subida hacia el Collado de Asuntza':
+        'Ikus-zabaletak Asuntzako lepora igotzen denean',
+    'Manillar en marcha por la pista del circuito':
+        'Manillarra pistan zehar seriolan',
+    'Paisaje de montaña con caseríos y prados en el valle':
+        'Mendizabal-paisaia, baserri eta belardiekin haranean',
+    'Detalle del camino de tierra y piedra durante el recorrido':
+        'Ibilbidearen lurrezko eta harrizko bidearen xehetasuna',
+    'Vistas panorámicas desde el Collado de Asuntza':
+        'Ikuspegi panoramikoak Asuntzako lepotik',
+    'Últimos kilómetros del recorrido con vistas al Collado de Asuntza':
+        'Ibilbidearen azken kilometroak Asuntzako lepoaren ikuspegiarekin',
+    '<h2>La ruta en detalle</h2>':
+        '<h2>Ibilbidea xehetasunean</h2>',
+    '<p>Desde Trabakua comienza el ascenso por pista de cemento y tierra, con vistas amplias sobre el valle de Mallabia. La pendiente es sostenida pero sin tramos imposibles, y la superficie permite rodar con seguridad aunque sea exigente. Una vez alcanzado el collado, la bajada es rápida y técnica — aquí es donde la e-bike demuestra su valor si no tienes pedalada abundante.</p>':
+        '<p>Trabakuatik hasten da zementu eta lurrezko pistara igotzen, Mallabiko haranearen gainean ikus zabalekin. Maldak etengabe baina tramo ezinezinak gabe, eta aurpegiak seguru rotzea uzten du nahiz exijentea izan. Lepoa iritsi ondoren, beherakada azkarra eta teknikoa da — hemen da e-bikeak bere balioa erakusten duen lekua pedalada aski ez bada.',
+    '<p>La vuelta se hace más tranquila, con tramos de pista de montaña que permiten recuperarse. El paisaje cambia constantemente: de las vistas abiertas del collado pasamos a las arboledas del regreso, y siempre hay montaña por todas partes. No hay sendero estrecho, la ruta es accesible para bici convencional si estás entrenado.</p>':
+        '<p>Itzulera quietoa da, berrantolaketa uzten duten mendiko pista-tarteekin. Paisaia etengabe aldatzen da: lepoaren ikus zabaletatik atzerapenerako arbolen altzarira igarotzen gara, eta beti dago mendia alderdi guztietan. Bidexkarik ez, zirkuitua txirrindu arrunterako irekia da trebea bazara.</p>',
+    '<p class="report-modal-intro">&iquest;Has visto un &aacute;rbol ca&iacute;do, un sendero cortado o algo que haya cambiado en esta ruta? Cu&eacute;ntamelo y lo reviso en persona antes de actualizar la ficha.</p>':
+        '<p class="report-modal-intro">&iquest;Zuhaitz eroria, bidexka moztu edo zerbait ibilbidean aldatua ikusi duzu? Esan didazu eta pertsonalki zintzo berrikusten dut ficha eguneratu aurretik.</p>',
+}
 
-    # -- para quien es --
-    '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
-    '21,78 km y +962 m que no van de encadenar cimas, sino de conocer el terreno: los pasos peque&ntilde;os que unen el camino alto de Asuntza y Arteta con el de abajo, hacia Berano Txiki. Se sube por unos y se baja por otros, cruzando la zona varias veces.':
-        '21,78 km eta +962 m, gailurrak kateatzeko baino, ingurua ezagutzeko: Asuntza eta Artetako goiko bidea behekoarekin, Berano Txiki aldera, lotzen duten pasabide txikiak. Batzuetatik gora eta besteetatik behera, ingurua behin baino gehiagotan zeharkatuz.',
-    'Pide algo de manejo con la bici: por estos pasos hay que tener cierta soltura, no es una vuelta para iniciarse. Va bien para quien ya conoce la circular habitual y quiere sacarle m&aacute;s partido, porque una vez localizados estos pasos se pueden acortar, alargar o darle la vuelta a la ruta de muchas maneras. Por el camino se pasa por la <b>fuente de Arteta</b>, uno de los pocos puntos de agua de la zona.':
-        'Bizikletarekin trebetasun pixka bat eskatzen du: pasabide hauetan eskarmentua komeni da, ez da hasiberrientzako buelta. Ohiko zirkularra ezagutzen duenarentzat da egokia, hari etekin gehiago atera nahi badio: pasabide horiek behin ezagututa, ibilbidea laburtu, luzatu edo buelta eman daiteke modu askotan. Bidean <b>Artetako iturria</b>tik pasatzen gara, inguruko ur-puntu bakanetako bat.',
-
-    # -- el texto del cuerpo --
-    'Salimos desde <b>Trabakua</b> por el camino habitual hacia <b>Asuntza</b>. Durante los primeros kil&oacute;metros avanzamos por caminos conocidos hasta llegar al cruce de <b>Arteta</b>. Es aqu&iacute; donde realmente comienza la parte m&aacute;s especial de esta ruta.':
-        'Trabajutik abiatuko gara, ohiko ibilbidea jarraituz Asuntza aldera. Lehen kilometro hauetan, ezagutzen ditugun bideetatik aurrera egingo dugu, Artetako bidegurutzera iritsi arte. Hemen hasten da benetan ibilbide hau, eta hemendik aurrera ingurua esploratzen hasiko gara.',
-    'La zona de Arteta y Asuntza es bastante conocida entre la gente que suele andar por aqu&iacute;, sobre todo porque se utiliza habitualmente para hacer una ruta circular. Se puede acceder desde Trabakua, Berano Txiki, Berano o Ermua, y mucha gente la utiliza tanto para dar una vuelta como para enlazar con otros recorridos de la zona.':
-        'Arteta eta Asuntza ingurua nahiko ezaguna da hemendik ibiltzen den jendearen artean, batez ere ohikoa delako ibilbide zirkular bat egiteko erabiltzea. Trabakuatik, Berano Txikitik, Beranotik edo Ermuatik irits daiteke, eta oso erabilia da paseatzeko zein beste mendi-ibilbide batzuekin lotzeko.',
-    'La mayor&iacute;a suele utilizar los caminos principales de piedra: por la parte alta, pasando por Asuntza y Arteta, o por la parte baja, entre Berano Txiki y Arteta. Tambi&eacute;n es una buena zona de paso para continuar hacia <a href="barinaga.html">Barinaga</a> y <a href="mendibil.html">Mendibil</a> o, en sentido contrario, dirigirse hacia Trabakua y desde all&iacute; enlazar con las diferentes subidas hacia <a href="oiz.html">Oiz</a>. Tambi&eacute;n es una buena opci&oacute;n para alargar el recorrido despu&eacute;s de bajar de <a href="urko.html">Urko</a>.':
-        'Jende gehiena harrizko bide nagusietatik mugitzen da: goiko aldetik, Asuntza eta Arteta igaroz, edo beheko aldetik, Berano Txiki ingurutik Artetara. Bide hauek <a href="barinaga.html">Barinaga</a> eta <a href="mendibil.html">Mendibil</a> aldera jarraitzeko edo, kontrako norabidean, Trabakua aldera joateko pasabide gisa ere erabiltzen dira, eta handik <a href="oiz.html">Oiz</a>era igotzeko ibilbideekin lotzeko. <a href="urko.html">Urko</a>tik jaitsi ondoren irteera luzatzeko aukera ona ere bada.',
-    'Pero entre esos dos caminos habituales hay m&aacute;s opciones de las que parece a simple vista. Y eso es precisamente lo que queremos ense&ntilde;ar con esta ruta.':
-        'Baina bi ibilbide nagusi horien artean, dirudiena baino gehiago dago. Eta hain zuzen ere, hori da ibilbide honekin erakutsi nahi duguna.',
-    'A partir del cruce de Arteta dejaremos la circular habitual para movernos entre la parte alta y la baja, recorriendo peque&ntilde;os senderos, pistas, atajos y pasos menos conocidos que conectan ambas zonas. La idea es conocer las diferentes alternativas entre Arteta y Asuntza, para poder utilizarlas despu&eacute;s para acortar, alargar o crear nuevas combinaciones de rutas.':
-        'Artetako bidegurutzetik aurrera, ohiko ibilbide zirkularra jarraitu beharrean, goiko eta beheko aldeen artean mugitzen hasiko gara. Bidexka, pista eta gutxiago erabiltzen diren bideetatik sartuko gara, alde batetik bestera gurutzatuz eta bi ibilbideak lotzen dituzten pasabideak bilatuz.',
-    'Por algunos de los senderos que encontraremos, conviene tener algo de experiencia con la <b>BTT</b>.':
-        'Batetik igo, bestetik jaitsi eta ingurua hainbat aldiz zeharkatuko dugu. Batzuk lasterbide gisa erabiliko ditugu, eta beste batzuk, berriz, buelta bat erabat aldatzeko alternatiba gisa. Arteta eta Asuntza artean ezagutzen ditugun pasabide guztiak zeharkatzea da asmoa, ondoren bakoitzak egokien iruditzen zaion moduan erabil ditzan: ibilbide bat laburtu, luzatu, norabidea aldatu edo konbinazio berriak sortu.',
-    'Durante el recorrido tambi&eacute;n pasaremos por la <b>fuente de Arteta</b>, un punto de agua que merece la pena tener localizado, ya que no hay muchas fuentes por esta zona.':
-        'Buelta itxi bakar bat jarraitu beharrean, ibilbide honek Arteta eta Asuntza inguruko ohiko ibilbideen artean ezkutatzen den bide eta bidexken sarea benetan ezagutzeko balio du. Behin ezagututa, inguru honetan ibilbide desberdinak muntatzeko aukerak asko handitzen dira.',
-    'Despu&eacute;s de recorrer las diferentes alternativas, volveremos a enlazar con los caminos habituales para regresar hacia <b>Trabakua</b> y terminar la ruta.':
-        'Ibilbidean zehar, Artetako iturritik ere pasatuko gara, ur-puntu bat, inguru honetan aurkituko ditugun iturri bakanetako bat baita. Alternatiba desberdinak zeharkatu ondoren, ohiko bideekin lotuko gara berriro, Trabakua aldera itzultzeko eta ibilbidea ixteko.',
-    # -- alt de las fotos --
-    'alt="Vista del valle desde un muro de piedra, con caser&iacute;os entre prados y bosque y una sierra rocosa al fondo"':
-        'alt="Haranaren ikuspegia harrizko horma batetik, baserriak larre eta basoen artean eta harkaitzezko mendilerroa atzealdean"',
-    'alt="Pista de cemento subiendo entre el arbolado, con una se&ntilde;al de prohibido el paso al fondo"':
-        'alt="Zementuzko pista zuhaitzen artetik gora, sarrera debekatua dagoela dioen seinale batekin atzealdean"',
-    'alt="Camino de tierra atravesando el bosque a contraluz, con la sombra del ciclista proyectada sobre el suelo"':
-        'alt="Lurrezko bidea basoa zeharkatzen argiaren kontra, txirrindulariaren itzala lurrean marraztuta"',
-    'alt="La e-bike apoyada junto a un puente de piedra de un solo arco, sobre el cauce cubierto de hojas secas"':
-        'alt="E-bikea arku bakarreko harrizko zubi baten ondoan bermatuta, hosto lehorrez estalitako ibilguaren gainean"',
-    'alt="Camino de piedra entre un muro y la ladera, con el cielo despejado y los aerogeneradores al fondo"':
-        'alt="Harrizko bidea horma baten eta hegalaren artean, zerua garbi eta eolikoak atzealdean"',
-    'alt="Cruce de caminos en pleno pinar, con la bicicleta tumbada al borde de la pista"':
-        'alt="Bideen arteko gurutzea pinudi betean, bizikleta pistaren ertzean etzanda"',
-    'alt="Poste indicador de madera hacia la fuente de Arteta, con el bosque y la campa al fondo"':
-        'alt="Egurrezko seinale-zutoina Artetako iturrirantz, basoa eta zelaia atzealdean"',
-    'alt="La fuente de Arteta brotando entre la roca, al pie de un afloramiento cubierto de musgo y helechos"':
-        'alt="Artetako iturria harkaitzen artetik sortzen, goroldio eta iratzez estalitako harkaitz-multzo baten oinean"',
-    'alt="El manillar de la e-bike en primer plano sobre la pista, con la ladera del monte al fondo"':
-        'alt="E-bikearen manillarra lehen planoan pistaren gainean, mendiaren hegala atzealdean"',
+TRABAKUAMALLABIA = {
+    '<h1>Trabakua, Zengotita,<br><em>Aitzu, Mallabia y Osmagain</em></h1>':
+        '<h1>Trabakua, Zengotita,<br><em>Aitzu, Mallabia eta Osmagain</em></h1>',
+    'Circuito desde Trabakua pasando por Zengotitagane, Aitzu, Mallabia y Osmagain':
+        'Zirkuitua Trabakuatik hasita Zengotitagane, Aitzu, Mallabia eta Osmagain igarota',
+    'Vistas del paisaje durante la ruta Trabakua, Zengotita, Aitzu, Mallabia y Osmagain':
+        'Paisaiaren ikuspegiak Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain ibilbidean',
+    'alt="Foto ampliada del recorrido"':
+        'alt="Ibilbidearen argazki handia"',
+    '<span>Pista/tierra</span>':
+        '<span>Pista/lurra</span>',
+    '<span>BTT</span>':
+        '<span>BTT</span>',
+    '<span>Circuito</span>':
+        '<span>Zirkuitua</span>',
+    'Ruta para ciclistas de montaña con experiencia en terreno técnico y buena forma física. Combina pistas de asfalto, tierra y tramos técnicos, con varios ascensos sostenidos y descensos rápidos. Requiere concentración y control en bicicleta.':
+        'BTT-en txirrindubitsuentzako, lurrean tekniko eta entzunaldi fisikoarekin trebeak. Asfalto-pista, lurra eta tramo teknikoak konbinatzen ditu, igoera etengabeak eta beherakada azkarrekin. Txirrinduaren kontzentrazioa eta kontrola behar du.',
+    'Tramo del recorrido con vistas a las montañas circundantes':
+        'Ibilbidearen tartea inguruko mendien ikuspegiarekin',
+    'Vista panorámica durante la subida hacia Zengotitagane':
+        'Ikuspegi panoramikoa Zengotitaganera igotzen denean',
+    'Detalle de la pista de tierra durante el recorrido':
+        'Ibilbidean lurrezko pistaren xehetasuna',
+    'Paisaje de montaña con vegetación y caseríos':
+        'Mendizabal-paisaia begetazioarekin eta baserriekin',
+    'Manillar en marcha durante un tramo técnico':
+        'Manillarra tramo teknikoan zehar seriolan',
+    'Descenso técnico entre árboles':
+        'Beherakada teknikoa zuhaitzen artean',
+    'Vista de Mallabia desde la ruta':
+        'Mallabiren ikuspegi ibilbidean',
+    'Tramo de asfalto en descenso':
+        'Asfalto-tartea beherakadan',
+    'Cruce de pistas durante el circuito':
+        'Pistaren gurutzaketa zirkuituan',
+    'Últimos kilómetros de descenso':
+        'Beherakadaren azken kilometroak',
+    'Vista final del recorrido cerca de Trabakua':
+        'Ibilbidearen ikuspegia Trabakuaren inguruan',
+    '<h2>La ruta en detalle</h2>':
+        '<h2>Ibilbidea xehetasunean</h2>',
+    'Salimos de <b>Trabakua</b> en dirección a Zengotitagane, tomando una pista de cemento que sube con constancia hacia las alturas. Los primeros kilómetros son de ascenso gradual, con vistas amplias sobre el valle de Mallabia. Es un inicio técnico, pero la subida es progresiva y sin sorpresas abruptas. La pista permite rodar con seguridad aunque sea exigente en piernas.':
+        'Trabakuatik atera <b>Trabakua</b>tik Zengotitaganerako norabidean, zementu-pista bat hartuz, zeharka goitik etengabe igotzen dena. Lehenbiziko kilometroak igoerak gradualak dira, Mallabiko haranearen gainean ikus zabalekin. Hasiera teknikoa da, baina igoenka progresiboak eta beherakada itzulekarik gabeak. Pisteak seguru rotzea uzten du nahiz sakerok baldintzatua izan.',
+    'Al llegar a <b>Zengotitagane</b>, pasamos por la zona de parques eólicos y pistas de mantenimiento. Aquí el paisaje se abre completamente, con vistas de largo alcance hacia Bizkaia. Continuamos por pista hacia <b>Aitzu</b>, donde la ruta toma carácter más técnico. Los tramos se vuelven más irregulares, con sectores de tierra y piedra que exigen concentración. Las vistas siguen siendo espectaculares, con montañas en todas direcciones.':
+        '<b>Zengotitaganera</b> iristean, parke eoliko eta mantenimentu pisten gunean zehar igaro. Hemen paisaia osoa zabaltzen da, Bizkaira begira ikus luzeekin. Pistaren bidez <b>Aitzu</b>ra jarraitu, non ibilbideak karatera teknikoagoa hartzen duen. Tarteak irregularragoak bihurtzen dira, lurra eta harria duten sektoreekin kontzentrazioa eskatzen dutenak. Ikuspegiak behingoz espektakularrak dira, mendia alderdi guztietan.',
+    'Desde Aitzu, bajamos técnicamente hacia el valle de <b>Mallabia</b>, con descensos rápidos que te hacen disfrutar de la bicicleta. Este sector es donde más disfruta un ciclista con experiencia: flujo constante, terreno variado y paisaje cambiante. La bajada tiene tramos de asfalto y tierra, todos ellos rodables y muy divertidos si tienes técnica.':
+        'Aitzetik behean <b>Mallabia</b>ko haranerantz, beherakada bizkorrekin etengabe. Sektore hau da trebetasun duten txirrindubitsuenak gehien disfrutatu egiten duten lekua: fluxu etengabea, lurrean desberdina eta paisaia aldakorra. Beherakadak asfalto eta lurrezko tarteak ditu, guztiak rotzekoak eta bistan atsegina teknika badago.',
+    'Una vez en Mallabia, seguimos por pista de asfalto y cemento que nos lleva hacia <b>Osmagain</b>. Este tramo es más rodador, ideal para recuperarse del esfuerzo anterior. Las vistas de Mallabia desde aquí son hermosas, con el valle completo visible desde la altura. Pasamos cerca de caseríos y zonas cultivadas, recordándote que estás en el corazón de Euskalherria.':
+        'Mallaban behin, asfalto eta zementu pistaren bidez <b>Osmagainera</b> doaz. Tartea rotzailago da, aurreko esfortzuagatik berrantolatzeko ideala. Mallabiaren ikuspegiak hemendik ederrak dira, haranean osoa altxeratik ikusgarria. Baserrietatik eta landu-gunetatik gertu igaro, Euskalheriaren bihotzean zaudela gogoratuz.',
+    'Desde Osmagain, la ruta se orienta hacia el regreso a Trabakua. Continuamos por pistas de montaña que atraviesan zonas boscosas y abiertas alternadamente. El terreno es técnico en sectores, con raíces y piedras que mantienen la atención. Sin embargo, la pendiente es favorable para el regreso, permitiendo que disfrutes del paisaje sin un esfuerzo excesivo.':
+        'Osmagainetik, ibilbidea Trabakuara itzulera orientatzen da. Mendiko pisten bidez jarraitu, baso-guneetan eta irekian zehar txandakara igaro. Lurra teknikoa da sektoreetan, sustraien eta harriaren bidez arreta mantentzen dutenak. Baina, maldak ez kalean itzultzeko, paisaia disfrutatu uzten duzu esfortzu gehigaturik gabe.',
+    'En los últimos kilómetros, volvemos a encontrar tramos de asfalto y cemento que desembocan nuevamente en <b>Trabakua</b>, donde completamos el circuito. Esta etapa final es la más rápida, con descensos que permiten recuperar velocidad y cerrar la ruta con energía. El desnivel acumulado de casi 900 metros de subida te dejará con la sensación de haber hecho trabajo serio, pero los 19,44 km pasan rápido gracias al flujo constante de la ruta.':
+        'Azken kilometroetan, asfalto eta zementu tarteak berriro aurkitzen ditugu <b>Trabakua</b>n berriz amaitu, zirkuitua bete ahal izateko. Azken etapa hau azkarrena da, abiadura berreskuratu eta ibilbidea energiarekin itxi uzten duten beherakadarekin. Igoeraren 900 metro-eko desnibela ia gurpil serio egin duzula sentitu uzten zaituezu, baina 19,44 km ibilbidearen fluxu etengabea dela-eta bizkorra igaro.',
+    '<h3>Waypoints clave</h3>':
+        '<h3>Gako-puntuak</h3>',
+    '<span class="elev-text"><b>Zengotitagane</b> · zona de eolikoak</span>':
+        '<span class="elev-text"><b>Zengotitagane</b> · eolikoaren gunea</span>',
+    '<span class="elev-text"><b>Aitzu</b> · tramo técnico</span>':
+        '<span class="elev-text"><b>Aitzu</b> · tramo teknikoa</span>',
+    '<span class="elev-text"><b>Mallabia</b> · valle y cruce</span>':
+        '<span class="elev-text"><b>Mallabia</b> · harana eta gurutzaketa</span>',
+    '<span class="elev-text"><b>Osmagain</b> · punto alto del retorno</span>':
+        '<span class="elev-text"><b>Osmagain</b> · itzuleraren puntu altuena</span>',
+    'Ver ruta completa en Wikiloc':
+        'Ibilbide osoa WikLocen',
+    'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.gpx"':
+        'download="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain.gpx"',
+    'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.kml"':
+        'download="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain.kml"',
 }
 
 PAGE_STRINGS = {
@@ -3221,4 +3279,5 @@ PAGE_STRINGS = {
     'potrera': POTRERA,
     'intxorta': INTXORTA,
     'artetaasuntza': ARTETAASUNTZA,
+    'trabakuamallabia': TRABAKUAMALLABIA,
 }

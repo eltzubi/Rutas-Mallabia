@@ -321,4 +321,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/artetaasuntza.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/artetaasuntza.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/trabakuamallabia.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuamallabia.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuamallabia.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/trabakuamallabia.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuamallabia.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuamallabia.eu.html"/>
+  </url>
 </urlset>
