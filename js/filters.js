@@ -28,6 +28,8 @@
   var distanceFill = document.getElementById('distanceFill');
   var desnivelFill = document.getElementById('desnivelFill');
   var resetBtns = document.querySelectorAll('[data-filter-reset]');
+  var searchInput = document.getElementById('searchInput');
+  var searchQuery = '';
   if (!activityChips.length || !cards.length) return;
 
   var view = 'list';
@@ -466,8 +468,6 @@
   });
 
   // Search functionality
-  var searchInput = document.getElementById('searchInput');
-  var searchQuery = '';
   if (searchInput) {
     searchInput.addEventListener('input', function(e) {
       searchQuery = (e.target.value || '').toLowerCase().trim();
