@@ -3211,8 +3211,6 @@ TRABAKUAMALLABIA = {
         'Ibilbidearen tartea inguruko mendien ikuspegiarekin',
     'Vista panorámica durante la subida hacia Zengotitagane':
         'Ikuspegi panoramikoa Zengotitaganera igotzen denean',
-    'Detalle de la pista de tierra durante el recorrido':
-        'Ibilbidean lurrezko pistaren xehetasuna',
     'Paisaje de montaña con vegetación y caseríos':
         'Mendizabal-paisaia begetazioarekin eta baserriekin',
     'Manillar en marcha durante un tramo técnico':
