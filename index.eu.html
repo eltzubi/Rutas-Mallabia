@@ -131,6 +131,33 @@
       </button>
     </div>
 
+    <button type="button" class="more-filters-toggle" id="moreFiltersToggle" aria-expanded="false">Más filtros</button>
+    <div class="range-filters" id="moreFiltersPanel" hidden data-approx="aprox." data-all-distance="Denak" data-all-desnivel="Denak" data-count-one="ibilbide bat" data-count-many="ibilbideak" data-impossible-distance="(rango de distancia imposible)" data-impossible-desnivel="(rango de desnivel imposible)">
+      <div class="filter-group">
+        <label for="distanceRangeMin" style="display:block; margin-bottom:12px; font-weight:600; font-size:14px;">Distantzia (km)</label>
+        <div class="range-pair" style="position:relative; margin-bottom:20px;">
+          <input type="range" id="distanceRangeMin" class="range-input" min="0" max="100" value="0" style="position:absolute; width:100%; height:5px; top:50%; z-index:5; pointer-events:none; -webkit-appearance:none; appearance:none; background:none; border:none; padding:0; margin:0; transform:translateY(-50%); cursor:pointer;">
+          <input type="range" id="distanceRangeMax" class="range-input" min="0" max="100" value="100" style="position:absolute; width:100%; height:5px; top:50%; z-index:3; pointer-events:none; -webkit-appearance:none; appearance:none; background:none; border:none; padding:0; margin:0; transform:translateY(-50%); cursor:pointer;">
+          <div class="range-track" style="position:relative; width:100%; height:5px; background:var(--line); border-radius:4px;">
+            <div class="range-fill" id="distanceFill" style="position:absolute; height:100%; background:var(--teal); border-radius:4px; left:0%; right:0%;"></div>
+          </div>
+        </div>
+        <p class="range-value" id="distanceVal" style="font-size:13px; color:var(--ink-dim); margin:0;"></p>
+      </div>
+
+      <div class="filter-group" style="margin-top:24px;">
+        <label for="desnivelRangeMin" style="display:block; margin-bottom:12px; font-weight:600; font-size:14px;">Desberdintza (m)</label>
+        <div class="range-pair" style="position:relative; margin-bottom:20px;">
+          <input type="range" id="desnivelRangeMin" class="range-input" min="0" max="1000" value="0" style="position:absolute; width:100%; height:5px; top:50%; z-index:5; pointer-events:none; -webkit-appearance:none; appearance:none; background:none; border:none; padding:0; margin:0; transform:translateY(-50%); cursor:pointer;">
+          <input type="range" id="desnivelRangeMax" class="range-input" min="0" max="1000" value="1000" style="position:absolute; width:100%; height:5px; top:50%; z-index:3; pointer-events:none; -webkit-appearance:none; appearance:none; background:none; border:none; padding:0; margin:0; transform:translateY(-50%); cursor:pointer;">
+          <div class="range-track" style="position:relative; width:100%; height:5px; background:var(--line); border-radius:4px;">
+            <div class="range-fill" id="desnivelFill" style="position:absolute; height:100%; background:var(--teal); border-radius:4px; left:0%; right:0%;"></div>
+          </div>
+        </div>
+        <p class="range-value" id="desnivelVal" style="font-size:13px; color:var(--ink-dim); margin:0;"></p>
+      </div>
+    </div>
+
     <div class="view-toggle-row">
       <div class="view-toggle" role="group" aria-label="Ikusi zerrenda edo mapa gisa">
         <button type="button" class="view-toggle-btn active" data-view="list">zerrenda</button>
