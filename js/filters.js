@@ -28,7 +28,6 @@
   var distanceFill = document.getElementById('distanceFill');
   var desnivelFill = document.getElementById('desnivelFill');
   var resetBtns = document.querySelectorAll('[data-filter-reset]');
-  var searchInput = document.getElementById('searchInput');
   var searchQuery = '';
   if (!activityChips.length || !cards.length) return;
 
@@ -327,8 +326,7 @@
         difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
         distance: [distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin, distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax],
         desnivel: [desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin, desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax],
-        view: view,
-        search: searchQuery
+        view: view
       };
       localStorage.setItem('trabakutik_filters', JSON.stringify(state));
     } catch (e) {
@@ -383,12 +381,6 @@
         view = state.view;
       }
 
-      // Restore search query
-      if (state.search && state.search.length > 0) {
-        searchQuery = state.search;
-        if (searchInput) searchInput.value = state.search;
-      }
-
       return true;
     } catch (e) {
       return false;
@@ -408,7 +400,6 @@
     if (desnivelMax) desnivelMax.value = maxDesnivel;
     else filterState.desnivelMax = Infinity;
     searchQuery = '';
-    if (searchInput) searchInput.value = '';
     view = 'list';
     viewBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view === 'list'); });
     if (resultsList) resultsList.hidden = false;
@@ -466,14 +457,6 @@
       if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
     });
   });
-
-  // Search functionality
-  if (searchInput) {
-    searchInput.addEventListener('input', function(e) {
-      searchQuery = (e.target.value || '').toLowerCase().trim();
-      apply();
-    });
-  }
 
   // Restore filters from localStorage and apply them
   if (!restoreFiltersFromStorage()) {
