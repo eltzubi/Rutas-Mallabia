@@ -283,6 +283,10 @@ HOME = {
         '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+    '<p class="route-card-desc">Circuito de BTT exigente desde Trabakua, con ascensos técnicos y vistas del Duranguesado</p>':
+        '<p class="route-card-desc">Zirkuitu teknikoa BTT-ean Trabakuatik, igoerak eta Duranguesadoko ikuspegiarekin</p>',
+    'alt="Tramo del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
+        'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen zatia"',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
         'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
@@ -2913,6 +2917,7 @@ DESCRIPTIONS = {
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
+    'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Duranguesadoko ikuspegiarekin',
 }
 
 # <title> per page (head files)
@@ -3018,6 +3023,7 @@ TITLES = {
     'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
     'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · Bizikleta ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
+    'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3165,6 +3171,77 @@ ARTETAASUNTZA = {
         '<p class="report-modal-intro">&iquest;Zuhaitz eroria, bidexka moztu edo zerbait ibilbidean aldatua ikusi duzu? Esan didazu eta pertsonalki zintzo berrikusten dut ficha eguneratu aurretik.</p>',
 }
 
+TRABAKUAMALLABIA = {
+    '<h1>Trabakua, Zengotita,<br><em>Aitzu, Mallabia y Osmagain</em></h1>':
+        '<h1>Trabakua, Zengotita,<br><em>Aitzu, Mallabia eta Osmagain</em></h1>',
+    'Circuito desde Trabakua pasando por Zengotitagane, Aitzu, Mallabia y Osmagain':
+        'Zirkuitua Trabakuatik hasita Zengotitagane, Aitzu, Mallabia eta Osmagain igarota',
+    'Vistas del paisaje durante la ruta Trabakua, Zengotita, Aitzu, Mallabia y Osmagain':
+        'Paisaiaren ikuspegiak Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain ibilbidean',
+    'alt="Foto ampliada del recorrido"':
+        'alt="Ibilbidearen argazki handia"',
+    '<span>Pista/tierra</span>':
+        '<span>Pista/lurra</span>',
+    '<span>BTT</span>':
+        '<span>BTT</span>',
+    '<span>Circuito</span>':
+        '<span>Zirkuitua</span>',
+    'Ruta para ciclistas de montaña con experiencia en terreno técnico y buena forma física. Combina pistas de asfalto, tierra y tramos técnicos, con varios ascensos sostenidos y descensos rápidos. Requiere concentración y control en bicicleta.':
+        'BTT-en txirrindubitsuentzako, lurrean tekniko eta entzunaldi fisikoarekin trebeak. Asfalto-pista, lurra eta tramo teknikoak konbinatzen ditu, igoera etengabeak eta beherakada azkarrekin. Txirrinduaren kontzentrazioa eta kontrola behar du.',
+    'Tramo del recorrido con vistas a las montañas circundantes':
+        'Ibilbidearen tartea inguruko mendien ikuspegiarekin',
+    'Vista panorámica durante la subida hacia Zengotitagane':
+        'Ikuspegi panoramikoa Zengotitaganera igotzen denean',
+    'Detalle de la pista de tierra durante el recorrido':
+        'Ibilbidean lurrezko pistaren xehetasuna',
+    'Paisaje de montaña con vegetación y caseríos':
+        'Mendizabal-paisaia begetazioarekin eta baserriekin',
+    'Manillar en marcha durante un tramo técnico':
+        'Manillarra tramo teknikoan zehar seriolan',
+    'Descenso técnico entre árboles':
+        'Beherakada teknikoa zuhaitzen artean',
+    'Vista de Mallabia desde la ruta':
+        'Mallabiren ikuspegi ibilbidean',
+    'Tramo de asfalto en descenso':
+        'Asfalto-tartea beherakadan',
+    'Cruce de pistas durante el circuito':
+        'Pistaren gurutzaketa zirkuituan',
+    'Últimos kilómetros de descenso':
+        'Beherakadaren azken kilometroak',
+    'Vista final del recorrido cerca de Trabakua':
+        'Ibilbidearen ikuspegia Trabakuaren inguruan',
+    '<h2>La ruta en detalle</h2>':
+        '<h2>Ibilbidea xehetasunean</h2>',
+    'Salimos de <b>Trabakua</b> en dirección a Zengotitagane, tomando una pista de cemento que sube con constancia hacia las alturas. Los primeros kilómetros son de ascenso gradual, con vistas amplias sobre el valle de Mallabia. Es un inicio técnico, pero la subida es progresiva y sin sorpresas abruptas. La pista permite rodar con seguridad aunque sea exigente en piernas.':
+        'Trabakuatik atera <b>Trabakua</b>tik Zengotitaganerako norabidean, zementu-pista bat hartuz, zeharka goitik etengabe igotzen dena. Lehenbiziko kilometroak igoerak gradualak dira, Mallabiko haranearen gainean ikus zabalekin. Hasiera teknikoa da, baina igoenka progresiboak eta beherakada itzulekarik gabeak. Pisteak seguru rotzea uzten du nahiz sakerok baldintzatua izan.',
+    'Al llegar a <b>Zengotitagane</b>, pasamos por la zona de parques eólicos y pistas de mantenimiento. Aquí el paisaje se abre completamente, con vistas de largo alcance hacia Bizkaia. Continuamos por pista hacia <b>Aitzu</b>, donde la ruta toma carácter más técnico. Los tramos se vuelven más irregulares, con sectores de tierra y piedra que exigen concentración. Las vistas siguen siendo espectaculares, con montañas en todas direcciones.':
+        '<b>Zengotitaganera</b> iristean, parke eoliko eta mantenimentu pisten gunean zehar igaro. Hemen paisaia osoa zabaltzen da, Bizkaira begira ikus luzeekin. Pistaren bidez <b>Aitzu</b>ra jarraitu, non ibilbideak karatera teknikoagoa hartzen duen. Tarteak irregularragoak bihurtzen dira, lurra eta harria duten sektoreekin kontzentrazioa eskatzen dutenak. Ikuspegiak behingoz espektakularrak dira, mendia alderdi guztietan.',
+    'Desde Aitzu, bajamos técnicamente hacia el valle de <b>Mallabia</b>, con descensos rápidos que te hacen disfrutar de la bicicleta. Este sector es donde más disfruta un ciclista con experiencia: flujo constante, terreno variado y paisaje cambiante. La bajada tiene tramos de asfalto y tierra, todos ellos rodables y muy divertidos si tienes técnica.':
+        'Aitzetik behean <b>Mallabia</b>ko haranerantz, beherakada bizkorrekin etengabe. Sektore hau da trebetasun duten txirrindubitsuenak gehien disfrutatu egiten duten lekua: fluxu etengabea, lurrean desberdina eta paisaia aldakorra. Beherakadak asfalto eta lurrezko tarteak ditu, guztiak rotzekoak eta bistan atsegina teknika badago.',
+    'Una vez en Mallabia, seguimos por pista de asfalto y cemento que nos lleva hacia <b>Osmagain</b>. Este tramo es más rodador, ideal para recuperarse del esfuerzo anterior. Las vistas de Mallabia desde aquí son hermosas, con el valle completo visible desde la altura. Pasamos cerca de caseríos y zonas cultivadas, recordándote que estás en el corazón de Euskalherria.':
+        'Mallaban behin, asfalto eta zementu pistaren bidez <b>Osmagainera</b> doaz. Tartea rotzailago da, aurreko esfortzuagatik berrantolatzeko ideala. Mallabiaren ikuspegiak hemendik ederrak dira, haranean osoa altxeratik ikusgarria. Baserrietatik eta landu-gunetatik gertu igaro, Euskalheriaren bihotzean zaudela gogoratuz.',
+    'Desde Osmagain, la ruta se orienta hacia el regreso a Trabakua. Continuamos por pistas de montaña que atraviesan zonas boscosas y abiertas alternadamente. El terreno es técnico en sectores, con raíces y piedras que mantienen la atención. Sin embargo, la pendiente es favorable para el regreso, permitiendo que disfrutes del paisaje sin un esfuerzo excesivo.':
+        'Osmagainetik, ibilbidea Trabakuara itzulera orientatzen da. Mendiko pisten bidez jarraitu, baso-guneetan eta irekian zehar txandakara igaro. Lurra teknikoa da sektoreetan, sustraien eta harriaren bidez arreta mantentzen dutenak. Baina, maldak ez kalean itzultzeko, paisaia disfrutatu uzten duzu esfortzu gehigaturik gabe.',
+    'En los últimos kilómetros, volvemos a encontrar tramos de asfalto y cemento que desembocan nuevamente en <b>Trabakua</b>, donde completamos el circuito. Esta etapa final es la más rápida, con descensos que permiten recuperar velocidad y cerrar la ruta con energía. El desnivel acumulado de casi 900 metros de subida te dejará con la sensación de haber hecho trabajo serio, pero los 19,44 km pasan rápido gracias al flujo constante de la ruta.':
+        'Azken kilometroetan, asfalto eta zementu tarteak berriro aurkitzen ditugu <b>Trabakua</b>n berriz amaitu, zirkuitua bete ahal izateko. Azken etapa hau azkarrena da, abiadura berreskuratu eta ibilbidea energiarekin itxi uzten duten beherakadarekin. Igoeraren 900 metro-eko desnibela ia gurpil serio egin duzula sentitu uzten zaituezu, baina 19,44 km ibilbidearen fluxu etengabea dela-eta bizkorra igaro.',
+    '<h3>Waypoints clave</h3>':
+        '<h3>Gako-puntuak</h3>',
+    '<span class="elev-text"><b>Zengotitagane</b> · zona de eolikoak</span>':
+        '<span class="elev-text"><b>Zengotitagane</b> · eolikoaren gunea</span>',
+    '<span class="elev-text"><b>Aitzu</b> · tramo técnico</span>':
+        '<span class="elev-text"><b>Aitzu</b> · tramo teknikoa</span>',
+    '<span class="elev-text"><b>Mallabia</b> · valle y cruce</span>':
+        '<span class="elev-text"><b>Mallabia</b> · harana eta gurutzaketa</span>',
+    '<span class="elev-text"><b>Osmagain</b> · punto alto del retorno</span>':
+        '<span class="elev-text"><b>Osmagain</b> · itzuleraren puntu altuena</span>',
+    'Ver ruta completa en Wikiloc':
+        'Ibilbide osoa WikLocen',
+    'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.gpx"':
+        'download="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain.gpx"',
+    'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.kml"':
+        'download="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3198,4 +3275,5 @@ PAGE_STRINGS = {
     'potrera': POTRERA,
     'intxorta': INTXORTA,
     'artetaasuntza': ARTETAASUNTZA,
+    'trabakuamallabia': TRABAKUAMALLABIA,
 }
