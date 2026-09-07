@@ -115,6 +115,13 @@ There's no automated test suite — verification is manual:
 - `git status` after `build.py`/`optimize_images.py` before committing — both regenerate/rewrite
   files across the whole tree, so it's easy to accidentally stage an unrelated change (e.g. revert
   unintended image recompressions with `git checkout --`).
+- **For a brand-new route page, or one you're doing major surgery on: before calling it done, diff
+  its `_tail.html` structurally against a known-good page's (e.g. `arteta_tail.html`), or run the
+  `web-auditor` agent on it.** `trabakuamallabia` shipped missing the map/JS, the `<footer>`, the
+  `#toTop` button, the elevation-profile markers, with a duplicated icon and untranslated strings —
+  none of it caught because each fix only checked the one thing just reported, never the whole page
+  against the template every other route already follows. Checking piecemeal, one user-reported bug
+  at a time, is what let all of that ship in the first place — don't repeat it.
 
 ## Content rules
 
