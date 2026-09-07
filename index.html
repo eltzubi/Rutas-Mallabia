@@ -45,7 +45,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
 <link rel="stylesheet" href="base.css?v=9617327d">
-<link rel="stylesheet" href="home.css?v=6e37bfc4">
+<link rel="stylesheet" href="home.css?v=9454119f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,44 +92,44 @@
   </section>
 
   <section class="finder" data-approx="aprox." data-all-distance="Todas" data-all-desnivel="Todos" data-count-one="ruta encontrada" data-count-many="rutas encontradas" data-impossible-distance="(rango de distancia imposible)" data-impossible-desnivel="(rango de desnivel imposible)">
-    <div class="activity-filter" role="group" aria-label="Filtrar por actividad">
-      <button type="button" class="activity-chip active" data-activity="senderismo">
-        <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5v7.3c0 .7-.3 1.4-.8 1.9L3.5 14.4c-.6.5-.9 1.3-.9 2v2.6a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1.6c0-1-.7-1.9-1.7-2.1l-6.4-1.5a2 2 0 0 1-1.5-1.9V2.5"/><path d="M7 2.5h6.5"/><path d="M9.5 6h4M9.5 8.7h4"/></svg>
-        <span>A pie</span>
-      </button>
-      <button type="button" class="activity-chip active" data-activity="bici">
-        <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
-        <span>En bici</span>
-      </button>
+    <div class="finder-toolbar">
+      <div class="activity-filter" role="group" aria-label="Filtrar por actividad">
+        <button type="button" class="activity-chip active" data-activity="all">Todas</button>
+        <button type="button" class="activity-chip" data-activity="senderismo">A pie</button>
+        <button type="button" class="activity-chip" data-activity="bici">BTT/e-bike</button>
+      </div>
+      <button type="button" class="open-filters" id="openFilters" aria-haspopup="dialog" aria-controls="filterDialog">Filtrar<span id="filterBadge" hidden></span></button>
     </div>
-    <div class="difficulty-filter" role="group" aria-label="Filtrar por dificultad">
-      <button type="button" class="difficulty-chip active" data-difficulty="facil">
-        <span class="chip-dot dot-facil" aria-hidden="true"></span>
-        <span>F&aacute;cil</span>
-      </button>
-      <button type="button" class="difficulty-chip active" data-difficulty="media">
-        <span class="chip-dot dot-media" aria-hidden="true"></span>
-        <span>Media</span>
-      </button>
-      <button type="button" class="difficulty-chip active" data-difficulty="dificil">
-        <span class="chip-dot dot-dificil" aria-hidden="true"></span>
-        <span>Dif&iacute;cil</span>
-      </button>
+    <div id="desktopFilters">
+      <div id="filterControls" class="filter-controls">
+        <fieldset class="distance-group">
+          <legend>Distancia</legend>
+          <div class="distance-filter">
+            <button type="button" class="distance-chip active" data-distance-preset="all">Todas</button>
+            <button type="button" class="distance-chip" data-distance-preset="corto">Hasta 10 km</button>
+            <button type="button" class="distance-chip" data-distance-preset="media1">10–20 km</button>
+            <button type="button" class="distance-chip" data-distance-preset="media2">20–30 km</button>
+            <button type="button" class="distance-chip" data-distance-preset="larga">Más de 30 km</button>
+          </div>
+        </fieldset>
+        <details class="advanced-filters" id="advancedFilters">
+          <summary>Más filtros<span id="advancedBadge" hidden></span></summary>
+          <div class="advanced-fields">
+            <label for="difficultySelect">Dificultad
+              <select id="difficultySelect"><option value="all">Todas</option><option value="facil">Fácil</option><option value="media">Media</option><option value="dificil">Difícil</option></select>
+            </label>
+            <label for="elevationSelect">Desnivel positivo
+              <select id="elevationSelect"><option value="all">Todos</option><option value="low">Hasta 500 m</option><option value="medium">500–1.000 m</option><option value="high">Más de 1.000 m</option></select>
+            </label>
+          </div>
+        </details>
+      </div>
     </div>
-    <div class="distance-filter" role="group" aria-label="Filtrar por distancia">
-      <button type="button" class="distance-chip" data-distance-preset="corto">
-        <span>Corto</span>
-      </button>
-      <button type="button" class="distance-chip" data-distance-preset="media1">
-        <span>Medio</span>
-      </button>
-      <button type="button" class="distance-chip" data-distance-preset="media2">
-        <span>Largo</span>
-      </button>
-      <button type="button" class="distance-chip" data-distance-preset="larga">
-        <span>Muy largo</span>
-      </button>
-    </div>
+    <dialog id="filterDialog" class="filter-dialog" aria-labelledby="filterDialogTitle">
+      <div class="filter-dialog-heading"><h2 id="filterDialogTitle">Filtrar rutas</h2><button type="button" id="closeFilters" aria-label="Cerrar filtros">×</button></div>
+      <div id="mobileFilters"></div>
+      <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Restablecer</button><button type="button" class="show-results" id="showResults">Ver rutas</button></div>
+    </dialog>
 
     <div class="view-toggle-row">
       <div class="view-toggle" role="group" aria-label="Ver como lista o mapa">
@@ -595,16 +595,9 @@
         </div>
       </a>
     </div>
-    <p class="filter-empty" id="filterEmpty" role="status">No hay rutas de este tipo todav&iacute;a. <button type="button" class="filter-reset" data-filter-reset>Quitar filtros</button></p>
-
-    <div class="filter-suggestions" id="filterSuggestions" hidden>
-      <p class="suggestion-text">Intenta relajar los filtros:</p>
-      <div class="suggestion-buttons">
-        <button type="button" class="suggestion-btn" data-suggestion="activities">Ver todas las actividades</button>
-        <button type="button" class="suggestion-btn" data-suggestion="difficulties">Ver todas las dificultades</button>
-        <button type="button" class="suggestion-btn" data-suggestion="distance">Ampliar rango de distancia</button>
-        <button type="button" class="suggestion-btn" data-suggestion="desnivel">Ampliar rango de desnivel</button>
-      </div>
+    <div class="filter-empty" id="filterEmpty" role="status" hidden>
+      <p>No hay rutas con estos filtros.</p>
+      <button type="button" class="suggestion-btn" id="recoverFilters">Ampliar distancia</button>
     </div>
 
     <div class="map-section" id="routeMapWrap" hidden>
@@ -626,22 +619,7 @@
     </div>
   </section>
 
-  <section class="quick-help">
-    <h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>
-    <div class="quick-help-grid">
-      <button type="button" class="quick-help-btn" data-quick-preset="corto">
-        <b>Algo corto</b><span>Menos de 10 km</span>
-      </button>
-      <button type="button" class="quick-help-btn" data-quick-preset="media1">
-        <b>Un par de horas</b><span>10&ndash;20 km</span>
-      </button>
-      <button type="button" class="quick-help-btn" data-quick-preset="larga">
-        <b>Una buena vuelta</b><span>M&aacute;s de 30 km</span>
-      </button>
-    </div>
-  </section>
-
-  <section class="info-accordion">
+<section class="info-accordion">
     <details class="info-details">
       <summary>Antes de salir</summary>
       <div class="info-details-body">
@@ -690,7 +668,7 @@
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
 
-<script src="js/filters.js?v=6a2ca650"></script>
+<script src="js/filters.js?v=7efa0eed"></script>
 <script src="js/app.js?v=84b5c1ee"></script>
 <script src="js/webmcp.js?v=ed4e6132"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->

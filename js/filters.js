@@ -1,492 +1,160 @@
-// Home page route list: every route is on the page from the start; the
-// activity/difficulty chips and the range sliders just narrow it down, and
-// the same selection drives the map view. Language-independent -- the labels
-// it writes come from the page itself (data-* attributes carry the
-// per-language text).
+// One filter state feeds the list, map, result count and mobile dialog.
 (function(){
-  var activityChips = document.querySelectorAll('.activity-chip');
-  var difficultyChips = document.querySelectorAll('.difficulty-chip');
-  var distanceChips = document.querySelectorAll('.distance-chip');
-  var moreFiltersToggle = document.getElementById('moreFiltersToggle');
-  var moreFiltersPanel = document.getElementById('moreFiltersPanel');
-  var viewBtns = document.querySelectorAll('.view-toggle-btn');
-  var resultsList = document.getElementById('routeResults');
+  var finder = document.querySelector('.finder');
+  if (!finder) return;
+  var cards = Array.from(finder.querySelectorAll('.route-card[data-activity]'));
+  var activityButtons = Array.from(finder.querySelectorAll('.activity-chip'));
+  var distanceButtons = Array.from(finder.querySelectorAll('.distance-chip'));
+  var viewButtons = Array.from(finder.querySelectorAll('.view-toggle-btn'));
+  var difficulty = document.getElementById('difficultySelect');
+  var elevation = document.getElementById('elevationSelect');
+  var results = document.getElementById('routeResults');
   var mapWrap = document.getElementById('routeMapWrap');
-  var cards = document.querySelectorAll('.route-card[data-activity]');
-  var emptyMsg = document.getElementById('filterEmpty');
-  var resultCount = document.getElementById('resultCount');
-  var activeFiltersDisplay = document.getElementById('activeFilters');
-  var filterSuggestions = document.getElementById('filterSuggestions');
-  var suggestionBtns = document.querySelectorAll('.suggestion-btn');
-  var quickBtns = document.querySelectorAll('.quick-help-btn');
-  var distanceMin = document.getElementById('distanceRangeMin');
-  var distanceMax = document.getElementById('distanceRangeMax');
-  var desnivelMin = document.getElementById('desnivelRangeMin');
-  var desnivelMax = document.getElementById('desnivelRangeMax');
-  var distanceVal = document.getElementById('distanceVal');
-  var desnivelVal = document.getElementById('desnivelVal');
-  var distanceFill = document.getElementById('distanceFill');
-  var desnivelFill = document.getElementById('desnivelFill');
-  var resetBtns = document.querySelectorAll('[data-filter-reset]');
-  var searchQuery = '';
-  if (!activityChips.length || !cards.length) return;
-
-  var view = 'list';
-  var filterState = {
-    distanceMin: 0,
-    distanceMax: Infinity,
-    desnivelMin: 0,
-    desnivelMax: Infinity
+  var dialog = document.getElementById('filterDialog');
+  var openButton = document.getElementById('openFilters');
+  var controls = document.getElementById('filterControls');
+  var advanced = document.getElementById('advancedFilters');
+  var empty = document.getElementById('filterEmpty');
+  var recover = document.getElementById('recoverFilters');
+  if (!cards.length || !difficulty || !elevation) return;
+  var eu = document.documentElement.lang === 'eu';
+  var words = eu ? {
+    one: 'ibilbide', many: 'ibilbide', show: function(n){ return n + ' ibilbide ikusi'; },
+    distance: 'Distantzia zabaldu', difficulty: 'Zailtasun guztiak ikusi',
+    elevation: 'Desnibel guztiak ikusi', extra: 'Distantzia, zailtasuna eta desnibela kendu',
+    all: 'Jarduera guztiak ikusi'
+  } : {
+    one: 'ruta', many: 'rutas', show: function(n){ return 'Ver ' + n + (n === 1 ? ' ruta' : ' rutas'); },
+    distance: 'Ampliar distancia', difficulty: 'Ver todas las dificultades',
+    elevation: 'Ver todos los desniveles', extra: 'Quitar distancia, dificultad y desnivel',
+    all: 'Ver todas las actividades'
   };
-
-  // Se consulta en cada salto, no una vez al cargar: la preferencia puede
-  // cambiar con la sesion abierta.
-  function reduceMotion(){
-    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }
-
-  var filters = document.querySelector('.finder') || document.body;
-  var TXT_APPROX = filters.dataset.approx || 'aprox.';
-  var TXT_ALL_DISTANCE = filters.dataset.allDistance || 'Todas';
-  var TXT_ALL_DESNIVEL = filters.dataset.allDesnivel || 'Todos';
-  var TXT_COUNT_ONE = filters.dataset.countOne || 'ruta encontrada';
-  var TXT_COUNT_MANY = filters.dataset.countMany || 'rutas encontradas';
-  var TXT_IMPOSSIBLE_DISTANCE = filters.dataset.impossibleDistance || '(rango de distancia imposible)';
-  var TXT_IMPOSSIBLE_DESNIVEL = filters.dataset.impossibleDesnivel || '(rango de desnivel imposible)';
-
-  function niceCeil(n, step){ return Math.ceil(n / step) * step; }
-
-  var distances = Array.prototype.map.call(cards, function(c){ return parseFloat(c.dataset.distanceKm) || 0; });
-  var desniveles = Array.prototype.map.call(cards, function(c){ return parseFloat(c.dataset.desnivelM) || 0; });
-  var maxDistance = niceCeil(Math.max.apply(null, distances), 5) || 5;
-  var maxDesnivel = niceCeil(Math.max.apply(null, desniveles), 100) || 100;
-  var minActualDistance = Math.min.apply(null, distances);
-  var maxActualDistance = Math.max.apply(null, distances);
-  var minActualDesnivel = Math.min.apply(null, desniveles);
-  var maxActualDesnivel = Math.max.apply(null, desniveles);
-
-  function setupPair(minEl, maxEl, max, step){
-    if (!minEl || !maxEl) return;
-    minEl.max = maxEl.max = max;
-    minEl.step = maxEl.step = step;
-    minEl.value = 0;
-    maxEl.value = max;
-  }
-  setupPair(distanceMin, distanceMax, maxDistance, 0.5);
-  setupPair(desnivelMin, desnivelMax, maxDesnivel, 25);
-
-  function linkPair(minEl, maxEl, onChange){
-    if (!minEl || !maxEl) return;
-    function clamp(){
-      if (parseFloat(minEl.value) > parseFloat(maxEl.value)) minEl.value = maxEl.value;
-    }
-    minEl.addEventListener('input', function(){ clamp(); onChange(); apply(); });
-    maxEl.addEventListener('input', function(){
-      if (parseFloat(maxEl.value) < parseFloat(minEl.value)) maxEl.value = minEl.value;
-      onChange(); apply();
-    });
-    [minEl, maxEl].forEach(function(el){
-      ['mousedown', 'touchstart'].forEach(function(evt){
-        el.addEventListener(evt, function(){
-          minEl.classList.remove('range-top');
-          maxEl.classList.remove('range-top');
-          el.classList.add('range-top');
-        });
-      });
-    });
-  }
-  linkPair(distanceMin, distanceMax, function(){ setActiveDistanceChip(null); });
-  linkPair(desnivelMin, desnivelMax, function(){});
-
-  function fillPair(minEl, maxEl, fillEl, max){
-    if (!minEl || !maxEl || !fillEl || !max) return;
-    var loPct = parseFloat(minEl.value) / max * 100;
-    var hiPct = parseFloat(maxEl.value) / max * 100;
-    fillEl.style.left = loPct + '%';
-    fillEl.style.right = (100 - hiPct) + '%';
-  }
-
-  function fmtRange(minV, maxV, max, isElevation, allWord){
-    if (minV <= 0 && maxV >= max) return allWord;
-    if (!Number.isFinite(maxV)) maxV = max;
-    var fmt = function(n){ return isElevation ? Math.round(n) : n.toFixed(1).replace('.0',''); };
-    return fmt(minV) + '–' + fmt(maxV) + (isElevation ? ' m ' : ' km ') + TXT_APPROX;
-  }
-
-  function setActiveDistanceChip(chip){
-    distanceChips.forEach(function(c){ c.classList.toggle('active', c === chip); });
-  }
-
-  function updateControlStates(){
-    [activityChips, difficultyChips, distanceChips, viewBtns].forEach(function(group){
-      group.forEach(function(button){
-        button.setAttribute('aria-pressed', String(button.classList.contains('active')));
-      });
-    });
-  }
-
-  function selectedLabels(group){
-    return Array.prototype.filter.call(group, function(c){ return c.classList.contains('active'); })
-      .map(function(c){ return c.textContent.trim(); });
-  }
-
-  // The current home has presets, not sliders. Both interfaces must write
-  // the same fallback state, including the empty-results recovery buttons.
-  function setDistanceRange(lo, hi){
-    filterState.distanceMin = lo;
-    filterState.distanceMax = hi;
-    if (distanceMin) distanceMin.value = lo;
-    if (distanceMax) distanceMax.value = Math.min(hi, maxDistance);
-  }
-
-  var DISTANCE_PRESETS = {
-    corto: [0, 10],
-    media1: [10, 20],
-    media2: [20, 30],
-    larga: [30, Infinity]
+  var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list'};
+  var state = Object.assign({}, defaults);
+  var allowed = {
+    activity:['all','senderismo','bici'], distance:['all','corto','media1','media2','larga'],
+    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','map']
   };
-
-  distanceChips.forEach(function(chip){
-    chip.addEventListener('click', function(){
-      var already = chip.classList.contains('active');
-      setActiveDistanceChip(already ? null : chip);
-      var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
-      var lo = 0, hi = Infinity;
-      if (!already && range) {
-        lo = range[0];
-        hi = range[1];
+  try {
+    var saved = JSON.parse(localStorage.getItem('trabakutik_filters'));
+    if (saved && typeof saved === 'object') {
+      if (saved.version !== 2) {
+        saved.activity = Array.isArray(saved.activities) && saved.activities.length === 1 ? saved.activities[0] : 'all';
+        saved.difficulty = Array.isArray(saved.difficulties) && saved.difficulties.length === 1 ? saved.difficulties[0] : 'all';
+        saved.distance = saved.distancePreset || 'all';
       }
-      setDistanceRange(lo, hi);
-      apply();
-    });
-  });
+      Object.keys(defaults).forEach(function(k){ if (allowed[k].indexOf(saved[k]) !== -1) state[k] = saved[k]; });
+    }
+  } catch (_) { /* Storage may be unavailable or malformed. */ }
 
-  if (moreFiltersToggle && moreFiltersPanel) {
-    function closePanel(){
-      moreFiltersPanel.setAttribute('hidden', '');
-      moreFiltersToggle.setAttribute('aria-expanded', 'false');
-    }
-    function openPanel(){
-      moreFiltersPanel.removeAttribute('hidden');
-      moreFiltersToggle.setAttribute('aria-expanded', 'true');
-    }
-    moreFiltersToggle.addEventListener('click', function(){
-      var open = moreFiltersPanel.hasAttribute('hidden');
-      if (open) openPanel();
-      else closePanel();
-    });
-    // Close drawer on backdrop click (mobile drawer modal)
-    moreFiltersPanel.addEventListener('click', function(e){
-      if (e.target === moreFiltersPanel) closePanel();
-    });
-    // Close drawer on escape key
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && !moreFiltersPanel.hasAttribute('hidden')) closePanel();
+  function matches(card, s){
+    var km = Number(card.dataset.distanceKm), gain = Number(card.dataset.desnivelM);
+    var distanceOK = s.distance === 'all' ||
+      (s.distance === 'corto' && km <= 10) ||
+      (s.distance === 'media1' && km > 10 && km <= 20) ||
+      (s.distance === 'media2' && km > 20 && km <= 30) ||
+      (s.distance === 'larga' && km > 30);
+    var elevationOK = s.elevation === 'all' ||
+      (s.elevation === 'low' && gain <= 500) ||
+      (s.elevation === 'medium' && gain > 500 && gain <= 1000) ||
+      (s.elevation === 'high' && gain > 1000);
+    return (s.activity === 'all' || card.dataset.activity.split(',').indexOf(s.activity) !== -1) &&
+      (s.difficulty === 'all' || card.dataset.difficulty === s.difficulty) && distanceOK && elevationOK;
+  }
+  function selectedLabel(buttons, key, value){
+    var button = buttons.find(function(b){ return b.dataset[key] === value; });
+    return button ? button.textContent.trim() : '';
+  }
+  function optionLabel(select){
+    var option = select.querySelector('option[value="' + select.value + '"]');
+    return option ? option.textContent.trim() : '';
+  }
+  function paintButtons(buttons, key, value){
+    buttons.forEach(function(b){
+      var on = b.dataset[key] === value;
+      b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on));
     });
   }
-
-  // Deja la fila de pestanas justo debajo de la cabecera y de la barra de
-  // actividad, que van fijas arriba y taparian el principio del mapa.
-  var STICKY_H = 132;
-
-  function scrollToMap(){
-    var anchor = document.querySelector('.view-toggle-row') || mapWrap;
-    if (!anchor) return;
-    // En dos pasos: el primero cuando ya se ha ocultado la lista, y el
-    // segundo cuando el mapa termina de montarse y la pagina deja de
-    // moverse bajo los pies.
-    var go = function(smooth){
-      var y = window.pageYOffset + anchor.getBoundingClientRect().top - STICKY_H;
-      window.scrollTo({ top: Math.max(y, 0), behavior: (smooth && !reduceMotion()) ? 'smooth' : 'auto' });
-    };
-    requestAnimationFrame(function(){ go(true); });
-    setTimeout(function(){ go(false); }, 700);
+  function badge(id, n){
+    var el = document.getElementById(id); el.textContent = n ? ' (' + n + ')' : ''; el.hidden = !n;
   }
-
-  viewBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      view = btn.dataset.view;
-      viewBtns.forEach(function(b){ b.classList.toggle('active', b === btn); });
-      if (resultsList) resultsList.hidden = (view !== 'list');
-      if (mapWrap) mapWrap.hidden = (view !== 'map');
-      updateControlStates();
-      // Al pedir el mapa, llevar la vista hasta el; se salta a la fila de
-      // pestanas (no al mapa) porque con la lista oculta la pagina se queda
-      // corta y el scroll toparia con el final, dejando el mapa medio tapado
-      // por la cabecera.
-      if (view === 'map' && mapWrap) {
-        scrollToMap();
-      }
-      saveFiltersToStorage();
-    });
-  });
-
-  function updateActiveFiltersDisplay(){
-    if (!activeFiltersDisplay) return;
-    var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
-      .map(function(c){ return c.dataset.difficulty; });
-    var activeActivities = Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); })
-      .map(function(c){ return c.dataset.activity; });
-    var minD = distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin;
-    var maxD = distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax;
-    var minE = desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin;
-    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax;
-
-    var parts = [];
-    if (activeActivities.length !== activityChips.length) {
-      parts.push(selectedLabels(activityChips).join(' + '));
-    }
-    if (activeDifficulty.length !== difficultyChips.length) {
-      parts.push(selectedLabels(difficultyChips).join(' + '));
-    }
-    if (minD > 0 || maxD < maxDistance) {
-      parts.push(fmtRange(minD, maxD, maxDistance, false, ''));
-    }
-    if (minE > 0 || maxE < maxDesnivel) {
-      parts.push(fmtRange(minE, maxE, maxDesnivel, true, ''));
-    }
-
-    if (parts.length > 0) {
-      activeFiltersDisplay.textContent = parts.join(' · ');
-      activeFiltersDisplay.style.display = 'block';
-    } else {
-      activeFiltersDisplay.textContent = '';
-      activeFiltersDisplay.style.display = 'none';
-    }
-  }
-
+  var recoveryState = null;
   function apply(){
-    var activeDifficulty = Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); })
-      .map(function(c){ return c.dataset.difficulty; });
-    var minD = distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin;
-    var maxD = distanceMax ? parseFloat(distanceMax.value) : filterState.distanceMax;
-    var minE = desnivelMin ? parseFloat(desnivelMin.value) : filterState.desnivelMin;
-    var maxE = desnivelMax ? parseFloat(desnivelMax.value) : filterState.desnivelMax;
-    if (distanceVal) distanceVal.textContent = fmtRange(minD, maxD, maxDistance, false, TXT_ALL_DISTANCE);
-    if (desnivelVal) desnivelVal.textContent = fmtRange(minE, maxE, maxDesnivel, true, TXT_ALL_DESNIVEL);
-    fillPair(distanceMin, distanceMax, distanceFill, maxDistance);
-    fillPair(desnivelMin, desnivelMax, desnivelFill, maxDesnivel);
-
-    var activeActivities = Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); })
-      .map(function(c){ return c.dataset.activity; });
-
-    var visibleHrefs = [];
-    var shown = 0;
+    difficulty.value = state.difficulty; elevation.value = state.elevation;
+    paintButtons(activityButtons, 'activity', state.activity);
+    paintButtons(distanceButtons, 'distancePreset', state.distance);
+    paintButtons(viewButtons, 'view', state.view);
+    var visible = [];
     cards.forEach(function(card){
-      var km = parseFloat(card.dataset.distanceKm) || 0;
-      var m = parseFloat(card.dataset.desnivelM) || 0;
-      var activities = card.dataset.activity.split(',');
-      var matchesActivity = !activeActivities.length || activities.some(function(a){
-        return activeActivities.indexOf(a) !== -1;
+      var show = matches(card, state); card.classList.toggle('is-hidden', !show);
+      if (show) visible.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
+    });
+    results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
+    var n = visible.length;
+    document.getElementById('resultCount').textContent = n + ' ' + (n === 1 ? words.one : words.many);
+    document.getElementById('showResults').textContent = words.show(n);
+    var extraCount = ['distance','difficulty','elevation'].filter(function(k){return state[k] !== 'all';}).length;
+    badge('filterBadge', extraCount);
+    badge('advancedBadge', Number(state.difficulty !== 'all') + Number(state.elevation !== 'all'));
+    var labels = [];
+    if (state.activity !== 'all') labels.push(selectedLabel(activityButtons,'activity',state.activity));
+    if (state.distance !== 'all') labels.push(selectedLabel(distanceButtons,'distancePreset',state.distance));
+    if (state.difficulty !== 'all') labels.push(optionLabel(difficulty));
+    if (state.elevation !== 'all') labels.push((eu ? 'Desnibela: ' : 'Desnivel: ') + optionLabel(elevation));
+    var summary = document.getElementById('activeFilters');
+    summary.textContent = labels.join(' · '); summary.hidden = !labels.length;
+    finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.hidden = !labels.length;});
+    finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !extraCount;});
+    empty.hidden = n !== 0; empty.classList.toggle('visible', n === 0);
+    if (!n) {
+      // Offer one relaxation that actually yields results. Keep the selected
+      // activity unless there are no routes at all for that activity.
+      recoveryState = null;
+      ['distance','difficulty','elevation'].some(function(k){
+        if (state[k] === 'all') return false;
+        var candidate = Object.assign({}, state); candidate[k] = 'all';
+        if (!cards.some(function(c){return matches(c,candidate);})) return false;
+        recoveryState = candidate; recover.textContent = words[k]; return true;
       });
-      var matchesDifficulty = !activeDifficulty.length || activeDifficulty.indexOf(card.dataset.difficulty) !== -1;
-      var matchesSearch = !searchQuery || (function(){
-        var nameEl = card.querySelector('.route-card-name');
-        var descEl = card.querySelector('.route-card-desc');
-        var name = nameEl ? nameEl.textContent.toLowerCase() : '';
-        var desc = descEl ? descEl.textContent.toLowerCase() : '';
-        return name.includes(searchQuery) || desc.includes(searchQuery);
-      })();
-      var matches = matchesActivity && matchesDifficulty && km >= minD && km <= maxD && m >= minE && m <= maxE && matchesSearch;
-      if (matches) {
-        shown++;
-        visibleHrefs.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
+      if (!recoveryState) {
+        recoveryState = Object.assign({}, defaults, {activity:state.activity, view:state.view});
+        recover.textContent = words.extra;
+        if (!cards.some(function(c){return matches(c,recoveryState);})) {
+          recoveryState.activity = 'all'; recover.textContent = words.all;
+        }
       }
-      card.classList.toggle('is-hidden', !matches);
-    });
-    // Detect impossible filter ranges (no routes can match even without activity/difficulty filters)
-    var impossibleDistance = maxD < minActualDistance || minD > maxActualDistance;
-    var impossibleDesnivel = maxE < minActualDesnivel || minE > maxActualDesnivel;
-    var impossibleRange = impossibleDistance || impossibleDesnivel;
-
-    if (emptyMsg) emptyMsg.classList.toggle('visible', shown === 0);
-    if (filterSuggestions) filterSuggestions.hidden = (shown > 0);
-    if (resultCount) {
-      var msg = shown + ' ' + (shown === 1 ? TXT_COUNT_ONE : TXT_COUNT_MANY);
-      if (impossibleRange && shown === 0) {
-        msg += ' ' + (impossibleDistance ? TXT_IMPOSSIBLE_DISTANCE : TXT_IMPOSSIBLE_DESNIVEL);
-      }
-      resultCount.textContent = msg;
     }
-
-    // Con los deslizadores en un extremo se llega a "0 rutas encontradas" y
-    // antes no habia forma de salir de ahi sin recolocarlos a mano o recargar.
-    // El boton solo aparece cuando hay algo que quitar.
-    var filtrado = activeActivities.length !== activityChips.length ||
-                   activeDifficulty.length !== difficultyChips.length ||
-                   minD > 0 || maxD < maxDistance || minE > 0 || maxE < maxDesnivel;
-    resetBtns.forEach(function(b){
-      if (filtrado) b.removeAttribute('hidden');
-      else b.setAttribute('hidden', '');
-    });
-    // map.js can load after this first event (Leaflet comes from a CDN).
-    // Keep the latest selection available for a late subscriber as well.
-    window.trabakutikVisibleRoutes = visibleHrefs.slice();
-    document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
-    updateControlStates();
-    saveFiltersToStorage();
-    updateActiveFiltersDisplay();
+    window.trabakutikVisibleRoutes = visible.slice();
+    document.dispatchEvent(new CustomEvent('routefilters:apply', {detail:{visibleHrefs:visible}}));
+    try { localStorage.setItem('trabakutik_filters', JSON.stringify(Object.assign({version:2},state))); } catch (_) {}
   }
+  activityButtons.forEach(function(b){b.addEventListener('click',function(){state.activity=b.dataset.activity;apply();});});
+  distanceButtons.forEach(function(b){b.addEventListener('click',function(){state.distance=b.dataset.distancePreset;apply();});});
+  difficulty.addEventListener('change',function(){state.difficulty=difficulty.value;apply();});
+  elevation.addEventListener('change',function(){state.elevation=elevation.value;apply();});
+  viewButtons.forEach(function(b){b.addEventListener('click',function(){state.view=b.dataset.view;apply();});});
+  finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
+  finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state.distance=state.difficulty=state.elevation='all';apply();});});
+  recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
 
-  // Apagar el ultimo chip encendido dejaba los botones apagados y la lista
-  // entera igual ("sin filtro"), que no dice nada: mejor no dejar apagarlo.
-  function toggleChip(chip, group){
-    var activos = 0;
-    group.forEach(function(c){ if (c.classList.contains('active')) activos++; });
-    if (chip.classList.contains('active') && activos === 1) {
-      // Un clic que no hace nada parece que la pagina se ha colgado: un
-      // pulso corto deja claro que ese es el unico que queda encendido.
-      chip.classList.remove('is-locked');
-      void chip.offsetWidth;
-      chip.classList.add('is-locked');
-      setTimeout(function(){ chip.classList.remove('is-locked'); }, 400);
-      return;
-    }
-    chip.classList.toggle('active');
-    apply();
+  // The same controls move into a native modal on small screens. Native
+  // dialog supplies focus trapping, Escape, and an inert page behind it.
+  var mobile = window.matchMedia('(max-width: 659px)');
+  function placeControls(){
+    if (dialog.open) dialog.close();
+    document.getElementById(mobile.matches ? 'mobileFilters' : 'desktopFilters').appendChild(controls);
+    advanced.open = mobile.matches || state.difficulty !== 'all' || state.elevation !== 'all';
   }
-
-  function saveFiltersToStorage(){
-    try {
-      var state = {
-        activities: Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.activity; }),
-        difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
-        view: view,
-        distanceMin: distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin,
-        distanceMax: distanceMax ? parseFloat(distanceMax.value) :
-          (Number.isFinite(filterState.distanceMax) ? filterState.distanceMax : null),
-        distancePreset: (Array.prototype.find.call(distanceChips, function(c){
-          return c.classList.contains('active');
-        }) || { dataset: {} }).dataset.distancePreset || null
-      };
-      localStorage.setItem('trabakutik_filters', JSON.stringify(state));
-    } catch (e) {
-      // localStorage might be disabled or full; silently continue
-    }
-  }
-
-  function restoreFiltersFromStorage(){
-    try {
-      var saved = localStorage.getItem('trabakutik_filters');
-      if (!saved) return;
-      var state = JSON.parse(saved);
-      if (!state || typeof state !== 'object') return false;
-
-      function restoreGroup(group, values, key){
-        if (!Array.isArray(values)) return;
-        var matches = Array.prototype.filter.call(group, function(c){
-          return values.indexOf(c.dataset[key]) !== -1;
-        });
-        // Ignore corrupt/obsolete values instead of turning every chip off.
-        if (!matches.length) return;
-        group.forEach(function(c){ c.classList.toggle('active', matches.indexOf(c) !== -1); });
-      }
-
-      // Restore activities
-      restoreGroup(activityChips, state.activities, 'activity');
-
-      // Restore difficulties
-      restoreGroup(difficultyChips, state.difficulties, 'difficulty');
-
-      var preset = Object.prototype.hasOwnProperty.call(DISTANCE_PRESETS, state.distancePreset) &&
-        DISTANCE_PRESETS[state.distancePreset];
-      if (preset) {
-        setDistanceRange(preset[0], preset[1]);
-        distanceChips.forEach(function(c){
-          c.classList.toggle('active', c.dataset.distancePreset === state.distancePreset);
-        });
-      } else if (typeof state.distanceMin === 'number' && Number.isFinite(state.distanceMin) &&
-                 state.distanceMin >= 0 &&
-                 (state.distanceMax === null || (typeof state.distanceMax === 'number' &&
-                  Number.isFinite(state.distanceMax) && state.distanceMax >= state.distanceMin))) {
-        setDistanceRange(state.distanceMin, state.distanceMax === null ? Infinity : state.distanceMax);
-      }
-
-      // Restore view preference
-      if (state.view === 'map') {
-        viewBtns.forEach(function(btn){
-          btn.classList.toggle('active', btn.dataset.view === state.view);
-        });
-        if (resultsList) resultsList.hidden = (state.view !== 'list');
-        if (mapWrap) mapWrap.hidden = (state.view !== 'map');
-        view = state.view;
-      }
-
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function resetFilters(){
-    activityChips.forEach(function(c){ c.classList.add('active'); });
-    difficultyChips.forEach(function(c){ c.classList.add('active'); });
-    setActiveDistanceChip(null);
-    setDistanceRange(0, Infinity);
-    if (desnivelMin) desnivelMin.value = 0;
-    else filterState.desnivelMin = 0;
-    if (desnivelMax) desnivelMax.value = maxDesnivel;
-    else filterState.desnivelMax = Infinity;
-    searchQuery = '';
-    view = 'list';
-    viewBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view === 'list'); });
-    if (resultsList) resultsList.hidden = false;
-    if (mapWrap) mapWrap.hidden = true;
-    apply();
-    saveFiltersToStorage();
-  }
-  resetBtns.forEach(function(b){ b.addEventListener('click', resetFilters); });
-
-  activityChips.forEach(function(chip){
-    chip.addEventListener('click', function(){ toggleChip(chip, activityChips); });
+  openButton.addEventListener('click',function(){dialog.showModal();document.body.classList.add('filters-open');});
+  function close(){dialog.close();}
+  document.getElementById('closeFilters').addEventListener('click',close);
+  document.getElementById('showResults').addEventListener('click',close);
+  dialog.addEventListener('close',function(){document.body.classList.remove('filters-open');openButton.focus({preventScroll:true});});
+  dialog.addEventListener('click',function(e){
+    var r=dialog.getBoundingClientRect();
+    if(e.target===dialog && (e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom))close();
   });
-
-  difficultyChips.forEach(function(chip){
-    chip.addEventListener('click', function(){ toggleChip(chip, difficultyChips); });
-  });
-
-  suggestionBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var type = btn.dataset.suggestion;
-      if (type === 'activities') {
-        activityChips.forEach(function(c){ c.classList.add('active'); });
-      } else if (type === 'difficulties') {
-        difficultyChips.forEach(function(c){ c.classList.add('active'); });
-      } else if (type === 'distance') {
-        setDistanceRange(0, Infinity);
-        setActiveDistanceChip(null);
-      } else if (type === 'desnivel') {
-        filterState.desnivelMin = 0;
-        filterState.desnivelMax = Infinity;
-        if (desnivelMin) desnivelMin.value = 0;
-        if (desnivelMax) desnivelMax.value = maxDesnivel;
-      }
-      apply();
-      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
-    });
-  });
-
-  quickBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var preset = btn.dataset.quickPreset;
-      var range = DISTANCE_PRESETS[preset];
-      var chip = null;
-      distanceChips.forEach(function(c){ if (c.dataset.distancePreset === preset) chip = c; });
-      setActiveDistanceChip(chip);
-      if (range) {
-        setDistanceRange(range[0], range[1]);
-      }
-      apply();
-      if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
-    });
-  });
-
-  // Restore filters from localStorage and apply them
-  if (!restoreFiltersFromStorage()) {
-    // If no saved filters, just apply defaults
-    apply();
-  } else {
-    // If restored, apply the restored state
-    apply();
-  }
+  if (mobile.addEventListener) mobile.addEventListener('change',placeControls);
+  else if (mobile.addListener) mobile.addListener(placeControls);
+  placeControls(); apply();
 })();

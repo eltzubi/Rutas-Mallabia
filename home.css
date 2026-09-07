@@ -145,112 +145,50 @@
 }
 
 /* ---- finder: activity picker + filters + results ---- */
-/* All the controls share one width so the two chip rows and the "más filtros"
-   panel line up edge to edge as a single block instead of three loose rows. */
-.finder{ --filter-col:420px; max-width:820px; margin:20px auto 0; padding:0 24px; }
-@media (min-width:1024px){ .finder{ max-width:1100px; } }
-.finder > .eyebrow{ color:var(--ink-dim); justify-content:center; }
-/* The activity chips follow you down the list: with every route on the page
-   at once, you want to flip between "a pie" and "en bici" wherever you are
-   in the scroll, not have to go back up to the top for it. */
-.activity-filter{
-  display:flex; justify-content:center; gap:8px;
-  width:100%; max-width:var(--filter-col); margin:0 auto 8px;
-  position:sticky; top:56px; z-index:60;
-  padding:7px; border:1px solid var(--line); border-radius:16px;
-  background:var(--ground);
-  background:color-mix(in srgb, var(--ground) 90%, transparent);
-  backdrop-filter:blur(14px) saturate(140%);
-  -webkit-backdrop-filter:blur(14px) saturate(140%);
-  transition:top .25s ease;
+/* A single search area; activity stays reachable while browsing. */
+.finder{ max-width:820px; margin:20px auto 0; padding:0 24px; }
+@media (min-width:1024px){ .finder{max-width:1100px;} }
+.finder-toolbar{display:flex;align-items:center;gap:10px;position:sticky;top:56px;z-index:60;background:var(--ground);padding:10px 0;}
+.activity-filter{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px;background:var(--ground-raised);}
+.activity-chip,.distance-chip,.open-filters{font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;border:1px solid transparent;border-radius:8px;padding:11px 14px;min-height:44px;color:var(--ink-dim);background:transparent;}
+.activity-chip.active,.distance-chip.active{background:var(--teal);border-color:var(--teal);color:var(--ground);}
+.activity-chip:hover,.distance-chip:hover{border-color:var(--ink-dim);}
+.open-filters{display:none;border-color:var(--line);color:var(--ink);white-space:nowrap;}
+.filter-controls{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--ground-raised);margin:0 0 18px;}
+.distance-group{margin:0;padding:0;border:0;min-width:0;}
+.distance-group legend{font:600 12px 'IBM Plex Mono',monospace;color:var(--ink);margin-bottom:10px;}
+.distance-filter{display:flex;flex-wrap:wrap;gap:6px;}
+.distance-chip{border-color:var(--line);background:var(--ground);white-space:nowrap;}
+.advanced-filters{margin-top:16px;border-top:1px solid var(--line);padding-top:14px;}
+.advanced-filters summary{cursor:pointer;font:600 12px 'IBM Plex Mono',monospace;color:var(--ink);min-height:28px;}
+.advanced-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;}
+.advanced-fields label{display:flex;flex-direction:column;gap:8px;font:500 12px 'IBM Plex Mono',monospace;color:var(--ink-dim);min-width:0;}
+.advanced-fields select{box-sizing:border-box;width:100%;min-height:46px;border:1px solid var(--line);border-radius:8px;padding:10px;color:var(--ink);background:var(--ground);font:inherit;font-size:16px;}
+.finder button:focus-visible,.finder select:focus-visible,.finder summary:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+.filter-dialog{box-sizing:border-box;width:min(100% - 24px,520px);max-height:calc(100dvh - 32px);border:1px solid var(--line);border-radius:20px;padding:20px;color:var(--ink);background:var(--ground);overflow:auto;}
+.filter-dialog::backdrop{background:rgba(0,0,0,.65);}
+.filter-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;}
+.filter-dialog-heading h2{font:600 24px 'Fraunces',serif;margin:0;}
+.filter-dialog-heading button{border:1px solid var(--line);border-radius:50%;width:44px;height:44px;background:transparent;color:var(--ink);font-size:26px;cursor:pointer;}
+.filter-dialog-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;}
+.show-results{min-height:48px;padding:12px 18px;border:0;border-radius:10px;background:var(--teal);color:var(--ground);font:600 14px 'IBM Plex Mono',monospace;cursor:pointer;}
+.filters-open{overflow:hidden;}
+.filter-dialog .filter-reset{display:inline-flex;min-height:44px;}
+.filter-dialog .filter-reset:disabled{opacity:.45;cursor:default;}
+.filter-empty[hidden],.active-filters[hidden]{display:none;}
+@media(max-width:659px){
+  .finder{padding:0 16px;}
+  .finder-toolbar{gap:6px;flex-wrap:wrap;}
+  .activity-filter{flex:1;min-width:0;}
+  .activity-chip{flex:1;padding:10px 6px;font-size:11px;white-space:nowrap;}
+  .open-filters{display:inline-flex;align-items:center;padding:10px;font-size:11px;}
+  .filter-dialog .filter-controls{padding:0;border:0;background:transparent;margin:0;}
+  .filter-dialog .distance-filter{display:grid;grid-template-columns:1fr 1fr;}
+  .filter-dialog .distance-chip:first-child{grid-column:1 / -1;}
+  .filter-dialog .advanced-fields{grid-template-columns:1fr;}
+  .filter-dialog .advanced-filters summary{display:none;}
+  .filter-dialog .advanced-filters{padding-top:4px;}
 }
-/* The masthead is always compact by the time this filter bar can reach
-   its sticky position, so it can sit right under the shorter header. */
-.activity-chip{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:7px; white-space:nowrap;
-  flex:1 1 0; min-width:0;
-  font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:700;
-  letter-spacing:.04em; text-transform:uppercase;
-  padding:10px 12px; border-radius:9px;   /* 16 del marco menos sus 7 de relleno: esquinas concentricas */
-  border:1px solid var(--line); background:var(--ground);
-  color:var(--ink-dim); cursor:pointer;
-  transition:background .2s ease, color .2s ease, border-color .2s ease,
-             transform .15s ease, box-shadow .2s ease;
-}
-.chip-icon{ flex-shrink:0; opacity:.85; }
-.activity-chip.active{
-  background:var(--teal); border-color:var(--teal); color:var(--ground);
-  box-shadow:0 3px 12px -3px var(--teal);
-}
-.activity-chip.active .chip-icon{ opacity:1; }
-.activity-chip.active[data-activity="senderismo"]{
-  background:var(--violet); border-color:var(--violet);
-  box-shadow:0 3px 12px -3px var(--violet);
-}
-.activity-chip:not(.active):hover{ border-color:var(--teal); color:var(--ink); }
-.activity-chip:active{ transform:scale(.97); }
-/* Pulso al intentar apagar el unico chip que queda encendido. */
-@keyframes chip-locked{ 0%,100%{ transform:scale(1); } 45%{ transform:scale(1.06); } }
-.activity-chip.is-locked, .difficulty-chip.is-locked{ animation:chip-locked .35s ease; }
-@media (prefers-reduced-motion:reduce){
-  .activity-chip.is-locked, .difficulty-chip.is-locked{ animation:none; }
-}
-/* Second tier of the same block: same width, same frame, lighter weight. */
-.difficulty-filter{
-  display:flex; justify-content:center; gap:6px;
-  width:100%; max-width:var(--filter-col); margin:0 auto 10px;
-  padding:6px; border:1px solid var(--line); border-radius:14px;
-  background:var(--ground-raised);
-  background:color-mix(in srgb, var(--ground-raised) 55%, transparent);
-}
-.difficulty-chip{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:6px; white-space:nowrap;
-  flex:1 1 0; min-width:0;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
-  letter-spacing:.04em; text-transform:uppercase;
-  padding:7px 8px; border-radius:8px;   /* 14 del marco menos sus 6 de relleno */
-  border:1px solid var(--line); background:none;
-  color:var(--ink-dim); cursor:pointer; opacity:.5;
-  transition:background .2s ease, color .2s ease, border-color .2s ease,
-             opacity .2s ease, transform .15s ease;
-}
-.chip-dot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-.dot-facil{ background:#4CAF6E; }
-.dot-media{ background:#E0A733; }
-.dot-dificil{ background:#E0553D; }
-.difficulty-chip.active{
-  background:var(--ground-raised); border-color:var(--ink-dim); color:var(--ink); opacity:1;
-  box-shadow:0 1px 4px -2px rgba(0,0,0,.4);
-}
-.difficulty-chip:not(.active):hover{ opacity:.8; border-color:var(--ink-dim); }
-.difficulty-chip:active{ transform:scale(.95); }
-.distance-filter{
-  display:flex; justify-content:center; gap:6px;
-  width:100%; max-width:var(--filter-col); margin:0 auto 10px;
-  padding:6px; border:1px solid var(--line); border-radius:14px;
-  background:var(--ground-raised);
-  background:color-mix(in srgb, var(--ground-raised) 55%, transparent);
-}
-.distance-chip{
-  display:inline-flex; align-items:center; justify-content:center;
-  gap:6px; white-space:nowrap;
-  flex:1 1 0; min-width:0;
-  font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:700;
-  letter-spacing:.04em; text-transform:uppercase;
-  padding:7px 8px; border-radius:8px;
-  border:1px solid var(--line); background:none;
-  color:var(--ink-dim); cursor:pointer; opacity:.5;
-  transition:background .2s ease, color .2s ease, border-color .2s ease,
-             opacity .2s ease, transform .15s ease;
-}
-.distance-chip.active{
-  background:var(--ground-raised); border-color:var(--ink-dim); color:var(--ink); opacity:1;
-  box-shadow:0 1px 4px -2px rgba(0,0,0,.4);
-}
-.distance-chip:not(.active):hover{ opacity:.8; border-color:var(--ink-dim); }
-.distance-chip:active{ transform:scale(.95); }
 .filter-empty{
   display:none;
   font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);
@@ -378,33 +316,6 @@
 .route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
 .route-card-tags .v:first-child{ color:var(--teal); }
 .route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
-
-/* ---- quick help: not sure which route ---- */
-.quick-help{ max-width:820px; margin:48px auto 0; padding:0 24px; }
-@media (min-width:1024px){ .quick-help{ max-width:1100px; } }
-.quick-help > .eyebrow{ color:var(--ink-dim); }
-.quick-help-grid{
-  display:grid; grid-template-columns:1fr; gap:0;
-  border:1px solid var(--line); border-radius:16px; overflow:hidden;
-  background:var(--ground-raised);
-}
-@media (min-width:660px){ .quick-help-grid{ grid-template-columns:repeat(3,1fr); } }
-.quick-help-btn{
-  display:flex; flex-direction:column; gap:4px; align-items:flex-start;
-  padding:18px 20px;
-  border:none; border-top:1px solid var(--line);
-  background:none;
-  color:var(--ink); cursor:pointer; text-align:left;
-  transition:background .2s ease;
-}
-.quick-help-grid > .quick-help-btn:first-child{ border-top:none; }
-@media (min-width:660px){
-  .quick-help-btn{ border-top:none; border-left:1px solid var(--line); }
-  .quick-help-grid > .quick-help-btn:first-child{ border-left:none; }
-}
-.quick-help-btn:hover{ background:var(--ground); }
-.quick-help-btn b{ font-family:'Fraunces',serif; font-size:15px; font-weight:700; }
-.quick-help-btn span{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); }
 
 /* ---- info accordion: before you leave, parking, sleeping nearby ---- */
 .info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }

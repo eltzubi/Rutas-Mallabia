@@ -62,11 +62,13 @@ class Element {
   click(){this.dispatchEvent({type:'click'});}
   focus(){this.ownerDocument.activeElement=this;}
   contains(el){return el===this || this.children.some(c=>typeof c!=='string'&&c.contains(el));}
-  appendChild(el){el.parentElement=this;this.children.push(el);return el;}
+  appendChild(el){if(el.parentElement)el.remove();el.parentElement=this;this.children.push(el);return el;}
   remove(){this.parentElement.children=this.parentElement.children.filter(c=>c!==this);}
   getBoundingClientRect(){return {top:0,width:800,height:200};}
   scrollIntoView(){}
   reset(){}
+  showModal(){this.open=true;}
+  close(){this.open=false;this.dispatchEvent({type:'close'});}
 }
 const fixtures = new Map();
 function env(page='index.html', storage=new Map()) {
@@ -104,51 +106,68 @@ function env(page='index.html', storage=new Map()) {
 const settle=async()=>{for(let i=0;i<15;i++)await Promise.resolve();};
 const visible=e=>e.all('.route-card').filter(c=>!c.classList.contains('is-hidden'));
 
-test('filters: empty-result recovery, accessibility, reload and language switch',()=>{
-  const e=env(); e.run('filters.js');assert.equal(visible(e).length,32);
-  e.one('.activity-chip[data-activity="senderismo"]').click(); assert.equal(visible(e).length,15);
-  for(const slug of ['muniozguren','iruzubieta'])assert(visible(e).some(c=>c.getAttribute('href')===slug+'.html'));
-  e.one('[data-distance-preset="corto"]').click();assert.equal(visible(e).length,0);
-  e.one('[data-suggestion="distance"]').click();assert.equal(visible(e).length,15);
-  e.one('[data-distance-preset="media2"]').click();const selected=Array.from(e.win.trabakutikVisibleRoutes);
-  assert(selected.length>0&&selected.length<15);
-  e.one('[data-view="map"]').click();
-  const eu=env('index.eu.html',e.storage);eu.run('filters.js');
+test('exclusive filters persist across languages and list/map',()=>{
+  const e=env();e.run('filters.js');assert.equal(visible(e).length,32);
+  e.one('.activity-chip[data-activity="bici"]').click();assert.equal(visible(e).length,17);
+  assert.equal(e.all('.activity-chip.active').length,1);
+  e.one('[data-distance-preset="larga"]').click();
+  e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
+  e.one('#elevationSelect').value='high';e.one('#elevationSelect').dispatchEvent({type:'change'});
+  const selected=Array.from(e.win.trabakutikVisibleRoutes);assert(selected.length>0);
+  e.one('[data-view="map"]').click();const eu=env('index.eu.html',e.storage);eu.run('filters.js');
   assert.deepEqual(Array.from(eu.win.trabakutikVisibleRoutes),selected);
-  assert.match(eu.one('#resultCount').textContent,/ibilbide aurkitu/);
-  assert.match(eu.one('#activeFilters').textContent,/gutxi gorabehera/);
-  assert.equal(eu.one('[data-distance-preset="media2"]').getAttribute('aria-pressed'),'true');
+  assert.match(eu.one('#resultCount').textContent,/ibilbide/);
+  assert.equal(eu.one('#difficultySelect').value,'dificil');assert.equal(eu.one('#elevationSelect').value,'high');
   assert.equal(eu.one('[data-view="map"]').getAttribute('aria-pressed'),'true');
-  assert.equal(eu.one('#routeMapWrap').hidden,false);
-  eu.one('[data-distance-preset="larga"]').click();assert(!eu.one('#activeFilters').textContent.includes('Infinity'));
   eu.one('[data-filter-reset]').click();assert.equal(visible(eu).length,32);
-  assert.equal(eu.one('[data-view="list"]').getAttribute('aria-pressed'),'true');
+  assert.equal(eu.one('#routeMapWrap').hidden,false);
 });
-test('filters tolerate corrupt and obsolete saved preferences',()=>{
-  for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],difficulties:['unknown'],view:'unknown',distancePreset:'constructor'})]){
-    const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');
-    assert.equal(visible(e).length,32);assert.equal(e.one('#routeResults').hidden,false);
+test('empty-result recovery finds results while keeping activity',()=>{
+  const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="bici"]').click();
+  e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
+  e.one('[data-distance-preset="corto"]').click();assert.equal(visible(e).length,0);
+  assert.equal(e.one('#recoverFilters').textContent,'Ampliar distancia');
+  e.one('#recoverFilters').click();assert(visible(e).length>0);
+  assert.equal(e.one('.activity-chip[data-activity="bici"]').getAttribute('aria-pressed'),'true');
+});
+test('invalid storage is safe; old preferences migrate',()=>{
+  for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],view:'unknown'})]){
+    const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,32);
   }
+  const e=env('index.html',new Map([['trabakutik_filters',JSON.stringify({activities:['bici'],distancePreset:'media1',view:'map'})]]));e.run('filters.js');
+  assert(visible(e).length>0);assert(visible(e).every(c=>Number(c.dataset.distanceKm)>10&&Number(c.dataset.distanceKm)<=20));
+  assert.equal(e.one('#routeMapWrap').hidden,false);
+});
+test('mobile dialog reuses controls and reset keeps activity',()=>{
+  const e=env();let changed;const media={matches:true,addEventListener(t,fn){changed=fn;}};
+  e.win.matchMedia=()=>media;e.run('filters.js');
+  assert.equal(e.one('#filterControls').parentElement,e.one('#mobileFilters'));
+  e.one('.activity-chip[data-activity="bici"]').click();e.one('#openFilters').click();assert.equal(e.one('#filterDialog').open,true);
+  e.one('[data-distance-preset="corto"]').click();assert.equal(e.one('#showResults').textContent,'Ver 1 ruta');
+  e.one('[data-extra-reset]').click();assert.equal(visible(e).length,17);
+  e.one('#showResults').click();assert.equal(e.one('#filterDialog').open,false);assert.equal(e.doc.activeElement,e.one('#openFilters'));
+  media.matches=false;changed();assert.equal(e.one('#filterControls').parentElement,e.one('#desktopFilters'));
+  assert.equal(e.all('#filterControls').length,1);
 });
 test('map catches filters loaded earlier; keyboard opens/closes and hidden routes leave tab order',async()=>{
-  const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="senderismo"]').click();
+  const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="bici"]').click();
   e.run('map.js');await settle();assert.equal(e.errors.length,0);assert.equal(e.lines.length,32);
-  assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,15);
+  assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,17);
   const line=e.lines.find(l=>l.path.getAttribute('tabindex')==='0');line.path.focus();
   line.path.dispatchEvent({type:'keydown',key:'Enter'});
   const panel=e.one('.route-info-panel');assert.equal(panel.hidden,false);
   assert.equal(line.path.getAttribute('aria-pressed'),'true');assert.equal(e.doc.activeElement,e.one('.route-info-panel-close'));
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert.equal(e.doc.activeElement,line.path);
-  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,0);
-  e.one('[data-suggestion="distance"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,15);
+  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,1);
+  e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,17);
   const layers=e.one('.map-layers-btn');layers.click();assert.equal(layers.getAttribute('aria-pressed'),'true');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{
   const e=env();let release;e.context.fetch=()=>new Promise(r=>{release=r;});e.run('map.js');e.run('filters.js');
-  e.one('.activity-chip[data-activity="senderismo"]').click();
+  e.one('.activity-chip[data-activity="bici"]').click();
   release({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trailhead.json')))});await settle();
-  assert.equal(e.errors.length,0);assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,15);
+  assert.equal(e.errors.length,0);assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,17);
 });
 test('HTTP, invalid JSON, invalid data and stalled map requests display an error and can retry',async()=>{
   for(const failure of ['http','json','data','timeout']){

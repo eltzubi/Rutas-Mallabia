@@ -271,12 +271,33 @@ ROUTE = {
 }
 
 HOME = {
+    '>Todas</button>': '>Guztiak</button>',
+    '>A pie</button>': '>Oinez</button>',
+    '>Filtrar<span': '>Iragazi<span',
+    '<legend>Distancia</legend>': '<legend>Distantzia</legend>',
+    '>Hasta 10 km</button>': '>10 km arte</button>',
+    '>Más de 30 km</button>': '>30 km baino gehiago</button>',
+    '<summary>Más filtros<span': '<summary>Iragazki gehiago<span',
+    'for="difficultySelect">Dificultad': 'for="difficultySelect">Zailtasuna',
+    'for="elevationSelect">Desnivel positivo': 'for="elevationSelect">Goranzko desnibela',
+    '>Todas</option>': '>Guztiak</option>',
+    '>Todos</option>': '>Guztiak</option>',
+    '>Fácil</option>': '>Erraza</option>',
+    '>Media</option>': '>Ertaina</option>',
+    '>Difícil</option>': '>Zaila</option>',
+    '>Hasta 500 m</option>': '>500 m arte</option>',
+    '>Más de 1.000 m</option>': '>1.000 m baino gehiago</option>',
+    '>Filtrar rutas</h2>': '>Ibilbideak iragazi</h2>',
+    'aria-label="Cerrar filtros"': 'aria-label="Iragazkiak itxi"',
+    '>Restablecer</button>': '>Berrezarri</button>',
+    '>Ver rutas</button>': '>Ibilbideak ikusi</button>',
+    '<p>No hay rutas con estos filtros.</p>': '<p>Ez dago iragazki hauekin bat datorren ibilbiderik.</p>',
+    '>Ampliar distancia</button>': '>Distantzia zabaldu</button>',
+
     'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
 
     # finder (redesign)
-    '<span>A pie</span>': '<span>Oinez</span>',
-    '<span>En bici</span>': '<span>Bizikletaz</span>',
     'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
@@ -318,13 +339,6 @@ HOME = {
         'batekin"',
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
-    '<h2 class="eyebrow">&iquest;No sabes cu&aacute;l elegir?</h2>':
-        '<h2 class="eyebrow">&iquest;Ez dakizu zein aukeratu?</h2>',
-    '<b>Algo corto</b>': '<b>Zerbait laburra</b>',
-    '<span>Menos de 10 km</span>': '<span>10 km baino gutxiago</span>',
-    '<b>Un par de horas</b>': '<b>Ordu pare bat</b>',
-    '<b>Una buena vuelta</b>': '<b>Ibilbide ederra</b>',
-    '<span>M&aacute;s de 30 km</span>': '<span>30 km baino gehiago</span>',
     '<summary>Antes de salir</summary>': '<summary>Irten aurretik</summary>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
@@ -403,23 +417,9 @@ HOME = {
         'hondatuta&mdash;, jakinarazidazu ibilbide bakoitzaren fitxan dagoen &laquo;Arazoa jakinarazi&raquo; '
         'botoiaren bidez.',
 
-    'aria-label="Filtrar por dificultad"': 'aria-label="Iragazi zailtasunaren arabera"',
-    '<span>F&aacute;cil</span>': '<span>Erraza</span>',
-    '<span>Media</span>': '<span>Ertaina</span>',
-    '<span>Dif&iacute;cil</span>': '<span>Zaila</span>',
 
-    'aria-label="Filtrar por distancia"': 'aria-label="Iragazi distantzaren arabera"',
-    'data-distance-preset="corto">\n        <span>Corto</span>': 'data-distance-preset="corto">\n        <span>Labur</span>',
-    'data-distance-preset="media1">\n        <span>Medio</span>': 'data-distance-preset="media1">\n        <span>Ertaina</span>',
-    'data-distance-preset="media2">\n        <span>Largo</span>': 'data-distance-preset="media2">\n        <span>Luzea</span>',
-    'data-distance-preset="larga">\n        <span>Muy largo</span>': 'data-distance-preset="larga">\n        <span>Oso luzea</span>',
 
-    'Ver todas las actividades': 'Jarduera guztiak ikusi',
-    'Ver todas las dificultades': 'Zailtasun guztiak ikusi',
-    'Ampliar rango de distancia': 'Distantzia-barrutia zabaldu',
-    'Ampliar rango de desnivel': 'Desnibel-barrutia zabaldu',
 
-    'No hay rutas de este tipo todav&iacute;a.': 'Oraindik ez dago mota honetako ibilbiderik.',
     'Quitar filtros': 'Iragazkiak kendu',
 
     # route cards
