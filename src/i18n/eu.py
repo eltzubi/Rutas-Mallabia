@@ -59,6 +59,12 @@ COMMON = {
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
+    '<h3 class="route-card-name">Zengotita, Iturzurigaina y Betzun</h3>':
+        '<h3 class="route-card-name">Zengotita, Iturzurigaina eta Betzun</h3>',
+    '<p class="route-card-desc">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Crist&oacute;bal y San Juan</p>':
+        '<p class="route-card-desc">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta San Juanetik igarota</p>',
+    'alt="Pista de tierra hacia los aerogeneradores del cordal, en la subida desde Zengotita"':
+        'alt="Lurrezko pista gandorreko aerosorgailuetarantz, Zengotitatik igotzean"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
         '<p class="route-card-desc">Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik</p>',
     '<p class="route-card-desc">Iturzuri, Túmulo de Probazelaiburu II y Zengotitagane desde Trabakua</p>':
@@ -2942,6 +2948,7 @@ DESCRIPTIONS = {
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
     'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
+    'betzun': 'Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta San Juanetik igarota',
 }
 
 # <title> per page (head files)
@@ -3048,6 +3055,7 @@ TITLES = {
     'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · Bizikleta ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
     'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · Bizikleta ibilbidea — Herriko ibilbideak',
+    'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3309,6 +3317,80 @@ TRABAKUAMALLABIA = {
         'download="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain.kml"',
 }
 
+BETZUN = {
+    # hero
+    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Zengotita, Iturzurigaina y Betzun</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista eta bidezidorra</span><span class="sep">/</span><span>Zengotita, Iturzurigaina eta Betzun</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>Zengotita, Iturzurigaina<br><em>y Betzun</em></h1>':
+        '<h1>Zengotita, Iturzurigaina<br><em>eta Betzun</em></h1>',
+    '<p class="full-name">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Crist&oacute;bal y San Juan</p>':
+        '<p class="full-name">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta San Juanetik igarota</p>',
+
+    # perfil: marcadores y leyenda
+    '<title>San Crist&oacute;bal &middot; 7,8 km &middot; 496 m</title>':
+        '<title>San Kristobal &middot; 7,8 km &middot; 496 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span>',
+
+    # fotos
+    'alt="Foto ampliada del recorrido de Zengotita, Iturzurigaina y Betzun"':
+        'alt="Zengotita, Iturzurigaina eta Betzungo ibilbidearen argazki handitua"',
+    'alt="Salamandra amarilla y negra junto a una bota de monta&ntilde;a, en el sendero"':
+        'alt="Salamandra hori-beltza mendiko bota baten ondoan, bidezidorrean"',
+    'alt="Dos aerogeneradores del cordal con un reba&ntilde;o de ovejas pastando en la ladera"':
+        'alt="Gandorreko bi aerosorgailu, ardi-talde bat magalean bazkan dutela"',
+    'alt="Cruz de piedra sobre una base de sillar en lo alto, con aerogeneradores y el Duranguesado al fondo"':
+        'alt="Harrizko gurutzea harlanduzko oinarri baten gainean goialdean, aerosorgailuak eta Durangaldea atzealdean"',
+    'alt="Caballos pastando en un prado en lo alto, con arbolado y un aerogenerador al fondo"':
+        'alt="Zaldiak belardi batean bazkan goialdean, zuhaitzak eta aerosorgailu bat atzealdean"',
+    'alt="Pista de tierra entre prados con varios aerogeneradores del cordal al fondo"':
+        'alt="Lurrezko pista belardien artean, gandorreko hainbat aerosorgailu atzealdean"',
+    'alt="Vacas pastando en un prado en la bajada, con monta&ntilde;as al fondo entre nubes"':
+        'alt="Behiak belardi batean bazkan jaitsieran, mendiak atzealdean hodeien artean"',
+    'alt="Aerogeneradores al atardecer junto a una hilera de &aacute;rboles sin hojas"':
+        'alt="Aerosorgailuak ilunabarrean hostorik gabeko zuhaitz-ilara baten ondoan"',
+
+    # descargas
+    'download="Zengotita, Iturzurigaina y Betzun.gpx"':
+        'download="Zengotita, Iturzurigaina eta Betzun.gpx"',
+    'download="Zengotita, Iturzurigaina y Betzun.kml"':
+        'download="Zengotita, Iturzurigaina eta Betzun.kml"',
+
+    # para quien es
+    '<p>10 km y +611 m de desnivel en un solo circuito, con una subida pr&aacute;cticamente continua hasta Iturzurigaina y una bajada r&aacute;pida por la otra vertiente. Hay agua junto a la fuente de Iturzuri, cerca del punto m&aacute;s alto.</p>':
+        '<p>10 km eta +611 m desnibel zirkuitu bakar batean, Iturzurigainerainoko ia etengabeko igoerarekin eta beste isurialdetik jaitsiera azkar batekin. Ura dago Iturzuriko iturriaren ondoan, punturik altuenetik gertu.</p>',
+
+    # el texto del cuerpo
+    '<p>El track comienza en el propio barrio de <b>Zengotita</b>, a unos 2 kil&oacute;metros de Trabakua. Salimos desde la parte alta del barrio y, junto a una fuente de agua, cogemos el camino en direcci&oacute;n norte para comenzar la subida.</p>':
+        '<p>Ibilbidea <b>Zengotita</b> auzoan bertan hasten da, Trabakuatik 2 kilometro ingurura. Auzoaren goiko aldetik abiatzen gara, eta, ur-iturri baten ondoan, iparralderantz doan bidea hartzen dugu igoerari ekiteko.</p>',
+    '<p>Tenemos por delante unos 2,5 kil&oacute;metros de subida pr&aacute;cticamente continua. Vamos ganando altura poco a poco hasta alcanzar la parte alta, junto al parque e&oacute;lico.</p>':
+        '<p>Aurretik 2,5 kilometro inguruko igoera ia etengabea dugu. Altuera irabazten goaz pixkanaka, parke eolikotik gertu dagoen goiko aldera iritsi arte.</p>',
+    '<p>Una vez arriba, dejamos a nuestra derecha los e&oacute;licos y la cresta que contin&uacute;a hacia <a href="zengotitagane.html">Zengotitagane</a>. Esta vez no seguimos por all&iacute;, sino que giramos hacia la izquierda y continuamos por la parte alta en direcci&oacute;n a <b>Iturzurigaina</b> (km 5,4 &middot; 855 m).</p>':
+        '<p>Behin goian, eskuinean uzten ditugu haize-sorgailuak eta <a href="zengotitagane.html">Zengotitagane</a> aldera jarraitzen duen gailurra. Oraingoan ez dugu handik jarraitzen, baizik eta ezkerrera biratu eta goiko aldetik jarraitzen dugu <b>Iturzurigaina</b>rantz (5,4 km &middot; 855 m).</p>',
+    '<p>Al llegar a Iturzurigaina, si nos desviamos ligeramente hacia la derecha podemos acercarnos a la fuente de Iturzuri, situada junto a un peque&ntilde;o refugio. Es un buen punto para coger agua antes de continuar.</p>':
+        '<p>Iturzurigainera iristean, eskuinera pixka bat desbideratzen bagara, Iturzuriko iturrira hurbil gaitezke, aterpe txiki baten ondoan dagoena. Puntu ona da ura hartu eta ibilbidearekin jarraitzeko.</p>',
+    '<p>Para seguir con la ruta volvemos a la parte alta y giramos a la izquierda en busca de la cruz de piedra. Al llegar a ella cambiamos de vertiente y comenzamos el descenso hacia el sur.</p>':
+        '<p>Ibilbidearekin jarraitzeko, goiko aldera itzultzen gara eta ezkerrera biratzen dugu harrizko gurutzearen bila. Bertara iristean, isurialdea aldatu eta hegoalderantz jaisten hasten gara.</p>',
+    '<p>La bajada es r&aacute;pida y vamos perdiendo altura con facilidad. M&aacute;s abajo llegamos junto a un haya grande, donde giramos a la derecha y continuamos descendiendo hasta llegar al caser&iacute;o <b>Betzun</b> (km 7,1 &middot; 554 m).</p>':
+        '<p>Jaitsiera azkarra da, eta erraz galtzen dugu altuera. Beherago, pago handi baten ondora iristen gara, eta eskuinera biratu eta jaisten jarraitzen dugu <b>Betzun</b> (7,1 km &middot; 554 m) baserrira iritsi arte.</p>',
+    '<p>En Betzun tenemos dos posibilidades. Si seguimos el camino de cemento que llega al caser&iacute;o, podemos regresar directamente hacia Zengotita y completar as&iacute; una vuelta bonita y r&aacute;pida.</p>':
+        '<p>Betzunen bi aukera ditugu. Baserria iristen den zementuzko bidea jarraitzen badugu, zuzenean itzul gaitezke Zengotitara eta horrela buelta polit eta azkar bat osatu.</p>',
+    '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
+        '<p>Guk, ordea, ibilbidea pixka bat gehiago luzatuko dugu. Betzunen eskuinera biratu eta beste isurialde hori zeharkatzen jarraitzea ahalbidetzen digun pista txiki batetik jarraitzen dugu.</p>',
+    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Crist&oacute;bal</b> (km 7,8 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
+        '<p>Handik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> (7,8 km &middot; 496 m) ingurura iritsi arte, non Garaitik datorren harrizko pista batekin bat egiten dugun.</p>',
+    '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a San Juan, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
+        '<p>Hortik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu San Juanerantz, Durangaldeko mendietara begira ikuspegi ederrez gozatuz tarte honen zati handi batean.</p>',
+    '<p>Llegamos al barrio de San Juan y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
+        '<p>San Juan auzora iristen gara eta jaisten jarraitzen dugu errepide nagusira iritsi arte. Errepidea gurutzatu eta, beste aldean, Zengotitara igotzen den errepide zaharra hartzen dugu.</p>',
+    '<p>Solo nos queda remontar por esta carretera hasta regresar al barrio, exactamente al punto donde hab&iacute;amos comenzado el track, y cerrar la vuelta.</p>':
+        '<p>Errepide horretatik igotzea besterik ez zaigu geratzen auzora itzultzeko, hain zuzen ere ibilbidea hasi dugun puntura, eta buelta ixteko.</p>',
+    '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Crist&oacute;bal y San Juan para completar el recorrido entero.</p>':
+        '<p>Nahiko ibilbide azkarra eta oso interesgarria da Zengotitatik Iturzurigainera igotzeko beste modu bat ezagutzeko eta kontrako isurialdetik itzultzeko. Gainera, Betzunera iristean, Zengotitara zuzenean itzultzeko aukera dugu buelta laburrago bat egiteko, edo San Kristobal eta San Juan aldera jarraitzeko ibilbidea osatzeko.</p>',
+    '<p>Una vuelta sencilla de seguir, con una buena subida inicial, un descenso r&aacute;pido y buenas vistas, que adem&aacute;s nos permite conocer varios caminos &uacute;tiles para enlazar despu&eacute;s con otras rutas de la zona.</p>':
+        '<p>Jarraitzeko erraza den buelta bat, hasierako igoera on batekin, jaitsiera azkar batekin eta ikuspegi ederrekin, gainera, inguruko beste ibilbide batzuekin lotzeko baliagarriak diren hainbat bide ezagutzeko aukera ematen diguna.</p>',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3343,4 +3425,5 @@ PAGE_STRINGS = {
     'intxorta': INTXORTA,
     'artetaasuntza': ARTETAASUNTZA,
     'trabakuamallabia': TRABAKUAMALLABIA,
+    'betzun': BETZUN,
 }

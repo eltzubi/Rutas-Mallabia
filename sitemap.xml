@@ -331,4 +331,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuamallabia.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuamallabia.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/betzun.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/betzun.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/betzun.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/betzun.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/betzun.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/betzun.eu.html"/>
+  </url>
 </urlset>
