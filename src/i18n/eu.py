@@ -3218,6 +3218,8 @@ TRABAKUAMALLABIA = {
         'alt="Ibilbidearen argazki handia"',
     '<span class="elev-legend-item"><span class="num">3</span>Bajada del sendero</span>':
         '<span class="elev-legend-item"><span class="num">3</span>Bidezidorreko jaitsiera</span>',
+    'Bajada del sendero':
+        'Bidezidorreko jaitsiera',
     '<span>Pista/tierra</span>':
         '<span>Pista/lurra</span>',
     '<span class="v">Pista/tierra</span>':
