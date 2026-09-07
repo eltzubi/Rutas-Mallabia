@@ -1476,7 +1476,7 @@ EGOARBITZA = {
     'hasta <b>Egoarbitza</b> (km 16,2 &middot; 722 m): pista al principio, despu&eacute;s media cresta, '
     'empinada y dura, con un tramo final rocoso donde conviene ir con cuidado.':
         'Ama&ntilde;a zeharkatuta, industrialdera igotzen da, eta handik hasten da <b>Egoarbitza</b>rako '
-        '(16,2 km &middot; 722 m) bidea: hasieran pista, gero gandor-erdia gogorra eta tentea, eta '
+        '(16,2 km &middot; 722 m) bidea: hasieran pista, gero gandor-erdi gogor eta tentea, eta '
         'amaieran harritza duen zatia, kontu handiz ibiltzea komeni dena.',
 
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
