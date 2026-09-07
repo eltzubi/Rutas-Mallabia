@@ -3218,6 +3218,10 @@ TRABAKUAMALLABIA = {
         'alt="Ibilbidearen argazki handia"',
     '<span>Pista/tierra</span>':
         '<span>Pista/lurra</span>',
+    '<span class="v">Exigente</span>':
+        '<span class="v">Eskatzailea</span>',
+    '<span class="v">Pista/tierra</span>':
+        '<span class="v">Pista/lurra</span>',
     '<span>BTT</span>':
         '<span>BTT</span>',
     '<span>Circuito</span>':
@@ -3288,8 +3292,6 @@ TRABAKUAMALLABIA = {
         'Igoera eramangarriak, zati lasaiak eta jaitsiera tekniko eta jostagarri batzuk aurkituko ditugu. BTT arruntarekin egin daiteke, baina ibilbide honetarako e-bikea gomendagarriagoa da, batez ere etengabeko igoera-jaitsierengatik eta bide txiki horien artean erosoago mugitzeko.',
     'No es una ruta extrema, pero sí conviene tener algo de experiencia sobre la bici, especialmente para disfrutar con seguridad de las bajadas más técnicas. Para quien ya conozca las pistas principales de esta zona, es una buena oportunidad para descubrir varios caminos que normalmente pasan desapercibidos.':
         'Ez da muturreko ibilbidea, baina komeni da bizikleta gainean esperientzia pixka bat izatea, batez ere jaitsiera teknikoenetan. Inguruko pista nagusiak dagoeneko ezagutzen dituenarentzat, aukera polita da normalean oharkabean geratzen diren bide eta bidezidor batzuk ezagutzeko.',
-    '<h3>Waypoints clave</h3>':
-        '<h3>Gako-puntuak</h3>',
     'Ver ruta completa en Wikiloc':
         'Ibilbide osoa WikLocen',
     'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.gpx"':
