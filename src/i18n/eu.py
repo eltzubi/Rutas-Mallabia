@@ -320,7 +320,7 @@ HOME = {
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
     '<p class="route-card-desc">Circuito de BTT exigente desde Trabakua, con ascensos técnicos y vistas del Duranguesado</p>':
-        '<p class="route-card-desc">Zirkuitu teknikoa BTT-ean Trabakuatik, igoerak eta Duranguesadoko ikuspegiarekin</p>',
+        '<p class="route-card-desc">Zirkuitu teknikoa BTT-ean Trabakuatik, igoerak eta Durangaldeko ikuspegiarekin</p>',
     'alt="Tramo del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
         'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen zatia"',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
@@ -2940,7 +2940,7 @@ DESCRIPTIONS = {
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
-    'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Duranguesadoko ikuspegiarekin',
+    'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
 }
 
 # <title> per page (head files)
