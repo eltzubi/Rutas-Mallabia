@@ -3357,8 +3357,8 @@ BETZUN = {
         'download="Zengotita, Iturzurigaina eta Betzun.kml"',
 
     # para quien es
-    '<p>10 km y +611 m de desnivel en un solo circuito, con una subida pr&aacute;cticamente continua hasta Iturzurigaina y una bajada r&aacute;pida por la otra vertiente. Hay agua junto a la fuente de Iturzuri, cerca del punto m&aacute;s alto.</p>':
-        '<p>10 km eta +611 m desnibel zirkuitu bakar batean, Iturzurigainerainoko ia etengabeko igoerarekin eta beste isurialdetik jaitsiera azkar batekin. Ura dago Iturzuriko iturriaren ondoan, punturik altuenetik gertu.</p>',
+    '<p>10 km y +577 m de desnivel en un solo circuito, con una subida pr&aacute;cticamente continua hasta Iturzurigaina y una bajada r&aacute;pida por la otra vertiente. Hay agua junto a la fuente de Iturzuri, cerca del punto m&aacute;s alto.</p>':
+        '<p>10 km eta +577 m desnibel zirkuitu bakar batean, Iturzurigainerainoko ia etengabeko igoerarekin eta beste isurialdetik jaitsiera azkar batekin. Ura dago Iturzuriko iturriaren ondoan, punturik altuenetik gertu.</p>',
 
     # el texto del cuerpo
     '<p>El track comienza en el propio barrio de <b>Zengotita</b>, a unos 2 kil&oacute;metros de Trabakua. Salimos desde la parte alta del barrio y, junto a una fuente de agua, cogemos el camino en direcci&oacute;n norte para comenzar la subida.</p>':
