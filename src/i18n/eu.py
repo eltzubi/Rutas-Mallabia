@@ -542,6 +542,12 @@ HOME = {
 }
 
 TRABAKUA = {
+    '<span class="elev-legend-item"><span class="num">1</span>Cruce a la izquierda</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Ezkerreko bidegurutzea</span>',
+    '<span class="elev-legend-item"><span class="num">2</span>Cruce Aginaga</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>Aginagako bidegurutzea</span>',
+    'Cruce a la izquierda': 'Ezkerreko bidegurutzea',
+    'Cruce Aginaga': 'Aginagako bidegurutzea',
     '<span>Pista</span><span class="sep">/</span><span>Cemento, piedra y tierra</span>':
         '<span>Pista</span><span class="sep">/</span><span>Zementua, harria eta lurra</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
