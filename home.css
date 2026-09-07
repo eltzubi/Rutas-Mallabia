@@ -184,9 +184,9 @@
 .filter-dialog .filter-reset:disabled{opacity:.45;cursor:default;}
 .filter-empty[hidden],.active-filters[hidden]{display:none;}
 @media(max-width:659px){
-  .finder{padding:0 16px;}
-  .finder-toolbar{gap:8px;flex-wrap:wrap;}
-  .activity-filter{flex:1;min-width:0;padding:4px;gap:2px;}
+  .finder{margin-top:16px;padding:0 16px;}
+  .finder-toolbar{gap:8px;flex-wrap:wrap;padding:0 0 12px;}
+  .activity-filter{flex:1;min-width:0;padding:2px;gap:2px;}
   .activity-chip{flex:1;padding:10px 8px;font-size:11px;white-space:nowrap;}
   .open-filters{display:inline-flex;align-items:center;padding:10px 12px;font-size:11px;}
   .filter-dialog{width:100%;max-width:520px;max-height:calc(100dvh - 16px);margin:auto auto 0;border-radius:28px 28px 0 0;padding:14px 24px max(24px,env(safe-area-inset-bottom));border-bottom:0;}
@@ -252,6 +252,11 @@
 .filter-reset:hover{text-decoration:underline;text-underline-offset:4px;}
 .filter-reset[hidden]{display:none;}
 .filter-empty .filter-reset{ margin-left:6px; }
+@media(max-width:659px){
+  .view-toggle-row{row-gap:16px;margin-bottom:16px;}
+  .view-toggle{padding:2px;margin-bottom:0;}
+  .result-line{margin-bottom:8px;}
+}
 
 /* ---- route cards: compact, scannable ---- */
 .route-card-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
