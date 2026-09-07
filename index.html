@@ -45,7 +45,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="fonts.css?v=974c4428">
 <link rel="stylesheet" href="base.css?v=9617327d">
-<link rel="stylesheet" href="home.css?v=a6bcbf83">
+<link rel="stylesheet" href="home.css?v=e6563469">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -127,6 +127,14 @@
     </div>
     <dialog id="filterDialog" class="filter-dialog" aria-labelledby="filterDialogTitle">
       <div class="filter-dialog-heading"><h2 id="filterDialogTitle">Filtrar rutas</h2><button type="button" id="closeFilters" aria-label="Cerrar filtros">×</button></div>
+      <fieldset class="dialog-activity-group">
+        <legend>Actividad</legend>
+        <div class="activity-filter">
+          <button type="button" class="activity-chip active" data-activity="all">Todas</button>
+          <button type="button" class="activity-chip" data-activity="senderismo">A pie</button>
+          <button type="button" class="activity-chip" data-activity="bici">BTT/e-bike</button>
+        </div>
+      </fieldset>
       <div id="mobileFilters"></div>
       <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Restablecer</button><button type="button" class="show-results" id="showResults">Ver rutas</button></div>
     </dialog>
@@ -668,7 +676,7 @@
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
 
-<script src="js/filters.js?v=7efa0eed"></script>
+<script src="js/filters.js?v=3f2f029f"></script>
 <script src="js/app.js?v=84b5c1ee"></script>
 <script src="js/webmcp.js?v=ed4e6132"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->

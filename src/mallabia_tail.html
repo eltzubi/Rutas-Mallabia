@@ -66,6 +66,14 @@
     </div>
     <dialog id="filterDialog" class="filter-dialog" aria-labelledby="filterDialogTitle">
       <div class="filter-dialog-heading"><h2 id="filterDialogTitle">Filtrar rutas</h2><button type="button" id="closeFilters" aria-label="Cerrar filtros">×</button></div>
+      <fieldset class="dialog-activity-group">
+        <legend>Actividad</legend>
+        <div class="activity-filter">
+          <button type="button" class="activity-chip active" data-activity="all">Todas</button>
+          <button type="button" class="activity-chip" data-activity="senderismo">A pie</button>
+          <button type="button" class="activity-chip" data-activity="bici">BTT/e-bike</button>
+        </div>
+      </fieldset>
       <div id="mobileFilters"></div>
       <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Restablecer</button><button type="button" class="show-results" id="showResults">Ver rutas</button></div>
     </dialog>

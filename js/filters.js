@@ -104,7 +104,7 @@
     var summary = document.getElementById('activeFilters');
     summary.textContent = labels.join(' · '); summary.hidden = !labels.length;
     finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.hidden = !labels.length;});
-    finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !extraCount;});
+    finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !labels.length;});
     empty.hidden = n !== 0; empty.classList.toggle('visible', n === 0);
     if (!n) {
       // Offer one relaxation that actually yields results. Keep the selected
@@ -134,7 +134,7 @@
   elevation.addEventListener('change',function(){state.elevation=elevation.value;apply();});
   viewButtons.forEach(function(b){b.addEventListener('click',function(){state.view=b.dataset.view;apply();});});
   finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
-  finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state.distance=state.difficulty=state.elevation='all';apply();});});
+  finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
   recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
 
   // The same controls move into a native modal on small screens. Native

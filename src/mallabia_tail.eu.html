@@ -66,6 +66,14 @@
     </div>
     <dialog id="filterDialog" class="filter-dialog" aria-labelledby="filterDialogTitle">
       <div class="filter-dialog-heading"><h2 id="filterDialogTitle">Ibilbideak iragazi</h2><button type="button" id="closeFilters" aria-label="Iragazkiak itxi">×</button></div>
+      <fieldset class="dialog-activity-group">
+        <legend>Jarduera</legend>
+        <div class="activity-filter">
+          <button type="button" class="activity-chip active" data-activity="all">Guztiak</button>
+          <button type="button" class="activity-chip" data-activity="senderismo">Oinez</button>
+          <button type="button" class="activity-chip" data-activity="bici">BTT/e-bike</button>
+        </div>
+      </fieldset>
       <div id="mobileFilters"></div>
       <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Berrezarri</button><button type="button" class="show-results" id="showResults">Ibilbideak ikusi</button></div>
     </dialog>

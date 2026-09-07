@@ -271,6 +271,7 @@ ROUTE = {
 }
 
 HOME = {
+    '<legend>Actividad</legend>': '<legend>Jarduera</legend>',
     '>Todas</button>': '>Guztiak</button>',
     '>A pie</button>': '>Oinez</button>',
     '>Filtrar<span': '>Iragazi<span',
