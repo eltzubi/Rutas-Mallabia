@@ -989,7 +989,7 @@ ZENGOTITAGANE = {
         'alt="Anboto eta Alluitzerako ikuspegiak, Durango atzealdean, ibilbidearen goialdetik"',
     'alt="V&eacute;rtice geod&eacute;sico en Iturzurigana, el punto m&aacute;s alto de la ruta, '
     'con vistas alrededor"':
-        'alt="Vertize geodesikoa Iturzuriganan, ibilbideko punturik altuenean, inguruko '
+        'alt="Bertize geodesikoa Iturzuriganan, ibilbideko punturik altuenean, inguruko '
         'ikuspegiekin"',
     'alt="Una cruz en uno de los altos de la ruta, con el valle y una carretera al fondo"':
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
@@ -1067,7 +1067,7 @@ OIZ = {
         'alt="Oizetiko ikuspegi panoramikoak, eolikoekin eta eguzkia aurrez aurre"',
     'alt="V&eacute;rtice geod&eacute;sico en el Oiz de noche, con las luces rojas de los '
     'aerogeneradores al fondo"':
-        'alt="Vertize geodesikoa Oizen gauez, eolikoen argi gorriak atzealdean"',
+        'alt="Bertize geodesikoa Oizen gauez, eolikoen argi gorriak atzealdean"',
     'alt="Atardecer en el Oiz, con la silueta de los aerogeneradores en la cresta"':
         'alt="Ilunabarra Oizen, eolikoen silueta gailur-gerrikoan"',
     'alt="Un reba&ntilde;o de camino al Oiz de noche, con las luces de un pueblo al fondo"':
