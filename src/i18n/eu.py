@@ -3218,8 +3218,6 @@ TRABAKUAMALLABIA = {
         'alt="Ibilbidearen argazki handia"',
     '<span>Pista/tierra</span>':
         '<span>Pista/lurra</span>',
-    '<span class="v">Exigente</span>':
-        '<span class="v">Eskatzailea</span>',
     '<span class="v">Pista/tierra</span>':
         '<span class="v">Pista/lurra</span>',
     '<span>BTT</span>':
