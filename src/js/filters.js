@@ -45,7 +45,7 @@
     return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }
 
-  var filters = document.querySelector('.range-filters') || document.body;
+  var filters = document.querySelector('.finder') || document.body;
   var TXT_APPROX = filters.dataset.approx || 'aprox.';
   var TXT_ALL_DISTANCE = filters.dataset.allDistance || 'Todas';
   var TXT_ALL_DESNIVEL = filters.dataset.allDesnivel || 'Todos';
@@ -108,12 +108,35 @@
 
   function fmtRange(minV, maxV, max, isElevation, allWord){
     if (minV <= 0 && maxV >= max) return allWord;
+    if (!Number.isFinite(maxV)) maxV = max;
     var fmt = function(n){ return isElevation ? Math.round(n) : n.toFixed(1).replace('.0',''); };
     return fmt(minV) + '–' + fmt(maxV) + (isElevation ? ' m ' : ' km ') + TXT_APPROX;
   }
 
   function setActiveDistanceChip(chip){
     distanceChips.forEach(function(c){ c.classList.toggle('active', c === chip); });
+  }
+
+  function updateControlStates(){
+    [activityChips, difficultyChips, distanceChips, viewBtns].forEach(function(group){
+      group.forEach(function(button){
+        button.setAttribute('aria-pressed', String(button.classList.contains('active')));
+      });
+    });
+  }
+
+  function selectedLabels(group){
+    return Array.prototype.filter.call(group, function(c){ return c.classList.contains('active'); })
+      .map(function(c){ return c.textContent.trim(); });
+  }
+
+  // The current home has presets, not sliders. Both interfaces must write
+  // the same fallback state, including the empty-results recovery buttons.
+  function setDistanceRange(lo, hi){
+    filterState.distanceMin = lo;
+    filterState.distanceMax = hi;
+    if (distanceMin) distanceMin.value = lo;
+    if (distanceMax) distanceMax.value = Math.min(hi, maxDistance);
   }
 
   var DISTANCE_PRESETS = {
@@ -128,15 +151,12 @@
       var already = chip.classList.contains('active');
       setActiveDistanceChip(already ? null : chip);
       var range = DISTANCE_PRESETS[chip.dataset.distancePreset];
-      var lo = 0, hi = maxDistance;
+      var lo = 0, hi = Infinity;
       if (!already && range) {
         lo = range[0];
-        hi = Math.min(range[1], maxDistance);
+        hi = range[1];
       }
-      if (distanceMin) distanceMin.value = lo;
-      else filterState.distanceMin = lo;
-      if (distanceMax) distanceMax.value = hi;
-      else filterState.distanceMax = hi;
+      setDistanceRange(lo, hi);
       apply();
     });
   });
@@ -189,6 +209,7 @@
       viewBtns.forEach(function(b){ b.classList.toggle('active', b === btn); });
       if (resultsList) resultsList.hidden = (view !== 'list');
       if (mapWrap) mapWrap.hidden = (view !== 'map');
+      updateControlStates();
       // Al pedir el mapa, llevar la vista hasta el; se salta a la fila de
       // pestanas (no al mapa) porque con la lista oculta la pagina se queda
       // corta y el scroll toparia con el final, dejando el mapa medio tapado
@@ -213,10 +234,10 @@
 
     var parts = [];
     if (activeActivities.length !== activityChips.length) {
-      parts.push(activeActivities.join(' + '));
+      parts.push(selectedLabels(activityChips).join(' + '));
     }
     if (activeDifficulty.length !== difficultyChips.length) {
-      parts.push(activeDifficulty.join(' + '));
+      parts.push(selectedLabels(difficultyChips).join(' + '));
     }
     if (minD > 0 || maxD < maxDistance) {
       parts.push(fmtRange(minD, maxD, maxDistance, false, ''));
@@ -298,7 +319,11 @@
       if (filtrado) b.removeAttribute('hidden');
       else b.setAttribute('hidden', '');
     });
+    // map.js can load after this first event (Leaflet comes from a CDN).
+    // Keep the latest selection available for a late subscriber as well.
+    window.trabakutikVisibleRoutes = visibleHrefs.slice();
     document.dispatchEvent(new CustomEvent('routefilters:apply', { detail: { visibleHrefs: visibleHrefs } }));
+    updateControlStates();
     saveFiltersToStorage();
     updateActiveFiltersDisplay();
   }
@@ -326,7 +351,13 @@
       var state = {
         activities: Array.prototype.filter.call(activityChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.activity; }),
         difficulties: Array.prototype.filter.call(difficultyChips, function(c){ return c.classList.contains('active'); }).map(function(c){ return c.dataset.difficulty; }),
-        view: view
+        view: view,
+        distanceMin: distanceMin ? parseFloat(distanceMin.value) : filterState.distanceMin,
+        distanceMax: distanceMax ? parseFloat(distanceMax.value) :
+          (Number.isFinite(filterState.distanceMax) ? filterState.distanceMax : null),
+        distancePreset: (Array.prototype.find.call(distanceChips, function(c){
+          return c.classList.contains('active');
+        }) || { dataset: {} }).dataset.distancePreset || null
       };
       localStorage.setItem('trabakutik_filters', JSON.stringify(state));
     } catch (e) {
@@ -339,23 +370,40 @@
       var saved = localStorage.getItem('trabakutik_filters');
       if (!saved) return;
       var state = JSON.parse(saved);
+      if (!state || typeof state !== 'object') return false;
 
-      // Restore activities
-      if (state.activities && state.activities.length > 0) {
-        activityChips.forEach(function(c){
-          c.classList.toggle('active', state.activities.indexOf(c.dataset.activity) !== -1);
+      function restoreGroup(group, values, key){
+        if (!Array.isArray(values)) return;
+        var matches = Array.prototype.filter.call(group, function(c){
+          return values.indexOf(c.dataset[key]) !== -1;
         });
+        // Ignore corrupt/obsolete values instead of turning every chip off.
+        if (!matches.length) return;
+        group.forEach(function(c){ c.classList.toggle('active', matches.indexOf(c) !== -1); });
       }
 
+      // Restore activities
+      restoreGroup(activityChips, state.activities, 'activity');
+
       // Restore difficulties
-      if (state.difficulties && state.difficulties.length > 0) {
-        difficultyChips.forEach(function(c){
-          c.classList.toggle('active', state.difficulties.indexOf(c.dataset.difficulty) !== -1);
+      restoreGroup(difficultyChips, state.difficulties, 'difficulty');
+
+      var preset = Object.prototype.hasOwnProperty.call(DISTANCE_PRESETS, state.distancePreset) &&
+        DISTANCE_PRESETS[state.distancePreset];
+      if (preset) {
+        setDistanceRange(preset[0], preset[1]);
+        distanceChips.forEach(function(c){
+          c.classList.toggle('active', c.dataset.distancePreset === state.distancePreset);
         });
+      } else if (typeof state.distanceMin === 'number' && Number.isFinite(state.distanceMin) &&
+                 state.distanceMin >= 0 &&
+                 (state.distanceMax === null || (typeof state.distanceMax === 'number' &&
+                  Number.isFinite(state.distanceMax) && state.distanceMax >= state.distanceMin))) {
+        setDistanceRange(state.distanceMin, state.distanceMax === null ? Infinity : state.distanceMax);
       }
 
       // Restore view preference
-      if (state.view && state.view !== 'list') {
+      if (state.view === 'map') {
         viewBtns.forEach(function(btn){
           btn.classList.toggle('active', btn.dataset.view === state.view);
         });
@@ -374,10 +422,7 @@
     activityChips.forEach(function(c){ c.classList.add('active'); });
     difficultyChips.forEach(function(c){ c.classList.add('active'); });
     setActiveDistanceChip(null);
-    if (distanceMin) distanceMin.value = 0;
-    else filterState.distanceMin = 0;
-    if (distanceMax) distanceMax.value = maxDistance;
-    else filterState.distanceMax = Infinity;
+    setDistanceRange(0, Infinity);
     if (desnivelMin) desnivelMin.value = 0;
     else filterState.desnivelMin = 0;
     if (desnivelMax) desnivelMax.value = maxDesnivel;
@@ -408,10 +453,11 @@
       } else if (type === 'difficulties') {
         difficultyChips.forEach(function(c){ c.classList.add('active'); });
       } else if (type === 'distance') {
-        if (distanceMin) distanceMin.value = 0;
-        if (distanceMax) distanceMax.value = maxDistance;
+        setDistanceRange(0, Infinity);
         setActiveDistanceChip(null);
       } else if (type === 'desnivel') {
+        filterState.desnivelMin = 0;
+        filterState.desnivelMax = Infinity;
         if (desnivelMin) desnivelMin.value = 0;
         if (desnivelMax) desnivelMax.value = maxDesnivel;
       }
@@ -428,13 +474,7 @@
       distanceChips.forEach(function(c){ if (c.dataset.distancePreset === preset) chip = c; });
       setActiveDistanceChip(chip);
       if (range) {
-        if (distanceMin && distanceMax) {
-          distanceMin.value = range[0];
-          distanceMax.value = Math.min(range[1], maxDistance);
-        } else {
-          filterState.distanceMin = range[0];
-          filterState.distanceMax = Math.min(range[1], maxDistance);
-        }
+        setDistanceRange(range[0], range[1]);
       }
       apply();
       if (resultsList) resultsList.scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });

@@ -10,6 +10,25 @@ Place names (Trabakua, Zengotitagane, Iturzuri, Zenarruza, Oiz…) are
 already Basque and stay as they are.
 """
 
+# Runtime labels are attached to the rendered HTML by build.py.
+UI = {
+    'Cambiar a tema claro': 'Aldatu gai argira',
+    'Cambiar a tema oscuro': 'Aldatu gai ilunera',
+    'Enviando…': 'Bidaltzen…',
+    'Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.':
+        'Eskerrik asko. Abisua jaso dut, eta bertara joango naiz egiaztatzera, ibilbidearen fitxa eguneratu aurretik.',
+    'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.':
+        'Ezin izan da bidali. Saiatu berriro edo idatzi trabakutik@gmail.com helbidera.',
+    'Incidencia en ruta:': 'Ibilbideko gorabehera:',
+    'aprox.': 'gutxi gorabehera',
+    'Todas': 'Guztiak',
+    'Todos': 'Guztiak',
+    'ruta encontrada': 'ibilbide aurkitu da',
+    'rutas encontradas': 'ibilbide aurkitu dira',
+    '(rango de distancia imposible)': '(ez dago distantzia-tarte horretako ibilbiderik)',
+    '(rango de desnivel imposible)': '(ez dago desnibel-tarte horretako ibilbiderik)',
+}
+
 # Shared across every page.
 COMMON = {
     # El bloque de "rutas parecidas" del final de cada ficha lo genera
@@ -252,8 +271,6 @@ ROUTE = {
 }
 
 HOME = {
-    '<p class="hero-compact-stats">31 rutas &middot; 712 km &middot; 30.814 m+</p>':
-        '<p class="hero-compact-stats">31 ibilbide &middot; 712 km &middot; 30.814 m+</p>',
     'alt="El embalse de Aixola al amanecer, con el agua en calma reflejando las laderas, el muro de la presa al fondo y el sol saliendo entre los &aacute;rboles de la orilla"':
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
 
