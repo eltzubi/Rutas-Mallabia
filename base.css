@@ -43,14 +43,14 @@ body{
 /* Ampliado: alto de pantalla y de borde a borde. Antes solo crecia de alto y
    se quedaba con el ancho de su columna, asi que en un movil salia un mapa
    alto y estrecho. El margen negativo saca la caja de los rellenos de sus
-   padres hasta los bordes de la ventana; con width:auto no hace falta 100vw,
-   que en escritorio se cuela por debajo de la barra de desplazamiento. */
+   padres hasta los bordes del area util. map.js mide clientWidth: 100vw
+   tambien incluye la barra vertical y creaba desplazamiento horizontal. */
 .route-map-box.is-expanded{
   aspect-ratio:auto;
   height:80vh; height:80dvh;
   width:auto;
   max-width:none;
-  margin-inline:calc(50% - 50vw);
+  margin-inline:calc((100% - var(--map-viewport-width, 100%)) / 2);
   border-left:0; border-right:0; border-radius:0;
 }
 .route-map-box .leaflet-container{ width:100%; height:100%; background:var(--ground-raised); font-family:'Karla',sans-serif; }
@@ -65,9 +65,11 @@ body{
 }
 .map-expand-btn:hover{ opacity:1; }
 .map-unavailable{
-  display:flex; align-items:center; justify-content:center; text-align:center;
+  display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; text-align:center;
   padding:24px; color:var(--ink-dim); font-size:13px; line-height:1.6;
 }
+.map-retry{ font:inherit; color:var(--ink); background:var(--ground); border:1px solid var(--line); border-radius:8px; padding:10px 16px; cursor:pointer; }
+.leaflet-interactive[role="button"]:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
 .map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
 .map-layers-btn{

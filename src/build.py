@@ -166,6 +166,7 @@ def home_cards(src_suffix):
             "href": href,
             "activities": set(activity.split(",")),
             "km": float(km or 0),
+            "desnivel": int(desnivel or 0),
             "name": name.strip(),
             "stats": stats.strip(),
         }
@@ -207,6 +208,36 @@ def add_similar_routes(page_html, page, cards, lang):
               f'    <div class="next-route-list">\n{tarjetas}\n    </div>\n'
               f'  </section>\n\n')
     return page_html.replace(anchor, bloque + anchor, 1)
+
+
+def add_ui_text(page_html, cards, lang):
+    """Attach translated runtime labels to stable elements, not removed controls."""
+    def attrs(values):
+        return ''.join(f' data-{key}="{html.escape(eu.UI[value] if lang == "eu" else value, quote=True)}"'
+                       for key, value in values.items())
+
+    page_html = page_html.replace('id="themeToggle"', 'id="themeToggle"' + attrs({
+        "label-light": "Cambiar a tema claro", "label-dark": "Cambiar a tema oscuro",
+    }))
+    page_html = page_html.replace('<form id="reportForm">', '<form id="reportForm"' + attrs({
+        "sending": "Enviando…",
+        "success": "Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.",
+        "error": "No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.",
+        "subject-prefix": "Incidencia en ruta:",
+    }) + '>')
+    page_html = page_html.replace('<section class="finder">', '<section class="finder"' + attrs({
+        "approx": "aprox.", "all-distance": "Todas", "all-desnivel": "Todos",
+        "count-one": "ruta encontrada", "count-many": "rutas encontradas",
+        "impossible-distance": "(rango de distancia imposible)",
+        "impossible-desnivel": "(rango de desnivel imposible)",
+    }) + '>')
+    total_km = round(sum(c["km"] for c in cards.values()))
+    total_gain = sum(c["desnivel"] for c in cards.values())
+    route_word = "ibilbide" if lang == "eu" else "rutas"
+    summary = (f'{len(cards)} {route_word} &middot; {total_km:,} km &middot; '
+               f'{total_gain:,} m+').replace(',', '.')
+    return page_html.replace('<p class="hero-compact-stats" data-route-totals></p>',
+                             f'<p class="hero-compact-stats" data-route-totals>{summary}</p>')
 
 
 def map_legend(cards, lang):
@@ -296,6 +327,7 @@ def main():
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
+            page_html = add_ui_text(page_html, cards[lang], lang)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = page_html.replace(

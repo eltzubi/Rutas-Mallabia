@@ -17,6 +17,34 @@
 (function(){
   var el = document.querySelector('[data-map-src]');
   if (!el) return;
+  var isEu = document.documentElement.lang === 'eu';
+  var map = null;
+  var loading = false;
+  var cleanups = [];
+
+  function showUnavailable(retry){
+    el.classList.add('map-unavailable');
+    el.setAttribute('aria-busy', 'false');
+    el.textContent = '';
+    var message = document.createElement('p');
+    message.setAttribute('role', 'status');
+    message.textContent = isEu ?
+      'Ezin izan da mapa kargatu. Ibilbideak deskargatzeko estekak erabil ditzakezu.' :
+      'No se ha podido cargar el mapa. Puedes usar los enlaces de descarga de las rutas.';
+    el.appendChild(message);
+    var retryButton = document.createElement('button');
+    retryButton.type = 'button';
+    retryButton.className = 'map-retry';
+    retryButton.textContent = isEu ? 'Saiatu berriro' : 'Reintentar';
+    retryButton.addEventListener('click', retry);
+    el.appendChild(retryButton);
+    var box = el.parentElement;
+    if (box) {
+      box.classList.remove('is-expanded');
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers-btn'),
+        function(b){ b.hidden = true; });
+    }
+  }
 
   // Se consulta en cada salto, no una vez al cargar: la preferencia puede
   // cambiar con la sesion abierta.
@@ -30,16 +58,7 @@
   // funcionando, asi que se podia ampliar la nada a 80vh. Mejor decirlo y
   // retirar los botones que ya no mandan sobre nada.
   if (typeof L === 'undefined') {
-    el.classList.add('map-unavailable');
-    el.textContent = document.documentElement.lang === 'eu' ?
-      'Ezin izan da mapa kargatu. Ibilbidearen trazua GPX fitxategian duzu.' :
-      'No se ha podido cargar el mapa. El trazado de la ruta está en el GPX.';
-    var box = el.parentElement;
-    if (box) {
-      box.classList.remove('is-expanded');
-      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers-btn'),
-        function(b){ b.hidden = true; });
-    }
+    showUnavailable(function(){ window.location.reload(); });
     return;
   }
 
@@ -50,8 +69,14 @@
   var resetView = null;   // lo rellena el bloque del mapa, mas abajo
 
   var expandBtn = el.parentElement && el.parentElement.querySelector('.map-expand-btn');
+  function updateViewportWidth(){
+    el.parentElement.style.setProperty('--map-viewport-width', document.documentElement.clientWidth + 'px');
+  }
+  updateViewportWidth();
+  window.addEventListener('resize', updateViewportWidth, { passive: true });
   if (expandBtn) {
     expandBtn.addEventListener('click', function(){
+      updateViewportWidth();
       var expanded = el.parentElement.classList.toggle('is-expanded');
       expandBtn.setAttribute('aria-label', expanded ?
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
@@ -81,8 +106,6 @@
       }
     });
   }
-
-  var isEu = document.documentElement.lang === 'eu';
 
   var css = getComputedStyle(document.documentElement);
   function token(name, fallback){
@@ -135,15 +158,39 @@
   // to each other -- whichever fires first, the other picks up the latest
   // state once it's ready (onRouteFilterChange is wired up once the map's
   // lines exist).
-  var pendingVisibleHrefs = null;
+  var pendingVisibleHrefs = window.trabakutikVisibleRoutes || null;
   var onRouteFilterChange = null;
   document.addEventListener('routefilters:apply', function(e){
     pendingVisibleHrefs = e.detail.visibleHrefs;
     if (onRouteFilterChange) onRouteFilterChange(pendingVisibleHrefs);
   });
 
-  fetch(el.dataset.mapSrc).then(function(r){ return r.json(); }).then(function(data){
-    var map = L.map(el, {
+  function loadMap(){
+    if (loading) return;
+    loading = true;
+    el.classList.remove('map-unavailable');
+    el.textContent = '';
+    el.setAttribute('aria-busy', 'true');
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timeout;
+    var request = fetch(el.dataset.mapSrc, controller ? { signal: controller.signal } : {}).then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+    // A stalled request must also reach the visible error/retry state.
+    var deadline = new Promise(function(resolve, reject){
+      timeout = setTimeout(function(){
+        if (controller) controller.abort();
+        reject(new Error('Map request timed out'));
+      }, 15000);
+    });
+    Promise.race([request, deadline]).then(function(data){
+    clearTimeout(timeout);
+    if (!data || !Array.isArray(data.tracks) || !data.tracks.length ||
+        data.tracks.some(function(t){ return !Array.isArray(t.points) || !t.points.length; })) {
+      throw new Error('Invalid map tracks');
+    }
+    map = L.map(el, {
       zoomControl: true,
       scrollWheelZoom: false,
       center: data.tracks[0].points[0],
@@ -165,12 +212,14 @@
     layersBtn.type = 'button';
     layersBtn.className = 'map-layers-btn';
     layersBtn.setAttribute('aria-label', isEu ? 'Aldatu mapa mota' : 'Cambiar tipo de mapa');
+    layersBtn.setAttribute('aria-pressed', 'false');
     layersBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>';
     layersBtn.addEventListener('click', function(){
       isTopo = !isTopo;
       if (isTopo) { map.removeLayer(osmLayer); topoLayer.addTo(map); }
       else { map.removeLayer(topoLayer); osmLayer.addTo(map); }
       layersBtn.classList.toggle('is-active', isTopo);
+      layersBtn.setAttribute('aria-pressed', String(isTopo));
     });
     el.parentElement.appendChild(layersBtn);
 
@@ -180,12 +229,16 @@
     // describes, especially once we've zoomed in on it below. A fixed panel
     // never does, and its own height feeds back into the zoom padding so
     // the route never renders underneath it either.
-    var panel = null, panelBody = null, activeLine = null, activeBaseColor = null;
+    var panel = null, panelBody = null, panelClose = null, activeLine = null, activeBaseColor = null;
     function ensurePanel(){
       if (panel) return;
       panel = document.createElement('div');
       panel.className = 'route-info-panel';
+      panel.hidden = true;
+      panel.setAttribute('role', 'region');
+      panel.setAttribute('aria-label', isEu ? 'Ibilbidearen informazioa' : 'Información de la ruta');
       var close = document.createElement('button');
+      panelClose = close;
       close.type = 'button';
       close.className = 'route-info-panel-close';
       close.setAttribute('aria-label', isEu ? 'Itxi' : 'Cerrar');
@@ -195,28 +248,49 @@
       panel.appendChild(close);
       panel.appendChild(panelBody);
       el.parentElement.appendChild(panel);
+      panel.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') { e.preventDefault(); closePanel(); }
+      });
     }
     function closePanel(){
       if (!panel || !panel.classList.contains('open')) return;
+      var returnFocus = panel.contains(document.activeElement);
       panel.classList.remove('open');
-      if (activeLine) { activeLine.setStyle({ color: activeBaseColor, weight: 4 }); activeLine = null; }
+      panel.hidden = true;
+      if (activeLine) {
+        var path = activeLine.getElement();
+        activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+        if (path) {
+          path.setAttribute('aria-pressed', 'false');
+          if (returnFocus) path.focus({ preventScroll: true });
+        }
+        activeLine = null;
+      }
       // Antes esto reencuadraba el mapa entero al cerrar la ficha (y como
       // cualquier toque en el mapa cierra la ficha, se salia del zoom sin
       // querer). Ahora la vista se queda donde el visitante la ha dejado.
     }
-    function openPanel(line, baseColor, html){
+    function openPanel(line, baseColor, html, keyboard){
       ensurePanel();
-      if (activeLine && activeLine !== line) activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+      if (activeLine && activeLine !== line) {
+        activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+        activeLine.getElement().setAttribute('aria-pressed', 'false');
+      }
       activeLine = line; activeBaseColor = baseColor;
+      userMoved = true;
       line.setStyle({ color: COLORS.parking, weight: 6 });
+      line.getElement().setAttribute('aria-pressed', 'true');
       panelBody.innerHTML = html;
+      panel.hidden = false;
       panel.classList.add('open');
       var panelHeight = panel.getBoundingClientRect().height;
       map.flyToBounds(line.getBounds(), {
         paddingTopLeft: [24, 24],
         paddingBottomRight: [24, panelHeight + 24],
-        maxZoom: 15
+        maxZoom: 15,
+        animate: !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
       });
+      if (keyboard) panelClose.focus({ preventScroll: true });
     }
 
     var bounds = null;
@@ -241,8 +315,9 @@
         var distanceKm = sign ? sign.dataset.distanceKm : null;
         var desnivelM = sign ? sign.dataset.desnivelM : null;
         var activity = sign ? sign.dataset.activity : null;
-        var activityLabel = activity === 'bici' ? 'BTT/e-bike'
-          : activity === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : null;
+        var activityLabel = (activity || '').split(',').map(function(a){
+          return a === 'bici' ? 'BTT/e-bike' : a === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : '';
+        }).filter(Boolean).join(' · ');
         var distLabel = isEu ? 'Distantzia' : 'Distancia';
         var descLabel = isEu ? 'Desnibela' : 'Desnivel';
         var actLabel = isEu ? 'Jarduera' : 'Actividad';
@@ -277,7 +352,24 @@
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
         line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
-        if (pathEl) pathEl.style.cursor = 'pointer';
+        if (pathEl) {
+          pathEl.style.cursor = 'pointer';
+          pathEl.setAttribute('tabindex', '0');
+          pathEl.setAttribute('role', 'button');
+          pathEl.setAttribute('aria-label', name);
+          pathEl.setAttribute('aria-pressed', 'false');
+          pathEl.addEventListener('keydown', function(e){
+            if (pathEl.getAttribute('aria-hidden') === 'true') return;
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault(); e.stopPropagation();
+              openPanel(line, baseColor, html, true);
+            } else if (e.key === 'Escape') {
+              e.preventDefault(); closePanel();
+            }
+          });
+          pathEl.addEventListener('focus', function(){ line.setStyle({ weight: 6 }); });
+          pathEl.addEventListener('blur', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+        }
         hrefToLine[t.href] = { line: line, baseColor: baseColor };
       }
     });
@@ -299,7 +391,12 @@
         if (!show && entry.line === activeLine) closePanel();
         entry.line.setStyle({ opacity: show ? baseOpacity : 0.06 });
         var pathEl = entry.line.getElement();
-        if (pathEl) pathEl.style.pointerEvents = show ? '' : 'none';
+        if (pathEl) {
+          if (!show && pathEl === document.activeElement) el.focus({ preventScroll: true });
+          pathEl.style.pointerEvents = show ? '' : 'none';
+          pathEl.setAttribute('tabindex', show ? '0' : '-1');
+          pathEl.setAttribute('aria-hidden', show ? 'false' : 'true');
+        }
       });
     }
     applyRouteFilter(pendingVisibleHrefs);
@@ -348,6 +445,7 @@
     map.on('dragstart', markMoved);
     ['wheel', 'touchstart', 'dblclick', 'pointerdown'].forEach(function(ev){
       map.getContainer().addEventListener(ev, markMoved, { passive: true });
+      cleanups.push(function(){ el.removeEventListener(ev, markMoved); });
     });
 
     function fit(){
@@ -356,9 +454,36 @@
     }
     resetView = function(){ map.invalidateSize(); map.fitBounds(bounds, { padding: [24, 24] }); };
     fit();
-    if ('ResizeObserver' in window) new ResizeObserver(fit).observe(el);
-    else window.addEventListener('resize', fit);
-  }).catch(function(err){
+    if ('ResizeObserver' in window) {
+      var observer = new ResizeObserver(fit);
+      observer.observe(el);
+      cleanups.push(function(){ observer.disconnect(); });
+    } else {
+      window.addEventListener('resize', fit);
+      cleanups.push(function(){ window.removeEventListener('resize', fit); });
+    }
+    if (expandBtn) {
+      expandBtn.hidden = false;
+      var expanded = el.parentElement.classList.contains('is-expanded');
+      expandBtn.classList.toggle('is-active', expanded);
+      expandBtn.setAttribute('aria-label', expanded ?
+        expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
+    }
+    el.setAttribute('aria-busy', 'false');
+    loading = false;
+    }).catch(function(err){
+    clearTimeout(timeout);
+    cleanups.forEach(function(cleanup){ cleanup(); });
+    cleanups = [];
+    if (map) { map.remove(); map = null; }
+    resetView = null;
+    onRouteFilterChange = null;
+    Array.prototype.forEach.call(el.parentElement.querySelectorAll('.map-layers-btn, .route-info-panel'),
+      function(node){ node.remove(); });
+    loading = false;
+    showUnavailable(loadMap);
     if (window.console) console.error('No se pudo cargar el mapa:', err);
-  });
+    });
+  }
+  loadMap();
 })();

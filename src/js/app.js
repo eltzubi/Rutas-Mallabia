@@ -116,7 +116,7 @@
   }
   function updateLabel(){
     var eff = effectiveTheme();
-    btn.setAttribute('aria-label', eff === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+    btn.setAttribute('aria-label', eff === 'dark' ? btn.dataset.labelLight : btn.dataset.labelDark);
   }
   function applyTheme(theme){
     if (theme === 'light') root.setAttribute('data-theme', 'light');
@@ -154,7 +154,7 @@
     // wrap onto a second line) becomes a space instead of vanishing.
     var routeName = routeNameEl ? (routeNameEl.innerText || routeNameEl.textContent).replace(/\s+/g, ' ').trim() : document.title;
     if (routeField) routeField.value = routeName;
-    if (subjectField) subjectField.value = 'Incidencia en ruta: ' + routeName;
+    if (subjectField) subjectField.value = form.dataset.subjectPrefix + ' ' + routeName;
     box.classList.add('open');
     document.body.style.overflow = 'hidden';
     close.focus();
@@ -194,7 +194,7 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
     submitBtn.disabled = true;
-    status.textContent = 'Enviando…';
+    status.textContent = form.dataset.sending;
     status.className = 'report-status';
     fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
@@ -203,14 +203,14 @@
     }).then(function(res){
       if (res.ok) {
         form.reset();
-        status.textContent = 'Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.';
+        status.textContent = form.dataset.success;
         status.className = 'report-status success';
       } else {
-        status.textContent = 'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.';
+        status.textContent = form.dataset.error;
         status.className = 'report-status error';
       }
     }).catch(function(){
-      status.textContent = 'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.';
+      status.textContent = form.dataset.error;
       status.className = 'report-status error';
     }).then(function(){
       submitBtn.disabled = false;
