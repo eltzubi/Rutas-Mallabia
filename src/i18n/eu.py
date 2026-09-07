@@ -101,8 +101,8 @@ COMMON = {
         '<p class="route-card-desc">Urko, Oiz eta Egoarbitza Ermuatik</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Aixola, Elgeta y Zaldibar hasta Berriz</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino</p>',
-    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigana y Maguna</p>':
-        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako Trikuharritik igarota Magunaraino</p>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigaina y Maguna</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako Trikuharritik igarota Magunaraino</p>',
     '<p class="route-card-desc">El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del Oiz</p>':
         '<p class="route-card-desc">7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota</p>',
     '<p class="route-card-desc">El trazado real de la 7 Pago Mendi Lasterketa 16K, la versi&oacute;n corta de la carrera</p>':
@@ -125,8 +125,8 @@ COMMON = {
         '<h3 class="route-card-name">Trabakua, Goita auzoko paseoa</h3>',
     '<h3 class="route-card-name">Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua</h3>':
         '<h3 class="route-card-name">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</h3>',
-    '<h3 class="route-card-name">Zengotitagane, Iturzurigana y San Crist&oacute;bal Txiki</h3>':
-        '<h3 class="route-card-name">Zengotitagane, Iturzurigana eta San Kristobal Txiki</h3>',
+    '<h3 class="route-card-name">Zengotitagane, Iturzurigaina y San Crist&oacute;bal Txiki</h3>':
+        '<h3 class="route-card-name">Zengotitagane, Iturzurigaina eta San Kristobal Txiki</h3>',
     '<h3 class="route-card-name">Zengotitagane, Askako y San Crist&oacute;bal</h3>':
         '<h3 class="route-card-name">Zengotitagane, Askako eta San Kristobal</h3>',
     '<h3 class="route-card-name">Zengotitagane, Axmakur y Oiz</h3>':
@@ -704,11 +704,11 @@ ZENARRUZA = {
     'download="Zenarruza, San Kristobal y Zengotitagane.kml"': 'download="Zenarruza, San Kristobal eta Zengotitagane.kml"',
     '<title>Monasterio de Zenarruza': '<title>Zenarruzako monasterioa',
     '<title>Ermita San Kristobal': '<title>San Kristobal ermita',
-    '<title>Dolmen Iturzurigana': '<title>Iturzuriganako trikuharria',
+    '<title>Dolmen Iturzurigaina': '<title>Iturzurigainako trikuharria',
     '<title>Zengotitagane': '<title>Zengotitagane',
     '<span class="num">1</span>Monasterio de Zenarruza': '<span class="num">1</span>Zenarruzako monasterioa',
     '<span class="num">2</span>Ermita San Kristobal': '<span class="num">2</span>San Kristobal ermita',
-    '<span class="num">3</span>Dolmen Iturzurigana': '<span class="num">3</span>Iturzuriganako trikuharria',
+    '<span class="num">3</span>Dolmen Iturzurigaina': '<span class="num">3</span>Iturzurigainako trikuharria',
     '<span>Pista y asfalto</span><span class="sep">/</span><span>Colegiata, ermita y dolmen</span>':
         '<span>Pista eta asfaltoa</span><span class="sep">/</span><span>Kolegiata, ermita eta trikuharria</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
@@ -762,11 +762,11 @@ ZENARRUZA = {
         'uztailaren 10aren hurrengo igandean erromeria egiten duena.',
     'Tras la ermita el camino baja hacia el sur hasta un collado a 605 m (km 22,1) para remontar '
     'despu&eacute;s hacia el este, ganando otra vez altura hasta el punto m&aacute;s alto de toda la '
-    'ruta: el <b>Dolmen Iturzurigana</b> (km 26,6 &middot; 863 m). Un kil&oacute;metro m&aacute;s al '
+    'ruta: el <b>Dolmen Iturzurigaina</b> (km 26,6 &middot; 863 m). Un kil&oacute;metro m&aacute;s al '
     'este, ya dentro del parque e&oacute;lico del Oiz, se corona <b>Zengotitagane</b> (km 27,7 &middot; 822 m).':
         'Ermitatik, bidea hegoalderantz jaisten da 605 metroko lepo bateraino (22,1 km), eta handik '
         'ekialderantz berriro igotzen da, altuera irabaziz ibilbide osoko punturik altuenera: '
-        '<b>Iturzuriganako trikuharria</b> (26,6 km &middot; 863 m). Kilometro bat ekialderago, jada '
+        '<b>Iturzurigainako trikuharria</b> (26,6 km &middot; 863 m). Kilometro bat ekialderago, jada '
         'Oizeko parke eolikoaren barruan, <b>Zengotitagane</b> koroatzen da (27,7 km &middot; 822 m).',
     'Desde Zengotitagane el descenso final va hacia el este-sureste, perdiendo los &uacute;ltimos '
     '400 m de desnivel en poco m&aacute;s de 4 km hasta cerrar el c&iacute;rculo de vuelta en '
@@ -971,26 +971,26 @@ GEREA = {
 }
 
 ZENGOTITAGANE = {
-    'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.gpx"',
-    'download="Zengotitagane, Iturzurigana y San Cristóbal Txiki.kml"': 'download="Zengotitagane, Iturzurigana eta San Kristobal Txiki.kml"',
+    'download="Zengotitagane, Iturzurigaina y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.gpx"',
+    'download="Zengotitagane, Iturzurigaina y San Cristóbal Txiki.kml"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.kml"',
     'alt="Caballos pastando en un prado cercado en lo alto, con los aerogeneradores del cordal recortados al fondo y el arbolado dando sombra a un lado"':
         'alt="Zaldiak hesitutako belardi batean goialdean, gandorreko eolikoak hondoan eta zuhaitzak alde batean itzala ematen"',
     'alt="Foto ampliada del recorrido de Zengotitagane"':
         'alt="Zengotitagane ibilbidearen argazki handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
-    '<span>Zengotitagane, Iturzurigana y ermitas</span>':
+    '<span>Zengotitagane, Iturzurigaina y ermitas</span>':
         '<span>Errepidea eta pista</span><span class="sep">/</span>'
-        '<span>Zengotitagane, Iturzurigana eta ermitak</span>',
+        '<span>Zengotitagane, Iturzurigaina eta ermitak</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Zengotitagane, Iturzurigana<br><em>y San Crist&oacute;bal Txiki</em></h1>':
-        '<h1>Zengotitagane, Iturzurigana<br><em>eta San Kristobal Txiki</em></h1>',
+    '<h1>Zengotitagane, Iturzurigaina<br><em>y San Crist&oacute;bal Txiki</em></h1>':
+        '<h1>Zengotitagane, Iturzurigaina<br><em>eta San Kristobal Txiki</em></h1>',
     'Circuito desde Trabakua, con las ermitas de San Crist&oacute;bal Txiki y San Juan':
         'Zirkuitua Trabakuatik, San Kristobal Txiki eta San Juan ermitekin',
     'alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta"':
         'alt="Anboto eta Alluitzerako ikuspegiak, Durango atzealdean, ibilbidearen goialdetik"',
-    'alt="V&eacute;rtice geod&eacute;sico en Iturzurigana, el punto m&aacute;s alto de la ruta, '
+    'alt="V&eacute;rtice geod&eacute;sico en Iturzurigaina, el punto m&aacute;s alto de la ruta, '
     'con vistas alrededor"':
-        'alt="Bertize geodesikoa Iturzuriganan, ibilbideko punturik altuenean, inguruko '
+        'alt="Bertize geodesikoa Iturzurigainan, ibilbideko punturik altuenean, inguruko '
         'ikuspegiekin"',
     'alt="Una cruz en uno de los altos de la ruta, con el valle y una carretera al fondo"':
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
@@ -1008,10 +1008,10 @@ ZENGOTITAGANE = {
         'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;alderantzizko norabidean, ordea, '
         'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
     'Tras Zengotitagane seguimos por la cresta, con vistas a los dos lados &mdash;especialmente '
-    'bonitas hacia <b>Iturzurigana</b> (km 4,8, 859 m), el punto m&aacute;s alto de la ruta. '
+    'bonitas hacia <b>Iturzurigaina</b> (km 4,8, 859 m), el punto m&aacute;s alto de la ruta. '
     'Quien quiera coger agua puede desviarse unos metros a la derecha.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu, bi aldeetara '
-        'ikuspegiekin &mdash;bereziki ederrak <b>Iturzurigana</b>rantz (4,8 km, 859 m), '
+        'ikuspegiekin &mdash;bereziki ederrak <b>Iturzurigaina</b>rantz (4,8 km, 859 m), '
         'ibilbideko punturik altuena. Ura hartu nahi duenak eskuinera desbideratu ditzake '
         'metro batzuk.',
     'Empieza entonces la bajada hacia Garai, primero por una pista de cemento y despu&eacute;s '
@@ -1038,11 +1038,11 @@ ZENGOTITAGANE = {
     '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
-    'agua cerca de Iturzurigana (km 4,8) y en la zona de Garai, antes de la Ermita de San '
+    'agua cerca de Iturzurigaina (km 4,8) y en la zona de Garai, antes de la Ermita de San '
     'Crist&oacute;bal Txiki.':
         '22,4 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko aldean, '
+        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko aldean, '
         'San Kristobal Txiki ermitaren aurretik.',
     'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
     'Ermita de San Juan': 'San Juan ermita',
@@ -1313,14 +1313,14 @@ SANCRISTOBAL = {
         '&middot; 810 m), parke eolikoko haize-errotak artean. Malda oso gogorrak dira, ia '
         'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;baina kontrako noranzkoan, hau '
         'jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arruntarekin.',
-    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigana</b> (km 4,8, 858 m), con '
+    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigaina</b> (km 4,8, 858 m), con '
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
     'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
     'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
     '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
     'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
     'monta&ntilde;a que organiza el municipio de Garai.':
-        'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigana</b>raino (4,8 km &middot; '
+        'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigaina</b>raino (4,8 km &middot; '
         '858 m), bi aldeetara bistak dituela. Ura hartu nahi duenak eskuinera metro gutxi '
         'batzuk desbideratu daiteke. Pixka bat aurrerago, haize-errotak paraleloan zeharkatuz '
         'Oizko goialdea, zementuzko pista batera jaisten gara, <b>Askako</b> gailur-ingurura '
@@ -1351,11 +1351,11 @@ SANCRISTOBAL = {
     '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
-    'agua cerca de Iturzurigana (km 4,8) y en una fuente a la salida de Garai, con agua todo '
+    'agua cerca de Iturzurigaina (km 4,8) y en una fuente a la salida de Garai, con agua todo '
     'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
         '26,9 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Ura badago Iturzuriganatik gertu (4,8 km) eta Garaiko '
+        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko '
         'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
         'aurretik.',
     'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
@@ -2308,22 +2308,22 @@ ZALDIBAR = {
 
 MAGUNA = {
     # hero
-    '<span>Pista y carretera</span><span class="sep">/</span><span>Zengotitagane, Iturzurigana y Maguna</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zengotitagane, Iturzurigana eta Maguna</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<span>Pista y carretera</span><span class="sep">/</span><span>Zengotitagane, Iturzurigaina y Maguna</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zengotitagane, Iturzurigaina eta Maguna</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zengotitagane<br><em>y Maguna</em></h1>':
         '<h1>Trabakua, Zengotitagane<br><em>eta Maguna</em></h1>',
-    '<p class="full-name">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigana y Maguna</p>':
-        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako Trikuharritik igarota Magunaraino</p>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Zengotitagane, el Dolmen de Iturzurigaina y Maguna</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako Trikuharritik igarota Magunaraino</p>',
 
     # elevation profile markers + legend (used twice: hero chart and map section)
-    '<title>Dolmen de Iturzurigana &middot; 4,6 km &middot; 843 m</title>':
-        '<title>Iturzuriganako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
+    '<title>Dolmen de Iturzurigaina &middot; 4,6 km &middot; 843 m</title>':
+        '<title>Iturzurigainako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
     '<title>Ermita de San Crist&oacute;bal Txiki &middot; 26,8 km &middot; 496 m</title>':
         '<title>San Kristobal Txiki ermita &middot; 26,8 km &middot; 496 m</title>',
     '<title>Ermita de San Juan &middot; 30,8 km &middot; 403 m</title>':
         '<title>San Juan ermita &middot; 30,8 km &middot; 403 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigana</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Crist&oacute;bal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Ermita de San Juan</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzuriganako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki ermita</span> <span class="elev-legend-item"><span class="num">5</span>San Juan ermita</span>',
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Crist&oacute;bal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Ermita de San Juan</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigainako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki ermita</span> <span class="elev-legend-item"><span class="num">5</span>San Juan ermita</span>',
 
     # photos
     'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
@@ -2356,8 +2356,8 @@ MAGUNA = {
     # body copy
     'Salimos de <b>Trabakua</b> en direcci&oacute;n a Osma por carretera. Algo m&aacute;s de 2 km despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> (km 3,6 &middot; 788 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy duras, casi imposibles de subir con una bici normal.':
         '<b>Trabakua</b>tik Osma aldera ateratzen gara errepidez. 2 km pasatxo egin ondoren, eskuinera biratu eta <b>Zengotitagane</b>ra (3,6 km &middot; 788 m) igotzen den pista hartzen dugu, parke eolikoko aerosorgailuen artean. Maldak oso gogorrak dira, eta ia ezinezkoa da bizikleta arrunt batekin igotzeko.',
-    'Tras Zengotitagane seguimos por la cresta hasta el <b>Dolmen de Iturzurigana</b> (km 4,6 &middot; 843 m), con buenas vistas hacia los dos lados. Quien necesite coger agua puede desviarse unos metros a la derecha.':
-        'Zengotitagane igaro ondoren, gailurretik jarraitzen dugu <b>Iturzurigana</b> trikuharrira (4,6 km &middot; 843 m), bi aldeetara ikuspegi ederrak ditugula. Ura hartu behar duenak eskuinera metro batzuk desbidera daiteke.',
+    'Tras Zengotitagane seguimos por la cresta hasta el <b>Dolmen de Iturzurigaina</b> (km 4,6 &middot; 843 m), con buenas vistas hacia los dos lados. Quien necesite coger agua puede desviarse unos metros a la derecha.':
+        'Zengotitagane igaro ondoren, gailurretik jarraitzen dugu <b>Iturzurigaina</b> trikuharrira (4,6 km &middot; 843 m), bi aldeetara ikuspegi ederrak ditugula. Ura hartu behar duenak eskuinera metro batzuk desbidera daiteke.',
     'Continuamos por la parte alta del <b>Oiz</b>, avanzando en paralelo a los aerogeneradores, hasta salir a la pista de cemento que sube desde <b>Garai</b> a San Crist&oacute;bal de Oiz. Subimos por ella unos 300 metros y enseguida nos desviamos a la izquierda por una pista de tierra.':
         '<b>Oiz</b>en goialdetik jarraitzen dugu, aerosorgailuen azpitik eta norabide berean, <b>Garai</b>tik San Kristobal Oizerako porlanezko pistara irten arte. Handik 300 metro inguru igotzen gara, eta berehala ezkerrera desbideratzen gara lurrezko pista batetik.',
     'Al principio avanzamos pr&aacute;cticamente en transversal, pero poco a poco el terreno empieza a inclinarse y entramos de lleno en la bajada. El camino tiene alg&uacute;n tramo algo abrupto, aunque en general se circula bien. M&aacute;s abajo hay que estar atentos para localizar, a mano derecha, un sendero medio escondido entre los eucaliptos.':
@@ -2392,8 +2392,8 @@ MAGUNA = {
     # para quién es
     '<h2>Un circuito largo en e-bike</h2>':
         '<h2>E-bikearekin egiteko ibilbide luzea</h2>',
-    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigana (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Crist&oacute;bal Txiki (km 26,8).':
-        '33,44 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzuriganatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
+    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigaina (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Crist&oacute;bal Txiki (km 26,8).':
+        '33,44 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzurigainatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
 }
 
 PAGO7 = {
@@ -2404,18 +2404,18 @@ PAGO7 = {
         '<p class="full-name">7 Pago Mendi Lasterketaren benetako ibilbidea, Oizko gailurretik igarota</p>',
 
     # elev markers / legend (used twice: hero chart and map section)
-    '<title>Dolmen de Iturzurigana &middot; 16,5 km &middot; 855 m</title>':
-        '<title>Iturzuriganako Trikuharria &middot; 16,5 km &middot; 855 m</title>',
+    '<title>Dolmen de Iturzurigaina &middot; 16,5 km &middot; 855 m</title>':
+        '<title>Iturzurigainako Trikuharria &middot; 16,5 km &middot; 855 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> '
     '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
     '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
-    '<span class="elev-legend-item"><span class="num">4</span>Dolmen de Iturzurigana</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Dolmen de Iturzurigaina</span> '
     '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
     '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> '
         '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
         '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
-        '<span class="elev-legend-item"><span class="num">4</span>Iturzuriganako Trikuharria</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>Iturzurigainako Trikuharria</span> '
         '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
         '<span class="elev-legend-item"><span class="num">6</span>Arietzu</span>',
 
@@ -2470,8 +2470,8 @@ PAGO7 = {
         'Gora iristeak poza ematen du. Baita zailena eginda dagoela pentsatzeko sentsazioa ere.',
     'Todav&iacute;a queda carrera.':
         'Baina oraindik lasterketa geratzen da.',
-    'Desde Oiz comenzamos a bajar hacia <b>Iturzurigana</b>, pero el regreso a Mallabia no es simplemente dejarse caer. Hay cambios de terreno, alg&uacute;n repecho y kil&oacute;metros en los que las piernas empiezan a recordar todo lo que llevan acumulado.':
-        'Oiztik <b>Iturzurigana</b> aldera jaisten hasten gara, baina Mallabirako itzulera ez da beherantz joatea besterik. Lur aldaketak, aldapatxoren bat eta ordurako pilatutako guztia hanketan nabaritzen hasten diren kilometroak datoz.',
+    'Desde Oiz comenzamos a bajar hacia <b>Iturzurigaina</b>, pero el regreso a Mallabia no es simplemente dejarse caer. Hay cambios de terreno, alg&uacute;n repecho y kil&oacute;metros en los que las piernas empiezan a recordar todo lo que llevan acumulado.':
+        'Oiztik <b>Iturzurigaina</b> aldera jaisten hasten gara, baina Mallabirako itzulera ez da beherantz joatea besterik. Lur aldaketak, aldapatxoren bat eta ordurako pilatutako guztia hanketan nabaritzen hasten diren kilometroak datoz.',
     'Seguimos hacia <b>Osmagain</b> y <b>Arietzu</b>. A estas alturas ya pasamos de los veinte kil&oacute;metros y cualquier peque&ntilde;a subida parece bastante m&aacute;s grande que al principio.':
         '<b>Osmagain</b> eta <b>Arietzu</b> aldera jarraitzen dugu. Puntu honetan hogei kilometro baino gehiago daramatzagu eta hasieran ia konturatu gabe igaroko genukeen aldapa txiki batek ere bestelako itxura hartzen du.',
     'Desde Arietzu s&iacute; empezamos a mirar definitivamente hacia Mallabia. Si quedan piernas, es una zona donde todav&iacute;a se puede correr y disfrutar de los &uacute;ltimos kil&oacute;metros.':
@@ -2501,8 +2501,8 @@ PAGO7 = {
 
 PAGO16 = {
     # hero
-    '<span>Mixta</span><span class="sep">/</span><span>Iturzurigana</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Nahasia</span><span class="sep">/</span><span>Iturzurigana</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<span>Mixta</span><span class="sep">/</span><span>Iturzurigaina</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Iturzurigaina</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<p class="full-name">El trazado real de la 7 Pago Mendi Lasterketa 16K, la versi&oacute;n corta de la carrera</p>':
         '<p class="full-name">7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea, lasterketaren bertsio laburra</p>',
 
@@ -2545,8 +2545,8 @@ PAGO16 = {
         '<b>Mallabi</b>ko plazatik abiatuko gara, eta berehala utziko dugu herrigunea atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabaziko dugu altuera, <b>Zengotita</b> auzoko <b>San Juan ermita</b>tik igaroz, <b>Zengotitagane</b>rako igoerari ekin aurretik.',
     'Despu&eacute;s de Zengotitagane continuamos por la parte alta, cresteando y con buenas vistas a ambos lados. A nuestra derecha se abre el valle de Gerea, mientras que a la izquierda tenemos las monta&ntilde;as del Duranguesado.':
         'Zengotitagane atzean utzita, goiko aldetik jarraituko dugu, bizkarretik aurrera eginez eta bi aldeetara ikuspegi ederrak izanez. Eskuinean Gerea harana zabaltzen da, eta ezkerrean Durangaldeko mendiak izango ditugu.',
-    'Seguimos hacia <b>Iturzurigana</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles, en un hayedo, y poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigana, el punto m&aacute;s alto de la carrera.':
-        '<b>Iturzurigana</b> aldera jarraituko dugu. Zuhaitz artean tarte labur batean sartu eta, pagadi batean, handik gutxira ezkerrera egingo dugu, trikuharrien ingurura eramango gaituen igoerari ekiteko. Metro batzuk gehiago egin ondoren Iturzuriganera iritsiko gara, lasterketako punturik altuenera.',
+    'Seguimos hacia <b>Iturzurigaina</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles, en un hayedo, y poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigaina, el punto m&aacute;s alto de la carrera.':
+        '<b>Iturzurigaina</b> aldera jarraituko dugu. Zuhaitz artean tarte labur batean sartu eta, pagadi batean, handik gutxira ezkerrera egingo dugu, trikuharrien ingurura eramango gaituen igoerari ekiteko. Metro batzuk gehiago egin ondoren Iturzuriganera iritsiko gara, lasterketako punturik altuenera.',
     'A partir de aqu&iacute; comienza el regreso. M&aacute;s adelante giramos a la izquierda y, junto a una cruz de piedra, cogemos un sendero que nos hace perder altura en direcci&oacute;n al caser&iacute;o <b>Betzuen</b>. Es una bajada r&aacute;pida y entretenida en la que se pierde bastante altura en poco tiempo.':
         'Hemendik aurrera itzulerako bidea hasten da. Aurrerago ezkerrera egingo dugu eta, harrizko gurutze baten ondoan, <b>Betzuen</b> baserriaren norabidean jaisten den bidezidorra hartuko dugu. Jaitsiera azkar eta entretenigarria da, eta denbora gutxian altuera dezente galtzen da.',
     'Antes de llegar abajo del todo giramos de nuevo a la izquierda y cogemos un camino bastante menos conocido que nos lleva de vuelta hacia el barrio de Zengotita.':
@@ -2777,11 +2777,11 @@ EXIGENTE = {
     '<span class="num">5</span>Oiz':
         '<span class="num">5</span>Oiz',
 
-    'Dolmen Iturzurigana &middot; 34,8 km &middot; 852 m':
-        'Iturzuriganako trikuharria &middot; 34,8 km &middot; 852 m',
+    'Dolmen Iturzurigaina &middot; 34,8 km &middot; 852 m':
+        'Iturzurigainako trikuharria &middot; 34,8 km &middot; 852 m',
 
-    '<span class="num">6</span>Dolmen Iturzurigana':
-        '<span class="num">6</span>Iturzuriganako trikuharria',
+    '<span class="num">6</span>Dolmen Iturzurigaina':
+        '<span class="num">6</span>Iturzurigainako trikuharria',
 
     'Zengotitagane &middot; 36,0 km &middot; 806 m':
         'Zengotitagane &middot; 36,0 km &middot; 806 m',
@@ -2816,8 +2816,8 @@ EXIGENTE = {
     'Desde San Crist&oacute;bal seguimos ganando altura hasta alcanzar las antenas de la cima del <b><a href="oiz.html">Oiz</a></b> (km 32,0 &middot; 1.020 m), punto m&aacute;s alto de la ruta y un lugar privilegiado para disfrutar de unas vistas de 360 grados.':
         'San Kristobaletik garaiera irabazten jarraituko dugu <b><a href="oiz.html">Oiz</a></b>ko gailurreko antenetara iritsi arte (32,0 km &middot; 1.020 m). Hau izango da ibilbideko punturik garaiena, inguruko paisaiaz 360 graduko ikuspegiarekin gozatzeko leku paregabea.',
 
-    'La bajada comienza hacia los aerogeneradores por un tramo corto pero muy rocoso, donde lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano. Despu&eacute;s seguimos hacia <b>Iturzurigaina</b> (km 34,8 &middot; 852 m) y <b><a href="zengotitagane.html">Zengotitagaina</a></b> (km 36,0 &middot; 806 m), pasando cerca de un refugio y una fuente, antes de afrontar la r&aacute;pida y pronunciada bajada de cemento hacia <b><a href="osma.html">Osma</a></b>.':
-        'Jaitsiera eolikoetarantz hasten da, tarte labur baina oso harritsu batetik. Zati honetan gomendagarriena bizikletatik jaitsi eta eskuz eramatea da. Ondoren <b>Iturzurigaina</b> (34,8 km &middot; 852 m) eta <b><a href="zengotitagane.html">Zengotitagaina</a></b> (36,0 km &middot; 806 m) aldera jarraituko dugu, aterpe eta ur-iturri baten ingurutik igaroz, <b><a href="osma.html">Osma</a></b>n amaitzen den zementuzko jaitsiera azkar eta aldapatsuari ekin aurretik.',
+    'La bajada comienza hacia los aerogeneradores por un tramo corto pero muy rocoso, donde lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano. Despu&eacute;s seguimos hacia <b>Iturzurigaina</b> (km 34,8 &middot; 852 m) y <b><a href="zengotitagane.html">Zengotitagane</a></b> (km 36,0 &middot; 806 m), pasando cerca de un refugio y una fuente, antes de afrontar la r&aacute;pida y pronunciada bajada de cemento hacia <b><a href="osma.html">Osma</a></b>.':
+        'Jaitsiera eolikoetarantz hasten da, tarte labur baina oso harritsu batetik. Zati honetan gomendagarriena bizikletatik jaitsi eta eskuz eramatea da. Ondoren <b>Iturzurigaina</b> (34,8 km &middot; 852 m) eta <b><a href="zengotitagane.html">Zengotitagane</a></b> (36,0 km &middot; 806 m) aldera jarraituko dugu, aterpe eta ur-iturri baten ingurutik igaroz, <b><a href="osma.html">Osma</a></b>n amaitzen den zementuzko jaitsiera azkar eta aldapatsuari ekin aurretik.',
 
     'Desde all&iacute; solo queda salir a la carretera general y remontar los &uacute;ltimos dos kil&oacute;metros hasta Trabakua, cerrando una ruta que combina pr&aacute;cticamente de todo: pistas r&aacute;pidas, caminos de piedra y tierra, buenas subidas, zonas tranquilas entre caser&iacute;os y el paso por la cima del Oiz.':
         'Handik errepide nagusira ateratzea eta Trabakuara itzultzeko azken bi kilometroak igotzea besterik ez zaigu geratuko. Horrela amaituko dugu ia denetarik eskaintzen duen ibilbidea: pista azkarrak, harrizko eta lurrezko bideak, igoera ederrak, baserri arteko tarte lasaiak eta Oizko gailurretik igarotzea.',
@@ -2929,7 +2929,7 @@ DESCRIPTIONS = {
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
-    'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzuriganako '
+    'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
         'Trikuharritik igarota Magunaraino',
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea (trail running), Oizko gailurretik igarota',
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea (trail running), Mallabiko mendi eta auzoetan barrena',
