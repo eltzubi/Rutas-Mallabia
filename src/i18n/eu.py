@@ -3222,8 +3222,10 @@ TRABAKUAMALLABIA = {
         '<span>BTT</span>',
     '<span>Circuito</span>':
         '<span>Zirkuitua</span>',
+    '<h2>BTT exigente de distancia media</h2>':
+        '<h2>BTT eskatzailea, distantzia ertainekoa</h2>',
     'Ruta para ciclistas de montaña con experiencia en terreno técnico y buena forma física. Combina pistas de asfalto, tierra y tramos técnicos, con varios ascensos sostenidos y descensos rápidos. Requiere concentración y control en bicicleta.':
-        'BTT-en txirrindubitsuentzako, lurrean tekniko eta entzunaldi fisikoarekin trebeak. Asfalto-pista, lurra eta tramo teknikoak konbinatzen ditu, igoera etengabeak eta beherakada azkarrekin. Txirrinduaren kontzentrazioa eta kontrola behar du.',
+        'Terreno teknikoan esperientzia eta forma fisiko ona duten mendiko txirrindularientzako ibilbidea. Asfaltozko pista, lur bide eta tarte teknikoak konbinatzen ditu, hainbat igoera jarraitu eta jaitsiera azkarrekin. Kontzentrazioa eta bizikletaren kontrol ona eskatzen ditu.',
     'Tramo del recorrido con vistas a las montañas circundantes':
         'Ibilbidearen tartea inguruko mendien ikuspegiarekin',
     'Vista panorámica durante la subida hacia Zengotitagane':
@@ -3231,7 +3233,7 @@ TRABAKUAMALLABIA = {
     'Paisaje de montaña con vegetación y caseríos':
         'Mendizabal-paisaia begetazioarekin eta baserriekin',
     'Manillar en marcha durante un tramo técnico':
-        'Manillarra tramo teknikoan zehar seriolan',
+        'Manillarra martxan, tarte tekniko batean zehar',
     'Descenso técnico entre árboles':
         'Beherakada teknikoa zuhaitzen artean',
     'Vista de Mallabia desde la ruta':
@@ -3288,14 +3290,6 @@ TRABAKUAMALLABIA = {
         'Ez da muturreko ibilbidea, baina komeni da bizikleta gainean esperientzia pixka bat izatea, batez ere jaitsiera teknikoenetan. Inguruko pista nagusiak dagoeneko ezagutzen dituenarentzat, aukera polita da normalean oharkabean geratzen diren bide eta bidezidor batzuk ezagutzeko.',
     '<h3>Waypoints clave</h3>':
         '<h3>Gako-puntuak</h3>',
-    '<span class="elev-text"><b>Zengotitagane</b> · zona de eolikoak</span>':
-        '<span class="elev-text"><b>Zengotitagane</b> · eolikoaren gunea</span>',
-    '<span class="elev-text"><b>Aitzu</b> · tramo técnico</span>':
-        '<span class="elev-text"><b>Aitzu</b> · tramo teknikoa</span>',
-    '<span class="elev-text"><b>Mallabia</b> · valle y cruce</span>':
-        '<span class="elev-text"><b>Mallabia</b> · harana eta gurutzaketa</span>',
-    '<span class="elev-text"><b>Osmagain</b> · punto alto del retorno</span>':
-        '<span class="elev-text"><b>Osmagain</b> · itzuleraren puntu altuena</span>',
     'Ver ruta completa en Wikiloc':
         'Ibilbide osoa WikLocen',
     'download="Trabakua, Zengotita, Aitzu, Mallabia y Osmagain.gpx"':
