@@ -3384,7 +3384,7 @@ BETZUN = {
     '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
         '<p>Gu, ordea, ibilbidea pixka bat gehiago luzatuko dugu. Betzunen eskuinera biratu eta isurialde hau zeharkatzen jarraitzen uzten digun pista txiki batetik jarraituko dugu.</p>',
     '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Crist&oacute;bal</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
-        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m), non Garaiko harrizko pista batekin bat egiten dugun.</p>',
+        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m). Garaitik datorren pista honetan sartzen gara.</p>',
     '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a San Juan, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
         '<p>Hemendik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu San Juan aldera, Durangaldeko mendietara ikuspegi ederrekin tarte honen zati handi batean.</p>',
     '<p>Llegamos al barrio de San Juan y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
