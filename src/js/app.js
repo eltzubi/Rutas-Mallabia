@@ -1,14 +1,119 @@
 // Shared behaviour for every page (both languages).
 // Built from src/js/app.js by src/build.py -- edit there, not in app.js.
 
-// --- route connections: describe the footer by geography, not similarity ---
+// --- route connections: real geography from the recorded tracks ---
 (function(){
   var section = document.querySelector('.next-routes');
   if (!section) return;
+
   var heading = section.querySelector('.eyebrow');
-  if (!heading) return;
+  var list = section.querySelector('.next-route-list');
   var isEu = document.documentElement.lang === 'eu';
-  heading.textContent = isEu ? 'Inguru honetako ibilbideak' : 'Rutas por esta zona';
+  if (heading) heading.textContent = isEu ? 'Inguru honetako ibilbideak' : 'Rutas por esta zona';
+  if (!list || !window.fetch || !window.DOMParser) return;
+
+  var file = (location.pathname.split('/').pop() || '').split('?')[0];
+  var slug = file.replace(/\.eu\.html$/, '').replace(/\.html$/, '');
+  if (!slug || slug === 'index') return;
+
+  function routeSlug(href){
+    return (href || '').split('/').pop().split('?')[0]
+      .replace(/\.eu\.html$/, '').replace(/\.html$/, '');
+  }
+
+  function meters(a, b){
+    var rad = Math.PI / 180;
+    var lat = ((a[0] + b[0]) / 2) * rad;
+    var dy = (a[0] - b[0]) * 111320;
+    var dx = (a[1] - b[1]) * 111320 * Math.cos(lat);
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  // Ratio of points in A that run close to B. The JSON tracks are already
+  // resampled, so point coverage is a useful approximation of shared terrain.
+  function coverage(a, b, threshold){
+    if (!a.length || !b.length) return 0;
+    var stepA = Math.max(1, Math.floor(a.length / 120));
+    var stepB = Math.max(1, Math.floor(b.length / 160));
+    var close = 0, total = 0;
+    for (var i = 0; i < a.length; i += stepA){
+      total++;
+      for (var j = 0; j < b.length; j += stepB){
+        if (meters(a[i], b[j]) <= threshold){ close++; break; }
+      }
+    }
+    return total ? close / total : 0;
+  }
+
+  function pointsOf(track){
+    return track && Array.isArray(track.points) ? track.points : [];
+  }
+
+  var home = isEu ? 'index.eu.html' : 'index.html';
+  Promise.all([
+    fetch('data/trailhead.json').then(function(r){ if (!r.ok) throw new Error('tracks'); return r.json(); }),
+    fetch(home).then(function(r){ if (!r.ok) throw new Error('home'); return r.text(); })
+  ]).then(function(values){
+    var tracks = (values[0] && values[0].tracks) || [];
+    var doc = new DOMParser().parseFromString(values[1], 'text/html');
+    var cards = {};
+    doc.querySelectorAll('a.route-card').forEach(function(card){
+      var s = routeSlug(card.getAttribute('href'));
+      if (!s) return;
+      var name = card.querySelector('.route-card-name');
+      var stats = card.querySelector('.route-card-stats');
+      cards[s] = {
+        href: card.getAttribute('href'),
+        name: name ? name.innerHTML : s,
+        stats: stats ? stats.innerHTML : ''
+      };
+    });
+
+    var mine = null;
+    tracks.forEach(function(t){ if (routeSlug(t.href) === slug) mine = t; });
+    if (!mine) return;
+    var myPoints = pointsOf(mine);
+
+    var scored = [];
+    tracks.forEach(function(t){
+      var s = routeSlug(t.href);
+      if (!s || s === slug || !cards[s]) return;
+      var pts = pointsOf(t);
+      if (!pts.length) return;
+
+      // 70 m rewards genuinely shared paths; 250 m keeps routes in the same
+      // hillside/valley relevant even when they use parallel tracks.
+      var shared = Math.max(coverage(myPoints, pts, 70), coverage(pts, myPoints, 70));
+      var nearby = Math.max(coverage(myPoints, pts, 250), coverage(pts, myPoints, 250));
+      var score = shared * 4 + nearby;
+      if (shared >= 0.08 || nearby >= 0.22) scored.push({ slug:s, shared:shared, nearby:nearby, score:score });
+    });
+
+    scored.sort(function(a, b){
+      return b.score - a.score || b.shared - a.shared || b.nearby - a.nearby;
+    });
+    scored = scored.slice(0, 3);
+    if (!scored.length) return; // keep the static fallback from build.py
+
+    list.innerHTML = '';
+    scored.forEach(function(item){
+      var c = cards[item.slug];
+      var link = document.createElement('a');
+      link.className = 'next-route';
+      link.href = c.href;
+      var name = document.createElement('span');
+      name.className = 'next-route-name';
+      name.innerHTML = c.name;
+      var stats = document.createElement('span');
+      stats.className = 'next-route-stats';
+      stats.innerHTML = c.stats;
+      link.appendChild(name);
+      link.appendChild(stats);
+      list.appendChild(link);
+    });
+  }).catch(function(){
+    // The two cards written by build.py remain visible as a no-JS/network fallback.
+  });
 })();
 
 // --- language switch: remember an explicit choice, sitewide -- so index.html's
