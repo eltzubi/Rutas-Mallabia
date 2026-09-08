@@ -95,7 +95,7 @@
   position:relative; overflow:hidden;
   margin:14px auto 0; max-width:820px;
   border-radius:20px;
-  min-height:38vh; max-height:420px;
+  min-height:30vh; max-height:360px;
   display:flex;
 }
 @media (min-width:1024px){ .hero-compact{ max-width:1100px; } }
