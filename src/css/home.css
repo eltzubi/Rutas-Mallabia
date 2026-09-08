@@ -102,6 +102,12 @@
 .hero-compact picture{ position:absolute; inset:0; }
 .hero-compact img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  /* La bici sale pegada al borde derecho de la foto: en movil (retrato) el
+     contenedor es mucho mas estrecho que la foto y el recorte centrado la
+     dejaba fuera. Desplazando el encuadre a la derecha se ve la bici entera
+     sin recortar tampoco a la persona (en pantallas anchas el object-fit no
+     recorta en horizontal, asi que aqui no cambia nada). */
+  object-position:right center;
   filter:contrast(1.3) saturate(1.5) brightness(1.03);
 }
 .hero-compact-scrim{
