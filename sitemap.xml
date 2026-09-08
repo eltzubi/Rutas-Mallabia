@@ -341,4 +341,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/betzun.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/betzun.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/sarrimendi.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sarrimendi.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sarrimendi.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/sarrimendi.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sarrimendi.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sarrimendi.eu.html"/>
+  </url>
 </urlset>
