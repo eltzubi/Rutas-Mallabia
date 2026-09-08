@@ -3327,8 +3327,8 @@ BETZUN = {
         '<p class="full-name">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta San Juanetik igarota</p>',
 
     # perfil: marcadores y leyenda
-    '<title>San Crist&oacute;bal &middot; 7,8 km &middot; 496 m</title>':
-        '<title>San Kristobal &middot; 7,8 km &middot; 496 m</title>',
+    '<title>San Crist&oacute;bal &middot; 6,0 km &middot; 496 m</title>':
+        '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span>',
 
@@ -3350,6 +3350,10 @@ BETZUN = {
     'alt="Aerogeneradores al atardecer junto a una hilera de &aacute;rboles sin hojas"':
         'alt="Aerosorgailuak ilunabarrean hostorik gabeko zuhaitz-ilara baten ondoan"',
 
+    # facts
+    '<span class="v">Ermita de Zengotita</span><span class="k">Salida</span>':
+        '<span class="v">Zengotitako ermita</span><span class="k">Irteera</span>',
+
     # descargas
     'download="Zengotita, Iturzurigaina y Betzun.gpx"':
         'download="Zengotita, Iturzurigaina eta Betzun.gpx"',
@@ -3357,8 +3361,8 @@ BETZUN = {
         'download="Zengotita, Iturzurigaina eta Betzun.kml"',
 
     # para quien es
-    '<p>10 km y +577 m de desnivel en un solo circuito, con una subida pr&aacute;cticamente continua hasta Iturzurigaina y una bajada r&aacute;pida por la otra vertiente. Hay agua en la fuente de Zengotita, al principio, y en la fuente de Iturzuri, cerca del punto m&aacute;s alto.</p>':
-        '<p>10 km eta +577 m desnibel zirkuitu bakar batean, Iturzurigainerainoko ia etengabeko igoerarekin eta beste isurialdetik jaitsiera azkar batekin. Ura dago Zengotitako iturrian, hasieran, eta Iturzuriko iturrian, punturik altuenetik gertu.</p>',
+    '<p>10,1 km y +577 m de desnivel en un solo circuito, con una subida pr&aacute;cticamente continua hasta Iturzurigaina y una bajada r&aacute;pida por la otra vertiente. Hay agua en la fuente de Zengotita, al principio, y en la fuente de Iturzuri, cerca del punto m&aacute;s alto.</p>':
+        '<p>10,1 km eta +577 m desnibel zirkuitu bakar batean, Iturzurigainerainoko ia etengabeko igoerarekin eta beste isurialdetik jaitsiera azkar batekin. Ura dago Zengotitako iturrian, hasieran, eta Iturzuriko iturrian, punturik altuenetik gertu.</p>',
 
     # el texto del cuerpo
     '<p>El track comienza en el propio barrio de <b>Zengotita</b>, a unos 2 kil&oacute;metros de Trabakua. Salimos desde la parte alta del barrio y, junto a una fuente de agua, cogemos el camino en direcci&oacute;n norte para comenzar la subida.</p>':
@@ -3369,18 +3373,18 @@ BETZUN = {
         '<p>Behin goian, gure eskuinean haize-sorgailuak eta <a href="zengotitagane.html">Zengotitagane</a> aldera doan gailurra utziko ditugu. Oraingoan, ez dugu bide horretatik jarraituko; aitzitik, ezkerrera biratu eta goialdetik jarraituko dugu Iturzurirantz.</p>',
     '<p>Seguimos pr&aacute;cticamente de frente hasta meternos en el hayedo que vemos delante. Lo atravesamos y, al otro lado, llegamos a la fuente de Iturzuri, situada junto a un peque&ntilde;o refugio. Un buen lugar para hacer una parada y coger agua.</p>':
         '<p>Aurrez aurre jarraitzen dugu, parean ikusten dugun pagadian sartu arte. Pagadia zeharkatu ondoren, Iturzuriko iturrira iritsiko gara, aterpe txiki baten ondoan kokatua. Leku aproposa da geldialdi bat egiteko eta ura hartzeko.</p>',
-    '<p>Desde este punto tambi&eacute;n tenemos otra posibilidad: si gir&aacute;ramos a la derecha y continu&aacute;ramos hacia la zona de los e&oacute;licos, podr&iacute;amos seguir en direcci&oacute;n a la cima del <a href="oiz.html">Oiz</a>. Nosotros no vamos por all&iacute;. Giramos a la izquierda y subimos los pocos metros que nos separan de <b>Iturzurigaina</b> (km 5,4 &middot; 855 m).</p>':
-        '<p>Puntu honetatik beste aukera bat ere badugu: eskuinera biratu eta haize-sorgailuen eremurantz jarraituz gero, <a href="oiz.html">Oiz</a>ko gailurrerantz jarraitu genezake. Gu ez goaz hortik. Ezkerrera biratu eta <b>Iturzurigaina</b>tik bereizten gaituzten metro gutxi batzuk igoko ditugu (5,4 km &middot; 855 m).</p>',
+    '<p>Desde este punto tambi&eacute;n tenemos otra posibilidad: si gir&aacute;ramos a la derecha y continu&aacute;ramos hacia la zona de los e&oacute;licos, podr&iacute;amos seguir en direcci&oacute;n a la cima del <a href="oiz.html">Oiz</a>. Nosotros no vamos por all&iacute;. Giramos a la izquierda y subimos los pocos metros que nos separan de <b>Iturzurigaina</b> (km 3,6 &middot; 855 m).</p>':
+        '<p>Puntu honetatik beste aukera bat ere badugu: eskuinera biratu eta haize-sorgailuen eremurantz jarraituz gero, <a href="oiz.html">Oiz</a>ko gailurrerantz jarraitu genezake. Gu ez goaz hortik. Ezkerrera biratu eta <b>Iturzurigaina</b>tik bereizten gaituzten metro gutxi batzuk igoko ditugu (3,6 km &middot; 855 m).</p>',
     '<p>Una vez arriba buscamos la cruz de piedra y, junto a ella, cambiamos completamente de vertiente para comenzar el descenso hacia el sur.</p>':
         '<p>Gora iristean, harrizko gurutzea bilatuko dugu, eta, haren ondoan, isurialdea erabat aldatuko dugu hegoalderantz jaisten hasteko.</p>',
-    '<p>La bajada es r&aacute;pida y vamos perdiendo altura con facilidad. M&aacute;s abajo llegamos junto a un haya grande, donde giramos a la derecha y continuamos descendiendo hasta llegar al caser&iacute;o <b>Betzun</b> (km 6,5 &middot; 628 m).</p>':
-        '<p>Jaitsiera azkarra da, eta erraz galtzen dugu altuera. Beherago, pago handi baten ondora iritsiko gara, eta eskuinera biratu eta jaisten jarraituko dugu <b>Betzun</b> baserrira iritsi arte (6,5 km &middot; 628 m).</p>',
+    '<p>La bajada es r&aacute;pida y vamos perdiendo altura con facilidad. M&aacute;s abajo llegamos junto a un haya grande, donde giramos a la derecha y continuamos descendiendo hasta llegar al caser&iacute;o <b>Betzun</b> (km 4,7 &middot; 628 m).</p>':
+        '<p>Jaitsiera azkarra da, eta erraz galtzen dugu altuera. Beherago, pago handi baten ondora iritsiko gara, eta eskuinera biratu eta jaisten jarraituko dugu <b>Betzun</b> baserrira iritsi arte (4,7 km &middot; 628 m).</p>',
     '<p>En Betzun tenemos dos posibilidades. Si seguimos el camino de cemento que llega al caser&iacute;o, podemos regresar directamente hacia Zengotita y completar as&iacute; una vuelta bonita y r&aacute;pida.</p>':
         '<p>Betzunen bi aukera ditugu. Baserria iristen den zementuzko bidea jarraitzen badugu, Zengotitara zuzenean itzul gaitezke, eta horrela itzuli polit eta azkar bat osatu.</p>',
     '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
         '<p>Gu, ordea, ibilbidea pixka bat gehiago luzatuko dugu. Betzunen eskuinera biratu eta isurialde hau zeharkatzen jarraitzen uzten digun pista txiki batetik jarraituko dugu.</p>',
-    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Crist&oacute;bal</b> (km 7,8 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
-        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (7,8 km &middot; 496 m), non Garaiko harrizko pista batekin bat egiten dugun.</p>',
+    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Crist&oacute;bal</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
+        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m), non Garaiko harrizko pista batekin bat egiten dugun.</p>',
     '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a San Juan, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
         '<p>Hemendik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu San Juan aldera, Durangaldeko mendietara ikuspegi ederrekin tarte honen zati handi batean.</p>',
     '<p>Llegamos al barrio de San Juan y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
