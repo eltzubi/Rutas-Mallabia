@@ -79,8 +79,8 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua Trabakuatik, San Kristobal Txiki ermitarekin eta Berriz-Olakueta auzoarekin</p>',
     '<p class="route-card-desc">Ida y vuelta desde Trabakua hasta el Oiz</p>':
         '<p class="route-card-desc">Joan-etorria Trabakuatik Oizeraino</p>',
-    '<p class="route-card-desc">Circuito desde el barrio de Berriz-Olakueta</p>':
-        '<p class="route-card-desc">Zirkuitua Berriz-Olakueta auzotik</p>',
+    '<p class="route-card-desc">Circuito desde la Ermita de San Juan</p>':
+        '<p class="route-card-desc">Zirkuitua San Juan ermitatik</p>',
     '<p class="route-card-desc">Circuito desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik</p>',
     '<p class="route-card-desc">Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de San Crist&oacute;bal Txiki y el barrio de Berriz-Olakueta</p>':
@@ -793,10 +793,10 @@ OSMA = {
     'download="Trabakua, Elgeta y Argiñeta.kml"': 'download="Trabakua, Elgeta eta Argiñeta.kml"',
     # waypoint names -- one key covers both the elev-legend span and the
     # matching <title> tooltip, since both contain this exact substring.
-    'Berriz-Olakueta': 'Berriz-Olakueta',
+    'Ermita de San Juan (1&ordf;)': 'San Juan ermita (1.a)',
     'Ermita de Santa Marina': 'Santa Marina ermita',
     'Larrosako Iturri': 'Larrosako Iturri',
-    'Ermita de San Juan': 'San Juan ermita',
+    'Ermita de San Juan (2&ordf;)': 'San Juan ermita (2.a)',
     'Necr&oacute;polis de Argi&ntilde;eta': 'Argi&ntilde;etako Nekropolia',
     'Ermita de San Lorenzo (1&ordf;)': 'San Lorentzo ermita (1.a)',
     'Ermita de San Juan Bautista': 'San Juan Bataiatzailea ermita',
@@ -1034,12 +1034,12 @@ ZENGOTITAGANE = {
         'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
         'da, eolikoen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute; y, un poco '
-    'm&aacute;s adelante, el de <b>Berriz-Olakueta</b> (km 19,6, 400 m), justo antes de cruzar '
+    'm&aacute;s adelante, el de <b>Berriz-Olakueta</b> (km 17,1, 302 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
     'de vuelta a Trabakua.':
         'Abiadura betean jarraitzen dugu behera San Jos&eacute; auzoraino eta, pixka bat '
-        'aurrerago, <b>Berriz-Olakueta</b> auzoraino (19,6 km, 400 m), Trabakua eta Berriz '
+        'aurrerago, <b>Berriz-Olakueta</b> auzoraino (17,1 km, 302 m), Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatu aurretik. Gurutzatu eta errepide zaharretik gora '
         'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura jaitsi aurretik.',
     '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
@@ -1139,7 +1139,7 @@ ARIETZU = {
         '<span>Bidezidorra</span><span class="sep">/</span><span>Osmagain eta Arietzu</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     '<h1>Osmagain<br><em>y Arietzu</em></h1>': '<h1>Osmagain<br><em>eta Arietzu</em></h1>',
-    'Circuito desde el barrio de Berriz-Olakueta': 'Zirkuitua Berriz-Olakueta auzotik',
+    'Circuito desde la Ermita de San Juan': 'Zirkuitua San Juan ermitatik',
     'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
     'pista serpenteando entre los montes"':
         'alt="Haranaren ikuspegia ibilbidetik, baserriekin, zaldiak dituen larre batekin '
@@ -1169,16 +1169,16 @@ ARIETZU = {
     'serpenteando por la ladera de enfrente"':
         'alt="Bidezidorra gailurrean iratzeen artean, korrikalari bat atzealdean eta pistak '
         'aurreko hegalean bihurgunez"',
-    'data-marker-title="Barrio de Berriz-Olakueta (salida y llegada)"':
-        'data-marker-title="Berriz-Olakueta auzoa (irteera eta helmuga)"',
-    '<span class="v">Barrio de Berriz-Olakueta</span>': '<span class="v">Berriz-Olakueta auzoa</span>',
-    'Circuito corto desde el barrio de Berriz-Olakueta, en el barrio de Zengotita, hasta '
+    'data-marker-title="Ermita de San Juan (salida y llegada)"':
+        'data-marker-title="San Juan ermita (irteera eta helmuga)"',
+    '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
+    'Circuito corto desde la Ermita de San Juan, en el barrio de Zengotita, hasta '
     '<b>Osmagain</b> (km 0,7, 527 m), con una cruz en el alto y muy buenas vistas desde el '
     'cresterío: hacia Berriz y los montes del Duranguesado a un lado, hacia los barrios de '
     'Zengotita y Osma al otro. Este tramo coincide con parte del recorrido de la <a '
     'href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi '
     'Lasterketa</a>, la carrera de montaña que se celebra en mayo.':
-        'Zirkuitu laburra Berriz-Olakueta auzotik, Zengotita auzoan, <b>Osmagain</b>eraino '
+        'Zirkuitu laburra San Juan ermitatik, Zengotita auzoan, <b>Osmagain</b>eraino '
         '(0,7 km, 527 m), goian gurutze batekin eta ikuspegi bikainekin gailurrerditik: '
         'Berriz eta Durangaldeko mendiak alde batetik, eta bestetik Zengotita eta Osma '
         'auzoak. Ibilbidearen zati hau <a href="https://7pago.com" target="_blank" '
@@ -1193,7 +1193,7 @@ ARIETZU = {
     'de camino (Osmagain y Arietzu).':
         '4,3 km eta +235 m-ko desnibela zirkuitu laburrean, haurrentzat egokia, bidean bi '
         'goirekin (Osmagain eta Arietzu).',
-    '<b>&middot; Barrio de Berriz-Olakueta</b>': '<b>&middot; Berriz-Olakueta auzoa</b>',
+    '<b>&middot; Ermita de San Juan</b>': '<b>&middot; San Juan ermita</b>',
 }
 
 URKO = {
@@ -1348,12 +1348,12 @@ SANCRISTOBAL = {
         'harrizko pista batetik egiten da, goiko San Kristobal ermitatik bereizteko '
         '&mdash;Oiz aldeko haize-errotak inguruan dituen ermitarekin.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute; y, un poco '
-    'm&aacute;s adelante, el de <b>Berriz-Olakueta</b> (km 24,5, 404 m), justo antes de cruzar '
+    'm&aacute;s adelante, el de <b>Berriz-Olakueta</b> (km 22,4, 308 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
     'de vuelta a Trabakua.':
         'Handik beherantz abiadura handian jaisten gara San Jos&eacute; auzoraino eta, pixka '
-        'bat aurrerago, <b>Berriz-Olakueta</b> auzoraino (24,5 km &middot; 404 m), Trabakua eta '
+        'bat aurrerago, <b>Berriz-Olakueta</b> auzoraino (22,4 km &middot; 308 m), Trabakua eta '
         'Berriz lotzen dituen errepide nagusia zeharkatu aurretik. Zeharkatu eta errepide '
         'zaharretik igotzen da Zengotita auzorantz, zirkuitua ixteko puntura iritsi aurretik, '
         'Trabakuara berriro jaitsi baino lehen.',
@@ -2244,8 +2244,8 @@ ZALDIBAR = {
         '<title>Asuntzako lepoa &middot; 5,2 km &middot; 499 m</title>',
     '<title>Presa de Aixola &middot; 13,1 km &middot; 308 m</title>':
         '<title>Aixolako presa &middot; 13,1 km &middot; 308 m</title>',
-    '<title>Berriz-Olakueta &middot; 40,0 km &middot; 412 m</title>':
-        '<title>Berriz-Olakueta &middot; 40,0 km &middot; 412 m</title>',
+    '<title>Berriz-Olakueta &middot; 38,1 km &middot; 276 m</title>':
+        '<title>Berriz-Olakueta &middot; 38,1 km &middot; 276 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Collado de Asuntza</span> '
     '<span class="elev-legend-item"><span class="num">2</span>Presa de Aixola</span> '
     '<span class="elev-legend-item"><span class="num">3</span>Elgeta</span> '
@@ -2302,8 +2302,8 @@ ZALDIBAR = {
         'Puntu honetan beste aukera bat ere badugu, ibilbidea hainbeste luzatu edo desnibel gehiago pilatu nahi ez badugu. Ezkerrera hartu beharrean, zuzen jarrai dezakegu ermitarantz eta GRarekin bat egin. GRak Zengotita aldera eramango gaitu. Aukera ona da ibilbidea laburtzeko, Zaldibar eta Berriz aldera jaistea eta ondorengo igoera saihestuz.',
     'Siguiendo con el recorrido principal, atravesamos Zaldibar y, junto a la estaci&oacute;n, continuamos en direcci&oacute;n a <b>Berriz</b> (36,3 km &middot; 184 m). Vamos perdiendo altura poco a poco y, ya a la entrada de Berriz, tomamos el bidegorri que discurre por un lateral del pueblo, junto al riachuelo.':
         'Ibilbide nagusiarekin jarraituz, Zaldibar zeharkatu eta, geltokiaren ondoan, <b>Berriz</b> aldera jarraituko dugu (36,3 km &middot; 184 m). Pixkanaka altuera galtzen joango gara eta, Berrizko sarreran bertan, herriaren albo batetik, Erreka bazterretik doan bidegorria hartuko dugu.',
-    'El bidegorri nos deja en la parte alta de Berriz, donde salimos nuevamente a la carretera y comenzamos la subida en direcci&oacute;n a Zengotita y, despu&eacute;s, Trabakua. Pero estaremos muy poco tiempo en la carretera principal: a la altura del barrio de <b>Berriz-Olakueta</b> (40,0 km &middot; 412 m), tomamos a mano derecha la antigua carretera que sube hacia Zengotita.':
-        'Bidegorriak Berrizko goialdean utziko gaitu; han, berriro errepidera irten eta Zengotita eta, ondoren, Trabakua aldera igotzen hasiko gara. Hala ere, oso denbora gutxian egongo gara errepide nagusian: <b>Berriz-Olakueta</b> auzoaren parean (40,0 km &middot; 412 m), eskuinetara hartuko dugu Zengotita aldera igotzen den antzinako errepidea.',
+    'El bidegorri nos deja en la parte alta de Berriz, donde salimos nuevamente a la carretera y comenzamos la subida en direcci&oacute;n a Zengotita y, despu&eacute;s, Trabakua. Pero estaremos muy poco tiempo en la carretera principal: a la altura del barrio de <b>Berriz-Olakueta</b> (38,1 km &middot; 276 m), tomamos a mano derecha la antigua carretera que sube hacia Zengotita.':
+        'Bidegorriak Berrizko goialdean utziko gaitu; han, berriro errepidera irten eta Zengotita eta, ondoren, Trabakua aldera igotzen hasiko gara. Hala ere, oso denbora gutxian egongo gara errepide nagusian: <b>Berriz-Olakueta</b> auzoaren parean (38,1 km &middot; 276 m), eskuinetara hartuko dugu Zengotita aldera igotzen den antzinako errepidea.',
     'Superada esta &uacute;ltima parte de la subida, ya solo nos queda continuar hacia Trabakua, punto de inicio y final de la ruta.':
         'Igoeraren azken zati hau gaindituta, Trabakua aldera jarraitzea besterik ez zaigu geratuko; ibilbidearen hasiera eta amaiera puntua da.',
     'Una vuelta larga y muy variada, combinando carreteras secundarias, pistas, senderos y bidegorri. El paso por Aixola, Elgeta y Goiko Mendia aporta algunos de los tramos m&aacute;s agradables del recorrido, mientras que la bajada hacia Zaldibar y Berriz nos permite alargar la vuelta antes de afrontar el regreso por Zengotita. Adem&aacute;s, encontramos varias fuentes bien repartidas a lo largo del recorrido, algo especialmente &uacute;til en una ruta de esta longitud.':
@@ -2329,8 +2329,8 @@ MAGUNA = {
         '<title>Iturzurigainako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
     '<title>Ermita de San Crist&oacute;bal Txiki &middot; 26,8 km &middot; 496 m</title>':
         '<title>San Kristobal Txiki ermita &middot; 26,8 km &middot; 496 m</title>',
-    '<title>Berriz-Olakueta &middot; 30,8 km &middot; 403 m</title>':
-        '<title>Berriz-Olakueta &middot; 30,8 km &middot; 403 m</title>',
+    '<title>Berriz-Olakueta &middot; 28,4 km &middot; 324 m</title>':
+        '<title>Berriz-Olakueta &middot; 28,4 km &middot; 324 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Crist&oacute;bal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Berriz-Olakueta</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigainako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki ermita</span> <span class="elev-legend-item"><span class="num">5</span>Berriz-Olakueta</span>',
 
@@ -2391,8 +2391,8 @@ MAGUNA = {
         'Garaiera dezente galdu ondoren, <b>Sarria</b>tik Garaira doan errepidera irteten gara. Metro batzuk ezkerrera egin, eta berehala berriro ezkerrera gogor biratu eta beste igoera bati ekiten diogu.',
     'Nos dirigimos ahora hacia la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 26,8 &middot; 496 m). Alcanzado el punto m&aacute;s alto, encontraremos una fuente a mano izquierda, un buen lugar para rellenar agua antes de comenzar nuevamente el descenso.':
         'Orain <b>San Kristobal Txiki ermita</b>ra (26,8 km &middot; 496 m) goaz. Punturik gorenera iritsitakoan, ezkerrean iturri bat aurkituko dugu, berriro jaitsiera hasi aurretik ura betetzeko leku aproposa.',
-    'Desde aqu&iacute; bajamos hacia San Crist&oacute;bal Txiki y enlazamos con una bajada larga, r&aacute;pida y muy disfrutona que nos lleva hasta el barrio de <b>Berriz-Olakueta</b> (km 30,8 &middot; 403 m). Continuamos descendiendo hasta encontrarnos con la carretera general que une Trabakua con Berriz.':
-        'Hemendik San Kristobal Txikirantz jaisten gara, eta jaitsiera luze, azkar eta oso gozagarri batekin jarraitzen dugu <b>Berriz-Olakueta</b> auzoraino (30,8 km &middot; 403 m). Jaisten jarraitzen dugu Trabakua eta Berriz lotzen dituen errepide nagusia aurkitu arte.',
+    'Desde aqu&iacute; bajamos hacia San Crist&oacute;bal Txiki y enlazamos con una bajada larga, r&aacute;pida y muy disfrutona que nos lleva hasta el barrio de <b>Berriz-Olakueta</b> (km 28,4 &middot; 324 m). Continuamos descendiendo hasta encontrarnos con la carretera general que une Trabakua con Berriz.':
+        'Hemendik San Kristobal Txikirantz jaisten gara, eta jaitsiera luze, azkar eta oso gozagarri batekin jarraitzen dugu <b>Berriz-Olakueta</b> auzoraino (28,4 km &middot; 324 m). Jaisten jarraitzen dugu Trabakua eta Berriz lotzen dituen errepide nagusia aurkitu arte.',
     'La cruzamos all&iacute; mismo, con mucho cuidado, y cogemos enfrente la antigua carretera que sube hacia Zengotita. El ascenso es ya mucho m&aacute;s suave y, a estas alturas, se agradece.':
         'Han bertan zeharkatzen dugu, kontu handiz, eta aurrean Zengotitara igotzen den errepide zaharra hartzen dugu. Igoera askoz leunagoa da jada, eta une honetan eskertzen da.',
     'La ruta est&aacute; pr&aacute;cticamente hecha. Desde aqu&iacute; apenas nos separan un par de kil&oacute;metros de Trabakua. Despu&eacute;s de todas las subidas, senderos, pistas y bajadas del recorrido, esos &uacute;ltimos kil&oacute;metros ya los tenemos chupados.':
@@ -2467,8 +2467,8 @@ PAGO7 = {
         '7 Pago Mendi Lasterketako 25K ibilbideak paperean dirudiena baino gehiago dauka. 25 kilometro dira, baina ia 1.400 metroko desnibel positiboarekin eta atseden hartzeko tarte gutxirekin, kilometroak nabaritzen joaten dira.',
     'Tambi&eacute;n se puede acceder al circuito desde <b>Trabakua</b> en apenas 15 minutos. Al tratarse de una ruta de Mallabia y teniendo en cuenta que muchas de las rutas que salen de Trabakua discurren por tramos de carrera, este recorrido tiene aqu&iacute; su sitio.':
         '<b>Trabaku</b>tik ere 15 minutu eskasean iritsi daiteke zirkuitura. Mallabiko ibilbidea izanik, eta Trabakutik abiatzen diren beste ibilbide batzuekin inguru bera partekatzen duenez, ibilbide honek ere badu hemen bere lekua.',
-    'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por el <b>barrio de Berriz-Olakueta</b>, en el barrio de <b>Zengotita</b>, antes de subir hacia <b>Zengotitagane</b>.':
-        '<b>Mallabi</b>ko plazatik ateratzen gara eta berehala uzten dugu herria atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabazten dugu altuera, <b>Berriz-Olakueta</b> auzotik igaro, <b>Zengotita</b> auzoan, <b>Zengotitagane</b>ra igo aurretik.',
+    'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por la <b>Ermita de San Juan</b>, en el barrio de <b>Zengotita</b>, antes de subir hacia <b>Zengotitagane</b>.':
+        '<b>Mallabi</b>ko plazatik ateratzen gara eta berehala uzten dugu herria atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabazten dugu altuera, <b>San Juan ermita</b>tik igaro, <b>Zengotita</b> auzoan, <b>Zengotitagane</b>ra igo aurretik.',
     'Despu&eacute;s de Zengotitagane toca bajar, y bastante. Al principio se puede correr bien, pero seg&uacute;n vamos perdiendo altura la bajada se vuelve m&aacute;s t&eacute;cnica y hay que estar atentos. Abajo cambia de nuevo el terreno y comenzamos a subir de forma m&aacute;s suave hacia <a href="gerea.html">Ur Jauziak</a>.':
         'Zengotitagane pasatu ondoren jaitsiera gogorra dator, eta ez da motza. Hasieran ondo korrika egin daiteke, baina behera egin ahala gero eta teknikoagoa bihurtzen da eta adi ibili behar da. Behean, lurra berriro aldatzen da eta igoera lasaiago bati ekiten diogu <a href="gerea.html">Ur Jauziak</a> aldera.',
     'A partir de ah&iacute; ponemos rumbo a <b>Oiz</b>.':
@@ -2550,8 +2550,8 @@ PAGO16 = {
         'Gainera, Trabakutik are gertuago daukagu <a href="7pago.html">7 Pago Mendi Lasterketa</a>ko 25K-ko ibilbidea. 15 minutu inguruan lasterketa luzeko trazatuarekin bat egin dezakegu, <a href="gerea.html">Gerea</a> ur-jauzietara doan igoeratik. Handik aurrera, lasterketako ibilbidearen zati bat jarrai dezakegu edo inguruko beste ibilbide batzuekin lotzeko erabili.',
     'Al tratarse de una ruta de Mallabia y teniendo en cuenta que muchas de las rutas que parten de Trabakua coinciden en alg&uacute;n momento con los recorridos de la 16K y la 25K de la 7 Pago, este trazado tambi&eacute;n ten&iacute;a que tener aqu&iacute; su sitio.':
         'Mallabiko ibilbidea izanik, eta Trabakutik ateratzen diren hainbat ibilbidek 7 Pagoko 16K eta 25K-ko trazatuetako zatiak erabiltzen dituztela kontuan hartuta, ibilbide honek ere hemen bere lekua izan behar zuen.',
-    'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por el <b>barrio de Berriz-Olakueta</b>, en el barrio de <b>Zengotita</b>, antes de afrontar la subida hacia <b>Zengotitagane</b>.':
-        '<b>Mallabi</b>ko plazatik abiatuko gara, eta berehala utziko dugu herrigunea atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabaziko dugu altuera, <b>Zengotita</b> auzoko <b>Berriz-Olakueta</b> auzotik igaroz, <b>Zengotitagane</b>rako igoerari ekin aurretik.',
+    'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por la <b>Ermita de San Juan</b>, en el barrio de <b>Zengotita</b>, antes de afrontar la subida hacia <b>Zengotitagane</b>.':
+        '<b>Mallabi</b>ko plazatik abiatuko gara, eta berehala utziko dugu herrigunea atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabaziko dugu altuera, <b>Zengotita</b> auzoko <b>San Juan ermita</b>tik igaroz, <b>Zengotitagane</b>rako igoerari ekin aurretik.',
     'Despu&eacute;s de Zengotitagane continuamos por la parte alta, cresteando y con buenas vistas a ambos lados. A nuestra derecha se abre el valle de Gerea, mientras que a la izquierda tenemos las monta&ntilde;as del Duranguesado.':
         'Zengotitagane atzean utzita, goiko aldetik jarraituko dugu, bizkarretik aurrera eginez eta bi aldeetara ikuspegi ederrak izanez. Eskuinean Gerea harana zabaltzen da, eta ezkerrean Durangaldeko mendiak izango ditugu.',
     'Seguimos hacia <b>Iturzurigaina</b>. Entramos durante un peque&ntilde;o tramo entre &aacute;rboles, en un hayedo, y poco despu&eacute;s, giramos a la izquierda para afrontar la subida que nos lleva hasta la zona de los d&oacute;lmenes. Continuamos unos metros m&aacute;s hasta alcanzar Iturzurigaina, el punto m&aacute;s alto de la carrera.':
@@ -2560,8 +2560,8 @@ PAGO16 = {
         'Hemendik aurrera itzulerako bidea hasten da. Aurrerago ezkerrera egingo dugu eta, harrizko gurutze baten ondoan, <b>Betzuen</b> baserriaren norabidean jaisten den bidezidorra hartuko dugu. Jaitsiera azkar eta entretenigarria da, eta denbora gutxian altuera dezente galtzen da.',
     'Antes de llegar abajo del todo giramos de nuevo a la izquierda y cogemos un camino bastante menos conocido que nos lleva de vuelta hacia el barrio de Zengotita.':
         'Beheraino iritsi baino lehen, berriro ezkerrera egingo dugu eta hain ezaguna ez den bide bat hartuko dugu, Zengotita auzora bueltan eramango gaituena.',
-    'Tras pasar de nuevo por la parte baja del barrio de Zengotita, cerca del barrio de Berriz-Olakueta, todav&iacute;a quedan las dos &uacute;ltimas subidas de la carrera. Primero afrontamos la subida a <a href="arietzu.html">Osmagain</a>, coronada por una cruz, y despu&eacute;s continuamos hacia <a href="arietzu.html">Arietzu</a>, donde encontramos otra cruz en la cima.':
-        'Zengotita auzoko beheko aldetik berriro igaro ondoren, Berriz-Olakueta auzoaren ingurutik, lasterketako azken bi igoerak geratzen zaizkigu oraindik. Lehenengo <a href="arietzu.html">Osmagain</a>era igoko gara, tontorreko gurutzeraino, eta ondoren <a href="arietzu.html">Arietzu</a> aldera jarraituko dugu, han ere tontorrean beste gurutze bat aurkituko dugularik.',
+    'Tras pasar de nuevo por la parte baja del barrio de Zengotita, cerca de la ermita de San Juan, todav&iacute;a quedan las dos &uacute;ltimas subidas de la carrera. Primero afrontamos la subida a <a href="arietzu.html">Osmagain</a>, coronada por una cruz, y despu&eacute;s continuamos hacia <a href="arietzu.html">Arietzu</a>, donde encontramos otra cruz en la cima.':
+        'Zengotita auzoko beheko aldetik berriro igaro ondoren, San Juan ermitaren ingurutik, lasterketako azken bi igoerak geratzen zaizkigu oraindik. Lehenengo <a href="arietzu.html">Osmagain</a>era igoko gara, tontorreko gurutzeraino, eta ondoren <a href="arietzu.html">Arietzu</a> aldera jarraituko dugu, han ere tontorrean beste gurutze bat aurkituko dugularik.',
     'Superado Arietzu, ya s&iacute; comienza el descenso definitivo hacia Mallabia. Bajamos hasta alcanzar la zona del r&iacute;o y, desde all&iacute;, el terreno se suaviza. Continuamos junto al agua, pr&aacute;cticamente llaneando y con alg&uacute;n peque&ntilde;o repecho, hasta regresar al pueblo y completar los 16 kil&oacute;metros.':
         'Arietzu gaindituta, orain bai, Mallabiarako azken jaitsiera hasiko dugu. Erreka ingurura jaitsi eta, handik aurrera, ibilbidea nabarmen leuntzen da. Uraren ondotik eta ia lauan jarraituko dugu, tarteka aldapatxo txikiren batekin, Mallabiara itzuli eta 16 kilometroko ibilbidea osatu arte.',
     'No es una carrera especialmente t&eacute;cnica ni tiene desniveles exagerados, pero tampoco conviene confiarse. Es una carrera r&aacute;pida, y ser r&aacute;pida no significa que sea f&aacute;cil. Se puede correr durante buena parte del recorrido, las subidas se hacen a buen ritmo y apenas hay momentos para recuperar del todo. Si se aprieta demasiado al principio, Osmagain, Arietzu y los &uacute;ltimos kil&oacute;metros de regreso a Mallabia pueden terminar haci&eacute;ndose bastante largos.':
@@ -2920,7 +2920,7 @@ DESCRIPTIONS = {
     'gerea': 'Oinezko zirkuitua Trabakuatik Gereako ur-jauzira',
     'zengotitagane': 'Zirkuitua e-bikez Trabakuatik, San Kristobal Txiki ermitarekin eta Berriz-Olakueta auzoarekin',
     'oiz': 'Oinezko joan-etorria Trabakuatik Oizko gailurreraino',
-    'arietzu': 'Oinezko zirkuitua Berriz-Olakueta auzotik',
+    'arietzu': 'Oinezko zirkuitua San Juan ermitatik',
     'urko': 'Oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     'sancristobal': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki ermitarekin eta Berriz-Olakueta auzoarekin',
@@ -3390,8 +3390,8 @@ BETZUN = {
         '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m). Garaitik datorren pista honetan sartzen gara.</p>',
     '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a Berriz-Olakueta, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
         '<p>Hemendik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu Berriz-Olakueta aldera, Durangaldeko mendietara ikuspegi ederrekin tarte honen zati handi batean.</p>',
-    '<p>Llegamos al barrio de Berriz-Olakueta y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
-        '<p>Berriz-Olakueta auzora iristen gara eta jaisten jarraitzen dugu errepide nagusira iritsi arte. Errepidea gurutzatu eta, beste aldean, Zengotitara igotzen den errepide zaharra hartzen dugu.</p>',
+    '<p>Llegamos al barrio de <b>Berriz-Olakueta</b> (km 7,6 &middot; 315 m) y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
+        '<p>Berriz-Olakueta auzora iristen gara (7,6 km &middot; 315 m) eta jaisten jarraitzen dugu errepide nagusira iritsi arte. Errepidea gurutzatu eta, beste aldean, Zengotitara igotzen den errepide zaharra hartzen dugu.</p>',
     '<p>Solo nos queda remontar por esta carretera hasta regresar al barrio, exactamente al punto donde hab&iacute;amos comenzado el track, y cerrar la vuelta.</p>':
         '<p>Errepide honetatik igotzea besterik ez zaigu geratzen auzora itzultzeko, ibilbidea hasi dugun leku berera, eta itzulia ixteko.</p>',
     '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Crist&oacute;bal y Berriz-Olakueta para completar el recorrido entero.</p>':
