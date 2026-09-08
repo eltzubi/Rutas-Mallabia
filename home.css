@@ -102,17 +102,16 @@
 .hero-compact picture{ position:absolute; inset:0; }
 .hero-compact img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  /* Encuadre equilibrado: mantiene persona y bici a la derecha sin llevar la
-     foto hasta el borde, y baja ligeramente el punto de interes para conservar
-     mejor la bici y el primer plano en formatos anchos. */
-  object-position:78% 58%;
+  /* En movil damos prioridad a la bici y su luz, que estan en el lado derecho
+     de la foto. En pantallas mas anchas recuperamos un encuadre mas centrado. */
+  object-position:100% 58%;
   filter:contrast(1.3) saturate(1.5) brightness(1.03);
 }
 @media (min-width:700px){
-  .hero-compact img{ object-position:72% 58%; }
+  .hero-compact img{ object-position:85% 58%; }
 }
 @media (min-width:1024px){
-  .hero-compact img{ object-position:68% 58%; }
+  .hero-compact img{ object-position:72% 58%; }
 }
 .hero-compact-scrim{
   position:absolute; inset:0;
