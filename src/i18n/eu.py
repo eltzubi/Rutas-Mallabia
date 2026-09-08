@@ -3377,8 +3377,8 @@ BETZUN = {
         '<p>Puntu honetatik beste aukera bat ere badugu: eskuinera biratu eta haize-sorgailuen eremurantz jarraituz gero, <a href="oiz.html">Oiz</a>ko gailurrerantz jarraitu genezake. Gu ez goaz hortik. Ezkerrera biratu eta <b>Iturzurigaina</b>tik bereizten gaituzten metro gutxi batzuk igoko ditugu (3,6 km &middot; 855 m).</p>',
     '<p>Una vez arriba buscamos la cruz de piedra y, junto a ella, cambiamos completamente de vertiente para comenzar el descenso hacia el sur.</p>':
         '<p>Gora iristean, harrizko gurutzea bilatuko dugu, eta, haren ondoan, isurialdea erabat aldatuko dugu hegoalderantz jaisten hasteko.</p>',
-    '<p>La bajada es r&aacute;pida y vamos perdiendo altura con facilidad. Continuamos descendiendo hasta llegar al caser&iacute;o <b>Betzun</b> (km 4,7 &middot; 628 m).</p>':
-        '<p>Jaitsiera azkarra da, eta erraz galtzen dugu altuera. Jaisten jarraituko dugu <b>Betzun</b> baserrira iritsi arte (4,7 km &middot; 628 m).</p>',
+    '<p>La bajada es r&aacute;pida y vamos perdiendo altura con facilidad. Continuamos descendiendo hasta llegar al caser&iacute;o <b>Betzun</b> (km 5,0 &middot; 550 m).</p>':
+        '<p>Jaitsiera azkarra da, eta erraz galtzen dugu altuera. Jaisten jarraituko dugu <b>Betzun</b> baserrira iritsi arte (5,0 km &middot; 550 m).</p>',
     '<p>En Betzun tenemos dos posibilidades. Si seguimos el camino de cemento que llega al caser&iacute;o, podemos regresar directamente hacia Zengotita y completar as&iacute; una vuelta bonita y r&aacute;pida.</p>':
         '<p>Betzunen bi aukera ditugu. Baserria iristen den zementuzko bidea jarraitzen badugu, Zengotitara zuzenean itzul gaitezke, eta horrela itzuli polit eta azkar bat osatu.</p>',
     '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
