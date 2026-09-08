@@ -3485,6 +3485,10 @@ SARRIMENDI = {
         'Zaldia bazkan Oizko parke eolikoko aerosorgailuen ondoan',
     'Cima herbosa con un peque&ntilde;o moj&oacute;n y un caballo pastando al fondo, con las monta&ntilde;as del entorno':
         'Gailur belartsua, mugarri txiki batekin eta zaldi bat bazkan atzealdean, inguruko mendiekin',
+    'Peque&ntilde;a escultura de alambre sobre una roca musgosa, entre la niebla y los pinos':
+        'Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean',
+    'Reba&ntilde;o de ovejas caminando por un sendero entre helechos':
+        'Ardi-taldea garo artean bidezidor batean',
 }
 
 PAGE_STRINGS = {
