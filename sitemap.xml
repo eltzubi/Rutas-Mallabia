@@ -351,4 +351,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sarrimendi.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sarrimendi.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/longa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/longa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/longa.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/longa.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/longa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/longa.eu.html"/>
+  </url>
 </urlset>

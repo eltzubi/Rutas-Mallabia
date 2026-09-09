@@ -65,10 +65,16 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota</p>',
     '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu y Mendibil</h3>':
         '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu eta Mendibil</h3>',
+    '<h3 class="route-card-name">Trabakua, Zengotitagane, Iturzuri y Longa</h3>':
+        '<h3 class="route-card-name">Trabakua, Zengotitagane, Iturzuri eta Longa</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Zengotitagane, el hayedo de Iturzuri y la bajada hacia Longa</p>':
+        '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota</p>',
     '<p class="route-card-desc">Circuito de trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietxu y Mallabia hasta Mendibil</p>':
         '<p class="route-card-desc">Trail running zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita, Arietxu eta Mallabiatik igarota Mendibileraino</p>',
     'alt="Peque&ntilde;a escultura de alambre sobre una roca musgosa, entre la niebla y los pinos"':
         'alt="Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean"',
+    'alt="Aerogeneradores del parque e&oacute;lico recortados contra el sol, con la niebla en los valles al fondo"':
+        'alt="Parke eolikoko aerosorgailuak eguzkiaren kontra, haranetako lainoarekin atzealdean"',
     'alt="Pista de tierra hacia los aerogeneradores del cordal, en la subida desde Zengotita"':
         'alt="Lurrezko pista gandorreko aerosorgailuetarantz, Zengotitatik igotzean"',
     '<p class="route-card-desc">Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua</p>':
@@ -2959,6 +2965,7 @@ DESCRIPTIONS = {
     'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
     'betzun': 'Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota',
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
+    'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
 }
 
 # <title> per page (head files)
@@ -3067,6 +3074,7 @@ TITLES = {
     'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · Bizikleta ibilbidea — Herriko ibilbideak',
     'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
+    'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3477,6 +3485,41 @@ SARRIMENDI = {
         'Ardi-taldea garo artean bidezidor batean',
 }
 
+LONGA = {
+    '<span>Pista y hayedo</span><span class="sep">/</span><span>Zengotitagane, Iturzuri y Longa</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta pagadia</span><span class="sep">/</span><span>Zengotitagane, Iturzuri eta Longa</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Zengotitagane<br><em>Iturzuri y Longa</em></h1>':
+        '<h1>Trabakua, Zengotitagane<br><em>Iturzuri eta Longa</em></h1>',
+    '<p class="full-name">Circuito de senderismo desde Trabakua por Zengotitagane, el hayedo de Iturzuri y la bajada hacia Longa</p>':
+        '<p class="full-name">Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota</p>',
+    'Circuito de senderismo desde Trabakua por Zengotitagane, el hayedo de Iturzuri y la bajada hacia Longa':
+        'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
+    'Aerogeneradores del parque e&oacute;lico recortados contra el sol, con la niebla en los valles al fondo':
+        'Parke eolikoko aerosorgailuak eguzkiaren kontra, haranetako lainoarekin atzealdean',
+    'Foto ampliada del recorrido de Trabakua, Zengotitagane, Iturzuri y Longa':
+        'Trabakua, Zengotitagane, Iturzuri eta Longa ibilbidearen argazki handitua',
+    'Fila de aerogeneradores sobre la loma, con un bosque de repoblaci&oacute;n y una valla de madera en primer plano':
+        'Aerosorgailu ilara lepoaren gainean, birlandatutako baso batekin eta egurrezko hesi batekin aurrealdean',
+    'Vacas pastando junto a los aerogeneradores del parque e&oacute;lico':
+        'Behiak bazkan parke eolikoko aerosorgailuen ondoan',
+    'Entrada a un hayedo por un camino de tierra entre setos, con aerogeneradores al fondo':
+        'Pagadi baterako sarrera lur bidetik hesien artean, aerosorgailuak atzealdean',
+    'Hayedo con las hojas verdes y un tronco ca&iacute;do entre los &aacute;rboles':
+        'Pagadia hosto berdeekin eta enbor erori bat zuhaitzen artean',
+    'Camino entre hayas sin hojas, con el sol filtr&aacute;ndose entre las ramas':
+        'Bidea hosto gabeko pagoen artean, eguzkia adarren artetik iragazten',
+    '[PENDIENTE: nombre del refugio de piedra], brezo y argoma en flor':
+        '[PENDIENTE: harrizko aterpearen izena], txilar eta otalore artean',
+    'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
+        'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
+    '[PENDIENTE: texto en castellano del usuario. Track real: Trabakua &rarr; Zengotitagane (km 2,1) &rarr; hayedo &rarr; Iturzuri (km 3,4) &rarr; Longa &rarr; Trabakua. 9,41&nbsp;km, +635&nbsp;m.]':
+        '[PENDIENTE: erabiltzailearen euskarazko testua. Benetako ibilbidea: Trabakua &rarr; Zengotitagane (km 2,1) &rarr; pagadia &rarr; Iturzuri (km 3,4) &rarr; Longa &rarr; Trabakua. 9,41&nbsp;km, +635&nbsp;m.]',
+    'download="Trabakua, Zengotitagane, Iturzuri y Longa.gpx"':
+        'download="Trabakua, Zengotitagane, Iturzuri eta Longa.gpx"',
+    'download="Trabakua, Zengotitagane, Iturzuri y Longa.kml"':
+        'download="Trabakua, Zengotitagane, Iturzuri eta Longa.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3513,4 +3556,5 @@ PAGE_STRINGS = {
     'trabakuamallabia': TRABAKUAMALLABIA,
     'betzun': BETZUN,
     'sarrimendi': SARRIMENDI,
+    'longa': LONGA,
 }
