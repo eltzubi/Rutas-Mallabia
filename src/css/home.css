@@ -201,79 +201,368 @@
   .filter-dialog .advanced-filters summary{display:none;}
   .filter-dialog .advanced-filters{margin-top:24px;}
 }
-@media(prefers-reduced-motion:reduce){.activity-chip,.distance-chip,.route-card{transition:none;}}
-
-.view-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;}
-.view-toggle{display:inline-flex;padding:3px;background:var(--ground-raised);border-radius:999px;}
-.view-toggle-btn{border:0;background:transparent;color:var(--ink-dim);font:600 11px 'IBM Plex Mono',monospace;padding:9px 15px;border-radius:999px;cursor:pointer;text-transform:uppercase;letter-spacing:.05em;}
-.view-toggle-btn.active{background:var(--ink);color:var(--ground);}
-.result-line{display:flex;align-items:center;justify-content:flex-end;gap:12px;min-width:0;}
-.result-info{min-width:0;text-align:right;}
-.result-count{font:600 11px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin:0;white-space:nowrap;}
-.active-filters{font:500 10px 'IBM Plex Mono',monospace;color:var(--teal);margin:3px 0 0;line-height:1.3;}
-.filter-reset{border:0;background:transparent;color:var(--ink-dim);font:500 11px 'IBM Plex Mono',monospace;cursor:pointer;padding:8px 0;text-decoration:underline;text-underline-offset:3px;}
-.filter-reset:hover{color:var(--ink);}
-
-.route-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
-.route-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--ground-raised);transition:transform .18s ease,border-color .18s ease;}
-.route-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--teal) 35%,var(--line));}
-.route-card-photo{aspect-ratio:16/9;overflow:hidden;background:var(--ground);}
-.route-card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;}
-.route-card:hover .route-card-photo img{transform:scale(1.025);}
-.route-card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
-.route-card-name{font:700 19px/1.08 'Fraunces',serif;margin:0;letter-spacing:-.01em;}
-.route-card-desc{font:400 13px/1.45 'Karla',sans-serif;color:var(--ink-dim);margin:0;}
-.route-card-chart{height:38px;margin-top:auto;}
-.route-card-chart svg{width:100%;height:100%;display:block;}
-.route-card-stats{display:flex;gap:10px;flex-wrap:wrap;font:600 10px 'IBM Plex Mono',monospace;color:var(--ink-dim);}
-.route-card-stats span{white-space:nowrap;}
-.route-card-tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font:500 10.5px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin:2px 0 0;}
-.route-card-tags .v{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;background:var(--ground-raised);border:1px solid var(--line);white-space:nowrap;}
-
-.map-route-popup{font:600 12px 'IBM Plex Mono',monospace;line-height:1.35;}
-.map-route-popup a{color:inherit;text-decoration:none;}
-.map-legend{padding:16px 4px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-dim);}
-.map-summary{margin:0 0 8px;color:var(--ink);}
-.map-legend-line{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;}
-.map-legend-item{display:inline-flex;align-items:center;gap:6px;}
-.map-legend-item .dot{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0;}
-.map-legend-item .dot.bici{background:var(--teal);}
-.map-legend-item .dot.senderismo{background:var(--violet);}
-.map-note{font-family:'Karla',sans-serif;font-size:13px;color:var(--ink-dim);line-height:1.6;margin:10px 0 0;}
-.map-note a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;}
-.suggestion-btn{
-  font:600 12px 'IBM Plex Mono',monospace; color:var(--ink);
-  background:var(--ground-raised); border:1px solid var(--line); border-radius:999px;
-  padding:10px 18px; cursor:pointer;
+@media(prefers-reduced-motion:reduce){.activity-chip,.distance-chip,.open-filters{transition:none;}}
+.filter-empty{
+  display:none;
+  font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);
+  padding:20px 0;
 }
-.suggestion-btn:hover{ border-color:var(--teal); color:var(--teal); }
+.filter-empty.visible{ display:block; }
+.filter-suggestions{
+  padding:16px; background:var(--bg-hover); border-radius:8px; margin-top:12px;
+}
+.suggestion-text{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+  margin:0 0 10px;
+}
+.suggestion-buttons{
+  display:flex; flex-direction:column; gap:8px;
+}
+.suggestion-btn{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.04em;
+  color:var(--ink-dim); background:var(--bg); border:1px solid var(--line);
+  border-radius:4px; padding:8px 12px; cursor:pointer; text-align:left;
+  transition:color .2s ease, border-color .2s ease, background .2s ease;
+}
+.suggestion-btn:hover{
+  color:var(--teal); border-color:var(--teal); background:var(--bg);
+}
+@media(min-width:600px){
+  .suggestion-buttons{ flex-direction:row; flex-wrap:wrap; }
+  .suggestion-btn{ flex:1; min-width:120px; }
+}
 
-.info-accordion{ margin:56px 24px 0; display:flex; flex-direction:column; gap:10px; }
-.info-details{ border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--ground-raised); }
+/* ---- view toggle: list or map, same filters either way ---- */
+.view-toggle-row{
+  /* con el boton de quitar filtros dentro, en un movil estrecho no caben las
+     tres cosas en una linea: que baje el contador, no que se salga */
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap; row-gap:10px;
+  margin-bottom:18px; border-bottom:1px solid var(--line);
+  /* hueco para la cabecera y la barra de actividad al saltar aqui */
+  scroll-margin-top:132px;
+}
+.view-toggle{display:flex;gap:4px;background:var(--ground-raised);border-radius:999px;padding:4px;margin-bottom:12px;}
+.view-toggle-btn{font:600 12px 'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;min-height:44px;border:0;border-radius:999px;background:none;color:var(--ink-dim);cursor:pointer;}
+.view-toggle-btn:hover{color:var(--ink);}
+.view-toggle-btn.active{color:var(--ink);background:var(--ground);box-shadow:0 1px 5px #0000000d;}
+.result-count{font:400 11px 'IBM Plex Mono',monospace;color:var(--ink);white-space:nowrap;margin:0;}
+.result-info{min-width:0;flex:1;}
+.active-filters{font:400 10px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin:5px 0 0;white-space:normal;overflow-wrap:anywhere;}
+.result-line{display:flex;align-items:center;gap:14px;margin-left:auto;min-width:0;margin-bottom:12px;}
+.filter-reset{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--teal);background:none;border:0;border-radius:8px;padding:10px 4px;min-height:44px;cursor:pointer;white-space:nowrap;}
+.filter-reset:hover{text-decoration:underline;text-underline-offset:4px;}
+.filter-reset[hidden]{display:none;}
+.filter-empty .filter-reset{ margin-left:6px; }
+@media(max-width:659px){
+  .view-toggle-row{row-gap:16px;margin-bottom:16px;}
+  .view-toggle{padding:2px;margin-bottom:0;}
+  .result-line{margin-bottom:8px;}
+}
+
+/* ---- route cards: compact, scannable ---- */
+.route-card-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+/* display:grid le ganaba al [hidden] del navegador y la lista seguia a la
+   vista al cambiar a mapa. */
+.route-card-grid[hidden]{ display:none; }
+@media (min-width:660px){ .route-card-grid{ grid-template-columns:repeat(2,1fr); } }
+.route-card{
+  display:flex; flex-direction:column;
+  border:1px solid var(--line); border-radius:16px;
+  background:var(--ground-raised);
+  text-decoration:none; color:var(--ink);
+  overflow:hidden;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .15s ease;
+}
+.route-card:hover{ transform:translateY(-2px); box-shadow:0 10px 26px -10px rgba(0,0,0,.4); border-color:var(--ink-dim); }
+.route-card:active{ transform:scale(.995); }
+.route-card.is-hidden{ display:none; }
+.route-card-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--ground); }
+.route-card-photo img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  /* El contraste y la saturacion van grabados en el propio fichero
+     (scripts/make_card_thumbs.py), junto con el igualado de tono entre las 28:
+     un filtro de CSS es el mismo para todas y aqui hace falta ajustar foto a
+     foto. Si se vuelve a poner aqui, se aplicaria dos veces. */
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.route-card:hover .route-card-photo img{ transform:scale(1.06); }
+.route-card-body{ flex:1; display:flex; flex-direction:column; gap:8px; padding:16px 18px 18px; }
+.route-card-name{
+  font-family:'Fraunces',serif; font-weight:700; font-style:italic;
+  font-size:17px; line-height:1.2; margin:0;
+  text-wrap:balance; overflow-wrap:anywhere;
+}
+.route-card-desc{
+  font-family:'Karla',sans-serif; font-size:13.5px; line-height:1.5;
+  color:var(--ink-dim); margin:0;
+}
+.route-card-chart{ height:46px; margin:6px 0 2px; }
+.route-card-desc + .route-card-chart{ margin-top:auto; }
+.route-card-chart svg{ width:100%; height:100%; display:block; }
+.route-card-stats{
+  font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600;
+  color:var(--ink); margin:0; font-variant-numeric:tabular-nums;
+}
+.route-card-tags{ font-size:11px; margin:0; color:var(--ink-dim); }
+.route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
+.route-card-tags .v:first-child{ color:var(--teal); }
+.route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
+
+/* ---- info accordion: before you leave, parking, sleeping nearby ---- */
+.info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }
+@media (min-width:1024px){ .info-accordion{ max-width:1100px; } }
+.info-details{ border-top:1px solid var(--line); }
+.info-details:last-child{ border-bottom:1px solid var(--line); }
 .info-details summary{
-  cursor:pointer; list-style:none; padding:16px 20px;
-  font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px;
-  color:var(--ink); display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:17px 4px; cursor:pointer; list-style:none;
+  font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:700;
+  letter-spacing:.03em; text-transform:uppercase; color:var(--ink);
 }
 .info-details summary::-webkit-details-marker{ display:none; }
-.info-details summary::after{
-  content:'+'; font-size:18px; color:var(--ink-dim); flex-shrink:0; margin-left:12px;
-}
-.info-details[open] summary::after{ content:'\2212'; }
-.info-details-body{ padding:0 20px 20px; display:flex; flex-direction:column; gap:10px; }
-.info-details-body .map-box{ margin:0; border:1px solid var(--line); }
-.info-details-body .parada{ margin:0; }
+.info-details summary::after{ content:'+'; font-size:18px; color:var(--ink-dim); transition:transform .2s ease; }
+.info-details[open] summary::after{ content:'−'; }
+.info-details-body{ padding:0 4px 24px; }
 
-@media(max-width:659px){
-  .route-card-grid{grid-template-columns:1fr;}
-  .view-toggle-row{align-items:flex-start;}
-  .view-toggle{flex-shrink:0;}
-  .result-count{white-space:normal;}
+/* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
+.map-section{ max-width:1400px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
+
+.map-box{
+  position:relative;
+  border:1px solid var(--line);
+  aspect-ratio:4/3;
+  background:var(--ground-raised);
+  overflow:hidden;
+}
+@media (min-width:640px){ .map-box{ aspect-ratio:16/9; } }
+.map-box iframe{ width:100%; height:100%; border:0; display:block; filter:grayscale(.15) contrast(1.02); }
+/* Esto es texto para leer (donde aparcar, donde dormir), no una etiqueta:
+   a 10,5 px en el movil no habia quien lo leyera. */
+.map-note{
+  margin-top:12px; max-width:60ch;
+  font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.65;
+  color:var(--ink-dim);
+}
+.map-note a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+.map-note a:hover{ color:var(--violet); }
+.directions-cta{
+  margin-top:14px;
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;
+  letter-spacing:.03em; text-transform:uppercase;
+  color:var(--ground); background:var(--teal);
+  padding:12px 19px; text-decoration:none;
+  transition:background .2s ease;
+}
+.directions-cta:hover{ background:var(--violet); }
+.directions-cta + .eyebrow{ margin-top:28px; }
+/* La caja del mapa general es cuadrada, y del tamano que quepa.
+   Las 30 rutas ocupan 17,2 km de ancho por 16,9 de alto: una huella
+   cuadrada. Leaflet encaja eso por el lado corto de la caja, asi que en una
+   caja apaisada el dibujo lo fijaba la altura y el ancho sobrante quedaba en
+   blanco: la de 16:9 desperdiciaba el 44% y dibujaba las rutas a 434 px.
+   Cuadrada no sobra nada y el dibujo es tan grande como permita la pantalla:
+   el lado es el menor entre el ancho disponible y el 80% del alto de la
+   ventana. Si algun dia entra una ruta lejos y la huella deja de ser
+   cuadrada, esta regla deja de ser la buena. */
+.route-map-box{
+  position:relative;
+  border:1px solid var(--line);
+  aspect-ratio:1/1;
+  width:min(100%, 80svh);
+  margin-inline:auto;
+  background:var(--ground-raised);
+  overflow:hidden;
+  scroll-margin-top:100px; /* clears the sticky masthead when scrolled into view */
 }
 
-@media(max-width:420px){
-  .masthead{margin-inline:10px;}
-  .hero-compact{margin-inline:10px;}
-  .hero-compact-content{padding-inline:18px;}
-  .hero-compact-lead{font-size:14px;}
+.leaflet-popup-content-wrapper{
+  background:var(--ground-raised) !important; color:var(--ink) !important;
+  border:1px solid var(--line); border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
+.leaflet-popup-tip{ background:var(--ground-raised) !important; border:1px solid var(--line); }
+.leaflet-popup-content{ margin:12px 14px; font-family:'Karla',sans-serif; min-width:180px; }
+.leaflet-popup-close-button{ color:var(--ink-dim) !important; }
+/* La foto va a sangre en la cabecera del panel: los margenes negativos son
+   los rellenos del propio panel (16 arriba, 18 a la izquierda, 40 a la
+   derecha por el boton de cerrar). */
+.route-popup-photo{ margin:-16px -40px 10px -18px; height:88px; overflow:hidden; }
+.route-popup-photo img{ width:100%; height:100%; object-fit:cover; display:block;
+  filter:contrast(1.06) saturate(1.12); }
+.route-popup-chart{ display:block; width:100%; height:52px; margin-bottom:8px; }
+.route-popup h3{ font-family:'Fraunces',serif; font-size:16px; margin:0 0 8px; color:var(--ink) !important; }
+.route-popup .route-popup-facts{
+  display:flex; gap:12px; flex-wrap:wrap; margin-bottom:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim) !important;
+}
+.route-popup .route-popup-facts b{ color:var(--ink) !important; font-weight:600; }
+.route-popup .route-popup-dir{ font-size:12px; color:var(--ink-dim) !important; margin-bottom:10px; }
+.route-popup a{
+  display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px;
+  font-weight:600; text-transform:uppercase; letter-spacing:.04em;
+  color:var(--teal); text-decoration:none;
+}
+.route-popup a:hover{ text-decoration:underline; }
+.route-info-panel{
+  position:absolute; left:0; right:0; bottom:0; z-index:500;
+  max-height:85%; overflow-y:auto;
+  background:var(--ground-raised); border-top:1px solid var(--line);
+  box-shadow:0 -8px 24px rgba(0,0,0,.35);
+  padding:16px 40px 16px 18px;
+  transform:translateY(100%);
+  transition:transform .25s ease;
+}
+.route-info-panel.open{ transform:translateY(0); }
+.route-info-panel-close{
+  position:absolute; top:10px; right:10px; z-index:1;
+  width:28px; height:28px; border-radius:50%;
+  background:var(--ground); border:1px solid var(--line); color:var(--ink-dim);
+  display:flex; align-items:center; justify-content:center;
+  font-size:12px; cursor:pointer;
+}
+.route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
+.route-info-panel .route-popup h3{ padding-right:24px; }
+/* En el movil la caja del mapa es cuadrada y pequena (~294 px de alto): con la
+   foto dentro, el nombre largo de una ruta hacia que el boton "Ver ruta" se
+   saliera del panel. Foto mas baja, titulo mas apretado y menos relleno. */
+@media (max-width:520px){
+  .route-info-panel{ padding:11px 40px 11px 16px; }
+  .route-popup-photo{ margin:-11px -40px 8px -16px; height:64px; }
+  .route-popup h3{ font-size:13.5px; line-height:1.25; margin:0 0 6px; }
+  .route-popup .route-popup-facts{ gap:10px; margin-bottom:7px; }
+}
+
+/* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
+   menos que diga por que, y que los botones que ya no mandan sobre nada
+   desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
+
+.map-legend{ margin-top:12px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.55; color:var(--ink-dim); }
+.map-summary{ margin:0 0 6px; color:var(--ink); font-size:14px; }
+.map-legend-line{ display:flex; flex-wrap:wrap; gap:6px 16px; margin:0; }
+.map-legend-item{ display:inline-flex; align-items:center; gap:6px; }
+.map-legend-item .dot{ width:10px; height:10px; border-radius:50%; display:inline-block; flex-shrink:0; }
+.map-legend-item .dot.bici{ background:var(--teal); }
+.map-legend-item .dot.senderismo{ background:var(--violet); }
+
+footer{
+  margin:60px auto 0; max-width:820px; padding:22px 24px 0; border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 20px;
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6; color:var(--ink-dim);
+}
+footer a{ color:var(--teal); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+
+@media (min-width:1024px){
+  .wrap,
+  .masthead,
+  footer,
+  .mini-gallery{ max-width:1100px; }
+}
+
+/* ---- mini gallery (banner de acción) ---- */
+.mini-gallery{ max-width:820px; margin:32px auto 0; padding:0 24px; }
+.mini-gallery > .eyebrow{ margin-bottom:16px; }
+.mini-gallery .gallery-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+}
+.mini-gallery .gallery-grid--single{ grid-template-columns:1fr; }
+.mini-gallery .gallery-grid--quad{ grid-template-columns:repeat(4,1fr); gap:6px; }
+.mini-gallery .gallery-item{
+  position:relative; aspect-ratio:1/1; overflow:hidden;
+  border:1px solid var(--line); padding:0; background:none; cursor:zoom-in;
+}
+.mini-gallery .gallery-item--wide{ aspect-ratio:2400/1100; border-color:transparent; background:var(--ground); }
+.mini-gallery .gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.2,.7,.2,1); filter:contrast(1.1) saturate(1.28); }
+.mini-gallery .gallery-item--wide img{ filter:none; }
+.mini-gallery .gallery-item:hover img{ transform:scale(1.06); }
+.mini-gallery .cardinal-label{
+  position:absolute; top:6px; left:50%; transform:translateX(-50%); z-index:2;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:.05em;
+  color:#fff; background:rgba(10,12,8,.6); padding:2px 7px; pointer-events:none;
+}
+.mini-gallery .gallery-item .photo-zoom{
+  position:absolute; right:8px; bottom:8px;
+  font-family:'IBM Plex Mono',monospace; font-size:11px;
+  color:#fff; background:rgba(20,23,15,.6); width:22px; height:22px;
+  display:flex; align-items:center; justify-content:center;
+}
+
+.lightbox{
+  position:fixed; inset:0; z-index:100;
+  background:rgba(10,12,8,.8);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  display:none; align-items:center; justify-content:center;
+  padding:24px;
+}
+
+.lightbox img{ max-width:100%; max-height:100%; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+
+.to-top{
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  width:46px; height:46px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--teal); color:var(--ground); border:none; cursor:pointer;
+  box-shadow:0 6px 20px rgba(20,23,15,.25);
+  opacity:0; transform:translateY(8px); pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease, background .2s ease;
+}
+
+@media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
+
+/* ---- Sendero de noche: glow + rounded language ---- */
+.theme-toggle{ border-radius:50%; }
+.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
+
+.wikiloc-link, .directions-cta, .back-home-link{
+  border-radius:12px;
+  box-shadow:0 0 24px -10px var(--teal);
+}
+.wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover{
+  box-shadow:0 0 30px -8px var(--violet);
+}
+.wikiloc-link.ghost{ box-shadow:none; }
+
+.fact{ border-radius:14px; }
+.fact .v{ text-shadow:0 0 14px currentColor; }
+
+.range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
+.range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
+
+.hero-chart{ border-radius:20px; }
+
+.parada{
+  margin:0 0 24px;
+  background:var(--violet-soft);
+  border-left:3px solid var(--violet);
+  padding:22px 24px 24px;
+  display:flex; flex-direction:column; gap:8px;
+}
+
+.parada{ border-radius:0 16px 16px 0; box-shadow:0 0 32px -16px var(--violet); }
+.parada{
+  background:var(--violet-soft);
+  background:color-mix(in srgb, var(--violet-soft) 90%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+
+/* ---- ambient fx: faint grid + soft glow behind the page ---- */
+.page{ position:relative; z-index:1; }
+.fx-world{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+.fx-grid{
+  position:absolute; inset:0; opacity:.12;
+  background-image:
+    linear-gradient(rgba(234,245,226,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234,245,226,.06) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom, #000, transparent 75%);
+  -webkit-mask-image:linear-gradient(to bottom, #000, transparent 75%);
+}
+:root[data-theme="light"] .fx-grid{ opacity:.05; }
+.fx-glow{ position:absolute; width:60vw; height:60vw; border-radius:50%; filter:blur(90px); opacity:.14; }
+.fx-glow.a{ top:-22vw; left:-16vw; background:var(--teal); }
+.fx-glow.b{ top:8vw; right:-22vw; background:var(--violet); }
+:root[data-theme="light"] .fx-glow{ opacity:.10; }
