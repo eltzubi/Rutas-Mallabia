@@ -3512,8 +3512,20 @@ LONGA = {
         '[PENDIENTE: harrizko aterpearen izena], txilar eta otalore artean',
     'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
         'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
-    '[PENDIENTE: texto en castellano del usuario. Track real: Trabakua &rarr; Zengotitagane (km 2,1) &rarr; hayedo &rarr; Iturzuri (km 3,4) &rarr; Longa &rarr; Trabakua. 9,41&nbsp;km, +635&nbsp;m.]':
-        '[PENDIENTE: erabiltzailearen euskarazko testua. Benetako ibilbidea: Trabakua &rarr; Zengotitagane (km 2,1) &rarr; pagadia &rarr; Iturzuri (km 3,4) &rarr; Longa &rarr; Trabakua. 9,41&nbsp;km, +635&nbsp;m.]',
+    'Como casi siempre, salimos desde Trabakua en direcci&oacute;n norte y comenzamos la subida hacia <b>Zengotitagane</b>. Son aproximadamente 2 kil&oacute;metros de subida pr&aacute;cticamente en l&iacute;nea recta hasta llegar arriba.':
+        '[PENDIENTE: euskarazko testua]',
+    'Una vez en Zengotitagane, giramos hacia la derecha y continuamos subiendo junto a los e&oacute;licos, disfrutando de las vistas a ambos lados. Seguimos hasta meternos de frente en el hayedo en direcci&oacute;n a <b><a href="iturrizuri.html">Iturzuri</a></b>.':
+        '[PENDIENTE: euskarazko testua]',
+    'Atravesamos el hayedo hasta llegar a Iturzuri, donde encontramos el refugio y la fuente y podemos aprovechar para coger agua. Desde aqu&iacute; volvemos a meternos en el hayedo y continuamos atraves&aacute;ndolo hasta salir por el otro lado.':
+        '[PENDIENTE: euskarazko testua]',
+    'Al salir del hayedo giramos hacia el este y comenzamos a bajar de forma bastante directa. Seguimos descendiendo por la parte baja del hayedo hasta encontrar una verja, que cruzamos para continuar por un sendero.':
+        '[PENDIENTE: euskarazko testua]',
+    'A medida que bajamos, el sendero se va convirtiendo en pista.':
+        '[PENDIENTE: euskarazko testua]',
+    'Continuamos bajando por la pista hacia la zona de <b>Longa</b>. Ya en la parte baja pasamos junto a una borda y finalmente salimos a la carretera. Desde aqu&iacute; regresamos hacia Trabakua por carretera de barrio.':
+        '[PENDIENTE: euskarazko testua]',
+    'La intenci&oacute;n de esta ruta es, sobre todo, dar a conocer esta bajada hacia la zona de Longa, un paso que utiliza poca gente. Nosotros lo recorremos de bajada, pero tambi&eacute;n puede hacerse en sentido contrario y utilizarse como subida, ofreciendo as&iacute; otra posibilidad para moverse y enlazar recorridos por esta zona.':
+        '[PENDIENTE: euskarazko testua]',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.gpx"':
         'download="Trabakua, Zengotitagane, Iturzuri eta Longa.gpx"',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.kml"':
