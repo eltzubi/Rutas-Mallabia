@@ -3522,8 +3522,8 @@ LONGA = {
         'Pagaditik ateratzen garenean, ekialderantz biratzen dugu eta nahiko zuzen jaisten hasten gara. Pagadiaren behealdetik jaisten jarraitzen dugu, hesi bat aurkitu arte, zeina gurutzatzen dugun bidezidor batetik jarraitzeko.',
     'A medida que bajamos, el sendero se va convirtiendo en pista.':
         'Jaisten garen heinean, bidezidorra pista bihurtzen joaten da.',
-    'Continuamos bajando por la pista hacia la zona de <b>Longa</b>. Ya en la parte baja pasamos junto a una borda y finalmente salimos a la carretera. Desde aqu&iacute; regresamos hacia Trabakua por carretera de barrio.':
-        '<b>Longa</b> aldera jaisten jarraitzen dugu pistatik. Behealdean, borda baten ondotik pasatzen gara eta, azkenik, errepidera irteten gara. Hemendik Trabakuara itzultzen gara auzo-errepidetik.',
+    'Continuamos bajando por la pista hacia la zona de <b>Longa</b>, en el barrio de <a href="gerea.html">Gerea</a>. Ya en la parte baja pasamos junto a una borda y finalmente salimos a la carretera. Desde aqu&iacute; regresamos hacia Trabakua por carretera de barrio.':
+        '<b>Longa</b> aldera jaisten jarraitzen dugu pistatik, <a href="gerea.html">Gerea</a> auzoan. Behealdean, borda baten ondotik pasatzen gara eta, azkenik, errepidera irteten gara. Hemendik Trabakuara itzultzen gara auzo-errepidetik.',
     'La intenci&oacute;n de esta ruta es, sobre todo, dar a conocer esta bajada hacia la zona de Longa, un paso que utiliza poca gente. Nosotros lo recorremos de bajada, pero tambi&eacute;n puede hacerse en sentido contrario y utilizarse como subida, ofreciendo as&iacute; otra posibilidad para moverse y enlazar recorridos por esta zona.':
         'Ibilbide honen asmoa, batez ere, Longa aldera doan jaitsiera hau ezagutaraztea da, jende gutxik erabiltzen duen bide bat. Gu jaitsiera moduan egiten dugu, baina kontrako norabidean ere egin daiteke eta igoera gisa erabili, horrela beste aukera bat eskainiz inguru honetan mugitzeko eta ibilbideak lotzeko.',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.gpx"':
