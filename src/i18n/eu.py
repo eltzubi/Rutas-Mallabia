@@ -3513,19 +3513,19 @@ LONGA = {
     'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
         'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
     'Como casi siempre, salimos desde Trabakua en direcci&oacute;n norte y comenzamos la subida hacia <b>Zengotitagane</b>. Son aproximadamente 2 kil&oacute;metros de subida pr&aacute;cticamente en l&iacute;nea recta hasta llegar arriba.':
-        '[PENDIENTE: euskarazko testua]',
+        'Ia beti bezala, Trabakuatik abiatzen gara iparralderantz eta <b>Zengotitagane</b> aldera igotzen hasten gara. Gutxi gorabehera 2 kilometroko igoera da, ia zuzen-zuzena, goian iritsi arte.',
     'Una vez en Zengotitagane, giramos hacia la derecha y continuamos subiendo junto a los e&oacute;licos, disfrutando de las vistas a ambos lados. Seguimos hasta meternos de frente en el hayedo en direcci&oacute;n a <b><a href="iturrizuri.html">Iturzuri</a></b>.':
-        '[PENDIENTE: euskarazko testua]',
+        'Zengotitaganen, eskuinera biratzen dugu eta igotzen jarraitzen dugu, haize-sorgailuen ondotik, alde bietako ikuspegiaz gozatuz. <b><a href="iturrizuri.html">Iturzuri</a></b>rantz doan pagadian sartzen gara.',
     'Atravesamos el hayedo hasta llegar a Iturzuri, donde encontramos el refugio y la fuente y podemos aprovechar para coger agua. Desde aqu&iacute; volvemos a meternos en el hayedo y continuamos atraves&aacute;ndolo hasta salir por el otro lado.':
-        '[PENDIENTE: euskarazko testua]',
+        'Pagadia zeharkatzen dugu Iturzurira iritsi arte, non aterpea eta iturria aurkitzen ditugun, eta ura hartzeko aprobetxatzen dugu. Hemendik pagadian berriro sartzen gara eta zeharkatzen jarraitzen dugu beste aldetik atera arte.',
     'Al salir del hayedo giramos hacia el este y comenzamos a bajar de forma bastante directa. Seguimos descendiendo por la parte baja del hayedo hasta encontrar una verja, que cruzamos para continuar por un sendero.':
-        '[PENDIENTE: euskarazko testua]',
+        'Pagaditik ateratzen garenean, ekialderantz biratzen dugu eta nahiko zuzen jaisten hasten gara. Pagadiaren behealdetik jaisten jarraitzen dugu, hesi bat aurkitu arte, zeina gurutzatzen dugun bidezidor batetik jarraitzeko.',
     'A medida que bajamos, el sendero se va convirtiendo en pista.':
-        '[PENDIENTE: euskarazko testua]',
+        'Jaisten garen heinean, bidezidorra pista bihurtzen joaten da.',
     'Continuamos bajando por la pista hacia la zona de <b>Longa</b>. Ya en la parte baja pasamos junto a una borda y finalmente salimos a la carretera. Desde aqu&iacute; regresamos hacia Trabakua por carretera de barrio.':
-        '[PENDIENTE: euskarazko testua]',
+        '<b>Longa</b> aldera jaisten jarraitzen dugu pistatik. Behealdean, borda baten ondotik pasatzen gara eta, azkenik, errepidera irteten gara. Hemendik Trabakuara itzultzen gara auzo-errepidetik.',
     'La intenci&oacute;n de esta ruta es, sobre todo, dar a conocer esta bajada hacia la zona de Longa, un paso que utiliza poca gente. Nosotros lo recorremos de bajada, pero tambi&eacute;n puede hacerse en sentido contrario y utilizarse como subida, ofreciendo as&iacute; otra posibilidad para moverse y enlazar recorridos por esta zona.':
-        '[PENDIENTE: euskarazko testua]',
+        'Ibilbide honen asmoa, batez ere, Longa aldera doan jaitsiera hau ezagutaraztea da, jende gutxik erabiltzen duen bide bat. Gu jaitsiera moduan egiten dugu, baina kontrako norabidean ere egin daiteke eta igoera gisa erabili, horrela beste aukera bat eskainiz inguru honetan mugitzeko eta ibilbideak lotzeko.',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.gpx"':
         'download="Trabakua, Zengotitagane, Iturzuri eta Longa.gpx"',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.kml"':
