@@ -3508,8 +3508,8 @@ LONGA = {
         'Pagadia hosto berdeekin eta enbor erori bat zuhaitzen artean',
     'Camino entre hayas sin hojas, con el sol filtr&aacute;ndose entre las ramas':
         'Bidea hosto gabeko pagoen artean, eguzkia adarren artetik iragazten',
-    '[PENDIENTE: nombre del refugio de piedra], brezo y argoma en flor':
-        '[PENDIENTE: harrizko aterpearen izena], txilar eta otalore artean',
+    'Fuente de Iturzuri, entre brezo y argoma en flor':
+        'Iturzuriko iturria, txilar eta otalore artean',
     'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
         'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
     'Como casi siempre, salimos desde Trabakua en direcci&oacute;n norte y comenzamos la subida hacia <b>Zengotitagane</b>. Son aproximadamente 2 kil&oacute;metros de subida pr&aacute;cticamente en l&iacute;nea recta hasta llegar arriba.':
