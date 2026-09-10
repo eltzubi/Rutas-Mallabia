@@ -152,7 +152,7 @@
 .finder-toolbar{display:flex;align-items:center;gap:12px;position:sticky;top:56px;z-index:60;padding:12px 0;isolation:isolate;}
 .finder-toolbar::before{content:"";position:absolute;inset:0 -8px;z-index:-1;border-radius:20px;background:var(--ground);background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
 .activity-filter{display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--ground-raised);}
-.activity-chip,.distance-chip,.open-filters{font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;border:1px solid transparent;border-radius:999px;padding:11px 20px;min-height:44px;color:var(--ink-dim);background:transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
+.activity-chip,.distance-chip,.open-filters{font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;border:1px solid transparent;border-radius:999px;padding:8px 20px;min-height:36px;color:var(--ink-dim);background:transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
 .activity-chip.active{background:var(--ink);color:var(--ground);box-shadow:0 2px 8px #00000012;}
 .activity-chip:hover:not(.active),.distance-chip:hover:not(.active){color:var(--ink);background:var(--ground-raised);}
 .open-filters{display:none;border-color:var(--line);color:var(--ink);white-space:nowrap;gap:6px;}
@@ -189,8 +189,8 @@
   .finder{margin-top:16px;padding:0 16px;}
   .finder-toolbar{gap:8px;flex-wrap:wrap;padding:0 0 12px;}
   .activity-filter{flex:1;min-width:0;padding:2px;gap:2px;}
-  .activity-chip{flex:1;padding:10px 8px;font-size:11px;white-space:nowrap;}
-  .open-filters{display:inline-flex;align-items:center;padding:10px 12px;font-size:11px;}
+  .activity-chip{flex:1;padding:7px 8px;font-size:11px;white-space:nowrap;}
+  .open-filters{display:inline-flex;align-items:center;padding:7px 12px;font-size:11px;}
   .filter-dialog{width:100%;max-width:520px;max-height:calc(100dvh - 16px);margin:auto auto 0;border-radius:28px 28px 0 0;padding:14px 24px max(24px,env(safe-area-inset-bottom));border-bottom:0;}
   .filter-dialog::before{content:"";display:block;width:36px;height:4px;margin:0 auto 20px;background:var(--line);border-radius:99px;}
   .filter-dialog .filter-controls{padding:0;border:0;margin:0;}
