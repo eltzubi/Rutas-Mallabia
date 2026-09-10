@@ -3670,21 +3670,9 @@ AMARAUNE = {
     '<p class="full-name">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
         '<p class="full-name">Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen</p>',
 
-    # elev markers / legend (used twice: hero chart and map section)
-    '<title>Ermita de Urdaixa &middot; 11,6 km &middot; 396 m</title>':
-        '<title>Urdaixako ermita &middot; 11,6 km &middot; 396 m</title>',
-    '<title>Ermita de San Krist&oacute;bal &middot; 14,8 km &middot; 494 m</title>':
-        '<title>San Kristobal ermita &middot; 14,8 km &middot; 494 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> '
-    '<span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> '
-    '<span class="elev-legend-item"><span class="num">3</span>Sarrimendi</span> '
-    '<span class="elev-legend-item"><span class="num">4</span>Ermita de San Krist&oacute;bal</span> '
-    '<span class="elev-legend-item"><span class="num">5</span>Gaztelumendi</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> '
-        '<span class="elev-legend-item"><span class="num">2</span>Urdaixako ermita</span> '
-        '<span class="elev-legend-item"><span class="num">3</span>Sarrimendi</span> '
-        '<span class="elev-legend-item"><span class="num">4</span>San Kristobal ermita</span> '
-        '<span class="elev-legend-item"><span class="num">5</span>Gaztelumendi</span>',
+    # elev markers / legend: San Kristobal Txiki, Betzun, Iturzurigaina, Sarrimendi
+    # and Gaztelumendi are all Basque toponyms already, unchanged in castellano
+    # and euskera alike -- no translation entries needed for them.
 
     # facts note (custom wording: Desnivel is the race poster's official figure, not raw GPX)
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial del cartel de la carrera (+1.000&nbsp;m; el track GPX da algo m&aacute;s, unos +1.260&nbsp;m). <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
@@ -3709,8 +3697,8 @@ AMARAUNE = {
     # body copy
     'El trazado real de la Amaraune Mendi Lasterketa, en Berriz. Carrera de monta&ntilde;a organizada por Amaraune Berrizko Mendi Kirol Elkartea, que se celebra cada junio.':
         'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen. Amaraune Berrizko Mendi Kirol Elkarteak antolatzen duen mendi lasterketa da, ekainero jokatzen dena.',
-    '[PENDIENTE: texto en castellano del usuario. Track real: Berriz &rarr; Iturzurigaina (km 6,6) &rarr; Ermita de Urdaixa (km 11,6) &rarr; Sarrimendi (km 13,5) &rarr; Ermita de San Krist&oacute;bal (km 14,8) &rarr; Gaztelumendi (km 15,2) &rarr; Berriz. 19,52&nbsp;km, +1.000&nbsp;m oficiales (+1.260&nbsp;m seg&uacute;n el GPX).]':
-        '[PENDIENTE: erabiltzailearen euskarazko testua. Benetako ibilbidea: Berriz &rarr; Iturzurigaina (6,6 km) &rarr; Urdaixako ermita (11,6 km) &rarr; Sarrimendi (13,5 km) &rarr; San Kristobal ermita (14,8 km) &rarr; Gaztelumendi (15,2 km) &rarr; Berriz. 19,52&nbsp;km, +1.000&nbsp;m ofizialak (+1.260&nbsp;m GPXaren arabera).]',
+    '<p>Esta ruta sigue el recorrido de la Amaraune Lasterketa de Berriz. Aunque no parte de <b>Trabakua</b>, hemos querido incluirla porque pasa por una zona muy habitual en nuestras rutas, <b>Iturzurigaina</b>, y porque nos permite conocer nuevos senderos y caminos muy bonitos que normalmente no utilizamos.</p>\n    <p>Salimos desde Berriz, desde la zona situada junto a la iglesia, y comenzamos a subir hacia el barrio de <b>Besoita</b>. Desde all&iacute; cogemos la pista que asciende hacia la <b><a href="sancristobal.html">ermita de San Kristobal Txiki</a></b>.</p>\n    <p>Antes de llegar a la ermita, en plena curva, dejamos la pista y nos metemos a mano derecha. Comienza aqu&iacute; un bonito sendero que sube por detr&aacute;s del monte y que, poco a poco, nos acerca hasta la propia ermita de San Kristobal Txiki.</p>\n    <p>Desde la ermita giramos a la derecha, como hemos hecho en otras rutas, y continuamos hacia el caser&iacute;o <b><a href="betzun.html">Betzun</a></b>, situado en la parte alta de <b>Zengotita</b>. A partir de aqu&iacute; tomamos direcci&oacute;n norte y el camino comienza a subir con fuerza hacia Iturzurigaina, una zona que conocemos bien por su cercan&iacute;a a <b><a href="iturrizuri.html">Iturzuri</a></b> y <b><a href="zengotitagane.html">Zengotitagane</a></b>.</p>\n    <p>Despu&eacute;s de alcanzar la parte alta y m&aacute;s llana, giramos a la izquierda y volvemos a meternos entre &aacute;rboles, entrando en una zona de bosque bastante cerrado.</p>\n    <p>A partir de este punto comienza una de las partes m&aacute;s interesantes de la ruta. Vamos enlazando pistas y caminos entre el bosque, con algunos claros que nos dejan buenas vistas, mientras empezamos a contemplar la zona de los e&oacute;licos de <b><a href="oiz.html">Oiz</a></b>. Continuamos a media ladera, atravesando esta parte de la monta&ntilde;a sin necesidad de subir hasta la cima.</p>\n    <p>M&aacute;s adelante el recorrido cambia completamente. Giramos y comenzamos el descenso por una sucesi&oacute;n de senderos escondidos entre el bosque, muy bonitos tanto para correr como para hacer senderismo. Es una zona diferente a los caminos que solemos utilizar y uno de los motivos por los que merece la pena conocer este recorrido.</p>\n    <p>Estos senderos nos van llevando hacia <b>Sarrimendia</b>. Una vez alcanzada su parte alta, antes de iniciar la bajada hacia Berriz, tendremos que subir hasta el &uacute;ltimo pico, <b>Gaztelumendi</b>. Desde all&iacute; comenzamos el descenso, regresando nuevamente por la zona del barrio de Besoita para completar la vuelta.</p>':
+        '<p>[PENDIENTE: erabiltzailearen euskarazko testua. Gaztelaniazko testua jada gehituta dago goian; euskarazko itzulpena falta da.]</p>',
 
     # map + footer
     'data-marker-title="Berriz (salida y llegada)"':
