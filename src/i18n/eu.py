@@ -380,7 +380,6 @@ HOME = {
         'batekin"',
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
-    '<summary>Antes de salir</summary>': '<summary>Irten aurretik</summary>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
 
@@ -441,21 +440,34 @@ HOME = {
         'aurkituko duzun baliagarriena jasotzen du &mdash;ikuspegiak, ur-iturriak, bidegurutzeak eta '
         'zenbait erreferentzia-puntu&mdash; ibilbidean zehar laguntzeko.',
 
-    'Las rutas no est&aacute;n se&ntilde;alizadas, por lo que es imprescindible llevar el track cargado '
-    'en un GPS, reloj o dispositivo de navegaci&oacute;n. La informaci&oacute;n que encontrar&aacute;s '
+    'Las rutas no est&aacute;n se&ntilde;alizadas, por lo que <b>es imprescindible llevar el track cargado '
+    'en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n que encontrar&aacute;s '
     'aqu&iacute; sirve de apoyo y para conocer mejor la ruta, pero no sustituye al track durante el '
     'recorrido.':
-        'Ibilbideak ez daude seinalizatuta, beraz ezinbestekoa da trackea GPS, erloju edo '
-        'nabigazio-gailu batean kargatuta eramatea. Hemen aurkituko duzun informazioak laguntzeko eta '
+        'Ibilbideak ez daude seinalizatuta, beraz <b>ezinbestekoa da trackea GPS, erloju edo '
+        'nabigazio-gailu batean kargatuta eramatea</b>. Hemen aurkituko duzun informazioak laguntzeko eta '
         'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
 
     'Las rutas en bici est&aacute;n hechas con asistencia el&eacute;ctrica est&aacute;ndar; la dificultad real puede variar seg&uacute;n la bici y el ciclista.':
         'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira; benetako zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
+    'El estado de los senderos puede cambiar seg&uacute;n la &eacute;poca del a&ntilde;o. Dependiendo de la estaci&oacute;n, la vegetaci&oacute;n, las lluvias o el poco uso de alg&uacute;n tramo, puedes encontrarlos m&aacute;s limpios o algo m&aacute;s cerrados. En general son caminos y senderos abiertos y transitables, pero las condiciones que encuentres el d&iacute;a de la ruta pueden ser diferentes a las descritas aqu&iacute;.':
+        'Bidezidorren egoera urtaroaren arabera alda daiteke. Urtaroaren, landaretzaren, euriaren edo '
+        'zenbait tarteren erabilera urriaren arabera, garbiago edo itxiago aurki ditzakezu. Oro har, bide '
+        'eta bidezidor irekiak eta ibilgarriak dira, baina ibilbidea egiten duzun egunean aurkituko '
+        'dituzun baldintzak hemen deskribatutakoak baino desberdinak izan daitezke.',
+    'La informaci&oacute;n de cada ruta refleja las condiciones encontradas cuando fue recorrida y documentada. El terreno de monta&ntilde;a puede cambiar con el tiempo y aparecer barro, hojas, piedras sueltas, ramas, &aacute;rboles ca&iacute;dos u otros obst&aacute;culos. Valora siempre las condiciones del momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
+        'Ibilbide bakoitzaren informazioak ibilbidea egin eta dokumentatu zenean aurkitutako baldintzak '
+        'jasotzen ditu. Mendiko lurra denborarekin alda daiteke, eta lokatza, hostoak, harri solteak, '
+        'adarrak, zuhaitz eroriak edo beste oztopo batzuk ager daitezke. Balioetsi beti unean uneko '
+        'baldintzak eta, pauso bat seguru iruditzen ez bazaizu, <b>bilatu beste bide bat edo egin '
+        'atzera</b>.',
     'Si te encuentras algo que haya cambiado &mdash;un &aacute;rbol ca&iacute;do, un tramo cortado, '
-    'se&ntilde;alizaci&oacute;n da&ntilde;ada&mdash;, av&iacute;same con el bot&oacute;n &laquo;Reportar incidencia&raquo; '
+    'un sendero especialmente cerrado, se&ntilde;alizaci&oacute;n da&ntilde;ada o cualquier otra '
+    'incidencia&mdash;, av&iacute;same con el bot&oacute;n &laquo;Reportar incidencia&raquo; '
     'que hay en cada ficha de ruta.':
-        'Zerbait aldatuta aurkitzen baduzu &mdash;zuhaitz bat erorita, tarte bat moztuta, seinaleztapena '
-        'hondatuta&mdash;, jakinarazidazu ibilbide bakoitzaren fitxan dagoen &laquo;Arazoa jakinarazi&raquo; '
+        'Zerbait aldatuta aurkitzen baduzu &mdash;zuhaitz bat erorita, tarte bat moztuta, bidezidor bat '
+        'bereziki itxita, seinaleztapena hondatuta edo beste edozein arazo&mdash;, jakinarazidazu '
+        'ibilbide bakoitzaren fitxan dagoen &laquo;Arazoa jakinarazi&raquo; '
         'botoiaren bidez.',
 
 
