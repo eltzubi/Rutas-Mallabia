@@ -3581,8 +3581,8 @@ ZENGOTITAOSMAGAIN = {
         'Igoerak pixkanaka Zengotitarantz eramango gaitu, pagadi batetik ere pasatuz. Zati lasai eta anitza da, non altuera pixkanaka irabazten joango garen auzora itzuli arte.',
     'Una vez en Zengotita volvemos a pasar junto a la ermita y, esta vez, regresamos por carretera hasta Trabakua, donde terminamos la ruta.':
         'Zengotitara iritsitakoan, berriro ere baselizaren ondotik pasatuko gara, eta oraingoan errepidetik Trabakuara itzuliko gara, non ibilbidea amaituko dugun.',
-    'Tambi&eacute;n existe la posibilidad de empezar directamente junto a la ermita de Zengotita. De esta forma se eliminan los kil&oacute;metros de ida y vuelta desde Trabakua y parte del recorrido por carretera, dejando una vuelta bastante m&aacute;s corta, especialmente interesante si queremos hacerla con ni&ntilde;os.':
-        'Zengotitako baselizaren ondoan zuzenean hastea ere posible da. Horrela, Trabakuatik joan-etorriko kilometroak eta errepideko ibilbidearen zati bat ezabatzen dira, ibilbide askoz laburragoa utziz, bereziki interesgarria haurrekin egin nahi badugu.',
+    'Tambi&eacute;n existe la posibilidad de empezar directamente junto a la ermita de Zengotita, donde hay un buen aparcamiento. De esta forma se eliminan los kil&oacute;metros de ida y vuelta desde Trabakua y parte del recorrido por carretera, dejando una vuelta bastante m&aacute;s corta, especialmente interesante si queremos hacerla con ni&ntilde;os.':
+        'Zengotitako baselizaren ondoan zuzenean hastea ere posible da, aparkaleku ona baitago. Horrela, Trabakuatik joan-etorriko kilometroak eta errepideko ibilbidearen zati bat ezabatzen dira, ibilbide askoz laburragoa utziz, bereziki interesgarria haurrekin egin nahi badugu.',
     'download="Fuente Zengotita, Osmagain y Arietzu.gpx"':
         'download="Zengotitako iturria, Osmagain eta Arietzu.gpx"',
     'download="Fuente Zengotita, Osmagain y Arietzu.kml"':
