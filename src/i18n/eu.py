@@ -79,6 +79,12 @@ COMMON = {
         '<h3 class="route-card-name">Axmakur, Iturrizuri eta Zengotitagane</h3>',
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Axmakur, Iturrizuri y Zengotitagane</p>':
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota</p>',
+    '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>':
+        '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>',
+    '<p class="route-card-desc">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
+        '<p class="route-card-desc">Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen</p>',
+    'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
+        'alt="Korrikalaria bidezidor batean gora aerosorgailu baterantz, beste korrikalari batzuk atzealdean"',
     'alt="Vista desde el manillar de la bicicleta sobre una pista de tierra y grava"':
         'alt="Bizikletaren eskulekutik ikusitako lurrezko eta hartxintxarrezko pista"',
     'alt="Peque&ntilde;a escultura de alambre sobre una roca musgosa, entre la niebla y los pinos"':
@@ -2978,6 +2984,7 @@ DESCRIPTIONS = {
     'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
     'zengotitaosmagain': 'Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik',
     'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota',
+    'amaraune': 'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen',
 }
 
 # <title> per page (head files)
@@ -3089,6 +3096,7 @@ TITLES = {
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitaosmagain': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'axmakuriturrizuri': 'Axmakur, Iturrizuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3655,6 +3663,61 @@ AXMAKURITURRIZURI = {
         'download="Axmakur, Iturrizuri eta Zengotitagane.kml"',
 }
 
+AMARAUNE = {
+    # hero
+    '<span>Mixta</span><span class="sep">/</span><span>Iturzurigaina</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Iturzurigaina</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<p class="full-name">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
+        '<p class="full-name">Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen</p>',
+
+    # elev markers / legend (used twice: hero chart and map section)
+    '<title>Ermita de Urdaixa &middot; 11,6 km &middot; 396 m</title>':
+        '<title>Urdaixako ermita &middot; 11,6 km &middot; 396 m</title>',
+    '<title>Ermita de San Krist&oacute;bal &middot; 14,8 km &middot; 494 m</title>':
+        '<title>San Kristobal ermita &middot; 14,8 km &middot; 494 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> '
+    '<span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> '
+    '<span class="elev-legend-item"><span class="num">3</span>Sarrimendi</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Ermita de San Krist&oacute;bal</span> '
+    '<span class="elev-legend-item"><span class="num">5</span>Gaztelumendi</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> '
+        '<span class="elev-legend-item"><span class="num">2</span>Urdaixako ermita</span> '
+        '<span class="elev-legend-item"><span class="num">3</span>Sarrimendi</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>San Kristobal ermita</span> '
+        '<span class="elev-legend-item"><span class="num">5</span>Gaztelumendi</span>',
+
+    # facts note (custom wording: Desnivel is the race poster's official figure, not raw GPX)
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial del cartel de la carrera (+1.000&nbsp;m; el track GPX da algo m&aacute;s, unos +1.260&nbsp;m). <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, lasterketaren kartelaren datu ofiziala (+1.000&nbsp;m; GPX trackak zertxobait gehiago ematen du, +1.260&nbsp;m inguru). <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+
+    # photos
+    'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
+        'alt="Korrikalaria bidezidor batean gora aerosorgailu baterantz, beste korrikalari batzuk atzealdean"',
+    'alt="Foto ampliada del recorrido de la Amaraune Mendi Lasterketa"':
+        'alt="Amaraune Mendi Lasterketaren ibilbidearen argazki handitua"',
+    'alt="Cartel de la II Amaraune Mendi Lasterketa, en Berriz: 19 km y +1.000 m, el 24 de junio"':
+        'alt="Amaraune Mendi Lasterketaren II. edizioko kartela, Berrizen: 19 km eta +1.000 m, ekainaren 24an"',
+    'alt="Vista de las monta&ntilde;as entre la niebla, desde un prado de helechos"':
+        'alt="Mendiak lainoartean, iratze-larre batetik ikusita"',
+    'alt="Vacas pastando en una ladera, con los aerogeneradores del cordal al fondo"':
+        'alt="Behiak hegal batean bazkan, gandorreko aerosorgailuak atzealdean"',
+    'alt="Vaca con grandes cuernos, con el valle cubierto de niebla y las monta&ntilde;as al fondo"':
+        'alt="Adar handiko behia, harana lainoz estalita eta mendiak atzealdean"',
+    'alt="Gran roca en un claro del bosque, con el valle entre niebla al fondo"':
+        'alt="Harkaitz handia basoko soilgune batean, harana lainoartean atzealdean"',
+
+    # body copy
+    'El trazado real de la Amaraune Mendi Lasterketa, en Berriz. Carrera de monta&ntilde;a organizada por Amaraune Berrizko Mendi Kirol Elkartea, que se celebra cada junio.':
+        'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen. Amaraune Berrizko Mendi Kirol Elkarteak antolatzen duen mendi lasterketa da, ekainero jokatzen dena.',
+    '[PENDIENTE: texto en castellano del usuario. Track real: Berriz &rarr; Iturzurigaina (km 6,6) &rarr; Ermita de Urdaixa (km 11,6) &rarr; Sarrimendi (km 13,5) &rarr; Ermita de San Krist&oacute;bal (km 14,8) &rarr; Gaztelumendi (km 15,2) &rarr; Berriz. 19,52&nbsp;km, +1.000&nbsp;m oficiales (+1.260&nbsp;m seg&uacute;n el GPX).]':
+        '[PENDIENTE: erabiltzailearen euskarazko testua. Benetako ibilbidea: Berriz &rarr; Iturzurigaina (6,6 km) &rarr; Urdaixako ermita (11,6 km) &rarr; Sarrimendi (13,5 km) &rarr; San Kristobal ermita (14,8 km) &rarr; Gaztelumendi (15,2 km) &rarr; Berriz. 19,52&nbsp;km, +1.000&nbsp;m ofizialak (+1.260&nbsp;m GPXaren arabera).]',
+
+    # map + footer
+    'data-marker-title="Berriz (salida y llegada)"':
+        'data-marker-title="Berriz (irteera eta helmuga)"',
+    'Circuito &mdash; vuelve al mismo punto': 'Zirkuitua &mdash; puntu berera itzultzen da',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3694,4 +3757,5 @@ PAGE_STRINGS = {
     'longa': LONGA,
     'zengotitaosmagain': ZENGOTITAOSMAGAIN,
     'axmakuriturrizuri': AXMAKURITURRIZURI,
+    'amaraune': AMARAUNE,
 }
