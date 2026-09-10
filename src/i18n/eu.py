@@ -75,6 +75,12 @@ COMMON = {
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
     'alt="Arroyo entre helechos y hojarasca en un bosque de con&iacute;feras"':
         'alt="Erreka bat garo eta hosto artean konifero-baso batean"',
+    '<h3 class="route-card-name">Axmakur, Iturrizuri y Zengotitagane</h3>':
+        '<h3 class="route-card-name">Axmakur, Iturrizuri eta Zengotitagane</h3>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Axmakur, Iturrizuri y Zengotitagane</p>':
+        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota</p>',
+    'alt="Vista desde el manillar de la bicicleta sobre una pista de tierra y grava"':
+        'alt="Bizikletaren eskulekutik ikusitako lurrezko eta hartxintxarrezko pista"',
     'alt="Peque&ntilde;a escultura de alambre sobre una roca musgosa, entre la niebla y los pinos"':
         'alt="Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean"',
     'alt="Aerogeneradores del parque e&oacute;lico recortados contra el sol, con la niebla en los valles al fondo"':
@@ -2971,6 +2977,7 @@ DESCRIPTIONS = {
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
     'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
     'zengotitaosmagain': 'Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik',
+    'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota',
 }
 
 # <title> per page (head files)
@@ -3081,6 +3088,7 @@ TITLES = {
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitaosmagain': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
+    'axmakuriturrizuri': 'Axmakur, Iturrizuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3595,6 +3603,35 @@ ZENGOTITAOSMAGAIN = {
         'download="Osmagain eta Arietzu.kml"',
 }
 
+AXMAKURITURRIZURI = {
+    '<span>Pista y tierra</span><span class="sep">/</span><span>Axmakur, Iturrizuri y Zengotitagane</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta lurra</span><span class="sep">/</span><span>Axmakur, Iturrizuri eta Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Axmakur, Iturrizuri<br><em>y Zengotitagane</em></h1>':
+        '<h1>Axmakur, Iturrizuri<br><em>eta Zengotitagane</em></h1>',
+    '<p class="full-name">Circuito de BTT desde Trabakua por Axmakur, Iturrizuri y Zengotitagane</p>':
+        '<p class="full-name">BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota</p>',
+    'Vista desde el manillar de la bicicleta sobre una pista de tierra y grava':
+        'Bizikletaren eskulekutik ikusitako lurrezko eta hartxintxarrezko pista',
+    'Foto ampliada del recorrido de Axmakur, Iturrizuri y Zengotitagane':
+        'Axmakur, Iturrizuri eta Zengotitagane ibilbidearen argazki handitua',
+    'Bicicleta apoyada en un &aacute;rbol en una ladera con hojas oto&ntilde;ales':
+        'Bizikleta zuhaitz baten kontra, hosto oreztatuak dituen malda batean',
+    'Bicicleta junto a una peque&ntilde;a laguna de monta&ntilde;a, con una valla y vistas al fondo':
+        'Bizikleta mendiko aintzira txiki baten ondoan, hesi batekin eta atzealdean ikuspegiekin',
+    'Vista desde el manillar de la bicicleta junto a los aerogeneradores del cordal':
+        'Bizikletaren eskulekutik ikusitako gandorreko aerosorgailuak',
+    'Bicicleta junto a un moj&oacute;n de piedra, con amplias vistas a los montes':
+        'Bizikleta harrizko mugarri baten ondoan, mendietara ikuspegi zabalekin',
+    'Fuente de Iturzuri': 'Iturzuriko iturria',
+    'T&uacute;mulo Probazelaiburu II': 'Probazelaiburu II.a tumulua',
+    '[PENDIENTE: texto en castellano del usuario. Track real: Trabakua &rarr; Axmakur (km 9,3) &rarr; Fuente de Iturzuri (km 9,8) &rarr; T&uacute;mulo Probazelaiburu II (km 10,1) &rarr; Zengotitagane (km 10,8) &rarr; Trabakua. 14,97&nbsp;km, +728&nbsp;m.]':
+        '[PENDIENTE: euskarazko testua. Benetako ibilbidea: Trabakua &rarr; Axmakur (km 9,3) &rarr; Iturzuriko iturria (km 9,8) &rarr; Probazelaiburu II.a tumulua (km 10,1) &rarr; Zengotitagane (km 10,8) &rarr; Trabakua. 14,97&nbsp;km, +728&nbsp;m.]',
+    'download="Axmakur, Iturrizuri y Zengotitagane.gpx"':
+        'download="Axmakur, Iturrizuri eta Zengotitagane.gpx"',
+    'download="Axmakur, Iturrizuri y Zengotitagane.kml"':
+        'download="Axmakur, Iturrizuri eta Zengotitagane.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3633,4 +3670,5 @@ PAGE_STRINGS = {
     'sarrimendi': SARRIMENDI,
     'longa': LONGA,
     'zengotitaosmagain': ZENGOTITAOSMAGAIN,
+    'axmakuriturrizuri': AXMAKURITURRIZURI,
 }
