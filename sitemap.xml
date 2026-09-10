@@ -361,4 +361,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/longa.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/longa.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/zengotitaosmagain.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zengotitaosmagain.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zengotitaosmagain.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/zengotitaosmagain.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zengotitaosmagain.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zengotitaosmagain.eu.html"/>
+  </url>
 </urlset>

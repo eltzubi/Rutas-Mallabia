@@ -71,6 +71,12 @@ COMMON = {
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota</p>',
     '<p class="route-card-desc">Circuito de trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietxu y Mallabia hasta Mendibil</p>':
         '<p class="route-card-desc">Trail running zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita, Arietxu eta Mallabiatik igarota Mendibileraino</p>',
+    '<h3 class="route-card-name">Fuente Zengotita, Osmagain y Arietzu</h3>':
+        '<h3 class="route-card-name">Zengotitako iturria, Osmagain eta Arietzu</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Fuente Zengotita, Osmagain y Arietzu, por tramos del 7 Pago Mendi Lasterketa</p>':
+        '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Zengotitako iturria, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
+    'alt="Cruz de piedra en la cima, entre &aacute;rboles y rocas cubiertas de musgo"':
+        'alt="Harrizko gurutzea gailurrean, zuhaitz eta goroldiozko harrien artean"',
     'alt="Peque&ntilde;a escultura de alambre sobre una roca musgosa, entre la niebla y los pinos"':
         'alt="Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean"',
     'alt="Aerogeneradores del parque e&oacute;lico recortados contra el sol, con la niebla en los valles al fondo"':
@@ -2966,6 +2972,7 @@ DESCRIPTIONS = {
     'betzun': 'Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota',
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
     'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
+    'zengotitaosmagain': 'Oinezko zirkuitua Trabakuatik, Zengotitako iturria, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik',
 }
 
 # <title> per page (head files)
@@ -3075,6 +3082,7 @@ TITLES = {
     'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
+    'zengotitaosmagain': 'Zengotitako iturria, Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3532,6 +3540,37 @@ LONGA = {
         'download="Trabakua, Zengotitagane, Iturzuri eta Longa.kml"',
 }
 
+ZENGOTITAOSMAGAIN = {
+    '<span>Pista y monte</span><span class="sep">/</span><span>Fuente Zengotita, Osmagain y Arietzu</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta mendia</span><span class="sep">/</span><span>Zengotitako iturria, Osmagain eta Arietzu</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Fuente Zengotita<br><em>Osmagain y Arietzu</em></h1>':
+        '<h1>Zengotitako iturria<br><em>Osmagain eta Arietzu</em></h1>',
+    '<p class="full-name">Circuito de senderismo desde Trabakua por Fuente Zengotita, Osmagain y Arietzu, por tramos del 7 Pago Mendi Lasterketa</p>':
+        '<p class="full-name">Oinezko zirkuitua Trabakuatik, Zengotitako iturria, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
+    'Cruz de piedra en la cima, entre &aacute;rboles y rocas cubiertas de musgo':
+        'Harrizko gurutzea gailurrean, zuhaitz eta goroldiozko harrien artean',
+    'Fuente Zengotita': 'Zengotitako iturria',
+    'Ermita de Zengotita': 'Zengotitako baseliza',
+    'Foto ampliada del recorrido de Fuente Zengotita, Osmagain y Arietzu':
+        'Zengotitako iturria, Osmagain eta Arietzu ibilbidearen argazki handitua',
+    'Vista panor&aacute;mica del valle con caser&iacute;os, un caballo pastando y una pista de hormig&oacute;n':
+        'Haranaren ikuspegi panoramikoa baserriekin, zaldi bat bazkan eta zementuzko pista batekin',
+    'Arroyo entre helechos y hojarasca en un bosque de con&iacute;feras':
+        'Erreka bat garo eta hosto artean konifero-baso batean',
+    'Sendero de hierba subiendo hacia una cima arbolada':
+        'Belar-bidezidorra zuhaitzez betetako gailur batera igotzen',
+    'Cruz de madera en la cima, con vistas a las monta&ntilde;as del entorno':
+        'Egurrezko gurutzea gailurrean, inguruko mendien ikuspegiarekin',
+    'Hayas trasmochas entre helechos en una ladera boscosa':
+        'Pago motzak garo artean basoko malda batean',
+    '[PENDIENTE: texto en castellano del usuario. Track real: Trabakua &rarr; Fuente Zengotita (km 2,2) &rarr; Osmagain (km 3,4) &rarr; Arietzu (km 4,9) &rarr; Ermita de Zengotita otra vez (km 9,7) &rarr; Trabakua. 11,97&nbsp;km, +560&nbsp;m. Por tramos del 7 Pago Mendi Lasterketa.]':
+        '[PENDIENTE: euskarazko testua. Benetako ibilbidea: Trabakua &rarr; Zengotitako iturria (km 2,2) &rarr; Osmagain (km 3,4) &rarr; Arietzu (km 4,9) &rarr; Zengotitako baseliza berriro (km 9,7) &rarr; Trabakua. 11,97&nbsp;km, +560&nbsp;m. 7 Pago Mendi Lasterketaren zati batzuetatik.]',
+    'download="Fuente Zengotita, Osmagain y Arietzu.gpx"':
+        'download="Zengotitako iturria, Osmagain eta Arietzu.gpx"',
+    'download="Fuente Zengotita, Osmagain y Arietzu.kml"':
+        'download="Zengotitako iturria, Osmagain eta Arietzu.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3569,4 +3608,5 @@ PAGE_STRINGS = {
     'betzun': BETZUN,
     'sarrimendi': SARRIMENDI,
     'longa': LONGA,
+    'zengotitaosmagain': ZENGOTITAOSMAGAIN,
 }
