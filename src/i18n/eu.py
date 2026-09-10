@@ -2685,6 +2685,14 @@ MUNIOZGUREN = {
 
     'alt="Astarloko Atxa, el picacho de roca rojiza sobre Muniozguren, con un caser&iacute;o de tejado rojo a media ladera, prados y arbolado por debajo y un cierre de alambre en primer plano"':
         'alt="Astarloko Atxa, Muniozguren gaineko harkaitz gorrixkako tontorra, teilatu gorriko baserri bat magalaren erdian, zelaiak eta zuhaitzak azpian eta alanbrezko hesi bat lehen planoan"',
+    'alt="Pista de grava bajando hacia una cancela met&aacute;lica entre pinos altos, con un monte al fondo"':
+        'alt="Legarrezko pista metalezko atetxo baterantz jaisten, pinu altuen artean, mendi bat hondoan duela"',
+    'alt="Pista forestal entre pinos altos y hiedra, con un claro iluminado al fondo"':
+        'alt="Baso-pista pinu altu eta huntzaren artean, argi-une bat hondoan duela"',
+    'alt="Sendero herboso entre postes de alambre de espino, adentr&aacute;ndose en el bosque"':
+        'alt="Bidezidor belartsua alanbre-hesiko zutoinen artean, basoan barrena sartuz"',
+    'alt="Camino de hierba bajo la b&oacute;veda de &aacute;rboles del bosque"':
+        'alt="Belarrezko bidea basoko zuhaitzen ganga azpian"',
     'alt="Pico rocoso al fondo, visto desde un camino de tierra junto a una alambrada, con caser&iacute;os dispersos en la ladera"':
         'alt="Gailur harritsua atzealdean, alanbre-hesi baten ondoko lurrezko bide batetik ikusia, baserri sakabanatuekin magalean"',
     'alt="Foto ampliada del recorrido de Trabakua, Longa, Muniozguren"':
