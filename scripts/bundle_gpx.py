@@ -64,10 +64,17 @@ def main():
         os.remove(OUT_PATH)
 
     with zipfile.ZipFile(OUT_PATH, "w", zipfile.ZIP_DEFLATED) as zf:
+        seen = {}
         for slug, name, gpx_path in routes:
             # Strip only characters illegal in a filename; keep the title
             # otherwise intact (accents, commas and all).
             safe_name = re.sub(r'[\\/:*?"<>|]', "", name).strip()
+            # Two different routes can share the same title (e.g. a short
+            # route and a longer one both called "Osmagain y Arietzu"):
+            # without this, one would silently overwrite the other's entry.
+            if safe_name in seen:
+                safe_name = f"{safe_name} ({slug})"
+            seen[safe_name] = slug
             zf.write(gpx_path, arcname=f"{safe_name}.gpx")
 
     print(f"wrote {os.path.relpath(OUT_PATH, ROOT)} ({len(routes)} files)")

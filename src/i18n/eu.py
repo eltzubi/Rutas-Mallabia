@@ -3561,6 +3561,14 @@ ZENGOTITAOSMAGAIN = {
         'Egurrezko gurutzea gailurrean, inguruko mendien ikuspegiarekin',
     'Hayas trasmochas entre helechos en una ladera boscosa':
         'Pago motzak garo artean basoko malda batean',
+    'Sendero de tierra entre musgo y helechos en un tramo de bosque':
+        'Lurrezko bidezidorra goroldio eta garo artean, baso-tarte batean',
+    'Pista de tierra junto a una valla, subiendo entre pinares':
+        'Lurrezko pista hesi baten ondoan, pinudi artean gora',
+    'Cruz de piedra con vistas al valle, con claros de bosque talado al fondo':
+        'Harrizko gurutzea haranaren ikuspegiarekin, atzealdean moztutako basoko soroak dituela',
+    'Cruz de piedra a contraluz, con las monta&ntilde;as y el valle al fondo':
+        'Harrizko gurutzea kontraargitan, atzealdean mendiak eta harana dituela',
     'Con esta ruta queremos ense&ntilde;ar la parte baja del recorrido de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, sin acceder a las zonas m&aacute;s altas. Es una alternativa m&aacute;s corta y asequible, pensada tambi&eacute;n para hacerla con ni&ntilde;os que est&eacute;n acostumbrados a andar por el monte, pero intentando que siga siendo una vuelta variada y entretenida.':
         'Ibilbide honen bidez, <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren beheko zatia erakutsi nahi dugu, goiko eremuetara iritsi gabe. Alternatiba laburrago eta errazago bat da, mendian ibiltzen ohituta dauden haurrekin egiteko pentsatua, baina aldi berean ibilbide anitza eta entretenigarria izaten saiatuz.',
     'La ruta sale desde Trabakua en direcci&oacute;n a <b>Zengotita</b>. Despu&eacute;s de unos 2 kil&oacute;metros nos desviamos a la derecha por el camino que sube hacia <b><a href="zengotitagane.html">Zengotitagane</a></b>, aunque apenas permaneceremos medio kil&oacute;metro en &eacute;l. Lo dejamos para girar a la izquierda y dirigirnos hacia la parte baja de Zengotita.':
