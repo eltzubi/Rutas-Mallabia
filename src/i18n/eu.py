@@ -3623,7 +3623,6 @@ AXMAKURITURRIZURI = {
     'Bicicleta junto a un moj&oacute;n de piedra, con amplias vistas a los montes':
         'Bizikleta harrizko mugarri baten ondoan, mendietara ikuspegi zabalekin',
     'Fuente de Iturzuri': 'Iturzuriko iturria',
-    'T&uacute;mulo Probazelaiburu II': 'Probazelaiburu II.a tumulua',
     'Esta ruta sigue pr&aacute;cticamente el mismo recorrido que <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, pero en una versi&oacute;n m&aacute;s corta y directa. En esta ocasi&oacute;n evitamos las bajadas hacia la zona de la potrera y otros desv&iacute;os de aquella vuelta, manteni&eacute;ndonos en la parte alta y reduciendo as&iacute; bastante el recorrido.':
         'Ibilbide honek <a href="potrera.html">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</a> ibilbidearen antzeko bidea jarraitzen du, baina bertsio laburrago eta zuzenago batean. Oraingoan, korta ingururako jaitsierak eta beste ibilbide hartako desbideratzeak saihesten ditugu, goiko aldean mantenduz eta, horrela, ibilbidea nabarmen murriztuz.',
     'Salimos de <b>Trabakua</b>, entre los dos bares del puerto, tomando la carretera que sube en direcci&oacute;n a Gerea. Continuamos por ella sin desviarnos, avanzando tranquilamente entre caser&iacute;os y prados hasta llegar a <b>Muniozguren</b>.':
