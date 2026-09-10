@@ -83,12 +83,12 @@ COMMON = {
         '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>',
     '<p class="route-card-desc">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
         '<p class="route-card-desc">Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen</p>',
-    '<h3 class="route-card-name">Ur Jauziak y Astarloko Atxa</h3>':
+    '<h3 class="route-card-name">Cascada y Astarloko Atxa</h3>':
         '<h3 class="route-card-name">Ur Jauziak eta Astarloko Atxa</h3>',
-    '<p class="route-card-desc">Circuito de senderismo a Ur Jauziak y Astarloko Atxa desde Trabakua</p>':
+    '<p class="route-card-desc">Circuito de senderismo a la Cascada y Astarloko Atxa desde Trabakua</p>':
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino</p>',
-    'alt="Ur Jauziak, la cascada escalonada entre musgo y rocas, con &aacute;rboles alrededor"':
-        'alt="Ur Jauziak, goroldio eta harrien artean mailaka jaisten den ur-jauzia, zuhaitzen artean"',
+    'alt="Vista del cordal con la fila de aerogeneradores y las antenas de la cima al fondo, tras un muro de piedra entre helechos"':
+        'alt="Harrizko horma baten atzetik, garoen artean, gandorraren ikuspegia eolikoen ilararekin eta gailurreko antenekin atzealdean"',
     'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
         'alt="Korrikalaria bidezidor batean gora aerosorgailu baterantz, beste korrikalari batzuk atzealdean"',
     'alt="Vista desde el manillar de la bicicleta sobre una pista de tierra y grava"':
@@ -159,7 +159,7 @@ COMMON = {
         '<h3 class="route-card-name">Iturzuri, Zengotitagane Gereako ur-jauzitik gora</h3>',
     '<h3 class="route-card-name">Zenarruza, San Kristobal y Zengotitagane</h3>':
         '<h3 class="route-card-name">Zenarruza, San Kristobal eta Zengotitagane</h3>',
-    '<h3 class="route-card-name">Ur Jauziak Gerea</h3>':
+    '<h3 class="route-card-name">Cascada de Gerea</h3>':
         '<h3 class="route-card-name">Ur Jauziak Gerea</h3>',
     '<h3 class="route-card-name">Trabakua, paseo por el barrio Goita</h3>':
         '<h3 class="route-card-name">Trabakua, Goita auzoko paseoa</h3>',
@@ -516,7 +516,7 @@ HOME = {
     'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
 
     # gerea card
-    'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
+    'alt="La cascada escalonada de Gerea, con el agua bajando entre las rocas"':
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
 
     # goita card
@@ -950,9 +950,9 @@ GEREA = {
         'Zirkuitua Trabakuatik Gereako ur-jauzira',
     'alt="Mar de lomas verdes con caser&iacute;os y prados repartidos por las laderas, vistas por encima de las copas de unos abetos, con el mar asomando en el horizonte"':
         'alt="Muino berdeen itsasoa, baserriak eta zelaiak magaletan barreiatuta, izeien adaburuen gainetik ikusita, eta itsasoa zerumugan agertzen"',
-    'alt="Ur Jauziak, la cascada escalonada de Gerea, con el agua bajando entre las rocas"':
+    'alt="La cascada escalonada de Gerea, con el agua bajando entre las rocas"':
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
-    'alt="Foto ampliada del recorrido de Ur Jauziak-Gerea"':
+    'alt="Foto ampliada del recorrido de la Cascada de Gerea"':
         'alt="Ur Jauziak-Gerea ibilbidearen argazki handitua"',
     'alt="Cartel de madera del recorrido, con indicaciones a Ur Jauzia y a Trabakua"':
         'alt="Ibilbidearen egurrezko kartela, Ur Jauziarako eta Trabakuarako seinaleekin"',
@@ -961,19 +961,19 @@ GEREA = {
     'alt="Sendero junto a una borda abandonada de tejado rojo, con los aerogeneradores al fondo"':
         'alt="Bidezidorra borda abandonatu baten ondoan, teilatu gorriarekin, eolikoak '
         'atzealdean"',
-    'alt="Ur Jauziak en otoño, con el agua cayendo entre musgo y rocas"':
+    'alt="La cascada en otoño, con el agua cayendo entre musgo y rocas"':
         'alt="Ur Jauziak udazkenean, ura goroldio eta harrien artetik erortzen"',
     'alt="Vistas al barrio de Gerea desde la subida, entre caseríos y montañas"':
         'alt="Gereako auzorako ikuspegiak igoeratik, baserrien eta mendien artean"',
-    'alt="Ur Jauziak en diciembre, con el agua cayendo con fuerza entre las rocas"':
+    'alt="La cascada en diciembre, con el agua cayendo con fuerza entre las rocas"':
         'alt="Ur Jauziak abenduan, ura indarrez harrien artetik erortzen"',
     'alt="Sendero estrecho entre helechos y árboles, en un tramo umbrío del recorrido"':
         'alt="Bide-zidor estua garo eta zuhaitzen artean, ibilbideko tarte itzaltsu batean"',
     'alt="Marca verde y blanca de sendero pintada en el tronco de un árbol"':
         'alt="Bide-marka berde eta zuria zuhaitz baten enborrean margotuta"',
     'Esta ruta sale de Trabakua y sube marcada en parte con pintadas verdes y blancas. Tras unos '
-    '40 minutos de subida llega la primera parada: <b>Ur Jauziak</b>, una cascada escalonada '
-    'entre rocas y musgo. En invierno el caudal es impresionante; en verano baja mucho y se '
+    '40 minutos de subida llega la primera parada: la <b>cascada</b>, escalonada entre rocas y '
+    'musgo. En invierno el caudal es impresionante; en verano baja mucho y se '
     'queda con poca agua y mucho musgo —sigue siendo bonita, pero merece más la pena el resto '
     'del año.':
         'Ibilbide honek Trabakuatik irten eta gora egiten du, tarte batean berde eta zuriz '
@@ -2450,7 +2450,7 @@ PAGO7 = {
     '<title>Dolmen de Iturzurigaina &middot; 16,5 km &middot; 855 m</title>':
         '<title>Iturzurigainako Trikuharria &middot; 16,5 km &middot; 855 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> '
-    '<span class="elev-legend-item"><span class="num">2</span>Ur Jauziak</span> '
+    '<span class="elev-legend-item"><span class="num">2</span>Cascada de Gerea</span> '
     '<span class="elev-legend-item"><span class="num">3</span>Oiz</span> '
     '<span class="elev-legend-item"><span class="num">4</span>Dolmen de Iturzurigaina</span> '
     '<span class="elev-legend-item"><span class="num">5</span>Osmagain</span> '
@@ -2473,7 +2473,7 @@ PAGO7 = {
         'alt="Korrikalariak baso-zati batean, 7 Pago Mendi Lasterketaren bandera ofizial baten ondoan, 27 eta 28 dortsalak"',
     'alt="V&eacute;rtice geod&eacute;sico en una cima, entre niebla"':
         'alt="Bertize geodesikoa gailur batean, lainoaren artean"',
-    'alt="Cascada de Ur Jauziak, con el agua cayendo entre las rocas del bosque"':
+    'alt="Cascada de Gerea, con el agua cayendo entre las rocas del bosque"':
         'alt="Ur Jauziak ur-jauzia, ura basoko harrien artetik erortzen"',
     'alt="Pista forestal entre niebla, con troncos apilados a un lado"':
         'alt="Baso-pista lainoaren artean, enborrak alde batean pilatuta"',
@@ -2503,7 +2503,7 @@ PAGO7 = {
         '<b>Trabaku</b>tik ere 15 minutu eskasean iritsi daiteke zirkuitura. Mallabiko ibilbidea izanik, eta Trabakutik abiatzen diren beste ibilbide batzuekin inguru bera partekatzen duenez, ibilbide honek ere badu hemen bere lekua.',
     'Salimos de la plaza de <b>Mallabia</b> y enseguida dejamos atr&aacute;s el pueblo para meternos entre barrios, caser&iacute;os y caminos de monte. Los primeros kil&oacute;metros van ganando altura poco a poco, pasando por la <b>Ermita de San Juan</b>, en el barrio de <b>Zengotita</b>, antes de subir hacia <b>Zengotitagane</b>.':
         '<b>Mallabi</b>ko plazatik ateratzen gara eta berehala uzten dugu herria atzean, auzo, baserri eta mendi-bideetan sartzeko. Lehen kilometroetan pixkanaka irabazten dugu altuera, <b>San Juan ermita</b>tik igaro, <b>Zengotita</b> auzoan, <b>Zengotitagane</b>ra igo aurretik.',
-    'Despu&eacute;s de Zengotitagane toca bajar, y bastante. Al principio se puede correr bien, pero seg&uacute;n vamos perdiendo altura la bajada se vuelve m&aacute;s t&eacute;cnica y hay que estar atentos. Abajo cambia de nuevo el terreno y comenzamos a subir de forma m&aacute;s suave hacia <a href="gerea.html">Ur Jauziak</a>.':
+    'Despu&eacute;s de Zengotitagane toca bajar, y bastante. Al principio se puede correr bien, pero seg&uacute;n vamos perdiendo altura la bajada se vuelve m&aacute;s t&eacute;cnica y hay que estar atentos. Abajo cambia de nuevo el terreno y comenzamos a subir de forma m&aacute;s suave hacia la <a href="gerea.html">Cascada de Gerea</a>.':
         'Zengotitagane pasatu ondoren jaitsiera gogorra dator, eta ez da motza. Hasieran ondo korrika egin daiteke, baina behera egin ahala gero eta teknikoagoa bihurtzen da eta adi ibili behar da. Behean, lurra berriro aldatzen da eta igoera lasaiago bati ekiten diogu <a href="gerea.html">Ur Jauziak</a> aldera.',
     'A partir de ah&iacute; ponemos rumbo a <b>Oiz</b>.':
         'Handik aurrera, <b>Oiz</b> dugu jomugan.',
@@ -2533,7 +2533,7 @@ PAGO7 = {
         'Hau da <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbide ofiziala, maiatzero Mallabian jokatzen dena. Track ona hurrengo edizioa baino lehen ibilbidea ezagutzeko.',
 
     # parada
-    'A&ntilde;ado esta ruta por ser de Mallabia y porque buena parte de su recorrido coincide con tramos de otras rutas que salen de Trabakua y alrededores: sube al mismo <a href="oiz.html">Oiz</a> y pasa por los mismos altos de <a href="arietzu.html">Osmagain y Arietzu</a>, con tramos de bosque, la cascada de Ur Jauziak y buenas vistas desde el cordal.':
+    'A&ntilde;ado esta ruta por ser de Mallabia y porque buena parte de su recorrido coincide con tramos de otras rutas que salen de Trabakua y alrededores: sube al mismo <a href="oiz.html">Oiz</a> y pasa por los mismos altos de <a href="arietzu.html">Osmagain y Arietzu</a>, con tramos de bosque, la cascada de Gerea y buenas vistas desde el cordal.':
         'Ibilbide hau gehitzen dut Mallabiakoa delako, eta bere ibilbidearen zati handi bat Trabakuatik eta inguruetatik ateratzen diren beste ibilbide batzuen zatiekin bat datorrelako: <a href="oiz.html">Oiz</a> mendi bera igotzen du eta <a href="arietzu.html">Osmagain eta Arietzu</a>ko goi berberetatik igarotzen da, baso-zatiekin, Ur Jauziak ur-jauziarekin eta gailurreko ikuspegi ederrekin.',
 
     # map + footer
@@ -3727,13 +3727,13 @@ AMARAUNE = {
 ASTARLOKOATXA = {
     '<span>Sendero</span><span class="sep">/</span><span>Cascada y cima con vistas</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia eta gailur ikusgarria</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Ur Jauziak<br><em>y Astarloko Atxa</em></h1>':
+    '<h1>Cascada<br><em>y Astarloko Atxa</em></h1>':
         '<h1>Ur Jauziak<br><em>eta Astarloko Atxa</em></h1>',
-    '<p class="full-name">Circuito de senderismo a Ur Jauziak y Astarloko Atxa desde Trabakua</p>':
+    '<p class="full-name">Circuito de senderismo a la Cascada y Astarloko Atxa desde Trabakua</p>':
         '<p class="full-name">Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino</p>',
-    'alt="Ur Jauziak, la cascada escalonada entre musgo y rocas, con &aacute;rboles alrededor"':
-        'alt="Ur Jauziak, goroldio eta harrien artean mailaka jaisten den ur-jauzia, zuhaitzen artean"',
-    'alt="Foto ampliada del recorrido de Ur Jauziak y Astarloko Atxa"':
+    'alt="Vista del cordal con la fila de aerogeneradores y las antenas de la cima al fondo, tras un muro de piedra entre helechos"':
+        'alt="Harrizko horma baten atzetik, garoen artean, gandorraren ikuspegia eolikoen ilararekin eta gailurreko antenekin atzealdean"',
+    'alt="Foto ampliada del recorrido de la Cascada y Astarloko Atxa"':
         'alt="Ur Jauziak eta Astarloko Atxa ibilbidearen argazki handitua"',
     'alt="&Aacute;rbol junto a un camino de tierra, con un cartel de madera del sendero y el monte al fondo"':
         'alt="Zuhaitza lurrezko bide baten ondoan, bidearen egurrezko kartelarekin eta mendia atzealdean"',
@@ -3761,15 +3761,17 @@ ASTARLOKOATXA = {
         'alt="Aerosorgailu ilara gandorraren gainean, antenak gailurrean atzealdean"',
     'alt="Vista panor&aacute;mica del valle, con caser&iacute;os, monta&ntilde;as y el mar al fondo"':
         'alt="Haranaren ikuspegi panoramikoa, baserriak, mendiak eta itsasoa atzealdean"',
-    'alt="Ur Jauziak con el agua cayendo en dos hilos entre rocas cubiertas de musgo, en un tramo de bosque cerrado"':
+    'alt="Cabras bajo un gran &aacute;rbol, entre helechos y rocas cubiertas de musgo"':
+        'alt="Ahuntzak zuhaitz handi baten azpian, garoen eta goroldioz estalitako harrien artean"',
+    'alt="La cascada con el agua cayendo en dos hilos entre rocas cubiertas de musgo, en un tramo de bosque cerrado"':
         'alt="Ur Jauziak, ura bi hariotan goroldioz estalitako harrien artetik jausten, baso itxi samar batean"',
-    'alt="Ur Jauziak en oto&ntilde;o, con hojas secas en primer plano y un gran canto rodado junto a la ca&iacute;da de agua"':
+    'alt="La cascada en oto&ntilde;o, con hojas secas en primer plano y un gran canto rodado junto a la ca&iacute;da de agua"':
         'alt="Ur Jauziak udazkenean, hosto lehorrak lehen planoan eta harkaitz handi bat ur-jauziaren ondoan"',
-    '<p>Antes de empezar, una opci&oacute;n para quien simplemente quiera conocer <b>Astarloko Atxa</b> sin hacer toda la vuelta: se puede hacer el recorrido en sentido contrario desde <b>Trabakua</b>, siguiendo directamente hacia <b><a href="muniozguren.html">Muniozguren</a></b> y, una vez all&iacute;, subir a la cima. Es una alternativa mucho m&aacute;s directa y c&oacute;moda para quien no quiera hacer un recorrido tan largo.</p>\n    <p>Salimos desde Trabakua en direcci&oacute;n norte. Durante los primeros 300 metros seguimos el mismo recorrido que utilizamos para subir hacia <b><a href="zengotitagane.html">Zengotitagane</a></b>. Despu&eacute;s dejamos ese camino y giramos a mano derecha para coger la pista que seguimos tambi&eacute;n en la ruta de <b><a href="gerea.html">Ur Jauziak</a></b>.</p>\n    <p>Nada m&aacute;s entrar nos encontramos con una primera rampa, pero despu&eacute;s el terreno se vuelve m&aacute;s llevadero, alternando peque&ntilde;as subidas y bajadas mientras vamos avanzando poco a poco.</p>\n    <p>M&aacute;s adelante llegamos a un cruce que forma parte de una peque&ntilde;a circular. Normalmente solemos hacerla entrando por la parte baja y regresando por arriba, pero esta vez la hacemos al contrario para evitar repetir el mismo camino. Cogemos primero la parte alta y nos acercamos hasta la zona de Ur-jauziak, donde encontramos la cascada. Despu&eacute;s continuamos hacia la parte baja de la circular, bajando por una zona m&aacute;s cerrada y bonita.</p>\n    <p>Seguimos descendiendo y recorremos tambi&eacute;n un peque&ntilde;o tramo del recorrido de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, esta vez en sentido contrario. Al llegar abajo, en lugar de cerrar la circular y volver hacia Trabakua por la parte baja, giramos a mano izquierda y comenzamos una parte completamente diferente de la ruta.</p>\n    <p>A partir de aqu&iacute; avanzamos a media ladera por las faldas del <b><a href="oiz.html">Oiz</a></b>, en direcci&oacute;n hacia Muniozguren. Al principio iremos perdiendo algo de altura y cruzaremos un peque&ntilde;o arroyo mientras seguimos por caminos. Pasaremos junto a una borda y continuaremos hasta terminar enlazando con el camino que viene de Muniozguren hacia <b>Longa</b>.</p>\n    <p>Al llegar a este camino veremos una verja de hierro justo enfrente. Por ah&iacute; se contin&uacute;a hacia Longa, pero esta vez no vamos por ese camino. Nosotros giramos a la izquierda y comenzamos a subir por una buena pista. Primero toca ganar algo de altura y despu&eacute;s el terreno vuelve a suavizarse.</p>\n    <p>Poco a poco nos vamos acercando a Muniozguren. Ya podemos ver el caser&iacute;o y, detr&aacute;s de &eacute;l, Astarloko Atxa, la peque&ntilde;a cima a la que queremos llegar. Nos acercamos hasta el caser&iacute;o y, antes de comenzar a bajar hacia el barrio de <b><a href="gerea.html">Gerea</a></b>, giramos a mano izquierda.</p>\n    <p>Pasamos una puerta met&aacute;lica y un peque&ntilde;o dep&oacute;sito y continuamos hacia Astarloko Atxa, que tenemos ya pr&aacute;cticamente encima. La subida final es corta, pero intensa, y nos lleva directamente hasta la cima.</p>\n    <p>Una vez arriba, las vistas son impresionantes. Astarloko Atxa es una de esas peque&ntilde;as cumbres que normalmente pasamos por alto cuando hacemos rutas por esta zona, pero para nuestro gusto tiene algunas de las mejores vistas de los alrededores. Desde la cima tenemos una panor&aacute;mica pr&aacute;cticamente de 360 grados, as&iacute; que, si el d&iacute;a acompa&ntilde;a, merece la pena quedarse un rato arriba y disfrutar tranquilamente del paisaje.</p>\n    <p>Despu&eacute;s bajamos por el mismo sitio hasta regresar junto al caser&iacute;o de Muniozguren. All&iacute; cogemos el camino hacia la izquierda, en direcci&oacute;n al barrio de Gerea.</p>\n    <p>Desde aqu&iacute; comenzamos el regreso hacia Trabakua, unos 6 kil&oacute;metros en los que pr&aacute;cticamente solo tendremos que seguir el camino. Al principio avanzamos por cemento hasta llegar a la zona de Longa y, a partir de all&iacute;, el cemento deja paso al asfalto, que ya seguiremos hasta Trabakua. Es un tramo muy agradable para terminar la ruta, pasando entre caser&iacute;os, ganado y prados, y disfrutando de buenas vistas sobre los valles y la zona de los e&oacute;licos.</p>\n    <p>Con buen tiempo, este &uacute;ltimo tramo se disfruta especialmente y pone un buen final a una ruta muy variada, en la que combinamos la zona de Ur-jauziak con caminos a media ladera por las faldas del Oiz y la subida a Astarloko Atxa, una peque&ntilde;a cima que muchas veces pasa desapercibida, pero que merece mucho la pena conocer.</p>':
+    '<p>Antes de empezar, una opci&oacute;n para quien simplemente quiera conocer <b>Astarloko Atxa</b> sin hacer toda la vuelta: se puede hacer el recorrido en sentido contrario desde <b>Trabakua</b>, siguiendo directamente hacia <b><a href="muniozguren.html">Muniozguren</a></b> y, una vez all&iacute;, subir a la cima. Es una alternativa mucho m&aacute;s directa y c&oacute;moda para quien no quiera hacer un recorrido tan largo.</p>\n    <p>Salimos desde Trabakua en direcci&oacute;n norte. Durante los primeros 300 metros seguimos el mismo recorrido que utilizamos para subir hacia <b><a href="zengotitagane.html">Zengotitagane</a></b>. Despu&eacute;s dejamos ese camino y giramos a mano derecha para coger la pista que seguimos tambi&eacute;n en la ruta de la <b><a href="gerea.html">Cascada de Gerea</a></b>.</p>\n    <p>Nada m&aacute;s entrar nos encontramos con una primera rampa, pero despu&eacute;s el terreno se vuelve m&aacute;s llevadero, alternando peque&ntilde;as subidas y bajadas mientras vamos avanzando poco a poco.</p>\n    <p>M&aacute;s adelante llegamos a un cruce que forma parte de una peque&ntilde;a circular. Normalmente solemos hacerla entrando por la parte baja y regresando por arriba, pero esta vez la hacemos al contrario para evitar repetir el mismo camino. Cogemos primero la parte alta y nos acercamos hasta la zona de la cascada. Despu&eacute;s continuamos hacia la parte baja de la circular, bajando por una zona m&aacute;s cerrada y bonita.</p>\n    <p>Seguimos descendiendo y recorremos tambi&eacute;n un peque&ntilde;o tramo del recorrido de la <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>, esta vez en sentido contrario. Al llegar abajo, en lugar de cerrar la circular y volver hacia Trabakua por la parte baja, giramos a mano izquierda y comenzamos una parte completamente diferente de la ruta.</p>\n    <p>A partir de aqu&iacute; avanzamos a media ladera por las faldas del <b><a href="oiz.html">Oiz</a></b>, en direcci&oacute;n hacia Muniozguren. Al principio iremos perdiendo algo de altura y cruzaremos un peque&ntilde;o arroyo mientras seguimos por caminos. Pasaremos junto a una borda y continuaremos hasta terminar enlazando con el camino que viene de Muniozguren hacia <b>Longa</b>.</p>\n    <p>Al llegar a este camino veremos una verja de hierro justo enfrente. Por ah&iacute; se contin&uacute;a hacia Longa, pero esta vez no vamos por ese camino. Nosotros giramos a la izquierda y comenzamos a subir por una buena pista. Primero toca ganar algo de altura y despu&eacute;s el terreno vuelve a suavizarse.</p>\n    <p>Poco a poco nos vamos acercando a Muniozguren. Ya podemos ver el caser&iacute;o y, detr&aacute;s de &eacute;l, Astarloko Atxa, la peque&ntilde;a cima a la que queremos llegar. Nos acercamos hasta el caser&iacute;o y, antes de comenzar a bajar hacia el barrio de <b><a href="gerea.html">Gerea</a></b>, giramos a mano izquierda.</p>\n    <p>Pasamos una puerta met&aacute;lica y un peque&ntilde;o dep&oacute;sito y continuamos hacia Astarloko Atxa, que tenemos ya pr&aacute;cticamente encima. La subida final es corta, pero intensa, y nos lleva directamente hasta la cima.</p>\n    <p>Una vez arriba, las vistas son impresionantes. Astarloko Atxa es una de esas peque&ntilde;as cumbres que normalmente pasamos por alto cuando hacemos rutas por esta zona, pero para nuestro gusto tiene algunas de las mejores vistas de los alrededores. Desde la cima tenemos una panor&aacute;mica pr&aacute;cticamente de 360 grados, as&iacute; que, si el d&iacute;a acompa&ntilde;a, merece la pena quedarse un rato arriba y disfrutar tranquilamente del paisaje.</p>\n    <p>Despu&eacute;s bajamos por el mismo sitio hasta regresar junto al caser&iacute;o de Muniozguren. All&iacute; cogemos el camino hacia la izquierda, en direcci&oacute;n al barrio de Gerea.</p>\n    <p>Desde aqu&iacute; comenzamos el regreso hacia Trabakua, unos 6 kil&oacute;metros en los que pr&aacute;cticamente solo tendremos que seguir el camino. Al principio avanzamos por cemento hasta llegar a la zona de Longa y, a partir de all&iacute;, el cemento deja paso al asfalto, que ya seguiremos hasta Trabakua. Es un tramo muy agradable para terminar la ruta, pasando entre caser&iacute;os, ganado y prados, y disfrutando de buenas vistas sobre los valles y la zona de los e&oacute;licos.</p>\n    <p>Con buen tiempo, este &uacute;ltimo tramo se disfruta especialmente y pone un buen final a una ruta muy variada, en la que combinamos la zona de la cascada con caminos a media ladera por las faldas del Oiz y la subida a Astarloko Atxa, una peque&ntilde;a cima que muchas veces pasa desapercibida, pero que merece mucho la pena conocer.</p>':
         '    <p>Hasi aurretik, aukera bat dago <b>Astarloko Atxa</b> ezagutu nahi duenarentzat, bira osoa egin gabe: <b>Trabakua</b>tik abiatuta, zuzenean <b><a href="muniozguren.html">Muniozguren</a></b>erantz joan daiteke, eta handik gailurrera igo. Aukera zuzenagoa eta erosoagoa da ibilbide luzea egin nahi ez duenarentzat.</p>\n    <p>Trabakuatik iparralderantz abiatzen gara. Lehenengo 300 metroetan, <b><a href="zengotitagane.html">Zengotitagane</a></b> aldera igotzeko erabili genuen ibilbide bera jarraitzen dugu. Ondoren, bide hori utzi eta eskuinera biratzen dugu, <b><a href="gerea.html">Ur-jauziak</a></b> ibilbidean ere jarraitu genuen pista hartzeko.</p>\n    <p>Sartu bezain laster, lehenengo aldapa bat aurkitzen dugu, baina gero lurra errazagoa bihurtzen da, igoera eta jaitsiera txikiak txandakatuz, pixkanaka aurrera goazen bitartean.</p>\n    <p>Aurrerago, zirkular txiki baten parte den bidegurutze batera iristen gara. Normalean, behealdetik sartu eta goitik itzultzen gara, baina oraingoan alderantziz egiten dugu, bide bera ez errepikatzeko. Lehenik, goiko aldea hartzen dugu, eta Ur-jauziak ingurura hurbiltzen gara, non ur-jauzia aurkitzen dugun. Ondoren, zirkularraren beheko aldera jarraitzen dugu, eremu itxiago eta politago batetik jaitsiz.</p>\n    <p>Jaisten jarraitzen dugu, eta <a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago Mendi Lasterketa</a>ren ibilbidearen zati txiki bat ere egiten dugu, oraingoan kontrako norabidean. Behera iristean, zirkularra itxi eta Trabakuara beheko aldetik itzuli beharrean, ezkerrera biratu eta ibilbidearen guztiz desberdina den zati bat hasten dugu.</p>\n    <p>Hemendik aurrera, <b><a href="oiz.html">Oiz</a></b> mendiaren magalean zehar goaz, Muniozguren aldera. Hasieran, altuera pixka bat galduko dugu eta erreka txiki bat zeharkatuko dugu, bideetatik jarraitzen dugun bitartean. Borda baten ondotik pasatuko gara eta Muniozgurenetik <b>Longa</b>ra doan bidearekin bat egiten amaituko dugu.</p>\n    <p>Bide honetara iristean, burdinazko langa bat ikusiko dugu zuzenean aurrean. Hortik Longara jarraitzen da, baina oraingoan ez goaz bide horretatik. Ezkerrera biratu eta pista on batetik igotzen hasten gara. Lehenik, altuera pixka bat irabazi behar dugu, eta gero lurra leundu egiten da berriro.</p>\n    <p>Pixkanaka, Muniozgurenera hurbiltzen ari gara. Dagoeneko baserria ikus dezakegu, eta, haren atzean, Astarloko Atxa, iritsi nahi dugun gailur txikia. Baserriaren ondora hurbiltzen gara, eta, <b><a href="gerea.html">Gerea</a></b> auzora jaisten hasi aurretik, ezkerrera biratzen dugu.</p>\n    <p>Ate metaliko bat eta deposito txiki bat pasatzen ditugu, eta Astarloko Atxarantz jarraitzen dugu, ia gainean baitugu. Azken igoera laburra baina bizia da, eta zuzenean gailurrera eramaten gaitu.</p>\n    <p>Gora iritsitakoan, ikuspegiak ikusgarriak dira. Astarloko Atxa inguru honetan ibilaldiak egiten ditugunean normalean oharkabean pasatzen den gailur txiki horietako bat da, baina, gure ustez, inguruko ikuspegi onenetako batzuk ditu. Gailurretik ia 360 graduko panoramika dugu, beraz, eguraldi ona egiten badu, merezi du tarte batean goian geratzea eta paisaiaz lasai gozatzea.</p>\n    <p>Ondoren, leku beretik jaisten gara Muniozguren baserriaren ondora itzultzeko. Han, ezkerrera doan bidea hartzen dugu, Gerea auzorantz.</p>\n    <p>Hemendik aurrera, Trabakuara itzultzen hasten gara, 6 kilometro inguru, non ia bidea jarraitu besterik ez dugun egin beharko. Hasieran, zementuzko bideetatik goaz Longa ingurura iritsi arte, eta hortik aurrera, zementuaren ordez asfaltoa dago, eta hori Trabakuara iritsi arte jarraituko dugu. Ibilbidea amaitzeko zati atsegina da, baserrien, ganaduen eta larreen artean, eta bailaren eta haize-errotaren inguruko ikuspegi ederrak ditugu.</p>\n    <p>Eguraldi ona egiten badu, azken zati hau bereziki gozatzen da, eta amaiera ona ematen dio ibilbide askotariko bati, non Ur-jauziak ingurua, Oiz mendiaren magalean zeharreko bideak eta Astarloko Atxaren igoera konbinatzen ditugun, askotan oharkabean pasatzen den gailur txiki bat, baina ezagutzea merezi duena.</p>',
-    'download="Ur Jauziak y Astarloko Atxa.gpx"':
+    'download="Cascada y Astarloko Atxa.gpx"':
         'download="Ur Jauziak eta Astarloko Atxa.gpx"',
-    'download="Ur Jauziak y Astarloko Atxa.kml"':
+    'download="Cascada y Astarloko Atxa.kml"':
         'download="Ur Jauziak eta Astarloko Atxa.kml"',
 }
 
