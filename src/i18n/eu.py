@@ -3648,9 +3648,7 @@ AXMAKURITURRIZURI = {
         '[PENDIENTE: euskarazko testua]',
     'Aqu&iacute; giramos a la izquierda y afrontamos ya el &uacute;ltimo tramo de la ruta. Solo nos quedan unos 2 kil&oacute;metros por carretera para regresar a Trabakua y cerrar la vuelta.':
         '[PENDIENTE: euskarazko testua]',
-    'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT.':
-        '[PENDIENTE: euskarazko testua]',
-    'Esta es adem&aacute;s una diferencia importante respecto a la ruta <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>. Aunque ambas comparten buena parte del recorrido, en aquella hacer la vuelta en sentido contrario ser&iacute;a pr&aacute;cticamente impensable por el tipo de terreno y algunos de los tramos que incluye. En esta versi&oacute;n m&aacute;s corta, en cambio, darle la vuelta al recorrido funciona muy bien y puede ser incluso la opci&oacute;n m&aacute;s recomendable.':
+    'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT. Esto es algo que podemos hacer en esta versi&oacute;n m&aacute;s corta, ya que en la ruta <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, por el tipo de terreno y algunos de sus tramos, hacerla en sentido contrario ser&iacute;a pr&aacute;cticamente impensable.':
         '[PENDIENTE: euskarazko testua]',
     'download="Axmakur, Iturrizuri y Zengotitagane.gpx"':
         'download="Axmakur, Iturrizuri eta Zengotitagane.gpx"',
