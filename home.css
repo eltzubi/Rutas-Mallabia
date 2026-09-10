@@ -324,6 +324,8 @@
 .info-details summary::after{ content:'+'; font-size:18px; color:var(--ink-dim); transition:transform .2s ease; }
 .info-details[open] summary::after{ content:'−'; }
 .info-details-body{ padding:0 4px 24px; }
+.notice-details summary{ color:var(--violet); }
+.notice-details summary::after{ color:var(--violet); }
 
 /* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
 .map-section{ max-width:1400px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }

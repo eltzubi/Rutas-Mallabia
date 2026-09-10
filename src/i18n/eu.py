@@ -432,6 +432,8 @@ HOME = {
     # filters
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
+    '<summary>GPS obligatorio &mdash; l&eacute;elo antes de salir</summary>':
+        '<summary>GPSa nahitaezkoa &mdash; irakurri irten aurretik</summary>',
     'Las rutas est&aacute;n documentadas directamente sobre el terreno, recorri&eacute;ndolas paso a '
     'paso. La informaci&oacute;n recoge lo m&aacute;s &uacute;til que encontrar&aacute;s por el camino '
     '&mdash;vistas, fuentes de agua, cruces y algunos puntos de referencia&mdash; para ayudarte durante '
