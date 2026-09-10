@@ -3674,9 +3674,10 @@ AMARAUNE = {
     # and Gaztelumendi are all Basque toponyms already, unchanged in castellano
     # and euskera alike -- no translation entries needed for them.
 
-    # facts note (custom wording: Desnivel is the race poster's official figure, not raw GPX)
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial del cartel de la carrera (+1.000&nbsp;m; el track GPX da algo m&aacute;s, unos +1.260&nbsp;m). <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, lasterketaren kartelaren datu ofiziala (+1.000&nbsp;m; GPX trackak zertxobait gehiago ematen du, +1.260&nbsp;m inguru). <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+    # facts note (custom wording: Desnivel is the user's own real figure, cited
+    # alongside the race poster's +1.000m and the raw GPX's +1.260m)
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+930&nbsp;m); el cartel de la carrera da +1.000&nbsp;m y el track GPX +1.260&nbsp;m. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, ibilbidearen benetakoa (+930&nbsp;m); lasterketaren kartelak +1.000&nbsp;m ematen du eta GPX trackak +1.260&nbsp;m. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
 
     # photos
     'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
