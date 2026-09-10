@@ -3624,8 +3624,34 @@ AXMAKURITURRIZURI = {
         'Bizikleta harrizko mugarri baten ondoan, mendietara ikuspegi zabalekin',
     'Fuente de Iturzuri': 'Iturzuriko iturria',
     'T&uacute;mulo Probazelaiburu II': 'Probazelaiburu II.a tumulua',
-    '[PENDIENTE: texto en castellano del usuario. Track real: Trabakua &rarr; Axmakur (km 9,3) &rarr; Fuente de Iturzuri (km 9,8) &rarr; T&uacute;mulo Probazelaiburu II (km 10,1) &rarr; Zengotitagane (km 10,8) &rarr; Trabakua. 14,97&nbsp;km, +728&nbsp;m.]':
-        '[PENDIENTE: euskarazko testua. Benetako ibilbidea: Trabakua &rarr; Axmakur (km 9,3) &rarr; Iturzuriko iturria (km 9,8) &rarr; Probazelaiburu II.a tumulua (km 10,1) &rarr; Zengotitagane (km 10,8) &rarr; Trabakua. 14,97&nbsp;km, +728&nbsp;m.]',
+    'Esta ruta sigue pr&aacute;cticamente el mismo recorrido que <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, pero en una versi&oacute;n m&aacute;s corta y directa. En esta ocasi&oacute;n evitamos las bajadas hacia la zona de la potrera y otros desv&iacute;os de aquella vuelta, manteni&eacute;ndonos en la parte alta y reduciendo as&iacute; bastante el recorrido.':
+        '[PENDIENTE: euskarazko testua]',
+    'Salimos de <b>Trabakua</b>, entre los dos bares del puerto, tomando la carretera que sube en direcci&oacute;n a Gerea. Continuamos por ella sin desviarnos, avanzando tranquilamente entre caser&iacute;os y prados hasta llegar a <b>Muniozguren</b>.':
+        '<b>Trabakua</b>tik abiatuko gara, mendateko bi tabernen artetik, Gerea aldera igotzen den errepidea hartuta. Desbideratu gabe jarraituko dugu, baserri eta zelai artean lasai igoz, <b>Muniozguren</b>era iritsi arte.',
+    'En Muniozguren termina el cemento. Al fondo cogemos la pista de piedra que sale a la izquierda y continuamos subiendo por ella, ganando altura poco a poco. Seguimos siempre por la pista principal, sin desviarnos, en una subida bastante suave y llevadera.':
+        'Muniozgurenen porlana amaitzen da. Amaieran, ezkerretara ateratzen den harrizko pista hartuko dugu, eta handik gora jarraituko dugu, pixkanaka altuera irabaziz. Pista nagusitik jarraituko dugu beti, desbideratu gabe, igoera nahiko leun eta eramangarri batean.',
+    'En el kil&oacute;metro 7,3 la pista llega a una curva cerrada que gira a la derecha. Si en vez de tomarla sigui&eacute;ramos de frente, hacia la izquierda, podr&iacute;amos bajar hacia <b>Longa</b> y volver a Trabakua por el recorrido de <a href="muniozguren.html">Trabakua, Longa y Muniozguren</a>. Nosotros continuamos por la pista principal, girando a la derecha, en direcci&oacute;n al <b>Oiz</b>.':
+        '[PENDIENTE: euskarazko testua]',
+    'As&iacute; llegamos aproximadamente al <b>kil&oacute;metro 10,3</b>, donde alcanzamos el punto m&aacute;s alto de esta primera subida. A nuestra izquierda nace un peque&ntilde;o sendero. Apenas son unos 200 metros, pero aqu&iacute; cambia completamente el terreno: aparece una cuesta muy fuerte en la que resulta pr&aacute;cticamente imposible subir montado. Con una e-bike, por el peso, empujar cuesta arriba se hace complicado; con una bici normal se sube empujando tranquilamente.':
+        'Horrela, gutxi gorabehera <b>10,3. kilometro</b>ra iritsiko gara, lehen igoera honetako punturik altuenera. Bertan, ezkerretara bidezidor txiki bat ateratzen da. 200 metro inguru baino ez dira, baina hemen bidea erabat aldatzen da: aldapa oso gogorra aurkituko dugu, gainean igotzea ia ezinezkoa dena. E-bike batekin, pisuagatik, bultzaka igotzea zaila da; bizikleta arrunt batekin, ordea, bultzaka lasai igotzen da.',
+    'Es un tramo corto pero intenso. Este antiguo camino fue en su d&iacute;a una de las rutas de BTT de referencia del <b>Bajo Deba</b>, aunque con el tiempo se fue perdiendo y lleg&oacute; a quedar pr&aacute;cticamente abandonado. Recientemente se ha recuperado gracias, entre otras cosas, al paso de la <a href="7pago.html">7 Pago Mendi Lasterketa</a> de Mallabia.':
+        'Tarte laburra da, baina gogorra. Bide zahar hau garai batean <b>Debabarrena</b>ko BTT ibilbide ezagunenetako bat izan zen, baina denborarekin galduz joan zen eta ia abandonatuta geratu zen. Azken urteotan berriro berreskuratu da, besteak beste, Mallabiko <a href="7pago.html">7 Pago Mendi Lasterketa</a> bertatik igarotzen delako.',
+    'Superado este repecho salimos a una preciosa campa. Continuamos subiendo junto a una borda y el paisaje empieza a abrirse de verdad. De frente aparecen los aerogeneradores del cordal de Oiz y, si miramos hacia atr&aacute;s, las vistas alcanzan buena parte de las monta&ntilde;as y valles que hemos ido dejando atr&aacute;s.':
+        '[PENDIENTE: euskarazko testua]',
+    'Aqu&iacute; no hay camino: subimos la campa campo a trav&eacute;s hasta alcanzar la parte alta, donde cruzamos un vallado y accedemos a la pista de los aerogeneradores.':
+        'Hemen ez dago biderik: landan zehar gora egingo dugu goiko aldera iritsi arte. Bertan, hesi bat zeharkatu eta eolikoen pistara aterako gara.',
+    'Una vez arriba, giramos a la izquierda y continuamos junto a los e&oacute;licos en direcci&oacute;n a <b><a href="iturrizuri.html">Iturzuri</a></b>. All&iacute; encontramos el refugio y la fuente, un buen punto para reponer agua antes de continuar.':
+        '[PENDIENTE: euskarazko testua]',
+    'Desde Iturzuri nos adentramos en el hayedo y lo atravesamos en busca de <b><a href="zengotitagane.html">Zengotitagane</a></b>. Al salir del bosque nos acercamos hasta &eacute;l recorriendo una cresta bastante llana y abierta, con buenas vistas a ambos lados.':
+        '[PENDIENTE: euskarazko testua]',
+    'Desde Zengotitagane comenzamos el descenso hacia Osma por una pista en buen estado, aunque con bastante pendiente. La bajada es directa y nos lleva hasta salir a la carretera general.':
+        '[PENDIENTE: euskarazko testua]',
+    'Aqu&iacute; giramos a la izquierda y afrontamos ya el &uacute;ltimo tramo de la ruta. Solo nos quedan unos 2 kil&oacute;metros por carretera para regresar a Trabakua y cerrar la vuelta.':
+        '[PENDIENTE: euskarazko testua]',
+    'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT.':
+        '[PENDIENTE: euskarazko testua]',
+    'Esta es adem&aacute;s una diferencia importante respecto a la ruta <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>. Aunque ambas comparten buena parte del recorrido, en aquella hacer la vuelta en sentido contrario ser&iacute;a pr&aacute;cticamente impensable por el tipo de terreno y algunos de los tramos que incluye. En esta versi&oacute;n m&aacute;s corta, en cambio, darle la vuelta al recorrido funciona muy bien y puede ser incluso la opci&oacute;n m&aacute;s recomendable.':
+        '[PENDIENTE: euskarazko testua]',
     'download="Axmakur, Iturrizuri y Zengotitagane.gpx"':
         'download="Axmakur, Iturrizuri eta Zengotitagane.gpx"',
     'download="Axmakur, Iturrizuri y Zengotitagane.kml"':
