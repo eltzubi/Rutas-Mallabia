@@ -391,4 +391,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/amaraune.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/amaraune.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/astarlokoatxa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/astarlokoatxa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/astarlokoatxa.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/astarlokoatxa.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/astarlokoatxa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/astarlokoatxa.eu.html"/>
+  </url>
 </urlset>
