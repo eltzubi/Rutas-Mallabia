@@ -127,6 +127,20 @@
   });
 })();
 
+// --- close button inside an open <details> notice (e.g. "GPS obligatorio") ---
+(function(){
+  var buttons = document.querySelectorAll('.notice-close');
+  for (var i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      var details = this.closest('details');
+      if (!details) return;
+      details.open = false;
+      var summary = details.querySelector('summary');
+      if (summary) summary.scrollIntoView({ block: 'nearest' });
+    });
+  }
+})();
+
 // --- photo lightbox ---
 (function(){
   var box = document.getElementById('lightbox');

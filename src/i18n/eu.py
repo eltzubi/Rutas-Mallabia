@@ -476,6 +476,8 @@ HOME = {
 
 
     'Quitar filtros': 'Iragazkiak kendu',
+    '<button type="button" class="filter-reset notice-close">Cerrar</button>':
+        '<button type="button" class="filter-reset notice-close">Itxi</button>',
 
     # route cards
     'alt="Pista de cemento y piedra en la ruta de Trabakua"':
