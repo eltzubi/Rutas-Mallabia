@@ -802,6 +802,10 @@ ZENARRUZA = {
         'alt="Oizerako igoera, gailurreko antenekin eta haizezurrutariak ezkerrean, baserri baten ondoan"',
     'alt="La Ermita San Kristobal junto a los aerogeneradores del parque e&oacute;lico"':
         'alt="San Kristobal ermita, parke eolikoaren haizezurrutarien ondoan"',
+    'alt="Camino empedrado hacia el Monasterio de Zenarruza, con un gran roble y un crucero de piedra"':
+        'alt="Harlauzazko bidea Zenarruzako Monasteriorantz, haritz handi bat eta harrizko gurutze bat ondoan"',
+    'alt="Vista del Monasterio de Zenarruza a trav&eacute;s de un arco de piedra, con la iglesia y el muro del claustro al fondo"':
+        'alt="Zenarruzako Monasterioaren ikuspegia harrizko arku baten artetik, eliza eta klaustroko horma atzealdean"',
     'Sale de Trabakua hacia el norte y, subiendo y bajando por los altos entre Mallabia y '
     'Ziortza-Bolibar, pierde altura de golpe en el &uacute;ltimo tramo hasta el <b>Monasterio de '
     'Zenarruza</b> (km 9,4 &middot; 287 m) &mdash;colegiata cisterciense fundada en el siglo XI, la '
@@ -1612,6 +1616,8 @@ URREGARAI = {
         'alt="Egunsentia, lainoak zelaien gainean desegiten, harrizko borda bat zuhaitzen artean lehen planoan eta baserriak muinoetan barreiatuta"',
     'alt="El pueblo en el fondo del valle al amanecer, visto desde lo alto, con los montes encadenados detr&aacute;s en tonos cada vez m&aacute;s claros"':
         'alt="Herria haranaren hondoan egunsentian, goitik ikusita, mendiak kateatuta atzean gero eta tonu argiagoetan"',
+    'alt="Vistas a Markina desde la pista de subida a Urregarai, con el valle y los montes verdes al fondo"':
+        'alt="Markinako bistak Urregairako igoerako pistatik, harana eta mendi berdeak atzealdean"',
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     'alt="Foto ampliada del recorrido de Iturreta, Markina y Urregarai"':
@@ -1731,6 +1737,12 @@ KALAMUA = {
         'alt="Baserri zuria eta ardiak larre berdeen artean, mendiak atzealdean"',
     'alt="Moj&oacute;n en la cima con vistas a un pueblo en el valle al fondo"':
         'alt="Mugarria gailurrean, haraneko herri baten ikuspegiarekin atzealdean"',
+    'alt="Moj&oacute;n de piedra en la cima, con un reba&ntilde;o de cabras tumbadas en el prado y las monta&ntilde;as del entorno al fondo"':
+        'alt="Harrizko mugarria gailurrean, ahuntz talde bat belardian etzanda eta inguruko mendiak atzealdean"',
+    'alt="Reba&ntilde;o de cabras y ovejas tumbadas en un prado de la cima, con el cordal boscoso y las monta&ntilde;as al fondo"':
+        'alt="Ahuntz eta ardi talde bat gailurreko belardi batean etzanda, gandor basotsua eta mendiak atzealdean"',
+    'alt="Moj&oacute;n de piedra en la cima, con las monta&ntilde;as del entorno y un pueblo en el valle al fondo"':
+        'alt="Harrizko mugarria gailurrean, inguruko mendiak eta haraneko herri bat atzealdean"',
 
     'Subimos desde Trabakua hasta <b>Urko</b> (km 7,9 &middot; 791 m) por el mismo camino que la ruta de '
     '<a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde ah&iacute; bajamos hacia Ixua para cruzar la '
@@ -2827,6 +2839,8 @@ EXIGENTE = {
 
     'Moj&oacute;n de la cima del Oiz (1.026 m) junto a una cruz de piedra, con los aerogeneradores y las monta&ntilde;as al atardecer':
         'Oizko gailurreko mugarria (1.026 m) harrizko gurutze baten ondoan, aerosorgailuak eta mendiak ilunabarrean',
+    'Dolmen de Iturzurigaina, con el valle y las monta&ntilde;as del entorno al fondo':
+        'Iturzurigainako trikuharria, harana eta inguruko mendiak atzealdean',
 
     'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
         'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
@@ -3180,6 +3194,12 @@ INTXORTA = {
         'alt="Erdella gauez: gailurreko zutoina, piolet baten siluetarekin errematatua, harrizko muinoaren gainean, pagadi itxia inguruan"',
     'alt="Intxorta de noche: la torreta met&aacute;lica con su paleta y la caseta con pintadas, con las luces de los pueblos del valle al fondo"':
         'alt="Intxorta gauez: metalezko dorretxoa bere palarekin eta etxola pintatua, haraneko herrien argiak hondoan"',
+    'alt="Torreta met&aacute;lica con su paleta oxidada recortada contra el cielo azul, con las monta&ntilde;as del valle al fondo"':
+        'alt="Metalezko dorretxoa, herdoildutako pala zeru urdinaren gainean, haraneko mendiak hondoan"',
+    'alt="Cruz de piedra sobre un mont&iacute;culo en el bosque, con escalones de piedra y hojarasca alrededor"':
+        'alt="Harrizko gurutzea muino baten gainean basoan, harrizko mailak eta hosto erorien artean"',
+    'alt="Vistas al valle y las monta&ntilde;as boscosas del entorno desde un claro, con pinos en primer plano"':
+        'alt="Harana eta inguruko mendi basotsuen bistak soro batetik, pinuak lehen planoan"',
     'alt="V&eacute;rtice geod&eacute;sico sobre su base de hormig&oacute;n en la cima, entre roca caliza, con el cordal de hierba perdi&eacute;ndose en la niebla"':
         'alt="Erpin geodesikoa hormigoizko oinarriaren gainean tontorrean, kareharrien artean, eta belarrezko gandorra lainoartean galtzen"',
     'alt="Zapatillas de trail sobre el barro seco y agrietado de una rampa muy empinada, vista desde arriba"':
