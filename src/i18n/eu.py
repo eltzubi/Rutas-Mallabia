@@ -121,8 +121,8 @@ COMMON = {
         '<p class="route-card-desc">Joan-etorria Trabakuatik Oizeraino</p>',
     '<p class="route-card-desc">Circuito desde la Ermita de San Juan</p>':
         '<p class="route-card-desc">Zirkuitua San Juan ermitatik</p>',
-    '<p class="route-card-desc">Circuito desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza</p>':
-        '<p class="route-card-desc">Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik</p>',
+    '<p class="route-card-desc">Circuito de senderismo y trail running desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza</p>':
+        '<p class="route-card-desc">Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik</p>',
     '<p class="route-card-desc">Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de San Crist&oacute;bal Txiki y el barrio de Besoita</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil</p>':
@@ -1257,8 +1257,9 @@ URKO = {
         '<span>Bidezidorra</span><span class="sep">/</span><span>Arandomendi, Urko eta '
         'Asuntzako lepoa</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    'Circuito desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza':
-        'Zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    'Circuito de senderismo y trail running desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza':
+        'Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    '<h2>Trail running y senderismo</h2>': '<h2>Trail running eta oinez</h2>',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
     '<span class="num">3</span>Collado de Asuntza': '<span class="num">3</span>Asuntzako lepoa',
     'alt="Nubes bajas en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
@@ -3003,7 +3004,7 @@ DESCRIPTIONS = {
     'zengotitagane': 'Zirkuitua e-bikez Trabakuatik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin',
     'oiz': 'Oinezko joan-etorria Trabakuatik Oizko gailurreraino',
     'arietzu': 'Oinezko zirkuitua San Juan ermitatik',
-    'urko': 'Oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
+    'urko': 'Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     'sancristobal': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Askakotik, San '
         'Kristobal Txiki ermitarekin eta Besoita auzoarekin',
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
@@ -3121,7 +3122,7 @@ TITLES = {
     'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
-    'urko': 'Trabakua, Asuntza eta Urko · Oinezko ibilbidea — Herriko ibilbideak',
+    'urko': 'Trabakua, Asuntza eta Urko · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
