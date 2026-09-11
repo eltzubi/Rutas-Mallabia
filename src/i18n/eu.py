@@ -1273,6 +1273,14 @@ URKO = {
         'alt="Seinaleztapen-zutoina eta mugarria gailurrean, itsasoa atzealdean hodei baxuen artean"',
     'alt="Ovejas y vacas pastando en un prado, con un montón de estiércol y un caserío al fondo"':
         'alt="Ardiak eta behiak larre batean bazkan, simaur-pila batekin eta baserri bat atzealdean"',
+    'alt="Vértice geodésico en la cumbre del Urko al atardecer, con el valle y un pueblo al fondo entre nubes"':
+        'alt="Urkoko gailurreko bertize geodesikoa ilunabarrean, harana eta herri bat atzealdean hodeien artean"',
+    'alt="Sendero por la cresta con vistas a un pueblo en el valle y las montañas al fondo"':
+        'alt="Bidezidorra gandorretik, haraneko herri baten eta mendien bistekin atzealdean"',
+    'alt="Placa del vértice geodésico del Urko, en la frontera entre Bizkaia y Gipuzkoa, con la cresta al fondo"':
+        'alt="Urkoko bertize geodesikoaren plaka, Bizkaia eta Gipuzkoaren arteko mugan, gandorra atzealdean"',
+    'alt="Amanecer con un mar de nubes en el valle, con el sol asomando entre las montañas"':
+        'alt="Egunsentia laino-itsaso batekin haranean, eguzkia mendien artetik agertzen dela"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de '
     'un kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto '
     'atr&aacute;s y empieza una cuesta que por un momento se pone intensa, pero corta; '
