@@ -440,43 +440,26 @@ HOME = {
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
     '<summary>GPS obligatorio &mdash; l&eacute;elo antes de salir</summary>':
         '<summary>GPSa nahitaezkoa &mdash; irakurri irten aurretik</summary>',
-    'Las rutas est&aacute;n documentadas directamente sobre el terreno, recorri&eacute;ndolas paso a '
-    'paso. La informaci&oacute;n recoge lo m&aacute;s &uacute;til que encontrar&aacute;s por el camino '
-    '&mdash;vistas, fuentes de agua, cruces y algunos puntos de referencia&mdash; para ayudarte durante '
-    'el recorrido.':
-        'Ibilbideak zuzenean bertatik dokumentatuta daude, urratsez urrats eginez. Informazioak bidean '
-        'aurkituko duzun baliagarriena jasotzen du &mdash;ikuspegiak, ur-iturriak, bidegurutzeak eta '
-        'zenbait erreferentzia-puntu&mdash; ibilbidean zehar laguntzeko.',
+    'Las rutas est&aacute;n documentadas sobre el terreno, con informaci&oacute;n &uacute;til sobre fuentes, cruces, vistas y puntos de referencia.':
+        'Ibilbideak bertatik dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei eta erreferentzia-puntuei buruzko informazio baliagarriarekin.',
 
-    'Las rutas no est&aacute;n se&ntilde;alizadas, por lo que <b>es imprescindible llevar el track cargado '
-    'en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n que encontrar&aacute;s '
-    'aqu&iacute; sirve de apoyo y para conocer mejor la ruta, pero no sustituye al track durante el '
-    'recorrido.':
-        'Ibilbideak ez daude seinalizatuta, beraz <b>ezinbestekoa da trackea GPS, erloju edo '
-        'nabigazio-gailu batean kargatuta eramatea</b>. Hemen aurkituko duzun informazioak laguntzeko eta '
-        'ibilbidea hobeto ezagutzeko balio du, baina ez du ordezten trackea ibilbidean zehar.',
+    'No est&aacute;n se&ntilde;alizadas, por lo que <b>es imprescindible llevar el track cargado '
+    'en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n de la web sirve '
+    'de apoyo, pero no sustituye al track.':
+        'Ez daude seinalizatuta, beraz <b>ezinbestekoa da trackea GPS, erloju edo '
+        'nabigazio-gailu batean kargatuta eramatea</b>. Webguneko informazioak laguntzeko balio du, '
+        'baina ez du ordezten trackea.',
 
-    'Las rutas en bici est&aacute;n hechas con asistencia el&eacute;ctrica est&aacute;ndar; la dificultad real puede variar seg&uacute;n la bici y el ciclista.':
-        'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira; benetako zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
-    'El estado de los senderos puede cambiar seg&uacute;n la &eacute;poca del a&ntilde;o. Dependiendo de la estaci&oacute;n, la vegetaci&oacute;n, las lluvias o el poco uso de alg&uacute;n tramo, puedes encontrarlos m&aacute;s limpios o algo m&aacute;s cerrados. En general son caminos y senderos abiertos y transitables, pero las condiciones que encuentres el d&iacute;a de la ruta pueden ser diferentes a las descritas aqu&iacute;.':
-        'Bidezidorren egoera urtaroaren arabera alda daiteke. Urtaroaren, landaretzaren, euriaren edo '
-        'zenbait tarteren erabilera urriaren arabera, garbiago edo itxiago aurki ditzakezu. Oro har, bide '
-        'eta bidezidor irekiak eta ibilgarriak dira, baina ibilbidea egiten duzun egunean aurkituko '
-        'dituzun baldintzak hemen deskribatutakoak baino desberdinak izan daitezke.',
-    'La informaci&oacute;n de cada ruta refleja las condiciones encontradas cuando fue recorrida y documentada. El terreno de monta&ntilde;a puede cambiar con el tiempo y aparecer barro, hojas, piedras sueltas, ramas, &aacute;rboles ca&iacute;dos u otros obst&aacute;culos. Valora siempre las condiciones del momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
-        'Ibilbide bakoitzaren informazioak ibilbidea egin eta dokumentatu zenean aurkitutako baldintzak '
-        'jasotzen ditu. Mendiko lurra denborarekin alda daiteke, eta lokatza, hostoak, harri solteak, '
-        'adarrak, zuhaitz eroriak edo beste oztopo batzuk ager daitezke. Balioetsi beti unean uneko '
-        'baldintzak eta, pauso bat seguru iruditzen ez bazaizu, <b>bilatu beste bide bat edo egin '
-        'atzera</b>.',
-    'Si te encuentras algo que haya cambiado &mdash;un &aacute;rbol ca&iacute;do, un tramo cortado, '
-    'un sendero especialmente cerrado, se&ntilde;alizaci&oacute;n da&ntilde;ada o cualquier otra '
-    'incidencia&mdash;, av&iacute;same con el bot&oacute;n &laquo;Reportar incidencia&raquo; '
-    'que hay en cada ficha de ruta.':
-        'Zerbait aldatuta aurkitzen baduzu &mdash;zuhaitz bat erorita, tarte bat moztuta, bidezidor bat '
-        'bereziki itxita, seinaleztapena hondatuta edo beste edozein arazo&mdash;, jakinarazidazu '
-        'ibilbide bakoitzaren fitxan dagoen &laquo;Arazoa jakinarazi&raquo; '
-        'botoiaren bidez.',
+    'Las rutas en bici se han realizado con asistencia el&eacute;ctrica est&aacute;ndar y la dificultad puede variar seg&uacute;n la bici y el ciclista.':
+        'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira, eta zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
+    'El estado de caminos y senderos puede cambiar con el tiempo &mdash;por la vegetaci&oacute;n, la lluvia, el barro, &aacute;rboles ca&iacute;dos u otros obst&aacute;culos&mdash; respecto a como se documentaron. Valora siempre las condiciones del momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
+        'Bide eta bidezidorren egoera denborarekin alda daiteke &mdash;landaretzagatik, euriagatik, '
+        'lokatzagatik, zuhaitz eroriengatik edo beste oztopo batzuengatik&mdash; dokumentatu ziren '
+        'unetik. Balioetsi beti unean uneko baldintzak eta, pauso bat seguru iruditzen ez bazaizu, '
+        '<b>bilatu beste bide bat edo egin atzera</b>.',
+    'Si encuentras alg&uacute;n cambio o incidencia, puedes avisarme mediante el bot&oacute;n &laquo;Reportar incidencia&raquo; de cada ruta.':
+        'Zerbait aldatuta edo arazoren bat aurkitzen baduzu, jakinarazidazu ibilbide bakoitzeko '
+        '&laquo;Arazoa jakinarazi&raquo; botoiaren bidez.',
 
 
 
