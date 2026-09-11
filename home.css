@@ -186,6 +186,7 @@
 .filter-dialog .filter-reset:disabled{opacity:.45;cursor:default;}
 .filter-empty[hidden]{display:none;}
 @media(max-width:659px){
+  #beforeYouGo{padding:0 16px;}
   .finder{margin-top:16px;padding:0 16px;}
   .finder-toolbar{gap:8px;flex-wrap:wrap;padding:0 0 12px;}
   .activity-filter{flex:1;min-width:0;padding:2px;gap:2px;}
@@ -307,7 +308,7 @@
 /* ---- info accordion: before you leave, parking, sleeping nearby ---- */
 .info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }
 @media (min-width:1024px){ .info-accordion{ max-width:1100px; } }
-#beforeYouGo{ max-width:none; margin:0 0 24px; padding:0; }
+#beforeYouGo{ margin:20px auto 24px; }
 .info-details{ border-top:1px solid var(--line); }
 .info-details:last-child{ border-bottom:1px solid var(--line); }
 .info-details summary{

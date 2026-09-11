@@ -135,7 +135,8 @@
       }
     }
     window.trabakutikVisibleRoutes = visible.slice();
-    document.dispatchEvent(new CustomEvent('routefilters:apply', {detail:{visibleHrefs:visible}}));
+    window.trabakutikActivity = state.activity;
+    document.dispatchEvent(new CustomEvent('routefilters:apply', {detail:{visibleHrefs:visible, activity:state.activity}}));
     try { localStorage.setItem('trabakutik_filters', JSON.stringify(Object.assign({version:2},state))); } catch (_) {}
   }
   activityButtons.forEach(function(b){b.addEventListener('click',function(){state.activity=b.dataset.activity;apply();});});

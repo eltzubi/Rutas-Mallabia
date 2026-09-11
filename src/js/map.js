@@ -159,10 +159,12 @@
   // state once it's ready (onRouteFilterChange is wired up once the map's
   // lines exist).
   var pendingVisibleHrefs = window.trabakutikVisibleRoutes || null;
+  var pendingActivity = window.trabakutikActivity || 'all';
   var onRouteFilterChange = null;
   document.addEventListener('routefilters:apply', function(e){
     pendingVisibleHrefs = e.detail.visibleHrefs;
-    if (onRouteFilterChange) onRouteFilterChange(pendingVisibleHrefs);
+    pendingActivity = e.detail.activity || 'all';
+    if (onRouteFilterChange) onRouteFilterChange(pendingVisibleHrefs, pendingActivity);
   });
 
   function loadMap(){
@@ -348,7 +350,7 @@
         var html = '<div class="route-popup">' + photo + chart + '<h3>' + name + '</h3>' +
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
-        line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, baseColor, html); });
+        line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
         line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
         var pathEl = line.getElement();
@@ -362,7 +364,7 @@
             if (pathEl.getAttribute('aria-hidden') === 'true') return;
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault(); e.stopPropagation();
-              openPanel(line, baseColor, html, true);
+              openPanel(line, hrefToLine[t.href].currentColor, html, true);
             } else if (e.key === 'Escape') {
               e.preventDefault(); closePanel();
             }
@@ -370,14 +372,14 @@
           pathEl.addEventListener('focus', function(){ line.setStyle({ weight: 6 }); });
           pathEl.addEventListener('blur', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
         }
-        hrefToLine[t.href] = { line: line, baseColor: baseColor };
+        hrefToLine[t.href] = { line: line, baseColor: baseColor, activity: activity, currentColor: baseColor };
       }
     });
 
     // Fades out routes that the home page's activity/distance/desnivel
     // filters (js/filters.js) have hidden, instead of the map staying
     // stuck showing every route regardless of the filter state.
-    function applyRouteFilter(visibleHrefs){
+    function applyRouteFilter(visibleHrefs, activity){
       var hrefs = Object.keys(hrefToLine);
       if (!hrefs.length) return;
       var visible = null;
@@ -385,11 +387,24 @@
         visible = {};
         visibleHrefs.forEach(function(h){ visible[h] = true; });
       }
+      // With a single activity selected, every visible track (including
+      // mixed a-pie/BTT routes, whose stored color always leans "en bici")
+      // is forced to that activity's color, so the map reads as one
+      // consistent color instead of a teal/violet mix. "Todas las
+      // actividades" leaves each route its own stored color.
+      var forcedColor = activity === 'senderismo' ? COLORS.violet :
+        activity === 'bici' ? COLORS.teal : null;
       hrefs.forEach(function(href){
         var entry = hrefToLine[href];
         var show = !visible || visible[href];
         if (!show && entry.line === activeLine) closePanel();
-        entry.line.setStyle({ opacity: show ? baseOpacity : 0.06 });
+        var color = forcedColor || entry.baseColor;
+        entry.currentColor = color;
+        if (entry.line === activeLine) {
+          activeBaseColor = color;
+        } else {
+          entry.line.setStyle({ opacity: show ? baseOpacity : 0.06, color: color });
+        }
         var pathEl = entry.line.getElement();
         if (pathEl) {
           if (!show && pathEl === document.activeElement) el.focus({ preventScroll: true });
@@ -399,7 +414,7 @@
         }
       });
     }
-    applyRouteFilter(pendingVisibleHrefs);
+    applyRouteFilter(pendingVisibleHrefs, pendingActivity);
     onRouteFilterChange = applyRouteFilter;
 
     if (data.marker) {
