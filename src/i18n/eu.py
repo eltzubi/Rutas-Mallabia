@@ -630,6 +630,8 @@ TRABAKUA = {
         'alt="Durangaldeko bistak Beranotik, baserriak eta larreak haranean"',
     'alt="Reba&ntilde;o de ovejas en un prado en pendiente, con el valle y sus caser&iacute;os abajo y las monta&ntilde;as del Duranguesado al fondo entre nubes"':
         'alt="Ardi-taldea aldapako belardi batean, harana eta bere baserriak behean eta Durangaldeko mendiak hondoan hodeien artean"',
+    'alt="Pista asfaltada entre robles junto a un cierre de madera, con el bosque a ambos lados"':
+        'alt="Pista asfaltatua haritzen artean, egurrezko itxitura baten ondoan, basoa bi aldeetan"',
     # The first Spanish paragraph becomes two in Basque -- the natural break
     # falls after the descent, so the </p><p> is part of the replacement.
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan —poco más de un kilómetro— '
@@ -3439,6 +3441,8 @@ BETZUN = {
         'alt="Behiak belardi batean bazkan jaitsieran, mendiak atzealdean hodeien artean"',
     'alt="Aerogeneradores al atardecer junto a una hilera de &aacute;rboles sin hojas"':
         'alt="Aerosorgailuak ilunabarrean hostorik gabeko zuhaitz-ilara baten ondoan"',
+    'alt="Cruz de piedra en la cima, con el valle y varios pueblos al fondo entre nubes bajas"':
+        'alt="Harrizko gurutzea gailurrean, harana eta hainbat herri atzealdean hodei baxuen artean"',
 
     # facts
     '<span class="v">Ermita de Zengotita</span><span class="k">Salida</span>':
@@ -3827,6 +3831,8 @@ GARAIMAGUNA = {
         'alt="Hiru aerosorgailu pinuen artean, mendiak eta hodeitutako zeru bat eguzki-izpi batekin atzealdean"',
     'alt="Charca helada entre pinos con nieve alrededor, reflejando los troncos en el agua"':
         'alt="Putzu izoztua pinuen artean elurrez inguratuta, enborrak uretan islatzen direla"',
+    'alt="Bicicleta el&eacute;ctrica apoyada en el v&eacute;rtice geod&eacute;sico de la cima, sobre un mar de nubes con monta&ntilde;as asomando al fondo"':
+        'alt="Bizikleta elektrikoa gailurreko bertize geodesikoan bermatuta, laino-itsaso baten gainean, mendiak hondoan agertzen direla"',
     '32,46 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
         '32,46 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
