@@ -184,7 +184,7 @@
 .filters-open{overflow:hidden;}
 .filter-dialog .filter-reset{display:inline-flex;align-items:center;min-height:44px;}
 .filter-dialog .filter-reset:disabled{opacity:.45;cursor:default;}
-.filter-empty[hidden],.active-filters[hidden]{display:none;}
+.filter-empty[hidden]{display:none;}
 @media(max-width:659px){
   .finder{margin-top:16px;padding:0 16px;}
   .finder-toolbar{gap:8px;flex-wrap:wrap;padding:0 0 12px;}
@@ -246,10 +246,6 @@
 .view-toggle-btn{font:600 12px 'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;min-height:44px;border:0;border-radius:999px;background:none;color:var(--ink-dim);cursor:pointer;}
 .view-toggle-btn:hover{color:var(--ink);}
 .view-toggle-btn.active{color:var(--ink);background:var(--ground);box-shadow:0 1px 5px #0000000d;}
-.result-count{font:400 11px 'IBM Plex Mono',monospace;color:var(--ink);white-space:nowrap;margin:0;}
-.result-info{min-width:0;flex:1;}
-.active-filters{font:400 10px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin:5px 0 0;white-space:normal;overflow-wrap:anywhere;}
-.result-line{display:flex;align-items:center;gap:14px;margin-left:auto;min-width:0;margin-bottom:12px;}
 .filter-reset{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--teal);background:none;border:0;border-radius:8px;padding:10px 4px;min-height:44px;cursor:pointer;white-space:nowrap;}
 .filter-reset:hover{text-decoration:underline;text-underline-offset:4px;}
 .filter-reset[hidden]{display:none;}
@@ -257,7 +253,6 @@
 @media(max-width:659px){
   .view-toggle-row{row-gap:16px;margin-bottom:16px;}
   .view-toggle{padding:2px;margin-bottom:0;}
-  .result-line{margin-bottom:8px;}
 }
 
 /* ---- route cards: compact, scannable ---- */

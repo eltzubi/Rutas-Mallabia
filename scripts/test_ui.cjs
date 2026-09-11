@@ -118,10 +118,14 @@ test('exclusive filters persist across languages and list/map',()=>{
   const selected=Array.from(e.win.trabakutikVisibleRoutes);assert(selected.length>0);
   e.one('[data-view="map"]').click();const eu=env('index.eu.html',e.storage);eu.run('filters.js');
   assert.deepEqual(Array.from(eu.win.trabakutikVisibleRoutes),selected);
-  assert.match(eu.one('#resultCount').textContent,/ibilbide/);
+  assert.match(eu.one('[data-route-totals]').textContent,/ibilbide/);
   assert.equal(eu.one('#difficultySelect').value,'dificil');assert.equal(eu.one('#elevationSelect').value,'high');
   assert.equal(eu.one('[data-view="map"]').getAttribute('aria-pressed'),'true');
-  eu.one('[data-filter-reset]').click();assert.equal(visible(eu).length,totalRoutes(eu));
+  eu.one('.activity-chip[data-activity="all"]').click();
+  eu.one('[data-distance-preset="all"]').click();
+  eu.one('#difficultySelect').value='all';eu.one('#difficultySelect').dispatchEvent({type:'change'});
+  eu.one('#elevationSelect').value='all';eu.one('#elevationSelect').dispatchEvent({type:'change'});
+  assert.equal(visible(eu).length,totalRoutes(eu));
   assert.equal(eu.one('#routeMapWrap').hidden,false);
 });
 test('empty-result recovery finds results while keeping activity',()=>{

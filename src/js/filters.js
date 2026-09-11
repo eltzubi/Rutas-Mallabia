@@ -85,14 +85,24 @@
     paintButtons(distanceButtons, 'distancePreset', state.distance);
     paintButtons(viewButtons, 'view', state.view);
     var visible = [];
+    var totalKm = 0, totalGain = 0;
     cards.forEach(function(card){
       var show = matches(card, state); card.classList.toggle('is-hidden', !show);
-      if (show) visible.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
+      if (show) {
+        visible.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
+        totalKm += Number(card.dataset.distanceKm) || 0;
+        totalGain += Number(card.dataset.desnivelM) || 0;
+      }
     });
     results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
     var n = visible.length;
-    document.getElementById('resultCount').textContent = n + ' ' + (n === 1 ? words.one : words.many);
     document.getElementById('showResults').textContent = words.show(n);
+    var totals = document.querySelector('[data-route-totals]');
+    if (totals) {
+      totals.textContent = n + ' ' + (eu ? 'ibilbide' : 'rutas') + ' · ' +
+        Math.round(totalKm).toLocaleString('es-ES') + ' km · ' +
+        Math.round(totalGain).toLocaleString('es-ES') + ' m+';
+    }
     var extraCount = ['distance','difficulty','elevation'].filter(function(k){return state[k] !== 'all';}).length;
     badge('filterBadge', extraCount);
     badge('advancedBadge', Number(state.difficulty !== 'all') + Number(state.elevation !== 'all'));
@@ -102,7 +112,7 @@
     if (state.difficulty !== 'all') labels.push(optionLabel(difficulty));
     if (state.elevation !== 'all') labels.push((eu ? 'Desnibela: ' : 'Desnivel: ') + optionLabel(elevation));
     var summary = document.getElementById('activeFilters');
-    summary.textContent = labels.join(' · '); summary.hidden = !labels.length;
+    if (summary) { summary.textContent = labels.join(' · '); summary.hidden = !labels.length; }
     finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.hidden = !labels.length;});
     finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !labels.length;});
     empty.hidden = n !== 0; empty.classList.toggle('visible', n === 0);

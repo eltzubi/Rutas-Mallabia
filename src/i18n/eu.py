@@ -481,7 +481,6 @@ HOME = {
 
 
 
-    'Quitar filtros': 'Iragazkiak kendu',
     '<button type="button" class="notice-close">Cerrar aviso</button>':
         '<button type="button" class="notice-close">Itxi</button>',
 
@@ -3834,8 +3833,8 @@ GARAIMAGUNA = {
         '<p>Ibilbide honekin, <b><a href="maguna.html">Maguna</a></b>raino iristeko beste modu bat proposatzen dugu, Muxikako auzo bat, gure ohiko ibilbideetatik pixka bat urrun dagoena. Oraingoan beheko aldetik sartuko gara, bide asko, eremu berriak eta tarte entretenigarriak deskubrituz.</p>',
     '<p>Salimos de <b>Trabakua</b> por la carretera vieja de Zengotita hacia Berriz. Cruzamos la carretera general y subimos hacia Besoita, pasando por <b><a href="sancristobal.html">San Kristobal Txiki</a></b> hasta llegar a <b>Garai</b> (km 10,4 &middot; 274 m), donde podemos coger agua en la fuente situada junto al antiguo lavadero.</p>':
         '<p><b>Trabakua</b>tik abiatzen gara Zengotitako errepide zaharretik Berrizerantz. Errepide nagusia zeharkatu eta Besoitarantz igotzen gara, <b><a href="sancristobal.html">San Kristobal Txiki</a></b>tik igaroz, <b>Garai</b>ra (km 10,4 &middot; 274 m) iritsi arte. Han, garbitegi zaharraren ondoan dagoen iturrian ura har dezakegu.</p>',
-    '<p>A la entrada de Garai giramos a la derecha por una pista hacia el monte. Seguimos parte del recorrido del Asto Trail de Garai, avanzando hacia el oeste por detr&aacute;s de A&ntilde;ao y descendiendo despu&eacute;s hacia un &aacute;rea recreativa.</p>':
-        '<p>Garaiko sarreran, eskuinera biratzen dugu mendi aldera doan pista batetik. Garaiko Asto Trailaren ibilbidearen zati bat jarraitzen dugu, mendebalderantz A&ntilde;aoren atzetik aurrera eginez eta gero aisialdi-gune baterantz jaitsiz.</p>',
+    '<p>A la entrada de Garai giramos a la derecha por una pista hacia el monte. Seguimos parte del recorrido del Asto Trail de Garai, pero en sentido contrario, avanzando hacia el oeste por detr&aacute;s de A&ntilde;ao y descendiendo despu&eacute;s hacia un &aacute;rea recreativa.</p>':
+        '<p>Garaiko sarreran, eskuinera biratzen dugu mendi aldera doan pista batetik. Garaiko Asto Trailaren ibilbidearen zati bat jarraitzen dugu, baina kontrako norabidean, mendebalderantz A&ntilde;aoren atzetik aurrera eginez eta gero aisialdi-gune baterantz jaitsiz.</p>',
     '<p>Desde all&iacute; nos dirigimos hacia <b>Maguna</b> (km 17,2 &middot; 345 m), siguiendo el track, ya que hay varios cruces y alternativas. Tras superar una alambrada, bajamos hasta el fondo del valle, junto a un caser&iacute;o.</p>':
         '<p>Handik <b>Maguna</b>rantz abiatzen gara (km 17,2 &middot; 345 m), track-a jarraituz, bidegurutze eta alternatiba ugari baitaude. Alanbre-hesi bat gainditu ondoren, haranaren hondoraino jaisten gara, baserri baten ondora.</p>',
     '<p>A partir de aqu&iacute; continuamos por peque&ntilde;as carreteras, ganando altura. En un cruce dejamos a la izquierda el camino hacia Maguna y giramos a la derecha por una pista conocida que sube hacia la carretera de <b><a href="zengotitagane.html">Zengotitagane</a></b>, San Kristobal y la zona de los e&oacute;licos.</p>':
