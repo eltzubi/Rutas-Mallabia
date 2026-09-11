@@ -971,6 +971,8 @@ GEREA = {
         'Zirkuitua Trabakuatik Gereako ur-jauzira',
     'alt="Mar de lomas verdes con caser&iacute;os y prados repartidos por las laderas, vistas por encima de las copas de unos abetos, con el mar asomando en el horizonte"':
         'alt="Muino berdeen itsasoa, baserriak eta zelaiak magaletan barreiatuta, izeien adaburuen gainetik ikusita, eta itsasoa zerumugan agertzen"',
+    'alt="Sendero estrecho en una ladera boscosa, entre hojas ca&iacute;das y helechos, con una marca naranja en un tronco"':
+        'alt="Bidezidor estua muino baso batean, hosto erorien eta garoen artean, enbor batean marka laranja batekin"',
     'alt="La cascada escalonada de Gerea, con el agua bajando entre las rocas"':
         'alt="Ur Jauziak, Gereako ur-jauzi mailakatua, ura harrien artetik jaisten"',
     'alt="Foto ampliada del recorrido de la Cascada de Gerea"':
