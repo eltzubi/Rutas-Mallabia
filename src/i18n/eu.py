@@ -89,6 +89,12 @@ COMMON = {
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino</p>',
     'alt="Vista del cordal con la fila de aerogeneradores y las antenas de la cima al fondo, tras un muro de piedra entre helechos"':
         'alt="Harrizko horma baten atzetik, garoen artean, gandorraren ikuspegia eolikoen ilararekin eta gailurreko antenekin atzealdean"',
+    '<h3 class="route-card-name">Garai, Maguna, Axmakur y Zengotitagane</h3>':
+        '<h3 class="route-card-name">Garai, Maguna, Axmakur eta Zengotitagane</h3>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
+        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
+    'alt="Caser&iacute;o tradicional junto a un bosque, con un monte nevado al fondo, al atardecer"':
+        'alt="Baserri tradizionala baso baten ondoan, mendi elurtu bat atzealdean, ilunabarrean"',
     'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
         'alt="Korrikalaria bidezidor batean gora aerosorgailu baterantz, beste korrikalari batzuk atzealdean"',
     'alt="Vista desde el manillar de la bicicleta sobre una pista de tierra y grava"':
@@ -1794,6 +1800,14 @@ MUNDIOKOKOBA = {
         'alt="Kobaren bigarren zatira jaisteko erabilitako sokaren korapiloa"',
     'alt="Galer&iacute;a interior de la cueva, con paredes de roca estratificada"':
         'alt="Kobaren barruko galeria, harrizko horma geruzatuekin"',
+    'alt="Grieta vertical estrecha en la cueva, con una cuerda morada descendiendo entre paredes de roca h&uacute;meda"':
+        'alt="Kobako arrakala bertikal estua, soka more bat harrizko horma bustien artetik jaisten"',
+    'alt="Formaciones de roca clara y coladas de piedra en el interior de la cueva, junto a un suelo rocoso"':
+        'alt="Harri argizko formazioak eta harrizko koladak kobaren barruan, lurzoru harritsu baten ondoan"',
+    'alt="Coladas y estalactitas doradas colgando del techo de la cueva, iluminadas por el foco"':
+        'alt="Kolada eta estalaktita urreztatuak kobaren sabaitik zintzilik, fokuak argituta"',
+    'alt="Paso estrecho entre rocas en la cueva, con una cuerda visible en la oscuridad del interior"':
+        'alt="Harrien arteko pasabide estua kobaren barruan, soka bat ilunpean ikusgai"',
     'Se sale desde el Alto de Trabakua. Los primeros metros bajan &mdash;poco m&aacute;s de un '
     'kil&oacute;metro&mdash; hasta un cruce a la izquierda donde se deja el asfalto atr&aacute;s: '
     'desde ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. El primer '
@@ -3016,6 +3030,7 @@ DESCRIPTIONS = {
     'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota',
     'amaraune': 'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen',
     'astarlokoatxa': 'Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino',
+    'garaimaguna': 'BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota',
 }
 
 # <title> per page (head files)
@@ -3129,6 +3144,7 @@ TITLES = {
     'axmakuriturrizuri': 'Axmakur, Iturrizuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
+    'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3791,6 +3807,51 @@ ASTARLOKOATXA = {
         'download="Ur Jauziak eta Astarloko Atxa.kml"',
 }
 
+GARAIMAGUNA = {
+    '<span>Asfalto, pista y sendero t&eacute;cnico</span><span class="sep">/</span><span>Garai, Maguna y Axmakur</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Asfaltoa, pista eta bidezidor teknikoa</span><span class="sep">/</span><span>Garai, Maguna eta Axmakur</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Garai, Maguna<br><em>Axmakur y Zengotitagane</em></h1>':
+        '<h1>Garai, Maguna<br><em>Axmakur eta Zengotitagane</em></h1>',
+    '<p class="full-name">Circuito de BTT desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
+        '<p class="full-name">BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
+    'alt="Caser&iacute;o tradicional junto a un bosque, con un monte nevado al fondo, al atardecer"':
+        'alt="Baserri tradizionala baso baten ondoan, mendi elurtu bat atzealdean, ilunabarrean"',
+    'alt="Foto ampliada del recorrido de Garai, Maguna, Axmakur y Zengotitagane"':
+        'alt="Garai, Maguna, Axmakur eta Zengotitagane ibilbidearen argazki handitua"',
+    'alt="Nubes doradas al atardecer sobre las siluetas de los montes, con una antena en la cima a la derecha"':
+        'alt="Hodei urreztatuak ilunabarrean mendien silueten gainean, antena bat gailurrean eskuinaldean"',
+    'alt="Arroyo entre rocas cubiertas de musgo y hojas ca&iacute;das, en un tramo de bosque en oto&ntilde;o"':
+        'alt="Erreka goroldioz estalitako harrien eta hosto erorien artean, udazkeneko baso-zati batean"',
+    'alt="Tres aerogeneradores entre pinos, con monta&ntilde;as y un cielo nublado con un rayo de sol al fondo"':
+        'alt="Hiru aerosorgailu pinuen artean, mendiak eta hodeitutako zeru bat eguzki-izpi batekin atzealdean"',
+    'alt="Charca helada entre pinos con nieve alrededor, reflejando los troncos en el agua"':
+        'alt="Putzu izoztua pinuen artean elurrez inguratuta, enborrak uretan islatzen direla"',
+    '32,46 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
+        '32,46 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, ibilbidearen benetakoa (+1.288&nbsp;m); GPX trackak +1.421&nbsp;m ematen du. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+    '<p>Con esta ruta proponemos otra forma de llegar a <b><a href="maguna.html">Maguna</a></b>, barrio de Muxika algo alejado de nuestros recorridos habituales. Esta vez entraremos por la parte baja, descubriendo muchos caminos, zonas nuevas y tramos entretenidos.</p>':
+        '<p>Ibilbide honekin, <b><a href="maguna.html">Maguna</a></b>raino iristeko beste modu bat proposatzen dugu, Muxikako auzo bat, gure ohiko ibilbideetatik pixka bat urrun dagoena. Oraingoan beheko aldetik sartuko gara, bide asko, eremu berriak eta tarte entretenigarriak deskubrituz.</p>',
+    '<p>Salimos de <b>Trabakua</b> por la carretera vieja de Zengotita hacia Berriz. Cruzamos la carretera general y subimos hacia Besoita, pasando por <b><a href="sancristobal.html">San Kristobal Txiki</a></b> hasta llegar a <b>Garai</b> (km 10,4 &middot; 274 m), donde podemos coger agua en la fuente situada junto al antiguo lavadero.</p>':
+        '<p><b>Trabakua</b>tik abiatzen gara Zengotitako errepide zaharretik Berrizerantz. Errepide nagusia zeharkatu eta Besoitarantz igotzen gara, <b><a href="sancristobal.html">San Kristobal Txiki</a></b>tik igaroz, <b>Garai</b>ra (km 10,4 &middot; 274 m) iritsi arte. Han, garbitegi zaharraren ondoan dagoen iturrian ura har dezakegu.</p>',
+    '<p>A la entrada de Garai giramos a la derecha por una pista hacia el monte. Seguimos parte del recorrido del Asto Trail de Garai, avanzando hacia el oeste por detr&aacute;s de A&ntilde;ao y descendiendo despu&eacute;s hacia un &aacute;rea recreativa.</p>':
+        '<p>Garaiko sarreran, eskuinera biratzen dugu mendi aldera doan pista batetik. Garaiko Asto Trailaren ibilbidearen zati bat jarraitzen dugu, mendebalderantz A&ntilde;aoren atzetik aurrera eginez eta gero aisialdi-gune baterantz jaitsiz.</p>',
+    '<p>Desde all&iacute; nos dirigimos hacia <b>Maguna</b> (km 17,2 &middot; 345 m), siguiendo el track, ya que hay varios cruces y alternativas. Tras superar una alambrada, bajamos hasta el fondo del valle, junto a un caser&iacute;o.</p>':
+        '<p>Handik <b>Maguna</b>rantz abiatzen gara (km 17,2 &middot; 345 m), track-a jarraituz, bidegurutze eta alternatiba ugari baitaude. Alanbre-hesi bat gainditu ondoren, haranaren hondoraino jaisten gara, baserri baten ondora.</p>',
+    '<p>A partir de aqu&iacute; continuamos por peque&ntilde;as carreteras, ganando altura. En un cruce dejamos a la izquierda el camino hacia Maguna y giramos a la derecha por una pista conocida que sube hacia la carretera de <b><a href="zengotitagane.html">Zengotitagane</a></b>, San Kristobal y la zona de los e&oacute;licos.</p>':
+        '<p>Hemendik aurrera, errepide txikietatik jarraitzen dugu, altuera irabaziz. Bidegurutze batean, Magunarantz doan bidea ezkerrean utzi eta eskuinera biratzen dugu <b><a href="zengotitagane.html">Zengotitagane</a></b>, San Kristobal eta eolikoen eremura igotzen den pista ezagun batetik.</p>',
+    '<p>Seguimos ascendiendo hasta salir a una carretera de cemento. Giramos a la izquierda hacia Zengotitagane y, en una curva, nos desviamos por un sendero.</p>':
+        '<p>Igotzen jarraitzen dugu zementuzko errepide batera irten arte. Ezkerrera biratzen dugu Zengotitaganerantz, eta bihurgune batean, bidezidor batetik desbideratzen gara.</p>',
+    '<p>Rodeamos la cumbre de Askako por varios senderos escondidos, bonitos y algo t&eacute;cnicos, aunque ciclables. Despu&eacute;s volvemos a la carretera y continuamos hacia <b><a href="axmakuriturrizuri.html">Iturzuri</a></b>. Antes del regreso nos acercamos a <b>Axmakur</b> (km 26,8 &middot; 898 m) para disfrutar de las vistas y alargar la ruta.</p>':
+        '<p>Askakoko tontorra inguratzen dugu ezkutuko bidezidor polit eta tekniko batzuetatik, nahiz eta bizikletaz ibiltzeko modukoak izan. Ondoren, errepidera itzultzen gara eta <b><a href="axmakuriturrizuri.html">Iturzuri</a></b>rantz jarraitzen dugu. Itzuli aurretik, <b>Axmakur</b>rera (km 26,8 &middot; 898 m) hurbiltzen gara ikuspegiaz gozatzeko eta ibilbidea luzatzeko.</p>',
+    '<p>Pasamos por Iturzuri, donde podemos coger agua, y seguimos hasta <b>Zengotitagane</b> (km 28,9 &middot; 816 m). All&iacute; tomamos la pista de descenso hacia <b><a href="osma.html">Osma</a></b>, que nos lleva casi hasta la carretera general. Giramos hacia Trabakua y, tras unos dos kil&oacute;metros, llegamos al punto de partida.</p>':
+        '<p>Iturzuritik igarotzen gara, non ura har dezakegun, eta <b>Zengotitagane</b>raino jarraitzen dugu (km 28,9 &middot; 816 m). Han, <b><a href="osma.html">Osma</a></b>rantz jaisten den pista hartzen dugu, errepide nagusiraino ia eramaten gaituena. Trabakuarantz biratzen dugu eta, bi kilometro inguru egin ondoren, abiapuntura iristen gara.</p>',
+    'download="Garai, Maguna, Axmakur y Zengotitagane.gpx"':
+        'download="Garai, Maguna, Axmakur eta Zengotitagane.gpx"',
+    'download="Garai, Maguna, Axmakur y Zengotitagane.kml"':
+        'download="Garai, Maguna, Axmakur eta Zengotitagane.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3832,4 +3893,5 @@ PAGE_STRINGS = {
     'axmakuriturrizuri': AXMAKURITURRIZURI,
     'amaraune': AMARAUNE,
     'astarlokoatxa': ASTARLOKOATXA,
+    'garaimaguna': GARAIMAGUNA,
 }

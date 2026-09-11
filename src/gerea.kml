@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
-<name>Ur Jauziak Gerea</name>
+<name>Cascada de Gerea</name>
 <Style id="track">
 <LineStyle><color>ff2fe0f5</color><width>4</width></LineStyle>
 </Style>
 <Placemark>
-<name>Ur Jauziak Gerea</name>
+<name>Cascada de Gerea</name>
 <styleUrl>#track</styleUrl>
 <LineString>
 <tessellate>1</tessellate>
