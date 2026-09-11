@@ -111,7 +111,7 @@ const activityRoutes=(e,activity)=>e.all('.route-card').filter(c=>c.dataset.acti
 test('exclusive filters persist across languages and list/map',()=>{
   const e=env();e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
   e.one('.activity-chip[data-activity="bici"]').click();assert.equal(visible(e).length,activityRoutes(e,'bici'));
-  assert.equal(e.all('.activity-chip.active').length,1);
+  assert.equal(e.all('.activity-chip.active').length,e.all('.activity-filter').length);
   e.one('[data-distance-preset="larga"]').click();
   e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
   e.one('#elevationSelect').value='high';e.one('#elevationSelect').dispatchEvent({type:'change'});

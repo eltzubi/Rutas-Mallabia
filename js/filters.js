@@ -134,7 +134,7 @@
   elevation.addEventListener('change',function(){state.elevation=elevation.value;apply();});
   viewButtons.forEach(function(b){b.addEventListener('click',function(){state.view=b.dataset.view;apply();});});
   finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
-  finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
+  finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
   recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
 
   // The same controls move into a native modal on small screens. Native
