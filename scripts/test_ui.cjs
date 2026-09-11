@@ -107,6 +107,7 @@ const settle=async()=>{for(let i=0;i<15;i++)await Promise.resolve();};
 const visible=e=>e.all('.route-card').filter(c=>!c.classList.contains('is-hidden'));
 const totalRoutes=e=>e.all('.route-card').length;
 const activityRoutes=(e,activity)=>e.all('.route-card').filter(c=>c.dataset.activity.split(',').includes(activity)).length;
+const shortActivityRoutes=(e,activity)=>e.all('.route-card').filter(c=>c.dataset.activity.split(',').includes(activity)&&Number(c.dataset.distanceKm)<=10).length;
 
 test('exclusive filters persist across languages and list/map',()=>{
   const e=env();e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
@@ -149,7 +150,9 @@ test('mobile dialog reuses controls and reset keeps activity',()=>{
   e.win.matchMedia=()=>media;e.run('filters.js');
   assert.equal(e.one('#filterControls').parentElement,e.one('#mobileFilters'));
   e.one('.activity-chip[data-activity="bici"]').click();e.one('#openFilters').click();assert.equal(e.one('#filterDialog').open,true);
-  e.one('[data-distance-preset="corto"]').click();assert.equal(e.one('#showResults').textContent,'Ver 1 ruta');
+  e.one('[data-distance-preset="corto"]').click();
+  const shortBici=shortActivityRoutes(e,'bici');
+  assert.equal(e.one('#showResults').textContent,shortBici===1?'Ver 1 ruta':`Ver ${shortBici} rutas`);
   e.one('[data-extra-reset]').click();assert.equal(visible(e).length,activityRoutes(e,'bici'));
   e.one('#showResults').click();assert.equal(e.one('#filterDialog').open,false);assert.equal(e.doc.activeElement,e.one('#openFilters'));
   media.matches=false;changed();assert.equal(e.one('#filterControls').parentElement,e.one('#desktopFilters'));
@@ -164,7 +167,7 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   const panel=e.one('.route-info-panel');assert.equal(panel.hidden,false);
   assert.equal(line.path.getAttribute('aria-pressed'),'true');assert.equal(e.doc.activeElement,e.one('.route-info-panel-close'));
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert.equal(e.doc.activeElement,line.path);
-  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,1);
+  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   const layers=e.one('.map-layers-btn');layers.click();assert.equal(layers.getAttribute('aria-pressed'),'true');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
