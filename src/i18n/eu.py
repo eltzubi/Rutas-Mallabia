@@ -515,8 +515,8 @@ HOME = {
         'Deskargatu track guztiak (ZIP, GPX bat ibilbide bakoitzeko)',
 
     # osma card
-    'alt="Presa de Aixola, junto a Larrosako Iturri, en la ruta de Osma"':
-        'alt="Aixolako presa, Larrosako Iturritik gertu, Osmako ibilbidean"',
+    'alt="Sarc&oacute;fagos medievales de la Necr&oacute;polis de Argi&ntilde;eta bajo un roble, con un caser&iacute;o y prados al fondo"':
+        'alt="Erdi Aroko hilobiak Argi&ntilde;etako Nekropolian haritz baten azpian, baserri bat eta larreak atzealdean"',
     'Trabakua, Elgeta y Argi&ntilde;eta': 'Trabakua, Elgeta eta Argi&ntilde;eta',
 
     # gerea card
