@@ -78,7 +78,11 @@ body{
   padding:24px; color:var(--ink-dim); font-size:13px; line-height:1.6;
 }
 .map-retry{ font:inherit; color:var(--ink); background:var(--ground); border:1px solid var(--line); border-radius:8px; padding:10px 16px; cursor:pointer; }
-.leaflet-interactive[role="button"]:focus-visible{ outline:3px solid var(--ink); outline-offset:3px; }
+/* No outline here: an SVG path's outline follows its bounding box, which for
+   a long winding route line turns into a huge stray rectangle across the
+   map rather than a ring around the line. js/map.js already thickens the
+   line itself on focus (weight:6), which is a shape-following indicator. */
+.leaflet-interactive[role="button"]:focus-visible{ outline:none; }
 .map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
 .map-layers-btn{
