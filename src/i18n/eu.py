@@ -438,8 +438,8 @@ HOME = {
     # filters
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>GPS obligatorio</h2>': '<h2>GPSa nahitaezkoa</h2>',
-    '<summary>GPS obligatorio &mdash; l&eacute;elo antes de salir</summary>':
-        '<summary>GPSa nahitaezkoa &mdash; irakurri irten aurretik</summary>',
+    '<summary>L&eacute;elo antes de salir</summary>':
+        '<summary>Irakurri irten aurretik</summary>',
     'Las rutas est&aacute;n documentadas sobre el terreno, con informaci&oacute;n &uacute;til sobre fuentes, cruces, vistas y puntos de referencia.':
         'Ibilbideak bertatik dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei eta erreferentzia-puntuei buruzko informazio baliagarriarekin.',
 
