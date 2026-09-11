@@ -1529,21 +1529,21 @@ EGOARBITZA = {
 
     'Cruzado Ama&ntilde;a se sube hacia el pol&iacute;gono industrial, y de ah&iacute; arranca el sendero '
     'hasta <b>Egoarbitza</b> (km 16,2 &middot; 722 m): pista al principio, despu&eacute;s media cresta, '
-    'empinada y dura, con un tramo final rocoso donde conviene ir con cuidado.':
+    'empinada y dura, con un tramo final rocoso donde conviene ir con cuidado. Esta subida, junto con la '
+    'bajada hacia la presa de Aixola, tambi&eacute;n la comparte la carrera del <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> de Zaldibar.':
         'Ama&ntilde;a zeharkatuta, industrialdera igotzen da, eta handik hasten da <b>Egoarbitza</b>rako '
         '(16,2 km &middot; 722 m) bidea: hasieran pista, gero gailur-lerro gogor eta tentea, eta '
-        'amaieran harritza duen zatia, kontu handiz ibiltzea komeni dena.',
+        'amaieran harritza duen zatia, kontu handiz ibiltzea komeni dena. Igoera hau, Aixolako presarako '
+        'jaitsierarekin batera, Zaldibarko <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> lasterketak ere partekatzen du.',
 
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
     'pista. Justo al llegar al camino de la presa merece la pena desviarse a la izquierda unos metros '
     'hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
-    'hacia <b>Santama&ntilde;azar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio. '
-    'La mayor&iacute;a de este tramo tambi&eacute;n la comparte la carrera del <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> de Zaldibar.':
+    'hacia <b>Santama&ntilde;azar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio.':
         '<b>Aixolako presa</b>ra jaitsiera (19. km) oso ona da: lehenengo bide estua, gero pista. '
         'Presako bidera iritsi bezain pronto, ezkerretara metro gutxi batzuk egitea merezi du, urte '
         'osoan ura duen iturri batera. Presaren aurrealdea zeharkatu, eta <b>Santama&ntilde;azar</b> '
-        'aldera igotzen da (22,6 km &middot; 663 m), dena pista, misteriorik gabe. '
-        'Tarte honen zatirik handiena Zaldibarko <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> lasterketak ere partekatzen du.',
+        'aldera igotzen da (22,6 km &middot; 663 m), dena pista, misteriorik gabe.',
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. En la ermita se coge la GR, que sube poco a poco hacia '
