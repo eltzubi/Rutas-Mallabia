@@ -450,8 +450,8 @@ HOME = {
         'nabigazio-gailu batean kargatuta eramatea</b>. Webguneko informazioak laguntzeko balio du, '
         'baina ez du ordezten trackea.',
 
-    'Las rutas en bici se han realizado con asistencia el&eacute;ctrica est&aacute;ndar y la dificultad puede variar seg&uacute;n la bici y el ciclista.':
-        'Bizikletako ibilbideak ohiko laguntza elektrikoarekin egin dira, eta zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
+    'Las rutas en bici mayormente se han realizado con asistencia el&eacute;ctrica est&aacute;ndar y la dificultad puede variar seg&uacute;n la bici y el ciclista.':
+        'Bizikletako ibilbideak gehienbat ohiko laguntza elektrikoarekin egin dira, eta zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
     'El estado de caminos y senderos puede cambiar con el tiempo &mdash;por la vegetaci&oacute;n, la lluvia, el barro, &aacute;rboles ca&iacute;dos u otros obst&aacute;culos&mdash; respecto a como se documentaron. Valora siempre las condiciones del momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
         'Bide eta bidezidorren egoera denborarekin alda daiteke &mdash;landaretzagatik, euriagatik, '
         'lokatzagatik, zuhaitz eroriengatik edo beste oztopo batzuengatik&mdash; dokumentatu ziren '
