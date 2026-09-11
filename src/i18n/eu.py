@@ -1537,11 +1537,13 @@ EGOARBITZA = {
     'La bajada hacia la <b>presa de Aixola</b> (km 19) es muy buena: primero sendero, despu&eacute;s '
     'pista. Justo al llegar al camino de la presa merece la pena desviarse a la izquierda unos metros '
     'hasta una fuente con agua todo el a&ntilde;o. Se cruza el frente de la presa y se sube '
-    'hacia <b>Santama&ntilde;azar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio.':
+    'hacia <b>Santama&ntilde;azar</b> (km 22,6 &middot; 663 m), toda por pista, sin ning&uacute;n misterio. '
+    'La mayor&iacute;a de este tramo tambi&eacute;n la comparte la carrera del <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> de Zaldibar.':
         '<b>Aixolako presa</b>ra jaitsiera (19. km) oso ona da: lehenengo bide estua, gero pista. '
         'Presako bidera iritsi bezain pronto, ezkerretara metro gutxi batzuk egitea merezi du, urte '
         'osoan ura duen iturri batera. Presaren aurrealdea zeharkatu, eta <b>Santama&ntilde;azar</b> '
-        'aldera igotzen da (22,6 km &middot; 663 m), dena pista, misteriorik gabe.',
+        'aldera igotzen da (22,6 km &middot; 663 m), dena pista, misteriorik gabe. '
+        'Tarte honen zatirik handiena Zaldibarko <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> lasterketak ere partekatzen du.',
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. En la ermita se coge la GR, que sube poco a poco hacia '
