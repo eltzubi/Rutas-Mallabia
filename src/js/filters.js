@@ -113,7 +113,6 @@
     if (state.elevation !== 'all') labels.push((eu ? 'Desnibela: ' : 'Desnivel: ') + optionLabel(elevation));
     var summary = document.getElementById('activeFilters');
     if (summary) { summary.textContent = labels.join(' · '); summary.hidden = !labels.length; }
-    finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.hidden = !labels.length;});
     finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !labels.length;});
     empty.hidden = n !== 0; empty.classList.toggle('visible', n === 0);
     if (!n) {
@@ -144,7 +143,6 @@
   difficulty.addEventListener('change',function(){state.difficulty=difficulty.value;apply();});
   elevation.addEventListener('change',function(){state.elevation=elevation.value;apply();});
   viewButtons.forEach(function(b){b.addEventListener('click',function(){state.view=b.dataset.view;apply();});});
-  finder.querySelectorAll('[data-filter-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view});apply();});});
   finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
   recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
 
