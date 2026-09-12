@@ -41,7 +41,7 @@ python3 scripts/make_card_thumbs.py  # img/<name>-card.{jpg,webp}: the home page
 ```
 
 `make_card_thumbs.py` is the one to re-run when a route joins the home page: the card `<picture>` points at
-`img/<name>-card.webp` (an 800 px, 16:10 centre crop — the same crop `object-fit:cover` was doing in the
+`img/<name>-card.webp` (a 1100 px, 16:10 centre crop — the same crop `object-fit:cover` was doing in the
 browser), not at the full 1600 px photo. Without it the new card has no image. Everything below the first two
 cards is `loading="lazy"`, so the home page loads ~0.6 MB instead of ~6.6 MB.
 
