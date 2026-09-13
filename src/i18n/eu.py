@@ -3915,8 +3915,8 @@ SANPEDROBIDARTE = {
         'alt="Egunsentia, harana lainoz betea, eguzkia mendien atzetik irteten"',
     'alt="Foto ampliada del recorrido de Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte"':
         'alt="Arteta, Drogeten Iturria eta San Pedro Bidarte ermitaren ibilbidearen argazki handitua"',
-    '<p>14,12 km y +521 m de desnivel en un circuito de dificultad media, que apenas toca carretera: la mayor parte del recorrido va por senderos y pistas poco transitadas. Hay un tramo, cerca de la cantera de Ermua, con senderos algo cerrados que exigen ir atentos al paso, aunque siempre practicables.</p>':
-        '<p>14,12 km eta +521 m-ko desnibela, zailtasun ertaineko zirkuitu batean, errepidea ia ukitu gabe: ibilbidearen zati handiena bidezidor eta pista gutxi erabilietatik doa. Tarte bat dago, Ermuko harrobitik gertu, bidezidor itxi samarrekin, adi ibiltzea eskatzen dutenak, nahiz eta beti pasatzeko modukoak izan.</p>',
+    '<p>14,12 km y +521 m de desnivel en un circuito de dificultad media, que apenas toca carretera: la mayor parte del recorrido va por senderos y pistas poco transitadas. Hay un tramo, al principio de la bajada de la fuente de Arteta, con senderos algo cerrados que exigen ir atentos al paso, aunque siempre practicables.</p>':
+        '<p>14,12 km eta +521 m-ko desnibela, zailtasun ertaineko zirkuitu batean, errepidea ia ukitu gabe: ibilbidearen zati handiena bidezidor eta pista gutxi erabilietatik doa. Tarte bat dago, Artetako iturriaren jaitsieraren hasieran, bidezidor itxi samarrekin, adi ibiltzea eskatzen dutenak, nahiz eta beti pasatzeko modukoak izan.</p>',
     'alt="Pista de piedra y grava subiendo entre helechos y matorral"':
         'alt="Harri eta legarrezko pista garo eta sasien artean gora"',
     'alt="Cruce de caminos en un bosque de eucaliptos"':
