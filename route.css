@@ -105,6 +105,16 @@
 
 .map-section .elev-legend{ padding:0 0 16px; }
 
+/* Compact copy of the hero elevation profile, cloned in right above the
+   map by js/map.js -- keeps the elevation<->map hover link visible on a
+   phone, where the hero chart (top of page) and the map (much lower) are
+   never both on screen at once. */
+.mini-elev-chart{
+  background:var(--ground-raised); border:1px solid var(--line);
+  border-radius:14px; overflow:hidden; margin-bottom:14px;
+}
+.mini-elev-chart svg{ display:block; width:100%; height:90px; }
+
 /* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
    menos que diga por que, y que los botones que ya no mandan sobre nada
    desaparezcan de verdad -- display:flex propio gana a [hidden] del navegador. */
