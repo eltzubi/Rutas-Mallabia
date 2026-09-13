@@ -203,13 +203,20 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Layer switcher (topographic view), on every map -- the home page's
-    // overview and each route's own map alike.
+    // Layer switcher (topographic + satellite views), on every map -- the
+    // home page's overview and each route's own map alike. Cycles through
+    // three free layers, none of which needs an API key: OSM (default),
+    // OpenTopoMap (relief/contours) and Esri World Imagery (aerial photo).
     var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
       maxZoom: 17,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
     });
-    var isTopo = false;
+    var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
+    });
+    var layers = [osmLayer, topoLayer, satLayer];
+    var layerIndex = 0;
     var layersBtn = document.createElement('button');
     layersBtn.type = 'button';
     layersBtn.className = 'map-layers-btn';
@@ -217,11 +224,12 @@
     layersBtn.setAttribute('aria-pressed', 'false');
     layersBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>';
     layersBtn.addEventListener('click', function(){
-      isTopo = !isTopo;
-      if (isTopo) { map.removeLayer(osmLayer); topoLayer.addTo(map); }
-      else { map.removeLayer(topoLayer); osmLayer.addTo(map); }
-      layersBtn.classList.toggle('is-active', isTopo);
-      layersBtn.setAttribute('aria-pressed', String(isTopo));
+      var prev = layerIndex;
+      layerIndex = (layerIndex + 1) % layers.length;
+      map.removeLayer(layers[prev]);
+      layers[layerIndex].addTo(map);
+      layersBtn.classList.toggle('is-active', layerIndex !== 0);
+      layersBtn.setAttribute('aria-pressed', String(layerIndex !== 0));
     });
     el.parentElement.appendChild(layersBtn);
 
@@ -445,6 +453,107 @@
         })
       }).addTo(map);
     });
+
+    // Elevation profile <-> map, linked (Wikiloc-style): only on a route's
+    // own page, where there's exactly one track and its own elevation-
+    // profile SVG in .hero-chart (the home overview map has many tracks
+    // and no such SVG, so this stays off there). The profile's path is
+    // drawn at N evenly-distance-spaced samples over x=[0,1000] (see the
+    // by-hand elevation script this pipeline uses), so a screen-x fraction
+    // maps directly onto the same fraction of this track's own point array.
+    var track0 = data.tracks[0];
+    if (data.tracks.length === 1 && !track0.href && track0.points.length > 1) {
+      // Direct child only: the hero-activity-badge's own small icon <svg>
+      // also lives inside .chart-visual, ahead of the elevation profile
+      // one in document order, and would otherwise win a plain "svg" match.
+      var elevSvg = document.querySelector('.chart-visual > svg');
+      var elevPath = elevSvg && elevSvg.querySelector('path[stroke]');
+      if (elevSvg && elevPath) {
+        var svgNS = 'http://www.w3.org/2000/svg';
+        var cursorLine = document.createElementNS(svgNS, 'line');
+        cursorLine.setAttribute('y1', '0');
+        cursorLine.setAttribute('y2', '300');
+        cursorLine.setAttribute('stroke', ground);
+        cursorLine.setAttribute('stroke-width', '1.5');
+        cursorLine.setAttribute('stroke-dasharray', '4 3');
+        cursorLine.setAttribute('opacity', '0');
+        cursorLine.style.pointerEvents = 'none';
+        elevSvg.appendChild(cursorLine);
+        var cursorDot = document.createElementNS(svgNS, 'circle');
+        cursorDot.setAttribute('r', '6');
+        cursorDot.setAttribute('fill', COLORS.teal);
+        cursorDot.setAttribute('stroke', ground);
+        cursorDot.setAttribute('stroke-width', '2');
+        cursorDot.setAttribute('opacity', '0');
+        cursorDot.style.pointerEvents = 'none';
+        elevSvg.appendChild(cursorDot);
+
+        var mapCursor = L.circleMarker(track0.points[0], {
+          radius: 7, weight: 2.5, color: ground, fillColor: COLORS.teal,
+          fillOpacity: 1, opacity: 0, interactive: false
+        }).addTo(map);
+
+        // Binary search along the (monotonic-in-x) stroke path for the y
+        // at a given x -- there's no direct "value at x" query on <path>.
+        var pathLen = elevPath.getTotalLength();
+        function yAtX(x){
+          var lo = 0, hi = pathLen, pt;
+          for (var i = 0; i < 20; i++){
+            var mid = (lo + hi) / 2;
+            pt = elevPath.getPointAtLength(mid);
+            if (pt.x < x) lo = mid; else hi = mid;
+          }
+          return pt.y;
+        }
+        function showAtFraction(frac){
+          frac = Math.max(0, Math.min(1, frac));
+          var x = frac * 1000;
+          var idx = Math.round(frac * (track0.points.length - 1));
+          cursorLine.setAttribute('x1', x); cursorLine.setAttribute('x2', x);
+          cursorLine.setAttribute('opacity', '1');
+          cursorDot.setAttribute('cx', x); cursorDot.setAttribute('cy', yAtX(x));
+          cursorDot.setAttribute('opacity', '1');
+          mapCursor.setLatLng(track0.points[idx]);
+          mapCursor.setStyle({ opacity: 1, fillOpacity: 1 });
+        }
+        function hideCursor(){
+          cursorLine.setAttribute('opacity', '0');
+          cursorDot.setAttribute('opacity', '0');
+          mapCursor.setStyle({ opacity: 0, fillOpacity: 0 });
+        }
+        function fractionFromEvent(e){
+          var rect = elevSvg.getBoundingClientRect();
+          var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+          return x / rect.width;
+        }
+        elevSvg.addEventListener('mousemove', function(e){ showAtFraction(fractionFromEvent(e)); });
+        elevSvg.addEventListener('mouseleave', hideCursor);
+        elevSvg.addEventListener('touchstart', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
+        elevSvg.addEventListener('touchmove', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
+        elevSvg.addEventListener('touchend', hideCursor);
+
+        // The other direction: hovering the track on the map highlights the
+        // matching point on the elevation profile.
+        var trackLine = hrefToLine[track0.href] ? hrefToLine[track0.href].line : null;
+        if (!trackLine) {
+          // A route's own map track carries no href (see above), so grab
+          // the one and only polyline drawn for it directly.
+          map.eachLayer(function(layer){ if (layer instanceof L.Polyline) trackLine = layer; });
+        }
+        if (trackLine) {
+          trackLine.on('mousemove', function(e){
+            var nearest = 0, best = Infinity;
+            for (var i = 0; i < track0.points.length; i++){
+              var p = track0.points[i];
+              var d = Math.pow(p[0] - e.latlng.lat, 2) + Math.pow(p[1] - e.latlng.lng, 2);
+              if (d < best) { best = d; nearest = i; }
+            }
+            showAtFraction(nearest / (track0.points.length - 1));
+          });
+          trackLine.on('mouseout', hideCursor);
+        }
+      }
+    }
 
     map.on('click', closePanel);
 
