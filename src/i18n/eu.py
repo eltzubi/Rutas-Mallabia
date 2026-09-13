@@ -3585,6 +3585,8 @@ SARRIMENDI = {
         'Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean',
     'Reba&ntilde;o de ovejas caminando por un sendero entre helechos':
         'Ardi-taldea garo artean bidezidor batean',
+    'Hito de Sarrionamendia, una figura de metal con una campana, atado con un lazo rojo, sobre una roca entre pinos y niebla':
+        'Sarrionamendiko mugarria, kanpaia duen metalezko irudia, lazo gorriz lotuta, harri baten gainean, pinuen eta lainoaren artean',
 }
 
 LONGA = {
