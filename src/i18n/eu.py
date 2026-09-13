@@ -75,10 +75,10 @@ COMMON = {
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
     'alt="Arroyo entre helechos y hojarasca en un bosque de con&iacute;feras"':
         'alt="Erreka bat garo eta hosto artean konifero-baso batean"',
-    '<h3 class="route-card-name">Axmakur, Iturrizuri y Zengotitagane</h3>':
-        '<h3 class="route-card-name">Axmakur, Iturrizuri eta Zengotitagane</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Axmakur, Iturrizuri y Zengotitagane</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota</p>',
+    '<h3 class="route-card-name">Axmakur, Iturzuri y Zengotitagane</h3>':
+        '<h3 class="route-card-name">Axmakur, Iturzuri eta Zengotitagane</h3>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
+        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
     '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>':
         '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>',
     '<p class="route-card-desc">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
@@ -679,8 +679,8 @@ ITURZURI = {
     'alt="Vista panorámica desde la ruta, con el valle cubierto de niebla y las crestas del Duranguesado al fondo"':
         'alt="Bista panoramikoa ibilbidetik, harana lainoz estalita eta Durangaldeko gailurrak atzealdean"',
     'alt="Foto ampliada del recorrido de Iturzuri"': 'alt="Iturzuriko ibilbidearen argazki handitua"',
-    'alt="La cascada de Gerena, primera parada de la ruta"':
-        'alt="Gerenako ur-jauzia, ibilbideko lehen geldialdia"',
+    'alt="La cascada de Gerea, primera parada de la ruta"':
+        'alt="Gereako ur-jauzia, ibilbideko lehen geldialdia"',
     'alt="Placa del túmulo prehistórico de Probazelaiburu II, el punto más alto de la ruta"':
         'alt="Probazelaiburu II.a historiaurreko tumuluaren plaka, ibilbideko punturik altuena"',
     'alt="Niebla entre los árboles cerca de la cima"': 'alt="Lainoa zuhaitzen artean gailurretik gertu"',
@@ -689,7 +689,7 @@ ITURZURI = {
     'alt="Restos junto a un aerogenerador cerca de Zengotitagane"':
         'alt="Hondarrak eoliko baten ondoan Zengotitagane inguruan"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
-    'parada: la <b>cascada de Gerena</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
+    'parada: la <b>cascada de Gerea</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia '
     '<a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago</a>, '
     'escondido entre cipreses y fácil de perder si no se mira bien por dónde sigue. Después de '
@@ -702,7 +702,7 @@ ITURZURI = {
     'prehistórico donde el horizonte se abre entero, con las crestas del Duranguesado '
     'extendiéndose hasta perderse de vista.':
         'Trabakuatik ipar-ekialderantz ateratzen da bidea, eta berrogei minutuko igoera lasaian, '
-        'lehen geldialdia agertzen da: <b>Gerenako ur-jauzia</b>. Handik gora jarraitzen da bigarren '
+        'lehen geldialdia agertzen da: <b>Gereako ur-jauzia</b>. Handik gora jarraitzen da bigarren '
         'ur-jauziraino, goiko aldera. Tarte horretan bakarrik zeharkatzen da ura, '
         '<a href="https://7pago.com" target="_blank" rel="noopener noreferrer">7 Pago</a> aldera '
         'igotzen den bidezidor estu bati heltzeko; altzifreen artean ezkutatuta doa, eta erraz '
@@ -738,12 +738,12 @@ ITURZURI = {
         'auzoan. Baina iritsi aurretik, bideak bat-batean biratzen du, eta iparralderantz itzultzen '
         'gara joaneko bidearekin berriro lotu arte, Trabakuatik oso gertu, zirkuitua ixteko.',
     'Sendero de montaña, no apto para bici. Hay dos tramos que exigen ir atentos: el cruce en la '
-    'segunda cascada de Gerena para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
+    'segunda cascada de Gerea para coger el paso hacia 7 Pago, y la bajada sin marcar hacia el sur '
     'desde Zengotitagane. Quien prefiera un día más corto puede bajar directo a Trabakua desde la '
     'cima, sin rodear el lado este. Hay agua en la fuente de Iturzuri (km 4,3), único punto de la '
     'ruta para llenar cantimploras.':
         'Mendiko bidezidorra, ez da bizikletarako egokia. Bi tartek adi ibiltzea eskatzen dute: '
-        'Gerenako bigarren ur-jauziko igarobidea 7 Pago alderantz hartzeko, eta Zengotitagatik '
+        'Gereako bigarren ur-jauziko igarobidea 7 Pago alderantz hartzeko, eta Zengotitagatik '
         'hegoalderantz doan markatu gabeko jaitsiera. Egun laburragoa nahi duenak zuzenean jaits '
         'daiteke Trabakuara gailurretik, ekialdea inguratu gabe. Ura dago Iturzuriko iturrian (4,3 '
         'km), ibilbideko kantinplorak betetzeko puntu bakarra.',
@@ -1692,8 +1692,8 @@ URREGARAI = {
         'baina hara igotzen hasi baino lehen, asfaltoa uzten dugu zementuzko aldapa pikotik '
         '<b>Muniozgurenerantz</b> igotzeko (25,5 km &middot; 496 m), Oiz mendiaren oinean.',
 
-    'Ya solo queda bajar hacia Trabakua, por el barrio de Gerena, para cerrar el circuito.':
-        'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerena auzotik, zirkuitua ixteko.',
+    'Ya solo queda bajar hacia Trabakua, por el barrio de Gerea, para cerrar el circuito.':
+        'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerea auzotik, zirkuitua ixteko.',
 
     '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (Urregarai y '
     'Muniozguren) y tramos de pista, asfalto y cemento empinado. '
@@ -3051,7 +3051,7 @@ DESCRIPTIONS = {
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
     'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
     'zengotitaosmagain': 'Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik',
-    'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota',
+    'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota',
     'amaraune': 'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen',
     'astarlokoatxa': 'Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino',
     'garaimaguna': 'BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota',
@@ -3165,7 +3165,7 @@ TITLES = {
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitaosmagain': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
-    'axmakuriturrizuri': 'Axmakur, Iturrizuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'axmakuriturrizuri': 'Axmakur, Iturzuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
     'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
@@ -3692,16 +3692,16 @@ ZENGOTITAOSMAGAIN = {
 }
 
 AXMAKURITURRIZURI = {
-    '<span>Pista y tierra</span><span class="sep">/</span><span>Axmakur, Iturrizuri y Zengotitagane</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Pista eta lurra</span><span class="sep">/</span><span>Axmakur, Iturrizuri eta Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Axmakur, Iturrizuri<br><em>y Zengotitagane</em></h1>':
-        '<h1>Axmakur, Iturrizuri<br><em>eta Zengotitagane</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Axmakur, Iturrizuri y Zengotitagane</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Axmakur, Iturrizuri eta Zengotitaganetik igarota</p>',
+    '<span>Pista y tierra</span><span class="sep">/</span><span>Axmakur, Iturzuri y Zengotitagane</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta lurra</span><span class="sep">/</span><span>Axmakur, Iturzuri eta Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Axmakur, Iturzuri<br><em>y Zengotitagane</em></h1>':
+        '<h1>Axmakur, Iturzuri<br><em>eta Zengotitagane</em></h1>',
+    '<p class="full-name">Circuito de BTT desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
+        '<p class="full-name">BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
     'Vista desde el manillar de la bicicleta sobre una pista de tierra y grava':
         'Bizikletaren eskulekutik ikusitako lurrezko eta hartxintxarrezko pista',
-    'Foto ampliada del recorrido de Axmakur, Iturrizuri y Zengotitagane':
-        'Axmakur, Iturrizuri eta Zengotitagane ibilbidearen argazki handitua',
+    'Foto ampliada del recorrido de Axmakur, Iturzuri y Zengotitagane':
+        'Axmakur, Iturzuri eta Zengotitagane ibilbidearen argazki handitua',
     'Bicicleta apoyada en un &aacute;rbol en una ladera con hojas oto&ntilde;ales':
         'Bizikleta zuhaitz baten kontra, hosto oreztatuak dituen malda batean',
     'Bicicleta junto a una peque&ntilde;a laguna de monta&ntilde;a, con una valla y vistas al fondo':
@@ -3737,10 +3737,10 @@ AXMAKURITURRIZURI = {
         'Hemen ezkerrera biratu eta ibilbidearen azken zatia egiten dugu. Trabakuara itzuli eta buelta ixteko 2 kilometro inguru baino ez zaizkigu geratzen errepidetik.',
     'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT. Esto es algo que podemos hacer en esta versi&oacute;n m&aacute;s corta, ya que en la ruta <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, por el tipo de terreno y algunos de sus tramos, hacerla en sentido contrario ser&iacute;a pr&aacute;cticamente impensable.':
         'Ibilbidea norabide honetan deskribatuta dagoen arren, alderantziz egitea gomendatzen dugu. Horrela, eramangarriagoa da eta, batez ere, jaitsierak erakargarriagoak eta entretenigarriagoak dira, eta horregatik uste dugu BTTn askoz gehiago gozatzen dela. Hau bertsio labur honetan egin dezakegun zerbait da, <a href="potrera.html">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</a> ibilbidean, lur motagatik eta bere tarte batzuengatik, kontrako norabidean egitea ia pentsaezina izango litzatekeelako.',
-    'download="Axmakur, Iturrizuri y Zengotitagane.gpx"':
-        'download="Axmakur, Iturrizuri eta Zengotitagane.gpx"',
-    'download="Axmakur, Iturrizuri y Zengotitagane.kml"':
-        'download="Axmakur, Iturrizuri eta Zengotitagane.kml"',
+    'download="Axmakur, Iturzuri y Zengotitagane.gpx"':
+        'download="Axmakur, Iturzuri eta Zengotitagane.gpx"',
+    'download="Axmakur, Iturzuri y Zengotitagane.kml"':
+        'download="Axmakur, Iturzuri eta Zengotitagane.kml"',
 }
 
 AMARAUNE = {
