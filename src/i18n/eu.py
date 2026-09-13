@@ -3937,14 +3937,14 @@ SANPEDROBIDARTE = {
         'alt="Basotik zelai ireki batera ateratzen den bidezidorra, haritzen artean"',
     'alt="Claro entre bosque de pinos y eucaliptos, con un prado en el fondo del valle"':
         'alt="Argizulo bat pinu eta eukalipto basoaren artean, harana hondoan zelai batekin"',
-    'alt="Otra vista del mismo claro entre el bosque"':
-        'alt="Baso arteko argizulo beraren beste ikuspegi bat"',
     'alt="Balsa de agua verde junto al camino, con una vaca pastando cerca"':
         'alt="Ur berdezko urmaela bidearen ondoan, behi bat gertu bazkan"',
     'alt="Vista del pueblo con la torre de la iglesia y los tejados rojos, entre los montes"':
         'alt="Herriaren ikuspegia, elizaren dorrearekin eta teilatu gorriekin, mendien artean"',
     'alt="Alambrada con un pico rocoso recortado al fondo, entre hierba seca"':
         'alt="Alanbre-hesia, gailur harritsu bat atzealdean nabarmenduta, belar lehorraren artean"',
+    'alt="Fuente de Iturburua, de piedra y cubierta de musgo, con un ca&ntilde;o de agua y un cartel de agua no tratada, en el bosque"':
+        'alt="Iturburuko iturria, harrizkoa eta goroldioz estalita, ur-txorrota eta tratatu gabeko uraren kartela dituena, basoan"',
     '<p>Con esta ruta queremos ense&ntilde;ar una forma diferente de acercarnos a Ermua desde Trabakua, tocando muy poca carretera y aprovechando senderos y caminos bastante poco transitados.</p>':
         '<p>Ibilbidea Trabakuan hasten da eta Ermuarantz doa, errepide gutxi ukituz eta bidezidor eta bide ez oso erabilietatik igaroz.</p>',
     '<p>En nuestra opini&oacute;n, esta ruta gana bastante haci&eacute;ndola en sentido contrario. El recorrido es todav&iacute;a m&aacute;s bonito, aunque tambi&eacute;n algo m&aacute;s duro, sobre todo en algunos tramos. Si se hace al rev&eacute;s, la recomendamos para gente que ya est&aacute; un poco rodada y acostumbrada a andar por el monte, no para hacer con ni&ntilde;os peque&ntilde;os.</p>':
@@ -3971,14 +3971,14 @@ SANPEDROBIDARTE = {
         'Industrialdean sartzen gara eta, metro batzuk aurrera egin ondoren, ezkerrera biratzen dugu azken igoera hasteko. <b><a href="goita.html">Goita</a></b> auzo politetik igotzen gara, baserriak dituen eremu lasai batetik, non haranaren bi aldeetara ikuspegi ederrak dauden. Handik Trabakuara itzultzen jarraitzen dugu, non ibilbidea amaitzen dugun.',
     '<title>Fuente de Arteta &middot; 2,6 km &middot; 457 m</title>':
         '<title>Artetako iturria &middot; 2,6 km &middot; 457 m</title>',
-    '<title>Kantera &middot; 6,1 km &middot; 187 m</title>':
-        '<title>Harrobia &middot; 6,1 km &middot; 187 m</title>',
+    '<title>Drogeten Iturria &middot; 6,1 km &middot; 187 m</title>':
+        '<title>Drogeten Iturria &middot; 6,1 km &middot; 187 m</title>',
     '<title>Ongarai &middot; 7,3 km &middot; 201 m</title>':
         '<title>Ongarai &middot; 7,3 km &middot; 201 m</title>',
     '<title>San Pedro de Bidarte &middot; 9,2 km &middot; 257 m</title>':
         '<title>San Pedro Bidarte &middot; 9,2 km &middot; 257 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">2</span>Kantera</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro de Bidarte</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">2</span>Harrobia</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro Bidarte</span>',
+    '<span class="elev-legend-item"><span class="num">1</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">2</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro de Bidarte</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">2</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro Bidarte</span>',
     'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.gpx"':
         'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.gpx"',
     'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.kml"':
