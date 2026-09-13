@@ -318,6 +318,14 @@ ROUTE = {
 }
 
 HOME = {
+    # sanpedrobidarte card
+    'alt="Amanecer con niebla en el valle, con el sol saliendo tras los montes"':
+        'alt="Egunsentia, harana lainoz betea, eguzkia mendien atzetik irteten"',
+    '<h3 class="route-card-name">Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte</h3>':
+        '<h3 class="route-card-name">Arteta, Drogeten Iturria eta San Pedro Bidarte ermita</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Arteta, Ermua y la Ermita de San Pedro de Bidarte</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Arteta, Ermua eta San Pedro Bidarte ermitatik igarota</p>',
+
     # axmakuriturrizuri card
     'alt="Bicicleta junto a una peque&ntilde;a laguna de monta&ntilde;a, con una valla y vistas al fondo"':
         'alt="Bizikleta mendiko aintzira txiki baten ondoan, hesi batekin eta atzealdean ikuspegiekin"',
@@ -3057,6 +3065,7 @@ DESCRIPTIONS = {
     'amaraune': 'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen',
     'astarlokoatxa': 'Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino',
     'garaimaguna': 'BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota',
+    'sanpedrobidarte': 'Zirkuitua Trabakuatik, Arteta, Ermua eta San Pedro Bidarte ermitatik igarota',
 }
 
 # <title> per page (head files)
@@ -3171,6 +3180,7 @@ TITLES = {
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
     'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte ermita · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -3894,6 +3904,83 @@ GARAIMAGUNA = {
         'download="Garai, Maguna, Axmakur eta Zengotitagane.kml"',
 }
 
+SANPEDROBIDARTE = {
+    '<span>Sendero y pista</span><span class="sep">/</span><span>Arteta y San Pedro de Bidarte</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Arteta eta San Pedro Bidarte</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Arteta, Drogeten Iturria<br><em>y Ermita San Pedro de Bidarte</em></h1>':
+        '<h1>Arteta, Drogeten Iturria<br><em>eta San Pedro Bidarte ermita</em></h1>',
+    '<p class="full-name">Circuito de senderismo desde Trabakua por Arteta, Drogeten Iturria y la Ermita de San Pedro de Bidarte</p>':
+        '<p class="full-name">Zirkuitua Trabakuatik, Arteta, Drogeten Iturria eta San Pedro Bidarte ermitatik igarota</p>',
+    'alt="Amanecer con niebla en el valle, con el sol saliendo tras los montes"':
+        'alt="Egunsentia, harana lainoz betea, eguzkia mendien atzetik irteten"',
+    'alt="Foto ampliada del recorrido de Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte"':
+        'alt="Arteta, Drogeten Iturria eta San Pedro Bidarte ermitaren ibilbidearen argazki handitua"',
+    '<p>14,12 km y +521 m de desnivel en un circuito de dificultad media, que apenas toca carretera: la mayor parte del recorrido va por senderos y pistas poco transitadas. Hay un tramo, cerca de la cantera de Ermua, con senderos algo cerrados que exigen ir atentos al paso, aunque siempre practicables.</p>':
+        '<p>14,12 km eta +521 m-ko desnibela, zailtasun ertaineko zirkuitu batean, errepidea ia ukitu gabe: ibilbidearen zati handiena bidezidor eta pista gutxi erabilietatik doa. Tarte bat dago, Ermuko harrobitik gertu, bidezidor itxi samarrekin, adi ibiltzea eskatzen dutenak, nahiz eta beti pasatzeko modukoak izan.</p>',
+    'alt="Pista de piedra y grava subiendo entre helechos y matorral"':
+        'alt="Harri eta legarrezko pista garo eta sasien artean gora"',
+    'alt="Cruce de caminos en un bosque de eucaliptos"':
+        'alt="Bide-gurutzea eukalipto baso batean"',
+    'alt="Puente de piedra cubierto de musgo sobre un arroyo, entre hojas ca&iacute;das"':
+        'alt="Goroldioz estalitako harrizko zubia erreka baten gainean, hosto erorien artean"',
+    'alt="Tramo de sendero empedrado entre helechos, junto al desnivel de la ladera"':
+        'alt="Harrizko bidezidor tartea garoen artean, maldaren ondoan"',
+    'alt="Cruce de un arroyo entre rocas, en un tramo de bosque de con&iacute;feras"':
+        'alt="Erreka baten zeharkaldia harrien artean, konifero-baso tarte batean"',
+    'alt="Sendero pedregoso bajando entre helechos y matorral"':
+        'alt="Bidezidor harritsua garo eta sasien artean behera"',
+    'alt="Otro cruce de arroyo entre piedras musgosas, en el bosque"':
+        'alt="Beste erreka-zeharkaldi bat harri goroldiotsuen artean, basoan"',
+    'alt="Casa entre la niebla, vista desde lejos entre el arbolado"':
+        'alt="Etxea lainoaren artean, urrutitik ikusia zuhaiztien artetik"',
+    'alt="Sendero saliendo del bosque a un prado abierto, entre robles"':
+        'alt="Basotik zelai ireki batera ateratzen den bidezidorra, haritzen artean"',
+    'alt="Claro entre bosque de pinos y eucaliptos, con un prado en el fondo del valle"':
+        'alt="Argizulo bat pinu eta eukalipto basoaren artean, harana hondoan zelai batekin"',
+    'alt="Otra vista del mismo claro entre el bosque"':
+        'alt="Baso arteko argizulo beraren beste ikuspegi bat"',
+    'alt="Balsa de agua verde junto al camino, con una vaca pastando cerca"':
+        'alt="Ur berdezko urmaela bidearen ondoan, behi bat gertu bazkan"',
+    'alt="Vista del pueblo con la torre de la iglesia y los tejados rojos, entre los montes"':
+        'alt="Herriaren ikuspegia, elizaren dorrearekin eta teilatu gorriekin, mendien artean"',
+    'alt="Alambrada con un pico rocoso recortado al fondo, entre hierba seca"':
+        'alt="Alanbre-hesia, gailur harritsu bat atzealdean nabarmenduta, belar lehorraren artean"',
+    '<p>Con esta ruta queremos ense&ntilde;ar una forma diferente de acercarnos hacia Ermua desde Trabakua, apenas tocando carretera y aprovechando senderos y caminos bastante poco transitados.</p>':
+        '<p>Ibilbide honekin, Ermura Trabakuatik hurbiltzeko modu desberdin bat erakutsi nahi dugu, errepidea ia ukitu gabe eta nahiko gutxi erabiltzen diren bidezidorrak eta bideak aprobetxatuz.</p>',
+    'Salimos de Trabakua en direcci&oacute;n a Ermua por la carretera, pero la abandonamos enseguida para girar a la izquierda y comenzar a subir por un camino de cemento. Aproximadamente en el km 2 llegamos al cruce de <b>Arteta</b>, en la vuelta de Asuntza. En el mismo cruce seguimos por el sendero que sale pr&aacute;cticamente de frente, entre eucaliptos, en busca de la <b>fuente de Arteta</b> (km 2,6 &middot; 457 m), escondida entre los &aacute;rboles.':
+        'Trabakuatik Ermurantz abiatzen gara errepidetik, baina berehala utzi eta ezkerrera biratzen dugu zementuzko bide batetik igotzen hasteko. Gutxi gorabehera 2. kilometroan <b>Arteta</b>ko bidegurutzera iristen gara, Asuntzako itzulian. Bidegurutze berean, ia aurrez aurre ateratzen den bidezidorretik jarraitzen dugu, eukaliptoen artean, <b>Artetako iturria</b>ren bila (2,6 km &middot; 457 m), zuhaitzen artean ezkutatuta.',
+    'Despu&eacute;s de pasar por la fuente continuamos junto al riachuelo. A partir de aqu&iacute; iremos descendiendo en direcci&oacute;n sureste, procurando mantenernos por su margen izquierda y avanzando siempre cerca del agua. Es una zona de senderos poco transitados, algunos algo cerrados, pero por los que se puede pasar. Poco a poco el camino se va abriendo y termina convirti&eacute;ndose en una pista que nos lleva hasta Berano Txiki.':
+        'Iturritik igaro ondoren, errekastoaren ondotik jarraitzen dugu. Hemendik aurrera, hego-ekialderantz jaisten hasiko gara, ezkerreko ertzetik mantentzen saiatuz eta beti uraren ondoan aurrera eginez. Nahiko gutxi erabiltzen diren bidezidorren eremua da, batzuk itxi samarrak, baina pasatzeko modukoak. Pixkanaka, bidea irekitzen joaten da eta Berano Txikiraino eramaten gaituen pista bihurtzen da.',
+    'Cruzamos la carretera y volvemos a meternos en otro sendero que contin&uacute;a junto al r&iacute;o en direcci&oacute;n a la zona de la <b>cantera de Ermua</b>. Es un tramo muy bonito, con bastantes escaleras y alg&uacute;n peque&ntilde;o puente. Ya cerca de la cantera salimos a la carretera que sube hacia Berano Txiki y continuamos bajando hasta llegar a la carretera general.':
+        'Errepidea gurutzatu eta berriro sartzen gara <b>Ermuko harrobia</b>ren ingururantz doan bidezidor batean, ibaiaren ondotik. Oso tarte polita da, eskailera askorekin eta zubi txikiren batekin. Harrobitik gertu, Berano Txikira igotzen den errepidera ateratzen gara eta jaisten jarraitzen dugu errepide nagusira iritsi arte.',
+    'Cruzamos la carretera, ya en Ermua, y buscamos el bidegorri que va junto al r&iacute;o. Lo seguimos hasta la zona del campo de f&uacute;tbol y desde all&iacute; continuamos hacia la parte alta de <b>Ongarai</b>, donde enlazamos con la pista que nos dar&aacute; paso hacia San Pedro de Bidarte.':
+        'Errepidea gurutzatu, Ermuan gaudela, eta ibaiaren ondotik doan bidegorria bilatzen dugu. Futbol-zelaiaren ingururaino jarraitzen dugu eta handik <b>Ongarai</b>ko goiko alderantz jarraitzen dugu, San Pedrorako bidea emango digun pistarekin bat egiten dugun lekuan.',
+    'Al principio de esta pista encontraremos un par de verjas met&aacute;licas. Si est&aacute;n cerradas, las abriremos para pasar y las dejaremos exactamente como estaban. A partir de aqu&iacute; continuamos suavemente hacia San Pedro por buenas pistas y caminos, con bonitas vistas del entorno.':
+        'Pista honen hasieran metalezko pare bat hesi aurkituko ditugu. Itxita badaude, ireki egingo ditugu pasatzeko eta zeuden bezala utziko ditugu. Hemendik aurrera, San Pedro aldera jarraitzen dugu, pista eta bide onetatik, inguruaren ikuspegi politekin.',
+    'Al llegar a <b>San Pedro de Bidarte</b> (km 9,2 &middot; 257 m) cruzamos la carretera y continuamos de frente, entre los caser&iacute;os de la parte alta del barrio. Desde aqu&iacute; seguimos ganando altura por la loma, con buenas vistas hacia Arteta, Berano Goitia y todo el entorno que hemos ido recorriendo.':
+        '<b>San Pedro</b>ra iristean (9,2 km &middot; 257 m), errepidea gurutzatu eta aurrera jarraitzen dugu, auzoaren goiko aldeko baserrien artean. Hemendik, altuera irabazten jarraitzen dugu muinoan zehar, Arteta, Berano Goitia eta inguru osoaren ikuspegi ederrekin.',
+    'Al terminar la loma alcanzamos la carretera general, pero apenas la tocamos. Nada m&aacute;s salir giramos a la derecha y continuamos por carretera de asfalto hacia Apoita y San Mart&iacute;n, la misma zona desde la que tambi&eacute;n podemos volver a subir hacia Trabakua.':
+        'Muinoa amaitzean, errepide nagusira iristen gara, baina ia ez dugu ukitzen. Atera bezain laster, eskuinera biratu eta asfaltozko errepidetik jarraitzen dugu Apoita eta San Martin aldera, Trabakuara itzultzeko ere erabil dezakegun eremura.',
+    'Ahora descendemos hasta llegar nuevamente al r&iacute;o y comenzamos otra peque&ntilde;a subida. Poco despu&eacute;s encontramos un camino a mano derecha y lo cogemos para bajar hacia el pol&iacute;gono de Goitondo.':
+        'Orain, berriro errekara iritsi arte jaisten gara eta beste igoera txiki bat hasten dugu. Handik gutxira, eskuineko bide bat aurkitzen dugu eta hartu egiten dugu Goitondoko industrialdera jaisteko.',
+    'Entramos en el pol&iacute;gono y, despu&eacute;s de avanzar unos metros, giramos a la izquierda para comenzar la &uacute;ltima subida. Ascendemos por el barrio de <b>Goita</b> y continuamos desde all&iacute; hasta regresar a Trabakua, donde terminamos la ruta.':
+        'Industrialdean sartu eta, metro batzuk aurrera egin ondoren, ezkerrera biratzen dugu azken igoera hasteko. <b>Goita</b> auzotik igotzen gara eta handik Trabakuara itzultzen gara, ibilbidea amaitzen dugun lekura.',
+    '<title>Fuente de Arteta &middot; 2,6 km &middot; 457 m</title>':
+        '<title>Artetako iturria &middot; 2,6 km &middot; 457 m</title>',
+    '<title>Kantera &middot; 6,1 km &middot; 187 m</title>':
+        '<title>Harrobia &middot; 6,1 km &middot; 187 m</title>',
+    '<title>Ongarai &middot; 7,3 km &middot; 201 m</title>':
+        '<title>Ongarai &middot; 7,3 km &middot; 201 m</title>',
+    '<title>San Pedro de Bidarte &middot; 9,2 km &middot; 257 m</title>':
+        '<title>San Pedro Bidarte &middot; 9,2 km &middot; 257 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">2</span>Kantera</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro de Bidarte</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">2</span>Harrobia</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro Bidarte</span>',
+    'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.gpx"':
+        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.gpx"',
+    'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.kml"':
+        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.kml"',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -3936,4 +4023,5 @@ PAGE_STRINGS = {
     'amaraune': AMARAUNE,
     'astarlokoatxa': ASTARLOKOATXA,
     'garaimaguna': GARAIMAGUNA,
+    'sanpedrobidarte': SANPEDROBIDARTE,
 }
