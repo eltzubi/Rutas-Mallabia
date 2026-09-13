@@ -464,8 +464,8 @@ HOME = {
 
     'Las rutas en bici mayormente se han realizado con asistencia el&eacute;ctrica est&aacute;ndar y la dificultad puede variar seg&uacute;n la bici y el ciclista.':
         'Bizikletako ibilbideak gehienbat ohiko laguntza elektrikoarekin egin dira, eta zailtasuna bizikletaren eta txirrindulariaren arabera alda daiteke.',
-    'Muchas de las rutas de senderismo, sobre todo las de trail running, las hemos hecho corriendo en vez de andando, as&iacute; que la dificultad puede variar si las haces a pie.':
-        'Oinezko ibilbide askotan, batez ere trail running motakoetan, oinez baino gehiago korrika egin dugu, beraz zailtasuna alda daiteke oinez eginez gero.',
+    'Casi todas las rutas de senderismo las hemos hecho corriendo, ya sea como entrenamiento o para poder hacer rutas m&aacute;s largas en un fin de semana. Si las haces a pie, simplemente te llevar&aacute; m&aacute;s tiempo.':
+        'Ia oinezko ibilbide guztiak korrika egin ditugu, entrenamendu gisa edo asteburuan ibilbide luzeagoak egin ahal izateko. Oinez eginez gero, denbora gehiago beharko duzu, besterik gabe.',
     'El estado de caminos y senderos puede cambiar con el tiempo &mdash;por la vegetaci&oacute;n, la lluvia, el barro, &aacute;rboles ca&iacute;dos u otros obst&aacute;culos&mdash; respecto a como se documentaron. Valora siempre las condiciones del momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
         'Bide eta bidezidorren egoera denborarekin alda daiteke &mdash;landaretzagatik, euriagatik, '
         'lokatzagatik, zuhaitz eroriengatik edo beste oztopo batzuengatik&mdash; dokumentatu ziren '
