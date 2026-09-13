@@ -247,6 +247,7 @@ ROUTE = {
         '<h2>Oinez &middot; Trail running &middot; BTT/e-bike</h2>',
     '<h2>Senderismo &middot; Trail running</h2>':
         '<h2>Oinez &middot; Trail running</h2>',
+    '<h2>Trail running y senderismo</h2>': '<h2>Trail running eta oinez</h2>',
     '<span class="k">Altitud mín.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud m&iacute;n.</span>': '<span class="k">Altitudea min.</span>',
     '<span class="k">Altitud máx.</span>': '<span class="k">Altitudea max.</span>',
@@ -317,6 +318,9 @@ ROUTE = {
 }
 
 HOME = {
+    # axmakuriturrizuri card
+    'alt="Bicicleta junto a una peque&ntilde;a laguna de monta&ntilde;a, con una valla y vistas al fondo"':
+        'alt="Bizikleta mendiko aintzira txiki baten ondoan, hesi batekin eta atzealdean ikuspegiekin"',
     '<legend>Actividad</legend>': '<legend>Jarduera</legend>',
     '>Todas</button>': '>Guztiak</button>',
     '>A pie</button>': '>Oinez</button>',
@@ -1267,7 +1271,6 @@ URKO = {
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     'Circuito de senderismo y trail running desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza':
         'Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
-    '<h2>Trail running y senderismo</h2>': '<h2>Trail running eta oinez</h2>',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
     '<span class="num">3</span>Collado de Asuntza': '<span class="num">3</span>Asuntzako lepoa',
     'alt="Nubes bajas en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
@@ -2168,7 +2171,7 @@ ARTETA = {
 
 GOITA = {
     '<h2>Un paseo corto y accesible para (casi) cualquiera</h2>':
-        '<h2>Paseo labur eta erraza (ia) edonorentzat</h2>',
+        '<h2>Paseoa labur eta erraza (ia) edonorentzat</h2>',
     '<title>Polígono de Anbre · 2,39 km · 229 m</title>':
         '<title>Anbre industrialdea · 2,39 km · 229 m</title>',
     '<span class="num">1</span>Polígono de Anbre':
@@ -3790,6 +3793,10 @@ ASTARLOKOATXA = {
         '<span>Bidezidorra</span><span class="sep">/</span><span>Ur-jauzia eta gailur ikusgarria</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Cascada<br><em>y Astarloko Atxa</em></h1>':
         '<h1>Ur Jauziak<br><em>eta Astarloko Atxa</em></h1>',
+    '<title>Cascada &middot; 2,54 km &middot; 667 m</title>':
+        '<title>Ur-jauzia &middot; 2,54 km &middot; 667 m</title>',
+    '<span class="num">1</span>Cascada</span>':
+        '<span class="num">1</span>Ur-jauzia</span>',
     '<p class="full-name">Circuito de senderismo a la Cascada y Astarloko Atxa desde Trabakua</p>':
         '<p class="full-name">Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino</p>',
     'alt="Vista del cordal con la fila de aerogeneradores y las antenas de la cima al fondo, tras un muro de piedra entre helechos"':

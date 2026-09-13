@@ -37,10 +37,10 @@ for _p in ROUTE_PAGES:
 # words with no Basque homograph, so a hit is always a real miss.
 SPANISH_TELLS = [
     "Distancia", "Desnivel", "Superficie", "Actividad", "Salida", "Circuito",
-    "Sendero", "sendero", "Senderismo", "Bici", "Mixta", "Ampliar", "Cerrar",
+    "Sendero", "sendero", "Senderismo", "senderismo", "Bici", "Mixta", "Ampliar", "Cerrar",
     "Volver", "Descargar", "ruta", "Ruta", "rutas", "camino", "hacia", "desde",
     "sobre el terreno",
-    "Mapa", "Puerto", "aparcamiento", "aparcar", "cascada", "Fuente",
+    "Mapa", "Puerto", "aparcamiento", "aparcar", "cascada", "Cascada", "Fuente",
     "Monasterio", "Ermita", "Dolmen", "Refugio", "Borda abandonada",
     "Altitud", "perfil real", "tema oscuro", "tema claro",
     # Dificultades y filtros: se colaron en las fichas de la portada.
@@ -48,7 +48,7 @@ SPANISH_TELLS = [
     # Textos de fotos y de navegación.
     "Foto", "Fotos", "Vista", "Vistas", "Señal", "Corredores", "Navegar",
     "recorrido", "subiendo", "aerogeneradores", "montes", "valle", "entre",
-    "sobre", "paseo", "corto", "corta", "accesible", "cualquiera",
+    "sobre", "paseo", "Paseo", "corto", "corta", "accesible", "cualquiera",
     "carretera", "izquierda", "derecha",
 ]
 
