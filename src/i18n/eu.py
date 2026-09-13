@@ -1623,6 +1623,10 @@ URREGARAI = {
         'alt="Herria haranaren hondoan egunsentian, goitik ikusita, mendiak kateatuta atzean gero eta tonu argiagoetan"',
     'alt="Vistas a Markina desde la pista de subida a Urregarai, con el valle y los montes verdes al fondo"':
         'alt="Markinako bistak Urregairako igoerako pistatik, harana eta mendi berdeak atzealdean"',
+    'alt="Camino entre helechos y &aacute;rboles, con un t&uacute;nel de luz al fondo"':
+        'alt="Bidea garo eta zuhaitzen artean, argi-tunel batekin atzealdean"',
+    'alt="Vista de los montes a contraluz con el Oiz y su parque e&oacute;lico al fondo"':
+        'alt="Mendien ikuspegia kontrargian, Oiz eta bere parke eolikoa atzealdean"',
     'alt="Amanecer con luz anaranjada sobre las monta&ntilde;as, al salir de Trabakua"':
         'alt="Egunsentia argi laranjaz mendien gainean, Trabakuatik irtetean"',
     'alt="Foto ampliada del recorrido de Iturreta, Markina y Urregarai"':
@@ -3585,6 +3589,8 @@ SARRIMENDI = {
         'Alanbrezko eskultura txikia harri goroldiotsu baten gainean, lainoaren eta pinuen artean',
     'Reba&ntilde;o de ovejas caminando por un sendero entre helechos':
         'Ardi-taldea garo artean bidezidor batean',
+    'Hito de Sarrionamendia, una figura de metal con una campana, atado con un lazo rojo, sobre una roca entre pinos y niebla':
+        'Sarrionamendiko mugarria, kanpaia duen metalezko irudia, lazo gorriz lotuta, harri baten gainean, pinuen eta lainoaren artean',
 }
 
 LONGA = {
