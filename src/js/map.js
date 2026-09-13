@@ -82,7 +82,14 @@
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
-        el.parentElement.scrollIntoView(scrollOpts());
+        // Scroll to the mini elevation chart when there is one (it sits
+        // right above the map box, inside the same .map-section) so
+        // expanding the map doesn't push it off the top of the screen --
+        // otherwise the elevation<->map link has nothing to show up next
+        // to once the map takes over most of the viewport.
+        var mapSection = el.closest('.map-section');
+        var miniChart = mapSection && mapSection.querySelector('.mini-elev-chart');
+        (miniChart || el.parentElement).scrollIntoView(scrollOpts());
       } else if (resetView) {
         // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
         // la vista pequena; y asi queda una forma clara de reencuadrar.
