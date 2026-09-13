@@ -466,71 +466,108 @@
       // Direct child only: the hero-activity-badge's own small icon <svg>
       // also lives inside .chart-visual, ahead of the elevation profile
       // one in document order, and would otherwise win a plain "svg" match.
-      var elevSvg = document.querySelector('.chart-visual > svg');
-      var elevPath = elevSvg && elevSvg.querySelector('path[stroke]');
-      if (elevSvg && elevPath) {
+      var heroSvg = document.querySelector('.chart-visual > svg');
+      var heroPath = heroSvg && heroSvg.querySelector('path[stroke]');
+      if (heroSvg && heroPath) {
         var svgNS = 'http://www.w3.org/2000/svg';
-        var cursorLine = document.createElementNS(svgNS, 'line');
-        cursorLine.setAttribute('y1', '0');
-        cursorLine.setAttribute('y2', '300');
-        cursorLine.setAttribute('stroke', ground);
-        cursorLine.setAttribute('stroke-width', '1.5');
-        cursorLine.setAttribute('stroke-dasharray', '4 3');
-        cursorLine.setAttribute('opacity', '0');
-        cursorLine.style.pointerEvents = 'none';
-        elevSvg.appendChild(cursorLine);
-        var cursorDot = document.createElementNS(svgNS, 'circle');
-        cursorDot.setAttribute('r', '6');
-        cursorDot.setAttribute('fill', COLORS.teal);
-        cursorDot.setAttribute('stroke', ground);
-        cursorDot.setAttribute('stroke-width', '2');
-        cursorDot.setAttribute('opacity', '0');
-        cursorDot.style.pointerEvents = 'none';
-        elevSvg.appendChild(cursorDot);
+        var charts = [];
 
-        var mapCursor = L.circleMarker(track0.points[0], {
-          radius: 7, weight: 2.5, color: ground, fillColor: COLORS.teal,
-          fillOpacity: 1, opacity: 0, interactive: false
-        }).addTo(map);
+        function addChart(svg){
+          var cursorLine = document.createElementNS(svgNS, 'line');
+          cursorLine.setAttribute('y1', '0');
+          cursorLine.setAttribute('y2', '300');
+          cursorLine.setAttribute('stroke', ground);
+          cursorLine.setAttribute('stroke-width', '1.5');
+          cursorLine.setAttribute('stroke-dasharray', '4 3');
+          cursorLine.setAttribute('opacity', '0');
+          cursorLine.style.pointerEvents = 'none';
+          svg.appendChild(cursorLine);
+          var cursorDot = document.createElementNS(svgNS, 'circle');
+          cursorDot.setAttribute('r', '6');
+          cursorDot.setAttribute('fill', COLORS.teal);
+          cursorDot.setAttribute('stroke', ground);
+          cursorDot.setAttribute('stroke-width', '2');
+          cursorDot.setAttribute('opacity', '0');
+          cursorDot.style.pointerEvents = 'none';
+          svg.appendChild(cursorDot);
+          var chart = { svg: svg, line: cursorLine, dot: cursorDot };
+          charts.push(chart);
+          function fractionFromEvent(e){
+            var rect = svg.getBoundingClientRect();
+            var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            return x / rect.width;
+          }
+          svg.addEventListener('mousemove', function(e){ showAtFraction(fractionFromEvent(e)); });
+          svg.addEventListener('mouseleave', hideCursor);
+          svg.addEventListener('touchstart', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
+          svg.addEventListener('touchmove', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
+          svg.addEventListener('touchend', hideCursor);
+          return chart;
+        }
+
+        // A second, compact copy of the same profile right above the map:
+        // on a phone the hero chart (top of page) and the map (much lower
+        // down) are never both on screen together, so hovering one to see
+        // it move on the other was invisible in practice. Cloned -- same
+        // <path> "d", so the same x/y coordinate space -- BEFORE the hero
+        // gets its own cursor line/dot below, so there's nothing to strip
+        // back out of the clone. Placed right next to the map this way,
+        // with no need to touch every route's own _tail.html by hand.
+        var mapSection = el.closest('.map-section');
+        var mapBox = mapSection && mapSection.querySelector('.route-map-box');
+        var miniSvg = null;
+        if (mapSection && mapBox) {
+          var miniWrap = document.createElement('div');
+          miniWrap.className = 'mini-elev-chart';
+          miniSvg = heroSvg.cloneNode(true);
+          miniWrap.appendChild(miniSvg);
+          mapBox.parentNode.insertBefore(miniWrap, mapBox);
+        }
+
+        addChart(heroSvg);
+        if (miniSvg) addChart(miniSvg);
 
         // Binary search along the (monotonic-in-x) stroke path for the y
         // at a given x -- there's no direct "value at x" query on <path>.
-        var pathLen = elevPath.getTotalLength();
+        // Every chart here is a clone of the same original, so they all
+        // share one coordinate space and this one lookup serves them all.
+        var pathLen = heroPath.getTotalLength();
         function yAtX(x){
           var lo = 0, hi = pathLen, pt;
           for (var i = 0; i < 20; i++){
             var mid = (lo + hi) / 2;
-            pt = elevPath.getPointAtLength(mid);
+            pt = heroPath.getPointAtLength(mid);
             if (pt.x < x) lo = mid; else hi = mid;
           }
           return pt.y;
         }
+
+        var mapCursor = L.circleMarker(track0.points[0], {
+          radius: 7, weight: 2.5, color: ground, fillColor: COLORS.parking,
+          fillOpacity: 1, opacity: 0, interactive: false
+        }).addTo(map);
+
         function showAtFraction(frac){
           frac = Math.max(0, Math.min(1, frac));
           var x = frac * 1000;
+          var y = yAtX(x);
           var idx = Math.round(frac * (track0.points.length - 1));
-          cursorLine.setAttribute('x1', x); cursorLine.setAttribute('x2', x);
-          cursorLine.setAttribute('opacity', '1');
-          cursorDot.setAttribute('cx', x); cursorDot.setAttribute('cy', yAtX(x));
-          cursorDot.setAttribute('opacity', '1');
+          charts.forEach(function(c){
+            c.line.setAttribute('x1', x); c.line.setAttribute('x2', x);
+            c.line.setAttribute('opacity', '1');
+            c.dot.setAttribute('cx', x); c.dot.setAttribute('cy', y);
+            c.dot.setAttribute('opacity', '1');
+          });
           mapCursor.setLatLng(track0.points[idx]);
           mapCursor.setStyle({ opacity: 1, fillOpacity: 1 });
         }
         function hideCursor(){
-          cursorLine.setAttribute('opacity', '0');
-          cursorDot.setAttribute('opacity', '0');
+          charts.forEach(function(c){
+            c.line.setAttribute('opacity', '0');
+            c.dot.setAttribute('opacity', '0');
+          });
           mapCursor.setStyle({ opacity: 0, fillOpacity: 0 });
         }
-        function fractionFromEvent(e){
-          var rect = elevSvg.getBoundingClientRect();
-          var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-          return x / rect.width;
-        }
-        elevSvg.addEventListener('mousemove', function(e){ showAtFraction(fractionFromEvent(e)); });
-        elevSvg.addEventListener('mouseleave', hideCursor);
-        elevSvg.addEventListener('touchstart', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
-        elevSvg.addEventListener('touchmove', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
-        elevSvg.addEventListener('touchend', hideCursor);
 
         // The other direction: hovering the track on the map highlights the
         // matching point on the elevation profile.
