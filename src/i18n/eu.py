@@ -173,8 +173,8 @@ COMMON = {
         '<h3 class="route-card-name">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</h3>',
     '<h3 class="route-card-name">Zengotitagane, Iturzurigaina y San Crist&oacute;bal Txiki</h3>':
         '<h3 class="route-card-name">Zengotitagane, Iturzurigaina eta San Kristobal Txiki</h3>',
-    '<h3 class="route-card-name">Zengotitagane, Askako y San Crist&oacute;bal</h3>':
-        '<h3 class="route-card-name">Zengotitagane, Askako eta San Kristobal</h3>',
+    '<h3 class="route-card-name">Zengotitagane, Askako y Garai</h3>':
+        '<h3 class="route-card-name">Zengotitagane, Askako eta Garai</h3>',
     '<h3 class="route-card-name">Zengotitagane, Axmakur y Oiz</h3>':
         '<h3 class="route-card-name">Zengotitagane, Axmakur eta Oiz</h3>',
     '<h3 class="route-card-name">Osmagain y Arietzu</h3>':
@@ -1369,17 +1369,16 @@ URKO = {
 SANCRISTOBAL = {
     'download="Zengotitagane, Askako y San Cristóbal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
     'download="Zengotitagane, Askako y San Cristóbal.kml"': 'download="Zengotitagane, Askako eta San Kristobal.kml"',
-    'alt="Foto ampliada del recorrido de Zengotitagane, Askako y San '
-    'Crist&oacute;bal"':
-        'alt="Zengotitagane, Askako eta San Kristobal ibilbidearen argazki '
+    'alt="Foto ampliada del recorrido de Zengotitagane, Askako y Garai"':
+        'alt="Zengotitagane, Askako eta Garai ibilbidearen argazki '
         'handitua"',
     '<span>Carretera y pista</span><span class="sep">/</span>'
     '<span>Zengotitagane, Askako y Garai</span>':
         '<span>Errepidea eta pista</span><span class="sep">/</span>'
         '<span>Zengotitagane, Askako eta Garai</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Zengotitagane, Askako<br><em>y San Crist&oacute;bal</em></h1>':
-        '<h1>Zengotitagane, Askako<br><em>eta San Kristobal</em></h1>',
+    '<h1>Zengotitagane, Askako<br><em>y Garai</em></h1>':
+        '<h1>Zengotitagane, Askako<br><em>eta Garai</em></h1>',
     'Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de '
     'San Crist&oacute;bal Txiki y el barrio de Besoita':
         'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal '
@@ -3169,7 +3168,7 @@ TITLES = {
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
-    'sancristobal': 'Zengotitagane, Askako eta San Kristobal · Bizikleta '
+    'sancristobal': 'Zengotitagane, Askako eta Garai · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
     'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza, Santamañazar eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
