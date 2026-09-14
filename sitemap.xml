@@ -421,4 +421,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sanpedrobidarte.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sanpedrobidarte.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/sancristobaloiz.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sancristobaloiz.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sancristobaloiz.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/sancristobaloiz.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sancristobaloiz.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sancristobaloiz.eu.html"/>
+  </url>
 </urlset>
