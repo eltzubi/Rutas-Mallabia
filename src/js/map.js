@@ -474,6 +474,22 @@
         var svgNS = 'http://www.w3.org/2000/svg';
         var charts = [];
 
+        // Parsed once from the page's own already-rendered figures (the
+        // facts row and the elevation tags), rather than recomputed here:
+        // there is exactly one source of truth for distance/altitude range,
+        // and it is the text every visitor already reads.
+        function parseNum(str){
+          var m = str && str.match(/[\d.,]+(?=\s*(?:km|m)\b)/);
+          if (!m) return null;
+          return parseFloat(m[0].replace(/\./g, '').replace(',', '.'));
+        }
+        var factsBox = document.querySelector('.facts');
+        var tagsBox = document.querySelector('.elev-tags');
+        var totalKm = factsBox && parseNum(factsBox.querySelector('.fact .v').textContent);
+        var minEle = tagsBox && parseNum(tagsBox.querySelector('.end.left .v').textContent);
+        var maxEle = tagsBox && parseNum(tagsBox.querySelector('.end.right .v').textContent);
+        var hasReadout = totalKm != null && minEle != null && maxEle != null && maxEle > minEle;
+
         function addChart(svg){
           var cursorLine = document.createElementNS(svgNS, 'line');
           cursorLine.setAttribute('y1', '0');
@@ -492,7 +508,30 @@
           cursorDot.setAttribute('opacity', '0');
           cursorDot.style.pointerEvents = 'none';
           svg.appendChild(cursorDot);
-          var chart = { svg: svg, line: cursorLine, dot: cursorDot };
+          var readout = null;
+          if (hasReadout) {
+            readout = document.createElementNS(svgNS, 'g');
+            readout.setAttribute('class', 'elev-readout');
+            readout.setAttribute('opacity', '0');
+            readout.style.pointerEvents = 'none';
+            var readoutBg = document.createElementNS(svgNS, 'rect');
+            readoutBg.setAttribute('height', '24');
+            readoutBg.setAttribute('rx', '5');
+            readoutBg.setAttribute('fill', ground);
+            readoutBg.setAttribute('opacity', '0.85');
+            var readoutText = document.createElementNS(svgNS, 'text');
+            readoutText.setAttribute('y', '16');
+            readoutText.setAttribute('text-anchor', 'middle');
+            readoutText.setAttribute('font-family', "IBM Plex Mono, monospace");
+            readoutText.setAttribute('font-size', '13');
+            readoutText.setAttribute('font-weight', '700');
+            readoutText.setAttribute('fill', COLORS.teal);
+            readout.appendChild(readoutBg);
+            readout.appendChild(readoutText);
+            svg.appendChild(readout);
+          }
+          var chart = { svg: svg, line: cursorLine, dot: cursorDot, readout: readout,
+            readoutBg: readoutBg, readoutText: readoutText };
           charts.push(chart);
           function fractionFromEvent(e){
             var rect = svg.getBoundingClientRect();
@@ -549,16 +588,46 @@
           fillOpacity: 1, opacity: 0, interactive: false
         }).addTo(map);
 
+        // "12,3 km" / "12,3 km &middot; 450 m", matching the comma-decimal,
+        // <b>-free plain format already used for every marker's km/ele pair
+        // in the body copy (site-wide convention, see eu.py/CLAUDE.md).
+        function fmtKm(km){ return km.toFixed(1).replace('.', ','); }
+        function readoutLabel(frac, y){
+          var km = fmtKm(frac * totalKm);
+          if (!isFinite(y)) return km + ' km';
+          var pad = 8;
+          var ele = Math.round(minEle + (maxEle - minEle) * (1 - (y - pad) / (300 - 2 * pad)));
+          return km + ' km · ' + ele + ' m';
+        }
         function showAtFraction(frac){
           frac = Math.max(0, Math.min(1, frac));
           var x = frac * 1000;
           var y = yAtX(x);
           var idx = Math.round(frac * (track0.points.length - 1));
+          var label = hasReadout ? readoutLabel(frac, y) : null;
           charts.forEach(function(c){
             c.line.setAttribute('x1', x); c.line.setAttribute('x2', x);
             c.line.setAttribute('opacity', '1');
             c.dot.setAttribute('cx', x); c.dot.setAttribute('cy', y);
             c.dot.setAttribute('opacity', '1');
+            if (c.readout && label) {
+              c.readoutText.textContent = label;
+              // Measured after the text is set (its width depends on the
+              // string), then the background rect and the whole group are
+              // placed from that -- centered over the dot, clamped so a
+              // reading near either end of the chart never spills outside
+              // the 0-1000 viewBox.
+              var textWidth = c.readoutText.getComputedTextLength();
+              var boxWidth = textWidth + 20;
+              var boxX = Math.max(4, Math.min(1000 - boxWidth - 4, x - boxWidth / 2));
+              var boxY = Math.max(4, y - 34);
+              c.readoutBg.setAttribute('x', boxX);
+              c.readoutBg.setAttribute('y', boxY);
+              c.readoutBg.setAttribute('width', boxWidth);
+              c.readoutText.setAttribute('x', boxX + boxWidth / 2);
+              c.readoutText.setAttribute('y', boxY + 16);
+              c.readout.setAttribute('opacity', '1');
+            }
           });
           mapCursor.setLatLng(track0.points[idx]);
           mapCursor.setStyle({ opacity: 1, fillOpacity: 1 });
@@ -567,6 +636,7 @@
           charts.forEach(function(c){
             c.line.setAttribute('opacity', '0');
             c.dot.setAttribute('opacity', '0');
+            if (c.readout) c.readout.setAttribute('opacity', '0');
           });
           mapCursor.setStyle({ opacity: 0, fillOpacity: 0 });
         }
