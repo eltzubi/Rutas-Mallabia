@@ -210,19 +210,14 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Layer switcher (topographic + satellite views), on every map -- the
-    // home page's overview and each route's own map alike. Cycles through
-    // three free layers, none of which needs an API key: OSM (default),
-    // OpenTopoMap (relief/contours) and Esri World Imagery (aerial photo).
-    var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      maxZoom: 17,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &middot; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
-    });
+    // Layer switcher (satellite view), on every map -- the home page's
+    // overview and each route's own map alike. Two free layers, neither
+    // needing an API key: OSM (default) and Esri World Imagery (aerial photo).
     var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
       attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
     });
-    var layers = [osmLayer, topoLayer, satLayer];
+    var layers = [osmLayer, satLayer];
     var layerIndex = 0;
     var layersBtn = document.createElement('button');
     layersBtn.type = 'button';
