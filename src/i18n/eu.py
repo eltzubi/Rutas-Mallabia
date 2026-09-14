@@ -1416,14 +1416,14 @@ SANCRISTOBAL = {
     'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
     'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
     '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
-    'vegetaci&oacute;n: parte del trazado cl&aacute;sico del AstoTrail, la exigente carrera de '
+    'vegetaci&oacute;n: parte del trazado cl&aacute;sico del <a href="https://www.instagram.com/astotrail" target="_blank" rel="noopener noreferrer">AstoTrail</a>, la exigente carrera de '
     'monta&ntilde;a que organiza el municipio de Garai.':
         'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigaina</b>raino (4,8 km &middot; '
         '858 m), bi aldeetara bistak dituela. Ura hartu nahi duenak eskuinera metro gutxi '
         'batzuk desbideratu daiteke. Pixka bat aurrerago, haize-errotak paraleloan zeharkatuz '
         'Oizko goialdea, zementuzko pista batera jaisten gara, <b>Askako</b> gailur-ingurura '
         'igotzeko (5,7 km &middot; 681 m). Gailur-inguru hori sasipean ezkutatuta doan bide '
-        'zoragarri batez zeharkatzen da: AstoTrail lasterketa gogorraren ibilbide klasikoaren '
+        'zoragarri batez zeharkatzen da: <a href="https://www.instagram.com/astotrail" target="_blank" rel="noopener noreferrer">AstoTrail</a> lasterketa gogorraren ibilbide klasikoaren '
         'parte, Garaiko udalerriak antolatzen duen mendiko proba ospetsua.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
     'se disfrutan de toda la ruta. Nada m&aacute;s salir de Garai hay una fuente a mano '
@@ -4141,8 +4141,8 @@ AXMAKURANDIKOA = {
         'Pistara iristean, eskuinera biratu eta kilometro batzuk egiten ditugu, mendi-hegala zeharkatuz <b>Garai</b>tik San Kristobalerantz igotzen den errepidera irten arte. Hemen ezkerrera biratu eta berriro jaisten hasten gara.',
     'M&aacute;s abajo llegamos al cruce que separa San Kristobal de Zengotitagane. Nosotros continuamos bajando unos pocos metros m&aacute;s por la carretera y, poco despu&eacute;s, la dejamos para meternos a mano izquierda en una pista de piedra que desciende por el monte. Por aqu&iacute; tambi&eacute;n podemos acabar llegando a Garai, pero lo hacemos por una zona m&aacute;s metida en el bosque, alejados de la carretera y con una bajada bastante entretenida.':
         'Beherago, San Kristobal eta Zengotitagane banatzen dituen bidegurutzera iristen gara. Gu beherago jaisten gara errepidetik metro batzuk gehiago, eta, handik gutxira, utzi egiten dugu ezkerretara mendiaren behera doan harrizko pista batean sartzeko. Hemendik ere Garaira irits gaitezke, baina basoan sartuago dagoen eremu batetik egiten dugu, errepidetik urrun eta jaitsiera entretenigarri samar batekin.',
-    'Continuamos por esta pista hasta llegar abajo del todo, donde enlazamos con el camino que viene de <b>Andikoa</b> (km 18,5 &middot; 187 m). Garai queda ya muy cerca hacia la derecha, pero nosotros giramos a la izquierda para empezar poco a poco el regreso.':
-        'Pista honetatik jarraitzen dugu behealdera iritsi arte, non <b>Andikoa</b>tik datorren bidearekin lotzen garen (18,5 km &middot; 187 m). Garai oso gertu dago eskuinaldera, baina gu ezkerrera biratzen gara itzulerari ekiteko.',
+    'Continuamos por esta pista hasta llegar abajo del todo, donde enlazamos con el camino que viene de <b>Andikoa</b> (km 15,0 &middot; 269 m). Garai queda ya muy cerca hacia la derecha, pero nosotros giramos a la izquierda para empezar poco a poco el regreso.':
+        'Pista honetatik jarraitzen dugu behealdera iritsi arte, non <b>Andikoa</b>tik datorren bidearekin lotzen garen (15,0 km &middot; 269 m). Garai oso gertu dago eskuinaldera, baina gu ezkerrera biratzen gara itzulerari ekiteko.',
     'Pasamos por la parte baja del barrio de Sarria y Andikoa y continuamos en direcci&oacute;n a <b>Berriz</b> (km 19,0 &middot; 224 m). Al llegar al pueblo subimos hacia la zona del vel&oacute;dromo, donde podemos aprovechar para coger agua y, si hace falta, limpiar la bici, ya que hay un punto preparado para ello.':
         'Sarriako eta Andikoako beheko aldetik pasatzen gara eta <b>Berriz</b>erantz jarraitzen dugu (19,0 km &middot; 224 m). Herrira iristean, belodromoaren eremurantz igotzen gara, non ura har dezakegun eta, behar izanez gero, bizikleta garbitu, horretarako prestatutako puntu bat baitago.',
     'Desde el vel&oacute;dromo volvemos a bajar y atravesamos Berriz para poner rumbo de nuevo hacia Trabakua. Al llegar a la altura de <b>Besoita</b> (km 21,6 &middot; 283 m) giramos a la derecha para coger la carretera vieja, tranquila y pr&aacute;cticamente sin tr&aacute;fico, que sube hacia Zengotita.':
