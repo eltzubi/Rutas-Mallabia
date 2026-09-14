@@ -4014,8 +4014,8 @@ SANCRISTOBALOIZ = {
     # para quien es
     '<h2>Una ruta larga en BTT</h2>':
         '<h2>BTTko ibilbide luzea</h2>',
-    '<p>30,70 km y +1.085 m de desnivel en un circuito de dificultad media, con superficie mixta entre pista y algo de sendero. Hay agua junto a una fuente en la zona de San Kristobal Txiki y en otra bastante escondida, justo detr&aacute;s de la ermita de San Crist&oacute;bal (km 12).</p>':
-        '<p>30,70 km eta +1.085 m-ko desnibela zailtasun ertaineko zirkuitu batean, azalera nahasiarekin, pista eta bidezidor pixka bat tartekatuz. Ura badago San Kristobal Txikiko iturri baten ondoan, eta beste bat, nahiko ezkutatua, San Kristobal ermitaren atzean (12. kilometroan).</p>',
+    '<p>30,70 km y +1.085 m de desnivel en un circuito de dificultad media, con superficie mixta entre pista y algo de sendero. Hay agua junto a una fuente en la zona de San Kristobal Txiki y en la Fuente Oiz (km 12,3), bastante escondida justo detr&aacute;s de la ermita de San Crist&oacute;bal.</p>':
+        '<p>30,70 km eta +1.085 m-ko desnibela zailtasun ertaineko zirkuitu batean, azalera nahasiarekin, pista eta bidezidor pixka bat tartekatuz. Ura badago San Kristobal Txikiko iturri baten ondoan, eta Oiz Iturrian (12,3 km), San Kristobal ermitaren atzean, nahiko ezkutatuta.</p>',
 
     # galeria
     'alt="Pedales y pies embarrados sobre un camino de grava y hojas"':
@@ -4048,8 +4048,10 @@ SANCRISTOBALOIZ = {
         '<title>Urdaixako ermita &middot; 6,6 km &middot; 386 m</title>',
     '<title>San Crist&oacute;bal &middot; 12,0 km &middot; 789 m</title>':
         '<title>San Kristobal &middot; 12,0 km &middot; 789 m</title>',
-    '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span> <span class="elev-legend-item"><span class="num">4</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">5</span>Muniozguren</span></div>':
-        '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Urdaixako ermita</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span> <span class="elev-legend-item"><span class="num">4</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">5</span>Muniozguren</span></div>',
+    '<title>Fuente Oiz &middot; 12,3 km &middot; 777 m</title>':
+        '<title>Oiz Iturria &middot; 12,3 km &middot; 777 m</title>',
+    '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span> <span class="elev-legend-item"><span class="num">4</span>Fuente Oiz</span> <span class="elev-legend-item"><span class="num">5</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">6</span>Muniozguren</span></div>':
+        '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Urdaixako ermita</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span> <span class="elev-legend-item"><span class="num">4</span>Oiz Iturria</span> <span class="elev-legend-item"><span class="num">5</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">6</span>Muniozguren</span></div>',
 
     # --- relato ---
     'Aunque parte de este recorrido ya aparece en otras rutas de la web, esta vez queremos ense&ntilde;ar sobre todo el tramo que va desde San Kristobal Txiki hasta la zona media de Oiz, para despu&eacute;s enlazar con caminos m&aacute;s habituales hacia Kortaun y <b><a href="zenarruza.html">Ziortza</a></b>. Adem&aacute;s, toda la ruta la hacemos en sentido contrario a otras vueltas que ya hemos hecho por la zona de Ziortza, as&iacute; que recorreremos caminos conocidos, pero esta vez en direcci&oacute;n inversa.':
@@ -4064,8 +4066,8 @@ SANCRISTOBALOIZ = {
         'Bidegurutzean ezkerreko bidea hartu eta <b>San Kristobal</b>erantz igotzen jarraitzen dugu (12 km &middot; 789 m).',
     'Una vez arriba, junto a la ermita, seguimos por el camino de la izquierda. El de la derecha sube directamente hacia la parte alta de Oiz y las antenas.':
         'Gora iritsitakoan, baselizaren ondoan, ezkerreko bidetik jarraitzen dugu. Eskuinekoak zuzenean igotzen du Oizko goialdera eta antenetara.',
-    'Justo detr&aacute;s de la ermita sale una peque&ntilde;a pista que parece que no lleva a ning&uacute;n sitio. Si bajamos unos metros por ella encontramos una buena fuente, bastante escondida y f&aacute;cil de pasar por alto. No es muy conocida, as&iacute; que viene bien saber que est&aacute; ah&iacute; para poder coger agua si la necesitamos.':
-        'Baselizaren atzean, inora ez doala dirudien pista txiki bat ateratzen da. Metro batzuk jaisten baditugu, iturri on bat aurkitzen dugu, nahiko ezkutatuta eta erraz oharkabean pasatzeko modukoa. Ez da oso ezaguna, beraz, ondo dago jakitea hor dagoela, ura behar badugu har dezakegula jakiteko.',
+    'Justo detr&aacute;s de la ermita sale una peque&ntilde;a pista que parece que no lleva a ning&uacute;n sitio. Si bajamos unos metros por ella encontramos la Fuente Oiz (km 12,3 &middot; 777 m), bastante escondida y f&aacute;cil de pasar por alto. No es muy conocida, as&iacute; que viene bien saber que est&aacute; ah&iacute; para poder coger agua si la necesitamos.':
+        'Baselizaren atzean, inora ez doala dirudien pista txiki bat ateratzen da. Metro batzuk jaisten baditugu, Oiz Iturria aurkitzen dugu (12,3 km &middot; 777 m), nahiko ezkutatuta eta erraz oharkabean pasatzeko modukoa. Ez da oso ezaguna, beraz, ondo dago jakitea hor dagoela, ura behar badugu har dezakegula jakiteko.',
     'Volvemos a subir esos pocos metros y empezamos a bajar en direcci&oacute;n a <b>Munitibar</b>. Al llegar a la parte baja encontramos un cruce. Por la izquierda seguir&iacute;amos hacia Munitibar, pero nosotros giramos a la derecha y empezamos a bordear el monte.':
         'Metro gutxi horiek berriro igo eta <b>Munitibar</b> aldera jaisten hasten gara. Behealdera iristean, bidegurutze bat aurkitzen dugu. Ezkerretik Munitibarrerantz jarraituko genuke, baina guk eskuinera biratu eta mendia inguratzen hasten gara.',
     'A partir de aqu&iacute; entramos en un tramo bonito y bastante solitario que nos lleva hacia la zona del caser&iacute;o y la granja de <b>Kortaun</b>. M&aacute;s adelante enlazamos de nuevo con pistas y comenzamos a bajar hacia el <b>monasterio de Ziortza</b> (km 21,5 &middot; 313 m).':
