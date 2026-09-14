@@ -160,6 +160,11 @@ There's no automated test suite — verification is manual:
 - Cross-reference other routes by name where the text mentions them (e.g. "el mismo pico de la ruta de
   `<a href="arietzu.html">Osmagain y Arietzu</a>`") using a plain `.html` href, letting `make_eu.py`'s
   `EU_OF` swap handle the Basque variant.
+- **The cement climb from Osma to Zengotitagane is hard for a normal (non-electric) bike.** Standing
+  instruction from the user: whenever a route's track uses this climb, say so in the short "para quién
+  es" summary (not necessarily in the user's own narrative body-copy, which stays near-verbatim per the
+  rule above) — e.g. "la subida de cemento desde Osma hasta Zengotitagane es dura para una bici normal,
+  recomendable con e-bike." First applied on `axmakurandikoa`.
 
 ## Basque translation style
 

@@ -318,6 +318,14 @@ ROUTE = {
 }
 
 HOME = {
+    # axmakurandikoa card
+    'alt="Cordillera monta&ntilde;osa en silueta al amanecer, con niebla en el valle"':
+        'alt="Mendilerroaren silueta egunsentian, lainoarekin haranean"',
+    '<h3 class="route-card-name">Zengotitagane, Axmakur y Andikoa</h3>':
+        '<h3 class="route-card-name">Zengotitagane, Axmakur eta Andikoa</h3>',
+    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota</p>',
+
     # sancristobaloiz card
     'alt="Fuente de piedra con dos ca&ntilde;os y musgo en el canal de agua"':
         'alt="Harrizko iturria, bi txorrotarekin eta ur-kanalean goroldioa duena"',
@@ -3078,6 +3086,8 @@ DESCRIPTIONS = {
     'sanpedrobidarte': 'Zirkuitua Trabakuatik, Arteta, Ermua eta San Pedro Bidarte ermitatik igarota',
     'sancristobaloiz': 'Zirkuitua BTTz Trabakuatik, San Kristobal (Oiz), Zenarruza eta '
         'Muniozgurenetik igarota, Ziortza inguruko ibilbideen kontrako norabidean',
+    'axmakurandikoa': 'BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta '
+        'Andikoatik igarota, Berrizeraino jaitsiz',
 }
 
 # <title> per page (head files)
@@ -3194,6 +3204,7 @@ TITLES = {
     'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte ermita · Oinezko ibilbidea — Herriko ibilbideak',
     'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · Bizikleta ibilbidea — Herriko ibilbideak',
+    'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4078,6 +4089,65 @@ SANCRISTOBALOIZ = {
         'Igoera amaitzean, <b><a href="muniozguren.html">Muniozguren</a></b> baserriaren eremura iristen gara (25,5 km &middot; 540 m). Hemendik Trabakuaraino 6 kilometro inguru geratzen zaizkigu, <b>Gerea</b> auzo polit eta lasaia zeharkatuz, berriro ere gainera itzultzeko.',
 }
 
+AXMAKURANDIKOA = {
+    '<span>Pista y carretera</span><span class="sep">/</span><span>Zengotitagane, Axmakur y Andikoa</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zengotitagane, Axmakur eta Andikoa</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Zengotitagane<br><em>Axmakur y Andikoa</em></h1>':
+        '<h1>Trabakua, Zengotitagane<br><em>Axmakur eta Andikoa</em></h1>',
+    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa, bajando hasta Berriz antes de volver por Besoita y Zengotita</p>':
+        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota, Berrizeraino jaitsiz eta Besoita eta Zengotitatik itzuliz</p>',
+    'alt="Cordillera monta&ntilde;osa en silueta al amanecer, con niebla en el valle"':
+        'alt="Mendilerroaren silueta egunsentian, lainoarekin haranean"',
+    'alt="Foto ampliada del recorrido de Trabakua, Zengotitagane, Axmakur y Andikoa"':
+        'alt="Trabakua, Zengotitagane, Axmakur eta Andikoa ibilbidearen argazki handitua"',
+    '<p>26,30 km y +841 m de desnivel en un solo circuito, con superficie de pista y carretera. La subida de cemento desde Osma hasta Zengotitagane es dura para una bici normal &mdash; recomendable con e-bike. Baja hasta la zona de Andikoa y Berriz, una parte del entorno que no aparec&iacute;a todav&iacute;a en ninguna otra ruta de la web. Hay agua en la fuente de Iturzuri, junto al refugio, y tambi&eacute;n en el vel&oacute;dromo de Berriz.</p>':
+        '<p>26,30 km eta +841 m-ko desnibela zirkuitu bakarrean, pista eta errepide gainean. Osmatik Zengotitaganerainoko zementuzko igoera gogorra da bizikleta arrunt batentzat &mdash; e-bikearekin gomendagarriagoa. Andikoa eta Berrizeko eremuraino jaisten da, webguneko beste inongo ibilbidetan oraindik agertzen ez zen ingurune-zati bat. Ura badago Iturzuriko iturrian, aterpearen ondoan, eta baita Berrizko belodromoan ere.</p>',
+    'alt="Refugio de madera iluminado de noche, con ventanas redondas"':
+        'alt="Zurezko aterpea gauez argiztatuta, leiho biribilekin"',
+    'alt="Veleta met&aacute;lica en primer plano con el cielo de atardecer al fondo"':
+        'alt="Haizeorratz metalikoa lehen planoan, ilunabarreko zerua hondoan"',
+    'alt="Vaca pastando con rayos de sol entre las nubes sobre el valle"':
+        'alt="Behia bazkan, eguzki-izpiak hodeien artetik haranaren gainean"',
+    'alt="Valle con niebla y humo de una zona industrial al fondo"':
+        'alt="Harana lainoarekin eta industrialde baten kearekin hondoan"',
+    'alt="&Aacute;rbol solitario junto a un camino en la ladera"':
+        'alt="Zuhaitz bakartia bide baten ondoan mendi-hegalean"',
+    'alt="Manillar de la e-bike con las monta&ntilde;as y el pueblo al fondo"':
+        'alt="E-bikearen heldulekua, mendiak eta herria hondoan"',
+    'alt="Vacas pastando junto a los aerogeneradores"':
+        'alt="Behiak bazkan aerosorgailuen ondoan"',
+    'download="Trabakua, Zengotitagane, Axmakur y Andikoa.gpx"':
+        'download="Trabakua, Zengotitagane, Axmakur eta Andikoa.gpx"',
+    'download="Trabakua, Zengotitagane, Axmakur y Andikoa.kml"':
+        'download="Trabakua, Zengotitagane, Axmakur eta Andikoa.kml"',
+
+    # --- relato ---
+    'Como casi todas nuestras rutas, esta tambi&eacute;n sale de Trabakua. Esta vez la idea es conocer una zona que hasta ahora pr&aacute;cticamente siempre hemos dejado de lado. En otras rutas ya nos hemos acercado hacia Garai, pero normalmente hemos vuelto a ganar altura sin meternos por la parte baja del valle. Hoy haremos justo lo contrario: bajaremos hasta esta zona para recorrer <b>Andikoa</b> y continuar por los barrios que nos llevan hacia <b>Berriz</b>, descubriendo as&iacute; una parte del entorno que todav&iacute;a nos quedaba por conocer.':
+        'Gure ibilbide gehienetan bezala, hau ere Trabakuatik abiatzen da. Oraingoan, orain arte ia beti alde batera utzi dugun eremu bat ezagutzea da asmoa. Beste ibilbide batzuetan Garairantz hurbildu gara, baina normalean altuera irabazi dugu berriro haranaren behealdean sartu gabe. Gaur kontrakoa egingo dugu: eremu horretara jaitsiko gara <b>Andikoa</b> zeharkatzeko eta <b>Berriz</b>erantz doazen auzoetatik jarraitzeko, oraindik ezagutzeko geratzen zitzaigun ingurunearen zati bat aurkituz.',
+    'Salimos de <b>Trabakua</b> en direcci&oacute;n a <b>Zengotita</b>, pero antes de llegar al barrio, en <b>Osma</b>, giramos a la derecha para coger el camino de cemento que sube hacia los e&oacute;licos. Seguimos por &eacute;l hasta alcanzar <b><a href="zengotitagane.html">Zengotitagane</a></b> (km 4,1 &middot; 805 m).':
+        '<b>Trabakua</b>tik <b>Zengotita</b>rantz abiatzen gara, baina auzora iritsi aurretik, <b>Osma</b>n, eskuinera biratu eta zementuzko bidea hartzen dugu, haize-sorgailuetara igotzen dena. Bide horretatik jarraitzen dugu <b><a href="zengotitagane.html">Zengotitagane</a></b>ra iritsi arte (4,1 km &middot; 805 m).',
+    'Una vez arriba continuamos hacia <b>Iturzurigaina</b> (km 5,2 &middot; 859 m). Este tramo podemos hacerlo por la pista o directamente por la cresta, seg&uacute;n lo que nos apetezca. Al llegar a Iturzurigaina, si queremos coger agua, nos desviamos a mano derecha y bajamos unos metros hasta <b>Iturzuri</b>, donde encontraremos la fuente junto al refugio. Despu&eacute;s volvemos al mismo punto para continuar la ruta.':
+        'Behin goian, <b>Iturzurigaina</b>rantz jarraitzen dugu (5,2 km &middot; 859 m). Zati hau pistatik edo zuzenean gailurretik egin dezakegu, nahi dugunaren arabera. Iturzurigainera iristean, ura hartu nahi badugu, eskuinera desbideratzen gara eta metro batzuk jaisten gara <b>Iturzuri</b>ra, non iturria aurkituko dugun aterpearen ondoan. Ondoren, puntu berera itzultzen gara ibilbidearekin jarraitzeko.',
+    'Desde Iturzurigaina seguimos de frente, nos metemos entre la arboleda y buscamos de nuevo la zona alta de los e&oacute;licos, acerc&aacute;ndonos hacia la punta de <b><a href="axmakuriturrizuri.html">Axmakur</a></b> (km 7,0 &middot; 907 m).':
+        'Iturzurigainetik aurrera jarraitzen dugu, zuhaitz artean sartu eta berriro haize-sorgailuen goiko aldea bilatzen dugu, <b><a href="axmakuriturrizuri.html">Axmakur</a></b> puntara hurbilduz (7,0 km &middot; 907 m).',
+    'Merece la pena llegar hasta aqu&iacute; simplemente por las vistas. Desde esta zona alta tenemos una buena panor&aacute;mica hacia los dos lados y, si quisi&eacute;ramos, podr&iacute;amos continuar siguiendo los e&oacute;licos en direcci&oacute;n a Oiz. Hoy no vamos por all&iacute;.':
+        'Merezi du hona iristea soilik ikuspegiengatik. Goiko eremu honetatik panoramika ona dugu bi aldeetara, eta nahi izanez gero, haize-sorgailuei jarraituz Oizerantz jarrai genezake. Gaur ez goaz hortik.',
+    'Para darle un poco m&aacute;s de gracia a la ruta, desde Axmakur dejamos el recorrido habitual y bajamos campo a trav&eacute;s en busca de la pista que atraviesa la ladera a media altura y comunica esta zona con <b>San Kristobal</b>. Este tramo campo a trav&eacute;s es corto y hay que hacerlo con algo de cuidado, ya que, aunque el terreno est&aacute; bastante limpio, podemos encontrarnos alguna piedra escondida. Una vez alcanzamos la pista, el terreno cambia por completo y continuamos ya por un camino claro y seguro.':
+        'Ibilbideari grazia pixka bat emateko, Axmakurretik ohiko ibilbidea utzi eta zelai zeharkatzen dugu pistaren bila, mendi-hegala erdialdetik zeharkatzen duena eta eremu hau <b>San Kristobal</b>ekin lotzen duena. Zelai zeharkako zati hau laburra da eta kontu handiz egin behar da, izan ere, lurra nahiko garbi dagoen arren, harri ezkuturen bat aurki dezakegu. Pista iristen garenean, lurra erabat aldatzen da eta bide argi eta seguru batetik jarraitzen dugu.',
+    'Al llegar a la pista giramos a la derecha y continuamos por ella durante unos kil&oacute;metros, atravesando la ladera hasta salir a la carretera que sube desde <b>Garai</b> hacia San Kristobal. Aqu&iacute; giramos a la izquierda y comenzamos de nuevo a descender.':
+        'Pistara iristean, eskuinera biratu eta kilometro batzuk egiten ditugu, mendi-hegala zeharkatuz <b>Garai</b>tik San Kristobalerantz igotzen den errepidera irten arte. Hemen ezkerrera biratu eta berriro jaisten hasten gara.',
+    'M&aacute;s abajo llegamos al cruce que separa San Kristobal de Zengotitagane. Nosotros continuamos bajando unos pocos metros m&aacute;s por la carretera y, poco despu&eacute;s, la dejamos para meternos a mano izquierda en una pista de piedra que desciende por el monte. Por aqu&iacute; tambi&eacute;n podemos acabar llegando a Garai, pero lo hacemos por una zona m&aacute;s metida en el bosque, alejados de la carretera y con una bajada bastante entretenida.':
+        'Beherago, San Kristobal eta Zengotitagane banatzen dituen bidegurutzera iristen gara. Gu beherago jaisten gara errepidetik metro batzuk gehiago, eta, handik gutxira, utzi egiten dugu ezkerretara mendiaren behera doan harrizko pista batean sartzeko. Hemendik ere Garaira irits gaitezke, baina basoan sartuago dagoen eremu batetik egiten dugu, errepidetik urrun eta jaitsiera entretenigarri samar batekin.',
+    'Continuamos por esta pista hasta llegar abajo del todo, donde enlazamos con el camino que viene de <b>Andikoa</b> (km 18,5 &middot; 187 m). Garai queda ya muy cerca hacia la derecha, pero nosotros giramos a la izquierda para empezar poco a poco el regreso.':
+        'Pista honetatik jarraitzen dugu behealdera iritsi arte, non <b>Andikoa</b>tik datorren bidearekin lotzen garen (18,5 km &middot; 187 m). Garai oso gertu dago eskuinaldera, baina gu ezkerrera biratzen gara itzulerari ekiteko.',
+    'Pasamos por la parte baja del barrio de Andikoa y continuamos en direcci&oacute;n a <b>Berriz</b> (km 19,0 &middot; 224 m). Al llegar al pueblo subimos hacia la zona del vel&oacute;dromo, donde podemos aprovechar para coger agua y, si hace falta, limpiar la bici, ya que hay un punto preparado para ello.':
+        'Andikoako beheko aldetik pasatzen gara eta <b>Berriz</b>erantz jarraitzen dugu (19,0 km &middot; 224 m). Herrira iristean, belodromoaren eremurantz igotzen gara, non ura har dezakegun eta, behar izanez gero, bizikleta garbitu, horretarako prestatutako puntu bat baitago.',
+    'Desde el vel&oacute;dromo volvemos a bajar y atravesamos Berriz para poner rumbo de nuevo hacia Trabakua. Al llegar a la altura de <b>Besoita</b> (km 21,6 &middot; 283 m) giramos a la derecha para coger la carretera vieja, tranquila y pr&aacute;cticamente sin tr&aacute;fico, que sube hacia Zengotita.':
+        'Belodromotik berriro jaitsi eta Berriz zeharkatzen dugu Trabakuara berriro bidean jartzeko. <b>Besoita</b>ren parean (21,6 km &middot; 283 m) eskuinera biratzen dugu Zengotitarantz igotzen den errepide zaharra hartzeko, lasaia eta ia trafikorik gabea.',
+    'Una vez en Zengotita ya tenemos pr&aacute;cticamente terminada la vuelta. Salimos de nuevo a la carretera general y recorremos los &uacute;ltimos dos kil&oacute;metros hasta Trabakua, donde acabamos la ruta.':
+        'Zengotitan gaudenean, ia buelta amaituta dugu. Berriro ere errepide nagusira ateratzen gara eta azken bi kilometroak egiten ditugu Trabakuara iritsi arte, non ibilbidea amaitzen dugun.',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -4122,4 +4192,5 @@ PAGE_STRINGS = {
     'garaimaguna': GARAIMAGUNA,
     'sanpedrobidarte': SANPEDROBIDARTE,
     'sancristobaloiz': SANCRISTOBALOIZ,
+    'axmakurandikoa': AXMAKURANDIKOA,
 }
