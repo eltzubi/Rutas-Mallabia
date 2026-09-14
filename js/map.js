@@ -515,15 +515,15 @@
             readout.setAttribute('opacity', '0');
             readout.style.pointerEvents = 'none';
             var readoutBg = document.createElementNS(svgNS, 'rect');
-            readoutBg.setAttribute('height', '24');
-            readoutBg.setAttribute('rx', '5');
+            readoutBg.setAttribute('height', '30');
+            readoutBg.setAttribute('rx', '6');
             readoutBg.setAttribute('fill', ground);
             readoutBg.setAttribute('opacity', '0.85');
             var readoutText = document.createElementNS(svgNS, 'text');
-            readoutText.setAttribute('y', '16');
+            readoutText.setAttribute('y', '20');
             readoutText.setAttribute('text-anchor', 'middle');
             readoutText.setAttribute('font-family', "IBM Plex Mono, monospace");
-            readoutText.setAttribute('font-size', '13');
+            readoutText.setAttribute('font-size', '17');
             readoutText.setAttribute('font-weight', '700');
             readoutText.setAttribute('fill', COLORS.teal);
             readout.appendChild(readoutBg);
@@ -542,7 +542,11 @@
           svg.addEventListener('mouseleave', hideCursor);
           svg.addEventListener('touchstart', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
           svg.addEventListener('touchmove', function(e){ showAtFraction(fractionFromEvent(e)); }, { passive: true });
-          svg.addEventListener('touchend', hideCursor);
+          // Deliberately no touchend->hideCursor: lifting the finger leaves
+          // the cursor, readout and map dot right where the visitor left
+          // them, instead of vanishing the instant contact ends -- there is
+          // no hover state on a touchscreen to fall back to, so this is the
+          // only way the reading stays visible long enough to actually read.
           return chart;
         }
 
@@ -618,9 +622,9 @@
               // reading near either end of the chart never spills outside
               // the 0-1000 viewBox.
               var textWidth = c.readoutText.getComputedTextLength();
-              var boxWidth = textWidth + 20;
+              var boxWidth = textWidth + 26;
               var boxX = Math.max(4, Math.min(1000 - boxWidth - 4, x - boxWidth / 2));
-              var boxY = Math.max(4, y - 34);
+              var boxY = Math.max(4, y - 40);
               c.readoutBg.setAttribute('x', boxX);
               c.readoutBg.setAttribute('y', boxY);
               c.readoutBg.setAttribute('width', boxWidth);
