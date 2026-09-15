@@ -4189,7 +4189,6 @@ MARKINABOLIBAR = {
         'alt="Zurezko pasarela erreka baten gainean, iratzez betetako baso trinko batean"',
     'alt="Ganado pastando en un prado de valle, con un camino de tierra y crestas caliza al fondo"':
         'alt="Abereak larrean, harana zeharkatzen duen lurrezko bide batekin eta harkaizko gailurrak hondoan"',
-    'Ver ruta original en Wikiloc': 'Ikusi jatorrizko ibilbidea Wikilocen',
     'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.gpx"':
         'download="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina.gpx"',
     'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.kml"':
