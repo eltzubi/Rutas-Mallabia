@@ -307,7 +307,7 @@ def add_estimated_time(page_html, lang):
     de sus propios data-distance-km/data-desnivel-m -- no hay una segunda
     fuente que se pueda desfasar. No-op en las paginas que no tienen tarjetas.
     """
-    label = '<span class="k">Tiempo estimado</span>'
+    label = '<span class="k">Tiempo estimado a pie</span>'
     if lang == "eu":
         label = eu.COMMON[label]
 
