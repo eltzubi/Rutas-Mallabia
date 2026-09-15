@@ -515,15 +515,15 @@
             readout.setAttribute('opacity', '0');
             readout.style.pointerEvents = 'none';
             var readoutBg = document.createElementNS(svgNS, 'rect');
-            readoutBg.setAttribute('height', '30');
-            readoutBg.setAttribute('rx', '6');
+            readoutBg.setAttribute('height', '38');
+            readoutBg.setAttribute('rx', '7');
             readoutBg.setAttribute('fill', ground);
             readoutBg.setAttribute('opacity', '0.85');
             var readoutText = document.createElementNS(svgNS, 'text');
-            readoutText.setAttribute('y', '20');
+            readoutText.setAttribute('y', '25');
             readoutText.setAttribute('text-anchor', 'middle');
             readoutText.setAttribute('font-family', "IBM Plex Mono, monospace");
-            readoutText.setAttribute('font-size', '17');
+            readoutText.setAttribute('font-size', '23');
             readoutText.setAttribute('font-weight', '700');
             readoutText.setAttribute('fill', COLORS.teal);
             readout.appendChild(readoutBg);
@@ -622,14 +622,14 @@
               // reading near either end of the chart never spills outside
               // the 0-1000 viewBox.
               var textWidth = c.readoutText.getComputedTextLength();
-              var boxWidth = textWidth + 26;
+              var boxWidth = textWidth + 32;
               var boxX = Math.max(4, Math.min(1000 - boxWidth - 4, x - boxWidth / 2));
-              var boxY = Math.max(4, y - 40);
+              var boxY = Math.max(4, y - 48);
               c.readoutBg.setAttribute('x', boxX);
               c.readoutBg.setAttribute('y', boxY);
               c.readoutBg.setAttribute('width', boxWidth);
               c.readoutText.setAttribute('x', boxX + boxWidth / 2);
-              c.readoutText.setAttribute('y', boxY + 16);
+              c.readoutText.setAttribute('y', boxY + 25);
               c.readout.setAttribute('opacity', '1');
             }
           });
