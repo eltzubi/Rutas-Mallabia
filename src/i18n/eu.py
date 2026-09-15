@@ -734,6 +734,10 @@ ITURZURI = {
         'alt="Bidezidorra gailurrerditik, eolikoak atzealdean"',
     'alt="Restos junto a un aerogenerador cerca de Zengotitagane"':
         'alt="Hondarrak eoliko baten ondoan Zengotitagane inguruan"',
+    'alt="Haya de gran porte en un claro, rodeada de vegetaci&oacute;n joven y helechos"':
+        'alt="Pago handi bat soilgune batean, landaretza gazte eta iratzez inguratuta"',
+    'alt="Reba&ntilde;o de ovejas cruzando una pista de grava junto a los aerogeneradores del cordal, en un d&iacute;a soleado"':
+        'alt="Ardi-taldea hartxintxarrezko pista batetik gurutzatzen, gandorreko eolikoen ondoan, egun eguzkitsu batean"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
     'parada: la <b>cascada de Gerea</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia '
@@ -2165,6 +2169,18 @@ ARTETA = {
     'prohibido el paso al fondo"':
         'alt="Zementuzko pista bat zuhaitzen artetik gora, sarrera debekatua dagoela '
         'dioen seinale batekin atzealdean"',
+    'alt="Vistas desde lo alto a un caser&iacute;o rodeado de prados, con el mar y las '
+    'monta&ntilde;as del entorno al fondo"':
+        'alt="Goitik ikusitako baserri bat larrez inguratuta, itsasoa eta inguruko '
+        'mendiak atzealdean"',
+    'alt="Un ni&ntilde;o tocando un cuerno de vaca en la cima, con otro agachado junto '
+    'al buz&oacute;n y las monta&ntilde;as al fondo"':
+        'alt="Mutiko bat behi-adar bat jotzen gailurrean, beste bat buzoiaren ondoan '
+        'makurtuta eta mendiak atzealdean"',
+    'alt="Claro entre repoblaciones de pino y eucalipto, con un prado y arbolado joven '
+    'en la vaguada"':
+        'alt="Soilgunea pinu eta eukalipto birlandaketen artean, larre eta zuhaitz '
+        'gazteekin haran-hondoan"',
     '<span>Mixta</span><span class="sep">/</span><span>Mendibil, Olamendi y Arteta</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Mendibil, Olamendi eta Arteta</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
@@ -2737,6 +2753,8 @@ BARINAGA = {
         'alt="Hodei itsasoa gandor batetik ikusia, mendiak lainoartean agertzen direla"',
     'alt="Moj&oacute;n de piedra en un prado, con aerogeneradores en las monta&ntilde;as al fondo"':
         'alt="Harrizko mugarria larre batean, haize-errotak mendietan atzealdean"',
+    'alt="V&eacute;rtice geod&eacute;sico en una cima rocosa, con amplias vistas a las monta&ntilde;as del entorno y aerogeneradores al fondo"':
+        'alt="Bertize geodesikoa gailur harritsu batean, inguruko mendien ikuspegi zabalarekin eta haize-errotak atzealdean"',
 
     'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil.gpx"':
         'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil.gpx"',
@@ -3677,6 +3695,8 @@ LONGA = {
         'Iturzuriko iturria, txilar eta otalore artean',
     'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
         'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
+    'Calavera de vaca colgada en un poste de la valla, entre zarzas y helechos, con el prado en la niebla al fondo':
+        'Behi-burezur bat hesiko zutoin batean zintzilik, sasi eta iratzeen artean, larrea lainotan atzealdean',
     'Como casi siempre, salimos desde Trabakua en direcci&oacute;n norte y comenzamos la subida hacia <b>Zengotitagane</b>. Son aproximadamente 2 kil&oacute;metros de subida pr&aacute;cticamente en l&iacute;nea recta hasta llegar arriba.':
         'Ia beti bezala, Trabakuatik abiatzen gara iparralderantz eta <b>Zengotitagane</b> aldera igotzen hasten gara. Gutxi gorabehera 2 kilometroko igoera da, ia zuzen-zuzena, goian iritsi arte.',
     'Una vez en Zengotitagane, giramos hacia la derecha y continuamos subiendo junto a los e&oacute;licos, disfrutando de las vistas a ambos lados. Seguimos hasta meternos de frente en el hayedo en direcci&oacute;n a <b><a href="iturrizuri.html">Iturzuri</a></b>.':
@@ -3773,6 +3793,12 @@ AXMAKURITURRIZURI = {
         'Bizikletaren eskulekutik ikusitako gandorreko aerosorgailuak',
     'Bicicleta junto a un moj&oacute;n de piedra, con amplias vistas a los montes':
         'Bizikleta harrizko mugarri baten ondoan, mendietara ikuspegi zabalekin',
+    'Sendero herboso descendiendo entre pinos y robles con hojas oto&ntilde;ales, con vistas a las monta&ntilde;as al fondo':
+        'Belarrezko bidezidorra pinu eta haritzen artean jaisten, hosto oreztatuekin eta atzealdean mendietara ikuspegiarekin',
+    'Sendero herboso ascendiendo entre pinos, con hojas oto&ntilde;ales a ambos lados':
+        'Belarrezko bidezidorra pinuen artean igotzen, alde bietan hosto oreztatuekin',
+    'Txabola de piedra en lo alto de un prado, con aerogeneradores al fondo':
+        'Harrizko txabola larre baten goialdean, aerosorgailuekin atzealdean',
     'Fuente de Iturzuri': 'Iturzuriko iturria',
     'Esta ruta sigue pr&aacute;cticamente el mismo recorrido que <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, pero en una versi&oacute;n m&aacute;s corta y directa. En esta ocasi&oacute;n evitamos las bajadas hacia la zona de la potrera y otros desv&iacute;os de aquella vuelta, manteni&eacute;ndonos en la parte alta y reduciendo as&iacute; bastante el recorrido.':
         'Ibilbide honek <a href="potrera.html">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</a> ibilbidearen antzeko bidea jarraitzen du, baina bertsio laburrago eta zuzenago batean. Oraingoan, korta ingururako jaitsierak eta beste ibilbide hartako desbideratzeak saihesten ditugu, goiko aldean mantenduz eta, horrela, ibilbidea nabarmen murriztuz.',
@@ -3927,6 +3953,22 @@ GARAIMAGUNA = {
         'alt="Putzu izoztua pinuen artean elurrez inguratuta, enborrak uretan islatzen direla"',
     'alt="Bicicleta el&eacute;ctrica apoyada en el v&eacute;rtice geod&eacute;sico de la cima, sobre un mar de nubes con monta&ntilde;as asomando al fondo"':
         'alt="Bizikleta elektrikoa gailurreko bertize geodesikoan bermatuta, laino-itsaso baten gainean, mendiak hondoan agertzen direla"',
+    'alt="Txabola de piedra con tejado de teja en un prado con niebla, con ganado pastando y un poste de se&ntilde;ales de madera"':
+        'alt="Harrizko txabola teilatu gorriarekin, larre lainotsu batean, ganadua bazkan eta zurezko seinale-zutoin batekin"',
+    'alt="Bicicleta apoyada en un moj&oacute;n de piedra junto a aerogeneradores, sobre un mar de nubes"':
+        'alt="Bizikleta harrizko mugarri baten kontra bermatuta aerosorgailuen ondoan, laino-itsaso baten gainean"',
+    'alt="Pista de hormig&oacute;n entre prados y repoblaci&oacute;n joven, con niebla cubriendo el monte al fondo"':
+        'alt="Hormigoizko pista larreen eta birlandaketa gazte baten artean, lainoak mendia estaltzen duela hondoan"',
+    'alt="Sendero t&eacute;cnico entre hayas y helechos, con luz filtrando entre las ramas"':
+        'alt="Bidezidor teknikoa pagoen eta iratzeen artean, argia adarren artetik iragazten dela"',
+    'alt="Sendero estrecho entre &aacute;rboles j&oacute;venes, en un tramo de bosque cerrado"':
+        'alt="Bidezidor estua zuhaitz gazteen artean, baso itxiko zati batean"',
+    'alt="Mar de nubes visto desde la pista, con monta&ntilde;as asomando entre la niebla bajo un cielo despejado"':
+        'alt="Laino-itsasoa pistatik ikusita, mendiak lainoaren artetik agertzen direla zeru garbi baten azpian"',
+    'alt="Cruce de un arroyo sobre una pista de hormig&oacute;n junto a una peque&ntilde;a cascada con troncos ca&iacute;dos, visto desde el manillar de la bicicleta"':
+        'alt="Erreka bat hormigoizko pista baten gainean zeharkatzen, ur-jauzi txiki baten ondoan enbor eroriekin, bizikletaren manetatik ikusita"',
+    'alt="Pista amplia entre hayas j&oacute;venes con un muro de piedra musgoso a un lado, en un tramo de bosque"':
+        'alt="Pista zabala pago gazteen artean, goroldioz estalitako harrizko horma batekin alde batean, baso-zati batean"',
     '32,46 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
         '32,46 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
@@ -4204,6 +4246,10 @@ MARKINABOLIBAR = {
         'alt="Zurezko pasarela erreka baten gainean, iratzez betetako baso trinko batean"',
     'alt="Ganado pastando en un prado de valle, con un camino de tierra y crestas caliza al fondo"':
         'alt="Abereak larrean, harana zeharkatzen duen lurrezko bide batekin eta harkaizko gailurrak hondoan"',
+    'alt="Margaritas silvestres junto a la pista, con una cresta caliza al fondo"':
+        'alt="Basa-bitxilorak pistaren ondoan, harkaizko gandor batekin hondoan"',
+    'alt="Vista general del monasterio de Zenarruza y sus edificios anexos, con un prado en primer plano"':
+        'alt="Zenarruzako monasterioaren eta ondoko eraikinen ikuspegi orokorra, larre batekin lehen planoan"',
     'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.gpx"':
         'download="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina.gpx"',
     'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.kml"':
@@ -4258,6 +4304,8 @@ ASUNTZABIRA = {
         'alt="Mendiko bizikletaren eskulekua konbinazio giltzarrapo batekin, malda eta mendiak hondoan"',
     'alt="Camino de tierra entre &aacute;rboles, con un tronco cubierto de hiedra en primer plano"':
         'alt="Lurrezko bidea zuhaitzen artean, huntzaz estalitako enbor batekin lehen planoan"',
+    'alt="Pista asfaltada entre robles junto a un camino cercado, con prados al fondo"':
+        'alt="Pista asfaltatua haritzen artean, hesitutako bide baten ondoan, larreak hondoan"',
     '<title>Arteta (parte alta) &middot; 3,08 km &middot; 484 m</title>':
         '<title>Arteta (goiko aldea) &middot; 3,08 km &middot; 484 m</title>',
     '<title>Arteta (parte baja) &middot; 9,94 km &middot; 489 m</title>':
