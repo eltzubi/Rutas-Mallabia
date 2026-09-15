@@ -321,8 +321,8 @@ HOME = {
     # markinabolibar card
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
-    '<h3 class="route-card-name">Zenarruza, Zeinka, Bolibar y Markina</h3>':
-        '<h3 class="route-card-name">Zenarruza, Zeinka, Bolibar eta Markina</h3>',
+    '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai y Markina</h3>':
+        '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai eta Markina</h3>',
     '<p class="route-card-desc">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Santa Eufemia</p>':
         '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Santa Eufemiatik igarota</p>',
 
@@ -3214,7 +3214,7 @@ TITLES = {
     'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte ermita · Oinezko ibilbidea — Herriko ibilbideak',
     'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · Bizikleta ibilbidea — Herriko ibilbideak',
     'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
-    'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Bolibar eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
+    'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4163,16 +4163,16 @@ AXMAKURANDIKOA = {
 }
 
 MARKINABOLIBAR = {
-    '<span>Pista y carretera</span><span class="sep">/</span><span>Zenarruza, Zeinka, Bolibar y Markina</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Bolibar eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Zenarruza<br><em>Zeinka, Bolibar y Markina</em></h1>':
-        '<h1>Trabakua, Zenarruza<br><em>Zeinka, Bolibar eta Markina</em></h1>',
+    '<span>Pista y carretera</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai y Markina</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai y Markina</em></h1>':
+        '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai eta Markina</em></h1>',
     '<p class="full-name">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Santa Eufemia, bajando hasta Markina antes de volver por Iruzubieta y Bolibar</p>':
         '<p class="full-name">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Santa Eufemiatik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz</p>',
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
-    'alt="Foto ampliada del recorrido de Trabakua, Zenarruza, Zeinka, Bolibar y Markina"':
-        'alt="Trabakua, Zenarruza, Zeinka, Bolibar eta Markina ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Trabakua, Zenarruza, Zeinka, Urregarai y Markina"':
+        'alt="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina ibilbidearen argazki handitua"',
     '<p>40,39 km y +1.236 m de desnivel en un solo circuito: la ruta con m&aacute;s desnivel publicada hasta ahora en esta web. El tramo original de Markina, Bolibar, Zenarruza, Zeinka y Urregarai ronda los 22 km, pero para enlazarlo con Trabakua a&ntilde;adimos la subida y bajada real hasta Zenarruza por Muniozguren, ya conocida de la ruta de <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz)</a>. Es un d&iacute;a largo, con superficie de pista y carretera. Hay agua en la fuente de Santa Eufemia, junto al refugio y la bolera, y otra junto al Camino de Santiago antes de llegar a Iruzubieta.</p>':
         '<p>40,39 km eta +1.236 m-ko desnibela zirkuitu bakarrean: webgune honetan orain arte argitaratutako desnibel handieneko ibilbidea. Markina, Bolibar, Zenarruza, Zeinka eta Urregaraiko jatorrizko zatiak 22 km inguru ditu, baina Trabakuarekin lotzeko Muniozgurenetik Zenarruzarainoko benetako igoera eta jaitsiera gehitu ditugu, <a href="sancristobaloiz.html">San Kristobal (Oiz)</a> ibilbidetik ezaguna. Egun luzea da, pista eta errepide gainekoa. Ura badago Santa Eufemiako iturrian, aterpearen eta bolatokiaren ondoan, eta beste bat Done Jakue bidean, Iruzubietara iritsi aurretik.</p>',
     'alt="Escalinata de piedra hacia el arco de entrada del monasterio de Zenarruza, con una cruz y un &aacute;rbol centenario"':
@@ -4190,10 +4190,10 @@ MARKINABOLIBAR = {
     'alt="Ganado pastando en un prado de valle, con un camino de tierra y crestas caliza al fondo"':
         'alt="Abereak larrean, harana zeharkatzen duen lurrezko bide batekin eta harkaizko gailurrak hondoan"',
     'Ver ruta original en Wikiloc': 'Ikusi jatorrizko ibilbidea Wikilocen',
-    'download="Trabakua, Zenarruza, Zeinka, Bolibar y Markina.gpx"':
-        'download="Trabakua, Zenarruza, Zeinka, Bolibar eta Markina.gpx"',
-    'download="Trabakua, Zenarruza, Zeinka, Bolibar y Markina.kml"':
-        'download="Trabakua, Zenarruza, Zeinka, Bolibar eta Markina.kml"',
+    'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.gpx"':
+        'download="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina.gpx"',
+    'download="Trabakua, Zenarruza, Zeinka, Urregarai y Markina.kml"':
+        'download="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina.kml"',
 
     # --- relato ---
     'Como en la ruta de <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</a>, salimos de <b>Trabakua</b> y subimos por <b>Gerea</b> hasta el caser&iacute;o de <b><a href="muniozguren.html">Muniozguren</a></b> (540 m). Desde all&iacute; bajamos hacia el monasterio de <b><a href="zenarruza.html">Zenarruza</a></b> (km 8,97 &middot; 312 m), donde empieza de verdad esta ruta.':
