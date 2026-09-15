@@ -738,6 +738,8 @@ ITURZURI = {
         'alt="Pago handi bat soilgune batean, landaretza gazte eta iratzez inguratuta"',
     'alt="Reba&ntilde;o de ovejas cruzando una pista de grava junto a los aerogeneradores del cordal, en un d&iacute;a soleado"':
         'alt="Ardi-taldea hartxintxarrezko pista batetik gurutzatzen, gandorreko eolikoen ondoan, egun eguzkitsu batean"',
+    'alt="Panel informativo de los monumentos de Probazelaiburu, con el t&uacute;mulo y los aerogeneradores del cordal al fondo"':
+        'alt="Probazelaiburuko monumentuen informazio-panela, tumulua eta gandorreko aerosorgailuak atzealdean"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
     'parada: la <b>cascada de Gerea</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia '
@@ -2173,10 +2175,6 @@ ARTETA = {
     'monta&ntilde;as del entorno al fondo"':
         'alt="Goitik ikusitako baserri bat larrez inguratuta, itsasoa eta inguruko '
         'mendiak atzealdean"',
-    'alt="Un ni&ntilde;o tocando un cuerno de vaca en la cima, con otro agachado junto '
-    'al buz&oacute;n y las monta&ntilde;as al fondo"':
-        'alt="Mutiko bat behi-adar bat jotzen gailurrean, beste bat buzoiaren ondoan '
-        'makurtuta eta mendiak atzealdean"',
     'alt="Claro entre repoblaciones de pino y eucalipto, con un prado y arbolado joven '
     'en la vaguada"':
         'alt="Soilgunea pinu eta eukalipto birlandaketen artean, larre eta zuhaitz '
