@@ -4252,6 +4252,12 @@ ASUNTZABIRA = {
         'alt="Zaldiak larrean malda batean, harana, baserriak eta mendiak hondoan ikusten direla"',
     'alt="Vista de un valle con edificios y caser&iacute;os entre bosque, con un pico caliza recortado al fondo"':
         'alt="Harana ikusgai, eraikinak eta baserriak basoaren artean, harkaizko gailur zorrotz batekin hondoan"',
+    'alt="Pista de grava entre bosque, con vistas a un valle boscoso y monta&ntilde;as al fondo bajo un cielo de nubes altas"':
+        'alt="Legarrezko pista basoan, haran basotsu bat eta mendiak hondoan ikusten direla, hodei goiko zeru batekin"',
+    'alt="Manillar de bicicleta de monta&ntilde;a con un candado de combinaci&oacute;n, con una ladera y monta&ntilde;as al fondo"':
+        'alt="Mendiko bizikletaren eskulekua konbinazio giltzarrapo batekin, malda eta mendiak hondoan"',
+    'alt="Camino de tierra entre &aacute;rboles, con un tronco cubierto de hiedra en primer plano"':
+        'alt="Lurrezko bidea zuhaitzen artean, huntzaz estalitako enbor batekin lehen planoan"',
     '<title>Arteta (parte alta) &middot; 3,08 km &middot; 484 m</title>':
         '<title>Arteta (goiko aldea) &middot; 3,08 km &middot; 484 m</title>',
     '<title>Arteta (parte baja) &middot; 9,94 km &middot; 489 m</title>':
@@ -4281,8 +4287,8 @@ ASUNTZABIRA = {
         'Goian, lepoan (12,5 km &middot; 512 m), ezkerretara jotzen dugu eta foru aldundiko pistetan sartzen gara. Gutxi ezagutzen diren pistak dira, oso entretenigarriak eta ederrak, eta Trabakua&ndash;Markina errepide nagusiraino ia jaisten uzten digute.',
     'Antes de llegar a ella giramos a mano izquierda y volvemos a ganar altura para regresar hacia la zona de Trabakua.':
         'Hara iritsi baino lehen ezkerretara jotzen dugu eta berriro altuera irabazten dugu Trabakua aldera itzultzeko.',
-    'Durante el recorrido tendremos adem&aacute;s buenas vistas hacia Anboto, la zona de Ambre, el barrio de Goita, Oiz y las monta&ntilde;as de alrededor, especialmente desde las zonas m&aacute;s abiertas.':
-        'Ibilbidean zehar, gainera, ikuspegi onak izango ditugu Anbotorantz, Ambre aldera, Goita auzorantz, Oizerantz eta inguruko mendietara, bereziki eremu irekienetatik.',
+    'Durante el recorrido tendremos adem&aacute;s buenas vistas hacia Anboto, el barrio de Gerea, el barrio de Goita, Oiz y las monta&ntilde;as de alrededor, especialmente desde las zonas m&aacute;s abiertas.':
+        'Ibilbidean zehar, gainera, ikuspegi onak izango ditugu Anbotorantz, Gerea auzorantz, Goita auzorantz, Oizerantz eta inguruko mendietara, bereziki eremu irekienetatik.',
     'Una vuelta muy completa y sin complicaciones t&eacute;cnicas: pista de principio a fin, firme limpio y sin necesidad de meternos en senderos ni caminos dif&iacute;ciles. Hay alguna subida con buena pendiente, pero tambi&eacute;n buenas bajadas para soltar el freno, y en general es un recorrido c&oacute;modo para disfrutar de la bicicleta y descubrir una zona bastante poco conocida.':
         'Buelta oso osoa eta zailtasun teknikorik gabekoa: pista hasieratik amaieraraino, sendo eta garbi, bidezidor edo bide zailetan sartu behar izan gabe. Malda oneko igoera bat edo beste egongo da, baina jaitsiera onak ere balazta askatzeko, eta, oro har, bizikletaz gozatzeko eta gutxi ezagutzen den eremu bat ezagutzeko ibilbide erosoa da.',
 }
