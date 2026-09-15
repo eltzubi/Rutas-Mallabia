@@ -4215,8 +4215,8 @@ MARKINABOLIBAR = {
         'Iruzubietara iristean, taberna baten ondoan, Bolibarrerantz jarraitzen duen zatia hartzen dugu. Hortik aurrera, ibilbidea pixka bat zailagoa baina entretenigarriagoa bihurtzen da. Zelai eta baserri artean aurrera egiten dugu, ganaduarekin puntu batzuetan eta ireki eta itxi beharko den metalezko ate batzuekin.',
     'Llegamos as&iacute; a <b>Bolibar</b> (km 29,38 &middot; 177 m). A la salida del pueblo, el Camino de Santiago contin&uacute;a hacia Zenarruza por una antigua calzada empedrada que asciende directamente hacia el monasterio. Es un tramo bonito y con mucho car&aacute;cter, pero nosotros, al ir en bici, no podemos continuar por ah&iacute;.':
         'Horrela, <b>Bolibar</b>rera iristen gara (29,38 km &middot; 177 m). Herriaren irteeran, Done Jakue bideak Zenarruzarantz jarraitzen du, monasteriorantz zuzenean igotzen den galtzada zahar batetik. Zati polita eta izaera handikoa da, baina guk, bizikletaz goazenez, ezin dugu hortik jarraitu.',
-    'En su lugar seguimos por carretera directamente hacia <b><a href="muniozguren.html">Muniozguren</a></b>, sin volver a pasar por el monasterio. Desde all&iacute; bajamos por Gerea hasta Trabakua, donde cerramos la ruta.':
-        'Horren ordez, errepidetik zuzenean <b><a href="muniozguren.html">Muniozguren</a></b>erantz jarraitzen dugu, monasteriotik berriro pasatu gabe. Handik, Gereatik behera Trabakuaraino jaisten gara, ibilbidea ixten dugun lekura.',
+    'En su lugar subimos por carretera directamente hacia <b><a href="muniozguren.html">Muniozguren</a></b>, sin volver a pasar por el monasterio. Desde all&iacute; bajamos por Gerea hasta Trabakua, donde cerramos la ruta.':
+        'Horren ordez, errepidetik zuzenean <b><a href="muniozguren.html">Muniozguren</a></b>erantz igotzen dugu, monasteriotik berriro pasatu gabe. Handik, Gereatik behera Trabakuaraino jaisten gara, ibilbidea ixten dugun lekura.',
 }
 
 PAGE_STRINGS = {
