@@ -635,10 +635,10 @@ HOME = {
 }
 
 TRABAKUA = {
-    '<span class="elev-legend-item"><span class="num">1</span>Cruce a la izquierda</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Ezkerreko bidegurutzea</span>',
-    '<span class="elev-legend-item"><span class="num">2</span>Cruce Aginaga</span>':
-        '<span class="elev-legend-item"><span class="num">2</span>Aginagako bidegurutzea</span>',
+    '<span class="elev-legend-item"><span class="num">2</span>Cruce a la izquierda</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>Ezkerreko bidegurutzea</span>',
+    '<span class="elev-legend-item"><span class="num">3</span>Cruce Aginaga</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Aginagako bidegurutzea</span>',
     'Cruce a la izquierda': 'Ezkerreko bidegurutzea',
     'Cruce Aginaga': 'Aginagako bidegurutzea',
     '<span>Pista</span><span class="sep">/</span><span>Cemento, piedra y tierra</span>':
@@ -1318,7 +1318,7 @@ URKO = {
     'Circuito de senderismo y trail running desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza':
         'Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik',
     '<title>Collado de Asuntza': '<title>Asuntzako lepoa',
-    '<span class="num">3</span>Collado de Asuntza': '<span class="num">3</span>Asuntzako lepoa',
+    '<span class="num">4</span>Collado de Asuntza': '<span class="num">4</span>Asuntzako lepoa',
     'alt="Nubes bajas en el valle, con el hayedo en tonos de oto&ntilde;o en primer plano"':
         'alt="Hodei baxuak haranean, pagadia udazkeneko koloreetan aurrean"',
     'alt="Niebla llenando el valle entre las crestas, con estelas de aviones en el cielo"':
@@ -3336,18 +3336,18 @@ ARTETAASUNTZA = {
         '<h1>Arteta, Asuntza<br><em>eta bien arteko pasabideak</em></h1>',
     'Circuito en e-bike desde Trabakua por Arteta, la Ermita de San Juan y el Collado de Asuntza, recorriendo los pasos que unen los dos caminos':
         'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
-    '<span class="elev-legend-item"><span class="num">3</span>Fuente de Arteta</span>':
-        '<span class="elev-legend-item"><span class="num">3</span>Artetako iturria</span>',
+    '<span class="elev-legend-item"><span class="num">4</span>Fuente de Arteta</span>':
+        '<span class="elev-legend-item"><span class="num">4</span>Artetako iturria</span>',
     '<title>Fuente de Arteta &middot; 8,0 km &middot; 464 m</title>':
         '<title>Artetako iturria &middot; 8,0 km &middot; 464 m</title>',
     '<title>Ermita de San Juan &middot; 3,4 km &middot; 448 m</title>':
         '<title>San Juan ermita &middot; 3,4 km &middot; 448 m</title>',
     '<title>Collado de Asuntza &middot; 16,4 km &middot; 479 m</title>':
         '<title>Asuntzako lepoa &middot; 16,4 km &middot; 479 m</title>',
-    '<span class="elev-legend-item"><span class="num">2</span>Ermita de San Juan</span>':
-        '<span class="elev-legend-item"><span class="num">2</span>San Juan ermita</span>',
-    '<span class="elev-legend-item"><span class="num">4</span>Collado de Asuntza</span>':
-        '<span class="elev-legend-item"><span class="num">4</span>Asuntzako lepoa</span>',
+    '<span class="elev-legend-item"><span class="num">3</span>Ermita de San Juan</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>San Juan ermita</span>',
+    '<span class="elev-legend-item"><span class="num">5</span>Collado de Asuntza</span>':
+        '<span class="elev-legend-item"><span class="num">5</span>Asuntzako lepoa</span>',
     'download="Arteta, Asuntza y los pasos entre ambos.gpx"':
         'download="Arteta, Asuntza eta bien arteko pasabideak.gpx"',
     'download="Arteta, Asuntza y los pasos entre ambos.kml"':
@@ -4026,8 +4026,8 @@ SANPEDROBIDARTE = {
         '<title>Ongarai &middot; 7,3 km &middot; 201 m</title>',
     '<title>San Pedro de Bidarte &middot; 9,2 km &middot; 257 m</title>':
         '<title>San Pedro Bidarte &middot; 9,2 km &middot; 257 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">2</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro de Bidarte</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">2</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">3</span>Ongarai</span> <span class="elev-legend-item"><span class="num">4</span>San Pedro Bidarte</span>',
+    '<span class="elev-legend-item"><span class="num">1</span>Donagarai</span> <span class="elev-legend-item"><span class="num">2</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">3</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">4</span>Ongarai</span> <span class="elev-legend-item"><span class="num">5</span>San Pedro de Bidarte</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Donagarai</span> <span class="elev-legend-item"><span class="num">2</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">3</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">4</span>Ongarai</span> <span class="elev-legend-item"><span class="num">5</span>San Pedro Bidarte</span>',
     'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.gpx"':
         'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.gpx"',
     'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.kml"':
