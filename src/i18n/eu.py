@@ -56,11 +56,10 @@ COMMON = {
     '<span class="k">Actividad</span>': '<span class="k">Jarduera</span>',
     '<span class="k">Salida</span>': '<span class="k">Irteera</span>',
     '<span class="k">Dificultad</span>': '<span class="k">Zailtasuna</span>',
-    # tarjeta de la portada: tiempo estimado a pie, calculado por build.py
-    # (algunas tarjetas llevan "Senderismo · Trail running" en la misma
-    # etiqueta, asi que hay que decir "a pie" para que quede claro a que
-    # ritmo se refiere el tiempo)
-    '<span class="k">Tiempo estimado a pie</span>': '<span class="k">Kalkulatutako iraupena oinez</span>',
+    # tarjeta de la portada: tiempo estimado a pie (siempre) y tiempo real
+    # corriendo (solo si el usuario lo ha dado), calculados por build.py
+    '<span class="k">A pie</span>': '<span class="k">Oinez</span>',
+    '<span class="k">Corriendo</span>': '<span class="k">Korrika</span>',
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
