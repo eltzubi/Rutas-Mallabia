@@ -451,4 +451,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/markinabolibar.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinabolibar.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/asuntzabira.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/asuntzabira.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/asuntzabira.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/asuntzabira.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/asuntzabira.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/asuntzabira.eu.html"/>
+  </url>
 </urlset>
