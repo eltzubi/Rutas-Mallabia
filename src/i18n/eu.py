@@ -1426,6 +1426,10 @@ SANCRISTOBAL = {
         'alt="Behiak bizkarrean atseden hartzen, harana eta mendiak atzealdean"',
     'alt="Caballos pastando entre &aacute;rboles, con los aerogeneradores del parque e&oacute;lico al fondo"':
         'alt="Zaldiak zuhaitzen artean bazkatzen, parke eolikoaren aerosorgailuak atzealdean"',
+    'alt="Sendero t&eacute;cnico entre hayas y helechos, con luz filtrando entre las ramas"':
+        'alt="Bidezidor teknikoa pagoen eta iratzeen artean, argia adarren artetik iragazten dela"',
+    'alt="Sendero estrecho entre &aacute;rboles j&oacute;venes, en un tramo de bosque cerrado"':
+        'alt="Bidezidor estua zuhaitz gazteen artean, baso itxiko zati batean"',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
@@ -3957,10 +3961,6 @@ GARAIMAGUNA = {
         'alt="Bizikleta harrizko mugarri baten kontra bermatuta aerosorgailuen ondoan, laino-itsaso baten gainean"',
     'alt="Pista de hormig&oacute;n entre prados y repoblaci&oacute;n joven, con niebla cubriendo el monte al fondo"':
         'alt="Hormigoizko pista larreen eta birlandaketa gazte baten artean, lainoak mendia estaltzen duela hondoan"',
-    'alt="Sendero t&eacute;cnico entre hayas y helechos, con luz filtrando entre las ramas"':
-        'alt="Bidezidor teknikoa pagoen eta iratzeen artean, argia adarren artetik iragazten dela"',
-    'alt="Sendero estrecho entre &aacute;rboles j&oacute;venes, en un tramo de bosque cerrado"':
-        'alt="Bidezidor estua zuhaitz gazteen artean, baso itxiko zati batean"',
     'alt="Mar de nubes visto desde la pista, con monta&ntilde;as asomando entre la niebla bajo un cielo despejado"':
         'alt="Laino-itsasoa pistatik ikusita, mendiak lainoaren artetik agertzen direla zeru garbi baten azpian"',
     'alt="Cruce de un arroyo sobre una pista de hormig&oacute;n junto a una peque&ntilde;a cascada con troncos ca&iacute;dos, visto desde el manillar de la bicicleta"':
