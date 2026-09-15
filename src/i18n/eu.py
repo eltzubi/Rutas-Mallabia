@@ -318,11 +318,13 @@ ROUTE = {
 }
 
 HOME = {
+    # trabakua card
+    '<h3 class="route-card-name">Asuntza bira por Aginaga</h3>':
+        '<h3 class="route-card-name">Asuntza bira Aginagatik</h3>',
+
     # asuntzabira card
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
-    '<h3 class="route-card-name">Vuelta a Asuntza, desde Aginaga</h3>':
-        '<h3 class="route-card-name">Asuntza bira, Aginagatik</h3>',
     '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Aginaga y el collado de Asuntza</p>':
         '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Aginaga eta Asuntzako lepotik igarota</p>',
 
@@ -642,7 +644,9 @@ TRABAKUA = {
     '<span>Pista</span><span class="sep">/</span><span>Cemento, piedra y tierra</span>':
         '<span>Pista</span><span class="sep">/</span><span>Zementua, harria eta lurra</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Asuntza<br><em>bira</em></h1>': '<h1>Asuntza<br><em>bira</em></h1>',
+    '<h1>Asuntza bira<br><em>por Aginaga</em></h1>': '<h1>Asuntza bira<br><em>Aginagatik</em></h1>',
+    'download="Asuntza bira por Aginaga.gpx"': 'download="Asuntza bira Aginagatik.gpx"',
+    'download="Asuntza bira por Aginaga.kml"': 'download="Asuntza bira Aginagatik.kml"',
     'Trabakua, Collado de Asuntza y Ermita de San Juan de Arteta desde Trabakua':
         'Trabakua, Asuntzako lepoa eta San Juan Artetako ermita Trabakuatik',
     'alt="Vistas desde el recorrido de Trabakua, con los montes del Duranguesado al fondo"':
@@ -3179,7 +3183,7 @@ AIXOLA = {
 
 TITLES = {
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
-    'trabakua': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
+    'trabakua': 'Asuntza bira Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
     'osma': 'Trabakua, Elgeta eta Argiñeta · Bizikleta ibilbidea — Herriko ibilbideak',
@@ -3225,7 +3229,7 @@ TITLES = {
     'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · Bizikleta ibilbidea — Herriko ibilbideak',
     'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
-    'asuntzabira': 'Asuntza bira, Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
+    'asuntzabira': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4231,18 +4235,15 @@ MARKINABOLIBAR = {
 }
 
 ASUNTZABIRA = {
-    # hero — "Asuntza bira, Aginagatik" es el titulo literal en euskera, dado
-    # por el usuario, no una traduccion de "Vuelta a Asuntza, desde Aginaga"
+    # hero — "Asuntza bira" es el mismo nombre en los dos idiomas
     '<span>Pista</span><span class="sep">/</span><span>Asuntza, Aginaga y Arteta</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista</span><span class="sep">/</span><span>Asuntza, Aginaga eta Arteta</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Vuelta a Asuntza<br><em>desde Aginaga</em></h1>':
-        '<h1>Asuntza bira<br><em>Aginagatik</em></h1>',
     '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Aginaga y el collado de Asuntza, con paso por la Ermita de San Juan y Arteta</p>':
         '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Aginaga eta Asuntzako lepotik igarota, San Juan ermita eta Arteta ere zeharkatuz</p>',
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
-    'alt="Foto ampliada del recorrido de Vuelta a Asuntza, desde Aginaga"':
-        'alt="Asuntza bira, Aginagatik ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Asuntza bira"':
+        'alt="Asuntza bira ibilbidearen argazki handitua"',
     '<title>Fuente de Arteta &middot; 3,08 km &middot; 484 m</title>':
         '<title>Artetako iturria &middot; 3,08 km &middot; 484 m</title>',
     '<title>Ermita de San Juan &middot; 9,49 km &middot; 445 m</title>':
@@ -4251,10 +4252,6 @@ ASUNTZABIRA = {
         '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span>',
     '<span class="elev-legend-item"><span class="num">4</span>Ermita de San Juan</span>':
         '<span class="elev-legend-item"><span class="num">4</span>San Juan ermita</span>',
-    'download="Vuelta a Asuntza, desde Aginaga.gpx"':
-        'download="Asuntza bira, Aginagatik.gpx"',
-    'download="Vuelta a Asuntza, desde Aginaga.kml"':
-        'download="Asuntza bira, Aginagatik.kml"',
     '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
     '<p>18,64 km y +589 m de desnivel en un circuito de pista, sin sendero estrecho ni entrar en carretera general. El punto m&aacute;s alejado de la vuelta est&aacute; junto a la Ermita de San Juan y el n&uacute;cleo de Arteta.</p>':
         '<p>18,64 km eta +589 m-ko desnibela pistazko zirkuitu batean, bidezidor esturik gabe eta errepide nagusietan sartu gabe. Buelta osoko puntu urrunena San Juan ermitaren eta Artetako herriguneraren ondoan dago.</p>',
