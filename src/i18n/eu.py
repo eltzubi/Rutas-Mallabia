@@ -323,8 +323,8 @@ HOME = {
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
     '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai y Markina</h3>':
         '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai eta Markina</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Santa Eufemia</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Santa Eufemiatik igarota</p>',
+    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Urregarai</p>':
+        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota</p>',
 
     # axmakurandikoa card
     'alt="Cordillera monta&ntilde;osa en silueta al amanecer, con niebla en el valle"':
@@ -3095,8 +3095,8 @@ DESCRIPTIONS = {
         'Muniozgurenetik igarota, Ziortza inguruko ibilbideen kontrako norabidean',
     'axmakurandikoa': 'BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta '
         'Andikoatik igarota, Berrizeraino jaitsiz',
-    'markinabolibar': 'BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Santa '
-        'Eufemiatik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz',
+    'markinabolibar': 'BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta '
+        'Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz',
 }
 
 # <title> per page (head files)
@@ -4167,14 +4167,14 @@ MARKINABOLIBAR = {
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai y Markina</em></h1>':
         '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai eta Markina</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Santa Eufemia, bajando hasta Markina antes de volver por Iruzubieta y Bolibar</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Santa Eufemiatik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz</p>',
+    '<p class="full-name">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Urregarai, bajando hasta Markina antes de volver por Iruzubieta y Bolibar</p>':
+        '<p class="full-name">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz</p>',
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
     'alt="Foto ampliada del recorrido de Trabakua, Zenarruza, Zeinka, Urregarai y Markina"':
         'alt="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina ibilbidearen argazki handitua"',
-    '<p>40,39 km y +1.236 m de desnivel en un solo circuito: la ruta con m&aacute;s desnivel publicada hasta ahora en esta web. El tramo original de Markina, Bolibar, Zenarruza, Zeinka y Urregarai ronda los 22 km, pero para enlazarlo con Trabakua a&ntilde;adimos la subida y bajada real hasta Zenarruza por Muniozguren, ya conocida de la ruta de <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz)</a>. Es un d&iacute;a largo, con superficie de pista y carretera. Hay agua en la fuente de Santa Eufemia, junto al refugio y la bolera, y otra junto al Camino de Santiago antes de llegar a Iruzubieta. Por el otro lado, la ruta <a href="urregarai.html">Iturreta, Markina y Urregarai</a> pasa cerca de la ermita de Santa Eufemia, por la parte de abajo en Urregarai, sin subir hasta ella.</p>':
-        '<p>40,39 km eta +1.236 m-ko desnibela zirkuitu bakarrean: webgune honetan orain arte argitaratutako desnibel handieneko ibilbidea. Markina, Bolibar, Zenarruza, Zeinka eta Urregaraiko jatorrizko zatiak 22 km inguru ditu, baina Trabakuarekin lotzeko Muniozgurenetik Zenarruzarainoko benetako igoera eta jaitsiera gehitu ditugu, <a href="sancristobaloiz.html">San Kristobal (Oiz)</a> ibilbidetik ezaguna. Egun luzea da, pista eta errepide gainekoa. Ura badago Santa Eufemiako iturrian, aterpearen eta bolatokiaren ondoan, eta beste bat Done Jakue bidean, Iruzubietara iritsi aurretik. Beste aldetik, <a href="urregarai.html">Iturreta, Markina eta Urregarai</a> ibilbideak Santa Eufemiako ermitatik gertu pasatzen da, Urregaraiko beheko aldetik, harainoko igoerarik egin gabe.</p>',
+    '<p>40,39 km y +1.236 m de desnivel en un solo circuito: la ruta con m&aacute;s desnivel publicada hasta ahora en esta web. El tramo original de Markina, Bolibar, Zenarruza, Zeinka y Urregarai ronda los 22 km, pero para enlazarlo con Trabakua a&ntilde;adimos la subida y bajada real hasta Zenarruza por Muniozguren, ya conocida de la ruta de <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz)</a>. Es un d&iacute;a largo, con superficie de pista y carretera. Hay agua en la fuente de Urregarai, junto al refugio y la bolera, y otra junto al Camino de Santiago antes de llegar a Iruzubieta. Por el otro lado, la ruta <a href="urregarai.html">Iturreta, Markina y Urregarai</a> pasa cerca de la ermita de Santa Eufemia, por la parte de abajo en Urregarai, sin subir hasta ella.</p>':
+        '<p>40,39 km eta +1.236 m-ko desnibela zirkuitu bakarrean: webgune honetan orain arte argitaratutako desnibel handieneko ibilbidea. Markina, Bolibar, Zenarruza, Zeinka eta Urregaraiko jatorrizko zatiak 22 km inguru ditu, baina Trabakuarekin lotzeko Muniozgurenetik Zenarruzarainoko benetako igoera eta jaitsiera gehitu ditugu, <a href="sancristobaloiz.html">San Kristobal (Oiz)</a> ibilbidetik ezaguna. Egun luzea da, pista eta errepide gainekoa. Ura badago Urregaraiko iturrian, aterpearen eta bolatokiaren ondoan, eta beste bat Done Jakue bidean, Iruzubietara iritsi aurretik. Beste aldetik, <a href="urregarai.html">Iturreta, Markina eta Urregarai</a> ibilbideak Santa Eufemiako ermitatik gertu pasatzen da, Urregaraiko beheko aldetik, harainoko igoerarik egin gabe.</p>',
     'alt="Escalinata de piedra hacia el arco de entrada del monasterio de Zenarruza, con una cruz y un &aacute;rbol centenario"':
         'alt="Harrizko eskailera Zenarruzako monasterioaren sarrerako arkurantz, gurutze bat eta mende-mendeko zuhaitz bat"',
     'alt="Zona de merendero con mesas y papeleras junto al camino, entre &aacute;rboles"':
@@ -4204,8 +4204,8 @@ MARKINABOLIBAR = {
         'Gora iristean, <b>Zeinka</b>rantz jarraituko dugu (12,74 km &middot; 356 m), oso eremu polit bat zeharkatuz, baserri eta larreen artean, eta bistak zabalduz aurrera egin ahala.',
     'Desde Zeinka nos metemos por una pista en la zona alta de Aulesti. Buena parte de este tramo discurre por pistas de tierra y resulta muy entretenido.':
         'Zeinkatik, pista batetik sartuko gara Aulestiko goialdean. Zati honen zati handi bat lurrezko pistetatik doa eta oso entretenigarria da.',
-    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia la parte alta de <b>Santa Eufemia</b> (km 17,86 &middot; 572 m), en la zona de <b>Atxagarai</b>, en el barrio de <b>Urregarai</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio y la bolera nos servir&aacute;n de referencia para saber que hemos llegado. Aqu&iacute; encontramos tambi&eacute;n una fuente, un buen punto para coger agua antes de continuar.':
-        'Errepide nagusira berriro iristean, <b>Lekoitzgane</b> mendatean, gurutzatu egingo dugu, eta parean <b>Santa Eufemia</b>ko goialdera igotzen den errepidea hartuko dugu (17,86 km &middot; 572 m), <b>Atxagarai</b> inguruan, <b>Urregarai</b> auzoan. Hemen, igoera gogorra dugu zain, malda handikoa, goialdera iritsi arte. Aterpetxeak eta bolatokiak erreferentzia gisa balioko digute, iritsi garela jakiteko. Hemen iturri bat ere aurkituko dugu, ura hartzeko puntu egokia, aurrera jarraitu aurretik.',
+    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia <b>Urregarai</b> (km 17,86 &middot; 572 m), en los alrededores de la ermita de <b>Santa Eufemia</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio de Urregarai, con una fuente y una bolera enfrente, nos servir&aacute; de referencia para saber que hemos llegado. Es un buen punto para coger agua antes de continuar.':
+        'Errepide nagusira berriro iristean, <b>Lekoitzgane</b> mendatean, gurutzatu egingo dugu, eta parean <b>Urregarai</b>rantz igotzen den errepidea hartuko dugu (17,86 km &middot; 572 m), <b>Santa Eufemia</b> ermitaren inguruan. Hemen, igoera gogorra dugu zain, malda handikoa, goialdera iritsi arte. Urregairako aterpeak, iturri batekin eta aurrean bolatoki batekin, erreferentzia gisa balioko digu iritsi garela jakiteko. Puntu egokia da ura hartzeko aurrera jarraitu aurretik.',
     'Despu&eacute;s de reponer agua seguimos por el otro lado y comenzamos el descenso. Primero atravesamos una zona de pastizales junto a una granja y, a partir de ah&iacute;, empezamos a perder altura de forma bastante seguida, aunque siempre por buen camino asfaltado.':
         'Ura hartu ondoren, beste aldetik jarraituko dugu, eta jaitsierari ekingo diogu. Lehenik, larre-eremu bat zeharkatuko dugu baserri handi baten ondoan, eta hortik aurrera, altuera galtzen hasiko gara, nahiko azkar, baina beti errepide asfaltatu onetik.',
     'Este descenso nos lleva directamente hasta <b>Markina</b> (km 23,06 &middot; 80 m), entrando aproximadamente por la zona de la salida hacia Ondarroa. Pasamos junto a una escuela y atravesamos Markina para buscar de nuevo el Camino de Santiago.':
