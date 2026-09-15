@@ -4244,6 +4244,14 @@ ASUNTZABIRA = {
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
     'alt="Foto ampliada del recorrido de Asuntza bira"':
         'alt="Asuntza bira ibilbidearen argazki handitua"',
+    'alt="Vista panor&aacute;mica de un valle con caser&iacute;os de tejado rojo, prados y monta&ntilde;as boscosas al fondo bajo un cielo de nubes altas"':
+        'alt="Harana ikuspegi panoramikoan, teilatu gorriko baserriekin, larreekin eta mendi basotsuak hondoan, hodei goiko zeru batekin"',
+    'alt="Pista de tierra junto a un muro de piedra, entre arbustos y pinos j&oacute;venes"':
+        'alt="Lurrezko pista harrizko horma baten ondoan, sasi eta pinu gazteen artean"',
+    'alt="Caballos pastando en una ladera con vistas a un valle con caser&iacute;os y monta&ntilde;as al fondo"':
+        'alt="Zaldiak larrean malda batean, harana, baserriak eta mendiak hondoan ikusten direla"',
+    'alt="Vista de un valle con edificios y caser&iacute;os entre bosque, con un pico caliza recortado al fondo"':
+        'alt="Harana ikusgai, eraikinak eta baserriak basoaren artean, harkaizko gailur zorrotz batekin hondoan"',
     '<title>Fuente de Arteta &middot; 3,08 km &middot; 484 m</title>':
         '<title>Artetako iturria &middot; 3,08 km &middot; 484 m</title>',
     '<title>Ermita de San Juan &middot; 9,49 km &middot; 445 m</title>':
@@ -4263,8 +4271,8 @@ ASUNTZABIRA = {
         'Aldapa horien ostean, pistak zuzenean jarraitzen du <b>Asuntza</b>ko lepoaraino (5,42 km &middot; 486 m), <b>Aginaga</b> aldetik gertu pasatuz (4,69 km &middot; 480 m).',
     'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano Txiki (km 6,25 &middot; 357 m) y la parte alta de Berano (km 7,57 &middot; 332 m), con vistas hacia el barrio de Goita y las monta&ntilde;as del Duranguesado.':
         'Pistak oso ondo rodatzen du hasieratik amaieraraino: ez dago bidezidor esturik, eta jaitsieretan malda nahikoa dago abiadura hartu eta gozatzeko. Bidean Berano Txiki (6,25 km &middot; 357 m) eta Beranoko goialdea (7,57 km &middot; 332 m) zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin.',
-    'Desde ah&iacute; la ruta contin&uacute;a hasta el punto m&aacute;s alejado del recorrido, junto a la <b>Ermita de San Juan</b> (km 9,49 &middot; 445 m) y el n&uacute;cleo de <b>Arteta</b> (km 9,94 &middot; 489 m), antes de iniciar el regreso hacia Trabakua. Este mismo entorno est&aacute; descrito con m&aacute;s detalle en la ruta <a href="artetaasuntza.html">Arteta, Asuntza y los pasos entre ambos</a>.':
-        'Hortik aurrera ibilbideak buelta osoko puntu urrunenaraino jarraitzen du, <b>San Juan ermitaren</b> (9,49 km &middot; 445 m) eta <b>Artetako</b> herriguneraren (9,94 km &middot; 489 m) ondotik, Trabakuarantz itzultzen hasi aurretik. Ingurune hori bera zehatzago azalduta dago <a href="artetaasuntza.html">Arteta, Asuntza eta bien arteko pasabideak</a> ibilbidean.',
+    'La primera mitad de la vuelta se abre hacia el este; en vez de volver sobre los mismos pasos, la ruta tira hacia el norte por una zona de caminos de la diputaci&oacute;n poco conocida &mdash;buenas pistas y accesibles&mdash; hasta el punto m&aacute;s alejado del recorrido, junto a la <b>Ermita de San Juan</b> (km 9,49 &middot; 445 m) y el n&uacute;cleo de <b>Arteta</b> (km 9,94 &middot; 489 m). Este mismo entorno est&aacute; descrito con m&aacute;s detalle en la ruta <a href="artetaasuntza.html">Arteta, Asuntza y los pasos entre ambos</a>.':
+        'Buelta erdia ekialdera zabaltzen da; pauso berak errepikatu ordez, ibilbideak iparraldera egiten du, gutxi ezagutzen den foru aldundiko bideen eremu batetik &mdash;pista onak eta erraz ibiltzekoak&mdash;, buelta osoko puntu urrunenaraino, <b>San Juan ermitaren</b> (9,49 km &middot; 445 m) eta <b>Artetako</b> herriguneraren (9,94 km &middot; 489 m) ondotik. Ingurune hori bera zehatzago azalduta dago <a href="artetaasuntza.html">Arteta, Asuntza eta bien arteko pasabideak</a> ibilbidean.',
 }
 
 PAGE_STRINGS = {
