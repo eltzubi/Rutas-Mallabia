@@ -325,8 +325,8 @@ HOME = {
     # asuntzabira card
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
-    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Aginaga y el collado de Asuntza</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Aginaga eta Asuntzako lepotik igarota</p>',
+    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota</p>',
 
     # markinabolibar card
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
@@ -3109,8 +3109,8 @@ DESCRIPTIONS = {
         'Andikoatik igarota, Berrizeraino jaitsiz',
     'markinabolibar': 'BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta '
         'Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz',
-    'asuntzabira': 'BTT/e-bike zirkuitua Trabakuatik, Aginaga eta Asuntzako lepotik '
-        'igarota, San Juan ermita eta Arteta ere zeharkatuz',
+    'asuntzabira': 'BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako '
+        'lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik',
 }
 
 # <title> per page (head files)
@@ -4236,10 +4236,10 @@ MARKINABOLIBAR = {
 
 ASUNTZABIRA = {
     # hero — "Asuntza bira" es el mismo nombre en los dos idiomas
-    '<span>Pista</span><span class="sep">/</span><span>Asuntza, Aginaga y Arteta</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Pista</span><span class="sep">/</span><span>Asuntza, Aginaga eta Arteta</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Aginaga y el collado de Asuntza, con paso por la Ermita de San Juan y Arteta</p>':
-        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Aginaga eta Asuntzako lepotik igarota, San Juan ermita eta Arteta ere zeharkatuz</p>',
+    '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta y Asuntza</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta eta Asuntza</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza, en su mayor parte por pistas poco conocidas de la Diputaci&oacute;n</p>':
+        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik</p>',
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
     'alt="Foto ampliada del recorrido de Asuntza bira"':
@@ -4252,27 +4252,39 @@ ASUNTZABIRA = {
         'alt="Zaldiak larrean malda batean, harana, baserriak eta mendiak hondoan ikusten direla"',
     'alt="Vista de un valle con edificios y caser&iacute;os entre bosque, con un pico caliza recortado al fondo"':
         'alt="Harana ikusgai, eraikinak eta baserriak basoaren artean, harkaizko gailur zorrotz batekin hondoan"',
-    '<title>Fuente de Arteta &middot; 3,08 km &middot; 484 m</title>':
-        '<title>Artetako iturria &middot; 3,08 km &middot; 484 m</title>',
-    '<title>Ermita de San Juan &middot; 9,49 km &middot; 445 m</title>':
-        '<title>San Juan ermita &middot; 9,49 km &middot; 445 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Fuente de Arteta</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Artetako iturria</span>',
-    '<span class="elev-legend-item"><span class="num">4</span>Ermita de San Juan</span>':
-        '<span class="elev-legend-item"><span class="num">4</span>San Juan ermita</span>',
+    '<title>Arteta (parte alta) &middot; 3,08 km &middot; 484 m</title>':
+        '<title>Arteta (goiko aldea) &middot; 3,08 km &middot; 484 m</title>',
+    '<title>Arteta (parte baja) &middot; 9,94 km &middot; 489 m</title>':
+        '<title>Arteta (beheko aldea) &middot; 9,94 km &middot; 489 m</title>',
+    '<span class="elev-legend-item"><span class="num">2</span>Arteta (parte alta)</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>Arteta (goiko aldea)</span>',
+    '<span class="elev-legend-item"><span class="num">6</span>Arteta (parte baja)</span>':
+        '<span class="elev-legend-item"><span class="num">6</span>Arteta (beheko aldea)</span>',
     '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
-    '<p>18,64 km y +589 m de desnivel en un circuito de pista, sin sendero estrecho ni entrar en carretera general. El punto m&aacute;s alejado de la vuelta est&aacute; junto a la Ermita de San Juan y el n&uacute;cleo de Arteta.</p>':
-        '<p>18,64 km eta +589 m-ko desnibela pistazko zirkuitu batean, bidezidor esturik gabe eta errepide nagusietan sartu gabe. Buelta osoko puntu urrunena San Juan ermitaren eta Artetako herriguneraren ondoan dago.</p>',
+    '<p>18,64 km y +589 m de desnivel en un recorrido que discurre casi en su totalidad por pista limpia y firme de piedra, sin senderos ni tramos t&eacute;cnicos. Hay alg&uacute;n repecho con buena pendiente y buenas bajadas para soltar el freno, pero en general es una vuelta c&oacute;moda, en una zona bastante poco conocida.</p>':
+        '<p>18,64 km eta +589 m-ko desnibela ibilbide batean, ia osorik harrizko pista garbi eta sendotik, bidezidorrik eta zati teknikorik gabe. Malda oneko aldapa bat edo beste egongo da, eta jaitsiera onak ere balazta askatzeko, baina, oro har, buelta erosoa da, gutxi ezagutzen den eremu batean.</p>',
 
     # --- relato ---
-    'Se sale desde el Alto de Trabakua hacia la zona de Arteta, pasando cerca de la fuente de Arteta (km 3,08 &middot; 484 m), hasta un cruce a la izquierda (km 4,27) donde se deja el asfalto atr&aacute;s: desde ah&iacute;, todo es pista en solitario, alternando cemento y tramos de piedra. Empezamos con el primer repecho algo duro pero corto.':
-        'Trabakuako Altotik abiatzen gara Arteta aldera, Artetako iturritik gertu pasatuz (3,08 km &middot; 484 m), ezkerrerako bidegurutze batera iritsi arte (4,27 km): han asfaltoa uzten dugu, eta hortik aurrera pista hutsa da, bakarrik, zementuzko eta harrizko tarteak txandakatuz. Lehen aldaparekin hasten gara, gogorra baina labur.',
-    'Despu&eacute;s de esas primeras cuestas, la pista sigue directa hasta el collado de <b>Asuntza</b> (km 5,42 &middot; 486 m), pasando cerca de la zona de <b>Aginaga</b> (km 4,69 &middot; 480 m).':
-        'Aldapa horien ostean, pistak zuzenean jarraitzen du <b>Asuntza</b>ko lepoaraino (5,42 km &middot; 486 m), <b>Aginaga</b> aldetik gertu pasatuz (4,69 km &middot; 480 m).',
-    'La pista rueda bien de principio a fin, sin sendero estrecho de por medio, y en las bajadas hay pendientes suficientes para coger algo de velocidad y disfrutarlas. El camino cruza Berano Txiki (km 6,25 &middot; 357 m) y la parte alta de Berano (km 7,57 &middot; 332 m), con vistas hacia el barrio de Goita y las monta&ntilde;as del Duranguesado.':
-        'Pistak oso ondo rodatzen du hasieratik amaieraraino: ez dago bidezidor esturik, eta jaitsieretan malda nahikoa dago abiadura hartu eta gozatzeko. Bidean Berano Txiki (6,25 km &middot; 357 m) eta Beranoko goialdea (7,57 km &middot; 332 m) zeharkatzen ditugu, Goita eta Durangaldeko mendietarako ikuspegiekin.',
-    'La primera mitad de la vuelta se abre hacia el este; en vez de volver sobre los mismos pasos, la ruta tira hacia el norte por una zona de caminos de la diputaci&oacute;n poco conocida &mdash;buenas pistas y accesibles&mdash; hasta el punto m&aacute;s alejado del recorrido, junto a la <b>Ermita de San Juan</b> (km 9,49 &middot; 445 m) y el n&uacute;cleo de <b>Arteta</b> (km 9,94 &middot; 489 m). Este mismo entorno est&aacute; descrito con m&aacute;s detalle en la ruta <a href="artetaasuntza.html">Arteta, Asuntza y los pasos entre ambos</a>.':
-        'Buelta erdia ekialdera zabaltzen da; pauso berak errepikatu ordez, ibilbideak iparraldera egiten du, gutxi ezagutzen den foru aldundiko bideen eremu batetik &mdash;pista onak eta erraz ibiltzekoak&mdash;, buelta osoko puntu urrunenaraino, <b>San Juan ermitaren</b> (9,49 km &middot; 445 m) eta <b>Artetako</b> herriguneraren (9,94 km &middot; 489 m) ondotik. Ingurune hori bera zehatzago azalduta dago <a href="artetaasuntza.html">Arteta, Asuntza eta bien arteko pasabideak</a> ibilbidean.',
+    'Salimos de <b>Trabakua</b> en direcci&oacute;n a Ermua por la carretera general. Antes de llegar a los 2 kil&oacute;metros, como hacemos habitualmente, giramos a la izquierda en <b>Donagarai</b> (km 1,61 &middot; 377 m), junto a un caser&iacute;o, para coger el recorrido hacia Asuntza, dejando atr&aacute;s la carretera y entrando en una zona mucho m&aacute;s tranquila, rodeada de monta&ntilde;as.':
+        '<b>Trabakua</b>tik abiatzen gara Ermua aldera, errepide nagusitik. 2 kilometrora iritsi baino lehen, ohi dugun bezala, ezkerretara jotzen dugu <b>Donagarai</b>n (1,61 km &middot; 377 m), baserri baten ondoan, Asuntzarako ibilbidea hartzeko, errepidea atzean utzita eta askoz ere lasaiagoa den eremu batera sartuz, mendiez inguratuta.',
+    'Desde aqu&iacute; comenzamos a ganar altura hasta llegar a la zona de <b>Arteta</b> (km 3,08 &middot; 484 m). Encontramos un cruce que permite hacer el recorrido en ambas direcciones, aunque nosotros continuamos por la parte alta. Este mismo cruce, y el entorno de Arteta y Asuntza, est&aacute; descrito con m&aacute;s detalle en la ruta <a href="artetaasuntza.html">Arteta, Asuntza y los pasos entre ambos</a>.':
+        'Hemendik altuera irabazten hasten gara <b>Arteta</b>ko eremuraino (3,08 km &middot; 484 m). Bidegurutze bat aurkitzen dugu, ibilbidea bi noranzkotan egiteko aukera ematen duena, baina guk goiko aldetik jarraitzen dugu. Bidegurutze hori bera, eta Arteta eta Asuntzako ingurunea, zehatzago azalduta dago <a href="artetaasuntza.html">Arteta, Asuntza eta bien arteko pasabideak</a> ibilbidean.',
+    'A partir de aqu&iacute; el recorrido se hace m&aacute;s llevadero, con una combinaci&oacute;n de subidas y bajadas que nos lleva hasta el collado de <b>Asuntza</b> (km 5,42 &middot; 486 m).':
+        'Hemendik aurrera ibilbidea eramangarriagoa bihurtzen da, igoera eta jaitsieren nahasketa batekin, <b>Asuntza</b>ko lepoaraino eramaten gaituena (5,42 km &middot; 486 m).',
+    'Desde el collado viene la bajada hacia <b>Berano Txiki</b> (km 6,25 &middot; 357 m). Continuamos despu&eacute;s por <b>Berano</b> (km 7,57 &middot; 332 m) hasta llegar de nuevo al cruce de Arteta (km 9,94 &middot; 489 m), esta vez por la parte baja.':
+        'Lepotik <b>Berano Txiki</b>rako jaitsiera dator (6,25 km &middot; 357 m). Ondoren <b>Berano</b>tik jarraitzen dugu (7,57 km &middot; 332 m) Artetako bidegurutzera berriro iritsi arte (9,94 km &middot; 489 m), oraingoan beheko aldetik.',
+    'A partir de aqu&iacute; nos desviamos hacia el norte. Cogemos la pista que sale a la derecha, en direcci&oacute;n a Iturreta, pero sin llegar a bajar hasta all&iacute;. Seguimos por la parte alta y avanzamos por una zona bastante desconocida, siempre por pista de piedra limpia y c&oacute;moda.':
+        'Hemendik aurrera iparralderantz jotzen dugu. Eskuinera irteten den pista hartzen dugu, Iturreta aldera, baina hara jaitsi gabe. Goiko aldetik jarraitzen dugu eta nahiko ezezaguna den eremu batetik aurrera egiten dugu, beti harrizko pista garbi eta erosotik.',
+    'En este tramo encontraremos un peque&ntilde;o desprendimiento. Es un paso muy corto, de aproximadamente un minuto, en el que puede resultar algo m&aacute;s inc&oacute;modo pasar con la bicicleta, pero se supera sin ning&uacute;n riesgo. Todo lo dem&aacute;s est&aacute; en muy buenas condiciones y la pista contin&uacute;a limpia.':
+        'Zati honetan lur-jausi txiki bat aurkituko dugu. Oso pasabide laburra da, minutu bat inguru, eta bizikletarekin pasatzea deserosoagoa izan daiteke, baina inolako arriskurik gabe gainditzen da. Gainerako guztia oso ondo dago eta pista garbi jarraitzen du.',
+    'Al llegar arriba, en el collado (km 12,5 &middot; 512 m), giramos hacia la izquierda y nos metemos en las pistas de la Diputaci&oacute;n. Son pistas poco conocidas, muy entretenidas y bonitas, que nos permiten seguir avanzando hasta bajar pr&aacute;cticamente hasta la carretera general de Trabakua&ndash;Markina.':
+        'Goian, lepoan (12,5 km &middot; 512 m), ezkerretara jotzen dugu eta foru aldundiko pistetan sartzen gara. Gutxi ezagutzen diren pistak dira, oso entretenigarriak eta ederrak, eta Trabakua&ndash;Markina errepide nagusiraino ia jaisten uzten digute.',
+    'Antes de llegar a ella giramos a mano izquierda y volvemos a ganar altura para regresar hacia la zona de Trabakua.':
+        'Hara iritsi baino lehen ezkerretara jotzen dugu eta berriro altuera irabazten dugu Trabakua aldera itzultzeko.',
+    'Durante el recorrido tendremos adem&aacute;s buenas vistas hacia Anboto, la zona de Ambre, el barrio de Goita, Oiz y las monta&ntilde;as de alrededor, especialmente desde las zonas m&aacute;s abiertas.':
+        'Ibilbidean zehar, gainera, ikuspegi onak izango ditugu Anbotorantz, Ambre aldera, Goita auzorantz, Oizerantz eta inguruko mendietara, bereziki eremu irekienetatik.',
+    'Una vuelta muy completa y sin complicaciones t&eacute;cnicas: pista de principio a fin, firme limpio y sin necesidad de meternos en senderos ni caminos dif&iacute;ciles. Hay alguna subida con buena pendiente, pero tambi&eacute;n buenas bajadas para soltar el freno, y en general es un recorrido c&oacute;modo para disfrutar de la bicicleta y descubrir una zona bastante poco conocida.':
+        'Buelta oso osoa eta zailtasun teknikorik gabekoa: pista hasieratik amaieraraino, sendo eta garbi, bidezidor edo bide zailetan sartu behar izan gabe. Malda oneko igoera bat edo beste egongo da, baina jaitsiera onak ere balazta askatzeko, eta, oro har, bizikletaz gozatzeko eta gutxi ezagutzen den eremu bat ezagutzeko ibilbide erosoa da.',
 }
 
 PAGE_STRINGS = {
