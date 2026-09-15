@@ -441,4 +441,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/axmakurandikoa.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/axmakurandikoa.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/markinabolibar.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/markinabolibar.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinabolibar.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/markinabolibar.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/markinabolibar.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinabolibar.eu.html"/>
+  </url>
 </urlset>
