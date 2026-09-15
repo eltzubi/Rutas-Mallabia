@@ -270,6 +270,7 @@ _CARD_RE = re.compile(
     r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"[^>]*>)'
     r'([\s\S]*?)(</a>)')
 _TAGS_RE = re.compile(r'(<p class="route-card-tags">.*?</p>)')
+_TIEMPO_REAL_RE = re.compile(r'data-tiempo-corriendo-min="(\d+)"')
 
 # Ritmo a pie: 6 km/h en llano + 10 min por cada 100 m de desnivel positivo
 # (regla de Naismith moderada). No es el ritmo del autor -- las rutas de
@@ -282,14 +283,23 @@ WALK_CLIMB_MIN_PER_100M = 10.0
 WALK_RANGE_PCT = 0.10
 
 
-def _fmt_minutes(total_min):
-    total_min = int(round(total_min / 5.0)) * 5
-    h, m = divmod(total_min, 60)
+def _fmt_hm(h, m):
     if h == 0:
         return f"{m} min"
     if m == 0:
         return f"{h}h"
     return f"{h}h{m:02d}"
+
+
+def _fmt_minutes(total_min):
+    total_min = int(round(total_min / 5.0)) * 5
+    return _fmt_hm(*divmod(total_min, 60))
+
+
+def _fmt_minutes_exact(total_min):
+    # Tiempo real corriendo, dado por el usuario -- sin redondear, a
+    # diferencia del estimado a pie: es un dato medido, no un calculo.
+    return _fmt_hm(*divmod(int(total_min), 60))
 
 
 def estimate_walk_time(km, desnivel):
@@ -303,20 +313,30 @@ def estimate_walk_time(km, desnivel):
 
 
 def add_estimated_time(page_html, lang):
-    """Tiempo estimado a pie en cada tarjeta de la portada, calculado a partir
-    de sus propios data-distance-km/data-desnivel-m -- no hay una segunda
-    fuente que se pueda desfasar. No-op en las paginas que no tienen tarjetas.
+    """Tiempo a pie (estimado) y corriendo (real, si se ha dado) en cada
+    tarjeta de la portada. El de a pie sale de sus propios
+    data-distance-km/data-desnivel-m -- no hay una segunda fuente que se
+    pueda desfasar. El de corriendo es un dato real, dado a mano
+    (data-tiempo-corriendo-min), no calculado -- por eso se muestra sin
+    redondear y como cifra unica, no como rango. No-op en las paginas que no
+    tienen tarjetas.
     """
-    label = '<span class="k">Tiempo estimado a pie</span>'
+    label_pie = '<span class="k">A pie</span>'
+    label_corriendo = '<span class="k">Corriendo</span>'
     if lang == "eu":
-        label = eu.COMMON[label]
+        label_pie = eu.COMMON[label_pie]
+        label_corriendo = eu.COMMON[label_corriendo]
 
     def repl(m):
         open_tag, activity, km, desnivel, body, close_tag = m.groups()
         if "senderismo" not in set(activity.split(",")):
             return m.group(0)
         rango = estimate_walk_time(float(km or 0), int(desnivel or 0))
-        nuevo = f'{label} <span class="v">{rango}</span>'
+        nuevo = f'{label_pie} <span class="v">{rango}</span>'
+        treal = _TIEMPO_REAL_RE.search(open_tag)
+        if treal:
+            corriendo = _fmt_minutes_exact(int(treal.group(1)))
+            nuevo += f' &middot; {label_corriendo} <span class="v">{corriendo}</span>'
         body = _TAGS_RE.sub(
             lambda t: f'{t.group(1)}\n          <p class="route-card-time">{nuevo}</p>',
             body, count=1)
