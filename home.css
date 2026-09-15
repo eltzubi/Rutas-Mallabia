@@ -327,8 +327,19 @@
 .info-details summary::after{ content:'+'; font-size:18px; color:var(--ink-dim); transition:transform .2s ease; }
 .info-details[open] summary::after{ content:'−'; }
 .info-details-body{ padding:0 4px 24px; }
-.notice-details summary{ color:var(--violet); }
+/* El aviso de seguridad necesita leerse como una tarjeta, no como una fila
+   de acordeon mas -- antes solo se distinguia por el color del texto y un
+   "+" identico al de "Donde aparcar"/"Dormir cerca", asi que pasaba
+   desapercibido pese a llevar la info de GPS/seguridad. */
+.notice-details{ border-top:none; }
+.info-details.notice-details:last-child{ border-bottom:none; }
+.notice-details summary{
+  color:var(--violet); background:var(--violet-soft);
+  border:1px solid var(--violet); border-radius:14px;
+  padding:14px 16px; font-size:15px;
+}
 .notice-details summary::after{ color:var(--violet); }
+.notice-icon{ flex:0 0 auto; margin-right:10px; color:var(--violet); }
 .notice-close{
   align-self:flex-start; margin-top:4px;
   font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.03em;
