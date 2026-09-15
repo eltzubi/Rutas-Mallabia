@@ -265,6 +265,66 @@ def map_legend(cards, lang):
     return "".join(partes)
 
 
+_CARD_RE = re.compile(
+    r'(<a class="route-card" href="[^"]+" data-activity="([^"]*)"'
+    r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"[^>]*>)'
+    r'([\s\S]*?)(</a>)')
+_TAGS_RE = re.compile(r'(<p class="route-card-tags">.*?</p>)')
+
+# Ritmo a pie: 6 km/h en llano + 10 min por cada 100 m de desnivel positivo
+# (regla de Naismith moderada). No es el ritmo del autor -- las rutas de
+# senderismo del sitio se han hecho mayormente corriendo (ver CLAUDE.md) --
+# sino un ritmo de caminante que cualquier visitante pueda cumplir. En bici
+# no se estima: con asistencia el&eacute;ctrica variable el margen real es
+# demasiado ancho para dar una cifra honesta.
+WALK_KMH = 6.0
+WALK_CLIMB_MIN_PER_100M = 10.0
+WALK_RANGE_PCT = 0.10
+
+
+def _fmt_minutes(total_min):
+    total_min = int(round(total_min / 5.0)) * 5
+    h, m = divmod(total_min, 60)
+    if h == 0:
+        return f"{m} min"
+    if m == 0:
+        return f"{h}h"
+    return f"{h}h{m:02d}"
+
+
+def estimate_walk_time(km, desnivel):
+    total_min = km / WALK_KMH * 60 + desnivel / 100.0 * WALK_CLIMB_MIN_PER_100M
+    low = total_min * (1 - WALK_RANGE_PCT)
+    high = total_min * (1 + WALK_RANGE_PCT)
+    low_s, high_s = _fmt_minutes(low), _fmt_minutes(high)
+    if low_s == high_s:
+        high_s = _fmt_minutes(high + 5)
+    return f"{low_s}–{high_s}"
+
+
+def add_estimated_time(page_html, lang):
+    """Tiempo estimado a pie en cada tarjeta de la portada, calculado a partir
+    de sus propios data-distance-km/data-desnivel-m -- no hay una segunda
+    fuente que se pueda desfasar. No-op en las paginas que no tienen tarjetas.
+    """
+    label = '<span class="k">Tiempo estimado</span>'
+    if lang == "eu":
+        label = eu.COMMON[label]
+
+    def repl(m):
+        open_tag, activity, km, desnivel, body, close_tag = m.groups()
+        if "senderismo" not in set(activity.split(",")):
+            return m.group(0)
+        rango = estimate_walk_time(float(km or 0), int(desnivel or 0))
+        nuevo = f'{label} <span class="v">{rango}</span>'
+        body = _TAGS_RE.sub(
+            lambda t: f'{t.group(1)}\n          <p class="route-card-time">{nuevo}</p>',
+            body, count=1)
+        return open_tag + body + close_tag
+
+    return _CARD_RE.sub(repl, page_html)
+
+
 def add_data_cache_busting(page_html):
     # Lo mismo para los tracks (data-map-src en las fichas y en el mapa
     # general). Un GPX corregido conserva el nombre del fichero, asi que
@@ -330,6 +390,7 @@ def main():
             page_html = add_ui_text(page_html, cards[lang], lang)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
+            page_html = add_estimated_time(page_html, lang)
             page_html = page_html.replace(
                 '<div class="map-legend" data-map-legend></div>',
                 f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')
