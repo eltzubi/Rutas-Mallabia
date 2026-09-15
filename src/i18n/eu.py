@@ -740,6 +740,8 @@ ITURZURI = {
         'alt="Ardi-taldea hartxintxarrezko pista batetik gurutzatzen, gandorreko eolikoen ondoan, egun eguzkitsu batean"',
     'alt="Panel informativo de los monumentos de Probazelaiburu, con el t&uacute;mulo y los aerogeneradores del cordal al fondo"':
         'alt="Probazelaiburuko monumentuen informazio-panela, tumulua eta gandorreko aerosorgailuak atzealdean"',
+    'alt="Txabola de piedra con tejado de teja en un prado con niebla, con ganado pastando y el cartel de Undakorta"':
+        'alt="Harrizko txabola teilatu gorriarekin, larre lainotsu batean, ganadua bazkan eta Undakortako kartela"',
     'Sale de Trabakua hacia el noreste y, tras cuarenta minutos de subida, llega a la primera '
     'parada: la <b>cascada de Gerea</b>. Sigue subiendo hasta la segunda cascada, la de arriba: '
     'ahí, y solo ahí, se cruza el agua para engancharse a un sendero que sube hacia '
@@ -1279,6 +1281,10 @@ ARIETZU = {
     'serpenteando por la ladera de enfrente"':
         'alt="Bidezidorra gailurrean iratzeen artean, korrikalari bat atzealdean eta pistak '
         'aurreko hegalean bihurgunez"',
+    'alt="Cruz de piedra en un alto de la ruta, entre &aacute;rboles y un sendero entre '
+    'helechos y brezo"':
+        'alt="Harrizko gurutzea ibilbideko goialde batean, zuhaitzen artean eta iratze eta '
+        'txilarren arteko bidezidor batekin"',
     'data-marker-title="Ermita de San Juan (salida y llegada)"':
         'data-marker-title="San Juan ermita (irteera eta helmuga)"',
     '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
