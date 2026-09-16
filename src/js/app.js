@@ -320,6 +320,6 @@
   if (!button || !mapButton || !mapWrap) return;
   button.addEventListener('click', function(){
     if (!mapButton.classList.contains('active')) mapButton.click();
-    mapWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 })();
