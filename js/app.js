@@ -311,3 +311,15 @@
     });
   });
 })();
+
+// --- header map shortcut: only on the home page ---
+(function(){
+  var button = document.getElementById('mapShortcut');
+  var mapButton = document.querySelector('.view-toggle-btn[data-view="map"]');
+  var mapWrap = document.getElementById('routeMapWrap');
+  if (!button || !mapButton || !mapWrap) return;
+  button.addEventListener('click', function(){
+    if (!mapButton.classList.contains('active')) mapButton.click();
+    mapWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();

@@ -76,6 +76,14 @@
 .theme-toggle:hover{ border-color:var(--teal); color:var(--teal); }
 
 .masthead-right{ display:flex; align-items:center; gap:14px; }
+.map-shortcut{
+  display:inline-flex; align-items:center; gap:6px;
+  height:26px; padding:0 10px; border-radius:999px;
+  border:1px solid var(--line); background:none; color:var(--ink-dim);
+  font:inherit; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  cursor:pointer;
+}
+.map-shortcut:hover{ border-color:var(--teal); color:var(--teal); }
 /* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
    de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
    agranda la zona sensible al dedo; el aspecto no cambia. */
