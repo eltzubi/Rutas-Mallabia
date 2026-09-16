@@ -126,6 +126,29 @@ ASSETS = {
     ("js", "webmcp.js"): "js/webmcp.js",
 }
 
+# Los .woff2 reales que referencia fonts.css (url('fonts/xxx.woff2')) --
+# binarios, no pasan por read()/ASSETS (texto UTF-8). El contenido no
+# cambia salvo que se cambie de tipografia, así que no llevan cache-busting
+# por hash como el resto de assets.
+FONT_FILES = [
+    "fraunces-italic.woff2",
+    "fraunces-normal.woff2",
+    "ibmplexmono-500.woff2",
+    "ibmplexmono-600.woff2",
+    "karla.woff2",
+]
+
+
+def copy_font_files():
+    out_dir = os.path.join(ROOT, "fonts")
+    os.makedirs(out_dir, exist_ok=True)
+    for name in FONT_FILES:
+        with open(os.path.join(HERE, "fonts", name), "rb") as f:
+            data = f.read()
+        with open(os.path.join(out_dir, name), "wb") as f:
+            f.write(data)
+        print(f"wrote fonts/{name} ({len(data)} bytes)")
+
 
 def add_cache_busting(page_html, versions):
     # fonts.css/home.css/route.css/js/*.js are real cached files (see the
@@ -468,6 +491,7 @@ def sync_trailhead_colors(cards):
 
 
 def main():
+    copy_font_files()
     versions = {}
     for parts, out in ASSETS.items():
         body = read(*parts)
