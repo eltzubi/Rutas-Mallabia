@@ -150,6 +150,8 @@
   var lastTrigger = null;
   function open(src, trigger){
     boxImg.src = src;
+    var triggerImg = trigger.querySelector('img');
+    if (triggerImg && triggerImg.alt) boxImg.alt = triggerImg.alt;
     lastTrigger = trigger;
     box.classList.add('open');
     document.body.style.overflow = 'hidden';

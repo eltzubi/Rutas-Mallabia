@@ -267,6 +267,52 @@ def map_legend(cards, lang):
     return "".join(partes)
 
 
+_BREADCRUMB2_RE = re.compile(r'("position": 2,\s*"name": ")([^"]*)(")')
+
+
+def shorten_breadcrumb(page_html):
+    """El segundo item de la miga de pan lleva el <title> completo (con el
+    sufijo "&middot; Ruta de ... -- Rutas Mallabia"), cuando solo deberia
+    llevar la etiqueta corta -- el nombre de la ruta, antes del primer
+    " &middot; ".
+    """
+    def shorten(m):
+        name = m.group(2)
+        short = name.split(" · ", 1)[0]
+        return m.group(1) + short + m.group(3)
+    return _BREADCRUMB2_RE.sub(shorten, page_html, count=1)
+
+
+_TOURIST_TRIP_RE = re.compile(r'("@type": "TouristTrip",[\s\S]*?"url": "[^"]*")\n(\}\n</script>)')
+
+
+def add_tourist_trip_properties(page_html, name):
+    """Aniade distancia/desnivel/dificultad al JSON-LD TouristTrip.
+
+    Los lee del propio .fact ya renderizado en esta misma pagina -- son el
+    mismo dato que ya se muestra, en el idioma que toca, sin duplicar la
+    fuente de verdad en otro sitio.
+    """
+    if name == "mallabia":
+        return page_html  # la portada lleva WebSite, no TouristTrip
+    dist = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
+                      r'<span class="k">(?:Distancia|Distantzia)</span>', page_html)
+    gain = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
+                      r'<span class="k">(?:Desnivel \+|Desnibela \+)</span>', page_html)
+    diff = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
+                      r'<span class="k">(?:Dificultad|Zailtasuna)</span>', page_html)
+    if not (dist and gain and diff):
+        return page_html
+    props = (
+        ',\n  "additionalProperty": [\n'
+        f'    {{"@type": "PropertyValue", "name": "distance", "value": "{html.unescape(dist.group(1))}"}},\n'
+        f'    {{"@type": "PropertyValue", "name": "elevationGain", "value": "{html.unescape(gain.group(1))}"}},\n'
+        f'    {{"@type": "PropertyValue", "name": "difficulty", "value": "{html.unescape(diff.group(1))}"}}\n'
+        '  ]\n'
+    )
+    return _TOURIST_TRIP_RE.sub(lambda m: m.group(1) + props + m.group(2), page_html, count=1)
+
+
 _CARD_RE = re.compile(
     r'(<a class="route-card" href="[^"]+" data-activity="([^"]*)"'
     r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"[^>]*>)'
@@ -443,9 +489,15 @@ def main():
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
+            page_html = add_tourist_trip_properties(page_html, name)
+            page_html = shorten_breadcrumb(page_html)
             page_html = page_html.replace(
                 '<div class="map-legend" data-map-legend></div>',
                 f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')
+            page_html = page_html.replace(
+                '<link rel="stylesheet" href="fonts.css">',
+                '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>\n'
+                '<link rel="stylesheet" href="fonts.css">')
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
             out_path = os.path.join(ROOT, out_name(name, out_suffix))
