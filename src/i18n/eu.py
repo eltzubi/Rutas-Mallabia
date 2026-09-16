@@ -4385,8 +4385,8 @@ GEREAOCULTA = {
         'alt="Gereako ibilbide ezezagunen argazki handitua"',
 
     # --- para quien es ---
-    '<p>15,13 km y +582 m de desnivel en un solo circuito. Es un recorrido pensado sobre todo para disfrutar con la BTT o la e-bike, con tramos que har&aacute;n trabajar de verdad las piernas. No es una vuelta para ir simplemente de paseo: hay alguna subida bastante dura, pero tambi&eacute;n bajadas entretenidas y zonas donde podremos disfrutar de la bicicleta.</p>':
-        '<p>15,13 km eta +582 m-ko desnibela zirkuitu bakarrean. Batez ere BTTz edo e-bikez gozatzeko pentsatutako ibilbidea da, benetan hankak lan eginaraziko dituzten zatiekin. Ez da lasai-lasai ibiltzeko bira bat: badago aldapa gogor samarren bat, baina baita jaitsiera entretenigarriak eta bizikletaz gozatzeko moduko eremuak ere.</p>',
+    '<p>15,13 km y +630 m de desnivel en un solo circuito. Es un recorrido pensado sobre todo para disfrutar con la BTT o la e-bike, con tramos que har&aacute;n trabajar de verdad las piernas. No es una vuelta para ir simplemente de paseo: hay alguna subida bastante dura, pero tambi&eacute;n bajadas entretenidas y zonas donde podremos disfrutar de la bicicleta.</p>':
+        '<p>15,13 km eta +630 m-ko desnibela zirkuitu bakarrean. Batez ere BTTz edo e-bikez gozatzeko pentsatutako ibilbidea da, benetan hankak lan eginaraziko dituzten zatiekin. Ez da lasai-lasai ibiltzeko bira bat: badago aldapa gogor samarren bat, baina baita jaitsiera entretenigarriak eta bizikletaz gozatzeko moduko eremuak ere.</p>',
 
     # --- galeria ---
     'alt="Carretera asfaltada bordeada de &aacute;rboles, con una borda peque&ntilde;a de tejado rojo y fachada blanca con una franja roja al fondo, bajo un cielo nublado"':
