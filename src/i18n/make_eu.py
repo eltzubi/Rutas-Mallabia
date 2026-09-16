@@ -166,6 +166,12 @@ def main():
         for es_file, eu_file in EU_OF.items():
             head = head.replace(f'"https://trabakutik.com/{es_file}"',
                                  f'"https://trabakutik.com/{eu_file}"')
+        if page == "mallabia":
+            # La portada es la unica pagina cuyo canonical/og:url/JSON-LD
+            # apunta a la raiz (sin nombre de fichero); el bucle de arriba no
+            # tiene "index.html" que sustituir en ese caso.
+            head = head.replace('"https://trabakutik.com/"',
+                                 '"https://trabakutik.com/index.eu.html"')
 
         # JSON-LD strings are unescaped (real UTF-8, not &ntilde; entities) --
         # swap the plain-text forms too, so the structured data matches the
