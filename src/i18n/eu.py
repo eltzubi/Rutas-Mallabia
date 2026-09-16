@@ -325,6 +325,14 @@ HOME = {
     'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
+    # gereaoculta card
+    'alt="Vista de un valle con una alambrada de madera en primer plano, montes con aerogeneradores entre las nubes y un caser&iacute;o disperso al fondo"':
+        'alt="Harana ikusgai, egurrezko hesia lehen planoan, hodei artean eolikoak dituzten mendiak eta baserri sakabanatu bat hondoan"',
+    '<h3 class="route-card-name">Gerea, las rutas desconocidas</h3>':
+        '<h3 class="route-card-name">Gerea, ibilbide ezezagunak</h3>',
+    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por rincones poco conocidos de Gerea</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
+
     # trabakua card
     '<h3 class="route-card-name">Asuntza bira por Aginaga</h3>':
         '<h3 class="route-card-name">Asuntza bira Aginagatik</h3>',
@@ -3152,6 +3160,8 @@ DESCRIPTIONS = {
         'Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz',
     'asuntzabira': 'BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako '
         'lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik',
+    'gereaoculta': 'BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi '
+        'ezagunetatik igarota, bi aldapa eskatzaile eta jaitsiera tekniko batzuekin',
 }
 
 # <title> per page (head files)
@@ -3271,6 +3281,7 @@ TITLES = {
     'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
     'asuntzabira': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
+    'gereaoculta': 'Gerea, ibilbide ezezagunak · Bizikleta ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4360,6 +4371,68 @@ ASUNTZABIRA = {
         'Bira osoa eta konplikazio teknikorik gabea: pista hasieratik amaierara, lurzoru garbia eta bidezidor edo bide zailetan sartu beharrik gabe. Malda ona duen igoeraren bat dago, baina baita balazta askatzeko jaitsiera onak ere, eta, oro har, ibilbide erosoa da bizikletaz gozatzeko eta nahiko ezezaguna den eremu bat ezagutzeko.',
 }
 
+GEREAOCULTA = {
+    # hero
+    '<span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Gerea</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Gerea</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Gerea<br><em>las rutas desconocidas</em></h1>':
+        '<h1>Gerea<br><em>ibilbide ezezagunak</em></h1>',
+    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por rincones poco conocidos del barrio de Gerea</p>':
+        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
+    'alt="Vista de un valle con una alambrada de madera en primer plano, montes con aerogeneradores entre las nubes y un caser&iacute;o disperso al fondo"':
+        'alt="Harana ikusgai, egurrezko hesia lehen planoan, hodei artean eolikoak dituzten mendiak eta baserri sakabanatu bat hondoan"',
+    'alt="Foto ampliada del recorrido de Gerea, las rutas desconocidas"':
+        'alt="Gereako ibilbide ezezagunen argazki handitua"',
+
+    # --- para quien es ---
+    '<p>15,13 km y +582 m de desnivel en un solo circuito. Es un recorrido pensado sobre todo para disfrutar con la BTT o la e-bike, con tramos que har&aacute;n trabajar de verdad las piernas. No es una vuelta para ir simplemente de paseo: hay alguna subida bastante dura, pero tambi&eacute;n bajadas entretenidas y zonas donde podremos disfrutar de la bicicleta.</p>':
+        '<p>15,13 km eta +582 m-ko desnibela zirkuitu bakarrean. Batez ere BTTz edo e-bikez gozatzeko pentsatutako ibilbidea da, benetan hankak lan eginaraziko dituzten zatiekin. Ez da lasai-lasai ibiltzeko bira bat: badago aldapa gogor samarren bat, baina baita jaitsiera entretenigarriak eta bizikletaz gozatzeko moduko eremuak ere.</p>',
+
+    # --- galeria ---
+    'alt="Carretera asfaltada bordeada de &aacute;rboles, con una borda peque&ntilde;a de tejado rojo y fachada blanca con una franja roja al fondo, bajo un cielo nublado"':
+        'alt="Zuhaitzez bazterreko errepide asfaltatua, teilatu gorriko borda txiki bat eta fatxada zuri gorri-marra batekin hondoan, zeru hodeitsu baten azpian"',
+    'alt="Pista de cemento entre campas, con un caser&iacute;o de tejado rojo entre pinos en lo alto de una loma al fondo"':
+        'alt="Porlanezko pista zelaien artean, teilatu gorriko baserri bat pinuen artean loma baten gainean hondoan"',
+    'alt="Roble grande junto a una cancela de madera en un cruce de caminos, con montes al fondo"':
+        'alt="Haritz handia egurrezko atearen ondoan bide-gurutze batean, mendiak hondoan"',
+    'alt="Pista de tierra entre una plantaci&oacute;n de pinos j&oacute;venes, con una ladera de helechos y pinos m&aacute;s altos en la loma"':
+        'alt="Lurrezko pista pinu gazteen landaketa artean, iratzez betetako malda batekin eta pinu garaiagoak lomaren gainean"',
+    'alt="Vista de un valle boscoso desde el manillar de una bicicleta, con aerogeneradores alineados en la sierra al fondo"':
+        'alt="Haran basotsu baten ikuspegia bizikletaren eskulekutik, mendilerroan lerrokatutako eolikoekin hondoan"',
+    'alt="Borda de piedra y cal, con tejado de teja y puerta de madera oscura, entre eucaliptos"':
+        'alt="Harri eta karezko borda, teilazko teilatu eta zurezko ate ilunarekin, eukaliptoen artean"',
+    'alt="Manillar de bicicleta mojado por la lluvia en un sendero estrecho, con monta&ntilde;as entre la niebla al fondo"':
+        'alt="Euriak bustitako bizikleta-eskulekua bidezidor estu batean, mendiak lainoaren artean hondoan"',
+    'alt="Pista forestal entre pinos altos, alfombrada de agujas de pino ca&iacute;das"':
+        'alt="Baso-pista pinu garaien artean, erorien pinu-orratzez alfonbratuta"',
+    'alt="Pista de tierra y grava subiendo hacia una loma boscosa entre helechos"':
+        'alt="Lurrezko eta legarrezko pista loma basotsu batera igotzen, iratzeen artean"',
+    'alt="Sendero estrecho y muy cubierto de vegetaci&oacute;n entre helechos y avellanos, con una bicicleta de monta&ntilde;a en primer plano"':
+        'alt="Bidezidor estu eta landaretzaz oso estalia iratze eta hurritzen artean, mendiko bizikleta bat lehen planoan"',
+    'alt="Bajada por un sendero de tierra entre helechos, con manillar de bicicleta en primer plano y un valle con caser&iacute;os al fondo"':
+        'alt="Jaitsiera lurrezko bidezidor batetik iratzeen artean, bizikleta-eskulekua lehen planoan eta baserriz betetako harana hondoan"',
+
+    # --- descargas ---
+    'download="Gerea, las rutas desconocidas.gpx"':
+        'download="Gerea, ibilbide ezezagunak.gpx"',
+    'download="Gerea, las rutas desconocidas.kml"':
+        'download="Gerea, ibilbide ezezagunak.kml"',
+
+    # --- relato ---
+    'Con estas rutas vamos a descubrir una parte del barrio de <b>Gerea</b>, una zona muy poco conocida y que guarda rincones que merece la pena recorrer.':
+        'Ibilbide hauekin <b>Gerea</b> auzoko zati bat ezagutuko dugu, oso gutxi ezaguna den eremu bat, ibiltzea merezi duten txokoak gordetzen dituena.',
+    'Salimos de <b>Trabakua</b> y, tras un primer tramo de enlace, empezamos con una bonita bajada, muy entretenida y con alg&uacute;n tramo que requerir&aacute; cierta habilidad para disfrutarla bien, hasta bajar a los 150 m (km 6,3), el punto m&aacute;s bajo de todo el recorrido.':
+        '<b>Trabakua</b>tik abiatuko gara eta, lehen lotura-zati baten ondoren, jaitsiera polit batekin hasiko dugu, oso entretenigarria eta trebetasun pixka bat eskatuko duen zatiren bat duena, 150 metrora jaitsi arte (6,3 km), ibilbide osoko puntu baxuena.',
+    'Despu&eacute;s llega una subida bastante empinada, de esas en las que toca apretar y darle duro a los pedales, hasta recuperar altura en torno a los 400 m (km 9,9).':
+        'Ondoren, aldapa nahiko gogorra dator, pedalei gogor eragin behar zaien horietakoa, 400 metro inguru berreskuratu arte (9,9 km).',
+    'M&aacute;s adelante cambiamos completamente de zona y nos acercamos al entorno de las cascadas de Gerea, aunque en esta ruta pasamos por sus alrededores sin llegar a ellas. Es un tramo diferente y m&aacute;s llevadero.':
+        'Aurrerago erabat aldatuko dugu eremuz eta Gereako ur-jauzien inguruetara hurbilduko gara, nahiz eta ibilbide honetan inguruetatik pasa eta ez heldu bertaraino. Zati desberdina eta eramangarriagoa da.',
+    'Despu&eacute;s afrontamos otra subida, en una zona distinta del recorrido, hasta el punto m&aacute;s alto de la ruta, ya en pleno barrio de <b>Gerea</b> (km 13,24 &middot; 595 m), para terminar con una bonita bajada por sendero que pone el punto final a la vuelta, de regreso a Trabakua.':
+        'Ondoren beste aldapa bati aurre egingo diogu, ibilbideko beste eremu batean, ibilbideko puntu garaienera arte, <b>Gerea</b> auzoaren erdi-erdian (13,24 km &middot; 595 m), eta bidezidor batetik jaitsiera polit batekin amaituko dugu buelta, Trabakuara itzuliz.',
+    'Una ruta pensada para disfrutar con la BTT o la e-bike, combinando bajadas entretenidas, dos subidas exigentes en zonas diferentes y rincones poco conocidos del barrio de Gerea.':
+        'BTTz edo e-bikez gozatzeko pentsatutako ibilbidea, jaitsiera entretenigarriak, bi aldapa eskatzaile eremu desberdinetan eta Gerea auzoko txoko gutxi ezagunak uztartzen dituena.',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -4407,4 +4480,5 @@ PAGE_STRINGS = {
     'axmakurandikoa': AXMAKURANDIKOA,
     'markinabolibar': MARKINABOLIBAR,
     'asuntzabira': ASUNTZABIRA,
+    'gereaoculta': GEREAOCULTA,
 }
