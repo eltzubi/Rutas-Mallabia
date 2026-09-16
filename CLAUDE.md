@@ -115,7 +115,10 @@ every waypoint's km from the resulting track — all of it shifts with a new sta
 what `sancristobaloiz` needed: its own recording started 544 m from Trabakua and diverged from there,
 but `zengotitagane.gpx`'s track passed 28 m from that same start point, so the real 476 m stretch
 between them (in effect, the N-633 from Trabakua to Zengotita) was spliced in — no coordinate in the
-published GPX/KML/map JSON was invented.
+published GPX/KML/map JSON was invented. His own explicit cutoff: any route whose start/end is more
+than 1 km from Trabakua is accepted as its own legitimate trailhead and stays as it is, no splicing
+needed — that's a separate question from the connectivity check above, which is what actually catches
+a track heading toward home and still applies regardless of distance from Trabakua.
 
 **Huge generated files.** Once a route page has embedded photos, `*_tail.html` and
 `fonts/inline_fonts.css` contain very long base64 lines. **Do not open these with a plain read/edit
