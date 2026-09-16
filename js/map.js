@@ -337,6 +337,11 @@
     var bounds = null;
     var hrefToLine = {};
     var hrefToLabel = {};
+    var labelFilterVisible = {}; // href -> false solo cuando el filtro lo oculta
+    // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
+    // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
+    // hasta que el visitante se acerca de verdad a una zona del mapa.
+    var LABEL_MIN_ZOOM = 16;
     var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
@@ -474,14 +479,10 @@
           pathEl.setAttribute('tabindex', show ? '0' : '-1');
           pathEl.setAttribute('aria-hidden', show ? 'false' : 'true');
         }
-        var labelEl = hrefToLabel[href] && hrefToLabel[href].getElement();
-        if (labelEl) {
-          labelEl.style.opacity = show ? '1' : '0';
-          labelEl.style.pointerEvents = show ? '' : 'none';
-        }
+        labelFilterVisible[href] = show;
       });
       // Con menos etiquetas visibles cambia lo que se solapa entre si.
-      repositionLabels();
+      updateLabelVisibility();
     }
     applyRouteFilter(pendingVisibleHrefs, pendingActivity);
     onRouteFilterChange = applyRouteFilter;
@@ -759,8 +760,23 @@
       });
     }
 
+    // Solo con zoom alto (el visitante ya se ha acercado a una zona
+    // concreta) se muestran las etiquetas; a la vista de conjunto quedarian
+    // 46 numeros amontonados sobre Trabakua.
+    function updateLabelVisibility(){
+      var zoomOk = map.getZoom() >= LABEL_MIN_ZOOM;
+      Object.keys(hrefToLabel).forEach(function(href){
+        var labelEl = hrefToLabel[href].getElement();
+        if (!labelEl) return;
+        var show = zoomOk && labelFilterVisible[href] !== false;
+        labelEl.style.opacity = show ? '1' : '0';
+        labelEl.style.pointerEvents = show ? '' : 'none';
+      });
+      if (zoomOk) repositionLabels();
+    }
+
     map.on('click', closePanel);
-    map.on('zoomend', repositionLabels);
+    map.on('zoomend', updateLabelVisibility);
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
@@ -783,7 +799,7 @@
     }
     resetView = function(){ map.invalidateSize(); map.fitBounds(bounds, { padding: [24, 24] }); };
     fit();
-    repositionLabels();
+    updateLabelVisibility();
     if ('ResizeObserver' in window) {
       var observer = new ResizeObserver(fit);
       observer.observe(el);
