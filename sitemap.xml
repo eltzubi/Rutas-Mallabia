@@ -461,4 +461,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/asuntzabira.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/asuntzabira.eu.html"/>
   </url>
+  <url>
+    <loc>https://trabakutik.com/gereaoculta.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/gereaoculta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/gereaoculta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/gereaoculta.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/gereaoculta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/gereaoculta.eu.html"/>
+  </url>
 </urlset>
