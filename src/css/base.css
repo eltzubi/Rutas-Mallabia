@@ -81,7 +81,13 @@ body{
 /* No outline here: an SVG path's outline follows its bounding box, which for
    a long winding route line turns into a huge stray rectangle across the
    map rather than a ring around the line. js/map.js already thickens the
-   line itself on focus (weight:6), which is a shape-following indicator. */
+   line itself on focus (weight:6), which is a shape-following indicator.
+   Plain :focus, not just :focus-visible -- closePanel() in map.js calls
+   path.focus() programmatically after a tap closes the info panel, and at
+   least one mobile browser (Brave/Android) still matches :focus-visible for
+   that non-keyboard focus, leaving the stray rectangle on screen until the
+   next tap. */
+.leaflet-interactive[role="button"]:focus,
 .leaflet-interactive[role="button"]:focus-visible{ outline:none; }
 .map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
