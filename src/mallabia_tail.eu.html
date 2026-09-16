@@ -56,6 +56,10 @@
         <button type="button" class="activity-chip" data-activity="senderismo">Oinez</button>
         <button type="button" class="activity-chip" data-activity="bici">BTT/e-bike</button>
       </div>
+      <div class="view-toggle" role="group" aria-label="Ikusi zerrenda edo mapa gisa">
+        <button type="button" class="view-toggle-btn active" data-view="list">zerrenda</button>
+        <button type="button" class="view-toggle-btn" data-view="map">mapa</button>
+      </div>
       <button type="button" class="open-filters" id="openFilters" aria-haspopup="dialog" aria-controls="filterDialog">Iragazi<span id="filterBadge" hidden></span></button>
     </div>
     <div id="desktopFilters">
@@ -96,13 +100,6 @@
       <div id="mobileFilters"></div>
       <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Berrezarri</button><button type="button" class="show-results" id="showResults">Ibilbideak ikusi</button></div>
     </dialog>
-
-    <div class="view-toggle-row">
-      <div class="view-toggle" role="group" aria-label="Ikusi zerrenda edo mapa gisa">
-        <button type="button" class="view-toggle-btn active" data-view="list">zerrenda</button>
-        <button type="button" class="view-toggle-btn" data-view="map">mapa</button>
-      </div>
-    </div>
 
     <div class="route-card-grid" id="routeResults">
       <a class="route-card" href="asuntzabira.eu.html" data-activity="bici" data-distance-km="18.64" data-desnivel-m="589" data-difficulty="facil">
