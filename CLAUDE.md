@@ -118,7 +118,11 @@ between them (in effect, the N-633 from Trabakua to Zengotita) was spliced in �
 published GPX/KML/map JSON was invented. His own explicit cutoff: any route whose start/end is more
 than 1 km from Trabakua is accepted as its own legitimate trailhead and stays as it is, no splicing
 needed — that's a separate question from the connectivity check above, which is what actually catches
-a track heading toward home and still applies regardless of distance from Trabakua.
+a track heading toward home and still applies regardless of distance from Trabakua. Directional
+signal, his own: his house sits to the west of Trabakua, so a GPX whose start/end is a short distance
+west of Trabakua's reference point (not just anywhere within 1 km) is likely departing from home even
+if it happens to connect to another route's track there — splice/trim it to start from Trabakua the
+same way, don't treat westward-and-close as safe just because it passes the connectivity check.
 
 **Huge generated files.** Once a route page has embedded photos, `*_tail.html` and
 `fonts/inline_fonts.css` contain very long base64 lines. **Do not open these with a plain read/edit
