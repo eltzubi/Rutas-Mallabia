@@ -466,6 +466,10 @@ def write_sitemap():
             lang: SITE_URL + out_name(name, out_suffix)
             for lang, (_, out_suffix) in LANGS.items()
         }
+        if name == "mallabia":
+            # La portada es la unica pagina cuyo canonical apunta a la raiz
+            # (ver mallabia_head.html), no a su propio nombre de fichero.
+            alternates["es"] = SITE_URL
         for loc in alternates.values():
             links = "\n".join(
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
