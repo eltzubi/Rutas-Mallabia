@@ -319,7 +319,13 @@
   var mapWrap = document.getElementById('routeMapWrap');
   if (!button || !mapButton || !mapWrap) return;
   button.addEventListener('click', function(){
-    if (!mapButton.classList.contains('active')) mapButton.click();
-    mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // El propio boton "mapa" del toggle (filters.js) ya centra el mapa en
+    // pantalla al pulsarlo; si ya estaba activo, ese click no dispara su
+    // listener de cambio de estado, asi que aqui hace falta el scroll aparte.
+    if (mapButton.classList.contains('active')) {
+      mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      mapButton.click();
+    }
   });
 })();

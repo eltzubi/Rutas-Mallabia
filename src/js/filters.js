@@ -142,7 +142,15 @@
   distanceButtons.forEach(function(b){b.addEventListener('click',function(){state.distance=b.dataset.distancePreset;apply();});});
   difficulty.addEventListener('change',function(){state.difficulty=difficulty.value;apply();});
   elevation.addEventListener('change',function(){state.elevation=elevation.value;apply();});
-  viewButtons.forEach(function(b){b.addEventListener('click',function(){state.view=b.dataset.view;apply();});});
+  viewButtons.forEach(function(b){b.addEventListener('click',function(){
+    state.view=b.dataset.view;apply();
+    // Al pasar a mapa desde cualquier punto de la pagina (p.ej. con la lista
+    // larga ya desplazada), la propia barra de filtros -- sticky, con el
+    // toggle lista/mapa -- se queda siempre visible arriba; centrar el mapa
+    // en el resto de la pantalla es lo que faltaba para que no se quedara
+    // fuera de la vista.
+    if (state.view === 'map' && mapWrap) mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });});
   finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
   recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
 
