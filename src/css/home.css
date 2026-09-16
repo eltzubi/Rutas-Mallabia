@@ -438,6 +438,19 @@
   color:var(--teal); text-decoration:none;
 }
 .route-popup a:hover{ text-decoration:underline; }
+.route-dist-label{ background:none; border:none; }
+.route-dist-label-inner{
+  position:absolute; left:0; top:0;
+  display:inline-block; white-space:nowrap;
+  font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600;
+  color:var(--ink); background:var(--ground-raised); border:1px solid var(--line);
+  border-radius:999px; padding:3px 8px;
+  box-shadow:0 1px 4px rgba(0,0,0,.25);
+  transform:translate(-50%,-50%);
+  transition:transform .15s ease, opacity .15s ease;
+  cursor:pointer;
+}
+.route-dist-label-inner:hover{ border-color:var(--teal); color:var(--teal); }
 .route-info-panel{
   position:absolute; left:0; right:0; bottom:0; z-index:500;
   max-height:85%; overflow-y:auto;

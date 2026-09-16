@@ -159,6 +159,35 @@
     return COMPASS[Math.round(deg / 45) % 8];
   }
 
+  // Punto medio por distancia real recorrida (no el punto central del
+  // array): en el mapa de conjunto todas las rutas salen de Trabakua, asi
+  // que una etiqueta de distancia puesta en el arranque se amontona con las
+  // de las demas. A mitad de recorrido ya se han separado casi siempre --
+  // comprobado contra las 46 rutas reales: la separacion minima entre la
+  // etiqueta de una ruta y la de su vecina mas cercana pasa de 8 m de
+  // mediana (en el arranque) a 824 m (en el punto medio).
+  function haversineMeters(a, b) {
+    var R = 6371000;
+    var p1 = a[0] * Math.PI / 180, p2 = b[0] * Math.PI / 180;
+    var dphi = (b[0] - a[0]) * Math.PI / 180;
+    var dl = (b[1] - a[1]) * Math.PI / 180;
+    var x = Math.sin(dphi / 2) * Math.sin(dphi / 2) +
+            Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+    return 2 * R * Math.asin(Math.sqrt(x));
+  }
+  function trackMidpoint(points) {
+    var total = 0, cum = [0], i;
+    for (i = 1; i < points.length; i++) {
+      total += haversineMeters(points[i - 1], points[i]);
+      cum.push(total);
+    }
+    var half = total / 2;
+    for (i = 0; i < cum.length; i++) {
+      if (cum[i] >= half) return points[i];
+    }
+    return points[points.length - 1];
+  }
+
   // js/filters.js (only present on the home page) announces its current
   // visible-routes set on every change. Registered before the fetch below
   // resolves, since the two scripts' load order isn't guaranteed relative
@@ -307,6 +336,7 @@
 
     var bounds = null;
     var hrefToLine = {};
+    var hrefToLabel = {};
     var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
@@ -363,6 +393,28 @@
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
         line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
         line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+
+        // Etiqueta de distancia en el punto medio, solo en el mapa de
+        // conjunto (aqui es donde 46 rutas comparten el mismo arranque).
+        if (distanceKm) {
+          var labelMarker = L.marker(trackMidpoint(t.points), {
+            icon: L.divIcon({
+              className: 'route-dist-label',
+              html: '<span class="route-dist-label-inner">' +
+                distanceKm.replace('.', ',') + ' km</span>',
+              iconSize: null
+            }),
+            title: name + ' — ' + distanceKm.replace('.', ',') + ' km',
+            keyboard: false
+          }).addTo(map);
+          labelMarker.on('click', function(e){
+            L.DomEvent.stopPropagation(e);
+            openPanel(line, hrefToLine[t.href].currentColor, html);
+          });
+          labelMarker.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
+          labelMarker.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+          hrefToLabel[t.href] = labelMarker;
+        }
         var pathEl = line.getElement();
         if (pathEl) {
           pathEl.style.cursor = 'pointer';
@@ -422,7 +474,14 @@
           pathEl.setAttribute('tabindex', show ? '0' : '-1');
           pathEl.setAttribute('aria-hidden', show ? 'false' : 'true');
         }
+        var labelEl = hrefToLabel[href] && hrefToLabel[href].getElement();
+        if (labelEl) {
+          labelEl.style.opacity = show ? '1' : '0';
+          labelEl.style.pointerEvents = show ? '' : 'none';
+        }
       });
+      // Con menos etiquetas visibles cambia lo que se solapa entre si.
+      repositionLabels();
     }
     applyRouteFilter(pendingVisibleHrefs, pendingActivity);
     onRouteFilterChange = applyRouteFilter;
@@ -668,7 +727,40 @@
       }
     }
 
+    // Reparte las etiquetas de distancia que, a la vista actual, caen a
+    // menos de MIN_DIST px de otra -- separandolas en vertical, un pequeno
+    // numero de pasadas basta con 46 rutas. Se recalcula en cada zoom (un
+    // pan no cambia la distancia relativa en pantalla entre dos puntos).
+    function repositionLabels(){
+      var hrefs = Object.keys(hrefToLabel);
+      if (!hrefs.length) return;
+      var pts = hrefs.map(function(h){
+        return map.latLngToContainerPoint(hrefToLabel[h].getLatLng());
+      });
+      var offsets = hrefs.map(function(){ return 0; });
+      var MIN_DIST = 42, ITER = 6;
+      for (var iter = 0; iter < ITER; iter++) {
+        for (var i = 0; i < pts.length; i++) {
+          for (var j = i + 1; j < pts.length; j++) {
+            var ay = pts[i].y + offsets[i], by = pts[j].y + offsets[j];
+            var dist = Math.sqrt(Math.pow(pts[j].x - pts[i].x, 2) + Math.pow(by - ay, 2));
+            if (dist < MIN_DIST) {
+              var push = (MIN_DIST - dist) / 2 + 1;
+              if (ay <= by) { offsets[i] -= push; offsets[j] += push; }
+              else { offsets[i] += push; offsets[j] -= push; }
+            }
+          }
+        }
+      }
+      hrefs.forEach(function(h, i){
+        var markerEl = hrefToLabel[h].getElement();
+        var inner = markerEl && markerEl.querySelector('.route-dist-label-inner');
+        if (inner) inner.style.transform = 'translate(-50%, calc(-50% + ' + offsets[i].toFixed(1) + 'px))';
+      });
+    }
+
     map.on('click', closePanel);
+    map.on('zoomend', repositionLabels);
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
@@ -691,6 +783,7 @@
     }
     resetView = function(){ map.invalidateSize(); map.fitBounds(bounds, { padding: [24, 24] }); };
     fit();
+    repositionLabels();
     if ('ResizeObserver' in window) {
       var observer = new ResizeObserver(fit);
       observer.observe(el);
