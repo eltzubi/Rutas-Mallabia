@@ -2855,8 +2855,8 @@ MUNIOZGUREN = {
     'alt="Campa verde con una puerta de madera y alambrada, pinos dispersos y un monte al fondo"':
         'alt="Zelai berdea, egurrezko atea eta alanbre-hesia, pinu sakabanatuak eta mendi bat atzealdean"',
 
-    '<span class="mid">perfil real del track &middot; 13,33 km</span>':
-        '<span class="mid">trackaren benetako profila &middot; 13,33 km</span>',
+    '<span class="mid">perfil real del track &middot; 10,97 km</span>':
+        '<span class="mid">trackaren benetako profila &middot; 10,97 km</span>',
 
 
     'Salimos desde el <b>puerto de Trabakua</b>. Entre los dos bares parte una peque&ntilde;a carretera asfaltada que se dirige hacia el barrio de <b>Gerea</b>, en direcci&oacute;n noroeste. La seguimos tranquilamente y, tras unos kil&oacute;metros, llegamos al barrio.':
@@ -2865,8 +2865,8 @@ MUNIOZGUREN = {
     'Continuamos por la misma carretera, atravesando un paisaje abierto, entre campas, caser&iacute;os y ganado, hasta alcanzar la zona de <b>Longa</b>, donde se encuentra el agroturismo. A partir de aqu&iacute; el asfalto deja paso al cemento. Conviene fijarse en este punto porque, a la vuelta, bajaremos desde las campas que vemos a nuestra izquierda y volveremos a enlazar aqu&iacute; con la carretera.':
         'Errepide beretik jarraituko dugu, zelai, baserri eta ganadu artean, <b>Longa</b> ingurura iritsi arte, bertan baitago nekazalturismoa. Hemendik aurrera asfaltoa amaitu eta porlanezko bidea hasten da. Komeni da puntu honi erreparatzea: bueltan, ezkerrean ikusten ditugun zelaietatik jaitsita, berriro hemen egingo dugu bat errepidearekin.',
 
-    'Seguimos por el camino de cemento, subiendo suavemente al principio, mientras vamos dejando atr&aacute;s alg&uacute;n caser&iacute;o disperso entre las campas. Poco a poco ganamos altura y, en el &uacute;ltimo kil&oacute;metro, la pendiente se hace m&aacute;s pronunciada hasta alcanzar <b>Muniozguren</b> (km 7,1 &middot; 561 m), el punto m&aacute;s alto de la ruta.':
-        'Porlanezko bidetik jarraituko dugu, hasieran aldapa leunean, zelaien artean sakabanatutako baserriren bat atzean utziz. Pixkanaka altuera hartzen joango gara eta, azken kilometroan, aldapa gogortu egiten da <b>Muniozguren</b> baserrira (7,1 km &middot; 561 m) iritsi arte, ibilbide honetan altuen dagoen baserria.',
+    'Seguimos por el camino de cemento, subiendo suavemente al principio, mientras vamos dejando atr&aacute;s alg&uacute;n caser&iacute;o disperso entre las campas. Poco a poco ganamos altura y, en el &uacute;ltimo kil&oacute;metro, la pendiente se hace m&aacute;s pronunciada hasta alcanzar <b>Muniozguren</b> (km 5,9 &middot; 561 m), el punto m&aacute;s alto de la ruta.':
+        'Porlanezko bidetik jarraituko dugu, hasieran aldapa leunean, zelaien artean sakabanatutako baserriren bat atzean utziz. Pixkanaka altuera hartzen joango gara eta, azken kilometroan, aldapa gogortu egiten da <b>Muniozguren</b> baserrira (5,9 km &middot; 561 m) iritsi arte, ibilbide honetan altuen dagoen baserria.',
 
     'Al llegar a Muniozguren, a nuestra derecha veremos <b><a href="astarlokoatxa.html">Astarloko Atxa</a></b>, un peque&ntilde;o pero llamativo picacho al que merece la pena subir. Desde arriba se tienen muy buenas vistas sobre todo Gerea y, justo enfrente, se extiende el cordal del Oiz.':
         'Muniozgurenera iristean, eskuinean <b><a href="astarlokoatxa.html">Astarloko Atxa</a></b> ikusiko dugu. Tontor txiki baina nabarmena da, eta bertara igotzea merezi du: goitik Gerea inguru osoaren ikuspegi ederra zabaltzen da, eta aurrez aurre Oizko mendilerroa dugu.',
@@ -2874,8 +2874,8 @@ MUNIOZGUREN = {
     'Continuamos y, poco m&aacute;s adelante, el camino hace un giro brusco a la derecha y comienza a bajar. Este es el camino que utilizamos habitualmente para enlazar con la <a href="zenarruza.html">ruta de Zenarruza</a> o para subir desde la zona de Bolibar. En esta ocasi&oacute;n no bajamos por ah&iacute; y seguimos de frente.':
         'Aurrera jarraituko dugu eta, handik gutxira, bideak eskuinera bira itxia egiten du eta beherantz hasten da. Bide hori erabili ohi dugu <a href="zenarruza.html">Zenarruzako ibilbidearekin</a> lotzeko edo Bolibar aldetik igotzeko. Oraingoan, ordea, ez dugu hartuko eta zuzen jarraituko dugu.',
 
-    'Un poco despu&eacute;s encontramos dos pistas. Dejamos la de la derecha y tomamos la de la izquierda, que enseguida se convierte en una pista de piedra. Subimos un poco y, a partir de ah&iacute;, avanzamos por un terreno entretenido de continuos sube y baja hasta aproximadamente el km 7,8.':
-        'Aurrerago bi pista aurkituko ditugu. Eskuinekoa utzi eta ezkerrekoa hartuko dugu; berehala harrizko pista bihurtzen da. Pixka bat igo eta, hortik aurrera, gora-behera artean jarraituko dugu 7,8. km ingurura iritsi arte.',
+    'Un poco despu&eacute;s encontramos dos pistas. Dejamos la de la derecha y tomamos la de la izquierda, que enseguida se convierte en una pista de piedra. Subimos un poco y, a partir de ah&iacute;, avanzamos por un terreno entretenido de continuos sube y baja hasta aproximadamente el km 6,7.':
+        'Aurrerago bi pista aurkituko ditugu. Eskuinekoa utzi eta ezkerrekoa hartuko dugu; berehala harrizko pista bihurtzen da. Pixka bat igo eta, hortik aurrera, gora-behera artean jarraituko dugu 6,7. km ingurura iritsi arte.',
 
     'En plena curva veremos una pista que sale hacia la derecha. La dejamos y continuamos de frente, comenzando ya el descenso hacia Longa.':
         'Bihurgune bete-betean eskuinera ateratzen den pista bat ikusiko dugu. Hura alde batera utzi eta zuzen jarraituko dugu, Longarantz jaisten hasteko.',
@@ -2883,14 +2883,14 @@ MUNIOZGUREN = {
     'Aqu&iacute; hay que prestar algo de atenci&oacute;n. Un poco m&aacute;s abajo podemos encontrarnos una alambrada atravesando parte del camino. Se ve con suficiente antelaci&oacute;n, pero conviene llegar despacio. Es baja y se puede pasar la bicicleta por encima sin demasiada dificultad.':
         'Tarte honetan kontu pixka batekin ibili behar da. Beherago, baliteke alanbre-hesi bat bidearen zati bat zeharkatzen aurkitzea. Aldez aurretik ondo ikusten da, baina komeni da poliki hurbiltzea. Ez da oso altua eta bizikleta gainetik pasatu daiteke arazo handirik gabe.',
 
-    'Continuamos bajando y, poco despu&eacute;s, encontramos una puerta de hierro. La atravesamos y seguimos descendiendo por las campas, normalmente entre caballos y ganado. Al llegar al km 9,5 &middot; 419 m, encontramos una nueva puerta de madera. La atravesamos y llegamos de nuevo a <b>Longa</b>.':
-        'Beherantz jarraituta, handik gutxira burdinazko ate bat aurkituko dugu. Bertatik igaro eta zelaietan behera jarraituko dugu, normalean zaldi eta ganadu artean. 9,5 km &middot; 419 m puntura iristean, beste egurrezko ate bat aurkituko dugu. Hura zeharkatu eta berriro <b>Longa</b>ra iritsiko gara.',
+    'Continuamos bajando y, poco despu&eacute;s, encontramos una puerta de hierro. La atravesamos y seguimos descendiendo por las campas, normalmente entre caballos y ganado. Al llegar al km 8,4 &middot; 419 m, encontramos una nueva puerta de madera. La atravesamos y llegamos de nuevo a <b>Longa</b>.':
+        'Beherantz jarraituta, handik gutxira burdinazko ate bat aurkituko dugu. Bertatik igaro eta zelaietan behera jarraituko dugu, normalean zaldi eta ganadu artean. 8,4 km &middot; 419 m puntura iristean, beste egurrezko ate bat aurkituko dugu. Hura zeharkatu eta berriro <b>Longa</b>ra iritsiko gara.',
 
     'Aqu&iacute; conectamos con la carretera por la que hab&iacute;amos pasado al principio. Giramos a la derecha y regresamos a Trabakua por el mismo camino de ida.':
         'Hemen hasieran erabili dugun errepidearekin egingo dugu bat. Eskuinera hartu eta bide beretik itzuliko gara Trabakuko mendatera.',
 
-    '13,33 km y +307 m de desnivel en un solo circuito. Es una ruta corta y r&aacute;pida, pero con suficiente recorrido para disfrutarla en bicicleta, perfecta para esos d&iacute;as en los que no tenemos demasiado tiempo pero queremos salir un rato. Tambi&eacute;n es una buena opci&oacute;n para correr o simplemente caminar, con bastante paisaje abierto y sin necesidad de alejarse demasiado de Trabakua.':
-        '13,33 km eta +307 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
+    '10,97 km y +282 m de desnivel en un solo circuito. Es una ruta corta y r&aacute;pida, pero con suficiente recorrido para disfrutarla en bicicleta, perfecta para esos d&iacute;as en los que no tenemos demasiado tiempo pero queremos salir un rato. Tambi&eacute;n es una buena opci&oacute;n para correr o simplemente caminar, con bastante paisaje abierto y sin necesidad de alejarse demasiado de Trabakua.':
+        '10,97 km eta +282 m-ko desnibela zirkuitu bakarrean. Ibilbide labur eta azkarra da, baina bizikletaz gozatzeko nahikoa ibilbide eskaintzen du, denbora askorik ez dugun egun horietarako aukera aproposa. Korrika egiteko edo oinez ibiltzeko ere oso egokia da, paisaia irekiak eskaintzen ditu eta Trabakutik gehiegi urrundu gabe.',
 }
 
 
