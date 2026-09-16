@@ -96,21 +96,26 @@ invented numbers. `data/trailhead.json` holds every route's track for the home-p
 (not duplicated in the JSON), and derives the route's compass heading itself.
 
 **A GPX must never start or end at the user's house — always at Trabakua (the pass) or thereabouts.**
-He has asked for this explicitly, for every route, standing instruction. A track recorded from home
-starts/ends however far his house is from Trabakua's shared reference point (`43.210466, -2.5460838`,
-the same one in every route's `marker.at`); every other route on the site starts/ends within roughly
-30-160 m of it. If a freshly uploaded GPX's first/last point is markedly farther than that from
-Trabakua, don't publish it as-is and don't ask him for his address either — check first whether an
-already-published route's own GPX (`src/<other-route>.gpx`) happens to pass close to the new track's
-actual start/end (a shared road several routes use to leave Trabakua often does); if so, splice in the
-real segment of that other GPX between Trabakua and the join point, and trim any leftover tail that
-drifts back out toward the house after the loop returns near Trabakua. Recompute distance, elevation
-gain/loss, min/max altitude, the elevation-profile SVG and every waypoint's km from the resulting
-track — all of it shifts with a new start point. This is exactly what `sancristobaloiz` needed: its
-own recording started 544 m from Trabakua and diverged from there, but `zengotitagane.gpx`'s track
-passed 28 m from that same start point, so the real 476 m stretch between them (in effect, the N-633
-from Trabakua to Zengotita) was spliced in — no coordinate in the published GPX/KML/map JSON was
-invented.
+He has asked for this explicitly, for every route, standing instruction. Don't use raw distance from
+Trabakua's shared reference point (`43.210466, -2.5460838`, the same one in every route's `marker.at`)
+to judge this — many legitimate routes start at a different trailhead and sit hundreds of metres to
+several km from that point (e.g. `amaraune` ~4.7 km, `7pago`/`7pago16` ~2.7 km), so "far from Trabakua"
+alone is not a useful signal and flags real, already-published routes as false positives. The reliable
+check is whether the track's first/last point sits close (tens of metres) to some point on an
+already-published route's own track (`src/<other-route>.gpx` or `data/trailhead.json`) — a real
+trailhead or junction is shared trail network, a private approach from home is not. Every currently
+published route's start/end sits within ~85 m of another route's track; anything farther than that is
+suspect. If a freshly uploaded GPX's first/last point is isolated like that, don't publish it as-is and
+don't ask him for his address either — check first whether an already-published route's own GPX
+happens to pass close to the new track's actual start/end (a shared road several routes use to leave
+Trabakua often does); if so, splice in the real segment of that other GPX between Trabakua and the join
+point, and trim any leftover tail that drifts back out toward the house after the loop returns near
+Trabakua. Recompute distance, elevation gain/loss, min/max altitude, the elevation-profile SVG and
+every waypoint's km from the resulting track — all of it shifts with a new start point. This is exactly
+what `sancristobaloiz` needed: its own recording started 544 m from Trabakua and diverged from there,
+but `zengotitagane.gpx`'s track passed 28 m from that same start point, so the real 476 m stretch
+between them (in effect, the N-633 from Trabakua to Zengotita) was spliced in — no coordinate in the
+published GPX/KML/map JSON was invented.
 
 **Huge generated files.** Once a route page has embedded photos, `*_tail.html` and
 `fonts/inline_fonts.css` contain very long base64 lines. **Do not open these with a plain read/edit
