@@ -10,13 +10,20 @@
   var elevation = document.getElementById('elevationSelect');
   var results = document.getElementById('routeResults');
   var mapWrap = document.getElementById('routeMapWrap');
+  var mapLegend = document.querySelector('.map-legend');
   var dialog = document.getElementById('filterDialog');
   var openButton = document.getElementById('openFilters');
   var controls = document.getElementById('filterControls');
   var advanced = document.getElementById('advancedFilters');
   var empty = document.getElementById('filterEmpty');
   var recover = document.getElementById('recoverFilters');
+  var searchInput = document.getElementById('routeSearch');
   if (!cards.length || !difficulty || !elevation) return;
+  var searchTerm = '';
+  var cardNames = new Map();
+  cards.forEach(function(c){
+    cardNames.set(c, ((c.querySelector('.route-card-name') || {}).textContent || '').toLowerCase());
+  });
   var eu = document.documentElement.lang === 'eu';
   var words = eu ? {
     one: 'ibilbide', many: 'ibilbide', show: function(n){ return n + ' ibilbide ikusi'; },
@@ -28,6 +35,11 @@
     distance: 'Ampliar distancia', difficulty: 'Ver todas las dificultades',
     elevation: 'Ver todos los desniveles', extra: 'Quitar distancia, dificultad y desnivel',
     all: 'Ver todas las actividades'
+  };
+  var mapWords = eu ? {
+    inMap: function(n){ return n + ' ibilbide mapan'; }, bici: 'bizikletaz', pie: 'oinez', ambas: 'bietan'
+  } : {
+    inMap: function(n){ return n + ' rutas en el mapa'; }, bici: 'en bici', pie: 'a pie', ambas: 'en ambas'
   };
   var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list'};
   var state = Object.assign({}, defaults);
@@ -58,8 +70,9 @@
       (s.elevation === 'low' && gain <= 500) ||
       (s.elevation === 'medium' && gain > 500 && gain <= 1000) ||
       (s.elevation === 'high' && gain > 1000);
+    var searchOK = !searchTerm || cardNames.get(card).indexOf(searchTerm) !== -1;
     return (s.activity === 'all' || card.dataset.activity.split(',').indexOf(s.activity) !== -1) &&
-      (s.difficulty === 'all' || card.dataset.difficulty === s.difficulty) && distanceOK && elevationOK;
+      (s.difficulty === 'all' || card.dataset.difficulty === s.difficulty) && distanceOK && elevationOK && searchOK;
   }
   function selectedLabel(buttons, key, value){
     var button = buttons.find(function(b){ return b.dataset[key] === value; });
@@ -85,18 +98,32 @@
     paintButtons(distanceButtons, 'distancePreset', state.distance);
     paintButtons(viewButtons, 'view', state.view);
     var visible = [];
-    var totalKm = 0, totalGain = 0;
+    var totalKm = 0, totalGain = 0, bici = 0, pie = 0, ambas = 0;
     cards.forEach(function(card){
       var show = matches(card, state); card.classList.toggle('is-hidden', !show);
       if (show) {
         visible.push(card.getAttribute('href').replace(/\.eu\.html$/, '.html'));
         totalKm += Number(card.dataset.distanceKm) || 0;
         totalGain += Number(card.dataset.desnivelM) || 0;
+        var acts = card.dataset.activity.split(',');
+        var hasBici = acts.indexOf('bici') !== -1, hasPie = acts.indexOf('senderismo') !== -1;
+        if (hasBici) bici++;
+        if (hasPie) pie++;
+        if (hasBici && hasPie) ambas++;
       }
     });
     results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
     var n = visible.length;
     document.getElementById('showResults').textContent = words.show(n);
+    if (mapLegend) {
+      var legendHtml = '<p class="map-summary"><b>' + mapWords.inMap(n) + '</b></p>' +
+        '<p class="map-legend-line">' +
+        '<span class="map-legend-item"><span class="dot bici"></span>' + bici + ' ' + mapWords.bici + '</span>' +
+        '<span class="map-legend-item"><span class="dot senderismo"></span>' + pie + ' ' + mapWords.pie + '</span>' +
+        (ambas ? '<span class="map-legend-item">' + ambas + ' ' + mapWords.ambas + '</span>' : '') +
+        '</p>';
+      mapLegend.innerHTML = legendHtml;
+    }
     var totals = document.querySelector('[data-route-totals]');
     if (totals) {
       totals.textContent = n + ' ' + (eu ? 'ibilbide' : 'rutas') + ' · ' +
@@ -125,6 +152,14 @@
         if (!cards.some(function(c){return matches(c,candidate);})) return false;
         recoveryState = candidate; recover.textContent = words[k]; return true;
       });
+      if (!recoveryState && searchTerm) {
+        var savedSearch = searchTerm; searchTerm = '';
+        if (cards.some(function(c){return matches(c,state);})) {
+          recoveryState = 'clear-search';
+          recover.textContent = eu ? 'Bilaketa kendu' : 'Quitar búsqueda';
+        }
+        searchTerm = savedSearch;
+      }
       if (!recoveryState) {
         recoveryState = Object.assign({}, defaults, {activity:state.activity, view:state.view});
         recover.textContent = words.extra;
@@ -152,7 +187,15 @@
     if (state.view === 'map' && mapWrap) mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });});
   finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
-  recover.addEventListener('click',function(){if(recoveryState){state=recoveryState;apply();}});
+  recover.addEventListener('click',function(){
+    if(!recoveryState) return;
+    if (recoveryState === 'clear-search') { searchTerm=''; if(searchInput) searchInput.value=''; }
+    else { state=recoveryState; }
+    apply();
+  });
+  if (searchInput) {
+    searchInput.addEventListener('input', function(){ searchTerm = searchInput.value.trim().toLowerCase(); apply(); });
+  }
 
   // The same controls move into a native modal on small screens. Native
   // dialog supplies focus trapping, Escape, and an inert page behind it.

@@ -322,6 +322,9 @@ ROUTE = {
 }
 
 HOME = {
+    'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
+        'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
+
     # trabakua card
     '<h3 class="route-card-name">Asuntza bira por Aginaga</h3>':
         '<h3 class="route-card-name">Asuntza bira Aginagatik</h3>',

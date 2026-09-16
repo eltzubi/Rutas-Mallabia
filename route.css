@@ -261,6 +261,12 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
 .fact{ border:1px solid var(--line); padding:11px 15px; min-width:96px; background:var(--ground-raised); }
 .fact .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:19px; font-variant-numeric:tabular-nums; display:block; color:var(--ink); }
 .fact .k{ font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-dim); }
+/* Distancia, desnivel, dificultad y los tiempos deciden si haces la ruta;
+   superficie/tipo/actividad/salida son contexto -- se distinguen con menos
+   peso en vez de darle a las 7-9 el mismo tama&ntilde;o. */
+.fact:nth-last-of-type(-n+4){ padding:9px 13px; background:transparent; }
+.fact:nth-last-of-type(-n+4) .v{ font-size:15px; }
+.fact:nth-last-of-type(-n+4) .k{ opacity:.8; }
 .facts-note{ margin:8px 24px 0; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim); }
 .facts-note b{ color:var(--teal); }
 
@@ -338,7 +344,7 @@ footer b{ color:var(--ink); font-weight:600; }
 .report-modal-card h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:4px 0 0; color:var(--ink); }
 .report-modal-intro{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:10px 0 20px; max-width:52ch; }
 .report-modal-close{
-  position:fixed; top:20px; right:20px; z-index:110;
+  position:absolute; top:20px; right:20px; z-index:110;
   width:32px; height:32px; border-radius:50%;
   background:var(--ground-raised); border:1px solid var(--line);
   color:var(--ink-dim); font-size:14px; cursor:pointer;

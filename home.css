@@ -156,6 +156,11 @@
 /* A single search area; activity stays reachable while browsing. */
 .finder{ max-width:820px; margin:20px auto 0; padding:0 24px; }
 @media (min-width:1024px){ .finder{max-width:1100px;} }
+.route-search{position:relative;margin-bottom:14px;}
+.route-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-dim);pointer-events:none;}
+.route-search input{width:100%;font:500 14px 'Karla',sans-serif;padding:10px 16px 10px 38px;border-radius:999px;border:1px solid var(--line);background:var(--ground-raised);color:var(--ink);-webkit-appearance:none;appearance:none;}
+.route-search input::placeholder{color:var(--ink-dim);}
+.route-search input:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
 /* Quiet segmented controls, with color reserved for the current choice. */
 .finder-toolbar{display:flex;align-items:center;gap:12px;position:sticky;top:56px;z-index:60;padding:12px 0;isolation:isolate;margin-bottom:18px;}
 .finder-toolbar::before{content:"";position:absolute;inset:0 -8px;z-index:-1;border-radius:20px;background:var(--ground);background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
@@ -263,6 +268,7 @@
    vista al cambiar a mapa. */
 .route-card-grid[hidden]{ display:none; }
 @media (min-width:660px){ .route-card-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .route-card-grid{ grid-template-columns:repeat(3,1fr); } }
 .route-card{
   display:flex; flex-direction:column;
   border:1px solid var(--line); border-radius:16px;
