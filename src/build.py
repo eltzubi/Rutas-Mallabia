@@ -157,16 +157,18 @@ def home_cards(src_suffix):
     cards = {}
     pattern = re.compile(
         r'<a class="route-card" href="([^"]+)" data-activity="([^"]*)"'
-        r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"'
+        r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"([^>]*)>'
         r'[\s\S]*?<h3 class="route-card-name">(.*?)</h3>'
         r'[\s\S]*?<p class="route-card-stats">(.*?)</p>')
-    for href, activity, km, desnivel, name, stats in pattern.findall(html_text):
+    for href, activity, km, desnivel, rest_attrs, name, stats in pattern.findall(html_text):
         slug = href.replace(".eu.html", "").replace(".html", "")
+        tiempo_match = re.search(r'data-tiempo-corriendo-min="(\d+)"', rest_attrs)
         cards[slug] = {
             "href": href,
             "activities": set(activity.split(",")),
             "km": float(km or 0),
             "desnivel": int(desnivel or 0),
+            "tiempo_real": int(tiempo_match.group(1)) if tiempo_match else None,
             "name": name.strip(),
             "stats": stats.strip(),
         }
@@ -345,6 +347,35 @@ def add_estimated_time(page_html, lang):
     return _CARD_RE.sub(repl, page_html)
 
 
+_FACT_ITEM_RE = re.compile(r'<div class="fact">.*?</div>')
+
+
+def add_route_facts_time(page_html, page, cards, lang):
+    """El mismo tiempo a pie/corriendo de la tarjeta de la portada, tambien en
+    la ficha de la propia ruta -- justo despues de Desnivel, en la fila de
+    .facts. Una sola fuente (la tarjeta de la portada, leida por home_cards())
+    para ambos sitios, asi que no hay dos cifras que puedan desfasarse.
+    """
+    card = cards.get(page)
+    if not card or "senderismo" not in card["activities"]:
+        return page_html
+    label_pie = '<span class="k">A pie</span>'
+    label_corriendo = '<span class="k">Corriendo</span>'
+    if lang == "eu":
+        label_pie = eu.COMMON[label_pie]
+        label_corriendo = eu.COMMON[label_corriendo]
+    rango = estimate_walk_time(card["km"], card["desnivel"])
+    nuevo = f'<div class="fact"><span class="v">{rango}</span>{label_pie}</div>'
+    if card["tiempo_real"]:
+        corriendo = _fmt_minutes_exact(card["tiempo_real"])
+        nuevo += f'\n    <div class="fact"><span class="v">{corriendo}</span>{label_corriendo}</div>'
+    matches = list(_FACT_ITEM_RE.finditer(page_html))
+    if len(matches) < 2:
+        return page_html
+    insert_at = matches[1].end()
+    return page_html[:insert_at] + '\n    ' + nuevo + page_html[insert_at:]
+
+
 def add_data_cache_busting(page_html):
     # Lo mismo para los tracks (data-map-src en las fichas y en el mapa
     # general). Un GPX corregido conserva el nombre del fichero, asi que
@@ -411,6 +442,7 @@ def main():
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_estimated_time(page_html, lang)
+            page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = page_html.replace(
                 '<div class="map-legend" data-map-legend></div>',
                 f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')
