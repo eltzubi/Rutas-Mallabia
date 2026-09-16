@@ -3092,7 +3092,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'mallabia': 'Oinezko eta BTT ibilbideak Mallabia eta Durangaldeko auzo, mendi eta herrietan. '
+    'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
     'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
     'iturrizuri': 'Oinezko zirkuitua: Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
