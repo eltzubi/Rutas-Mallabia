@@ -4384,6 +4384,24 @@ GEREAOCULTA = {
     'alt="Foto ampliada del recorrido de Gerea, las rutas desconocidas"':
         'alt="Gereako ibilbide ezezagunen argazki handitua"',
 
+    # --- perfil: marcadores y leyenda ---
+    '<title>Ermita &middot; 6,50 km &middot; 183 m</title>':
+        '<title>Baseliza &middot; 6,50 km &middot; 183 m</title>',
+    '<title>Subida &middot; 8,10 km &middot; 211 m</title>':
+        '<title>Igoera &middot; 8,10 km &middot; 211 m</title>',
+    '<title>Camino cascadas &middot; 12,00 km &middot; 423 m</title>':
+        '<title>Ur-jauzien bidea &middot; 12,00 km &middot; 423 m</title>',
+    '<title>Sendero bajada &middot; 14,50 km &middot; 519 m</title>':
+        '<title>Bidezidor-jaitsiera &middot; 14,50 km &middot; 519 m</title>',
+    '<span class="elev-legend-item"><span class="num">2</span>Ermita</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>Baseliza</span>',
+    '<span class="elev-legend-item"><span class="num">3</span>Subida</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Igoera</span>',
+    '<span class="elev-legend-item"><span class="num">4</span>Camino cascadas</span>':
+        '<span class="elev-legend-item"><span class="num">4</span>Ur-jauzien bidea</span>',
+    '<span class="elev-legend-item"><span class="num">5</span>Sendero bajada</span>':
+        '<span class="elev-legend-item"><span class="num">5</span>Bidezidor-jaitsiera</span>',
+
     # --- para quien es ---
     '<p>15,13 km y +630 m de desnivel en un solo circuito. Es un recorrido pensado sobre todo para disfrutar con la BTT o la e-bike, con tramos que har&aacute;n trabajar de verdad las piernas. No es una vuelta para ir simplemente de paseo: hay alguna subida bastante dura, pero tambi&eacute;n bajadas entretenidas y zonas donde podremos disfrutar de la bicicleta.</p>':
         '<p>15,13 km eta +630 m-ko desnibela zirkuitu bakarrean. Batez ere BTTz edo e-bikez gozatzeko pentsatutako ibilbidea da, benetan hankak lan eginaraziko dituzten zatiekin. Ez da lasai-lasai ibiltzeko bira bat: badago aldapa gogor samarren bat, baina baita jaitsiera entretenigarriak eta bizikletaz gozatzeko moduko eremuak ere.</p>',
