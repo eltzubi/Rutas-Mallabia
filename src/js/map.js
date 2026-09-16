@@ -341,7 +341,7 @@
     // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
-    var LABEL_MIN_ZOOM = 16;
+    var LABEL_MIN_ZOOM = 15;
     var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
