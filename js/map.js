@@ -522,7 +522,7 @@
         activity === 'bici' ? COLORS.teal : null;
       hrefs.forEach(function(href){
         var entry = hrefToLine[href];
-        var show = !visible || visible[href];
+        var show = !visible || !!visible[href];
         if (!show && entry.line === activeLine) closePanel();
         var color = forcedColor || entry.baseColor;
         entry.currentColor = color;
