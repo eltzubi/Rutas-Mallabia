@@ -516,11 +516,11 @@ footer a:hover{ text-decoration:underline; }
 .footer-meta .place{ color:var(--ink); font-weight:600; }
 .legal-pill{
   display:inline-flex; align-items:center; gap:7px;
-  padding:6px 12px; border:1px solid var(--line); border-radius:999px;
-  color:var(--ink-dim); text-decoration:none;
+  padding:6px 12px; border:1px solid var(--teal); border-radius:999px;
+  color:var(--teal); text-decoration:none;
   transition:border-color .18s ease, color .18s ease;
 }
-.legal-pill:hover{ border-color:var(--teal); color:var(--teal); text-decoration:none; }
+.legal-pill:hover{ border-color:var(--violet); color:var(--violet); text-decoration:none; }
 .legal-pill svg{ flex-shrink:0; }
 
 .footer-contact{
@@ -530,11 +530,11 @@ footer a:hover{ text-decoration:underline; }
 }
 .contact-btn{
   display:inline-flex; align-items:center; gap:7px;
-  padding:6px 12px; border:1px solid var(--line); border-radius:999px;
-  color:var(--ink-dim); text-decoration:none;
+  padding:6px 12px; border:1px solid var(--teal); border-radius:999px;
+  color:var(--teal); text-decoration:none;
   transition:border-color .18s ease, color .18s ease;
 }
-.contact-btn:hover{ border-color:var(--teal); color:var(--teal); text-decoration:none; }
+.contact-btn:hover{ border-color:var(--violet); color:var(--violet); text-decoration:none; }
 .contact-btn svg{ flex-shrink:0; }
 
 @media (min-width:1024px){
