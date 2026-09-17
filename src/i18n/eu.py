@@ -577,8 +577,8 @@ HOME = {
         'Trabakuko mendatea &middot; 43,2105&deg; N, 2,5461&deg; M',
     'A 5,7 km de Mallabia pueblo, unos 7 min en coche &mdash; casi todas las rutas salen de aqu&iacute;, con buen aparcamiento.':
         'Mallabia herritik 5,7 km-ra, 7 minutu inguru autoz &mdash; ia ibilbide guztiak hemendik ateratzen dira, aparkaleku onarekin.',
-    'Justo al lado del aparcamiento hay dos bares: caf&eacute; antes de salir, o cerveza y algo de comer al volver.':
-        'Aparkalekuaren ondoan bi taberna daude: kafea irten aurretik, edo garagardoa eta zerbait jateko itzultzean.',
+    'Justo al lado del aparcamiento hay dos bares, una buena opci&oacute;n para tomar un caf&eacute; antes de empezar o comer algo al terminar la ruta.':
+        'Aparkalekuaren ondoan bi taberna daude, aukera ona kafe bat hartzeko hasi aurretik edo zerbait jateko ibilbidea amaitutakoan.',
     'C&oacute;mo llegar': 'Nola iritsi',
     'Si quieres quedarte a dormir por la zona, hay casas rurales muy cerca: '
     '<a href="https://www.euskadi.eus/gobierno-vasco/-/es/alojamientos/casa-rural-trabaku-goiko/" target="_blank" rel="noopener noreferrer">Trabaku Goiko</a>, '
