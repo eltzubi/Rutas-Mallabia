@@ -680,8 +680,7 @@ HOME = {
     # footer
     '¿Alguna duda sobre las rutas?': 'Ibilbideei buruzko zalantzarik?',
     'Escribe por email': 'Idatzi emailez',
-    '<a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a>':
-        '<a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a>',
+    'Aviso legal y privacidad': 'Lege oharra eta pribatutasuna',
 }
 
 TRABAKUA = {
