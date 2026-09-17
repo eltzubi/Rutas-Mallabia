@@ -24,12 +24,16 @@
   // La descripcion de cada tarjeta ya nombra los barrios/pueblos por los que
   // pasa la ruta ("Circuito ... por Goierri, Elgeta, ... y Berriz"), asi que
   // una busqueda por un lugar que no esta en el titulo pero si en el
-  // recorrido tambien debe encontrar la ruta.
+  // recorrido tambien debe encontrar la ruta. data-places cubre ademas los
+  // lugares por los que el GPX real pasa muy cerca sin que el texto visible
+  // los mencione (verificado contra el track, sin tocar titulo ni
+  // descripcion): solo alimenta la busqueda, nunca se muestra en pantalla.
   var cardNames = new Map();
   cards.forEach(function(c){
     var name = (c.querySelector('.route-card-name') || {}).textContent || '';
     var desc = (c.querySelector('.route-card-desc') || {}).textContent || '';
-    cardNames.set(c, (name + ' ' + desc).toLowerCase());
+    var places = c.dataset.places || '';
+    cardNames.set(c, (name + ' ' + desc + ' ' + places).toLowerCase());
   });
   var eu = document.documentElement.lang === 'eu';
   var words = eu ? {
