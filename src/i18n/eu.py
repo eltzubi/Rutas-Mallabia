@@ -417,8 +417,8 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik</p>',
     '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</h3>':
         '<h3 class="route-card-name">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</h3>',
-    '<p class="route-card-desc">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
-        '<p class="route-card-desc">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
+    '<p class="route-card-desc">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta y Egoarbitza</p>':
+        '<p class="route-card-desc">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota</p>',
     'alt="Cruz de piedra sobre su pedestal en lo alto, junto a un monolito de roca y una ikurri&ntilde;a ondeando al fondo, entre hierba alta y pinar"':
         'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
     '<p class="route-card-desc">Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
@@ -3166,7 +3166,7 @@ DESCRIPTIONS = {
     'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
     'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
-    'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta eta Egoarbitzatik igarota',
+    'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota',
     'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
     'betzun': 'Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota',
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
@@ -3315,8 +3315,8 @@ INTXORTA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Bost tontor</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta y Egoarbitza</em></h1>':
         '<h1>Trabakua, Zengotitagane<br><em>Erdella, Intxorta eta Egoarbitza</em></h1>',
-    '<p class="full-name">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</p>':
-        '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzatik igarota</p>',
+    '<p class="full-name">Circuito largo de senderismo desde Trabakua por Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta y Egoarbitza</p>':
+        '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota</p>',
 
     # perfil: marcadores y leyenda
     '<title>Presa de Aixola &middot; 25,5 km &middot; 314 m</title>':
