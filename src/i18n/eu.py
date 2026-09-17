@@ -678,7 +678,8 @@ HOME = {
         'alt="Aixolako presa zuhaitzen artean, lainoa uraren gainean agertzen"',
 
     # footer
-    'Escríbeme': 'Idatzidazu',
+    '¿Alguna duda sobre las rutas?': 'Ibilbideei buruzko zalantzarik?',
+    'Escríbeme por email': 'Idatzidazu emailez',
     '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
         '<span><a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a></span>',
 }
