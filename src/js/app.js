@@ -331,3 +331,11 @@
     }
   });
 })();
+
+// --- floating "lista" shortcut over the overview map: home page only ---
+(function(){
+  var button = document.getElementById('listShortcut');
+  var listButton = document.querySelector('.view-toggle-btn[data-view="list"]');
+  if (!button || !listButton) return;
+  button.addEventListener('click', function(){ listButton.click(); });
+})();

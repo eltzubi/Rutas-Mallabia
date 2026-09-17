@@ -205,9 +205,6 @@
   .activity-filter{flex:1;min-width:0;padding:2px;gap:2px;order:1;}
   .activity-chip{flex:1;padding:4px 8px;font-size:11px;white-space:nowrap;}
   .open-filters{display:inline-flex;align-items:center;padding:4px 12px;font-size:11px;order:2;}
-  /* no cabe junto a los chips de actividad y "Filtrar" en una linea de
-     movil -- baja a su propia linea, a todo lo ancho, en vez de apretarse */
-  .view-toggle{flex-basis:100%;order:3;margin-left:0;justify-content:center;padding:2px;}
   .filter-dialog{width:100%;max-width:520px;max-height:calc(100dvh - 16px);margin:auto auto 0;border-radius:28px 28px 0 0;padding:14px 24px max(24px,env(safe-area-inset-bottom));border-bottom:0;}
   .filter-dialog::before{content:"";display:block;width:36px;height:4px;margin:0 auto 20px;background:var(--line);border-radius:99px;}
   .filter-dialog .filter-controls{padding:0;border:0;margin:0;}
@@ -250,13 +247,12 @@
 }
 
 /* ---- view toggle: list or map, same filters either way ----
-   Vive dentro de .finder-toolbar (fusionado con los chips de actividad en
-   una sola barra flotante) en vez de en su propia fila aparte: antes eran
-   dos barras de controles seguidas, con su propio fondo/borde cada una. */
-.view-toggle{display:flex;gap:4px;background:var(--ground-raised);border-radius:999px;padding:4px;margin-left:auto;}
-.view-toggle-btn{font:600 12px 'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 18px;min-height:28px;border:0;border-radius:999px;background:none;color:var(--ink-dim);cursor:pointer;}
-.view-toggle-btn:hover{color:var(--ink);}
-.view-toggle-btn.active{color:var(--ink);background:var(--ground);box-shadow:0 1px 5px #0000000d;}
+   Ya no vive en la barra de filtros -- el boton "mapa" de la cabecera y el
+   "lista" flotante sobre el propio mapa (mas abajo) hacen ese cambio de
+   vista y liberan el hueco que ocupaba aqui. Los botones siguen en el DOM
+   (filters.js sigue pintando su estado y esos dos atajos les hacen click
+   por programa) pero ya no se muestran directamente. */
+.view-toggle{display:none;}
 .filter-reset{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--teal);background:none;border:0;border-radius:8px;padding:10px 4px;min-height:44px;cursor:pointer;white-space:nowrap;}
 .filter-reset:hover{text-decoration:underline;text-underline-offset:4px;}
 .filter-reset[hidden]{display:none;}
@@ -360,6 +356,23 @@
 
 /* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
 .map-section{ max-width:1400px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
+
+/* Vuelta a la lista flotando sobre el propio mapa de conjunto -- misma idea
+   que el boton "mapa" de la cabecera, pero en sentido contrario, y visible
+   sin necesidad de guardar hueco fijo para el toggle que antes iba en la
+   barra de filtros. Abajo a la izquierda: arriba ya estan el control de
+   zoom de Leaflet (izquierda) y ampliar/capas (derecha). */
+.list-shortcut{
+  position:absolute; z-index:400; bottom:14px; left:10px;
+  display:inline-flex; align-items:center; gap:6px;
+  height:32px; padding:0 14px; border:1px solid var(--line); border-radius:999px;
+  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
+  font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase;
+  transition:opacity .2s ease, border-color .2s ease, color .2s ease;
+  background:color-mix(in srgb, var(--ground) 72%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+}
+.list-shortcut:hover{ opacity:1; border-color:var(--teal); color:var(--teal); }
 
 .map-box{
   position:relative;
