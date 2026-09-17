@@ -678,8 +678,7 @@ HOME = {
         'alt="Aixolako presa zuhaitzen artean, lainoa uraren gainean agertzen"',
 
     # footer
-    'Para cualquier duda: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
-        'Edozein zalantzarako: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>',
+    'Escríbeme': 'Idatzidazu',
     '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
         '<span><a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a></span>',
 }
