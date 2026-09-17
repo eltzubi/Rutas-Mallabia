@@ -21,9 +21,15 @@
   var searchInput = document.getElementById('routeSearch');
   if (!cards.length || !difficulty || !elevation) return;
   var searchTerm = '';
+  // La descripcion de cada tarjeta ya nombra los barrios/pueblos por los que
+  // pasa la ruta ("Circuito ... por Goierri, Elgeta, ... y Berriz"), asi que
+  // una busqueda por un lugar que no esta en el titulo pero si en el
+  // recorrido tambien debe encontrar la ruta.
   var cardNames = new Map();
   cards.forEach(function(c){
-    cardNames.set(c, ((c.querySelector('.route-card-name') || {}).textContent || '').toLowerCase());
+    var name = (c.querySelector('.route-card-name') || {}).textContent || '';
+    var desc = (c.querySelector('.route-card-desc') || {}).textContent || '';
+    cardNames.set(c, (name + ' ' + desc).toLowerCase());
   });
   var eu = document.documentElement.lang === 'eu';
   var words = eu ? {
