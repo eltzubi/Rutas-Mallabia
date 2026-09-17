@@ -279,6 +279,16 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   padding:.05em .07em 0 0; color:var(--teal);
 }
 
+.legal-content{ margin:42px 24px 0; max-width:66ch; }
+.legal-content h2{
+  font-family:'Fraunces',serif; font-weight:600; font-size:1.35rem; margin:44px 0 12px; color:var(--ink);
+}
+.legal-content h2:first-child{ margin-top:0; }
+.legal-content p{ font-family:'Karla',sans-serif; font-size:15.5px; line-height:1.7; color:var(--ink); margin:0 0 14px; }
+.legal-content a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+.legal-content a:hover{ color:var(--violet); }
+.legal-content code{ font-family:'IBM Plex Mono',monospace; font-size:.92em; background:var(--ground-raised); padding:.1em .35em; border-radius:4px; }
+
 footer{
   margin:50px 24px 0; padding-top:22px; border-top:1px solid var(--line);
   display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px 20px;
