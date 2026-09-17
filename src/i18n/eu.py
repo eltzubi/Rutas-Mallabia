@@ -447,6 +447,8 @@ HOME = {
         'batekin"',
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
+    'aria-label="Ver como lista"': 'aria-label="Ikusi zerrenda gisa"',
+    '</svg>lista</button>': '</svg>zerrenda</button>',
     '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
     '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
 
