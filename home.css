@@ -76,17 +76,6 @@
 .theme-toggle:hover{ border-color:var(--teal); color:var(--teal); }
 
 .masthead-right{ display:flex; align-items:center; gap:14px; }
-.map-shortcut{
-  display:inline-flex; align-items:center; gap:6px;
-  height:26px; padding:0 10px; border-radius:999px;
-  border:1px solid var(--line); background:none; color:var(--ink-dim);
-  font:inherit; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
-  cursor:pointer;
-}
-.map-shortcut:hover{ border-color:var(--teal); color:var(--teal); }
-/* Area tactil: los controles de la cabecera miden 26px de alto, muy por debajo
-   de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
-   agranda la zona sensible al dedo; el aspecto no cambia. */
 
 /* ---- compact hero ---- */
 .eyebrow{
@@ -357,22 +346,6 @@
 /* El salto al pulsar "mapa" deja hueco para la cabecera y la barra fija. */
 .map-section{ max-width:1400px; margin:56px auto 0; padding:0 24px; scroll-margin-top:150px; }
 
-/* Vuelta a la lista flotando sobre el propio mapa de conjunto -- misma idea
-   que el boton "mapa" de la cabecera, pero en sentido contrario, y visible
-   sin necesidad de guardar hueco fijo para el toggle que antes iba en la
-   barra de filtros. Abajo a la izquierda: arriba ya estan el control de
-   zoom de Leaflet (izquierda) y ampliar/capas (derecha). */
-.list-shortcut{
-  position:absolute; z-index:400; bottom:14px; left:10px;
-  display:inline-flex; align-items:center; gap:6px;
-  height:32px; padding:0 14px; border:1px solid var(--line); border-radius:999px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase;
-  transition:opacity .2s ease, border-color .2s ease, color .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-}
-.list-shortcut:hover{ opacity:1; border-color:var(--teal); color:var(--teal); }
 
 .map-box{
   position:relative;
@@ -569,6 +542,20 @@ footer a:hover{ text-decoration:underline; }
 }
 
 @media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .01ms; } }
+
+/* Un solo boton flotante, siempre en el mismo punto de la pantalla (no del
+   mapa, ni de la barra de filtros): cambia entre "mapa" y "lista" segun la
+   vista activa, en vez de tener un atajo distinto para cada sentido. */
+.view-fab{
+  position:fixed; left:50%; bottom:18px; z-index:60;
+  transform:translateX(-50%);
+  display:inline-flex; align-items:center; gap:7px;
+  padding:11px 20px; border-radius:999px; border:none; cursor:pointer;
+  background:var(--teal); color:var(--ground);
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em;
+  box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal);
+}
+.view-fab:hover{ background:var(--violet); box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--violet); }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }

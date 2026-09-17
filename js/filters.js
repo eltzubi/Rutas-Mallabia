@@ -11,6 +11,7 @@
   var results = document.getElementById('routeResults');
   var mapWrap = document.getElementById('routeMapWrap');
   var mapLegend = document.querySelector('.map-legend');
+  var viewFab = document.getElementById('viewFab');
   var dialog = document.getElementById('filterDialog');
   var openButton = document.getElementById('openFilters');
   var controls = document.getElementById('filterControls');
@@ -41,6 +42,10 @@
   } : {
     inMap: function(n){ return n + ' rutas en el mapa'; }, bici: 'en bici', pie: 'a pie', ambas: 'en ambas'
   };
+  var fabWords = eu ? { map: 'mapa', list: 'zerrenda', toMap: 'Ikusi mapa gisa', toList: 'Ikusi zerrenda gisa' }
+    : { map: 'mapa', list: 'lista', toMap: 'Ver como mapa', toList: 'Ver como lista' };
+  var MAP_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>';
+  var LIST_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
   var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list'};
   var state = Object.assign({}, defaults);
   var allowed = {
@@ -113,6 +118,11 @@
       }
     });
     results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
+    if (viewFab) {
+      var toMap = state.view === 'list';
+      viewFab.innerHTML = (toMap ? MAP_ICON : LIST_ICON) + '<span>' + (toMap ? fabWords.map : fabWords.list) + '</span>';
+      viewFab.setAttribute('aria-label', toMap ? fabWords.toMap : fabWords.toList);
+    }
     var n = visible.length;
     document.getElementById('showResults').textContent = words.show(n);
     if (mapLegend) {
@@ -186,6 +196,16 @@
     // fuera de la vista.
     if (state.view === 'map' && mapWrap) mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });});
+  if (viewFab) {
+    // Un solo boton, fijo en el mismo punto de la pantalla, que alterna entre
+    // vistas: hace click por programa sobre el boton oculto correspondiente,
+    // reutilizando su logica (estado + scroll al mapa) en vez de duplicarla.
+    viewFab.addEventListener('click', function(){
+      var target = state.view === 'list' ? 'map' : 'list';
+      var btn = viewButtons.find(function(b){ return b.dataset.view === target; });
+      if (btn) btn.click();
+    });
+  }
   finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
   recover.addEventListener('click',function(){
     if(!recoveryState) return;

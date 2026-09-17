@@ -314,28 +314,3 @@
   });
 })();
 
-// --- header map shortcut: only on the home page ---
-(function(){
-  var button = document.getElementById('mapShortcut');
-  var mapButton = document.querySelector('.view-toggle-btn[data-view="map"]');
-  var mapWrap = document.getElementById('routeMapWrap');
-  if (!button || !mapButton || !mapWrap) return;
-  button.addEventListener('click', function(){
-    // El propio boton "mapa" del toggle (filters.js) ya centra el mapa en
-    // pantalla al pulsarlo; si ya estaba activo, ese click no dispara su
-    // listener de cambio de estado, asi que aqui hace falta el scroll aparte.
-    if (mapButton.classList.contains('active')) {
-      mapWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      mapButton.click();
-    }
-  });
-})();
-
-// --- floating "lista" shortcut over the overview map: home page only ---
-(function(){
-  var button = document.getElementById('listShortcut');
-  var listButton = document.querySelector('.view-toggle-btn[data-view="list"]');
-  if (!button || !listButton) return;
-  button.addEventListener('click', function(){ listButton.click(); });
-})();
