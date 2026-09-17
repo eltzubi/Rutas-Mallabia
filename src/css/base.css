@@ -102,6 +102,22 @@ body{
 }
 .map-layers-btn:hover{ opacity:1; }
 .map-layers-btn.is-active{ color:var(--teal); opacity:1; }
+.map-layers-menu{
+  position:absolute; z-index:401; top:48px; right:10px; min-width:136px;
+  display:flex; flex-direction:column; gap:2px; padding:6px;
+  border:1px solid var(--line); border-radius:12px;
+  background:var(--ground); box-shadow:0 8px 24px rgba(0,0,0,.35);
+  background:color-mix(in srgb, var(--ground) 92%, transparent);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+}
+.map-layers-menu[hidden]{ display:none; }
+.map-layers-item{
+  display:block; width:100%; text-align:left; border:0; border-radius:8px;
+  padding:8px 10px; background:none; color:var(--ink-dim); cursor:pointer;
+  font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.02em;
+}
+.map-layers-item:hover{ background:var(--ground-raised); color:var(--ink); }
+.map-layers-item.is-selected{ background:var(--teal); color:var(--ground); }
 .eyebrow .sep{ opacity:.5; }
 .lightbox{
   position:fixed; inset:0; z-index:100;

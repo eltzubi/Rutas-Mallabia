@@ -239,30 +239,89 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     }).addTo(map);
 
-    // Layer switcher (satellite view), on every map -- the home page's
-    // overview and each route's own map alike. Two free layers, neither
-    // needing an API key: OSM (default) and Esri World Imagery (aerial photo).
+    // Layer switcher, on every map -- the home page's overview and each
+    // route's own map alike. Four free layers, none needing an API key:
+    // OSM (default), Esri World Imagery (aerial photo), OpenTopoMap
+    // (contour lines -- useful to gauge terrain at a glance) and CyclOSM
+    // (bike-oriented rendering: surfaces, cycle lanes).
     var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
       attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
     });
-    var layers = [osmLayer, satLayer];
+    var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      maxZoom: 17,
+      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
+    });
+    var cycleLayer = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
+    });
+    var layerDefs = [
+      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles' },
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite' },
+      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico' },
+      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista' }
+    ];
     var layerIndex = 0;
     var layersBtn = document.createElement('button');
     layersBtn.type = 'button';
     layersBtn.className = 'map-layers-btn';
     layersBtn.setAttribute('aria-label', isEu ? 'Aldatu mapa mota' : 'Cambiar tipo de mapa');
-    layersBtn.setAttribute('aria-pressed', 'false');
+    layersBtn.setAttribute('aria-haspopup', 'true');
+    layersBtn.setAttribute('aria-expanded', 'false');
     layersBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>';
-    layersBtn.addEventListener('click', function(){
-      var prev = layerIndex;
-      layerIndex = (layerIndex + 1) % layers.length;
-      map.removeLayer(layers[prev]);
-      layers[layerIndex].addTo(map);
-      layersBtn.classList.toggle('is-active', layerIndex !== 0);
-      layersBtn.setAttribute('aria-pressed', String(layerIndex !== 0));
+    var layersMenu = document.createElement('div');
+    layersMenu.className = 'map-layers-menu';
+    layersMenu.setAttribute('role', 'menu');
+    layersMenu.hidden = true;
+    function closeLayersMenu(){
+      layersMenu.hidden = true;
+      layersBtn.setAttribute('aria-expanded', 'false');
+    }
+    function openLayersMenu(){
+      layersMenu.hidden = false;
+      layersBtn.setAttribute('aria-expanded', 'true');
+    }
+    layerDefs.forEach(function(def, i){
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'map-layers-item' + (i === 0 ? ' is-selected' : '');
+      item.setAttribute('role', 'menuitemradio');
+      item.setAttribute('aria-checked', String(i === 0));
+      item.textContent = def.label;
+      item.addEventListener('click', function(){
+        if (i !== layerIndex) {
+          map.removeLayer(layerDefs[layerIndex].layer);
+          layerIndex = i;
+          layerDefs[layerIndex].layer.addTo(map);
+          Array.from(layersMenu.children).forEach(function(child, j){
+            child.classList.toggle('is-selected', j === layerIndex);
+            child.setAttribute('aria-checked', String(j === layerIndex));
+          });
+          layersBtn.classList.toggle('is-active', layerIndex !== 0);
+        }
+        closeLayersMenu();
+      });
+      layersMenu.appendChild(item);
+    });
+    layersBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      if (layersMenu.hidden) openLayersMenu(); else closeLayersMenu();
+    });
+    var closeLayersMenuOnOutsideClick = function(e){
+      if (!layersMenu.hidden && e.target !== layersBtn && !layersMenu.contains(e.target)) closeLayersMenu();
+    };
+    var closeLayersMenuOnEscape = function(e){
+      if (e.key === 'Escape' && !layersMenu.hidden) { closeLayersMenu(); layersBtn.focus(); }
+    };
+    document.addEventListener('click', closeLayersMenuOnOutsideClick);
+    document.addEventListener('keydown', closeLayersMenuOnEscape);
+    cleanups.push(function(){
+      document.removeEventListener('click', closeLayersMenuOnOutsideClick);
+      document.removeEventListener('keydown', closeLayersMenuOnEscape);
     });
     el.parentElement.appendChild(layersBtn);
+    el.parentElement.appendChild(layersMenu);
 
     // On a page with several routes (the home overview), clicking one opens
     // a bottom info panel instead of a Leaflet popup anchored to the click
