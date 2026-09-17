@@ -680,6 +680,8 @@ HOME = {
     # footer
     'Para cualquier duda: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>':
         'Edozein zalantzarako: <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>',
+    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
+        '<span><a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a></span>',
 }
 
 TRABAKUA = {
@@ -3187,6 +3189,8 @@ DESCRIPTIONS = {
         'lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik',
     'gereaoculta': 'BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi '
         'ezagunetatik igarota, bi aldapa eskatzaile eta jaitsiera tekniko batzuekin',
+    'aviso-legal': 'Trabakutiken lege oharra eta pribatutasun politika: titularra, '
+        'baldintzak eta datu pertsonalen tratamendua',
 }
 
 # <title> per page (head files)
@@ -3307,6 +3311,7 @@ TITLES = {
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
     'asuntzabira': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
     'gereaoculta': 'Gerea, ibilbide ezezagunak · Bizikleta ibilbidea — Herriko ibilbideak',
+    'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4490,6 +4495,46 @@ GEREAOCULTA = {
         'Hemendik <b>Trabakua</b>ko irteera-puntura lotzen gara berriro, <b>Gerea</b>n zehar buelta askotarikoa itxiz, igoera, jaitsiera, bidexka eta normalean oharkabean pasatzen diren txokoekin.',
 }
 
+AVISO_LEGAL = {
+    '<p class="eyebrow"><span>Legal</span></p>':
+        '<p class="eyebrow"><span>Lege oharra</span></p>',
+    '<h1>Aviso legal <em>y privacidad</em></h1>':
+        '<h1>Lege oharra <em>eta pribatutasuna</em></h1>',
+    '<p class="full-name">Quién soy, qué puedes esperar del contenido de esta web y qué pasa con los datos que me envías.</p>':
+        '<p class="full-name">Nor naizen, webgune honen edukitik zer espero dezakezun eta bidaltzen dizkidazun datuekin zer egiten dudan.</p>',
+
+    '<h2>Aviso legal</h2>':
+        '<h2>Lege oharra</h2>',
+    '<h2>Política de privacidad</h2>':
+        '<h2>Pribatutasun politika</h2>',
+
+    '<p><b>Titular del sitio:</b> Zori, persona física, sin actividad económica asociada a esta web. Contacto: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Webgunearen titularra:</b> Zori, pertsona fisikoa, webgune honi lotutako jarduera ekonomikorik gabe. Harremanetarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Objeto.</b> Trabakutik es un proyecto personal, sin ánimo de lucro, que documenta rutas de senderismo y BTT alrededor de Mallabia (Bizkaia) con datos reales: tracks GPX grabados sobre el terreno y fotografías propias. No es un servicio comercial ni recoge pagos ni publicidad.</p>':
+        '<p><b>Xedea.</b> Trabakutik proiektu pertsonala da, irabazi asmorik gabea, Mallabia (Bizkaia) inguruko oinezko eta BTT ibilbideak benetako datuekin jasotzen dituena: bertan grabatutako GPX trackak eta argazki propioak. Ez da zerbitzu komertziala, ez du ordainketarik jasotzen ez publizitaterik dauka.</p>',
+    '<p><b>Condiciones de uso.</b> El contenido tiene carácter informativo y orientativo. Las distancias, desniveles y descripciones reflejan cómo se hizo la ruta el día en que se grabó el track; el estado real del terreno puede cambiar (árboles caídos, senderos cortados, señalización dañada) y no siempre habrá tiempo de actualizarlo. El senderismo y el BTT son actividades con riesgo físico: usar esta información es responsabilidad de quien decide hacer la ruta, y esta web no sustituye la cartografía oficial ni el criterio propio sobre el terreno.</p>':
+        '<p><b>Erabilera baldintzak.</b> Edukia informatiboa eta orientagarria da. Distantziek, desnibelek eta deskribapenek islatzen dute ibilbidea egin zen egunean nolakoa zen; lekuaren egoera errealak alda daiteke (zuhaitz eroriak, bide moztuak, seinaleztapen kaltetua) eta beti ez dago eguneratzeko astirik. Senderismoa eta BTTa arrisku fisikoa duten jarduerak dira: informazio hau erabiltzea ibilbidea egitea erabakitzen duenaren erantzukizuna da, eta webgune honek ez du ordezkatzen kartografia ofiziala, ez lekuaren gaineko norberaren irizpidea.</p>',
+    '<p><b>Propiedad intelectual.</b> Los textos, fotografías y tracks GPX/KML publicados en trabakutik.com son del titular del sitio, salvo que se indique lo contrario. Pueden descargarse para uso personal (llevarlos a un GPS o app durante la ruta); reproducirlos en otro sitio o publicación requiere permiso previo.</p>':
+        '<p><b>Jabetza intelektuala.</b> Trabakutik.com-en argitaratutako testuak, argazkiak eta GPX/KML trackak webgunearen titularrarenak dira, kontrakoa adierazi ezean. Erabilera pertsonalerako deskarga daitezke (GPS batera edo app batera eramateko ibilbidean zehar); beste toki edo argitalpen batean erreproduzitzeko aldez aurretiko baimena behar da.</p>',
+    '<p><b>Enlaces a terceros.</b> Algunas páginas enlazan a Wikiloc, OpenStreetMap u otros servicios externos que el titular no controla ni de cuyo contenido responde.</p>':
+        '<p><b>Hirugarrenen estekak.</b> Orrialde batzuek Wikiloc, OpenStreetMap edo bestelako kanpo-zerbitzuetara esteka egiten dute; titularrak ez ditu kontrolatzen eta ez du haien edukiaren erantzukizunik.</p>',
+
+    '<p><b>Responsable del tratamiento:</b> Zori, contacto en <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Tratamenduaren arduraduna:</b> Zori, harremanetarako <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Qué datos se recogen.</b> Esta web no tiene usuarios registrados ni analítica. El único dato personal que se recoge es el que se escribe voluntariamente en el formulario «Reportar incidencia» de cada ruta: el tipo de incidencia, su ubicación aproximada, una descripción y, opcionalmente, un email de contacto.</p>':
+        '<p><b>Zer datu jasotzen dira.</b> Webgune honek ez du erabiltzaile erregistraturik ez analitikarik. Jasotzen den datu pertsonal bakarra ibilbide bakoitzeko «Reportar incidencia» formularioan borondatez idazten dena da: intzidentzia mota, gutxi gorabeherako kokapena, deskribapen bat eta, aukeran, harremanetarako email bat.</p>',
+    '<p><b>Finalidad y base legal.</b> Esos datos se usan únicamente para revisar la incidencia y, si hace falta, responder a quien la reporta. La base legal es el consentimiento: se envían solo si decides rellenar y enviar el formulario.</p>':
+        '<p><b>Xedea eta oinarri legala.</b> Datu horiek intzidentzia aztertzeko eta, behar izanez gero, jakinarazi duenari erantzuteko baino ez dira erabiltzen. Oinarri legala baimena da: formularioa bete eta bidaltzea erabakitzen baduzu bidaltzen dira soilik.</p>',
+    '<p><b>A quién se ceden.</b> El formulario lo procesa <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>, un servicio externo que actúa como encargado del tratamiento y entrega el mensaje por email; sus propios términos y ubicación (fuera de la UE) se pueden consultar en su web. El sitio en sí se sirve desde GitHub Pages (GitHub, Inc.), que aloja los archivos pero no recibe ningún dato del formulario.</p>':
+        '<p><b>Nori lagatzen zaizkion.</b> Formularioa <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a>k prozesatzen du, tratamenduaren arduradun gisa jarduten duen kanpo-zerbitzu batek, eta mezua emailez bidaltzen du; bere baldintzak eta kokapena (EBtik kanpo) bere webgunean kontsulta daitezke. Webgunea bera GitHub Pages-etik (GitHub, Inc.) zerbitzatzen da, fitxategiak hartzen dituena baina formularioko daturik jasotzen ez duena.</p>',
+    '<p><b>Conservación.</b> Los mensajes se conservan en el correo del titular el tiempo necesario para revisar la incidencia; no hay una base de datos propia donde se acumulen.</p>':
+        '<p><b>Kontserbazioa.</b> Mezuak titularraren postan gordetzen dira intzidentzia aztertzeko behar den denboran; ez dago horiek pilatzen dituen datu-baserik.</p>',
+    '<p><b>Tus derechos.</b> Puedes pedir acceder, corregir o borrar cualquier dato que hayas enviado, o retirar tu consentimiento, escribiendo a <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Zure eskubideak.</b> Bidali duzun edozein daturi sarbidea eskatu, zuzendu edo ezabatu, edo baimena kendu ahal duzu, <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>era idatzita.</p>',
+    '<p><b>Cookies y almacenamiento local.</b> Esta web no usa cookies de rastreo ni analítica de ningún tipo. Guarda una sola preferencia en el <code>localStorage</code> del navegador (si has elegido tema claro u oscuro), que no sale de tu dispositivo y no identifica a nadie.</p>':
+        '<p><b>Cookieak eta biltegiratze lokala.</b> Webgune honek ez du inolako jarraipen-cookierik ez analitikarik erabiltzen. Nabigatzailearen <code>localStorage</code>-n hobespen bakar bat gordetzen du (gai argia edo iluna aukeratu baduzu), zure gailutik atera ez eta inor identifikatzen ez duena.</p>',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -4538,4 +4583,5 @@ PAGE_STRINGS = {
     'markinabolibar': MARKINABOLIBAR,
     'asuntzabira': ASUNTZABIRA,
     'gereaoculta': GEREAOCULTA,
+    'aviso-legal': AVISO_LEGAL,
 }
