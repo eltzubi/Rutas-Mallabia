@@ -304,7 +304,7 @@
 .route-card-time .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; color:var(--ink); }
 
 /* ---- info accordion: before you leave, parking, sleeping nearby ---- */
-.info-accordion{ max-width:820px; margin:48px auto 0; padding:0 24px; }
+.info-accordion{ max-width:820px; margin:32px auto 0; padding:0 24px; }
 @media (min-width:1024px){ .info-accordion{ max-width:1100px; } }
 #beforeYouGo{ margin:20px auto 24px; }
 .info-details{ border-top:1px solid var(--line); }
@@ -503,7 +503,7 @@
 .map-legend-item .dot.senderismo{ background:var(--violet); }
 
 footer{
-  margin:56px auto 0; max-width:820px;
+  margin:32px auto 0; max-width:820px;
   border:1px solid var(--line); border-radius:16px; background:var(--ground-raised);
   padding:20px 22px; display:flex; flex-direction:column; gap:16px;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6; color:var(--ink-dim);
