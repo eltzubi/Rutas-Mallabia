@@ -324,24 +324,24 @@
    acordeon pelada, con el mismo lenguaje que el resto del sitio (borde +
    radio + fondo elevado, icono en circulo a juego con los puntos de la
    leyenda del mapa). */
-.practical-info{ display:flex; flex-direction:column; gap:14px; }
-.practical-info .info-details{
+.info-group{
   border:1px solid var(--line); border-radius:16px;
   background:var(--ground-raised); overflow:hidden;
-  transition:border-color .2s ease;
 }
-.practical-info .info-details:hover{ border-color:var(--teal); }
-.practical-info .info-details summary{ padding:16px 18px; }
+.practical-info .info-details{ border:none; border-radius:0; background:none; }
+.practical-info .info-details + .info-details{ border-top:1px solid var(--line); }
+.practical-info .info-details summary{ padding:12px 16px; }
+.practical-info .info-details summary:hover{ background:var(--teal-soft); }
 .practical-info .info-details summary::after{ color:var(--teal); }
-.info-summary-label{ display:flex; align-items:center; gap:12px; }
+.info-summary-label{ display:flex; align-items:center; gap:10px; }
 .info-icon{
   display:inline-flex; align-items:center; justify-content:center;
-  width:30px; height:30px; border-radius:50%; flex-shrink:0;
+  width:26px; height:26px; border-radius:50%; flex-shrink:0;
   background:var(--teal-soft); color:var(--teal);
 }
-.practical-info .info-details-body{ padding:0 18px 20px 60px; }
+.practical-info .info-details-body{ padding:0 16px 18px 52px; }
 @media (max-width:420px){
-  .practical-info .info-details-body{ padding-left:18px; }
+  .practical-info .info-details-body{ padding-left:16px; }
 }
 /* El aviso de seguridad necesita leerse como una tarjeta, no como una fila
    de acordeon mas -- antes solo se distinguia por el color del texto y un
@@ -503,24 +503,29 @@
 .map-legend-item .dot.senderismo{ background:var(--violet); }
 
 footer{
-  margin:56px auto 0; max-width:820px; padding:26px 24px 0; border-top:1px solid var(--line);
-  display:flex; flex-direction:column; gap:16px;
+  margin:56px auto 0; max-width:820px;
+  border:1px solid var(--line); border-radius:16px; background:var(--ground-raised);
+  padding:20px 22px; display:flex; flex-direction:column; gap:16px;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.6; color:var(--ink-dim);
 }
 @media (min-width:1024px){ footer{ max-width:1100px; } }
 footer a{ color:var(--teal); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 
-.footer-meta{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.footer-meta{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .footer-meta .place{ color:var(--ink); font-weight:600; }
-.footer-meta .sep{ opacity:.45; }
-@media (max-width:460px){
-  .footer-meta{ flex-direction:column; align-items:flex-start; gap:6px; }
-  .footer-meta .sep{ display:none; }
+.legal-pill{
+  display:inline-flex; align-items:center; gap:7px;
+  padding:6px 12px; border:1px solid var(--line); border-radius:999px;
+  color:var(--ink-dim); text-decoration:none;
+  transition:border-color .18s ease, color .18s ease;
 }
+.legal-pill:hover{ border-color:var(--teal); color:var(--teal); text-decoration:none; }
+.legal-pill svg{ flex-shrink:0; }
 
-.contact-line{
-  display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap;
+.footer-contact{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  padding-top:14px; border-top:1px solid var(--line);
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-dim);
 }
 .contact-btn{
