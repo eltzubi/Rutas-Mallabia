@@ -4507,8 +4507,8 @@ AVISO_LEGAL = {
     '<h2>Política de privacidad</h2>':
         '<h2>Pribatutasun politika</h2>',
 
-    '<p><b>Titular del sitio:</b> Zori, persona física, sin actividad económica asociada a esta web. Contacto: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
-        '<p><b>Webgunearen titularra:</b> Zori, pertsona fisikoa, webgune honi lotutako jarduera ekonomikorik gabe. Harremanetarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Titular del sitio:</b> Zorion, persona física, sin actividad económica asociada a esta web. Contacto: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Webgunearen titularra:</b> Zorion, pertsona fisikoa, webgune honi lotutako jarduera ekonomikorik gabe. Harremanetarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
     '<p><b>Objeto.</b> Trabakutik es un proyecto personal, sin ánimo de lucro, que documenta rutas de senderismo y BTT alrededor de Mallabia (Bizkaia) con datos reales: tracks GPX grabados sobre el terreno y fotografías propias. No es un servicio comercial ni recoge pagos ni publicidad.</p>':
         '<p><b>Xedea.</b> Trabakutik proiektu pertsonala da, irabazi asmorik gabea, Mallabia (Bizkaia) inguruko oinezko eta BTT ibilbideak benetako datuekin jasotzen dituena: bertan grabatutako GPX trackak eta argazki propioak. Ez da zerbitzu komertziala, ez du ordainketarik jasotzen ez publizitaterik dauka.</p>',
     '<p><b>Condiciones de uso.</b> El contenido tiene carácter informativo y orientativo. Las distancias, desniveles y descripciones reflejan cómo se hizo la ruta el día en que se grabó el track; el estado real del terreno puede cambiar (árboles caídos, senderos cortados, señalización dañada) y no siempre habrá tiempo de actualizarlo. El senderismo y el BTT son actividades con riesgo físico: usar esta información es responsabilidad de quien decide hacer la ruta, y esta web no sustituye la cartografía oficial ni el criterio propio sobre el terreno.</p>':
@@ -4518,8 +4518,8 @@ AVISO_LEGAL = {
     '<p><b>Enlaces a terceros.</b> Algunas páginas enlazan a Wikiloc, OpenStreetMap u otros servicios externos que el titular no controla ni de cuyo contenido responde.</p>':
         '<p><b>Hirugarrenen estekak.</b> Orrialde batzuek Wikiloc, OpenStreetMap edo bestelako kanpo-zerbitzuetara esteka egiten dute; titularrak ez ditu kontrolatzen eta ez du haien edukiaren erantzukizunik.</p>',
 
-    '<p><b>Responsable del tratamiento:</b> Zori, contacto en <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
-        '<p><b>Tratamenduaren arduraduna:</b> Zori, harremanetarako <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Responsable del tratamiento:</b> Zorion, contacto en <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Tratamenduaren arduraduna:</b> Zorion, harremanetarako <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
     '<p><b>Qué datos se recogen.</b> Esta web no tiene usuarios registrados ni analítica. El único dato personal que se recoge es el que se escribe voluntariamente en el formulario «Reportar incidencia» de cada ruta: el tipo de incidencia, su ubicación aproximada, una descripción y, opcionalmente, un email de contacto.</p>':
         '<p><b>Zer datu jasotzen dira.</b> Webgune honek ez du erabiltzaile erregistraturik ez analitikarik. Jasotzen den datu pertsonal bakarra ibilbide bakoitzeko «Reportar incidencia» formularioan borondatez idazten dena da: intzidentzia mota, gutxi gorabeherako kokapena, deskribapen bat eta, aukeran, harremanetarako email bat.</p>',
     '<p><b>Finalidad y base legal.</b> Esos datos se usan únicamente para revisar la incidencia y, si hace falta, responder a quien la reporta. La base legal es el consentimiento: se envían solo si decides rellenar y enviar el formulario.</p>':
