@@ -448,8 +448,8 @@ HOME = {
     'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
     'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
-    '<summary>D&oacute;nde aparcar</summary>': '<summary>Non aparkatu</summary>',
-    '<summary>Dormir cerca</summary>': '<summary>Non lo egin</summary>',
+    'D&oacute;nde aparcar': 'Non aparkatu',
+    'Dormir cerca': 'Non lo egin',
 
     # route-card photos for routes without a former feat-panel (redesign)
     'alt="Mojón en la cima del Mendibil, con el parque eólico y el pueblo al fondo"':
@@ -680,8 +680,8 @@ HOME = {
     # footer
     '¿Alguna duda sobre las rutas?': 'Ibilbideei buruzko zalantzarik?',
     'Escribe por email': 'Idatzi emailez',
-    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
-        '<span><a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a></span>',
+    '<a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a>':
+        '<a class="underline-link" href="aviso-legal.html">Lege oharra eta pribatutasuna</a>',
 }
 
 TRABAKUA = {
