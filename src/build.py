@@ -215,8 +215,13 @@ def similar_routes(slug, cards, count=2):
 
 
 def add_similar_routes(page_html, page, cards, lang):
-    """Cierra la ficha con dos rutas parecidas en vez de con un enlace al indice."""
-    vecinas = similar_routes(page, cards)
+    """Cierra la ficha con dos rutas parecidas sin repetir enlaces ya usados en el texto."""
+    body_match = re.search(r'<div class="body-copy">([\s\S]*?)</div>', page_html)
+    used_hrefs = set()
+    if body_match:
+        used_hrefs = set(re.findall(r'href="([^"]+)"', body_match.group(1)))
+    vecinas = [c for c in similar_routes(page, cards, count=len(cards))
+               if c["href"] not in used_hrefs][:2]
     anchor = '  <div class="back-home">'
     if not vecinas or anchor not in page_html:
         return page_html
