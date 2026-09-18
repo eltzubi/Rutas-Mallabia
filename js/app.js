@@ -219,6 +219,9 @@
   var btn = document.getElementById('themeToggle');
   if (!btn) return;
   var root = document.documentElement;
+  try {
+    if (!localStorage.getItem('rutas-mallabia-theme')) localStorage.setItem('rutas-mallabia-theme', 'dark');
+  } catch(err){}
   function effectiveTheme(){
     return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
