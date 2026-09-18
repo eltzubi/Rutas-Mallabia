@@ -75,9 +75,15 @@
     var myPoints = pointsOf(mine);
 
     var scored = [];
+    var linkedSlugs = {};
+    document.querySelectorAll('.body-copy a[href]').forEach(function(a){
+      var s = routeSlug(a.getAttribute('href'));
+      if (s) linkedSlugs[s] = true;
+    });
+
     tracks.forEach(function(t){
       var s = routeSlug(t.href);
-      if (!s || s === slug || !cards[s]) return;
+      if (!s || s === slug || linkedSlugs[s] || !cards[s]) return;
       var pts = pointsOf(t);
       if (!pts.length) return;
 
