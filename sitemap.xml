@@ -472,6 +472,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/gereaoculta.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/sancristobalgaraiandikoa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sancristobalgaraiandikoa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sancristobalgaraiandikoa.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/sancristobalgaraiandikoa.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/sancristobalgaraiandikoa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/sancristobalgaraiandikoa.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
