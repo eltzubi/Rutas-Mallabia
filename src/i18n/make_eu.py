@@ -24,12 +24,17 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "aviso-legal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "aviso-legal"]
 # "aviso-legal" no es una ruta (sin facts/perfil/galeria), pero comparte el
 # mismo cascaron de pagina (masthead, back-link, footer, back-home) que las
 # rutas -- se mete aqui para heredar esas mismas cadenas compartidas (ROUTE)
 # y el swap de href a .eu.html, no porque sea una ruta real.
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "aviso-legal"}
+ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "aviso-legal"}
+
+# Esta ficha se redactó ya en los dos idiomas durante su incorporación.
+# Hasta migrar sus textos al diccionario granular de eu.py, mantenemos su
+# tail EU como fuente explícita para que el generador no lo sobrescriba.
+MANUAL_EU_PAGES = {"sancristobalgaraiandikoa"}
 
 # es filename -> eu filename, for the cross-language links
 EU_OF = {"index.html": "index.eu.html"}
@@ -117,27 +122,35 @@ def main():
         with open(es_path, encoding="utf-8") as f:
             es = f.read()
 
-        shared, specific = tables_for(page)
-        out = translate(es, shared, specific, page)
-
-        # Order matters: retarget ordinary navigation first, THEN flip the
-        # language switch. Doing it the other way round turns the switch's
-        # freshly-written href="index.html" straight back into the Basque one.
-        for es_file, eu_file in EU_OF.items():
-            out = out.replace(f'href="{es_file}"', f'href="{eu_file}"')
-
-        out = re.sub(
-            r'<a class="lang-switch" href="([\w.]+)\.eu\.html" hreflang="eu" lang="eu" title="Euskaraz">EU</a>',
-            r'<a class="lang-switch" href="\1.html" hreflang="es" lang="es" title="En castellano">ES</a>',
-            out,
-        )
-
-        check_no_spanish(out, page)
-
         eu_path = os.path.join(SRC, f"{page}_tail.eu.html")
-        with open(eu_path, "w", encoding="utf-8") as f:
-            f.write(out)
-        print(f"wrote {os.path.relpath(eu_path, SRC)}")
+        if page in MANUAL_EU_PAGES:
+            if not os.path.exists(eu_path):
+                raise SystemExit(f"\n{page}: missing hand-maintained Basque tail: {eu_path}")
+            with open(eu_path, encoding="utf-8") as f:
+                out = f.read()
+            check_no_spanish(out, page)
+            print(f"kept {os.path.relpath(eu_path, SRC)} (hand-maintained)")
+        else:
+            shared, specific = tables_for(page)
+            out = translate(es, shared, specific, page)
+
+            # Order matters: retarget ordinary navigation first, THEN flip the
+            # language switch. Doing it the other way round turns the switch's
+            # freshly-written href="index.html" straight back into the Basque one.
+            for es_file, eu_file in EU_OF.items():
+                out = out.replace(f'href="{es_file}"', f'href="{eu_file}"')
+
+            out = re.sub(
+                r'<a class="lang-switch" href="([\w.]+)\.eu\.html" hreflang="eu" lang="eu" title="Euskaraz">EU</a>',
+                r'<a class="lang-switch" href="\1.html" hreflang="es" lang="es" title="En castellano">ES</a>',
+                out,
+            )
+
+            check_no_spanish(out, page)
+
+            with open(eu_path, "w", encoding="utf-8") as f:
+                f.write(out)
+            print(f"wrote {os.path.relpath(eu_path, SRC)}")
 
         # ---- head ----
         with open(os.path.join(SRC, f"{page}_head.html"), encoding="utf-8") as f:
