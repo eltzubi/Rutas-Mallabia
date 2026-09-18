@@ -322,6 +322,12 @@ ROUTE = {
 }
 
 HOME = {
+    'Trabakua, San Cristóbal Txiki, Garai y Andikoa':
+        'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
+    'Circuito por San Cristóbal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
+        'San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, pista, bidezidor eta Asto Traileko tarteekin',
+    'Camino entre árboles y un murete cubierto de musgo':
+        'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
     'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
