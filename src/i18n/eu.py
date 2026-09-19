@@ -328,6 +328,14 @@ HOME = {
         'San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, pista, bidezidor eta Asto Traileko tarteekin',
     'Camino entre árboles y un murete cubierto de musgo':
         'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
+
+    # zengotitaiturzuri card
+    'alt="Mar de nubes visto desde la parte alta de Zengotita"':
+        'alt="Hodei-itsasoa Zengotitako parte garaitik ikusita"',
+    '<h3 class="route-card-name">Zengotita, Iturzuri y Zengotitagane</h3>':
+        '<h3 class="route-card-name">Zengotita, Iturzuri eta Zengotitagane</h3>',
+    '<p class="route-card-desc">Vuelta corta desde Zengotita por el hayedo de Iturzuri y el cresterío de Zengotitagane</p>':
+        '<p class="route-card-desc">Zengotitatik hasitako itzuli laburra, Iturzuriko pagadia eta Zengotitagineko gailurra zeharkatuz</p>',
     'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
@@ -3194,8 +3202,9 @@ DESCRIPTIONS = {
         'lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik',
     'gereaoculta': 'BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi '
         'ezagunetatik igarota, bi aldapa eskatzaile eta jaitsiera tekniko batzuekin',
-    'sancristobalgaraiandikoa': 'BTT/e-bike zirkuitua Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatuz, '
+    'sancristobalgaraiandikoa': 'Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, '
         'pista, bidezidor eta Asto Traileko tarteekin',
+    'zengotitaiturzuri': 'Zengotitatik Iturzuri eta Zengotitaganera doan ibilbide zirkular labur eta askotarikoa',
     'aviso-legal': 'Trabakutiken lege oharra eta pribatutasun politika: titularra, '
         'baldintzak eta datu pertsonalen tratamendua',
 }
@@ -3318,7 +3327,8 @@ TITLES = {
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
     'asuntzabira': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
     'gereaoculta': 'Gerea, ibilbide ezezagunak · Bizikleta ibilbidea — Herriko ibilbideak',
-    'sancristobalgaraiandikoa': 'San Kristobal Txiki, Garai eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
+    'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
+    'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
 }
 

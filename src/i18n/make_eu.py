@@ -24,17 +24,17 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "aviso-legal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "aviso-legal"]
 # "aviso-legal" no es una ruta (sin facts/perfil/galeria), pero comparte el
 # mismo cascaron de pagina (masthead, back-link, footer, back-home) que las
 # rutas -- se mete aqui para heredar esas mismas cadenas compartidas (ROUTE)
 # y el swap de href a .eu.html, no porque sea una ruta real.
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "aviso-legal"}
+ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "osma", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "aviso-legal"}
 
 # Esta ficha se redactó ya en los dos idiomas durante su incorporación.
 # Hasta migrar sus textos al diccionario granular de eu.py, mantenemos su
 # tail EU como fuente explícita para que el generador no lo sobrescriba.
-MANUAL_EU_PAGES = {"sancristobalgaraiandikoa"}
+MANUAL_EU_PAGES = {"sancristobalgaraiandikoa", "zengotitaiturzuri"}
 
 # es filename -> eu filename, for the cross-language links
 EU_OF = {"index.html": "index.eu.html"}
