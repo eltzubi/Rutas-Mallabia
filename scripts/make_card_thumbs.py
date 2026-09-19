@@ -49,8 +49,8 @@ SUFFIX = "-card"
 # filter:contrast(1.1) saturate(1.25) sobre .route-card-photo img. Ahora van
 # grabados aqui para que la foto ya salga bien del fichero y para poder
 # ajustarla foto a foto, que un filtro de CSS no puede.
-CONTRASTE = 1.10
-SATURACION = 1.25
+CONTRASTE = 1.15
+SATURACION = 1.35
 
 # Y esto es lo nuevo: acercar la luminancia de cada foto a la del conjunto.
 # OBJETIVO es la mediana de las 28 en el momento de escribir esto; si algun dia
