@@ -4384,16 +4384,16 @@ SANTAMANAZARANDIKOA = {
         '<p><b>Abadi&ntilde;o</b>ko eremurantz doan jaitsiera luzea eta oso atsegina da. Lehenik, harri pista nahiko garbi eta eroso batetik, eta, beherago, baserri, zelai eta ia trafikorik gabeko auzo errepide txikien artean.</p>',
     '<p>Esta parte de la vuelta es especialmente bonita por las vistas. Bajamos hacia Matiena a trav&eacute;s del <b>Gaztelua</b>, desde donde se abre buena parte de los montes del Duranguesado, desde Anboto hasta Mugarra, con el resto de monta&ntilde;as entre medias.</p>':
         '<p>Itzuliaren zati hau bereziki polita da ikuspegiengatik. Matienarantz jaisten gara <b>Gaztelua</b>tik, eta handik Durangaldeko mendien zati handi bat zabaltzen da, Anbototik Mugarraraino, tarteko gainerako mendiekin.</p>',
-    '<p>Seguimos bajando hasta <b>Matiena</b> (km 24,3 &middot; 115 m), que atravesamos r&aacute;pidamente para buscar la parte alta, junto al Hotel San Blas. Pasamos por el puente sobre la carretera y continuamos ascendiendo hasta alcanzar la carretera que sube hacia Garai.</p>':
-        '<p><b>Matiena</b>raino jaisten jarraitzen dugu (24,3 km &middot; 115 m), eta azkar zeharkatzen dugu goialdearen bila, San Blas hotelaren ondoan. Errepidearen gaineko zubia pasatzen dugu eta igotzen jarraitzen dugu, Garairantz doan errepidera iritsi arte.</p>',
-    '<p>La cruzamos con cuidado, justo en una curva, y nos metemos directamente en el barrio rural de <b>Sarria</b>, entre prados, caser&iacute;os y ganado.</p>':
-        '<p>Kontu handiz gurutzatzen dugu, bihurgune batean, eta zuzenean <b>Sarria</b>ko landa auzoan sartzen gara, zelai, baserri eta ganadu artean.</p>',
-    '<p>Continuamos en direcci&oacute;n a <b><a href="axmakurandikoa.html">Andikoa</a></b> (km 28,7 &middot; 319 m), atravesando una zona muy tranquila y paisaj&iacute;stica. Desde all&iacute; enlazamos con el barrio de <b>Besoita</b> (km 30,5 &middot; 308 m) y bajamos nuevamente hacia la carretera general.</p>':
-        '<p><b><a href="axmakurandikoa.html">Andikoa</a></b>rantz jarraitzen dugu (28,7 km &middot; 319 m), oso lasaia eta paisajistikoa den eremu bat zeharkatuz. Handik, <b>Besoita</b>ko auzoarekin lotzen gara (30,5 km &middot; 308 m) eta berriro errepide nagusirantz jaisten gara.</p>',
-    '<p>La cruzamos y buscamos la carretera vieja que sube hacia Zengotita. Ya solo queda recuperar altura poco a poco hasta el barrio y enlazar con el tramo que nos devuelve a Trabakua.</p>':
-        '<p>Gurutzatu egiten dugu eta Zengotitara igotzen den errepide zaharra bilatzen dugu. Hemendik aurrera, altuera berreskuratu besterik ez dugu egin behar, pixkanaka, auzoraino, eta Trabakuara itzultzen gaituen zatiarekin lotu.</p>',
-    '<p>Una ruta muy variada, con bosque, pistas, senderos, barrios rurales, buenas vistas y alg&uacute;n tramo t&eacute;cnico que obliga a desenvolverse bien encima de la bici.</p>':
-        '<p>Oso ibilbide askotarikoa, basoa, pistak, bidexkak, landa auzoak, ikuspegi onak eta bizikletaren gainean ondo moldatzera behartzen duen zati tekniko bat dituena.</p>',
+    '<p>Seguimos bajando hasta <b>Matiena</b> (km 24,3 &middot; 115 m), que cruzamos casi sin darnos cuenta buscando la parte alta, junto al Hotel San Blas. Pasamos el puente sobre la carretera y seguimos subiendo hasta encontrarnos con la carretera que va hacia Garai.</p>':
+        '<p><b>Matiena</b>raino jaisten jarraitzen dugu (24,3 km &middot; 115 m), ia konturatu gabe zeharkatzen duguna goialdearen bila, San Blas hotelaren ondoan. Errepidearen gaineko zubia pasatu eta igotzen jarraitzen dugu, Garairantz doan errepidera iritsi arte.</p>',
+    '<p>La cruzamos con cuidado &mdash;queda justo en una curva&mdash; y nos metemos de lleno en el barrio rural de <b>Sarria</b>, entre prados, caser&iacute;os y algo de ganado suelto.</p>':
+        '<p>Kontu handiz gurutzatzen dugu &mdash;bihurgune batean dago&mdash; eta zuzenean <b>Sarria</b>ko landa auzoan sartzen gara, zelai, baserri eta ganadu artean.</p>',
+    '<p>Seguimos hacia <b><a href="axmakurandikoa.html">Andikoa</a></b> (km 28,7 &middot; 319 m), una zona muy tranquila y bonita para pedalear sin prisa. Desde all&iacute; enlazamos con el barrio de <b>Besoita</b> (km 30,5 &middot; 308 m) y volvemos a bajar hacia la carretera general.</p>':
+        '<p><b><a href="axmakurandikoa.html">Andikoa</a></b>rantz jarraitzen dugu (28,7 km &middot; 319 m), presarik gabe pedalatzeko eremu lasai eta polita. Handik, <b>Besoita</b>ko auzoarekin lotzen gara (30,5 km &middot; 308 m) eta berriro errepide nagusirantz jaisten gara.</p>',
+    '<p>La cruzamos una &uacute;ltima vez y buscamos la carretera vieja que sube hacia Zengotita. A partir de aqu&iacute; ya solo queda ir recuperando altura poco a poco, hasta enlazar con el tramo que nos devuelve a Trabakua.</p>':
+        '<p>Azken aldiz gurutzatu eta Zengotitara igotzen den errepide zaharra bilatzen dugu. Hemendik aurrera, altuera pixkanaka berreskuratu eta Trabakuara itzultzen gaituen zatiarekin lotu besterik ez zaigu geratzen.</p>',
+    '<p>Una ruta muy completa: bosque, pista, sendero, barrios rurales, buenas vistas y alg&uacute;n tramo t&eacute;cnico que exige ir atentos encima de la bici.</p>':
+        '<p>Ibilbide oso osoa: basoa, pista, bidexka, landa auzoak, ikuspegi onak eta bizikletaren gainean adi egotera behartzen duen zati tekniko bat.</p>',
 }
 
 MARKINABOLIBAR = {
