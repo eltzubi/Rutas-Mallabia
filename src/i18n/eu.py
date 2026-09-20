@@ -339,6 +339,14 @@ HOME = {
     'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
+    # santamanazarandikoa card
+    'alt="Cruz de piedra en la cima de Santama&ntilde;azar con la bici apoyada y vistas panor&aacute;micas"':
+        'alt="Harrizko gurutzea Santama&ntilde;azarko gailurrean, bizikleta bermatuta eta ikuspegi zabalarekin"',
+    '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka y Andikoa</h3>':
+        '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka eta Andikoa</h3>',
+    '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Santama&ntilde;azar, Mendraka y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitu luzea Trabakuatik, Santama&ntilde;azar, Mendraka eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
+
     # gereaoculta card
     'alt="Vista de un valle con una alambrada de madera en primer plano, montes con aerogeneradores entre las nubes y un caser&iacute;o disperso al fondo"':
         'alt="Harana ikusgai, egurrezko hesia lehen planoan, hodei artean eolikoak dituzten mendiak eta baserri sakabanatu bat hondoan"',
@@ -3205,6 +3213,8 @@ DESCRIPTIONS = {
     'sancristobalgaraiandikoa': 'Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, '
         'pista, bidezidor eta Asto Traileko tarteekin',
     'zengotitaiturzuri': 'Zengotitatik Iturzuri eta Zengotitaganera doan ibilbide zirkular labur eta askotarikoa',
+    'santamanazarandikoa': 'BTT/e-bike zirkuitu luzea Trabakuatik, Zengotita, Santamañazar, Mendraka, '
+        'Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin',
     'aviso-legal': 'Trabakutiken lege oharra eta pribatutasun politika: titularra, '
         'baldintzak eta datu pertsonalen tratamendua',
 }
@@ -3329,6 +3339,7 @@ TITLES = {
     'gereaoculta': 'Gerea, ibilbide ezezagunak · Bizikleta ibilbidea — Herriko ibilbideak',
     'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
+    'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
 }
 
@@ -4297,6 +4308,91 @@ AXMAKURANDIKOA = {
         'Zengotitan gaudenean, ia buelta amaituta dugu. Berriro ere errepide nagusira ateratzen gara eta azken bi kilometroak egiten ditugu Trabakuara iritsi arte, non ibilbidea amaitzen dugun.',
 }
 
+SANTAMANAZARANDIKOA = {
+    '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Santama&ntilde;azar, Mendraka y Andikoa</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista, bidexka eta errepidea</span><span class="sep">/</span><span>Santama&ntilde;azar, Mendraka eta Andikoa</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<span class="v">Pista, sendero y carretera</span>':
+        '<span class="v">Pista, bidexka eta errepidea</span>',
+    '<h1>Trabakua, Santama&ntilde;azar<br><em>Mendraka y Andikoa</em></h1>':
+        '<h1>Trabakua, Santama&ntilde;azar<br><em>Mendraka eta Andikoa</em></h1>',
+    '<p class="full-name">Circuito largo de BTT/e-bike desde Trabakua por Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
+        '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
+    'alt="Pista forestal entre pinos con vistas a las monta&ntilde;as a trav&eacute;s de los &aacute;rboles"':
+        'alt="Baso-pista pinuen artean, mendietarako ikuspegiekin zuhaitzen artetik"',
+    'alt="Foto ampliada del recorrido de Trabakua, Santama&ntilde;azar, Mendraka y Andikoa"':
+        'alt="Trabakua, Santama&ntilde;azar, Mendraka eta Andikoa ibilbidearen argazki handitua"',
+    'alt="Manillar de la bici cruzando un prado en lo alto, con las monta&ntilde;as al fondo"':
+        'alt="Bizikletaren heldulekua goiko zelai bat zeharkatzen, mendiak hondoan"',
+    'alt="Cruce del barrio de Zengotita junto a la ermita, con paneles informativos"':
+        'alt="Zengotita auzoko bidegurutzea ermitaren ondoan, informazio-panelekin"',
+    'alt="Pista forestal de hayas con una caseta de madera entre los &aacute;rboles"':
+        'alt="Pagadiko baso-pista, zurezko etxola bat zuhaitzen artean"',
+    'alt="Tramo de piedra y tierra suelta subiendo con fuerte pendiente"':
+        'alt="Harri eta lur solteko zatia, malda handiarekin igotzen"',
+    'alt="Cruz de piedra en la cima de Santama&ntilde;azar con la bici apoyada y vistas panor&aacute;micas"':
+        'alt="Harrizko gurutzea Santama&ntilde;azarko gailurrean, bizikleta bermatuta eta ikuspegi zabalarekin"',
+    'alt="Bajada por la cresta con el pueblo abajo y una monta&ntilde;a rocosa al fondo"':
+        'alt="Gailurretik jaitsiera, herria behean eta mendi harritsu bat hondoan"',
+    'alt="Antiguo lavadero de piedra cubierto de musgo"':
+        'alt="Goroldioz estalitako harrizko garbitegi zaharra"',
+    'alt="Sendero junto a una valla de madera en la ladera"':
+        'alt="Bidexka zurezko hesi baten ondoan mendi-hegalean"',
+    'alt="Front&oacute;n y merendero de piedra y madera bajo los &aacute;rboles"':
+        'alt="Harrizko eta zurezko pilotalekua eta jatordu-eremua zuhaitzen azpian"',
+    'alt="Sendero entre prados junto a una valla"':
+        'alt="Bidexka zelaien artean hesi baten ondoan"',
+    'alt="Ermita de piedra con espada&ntilde;a y campana"':
+        'alt="Harrizko ermita kanpandorre eta kanpaiarekin"',
+    'alt="Conjunto de fuente y lavadero de piedra con bancos, con las monta&ntilde;as al fondo"':
+        'alt="Harrizko iturri eta garbitegi multzoa bankuekin, mendiak hondoan"',
+    'alt="Pil&oacute;n de piedra de la fuente lleno de agua con lenteja de agua"':
+        'alt="Iturriaren harrizko pilotoia urez beteta, ur-lentejarekin"',
+    'alt="Vista de una monta&ntilde;a rocosa de tres picos entre los &aacute;rboles"':
+        'alt="Hiru gailurreko mendi harritsu baten ikuspegia zuhaitzen artetik"',
+    'alt="Carril bici junto a la carretera entrando en el pueblo"':
+        'alt="Bizikleta-bidea errepidearen ondoan herrira sartzen"',
+    'download="Trabakua, Santamañazar, Mendraka y Andikoa.gpx"':
+        'download="Trabakua, Santamañazar, Mendraka eta Andikoa.gpx"',
+    'download="Trabakua, Santamañazar, Mendraka y Andikoa.kml"':
+        'download="Trabakua, Santamañazar, Mendraka eta Andikoa.kml"',
+    '<p>Esta no es una ruta para todo el mundo. Si vamos inseguros encima de la bici o no nos desenvolvemos bien en terreno t&eacute;cnico, hay alg&uacute;n tramo que puede hacerse inc&oacute;modo. Pero con algo de manejo merece mucho la pena. Es una vuelta muy completa, con buenos cambios de paisaje, subidas exigentes, bajadas largas y entretenidas, barrios rurales y varios rincones muy bonitos. Perfecta para pasar una ma&ntilde;ana o una tarde.</p>':
+        '<p>Hau ez da mundu guztiarentzako ibilbidea. Bizikletaren gainean ziur ez bagaude edo lur teknikoan ondo moldatzen ez bagara, tarte batzuk deserosoak izan daitezke. Baina trebetasun pixka batekin, merezi du. Oso ibilbide osoa da, paisaia aldaketa onekin, igoera gogorrekin, jaitsiera luze eta entretenigarriekin, landa auzoekin eta txoko oso polit askorekin. Goiz edo arratsalde bat pasatzeko ezin hobea.</p>',
+    '<p>Como casi siempre, salimos de <b>Trabakua</b> y tomamos direcci&oacute;n <b><a href="zengotitaiturzuri.html">Zengotita</a></b>. Despu&eacute;s de unos dos kil&oacute;metros y medio llegamos al barrio (km 2,6 &middot; 417 m) y, junto a la ermita, cogemos el camino que atraviesa el pinar y nos lleva hacia <b>Areitio</b> (km 5,8 &middot; 334 m).</p>':
+        '<p>Ia beti bezala, <b>Trabakua</b>tik ateratzen gara eta <b><a href="zengotitaiturzuri.html">Zengotita</a></b>rantz abiatzen gara. Bi kilometro eta erdi inguru egin ondoren, auzora iristen gara (2,6 km &middot; 417 m), eta, ermitaren ondoan, pinudia zeharkatzen duen bidea hartzen dugu, <b>Areitio</b>rantz eramaten gaituena (5,8 km &middot; 334 m).</p>',
+    '<p>Desde all&iacute; continuamos por la zona de Goierri siguiendo durante un tramo las marcas del GR. En uno de los cruces cogemos el camino del medio y, poco despu&eacute;s, lo dejamos para entrar por una pista a mano derecha que empieza a ganar altura con bastante decisi&oacute;n.</p>':
+        '<p>Handik, Goierriko eremuan jarraitzen dugu, tarte batean GRaren markak jarraituz. Bidegurutze batean, erdiko bidea hartzen dugu, eta, handik gutxira, utzi egiten dugu, eskuineko pista batetik sartzeko, altuera nahiko erabakigarriarekin irabazten hasten dena.</p>',
+    '<p>Aqu&iacute; comienza una de las partes m&aacute;s interesantes de la ruta. Vamos subiendo hacia <b>Santama&ntilde;azar</b>. Al principio la pista se deja hacer bastante bien, especialmente con e-bike, pero m&aacute;s arriba el terreno cambia y aparecen zonas de piedra, placas m&aacute;s lisas y puntos de tierra dura. Con algo de t&eacute;cnica sigue siendo ciclable, aunque puede tocar echar pie a tierra durante unos metros.</p>':
+        '<p>Hemen hasten da ibilbideko zatirik interesgarrienetako bat. <b>Santama&ntilde;azar</b> aldera igotzen ari gara. Hasieran, pista nahiko ondo egiten da, batez ere e-bikearekin, baina gorago lurra aldatu egiten da eta harri eremuak, plaka lauagoak eta lur gogorreko puntuak agertzen dira. Teknika pixka batekin, bizikletaz ibiltzeko modukoa da oraindik, nahiz eta metro batzuetan oina lurrean jarri behar izan.</p>',
+    '<p>Casi sin darnos cuenta alcanzamos la zona alta de <b>Santama&ntilde;azar</b> (km 10,0 &middot; 665 m), con buenas vistas y un ambiente completamente distinto al del inicio. Desde aqu&iacute; empezamos a bajar hacia Mendraka.</p>':
+        '<p>Ia konturatu gabe, <b>Santama&ntilde;azar</b>reko goialdera iristen gara (10,0 km &middot; 665 m), ikuspegi onekin eta hasierakoaren oso bestelako giroarekin. Hemendik, Mendrakarantz jaisten hasten gara.</p>',
+    '<p>La bajada es larga, bonita y bastante limpia, perfecta para disfrutar de la bici sin demasiadas complicaciones.</p>':
+        '<p>Jaitsiera luzea, polita eta nahiko garbia da, bizikletaz gozatzeko konplikazio handirik gabe.</p>',
+    '<p>Llegamos al barrio de <b>Mendraka</b> (km 13,2 &middot; 324 m) y giramos a la derecha para buscar la ermita de San Juan. Antes pasamos por un sendero muy entretenido que poco a poco se transforma en pista. La ermita es un peque&ntilde;o rinc&oacute;n rural con bastante encanto y merece una parada r&aacute;pida.</p>':
+        '<p><b>Mendraka</b>ko auzora iristen gara (13,2 km &middot; 324 m) eta eskuinera biratzen dugu San Juan ermitaren bila. Lehenik, oso entretenigarria den bidexka batetik pasatzen gara, pixkanaka pista bihurtzen dena. Xarma handiko landa txoko txiki bat da ermita, eta geldialdi azkar bat merezi du.</p>',
+    '<p>Desde aqu&iacute; seguimos bajando hacia Miota. Al llegar a la carretera general la cruzamos directamente y empezamos otra subida, esta vez en direcci&oacute;n a Berriozabaleta.</p>':
+        '<p>Hemendik, Miota aldera jaisten jarraitzen dugu. Errepide nagusira iristean, zuzenean gurutzatzen dugu eta beste igoera bat hasten dugu, oraingoan Berriozabaletarantz.</p>',
+    '<p>Arriba entramos de nuevo en un entorno completamente rural. Pasamos junto a la ermita de Santa Catalina y, poco despu&eacute;s, llegamos a la fuente de <b>Berriozabaleta</b> (km 16,9 &middot; 278 m).</p>':
+        '<p>Goian, landa ingurune batean sartzen gara berriro. Santa Katalina ermitaren ondotik pasatzen gara, eta, handik gutxira, <b>Berriozabaleta</b>ko iturrira iristen gara (16,9 km &middot; 278 m).</p>',
+    '<p>La fuente forma parte de un bonito conjunto con lavadero y zona de descanso. Es uno de esos lugares en los que merece la pena parar un momento, tanto por el propio entorno como por las vistas hacia las monta&ntilde;as del Duranguesado.</p>':
+        '<p>Iturria multzo polit baten parte da, garbitegi eta atsedenleku batekin. Leku horietako bat da, non merezi duen une batez gelditzea, bai inguruneagatik, bai Durangaldeko mendietara dituen ikuspegiengatik.</p>',
+    '<p>Despu&eacute;s volvemos hacia la parte alta del barrio y continuamos junto a los caser&iacute;os. Poco despu&eacute;s dejamos el asfalto y empezamos a descender por un sendero que termina enlazando con una pista.</p>':
+        '<p>Ondoren, auzoaren goialdera itzultzen gara eta baserrien ondoan jarraitzen dugu. Handik gutxira, asfaltoa utzi eta pista batekin lotzen den bidexka batetik jaisten hasten gara.</p>',
+    '<p>La bajada hacia la zona de Abadi&ntilde;o es larga y muy agradecida. Primero por una pista de piedra bastante limpia y c&oacute;moda y, m&aacute;s abajo, entre caser&iacute;os, prados y peque&ntilde;as carreteras de barrio pr&aacute;cticamente sin tr&aacute;fico.</p>':
+        '<p><b>Abadi&ntilde;o</b>ko eremurantz doan jaitsiera luzea eta oso atsegina da. Lehenik, harri pista nahiko garbi eta eroso batetik, eta, beherago, baserri, zelai eta ia trafikorik gabeko auzo errepide txikien artean.</p>',
+    '<p>Esta parte de la vuelta es especialmente bonita por las vistas. Frente a nosotros se abre buena parte de la sierra del Duranguesado, desde Anboto hasta Mugarra, con el resto de monta&ntilde;as entre medias.</p>':
+        '<p>Itzuliaren zati hau bereziki polita da ikuspegiengatik. Gure aurrean Durangaldeko mendikatearen zati handi bat zabaltzen da, Anbototik Mugarraraino, tarteko gainerako mendiekin.</p>',
+    '<p>Seguimos bajando hasta <b>Matiena</b> (km 24,3 &middot; 115 m), que atravesamos r&aacute;pidamente para buscar la parte alta, junto al Hotel San Blas. Pasamos por el puente sobre la carretera y continuamos ascendiendo hasta alcanzar la carretera que sube hacia Garai.</p>':
+        '<p><b>Matiena</b>raino jaisten jarraitzen dugu (24,3 km &middot; 115 m), eta azkar zeharkatzen dugu goialdearen bila, San Blas hotelaren ondoan. Errepidearen gaineko zubia pasatzen dugu eta igotzen jarraitzen dugu, Garairantz doan errepidera iritsi arte.</p>',
+    '<p>La cruzamos con cuidado, justo en una curva, y nos metemos directamente en otro barrio rural, entre prados, caser&iacute;os y ganado.</p>':
+        '<p>Kontu handiz gurutzatzen dugu, bihurgune batean, eta zuzenean beste landa auzo batean sartzen gara, zelai, baserri eta ganadu artean.</p>',
+    '<p>Continuamos en direcci&oacute;n a <b><a href="axmakurandikoa.html">Andikoa</a></b> (km 28,7 &middot; 319 m), atravesando una zona muy tranquila y paisaj&iacute;stica. Desde all&iacute; enlazamos con el barrio de <b>Besoita</b> (km 30,5 &middot; 308 m) y bajamos nuevamente hacia la carretera general.</p>':
+        '<p><b><a href="axmakurandikoa.html">Andikoa</a></b>rantz jarraitzen dugu (28,7 km &middot; 319 m), oso lasaia eta paisajistikoa den eremu bat zeharkatuz. Handik, <b>Besoita</b>ko auzoarekin lotzen gara (30,5 km &middot; 308 m) eta berriro errepide nagusirantz jaisten gara.</p>',
+    '<p>La cruzamos y buscamos la carretera vieja que sube hacia Zengotita. Ya solo queda recuperar altura poco a poco hasta el barrio y enlazar con el tramo que nos devuelve a Trabakua.</p>':
+        '<p>Gurutzatu egiten dugu eta Zengotitara igotzen den errepide zaharra bilatzen dugu. Hemendik aurrera, altuera berreskuratu besterik ez dugu egin behar, pixkanaka, auzoraino, eta Trabakuara itzultzen gaituen zatiarekin lotu.</p>',
+    '<p>Una ruta muy variada, con bosque, pistas, senderos, barrios rurales, buenas vistas y alg&uacute;n tramo t&eacute;cnico que obliga a desenvolverse bien encima de la bici.</p>':
+        '<p>Oso ibilbide askotarikoa, basoa, pistak, bidexkak, landa auzoak, ikuspegi onak eta bizikletaren gainean ondo moldatzera behartzen duen zati tekniko bat dituena.</p>',
+}
+
 MARKINABOLIBAR = {
     '<span>Pista y carretera</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai y Markina</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
@@ -4598,6 +4694,7 @@ PAGE_STRINGS = {
     'sanpedrobidarte': SANPEDROBIDARTE,
     'sancristobaloiz': SANCRISTOBALOIZ,
     'axmakurandikoa': AXMAKURANDIKOA,
+    'santamanazarandikoa': SANTAMANAZARANDIKOA,
     'markinabolibar': MARKINABOLIBAR,
     'asuntzabira': ASUNTZABIRA,
     'gereaoculta': GEREAOCULTA,
