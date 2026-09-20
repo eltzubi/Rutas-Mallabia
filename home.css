@@ -613,6 +613,10 @@ footer a:hover{ text-decoration:underline; }
    keeps it from hiding card stats/tags mid-scroll, without moving it or
    reserving dead space in the card grid for every possible stopping point. */
 .view-fab.is-scrolling{ opacity:.25; }
+/* The route-info-panel's own "ver ruta completa" link lands in this same
+   fixed spot on short viewports -- js/map.js toggles this class while the
+   panel is open so the fab stops intercepting that tap. */
+.view-fab.is-hidden-behind-panel{ opacity:0; pointer-events:none; }
 @media (prefers-reduced-motion: reduce){ .view-fab{ transition:none; } }
 
 /* ---- Sendero de noche: glow + rounded language ---- */

@@ -58,7 +58,7 @@ SPANISH_TELLS = [
     "Foto", "Fotos", "Vista", "Vistas", "Señal", "Corredores", "Navegar",
     "recorrido", "subiendo", "aerogeneradores", "montes", "valle", "entre",
     "sobre", "paseo", "Paseo", "corto", "corta", "accesible", "cualquiera",
-    "carretera", "izquierda", "derecha",
+    "carretera", "izquierda", "derecha", "privacidad",
 ]
 
 

@@ -352,11 +352,18 @@
         if (e.key === 'Escape') { e.preventDefault(); closePanel(); }
       });
     }
+    // The mapa/lista FAB is position:fixed at the bottom centre, same spot
+    // the panel's "Ver ruta completa" link ends up at on a short viewport --
+    // it sat on top of the link and swallowed the tap ("no me deja entrar").
+    // Hiding it while the panel is open removes the overlap outright instead
+    // of fighting over z-index across two separate stacking contexts.
+    var viewFab = document.getElementById('viewFab');
     function closePanel(){
       if (!panel || !panel.classList.contains('open')) return;
       var returnFocus = panel.contains(document.activeElement);
       panel.classList.remove('open');
       panel.hidden = true;
+      if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
         activeLine.setStyle({ color: activeBaseColor, weight: 4 });
@@ -383,6 +390,7 @@
       panelBody.innerHTML = html;
       panel.hidden = false;
       panel.classList.add('open');
+      if (viewFab) viewFab.classList.add('is-hidden-behind-panel');
       var panelHeight = panel.getBoundingClientRect().height;
       map.flyToBounds(line.getBounds(), {
         paddingTopLeft: [24, 24],
