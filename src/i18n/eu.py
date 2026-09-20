@@ -344,8 +344,8 @@ HOME = {
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
     # santamanazarandikoa card
-    'alt="Cruz de piedra en la cima de Santama&ntilde;azar con la bici apoyada y vistas panor&aacute;micas"':
-        'alt="Harrizko gurutzea Santama&ntilde;azarko gailurrean, bizikleta bermatuta eta ikuspegi zabalarekin"',
+    'alt="Fuente y lavadero de piedra con la bici apoyada en el muro, con una monta&ntilde;a al fondo"':
+        'alt="Harrizko iturria eta garbitegia, bizikleta hormaren kontra bermatuta, mendi bat hondoan"',
     '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka y Andikoa</h3>':
         '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka eta Andikoa</h3>',
     '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Santama&ntilde;azar, Mendraka y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
@@ -4354,6 +4354,8 @@ SANTAMANAZARANDIKOA = {
         'alt="Hiru gailurreko mendi harritsu baten ikuspegia zuhaitzen artetik"',
     'alt="Carril bici junto a la carretera entrando en el pueblo"':
         'alt="Bizikleta-bidea errepidearen ondoan herrira sartzen"',
+    'alt="Fuente y lavadero de piedra con la bici apoyada en el muro, con una monta&ntilde;a al fondo"':
+        'alt="Harrizko iturria eta garbitegia, bizikleta hormaren kontra bermatuta, mendi bat hondoan"',
     'download="Trabakua, Santamañazar, Mendraka y Andikoa.gpx"':
         'download="Trabakua, Santamañazar, Mendraka eta Andikoa.gpx"',
     'download="Trabakua, Santamañazar, Mendraka y Andikoa.kml"':
