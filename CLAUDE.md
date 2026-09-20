@@ -81,9 +81,13 @@ in `src/` and are copied to the repo root by `build.py`, referenced by every pag
 hash (`?v=<sha256[:8]>`) to each reference so a stale browser cache never pairs old CSS/JS with new
 HTML.
 
-**Theme.** Light is the default for first-time visitors; dark is the explicit opt-in, stored in
+**Theme.** Dark is the default for first-time visitors; light is the explicit opt-in, stored in
 `localStorage` and applied by an inline script at the top of `<head>` (before first paint, to avoid a
-flash of the wrong theme). The toggle button's script just flips it and writes back.
+flash of the wrong theme). The toggle button's script just flips it and writes back. Every page's inline
+script must use the same criterion (`localStorage.getItem(key)==='light'`) — a route page that instead
+defaulted to light unless `'dark'` was already stored caused a real bug: the very first page a new
+visitor saw looked right, but the toggle button's own init code (`src/js/app.js`) wrote `'dark'` into
+storage on that first load, so the second page (or the home page, if visited first) came up dark anyway.
 
 **Route data pipeline.** Each route has a `src/<name>.gpx` (the real recorded track) and a
 `data/<name>.json` (resampled `tracks[].points` lat/lon pairs + `marker`/`waypoints`, consumed by
