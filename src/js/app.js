@@ -220,6 +220,24 @@
   onScroll();
 })();
 
+// --- fade the floating map/list button while the card list scrolls under it ---
+// It's position:fixed, so anything scrolling past that screen position (card
+// stats, tags) gets covered while it's fully opaque. Fading it out during the
+// scroll gesture itself -- when nobody is trying to read a card anyway -- and
+// back in ~150ms after scrolling stops fixes the overlap without touching the
+// button's position or the card layout.
+(function(){
+  var fab = document.getElementById('viewFab');
+  if (!fab) return;
+  var timer = null;
+  function onScroll(){
+    fab.classList.add('is-scrolling');
+    clearTimeout(timer);
+    timer = setTimeout(function(){ fab.classList.remove('is-scrolling'); }, 150);
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+})();
+
 // --- light/dark theme toggle ---
 (function(){
   var btn = document.getElementById('themeToggle');

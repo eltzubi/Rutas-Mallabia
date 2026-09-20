@@ -605,8 +605,15 @@ footer a:hover{ text-decoration:underline; }
   background:var(--teal); color:var(--ground);
   font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em;
   box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal);
+  opacity:1; transition:opacity .2s ease;
 }
 .view-fab:hover{ background:var(--violet); box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--violet); }
+/* Fixed position means it sits on top of whatever card scrolls past it --
+   fading it out during the scroll gesture (JS toggles this class in app.js)
+   keeps it from hiding card stats/tags mid-scroll, without moving it or
+   reserving dead space in the card grid for every possible stopping point. */
+.view-fab.is-scrolling{ opacity:.25; }
+@media (prefers-reduced-motion: reduce){ .view-fab{ transition:none; } }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
