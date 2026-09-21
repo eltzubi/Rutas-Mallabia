@@ -155,7 +155,12 @@
   if (!box || !boxImg || !close) return; // page has no photo gallery
   var lastTrigger = null;
   function open(src, trigger){
-    boxImg.src = src;
+    // El .jpg listado en data-lightbox-src siempre tiene un .webp hermano
+    // (optimize_images.py lo genera para cada foto) mas ligero -- lo
+    // probamos primero y caemos al jpg si por lo que sea no existe.
+    var webpSrc = src.replace(/\.jpg$/i, '.webp');
+    boxImg.onerror = function(){ boxImg.onerror = null; boxImg.src = src; };
+    boxImg.src = webpSrc;
     var triggerImg = trigger.querySelector('img');
     if (triggerImg && triggerImg.alt) boxImg.alt = triggerImg.alt;
     lastTrigger = trigger;
