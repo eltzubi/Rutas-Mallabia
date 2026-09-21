@@ -1002,6 +1002,12 @@ OSMA = {
         'alt="Argi&ntilde;etako Nekropoliko hilobiak haritzen azpian, ermita atzealdean"',
     'alt="Sarc&oacute;fagos de piedra de la Necr&oacute;polis de Argi&ntilde;eta, entre el c&eacute;sped y los &aacute;rboles"':
         'alt="Harrizko hilobiak Argi&ntilde;etako Nekropolian, belarraren eta zuhaitzen artean"',
+    'alt="Pista entre prados junto a una valla de madera"':
+        'alt="Pista zelaien artean, zurezko hesi baten ondoan"',
+    'alt="Panor&aacute;mica hacia Elorrio y el Duranguesado desde el barrio de Mendraca, con caballos pastando"':
+        'alt="Elorrio eta Durangaldearen panoramika Mendraca auzotik, zaldiak bazkatzen"',
+    'alt="Tumbas de piedra junto a la ermita de San Juan Bautista de Murgoitio, km 24,3 de la ruta"':
+        'alt="Harrizko hilobiak San Juan Bataiatzailea Murgoitioko ermitaren ondoan, ibilbideko 24,3 km"',
 
     'Esta ruta sale de Trabakua hacia el suroeste, hasta el barrio de Zengotita (km 1,3 &middot; 412 '
     'm), donde se coge la pista forestal que va hacia Areitio y enlaza con el GR &mdash;que va casi '
