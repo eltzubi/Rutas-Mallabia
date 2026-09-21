@@ -969,17 +969,9 @@ OSMA = {
     'download="Trabakua, Elgeta y Argiñeta.kml"': 'download="Trabakua, Elgeta eta Argiñeta.kml"',
     # waypoint names -- one key covers both the elev-legend span and the
     # matching <title> tooltip, since both contain this exact substring.
-    'Ermita de San Juan (1&ordf;)': 'San Juan ermita (1.a)',
-    'Ermita de Santa Marina': 'Santa Marina ermita',
     'Larrosako Iturri': 'Larrosako Iturri',
-    'Ermita de San Juan (2&ordf;)': 'San Juan ermita (2.a)',
     'Necr&oacute;polis de Argi&ntilde;eta': 'Argi&ntilde;etako Nekropolia',
-    'Ermita de San Lorenzo (1&ordf;)': 'San Lorentzo ermita (1.a)',
-    'Ermita de San Juan Bautista': 'San Juan Bataiatzailea ermita',
-    'San Antonio eliza': 'San Antonio eliza',
-    'Ermita de San Miguel': 'San Migel ermita',
     'Berriz': 'Berriz',
-    'Ermita de San Lorenzo (2&ordf;)': 'San Lorentzo ermita (2.a)',
 
     '<span>Pista y asfalto</span><span class="sep">/</span><span>Ermitas y necr&oacute;polis medieval</span>':
         '<span>Pista eta asfaltoa</span><span class="sep">/</span><span>Ermitak eta erdi aroko nekropolia</span>',
