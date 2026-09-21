@@ -4441,8 +4441,6 @@ MARKINAKOBAU = {
         'alt="Korridore estua kobazuloaren barruan, estalaktitadun harkaitz-hormen artean"',
     'alt="Estalagmita aislada iluminada en la oscuridad del interior de la cueva"':
         'alt="Estalagmita bakartu bat argiztatuta kobazuloaren barruko ilunpean"',
-    'alt="Paredes de roca con estalactitas en un tramo interior de la cueva"':
-        'alt="Estalaktitadun harkaitz-hormak kobazuloaren barruko zati batean"',
     'download="Markina, Kobaria koba, Berriatua y Larruskain.gpx"':
         'download="Markina, Kobaria koba, Berriatua eta Larruskain.gpx"',
     'download="Markina, Kobaria koba, Berriatua y Larruskain.kml"':
@@ -4463,8 +4461,8 @@ MARKINAKOBAU = {
         '<p>Ondoren, lepora itzultzen gara eta <b>Ariztieder</b>rerantz jarraitzen dugu, lehen zati honetako bigarren gailurra.</p>',
     '<p>Desde Ariztieder empezamos a perder altura en direcci&oacute;n a <b>Kobaria koba</b> (tambi&eacute;n conocida como Kobau), uno de los rincones m&aacute;s interesantes de toda la vuelta. Merece la pena llevar frontal, porque en la entrada se puede acceder un poco hacia el interior y asomarse a la b&oacute;veda de la cueva. Es un sitio bonito y curioso, y compensa parar unos minutos y echar un vistazo con calma.</p>':
         '<p>Ariztiederretik altuera galtzen hasten gara <b>Kobaria koba</b>ren norabidean (Kobau izenez ere ezaguna), itzuli osoko txokorik interesgarrienetako bat. Komeni da kopeta-argia eramatea, sarreran barrualdera pixka bat sar baitzaitezke eta kobaren gangari begiratu. Leku polita eta bitxia da, eta merezi du minutu batzuk gelditzea eta lasai begiratzea.</p>',
-    '<p>Tras dejar atr&aacute;s la cueva seguimos avanzando por una zona bastante movida, alternando pistas y senderos. Poco a poco vamos pasando por <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> y <b>Merelludi</b>, enlazando distintos barrios y zonas de monte antes de comenzar a perder m&aacute;s altura hacia Berriatua.</p>':
-        '<p>Kobazuloa atzean utzi ondoren, nahiko mugitua den eremu batetik aurrera jarraitzen dugu, pistak eta bidezidorrak tartekatuz. Pixkanaka, <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> eta <b>Merelludi</b>tik igarotzen gara, auzo eta mendi-eremu desberdinak lotuz, Berriatuara jaisten hasi aurretik.</p>',
+    '<p>Tras dejar atr&aacute;s la cueva seguimos avanzando por una zona bastante movida, alternando pistas y senderos. Poco a poco vamos pasando por <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> y <b>Merelludi</b>, enlazando distintos barrios y zonas de monte. En Merelludi cruzamos el <b>Alto de Milloi</b>, en la carretera de Markina a Lekeitio, antes de comenzar a perder m&aacute;s altura hacia Berriatua.</p>':
+        '<p>Kobazuloa atzean utzi ondoren, nahiko mugitua den eremu batetik aurrera jarraitzen dugu, pistak eta bidezidorrak tartekatuz. Pixkanaka, <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> eta <b>Merelludi</b>tik igarotzen gara, auzo eta mendi-eremu desberdinak lotuz. Merelludin <b>Milloiko gaina</b> zeharkatzen dugu, Markina-Lekeitio errepidean, Berriatuara jaisten hasi aurretik.</p>',
     '<p>Llegamos finalmente a <b>Berriatua</b> y, a partir de aqu&iacute;, volvemos a ganar altura por una zona bastante m&aacute;s escondida y poco conocida para nosotros. La subida es larga y se hace notar, aunque el terreno va cambiando y hace que el tramo resulte entretenido.</p>':
         '<p>Azkenik, <b>Berriatua</b>ra iristen gara, eta hemendik aurrera, altuera irabazten dugu guretzat nahiko ezkutua eta ezezaguna den eremu batetik. Igoera luzea da eta nabaritzen da, baina lurra aldatuz doa eta horrek tarte entretenigarria egiten du.</p>',
     '<p>Despu&eacute;s volvemos a perder altura para bajar hasta <b>Larruskain</b>. Atravesamos el barrio y, nada m&aacute;s dejarlo atr&aacute;s, empieza otra subida, esta vez m&aacute;s pronunciada y por un terreno todav&iacute;a m&aacute;s cerrado y desconocido.</p>':
