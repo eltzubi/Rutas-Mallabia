@@ -4531,8 +4531,8 @@ MALLUKITOKO = {
         '<p>Aurrera jarraitzen dugu basoan barrena, eta pixkanaka jaisten hasten gara, pistak eta bidezidorrak lotuz, altuera galtzen dugun bitartean.</p>',
     '<p>En torno al km 5,7, en plena curva, dejamos a nuestra derecha un camino que sube hacia la zona de <b>Ariztieder</b> y <b>Kobaria</b>. Por ah&iacute; podemos enlazar con la ruta que hicimos anteriormente pasando por <b><a href="markinakobau.html">Kobaria koba, Berriatua y Larruskain</a></b>.</p>':
         '<p>5,7 km inguruan, bihurgune betean, eskuinean <b>Ariztieder</b> eta <b>Kobaria</b> aldera igotzen den bide bat uzten dugu. Hortik <b><a href="markinakobau.html">Kobaria kobatik, Berriatua eta Larruskainetik</a></b> igarota egin genuen ibilbidearekin lotu gaitezke.</p>',
-    '<p>Continuamos con el descenso hasta llegar al <b>Puente Bolu</b>. Desde all&iacute; seguimos por la parte baja del recorrido hasta enlazar de nuevo con el camino de regreso hacia <b>Markina-Xemein</b>, donde cerramos la vuelta.</p>':
-        '<p>Jaitsierarekin jarraitzen dugu <b>Bolu Zubi</b>ra iritsi arte. Handik ibilbidearen behealdetik jarraitzen dugu <b>Markina-Xemein</b>erako itzulbidearekin berriro lotu arte, non itzulia ixten dugun.</p>',
+    '<p>Continuamos con el descenso hasta llegar al <b>Puente Bolu</b>, a un paso ya de cerrar la vuelta en <b>Markina-Xemein</b>.</p>':
+        '<p>Jaitsierarekin jarraitzen dugu <b>Bolu Zubi</b>ra iritsi arte, <b>Markina-Xemein</b>en itzulia ixtetik hurbil-hurbil.</p>',
 }
 
 MARKINABOLIBAR = {
