@@ -3336,7 +3336,7 @@ TITLES = {
     'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
-    'zengotitaosmagain': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
+    'zengotitaosmagain': 'Trabakua, Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'axmakuriturrizuri': 'Axmakur, Iturzuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
@@ -3823,8 +3823,8 @@ LONGA = {
 ZENGOTITAOSMAGAIN = {
     '<span>Pista y monte</span><span class="sep">/</span><span>Osmagain y Arietzu</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista eta mendia</span><span class="sep">/</span><span>Osmagain eta Arietzu</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Osmagain<br><em>y Arietzu</em></h1>':
-        '<h1>Osmagain<br><em>eta Arietzu</em></h1>',
+    '<h1>Trabakua, Osmagain<br><em>y Arietzu</em></h1>':
+        '<h1>Trabakua, Osmagain<br><em>eta Arietzu</em></h1>',
     '<p class="full-name">Circuito de senderismo desde Trabakua por Osmagain y Arietzu, por tramos del 7 Pago Mendi Lasterketa</p>':
         '<p class="full-name">Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
     'Cruz de piedra en la cima, entre &aacute;rboles y rocas cubiertas de musgo':
