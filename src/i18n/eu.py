@@ -343,6 +343,14 @@ HOME = {
     'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
+    # mallukitoko card
+    'alt="Panel informativo de un mirador con vistas al valle de Markina-Xemein entre nubes"':
+        'alt="Markina-Xemeingo haranera begira dagoen begiratoki bateko informazio-panela, hodeien artean"',
+    '<h3 class="route-card-name">Markina-Xemein, Mallukitoko, Zapola y Puente Bolu</h3>':
+        '<h3 class="route-card-name">Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Markina-Xemein por el b&uacute;nker de Mallukitoko, Zapola, una zona de trincheras de la Guerra Civil y el Puente Bolu</p>':
+        '<p class="route-card-desc">Oinezko ibilbide zirkularra Markina-Xemeindik, Mallukitokiko bunkerra, Zapola eta Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino</p>',
+
     # markinakobau card
     'alt="Boca de la cueva de Kobaria koba vista desde dentro, con helechos y musgo alrededor"':
         'alt="Kobaria kobaren ahoa barrutik ikusita, iratzeekin eta goroldioarekin inguruan"',
@@ -3237,6 +3245,8 @@ DESCRIPTIONS = {
         'baldintzak eta datu pertsonalen tratamendua',
     'markinakobau': 'Oinezko ibilbide zirkularra Markinatik, Kobaria kobako kobazuloa, Berriatua eta '
         'Larruskain auzotik igarota, azken zatian Done Jakue bidetik',
+    'mallukitoko': 'Oinezko ibilbide zirkularra Markina-Xemeindik, Mallukitokiko bunkerra, Zapola eta '
+        'Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino',
 }
 
 # <title> per page (head files)
@@ -3362,6 +3372,7 @@ TITLES = {
     'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
     'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
+    'mallukitoko': 'Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4471,6 +4482,61 @@ MARKINAKOBAU = {
         '<p>Hainbat kilometrotan zehar, eremu erosoago honetatik aurrera egiten dugu, ia malda handirik gabe, Markina-Xemeinerako azken jaitsiera hasi arte.</p>',
 }
 
+MALLUKITOKO = {
+    '<span>Sendero y pista</span><span class="sep">/</span><span>Mallukitoko, Zapola y Puente Bolu</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Mallukitoko, Zapola eta Bolu zubia</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Markina-Xemein, Mallukitoko<br><em>Zapola y Puente Bolu</em></h1>':
+        '<h1>Markina-Xemein, Mallukitoko<br><em>Zapola eta Bolu zubia</em></h1>',
+    '<p class="full-name">Circuito de senderismo desde Markina-Xemein por el b&uacute;nker de Mallukitoko, Zapola, una zona de trincheras de la Guerra Civil y el Puente Bolu</p>':
+        '<p class="full-name">Oinezko ibilbide zirkularra Markina-Xemeindik, Mallukitokiko bunkerra, Zapola eta Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino</p>',
+    'alt="Panel informativo de un mirador con vistas al valle de Markina-Xemein entre nubes"':
+        'alt="Markina-Xemeingo haranera begira dagoen begiratoki bateko informazio-panela, hodeien artean"',
+    'alt="Foto ampliada del recorrido de Markina-Xemein, Mallukitoko, Zapola y Puente Bolu"':
+        'alt="Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia ibilbidearen argazki handitua"',
+    'alt="El mismo mirador de Zapola visto desde otro &aacute;ngulo, con el valle al fondo"':
+        'alt="Zapolako begiratoki bera beste angelu batetik ikusita, harana hondoan"',
+    'alt="V&eacute;rtice geod&eacute;sico de hormig&oacute;n en la cima de Zapola, con un parque e&oacute;lico al fondo"':
+        'alt="Hormigoizko erpin geodesikoa Zapolako gailurrean, parke eoliko bat hondoan"',
+    'alt="Camino hundido entre muros de piedra cubiertos de musgo, con troncos apilados a un lado, en la zona de las trincheras"':
+        'alt="Harrizko hormen artean hondoratutako bidea, goroldioz estalia, enbor pilaketa batekin alboan, lubaki-eremuan"',
+    'alt="El mismo camino de las trincheras entre piedra y musgo, visto m&aacute;s de cerca"':
+        'alt="Lubakietako bide bera, harri eta goroldio artean, gertuagotik ikusita"',
+    'alt="Sendero forestal cubierto de musgo y helechos entre paredes de roca"':
+        'alt="Baso-bidezidorra goroldio eta iratzez estalia, harkaitz hormen artean"',
+    'alt="Vacas pastando en un prado verde junto a un caser&iacute;o de piedra, con el monte al fondo"':
+        'alt="Behiak larre berde batean, harrizko baserri baten ondoan, mendia hondoan"',
+    'download="Markina-Xemein, Mallukitoko, Zapola y Puente Bolu.gpx"':
+        'download="Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia.gpx"',
+    'download="Markina-Xemein, Mallukitoko, Zapola y Puente Bolu.kml"':
+        'download="Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia.kml"',
+    '<span class="v">Sendero y pista, algo pedregoso</span>':
+        '<span class="v">Bidezidorra eta pista, harritsu samarra</span>',
+    'data-marker-title="Markina-Xemein (salida y llegada)"':
+        'data-marker-title="Markina-Xemein (irteera eta helmuga)"',
+    '<p>Una ruta muy bonita por los alrededores de Markina-Xemein, con bastante bosque, una subida exigente hasta la zona alta de Zapola, restos de la Guerra Civil y una zona de trincheras que es uno de los tramos m&aacute;s especiales del recorrido.</p>':
+        '<p>Markina-Xemein inguruko ibilbide polit bat, baso askorekin, igoera gogor bat Zapolako goialderaino, Gerra Zibileko aztarnak eta lubakien eremu bat, ibilbideko zatirik berezienetako bat dena.</p>',
+    '<title>Cruce a Ariztieder &middot; 7,47 km &middot; 353 m</title>':
+        '<title>Ariztiederreko bidegurutzea &middot; 7,47 km &middot; 353 m</title>',
+    '<span class="elev-legend-item"><span class="num">3</span>Cruce a Ariztieder</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Ariztiederreko bidegurutzea</span>',
+
+    # --- relato ---
+    '<p>Salimos desde <b>Markina-Xemein</b> siguiendo inicialmente un tramo del <b>Camino de Santiago</b>. Poco despu&eacute;s lo dejamos y comenzamos a ganar altura poco a poco en direcci&oacute;n al barrio de <b>Meabe</b>, donde cogemos un sendero que enseguida empieza a tirar hacia arriba.</p>':
+        '<p><b>Markina-Xemein</b>dik abiatzen gara, hasieran <b>Donejakue bidea</b>ren zati bat jarraituz. Handik gutxira, utzi egiten dugu eta altuera irabazten hasten gara pixkanaka <b>Meabe</b> auzorantz, non berehala gora egiten duen bidezidor bat hartzen dugun.</p>',
+    '<p>Es una subida bastante exigente, con alg&uacute;n tramo pedregoso, y pr&aacute;cticamente todo el recorrido hasta el <b>Mallukitokiko bunkerra</b> va metido entre bosque.</p>':
+        '<p>Igoera nahiko gogorra da, harritsu samarra, eta <b>Mallukitokiko bunkerra</b>rainoko ibilbide ia guztia basoan barrena doa.</p>',
+    '<p>Despu&eacute;s de visitar el b&uacute;nker seguimos ganando altura hasta alcanzar <b>Zapola</b>, la parte m&aacute;s alta de la ruta.</p>':
+        '<p>Bunkerra bisitatu ondoren, altuera irabazten jarraitzen dugu <b>Zapola</b> iritsi arte, ibilbideko punturik altuena.</p>',
+    '<p>A partir de aqu&iacute; entramos en una de las zonas m&aacute;s bonitas de toda la vuelta. El recorrido se mete de lleno en el bosque y nos lleva por la zona de trincheras, todav&iacute;a bien visibles entre los &aacute;rboles. Es un tramo muy bonito, tanto por el entorno como por la historia que guarda, y merece la pena recorrerlo con calma.</p>':
+        '<p>Hemendik aurrera, itzuliko eremurik politenetako batean sartzen gara. Ibilbidea bete-betean sartzen da basoan, eta lubakien eremutik eramaten gaitu, oraindik ere ondo ikusten baitira zuhaitzen artean. Oso zati polita da, bai inguruagatik, bai gordetzen duen historiagatik, eta merezi du lasai ibiltzea.</p>',
+    '<p>Seguimos avanzando entre bosque y comenzamos poco a poco el descenso, enlazando pistas y senderos mientras vamos perdiendo altura.</p>':
+        '<p>Aurrera jarraitzen dugu basoan barrena, eta pixkanaka jaisten hasten gara, pistak eta bidezidorrak lotuz, altuera galtzen dugun bitartean.</p>',
+    '<p>En torno al km 5,7, en plena curva, dejamos a nuestra derecha un camino que sube hacia la zona de <b>Ariztieder</b> y <b>Kobaria</b>. Por ah&iacute; podemos enlazar con la ruta que hicimos anteriormente pasando por <b><a href="markinakobau.html">Kobaria koba, Berriatua y Larruskain</a></b>.</p>':
+        '<p>5,7 km inguruan, bihurgune betean, eskuinean <b>Ariztieder</b> eta <b>Kobaria</b> aldera igotzen den bide bat uzten dugu. Hortik <b><a href="markinakobau.html">Kobaria kobatik, Berriatua eta Larruskainetik</a></b> igarota egin genuen ibilbidearekin lotu gaitezke.</p>',
+    '<p>Continuamos con el descenso hasta llegar al <b>Puente Bolu</b>. Desde all&iacute; seguimos por la parte baja del recorrido hasta enlazar de nuevo con el camino de regreso hacia <b>Markina-Xemein</b>, donde cerramos la vuelta.</p>':
+        '<p>Jaitsierarekin jarraitzen dugu <b>Bolu Zubi</b>ra iritsi arte. Handik ibilbidearen behealdetik jarraitzen dugu <b>Markina-Xemein</b>erako itzulbidearekin berriro lotu arte, non itzulia ixten dugun.</p>',
+}
+
 MARKINABOLIBAR = {
     '<span>Pista y carretera</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai y Markina</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
@@ -4777,5 +4843,6 @@ PAGE_STRINGS = {
     'asuntzabira': ASUNTZABIRA,
     'gereaoculta': GEREAOCULTA,
     'markinakobau': MARKINAKOBAU,
+    'mallukitoko': MALLUKITOKO,
     'aviso-legal': AVISO_LEGAL,
 }
