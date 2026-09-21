@@ -330,8 +330,8 @@ HOME = {
         'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
     'Circuito por San Cristóbal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
         'San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, pista, bidezidor eta Asto Traileko tarteekin',
-    'Camino entre árboles y un murete cubierto de musgo':
-        'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
+    'Corredores avanzando por un sendero entre helechos y árboles':
+        'Korrikalariak iratze eta zuhaitz arteko bidezidorrean',
 
     # zengotitaiturzuri card
     'alt="Mar de nubes visto desde la parte alta de Zengotita"':
