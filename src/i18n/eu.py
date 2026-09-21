@@ -2476,18 +2476,22 @@ ZALDIBAR = {
         '<title>Asuntzako lepoa &middot; 5,2 km &middot; 499 m</title>',
     '<title>Presa de Aixola &middot; 13,1 km &middot; 308 m</title>':
         '<title>Aixolako presa &middot; 13,1 km &middot; 308 m</title>',
+    '<title>Eitzaga &middot; 11,1 km &middot; 179 m</title>':
+        '<title>Eitzaga &middot; 11,1 km &middot; 179 m</title>',
     '<title>Besoita &middot; 38,1 km &middot; 276 m</title>':
         '<title>Besoita &middot; 38,1 km &middot; 276 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Collado de Asuntza</span> '
-    '<span class="elev-legend-item"><span class="num">2</span>Presa de Aixola</span> '
-    '<span class="elev-legend-item"><span class="num">3</span>Elgeta</span> '
-    '<span class="elev-legend-item"><span class="num">4</span>Berriz</span> '
-    '<span class="elev-legend-item"><span class="num">5</span>Besoita</span>':
+    '<span class="elev-legend-item"><span class="num">2</span>Eitzaga</span> '
+    '<span class="elev-legend-item"><span class="num">3</span>Presa de Aixola</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Elgeta</span> '
+    '<span class="elev-legend-item"><span class="num">5</span>Berriz</span> '
+    '<span class="elev-legend-item"><span class="num">6</span>Besoita</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Asuntzako lepoa</span> '
-        '<span class="elev-legend-item"><span class="num">2</span>Aixolako presa</span> '
-        '<span class="elev-legend-item"><span class="num">3</span>Elgeta</span> '
-        '<span class="elev-legend-item"><span class="num">4</span>Berriz</span> '
-        '<span class="elev-legend-item"><span class="num">5</span>Besoita</span>',
+        '<span class="elev-legend-item"><span class="num">2</span>Eitzaga</span> '
+        '<span class="elev-legend-item"><span class="num">3</span>Aixolako presa</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>Elgeta</span> '
+        '<span class="elev-legend-item"><span class="num">5</span>Berriz</span> '
+        '<span class="elev-legend-item"><span class="num">6</span>Besoita</span>',
 
     # photos
     'alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"':
