@@ -3630,8 +3630,8 @@ BETZUN = {
     # perfil: marcadores y leyenda
     '<title>San Crist&oacute;bal &middot; 6,0 km &middot; 496 m</title>':
         '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">2</span>Betzun</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span>',
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Crist&oacute;bal</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal</span>',
 
     # fotos
     'alt="Foto ampliada del recorrido de Zengotita, Iturzurigaina y Betzun"':
