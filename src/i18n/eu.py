@@ -3532,8 +3532,8 @@ TRABAKUAMALLABIA = {
         'Paisaiaren ikuspegiak Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain ibilbidean',
     'alt="Foto ampliada del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
         'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen argazki handitua"',
-    '<span class="elev-legend-item"><span class="num">3</span>Bajada del sendero</span>':
-        '<span class="elev-legend-item"><span class="num">3</span>Bidezidorreko jaitsiera</span>',
+    '<span class="elev-legend-item"><span class="num">4</span>Bajada del sendero</span>':
+        '<span class="elev-legend-item"><span class="num">4</span>Bidezidorreko jaitsiera</span>',
     'Bajada del sendero':
         'Bidezidorreko jaitsiera',
     '<span>Pista/tierra</span>':
