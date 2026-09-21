@@ -119,8 +119,8 @@ COMMON = {
         '<p class="route-card-desc">Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik</p>',
     '<p class="route-card-desc">Monasterio de Zenarruza, Ermita San Kristobal y Zengotitagane desde Trabakua</p>':
         '<p class="route-card-desc">Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik</p>',
-    '<p class="route-card-desc">Circuito desde Trabakua por Osma y la Necr&oacute;polis de Argi&ntilde;eta</p>':
-        '<p class="route-card-desc">Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik</p>',
+    '<p class="route-card-desc">Circuito desde Trabakua por Elgeta y la Necr&oacute;polis de Argi&ntilde;eta</p>':
+        '<p class="route-card-desc">Zirkuitua Trabakuatik, Elgeta eta Argi&ntilde;etako Nekropolitik</p>',
     '<p class="route-card-desc">Circuito a la cascada de Gerea desde Trabakua</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik Gereako ur-jauzira</p>',
     '<p class="route-card-desc">Circuito desde Trabakua, con la ermita de San Crist&oacute;bal Txiki y el barrio de Besoita</p>':
@@ -986,12 +986,12 @@ OSMA = {
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     '<h1>Trabakua, Elgeta<br><em>y Argi&ntilde;eta</em></h1>':
         '<h1>Trabakua, Elgeta<br><em>eta Argi&ntilde;eta</em></h1>',
-    'Circuito desde Trabakua por Osma y la Necr&oacute;polis de Argi&ntilde;eta':
-        'Zirkuitua Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
+    'Circuito desde Trabakua por Elgeta y la Necr&oacute;polis de Argi&ntilde;eta':
+        'Zirkuitua Trabakuatik, Elgeta eta Argi&ntilde;etako Nekropolitik',
 
     'alt="Sarc&oacute;fagos medievales de la Necr&oacute;polis de Argi&ntilde;eta, km 20,1 de la ruta"':
         'alt="Erdi Aroko hilobiak Argi&ntilde;etako Nekropolian, ibilbideko 20,1 km"',
-    'alt="Foto ampliada del recorrido de Osma"': 'alt="Osmako ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Trabakua, Elgeta y Argi&ntilde;eta"': 'alt="Trabakua, Elgeta eta Argi&ntilde;etako ibilbidearen argazki handitua"',
     'alt="Presa de Aixola, junto a Larrosako Iturri, km 11,9 de la ruta"':
         'alt="Aixolako presa, Larrosako Iturritik gertu, ibilbideko 11,9 km"',
     'alt="Fila de sarc&oacute;fagos bajo los &aacute;rboles, Necr&oacute;polis de Argi&ntilde;eta"':
@@ -3068,8 +3068,8 @@ EXIGENTE = {
     'Desde San Crist&oacute;bal seguimos ganando altura hasta alcanzar las antenas de la cima del <b><a href="oiz.html">Oiz</a></b> (km 32,0 &middot; 1.020 m), punto m&aacute;s alto de la ruta y un lugar privilegiado para disfrutar de unas vistas de 360 grados.':
         'San Kristobaletik garaiera irabazten jarraituko dugu <b><a href="oiz.html">Oiz</a></b>ko gailurreko antenetara iritsi arte (32,0 km &middot; 1.020 m). Hau izango da ibilbideko punturik garaiena, inguruko paisaiaz 360 graduko ikuspegiarekin gozatzeko leku paregabea.',
 
-    'La bajada comienza hacia los aerogeneradores por un tramo corto pero muy rocoso, donde lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano. Despu&eacute;s seguimos hacia <b>Iturzurigaina</b> (km 34,8 &middot; 852 m) y <b><a href="zengotitagane.html">Zengotitagane</a></b> (km 36,0 &middot; 806 m), pasando cerca de un refugio y una fuente, antes de afrontar la r&aacute;pida y pronunciada bajada de cemento hacia <b><a href="osma.html">Osma</a></b>.':
-        'Jaitsiera eolikoetarantz hasten da, tarte labur baina oso harritsu batetik. Zati honetan gomendagarriena bizikletatik jaitsi eta eskuz eramatea da. Ondoren <b>Iturzurigaina</b> (34,8 km &middot; 852 m) eta <b><a href="zengotitagane.html">Zengotitagane</a></b> (36,0 km &middot; 806 m) aldera jarraituko dugu, aterpe eta ur-iturri baten ingurutik igaroz, <b><a href="osma.html">Osma</a></b>n amaitzen den zementuzko jaitsiera azkar eta aldapatsuari ekin aurretik.',
+    'La bajada comienza hacia los aerogeneradores por un tramo corto pero muy rocoso, donde lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano. Despu&eacute;s seguimos hacia <b>Iturzurigaina</b> (km 34,8 &middot; 852 m) y <b><a href="zengotitagane.html">Zengotitagane</a></b> (km 36,0 &middot; 806 m), pasando cerca de un refugio y una fuente, antes de afrontar la r&aacute;pida y pronunciada bajada de cemento hacia <b>Osma</b>.':
+        'Jaitsiera eolikoetarantz hasten da, tarte labur baina oso harritsu batetik. Zati honetan gomendagarriena bizikletatik jaitsi eta eskuz eramatea da. Ondoren <b>Iturzurigaina</b> (34,8 km &middot; 852 m) eta <b><a href="zengotitagane.html">Zengotitagane</a></b> (36,0 km &middot; 806 m) aldera jarraituko dugu, aterpe eta ur-iturri baten ingurutik igaroz, <b>Osma</b>n amaitzen den zementuzko jaitsiera azkar eta aldapatsuari ekin aurretik.',
 
     'Desde all&iacute; solo queda salir a la carretera general y remontar los &uacute;ltimos dos kil&oacute;metros hasta Trabakua, cerrando una ruta que combina pr&aacute;cticamente de todo: pistas r&aacute;pidas, caminos de piedra y tierra, buenas subidas, zonas tranquilas entre caser&iacute;os y el paso por la cima del Oiz.':
         'Handik errepide nagusira ateratzea eta Trabakuara itzultzeko azken bi kilometroak igotzea besterik ez zaigu geratuko. Horrela amaituko dugu ia denetarik eskaintzen duen ibilbidea: pista azkarrak, harrizko eta lurrezko bideak, igoera ederrak, baserri arteko tarte lasaiak eta Oizko gailurretik igarotzea.',
@@ -3159,7 +3159,7 @@ DESCRIPTIONS = {
     'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
     'iturrizuri': 'Oinezko zirkuitua: Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
     'zenarruza': 'Zirkuitua e-bikez: Zenarruzako monasterioa, San Kristobal ermita eta Zengotitagane Trabakuatik',
-    'osma': 'Zirkuitua e-bikez Trabakuatik, Osma eta Argi&ntilde;etako Nekropolitik',
+    'argineta': 'Zirkuitua e-bikez Trabakuatik, Elgeta eta Argi&ntilde;etako Nekropolitik',
     'gerea': 'Oinezko zirkuitua Trabakuatik Gereako ur-jauzira',
     'zengotitagane': 'Zirkuitua e-bikez Trabakuatik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin',
     'oiz': 'Oinezko joan-etorria Trabakuatik Oizko gailurreraino',
@@ -3295,7 +3295,7 @@ TITLES = {
     'trabakua': 'Asuntza bira Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
-    'osma': 'Trabakua, Elgeta eta Argiñeta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'argineta': 'Trabakua, Elgeta eta Argiñeta · Bizikleta ibilbidea — Herriko ibilbideak',
     'gerea': 'Gereako ur-jauzia · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
@@ -3567,8 +3567,8 @@ TRABAKUAMALLABIA = {
         '<b>Trabakua</b>tik abiatzen gara <b>Zengotitagane</b> aldera, hasieran iparralderantz. Pista batetik gora hasten gara eta, eskuinera doan ohiko desbideratzea hartu beharrean, zuzen jarraitzen dugu. Pista pixka bat apurtuagoa eta trialeroagoa bihurtzen da, baina arazorik gabe igo daiteke.',
     'Este primer tramo ya deja bastante claro el carácter de la ruta. Aunque gran parte del recorrido es perfectamente ciclable, iremos buscando algunos caminos y senderos más técnicos y juguetones. Se puede hacer con BTT, pero por el tipo de terreno y los continuos cambios de desnivel, la e-bike es la opción más recomendable para moverse por estas zonas y disfrutar mejor de toda la vuelta.':
         'Hasieratik ikusten da ibilbide honek beste kutsu bat duela. Zati handi bat erraz egin daiteke bizikletaz, baina tarteka bide eta bidezidor teknikoagoak eta jostagarriagoak bilatuko ditugu. BTTarekin egin daiteke, baina lur mota eta etengabeko igoera-jaitsierak kontuan hartuta, e-bikea egokiagoa da inguru hauetan mugitzeko eta ibilbide osoaz gehiago gozatzeko.',
-    'Un poco más arriba giramos a la izquierda y dejamos la subida para entrar en un sendero en descenso. Cambiamos completamente de dirección y vamos buscando la zona de <b><a href="osma.html">Osma</a></b> por caminos poco transitados que discurren por encima de la carretera general. Es precisamente uno de los atractivos de este tramo: poder enlazar la zona sin necesidad de circular por la general, utilizando caminos que están ahí pero que pasan bastante desapercibidos.':
-        'Pixka bat gorago ezkerrera biratu, igoera utzi eta beherantz doan bidezidor batean sartzen gara. Norabidea aldatu eta <b><a href="osma.html">Osma</a></b> aldera joko dugu, errepide nagusiaren gainetik doazen eta gutxi erabiltzen diren bideetatik. Zati honen interesetako bat hori da, hain zuzen ere: errepide nagusia saihestuz ingurua lotzeko aukera ematen duten bide txiki horiek ezagutzea.',
+    'Un poco más arriba giramos a la izquierda y dejamos la subida para entrar en un sendero en descenso. Cambiamos completamente de dirección y vamos buscando la zona de <b>Osma</b> por caminos poco transitados que discurren por encima de la carretera general. Es precisamente uno de los atractivos de este tramo: poder enlazar la zona sin necesidad de circular por la general, utilizando caminos que están ahí pero que pasan bastante desapercibidos.':
+        'Pixka bat gorago ezkerrera biratu, igoera utzi eta beherantz doan bidezidor batean sartzen gara. Norabidea aldatu eta <b>Osma</b> aldera joko dugu, errepide nagusiaren gainetik doazen eta gutxi erabiltzen diren bideetatik. Zati honen interesetako bat hori da, hain zuzen ere: errepide nagusia saihestuz ingurua lotzeko aukera ematen duten bide txiki horiek ezagutzea.',
     'Primero perdemos algo de altura y después volvemos a subir hasta enlazar con la pista que asciende desde Osma hacia Zengotitagane. Al alcanzar el cemento giramos a la derecha y subimos unos 200 metros. En una curva cerrada a la derecha abandonamos nuevamente la pista principal y cogemos las pistas que salen hacia la izquierda.':
         'Lehenengo pixka bat jaisten gara eta, ondoren, berriro gora egiten dugu Osmatik Zengotitagane aldera igotzen den pistarekin bat egin arte. Zementura iristean eskuinera biratu eta 200 metro inguru igotzen gara. Eskuinerako bihurgune itxi batean pista nagusia utzi eta ezkerrera ateratzen diren pistak hartzen ditugu.',
     'A partir de aquí comenzamos el descenso hacia el barrio de <b>Zengotita</b>. Vamos enlazando caminos hasta coger el que baja directamente al barrio. Justo a la entrada encontramos una fuente de agua a mano derecha, un buen punto para parar y rellenar los bidones.':
@@ -4659,7 +4659,7 @@ PAGE_STRINGS = {
     'trabakua': TRABAKUA,
     'iturrizuri': ITURZURI,
     'zenarruza': ZENARRUZA,
-    'osma': OSMA,
+    'argineta': OSMA,
     'gerea': GEREA,
     'zengotitagane': ZENGOTITAGANE,
     'oiz': OIZ,
