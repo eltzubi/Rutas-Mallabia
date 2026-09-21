@@ -346,10 +346,10 @@ HOME = {
     # markinakobau card
     'alt="Vacas pastando en un prado verde junto al bosque, con el monte al fondo"':
         'alt="Behiak larrean, basoaren ondoan, mendia hondoan"',
-    '<h3 class="route-card-name">Markina, Kobau, Berriatua y Larruskain</h3>':
-        '<h3 class="route-card-name">Markina, Kobau, Berriatua eta Larruskain</h3>',
-    '<p class="route-card-desc">Circuito de senderismo desde Markina por la cueva de Kobau, Berriatua y el barrio de Larruskain, con un tramo final por el Camino de Santiago</p>':
-        '<p class="route-card-desc">Oinezko ibilbide zirkularra Markinatik, Kobauko kobazuloa, Berriatua eta Larruskain auzotik igarota, azken zatian Done Jakue bidetik</p>',
+    '<h3 class="route-card-name">Markina, Kobaria koba, Berriatua y Larruskain</h3>':
+        '<h3 class="route-card-name">Markina, Kobaria koba, Berriatua eta Larruskain</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Markina por la cueva de Kobaria koba, Berriatua y el barrio de Larruskain, con un tramo final por el Camino de Santiago</p>':
+        '<p class="route-card-desc">Oinezko ibilbide zirkularra Markinatik, Kobaria kobako kobazuloa, Berriatua eta Larruskain auzotik igarota, azken zatian Done Jakue bidetik</p>',
 
     # santamanazarandikoa card
     'alt="Fuente y lavadero de piedra con la bici apoyada en el muro, con una monta&ntilde;a al fondo"':
@@ -3235,7 +3235,7 @@ DESCRIPTIONS = {
         'Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin',
     'aviso-legal': 'Trabakutiken lege oharra eta pribatutasun politika: titularra, '
         'baldintzak eta datu pertsonalen tratamendua',
-    'markinakobau': 'Oinezko ibilbide zirkularra Markinatik, Kobauko kobazuloa, Berriatua eta '
+    'markinakobau': 'Oinezko ibilbide zirkularra Markinatik, Kobaria kobako kobazuloa, Berriatua eta '
         'Larruskain auzotik igarota, azken zatian Done Jakue bidetik',
 }
 
@@ -3361,7 +3361,7 @@ TITLES = {
     'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
-    'markinakobau': 'Markina, Kobau, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
+    'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4417,48 +4417,62 @@ SANTAMANAZARANDIKOA = {
 }
 
 MARKINAKOBAU = {
-    '<span>Sendero y pista</span><span class="sep">/</span><span>Kobau, Berriatua y Larruskain</span><span class="sep">/</span><span>Circuito</span>':
-        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Kobau, Berriatua eta Larruskain</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Markina, Kobau<br><em>Berriatua y Larruskain</em></h1>':
-        '<h1>Markina, Kobau<br><em>Berriatua eta Larruskain</em></h1>',
-    '<p class="full-name">Circuito de senderismo desde Markina por la cueva de Kobau, Berriatua y el barrio de Larruskain, con un tramo final por el Camino de Santiago</p>':
-        '<p class="full-name">Oinezko ibilbide zirkularra Markinatik, Kobauko kobazuloa, Berriatua eta Larruskain auzotik igarota, azken zatian Done Jakue bidetik</p>',
+    '<span>Sendero y pista</span><span class="sep">/</span><span>Kobaria koba, Berriatua y Larruskain</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Kobaria koba, Berriatua eta Larruskain</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Markina, Kobaria koba<br><em>Berriatua y Larruskain</em></h1>':
+        '<h1>Markina, Kobaria koba<br><em>Berriatua eta Larruskain</em></h1>',
+    '<p class="full-name">Circuito de senderismo desde Markina por la cueva de Kobaria koba, Berriatua y el barrio de Larruskain, con un tramo final por el Camino de Santiago</p>':
+        '<p class="full-name">Oinezko ibilbide zirkularra Markinatik, Kobaria kobako kobazuloa, Berriatua eta Larruskain auzotik igarota, azken zatian Done Jakue bidetik</p>',
     'alt="Vacas pastando en un prado verde junto al bosque, con el monte al fondo"':
         'alt="Behiak larrean, basoaren ondoan, mendia hondoan"',
-    'alt="Foto ampliada del recorrido de Markina, Kobau, Berriatua y Larruskain"':
-        'alt="Markina, Kobau, Berriatua eta Larruskain ibilbidearen argazki handitua"',
-    'alt="Boca de la cueva de Kobau vista desde dentro, con helechos y musgo alrededor"':
-        'alt="Kobauko kobazuloaren ahoa barrutik ikusita, iratzeekin eta goroldioarekin inguruan"',
-    'alt="Salida de la cueva de Kobau enmarcada por &aacute;rboles y vegetaci&oacute;n"':
-        'alt="Kobauko kobazuloaren irteera zuhaitz eta landaredi artean"',
-    'alt="Formaciones rocosas en el interior oscuro de la cueva de Kobau"':
-        'alt="Harkaizko formazioak Kobauko kobazuloaren barrualde ilunean"',
+    'alt="Foto ampliada del recorrido de Markina, Kobaria koba, Berriatua y Larruskain"':
+        'alt="Markina, Kobaria koba, Berriatua eta Larruskain ibilbidearen argazki handitua"',
+    'alt="Boca de la cueva de Kobaria koba vista desde dentro, con helechos y musgo alrededor"':
+        'alt="Kobaria kobaren ahoa barrutik ikusita, iratzeekin eta goroldioarekin inguruan"',
+    'alt="Salida de la cueva de Kobaria koba enmarcada por &aacute;rboles y vegetaci&oacute;n"':
+        'alt="Kobaria kobaren irteera zuhaitz eta landaredi artean"',
+    'alt="Formaciones rocosas en el interior oscuro de la cueva de Kobaria koba"':
+        'alt="Harkaizko formazioak Kobaria kobaren barrualde ilunean"',
     'alt="Cruz de madera con el cartel Eliza se&ntilde;alando un cruce de caminos en el pinar"':
         'alt="Zurezko gurutzea, Eliza kartelarekin, pinudiko bidegurutze bat seinalatzen"',
-    'download="Markina, Kobau, Berriatua y Larruskain.gpx"':
-        'download="Markina, Kobau, Berriatua eta Larruskain.gpx"',
-    'download="Markina, Kobau, Berriatua y Larruskain.kml"':
-        'download="Markina, Kobau, Berriatua eta Larruskain.kml"',
+    'alt="Formaciones de coladas blancas cubriendo el techo de la cueva de Kobaria koba"':
+        'alt="Kolada zurien formazioak Kobaria kobaren sabaia estaltzen"',
+    'alt="Galer&iacute;a estrecha en el interior de la cueva entre paredes de roca con estalactitas"':
+        'alt="Korridore estua kobazuloaren barruan, estalaktitadun harkaitz-hormen artean"',
+    'alt="Estalagmita aislada iluminada en la oscuridad del interior de la cueva"':
+        'alt="Estalagmita bakartu bat argiztatuta kobazuloaren barruko ilunpean"',
+    'alt="Paredes de roca con estalactitas en un tramo interior de la cueva"':
+        'alt="Estalaktitadun harkaitz-hormak kobazuloaren barruko zati batean"',
+    'download="Markina, Kobaria koba, Berriatua y Larruskain.gpx"':
+        'download="Markina, Kobaria koba, Berriatua eta Larruskain.gpx"',
+    'download="Markina, Kobaria koba, Berriatua y Larruskain.kml"':
+        'download="Markina, Kobaria koba, Berriatua eta Larruskain.kml"',
     '<span class="v">Sendero, pista y algo de carretera</span>':
         '<span class="v">Bidezidorra, pista eta errepide pixka bat</span>',
     'data-marker-title="Markina (salida y llegada)"':
         'data-marker-title="Markina (irteera eta helmuga)"',
-    '<p>Ruta circular larga y exigente, con 27,80 km y unos 1.050 m de desnivel positivo &mdash; m&aacute;s por la distancia y el desnivel acumulado que por la dificultad t&eacute;cnica. Cerca del principio se pasa por la <b>cueva de Kobau</b>, una cueva bonita que merece la pena entrar a explorar un poco: conviene llevar frontal.</p>':
-        '<p>Ibilbide zirkular luze eta gogorra da, 27,80 km eta 1.050 m inguruko desnibel positiboarekin &mdash; distantziagatik eta metatutako desnibelagatik gehiago, zailtasun teknikoagatik baino. Hasieratik gertu, <b>Kobau</b>ko kobazulotik pasatzen gara, sartu eta pixka bat esploratzea merezi duen kobazulo polita: frontala eramatea komeni da.</p>',
-    '<p>Salimos desde <b>Markina</b> y empezamos ganando altura desde el principio.</p>':
-        '<p><b>Markina</b>tik ateratzen gara eta hasieratik altuera irabazten hasten gara.</p>',
-    '<p>La primera parte concentra una subida bastante clara que nos lleva hasta el <b>Etxebistako tontorra</b> (km 3,9 &middot; 437 m), uno de los puntos m&aacute;s altos de la ruta. Bajamos brevemente hasta la <b>cueva de Kobau</b> (km 4,4 &middot; 408 m), en el collado entre este pico y el siguiente &mdash;una cueva bonita que merece la pena entrar a explorar un poco (conviene llevar frontal)&mdash;, y volvemos a subir hasta el <b>Ariztieder</b> (km 4,5 &middot; 424 m).</p>':
-        '<p>Lehen zatiak igoera nahiko argia biltzen du, <b>Etxebistako tontorra</b>raino eramaten gaituena (3,9 km &middot; 437 m), ibilbideko punturik altuenetako bat. Labur jaisten gara <b>Kobau</b>ko kobazuloraino (4,4 km &middot; 408 m), gailur horren eta hurrengoaren arteko lepoan &mdash;sartu eta pixka bat esploratzea merezi duen kobazulo polita (frontala eramatea komeni da)&mdash;, eta berriro igotzen gara <b>Ariztieder</b>raino (4,5 km &middot; 424 m).</p>',
-    '<p>Desde ah&iacute; empezamos una bajada larga en direcci&oacute;n a Berriatua, atravesando los barrios de <b>Saratsua</b> y <b>Ubilla-Urberuaga</b>, perdiendo altura poco a poco hasta llegar a <b>Berriatua</b> (km 13,5 &middot; 27 m), la zona m&aacute;s baja del recorrido. Es un tramo que cambia bastante el ambiente de la ruta y rompe completamente con la subida inicial.</p>':
-        '<p>Handik, jaitsiera luze bati ekiten diogu Berriatua aldera, <b>Saratsua</b> eta <b>Ubilla-Urberuaga</b> auzoak zeharkatuz, pixkanaka altuera galduz <b>Berriatua</b>raino iritsi arte (13,5 km &middot; 27 m), ibilbideko puntu baxuena. Ibilbidearen giroa asko aldatzen duen zatia da, eta hasierako igoerarekin erabat hausten du.</p>',
-    '<p>Despu&eacute;s toca volver a ganar altura. Dejamos atr&aacute;s la parte baja y comenzamos a remontar hacia la zona de <b>Larruskain</b> (km 19,5 &middot; 419 m) &mdash;un barrio rural con su propio front&oacute;n. Esta segunda parte se hace notar porque ya llevamos bastantes kil&oacute;metros en las piernas y todav&iacute;a queda desnivel por delante.</p>':
-        '<p>Gero, berriro altuera irabazi behar da. Beheko aldea atzean utzi eta <b>Larruskain</b> aldera igotzen hasten gara (19,5 km &middot; 419 m) &mdash;bere fronto propioa duen landa auzoa. Bigarren zati hau nabaritu egiten da, hanketan kilometro ugari eramanda ere oraindik desnibel dezente geratzen baita aurretik.</p>',
-    '<p>La ruta contin&uacute;a con m&aacute;s subidas y bajadas, pasando de nuevo por zonas altas antes de empezar el regreso definitivo hacia Markina. Los &uacute;ltimos kil&oacute;metros coinciden con el propio Camino de Santiago (el Camino del Norte, que pasa por Markina-Xemein junto a la ermita de San Miguel de Arretxinaga) hasta llegar de nuevo al pueblo. No es una vuelta en la que se sube una vez y luego todo es bajar: el perfil es bastante movido hasta casi el final.</p>':
-        '<p>Ibilbideak igoera eta jaitsiera gehiagorekin jarraitzen du, berriro eremu altuetatik pasatuz Markinarako azken itzulera hasi aurretik. Azken kilometroak Done Jakue bidearekin bat datoz (Iparraldeko Bidea, Markina-Xemeinetik pasatzen dena, Arretxinagako San Migel ermitaren ondotik) herrira berriro iritsi arte. Ez da behin igo eta gero dena jaistea den itzuli horietako bat: profila nahiko mugitua da ia amaierara arte.</p>',
-    '<p>En conjunto es una ruta variada, larga y entretenida, con varios cambios de paisaje y una buena mezcla de zonas altas y fondos de valle. Para hacerla andando tranquilamente conviene contar con unas 6 h 30 min &ndash; 7 h 30 min.</p>':
-        '<p>Oro har, ibilbide aldakor, luze eta entretenigarria da, paisaia aldaketa ugarirekin eta eremu altu eta haran-hondoen nahasketa onarekin. Lasai oinez egiteko, 6 ordu 30 min &ndash; 7 ordu 30 min inguru kontuan hartzea komeni da.</p>',
-    '<p>Como siempre, recomendamos llevar el track cargado en un GPS, reloj o dispositivo de navegaci&oacute;n, adem&aacute;s de agua y algo de comida. El estado de los caminos puede cambiar con la lluvia, el barro, la vegetaci&oacute;n o la &eacute;poca del a&ntilde;o.</p>':
-        '<p>Beti bezala, gomendagarria da tracka GPS, erloju edo nabigazio gailu batean kargatuta eramatea, ur eta jaki batzuekin batera. Bideen egoera aldatu egin daiteke euriarekin, lokatzarekin, landarediarekin edo urtaroaren arabera.</p>',
+    '<p>Una ruta larga y muy variada, con muchos cambios de ambiente a lo largo del recorrido. Tiene zonas abiertas, bosque, cimas, la cueva, barrios y tramos m&aacute;s escondidos que hacen que no se haga mon&oacute;tona.</p>':
+        '<p>Ibilbide luze eta askotarikoa da, ingurune-aldaketa ugarirekin ibilbidean zehar. Zati irekiak, basoak, gailurrak, kobazuloa, auzoak eta ezkutuagoak diren tarteak ditu, eta horrek ibilbidea monotonoa ez izatea eragiten du.</p>',
+    '<p>Esta vez no salimos desde <b>Trabakua</b>. En la web hay varias rutas que permiten enlazar hasta esta zona, pero si las uni&eacute;ramos con este recorrido la vuelta se alargar&iacute;a demasiado. Por eso, para disfrutarla mejor y no convertirla en una jornada excesivamente larga, decidimos empezar directamente desde <b>Markina-Xemein</b>.</p>':
+        '<p>Oraingoan ez gara <b>Trabakua</b>tik abiatzen. Webgunean hainbat ibilbide daude inguru honetara iristeko, baina ibilbide honekin lotuko bagenitu, itzulia luzeegia izango litzateke. Horregatik, hobeto gozatzeko eta egun luzeegia ez izateko, <b>Markina-Xemein</b>dik zuzenean hastea erabaki genuen.</p>',
+    '<p>Salimos de Markina-Xemein en direcci&oacute;n norte, buscando el barrio de <b>Atxondoa</b>. Junto a la sidrer&iacute;a <b>Axpe</b> dejamos atr&aacute;s la zona urbana y cogemos una pista que empieza a ganar altura desde el principio.</p>':
+        '<p>Markina-Xemeindik iparralderantz abiatzen gara, <b>Atxondoa</b> auzoaren bila. <b>Axpe</b> sagardotegiaren ondoan, hiri-eremua atzean utzi eta hasieratik altuera irabazten hasten den pista bat hartzen dugu.</p>',
+    '<p>La subida desde la sidrer&iacute;a es bastante abierta, pr&aacute;cticamente sin bosque durante buena parte del ascenso. Vamos ganando altura de forma progresiva hasta acercarnos a la parte alta. Es all&iacute; donde cambia el ambiente: el camino se mete entre &aacute;rboles, aparecen tramos m&aacute;s cerrados de bosque y senderos, y poco despu&eacute;s alcanzamos la primera cima de la jornada, <b>Kobakogane</b>.</p>':
+        '<p>Sagardotegitik gorako bidea nahiko irekia da, ia basorik gabe igoeraren zati handi batean. Altuera pixkanaka irabazten goaz goialdera hurbildu arte. Han aldatzen da giroa: bidea zuhaitzen artean sartzen da, baso-tarte itxiagoak eta bidezidorrak agertzen dira, eta handik gutxira eguneko lehen gailurra iristen dugu, <b>Kobakogane</b>.</p>',
+    '<p>Despu&eacute;s volvemos hacia el collado y continuamos hacia <b>Ariztieder</b>, segunda cima de esta primera parte.</p>':
+        '<p>Ondoren, lepora itzultzen gara eta <b>Ariztieder</b>rerantz jarraitzen dugu, lehen zati honetako bigarren gailurra.</p>',
+    '<p>Desde Ariztieder empezamos a perder altura en direcci&oacute;n a <b>Kobaria koba</b> (tambi&eacute;n conocida como Kobau), uno de los rincones m&aacute;s interesantes de toda la vuelta. Merece la pena llevar frontal, porque en la entrada se puede acceder un poco hacia el interior y asomarse a la b&oacute;veda de la cueva. Es un sitio bonito y curioso, y compensa parar unos minutos y echar un vistazo con calma.</p>':
+        '<p>Ariztiederretik altuera galtzen hasten gara <b>Kobaria koba</b>ren norabidean (Kobau izenez ere ezaguna), itzuli osoko txokorik interesgarrienetako bat. Komeni da kopeta-argia eramatea, sarreran barrualdera pixka bat sar baitzaitezke eta kobaren gangari begiratu. Leku polita eta bitxia da, eta merezi du minutu batzuk gelditzea eta lasai begiratzea.</p>',
+    '<p>Tras dejar atr&aacute;s la cueva seguimos avanzando por una zona bastante movida, alternando pistas y senderos. Poco a poco vamos pasando por <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> y <b>Merelludi</b>, enlazando distintos barrios y zonas de monte antes de comenzar a perder m&aacute;s altura hacia Berriatua.</p>':
+        '<p>Kobazuloa atzean utzi ondoren, nahiko mugitua den eremu batetik aurrera jarraitzen dugu, pistak eta bidezidorrak tartekatuz. Pixkanaka, <b>Ubilla-Urberuaga</b>, <b>Sarasola</b> eta <b>Merelludi</b>tik igarotzen gara, auzo eta mendi-eremu desberdinak lotuz, Berriatuara jaisten hasi aurretik.</p>',
+    '<p>Llegamos finalmente a <b>Berriatua</b> y, a partir de aqu&iacute;, volvemos a ganar altura por una zona bastante m&aacute;s escondida y poco conocida para nosotros. La subida es larga y se hace notar, aunque el terreno va cambiando y hace que el tramo resulte entretenido.</p>':
+        '<p>Azkenik, <b>Berriatua</b>ra iristen gara, eta hemendik aurrera, altuera irabazten dugu guretzat nahiko ezkutua eta ezezaguna den eremu batetik. Igoera luzea da eta nabaritzen da, baina lurra aldatuz doa eta horrek tarte entretenigarria egiten du.</p>',
+    '<p>Despu&eacute;s volvemos a perder altura para bajar hasta <b>Larruskain</b>. Atravesamos el barrio y, nada m&aacute;s dejarlo atr&aacute;s, empieza otra subida, esta vez m&aacute;s pronunciada y por un terreno todav&iacute;a m&aacute;s cerrado y desconocido.</p>':
+        '<p>Ondoren, altuera galduko dugu berriro <b>Larruskain</b>era jaisteko. Auzoa zeharkatu eta, atzean utzi bezain laster, beste igoera bat hasten da, oraingoan aldapatsuagoa eta lur itxiago eta ezezagunago batetik.</p>',
+    '<p>Seguimos ganando altura hasta alcanzar la parte alta. A partir de aqu&iacute; el recorrido cambia bastante: el terreno se vuelve mucho m&aacute;s llano y c&oacute;modo, y enlazamos con el <b>Camino de Santiago</b>.</p>':
+        '<p>Altuera irabazten jarraitzen dugu goialdera iritsi arte. Hemendik aurrera, ibilbidea asko aldatzen da: lurra askoz lauagoa eta erosoagoa bihurtzen da, eta <b>Donejakue bidea</b>rekin lotzen dugu.</p>',
+    '<p>Durante varios kil&oacute;metros avanzamos ya por esta zona m&aacute;s llevadera, pr&aacute;cticamente sin grandes desniveles, hasta que comenzamos el descenso definitivo hacia Markina-Xemein.</p>':
+        '<p>Hainbat kilometrotan zehar, eremu erosoago honetatik aurrera egiten dugu, ia malda handirik gabe, Markina-Xemeinerako azken jaitsiera hasi arte.</p>',
 }
 
 MARKINABOLIBAR = {
