@@ -4513,8 +4513,8 @@ MALLUKITOKO = {
         'data-marker-title="Markina-Xemein (irteera eta helmuga)"',
     '<p>Una ruta muy bonita por los alrededores de Markina-Xemein, con bastante bosque, una subida exigente hasta la zona alta de Zapola, restos de la Guerra Civil y una zona de trincheras que es uno de los tramos m&aacute;s especiales del recorrido.</p>':
         '<p>Markina-Xemein inguruko ibilbide polit bat, baso askorekin, igoera gogor bat Zapolako goialderaino, Gerra Zibileko aztarnak eta lubakien eremu bat, ibilbideko zatirik berezienetako bat dena.</p>',
-    '<title>Cruce a Ariztieder &middot; 7,47 km &middot; 353 m</title>':
-        '<title>Ariztiederreko bidegurutzea &middot; 7,47 km &middot; 353 m</title>',
+    '<title>Cruce a Ariztieder &middot; 7,01 km &middot; 352 m</title>':
+        '<title>Ariztiederreko bidegurutzea &middot; 7,01 km &middot; 352 m</title>',
     '<span class="elev-legend-item"><span class="num">3</span>Cruce a Ariztieder</span>':
         '<span class="elev-legend-item"><span class="num">3</span>Ariztiederreko bidegurutzea</span>',
 
