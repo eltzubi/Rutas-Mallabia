@@ -344,8 +344,8 @@ HOME = {
         'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
 
     # markinakobau card
-    'alt="Vacas pastando en un prado verde junto al bosque, con el monte al fondo"':
-        'alt="Behiak larrean, basoaren ondoan, mendia hondoan"',
+    'alt="Boca de la cueva de Kobaria koba vista desde dentro, con helechos y musgo alrededor"':
+        'alt="Kobaria kobaren ahoa barrutik ikusita, iratzeekin eta goroldioarekin inguruan"',
     '<h3 class="route-card-name">Markina, Kobaria koba, Berriatua y Larruskain</h3>':
         '<h3 class="route-card-name">Markina, Kobaria koba, Berriatua eta Larruskain</h3>',
     '<p class="route-card-desc">Circuito de senderismo desde Markina por la cueva de Kobaria koba, Berriatua y el barrio de Larruskain, con un tramo final por el Camino de Santiago</p>':
