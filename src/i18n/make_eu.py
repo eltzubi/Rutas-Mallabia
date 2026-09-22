@@ -198,6 +198,13 @@ def main():
         head = head.replace(f'"description": "{html.unescape(es_desc)}"',
                              f'"description": "{html.unescape(eu_desc)}"')
 
+        # Same JSON-LD gap for the "difficulty" additionalProperty: it's a
+        # plain-text value the loop above never touches, so it stayed in
+        # Spanish on every route page's Basque version.
+        for es_diff, eu_diff in (("Fácil", "Erraza"), ("Media", "Ertaina"), ("Difícil", "Zaila")):
+            head = head.replace(f'"name": "difficulty", "value": "{es_diff}"',
+                                 f'"name": "difficulty", "value": "{eu_diff}"')
+
         with open(os.path.join(SRC, f"{page}_head.eu.html"), "w", encoding="utf-8") as f:
             f.write(head)
         print(f"wrote {page}_head.eu.html")
