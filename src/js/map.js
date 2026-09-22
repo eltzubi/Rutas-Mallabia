@@ -236,13 +236,17 @@
     });
     // Layer switcher, on every map -- the home page's overview and each
     // route's own map alike. Four free layers, none needing an API key:
-    // CyclOSM (default: bike-oriented rendering, surfaces, cycle lanes),
-    // OSM, Esri World Imagery (aerial photo) and OpenTopoMap (contour
-    // lines -- useful to gauge terrain at a glance).
+    // CyclOSM (bike-oriented rendering, surfaces, cycle lanes), OSM, Esri
+    // World Imagery (aerial photo) and OpenTopoMap (contour lines --
+    // useful to gauge terrain at a glance). Default is CyclOSM on a
+    // route's own map, but plain OSM streets on the home page's overview
+    // (trailhead.json) -- that map shows every route at once, where the
+    // cycling-specific rendering adds less than it does on a single track.
+    var isOverview = el.dataset.mapSrc === 'data/trailhead.json';
     var cycleLayer = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    });
     var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
@@ -255,13 +259,19 @@
       maxZoom: 17,
       attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
     });
-    var layerDefs = [
+    var layerDefs = isOverview ? [
+      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles' },
+      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista' },
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite' },
+      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico' }
+    ] : [
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista' },
       { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles' },
       { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite' },
       { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico' }
     ];
     var layerIndex = 0;
+    layerDefs[layerIndex].layer.addTo(map);
     var layersBtn = document.createElement('button');
     layersBtn.type = 'button';
     layersBtn.className = 'map-layers-btn';
