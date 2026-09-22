@@ -1775,6 +1775,11 @@ URREGARAI = {
     'download="Iturreta, Markina y Urregarai.kml"':
         'download="Iturreta, Markina eta Urregarai.kml"',
 
+    '<title>Collado de Urregarai &middot; 16,0 km &middot; 573 m</title>':
+        '<title>Urregaraiko lepoa &middot; 16,0 km &middot; 573 m</title>',
+    '<span class="elev-legend-item"><span class="num">3</span>Collado de Urregarai</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Urregaraiko lepoa</span>',
+
 
 
     'alt="Amanecer con bancos de niebla deshaci&eacute;ndose sobre los prados, con una borda de piedra entre el arbolado en primer plano y los caser&iacute;os repartidos por las lomas"':
@@ -1830,13 +1835,13 @@ URREGARAI = {
 
     'Ya en <b>Markina</b> (km 12 &middot; 79 m) volvemos a abastecernos de agua, en una fuente grande '
     'junto a la iglesia del Carmen. Cruzamos el pueblo hacia la salida, pasando junto a unas escuelas, '
-    'y cogemos de nuevo un camino de barrio que sube sin descanso hacia <b>Urregarai</b> (km 16 '
+    'y cogemos de nuevo un camino de barrio que sube sin descanso hacia <b>el collado de Urregarai</b> (km 16 '
     '&middot; 573 m), en los alrededores de Santa Eufemia. El &uacute;ltimo repecho es precioso, junto '
     'a un caser&iacute;o-granja con muchos pastos. Arriba est&aacute; el refugio de Urregarai, con una '
     'fuente y una bolera enfrente.':
         '<b>Markinan</b> (12 km &middot; 79 m) berriro ur hornitzen gara, Karmen elizaren ondoko iturri '
         'handi batean. Herria zeharkatzen dugu irteera aldera, eskola batzuen ondotik pasatuz, eta '
-        'berriro auzo-bide bat hartzen dugu, atsedenik gabe <b>Urregairantz</b> igotzen duena (16 km '
+        'berriro auzo-bide bat hartzen dugu, atsedenik gabe <b>Urregaraiko lepo</b>ra igotzen duena (16 km '
         '&middot; 573 m), Santa Eufemia inguruan. Azken aldapa ederra da, larre asko dituen '
         'baserri-granja baten ondoan. Goian Urregairako aterpea dago, iturri batekin eta aurrean '
         'bolatoki bat.',
@@ -1857,11 +1862,11 @@ URREGARAI = {
     'Ya solo queda bajar hacia Trabakua, por el barrio de Gerea, para cerrar el circuito.':
         'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerea auzotik, zirkuitua ixteko.',
 
-    '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (Urregarai y '
+    '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (el collado de Urregarai y '
     'Muniozguren) y tramos de pista, asfalto y cemento empinado. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente en Iturreta, otra junto a '
     'la iglesia del Carmen en Markina, y una tercera en el refugio de Urregarai.':
-        '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregarai '
+        '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregaraiko lepoa '
         'eta Muniozguren) eta pista, asfalto eta zementu pikoko tarteekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Karmen '
         'elizaren ondoan, eta hirugarren bat Urregairako aterpean.',
@@ -4561,6 +4566,10 @@ SANTAEUFEMIA = {
         '<title>Iturria &middot; 3,00 km &middot; 121 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Fuente</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Iturria</span>',
+    '<title>Collado de Urregarai &middot; 9,04 km &middot; 575 m</title>':
+        '<title>Urregaraiko lepoa &middot; 9,04 km &middot; 575 m</title>',
+    '<span class="elev-legend-item"><span class="num">2</span>Collado de Urregarai</span>':
+        '<span class="elev-legend-item"><span class="num">2</span>Urregaraiko lepoa</span>',
 
     # --- fotos ---
     'alt="Ermita de Santa Eufemia en la cima, con tejado de teja y vistas amplias sobre varias sierras"':
@@ -4620,6 +4629,10 @@ MARKINABOLIBAR = {
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
     'alt="Foto ampliada del recorrido de Trabakua, Zenarruza, Zeinka, Urregarai y Markina"':
         'alt="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina ibilbidearen argazki handitua"',
+    '<title>Collado de Urregarai &middot; 17,86 km &middot; 572 m</title>':
+        '<title>Urregaraiko lepoa &middot; 17,86 km &middot; 572 m</title>',
+    '<span class="elev-legend-item"><span class="num">3</span>Collado de Urregarai</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Urregaraiko lepoa</span>',
     '<p>38,47 km y +1.204 m de desnivel en un solo circuito, entre pistas de tierra (el tramo de Zeinka a Urregarai) y asfalto de barrio &mdash; sin entrar en ninguna carretera general, solo cruz&aacute;ndolas. La subida final, de Bolibar a Muniozguren (+363 m), es la m&aacute;s dura de la vuelta. Hay agua en la fuente de Urregarai, junto al refugio y la bolera, y otra junto al Camino de Santiago antes de llegar a Iruzubieta. Hay otro tramo distinto que tambi&eacute;n llega hasta Urregarai, entrando por Iturreta al sur: est&aacute; documentado en la ruta <a href="urregarai.html">Iturreta, Markina y Urregarai</a>.</p>':
         '<p>38,47 km eta +1.204 m-ko desnibela zirkuitu bakarrean, lurrezko pisten (Zeinkatik Urregairako zatia) eta auzoko asfaltoaren artean &mdash; errepide nagusietan sartu gabe, gurutzatu besterik ez. Azken igoera, Bolibartik Muniozgurenerainokoa (+363 m), da buelta osoko gogorrena. Ura badago Urregaraiko iturrian, aterpearen eta bolatokiaren ondoan, eta beste bat Done Jakue bidean, Iruzubietara iritsi aurretik. Badago beste zati bat, ezberdina, Urregairaino ere iristen dena, Iturretatik hegoaldetik sartuz: <a href="urregarai.html">Iturreta, Markina eta Urregarai</a> ibilbidean jasota dago.</p>',
     'alt="Escalinata de piedra hacia el arco de entrada del monasterio de Zenarruza, con una cruz y un &aacute;rbol centenario"':
@@ -4654,8 +4667,8 @@ MARKINABOLIBAR = {
         'Gora iritsitakoan, <b>Zeinka</b>rantz jarraitzen dugu (12,74 km &middot; 356 m), oso inguru polit bat zeharkatuz, baserri eta zelai artean, ikuspegi ederrekin, aurrera egin ahala zabaltzen direnak.',
     'Desde Zeinka nos metemos por una pista en la zona alta de Aulesti. Buena parte de este tramo discurre por pistas de tierra y resulta muy entretenido.':
         'Zeinkatik Aulestiko goiko aldean sartzen gara, pista batetik. Zati honen zati handi bat lurrezko pistetatik doa, eta oso entretenigarria da.',
-    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia <b>Urregarai</b> (km 17,86 &middot; 572 m), en los alrededores de la ermita de <b>Santa Eufemia</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio de Urregarai, con una fuente y una bolera enfrente, nos servir&aacute; de referencia para saber que hemos llegado. Es un buen punto para coger agua antes de continuar.':
-        'Berriro errepide nagusira iristean, <b>Lekoitzgane</b>ko gainean, gurutzatu egiten dugu, eta justu aurrean <b>Urregarai</b> aldera igotzen den errepidea hartzen dugu (17,86 km &middot; 572 m), <b>Santa Eufemia</b> ermitaren inguruan. Hemen aldapa gogor bat dugu zain, malda handikoa, goiko aldera iritsi arte. Urregaraiko aterpetxeak, iturri bat eta bolatoki bat aurrean dituela, erreferentzia gisa balioko digu iritsi garela jakiteko. Ura hartzeko puntu ona da, aurrera jarraitu aurretik.',
+    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia <b>el collado de Urregarai</b> (km 17,86 &middot; 572 m), en los alrededores de la ermita de <b>Santa Eufemia</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio de Urregarai, con una fuente y una bolera enfrente, nos servir&aacute; de referencia para saber que hemos llegado. Es un buen punto para coger agua antes de continuar.':
+        'Berriro errepide nagusira iristean, <b>Lekoitzgane</b>ko gainean, gurutzatu egiten dugu, eta justu aurrean <b>Urregaraiko lepo</b>ra igotzen den errepidea hartzen dugu (17,86 km &middot; 572 m), <b>Santa Eufemia</b> ermitaren inguruan. Hemen aldapa gogor bat dugu zain, malda handikoa, goiko aldera iritsi arte. Urregaraiko aterpetxeak, iturri bat eta bolatoki bat aurrean dituela, erreferentzia gisa balioko digu iritsi garela jakiteko. Ura hartzeko puntu ona da, aurrera jarraitu aurretik.',
     'Despu&eacute;s de reponer agua seguimos por el otro lado y comenzamos el descenso. La primera parte es muy bonita, entre prados y una granja, con mucho pasto &mdash; luego ya no tanto, hasta Markina. A partir de ah&iacute; empezamos a perder altura de forma bastante seguida, aunque siempre por buen camino asfaltado.':
         'Ura hartu ondoren, beste aldetik jarraitzen dugu eta jaitsierari ekiten diogu. Lehen zatia oso polita da, larreen eta baserri baten artean, larre asko dituela &mdash; gero ez horrenbeste, Markinaraino. Hortik aurrera, altuera galtzen hasten gara nahiko jarraian, nahiz eta beti errepide asfaltatu onetik.',
     'Este descenso nos lleva directamente hasta <b>Markina</b> (km 23,06 &middot; 80 m), entrando aproximadamente por la zona de la salida hacia Ondarroa. Pasamos junto a una escuela y atravesamos Markina para buscar de nuevo el Camino de Santiago.':
