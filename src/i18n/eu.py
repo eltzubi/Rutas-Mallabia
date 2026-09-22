@@ -4557,6 +4557,10 @@ SANTAEUFEMIA = {
         '<span class="v">Bidezidorra eta pista</span>',
     'data-marker-title="Markina-Xemein (salida y llegada)"':
         'data-marker-title="Markina-Xemein (irteera eta helmuga)"',
+    '<title>Fuente &middot; 3,00 km &middot; 121 m</title>':
+        '<title>Iturria &middot; 3,00 km &middot; 121 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Fuente</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Iturria</span>',
 
     # --- fotos ---
     'alt="Ermita de Santa Eufemia en la cima, con tejado de teja y vistas amplias sobre varias sierras"':
@@ -4585,8 +4589,8 @@ SANTAEUFEMIA = {
         '<p><b>Markina-Xemein</b>dik <b>Santa Eufemia</b>ra doan ibilbidea oso polita da, igoera luzea baina erraza duena eta ibilbidean zehar aldaketa ugari dituena. Hasieran, lasai joango gara <b>Donejakue bidea</b> jarraituz, eta pixkanaka altuera irabazten joango gara, pista artean sartu arte. Zati onena goian dago, <b>Atxagarai</b> eta <b>Urregarai</b> inguruan, ermita, iturria eta merezi duten ikuspegi ederrekin.</p>',
 
     # --- relato ---
-    '<p>Salimos de <b>Markina-Xemein</b> hacia el oeste, direcci&oacute;n <b><a href="iruzubieta.html">Iruzubieta</a></b>, siguiendo durante los primeros kil&oacute;metros el <b>Camino de Santiago</b>. Es un tramo c&oacute;modo para empezar y, aproximadamente en el kil&oacute;metro 3, al llegar a una fuente, dejamos el camino principal y giramos a la derecha para empezar a subir por una carretera asfaltada.</p>':
-        '<p><b>Markina-Xemein</b>dik mendebalderantz abiatuko gara, <b><a href="iruzubieta.html">Iruzubieta</a></b>rantz, lehen kilometroetan <b>Donejakue bidea</b> jarraituz. Hasiera erosoa da, eta, gutxi gorabehera 3. kilometroan, iturri batera iristean, bide nagusia utzi eta eskuinera biratuko dugu, asfaltozko errepide batetik igotzen hasteko.</p>',
+    '<p>Salimos de <b>Markina-Xemein</b> hacia el oeste, direcci&oacute;n <b><a href="iruzubieta.html">Iruzubieta</a></b>, siguiendo durante los primeros kil&oacute;metros el <b>Camino de Santiago</b>. Es un tramo c&oacute;modo para empezar y, aproximadamente en el kil&oacute;metro 3, al llegar a una <b>fuente</b>, dejamos el camino principal y giramos a la derecha para empezar a subir por una carretera asfaltada.</p>':
+        '<p><b>Markina-Xemein</b>dik mendebalderantz abiatuko gara, <b><a href="iruzubieta.html">Iruzubieta</a></b>rantz, lehen kilometroetan <b>Donejakue bidea</b> jarraituz. Hasiera erosoa da, eta, gutxi gorabehera 3. kilometroan, <b>iturri</b> batera iristean, bide nagusia utzi eta eskuinera biratuko dugu, asfaltozko errepide batetik igotzen hasteko.</p>',
     '<p>Pasamos junto a un restaurante y seguimos ascendiendo. M&aacute;s adelante dejamos el asfalto y entramos ya en pista. Desde aqu&iacute; la ruta cambia bastante y comienza una subida m&aacute;s larga, enlazando varias pistas y ganando altura poco a poco hasta acercarnos al alto de <b>Lekoitzgane</b>.</p>':
         '<p>Jatetxe baten ondotik pasatuko gara eta igotzen jarraituko dugu. Aurrerago, asfaltoa utzi eta pistan sartuko gara. Hemendik aurrera, ibilbidea asko aldatzen da, eta igoera luzeago bat hasten da, hainbat pista lotuz eta altuera pixkanaka irabaziz, <b>Lekoitzgane</b>ko gainera hurbildu arte.</p>',
     '<p>Al llegar al puerto cruzamos y cogemos la carretera de cemento que sube hacia <b>Atxagarai</b> y <b>Santa Eufemia</b>. Seguimos ganando metros y el terreno se va abriendo, con mejores vistas a medida que subimos.</p>':
