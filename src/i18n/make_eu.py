@@ -36,8 +36,11 @@ ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zeng
 # tail EU como fuente explícita para que el generador no lo sobrescriba.
 MANUAL_EU_PAGES = {"sancristobalgaraiandikoa", "zengotitaiturzuri"}
 
-# es filename -> eu filename, for the cross-language links
-EU_OF = {"index.html": "index.eu.html"}
+# es filename -> eu filename, for the cross-language links.
+# La portada en euskera es la raiz del sitio, o sea index.html mismo: el
+# castellano es el que se va a index.es.html (lo reapunta build.py al escribir
+# la salida ES). Por eso aqui index.html se queda como esta.
+EU_OF = {"index.html": "index.html"}
 for _p in ROUTE_PAGES:
     EU_OF[f"{_p}.html"] = f"{_p}.eu.html"
 
@@ -183,12 +186,10 @@ def main():
         for es_file, eu_file in EU_OF.items():
             head = head.replace(f'"https://trabakutik.com/{es_file}"',
                                  f'"https://trabakutik.com/{eu_file}"')
-        if page == "mallabia":
-            # La portada es la unica pagina cuyo canonical/og:url/JSON-LD
-            # apunta a la raiz (sin nombre de fichero); el bucle de arriba no
-            # tiene "index.html" que sustituir en ese caso.
-            head = head.replace('"https://trabakutik.com/"',
-                                 '"https://trabakutik.com/index.eu.html"')
+        # La portada en euskera es justo la raiz, asi que su canonical/og:url/
+        # JSON-LD se quedan tal cual estan en la fuente ("https://trabakutik.com/").
+        # El que se mueve es el castellano, y de eso se encarga build.py al
+        # escribir la salida ES (retarget_home_links).
 
         # JSON-LD strings are unescaped (real UTF-8, not &ntilde; entities) --
         # swap the plain-text forms too, so the structured data matches the

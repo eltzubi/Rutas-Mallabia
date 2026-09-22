@@ -49,7 +49,8 @@
     return track && Array.isArray(track.points) ? track.points : [];
   }
 
-  var home = isEu ? 'index.eu.html' : 'index.html';
+  // La portada en euskera es la raiz (index.html); el castellano vive aparte.
+  var home = isEu ? 'index.html' : 'index.es.html';
   Promise.all([
     fetch('data/trailhead.json').then(function(r){ if (!r.ok) throw new Error('tracks'); return r.json(); }),
     fetch(home).then(function(r){ if (!r.ok) throw new Error('home'); return r.text(); })
@@ -119,17 +120,6 @@
     });
   }).catch(function(){
     // The two cards written by build.py remain visible as a no-JS/network fallback.
-  });
-})();
-
-// --- language switch: remember an explicit choice, sitewide -- so index.html's
-// redirect to the Basque homepage (see mallabia_head.html) doesn't bounce
-// someone straight back after they've picked castellano on purpose ---
-(function(){
-  var link = document.querySelector('.lang-switch');
-  if (!link || !link.hreflang) return;
-  link.addEventListener('click', function(){
-    try { localStorage.setItem('rutas-mallabia-lang', link.hreflang); } catch(err){}
   });
 })();
 

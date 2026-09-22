@@ -102,16 +102,63 @@ def assemble_page(name, suffix=""):
 
 # First entry is home; it's the one written to index.html.
 PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "aviso-legal"]
-OUT_NAME = {"mallabia": "index"}  # others default to their own name
-
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
 SITE_URL = "https://trabakutik.com/"
 
+# La portada es la excepcion: lo que sirve trabakutik.com/ es el euskera, asi
+# que el euskera se lleva el index.html a secas y el castellano se va a
+# index.es.html. Antes la raiz servia el castellano y redirigia al euskera por
+# JavaScript, lo que dejaba a Google con dos senales contradictorias (el
+# canonical decia una cosa y la redireccion llevaba a otra); sirviendo el
+# euskera de verdad en la raiz no hace falta redirigir nada.
+HOME = "mallabia"
+HOME_OUT = {"eu": "index.html", "es": "index.es.html"}
 
-def out_name(page, out_suffix):
-    return f"{OUT_NAME.get(page, page)}{out_suffix}.html"
+
+def out_name(page, lang):
+    if page == HOME:
+        return HOME_OUT[lang]
+    return f"{page}{LANGS[lang][1]}.html"
+
+
+def retarget_home_links(page_html, lang):
+    """Reapunta los enlaces a la portada segun el idioma de la pagina.
+
+    Las fuentes en castellano enlazan la portada como index.html y el
+    conmutador de idioma como index.eu.html. Con el euskera en la raiz eso se
+    invierte: en la salida ES la portada propia pasa a ser index.es.html y el
+    conmutador apunta a la raiz; en la salida EU los index.html que dejo
+    make_eu.py ya son la portada correcta y solo hay que sacar el conmutador
+    hacia el castellano.
+    """
+    if lang == "es":
+        # De golpe, no en dos pasadas: reescribir primero index.html dejaria
+        # el index.eu.html del conmutador apuntando a un sitio que ya no toca.
+        page_html = re.sub(
+            r'href="index(\.eu)?\.html"',
+            lambda m: 'href="index.html"' if m.group(1) else 'href="index.es.html"',
+            page_html)
+        page_html = page_html.replace(
+            '<link rel="canonical" href="https://trabakutik.com/">',
+            '<link rel="canonical" href="https://trabakutik.com/index.es.html">')
+        page_html = page_html.replace(
+            '<meta property="og:url" content="https://trabakutik.com/">',
+            '<meta property="og:url" content="https://trabakutik.com/index.es.html">')
+        # La raiz sin nombre de fichero solo la usa la portada, asi que esto no
+        # toca el JSON-LD de ninguna otra pagina.
+        page_html = page_html.replace(
+            '"url": "https://trabakutik.com/",',
+            '"url": "https://trabakutik.com/index.es.html",')
+        return page_html
+    # Las fichas con el tail EU escrito a mano (MANUAL_EU_PAGES en make_eu.py)
+    # no pasan por el swap de EU_OF, asi que enlazan la portada como
+    # index.eu.html, que ahora es solo la redireccion heredada.
+    page_html = page_html.replace('href="index.eu.html"', 'href="index.html"')
+    return page_html.replace(
+        '<a class="lang-switch" href="index.html"',
+        '<a class="lang-switch" href="index.es.html"')
 
 
 # source asset -> file written at the repo root
@@ -527,14 +574,41 @@ def main():
                 '<link rel="stylesheet" href="fonts.css">',
                 '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>\n'
                 '<link rel="stylesheet" href="fonts.css">')
+            page_html = retarget_home_links(page_html, lang)
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
-            out_path = os.path.join(ROOT, out_name(name, out_suffix))
+            out_path = os.path.join(ROOT, out_name(name, lang))
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
             print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
 
+    write_legacy_eu_home()
     write_sitemap()
+
+
+def write_legacy_eu_home():
+    """index.eu.html: la portada en euskera cuando no estaba en la raiz.
+
+    Lleva tiempo indexada y compartida, asi que no puede quedarse en un 404 al
+    mudar el euskera a la raiz. El canonical le dice a Google cual es ahora la
+    buena y el refresh lleva a la persona alli sin que tenga que hacer nada.
+    """
+    html = (
+        '<!doctype html>\n<html lang="eu">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f'<link rel="canonical" href="{SITE_URL}">\n'
+        # El canonical va absoluto porque es la URL definitiva que se le declara
+        # a Google; el salto va relativo para que funcione tambien sirviendo el
+        # sitio desde otro sitio (una vista previa local, github.io).
+        '<meta http-equiv="refresh" content="0; url=./">\n'
+        "<title>Trabakutik</title>\n</head>\n<body>\n"
+        '<p><a href="./">Trabakutik &mdash; Mallabiako ibilbideak</a></p>\n'
+        "</body>\n</html>\n"
+    )
+    out_path = os.path.join(ROOT, "index.eu.html")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
 
 
 def write_sitemap():
@@ -543,14 +617,11 @@ def write_sitemap():
     # than duplicate content.
     urls = []
     for name in PAGES:
-        alternates = {
-            lang: SITE_URL + out_name(name, out_suffix)
-            for lang, (_, out_suffix) in LANGS.items()
-        }
-        if name == "mallabia":
-            # La portada es la unica pagina cuyo canonical apunta a la raiz
-            # (ver mallabia_head.html), no a su propio nombre de fichero.
-            alternates["es"] = SITE_URL
+        alternates = {lang: SITE_URL + out_name(name, lang) for lang in LANGS}
+        if name == HOME:
+            # La portada en euskera es la raiz, no "index.html" (ver
+            # mallabia_head.html): es la URL que se enlaza y se comparte.
+            alternates["eu"] = SITE_URL
         for loc in alternates.values():
             links = "\n".join(
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
