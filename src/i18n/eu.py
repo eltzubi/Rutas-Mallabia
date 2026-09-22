@@ -351,6 +351,12 @@ HOME = {
     '<p class="route-card-desc">Circuito de senderismo desde Markina-Xemein por el b&uacute;nker de Mallukitoko, Zapola, una zona de trincheras de la Guerra Civil y el Puente Bolu</p>':
         '<p class="route-card-desc">Oinezko ibilbide zirkularra Markina-Xemeindik, Mallukitokiko bunkerra, Zapola eta Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino</p>',
 
+    # santaeufemia card
+    'alt="Ermita de Santa Eufemia en la cima, con tejado de teja y vistas amplias sobre varias sierras"':
+        'alt="Santa Eufemia ermita gailurrean, teilazko teilatuarekin eta hainbat mendikateren ikuspegi zabalekin"',
+    '<p class="route-card-desc">Circuito desde Markina-Xemein hasta la ermita de Santa Eufemia, pasando por Atxagarai y Urregarai</p>':
+        '<p class="route-card-desc">Oinezko ibilbide zirkularra Markina-Xemeindik, Atxagarai eta Urregaraitik igarota, Santa Eufemiaraino</p>',
+
     # markinakobau card
     'alt="Boca de la cueva de Kobaria koba vista desde dentro, con helechos y musgo alrededor"':
         'alt="Kobaria kobaren ahoa barrutik ikusita, iratzeekin eta goroldioarekin inguruan"',
@@ -3247,6 +3253,8 @@ DESCRIPTIONS = {
         'Larruskain auzotik igarota, azken zatian Done Jakue bidetik',
     'mallukitoko': 'Oinezko ibilbide zirkularra Markina-Xemeindik, Mallukitokiko bunkerra, Zapola eta '
         'Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino',
+    'santaeufemia': 'Oinezko ibilbide zirkularra Markina-Xemeindik, Atxagarai eta Urregaraitik igarota, '
+        'Santa Eufemiaraino',
 }
 
 # <title> per page (head files)
@@ -3373,6 +3381,7 @@ TITLES = {
     'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
     'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
     'mallukitoko': 'Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia · Oinezko ibilbidea — Herriko ibilbideak',
+    'santaeufemia': 'Markina-Xemein, Santa Eufemia · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4537,6 +4546,65 @@ MALLUKITOKO = {
         '<p>Jaitsierarekin jarraitzen dugu <b>Bolu Zubi</b>ra iritsi arte, <b>Markina-Xemein</b>en itzulia ixtetik hurbil-hurbil.</p>',
 }
 
+SANTAEUFEMIA = {
+    '<span>Sendero y pista</span><span class="sep">/</span><span>Santa Eufemia</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Santa Eufemia</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<p class="full-name">Circuito desde Markina-Xemein hasta la ermita de Santa Eufemia, pasando por Atxagarai y Urregarai</p>':
+        '<p class="full-name">Oinezko ibilbide zirkularra Markina-Xemeindik, Atxagarai eta Urregaraitik igarota, Santa Eufemiaraino</p>',
+    'alt="Foto ampliada del recorrido de Markina-Xemein, Santa Eufemia"':
+        'alt="Markina-Xemein, Santa Eufemia ibilbidearen argazki handitua"',
+    '<span class="v">Sendero y pista</span>':
+        '<span class="v">Bidezidorra eta pista</span>',
+    'data-marker-title="Markina-Xemein (salida y llegada)"':
+        'data-marker-title="Markina-Xemein (irteera eta helmuga)"',
+
+    # --- fotos ---
+    'alt="Ermita de Santa Eufemia en la cima, con tejado de teja y vistas amplias sobre varias sierras"':
+        'alt="Santa Eufemia ermita gailurrean, teilazko teilatuarekin eta hainbat mendikateren ikuspegi zabalekin"',
+    'alt="La ermita de Santa Eufemia vista desde abajo, sobre una cima de roca caliza, con una escalera de piedra subiendo hacia ella"':
+        'alt="Santa Eufemia ermita behetik ikusita, kareharrizko gailur baten gainean, harrizko eskailera bat gora igotzen"',
+    'alt="Escalera de piedra subiendo hacia la ermita de Santa Eufemia, entre roca caliza"':
+        'alt="Harrizko eskailera Santa Eufemia ermitarantz gora, kareharrien artean"',
+    'alt="Corredor con chaqueta amarilla en la cima de Santa Eufemia, junto a la ermita"':
+        'alt="Korrikalaria jaka horiarekin Santa Eufemiako gailurrean, ermitaren ondoan"',
+    'alt="Abrevadero de piedra con agua en el bosque, junto al camino"':
+        'alt="Harrizko askatxoa urarekin basoan, bidearen ondoan"',
+    'alt="Se&ntilde;al met&aacute;lica oxidada de monta&ntilde;a en la cima, con el valle al fondo"':
+        'alt="Mendiko seinale metaliko herdoildua gailurrean, harana hondoan"',
+    'alt="La ermita de Santa Eufemia de cerca, sobre roca caliza, con la se&ntilde;al de monta&ntilde;a y cielo cubierto"':
+        'alt="Santa Eufemia ermita gertutik, kareharriaren gainean, mendiko seinalearekin eta zeru hodeitsuarekin"',
+    'alt="Interior de la ermita de Santa Eufemia, con techo de madera vista y un peque&ntilde;o altar de piedra"':
+        'alt="Santa Eufemia ermitaren barrualdea, zurezko sabai ikusgarriarekin eta harrizko aldare txiki batekin"',
+    'alt="Cartel del aterpetxe de Atxagarai, en Aulesti, en la fachada del refugio"':
+        'alt="Atxagaraiko aterpetxearen kartela, Aulestin, aterpearen fatxadan"',
+    'alt="Pista forestal entre pinos en la zona alta de la ruta"':
+        'alt="Baso-pista pinuen artean, ibilbideko goialdean"',
+
+    # --- para quién es ---
+    '<p>Una vuelta muy bonita desde <b>Markina-Xemein</b> hasta <b>Santa Eufemia</b>, con una subida larga pero llevadera y bastante variedad durante el recorrido. Al principio vamos tranquilos por el <b>Camino de Santiago</b> y poco a poco vamos ganando altura hasta meternos de lleno en pistas. La mejor parte llega arriba, en la zona de <b>Atxagarai</b> y <b>Urregarai</b>, con la ermita, la fuente y unas vistas que merecen mucho la pena.</p>':
+        '<p><b>Markina-Xemein</b>dik <b>Santa Eufemia</b>ra doan ibilbidea oso polita da, igoera luzea baina erraza duena eta ibilbidean zehar aldaketa ugari dituena. Hasieran, lasai joango gara <b>Donejakue bidea</b> jarraituz, eta pixkanaka altuera irabazten joango gara, pista artean sartu arte. Zati onena goian dago, <b>Atxagarai</b> eta <b>Urregarai</b> inguruan, ermita, iturria eta merezi duten ikuspegi ederrekin.</p>',
+
+    # --- relato ---
+    '<p>Salimos de <b>Markina-Xemein</b> hacia el oeste, direcci&oacute;n <b><a href="iruzubieta.html">Iruzubieta</a></b>, siguiendo durante los primeros kil&oacute;metros el <b>Camino de Santiago</b>. Es un tramo c&oacute;modo para empezar y, aproximadamente en el kil&oacute;metro 3, al llegar a una fuente, dejamos el camino principal y giramos a la derecha para empezar a subir por una carretera asfaltada.</p>':
+        '<p><b>Markina-Xemein</b>dik mendebalderantz abiatuko gara, <b><a href="iruzubieta.html">Iruzubieta</a></b>rantz, lehen kilometroetan <b>Donejakue bidea</b> jarraituz. Hasiera erosoa da, eta, gutxi gorabehera 3. kilometroan, iturri batera iristean, bide nagusia utzi eta eskuinera biratuko dugu, asfaltozko errepide batetik igotzen hasteko.</p>',
+    '<p>Pasamos junto a un restaurante y seguimos ascendiendo. M&aacute;s adelante dejamos el asfalto y entramos ya en pista. Desde aqu&iacute; la ruta cambia bastante y comienza una subida m&aacute;s larga, enlazando varias pistas y ganando altura poco a poco hasta acercarnos al alto de <b>Lekoitzgane</b>.</p>':
+        '<p>Jatetxe baten ondotik pasatuko gara eta igotzen jarraituko dugu. Aurrerago, asfaltoa utzi eta pistan sartuko gara. Hemendik aurrera, ibilbidea asko aldatzen da, eta igoera luzeago bat hasten da, hainbat pista lotuz eta altuera pixkanaka irabaziz, <b>Lekoitzgane</b>ko gainera hurbildu arte.</p>',
+    '<p>Al llegar al puerto cruzamos y cogemos la carretera de cemento que sube hacia <b>Atxagarai</b> y <b>Santa Eufemia</b>. Seguimos ganando metros y el terreno se va abriendo, con mejores vistas a medida que subimos.</p>':
+        '<p>Gainera iristean, gurutzatu eta <b>Atxagarai</b>ko eta <b>Santa Eufemia</b>ko porlanezko errepidea hartuko dugu. Metroak irabazten jarraituko dugu, eta lurra irekitzen joango da, ikuspegi hobeekin igotzen goazen heinean.</p>',
+    '<p>Arriba llegamos a la zona de Atxagarai, donde encontramos una fuente, una bolera y el refugio. Es un buen sitio para parar un momento, beber algo y coger agua antes de seguir.</p>':
+        '<p>Goian, Atxagaraiko eremura iritsiko gara, non iturri bat, bolatoki bat eta aterpea aurkituko ditugun. Leku ona da une batez gelditzeko, zerbait edateko eta ura hartzeko, jarraitu aurretik.</p>',
+    '<p>Desde el refugio giramos a la derecha y entramos en un camino medio roto que nos lleva hacia la ermita de Santa Eufemia, situada en lo alto de <b><a href="urregarai.html">Urregarai</a></b>. La parte final tiene mucho encanto, con la roca caliza y una escalinata de piedra de unos 222 pelda&ntilde;os que termina junto a la ermita. Es un lugar con mucha historia y muy conocido en la zona, especialmente por la romer&iacute;a de Santa Eufemia que se celebra cada septiembre.</p>':
+        '<p>Aterpetik eskuinera biratu eta bide erdi hautsi batean sartuko gara, <b><a href="urregarai.html">Urregarai</a></b>ko gainean dagoen Santa Eufemiako ermitara eramango gaituena. Azken zatia xarma handikoa da, kareharrizko haitzekin eta 222 mailako harrizko eskalinata batekin, ermitaren ondoan amaitzen dena. Historia handiko lekua da, eta oso ezaguna inguruan, batez ere irailean ospatzen den Santa Eufemiako erromeriagatik.</p>',
+    '<p>Si el d&iacute;a est&aacute; despejado, merece la pena quedarse un rato arriba. Las vistas son muy amplias, pr&aacute;cticamente de 360 grados, y desde aqu&iacute; se domina buena parte de <b>Lea-Artibai</b>, la costa y muchas de las monta&ntilde;as del interior.</p>':
+        '<p>Eguna garbi badago, merezi du goian tarte bat egotea. Ikuspegiak oso zabalak dira, ia 360 gradukoak, eta hemendik <b>Lea-Artibai</b>ko zati handi bat, kostaldea eta barnealdeko mendi asko menderatzen dira.</p>',
+    '<p>Despu&eacute;s deshacemos parte del camino y volvemos a bajar hasta la carretera general, en la zona de Lekoitzgane. Aqu&iacute; giramos a la izquierda y empezamos el regreso hacia Markina.</p>':
+        '<p>Ondoren, bidea desegin eta berriro jaitsiko gara errepide nagusira, Lekoitzganeko eremuan. Hemen, ezkerrera biratu eta Markinarantz itzuliko gara.</p>',
+    '<p>La &uacute;ltima parte ya es mucho m&aacute;s sencilla. Seguimos la carretera pr&aacute;cticamente todo el tiempo, en descenso, hasta volver a Markina-Xemein. No tiene demasiado misterio, aunque conviene bajar con cuidado, sobre todo en las curvas y en los tramos donde podamos encontrarnos alg&uacute;n coche.</p>':
+        '<p>Azken zatia askoz errazagoa da. Errepidea jarraituko dugu ia denbora guztian, jaitsieran, Markina-Xemeinera itzuli arte. Ez du misterio handirik, baina kontuz jaitsi behar da, batez ere bihurguneetan eta autoak aurki ditzakegun zatietan.</p>',
+    '<p>En conjunto es una vuelta muy agradecida, con una subida larga pero entretenida y una parte final en Santa Eufemia que compensa de sobra el esfuerzo.</p>':
+        '<p>Oro har, ibilbide atsegina da, igoera luzea baina entretenigarria duena eta Santa Eufemian amaiera zoragarria duena, ahalegina soberan konpentsatzen duena.</p>',
+}
+
 MARKINABOLIBAR = {
     '<span>Pista y carretera</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai y Markina</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
@@ -4844,5 +4912,6 @@ PAGE_STRINGS = {
     'gereaoculta': GEREAOCULTA,
     'markinakobau': MARKINAKOBAU,
     'mallukitoko': MALLUKITOKO,
+    'santaeufemia': SANTAEUFEMIA,
     'aviso-legal': AVISO_LEGAL,
 }

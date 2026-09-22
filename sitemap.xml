@@ -522,6 +522,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/mallukitoko.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/santaeufemia.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/santaeufemia.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/santaeufemia.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/santaeufemia.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/santaeufemia.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/santaeufemia.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
