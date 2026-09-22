@@ -1837,13 +1837,13 @@ URREGARAI = {
     'junto a la iglesia del Carmen. Cruzamos el pueblo hacia la salida, pasando junto a unas escuelas, '
     'y cogemos de nuevo un camino de barrio que sube sin descanso hacia <b>el collado de Urregarai</b> (km 16 '
     '&middot; 573 m), en los alrededores de Santa Eufemia. El &uacute;ltimo repecho es precioso, junto '
-    'a un caser&iacute;o-granja con muchos pastos. Arriba est&aacute; el refugio de Urregarai, con una '
+    'a un caser&iacute;o-granja con muchos pastos. Arriba est&aacute; el refugio de Atxagarai, con una '
     'fuente y una bolera enfrente.':
         '<b>Markinan</b> (12 km &middot; 79 m) berriro ur hornitzen gara, Karmen elizaren ondoko iturri '
         'handi batean. Herria zeharkatzen dugu irteera aldera, eskola batzuen ondotik pasatuz, eta '
         'berriro auzo-bide bat hartzen dugu, atsedenik gabe <b>Urregaraiko lepo</b>ra igotzen duena (16 km '
         '&middot; 573 m), Santa Eufemia inguruan. Azken aldapa ederra da, larre asko dituen '
-        'baserri-granja baten ondoan. Goian Urregairako aterpea dago, iturri batekin eta aurrean '
+        'baserri-granja baten ondoan. Goian Atxagaraiko aterpea dago, iturri batekin eta aurrean '
         'bolatoki bat.',
 
     'Bajamos por el camino de asfalto que zigzaguea hasta la carretera general, la cruzamos y, un poco '
@@ -1865,11 +1865,11 @@ URREGARAI = {
     '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (el collado de Urregarai y '
     'Muniozguren) y tramos de pista, asfalto y cemento empinado. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente en Iturreta, otra junto a '
-    'la iglesia del Carmen en Markina, y una tercera en el refugio de Urregarai.':
+    'la iglesia del Carmen en Markina, y una tercera en el refugio de Atxagarai.':
         '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregaraiko lepoa '
         'eta Muniozguren) eta pista, asfalto eta zementu pikoko tarteekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Karmen '
-        'elizaren ondoan, eta hirugarren bat Urregairako aterpean.',
+        'elizaren ondoan, eta hirugarren bat Atxagaraiko aterpean.',
 }
 
 KALAMUA = {
@@ -4667,8 +4667,8 @@ MARKINABOLIBAR = {
         'Gora iritsitakoan, <b>Zeinka</b>rantz jarraitzen dugu (12,74 km &middot; 356 m), oso inguru polit bat zeharkatuz, baserri eta zelai artean, ikuspegi ederrekin, aurrera egin ahala zabaltzen direnak.',
     'Desde Zeinka nos metemos por una pista en la zona alta de Aulesti. Buena parte de este tramo discurre por pistas de tierra y resulta muy entretenido.':
         'Zeinkatik Aulestiko goiko aldean sartzen gara, pista batetik. Zati honen zati handi bat lurrezko pistetatik doa, eta oso entretenigarria da.',
-    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia <b>el collado de Urregarai</b> (km 17,86 &middot; 572 m), en los alrededores de la ermita de <b>Santa Eufemia</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio de Urregarai, con una fuente y una bolera enfrente, nos servir&aacute; de referencia para saber que hemos llegado. Es un buen punto para coger agua antes de continuar.':
-        'Berriro errepide nagusira iristean, <b>Lekoitzgane</b>ko gainean, gurutzatu egiten dugu, eta justu aurrean <b>Urregaraiko lepo</b>ra igotzen den errepidea hartzen dugu (17,86 km &middot; 572 m), <b>Santa Eufemia</b> ermitaren inguruan. Hemen aldapa gogor bat dugu zain, malda handikoa, goiko aldera iritsi arte. Urregaraiko aterpetxeak, iturri bat eta bolatoki bat aurrean dituela, erreferentzia gisa balioko digu iritsi garela jakiteko. Ura hartzeko puntu ona da, aurrera jarraitu aurretik.',
+    'Al llegar de nuevo a la carretera general, en el alto de <b>Lekoitzgane</b>, la cruzamos y justo enfrente cogemos la carretera que sube hacia <b>el collado de Urregarai</b> (km 17,86 &middot; 572 m), en los alrededores de la ermita de <b>Santa Eufemia</b>. Aqu&iacute; nos espera una buena rampa de subida, con bastante pendiente, hasta alcanzar la zona alta. El refugio de Atxagarai, con una fuente y una bolera enfrente, nos servir&aacute; de referencia para saber que hemos llegado. Es un buen punto para coger agua antes de continuar.':
+        'Berriro errepide nagusira iristean, <b>Lekoitzgane</b>ko gainean, gurutzatu egiten dugu, eta justu aurrean <b>Urregaraiko lepo</b>ra igotzen den errepidea hartzen dugu (17,86 km &middot; 572 m), <b>Santa Eufemia</b> ermitaren inguruan. Hemen aldapa gogor bat dugu zain, malda handikoa, goiko aldera iritsi arte. Atxagaraiko aterpetxeak, iturri bat eta bolatoki bat aurrean dituela, erreferentzia gisa balioko digu iritsi garela jakiteko. Ura hartzeko puntu ona da, aurrera jarraitu aurretik.',
     'Despu&eacute;s de reponer agua seguimos por el otro lado y comenzamos el descenso. La primera parte es muy bonita, entre prados y una granja, con mucho pasto &mdash; luego ya no tanto, hasta Markina. A partir de ah&iacute; empezamos a perder altura de forma bastante seguida, aunque siempre por buen camino asfaltado.':
         'Ura hartu ondoren, beste aldetik jarraitzen dugu eta jaitsierari ekiten diogu. Lehen zatia oso polita da, larreen eta baserri baten artean, larre asko dituela &mdash; gero ez horrenbeste, Markinaraino. Hortik aurrera, altuera galtzen hasten gara nahiko jarraian, nahiz eta beti errepide asfaltatu onetik.',
     'Este descenso nos lleva directamente hasta <b>Markina</b> (km 23,06 &middot; 80 m), entrando aproximadamente por la zona de la salida hacia Ondarroa. Pasamos junto a una escuela y atravesamos Markina para buscar de nuevo el Camino de Santiago.':
