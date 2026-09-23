@@ -226,6 +226,7 @@ COMMON = {
     '<span class="v">Pista</span>': '<span class="v">Pista</span>',
     '<span class="v">Sendero</span>': '<span class="v">Bidezidorra</span>',
     '<span class="v">Mixta</span>': '<span class="v">Nahasia</span>',
+    '<span class="v">Traves&iacute;a</span>': '<span class="v">Zeharkaldia</span>',
     '<span class="v">Bici</span>': '<span class="v">Bizikleta</span>',
     '<span class="v">Senderismo</span>': '<span class="v">Oinez</span>',
     '<span class="v">Correr</span>': '<span class="v">Korrika</span>',
@@ -357,6 +358,14 @@ HOME = {
         'alt="Santa Eufemia ermita gailurrean, teilazko teilatuarekin eta hainbat mendikateren ikuspegi zabalekin"',
     '<p class="route-card-desc">Circuito desde Markina-Xemein hasta la ermita de Santa Eufemia, pasando por Atxagarai y Urregarai</p>':
         '<p class="route-card-desc">Oinezko ibilbide zirkularra Markina-Xemeindik, Atxagarai eta Urregaraitik igarota, Santa Eufemiaraino</p>',
+
+    # markinaurjauziak card
+    'alt="Pista de hierba por el cordal, con aerogeneradores en la loma y al fondo una cima coronada por antenas"':
+        'alt="Belarrezko pista gainean zehar, muinoan eolikoekin eta hondoan antenaz koroatutako gailur batekin"',
+    '<h3 class="route-card-name">Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea</h3>':
+        '<h3 class="route-card-name">Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak</h3>',
+    '<p class="route-card-desc">Traves&iacute;a a pie de Markina-Xemein a Trabakua por Bolibar y Muniozguren, hasta las cascadas de Gerea</p>':
+        '<p class="route-card-desc">Oinezko zeharkaldia Markina-Xemeindik Trabakuaraino, Bolibar eta Muniozgurendik igarota, Gereako ur-jauzietaraino</p>',
 
     # markinakobau card
     'alt="Boca de la cueva de Kobaria koba vista desde dentro, con helechos y musgo alrededor"':
@@ -3262,6 +3271,8 @@ DESCRIPTIONS = {
         'Gerra Zibileko lubaki-eremu batetik igarota, Bolu zubiraino',
     'santaeufemia': 'Oinezko ibilbide zirkularra Markina-Xemeindik, Atxagarai eta Urregaraitik igarota, '
         'Santa Eufemiaraino',
+    'markinaurjauziak': 'Oinezko zeharkaldia Markina-Xemeindik Trabakuaraino, Bolibar eta '
+        'Muniozgurendik igarota, Gereako ur-jauzietaraino',
 }
 
 # <title> per page (head files)
@@ -3389,6 +3400,7 @@ TITLES = {
     'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
     'mallukitoko': 'Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia · Oinezko ibilbidea — Herriko ibilbideak',
     'santaeufemia': 'Markina-Xemein, Santa Eufemia · Oinezko ibilbidea — Herriko ibilbideak',
+    'markinaurjauziak': 'Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
 }
 
 INTXORTA = {
@@ -4876,6 +4888,79 @@ AVISO_LEGAL = {
         '<p><b>Cookieak eta biltegiratze lokala.</b> Webgune honek ez du inolako jarraipen-cookierik ez analitikarik erabiltzen. Nabigatzailearen <code>localStorage</code>-n hobespen bakar bat gordetzen du (gai argia edo iluna aukeratu baduzu), zure gailutik atera ez eta inor identifikatzen ez duena.</p>',
 }
 
+MARKINAURJAUZIAK = {
+    '<span>Mixta</span><span class="sep">/</span><span>Cascadas de Gerea</span><span class="sep">/</span><span>Traves&iacute;a</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Gereako ur-jauziak</span><span class="sep">/</span><span>Zeharkaldia</span>',
+    '<h1>Markina-Xemein, Bolibar<br><em>Muniozguren y las cascadas de Gerea</em></h1>':
+        '<h1>Markina-Xemein, Bolibar<br><em>Muniozguren eta Gereako ur-jauziak</em></h1>',
+    '<p class="full-name">Traves&iacute;a a pie de Markina-Xemein a Trabakua por Bolibar y Muniozguren, hasta las cascadas de Gerea</p>':
+        '<p class="full-name">Oinezko zeharkaldia Markina-Xemeindik Trabakuaraino, Bolibar eta Muniozgurendik igarota, Gereako ur-jauzietaraino</p>',
+    'alt="Foto ampliada del recorrido de Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea"':
+        'alt="Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak ibilbidearen argazki handitua"',
+    'data-marker-title="Markina-Xemein (salida)"':
+        'data-marker-title="Markina-Xemein (irteera)"',
+    '<title>Cascada de Gerea &middot; 14,64 km &middot; 679 m</title>':
+        '<title>Gereako ur-jauzia &middot; 14,64 km &middot; 679 m</title>',
+    '<span class="elev-legend-item"><span class="num">3</span>Cascada de Gerea</span>':
+        '<span class="elev-legend-item"><span class="num">3</span>Gereako ur-jauzia</span>',
+    '<span>Traves&iacute;a &mdash; termina en Trabakua, no en la salida</span>':
+        '<span>Zeharkaldia &mdash; Trabakuan amaitzen da, ez irteeran</span>',
+    'download="Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea.gpx"':
+        'download="Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak.gpx"',
+    'download="Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea.kml"':
+        'download="Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak.kml"',
+
+    # --- para quién es ---
+    '    <p>La &uacute;nica ruta de la web que no vuelve al punto de salida: empieza en <b>Markina-Xemein</b> y termina en <b>Trabakua</b>, junto a la parada del autob&uacute;s, para poder volver sin repetir camino. Los primeros kil&oacute;metros van por el <b>Camino de Santiago</b> y son muy c&oacute;modos; el desnivel se concentra despu&eacute;s de <b>Bolibar</b>, con la subida de cemento hacia <b>Muniozguren</b>. Las <b>cascadas de Gerea</b> llegan casi al final, en el kil&oacute;metro 14,6, y a finales de verano bajan con muy poca agua.</p>':
+        '    <p>Webeko ibilbide bakarra da irteerara itzultzen ez dena: <b>Markina-Xemein</b>en hasten da eta <b>Trabakua</b>n amaitzen, autobus-geltokiaren ondoan, bide bera errepikatu gabe itzuli ahal izateko. Lehen kilometroak <b>Donejakue Bide</b>tik doaz eta oso erosoak dira; desnibela <b><a href="markinabolibar.html">Bolibar</a></b>en ondoren pilatzen da, <b><a href="muniozguren.html">Muniozguren</a></b>erako zementuzko igoerarekin. <b><a href="gerea.html">Gereako ur-jauziak</a></b> ia amaieran daude, 14,6. kilometroan, eta udaren ondoren ur oso gutxirekin jaisten dira.</p>',
+
+    # --- fotos ---
+    'alt="Camino asfaltado estrecho subiendo entre &aacute;rboles, con hojas ca&iacute;das en los bordes"':
+        'alt="Bide asfaltatu estua zuhaitzen artean gora, ertzetan eroritako hostoekin"',
+    'alt="Carretera estrecha junto a una barandilla de madera, con una iglesia de piedra y caser&iacute;os blancos abajo en el valle"':
+        'alt="Errepide estua zurezko baranda baten ondoan, harrizko eliza bat eta baserri zuriak beherago haranean"',
+    'alt="Pista de tierra entre prados vallados, con &aacute;rboles j&oacute;venes y hierba a ambos lados"':
+        'alt="Lur-pista hesitutako zelaien artean, zuhaitz gazteekin eta belarrarekin bi aldeetan"',
+    'alt="Sendero por una ladera de hierba seca, con una cima coronada por antenas a la izquierda y aerogeneradores en el cordal del fondo"':
+        'alt="Bidezidorra belar lehorreko hegal batean, ezkerrean antenaz koroatutako gailur bat eta hondoko gainean eolikoak"',
+    'alt="Sendero de tierra entre con&iacute;feras y hayas j&oacute;venes, con helechos a los lados"':
+        'alt="Lur-bidezidorra koniferoen eta pago gazteen artean, alboetan garoekin"',
+    'alt="Sendero estrecho entre arbolado joven, con helechos y musgo en los taludes"':
+        'alt="Bidezidor estua zuhaitz gazteen artean, ezpondetan garo eta goroldioarekin"',
+    'alt="Cascada inferior de Gerea: pared de roca en capas cubierta de musgo, con muy poca agua y una poza peque&ntilde;a al pie"':
+        'alt="Gereako beheko ur-jauzia: geruzatako harkaitz-horma goroldioz estalia, ur oso gutxirekin eta oinean putzu txiki bat"',
+    'alt="Zona de casas y equipamientos al pie del monte, con un caser&iacute;o de piedra y un edificio moderno de ventanas redondas"':
+        'alt="Etxe eta ekipamendu gunea mendiaren oinean, harrizko baserri bat eta leiho biribileko eraikin moderno batekin"',
+    'alt="Cascada superior de Gerea cayendo por una pared de roca en capas, cubierta de musgo, con poca agua a finales de septiembre"':
+        'alt="Gereako goiko ur-jauzia geruzatako harkaitz-horma batetik behera, goroldioz estalia, iraila amaieran ur gutxirekin"',
+    'alt="Pista de hierba por el cordal, con aerogeneradores en la loma y al fondo una cima coronada por antenas"':
+        'alt="Belarrezko pista gainean zehar, muinoan eolikoekin eta hondoan antenaz koroatutako gailur batekin"',
+
+    # --- relato ---
+    # El castellano abre con un parrafo de contexto (cambio de salida, recorrido
+    # lineal, vuelta en autobus) que el euskera del autor no trae: sus 9 parrafos
+    # arrancan ya en la salida. Se mapean los dos primeros del castellano sobre el
+    # primero en euskera, sin tocar el castellano.
+    '    <p>Esta ruta la hemos planteado para acercarnos a las <b><a href="gerea.html">cascadas de Gerea</a></b>, pero esta vez cambiando el punto de salida. En lugar de empezar desde <b>Trabakua</b>, salimos desde <b>Markina-Xemein</b> y terminamos la ruta en Trabakua. As&iacute; podemos hacer un recorrido m&aacute;s lineal y, al acabar, tenemos la opci&oacute;n de coger el autob&uacute;s para volver a Markina.</p>\n    <p>Salimos desde <b>Markina-Xemein</b> siguiendo el <b>Camino de Santiago</b> en direcci&oacute;n a <b><a href="iruzubieta.html">Iruzubieta</a></b> y <b><a href="markinabolibar.html">Bolibar</a></b>. Los primeros kil&oacute;metros son muy c&oacute;modos, ideales para ir calentando, con terreno bastante llevadero y alguna subida suave. Durante este tramo pasamos tambi&eacute;n junto a una fuente.</p>':
+        '    <p><b>Markina-Xemein</b>dik abiatu gara, <b>Donejakue Bide</b>a hartuta <b><a href="iruzubieta.html">Iruzubieta</a></b> eta <b><a href="markinabolibar.html">Bolibar</a></b>rerantz. Lehen kilometroak oso erosoak dira, berotzeko aproposak: lur eremu samurra, igoera leunak eta tartean iturri bat, betiko geldialdi azkar horietakoa egiteko.</p>',
+    '    <p>Entramos en <b>Iruzubieta</b> y buscamos la zona del bar. Junto a &eacute;l contin&uacute;a el <b>Camino de Santiago</b> y, a partir de aqu&iacute;, el terreno empieza a subir algo m&aacute;s. Seguimos entre prados, ganado y caser&iacute;os, con buenas vistas durante buena parte del recorrido, hasta llegar a <b>Bolibar</b>.</p>':
+        '    <p><b>Iruzubieta</b>ra iritsi eta taberna-gunearen bila jo dugu. Haren ondotik <b>Donejakue Bide</b>ak jarraitzen du, eta hemendik aurrera lurra pixkanaka igotzen hasten da. Zelai, abere eta baserrien artean goaz, ikuspegi zabal eta politarekin, <b>Bolibar</b>rera iritsi arte.</p>',
+    '    <p>Atravesamos <b>Bolibar</b> y continuamos todav&iacute;a un tramo por el <b>Camino de Santiago</b>. Poco despu&eacute;s lo dejamos para buscar la direcci&oacute;n de <b>Trabakua</b>. Tomamos la carretera hacia la izquierda y seguimos hasta llegar a otra fuente. Junto a ella sale, tambi&eacute;n a mano izquierda, el camino que quer&iacute;amos seguir.</p>':
+        '    <p><b>Bolibar</b> zeharkatu eta oraindik <b>Donejakue Bide</b>tik jarraitu dugu tarte batez. Handik gutxira, <b>Trabakua</b>rantz jotzeko unea iritsi da: ezkerreko errepidea hartu dugu, beste iturri batera iritsi arte. Iturri horren ondoan ateratzen da jarraitu nahi genuen bidea.</p>',
+    '    <p>La idea inicial era seguir este camino, que llega hasta las cercan&iacute;as del caser&iacute;o <b>Astarlo</b>. Ese era el recorrido previsto, pero a mitad de camino encontramos unas marcas nuevas y decidimos seguirlas. Al final nos sacaron del trazado original y terminamos haciendo una variante diferente.</p>':
+        '    <p>Hasierako asmoa bide hori jarraitzea zen, <b>Astarlo</b> baserriaren ingurura eramaten duena. Hori zen aurreikusitako ibilbidea, baina bidean marka berri batzuk agertu zaizkigu eta haiei jarraitzea erabaki dugu. Azkenean, jatorrizko ibilbidetik atera eta aldaera interesgarri bat egin dugu.</p>',
+    '    <p>Con esta variante nos acercamos a la zona de <b><a href="astarlokoatxa.html">Astarloko Atxa</a></b> por la parte de atr&aacute;s, pero sin llegar hasta la cima. Desde all&iacute; perdemos un poco de altura para coger el camino de cemento que sube desde <b>Bolibar</b> hacia <b><a href="muniozguren.html">Muniozguren</a></b>.</p>':
+        '    <p>Aldaera horrek <b><a href="astarlokoatxa.html">Astarloko Atxa</a></b> ingurura hurbildu gaitu atzeko aldetik, gailurrera iritsi gabe. Handik altuera apur bat galdu dugu <b>Bolibar</b>tik <b><a href="muniozguren.html">Muniozguren</a></b>era igotzen den zementuzko bidea hartzeko.</p>',
+    '    <p>Llegamos as&iacute; a <b>Muniozguren</b> y seguimos por su parte trasera en direcci&oacute;n a <b><a href="longa.html">Longa</a></b>, por caminos que ya conocemos de otras rutas. Cuando empezamos a bajar hacia Longa dejamos el camino principal y giramos a la derecha para entrar en un sendero m&aacute;s peque&ntilde;o.</p>':
+        '    <p><b>Muniozguren</b>era iritsita, atzeko aldetik jarraitu dugu <b><a href="longa.html">Longa</a></b>rantz, beste ibilbide batzuetatik ezagutzen ditugun bideetatik. <b>Longa</b>rantz jaisten hasten garenean, bide nagusia utzi eta eskuinera biratu dugu bidezidor txikiago batean sartzeko.</p>',
+    '    <p>Ese sendero nos permite enlazar con otro de nuestros recorridos y acercarnos a las <b>cascadas de Gerea</b>. Seguimos ascendiendo sin demasiada dificultad hasta llegar a la zona de las cascadas. Primero visitamos la de abajo y luego continuamos hasta la superior.</p>':
+        '    <p>Bidezidor horrek gure beste ibilbide batekin lotzen du eta <b><a href="gerea.html">Gereako ur-jauzi</a></b>etara hurbiltzeko aukera ematen du. Igoera erosoa da, eta ur-jauzien eremura iritsi arte jarraitzen dugu. Lehenik behekoa bisitatzen dugu, eta gero goikoa.</p>',
+    '    <p>A finales de septiembre encontramos muy poca agua, algo bastante normal despu&eacute;s del verano. Aun as&iacute;, el entorno sigue siendo bonito, con roca, humedad y bastante musgo. En &eacute;pocas m&aacute;s lluviosas las cascadas llevan mucha m&aacute;s agua y el lugar cambia por completo.</p>':
+        '    <p>Iraileko amaieran ur gutxi aurkitu dugu, uda ondoren ohikoa den bezala. Hala ere, ingurua beti da polita: harkaitza, hezetasuna, goroldioa... Euri-garaietan ur-jauziek indar handiagoa hartzen dute eta lekua erabat aldatzen da.</p>',
+    '    <p>Desde aqu&iacute; ya solo queda volver hacia <b>Trabakua</b>. Vamos perdiendo altura poco a poco hasta terminar la ruta junto a la parada de autob&uacute;s. Hemos hecho acabar el track justo ah&iacute; para que quien haya salido desde Markina pueda volver en autob&uacute;s sin tener que repetir el recorrido.</p>':
+        '    <p>Hemendik aurrera <b>Trabakua</b>rantz itzultzea besterik ez da geratzen. Altuera galtzen joango gara pixkanaka, autobus-geltokiaren ondoan ibilbidea amaitu arte. Horrela, <b>Markina-Xemein</b>dik abiatu eta autobusez itzuli gara, ibilbidea errepikatu beharrik gabe.</p>',
+}
+
 PAGE_STRINGS = {
     'mallabia': HOME,
     'trabakua': TRABAKUA,
@@ -4928,5 +5013,6 @@ PAGE_STRINGS = {
     'markinakobau': MARKINAKOBAU,
     'mallukitoko': MALLUKITOKO,
     'santaeufemia': SANTAEUFEMIA,
+    'markinaurjauziak': MARKINAURJAUZIAK,
     'aviso-legal': AVISO_LEGAL,
 }

@@ -532,6 +532,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/santaeufemia.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/markinaurjauziak.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/markinaurjauziak.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinaurjauziak.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/markinaurjauziak.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/markinaurjauziak.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinaurjauziak.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>

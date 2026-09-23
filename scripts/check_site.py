@@ -63,17 +63,18 @@ def main():
 
     for lang, (_, suffix) in build.LANGS.items():
         for page in build.PAGES:
-            filename = build.out_name(page, suffix)
+            filename = build.out_name(page, lang)
             document = Document((ROOT / filename).read_text())
             nodes = document.nodes
-            require(any('leaflet.css' in n['attrs'].get('href', '') for n in nodes),
-                    f'{filename}: missing Leaflet stylesheet')
+            if page != 'aviso-legal':   # la unica pagina sin mapa
+                require(any('leaflet.css' in n['attrs'].get('href', '') for n in nodes),
+                        f'{filename}: missing Leaflet stylesheet')
             theme = next(n for n in nodes if n['attrs'].get('id') == 'themeToggle')
             require(all(theme['attrs'].get(k) for k in ('data-label-light', 'data-label-dark')),
                     f'{filename}: missing theme translations')
             require(theme['attrs']['data-label-dark'] ==
                     ('Aldatu gai ilunera' if lang == 'eu' else 'Cambiar a tema oscuro'), filename)
-            if page != 'mallabia':
+            if page not in ('mallabia', 'aviso-legal'):
                 form = next(n for n in nodes if n['attrs'].get('id') == 'reportForm')
                 require(all(form['attrs'].get('data-' + k) for k in ['sending', 'success', 'error', 'subject-prefix']),
                         f'{filename}: missing report translations')
@@ -86,9 +87,12 @@ def main():
                 names = [n for n in walk(section) if 'elev-legend-item' in n['attrs'].get('class', '').split()]
                 data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
                 require(len(names) == len(data.get('waypoints', [])), f'{filename}: waypoint/legend mismatch')
-            else:
+            elif page == 'mallabia':
                 cards = [n for n in nodes if n['attrs'].get('class') == 'route-card']
-                require(len(cards) == len(build.PAGES) - 1, f'{filename}: missing card')
+                # PAGES lleva la portada y las paginas que no son rutas (aviso-legal),
+                # y ninguna de las dos tiene tarjeta.
+                rutas = [p for p in build.PAGES if p not in ('mallabia', 'aviso-legal')]
+                require(len(cards) == len(rutas), f'{filename}: missing card')
                 for slug in ('muniozguren', 'iruzubieta'):
                     card = next(n for n in cards if n['attrs'].get('href') == slug + suffix + '.html')
                     require(set(card['attrs']['data-activity'].split(',')) == {'bici', 'senderismo'}, slug)
