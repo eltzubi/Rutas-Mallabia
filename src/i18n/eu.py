@@ -4915,8 +4915,8 @@ MARKINAURJAUZIAK = {
     # --- fotos ---
     'alt="Camino asfaltado estrecho subiendo entre &aacute;rboles, con hojas ca&iacute;das en los bordes"':
         'alt="Bide asfaltatu estua zuhaitzen artean gora, ertzetan eroritako hostoekin"',
-    'alt="Carretera estrecha junto a una barandilla de madera, con una iglesia de piedra y caser&iacute;os blancos abajo en el valle"':
-        'alt="Errepide estua zurezko baranda baten ondoan, harrizko eliza bat eta baserri zuriak beherago haranean"',
+    'alt="La iglesia de Bolibar, de piedra y con campanario, vista desde la carretera, con caser&iacute;os blancos alrededor y monte arbolado al fondo"':
+        'alt="Bolibarko eliza, harrizkoa eta kanpandorreduna, errepidetik ikusita, baserri zuriak inguruan eta baso-mendia hondoan"',
     'alt="Pista de tierra entre prados vallados, con &aacute;rboles j&oacute;venes y hierba a ambos lados"':
         'alt="Lur-pista hesitutako zelaien artean, zuhaitz gazteekin eta belarrarekin bi aldeetan"',
     'alt="Sendero por una ladera de hierba seca, con el Oiz coronado por antenas a la izquierda y aerogeneradores en el cordal del fondo"':
