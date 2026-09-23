@@ -130,11 +130,19 @@
 .hero-compact-stats{
   margin:10px 0 0;
   font-family:'IBM Plex Mono',monospace; font-weight:600;
-  /* El limite lo pone el euskera, que es mas largo: "30 ibilbide" frente a
-     "30 rutas". A 320 px caben 32 caracteres de monoespaciada en 276, o sea
-     14,4 px como mucho; por encima de eso la linea se parte y deja el "m+"
-     colgando solo. */
-  font-size:clamp(.85rem, 4.3vw, 1.55rem);
+  /* El limite lo pone el euskera, que es mas largo: "52 ibilbide" frente a
+     "52 rutas". Con 4,3vw la linea ya no cabia a 320 px (pedia 277 px en 276)
+     porque el recuento crecio de 30 rutas a 52, asi que se partia en dos y
+     dejaba el "m+" colgando solo.
+     El nowrap ademas es lo que quita el salto de maquetacion: hasta que no
+     llegaba IBM Plex Mono la linea se medía con la monoespaciada del sistema,
+     mas ancha, ocupaba dos lineas y estiraba el hero 13 px por encima de su
+     min-height; al llegar la tipografia buena volvia a una linea y toda la
+     pagina subia de golpe (CLS de 0,25 en la portada en euskera). Con una
+     sola linea garantizada, el alto del hero ya no depende de que tipografia
+     este pintando en ese momento. */
+  white-space:nowrap;
+  font-size:clamp(.8rem, 4.1vw, 1.55rem);
   font-variant-numeric:tabular-nums;
   letter-spacing:.01em;
   color:var(--readout-a);
