@@ -35,8 +35,8 @@
         maxDistanceKm: { type: 'number', description: 'Maximum route distance in kilometers.' },
         difficulty: {
           type: 'string',
-          enum: ['facil', 'media', 'media-alta', 'dificil'],
-          description: 'facil = easy, media = moderate, media-alta = moderate-to-hard, dificil = hard.'
+          enum: ['facil', 'media', 'dificil'],
+          description: 'facil = easy, media = moderate, dificil = hard.'
         }
       }
     },

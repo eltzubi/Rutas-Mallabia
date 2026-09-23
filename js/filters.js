@@ -60,7 +60,7 @@
   var state = Object.assign({}, defaults);
   var allowed = {
     activity:['all','senderismo','bici'], distance:['all','corto','media1','media2','larga'],
-    difficulty:['all','facil','media','media-alta','dificil'], elevation:['all','low','medium','high'], view:['list','map']
+    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','map']
   };
   try {
     var saved = JSON.parse(localStorage.getItem('trabakutik_filters'));
