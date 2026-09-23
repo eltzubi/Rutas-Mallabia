@@ -4891,8 +4891,8 @@ AVISO_LEGAL = {
 MARKINAURJAUZIAK = {
     '<span>Mixta</span><span class="sep">/</span><span>Cascadas de Gerea</span><span class="sep">/</span><span>Traves&iacute;a</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Gereako ur-jauziak</span><span class="sep">/</span><span>Zeharkaldia</span>',
-    '<h1>Markina-Xemein, Bolibar<br><em>Muniozguren y las cascadas de Gerea</em></h1>':
-        '<h1>Markina-Xemein, Bolibar<br><em>Muniozguren eta Gereako ur-jauziak</em></h1>',
+    '<h1>Markina-Xemein, Bolibar,<br><em>Muniozguren y las cascadas de Gerea</em></h1>':
+        '<h1>Markina-Xemein, Bolibar,<br><em>Muniozguren eta Gereako ur-jauziak</em></h1>',
     '<p class="full-name">Traves&iacute;a a pie de Markina-Xemein a Trabakua por Bolibar y Muniozguren, hasta las cascadas de Gerea</p>':
         '<p class="full-name">Oinezko zeharkaldia Markina-Xemeindik Trabakuaraino, Bolibar eta Muniozgurendik igarota, Gereako ur-jauzietaraino</p>',
     'alt="Foto ampliada del recorrido de Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea"':
@@ -4911,7 +4911,7 @@ MARKINAURJAUZIAK = {
         'download="Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak.kml"',
 
     # --- para quién es ---
-    '    <p>La &uacute;nica ruta de la web que no vuelve al punto de salida: empieza en <b>Markina-Xemein</b> y termina en <b>Trabakua</b>, junto a la parada del autob&uacute;s, para poder volver sin repetir camino. Los primeros kil&oacute;metros van por el <b>Camino de Santiago</b> y son muy c&oacute;modos; el desnivel se concentra despu&eacute;s de <b>Bolibar</b>, con la subida de cemento hacia <b>Muniozguren</b>. Las <b>cascadas de Gerea</b> llegan casi al final, en el kil&oacute;metro 14,6, y a finales de verano bajan con muy poca agua.</p>':
+    '    <p>La &uacute;nica ruta de la web que no vuelve al punto de salida: empieza en <b>Markina-Xemein</b> y termina en <b>Trabakua</b>, junto a la parada del autob&uacute;s, para poder volver sin repetir camino. Los primeros kil&oacute;metros van por el <b>Camino de Santiago</b> y son muy c&oacute;modos; el desnivel se concentra despu&eacute;s de <b><a href="markinabolibar.html">Bolibar</a></b>, con la subida de cemento hacia <b><a href="muniozguren.html">Muniozguren</a></b>. Las <b><a href="gerea.html">cascadas de Gerea</a></b> llegan casi al final, en el kil&oacute;metro 14,6, y a finales de verano bajan con muy poca agua.</p>':
         '    <p>Webeko ibilbide bakarra da irteerara itzultzen ez dena: <b>Markina-Xemein</b>en hasten da eta <b>Trabakua</b>n amaitzen, autobus-geltokiaren ondoan, bide bera errepikatu gabe itzuli ahal izateko. Lehen kilometroak <b>Donejakue Bide</b>tik doaz eta oso erosoak dira; desnibela <b><a href="markinabolibar.html">Bolibar</a></b>en ondoren pilatzen da, <b><a href="muniozguren.html">Muniozguren</a></b>erako zementuzko igoerarekin. <b><a href="gerea.html">Gereako ur-jauziak</a></b> ia amaieran daude, 14,6. kilometroan, eta udaren ondoren ur oso gutxirekin jaisten dira.</p>',
 
     # --- fotos ---
