@@ -4908,6 +4908,11 @@ MARKINAURJAUZIAK = {
     'download="Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea.kml"':
         'download="Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak.kml"',
 
+    'alt="Pared de roca en capas completamente tapizada de musgo en la zona de las cascadas de Gerea, con hilos finos de agua cayendo"':
+        'alt="Geruzatako harkaitz-horma goroldioz erabat estalia Gereako ur-jauzien inguruan, ur-hari meheak behera erortzen"',
+    'alt="El monumento a Sim&oacute;n Bol&iacute;var en la plaza empedrada de Bolibar, con el Oiz al fondo coronado por antenas y aerogeneradores"':
+        'alt="Simon Bolibarren monumentua Bolibarko harrizko plazan, hondoan Oiz mendia antenaz eta eolikoz koroatuta"',
+
     # --- para quién es ---
     '    <p>Una subida larga con recompensa al final. Los primeros kil&oacute;metros son de calentar, por el <b>Camino de Santiago</b> y entre caser&iacute;os; despu&eacute;s el monte se pone serio hasta arriba, y cuando ya llevas todo el desnivel encima aparecen las <b><a href="gerea.html">cascadas de Gerea</a></b>. En verano bajan con poca agua, as&iacute; que si puedes elegir el d&iacute;a, mejor despu&eacute;s de una temporada de lluvia.</p>':
         '    <p>Igoera luzea, amaieran sarirekin. Lehen kilometroak berotzekoak dira, <b>Donejakue Bide</b>tik eta baserrien artean; gero, mendia serio jartzen da goiraino, eta desnibel guztia gainean daramagunean agertzen dira <b><a href="gerea.html">Gereako ur-jauziak</a></b>. Udan ur gutxirekin jaisten dira, beraz eguna aukeratzeko aukera baduzu, hobe euri-sasoi baten ondoren.</p>',
