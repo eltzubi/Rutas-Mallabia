@@ -232,6 +232,7 @@ COMMON = {
     '<span class="v">Fácil</span>': '<span class="v">Erraza</span>',
     '<span class="v">F&aacute;cil</span>': '<span class="v">Erraza</span>',
     '<span class="v">Media</span>': '<span class="v">Ertaina</span>',
+    '<span class="v">Media-alta</span>': '<span class="v">Ertain-altua</span>',
     '<span class="v">Difícil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Dif&iacute;cil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
@@ -440,6 +441,7 @@ HOME = {
     '>Todos</option>': '>Guztiak</option>',
     '>Fácil</option>': '>Erraza</option>',
     '>Media</option>': '>Ertaina</option>',
+    '>Media-alta</option>': '>Ertain-altua</option>',
     '>Difícil</option>': '>Zaila</option>',
     '>Hasta 500 m</option>': '>500 m arte</option>',
     '>Más de 1.000 m</option>': '>1.000 m baino gehiago</option>',
