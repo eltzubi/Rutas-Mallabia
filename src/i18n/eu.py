@@ -4584,6 +4584,10 @@ SANTAEUFEMIA = {
         '<span class="elev-legend-item"><span class="num">2</span>Urregaraiko lepoa</span>',
 
     # --- fotos ---
+    'alt="Cruce de caminos en el bosque, con postes de madera indicadores y una se&ntilde;al verde de senderos, junto a una zona ajardinada"':
+        'alt="Bidegurutzea basoan, zurezko seinale-zutoinekin eta bidezidorren seinale berde batekin, lorategi-gune baten ondoan"',
+    'alt="Fuente de piedra con el agua corriendo, junto a un moj&oacute;n del Camino de Santiago con la flecha amarilla y la vieira, y un peque&ntilde;o puente de piedra"':
+        'alt="Harrizko iturria ura darionik, Donejakue Bideko mugarriaren ondoan, gezi horia eta bieirarekin, eta harrizko zubi txiki bat"',
     'alt="Ermita de Santa Eufemia en la cima, con tejado de teja y vistas amplias sobre varias sierras"':
         'alt="Santa Eufemia ermita gailurrean, teilazko teilatuarekin eta hainbat mendikateren ikuspegi zabalekin"',
     'alt="La ermita de Santa Eufemia vista desde abajo, sobre una cima de roca caliza, con una escalera de piedra subiendo hacia ella"':
