@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - chatgpt/antes-salir-preview-20260924
+  pull_request:
+    branches:
+      - main
 
 jobs:
   mobile-preview:
