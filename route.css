@@ -3,7 +3,7 @@
   --ground:#0A0F0A;
   --ground-raised:#131C10;
   --ink:#EAF5E2;
-  --ink-dim:#8FA382;
+  --ink-dim:#A7B49F;
   --teal:#2FE0F5;
   --teal-soft:rgba(47,224,245,.14);
   --violet:#A6FF4D;
@@ -14,7 +14,7 @@
   --ground:#F4F7EF;
   --ground-raised:#E8EEE0;
   --ink:#16210F;
-  --ink-dim:#57624A;
+  --ink-dim:#4B573F;
   --teal:#006E86;
   --teal-soft:#CFE9EF;
   --violet:#3A6B15;
@@ -178,7 +178,7 @@
   font-size:9px; font-weight:700;
   flex-shrink:0;
 }
-.hero-label{ padding:18px 26px 26px; }
+.hero-label{ padding:16px 22px 22px; }
 .eyebrow{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; letter-spacing:.13em; text-transform:uppercase;
@@ -314,8 +314,8 @@ footer b{ color:var(--ink); font-weight:600; }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
-.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
-.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.theme-toggle:hover{ box-shadow:none; }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.45); }
 .logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
 .wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
@@ -390,9 +390,9 @@ footer b{ color:var(--ink); font-weight:600; }
 .report-status.error{ color:#E0553D; }
 
 .fact{ border-radius:14px; }
-.fact .v{ text-shadow:0 0 14px currentColor; }
-.feat-facts .fact .v{ text-shadow:0 0 12px currentColor; }
-.readout-item .v{ text-shadow:0 0 18px currentColor; }
+.fact .v{ text-shadow:none; }
+.feat-facts .fact .v{ text-shadow:none; }
+.readout-item .v{ text-shadow:none; }
 
 .activity-chip.active{ box-shadow:0 0 18px -3px currentColor; }
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 14px var(--teal); }
