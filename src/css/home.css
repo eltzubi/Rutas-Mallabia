@@ -370,26 +370,34 @@
 .notice-details summary::after{ color:var(--violet); font-weight:700; }
 .notice-summary-copy{
   min-width:0;
-  display:flex;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-areas:"tag title" "sub sub";
   align-items:baseline;
-  flex-wrap:nowrap;
-  gap:6px;
+  column-gap:9px;
+  row-gap:2px;
   text-align:left;
   overflow:hidden;
 }
-.notice-summary-title{
-  flex:0 0 auto;
-  font:700 12px/1.3 'IBM Plex Mono',monospace;
+.notice-summary-tag{
+  grid-area:tag;
+  font:700 9px/1.2 'IBM Plex Mono',monospace;
+  letter-spacing:.08em;
   color:var(--violet);
 }
+.notice-summary-title{
+  grid-area:title;
+  font:700 13px/1.25 'Karla',sans-serif;
+  color:var(--ink);
+}
 .notice-summary-sub{
+  grid-area:sub;
   min-width:0;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  font:500 12.5px/1.3 'Karla',sans-serif;
-  color:var(--ink);
-  opacity:.82;
+  font:500 11.5px/1.3 'Karla',sans-serif;
+  color:var(--ink-dim);
 }
 .notice-details[open] summary{ border-bottom-color:transparent; }
 .notice-details .info-details-body{ padding-top:4px; }
