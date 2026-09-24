@@ -542,6 +542,19 @@ def sync_trailhead_colors(cards):
     return len(cambios)
 
 
+def compact_route_header(page_html):
+    """Put the original title and facts before the unchanged profile."""
+    if '<div class="hero-chart">' not in page_html:
+        return page_html
+    label = re.search(r'<div class="hero-label">.*?</div>', page_html, re.S)
+    facts = re.search(r'<div class="facts">.*?</div>\s*</div>', page_html, re.S)
+    if not label or not facts:
+        raise SystemExit('Route header is missing its label or facts')
+    label_html, facts_html = label.group(), facts.group()
+    page_html = page_html.replace(label_html, '', 1).replace(facts_html, '', 1)
+    return page_html.replace('<div class="hero-chart">', '<div class="hero-chart">\n' + label_html + '\n' + facts_html, 1)
+
+
 def main():
     copy_font_files()
     versions = {}
@@ -565,6 +578,7 @@ def main():
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
+            page_html = compact_route_header(page_html)
             page_html = add_tourist_trip_properties(page_html, name)
             page_html = shorten_breadcrumb(page_html)
             page_html = page_html.replace(
