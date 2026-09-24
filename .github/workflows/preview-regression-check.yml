@@ -1,0 +1,13 @@
+name: Preview regression check
+on:
+  push:
+    branches:
+      - chatgpt/diseno-previa-20260924
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run site regression checks
+        run: python3 scripts/check_site.py
