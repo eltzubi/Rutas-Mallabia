@@ -218,7 +218,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   display:block; width:calc(100% - 48px);
   cursor:zoom-in;
 }
-.photo-slot img{ width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.15) saturate(1.38); }
+.photo-slot img{ width:100%; height:100%; object-fit:cover; display:block; filter:none; }
 .photo-zoom{
   position:absolute; right:10px; bottom:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px;
@@ -235,7 +235,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   position:relative; aspect-ratio:4/3; overflow:hidden;
   border:1px solid var(--line); padding:0; background:none; cursor:zoom-in;
 }
-.gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; filter:contrast(1.15) saturate(1.38); }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; filter:none; }
 .gallery-item .photo-zoom{
   position:absolute; right:8px; bottom:8px;
   font-family:'IBM Plex Mono',monospace; font-size:11px;
@@ -314,22 +314,22 @@ footer b{ color:var(--ink); font-weight:600; }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
-.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
-.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
-.logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
+.theme-toggle:hover{ box-shadow:none; }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5); }
+.logo-photo{ box-shadow:0 0 0 4px var(--ground); }
 
 .wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
   border-radius:12px;
-  box-shadow:0 0 24px -10px var(--teal);
+  box-shadow:none;
 }
 .wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover, .feat-cta:hover{
-  box-shadow:0 0 30px -8px var(--violet);
+  box-shadow:none;
 }
 .wikiloc-link.ghost{ box-shadow:none; }
 
 .feat-panel{ border-radius:22px; }
-.feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--teal); }
-.feat-panel[data-activity="senderismo"]{ box-shadow:0 0 0 1px var(--line), 0 0 40px -16px var(--violet); }
+.feat-panel[data-activity="bici"]{ box-shadow:0 0 0 1px var(--line); }
+.feat-panel[data-activity="senderismo"]{ box-shadow:0 0 0 1px var(--line); }
 
 .report-modal{
   position:fixed; inset:0; z-index:100;
@@ -381,9 +381,9 @@ footer b{ color:var(--ink); font-weight:600; }
 .report-submit{
   font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;
   color:var(--ground); background:var(--teal); border:none; border-radius:12px;
-  padding:11px 18px; cursor:pointer; box-shadow:0 0 24px -10px var(--teal);
+  padding:11px 18px; cursor:pointer; box-shadow:none;
 }
-.report-submit:hover{ box-shadow:0 0 30px -8px var(--violet); }
+.report-submit:hover{ box-shadow:none; }
 .report-submit:disabled{ opacity:.6; cursor:default; box-shadow:none; }
 .report-status{ margin:12px 0 0; font-family:'IBM Plex Mono',monospace; font-size:12px; min-height:1.4em; }
 .report-status.success{ color:var(--teal); }
@@ -429,3 +429,4 @@ footer b{ color:var(--ink); font-weight:600; }
  .elev-tags .mid{ order:3; width:100%; text-align:center; }
  .elev-legend{ padding-inline:16px; }
 }
+

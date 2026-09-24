@@ -558,16 +558,12 @@ HOME = {
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>🧭 GPS obligatorio</h2>': '<h2>🧭 GPSa nahitaezkoa</h2>',
     '<h2>🚪 Respeta el entorno</h2>': '<h2>🚪 Errespetatu ingurua</h2>',
-    '<summary><svg class="notice-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" '
-    'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '
-    'aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3'
-    'L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" '
-    'x2="12.01" y2="17"/></svg>L&eacute;elo antes de salir</summary>':
-        '<summary><svg class="notice-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" '
-        'stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '
-        'aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3'
-        'L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" '
-        'x2="12.01" y2="17"/></svg>Irakurri irten aurretik</summary>',
+    '<summary><span class="notice-summary-copy"><span class="notice-summary-tag">IMPORTANTE</span>'
+    '<span class="notice-summary-title">Antes de salir</span>'
+    '<span class="notice-summary-sub">GPS &middot; caminos &middot; puertas &middot; seguridad</span></span></summary>':
+        '<summary><span class="notice-summary-copy"><span class="notice-summary-tag">GARRANTZITSUA</span>'
+        '<span class="notice-summary-title">Irten aurretik</span>'
+        '<span class="notice-summary-sub">GPSa &middot; bideak &middot; ateak &middot; segurtasuna</span></span></summary>',
     'Las rutas est&aacute;n documentadas sobre el terreno, con informaci&oacute;n &uacute;til sobre fuentes, cruces, vistas y puntos de referencia.':
         'Ibilbideak bertatik dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei eta erreferentzia-puntuei buruzko informazio baliagarriarekin.',
 
