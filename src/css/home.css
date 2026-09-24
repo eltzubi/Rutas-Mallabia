@@ -682,3 +682,48 @@ footer a:hover{ text-decoration:underline; }
 .fx-glow.a{ top:-22vw; left:-16vw; background:var(--teal); }
 .fx-glow.b{ top:8vw; right:-22vw; background:var(--violet); }
 :root[data-theme="light"] .fx-glow{ opacity:.10; }
+
+/* Visual review: readable cards and a compact route finder. */
+:root:not([data-theme="light"]){ --ink-dim:#B2BDAA; }
+.fx-glow{ opacity:.035; }
+:root[data-theme="light"] .fx-glow{ opacity:.025; }
+.fx-grid{ display:none; }
+.hero-compact img{ filter:contrast(1.08) saturate(1.08); }
+.hero-compact{ min-height:310px; max-height:none; }
+.hero-compact h1{ line-height:1.05; text-shadow:0 2px 8px #0008; }
+.hero-compact-lead{ font-size:16px; }
+.hero-compact-stats{ font-family:'Karla',sans-serif; font-size:clamp(.9rem,3.6vw,1.2rem); text-shadow:none; }
+.finder{ margin-top:16px; }
+.route-search{ margin-bottom:8px; }
+.route-search input{ font-size:16px; min-height:44px; }
+.finder-toolbar{ padding:6px 0; margin-bottom:4px; }
+.finder-toolbar::before{ inset:0; border-radius:14px; }
+.activity-filter{ padding:3px; }
+.activity-chip,.distance-chip,.open-filters{ font-family:'Karla',sans-serif; font-size:14px; min-height:40px; }
+.filter-controls{ padding:8px 0 14px; margin-bottom:18px; }
+.distance-group legend{ margin-bottom:8px; font:600 14px 'Karla',sans-serif; }
+.distance-chip{ padding:8px 14px; }
+.advanced-filters{ margin-top:4px; }
+.advanced-filters summary,.advanced-fields label{ font:500 14px 'Karla',sans-serif; }
+.route-card-name{ font:700 20px/1.25 'Karla',sans-serif; text-wrap:pretty; }
+.route-card-desc{ font-size:16px; line-height:1.5; }
+.route-card-stats{ font:700 16px/1.4 'Karla',sans-serif; }
+.route-card-tags,.route-card-time{ font-size:14px; line-height:1.45; }
+.route-card-tags .v,.route-card-time .v{ font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0; }
+.route-card-body{ gap:9px; }
+.route-card-chart{ margin-bottom:4px; }
+.view-fab,.view-fab:hover,.to-top{ box-shadow:0 4px 16px #0005; }
+.theme-toggle:hover{ box-shadow:none; }
+@media(min-width:660px){
+ .filter-controls{ display:flex; align-items:flex-end; flex-wrap:wrap; gap:6px 24px; }
+ .advanced-filters{ margin-top:0; }
+ .advanced-filters[open]{ flex-basis:100%; }
+}
+@media(max-width:659px){
+ .hero-compact{ min-height:290px; }
+ .hero-compact-content{ padding:24px 18px; }
+ .finder-toolbar{ padding:4px 0 8px; gap:6px; }
+ .activity-chip{ padding:6px 7px; }
+ .open-filters{ padding:6px 10px; }
+ .route-card-body{ padding:16px; }
+}
