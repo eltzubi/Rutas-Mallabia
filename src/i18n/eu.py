@@ -558,10 +558,12 @@ HOME = {
     '<span class="k">Antes de salir</span>': '<span class="k">Irten aurretik</span>',
     '<h2>🧭 GPS obligatorio</h2>': '<h2>🧭 GPSa nahitaezkoa</h2>',
     '<h2>🚪 Respeta el entorno</h2>': '<h2>🚪 Errespetatu ingurua</h2>',
-    '<summary><span class="notice-summary-copy"><span class="notice-summary-title">Antes de salir</span>'
-    '<span class="notice-summary-sub">GPS, estado de los caminos y normas b&aacute;sicas</span></span></summary>':
-        '<summary><span class="notice-summary-copy"><span class="notice-summary-title">Irten aurretik</span>'
-        '<span class="notice-summary-sub">GPSa, bideen egoera eta oinarrizko arauak</span></span></summary>',
+    '<summary><span class="notice-summary-copy"><span class="notice-summary-tag">IMPORTANTE</span>'
+    '<span class="notice-summary-title">Antes de salir</span>'
+    '<span class="notice-summary-sub">GPS &middot; caminos &middot; puertas &middot; seguridad</span></span></summary>':
+        '<summary><span class="notice-summary-copy"><span class="notice-summary-tag">GARRANTZITSUA</span>'
+        '<span class="notice-summary-title">Irten aurretik</span>'
+        '<span class="notice-summary-sub">GPSa &middot; bideak &middot; ateak &middot; segurtasuna</span></span></summary>',
     'Las rutas est&aacute;n documentadas sobre el terreno, con informaci&oacute;n &uacute;til sobre fuentes, cruces, vistas y puntos de referencia.':
         'Ibilbideak bertatik dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei eta erreferentzia-puntuei buruzko informazio baliagarriarekin.',
 
