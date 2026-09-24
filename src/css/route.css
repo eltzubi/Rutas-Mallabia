@@ -438,8 +438,10 @@ footer b{ color:var(--ink); font-weight:600; }
     border-color:transparent;
     background:transparent;
     display:flex;
+    flex-direction:row-reverse;
+    justify-content:flex-end;
     align-items:baseline;
-    gap:6px;
+    gap:5px;
   }
   .hero-chart > .facts .fact:nth-child(n+5) .v{
     font-size:14px;
@@ -449,5 +451,7 @@ footer b{ color:var(--ink); font-weight:600; }
     font-size:11px;
     line-height:1.25;
     color:var(--ink-dim);
+    white-space:nowrap;
   }
+  .hero-chart > .facts .fact:nth-child(n+5) .k::after{ content:" ·"; }
 }
