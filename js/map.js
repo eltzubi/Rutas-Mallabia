@@ -375,12 +375,22 @@
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
-        activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+        activeLine.setStyle({ color: activeBaseColor, weight: 4, opacity: baseOpacity });
         if (path) {
           path.setAttribute('aria-pressed', 'false');
           if (returnFocus) path.focus({ preventScroll: true });
         }
         activeLine = null;
+        Object.keys(hrefToLine).forEach(function(href){
+          var entry = hrefToLine[href];
+          var entryPath = entry.line.getElement();
+          var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
+          entry.line.setStyle({
+            color: entry.currentColor,
+            weight: 4,
+            opacity: hidden ? 0.06 : baseOpacity
+          });
+        });
       }
       // Antes esto reencuadraba el mapa entero al cerrar la ficha (y como
       // cualquier toque en el mapa cierra la ficha, se salia del zoom sin
@@ -389,12 +399,25 @@
     function openPanel(line, baseColor, html, keyboard){
       ensurePanel();
       if (activeLine && activeLine !== line) {
-        activeLine.setStyle({ color: activeBaseColor, weight: 4 });
+        activeLine.setStyle({ color: activeBaseColor, weight: 4, opacity: baseOpacity });
         activeLine.getElement().setAttribute('aria-pressed', 'false');
       }
       activeLine = line; activeBaseColor = baseColor;
       userMoved = true;
-      line.setStyle({ color: COLORS.parking, weight: 6 });
+
+      // La ruta elegida manda visualmente: rojo fino por encima; el resto
+      // conserva su color pero se apaga para no taparla ni ensuciar el mapa.
+      Object.keys(hrefToLine).forEach(function(href){
+        var entry = hrefToLine[href];
+        var entryPath = entry.line.getElement();
+        var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
+        if (entry.line === line) {
+          entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
+          if (entry.line.bringToFront) entry.line.bringToFront();
+        } else {
+          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4 });
+        }
+      });
       line.getElement().setAttribute('aria-pressed', 'true');
       panelBody.innerHTML = html;
       panel.hidden = false;
@@ -472,8 +495,8 @@
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
-        line.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
-        line.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+        line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+        line.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
 
         // Etiqueta de distancia en el punto medio, solo en el mapa de
         // conjunto (aqui es donde 46 rutas comparten el mismo arranque).
@@ -492,8 +515,8 @@
             L.DomEvent.stopPropagation(e);
             openPanel(line, hrefToLine[t.href].currentColor, html);
           });
-          labelMarker.on('mouseover', function(){ line.setStyle({ weight: 6 }); });
-          labelMarker.on('mouseout', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+          labelMarker.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          labelMarker.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
           hrefToLabel[t.href] = labelMarker;
         }
         var pathEl = line.getElement();
@@ -512,8 +535,8 @@
               e.preventDefault(); closePanel();
             }
           });
-          pathEl.addEventListener('focus', function(){ line.setStyle({ weight: 6 }); });
-          pathEl.addEventListener('blur', function(){ if (line !== activeLine) line.setStyle({ weight: 4 }); });
+          pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          pathEl.addEventListener('blur', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
         }
         hrefToLine[t.href] = { line: line, baseColor: baseColor, activity: activity, currentColor: baseColor };
       }
@@ -545,8 +568,14 @@
         entry.currentColor = color;
         if (entry.line === activeLine) {
           activeBaseColor = color;
+          entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
+          if (entry.line.bringToFront) entry.line.bringToFront();
         } else {
-          entry.line.setStyle({ opacity: show ? baseOpacity : 0.06, color: color });
+          entry.line.setStyle({
+            opacity: show ? (activeLine ? 0.22 : baseOpacity) : 0.06,
+            color: color,
+            weight: 4
+          });
         }
         var pathEl = entry.line.getElement();
         if (pathEl) {
