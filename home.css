@@ -351,19 +351,40 @@
 @media (max-width:420px){
   .practical-info .info-details-body{ padding-left:16px; }
 }
-/* El aviso de seguridad necesita leerse como una tarjeta, no como una fila
-   de acordeon mas -- antes solo se distinguia por el color del texto y un
-   "+" identico al de "Donde aparcar"/"Dormir cerca", asi que pasaba
-   desapercibido pese a llevar la info de GPS/seguridad. */
+/* Aviso de seguridad: visible pero discreto cuando esta cerrado.
+   El contenido completo sigue disponible al abrir el <details>. */
 .notice-details{ border-top:none; }
 .info-details.notice-details:last-child{ border-bottom:none; }
 .notice-details summary{
-  color:var(--violet); background:var(--violet-soft);
-  border:1px solid var(--violet); border-radius:14px;
-  padding:6px 16px; font-size:15px;
+  color:var(--ink);
+  background:transparent;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  padding:10px 2px;
+  font-size:13px;
+  text-transform:none;
+  letter-spacing:0;
 }
-.notice-details summary::after{ color:var(--violet); }
-.notice-icon{ flex:0 0 auto; margin-right:10px; color:var(--violet); }
+.notice-details summary::after{ color:var(--ink-dim); }
+.notice-summary-copy{
+  min-width:0;
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:3px 8px;
+  text-align:left;
+}
+.notice-summary-title{
+  font:600 12px/1.4 'IBM Plex Mono',monospace;
+  color:var(--ink);
+}
+.notice-summary-sub{
+  font:400 13px/1.4 'Karla',sans-serif;
+  color:var(--ink-dim);
+}
+.notice-details[open] summary{ border-bottom-color:transparent; }
+.notice-details .info-details-body{ padding-top:4px; }
 .notice-close{
   align-self:flex-start; margin-top:4px;
   font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.03em;
