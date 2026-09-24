@@ -129,6 +129,7 @@
    veia ni una ruta sin desplazar. */
 .hero-compact-stats{
   margin:10px 0 0;
+  text-align:center;
   font-family:'IBM Plex Mono',monospace; font-weight:600;
   /* El limite lo pone el euskera, que es mas largo: "52 ibilbide" frente a
      "52 rutas". Con 4,3vw la linea ya no cabia a 320 px (pedia 277 px en 276)
