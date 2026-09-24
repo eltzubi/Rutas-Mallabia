@@ -3,7 +3,7 @@
   --ground:#0D0D0F;
   --ground-raised:#17171A;
   --ink:#EAF5E2;
-  --ink-dim:#8FA382;
+  --ink-dim:#A7B49F;
   --teal:#2FE0F5;
   --teal-soft:rgba(47,224,245,.14);
   --violet:#A6FF4D;
@@ -17,7 +17,7 @@
   --ground:#F5F5F3;
   --ground-raised:#E9E9E5;
   --ink:#16210F;
-  --ink-dim:#57624A;
+  --ink-dim:#4B573F;
   --teal:#006E86;
   --teal-soft:#CFE9EF;
   --violet:#3A6B15;
@@ -159,18 +159,18 @@
 .route-search input::placeholder{color:var(--ink-dim);}
 .route-search input:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
 /* Quiet segmented controls, with color reserved for the current choice. */
-.finder-toolbar{display:flex;align-items:center;gap:12px;position:sticky;top:56px;z-index:60;padding:12px 0;isolation:isolate;margin-bottom:18px;}
+.finder-toolbar{display:flex;align-items:center;gap:12px;position:sticky;top:56px;z-index:60;padding:10px 0;isolation:isolate;margin-bottom:12px;}
 .finder-toolbar::before{content:"";position:absolute;inset:0 -8px;z-index:-1;border-radius:20px;background:var(--ground);background:color-mix(in srgb,var(--ground) 92%,transparent);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
 .activity-filter{display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--ground-raised);}
 .activity-chip,.distance-chip,.open-filters{font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;border:1px solid transparent;border-radius:999px;padding:5px 20px;min-height:28px;color:var(--ink-dim);background:transparent;transition:background .18s ease,color .18s ease,border-color .18s ease;}
 .activity-chip.active{background:var(--ink);color:var(--ground);box-shadow:0 2px 8px #00000012;}
 .activity-chip:hover:not(.active),.distance-chip:hover:not(.active){color:var(--ink);background:var(--ground-raised);}
 .open-filters{display:none;border-color:var(--line);color:var(--ink);white-space:nowrap;gap:6px;}
-.filter-controls{padding:18px 0 24px;margin:0 0 20px;border-bottom:1px solid var(--line);}
+.filter-controls{padding:14px 0 18px;margin:0 0 16px;border-bottom:1px solid var(--line);}
 .distance-group{margin:0;padding:0;border:0;min-width:0;}
 .distance-group legend{font:600 12px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin-bottom:12px;}
-.distance-filter{display:flex;flex-wrap:wrap;gap:8px;}
-.distance-chip{background:var(--ground-raised);font-size:12px;padding:10px 18px;white-space:nowrap;}
+.distance-filter{display:flex;flex-wrap:wrap;gap:6px;}
+.distance-chip{background:var(--ground-raised);font-size:12px;padding:8px 14px;white-space:nowrap;}
 .distance-chip.active{background:var(--teal-soft);border-color:color-mix(in srgb,var(--teal) 30%,transparent);color:var(--teal);}
 .advanced-filters{margin-top:14px;}
 .advanced-filters summary{display:flex;align-items:center;gap:8px;width:fit-content;cursor:pointer;font:600 12px 'IBM Plex Mono',monospace;color:var(--ink-dim);min-height:44px;list-style:none;border-radius:8px;}
@@ -629,8 +629,8 @@ footer a:hover{ text-decoration:underline; }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
-.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
-.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.theme-toggle:hover{ box-shadow:none; }
+.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.45); }
 .logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
 .wikiloc-link, .directions-cta, .back-home-link{
@@ -643,7 +643,7 @@ footer a:hover{ text-decoration:underline; }
 .wikiloc-link.ghost{ box-shadow:none; }
 
 .fact{ border-radius:14px; }
-.fact .v{ text-shadow:0 0 14px currentColor; }
+.fact .v{ text-shadow:none; }
 
 .range-filter input[type="range"]::-webkit-slider-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
 .range-filter input[type="range"]::-moz-range-thumb{ box-shadow:0 0 0 3px var(--ground), 0 0 9px var(--teal); }
