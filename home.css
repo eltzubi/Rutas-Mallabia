@@ -286,9 +286,16 @@
 .route-card:hover .route-card-photo img{ transform:scale(1.06); }
 .route-card-body{ flex:1; display:flex; flex-direction:column; gap:8px; padding:16px 18px 18px; }
 .route-card-name{
-  font-family:'Fraunces',serif; font-weight:700; font-style:italic;
-  font-size:17px; line-height:1.2; margin:0;
-  text-wrap:balance; overflow-wrap:anywhere;
+  font-family:'Karla',sans-serif;
+  font-weight:800;
+  font-style:normal;
+  font-size:18px;
+  line-height:1.16;
+  letter-spacing:-.015em;
+  color:var(--ink);
+  margin:0;
+  text-wrap:balance;
+  overflow-wrap:anywhere;
 }
 .route-card-desc{
   font-family:'Karla',sans-serif; font-size:13.5px; line-height:1.5;
