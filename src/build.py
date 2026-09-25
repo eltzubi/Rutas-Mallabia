@@ -216,6 +216,35 @@ def add_cache_busting(page_html, versions):
 _data_versions = {}
 
 
+def stylize_home_card_titles(page_html):
+    """Da a los titulos de las tarjetas una jerarquia tipografica mixta.
+
+    El texto no cambia: solo se envuelve el tercio central para combinar
+    Karla contundente con Fraunces cursiva, como en la opcion visual 3.
+    """
+    pattern = re.compile(r'(<h3 class="route-card-name">)([^<]+)(</h3>)')
+
+    def repl(m):
+        words = m.group(2).split()
+        n = len(words)
+        if n < 3:
+            return m.group(0)
+        start = max(1, round(n * 0.30))
+        end = min(n - 1, max(start + 1, round(n * 0.80)))
+        first = " ".join(words[:start])
+        middle = " ".join(words[start:end])
+        last = " ".join(words[end:])
+        return (
+            m.group(1)
+            + '<span class="route-title-main">' + first + '</span> '
+            + '<span class="route-title-accent">' + middle + '</span> '
+            + '<span class="route-title-main">' + last + '</span>'
+            + m.group(3)
+        )
+
+    return pattern.sub(repl, page_html)
+
+
 def home_cards(src_suffix):
     """Los datos de cada ruta, leidos de las tarjetas de la portada.
 
@@ -574,6 +603,8 @@ def main():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
             page_html = add_ui_text(page_html, cards[lang], lang)
+            if name == HOME:
+                page_html = stylize_home_card_titles(page_html)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_estimated_time(page_html, lang)
