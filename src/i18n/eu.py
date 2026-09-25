@@ -327,6 +327,9 @@ ROUTE = {
 }
 
 HOME = {
+    '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>': '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>',
+    '<p class="route-card-desc">Recorrido de la II Ahuntzen Mendi Lasterketa de 2023, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">2023ko II. Ahuntzen Mendi Lasterketaren ibilbidea, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
+    'alt="Salida de la II Ahuntzen Mendi Lasterketa en la plaza de Elgeta"': 'alt="II. Ahuntzen Mendi Lasterketaren irteera Elgetako plazan"',
     'Trabakua, San Cristóbal Txiki, Garai y Andikoa':
         'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
     'Circuito por San Cristóbal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
@@ -3197,6 +3200,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'ahuntzen': '2023ko II. Ahuntzen Mendi Lasterketaren ibilbidea: 15 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
     'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
@@ -3342,6 +3346,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
     'trabakua': 'Asuntza bira Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
@@ -4972,6 +4977,7 @@ MARKINAURJAUZIAK = {
 }
 
 PAGE_STRINGS = {
+    'ahuntzen': {},
     'mallabia': HOME,
     'trabakua': TRABAKUA,
     'iturrizuri': ITURZURI,
