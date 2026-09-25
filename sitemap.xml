@@ -542,16 +542,6 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/markinaurjauziak.eu.html"/>
   </url>
   <url>
-    <loc>https://trabakutik.com/aviso-legal.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
-  </url>
-  <url>
-    <loc>https://trabakutik.com/aviso-legal.eu.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
-    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
-  </url>
-  <url>
     <loc>https://trabakutik.com/ahuntzen.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/ahuntzen.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/ahuntzen.eu.html"/>
@@ -560,5 +550,15 @@
     <loc>https://trabakutik.com/ahuntzen.eu.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/ahuntzen.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/ahuntzen.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/aviso-legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/aviso-legal.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>
   </url>
 </urlset>
