@@ -297,6 +297,18 @@
   text-wrap:balance;
   overflow-wrap:anywhere;
 }
+.route-card-name .route-title-main{
+  font-family:'Karla',sans-serif;
+  font-weight:800;
+  font-style:normal;
+}
+.route-card-name .route-title-accent{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-style:italic;
+  font-size:1.08em;
+  letter-spacing:-.01em;
+}
 .route-card-desc{
   font-family:'Karla',sans-serif; font-size:13.5px; line-height:1.5;
   color:var(--ink-dim); margin:0;
