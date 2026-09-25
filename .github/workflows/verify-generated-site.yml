@@ -1,0 +1,35 @@
+name: Verify generated site
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate Basque pages
+        run: python3 src/i18n/make_eu.py
+
+      - name: Rebuild published site
+        run: python3 src/build.py
+
+      - name: Check generated files are committed
+        run: |
+          if ! git diff --exit-code; then
+            echo "::error::Generated site files are out of sync with src/. Run 'python3 src/i18n/make_eu.py' and 'python3 src/build.py', then commit the generated changes."
+            exit 1
+          fi
