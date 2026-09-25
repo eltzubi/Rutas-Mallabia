@@ -3200,7 +3200,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'ahuntzen': '2023ko II. Ahuntzen Mendi Lasterketaren ibilbidea: 15 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
+    'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 15 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
     'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
