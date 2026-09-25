@@ -328,8 +328,8 @@ ROUTE = {
 
 HOME = {
     '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>': '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>',
-    '<p class="route-card-desc">Recorrido de la II Ahuntzen Mendi Lasterketa de 2023, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">2023ko II. Ahuntzen Mendi Lasterketaren ibilbidea, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
-    'alt="Salida de la II Ahuntzen Mendi Lasterketa en la plaza de Elgeta"': 'alt="II. Ahuntzen Mendi Lasterketaren irteera Elgetako plazan"',
+    '<p class="route-card-desc">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
+    'alt="Elgeta al amanecer, con la iglesia y el casco urbano"': 'alt="Elgeta egunsentian, eliza eta herrigunea"',
     'Trabakua, San Cristóbal Txiki, Garai y Andikoa':
         'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
     'Circuito por San Cristóbal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
