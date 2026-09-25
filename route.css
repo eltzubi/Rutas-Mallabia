@@ -295,6 +295,8 @@ footer{
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
 }
 footer b{ color:var(--ink); font-weight:600; }
+footer a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+footer a:hover{ color:var(--violet); }
 
 @media (max-width:480px){
   .facts{ gap:7px; }
