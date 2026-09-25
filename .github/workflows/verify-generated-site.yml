@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   verify-build:
@@ -27,14 +27,9 @@ jobs:
       - name: Rebuild published site
         run: python3 src/build.py
 
-      - name: Commit generated files on Ahuntzen branch
+      - name: Check generated files are committed
         run: |
-          if git diff --quiet; then
-            echo "Generated site already up to date"
-            exit 0
+          if ! git diff --exit-code; then
+            echo "::error::Generated site files are out of sync with src/. Run 'python3 src/i18n/make_eu.py' and 'python3 src/build.py', then commit the generated changes."
+            exit 1
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Regenerate site after Ahuntzen update"
-          git push origin HEAD:codex/ahuntzen-fotos-correccion
