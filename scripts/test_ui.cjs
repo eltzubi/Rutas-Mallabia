@@ -71,7 +71,7 @@ class Element {
   close(){this.open=false;this.dispatchEvent({type:'close'});}
 }
 const fixtures = new Map();
-function env(page='index.html', storage=new Map()) {
+function env(page='index.es.html', storage=new Map()) {
   if(!fixtures.has(page)) fixtures.set(page, JSON.parse(execFileSync('python3',[path.join(__dirname,'check_site.py'),'--fixture',page],{maxBuffer:8e6})));
   const doc=new Element(fixtures.get(page));
   function attach(el){el.ownerDocument=doc;el.children.filter(c=>typeof c!=='string').forEach(attach);} attach(doc);
@@ -84,10 +84,10 @@ function env(page='index.html', storage=new Map()) {
   Object.assign(win,{document:doc,scrollY:0,pageYOffset:0,innerHeight:800,scrollTo(){},matchMedia:()=>({matches:false}),location:{reload(){win.reloaded=true;}}});
   const maps=[],lines=[],errors=[];
   const L={
-    map(el){const m={el,on(){return this;},getContainer(){return el;},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){},remove(){this.removed=true;}};maps.push(m);return m;},
+    map(el){const m={el,on(){return this;},getContainer(){return el;},getZoom(){return 10;},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){},remove(){this.removed=true;}};maps.push(m);return m;},
     tileLayer(){return {addTo(){return this;}};},
     polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
-    marker(){return {addTo(){return this;}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
+    marker(){return {addTo(){return this;},on(){return this;},getElement(){return null;}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
   };
   const context=vm.createContext({window:win,document:doc,L,AbortController,
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
@@ -117,7 +117,7 @@ test('exclusive filters persist across languages and list/map',()=>{
   e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
   e.one('#elevationSelect').value='high';e.one('#elevationSelect').dispatchEvent({type:'change'});
   const selected=Array.from(e.win.trabakutikVisibleRoutes);assert(selected.length>0);
-  e.one('[data-view="map"]').click();const eu=env('index.eu.html',e.storage);eu.run('filters.js');
+  e.one('[data-view="map"]').click();const eu=env('index.html',e.storage);eu.run('filters.js');
   assert.deepEqual(Array.from(eu.win.trabakutikVisibleRoutes),selected);
   assert.match(eu.one('[data-route-totals]').textContent,/ibilbide/);
   assert.equal(eu.one('#difficultySelect').value,'dificil');assert.equal(eu.one('#elevationSelect').value,'high');
@@ -154,7 +154,7 @@ test('mobile dialog reuses controls and reset keeps activity',()=>{
   const shortBici=shortActivityRoutes(e,'bici');
   assert.equal(e.one('#showResults').textContent,shortBici===1?'Ver 1 ruta':`Ver ${shortBici} rutas`);
   e.one('[data-extra-reset]').click();assert.equal(visible(e).length,activityRoutes(e,'bici'));
-  e.one('#showResults').click();assert.equal(e.one('#filterDialog').open,false);assert.equal(e.doc.activeElement,e.one('#openFilters'));
+  e.one('#showResults').click();assert.equal(e.one('#filterDialog').open,false);assert(e.doc.activeElement===e.one('#openFilters'),'Focus returns to filter button');
   media.matches=false;changed();assert.equal(e.one('#filterControls').parentElement,e.one('#desktopFilters'));
   assert.equal(e.all('#filterControls').length,1);
 });
@@ -165,11 +165,11 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   const line=e.lines.find(l=>l.path.getAttribute('tabindex')==='0');line.path.focus();
   line.path.dispatchEvent({type:'keydown',key:'Enter'});
   const panel=e.one('.route-info-panel');assert.equal(panel.hidden,false);
-  assert.equal(line.path.getAttribute('aria-pressed'),'true');assert.equal(e.doc.activeElement,e.one('.route-info-panel-close'));
-  panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert.equal(e.doc.activeElement,line.path);
+  assert.equal(line.path.getAttribute('aria-pressed'),'true');assert(e.doc.activeElement===e.one('.route-info-panel-close'),'Focus moves to panel close button');
+  panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert(e.doc.activeElement===line.path,'Focus returns to route');
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
-  const layers=e.one('.map-layers-btn');layers.click();assert.equal(layers.getAttribute('aria-pressed'),'true');
+  const layers=e.one('.map-layers-btn');layers.click();assert.equal(layers.getAttribute('aria-expanded'),'true');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{
@@ -190,7 +190,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
-  const e=env('index.eu.html');delete e.context.L;e.run('map.js');
+  const e=env('index.html');delete e.context.L;e.run('map.js');
   assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/Ezin izan da mapa/);
   e.one('.map-retry').click();assert.equal(e.win.reloaded,true);
 });

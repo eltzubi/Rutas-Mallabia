@@ -33,3 +33,14 @@ jobs:
             echo "::error::Generated site files are out of sync with src/. Run 'python3 src/i18n/make_eu.py' and 'python3 src/build.py', then commit the generated changes."
             exit 1
           fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check pages, downloads and assets
+        run: python3 scripts/check_site.py
+
+      - name: Check interface behavior
+        run: node scripts/test_ui.cjs
