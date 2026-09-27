@@ -45,6 +45,7 @@ def candidatas():
 def main():
     forzar = "--force" in sys.argv
     hechas = saltadas = 0
+    rotas = []
     bytes_originales = bytes_nuevos = 0
 
     for origen in candidatas():
@@ -55,17 +56,24 @@ def main():
             saltadas += 1
             continue
 
-        with Image.open(origen) as im:
-            im = im.convert("RGB")
-            w, h = im.size
-            if max(w, h) <= ANCHO:
-                # Ya es pequena: no tiene sentido una variante, el srcset se
-                # queda con una sola fuente para esta foto.
-                saltadas += 1
-                continue
-            escala = ANCHO / max(w, h)
-            im = im.resize((round(w * escala), round(h * escala)), Image.LANCZOS)
-            im.save(destino, "WEBP", quality=CALIDAD, method=6)
+        try:
+            with Image.open(origen) as im:
+                im = im.convert("RGB")
+                w, h = im.size
+                if max(w, h) <= ANCHO:
+                    # Ya es pequena: no tiene sentido una variante, el srcset se
+                    # queda con una sola fuente para esta foto.
+                    saltadas += 1
+                    continue
+                escala = ANCHO / max(w, h)
+                im = im.resize((round(w * escala), round(h * escala)), Image.LANCZOS)
+                im.save(destino, "WEBP", quality=CALIDAD, method=6)
+        except OSError as e:
+            # Un fichero truncado o corrupto no puede parar a los otros
+            # quinientos: se avisa y se sigue.
+            print(f"  !! {os.path.basename(origen)}: ilegible ({e})")
+            rotas.append(os.path.basename(origen))
+            continue
 
         if os.path.exists(grande):
             bytes_originales += os.path.getsize(grande)
@@ -74,6 +82,8 @@ def main():
         print(f"  {os.path.basename(destino)} ({os.path.getsize(destino)//1024} KB)")
 
     print(f"\n{hechas} creadas, {saltadas} sin tocar")
+    if rotas:
+        print(f"{len(rotas)} ilegibles: {', '.join(rotas)}")
     if bytes_originales:
         print(f"peso de esas mismas fotos a 1600: {bytes_originales/1048576:.0f} MB")
         print(f"peso de las nuevas de 800:        {bytes_nuevos/1048576:.0f} MB "
