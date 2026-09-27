@@ -5297,16 +5297,16 @@ LONGAURJAUZIAK = {
         'download="Trabakua, Longa eta Gereako ur-jauziak.kml"',
     'Un circuito corto para acercarse a las <b><a href="markinaurjauziak.html">cascadas de Gerea</a></b> desde <b>Trabakua</b>, subiendo y bajando por <b><a href="longa.html">Longa</a></b>. Son 9,75 km y +336 m, casi todo por pista y camino ancho, con sendero en la parte alta. La subida es seguida pero no dura, y el premio est&aacute; arriba. No hay fuente en el recorrido: el agua, en la propia cascada o de vuelta en Trabakua.':
         'Zirkuitu laburra <b><a href="markinaurjauziak.html">Gereako ur-jauzi</a></b>etara <b>Trabakua</b>tik hurbiltzeko, <b><a href="longa.html">Longa</a></b>tik gora eta behera. 9,75 km eta +336 m dira, ia dena pista eta bide zabaletik, goiko aldean bidezidorra. Igoera jarraia da baina ez gogorra, eta saria goian dago. Ez dago iturririk ibilbidean: ura, ur-jauzian bertan edo Trabakuara bueltan.',
-    'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 380 m, el punto m&aacute;s bajo de toda la vuelta: camino ancho entre prados, con la cresta de Iturzuri y sus aerogeneradores enfrente.':
-        '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 380 metroraino, buelta osoko punturik baxuena: bide zabala soroen artean, Iturzuriko eolikoak aurrez aurre.',
-    'En el km 2,2 llegamos a <b>Longa</b>, el caser&iacute;o con el que empieza el barrio de Gerea y donde se encuentra el agroturismo. Aqu&iacute; se acaba la bajada y el camino enfila la subida.':
-        '2,2 km-an <b>Longa</b>ra iristen gara, Gereako auzoari hasiera ematen dion baserria, agroturismoa dagoen lekua. Hemen amaitzen da jaitsiera eta bideak igoerari heltzen dio.',
-    'Desde <b>Longa</b> arranca la subida de verdad: dos kil&oacute;metros seguidos que nos llevan de los 420 a los 680 m, por pista y por sendero, entre pinos y con&iacute;feras, pasando junto a una borda de piedra con el tejado verde.':
-        '<b>Longa</b>tik hasten da benetako igoera: bi kilometro jarraian, 420 metrotik 680ra, pistatik eta bidezidorretik, pinu eta koniferen artean, teilatu berdeko harrizko borda baten ondotik igarota.',
+    'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 392 m: camino ancho entre prados, con la cresta de Iturzuri y sus aerogeneradores enfrente.':
+        '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 392 metroraino: bide zabala soroen artean, Iturzuriko eolikoak aurrez aurre.',
+    'A partir de ah&iacute; el camino ya no deja de subir. En el km 3 pasamos por <b>Longa</b> (456 m), el caser&iacute;o con el que empieza el barrio de Gerea y donde se encuentra el agroturismo.':
+        'Handik aurrera bideak ez du igotzeari uzten. 3. kilometroan <b>Longa</b>tik igarotzen gara (456 m), Gereako auzoari hasiera ematen dion baserria, agroturismoa dagoen lekua.',
+    'De <b>Longa</b> arriba la subida se pone en serio: kil&oacute;metro y medio que nos lleva de los 456 a los 674 m, por pista y por sendero, entre pinos y con&iacute;feras, pasando junto a una borda de piedra con el tejado verde.':
+        '<b>Longa</b>tik gora igoera benetakoa da: kilometro eta erdi, 456 metrotik 674ra, pistatik eta bidezidorretik, pinu eta koniferen artean, teilatu berdeko harrizko borda baten ondotik igarota.',
     'Arriba, en el km 4,5, est&aacute;n las <b>cascadas de Gerea</b>. El agua baja por un cortado de roca en repisas, todo cubierto de musgo. Es el punto alto del d&iacute;a y el sitio para parar.':
         'Goian, 4,5 km-an, <b>Gereako ur-jauzi</b>ak daude. Ura harkaitz-ebakidura batetik jaisten da, apalez apal, dena goroldioz estalita. Eguneko punturik altuena da, eta gelditzeko lekua.',
-    'La vuelta se hace por el mismo camino: bajamos otra vez hasta <b>Longa</b> y desde all&iacute; seguimos hasta <b>Trabakua</b>. El &uacute;ltimo tramo es tendido, entre prados con ovejas y vacas y las monta&ntilde;as al fondo.':
-        'Itzulera bide beretik egiten da: berriro <b>Longa</b>raino jaisten gara eta handik <b>Trabakua</b>raino jarraitzen dugu. Azken zatia lasaia da, ardi eta behiak dituzten soroen artean, mendiak atzealdean.',
+    'La vuelta se hace por el mismo camino: volvemos a pasar por <b>Longa</b> en el km 6,7 y desde all&iacute; seguimos hasta <b>Trabakua</b>. El &uacute;ltimo tramo es tendido, entre prados con ovejas y vacas y las monta&ntilde;as al fondo.':
+        'Itzulera bide beretik egiten da: 6,7 kilometroan berriro <b>Longa</b>tik igarotzen gara eta handik <b>Trabakua</b>raino jarraitzen dugu. Azken zatia lasaia da, ardi eta behiak dituzten soroen artean, mendiak atzealdean.',
 }
 
 PAGE_STRINGS = {
