@@ -332,8 +332,8 @@ ROUTE = {
 }
 
 HOME = {
-    'alt="Camino de hierba entre prados, con la cresta de enfrente coronada por los eolikoak"':
-        'alt="Belarrezko bidea soroen artean, aurreko gailurra eolikoez koroatuta"',
+    'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
+        'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
     '<h3 class="route-card-name">Trabakua, Longa y las cascadas de Gerea</h3>':
         '<h3 class="route-card-name">Trabakua, Longa eta Gereako ur-jauziak</h3>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua, subiendo y bajando por Longa hasta las cascadas de Gerea</p>':
@@ -5253,16 +5253,16 @@ AHUNTZEN = {
 }
 
 LONGAURJAUZIAK = {
-    'alt="Camino de hierba entre prados, con la cresta de enfrente coronada por los eolikoak"':
-        'alt="Belarrezko bidea soroen artean, aurreko gailurra eolikoez koroatuta"',
+    'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
+        'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
     'alt="Portilla de madera cerrada en mitad de la pista, entre eucaliptos y prados vallados"':
         'alt="Egurrezko langa itxita pistaren erdian, eukalipto eta hesitutako soroen artean"',
     'alt="Bifurcaci&oacute;n de la pista en un pinar, con los helechos ya amarillos"':
         'alt="Pistaren bidegurutzea pinudi batean, iratzeak jada horituta"',
     'alt="Borda de piedra con el tejado verde, metida entre el arbolado"':
         'alt="Teilatu berdeko harrizko borda, zuhaitzen artean sartuta"',
-    'alt="Tramo pedregoso de subida, con los eolikoak asomando al fondo"':
-        'alt="Igoerako zati harritsua, eolikoak atzealdean agertzen"',
+    'alt="Tramo pedregoso de subida, con los aerogeneradores de Iturzuri asomando al fondo"':
+        'alt="Igoerako zati harritsua, Iturzuriko eolikoak atzealdean agertzen"',
     'alt="Senda entre con&iacute;feras altas, cubierta de ac&iacute;culas y con roca a un lado"':
         'alt="Bidezidorra konifera garaien artean, orratzez estalita eta harkaitza alde batean"',
     'alt="Salto de agua cayendo por las repisas de roca, todo cubierto de musgo"':
@@ -5297,10 +5297,10 @@ LONGAURJAUZIAK = {
         'download="Trabakua, Longa eta Gereako ur-jauziak.kml"',
     'Un circuito corto para acercarse a las <b><a href="markinaurjauziak.html">cascadas de Gerea</a></b> desde <b>Trabakua</b>, subiendo y bajando por <b><a href="longa.html">Longa</a></b>. Son 9,75 km y +336 m, casi todo por pista y camino ancho, con sendero en la parte alta. La subida es seguida pero no dura, y el premio est&aacute; arriba. No hay fuente en el recorrido: el agua, en la propia cascada o de vuelta en Trabakua.':
         'Zirkuitu laburra <b><a href="markinaurjauziak.html">Gereako ur-jauzi</a></b>etara <b>Trabakua</b>tik hurbiltzeko, <b><a href="longa.html">Longa</a></b>tik gora eta behera. 9,75 km eta +336 m dira, ia dena pista eta bide zabaletik, goiko aldean bidezidorra. Igoera jarraia da baina ez gogorra, eta saria goian dago. Ez dago iturririk ibilbidean: ura, ur-jauzian bertan edo Trabakuara bueltan.',
-    'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 380 m, el punto m&aacute;s bajo de toda la vuelta: camino ancho entre prados, con la cresta de los eolikoak enfrente.':
-        '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 380 metroraino, buelta osoko punturik baxuena: bide zabala soroen artean, eolikoen gailurra aurrez aurre.',
-    'En el km 2,2 llegamos a <b>Longa</b>, el caser&iacute;o donde empieza el barrio y donde se encuentra el agroturismo. Aqu&iacute; se acaba la bajada y el camino enfila la subida.':
-        '2,2 km-an <b>Longa</b>ra iristen gara, auzoari hasiera ematen dion baserria, agroturismoa dagoen lekua. Hemen amaitzen da jaitsiera eta bideak igoerari heltzen dio.',
+    'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 380 m, el punto m&aacute;s bajo de toda la vuelta: camino ancho entre prados, con la cresta de Iturzuri y sus aerogeneradores enfrente.':
+        '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 380 metroraino, buelta osoko punturik baxuena: bide zabala soroen artean, Iturzuriko eolikoak aurrez aurre.',
+    'En el km 2,2 llegamos a <b>Longa</b>, el caser&iacute;o con el que empieza el barrio de Gerea y donde se encuentra el agroturismo. Aqu&iacute; se acaba la bajada y el camino enfila la subida.':
+        '2,2 km-an <b>Longa</b>ra iristen gara, Gereako auzoari hasiera ematen dion baserria, agroturismoa dagoen lekua. Hemen amaitzen da jaitsiera eta bideak igoerari heltzen dio.',
     'Desde <b>Longa</b> arranca la subida de verdad: dos kil&oacute;metros seguidos que nos llevan de los 420 a los 680 m, por pista y por sendero, entre pinos y con&iacute;feras, pasando junto a una borda de piedra con el tejado verde.':
         '<b>Longa</b>tik hasten da benetako igoera: bi kilometro jarraian, 420 metrotik 680ra, pistatik eta bidezidorretik, pinu eta koniferen artean, teilatu berdeko harrizko borda baten ondotik igarota.',
     'Arriba, en el km 4,5, est&aacute;n las <b>cascadas de Gerea</b>. El agua baja por un cortado de roca en repisas, todo cubierto de musgo. Es el punto alto del d&iacute;a y el sitio para parar.':
