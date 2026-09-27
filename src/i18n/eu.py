@@ -305,6 +305,11 @@ ROUTE = {
     '<span class="k">Para quién es</span>': '<span class="k">Norentzat</span>',
     '<span class="k">Para qui&eacute;n es</span>': '<span class="k">Norentzat</span>',
     '<p class="eyebrow">Mapa de la ruta</p>': '<p class="eyebrow">Ibilbidearen mapa</p>',
+    # El 'gainean' que traduce 'sobre' viaja pegado al sufijo de Wikiloc de
+    # la clave siguiente, asi que las fichas que no llevan ese enlace se
+    # quedaban sin el. Esta clave larga, que solo casa con ellas, lo repone.
+    '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
+        '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
     'Track GPX real sobre': 'Benetako GPX tracka',
     '&middot; tambi&eacute;n en': 'gainean &middot; Wikilocen ere bai:',
     '&larr; Volver a rutas': '&larr; Itzuli ibilbideetara',
@@ -4977,10 +4982,6 @@ MARKINAURJAUZIAK = {
 }
 
 ZENGOTITAITURZURI = {
-    '<a class="back-link" href="index.html">&larr; Rutas</a>':
-        '<a class="back-link" href="index.eu.html">&larr; Ibilbideak</a>',
-    '<button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar a tema oscuro">\n      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>\n      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>\n    </button>':
-        '<button type="button" class="theme-toggle" id="themeToggle" data-label-light="Aldatu gai argira" data-label-dark="Aldatu gai ilunera" aria-label="Aldatu gai ilunera">\n      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>\n      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>\n    </button>',
     '<p class="eyebrow"><span>Senderismo</span><span class="sep">/</span><span>Zengotita · Iturzuri · Zengotitagane</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Oinez</span><span class="sep">/</span><span>Zengotita · Iturzuri · Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Zengotita, Iturzuri<br><em>y Zengotitagane</em></h1>':
@@ -5015,10 +5016,6 @@ ZENGOTITAITURZURI = {
         'Pertsona bat eserita, hodei-itsasoari begira gailurretik',
     'Mar de nubes fluyendo entre los valles y montañas':
         'Hodei-itsasoa haran eta mendien artean isurtzen',
-    '<a href="src/zengotitaiturzuri.gpx" download="Zengotita, Iturzuri y Zengotitagane.gpx" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Descargar GPX</a>':
-        '<a href="src/zengotitaiturzuri.gpx" download="Zengotita, Iturzuri eta Zengotitagane.gpx" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Deskargatu GPX</a>',
-    '<a href="src/zengotitaiturzuri.kml" download="Zengotita, Iturzuri y Zengotitagane.kml" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Descargar KML</a>':
-        '<a href="src/zengotitaiturzuri.kml" download="Zengotita, Iturzuri eta Zengotitagane.kml" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Deskargatu KML</a>',
     '<p>Una vuelta corta y muy agradable por la parte alta de Zengotita, combinando caseríos, hayedo, zonas abiertas y el entorno de Iturzuri y Zengotitagane. Una ruta sencilla y variada, con buenas vistas y rincones que merece la pena conocer.</p>':
         '<p>Ibilbide labur eta atsegina Zengotitako goiko aldetik, baserriak, pagadia, eremu irekiak eta Iturzuri eta Zengotitagane ingurua uztartuz. Ibilbide erraza eta askotarikoa da, bista onekin eta ezagutzea merezi duten txokoekin.</p>',
     '<p>Para llegar hasta aquí desde <b>Trabakua</b>, cogemos la carretera en dirección a Berriz y, a 2,5 km, tomamos el cruce hacia Zengotita.</p>':
@@ -5041,12 +5038,8 @@ ZENGOTITAITURZURI = {
         '<p>Distantziagatik eta zailtasunagatik, mendian ibiltzera ohituta dauden haurrekin egiteko aukera ona ere izan daiteke.</p>',
     '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
         '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
-    '<a class="back-home-link" href="index.html">&larr; Volver a rutas</a>':
-        '<a class="back-home-link" href="index.eu.html">&larr; Itzuli ibilbideetara</a>',
     '<span>Circuito — vuelve al mismo punto de salida</span>':
         '<span>Zirkuitua — irteerako puntu berera itzultzen da</span>',
-    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
-        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege-oharra eta pribatutasuna</a></span>',
     'alt="Mar de nubes cubriendo los valles, visto desde la parte alta de la ruta"':
         'alt="Hodei-itsasoak haranak estaltzen, ibilbidearen goialdetik ikusita"',
     'alt="Foto ampliada del recorrido de Zengotita, Iturzuri y Zengotitagane"':
@@ -5088,8 +5081,6 @@ ZENGOTITAITURZURI = {
 }
 
 SANCRISTOBALGARAIANDIKOA = {
-    '<a class="back-link" href="index.html">&larr; Rutas</a>':
-        '<a class="back-link" href="index.eu.html">&larr; Ibilbideak</a>',
     '<title>Fuente &middot; 5,5 km</title>':
         '<title>Iturria &middot; 5,5 km</title>',
     '<title>Carretera &middot; 9,5 km</title>':
@@ -5108,10 +5099,6 @@ SANCRISTOBALGARAIANDIKOA = {
         '<p class="full-name">Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua</p>',
     'Camino entre árboles y un murete cubierto de musgo':
         'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
-    '<span class="v">Mixta</span>':
-        '<span class="v">Mistoa</span>',
-    '<span class="k">Para quién es</span>':
-        '<span class="k">Norentzat da</span>',
     '<p>Esta ruta coincide, sobre todo en su parte central, con el recorrido del <b>Asto Trail de Garai</b>, y eso ya nos da una buena idea de lo que vamos a encontrar. Senderos muy entretenidos, zonas de bosque, bajadas para disfrutar y rincones que merece la pena conocer. Una ruta muy bonita que, además, nos ha servido para descubrir nuevos caminos por esta zona.</p>':
         '<p>Ibilbide hau, batez ere erdialdean, <b>Garaiko Asto Trail</b> lasterketaren ibilbidearekin bat dator, eta horrek aurkituko dugunaren ideia ona ematen digu. Bidezidor oso dibertigarriak, baso tarteak, gozatzeko jaitsierak eta ezagutzea merezi duten txokoak. Oso ibilbide polita da, eta, gainera, inguru honetan bide berriak ezagutzeko balio izan digu.</p>',
     'Corredores avanzando por un sendero entre helechos y árboles':
@@ -5130,10 +5117,6 @@ SANCRISTOBALGARAIANDIKOA = {
         'Zuhaitz arteko bidezidor estu eta hostotsua',
     'Pequeño río entre piedras y musgo en el bosque':
         'Erreka txikia harri eta goroldio artean',
-    '<a href="src/sancristobalgaraiandikoa.gpx" download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.gpx" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Descargar GPX\n    </a>':
-        '<a href="src/sancristobalgaraiandikoa.gpx" download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.gpx" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Deskargatu GPX\n    </a>',
-    '<a href="src/sancristobalgaraiandikoa.kml" download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.kml" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Descargar KML\n    </a>':
-        '<a href="src/sancristobalgaraiandikoa.kml" download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.kml" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Deskargatu KML\n    </a>',
     '<p>Salimos de Trabakua con esos primeros dos kilómetros y pico que suben tranquilos hacia Zengotita. Es un tramo sencillo, sin misterio, solo un cruce antes de entrar al barrio, ideal para ir calentando sin pensar demasiado. Al llegar a Zengotita toca girar a la izquierda y seguir la carretera hasta el caserío <a href="betzun.html">Betzun</a>, donde el asfalto se acaba. Allí cogemos la pista de la izquierda, cruzamos el río y empezamos a bajar hacia <a href="sancristobal.html">San Cristóbal Txiki</a>. En el cruce giramos a la derecha y volvemos a subir, una subida corta pero constante que te mete ya en la ruta de verdad.</p>':
         '<p>Trabakuatik abiatzen gara, Zengotitarantz igotzen diren lehen bi kilometro eta erdi lasai horiekin. Zati erraza da, misteriorik gabea, auzora sartu aurretik bidegurutze bat baino ez, gehiegi pentsatu gabe berotzen joateko aproposa. Zengotitara iristean, ezkerrera biratu eta <a href="betzun.eu.html">Betzun</a> baserriraino errepideari jarraitu behar zaio, asfaltoa amaitzen den lekura. Han, ezkerreko pista hartzen dugu, erreka zeharkatu eta <a href="sancristobal.eu.html">San Kristobal Txiki</a>rantz jaisten hasten gara. Bidegurutzean eskuinera biratu eta berriro igotzen gara, igoera laburra baina etengabea, benetako ibilbidean sartzen zaituena.</p>',
     '<p>Arriba aparece la fuente de siempre, la que sale en tantas rutas. Justo ahí enlazamos con el trazado del <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer">Asto Trail</a>, que baja desde <a href="sarrimendi.html">Sarrionamendi</a>. A partir de aquí la vuelta cambia de tono. Empezamos a bajar y, unos trescientos metros más adelante, dejamos la pista para entrar a la derecha en uno de los tramos más disfrutones del día. El sendero arranca muy juguetón, enlazando curvas rápidas. Hay un paso algo roto, pero se pasa sin problema. Luego el camino se estrecha, se cierra un poco y gana encanto. De repente aparece un entorno lleno de musgo, muy verde, muy húmedo. Cruzamos un pequeño río y empezamos a subir. El sendero está limpio, cuidado, se nota que por aquí pasa la carrera y es un tramo muy agradecido tanto para correr como para la bici.</p>':
@@ -5146,10 +5129,6 @@ SANCRISTOBALGARAIANDIKOA = {
         '<p>Besoita zeharkatu eta errepide nagusira jaisten gara. Zeharkatu eta Zengotitarantz igotzen den errepide zaharra hartzen dugu. Hemendik aurrera, kilometro gutxi batzuk baino ez dira geratzen Trabakuara itzultzeko eta itzulia ixteko, ibilbide askotarikoa, erritmoarekin, oso zati atseginekin eta zailtasun tekniko handirik gabe.</p>',
     '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
         '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
-    '<a class="back-home-link" href="index.html">&larr; Volver a rutas</a>':
-        '<a class="back-home-link" href="index.eu.html">&larr; Itzuli ibilbideetara</a>',
-    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
-        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege oharra eta pribatutasuna</a></span>',
     'Fuente':
         'Iturria',
     'Carretera':
@@ -5170,8 +5149,6 @@ SANCRISTOBALGARAIANDIKOA = {
         'Iturria · 14,8 km',
     'alt="Camino entre árboles y un murete cubierto de musgo"':
         'alt="Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan"',
-    'aria-label="Foto ampliada"':
-        'aria-label="Argazkia handituta"',
     'alt="Foto ampliada del recorrido de San Cristóbal Txiki, Garai y Andikoa"':
         'alt="San Kristobal Txiki, Garai eta Andikoa ibilbideko argazkia handituta"',
     'alt="Corredores avanzando por un sendero entre helechos y árboles"':
@@ -5221,26 +5198,6 @@ AHUNTZEN = {
         'Ibilbideko goiko aldeko baso zatia',
     'Punto alto del circuito entre niebla, junto a una caseta y una antena':
         'Zirkuituko puntu garaia lainopean, etxola eta antena baten ondoan',
-    '<a href="src/ahuntzen.gpx" download="Ahuntzen Mendi Lasterketa.gpx" class="wikiloc-link ghost">Descargar GPX</a>':
-        '<a href="src/ahuntzen.gpx" download="Ahuntzen Mendi Lasterketa.gpx" class="wikiloc-link ghost">Deskargatu GPXa</a>',
-    '<a href="src/ahuntzen.kml" download="Ahuntzen Mendi Lasterketa.kml" class="wikiloc-link ghost">Descargar KML</a>':
-        '<a href="src/ahuntzen.kml" download="Ahuntzen Mendi Lasterketa.kml" class="wikiloc-link ghost">Deskargatu KMLa</a>',
-    '<button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">Reportar incidencia</button>':
-        '<button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">Gorabehera jakinarazi</button>',
-    '<h2>Reportar una incidencia</h2>':
-        '<h2>Gorabehera bat jakinarazi</h2>',
-    '<p class="report-modal-intro">&iquest;Has visto un &aacute;rbol ca&iacute;do, un sendero cortado o algo que haya cambiado en esta ruta? Cu&eacute;ntamelo y lo reviso en persona antes de actualizar la ficha.</p>':
-        '<p class="report-modal-intro">Eroritako zuhaitzik, moztutako biderik edo ibilbidean aldaketarik ikusi duzu? Konta iezadazu eta fitxa eguneratu aurretik bertatik bertara egiaztatuko dut.</p>',
-    '<label class="report-field"><span>Tipo de incidencia</span><select name="tipo" required><option value="&Aacute;rbol o rama ca&iacute;da">&Aacute;rbol o rama ca&iacute;da</option><option value="Sendero cortado o desviado">Sendero cortado o desviado</option><option value="Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa">Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa</option><option value="Otro">Otro</option></select></label>':
-        '<label class="report-field"><span>Gorabehera mota</span><select name="tipo" required><option value="Zuhaitz edo adar eroria">Zuhaitz edo adar eroria</option><option value="Bidezidorra moztuta edo desbideratuta">Bidezidorra moztuta edo desbideratuta</option><option value="Seinale hondatua edo ezabatua">Seinale hondatua edo ezabatua</option><option value="Beste bat">Beste bat</option></select></label>',
-    '<label class="report-field"><span>Ubicaci&oacute;n aproximada</span><input type="text" name="ubicacion" placeholder="p. ej. km 8, cerca de la fuente..." required></label>':
-        '<label class="report-field"><span>Gutxi gorabeherako kokapena</span><input type="text" name="ubicacion" placeholder="adib. 8. km, iturriaren inguruan..." required></label>',
-    '<label class="report-field"><span>Descripci&oacute;n</span><textarea name="descripcion" rows="4" placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente" required></textarea></label>':
-        '<label class="report-field"><span>Deskribapena</span><textarea name="descripcion" rows="4" placeholder="Esan zer ikusi duzun eta non zehazki" required></textarea></label>',
-    '<label class="report-field"><span>Tu email (opcional, por si necesito preguntarte algo)</span><input type="email" name="email" placeholder="tu@email.com"></label>':
-        '<label class="report-field"><span>Zure emaila (aukerakoa)</span><input type="email" name="email" placeholder="zu@email.com"></label>',
-    '<button type="submit" class="report-submit">Enviar reporte</button>':
-        '<button type="submit" class="report-submit">Bidali</button>',
     '<p>Salimos desde la plaza de <b>Elgeta</b> y atravesamos el pueblo en direcci&oacute;n norte. Dejamos atr&aacute;s las &uacute;ltimas casas, cruzamos la carretera general y enseguida entramos en una pista que empieza a ganar altura hacia <b>Goikomendi</b>. Es la primera subida seria del circuito y sirve para entrar en calor desde el principio.</p>':
         '<p><b>Elgetako</b> plazatik abiatu eta herria iparralderantz zeharkatzen dugu. Azken etxeak atzean utzi, errepide nagusia gurutzatu eta berehala <b>Goikomendi</b> aldera altuera irabazten hasten den pista batean sartzen gara. Zirkuituko lehen igoera serioa da eta hasieratik erritmoa hartzeko balio du.</p>',
     '<p>Tras pasar por la parte alta empezamos a perder altura. La bajada nos lleva hacia la zona de la presa, en un tramo donde el terreno da un peque&ntilde;o respiro antes de volver a subir.</p>':
@@ -5263,8 +5220,6 @@ AHUNTZEN = {
         '<a class="next-route" href="7pago16.eu.html">\n      <span class="next-route-name">7 Pago Mendi Lasterketa 16K</span>\n      <span class="next-route-stats">16 km &middot; +750 m</span>\n    </a>',
     '<span>Circuito &mdash; vuelve al mismo punto</span>':
         '<span>Zirkuitua &mdash; abiapuntu berera itzultzen da</span>',
-    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
-        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege-oharra eta pribatutasuna</a></span>',
     'alt="Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo"':
         'alt="Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean"',
     'alt="Foto ampliada del circuito de Ahuntzen Mendi Lasterketa"':
@@ -5279,8 +5234,6 @@ AHUNTZEN = {
         'alt="Ibilbideko goiko aldeko baso zatia"',
     'alt="Punto alto del circuito entre niebla, junto a una caseta y una antena"':
         'alt="Zirkuituko puntu garaia lainopean, etxola eta antena baten ondoan"',
-    'aria-label="Reportar una incidencia"':
-        'aria-label="Gorabehera bat jakinarazi"',
     'placeholder="p. ej. km 8, cerca de la fuente..."':
         'placeholder="adib. 8. km, iturriaren inguruan..."',
     'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente"':
