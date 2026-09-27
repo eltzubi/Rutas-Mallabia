@@ -2,6 +2,8 @@
 """Read-only regression checks. Run after make_eu.py and build.py; stdlib only."""
 import hashlib
 import json
+import math
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 import sys
@@ -10,6 +12,55 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 VOID = set('area base br col embed hr img input link meta param source track wbr'.split())
+
+# Margenes de las comprobaciones contra el GPX. La distancia sale del track con
+# una precision de metros, asi que basta un 1% (hoy el peor caso es 0,7%). Las
+# altitudes minima y maxima son un solo punto del track, no una suma, asi que no
+# acumulan el ruido del GPS: 8 m cubre las diferencias de redondeo entre fuentes
+# (hoy el peor caso son 6 m).
+#
+# El DESNIVEL ACUMULADO no se comprueba a proposito: sumar los repechos del GPX
+# en crudo se va hasta un 43% de la cifra de la ficha, y ni suavizando baja del
+# 9% de media. Las fichas lo toman de la fuente de la ruta (Wikiloc, la
+# organizacion de la carrera), y la propia ficha lo advierte. Una comprobacion
+# asi solo daria falsas alarmas.
+TOLERANCIA_KM_PCT = 1.0
+TOLERANCIA_ALTITUD_M = 8.0
+
+_FACT = r'<span class="v">{}</span><span class="k">{}</span>'
+_CIFRA = r'([\d.,]+)'
+
+
+def numero(texto):
+    """'1.020,5' -> 1020.5 (miles con punto, decimales con coma)."""
+    return float(texto.replace('.', '').replace(',', '.'))
+
+
+def haversine(lat1, lon1, lat2, lon2):
+    radio = 6371000.0
+    f1, f2 = math.radians(lat1), math.radians(lat2)
+    a = (math.sin(math.radians(lat2 - lat1) / 2) ** 2
+         + math.cos(f1) * math.cos(f2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2)
+    return 2 * radio * math.asin(math.sqrt(a))
+
+
+def datos_gpx(ruta):
+    """(km totales, altitud minima, altitud maxima) del track real."""
+    puntos = [(float(p.attrib['lat']), float(p.attrib['lon']), float(p.find('{*}ele').text))
+              for p in ET.parse(ruta).findall('.//{*}trkpt')]
+    metros = sum(haversine(a[0], a[1], b[0], b[1]) for a, b in zip(puntos, puntos[1:]))
+    alturas = [e for _, _, e in puntos]
+    return metros / 1000, min(alturas), max(alturas)
+
+
+def body_copy(texto):
+    """El cuerpo de la ficha, sin el mapa ni lo que viene detras."""
+    inicio = texto.find('<div class="body-copy">')
+    if inicio < 0:
+        return ''
+    resto = texto[inicio:]
+    fin = resto.find('<section class="map-section"')
+    return resto[:fin] if fin > 0 else resto
 
 
 class Document(HTMLParser):
@@ -104,6 +155,51 @@ def main():
                 finder = next(n for n in nodes if n['attrs'].get('class') == 'finder')
                 require(finder['attrs']['data-count-many'] ==
                         ('ibilbide aurkitu dira' if lang == 'eu' else 'rutas encontradas'), filename)
+
+    # --- las cifras de la ficha contra el track real -----------------------
+    # Aqui es donde se habria visto sola la tanda de rutas que daban mas
+    # kilometros que su GPX, en vez de descubrirla leyendo fichas a mano.
+    for page in build.PAGES:
+        if page in ('mallabia', 'aviso-legal'):
+            continue
+        gpx = ROOT / 'src' / f'{page}.gpx'
+        require(gpx.exists(), f'{page}: falta su GPX')
+        km_real, alt_min, alt_max = datos_gpx(gpx)
+        html = (ROOT / f'{page}.html').read_text()
+
+        ficha = re.search(_FACT.format(_CIFRA + r'\s*km', 'Distancia'), html)
+        require(ficha is not None, f'{page}.html: no encuentro la distancia')
+        km_ficha = numero(ficha.group(1))
+        desvio = abs(km_ficha - km_real) / km_real * 100
+        require(desvio <= TOLERANCIA_KM_PCT,
+                f'{page}.html: distancia {km_ficha} km, el GPX da {km_real:.2f} km ({desvio:.1f}%)')
+
+        for etiqueta, real in (('Altitud m&iacute;n.', alt_min), ('Altitud m&aacute;x.', alt_max)):
+            m = re.search(_FACT.format(_CIFRA + r'\s*m', re.escape(etiqueta)), html)
+            if m is None:
+                continue          # no todas las fichas llevan las dos altitudes
+            require(abs(numero(m.group(1)) - real) <= TOLERANCIA_ALTITUD_M,
+                    f'{page}.html: {etiqueta} {m.group(1)} m, el GPX da {real:.0f} m')
+
+    # --- castellano y euskera, el mismo cuerpo -----------------------------
+    # La ficha en euskera se genera de la castellana, asi que el markup tiene
+    # que salir igual. Un <a> o un <picture> de menos significa que una clave de
+    # eu.py se ha comido una referencia a otra ruta o una imagen responsive
+    # (a ahuntzen le faltaban las seis). Las NEGRITAS no se comparan: el autor
+    # marca a veces un nombre distinto en cada idioma, y es decision suya.
+    for page in build.PAGES:
+        if page in ('mallabia', 'aviso-legal'):
+            continue
+        es = (ROOT / f'{page}.html').read_text()
+        eu_html = (ROOT / f'{page}.eu.html').read_text()
+        for etiqueta in ('a', 'picture'):
+            patron = rf'<{etiqueta}\b'
+            require(len(re.findall(patron, body_copy(es))) ==
+                    len(re.findall(patron, body_copy(eu_html))),
+                    f'{page}: el cuerpo en euskera no lleva los mismos <{etiqueta}>')
+        require(len(re.findall(r'<picture\b', es)) == len(re.findall(r'<picture\b', eu_html)),
+                f'{page}: numero de <picture> distinto entre idiomas')
+        require('<picture' in es, f'{page}.html: ninguna imagen responsive')
 
     for gpx in (ROOT / 'src').glob('*.gpx'):
         points = [(float(p.attrib['lon']), float(p.attrib['lat']), float(p.find('{*}ele').text))

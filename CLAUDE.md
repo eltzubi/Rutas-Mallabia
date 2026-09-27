@@ -57,8 +57,29 @@ it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, 
 `make_card_thumbs.py` derives its output from `<name>.jpg` rather than from its own previous output, so it
 is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
-There is no test suite, linter, or package manifest — this is plain Python (stdlib only) + hand-written
-HTML/CSS/JS with no build tooling beyond the two scripts above.
+```
+python3 scripts/check_site.py          # 1.143 comprobaciones sobre el sitio ya construido
+```
+
+`check_site.py` is the closest thing to a test suite: read-only, stdlib only, run it after `build.py`.
+Besides the page/marker/download/asset checks it already had, it now contrasts every route page against
+its own GPX and against its Basque twin:
+
+- **distance** in `.facts` vs the real track (1% tolerance; today's worst case is 0.7%)
+- **min/max altitude** vs the track (8 m; worst case 6 m)
+- **same `<a>` and `<picture>` count** in the Spanish and Basque body copy — a missing one means a key in
+  `eu.py` swallowed a cross-reference or a responsive image (ahuntzen was missing all six)
+- every route page has at least one `<picture>`
+
+It deliberately does **not** check cumulative elevation gain: summing the GPX's climbs raw drifts up to 43%
+from the figure on the page, and even smoothed it stays around 9% on average. Those figures come from the
+route's own source (Wikiloc, the race organiser) and the page says so. Checking it would only cry wolf.
+
+It also does not check the waypoint kilometres in the elevation-profile markers — see the note in
+"Content rules" about them still being on the old distance basis.
+
+There is no linter or package manifest — this is plain Python (stdlib only) + hand-written
+HTML/CSS/JS with no build tooling beyond the scripts above.
 
 ## Architecture
 
