@@ -58,7 +58,7 @@ it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, 
 is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
 ```
-python3 scripts/check_site.py          # 1.181 comprobaciones sobre el sitio ya construido
+python3 scripts/check_site.py          # 1.965 comprobaciones sobre el sitio ya construido
 python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favicon.svg
 ```
 
@@ -113,6 +113,14 @@ plus a per-page dict such as `EGOARBITZA`, wired up via `PAGE_STRINGS`, `TITLES`
 `eu.py`. Internal links between pages (`href="urko.html"`) are auto-swapped to the Basque
 counterpart (`href="urko.eu.html"`) by `EU_OF` in `make_eu.py` — write plain `.html` hrefs in both
 the Spanish source and the `eu.py` translation values, never the `.eu.html` form by hand.
+
+**No third parties.** The fonts were already self-hosted; **Leaflet is too**, in `src/vendor/leaflet`
+(copied to `vendor/leaflet` by `build.py`). It is the official 1.9.4 distribution, unmodified: its bytes
+match the SRI hashes the HTML used to declare while it came from jsdelivr, so it is exactly the same code
+that was already being served — only now without a CDN seeing every visitor's IP, and without the map
+going blank on 112 pages if that CDN has a bad day. `check_site.py` fails if any `<script src>` or
+`<link rel=stylesheet|preconnect|preload>` ever points off-site again. The only thing still fetched from
+outside are the map tiles, and those are requested by the JS, not the HTML.
 
 **Shared assets, not embedded per-page.** `css/home.css`, `css/route.css`,
 `fonts/inline_fonts.css` (self-hosted `@font-face`, base64) and `js/{app,map,filters}.js` live once

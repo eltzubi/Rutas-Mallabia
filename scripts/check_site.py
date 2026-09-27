@@ -201,6 +201,22 @@ def main():
                 f'{page}: numero de <picture> distinto entre idiomas')
         require('<picture' in es, f'{page}.html: ninguna imagen responsive')
 
+    # --- nada de terceros en el HTML --------------------------------------
+    # Las tipografias y Leaflet se sirven desde aqui. Lo unico que sale fuera
+    # son los tiles del mapa, y los pide el JS, no el HTML. Si algun dia se
+    # cuela un <script>/<link> a un CDN, se ve aqui: seria un tercero mirando
+    # la IP de cada visitante y un punto mas por el que el sitio puede caerse.
+    for lang in build.LANGS:
+        for page in build.PAGES:
+            nombre = build.out_name(page, lang)
+            pagina = (ROOT / nombre).read_text()
+            # Solo las etiquetas que traen codigo o conexiones. Un canonical o un
+            # hreflang apuntan al propio dominio en absoluto, y eso esta bien.
+            for etiqueta in re.findall(r'<script\b[^>]*\bsrc="[^"]*"[^>]*>', pagina) + \
+                    re.findall(r'<link\b[^>]*rel="(?:stylesheet|preconnect|preload|prefetch|dns-prefetch)"[^>]*>', pagina):
+                url = re.search(r'(?:src|href)="(?:https?:)?//([^/"]+)', etiqueta)
+                require(url is None, f'{nombre}: carga {url.group(1) if url else ""} desde fuera')
+
     # --- service worker y manifest ----------------------------------------
     # Un service worker es pegajoso: si se publica uno que apunta a ficheros que
     # no existen, install() falla y se queda sin instalar en todos los

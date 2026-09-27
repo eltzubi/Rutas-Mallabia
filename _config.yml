@@ -9,6 +9,7 @@
 exclude:
   # El registro de scripts/optimize_images.py: no forma parte del sitio.
   - img/.optimized.json
+  - src/vendor
   - src/*.webmanifest
   - src/build.py
   - src/*.html

@@ -186,6 +186,33 @@ FONT_FILES = [
 ]
 
 
+# Leaflet, servido desde el propio sitio en vez de desde un CDN. Se copia tal
+# cual viene de la distribucion oficial 1.9.4: los bytes coinciden con el SRI
+# que el HTML declaraba mientras venia de jsdelivr, asi que es exactamente el
+# mismo codigo que ya se estaba sirviendo, solo que sin que un tercero vea la
+# IP de cada visitante ni pueda dejar el mapa sin dibujar si se cae.
+LEAFLET_DIR = ("vendor", "leaflet")
+
+
+def copy_leaflet():
+    origen = os.path.join(HERE, *LEAFLET_DIR)
+    copiados = 0
+    for raiz, _dirs, ficheros in os.walk(origen):
+        rel = os.path.relpath(raiz, origen)
+        destino = os.path.join(ROOT, *LEAFLET_DIR) if rel == "." else \
+            os.path.join(ROOT, *LEAFLET_DIR, rel)
+        os.makedirs(destino, exist_ok=True)
+        for nombre in ficheros:
+            datos = open(os.path.join(raiz, nombre), "rb").read()
+            salida = os.path.join(destino, nombre)
+            # Se reescribe solo si cambia: si no, cada build ensuciaria el arbol
+            if not os.path.exists(salida) or open(salida, "rb").read() != datos:
+                with open(salida, "wb") as f:
+                    f.write(datos)
+            copiados += 1
+    print(f"vendor/leaflet: {copiados} ficheros")
+
+
 def copy_font_files():
     out_dir = os.path.join(ROOT, "fonts")
     os.makedirs(out_dir, exist_ok=True)
@@ -557,6 +584,7 @@ def compact_route_header(page_html):
 
 def main():
     copy_font_files()
+    copy_leaflet()
     versions = {}
     for parts, out in ASSETS.items():
         body = read(*parts)
@@ -586,9 +614,7 @@ def main():
                 f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')
             page_html = page_html.replace(
                 '<link rel="stylesheet" href="fonts.css">',
-                '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>\n'
-                + add_manifest(lang) +
-                '<link rel="stylesheet" href="fonts.css">')
+                add_manifest(lang) + '<link rel="stylesheet" href="fonts.css">')
             page_html = retarget_home_links(page_html, lang)
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
@@ -629,7 +655,8 @@ def write_offline_page(versions):
 # que hace que una ficha ya visitada se vea entera y no en crudo. Las fichas y
 # las fotos NO van aqui: se guardan segun se visitan, que es lo que evita
 # bajarse los 400 MB de imagenes del sitio.
-SHELL_EXTRA = ("offline.html", "favicon.svg", "icon-192.png")
+SHELL_EXTRA = ("offline.html", "favicon.svg", "icon-192.png",
+               "vendor/leaflet/leaflet.css", "vendor/leaflet/leaflet.js")
 
 
 def write_service_worker(versions):

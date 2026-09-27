@@ -23,10 +23,6 @@ const CACHE_MEDIOS = 'medios-v1';
 const MAX_MEDIOS = 150;          // ~150 imagenes cacheadas; las mas viejas se van
 const FUERA = 'offline.html';
 
-// Tiles: nunca. El resto de terceros que si interesa guardar (Leaflet, que es
-// lo que dibuja el mapa) va por CDN con integridad declarada en el HTML.
-const TILES = /(^|\.)(tile\.openstreetmap\.org|tile-cyclosm\.openstreetmap\.fr|tile\.opentopomap\.org)$/;
-const CDN = /(^|\.)(cdn\.jsdelivr\.net)$/;
 const MEDIO = /\.(webp|jpg|jpeg|png|svg|woff2)$/i;
 
 self.addEventListener('install', function (evento) {
@@ -77,9 +73,12 @@ self.addEventListener('fetch', function (evento) {
   if (peticion.method !== 'GET') return;
   const url = new URL(peticion.url);
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
-  if (TILES.test(url.hostname)) return;                       // los tiles, a la red y sin guardar
-  const propio = url.origin === self.location.origin;
-  if (!propio && !CDN.test(url.hostname)) return;
+  // Solo lo que sirve este mismo sitio. Lo unico de fuera son los tiles del
+  // mapa, y esos van a la red sin pasar por aqui: son de OpenStreetMap,
+  // OpenTopoMap y CyclOSM, servidores de voluntarios cuya politica de uso
+  // prohibe cachearlos en bloque. Leaflet ya no viene de un CDN, se sirve
+  // desde vendor/leaflet, asi que entra por la via normal.
+  if (url.origin !== self.location.origin) return;
 
   // Paginas: primero la red, para que quien tenga cobertura vea siempre la
   // ultima version; la copia guardada es solo el plan B.
