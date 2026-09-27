@@ -82,7 +82,15 @@ self.addEventListener('fetch', function (evento) {
 
   // Paginas: primero la red, para que quien tenga cobertura vea siempre la
   // ultima version; la copia guardada es solo el plan B.
-  if (peticion.mode === 'navigate') {
+  //
+  // Y no solo al navegar: app.js se descarga la portada con fetch() para sacar
+  // de ahi los nombres de las rutas vecinas. Si eso se sirviera de la cache,
+  // quien ya hubiera visitado la web construiria esa lista con una portada
+  // vieja, sin las rutas nuevas. Cualquier HTML va a la red primero.
+  const esPagina = peticion.mode === 'navigate'
+    || url.pathname === '/' || url.pathname.endsWith('/')
+    || /\.html$/.test(url.pathname);
+  if (esPagina) {
     evento.respondWith(
       fetch(peticion)
         .then(function (r) { return guardar(CACHE_PAGINAS, peticion, r); })

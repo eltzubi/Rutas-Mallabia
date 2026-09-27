@@ -57,6 +57,7 @@ Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
 import hashlib
+import xml.etree.ElementTree as ET
 import json
 import html.entities
 import os
@@ -272,19 +273,51 @@ def home_cards(src_suffix):
     return cards
 
 
-def similar_routes(slug, cards, count=2):
-    """Las rutas mas parecidas: misma actividad, y las mas cercanas en distancia.
+# Rejilla de unos 70 m. Dos rutas "se tocan" donde caen en la misma celda, que
+# es una forma barata de medir cuanto camino comparten sin comparar punto a
+# punto los 3.000-9.000 trkpt de cada una contra los de las otras 54.
+_CELDA = 0.00063
+_celdas_cache = {}
 
-    Sin inventar nada -- la semejanza sale de los datos reales del GPX que ya
-    llevan las tarjetas.
+
+def celdas_de(slug):
+    """Las celdas por las que pasa el track de una ruta."""
+    if slug not in _celdas_cache:
+        ruta = os.path.join(HERE, f"{slug}.gpx")
+        if not os.path.exists(ruta):
+            _celdas_cache[slug] = frozenset()
+        else:
+            puntos = ET.parse(ruta).findall(".//{*}trkpt")[::3]
+            _celdas_cache[slug] = frozenset(
+                (round(float(p.attrib["lat"]) / _CELDA),
+                 round(float(p.attrib["lon"]) / (_CELDA * 1.37)))
+                for p in puntos)
+    return _celdas_cache[slug]
+
+
+def similar_routes(slug, cards, count=2):
+    """Las rutas de al lado: misma actividad, y las que mas camino comparten.
+
+    Antes se ordenaban por parecido de kilometraje, y eso ponia al pie de una
+    ruta de Mallabia otra de Markina solo porque median lo mismo. Lo que sirve
+    a quien acaba de leer una ficha es saber que mas hay por esa zona, asi que
+    ahora manda cuanto track comparten de verdad. Sin inventar nada: sale de
+    los propios GPX.
     """
     me = cards.get(slug)
     if not me:
         return []
+    mias = celdas_de(slug)
     otras = [c for s, c in cards.items() if s != slug]
     misma_actividad = [c for c in otras if c["activities"] & me["activities"]]
     candidatas = misma_actividad or otras
-    candidatas.sort(key=lambda c: abs(c["km"] - me["km"]))
+
+    def comparten(c):
+        suyas = celdas_de(c["href"].replace(".eu.html", "").replace(".html", ""))
+        return len(mias & suyas) / len(mias) if mias else 0.0
+
+    # a igualdad de cercania (o si no comparten nada), la de kilometraje parecido
+    candidatas.sort(key=lambda c: (-comparten(c), abs(c["km"] - me["km"])))
     return candidatas[:count]
 
 
