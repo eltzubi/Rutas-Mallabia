@@ -185,16 +185,16 @@ There's no automated test suite — verification is manual:
 
 ## Content rules
 
-- **Known open issue: the waypoint kilometres are on the old distance basis.** Commit `e4967121`
-  corrected the total distance of 17 routes against their GPX (e.g. trabakua 16,5 → 15,65 km), but the
-  per-waypoint kilometres in the elevation-profile markers (`<g class="elev-marker"><title>Name · X km ·
-  Y m</title>`) were not recomputed. 35 of the site's 239 waypoints are now between +0,30 and +0,84 km
-  ahead of where that point really falls on the track, and **every deviation is positive** — the
-  signature of a shorter track measured with the old numbers. On trabakua all six match the old 16,5 km
-  basis exactly (16,5/15,65 = 1,054, and 6,45 × 1,054 = 6,8, the figure on the page). Affected routes:
-  sancristobal, trabakua, urregarai, zengotitagane, egoarbitza, kalamua, urko, arteta, zenarruza — all of
-  them in that commit's list. Fixing it also means moving each marker's `cx`, which is a visible change to
-  the profile, so it needs the user's go-ahead. `check_site.py` does not enforce this yet.
+- **The waypoint kilometres stay as they are — decided, do not "fix" them.** Commit `e4967121`
+  corrected the total distance of 17 routes against their GPX (e.g. trabakua 16,5 → 15,65 km) without
+  recomputing the per-waypoint kilometres in the elevation-profile markers (`<g class="elev-marker">
+  <title>Name · X km · Y m</title>`). 35 of the site's 239 waypoints therefore sit between +0,30 and
+  +0,84 km ahead of where that point falls on the current track, every deviation positive; on trabakua
+  all six match the old basis exactly (16,5/15,65 = 1,054, and 6,45 × 1,054 = 6,8, the figure on the
+  page). Affected: sancristobal, trabakua, urregarai, zengotitagane, egoarbitza, kalamua, urko, arteta,
+  zenarruza. **The user has looked at this and decided to leave them.** Recomputing them would also move
+  each marker's `cx`, changing the elevation profile of nine pages. Don't raise it again or change it
+  unless he asks; `check_site.py` deliberately does not check it.
 
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
