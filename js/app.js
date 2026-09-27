@@ -99,6 +99,18 @@
     scored.sort(function(a, b){
       return b.score - a.score || b.shared - a.shared || b.nearby - a.nearby;
     });
+
+    // Vecinas puestas a mano en build.py (data-fijas): van primero aunque el
+    // track no las acerque. Dos rutas pueden ir al mismo sitio por laderas
+    // distintas y compartir poco camino, y aun asi ser la una para la otra la
+    // referencia obvia.
+    var fijas = (section.getAttribute('data-fijas') || '').split(' ').filter(Boolean);
+    fijas.reverse().forEach(function(s){
+      if (!cards[s] || s === slug || linkedSlugs[s]) return;
+      var i = scored.findIndex(function(x){ return x.slug === s; });
+      var item = i >= 0 ? scored.splice(i, 1)[0] : { slug: s };
+      scored.unshift(item);
+    });
     scored = scored.slice(0, 3);
     if (!scored.length) return; // keep the static fallback from build.py
 

@@ -295,6 +295,17 @@ def celdas_de(slug):
     return _celdas_cache[slug]
 
 
+# Vecinas puestas a mano, para los casos en que el track no lo dice todo.
+# gerea y la ruta nueva van las dos a la Cascada de Gerea, pero llegan por
+# laderas distintas y solo comparten el 24% del camino, asi que por cercania
+# no se encontraban. Van primero; el resto de huecos los sigue rellenando el
+# calculo de siempre.
+VECINAS_FIJAS = {
+    "gerea": ("longaurjauziak",),
+    "longaurjauziak": ("gerea",),
+}
+
+
 def similar_routes(slug, cards, count=2):
     """Las rutas de al lado: misma actividad, y las que mas camino comparten.
 
@@ -318,7 +329,9 @@ def similar_routes(slug, cards, count=2):
 
     # a igualdad de cercania (o si no comparten nada), la de kilometraje parecido
     candidatas.sort(key=lambda c: (-comparten(c), abs(c["km"] - me["km"])))
-    return candidatas[:count]
+    fijas = [c for f in VECINAS_FIJAS.get(slug, ())
+             for c in candidatas if c["href"].startswith(f + ".")]
+    return (fijas + [c for c in candidatas if c not in fijas])[:count]
 
 
 def add_similar_routes(page_html, page, cards, lang):
@@ -340,7 +353,11 @@ def add_similar_routes(page_html, page, cards, lang):
         f'        <span class="next-route-name">{c["name"]}</span>\n'
         f'        <span class="next-route-stats">{c["stats"]}</span>\n'
         f'      </a>' for c in vecinas)
-    bloque = (f'  <section class="next-routes">\n'
+    # Las fijas se declaran aqui para que el JS, que recalcula la lista en el
+    # navegador, las respete en vez de tirarlas.
+    fijas = " ".join(VECINAS_FIJAS.get(page, ()))
+    attr = f' data-fijas="{fijas}"' if fijas else ""
+    bloque = (f'  <section class="next-routes"{attr}>\n'
               f'    <p class="eyebrow">{titulo}</p>\n'
               f'    <div class="next-route-list">\n{tarjetas}\n    </div>\n'
               f'  </section>\n\n')
