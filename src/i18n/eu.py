@@ -990,10 +990,10 @@ ZENARRUZA = {
         'Zengotitagandik, azken jaitsiera ekialde-hego-ekialderantz doa, azken 400 metroko desnibela '
         'galduz 4 kilometro pasatxotan, Trabakuan zirkuitua ixteko. Ibilbide luzea, baina ederra; '
         'pedalei gustura eragiteko modukoa.',
-    '31,7 km y +1.161 m de desnivel en un solo circuito. Sube '
+    '30,61 km y +1.161 m de desnivel en un solo circuito. Sube '
     'casi sin descanso hasta San Kristobal y vuelve a subir despu&eacute;s del collado hasta el '
     'dolmen: dos tirones largos seguidos.':
-        '31,7 km eta +1.161 m-ko desnibela zirkuitu bakarrean. Ia '
+        '30,61 km eta +1.161 m-ko desnibela zirkuitu bakarrean. Ia '
         'atsedenik gabe igotzen da San Kristobaleraino eta lepoaren ondoren berriro igotzen da '
         'trikuharriraino: bi tirada luze jarraian.',
 }
@@ -1109,10 +1109,10 @@ OSMA = {
         '&middot; 264 m), eta azken 4,7 km-etan eta 143 m-ko desnibelean etenik gabe igotzen da '
         'berriro Trabakuara, zirkuitua ixteko.',
 
-    '<p>36,8 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
+    '<p>36,36 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
     'Duranguesado. Hay agua en Larrosako Iturri (km 11,9) y '
     'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 20,1).</p>':
-        '<p>36,8 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
+        '<p>36,36 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
         'artean. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
         'Nekropolitik gertu (20,1 km).</p>',
 }
@@ -1265,12 +1265,12 @@ ZENGOTITAGANE = {
         'aurrerago, <b>Besoita</b> auzoraino (17,1 km, 302 m), Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatu aurretik. Gurutzatu eta errepide zaharretik gora '
         'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura jaitsi aurretik.',
-    '22,4 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    '21,98 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
     'agua cerca de Iturzurigaina (km 4,8) y en la zona de Garai, antes de la Ermita de San '
     'Crist&oacute;bal Txiki.':
-        '22,4 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+        '21,98 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko aldean, '
         'San Kristobal Txiki ermitaren aurretik.',
@@ -1345,9 +1345,9 @@ OIZ = {
     'La vuelta es por el mismo camino, de vuelta a Trabakua.':
         'Bueltarako, bide bera hartzen dugu, pago artean berriro jaitsiz, Trabakuara '
         'itzultzeko. Ibilbide osoa azkarra, argia eta paisaiaren poderioz oso gozagarria da.',
-    '11,1 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
+    '10,68 km y +752 m de desnivel en una ruta de ida y vuelta, con dos altos de camino '
     '(Zengotitagane y Axmakur) antes de coronar el Oiz (1.025 m).':
-        '11,1 km eta +752 m-ko desnibela joan-etorriko ibilbide batean, bidean bi goirekin '
+        '10,68 km eta +752 m-ko desnibela joan-etorriko ibilbide batean, bidean bi goirekin '
         '(Zengotitagane eta Axmakur) Oiz gailurreratu aurretik (1.025 m).',
     'Ida y vuelta &mdash; el mismo camino de ida y de vuelta':
         'Joan-etorria &mdash; bide bera joan eta etorrian',
@@ -1499,11 +1499,11 @@ URKO = {
         '&middot; 490 m), Urko eta Mendibil (613 m) bereizten dituen tartera. Lepoan '
         'pista hartzen dugu berriro, Asuntzako bidea bera, eta hortik Trabakuarantz '
         'igotzen hasten gara, ibilbideari buelta emateko.',
-    '15,3 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
+    '14,90 km y +873 m de desnivel en un circuito con dos altos de camino (Arandomendi y '
     'el Collado de Asuntza) antes y despu&eacute;s de coronar el Urko (785 m). No hay '
     'fuentes en la ruta, as&iacute; que conviene llevar agua &mdash;hay una en el bar de '
     'arriba de Trabakua, junto a los columpios.':
-        '15,3 km eta +873 m-ko desnibela zirkuitu batean, bidean bi goirekin (Arandomendi '
+        '14,90 km eta +873 m-ko desnibela zirkuitu batean, bidean bi goirekin (Arandomendi '
         'eta Asuntzako lepoa) Urko gailurra (785 m) egin aurretik eta ondoren. Ez dago '
         'iturririk ibilbidean, beraz komeni da ura eramatea &mdash;bat dago Trabakuko '
         'goiko tabernan, kulunkaren ondoan.',
@@ -1595,12 +1595,12 @@ SANCRISTOBAL = {
         'Berriz lotzen dituen errepide nagusia zeharkatu aurretik. Zeharkatu eta errepide '
         'zaharretik igotzen da Zengotita auzorantz, zirkuitua ixteko puntura iritsi aurretik, '
         'Trabakuara berriro jaitsi baino lehen.',
-    '26,9 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    '25,98 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
     'agua cerca de Iturzurigaina (km 4,8) y en una fuente a la salida de Garai, con agua todo '
     'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
-        '26,9 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+        '25,98 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko '
         'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
@@ -1758,12 +1758,12 @@ EGOARBITZA = {
         'handik, ia bertikalki Trabakuara: azken jaitsierak malda handia dauka, 400 m desnibel 2 km '
         'eskasetan, eta zirkuitua ixten da.',
 
-    '34,1 km y +2.201 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
+    '33,77 km y +2.201 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
     'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente junto a '
     'la presa de Aixola, otro en Santa Marina, y una fuente en el barrio de '
     'Zengotita.':
-        '34,1 km eta +2.201 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
+        '33,77 km eta +2.201 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
         'Egoarbitza, Arietxu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Aixolako presaren ondoan, beste bat '
         'Santa Marinan, eta iturri bat Zengotita auzoan.',
@@ -1874,11 +1874,11 @@ URREGARAI = {
     'Ya solo queda bajar hacia Trabakua, por el barrio de Gerea, para cerrar el circuito.':
         'Trabakuarantz jaistea besterik ez zaigu geratzen, Gerea auzotik, zirkuitua ixteko.',
 
-    '30,5 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (el collado de Urregarai y '
+    '30,05 km y +1.163 m de desnivel en un solo circuito, con dos subidas importantes (el collado de Urregarai y '
     'Muniozguren) y tramos de pista, asfalto y cemento empinado. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente en Iturreta, otra junto a '
     'la iglesia del Carmen en Markina, y una tercera en el refugio de Atxagarai.':
-        '30,5 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregaraiko lepoa '
+        '30,05 km eta +1.163 m-ko desnibela zirkuitu bakarrean, bi igoera garrantzitsurekin (Urregaraiko lepoa '
         'eta Muniozguren) eta pista, asfalto eta zementu pikoko tarteekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Iturretan, beste bat Markinako Karmen '
         'elizaren ondoan, eta hirugarren bat Atxagaraiko aterpean.',
@@ -1971,10 +1971,10 @@ KALAMUA = {
         'Azken igoera horrek <b>Mendibilera</b> eramaten gaitu (32,8 km &middot; 612 m). Hortik aurrera '
         'Trabakuara itzultzeko jaitsiera besterik ez da geratzen zirkuitua ixteko.',
 
-    '36,0 km y +1.676 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
+    '35,61 km y +1.676 m de desnivel en un solo circuito, con tres subidas importantes (Urko, Kalamua y '
     'Mendibil) y tramos de pista, asfalto y cemento. Hay varias fuentes en la subida a Kalamua para '
     'abastecerse de agua; a partir de ah&iacute; escasea hasta Markina.':
-        '36,0 km eta +1.676 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
+        '35,61 km eta +1.676 m-ko desnibela zirkuitu bakar batean, hiru igoera garrantzitsurekin (Urko, '
         'Kalamua eta Mendibil) eta pista, asfalto eta zementuzko tarteekin. Kalamuarako igoeran hainbat '
         'iturri daude urez hornitzeko; hortik aurrera ur eskasia egon daiteke Markinaraino.',
 }
@@ -2070,11 +2070,11 @@ MUNDIOKOKOBA = {
         'Desbideratze horrek <a href="trabakua.html">Trabakua bira</a>ren azken zatiarekin egiten '
         'du bat, baina askoz gorago &mdash;Berano Txikitik zein Beranoko goialdetik pasa '
         'gabe&mdash;, berriro Trabakurantz igo baino lehen, zirkulua ixteko.',
-    '13,0 km y +404 m de desnivel en un circuito corto pero con un desv&iacute;o especial: la '
+    '12,38 km y +404 m de desnivel en un circuito corto pero con un desv&iacute;o especial: la '
     'entrada a la cueva de Mundioko Koba. Dentro hay un peque&ntilde;o descenso que sin cuerda no '
     'se puede bajar &mdash;no llevar ni&ntilde;os m&aacute;s all&aacute; de la entrada sin la '
     'preparaci&oacute;n adecuada.':
-        '13,0 km eta +404 m desnibela, zirkuitu labur batean baina desbideratze berezi batekin: '
+        '12,38 km eta +404 m desnibela, zirkuitu labur batean baina desbideratze berezi batekin: '
         'Mundioko Kobaren sarrera. Barruan jaitsiera txiki bat dago, eta sokarik gabe ez da '
         'jaisteko modukoa &mdash;haurrak ez eramatea gomendatzen da, sarreratik harago ez bada.',
 }
@@ -2123,10 +2123,10 @@ IRUZUBIETA = {
     '<title>Desvío a Iturreta': '<title>Iturretarako desbideraketa',
     '<span class="num">2</span>Desvío a Iturreta</span>':
         '<span class="num">2</span>Iturretarako desbideraketa</span>',
-    '19,22 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
+    '18,39 km y +769 m de desnivel en un solo circuito, apto tanto para andar como para '
     'bicicleta. Los únicos puntos de agua son el bar de arriba de Trabakua, en la misma salida, y '
     'el bar del barrio de Iruzubieta.':
-        '19,22 km eta +769 m desnibel zirkuitu bakar batean, oinez zein bizikletaz egiteko '
+        '18,39 km eta +769 m desnibel zirkuitu bakar batean, oinez zein bizikletaz egiteko '
         'modukoa. Uraren bi puntu bakarrak dira '
         'Trabakuako goiko taberna, irteera puntuan bertan, eta Iruzubietako auzoko taberna.',
     'Sale del Alto de Trabakua bajando un kilómetro por la carretera general rumbo a Ermua, '
@@ -2346,11 +2346,11 @@ ARTETA = {
         'pista beretik, alderantziz, Trabakuara bueltan zirkulua itxi arte.',
     '<title>Fuente de Arteta': '<title>Artetako iturria',
     '<span class="num">3</span>Fuente de Arteta': '<span class="num">3</span>Artetako iturria',
-    '11,38 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
+    '10,70 km y +565 m de desnivel en un circuito largo, pensado para quien quiera '
     'conocer rincones escondidos y pistas o caminos distintos de los habituales por la '
     'zona de Mendibil y Arteta. La Fuente de Arteta sirve de punto de agua a mitad de '
     'recorrido.':
-        '11,38 km eta +565 m-ko desnibela zirkuitu luze batean, ohikoak ez diren txoko '
+        '10,70 km eta +565 m-ko desnibela zirkuitu luze batean, ohikoak ez diren txoko '
         'ezkutuak eta pista edo bide ezberdinak ezagutu nahi dituenarentzat, Mendibil '
         'eta Arteta inguruan. Artetako iturriak ur-puntu gisa balio du ibilbidearen '
         'erdialdean.',
