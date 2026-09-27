@@ -9,6 +9,7 @@ Allow: /src/*.kml
 Allow: /src/*.zip
 Disallow: /scripts/
 Disallow: /CLAUDE.md
+Disallow: /DESIGN.md
 Disallow: /README.md
 
 Sitemap: https://trabakutik.com/sitemap.xml

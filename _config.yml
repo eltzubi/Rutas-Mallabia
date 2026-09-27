@@ -15,4 +15,5 @@ exclude:
   - src/i18n
   - scripts
   - CLAUDE.md
+  - DESIGN.md
   - README.md
