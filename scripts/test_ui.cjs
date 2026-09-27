@@ -89,7 +89,7 @@ function env(page='index.es.html', storage=new Map()) {
     polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
     marker(){return {addTo(){return this;},on(){return this;},getElement(){return null;}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
   };
-  const context=vm.createContext({window:win,document:doc,L,AbortController,
+  const context=vm.createContext({window:win,document:doc,L,AbortController,navigator:{},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     CustomEvent:class {constructor(type,options){this.type=type;Object.assign(this,options);}},
     FormData:class {constructor(form){this.form=form;}},
