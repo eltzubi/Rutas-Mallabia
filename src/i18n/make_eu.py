@@ -34,7 +34,9 @@ ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zeng
 # Esta ficha se redactó ya en los dos idiomas durante su incorporación.
 # Hasta migrar sus textos al diccionario granular de eu.py, mantenemos su
 # tail EU como fuente explícita para que el generador no lo sobrescriba.
-MANUAL_EU_PAGES = {"sancristobalgaraiandikoa", "zengotitaiturzuri", "ahuntzen"}
+# Vacio: las tres fichas que se mantenian a mano ya tienen sus textos en
+# eu.py, asi que todas las paginas en euskera se generan igual.
+MANUAL_EU_PAGES = set()
 
 # es filename -> eu filename, for the cross-language links.
 # La portada en euskera es la raiz del sitio, o sea index.html mismo: el

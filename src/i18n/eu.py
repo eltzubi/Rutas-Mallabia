@@ -4976,8 +4976,325 @@ MARKINAURJAUZIAK = {
         '    <p>Hemendik aurrera <b>Trabakua</b>rantz itzultzea besterik ez da geratzen. Altuera galtzen joango gara pixkanaka, autobus-geltokiaren ondoan ibilbidea amaitu arte. Horrela, <b>Markina-Xemein</b>dik abiatu eta autobusez itzuli gara, ibilbidea errepikatu beharrik gabe.</p>',
 }
 
+ZENGOTITAITURZURI = {
+    '<a class="back-link" href="index.html">&larr; Rutas</a>':
+        '<a class="back-link" href="index.eu.html">&larr; Ibilbideak</a>',
+    '<button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar a tema oscuro">\n      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>\n      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>\n    </button>':
+        '<button type="button" class="theme-toggle" id="themeToggle" data-label-light="Aldatu gai argira" data-label-dark="Aldatu gai ilunera" aria-label="Aldatu gai ilunera">\n      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>\n      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>\n    </button>',
+    '<p class="eyebrow"><span>Senderismo</span><span class="sep">/</span><span>Zengotita · Iturzuri · Zengotitagane</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Oinez</span><span class="sep">/</span><span>Zengotita · Iturzuri · Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>Zengotita, Iturzuri<br><em>y Zengotitagane</em></h1>':
+        '<h1>Zengotita, Iturzuri<br><em>eta Zengotitagane</em></h1>',
+    '<p class="full-name">Circuito desde Zengotita por Iturzuri y Zengotitagane</p>':
+        '<p class="full-name">Ibilbide zirkularra Zengotitatik, Iturzuri eta Zengotitaganetik igaroz</p>',
+    'Mar de nubes cubriendo los valles, visto desde la parte alta de la ruta':
+        'Hodei-itsasoak haranak estaltzen, ibilbidearen goialdetik ikusita',
+    '<p>7,31 km y +435 m de desnivel en un circuito corto y variado. Al principio hay alguna cuesta más empinada, pero nada preocupante. Por distancia y dificultad, puede ser también una buena opción para hacer con niños acostumbrados a caminar por monte.</p>':
+        '<p>7,31 km eta +435 m-ko zirkuitua. Hasieran malda gogorrago batzuk baditu ere, ez da ezer kezkagarria. Distantziagatik eta zailtasunagatik, mendian ibiltzera ohituta dauden haurrekin egiteko aukera ona ere izan daiteke.</p>',
+    'Carretera de acceso al barrio de Zengotita, entre caseríos y árboles':
+        'Zengotitako auzorako sarbide errepidea, baserri eta zuhaitzen artean',
+    'Fuente y lavadero junto a los últimos caseríos de Zengotita':
+        'Zengotitako azken baserrien ondoan dagoen iturria eta garbitokia',
+    'Grupo subiendo por un camino pedregoso entre helechos':
+        'Talde bat harrizko bide batetik igotzen, iratzeen artean',
+    'Borda de piedra entre pinos, junto al camino de subida':
+        'Harrizko borda pinuen artean, igoerako bidearen ondoan',
+    'Senderistas avanzando por el hayedo, entre luces y sombras':
+        'Mendizaleak pagadian aurrera, argi-itzalen artean',
+    'Aerogenerador con vacas pastando en la ladera':
+        'Aerosorgailua eta behiak larrean bazkan',
+    'Camino entre árboles a la sombra del hayedo':
+        'Zuhaitz arteko bidea, pagadiaren itzalpean',
+    'Sendero soleado bajo las hayas, camino de Iturzuri':
+        'Bidezidor eguzkitsua pagoen azpian, Iturzurirako bidean',
+    'Dos aerogeneradores en la cresta, entre pinos':
+        'Bi aerosorgailu gailurrean, pinuen artean',
+    'Fuente y refugio de Iturzuri, con los aerogeneradores al fondo':
+        'Iturzuriko iturria eta aterpea, eolikoak atzean',
+    'Persona sentada contemplando el mar de nubes desde la cima':
+        'Pertsona bat eserita, hodei-itsasoari begira gailurretik',
+    'Mar de nubes fluyendo entre los valles y montañas':
+        'Hodei-itsasoa haran eta mendien artean isurtzen',
+    '<a href="src/zengotitaiturzuri.gpx" download="Zengotita, Iturzuri y Zengotitagane.gpx" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Descargar GPX</a>':
+        '<a href="src/zengotitaiturzuri.gpx" download="Zengotita, Iturzuri eta Zengotitagane.gpx" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Deskargatu GPX</a>',
+    '<a href="src/zengotitaiturzuri.kml" download="Zengotita, Iturzuri y Zengotitagane.kml" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Descargar KML</a>':
+        '<a href="src/zengotitaiturzuri.kml" download="Zengotita, Iturzuri eta Zengotitagane.kml" class="wikiloc-link ghost"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Deskargatu KML</a>',
+    '<p>Una vuelta corta y muy agradable por la parte alta de Zengotita, combinando caseríos, hayedo, zonas abiertas y el entorno de Iturzuri y Zengotitagane. Una ruta sencilla y variada, con buenas vistas y rincones que merece la pena conocer.</p>':
+        '<p>Ibilbide labur eta atsegina Zengotitako goiko aldetik, baserriak, pagadia, eremu irekiak eta Iturzuri eta Zengotitagane ingurua uztartuz. Ibilbide erraza eta askotarikoa da, bista onekin eta ezagutzea merezi duten txokoekin.</p>',
+    '<p>Para llegar hasta aquí desde <b>Trabakua</b>, cogemos la carretera en dirección a Berriz y, a 2,5 km, tomamos el cruce hacia Zengotita.</p>':
+        '<p>Hona iristeko <b>Trabakuatik</b>, Berrizerako norabidean errepidea hartzen dugu eta, 2,5 km-ra, Zengotitarako bidegurutzea hartzen dugu.</p>',
+    '<p>Esta ruta sale desde <b>Zengotita</b>. Dejamos el coche abajo, junto a la ermita, donde hay una zona para aparcar. Desde allí cogemos el asfalto y subimos hacia el barrio.</p>':
+        '<p>Ibilbidea <b>Zengotitatik</b> abiatzen da. Autoa behean uzten dugu, ermitaren ondoan dagoen aparkaleku batean. Handik asfaltoa hartu eta auzorantz igotzen gara.</p>',
+    '<p>Tras pasar entre los caseríos llegamos a una fuente muy bonita, con agua durante todo el año. Justo al lado dejamos el asfalto y cogemos la pista que empieza a subir hacia Oiz.</p>':
+        '<p>Baserrien artean igaro ondoren, iturri oso polit batera iristen gara, urte osoan ura izaten duena. Justu ondoan asfaltoa utzi eta Oizerantz igotzen hasten den pista hartzen dugu.</p>',
+    '<p>Al principio la subida aprieta un poco más, con alguna cuesta bastante empinada, pero nada preocupante. Según vamos ganando altura, el terreno se va suavizando y la subida se hace más llevadera. Poco a poco empiezan a aparecer los eólicos y el paisaje se abre, con vistas cada vez más amplias hacia las montañas y los valles de alrededor.</p>':
+        '<p>Hasieran igoerak pixka bat gehiago estutzen du, aldapa nahiko gogorrekin, baina ez da ezer kezkagarria. Altuera irabazten goazen heinean, malda leuntzen joaten da eta igoera eramangarriagoa bihurtzen da. Pixkanaka eolikoak agertzen hasten dira eta paisaia zabaltzen doa, inguruko mendi eta haranetara gero eta bista zabalagoekin.</p>',
+    '<p>Más adelante entramos en un bonito hayedo que nos llevará hacia <b>Iturzuri</b>. El cambio se nota enseguida: dejamos por un momento las zonas más abiertas y avanzamos entre árboles por un tramo mucho más cerrado y agradable.</p>':
+        '<p>Aurrerago, <b>Iturzuri</b>rantz eramango gaituen pagadi polit batean sartzen gara. Aldaketa berehala nabaritzen da: eremu irekiak une batez atzean utzi eta zuhaitz artean egiten dugu aurrera, tarte itxiago eta oso atsegin batean.</p>',
+    '<p>Al llegar a Iturzuri encontramos la fuente y el refugio. Desde este punto, si queremos alargar la ruta, también podemos continuar hasta Oiz siguiendo la ruta de <a href="oiz.html">Zengotitagane, Axmakur y Oiz</a>.</p>':
+        '<p>Iturzurira iristean, iturria eta aterpea aurkituko ditugu. Puntu honetatik, ibilbidea luzatu nahi badugu, Oizeraino jarraitzeko aukera ere badago, <a href="oiz.eu.html">Zengotitagane, Axmakur eta Oiz</a> ibilbidearekin lotuz.</p>',
+    '<p>Desde Iturzuri volvemos sobre nuestros pasos hasta quedar prácticamente a la altura del cruce que habíamos dejado al subir desde Zengotita. Allí cogemos el cresterío, que nos llevará hasta <b>Zengotitagane</b>. Es un tramo muy abierto y agradable, con bonitas vistas a ambos lados durante buena parte del recorrido.</p>':
+        '<p>Iturzuritik atzera egiten dugu igo garen bidetik, Zengotitatik igotzean utzi dugun bidegurutzearen pare ingurura iritsi arte. Han gailurretik doan bidea hartzen dugu, <b>Zengotitagane</b>raino eramango gaituena. Tarte irekia eta atsegina da, bi aldeetara bista ederrak dituena.</p>',
+    '<p>La bajada la haremos por una zona algo escondida, de esas que merece la pena conocer. Es un tramo distinto y entretenido, que nos permite salirnos un poco del recorrido más habitual antes de enlazar rápidamente de nuevo con la misma pista por la que habíamos subido.</p>':
+        '<p>Jaitsiera ezkutuxeago dagoen gune batetik egingo dugu, ezagutzea merezi duen horietako batetik. Tarte desberdina eta entretenigarria da, ohiko bidetik pixka bat aldentzeko aukera ematen duena. Handik gutxira, igoeran erabili dugun pista berarekin elkartuko gara berriro.</p>',
+    '<p>Por distancia y dificultad, puede ser también una buena opción para hacer con niños que ya estén acostumbrados a caminar por monte.</p>':
+        '<p>Distantziagatik eta zailtasunagatik, mendian ibiltzera ohituta dauden haurrekin egiteko aukera ona ere izan daiteke.</p>',
+    '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
+        '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
+    '<a class="back-home-link" href="index.html">&larr; Volver a rutas</a>':
+        '<a class="back-home-link" href="index.eu.html">&larr; Itzuli ibilbideetara</a>',
+    '<span>Circuito — vuelve al mismo punto de salida</span>':
+        '<span>Zirkuitua — irteerako puntu berera itzultzen da</span>',
+    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
+        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege-oharra eta pribatutasuna</a></span>',
+    'alt="Mar de nubes cubriendo los valles, visto desde la parte alta de la ruta"':
+        'alt="Hodei-itsasoak haranak estaltzen, ibilbidearen goialdetik ikusita"',
+    'alt="Foto ampliada del recorrido de Zengotita, Iturzuri y Zengotitagane"':
+        'alt="Zengotita, Iturzuri eta Zengotitagane ibilbidearen argazki handitua"',
+    'alt="Carretera de acceso al barrio de Zengotita, entre caseríos y árboles"':
+        'alt="Zengotitako auzorako sarbide errepidea, baserri eta zuhaitzen artean"',
+    'alt="Fuente y lavadero junto a los últimos caseríos de Zengotita"':
+        'alt="Zengotitako azken baserrien ondoan dagoen iturria eta garbitokia"',
+    'alt="Grupo subiendo por un camino pedregoso entre helechos"':
+        'alt="Talde bat harrizko bide batetik igotzen, iratzeen artean"',
+    'alt="Borda de piedra entre pinos, junto al camino de subida"':
+        'alt="Harrizko borda pinuen artean, igoerako bidearen ondoan"',
+    'alt="Senderistas avanzando por el hayedo, entre luces y sombras"':
+        'alt="Mendizaleak pagadian aurrera, argi-itzalen artean"',
+    'alt="Aerogenerador con vacas pastando en la ladera"':
+        'alt="Aerosorgailua eta behiak larrean bazkan"',
+    'alt="Camino entre árboles a la sombra del hayedo"':
+        'alt="Zuhaitz arteko bidea, pagadiaren itzalpean"',
+    'alt="Sendero soleado bajo las hayas, camino de Iturzuri"':
+        'alt="Bidezidor eguzkitsua pagoen azpian, Iturzurirako bidean"',
+    'alt="Dos aerogeneradores en la cresta, entre pinos"':
+        'alt="Bi aerosorgailu gailurrean, pinuen artean"',
+    'alt="Fuente y refugio de Iturzuri, con los aerogeneradores al fondo"':
+        'alt="Iturzuriko iturria eta aterpea, eolikoak atzean"',
+    'alt="Persona sentada contemplando el mar de nubes desde la cima"':
+        'alt="Pertsona bat eserita, hodei-itsasoari begira gailurretik"',
+    'alt="Mar de nubes fluyendo entre los valles y montañas"':
+        'alt="Hodei-itsasoa haran eta mendien artean isurtzen"',
+    'download="Zengotita, Iturzuri y Zengotitagane.gpx"':
+        'download="Zengotita, Iturzuri eta Zengotitagane.gpx"',
+    'download="Zengotita, Iturzuri y Zengotitagane.kml"':
+        'download="Zengotita, Iturzuri eta Zengotitagane.kml"',
+    'placeholder="p. ej. km 8, cerca de la fuente..."':
+        'placeholder="adib. 8. km, iturritik gertu..."',
+    'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente"':
+        'placeholder="Kontaidazu zer ikusi duzun eta non zehazki"',
+    'data-marker-title="Zengotita (salida y llegada)"':
+        'data-marker-title="Zengotita (irteera eta helmuga)"',
+}
+
+SANCRISTOBALGARAIANDIKOA = {
+    '<a class="back-link" href="index.html">&larr; Rutas</a>':
+        '<a class="back-link" href="index.eu.html">&larr; Ibilbideak</a>',
+    '<title>Fuente &middot; 5,5 km</title>':
+        '<title>Iturria &middot; 5,5 km</title>',
+    '<title>Carretera &middot; 9,5 km</title>':
+        '<title>Errepidea &middot; 9,5 km</title>',
+    '<title>Bajada &middot; 11,9 km</title>':
+        '<title>Jaitsiera &middot; 11,9 km</title>',
+    '<title>Sendero &middot; 12,8 km</title>':
+        '<title>Bidezidorra &middot; 12,8 km</title>',
+    '<title>Fuente &middot; 14,8 km</title>':
+        '<title>Iturria &middot; 14,8 km</title>',
+    '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Garai · Andikoa</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Garai · Andikoa</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>San Cristóbal Txiki<br><em>Garai y Andikoa</em></h1>':
+        '<h1>San Kristobal Txiki<br><em>Garai eta Andikoa</em></h1>',
+    '<p class="full-name">Circuito desde Trabakua por San Cristóbal Txiki, Garai y Andikoa</p>':
+        '<p class="full-name">Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua</p>',
+    'Camino entre árboles y un murete cubierto de musgo':
+        'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
+    '<span class="v">Mixta</span>':
+        '<span class="v">Mistoa</span>',
+    '<span class="k">Para quién es</span>':
+        '<span class="k">Norentzat da</span>',
+    '<p>Esta ruta coincide, sobre todo en su parte central, con el recorrido del <b>Asto Trail de Garai</b>, y eso ya nos da una buena idea de lo que vamos a encontrar. Senderos muy entretenidos, zonas de bosque, bajadas para disfrutar y rincones que merece la pena conocer. Una ruta muy bonita que, además, nos ha servido para descubrir nuevos caminos por esta zona.</p>':
+        '<p>Ibilbide hau, batez ere erdialdean, <b>Garaiko Asto Trail</b> lasterketaren ibilbidearekin bat dator, eta horrek aurkituko dugunaren ideia ona ematen digu. Bidezidor oso dibertigarriak, baso tarteak, gozatzeko jaitsierak eta ezagutzea merezi duten txokoak. Oso ibilbide polita da, eta, gainera, inguru honetan bide berriak ezagutzeko balio izan digu.</p>',
+    'Corredores avanzando por un sendero entre helechos y árboles':
+        'Korrikalariak iratze eta zuhaitz arteko bidezidorrean',
+    'Tramo de bosque cubierto de musgo junto al sendero':
+        'Goroldioz estalitako basoko tartea',
+    'Persona avanzando por una pista forestal':
+        'Pertsona basoko pistan',
+    'Camino ancho entre árboles en el bosque':
+        'Basoko bide zabala',
+    'Sendero de bosque con el suelo cubierto de musgo':
+        'Goroldioz estalitako basoko bidezidorra',
+    'Claro junto a un antiguo edificio de piedra y una gran campa':
+        'Harrizko eraikin zahar baten ondoko zabalgunea',
+    'Sendero estrecho y frondoso entre árboles':
+        'Zuhaitz arteko bidezidor estu eta hostotsua',
+    'Pequeño río entre piedras y musgo en el bosque':
+        'Erreka txikia harri eta goroldio artean',
+    '<a href="src/sancristobalgaraiandikoa.gpx" download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.gpx" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Descargar GPX\n    </a>':
+        '<a href="src/sancristobalgaraiandikoa.gpx" download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.gpx" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Deskargatu GPX\n    </a>',
+    '<a href="src/sancristobalgaraiandikoa.kml" download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.kml" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Descargar KML\n    </a>':
+        '<a href="src/sancristobalgaraiandikoa.kml" download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.kml" class="wikiloc-link ghost">\n      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>\n      Deskargatu KML\n    </a>',
+    '<p>Salimos de Trabakua con esos primeros dos kilómetros y pico que suben tranquilos hacia Zengotita. Es un tramo sencillo, sin misterio, solo un cruce antes de entrar al barrio, ideal para ir calentando sin pensar demasiado. Al llegar a Zengotita toca girar a la izquierda y seguir la carretera hasta el caserío <a href="betzun.html">Betzun</a>, donde el asfalto se acaba. Allí cogemos la pista de la izquierda, cruzamos el río y empezamos a bajar hacia <a href="sancristobal.html">San Cristóbal Txiki</a>. En el cruce giramos a la derecha y volvemos a subir, una subida corta pero constante que te mete ya en la ruta de verdad.</p>':
+        '<p>Trabakuatik abiatzen gara, Zengotitarantz igotzen diren lehen bi kilometro eta erdi lasai horiekin. Zati erraza da, misteriorik gabea, auzora sartu aurretik bidegurutze bat baino ez, gehiegi pentsatu gabe berotzen joateko aproposa. Zengotitara iristean, ezkerrera biratu eta <a href="betzun.eu.html">Betzun</a> baserriraino errepideari jarraitu behar zaio, asfaltoa amaitzen den lekura. Han, ezkerreko pista hartzen dugu, erreka zeharkatu eta <a href="sancristobal.eu.html">San Kristobal Txiki</a>rantz jaisten hasten gara. Bidegurutzean eskuinera biratu eta berriro igotzen gara, igoera laburra baina etengabea, benetako ibilbidean sartzen zaituena.</p>',
+    '<p>Arriba aparece la fuente de siempre, la que sale en tantas rutas. Justo ahí enlazamos con el trazado del <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer">Asto Trail</a>, que baja desde <a href="sarrimendi.html">Sarrionamendi</a>. A partir de aquí la vuelta cambia de tono. Empezamos a bajar y, unos trescientos metros más adelante, dejamos la pista para entrar a la derecha en uno de los tramos más disfrutones del día. El sendero arranca muy juguetón, enlazando curvas rápidas. Hay un paso algo roto, pero se pasa sin problema. Luego el camino se estrecha, se cierra un poco y gana encanto. De repente aparece un entorno lleno de musgo, muy verde, muy húmedo. Cruzamos un pequeño río y empezamos a subir. El sendero está limpio, cuidado, se nota que por aquí pasa la carrera y es un tramo muy agradecido tanto para correr como para la bici.</p>':
+        '<p>Goian betiko iturria agertzen da, hainbat ibilbidetan agertzen dena. Hain zuzen ere, hor <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer">Asto Trail</a>en trazadurarekin bat egiten dugu, <a href="sarrimendi.eu.html">Sarrionamendi</a>tik jaisten dena. Hemendik aurrera, itzuliak tonua aldatzen du. Jaisten hasten gara, eta, handik hirurehun bat metrora, pista utzi eta eskuinera sartzen gara eguneko zatirik atseginenetako batean. Bidezidorra oso jostalaria da, bihurgune azkarrak lotuz. Pasabide bat apur bat hautsita dago, baina arazorik gabe pasatzen da. Gero, bidea estutu egiten da, itxi egiten da apur bat eta xarma irabazten du. Bat-batean, goroldioz betetako ingurune bat agertzen da, oso berdea, oso hezea. Erreka txiki bat zeharkatu eta igotzen hasten gara. Bidezidorra garbi dago, zainduta, nabari da hemendik lasterketa pasatzen dela eta oso zati eskertzekoa dela, bai korrika egiteko bai bizikletarako.</p>',
+    '<p>El sendero nos deja en la carretera que sube hacia el cruce entre San Cristóbal Txiki y <a href="zengotitagane.html">Zengotitagane</a>. Giramos a la izquierda y bajamos hacia <a href="garaimaguna.html">Garai</a>, aunque el asfalto dura muy poco. Enseguida lo dejamos por la izquierda para volver a entrar en el recorrido del Asto Trail. Aquí llega otra bajada buena. Primero vamos por terreno abierto, con vistas y espacio para soltar un poco el freno. Luego entramos en un hayedo donde todo cambia: senderos estrechos, curvas, algún paso tipo descenso de BTT, nada complicado pero con ese punto justo que hace que disfrutes cada metro.</p>':
+        '<p>Bidezidorrak San Kristobal Txiki eta <a href="zengotitagane.eu.html">Zengotitagane</a> arteko bidegurutzera igotzen den errepidera eramaten gaitu. Ezkerrera biratu eta <a href="garaimaguna.eu.html">Garai</a>rantz jaisten gara, nahiz eta asfaltoak oso gutxi irauten duen. Berehala utzi eta Asto Traileko ibilbidera itzultzen gara. Hemen beste jaitsiera on bat dator. Lehenik, eremu irekian goaz, bistekin eta balazta pixka bat askatzeko lekuarekin. Gero, pagadi batean sartzen gara, non dena aldatzen den: bidezidor estuak, bihurguneak, BTT jaitsiera moduko pasabideren bat, ezer zailik ez, baina metro bakoitza gozatzera eramaten zaituen puntu horrekin.</p>',
+    '<p>Al salir del hayedo enlazamos con una pista de piedra que nos deja en Garai. En este punto dejamos ya el último tramo del recorrido de la carrera. A la entrada del pueblo giramos a la izquierda y encontramos una fuente junto a un lavadero antiguo, buen sitio para rellenar agua antes de seguir. Continuamos entre barrios en dirección a Sarria, ahora por la parte baja. Más adelante aparece el cruce hacia <a href="axmakurandikoa.html">Andikoa</a>, giramos a la izquierda y toca subir. Es una zona muy agradecida: pastizales, caseríos, vistas hacia las montañas de enfrente. Atravesamos Andikoa y seguimos hacia Besoita.</p>':
+        '<p>Pagaditik ateratzean, Garaira eramaten gaituen harrizko pista batekin bat egiten dugu. Puntu honetan lasterketaren ibilbideko azken zatia uzten dugu. Herriaren sarreran ezkerrera biratu eta iturri bat aurkitzen dugu garbitoki zahar baten ondoan, ura betetzeko leku ona, aurrera jarraitu aurretik. Auzoen artean jarraitzen dugu Sarriarantz, orain behealdetik. Aurrerago, <a href="axmakurandikoa.eu.html">Andikoa</a>rako bidegurutzea agertzen da, ezkerrera biratu eta igotzea tokatzen da. Oso zati atsegina da: larreak, baserriak, aurreko mendietarako bistak. Andikoa zeharkatu eta Besoitarantz jarraitzen dugu.</p>',
+    '<p>Cruzamos Besoita y bajamos hasta la carretera general. La atravesamos y cogemos la carretera vieja que sube hacia Zengotita. Desde aquí ya solo quedan unos pocos kilómetros para volver a Trabakua y cerrar la vuelta, una ruta variada, con ritmo, con zonas muy disfrutonas y sin complicaciones .</p>':
+        '<p>Besoita zeharkatu eta errepide nagusira jaisten gara. Zeharkatu eta Zengotitarantz igotzen den errepide zaharra hartzen dugu. Hemendik aurrera, kilometro gutxi batzuk baino ez dira geratzen Trabakuara itzultzeko eta itzulia ixteko, ibilbide askotarikoa, erritmoarekin, oso zati atseginekin eta zailtasun tekniko handirik gabe.</p>',
+    '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
+        '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
+    '<a class="back-home-link" href="index.html">&larr; Volver a rutas</a>':
+        '<a class="back-home-link" href="index.eu.html">&larr; Itzuli ibilbideetara</a>',
+    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
+        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege oharra eta pribatutasuna</a></span>',
+    'Fuente':
+        'Iturria',
+    'Carretera':
+        'Errepidea',
+    'Bajada':
+        'Jaitsiera',
+    'Sendero':
+        'Bidezidorra',
+    'Fuente · 5,5 km':
+        'Iturria · 5,5 km',
+    'Carretera · 9,5 km':
+        'Errepidea · 9,5 km',
+    'Bajada · 11,9 km':
+        'Jaitsiera · 11,9 km',
+    'Sendero · 12,8 km':
+        'Bidezidorra · 12,8 km',
+    'Fuente · 14,8 km':
+        'Iturria · 14,8 km',
+    'alt="Camino entre árboles y un murete cubierto de musgo"':
+        'alt="Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan"',
+    'aria-label="Foto ampliada"':
+        'aria-label="Argazkia handituta"',
+    'alt="Foto ampliada del recorrido de San Cristóbal Txiki, Garai y Andikoa"':
+        'alt="San Kristobal Txiki, Garai eta Andikoa ibilbideko argazkia handituta"',
+    'alt="Corredores avanzando por un sendero entre helechos y árboles"':
+        'alt="Korrikalariak iratze eta zuhaitz arteko bidezidorrean"',
+    'alt="Tramo de bosque cubierto de musgo junto al sendero"':
+        'alt="Goroldioz estalitako basoko tartea"',
+    'alt="Persona avanzando por una pista forestal"':
+        'alt="Pertsona basoko pistan"',
+    'alt="Camino ancho entre árboles en el bosque"':
+        'alt="Basoko bide zabala"',
+    'alt="Sendero de bosque con el suelo cubierto de musgo"':
+        'alt="Goroldioz estalitako basoko bidezidorra"',
+    'alt="Claro junto a un antiguo edificio de piedra y una gran campa"':
+        'alt="Harrizko eraikin zahar baten ondoko zabalgunea"',
+    'alt="Sendero estrecho y frondoso entre árboles"':
+        'alt="Zuhaitz arteko bidezidor estu eta hostotsua"',
+    'alt="Pequeño río entre piedras y musgo en el bosque"':
+        'alt="Erreka txikia harri eta goroldio artean"',
+    'download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.gpx"':
+        'download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.gpx"',
+    'download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.kml"':
+        'download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.kml"',
+    'placeholder="p. ej. km 8, cerca de la fuente..."':
+        'placeholder="adib. 8. km, iturritik gertu..."',
+    'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente"':
+        'placeholder="Kontaidazu zer ikusi duzun eta non zehazki"',
+}
+
+AHUNTZEN = {
+    '<p class="eyebrow"><span>Trail running</span><span class="sep">/</span><span>Intxorta</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Trail running</span><span class="sep">/</span><span>Intxorta</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<p class="full-name">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, con salida y llegada en Elgeta</p>':
+        '<p class="full-name">Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua, irteera eta helmuga Elgetan</p>',
+    'Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo':
+        'Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean',
+    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +870 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
+        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +870 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
+    '<p>Es un circuito corto pero intenso, basado en el recorrido de la <b><a href="https://intxortakoahuntzaktrail.es/" target="_blank" rel="noopener noreferrer">Ahuntzen Mendi Lasterketa</a></b>, con muchos cambios de ritmo y poco terreno para acomodarse. Las subidas se van acumulando y la ascensi&oacute;n final a <b>Intxorta</b> termina de poner a prueba el estado f&iacute;sico de cada uno.</p>':
+        '<p><b><a href="https://intxortakoahuntzaktrail.es/" target="_blank" rel="noopener noreferrer">Ahuntzen Mendi Lasterketaren</a></b> ibilbidea oinarri hartzen duen zirkuitu labur baina bizia da, erritmo aldaketa askorekin eta eroso joateko tarte gutxirekin. Igoerak pilatzen doaz, eta <b>Intxortako</b> azken igoerak bakoitzaren sasoi fisikoa proban jartzen du.</p>',
+    'Elgeta al amanecer, con la iglesia y el casco urbano':
+        'Elgeta egunsentian, eliza eta herrigunea',
+    'Pista de tierra del circuito al atardecer, con el valle al fondo':
+        'Zirkuituko lurrezko pista ilunabarrean, harana atzean',
+    'Zona alta del circuito entre bosque y rocas':
+        'Zirkuituko goiko aldea, baso eta harkaitz artean',
+    'Tramo de bosque en la parte alta del recorrido':
+        'Ibilbideko goiko aldeko baso zatia',
+    'Punto alto del circuito entre niebla, junto a una caseta y una antena':
+        'Zirkuituko puntu garaia lainopean, etxola eta antena baten ondoan',
+    '<a href="src/ahuntzen.gpx" download="Ahuntzen Mendi Lasterketa.gpx" class="wikiloc-link ghost">Descargar GPX</a>':
+        '<a href="src/ahuntzen.gpx" download="Ahuntzen Mendi Lasterketa.gpx" class="wikiloc-link ghost">Deskargatu GPXa</a>',
+    '<a href="src/ahuntzen.kml" download="Ahuntzen Mendi Lasterketa.kml" class="wikiloc-link ghost">Descargar KML</a>':
+        '<a href="src/ahuntzen.kml" download="Ahuntzen Mendi Lasterketa.kml" class="wikiloc-link ghost">Deskargatu KMLa</a>',
+    '<button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">Reportar incidencia</button>':
+        '<button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">Gorabehera jakinarazi</button>',
+    '<h2>Reportar una incidencia</h2>':
+        '<h2>Gorabehera bat jakinarazi</h2>',
+    '<p class="report-modal-intro">&iquest;Has visto un &aacute;rbol ca&iacute;do, un sendero cortado o algo que haya cambiado en esta ruta? Cu&eacute;ntamelo y lo reviso en persona antes de actualizar la ficha.</p>':
+        '<p class="report-modal-intro">Eroritako zuhaitzik, moztutako biderik edo ibilbidean aldaketarik ikusi duzu? Konta iezadazu eta fitxa eguneratu aurretik bertatik bertara egiaztatuko dut.</p>',
+    '<label class="report-field"><span>Tipo de incidencia</span><select name="tipo" required><option value="&Aacute;rbol o rama ca&iacute;da">&Aacute;rbol o rama ca&iacute;da</option><option value="Sendero cortado o desviado">Sendero cortado o desviado</option><option value="Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa">Se&ntilde;alizaci&oacute;n da&ntilde;ada o borrosa</option><option value="Otro">Otro</option></select></label>':
+        '<label class="report-field"><span>Gorabehera mota</span><select name="tipo" required><option value="Zuhaitz edo adar eroria">Zuhaitz edo adar eroria</option><option value="Bidezidorra moztuta edo desbideratuta">Bidezidorra moztuta edo desbideratuta</option><option value="Seinale hondatua edo ezabatua">Seinale hondatua edo ezabatua</option><option value="Beste bat">Beste bat</option></select></label>',
+    '<label class="report-field"><span>Ubicaci&oacute;n aproximada</span><input type="text" name="ubicacion" placeholder="p. ej. km 8, cerca de la fuente..." required></label>':
+        '<label class="report-field"><span>Gutxi gorabeherako kokapena</span><input type="text" name="ubicacion" placeholder="adib. 8. km, iturriaren inguruan..." required></label>',
+    '<label class="report-field"><span>Descripci&oacute;n</span><textarea name="descripcion" rows="4" placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente" required></textarea></label>':
+        '<label class="report-field"><span>Deskribapena</span><textarea name="descripcion" rows="4" placeholder="Esan zer ikusi duzun eta non zehazki" required></textarea></label>',
+    '<label class="report-field"><span>Tu email (opcional, por si necesito preguntarte algo)</span><input type="email" name="email" placeholder="tu@email.com"></label>':
+        '<label class="report-field"><span>Zure emaila (aukerakoa)</span><input type="email" name="email" placeholder="zu@email.com"></label>',
+    '<button type="submit" class="report-submit">Enviar reporte</button>':
+        '<button type="submit" class="report-submit">Bidali</button>',
+    '<p>Salimos desde la plaza de <b>Elgeta</b> y atravesamos el pueblo en direcci&oacute;n norte. Dejamos atr&aacute;s las &uacute;ltimas casas, cruzamos la carretera general y enseguida entramos en una pista que empieza a ganar altura hacia <b>Goikomendi</b>. Es la primera subida seria del circuito y sirve para entrar en calor desde el principio.</p>':
+        '<p><b>Elgetako</b> plazatik abiatu eta herria iparralderantz zeharkatzen dugu. Azken etxeak atzean utzi, errepide nagusia gurutzatu eta berehala <b>Goikomendi</b> aldera altuera irabazten hasten den pista batean sartzen gara. Zirkuituko lehen igoera serioa da eta hasieratik erritmoa hartzeko balio du.</p>',
+    '<p>Tras pasar por la parte alta empezamos a perder altura. La bajada nos lleva hacia la zona de la presa, en un tramo donde el terreno da un peque&ntilde;o respiro antes de volver a subir.</p>':
+        '<p>Goiko aldetik igaro ondoren altuera galtzen hasten gara. Jaitsierak presa ingurura eramaten gaitu, berriro igotzen hasi aurretik arnasa hartzeko tarte txiki batekin.</p>',
+    '<p>Desde la presa comenzamos a subir por el camino que enlaza con la pista principal que une Goierri con Elgeta. Apenas llevamos unos metros cuando lo dejamos y giramos a la izquierda para afrontar una subida mucho m&aacute;s directa y exigente. Ganamos altura r&aacute;pidamente hasta salir m&aacute;s arriba a esa misma pista.</p>':
+        '<p>Presatik aurrera doan bidea hartzen dugu. Goiko pistarekin lotu aurretik ezkerrera egin eta askoz zuzenago igotzen den aldapa hartzen dugu, ia aurrez aurre. Altuera azkar irabazten dugu eta pista berera iristen gara aldaera dezente gogorrago batetik.</p>',
+    '<p>Una vez en la pista llega una peque&ntilde;a tregua, aunque dura poco. Enseguida vuelve la subida y seguimos ganando altura hacia <b>Erdella</b>, acumulando desnivel poco a poco.</p>':
+        '<p>Pistara iristean atseden txiki bat dator, baina gutxi irauten du. Berehala berriro gora hasten da eta <b>Erdella</b> aldera altuera irabazten jarraitzen dugu, desnibela pixkanaka pilatuz.</p>',
+    '<p>Desde esta zona llega una bajada fuerte que nos lleva hasta la carretera general. La cruzamos y comienza la &uacute;ltima gran subida del circuito: <b>Intxorta</b>.</p>':
+        '<p>Handik jaitsiera gogor bat dator errepide nagusiraino. Errepidea gurutzatu eta zirkuituko azken igoera handia hasten da: <b>Intxorta</b>.</p>',
+    '<p>El inicio todav&iacute;a permite coger algo de ritmo, pero la pendiente va aumentando y los &uacute;ltimos metros se hacen duros. A estas alturas ya llevamos buena parte del desnivel acumulado y la subida termina de poner a prueba el estado f&iacute;sico de cada uno.</p>':
+        '<p>Hasieran erritmo pixka bat hartzeko aukera ematen du, baina aldapa handitzen doa eta azken metroak gogorrak egiten dira. Une horretan desnibelaren zatirik handiena pilatuta daukagu eta igoerak bakoitzaren sasoi fisikoa proban jartzen du.</p>',
+    '<p>Tras alcanzar <b>Intxorta</b> iniciamos el descenso hacia Elgeta, enlazando tramos r&aacute;pidos, senderos y pistas mientras perdemos altura hasta volver de nuevo al pueblo y cerrar el circuito en la plaza.</p>':
+        '<p><b>Intxorta</b>ra iritsi ondoren Elgetarako jaitsiera hasten dugu, tarte azkarrak, bidezidorrak eta pistak lotuz. Altuera galdu ahala herrira itzultzen gara eta zirkuitua plazan ixten dugu.</p>',
+    '<p class="wikiloc-credit">Track GPX real sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></p>':
+        '<p class="wikiloc-credit">Benetako GPX tracka <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> gainean</p>',
+    '<a class="next-route" href="intxorta.html">\n      <span class="next-route-name">Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</span>\n      <span class="next-route-stats">36,31 km &middot; +1.750 m</span>\n    </a>':
+        '<a class="next-route" href="intxorta.eu.html">\n      <span class="next-route-name">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</span>\n      <span class="next-route-stats">36,31 km &middot; +1.750 m</span>\n    </a>',
+    '<a class="next-route" href="7pago16.html">\n      <span class="next-route-name">7 Pago Mendi Lasterketa 16K</span>\n      <span class="next-route-stats">16 km &middot; +750 m</span>\n    </a>':
+        '<a class="next-route" href="7pago16.eu.html">\n      <span class="next-route-name">7 Pago Mendi Lasterketa 16K</span>\n      <span class="next-route-stats">16 km &middot; +750 m</span>\n    </a>',
+    '<span>Circuito &mdash; vuelve al mismo punto</span>':
+        '<span>Zirkuitua &mdash; abiapuntu berera itzultzen da</span>',
+    '<span><a class="underline-link" href="aviso-legal.html">Aviso legal y privacidad</a></span>':
+        '<span><a class="underline-link" href="aviso-legal.eu.html">Lege-oharra eta pribatutasuna</a></span>',
+    'alt="Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo"':
+        'alt="Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean"',
+    'alt="Foto ampliada del circuito de Ahuntzen Mendi Lasterketa"':
+        'alt="Ahuntzen Mendi Lasterketaren zirkuituko argazki handitua"',
+    'alt="Elgeta al amanecer, con la iglesia y el casco urbano"':
+        'alt="Elgeta egunsentian, eliza eta herrigunea"',
+    'alt="Pista de tierra del circuito al atardecer, con el valle al fondo"':
+        'alt="Zirkuituko lurrezko pista ilunabarrean, harana atzean"',
+    'alt="Zona alta del circuito entre bosque y rocas"':
+        'alt="Zirkuituko goiko aldea, baso eta harkaitz artean"',
+    'alt="Tramo de bosque en la parte alta del recorrido"':
+        'alt="Ibilbideko goiko aldeko baso zatia"',
+    'alt="Punto alto del circuito entre niebla, junto a una caseta y una antena"':
+        'alt="Zirkuituko puntu garaia lainopean, etxola eta antena baten ondoan"',
+    'aria-label="Reportar una incidencia"':
+        'aria-label="Gorabehera bat jakinarazi"',
+    'placeholder="p. ej. km 8, cerca de la fuente..."':
+        'placeholder="adib. 8. km, iturriaren inguruan..."',
+    'placeholder="Cu&eacute;ntame qu&eacute; has visto y d&oacute;nde exactamente"':
+        'placeholder="Esan zer ikusi duzun eta non zehazki"',
+    'placeholder="tu@email.com"':
+        'placeholder="zu@email.com"',
+    'data-marker-title="Elgeta (salida y llegada)"':
+        'data-marker-title="Elgeta (irteera eta helmuga)"',
+}
+
 PAGE_STRINGS = {
-    'ahuntzen': {},
+    'ahuntzen': AHUNTZEN,
+    'sancristobalgaraiandikoa': SANCRISTOBALGARAIANDIKOA,
+    'zengotitaiturzuri': ZENGOTITAITURZURI,
     'mallabia': HOME,
     'trabakua': TRABAKUA,
     'iturrizuri': ITURZURI,
