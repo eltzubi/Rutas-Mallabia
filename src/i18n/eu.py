@@ -5287,16 +5287,16 @@ LONGAURJAUZIAK = {
         '<span class="num">2</span>Gereako ur-jauzia</span>',
     '<title>Cascada de Gerea &middot; 4,5 km &middot; 674 m</title>':
         '<title>Gereako ur-jauzia &middot; 4,5 km &middot; 674 m</title>',
-    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +336 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
-        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +336 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
+    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +368 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
+        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +368 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
     'alt="Foto ampliada del recorrido de Trabakua, Longa y las cascadas de Gerea"':
         'alt="Trabakua, Longa eta Gereako ur-jauziak ibilbidearen argazki handitua"',
     'download="Trabakua, Longa y las cascadas de Gerea.gpx"':
         'download="Trabakua, Longa eta Gereako ur-jauziak.gpx"',
     'download="Trabakua, Longa y las cascadas de Gerea.kml"':
         'download="Trabakua, Longa eta Gereako ur-jauziak.kml"',
-    'Un circuito corto para acercarse a las <b><a href="markinaurjauziak.html">cascadas de Gerea</a></b> desde <b>Trabakua</b>, subiendo y bajando por <b><a href="longa.html">Longa</a></b>. Son 9,75 km y +336 m, casi todo por pista y camino ancho, con sendero en la parte alta. La subida es seguida pero no dura, y el premio est&aacute; arriba. No hay fuente en el recorrido: el agua, en la propia cascada o de vuelta en Trabakua.':
-        'Zirkuitu laburra <b><a href="markinaurjauziak.html">Gereako ur-jauzi</a></b>etara <b>Trabakua</b>tik hurbiltzeko, <b><a href="longa.html">Longa</a></b>tik gora eta behera. 9,75 km eta +336 m dira, ia dena pista eta bide zabaletik, goiko aldean bidezidorra. Igoera jarraia da baina ez gogorra, eta saria goian dago. Ez dago iturririk ibilbidean: ura, ur-jauzian bertan edo Trabakuara bueltan.',
+    'Un circuito corto para acercarse a las <b><a href="markinaurjauziak.html">cascadas de Gerea</a></b> desde <b>Trabakua</b>, subiendo y bajando por <b><a href="longa.html">Longa</a></b>. Son 9,75 km y +368 m, casi todo por pista y camino ancho, con sendero en la parte alta. La subida es seguida pero no dura, y el premio est&aacute; arriba. No hay fuente en el recorrido: el agua, en la propia cascada o de vuelta en Trabakua.':
+        'Zirkuitu laburra <b><a href="markinaurjauziak.html">Gereako ur-jauzi</a></b>etara <b>Trabakua</b>tik hurbiltzeko, <b><a href="longa.html">Longa</a></b>tik gora eta behera. 9,75 km eta +368 m dira, ia dena pista eta bide zabaletik, goiko aldean bidezidorra. Igoera jarraia da baina ez gogorra, eta saria goian dago. Ez dago iturririk ibilbidean: ura, ur-jauzian bertan edo Trabakuara bueltan.',
     'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 392 m: camino ancho entre prados, con la cresta de Iturzuri y sus aerogeneradores enfrente.':
         '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 392 metroraino: bide zabala soroen artean, Iturzuriko eolikoak aurrez aurre.',
     'A partir de ah&iacute; el camino ya no deja de subir. En el km 3 pasamos por <b>Longa</b> (456 m), el caser&iacute;o con el que empieza el barrio de Gerea y donde se encuentra el agroturismo.':
