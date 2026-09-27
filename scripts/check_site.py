@@ -201,6 +201,41 @@ def main():
                 f'{page}: numero de <picture> distinto entre idiomas')
         require('<picture' in es, f'{page}.html: ninguna imagen responsive')
 
+    # --- service worker y manifest ----------------------------------------
+    # Un service worker es pegajoso: si se publica uno que apunta a ficheros que
+    # no existen, install() falla y se queda sin instalar en todos los
+    # navegadores. Por eso se comprueba que todo lo que precachea esta de verdad
+    # en el sitio, y con el ?v= que llevan las paginas de hoy.
+    sw = (ROOT / 'sw.js').read_text()
+    concha = json.loads(re.search(r'const CONCHA = (\[[\s\S]*?\n\]);', sw).group(1))
+    require(bool(concha), 'sw.js: la lista de precacheo esta vacia')
+    # Las referencias con ?v= de todo el sitio: route.css solo aparece en las
+    # fichas y home.css solo en la portada, asi que hay que mirarlas todas.
+    referencias = set()
+    for lang in build.LANGS:
+        for page in build.PAGES:
+            referencias.update(re.findall(
+                r'(?:href|src)="([^"]+\?v=[0-9a-f]+)"',
+                (ROOT / build.out_name(page, lang)).read_text()))
+    for recurso in concha:
+        fichero, _, version = recurso.partition('?v=')
+        require((ROOT / fichero).exists(), f'sw.js precachea {fichero}, que no existe')
+        if version:
+            require(recurso in referencias,
+                    f'sw.js precachea {recurso}, pero ninguna pagina pide esa version')
+    require('offline.html' in concha, 'sw.js: la pagina de sin-conexion no se precachea')
+    for nombre in ('manifest.webmanifest', 'manifest.es.webmanifest'):
+        datos = json.loads((ROOT / nombre).read_text())
+        for icono in datos['icons']:
+            require((ROOT / icono['src']).exists(), f'{nombre}: falta {icono["src"]}')
+        require(datos['start_url'] in ('/', '/index.es.html'), f'{nombre}: start_url raro')
+    for lang, (_, suffix) in build.LANGS.items():
+        esperado = 'manifest.webmanifest' if lang == 'eu' else 'manifest.es.webmanifest'
+        pagina = (ROOT / build.out_name('arteta', lang)).read_text()
+        require(f'<link rel="manifest" href="{esperado}">' in pagina,
+                f'arteta [{lang}]: manifest que no corresponde a su idioma')
+        require('<meta name="theme-color"' in pagina, f'arteta [{lang}]: sin theme-color')
+
     for gpx in (ROOT / 'src').glob('*.gpx'):
         points = [(float(p.attrib['lon']), float(p.attrib['lat']), float(p.find('{*}ele').text))
                   for p in ET.parse(gpx).findall('.//{*}trkpt')]

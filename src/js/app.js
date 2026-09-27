@@ -336,3 +336,14 @@
   });
 })();
 
+
+/* Service worker: lo que hace que una ficha ya visitada se abra sin cobertura.
+   Se registra despues de 'load' para no competir por el ancho de banda con lo
+   que la persona ha venido a ver. Si falla, no pasa nada: la web funciona igual,
+   solo que necesitando datos. */
+(function(){
+  if (!('serviceWorker' in navigator)) return;
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+})();

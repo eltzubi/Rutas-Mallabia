@@ -587,6 +587,7 @@ def main():
             page_html = page_html.replace(
                 '<link rel="stylesheet" href="fonts.css">',
                 '<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>\n'
+                + add_manifest(lang) +
                 '<link rel="stylesheet" href="fonts.css">')
             page_html = retarget_home_links(page_html, lang)
             page_html = add_cache_busting(page_html, versions)
@@ -597,7 +598,56 @@ def main():
             print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
 
     write_legacy_eu_home()
+    write_offline_page(versions)
+    write_service_worker(versions)
     write_sitemap()
+
+
+def add_manifest(lang):
+    """El manifest y el color de barra, en cada pagina.
+
+    Hay uno por idioma y solo por el start_url: quien instale la web desde la
+    version en castellano tiene que abrirla en castellano, no en la portada en
+    euskera que cuelga de la raiz.
+    """
+    nombre = "manifest.webmanifest" if lang == "eu" else "manifest.es.webmanifest"
+    return (f'<link rel="manifest" href="{nombre}">\n'
+            '<meta name="theme-color" content="#0D0D0F">\n')
+
+
+def write_offline_page(versions):
+    """La pagina que sale al pedir, sin cobertura, algo que no se ha visitado."""
+    body = read("offline.html")
+    body = add_cache_busting(body, versions)
+    with open(os.path.join(ROOT, "offline.html"), "w", encoding="utf-8") as f:
+        f.write(body)
+    print("wrote offline.html")
+
+
+# Lo que el service worker guarda nada mas instalarse: la tipografia, los
+# estilos, el javascript y la pagina de sin-conexion. Son unos 210 kB y es lo
+# que hace que una ficha ya visitada se vea entera y no en crudo. Las fichas y
+# las fotos NO van aqui: se guardan segun se visitan, que es lo que evita
+# bajarse los 400 MB de imagenes del sitio.
+SHELL_EXTRA = ("offline.html", "favicon.svg", "icon-192.png")
+
+
+def write_service_worker(versions):
+    concha = [f"{name}?v={version}" for name, version in sorted(versions.items())]
+    concha += [f"fonts/{name}" for name in sorted(FONT_FILES)]
+    concha += list(SHELL_EXTRA)
+    # La version de la concha es el hash de su propia lista: cambia exactamente
+    # cuando cambia alguno de esos ficheros, ni antes ni despues.
+    version = hashlib.sha256("\n".join(concha).encode("utf-8")).hexdigest()[:8]
+    body = read("js", "sw.js")
+    body = body.replace("'__VERSION__'", json.dumps(version))
+    body = body.replace("__CONCHA__", json.dumps(concha, indent=2))
+    with open(os.path.join(ROOT, "sw.js"), "w", encoding="utf-8") as f:
+        f.write(body)
+    for nombre in ("manifest.webmanifest", "manifest.es.webmanifest"):
+        with open(os.path.join(ROOT, nombre), "w", encoding="utf-8") as f:
+            f.write(read(nombre))
+    print(f"wrote sw.js (concha {version}, {len(concha)} ficheros) + manifests")
 
 
 def write_legacy_eu_home():

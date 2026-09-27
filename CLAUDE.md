@@ -58,7 +58,8 @@ it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, 
 is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
 ```
-python3 scripts/check_site.py          # 1.143 comprobaciones sobre el sitio ya construido
+python3 scripts/check_site.py          # 1.181 comprobaciones sobre el sitio ya construido
+python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favicon.svg
 ```
 
 `check_site.py` is the closest thing to a test suite: read-only, stdlib only, run it after `build.py`.
@@ -119,6 +120,29 @@ in `src/` and are copied to the repo root by `build.py`, referenced by every pag
 `<script src>` (not inlined), so browsers cache them once across pages. `build.py` appends a content
 hash (`?v=<sha256[:8]>`) to each reference so a stale browser cache never pairs old CSS/JS with new
 HTML.
+
+**Offline (service worker).** The site is opened on the mountain, where there is no signal, so `sw.js`
+makes an already-visited route page work without data: its text, elevation profile, photos and GPX.
+`build.py` writes it from `src/js/sw.js`, stamping in a version and the precache list (the CSS/JS with
+their `?v=` hashes, the five `.woff2`, `offline.html` and the icon — about 210 kB). Pages and photos are
+**not** precached; they are stored as they are visited, which is what keeps it from pulling the site's
+400 MB of images.
+
+Strategy: **network-first for pages** (whoever has signal always sees the latest; the stored copy is only
+the fallback), cache-first for everything else, since the CSS/JS carry a content hash in the URL. The
+shell cache is named after its own hash, so it is dropped whole when any asset changes; the page and
+photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
+what a never-visited page falls back to.
+
+**Map tiles are deliberately never cached.** They come from OpenStreetMap, OpenTopoMap and CyclOSM —
+volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
+empty background, not on the map.
+
+If the service worker ever needs killing, publish a `sw.js` whose whole body is
+`self.registration.unregister()`; browsers that already have it will pick that up and detach themselves.
+
+Each language links its own `manifest.webmanifest` / `manifest.es.webmanifest`, differing only in
+`start_url`, so installing from the Spanish side opens the Spanish home and not the Basque root.
 
 **Theme.** Dark is the default for first-time visitors; light is the explicit opt-in, stored in
 `localStorage` and applied by an inline script at the top of `<head>` (before first paint, to avoid a
