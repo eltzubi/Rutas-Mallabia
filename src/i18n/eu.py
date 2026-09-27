@@ -38,7 +38,7 @@ COMMON = {
     # Footer: mismo texto en la portada (legal-pill) y en las 49 rutas
     # (underline-link) -- tiene que vivir en COMMON, no en ROUTE (que solo se
     # aplica a las paginas de ruta) ni en HOME (solo a la portada).
-    'Aviso legal y privacidad': 'Lege oharra eta pribatutasuna',
+    'Aviso legal y privacidad': 'Lege-oharra eta pribatutasuna',
     'rutas en el mapa': 'ibilbide mapan',
     'en bici': 'bizikletaz',
     'a pie': 'oinez',
@@ -3404,7 +3404,7 @@ TITLES = {
     'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
     'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
     'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
-    'aviso-legal': 'Lege oharra eta pribatutasun politika · Herriko ibilbideak',
+    'aviso-legal': 'Lege-oharra eta pribatutasun politika · Herriko ibilbideak',
     'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
     'mallukitoko': 'Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia · Oinezko ibilbidea — Herriko ibilbideak',
     'santaeufemia': 'Markina-Xemein, Santa Eufemia · Oinezko ibilbidea — Herriko ibilbideak',
@@ -4862,14 +4862,14 @@ GEREAOCULTA = {
 
 AVISO_LEGAL = {
     '<p class="eyebrow"><span>Legal</span></p>':
-        '<p class="eyebrow"><span>Lege oharra</span></p>',
+        '<p class="eyebrow"><span>Lege-oharra</span></p>',
     '<h1>Aviso legal <em>y privacidad</em></h1>':
-        '<h1>Lege oharra <em>eta pribatutasuna</em></h1>',
+        '<h1>Lege-oharra <em>eta pribatutasuna</em></h1>',
     '<p class="full-name">Quién soy, qué puedes esperar del contenido de esta web y qué pasa con los datos que me envías.</p>':
         '<p class="full-name">Nor naizen, webgune honen edukitik zer espero dezakezun eta bidaltzen dizkidazun datuekin zer egiten dudan.</p>',
 
     '<h2>Aviso legal</h2>':
-        '<h2>Lege oharra</h2>',
+        '<h2>Lege-oharra</h2>',
     '<h2>Política de privacidad</h2>':
         '<h2>Pribatutasun politika</h2>',
 
