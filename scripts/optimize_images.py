@@ -12,7 +12,18 @@ the long edge. Downscales in place (never upscales an already-smaller
 photo), strips EXIF, and recompresses as progressive JPEG. Also writes a
 sibling img/<name>.webp (used by <picture> in the *_tail.html templates)
 at the same resolution.
+
+Solo toca lo que hace falta. Recomprimir un JPEG que ya paso por aqui no lo
+mejora: da bytes distintos cada vez (1.026 ficheros nuevos en git por pasada,
+que es de donde salen los cientos de MB de historia) y ademas lo degrada un
+poco mas cada vez, porque vuelve a cuantizar una imagen ya cuantizada. Por eso
+se apunta en img/.optimized.json lo que se escribio, y en la siguiente pasada
+se saltan las fotos que siguen igual. Con --force se reprocesa todo.
+
+Tampoco entra en las salidas de los otros dos scripts (ver EXCLUIR).
 """
+import hashlib
+import json
 import os
 import sys
 
@@ -25,6 +36,39 @@ IMG_DIR = os.path.join(ROOT, "img")
 MAX_SIDE = 1600
 JPEG_QUALITY = 80
 WEBP_QUALITY = 75
+REGISTRO = os.path.join(IMG_DIR, ".optimized.json")
+# Salidas de otros scripts, que tienen su propia calidad afinada. Sin esto,
+# pasar por aqui detras de make_card_thumbs.py le sobrescribia el <name>-card.webp
+# con uno de peor calidad y mas pesado (114 -> 118 KB en la miniatura medida).
+# make_wide_variants.py excluye estos mismos sufijos por el mismo motivo.
+EXCLUIR = ("-card", "-800")
+
+
+def sha(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def lee_registro():
+    try:
+        with open(REGISTRO, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def ya_pasada(path, webp_path):
+    """Sin registro, adopta lo que ya esta hecho en vez de rehacerlo.
+
+    Las fotos del repositorio son justo la salida de este script, asi que la
+    primera pasada no tiene que reescribir nada: le basta con reconocerlas.
+    Una foto recien anadida no cumple esto (viene mas grande, o sin su webp) y
+    se procesa normal.
+    """
+    if not os.path.exists(webp_path):
+        return False
+    with Image.open(path) as im:
+        return max(im.size) <= MAX_SIDE
 
 
 def process(path):
@@ -61,16 +105,40 @@ def process(path):
 
 
 def main():
+    forzar = "--force" in sys.argv
+    registro = {} if forzar else lee_registro()
     total_before = total_after = total_webp = 0
-    names = sorted(f for f in os.listdir(IMG_DIR) if f.lower().endswith(".jpg"))
+    hechas = saltadas = 0
+    names = sorted(f for f in os.listdir(IMG_DIR)
+                   if f.lower().endswith(".jpg")
+                   and not any(x in f for x in EXCLUIR))
     for name in names:
-        b, a, w = process(os.path.join(IMG_DIR, name))
+        path = os.path.join(IMG_DIR, name)
+        webp_path = os.path.splitext(path)[0] + ".webp"
+        apunte = registro.get(name)
+        if not forzar:
+            if apunte and os.path.exists(webp_path) \
+                    and apunte.get("jpg") == sha(path) \
+                    and apunte.get("webp") == sha(webp_path):
+                saltadas += 1
+                continue
+            if apunte is None and ya_pasada(path, webp_path):
+                registro[name] = {"jpg": sha(path), "webp": sha(webp_path)}
+                saltadas += 1
+                continue
+        b, a, w = process(path)
+        registro[name] = {"jpg": sha(path), "webp": sha(webp_path)}
+        hechas += 1
         total_before += b
         total_after += a
         total_webp += w
-    print(f"\n{len(names)} images")
-    print(f"jpg total:  {total_before/1024/1024:.2f} MB -> {total_after/1024/1024:.2f} MB")
-    print(f"webp total: {total_webp/1024/1024:.2f} MB")
+    with open(REGISTRO, "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(registro.items())), f, indent=0, sort_keys=True)
+        f.write("\n")
+    print(f"\n{len(names)} imagenes: {hechas} procesadas, {saltadas} ya estaban")
+    if hechas:
+        print(f"jpg total:  {total_before/1024/1024:.2f} MB -> {total_after/1024/1024:.2f} MB")
+        print(f"webp total: {total_webp/1024/1024:.2f} MB")
 
 
 if __name__ == "__main__":

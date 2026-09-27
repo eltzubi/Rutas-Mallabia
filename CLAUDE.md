@@ -45,8 +45,17 @@ python3 scripts/make_card_thumbs.py  # img/<name>-card.{jpg,webp}: the home page
 browser), not at the full 1600 px photo. Without it the new card has no image. Everything below the first two
 cards is `loading="lazy"`, so the home page loads ~0.6 MB instead of ~6.6 MB.
 
-`optimize_images.py` walks and rewrites the **entire** `img/` directory every run, so after running it, `git checkout --`
-any images you didn't intend to touch before committing.
+`optimize_images.py` only touches what needs it. It keeps a register of what it wrote in
+`img/.optimized.json` and skips any photo whose `.jpg` and `.webp` still match that register, so a run
+after adding one photo processes that photo and leaves the other 565 alone. This matters for two reasons:
+re-encoding an already-processed JPEG produces **different bytes every time** (1,026 new blobs per run —
+that's where the hundreds of MB of git history came from) and it also degrades the photo a little more
+each pass, because it re-quantizes an already-quantized image. Pass `--force` to reprocess everything
+anyway. It also skips `-card` and `-800` files (`EXCLUIR`), which belong to the two scripts below: running
+it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, heavier one.
+
+`make_card_thumbs.py` derives its output from `<name>.jpg` rather than from its own previous output, so it
+is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
 There is no test suite, linter, or package manifest — this is plain Python (stdlib only) + hand-written
 HTML/CSS/JS with no build tooling beyond the two scripts above.
@@ -142,9 +151,9 @@ There's no automated test suite — verification is manual:
   1280px) for horizontal overflow, and actually look at screenshots — not just the code — before
   calling it done. A local server (`python3 -m http.server` from the repo root) is enough to preview
   the built site.
-- `git status` after `build.py`/`optimize_images.py` before committing — both regenerate/rewrite
-  files across the whole tree, so it's easy to accidentally stage an unrelated change (e.g. revert
-  unintended image recompressions with `git checkout --`).
+- `git status` after `build.py` before committing — it regenerates files across the whole tree, so it's
+  easy to accidentally stage an unrelated change. `optimize_images.py` no longer rewrites untouched
+  photos, but check anyway after `--force`.
 - **For a brand-new route page, or one you're doing major surgery on: before calling it done, diff
   its `_tail.html` structurally against a known-good page's (e.g. `arteta_tail.html`), or run the
   `web-auditor` agent on it.** `trabakuamallabia` shipped missing the map/JS, the `<footer>`, the

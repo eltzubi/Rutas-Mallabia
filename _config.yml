@@ -7,6 +7,8 @@
 # Lo que NO se excluye de src/ son las descargas: los .gpx, los .kml y el .zip
 # cuelgan de ahi y estan enlazados desde las fichas de ruta.
 exclude:
+  # El registro de scripts/optimize_images.py: no forma parte del sitio.
+  - img/.optimized.json
   - src/build.py
   - src/*.html
   - src/css
