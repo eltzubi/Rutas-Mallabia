@@ -332,6 +332,12 @@ ROUTE = {
 }
 
 HOME = {
+    'alt="Camino de hierba entre prados, con la cresta de enfrente coronada por los eolikoak"':
+        'alt="Belarrezko bidea soroen artean, aurreko gailurra eolikoez koroatuta"',
+    '<h3 class="route-card-name">Trabakua, Longa y las cascadas de Gerea</h3>':
+        '<h3 class="route-card-name">Trabakua, Longa eta Gereako ur-jauziak</h3>',
+    '<p class="route-card-desc">Circuito de senderismo desde Trabakua, subiendo y bajando por Longa hasta las cascadas de Gerea</p>':
+        '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino</p>',
     '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>': '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>',
     '<p class="route-card-desc">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
     'alt="Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo"': 'alt="Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean"',
@@ -3205,6 +3211,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
     'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 14,84 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
@@ -3351,6 +3358,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
     'trabakua': 'Asuntza bira Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
@@ -5244,7 +5252,65 @@ AHUNTZEN = {
         'data-marker-title="Elgeta (irteera eta helmuga)"',
 }
 
+LONGAURJAUZIAK = {
+    'alt="Camino de hierba entre prados, con la cresta de enfrente coronada por los eolikoak"':
+        'alt="Belarrezko bidea soroen artean, aurreko gailurra eolikoez koroatuta"',
+    'alt="Portilla de madera cerrada en mitad de la pista, entre eucaliptos y prados vallados"':
+        'alt="Egurrezko langa itxita pistaren erdian, eukalipto eta hesitutako soroen artean"',
+    'alt="Bifurcaci&oacute;n de la pista en un pinar, con los helechos ya amarillos"':
+        'alt="Pistaren bidegurutzea pinudi batean, iratzeak jada horituta"',
+    'alt="Borda de piedra con el tejado verde, metida entre el arbolado"':
+        'alt="Teilatu berdeko harrizko borda, zuhaitzen artean sartuta"',
+    'alt="Tramo pedregoso de subida, con los eolikoak asomando al fondo"':
+        'alt="Igoerako zati harritsua, eolikoak atzealdean agertzen"',
+    'alt="Senda entre con&iacute;feras altas, cubierta de ac&iacute;culas y con roca a un lado"':
+        'alt="Bidezidorra konifera garaien artean, orratzez estalita eta harkaitza alde batean"',
+    'alt="Salto de agua cayendo por las repisas de roca, todo cubierto de musgo"':
+        'alt="Ur-jauzia harkaitz-apaletatik behera, dena goroldioz estalita"',
+    'alt="Sendero estrecho entre helechos, con una marca blanca y verde pintada en una piedra"':
+        'alt="Bidezidor estua iratzeen artean, harri batean margotutako marka zuri-berdea"',
+    'alt="Las cascadas de Gerea bajando por el cortado de roca entre el musgo"':
+        'alt="Gereako ur-jauziak harkaitz-ebakiduratik behera, goroldio artean"',
+    'alt="Barrera de madera cruzando el camino, en un tramo umbr&iacute;o entre con&iacute;feras"':
+        'alt="Egurrezko langa bidea gurutzatzen, konifera arteko zati ilunean"',
+    'alt="Prado con una vaca y ovejas pastando, y las monta&ntilde;as del fondo entre la bruma"':
+        'alt="Soroa behi bat eta ardiak bazkatzen, eta mendiak atzealdean lainoartean"',
+    '<h1>Trabakua, Longa<br><em>y las cascadas de Gerea</em></h1>':
+        '<h1>Trabakua, Longa<br><em>eta Gereako ur-jauziak</em></h1>',
+    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Longa y cascadas de Gerea</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista eta bidezidorra</span><span class="sep">/</span><span>Longa eta Gereako ur-jauziak</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<p class="full-name">Circuito de senderismo desde Trabakua, subiendo y bajando por Longa hasta las cascadas de Gerea</p>':
+        '<p class="full-name">Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino</p>',
+    'perfil real del track &middot; 9,75 km':
+        'trackaren benetako profila &middot; 9,75 km',
+    '<span class="num">2</span>Cascada de Gerea</span>':
+        '<span class="num">2</span>Gereako ur-jauzia</span>',
+    '<title>Cascada de Gerea &middot; 4,5 km &middot; 674 m</title>':
+        '<title>Gereako ur-jauzia &middot; 4,5 km &middot; 674 m</title>',
+    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +336 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
+        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +336 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
+    'alt="Foto ampliada del recorrido de Trabakua, Longa y las cascadas de Gerea"':
+        'alt="Trabakua, Longa eta Gereako ur-jauziak ibilbidearen argazki handitua"',
+    'download="Trabakua, Longa y las cascadas de Gerea.gpx"':
+        'download="Trabakua, Longa eta Gereako ur-jauziak.gpx"',
+    'download="Trabakua, Longa y las cascadas de Gerea.kml"':
+        'download="Trabakua, Longa eta Gereako ur-jauziak.kml"',
+    'Un circuito corto para acercarse a las <b><a href="markinaurjauziak.html">cascadas de Gerea</a></b> desde <b>Trabakua</b>, subiendo y bajando por <b><a href="longa.html">Longa</a></b>. Son 9,75 km y +336 m, casi todo por pista y camino ancho, con sendero en la parte alta. La subida es seguida pero no dura, y el premio est&aacute; arriba. No hay fuente en el recorrido: el agua, en la propia cascada o de vuelta en Trabakua.':
+        'Zirkuitu laburra <b><a href="markinaurjauziak.html">Gereako ur-jauzi</a></b>etara <b>Trabakua</b>tik hurbiltzeko, <b><a href="longa.html">Longa</a></b>tik gora eta behera. 9,75 km eta +336 m dira, ia dena pista eta bide zabaletik, goiko aldean bidezidorra. Igoera jarraia da baina ez gogorra, eta saria goian dago. Ez dago iturririk ibilbidean: ura, ur-jauzian bertan edo Trabakuara bueltan.',
+    'Salimos de <b>Trabakua</b> hacia el noroeste. El primer kil&oacute;metro es de bajada, hasta los 380 m, el punto m&aacute;s bajo de toda la vuelta: camino ancho entre prados, con la cresta de los eolikoak enfrente.':
+        '<b>Trabakua</b>tik ipar-mendebalderantz abiatzen gara. Lehen kilometroa beherantz da, 380 metroraino, buelta osoko punturik baxuena: bide zabala soroen artean, eolikoen gailurra aurrez aurre.',
+    'En el km 2,2 llegamos a <b>Longa</b>, el caser&iacute;o donde empieza el barrio y donde se encuentra el agroturismo. Aqu&iacute; se acaba la bajada y el camino enfila la subida.':
+        '2,2 km-an <b>Longa</b>ra iristen gara, auzoari hasiera ematen dion baserria, agroturismoa dagoen lekua. Hemen amaitzen da jaitsiera eta bideak igoerari heltzen dio.',
+    'Desde <b>Longa</b> arranca la subida de verdad: dos kil&oacute;metros seguidos que nos llevan de los 420 a los 680 m, por pista y por sendero, entre pinos y con&iacute;feras, pasando junto a una borda de piedra con el tejado verde.':
+        '<b>Longa</b>tik hasten da benetako igoera: bi kilometro jarraian, 420 metrotik 680ra, pistatik eta bidezidorretik, pinu eta koniferen artean, teilatu berdeko harrizko borda baten ondotik igarota.',
+    'Arriba, en el km 4,5, est&aacute;n las <b>cascadas de Gerea</b>. El agua baja por un cortado de roca en repisas, todo cubierto de musgo. Es el punto alto del d&iacute;a y el sitio para parar.':
+        'Goian, 4,5 km-an, <b>Gereako ur-jauzi</b>ak daude. Ura harkaitz-ebakidura batetik jaisten da, apalez apal, dena goroldioz estalita. Eguneko punturik altuena da, eta gelditzeko lekua.',
+    'La vuelta se hace por el mismo camino: bajamos otra vez hasta <b>Longa</b> y desde all&iacute; seguimos hasta <b>Trabakua</b>. El &uacute;ltimo tramo es tendido, entre prados con ovejas y vacas y las monta&ntilde;as al fondo.':
+        'Itzulera bide beretik egiten da: berriro <b>Longa</b>raino jaisten gara eta handik <b>Trabakua</b>raino jarraitzen dugu. Azken zatia lasaia da, ardi eta behiak dituzten soroen artean, mendiak atzealdean.',
+}
+
 PAGE_STRINGS = {
+    'longaurjauziak': LONGAURJAUZIAK,
     'ahuntzen': AHUNTZEN,
     'sancristobalgaraiandikoa': SANCRISTOBALGARAIANDIKOA,
     'zengotitaiturzuri': ZENGOTITAITURZURI,
