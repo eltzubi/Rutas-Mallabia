@@ -332,6 +332,12 @@ ROUTE = {
 }
 
 HOME = {
+    '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s</h3>':
+        '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Santo Tomas</h3>',
+    '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Munitibar, el monasterio de Zenarruza y Bolibar</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitu luzea Trabakuatik, Munitibar, Zenarruzako monasterioa eta Bolibartik barrena</p>',
+    'alt="El monasterio de Zenarruza tras una campa con &aacute;rboles, con los montes al fondo"':
+        'alt="Zenarruzako monasterioa zuhaitzak dituen zelai baten atzean, mendiak atzealdean"',
     'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
         'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
     '<h3 class="route-card-name">Trabakua, Longa y las cascadas de Gerea</h3>':
@@ -3211,6 +3217,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'astorkigane': 'BTT/e-bike zirkuitu luzea Trabakuatik, Munitibar, Zenarruzako monasterioa eta Bolibartik barrena',
     'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
     'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 14,84 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
@@ -3358,6 +3365,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Santo Tomas · Bizikleta ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
@@ -5252,6 +5260,85 @@ AHUNTZEN = {
         'data-marker-title="Elgeta (irteera eta helmuga)"',
 }
 
+ASTORKIGANE = {
+    '<p class="eyebrow"><span>Pista, sendero y carretera</span><span class="sep">/</span><span>Astorkigane, Zenarruza y Santo Tom&aacute;s</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Astorkigane, Zenarruza eta Santo Tomas</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<span class="v">Pista, sendero y carretera</span>':
+        '<span class="v">Pista, bidezidorra eta errepidea</span>',
+    '<h1>Trabakua, Astorkigane<br><em>Zenarruza y Santo Tom&aacute;s</em></h1>':
+        '<h1>Trabakua, Astorkigane<br><em>Zenarruza eta Santo Tomas</em></h1>',
+    '<p class="full-name">Circuito largo de BTT/e-bike desde Trabakua por Munitibar, el monasterio de Zenarruza y Bolibar</p>':
+        '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Munitibar, Zenarruzako monasterioa eta Bolibartik barrena</p>',
+    'perfil real del track &middot; 38,90 km':
+        'trackaren benetako profila &middot; 38,90 km',
+    '<span class="num">2</span>Monasterio de Zenarruza</span>':
+        '<span class="num">2</span>Zenarruzako monasterioa</span>',
+    '<title>Monasterio de Zenarruza &middot; 28,7 km &middot; 293 m</title>':
+        '<title>Zenarruzako monasterioa &middot; 28,7 km &middot; 293 m</title>',
+    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +1400 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
+        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +1400 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
+    'alt="Foto ampliada del recorrido de Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s"':
+        'alt="Trabakua, Astorkigane, Zenarruza eta Santo Tomas ibilbidearen argazki handitua"',
+    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.gpx"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.gpx"',
+    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.kml"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.kml"',
+    'alt="El monasterio de Zenarruza tras una campa con &aacute;rboles, con los montes al fondo"':
+        'alt="Zenarruzako monasterioa zuhaitzak dituen zelai baten atzean, mendiak atzealdean"',
+    'alt="Pista ancha de tierra subiendo entre matorrales, con una senda que se separa a la izquierda"':
+        'alt="Lurrezko pista zabala sasien artean gora, ezkerretara bidezidor bat banatzen dela"',
+    'alt="Senda estrecha entre hierba alta y pinos, vista desde el manillar de la bici"':
+        'alt="Bidezidor estua belar luze eta pinuen artean, bizikletaren gidoitik ikusita"',
+    'alt="Senda bajando entre helechos hacia un valle de pinares, vista desde el manillar"':
+        'alt="Bidezidorra iratzeen artean behera, pinudiz betetako haran baterantz, gidoitik ikusita"',
+    'alt="Barrera de troncos cruzando una pista embarrada en el bosque, con la e-bike apoyada al lado"':
+        'alt="Enborrezko hesia basoko pista lokaztu bat zeharkatzen, e-bizikleta ondoan bermatuta"',
+    'alt="Pista pedregosa a la sombra de un bosque de hoja ancha"':
+        'alt="Pista harritsua hosto zabaleko baso baten itzalpean"',
+    'alt="Arroyo bajando en escalones de roca entre con&iacute;feras y musgo"':
+        'alt="Erreka harkaitz-mailetan behera, konifera eta goroldio artean"',
+    'alt="Vacas pastando en un prado cercado, con el Oiz, sus antenas y los e&oacute;licos al fondo"':
+        'alt="Behiak larrean hesitutako soro batean, Oiz, bere antenak eta eolikoak atzealdean"',
+    'alt="Un ternero caminando por la pista de cemento hacia un caser&iacute;o, con el Oiz detr&aacute;s"':
+        'alt="Txahal bat zementuzko pistan baserri baterantz, Oiz atzean"',
+    'alt="Cruce de pistas de cemento entre prados, con una granja y la ladera del Oiz"':
+        'alt="Zementuzko pisten bidegurutzea soroen artean, abeltegi bat eta Oizko magala"',
+    'alt="Vista desde una alambrada sobre prados, caser&iacute;os y pinares, con montes hasta el horizonte"':
+        'alt="Alanbre-hesi batetik ikusita soroak, baserriak eta pinudiak, mendiak zeruertzeraino"',
+    'alt="Pista de cemento entre plantaciones, con los e&oacute;licos en la cresta"':
+        'alt="Zementuzko pista landaketen artean, eolikoak gailurrean"',
+    'alt="Arroyo entre piedras con musgo junto al cartel de Marraixo Erreka"':
+        'alt="Erreka goroldiozko harrien artean, Marraixo Errekaren kartelaren ondoan"',
+    'alt="Pista de tierra junto a un prado, con un pueblo en la ladera de enfrente y montes al fondo, vista desde el manillar"':
+        'alt="Lurrezko pista soro baten ondoan, aurreko magalean herri bat eta mendiak atzealdean, gidoitik ikusita"',
+    'alt="Pista de tierra entre eucaliptos y helechos"':
+        'alt="Lurrezko pista eukalipto eta iratzeen artean"',
+    'alt="Cartel de entrada a Munitibar Arbatzegi-Gerrikaitz junto a la carretera y a un cultivo en emparrado"':
+        'alt="Munitibar Arbatzegi-Gerrikaitzeko sarrera-kartela errepide ondoan, parran hazitako landaketa baten aldamenean"',
+    'alt="Vista sobre un valle de pinares y prados con una iglesia de piedra, con la sierra de los e&oacute;licos al fondo"':
+        'alt="Pinudi eta soroetako haran baten ikuspegia, harrizko eliza batekin, eolikoen mendilerroa atzealdean"',
+    'alt="Antigua prensa de madera bajo un tejadillo, junto a un muro de piedra y un banco"':
+        'alt="Egurrezko prentsa zaharra teilatupe baten azpian, harrizko horma eta aulki baten ondoan"',
+    'alt="Puente de madera sobre un arroyo en una senda de bosque, visto desde el manillar"':
+        'alt="Egurrezko zubia erreka baten gainean baso-bidezidor batean, gidoitik ikusita"',
+    'alt="Camino empedrado entre arbustos junto a un muro de piedra"':
+        'alt="Harri-bide estua sasien artean, harrizko horma baten ondoan"',
+    'alt="Calzada empedrada bajo un t&uacute;nel de &aacute;rboles, cubierta de hojas"':
+        'alt="Galtzada harriztatua zuhaitzezko tunel baten azpian, hostoz estalita"',
+    'alt="Portilla de madera cerrando una pista entre prados, con la bici tumbada al otro lado y los e&oacute;licos en la cresta"':
+        'alt="Egurrezko langa belardien arteko pista bat ixten, bizikleta beste aldean etzanda eta eolikoak gailurrean"',
+    'Una vuelta larga para e-bike: 38,9 km y +1400 m. Tiene dos subidas largas, la del principio, hasta los 604 m bajo el <b>Oiz</b>, y la que sale de <b>Bolibar</b> de vuelta a Trabakua; entre medias, un descenso largo hasta el fondo del valle, a 98 m, junto a <b>Munitibar</b>. Mezcla pista, sendero, cemento, carretera y alg&uacute;n tramo de calzada empedrada.':
+        'E-bizikletarako itzuli luzea: 38,9 km eta +1400 m. Bi igoera luze ditu: hasierakoa, <b>Oiz</b>pean 604 metroraino, eta <b>Bolibar</b>tik Trabakuara itzultzekoa; tartean, jaitsiera luzea haranaren hondoraino, 98 metrora, <b>Munitibar</b> ondoan. Denetik du: pista, bidezidorra, zementua, errepidea eta galtzada harriztatuko zatiren bat.',
+    'Salimos de <b>Trabakua</b> y enseguida empezamos a subir por pista y sendero entre pinares. En el km 7,6 alcanzamos el punto m&aacute;s alto de la vuelta (604 m), con el <b>Oiz</b>, sus antenas y los e&oacute;licos muy cerca, entre prados con vacas y pistas de cemento.':
+        '<b>Trabakua</b>tik abiatu eta berehala hasten gara gora, pista eta bidezidorretik, pinudien artean. 7,6. kilometroan itzuliko punturik altuena harrapatzen dugu (604 m), <b>Oiz</b>, bere antenak eta eolikoak oso gertu ditugula, behiak dituzten soro eta zementuzko pisten artean.',
+    'Desde ah&iacute; empieza un descenso largo. En el km 9,4 cruzamos el arroyo <b>Marraixo</b> y seguimos bajando por pistas entre eucaliptos hasta el fondo del valle: en el km 16,4 estamos a solo 98 m, el punto m&aacute;s bajo del d&iacute;a, y poco despu&eacute;s entramos en <b>Munitibar</b>.':
+        'Handik aurrera jaitsiera luzea dator. 9,4. kilometroan <b>Marraixo</b> erreka zeharkatzen dugu, eta eukalipto arteko pistetatik behera jarraitzen dugu haranaren hondoraino: 16,4. kilometroan 98 metrora baino ez gaude, eguneko punturik baxuena, eta handik gutxira <b>Munitibar</b>ren sartzen gara.',
+    'Toca volver a subir. Por pistas, caminos empedrados y senderos de bosque, con alg&uacute;n puente de madera, llegamos en el km 28,7 al <b><a href="zenarruza.html">monasterio de Zenarruza</a></b> (293 m) y, poco m&aacute;s de un kil&oacute;metro despu&eacute;s, bajamos a <b>Bolibar</b> (km 30,0 &middot; 168 m).':
+        'Berriro gora egiteko ordua da. Pista, harri-bide eta baso-bidezidorretatik, egurrezko zubiren bat tarteko, 28,7. kilometroan <b><a href="zenarruza.html">Zenarruzako monasterio</a></b>ra iristen gara (293 m), eta kilometro bat eta piku geroago <b>Bolibar</b>rera jaisten gara (30,0 km &middot; 168 m).',
+    'Desde Bolibar queda la &uacute;ltima subida larga, de vuelta a los 492 m y con los e&oacute;licos a la vista, antes de regresar a <b>Trabakua</b>.':
+        'Bolibartik azken igoera luzea geratzen da, berriro 492 metroraino eta eolikoak begi-bistan, <b>Trabakua</b>ra itzuli aurretik.',
+}
+
 LONGAURJAUZIAK = {
     'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
         'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
@@ -5324,6 +5411,7 @@ LONGAURJAUZIAK = {
 }
 
 PAGE_STRINGS = {
+    'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
     'ahuntzen': AHUNTZEN,
     'sancristobalgaraiandikoa': SANCRISTOBALGARAIANDIKOA,
