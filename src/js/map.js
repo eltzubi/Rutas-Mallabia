@@ -462,7 +462,7 @@
         var desnivelM = sign ? sign.dataset.desnivelM : null;
         var activity = sign ? sign.dataset.activity : null;
         var activityLabel = (activity || '').split(',').map(function(a){
-          return a === 'bici' ? 'BTT/e-bike' : a === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : '';
+          return a === 'bici' ? 'E-bike' : a === 'senderismo' ? (isEu ? 'Oinez' : 'Senderismo') : '';
         }).filter(Boolean).join(' · ');
         var distLabel = isEu ? 'Distantzia' : 'Distancia';
         var descLabel = isEu ? 'Desnibela' : 'Desnivel';

@@ -85,8 +85,8 @@ COMMON = {
         'alt="Erreka bat garo eta hosto artean konifero-baso batean"',
     '<h3 class="route-card-name">Axmakur, Iturzuri y Zengotitagane</h3>':
         '<h3 class="route-card-name">Axmakur, Iturzuri eta Zengotitagane</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
     '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>':
         '<h3 class="route-card-name">Amaraune Mendi Lasterketa</h3>',
     '<p class="route-card-desc">El trazado real de la Amaraune Mendi Lasterketa, en Berriz</p>':
@@ -99,8 +99,8 @@ COMMON = {
         'alt="Harrizko horma baten atzetik, garoen artean, gandorraren ikuspegia eolikoen ilararekin eta gailurreko antenekin atzealdean"',
     '<h3 class="route-card-name">Garai, Maguna, Axmakur y Zengotitagane</h3>':
         '<h3 class="route-card-name">Garai, Maguna, Axmakur eta Zengotitagane</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
     'alt="Caser&iacute;o tradicional junto a un bosque, con un monte nevado al fondo, al atardecer"':
         'alt="Baserri tradizionala baso baten ondoan, mendi elurtu bat atzealdean, ilunabarrean"',
     'alt="Corredor subiendo un sendero hacia un aerogenerador, con m&aacute;s corredores al fondo"':
@@ -137,8 +137,8 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Egoarbitza y Santama&ntilde;azar hasta Zengotitagane</p>':
         '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santama&ntilde;azarretik igarota Zengotitaganeraino</p>',
-    '<p class="route-card-desc">Circuito de senderismo y BTT desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
-        '<p class="route-card-desc">Zirkuitua oinez eta BTTz Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
+    '<p class="route-card-desc">Circuito de senderismo y e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar</p>':
+        '<p class="route-card-desc">Zirkuitua oinez eta e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino</p>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Urko, Kalamua, San Migel, Markina, Iturreta y Mendibil</p>':
         '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito desde Trabakua hasta la cueva de Mundioko Koba, pasando por el Collado de Asuntza</p>':
@@ -165,8 +165,8 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota</p>',
     '<p class="route-card-desc">Circuito desde Trabakua por Gerea, Longa y Muniozguren</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota</p>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane</p>':
-        '<p class="route-card-desc">Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota</p>',
 
     # route-card names (redesign)
     '<h3 class="route-card-name">Iturzuri, Zengotitagane subida por la cascada de Gerea</h3>':
@@ -235,13 +235,13 @@ COMMON = {
     '<span class="v">Media</span>': '<span class="v">Ertaina</span>',
     '<span class="v">Difícil</span>': '<span class="v">Zaila</span>',
     '<span class="v">Dif&iacute;cil</span>': '<span class="v">Zaila</span>',
-    '<span class="v">Senderismo &middot; Trail running &middot; BTT/e-bike</span>':
-        '<span class="v">Oinez &middot; Trail running &middot; BTT/e-bike</span>',
+    '<span class="v">Senderismo &middot; Trail running &middot; E-bike</span>':
+        '<span class="v">Oinez &middot; Trail running &middot; E-bike</span>',
     '<span class="v">Senderismo &middot; Trail running</span>':
         '<span class="v">Oinez &middot; Trail running</span>',
-    '<span class="v">Senderismo &middot; BTT/e-bike</span>':
-        '<span class="v">Oinez &middot; BTT/e-bike</span>',
-    '<span class="v">BTT/e-bike</span>': '<span class="v">BTT/e-bike</span>',
+    '<span class="v">Senderismo &middot; E-bike</span>':
+        '<span class="v">Oinez &middot; E-bike</span>',
+    '<span class="v">E-bike</span>': '<span class="v">E-bike</span>',
     '<span class="v">Pista y carretera</span>': '<span class="v">Pista eta errepidea</span>',
     '<span class="v">Carretera, pista y sendero</span>': '<span class="v">Errepidea, pista eta bidezidorra</span>',
 }
@@ -251,9 +251,9 @@ ROUTE = {
     '&larr; Rutas': '&larr; Ibilbideak',
     '<h2>Senderismo y bici</h2>': '<h2>Oinez eta bizikleta</h2>',
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
-    '<h2>Senderismo &middot; BTT/e-bike</h2>': '<h2>Oinez &middot; BTT/e-bike</h2>',
-    '<h2>Senderismo &middot; Trail running &middot; BTT/e-bike</h2>':
-        '<h2>Oinez &middot; Trail running &middot; BTT/e-bike</h2>',
+    '<h2>Senderismo &middot; E-bike</h2>': '<h2>Oinez &middot; E-bike</h2>',
+    '<h2>Senderismo &middot; Trail running &middot; E-bike</h2>':
+        '<h2>Oinez &middot; Trail running &middot; E-bike</h2>',
     '<h2>Senderismo &middot; Trail running</h2>':
         '<h2>Oinez &middot; Trail running</h2>',
     '<h2>Trail running y senderismo</h2>': '<h2>Trail running eta oinez</h2>',
@@ -334,8 +334,8 @@ ROUTE = {
 HOME = {
     '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s</h3>':
         '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Santo Tomas</h3>',
-    '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
+    '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
+        '<p class="route-card-desc">E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
     'alt="Cruce de pistas de cemento entre prados, con una granja y la ladera del Oiz"':
         'alt="Zementuzko pisten bidegurutzea soroen artean, abeltegi bat eta Oizko magala"',
     'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
@@ -399,16 +399,16 @@ HOME = {
         'alt="Harrizko iturria eta garbitegia, bizikleta hormaren kontra bermatuta, mendi bat hondoan"',
     '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka y Andikoa</h3>':
         '<h3 class="route-card-name">Trabakua, Santama&ntilde;azar, Mendraka eta Andikoa</h3>',
-    '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Santama&ntilde;azar, Mendraka y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitu luzea Trabakuatik, Santama&ntilde;azar, Mendraka eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
+    '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Santama&ntilde;azar, Mendraka y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
+        '<p class="route-card-desc">E-bike zirkuitu luzea Trabakuatik, Santama&ntilde;azar, Mendraka eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
 
     # gereaoculta card
     'alt="Vista de un valle con una alambrada de madera en primer plano, montes con aerogeneradores entre las nubes y un caser&iacute;o disperso al fondo"':
         'alt="Harana ikusgai, egurrezko hesia lehen planoan, hodei artean eolikoak dituzten mendiak eta baserri sakabanatu bat hondoan"',
     '<h3 class="route-card-name">Gerea, las rutas desconocidas</h3>':
         '<h3 class="route-card-name">Gerea, ibilbide ezezagunak</h3>',
-    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por rincones poco conocidos de Gerea</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por rincones poco conocidos de Gerea</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
 
     # trabakua card
     '<h3 class="route-card-name">Asuntza bira por Aginaga</h3>':
@@ -417,32 +417,32 @@ HOME = {
     # asuntzabira card
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
-    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota</p>',
 
     # markinabolibar card
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
     '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai y Markina</h3>':
         '<h3 class="route-card-name">Zenarruza, Zeinka, Urregarai eta Markina</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Urregarai</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Zenarruza, Zeinka y Urregarai</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota</p>',
 
     # axmakurandikoa card
     'alt="Cordillera monta&ntilde;osa en silueta al amanecer, con niebla en el valle"':
         'alt="Mendilerroaren silueta egunsentian, lainoarekin haranean"',
     '<h3 class="route-card-name">Zengotitagane, Axmakur y Andikoa</h3>':
         '<h3 class="route-card-name">Zengotitagane, Axmakur eta Andikoa</h3>',
-    '<p class="route-card-desc">Circuito de BTT/e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa</p>':
-        '<p class="route-card-desc">BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota</p>',
 
     # sancristobaloiz card
     'alt="Fuente de piedra con dos ca&ntilde;os y musgo en el canal de agua"':
         'alt="Harrizko iturria, bi txorrotarekin eta ur-kanalean goroldioa duena"',
     '<h3 class="route-card-name">San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</h3>':
         '<h3 class="route-card-name">San Kristobal (Oiz), Zenarruza eta Muniozguren</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota</p>',
 
     # sanpedrobidarte card
     'alt="Amanecer con niebla en el valle, con el sol saliendo tras los montes"':
@@ -498,14 +498,14 @@ HOME = {
         '<p class="route-card-desc">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota</p>',
     'alt="Cruz de piedra sobre su pedestal en lo alto, junto a un monolito de roca y una ikurri&ntilde;a ondeando al fondo, entre hierba alta y pinar"':
         'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
-    '<p class="route-card-desc">Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
-        '<p class="route-card-desc">BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
+    '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
+        '<p class="route-card-desc">E-bike zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
     '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</h3>':
         '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
-    '<p class="route-card-desc">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
-        '<p class="route-card-desc">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
+        '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
     '<p class="route-card-desc">Circuito de BTT exigente desde Trabakua, con ascensos técnicos y vistas del Duranguesado</p>':
-        '<p class="route-card-desc">Zirkuitu teknikoa BTT-ean Trabakuatik, igoerak eta Durangaldeko ikuspegiarekin</p>',
+        '<p class="route-card-desc">Zirkuitu teknikoa e-bikean Trabakuatik, igoerak eta Durangaldeko ikuspegiarekin</p>',
     'alt="Tramo del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
         'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen zatia"',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
@@ -604,6 +604,8 @@ HOME = {
         'Bizikletako ibilbideak gehienbat ohiko laguntza elektrikoarekin egin dira. Zailtasuna eta '
         'ahalegina bizikletaren, laguntza motaren eta txirrindulari bakoitzaren ezaugarrien arabera '
         'alda daitezke.',
+    'Con una BTT convencional, la mayor&iacute;a de las rutas tienen zonas complicadas: est&aacute;n pensadas para e-bike.':
+        'BTT arrunt batekin, ibilbide gehienek zati zailak dituzte: e-bikerako pentsatuta daude.',
     'Casi todas las rutas de senderismo las hemos recorrido corriendo, ya sea como parte de nuestros '
     'entrenamientos o para aprovechar el fin de semana y hacer recorridos m&aacute;s largos. Si las '
     'haces andando, el recorrido es el mismo; simplemente necesitar&aacute;s algo m&aacute;s de tiempo '
@@ -1796,8 +1798,8 @@ URREGARAI = {
     '<h1>Iturreta, Markina<br><em>y Urregarai</em></h1>':
         '<h1>Iturreta, Markina<br><em>eta Urregarai</em></h1>',
 
-    'Circuito de senderismo y BTT desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
-        'Zirkuitua oinez eta BTTz Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
+    'Circuito de senderismo y e-bike desde Trabakua por Iturreta, Markina y Urregarai hasta Bolibar':
+        'Zirkuitua oinez eta e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik igarota Bolibarreraino',
 
     'download="Iturreta, Markina y Urregarai.gpx"':
         'download="Iturreta, Markina eta Urregarai.gpx"',
@@ -3027,8 +3029,8 @@ EXIGENTE = {
     '<h1>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz y Zengotitagane</em></h1>':
         '<h1>Trabakua, Barinaga, Iturreta<br><em>Bolibar, Zenarruza, Oiz eta Zengotitagane</em></h1>',
 
-    'Circuito de BTT desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
-        'Zirkuitua BTTz Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota',
+    'Circuito de e-bike desde Trabakua por Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
+        'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane igarota',
 
     'Plaza de Bolibar al amanecer, con un monumento de piedra en el centro y el sol asomando entre los edificios':
         'Bolibarko plaza egunsentian, harrizko monumentu bat erdian eta eguzkia eraikinen artetik agertzen',
@@ -3145,8 +3147,8 @@ POTRERA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Oiz eta San Kristobal Txiki</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Muniozguren<br><em>Oiz y San Kristobal Txiki</em></h1>':
         '<h1>Trabakua, Muniozguren<br><em>Oiz eta San Kristobal Txiki</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
 
     # elevation profile markers + legend
     '<title>El repecho &middot; 10,3 km &middot; 754 m</title>':
@@ -3217,10 +3219,10 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'astorkigane': 'BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
+    'astorkigane': 'E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
     'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
     'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 14,84 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
-    'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
+    'mallabia': 'Oinezko eta e-bike ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
         'Bertatik bertara dokumentatuak, benetako datuekin, ez liburuxka batekoak.',
     'trabakua': 'Zirkuitua e-bikez: Trabakua, Asuntzako lepoa eta San Juan Artetako ermita',
     'iturrizuri': 'Oinezko zirkuitua: Iturzuri, Probazelaiburu II.a tumulua eta Zengotitagane Trabakuatik',
@@ -3236,12 +3238,12 @@ DESCRIPTIONS = {
     'iturreta': 'Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota',
     'egoarbitza': 'Zirkuitua oinez Trabakuatik, Urko, Egoarbitza eta Santamañazarretik '
         'igarota Zengotitaganeraino',
-    'urregarai': 'Zirkuitua oinez eta BTTz Trabakuatik, Iturreta, Markina eta Urregaraitik '
+    'urregarai': 'Zirkuitua oinez eta e-bikez Trabakuatik, Iturreta, Markina eta Urregaraitik '
         'igarota Bolibarreraino',
     'kalamua': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, San Migel, Markina, '
         'Iturreta eta Mendibiletik igarota',
     'mundiokokoba': 'Oinezko zirkuitua Trabakuatik Mundioko Kobaraino, Asuntzako lepotik igarota',
-    'iruzubieta': 'Zirkuitua oinez eta BTTz Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
+    'iruzubieta': 'Zirkuitua oinez eta e-bikez Trabakuatik, Iturreta, Iruzubieta, Arta eta Gereatik igarota',
     'mendibil': 'Oinezko zirkuitua Trabakuatik Mendibilgo gailurreraino',
     'arteta': 'Oinezko zirkuitua Trabakuatik, Mendibil, Olamendi eta Artetatik igarota',
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik',
@@ -3253,36 +3255,36 @@ DESCRIPTIONS = {
     '7pago16': '7 Pago Mendi Lasterketako 16K-ko benetako ibilbidea (trail running), Mallabiko mendi eta auzoetan barrena',
     'barinaga': 'Zirkuitua oinez Trabakuatik, Urko, Kalamua, Barinaga, Iturreta eta Mendibiletik igarota',
     'muniozguren': 'Zirkuitua Trabakuatik, Gerea, Longa eta Muniozgurenetik igarota',
-    'exigente': 'Zirkuitu eskatzailea BTT/e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
+    'exigente': 'Zirkuitu eskatzailea e-bikez Trabakuatik, Barinaga, Iturreta, Bolibar, '
         'Zenarruzako monasterioa, Oiz eta Zengotitagane igarota',
-    'aixola': 'BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
-    'potrera': 'BTT zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
+    'aixola': 'E-bike zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota',
+    'potrera': 'E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota',
     'artetaasuntza': 'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     'intxorta': 'Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santamañazar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota',
-    'trabakuamallabia': 'BTT zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
+    'trabakuamallabia': 'E-bike zirkuitu teknikoa Trabakuatik, igoera eta Durangaldeko ikuspegiarekin',
     'betzun': 'Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota',
     'sarrimendi': 'Zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita eta Arietzutik igarota Mendibileraino',
     'longa': 'Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota',
     'zengotitaosmagain': 'Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik',
-    'axmakuriturrizuri': 'BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota',
+    'axmakuriturrizuri': 'E-bike zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota',
     'amaraune': 'Amaraune Mendi Lasterketaren benetako ibilbidea, Berrizen',
     'astarlokoatxa': 'Oinezko zirkuitua Trabakuatik, Ur Jauziak eta Astarloko Atxaraino',
-    'garaimaguna': 'BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota',
+    'garaimaguna': 'E-bike zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota',
     'sanpedrobidarte': 'Zirkuitua Trabakuatik, Arteta, Ermua eta San Pedro Bidarte ermitatik igarota',
-    'sancristobaloiz': 'Zirkuitua BTTz Trabakuatik, San Kristobal (Oiz), Zenarruza eta '
+    'sancristobaloiz': 'Zirkuitua e-bikez Trabakuatik, San Kristobal (Oiz), Zenarruza eta '
         'Muniozgurenetik igarota, Ziortza inguruko ibilbideen kontrako norabidean',
-    'axmakurandikoa': 'BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta '
+    'axmakurandikoa': 'E-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta '
         'Andikoatik igarota, Berrizeraino jaitsiz',
-    'markinabolibar': 'BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta '
+    'markinabolibar': 'E-bike zirkuitua Trabakuatik, Zenarruza, Zeinka eta '
         'Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz',
-    'asuntzabira': 'BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako '
+    'asuntzabira': 'E-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako '
         'lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik',
-    'gereaoculta': 'BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi '
+    'gereaoculta': 'E-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi '
         'ezagunetatik igarota, bi aldapa eskatzaile eta jaitsiera tekniko batzuekin',
     'sancristobalgaraiandikoa': 'Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, '
         'pista, bidezidor eta Asto Traileko tarteekin',
     'zengotitaiturzuri': 'Zengotitatik Iturzuri eta Zengotitaganera doan ibilbide zirkular labur eta askotarikoa',
-    'santamanazarandikoa': 'BTT/e-bike zirkuitu luzea Trabakuatik, Zengotita, Santamañazar, Mendraka, '
+    'santamanazarandikoa': 'E-bike zirkuitu luzea Trabakuatik, Zengotita, Santamañazar, Mendraka, '
         'Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin',
     'aviso-legal': 'Trabakutiken lege oharra eta pribatutasun politika: titularra, '
         'baldintzak eta datu pertsonalen tratamendua',
@@ -3316,8 +3318,8 @@ AIXOLA = {
         '<span>Nahasia</span><span class="sep">/</span><span>Aixola eta Eitzaga</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Goierri<br><em>Aixola y Eitzaga</em></h1>':
         '<h1>Trabakua, Goierri<br><em>Aixola eta Eitzaga</em></h1>',
-    '<p class="full-name">Circuito largo de BTT desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
-        '<p class="full-name">BTT zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
+    '<p class="full-name">Circuito largo de e-bike desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
+        '<p class="full-name">E-bike zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
     'download="Trabakua, Goierri, Aixola y Eitzaga.gpx"':
         'download="Trabakua, Goierri, Aixola eta Eitzaga.gpx"',
     'download="Trabakua, Goierri, Aixola y Eitzaga.kml"':
@@ -3365,61 +3367,61 @@ AIXOLA = {
 }
 
 TITLES = {
-    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Santo Tomas · Bizikleta ibilbidea — Herriko ibilbideak',
+    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Santo Tomas · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
-    'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
-    'trabakua': 'Asuntza bira Aginagatik · Bizikleta ibilbidea — Herriko ibilbideak',
+    'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta e-bikez Bizkaian',
+    'trabakua': 'Asuntza bira Aginagatik · E-bike ibilbidea — Herriko ibilbideak',
     'iturrizuri': 'Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
-    'zenarruza': 'Zenarruza eta San Kristobal · Bizikleta ibilbidea — Herriko ibilbideak',
-    'argineta': 'Trabakua, Elgeta eta Argiñeta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'zenarruza': 'Zenarruza eta San Kristobal · E-bike ibilbidea — Herriko ibilbideak',
+    'argineta': 'Trabakua, Elgeta eta Argiñeta · E-bike ibilbidea — Herriko ibilbideak',
     'gerea': 'Gereako ur-jauzia · Oinezko ibilbidea — Herriko ibilbideak',
-    'zengotitagane': 'Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'zengotitagane': 'Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
     'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Askako eta Garai · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
-    'iturreta': 'Trabakua, Barinaga eta Iturreta · Bizikleta ibilbidea — Herriko ibilbideak',
+    'iturreta': 'Trabakua, Barinaga eta Iturreta · E-bike ibilbidea — Herriko ibilbideak',
     'egoarbitza': 'Urko, Egoarbitza, Santamañazar eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
-    'urregarai': 'Iturreta, Markina eta Urregarai · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
+    'urregarai': 'Iturreta, Markina eta Urregarai · Oinezko eta e-bike ibilbidea — Herriko ibilbideak',
     'kalamua': 'Urko, Kalamua, San Migel eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'mundiokokoba': 'Mundioko Koba · Oinezko ibilbidea — Herriko ibilbideak',
-    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
+    'iruzubieta': 'Trabakua, Iturreta eta Iruzubieta · Oinezko eta e-bike ibilbidea — Herriko ibilbideak',
     'mendibil': 'Trabakua Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
     'arteta': 'Trabakua, Mendibil, Olamendi eta Arteta · Oinezko ibilbidea — Herriko ibilbideak',
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
-    'zaldibar': 'Trabakua, Aixola eta Berriz · Bizikleta ibilbidea — Herriko ibilbideak',
-    'maguna': 'Trabakua, Zengotitagane eta Maguna · Bizikleta ibilbidea — Herriko ibilbideak',
+    'zaldibar': 'Trabakua, Aixola eta Berriz · E-bike ibilbidea — Herriko ibilbideak',
+    'maguna': 'Trabakua, Zengotitagane eta Maguna · E-bike ibilbidea — Herriko ibilbideak',
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
     'barinaga': 'Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil · Oinezko ibilbidea — Herriko ibilbideak',
-    'muniozguren': 'Trabakua, Longa, Muniozguren · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
+    'muniozguren': 'Trabakua, Longa, Muniozguren · Oinezko eta e-bike ibilbidea — Herriko ibilbideak',
     'exigente': 'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane · '
-        'BTT ibilbidea — Herriko ibilbideak',
-    'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · Bizikleta ibilbidea — Herriko ibilbideak',
-    'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · Bizikleta ibilbidea — Herriko ibilbideak',
-    'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · Bizikleta ibilbidea — Herriko ibilbideak',
+        'E-bike ibilbidea — Herriko ibilbideak',
+    'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · E-bike ibilbidea — Herriko ibilbideak',
+    'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · E-bike ibilbidea — Herriko ibilbideak',
+    'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · E-bike ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
-    'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · Bizikleta ibilbidea — Herriko ibilbideak',
-    'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta BTT ibilbidea — Herriko ibilbideak',
+    'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · E-bike ibilbidea — Herriko ibilbideak',
+    'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta e-bike ibilbidea — Herriko ibilbideak',
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitaosmagain': 'Trabakua, Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
-    'axmakuriturrizuri': 'Axmakur, Iturzuri eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'axmakuriturrizuri': 'Axmakur, Iturzuri eta Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
-    'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · Bizikleta ibilbidea — Herriko ibilbideak',
+    'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte ermita · Oinezko ibilbidea — Herriko ibilbideak',
-    'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · Bizikleta ibilbidea — Herriko ibilbideak',
-    'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
-    'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · Bizikleta ibilbidea — Herriko ibilbideak',
-    'asuntzabira': 'Asuntza bira · Bizikleta ibilbidea — Herriko ibilbideak',
-    'gereaoculta': 'Gerea, ibilbide ezezagunak · Bizikleta ibilbidea — Herriko ibilbideak',
-    'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
+    'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · E-bike ibilbidea — Herriko ibilbideak',
+    'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
+    'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · E-bike ibilbidea — Herriko ibilbideak',
+    'asuntzabira': 'Asuntza bira · E-bike ibilbidea — Herriko ibilbideak',
+    'gereaoculta': 'Gerea, ibilbide ezezagunak · E-bike ibilbidea — Herriko ibilbideak',
+    'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
     'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
-    'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · Bizikleta ibilbidea — Herriko ibilbideak',
+    'santamanazarandikoa': 'Trabakua, Santamañazar, Mendraka eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
     'aviso-legal': 'Lege-oharra eta pribatutasun politika · Herriko ibilbideak',
     'markinakobau': 'Markina, Kobaria koba, Berriatua eta Larruskain · Oinezko ibilbidea — Herriko ibilbideak',
     'mallukitoko': 'Markina-Xemein, Mallukitoko, Zapola eta Bolu zubia · Oinezko ibilbidea — Herriko ibilbideak',
@@ -3553,7 +3555,7 @@ ARTETAASUNTZA = {
         'data-marker-title="Trabakua (irteera eta helmuga)"',
 
     # -- para quien es --
-    '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
+    '<h2>E-bike</h2>': '<h2>E-bike</h2>',
     '21,78 km y +962 m que no van de encadenar cimas, sino de conocer el terreno: los pasos peque&ntilde;os que unen el camino alto de Asuntza y Arteta con el de abajo, hacia Berano Txiki. Se sube por unos y se baja por otros, cruzando la zona varias veces.':
         '21,78 km eta +962 m, gailurrak kateatzeko baino, ingurua ezagutzeko: Asuntza eta Artetako goiko bidea behekoarekin, Berano Txiki aldera, lotzen duten pasabide txikiak. Batzuetatik gora eta besteetatik behera, ingurua behin baino gehiagotan zeharkatuz.',
     'Pide algo de manejo con la bici: por estos pasos hay que tener cierta soltura, no es una vuelta para iniciarse. Va bien para quien ya conoce la circular habitual y quiere sacarle m&aacute;s partido, porque una vez localizados estos pasos se pueden acortar, alargar o darle la vuelta a la ruta de muchas maneras. Por el camino se pasa por la <b>fuente de Arteta</b>, uno de los pocos puntos de agua de la zona.':
@@ -3614,8 +3616,8 @@ TRABAKUAMALLABIA = {
         '<span>Pista/lurra</span>',
     '<span class="v">Pista/tierra</span>':
         '<span class="v">Pista/lurra</span>',
-    '<span>BTT</span>':
-        '<span>BTT</span>',
+    '<span>E-bike</span>':
+        '<span>E-bike</span>',
     '<span>Circuito</span>':
         '<span>Zirkuitua</span>',
     '<h2>BTT exigente de distancia media</h2>':
@@ -3956,8 +3958,8 @@ AXMAKURITURRIZURI = {
         '<span>Pista eta lurra</span><span class="sep">/</span><span>Axmakur, Iturzuri eta Zengotitagane</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Axmakur, Iturzuri<br><em>y Zengotitagane</em></h1>':
         '<h1>Axmakur, Iturzuri<br><em>eta Zengotitagane</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Axmakur, Iturzuri y Zengotitagane</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Axmakur, Iturzuri eta Zengotitaganetik igarota</p>',
     'Vista desde el manillar de la bicicleta sobre una pista de tierra y grava':
         'Bizikletaren eskulekutik ikusitako lurrezko eta hartxintxarrezko pista',
     'Foto ampliada del recorrido de Axmakur, Iturzuri y Zengotitagane':
@@ -4114,8 +4116,8 @@ GARAIMAGUNA = {
         '<span>Asfaltoa, pista eta bidezidor teknikoa</span><span class="sep">/</span><span>Garai, Maguna eta Axmakur</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Garai, Maguna<br><em>Axmakur y Zengotitagane</em></h1>':
         '<h1>Garai, Maguna<br><em>Axmakur eta Zengotitagane</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Garai, Maguna, Axmakur y Zengotitagane</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Garai, Maguna, Axmakur eta Zengotitaganetik igarota</p>',
     'alt="Caser&iacute;o tradicional junto a un bosque, con un monte nevado al fondo, al atardecer"':
         'alt="Baserri tradizionala baso baten ondoan, mendi elurtu bat atzealdean, ilunabarrean"',
     'alt="Foto ampliada del recorrido de Garai, Maguna, Axmakur y Zengotitagane"':
@@ -4255,8 +4257,8 @@ SANCRISTOBALOIZ = {
         '<span>Nahasia</span><span class="sep">/</span><span>San Kristobal, Zenarruza eta Muniozguren</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, San Crist&oacute;bal (Oiz)<br><em>Zenarruza y Muniozguren</em></h1>':
         '<h1>Trabakua, San Kristobal (Oiz)<br><em>Zenarruza eta Muniozguren</em></h1>',
-    '<p class="full-name">Circuito en BTT desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren, en sentido contrario a las rutas ya publicadas por la zona de Ziortza</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota, Ziortza inguruan argitaratutako ibilbideen kontrako norabidean</p>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren, en sentido contrario a las rutas ya publicadas por la zona de Ziortza</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota, Ziortza inguruan argitaratutako ibilbideen kontrako norabidean</p>',
     'alt="Fuente de piedra con dos ca&ntilde;os y musgo en el canal de agua"':
         'alt="Harrizko iturria, bi txorrotarekin eta ur-kanalean goroldioa duena"',
     'alt="Foto ampliada del recorrido de Trabakua, San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren"':
@@ -4334,8 +4336,8 @@ AXMAKURANDIKOA = {
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zengotitagane, Axmakur eta Andikoa</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zengotitagane<br><em>Axmakur y Andikoa</em></h1>':
         '<h1>Trabakua, Zengotitagane<br><em>Axmakur eta Andikoa</em></h1>',
-    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa, bajando hasta Berriz antes de volver por Besoita y Zengotita</p>':
-        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota, Berrizeraino jaitsiz eta Besoita eta Zengotitatik itzuliz</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Zengotitagane, Axmakur y Andikoa, bajando hasta Berriz antes de volver por Besoita y Zengotita</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Zengotitagane, Axmakur eta Andikoatik igarota, Berrizeraino jaitsiz eta Besoita eta Zengotitatik itzuliz</p>',
     'alt="Cordillera monta&ntilde;osa en silueta al amanecer, con niebla en el valle"':
         'alt="Mendilerroaren silueta egunsentian, lainoarekin haranean"',
     'alt="Foto ampliada del recorrido de Trabakua, Zengotitagane, Axmakur y Andikoa"':
@@ -4399,8 +4401,8 @@ SANTAMANAZARANDIKOA = {
         '<span class="v">Pista, bidexka eta errepidea</span>',
     '<h1>Trabakua, Santama&ntilde;azar<br><em>Mendraka y Andikoa</em></h1>':
         '<h1>Trabakua, Santama&ntilde;azar<br><em>Mendraka eta Andikoa</em></h1>',
-    '<p class="full-name">Circuito largo de BTT/e-bike desde Trabakua por Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
-        '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
+    '<p class="full-name">Circuito largo de e-bike desde Trabakua por Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena y Andikoa, con un tramo t&eacute;cnico de piedra</p>':
+        '<p class="full-name">E-bike zirkuitu luzea Trabakuatik, Zengotita, Santama&ntilde;azar, Mendraka, Berriozabaleta, Matiena eta Andikoatik igarota, harrizko zati tekniko batekin</p>',
     'alt="Pista forestal entre pinos con vistas a las monta&ntilde;as a trav&eacute;s de los &aacute;rboles"':
         'alt="Baso-pista pinuen artean, mendietarako ikuspegiekin zuhaitzen artetik"',
     'alt="Foto ampliada del recorrido de Trabakua, Santama&ntilde;azar, Mendraka y Andikoa"':
@@ -4661,8 +4663,8 @@ MARKINABOLIBAR = {
         '<span>Pista eta errepidea</span><span class="sep">/</span><span>Zenarruza, Zeinka, Urregarai eta Markina</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai y Markina</em></h1>':
         '<h1>Trabakua, Zenarruza<br><em>Zeinka, Urregarai eta Markina</em></h1>',
-    '<p class="full-name">Circuito de BTT desde Trabakua por Zenarruza, Zeinka y Urregarai, bajando hasta Markina antes de volver por Iruzubieta y Bolibar</p>':
-        '<p class="full-name">BTT zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Zenarruza, Zeinka y Urregarai, bajando hasta Markina antes de volver por Iruzubieta y Bolibar</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Zenarruza, Zeinka eta Urregaraitik igarota, Markinaraino jaitsiz eta Iruzubieta eta Bolibartik itzuliz</p>',
     'alt="Bicicleta de monta&ntilde;a apoyada en un &aacute;rbol frente al monasterio de Zenarruza, con &aacute;rboles podados en primer plano"':
         'alt="Mendiko bizikleta zuhaitz baten kontra, Zenarruzako monasterioaren aurrean, moztutako zuhaitzak lehen planoan"',
     'alt="Foto ampliada del recorrido de Trabakua, Zenarruza, Zeinka, Urregarai y Markina"':
@@ -4725,8 +4727,8 @@ ASUNTZABIRA = {
     # hero — "Asuntza bira" es el mismo nombre en los dos idiomas
     '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta y Asuntza</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta eta Asuntza</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza, en su mayor parte por pistas poco conocidas de la Diputaci&oacute;n</p>':
-        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza, en su mayor parte por pistas poco conocidas de la Diputaci&oacute;n</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik</p>',
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
     'alt="Foto ampliada del recorrido de Asuntza bira"':
@@ -4755,7 +4757,7 @@ ASUNTZABIRA = {
         '<span class="elev-legend-item"><span class="num">2</span>Arteta (goiko aldea)</span>',
     '<span class="elev-legend-item"><span class="num">6</span>Arteta (parte baja)</span>':
         '<span class="elev-legend-item"><span class="num">6</span>Arteta (beheko aldea)</span>',
-    '<h2>BTT/e-bike</h2>': '<h2>BTT/e-bike</h2>',
+    '<h2>E-bike</h2>': '<h2>E-bike</h2>',
     '<p>18,64 km y +589 m de desnivel en un recorrido que discurre casi en su totalidad por pista limpia y firme de piedra, sin senderos ni tramos t&eacute;cnicos. Hay alg&uacute;n repecho con buena pendiente y buenas bajadas para soltar el freno, pero en general es una vuelta c&oacute;moda, en una zona bastante poco conocida.</p>':
         '<p>18,64 km eta +589 m-ko desnibela ibilbide batean, ia osorik harrizko pista garbi eta sendotik, bidezidorrik eta zati teknikorik gabe. Malda oneko aldapa bat edo beste egongo da, eta jaitsiera onak ere balazta askatzeko, baina, oro har, buelta erosoa da, gutxi ezagutzen den eremu batean.</p>',
 
@@ -4788,8 +4790,8 @@ GEREAOCULTA = {
         '<span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Gerea</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Gerea<br><em>las rutas desconocidas</em></h1>':
         '<h1>Gerea<br><em>ibilbide ezezagunak</em></h1>',
-    '<p class="full-name">Circuito de BTT/e-bike desde Trabakua por rincones poco conocidos del barrio de Gerea</p>':
-        '<p class="full-name">BTT/e-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
+    '<p class="full-name">Circuito de e-bike desde Trabakua por rincones poco conocidos del barrio de Gerea</p>':
+        '<p class="full-name">E-bike zirkuitua Trabakuatik, Gerea auzoko txoko gutxi ezagunetatik igarota</p>',
     'alt="Vista de un valle con una alambrada de madera en primer plano, montes con aerogeneradores entre las nubes y un caser&iacute;o disperso al fondo"':
         'alt="Harana ikusgai, egurrezko hesia lehen planoan, hodei artean eolikoak dituzten mendiak eta baserri sakabanatu bat hondoan"',
     'alt="Foto ampliada del recorrido de Gerea, las rutas desconocidas"':
@@ -5271,8 +5273,8 @@ ASTORKIGANE = {
         '<span class="v">Pista, bidezidorra eta errepidea</span>',
     '<h1>Trabakua, Astorkigane<br><em>Zenarruza y Santo Tom&aacute;s</em></h1>':
         '<h1>Trabakua, Astorkigane<br><em>Zenarruza eta Santo Tomas</em></h1>',
-    '<p class="full-name">Circuito largo de BTT/e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
-        '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
+    '<p class="full-name">Circuito largo de e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
+        '<p class="full-name">E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
     'perfil real del track &middot; 38,90 km':
         'trackaren benetako profila &middot; 38,90 km',
     '<span class="num">6</span>Monasterio de Zenarruza</span>':
