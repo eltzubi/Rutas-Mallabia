@@ -5260,6 +5260,7 @@ AHUNTZEN = {
         'data-marker-title="Elgeta (irteera eta helmuga)"',
 }
 
+
 ASTORKIGANE = {
     '<p class="eyebrow"><span>Pista, sendero y carretera</span><span class="sep">/</span><span>Astorkigane, Zenarruza y Santo Tom&aacute;s</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Astorkigane, Zenarruza eta Santo Tomas</span><span class="sep">/</span><span>Zirkuitua</span></p>',
@@ -5271,8 +5272,8 @@ ASTORKIGANE = {
         '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Munitibar, Zenarruzako monasterioa eta Bolibartik barrena</p>',
     'perfil real del track &middot; 38,90 km':
         'trackaren benetako profila &middot; 38,90 km',
-    '<span class="num">2</span>Monasterio de Zenarruza</span>':
-        '<span class="num">2</span>Zenarruzako monasterioa</span>',
+    '<span class="num">3</span>Monasterio de Zenarruza</span>':
+        '<span class="num">3</span>Zenarruzako monasterioa</span>',
     '<title>Monasterio de Zenarruza &middot; 28,7 km &middot; 293 m</title>':
         '<title>Zenarruzako monasterioa &middot; 28,7 km &middot; 293 m</title>',
     '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +1400 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
@@ -5329,8 +5330,8 @@ ASTORKIGANE = {
         'alt="Egurrezko langa belardien arteko pista bat ixten, bizikleta beste aldean etzanda eta eolikoak gailurrean"',
     'Una vuelta larga para e-bike: 38,9 km y +1400 m. Tiene dos subidas largas, la del principio, hasta los 604 m bajo el <b>Oiz</b>, y la que sale de <b>Bolibar</b> de vuelta a Trabakua; entre medias, un descenso largo hasta el fondo del valle, a 98 m, junto a <b>Munitibar</b>. Mezcla pista, sendero, cemento, carretera y alg&uacute;n tramo de calzada empedrada.':
         'E-bizikletarako itzuli luzea: 38,9 km eta +1400 m. Bi igoera luze ditu: hasierakoa, <b>Oiz</b>pean 604 metroraino, eta <b>Bolibar</b>tik Trabakuara itzultzekoa; tartean, jaitsiera luzea haranaren hondoraino, 98 metrora, <b>Munitibar</b> ondoan. Denetik du: pista, bidezidorra, zementua, errepidea eta galtzada harriztatuko zatiren bat.',
-    'Salimos de <b>Trabakua</b> y enseguida empezamos a subir por pista y sendero entre pinares. En el km 7,6 alcanzamos el punto m&aacute;s alto de la vuelta (604 m), con el <b>Oiz</b>, sus antenas y los e&oacute;licos muy cerca, entre prados con vacas y pistas de cemento.':
-        '<b>Trabakua</b>tik abiatu eta berehala hasten gara gora, pista eta bidezidorretik, pinudien artean. 7,6. kilometroan itzuliko punturik altuena harrapatzen dugu (604 m), <b>Oiz</b>, bere antenak eta eolikoak oso gertu ditugula, behiak dituzten soro eta zementuzko pisten artean.',
+    'Salimos de <b>Trabakua</b> y enseguida empezamos a subir por pista y sendero entre pinares. En el km 7,6 llegamos a <b>Kortaguren</b>, el punto m&aacute;s alto de la vuelta (604 m), con el <b>Oiz</b>, sus antenas y los e&oacute;licos muy cerca, entre prados con vacas y pistas de cemento.':
+        '<b>Trabakua</b>tik abiatu eta berehala hasten gara gora, pista eta bidezidorretik, pinudien artean. 7,6. kilometroan <b>Kortaguren</b>era iristen gara, itzuliko punturik altuena (604 m), <b>Oiz</b>, bere antenak eta eolikoak oso gertu ditugula, behiak dituzten soro eta zementuzko pisten artean.',
     'Desde ah&iacute; empieza un descenso largo. En el km 9,4 cruzamos el arroyo <b>Marraixo</b> y seguimos bajando por pistas entre eucaliptos hasta el fondo del valle: en el km 16,4 estamos a solo 98 m, el punto m&aacute;s bajo del d&iacute;a, y poco despu&eacute;s entramos en <b>Munitibar</b>.':
         'Handik aurrera jaitsiera luzea dator. 9,4. kilometroan <b>Marraixo</b> erreka zeharkatzen dugu, eta eukalipto arteko pistetatik behera jarraitzen dugu haranaren hondoraino: 16,4. kilometroan 98 metrora baino ez gaude, eguneko punturik baxuena, eta handik gutxira <b>Munitibar</b>ren sartzen gara.',
     'Toca volver a subir. Por pistas, caminos empedrados y senderos de bosque, con alg&uacute;n puente de madera, llegamos en el km 28,7 al <b><a href="zenarruza.html">monasterio de Zenarruza</a></b> (293 m) y, poco m&aacute;s de un kil&oacute;metro despu&eacute;s, bajamos a <b>Bolibar</b> (km 30,0 &middot; 168 m).':
