@@ -562,6 +562,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/longaurjauziak.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/astorkigane.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/astorkigane.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/astorkigane.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/astorkigane.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/astorkigane.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/astorkigane.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>

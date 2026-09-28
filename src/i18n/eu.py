@@ -332,6 +332,12 @@ ROUTE = {
 }
 
 HOME = {
+    '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s</h3>':
+        '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Santo Tomas</h3>',
+    '<p class="route-card-desc">Circuito largo de BTT/e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
+        '<p class="route-card-desc">BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
+    'alt="El monasterio de Zenarruza tras una campa con &aacute;rboles, con los montes al fondo"':
+        'alt="Zenarruzako monasterioa zuhaitzak dituen zelai baten atzean, mendiak atzealdean"',
     'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
         'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
     '<h3 class="route-card-name">Trabakua, Longa y las cascadas de Gerea</h3>':
@@ -3211,6 +3217,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'astorkigane': 'BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
     'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
     'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 14,84 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
     'mallabia': 'Oinezko eta BTT ibilbideak Mallabia inguruko auzo, mendi eta herrietan. '
@@ -3358,6 +3365,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Santo Tomas · Bizikleta ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta bizikletaz Bizkaian',
@@ -5252,6 +5260,111 @@ AHUNTZEN = {
         'data-marker-title="Elgeta (irteera eta helmuga)"',
 }
 
+
+
+
+
+ASTORKIGANE = {
+    '<p class="eyebrow"><span>Pista, sendero y carretera</span><span class="sep">/</span><span>Astorkigane, Zenarruza y Santo Tom&aacute;s</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Astorkigane, Zenarruza eta Santo Tomas</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<span class="v">Pista, sendero y carretera</span>':
+        '<span class="v">Pista, bidezidorra eta errepidea</span>',
+    '<h1>Trabakua, Astorkigane<br><em>Zenarruza y Santo Tom&aacute;s</em></h1>':
+        '<h1>Trabakua, Astorkigane<br><em>Zenarruza eta Santo Tomas</em></h1>',
+    '<p class="full-name">Circuito largo de BTT/e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
+        '<p class="full-name">BTT/e-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
+    'perfil real del track &middot; 38,90 km':
+        'trackaren benetako profila &middot; 38,90 km',
+    '<span class="num">6</span>Monasterio de Zenarruza</span>':
+        '<span class="num">6</span>Zenarruzako monasterioa</span>',
+    '<title>Monasterio de Zenarruza &middot; 28,7 km &middot; 293 m</title>':
+        '<title>Zenarruzako monasterioa &middot; 28,7 km &middot; 293 m</title>',
+    '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +1400 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
+        '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +1400 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
+    'alt="Foto ampliada del recorrido de Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s"':
+        'alt="Trabakua, Astorkigane, Zenarruza eta Santo Tomas ibilbidearen argazki handitua"',
+    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.gpx"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.gpx"',
+    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.kml"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.kml"',
+    'alt="El monasterio de Zenarruza tras una campa con &aacute;rboles, con los montes al fondo"':
+        'alt="Zenarruzako monasterioa zuhaitzak dituen zelai baten atzean, mendiak atzealdean"',
+    'alt="Pista ancha de tierra subiendo entre matorrales, con una senda que se separa a la izquierda"':
+        'alt="Lurrezko pista zabala sasien artean gora, ezkerretara bidezidor bat banatzen dela"',
+    'alt="Senda estrecha entre hierba alta y pinos, vista desde el manillar de la bici"':
+        'alt="Bidezidor estua belar luze eta pinuen artean, bizikletaren gidoitik ikusita"',
+    'alt="Senda bajando entre helechos hacia un valle de pinares, vista desde el manillar"':
+        'alt="Bidezidorra iratzeen artean behera, pinudiz betetako haran baterantz, gidoitik ikusita"',
+    'alt="Barrera de troncos cruzando una pista embarrada en el bosque, con la e-bike apoyada al lado"':
+        'alt="Enborrezko hesia basoko pista lokaztu bat zeharkatzen, e-bizikleta ondoan bermatuta"',
+    'alt="Pista pedregosa a la sombra de un bosque de hoja ancha"':
+        'alt="Pista harritsua hosto zabaleko baso baten itzalpean"',
+    'alt="Arroyo bajando en escalones de roca entre con&iacute;feras y musgo"':
+        'alt="Erreka harkaitz-mailetan behera, konifera eta goroldio artean"',
+    'alt="Vacas pastando en un prado cercado, con el Oiz, sus antenas y los e&oacute;licos al fondo"':
+        'alt="Behiak larrean hesitutako soro batean, Oiz, bere antenak eta eolikoak atzealdean"',
+    'alt="Un ternero caminando por la pista de cemento hacia un caser&iacute;o, con el Oiz detr&aacute;s"':
+        'alt="Txahal bat zementuzko pistan baserri baterantz, Oiz atzean"',
+    'alt="Cruce de pistas de cemento entre prados, con una granja y la ladera del Oiz"':
+        'alt="Zementuzko pisten bidegurutzea soroen artean, abeltegi bat eta Oizko magala"',
+    'alt="Vista desde una alambrada sobre prados, caser&iacute;os y pinares, con montes hasta el horizonte"':
+        'alt="Alanbre-hesi batetik ikusita soroak, baserriak eta pinudiak, mendiak zeruertzeraino"',
+    'alt="Pista de cemento entre plantaciones, con los e&oacute;licos en la cresta"':
+        'alt="Zementuzko pista landaketen artean, eolikoak gailurrean"',
+    'alt="Arroyo entre piedras con musgo junto al cartel de Marraixo Erreka"':
+        'alt="Erreka goroldiozko harrien artean, Marraixo Errekaren kartelaren ondoan"',
+    'alt="Pista de tierra junto a un prado, con un pueblo en la ladera de enfrente y montes al fondo, vista desde el manillar"':
+        'alt="Lurrezko pista soro baten ondoan, aurreko magalean herri bat eta mendiak atzealdean, gidoitik ikusita"',
+    'alt="Pista de tierra entre eucaliptos y helechos"':
+        'alt="Lurrezko pista eukalipto eta iratzeen artean"',
+    'alt="Cartel de entrada a Munitibar Arbatzegi-Gerrikaitz junto a la carretera y a un cultivo en emparrado"':
+        'alt="Munitibar Arbatzegi-Gerrikaitzeko sarrera-kartela errepide ondoan, parran hazitako landaketa baten aldamenean"',
+    'alt="Vista sobre un valle de pinares y prados con una iglesia de piedra, con la sierra de los e&oacute;licos al fondo"':
+        'alt="Pinudi eta soroetako haran baten ikuspegia, harrizko eliza batekin, eolikoen mendilerroa atzealdean"',
+    'alt="Antigua prensa de madera bajo un tejadillo, junto a un muro de piedra y un banco"':
+        'alt="Egurrezko prentsa zaharra teilatupe baten azpian, harrizko horma eta aulki baten ondoan"',
+    'alt="Puente de madera sobre un arroyo en una senda de bosque, visto desde el manillar"':
+        'alt="Egurrezko zubia erreka baten gainean baso-bidezidor batean, gidoitik ikusita"',
+    'alt="Camino empedrado entre arbustos junto a un muro de piedra"':
+        'alt="Harri-bide estua sasien artean, harrizko horma baten ondoan"',
+    'alt="Calzada empedrada bajo un t&uacute;nel de &aacute;rboles, cubierta de hojas"':
+        'alt="Galtzada harriztatua zuhaitzezko tunel baten azpian, hostoz estalita"',
+    'alt="Portilla de madera cerrando una pista entre prados, con la bici tumbada al otro lado y los e&oacute;licos en la cresta"':
+        'alt="Egurrezko langa belardien arteko pista bat ixten, bizikleta beste aldean etzanda eta eolikoak gailurrean"',
+    'Ruta exigente, tanto por la distancia como por la cantidad de subidas y bajadas: 38,9 km y +1400 m. La parte m&aacute;s delicada es el nuevo enlace hacia <b>Kortaguren</b>: durante aproximadamente un kil&oacute;metro hay vegetaci&oacute;n, puertas complicadas de pasar y un camino bastante cerrado, y no lo recomendamos como paso normal para todo el mundo. Se puede evitar bajando hacia <b>Bolibar</b> y <b>Ziortza</b> y volviendo a subir despu&eacute;s hacia Kortaguren. El resto es muy variado, con pistas amplias, senderos, bajadas largas y un tramo de calzada del Camino de Santiago. Agua en <b>Munitibar</b>.':
+        'Ibilbide gogorra, bai distantziagatik, bai igoera eta jaitsiera kopuruagatik: 38,9 km eta +1400 m. Zatirik delikatuena <b>Kortaguren</b>erako lotura berria da: kilometro batez gutxi gorabehera landaredia, pasatzeko zailak diren ateak eta nahiko itxita dagoen bidea daude, eta ez dugu denontzako ohiko pasabide gisa gomendatzen. <b>Bolibar</b> eta <b>Ziortza</b> aldera jaitsi eta gero Kortaguren aldera berriro igota saihestu daiteke. Gainerakoa oso aldakorra da: pista zabalak, bidezidorrak, jaitsiera luzeak eta Donejakue Bideko galtzada zati bat. Ura <b>Munitibar</b>ren.',
+    'Esta es una ruta bastante exigente, tanto por la distancia como por la cantidad de subidas y bajadas que se van acumulando. Adem&aacute;s, tiene algunos tramos que no conoc&iacute;amos y que hemos querido probar sobre la marcha. Precisamente ah&iacute; est&aacute; la parte m&aacute;s complicada de toda la vuelta.':
+        'Ibilbide nahiko gogorra da, bai distantziagatik, bai pilatzen diren igoera eta jaitsiera kopuruagatik. Gainera, ezagutzen ez genituen zati batzuk ditu, bidean bertan probatu nahi izan ditugunak. Hain zuzen ere, hortxe dago itzuli osoko zatirik zailena.',
+    'Salimos de <b>Trabakua</b> siguiendo el mismo camino que utilizamos para acercarnos a las <b><a href="gerea.html">cascadas de Gerea</a></b>. En esta ocasi&oacute;n continuamos por la zona de media ladera, un tramo bonito, practicable y sin ninguna dificultad especial. Tambi&eacute;n existe la posibilidad de hacerlo m&aacute;s c&oacute;modo por carretera. Llegamos al caser&iacute;o de <b>Muniozguren</b>, donde nos situamos frente a la carretera que baja hacia <b>Bolibar</b>, pero sin cogerla ni perder altura por ella.':
+        '<b>Trabakua</b>tik abiatzen gara, <b><a href="gerea.html">Gereako ur-jauzi</a></b>etara hurbiltzeko erabiltzen dugun bide beretik. Oraingoan mendi-hegalaren erdialdetik jarraitzen dugu: zati polita, egiteko modukoa eta zailtasun berezirik gabea. Errepidetik erosoago egiteko aukera ere badago. <b>Muniozguren</b> baserrira iristen gara, eta <b>Bolibar</b>rera jaisten den errepidearen parean geratzen gara, baina hura hartu gabe eta hortik altuerarik galdu gabe.',
+    'Seguimos avanzando hacia la zona de <b>Kortaguren</b>. Durante a&ntilde;os la opci&oacute;n habitual ha sido la pista vieja, la de m&aacute;s arriba, pero &uacute;ltimamente est&aacute; pr&aacute;cticamente intransitable en algunos puntos, entre el barro y los grandes surcos que se han formado. Por eso hemos querido probar un camino nuevo, m&aacute;s abajo.':
+        'Hemendik <b>Kortaguren</b> aldera jarraitzen dugu. Urteetan ohiko aukera goragoko pista zaharra izan da, baina azkenaldian ia ezin da ibili leku batzuetan, lokatza eta sortu diren ildaska handiak direla eta. Horregatik bide berri bat probatu nahi izan dugu, beherago.',
+    'Entramos por una puerta met&aacute;lica que da acceso a una campa y seguimos el camino que se ve al otro lado. Al principio est&aacute; bastante limpio, pero seg&uacute;n empezamos a bajar aparecen los primeros problemas: durante aproximadamente un kil&oacute;metro el camino se va cerrando poco a poco mientras baja hacia el r&iacute;o, y encontramos dos puertas, una de madera y otra de alambre, que no pudimos abrir y tuvimos que pasar la bici por encima.':
+        'Zelai batera sartzeko ate metaliko batetik sartu, eta beste aldean ikusten den bidea hartzen dugu. Hasieran nahiko garbi dago, baina behera egiten hasten garenean lehen arazoak agertzen dira: kilometro batez gutxi gorabehera, bidea pixkanaka ixten doa errekarantz jaisten den bitartean, eta bi ate aurkitu genituen, bata egurrezkoa eta bestea alanbrezkoa, ireki ezin izan genituenak; bizikleta gainetik pasatu behar izan genuen.',
+    'Este camino nuevo se puede pasar: no est&aacute; completamente cerrado, pero tampoco se puede decir que est&eacute; limpio. Se pasa con paciencia y sabiendo de antemano d&oacute;nde nos estamos metiendo, y es &uacute;nicamente para quien quiera probar una zona algo m&aacute;s aventurera. Si se quiere evitar, la alternativa es bajar hacia <b>Bolibar</b> y <b>Ziortza</b> y volver a ganar altura despu&eacute;s hacia Kortaguren. Se hace bastante m&aacute;s vuelta y se pierde m&aacute;s desnivel, pero se evita esta parte.':
+        'Bide berri hau pasatzeko modukoa da: ez dago guztiz itxita, baina garbi dagoenik ere ezin da esan. Pazientziaz pasatzen da, non sartzen garen aldez aurretik jakinda, eta zertxobait abenturazaleagoa den zona bat probatu nahi duenarentzat baino ez da. Saihestu nahi izanez gero, <b>Bolibar</b> eta <b>Ziortza</b> aldera jaistea da aukera, eta gero berriro Kortaguren aldera gora egitea. Itzuli handiagoa egiten da eta desnibel gehiago galtzen da, baina zati hau saihesten da.',
+    'Despu&eacute;s de llegar a la zona del r&iacute;o empieza de nuevo la subida y el camino va mejorando poco a poco. Salimos a una campa y, tras atravesarla, llegamos junto a dos caser&iacute;os. A partir de aqu&iacute; cambia completamente la ruta: desaparecen los problemas y volvemos a movernos por pistas amplias y en buen estado.':
+        'Erreka ingurura iritsi ondoren, igoera berriro hasten da eta bidea pixkanaka hobetzen doa. Zelai batera irten, hura zeharkatu, eta bi baserriren ondora iristen gara. Hemendik aurrera ibilbidea guztiz aldatzen da: arazoak desagertzen dira eta berriro egoera onean dauden pista zabaletatik goaz.',
+    'Seguimos ganando altura hasta llegar a <b>Kortaguren</b>. Desde aqu&iacute; continuamos por pistas muy amplias y bonitas, con buenas vistas hacia la zona de <b>Oiz</b>. M&aacute;s adelante giramos por una pista de cemento en direcci&oacute;n a <b>Munitibar</b>.':
+        'Altuera irabazten jarraitzen dugu <b>Kortaguren</b>era iritsi arte. Hemendik pista oso zabal eta politetatik jarraitzen dugu, <b>Oiz</b> aldera bista ederrak ditugula. Aurrerago zementuzko pista bat hartzen dugu, <b>Munitibar</b> aldera.',
+    'Llegamos despu&eacute;s al cruce que permite subir hacia <b>San Crist&oacute;bal</b>, una subida que ya hemos utilizado m&aacute;s de una vez en otras rutas. Esta vez la dejamos a un lado y giramos a la derecha. M&aacute;s adelante enlazamos con el GR y entramos en un sendero algo marcado por el paso de motos, pero todav&iacute;a bonito y con bastante hierba, hasta salir a la carretera que baja hacia <b>Gerrikaitz</b>.':
+        'Gero <b>San Kristobal</b>era igotzeko bidegurutzera iristen gara, beste ibilbide batzuetan behin baino gehiagotan erabili dugun igoera. Oraingoan alde batera utzi eta eskuinera egiten dugu. Aurrerago GRarekin lotu eta motoen pasoak markatutako bidezidor batean sartzen gara, baina oraindik polita eta belar askokoa, <b>Gerrikaitz</b>era jaisten den errepidera irten arte.',
+    'En un principio pens&aacute;bamos bajar directamente hacia Munitibar, pero para evitar el asfalto decidimos seguir explorando. Continuamos un tramo m&aacute;s por el GR y enlazamos con unas pistas reci&eacute;n abiertas, sin saber muy bien d&oacute;nde acabar&iacute;amos. El descenso fue largo, r&aacute;pido y muy bonito, pero acabamos casi en la zona de <b>Mendata</b> y no qued&oacute; otra que recuperar despu&eacute;s unos cinco kil&oacute;metros por carretera. Aun as&iacute;, el descenso mereci&oacute; la pena.':
+        'Hasieran zuzenean Munitibar aldera jaistea genuen buruan, baina asfaltoa saihesteko esploratzen jarraitzea erabaki genuen. GRtik beste zati batez jarraitu, eta berriki irekitako pista batzuekin lotu genuen, non amaituko genuen ondo jakin gabe. Jaitsiera luzea, azkarra eta oso polita izan zen, baina ia <b>Mendata</b> aldean amaitu genuen, eta gero bost bat kilometro errepidez berreskuratzea beste erremediorik ez zen izan. Hala ere, jaitsierak merezi izan zuen.',
+    'Llegamos a <b>Munitibar</b>, aprovechamos para coger agua y cruzamos el pueblo. Desde all&iacute; empezamos otra subida hacia el barrio de <b>Totorika</b> y continuamos despu&eacute;s hacia <b>Gerrika</b>. A estas alturas ya estamos claramente de regreso. Seguimos ganando altura hasta llegar a <b>Gontzegaraigane</b>.':
+        '<b>Munitibar</b>rera iristen gara, ura hartzeko aprobetxatu eta herria zeharkatzen dugu. Handik beste igoera bati ekiten diogu <b>Totorika</b> auzorantz, eta gero <b>Gerrika</b> aldera jarraitzen dugu. Honezkero argi eta garbi itzulera bidean gaude. Altuera irabazten jarraitzen dugu <b>Gontzegaraigane</b>ra iritsi arte.',
+    'Cruzamos la carretera y enlazamos con el Camino de Santiago en sentido contrario al habitual, por lo que lo normal es encontrarnos a los peregrinos de frente. La bajada hacia <b>Ziortza</b> es muy bonita, por un sendero y pista estrecha de piedra, bastante limpia y muy agradable de recorrer. Poco despu&eacute;s pasamos junto al monasterio.':
+        'Errepidea zeharkatu eta Donejakue Bidearekin lotzen gara, ohiko norabidearen kontrakoan; beraz, normalean erromesak aurrez aurre topatuko ditugu. <b>Ziortza</b> aldera jaitsiera oso polita da, bidezidor eta harrizko pista estu batetik, nahiko garbi eta ibiltzeko oso atsegina. Handik gutxira monasterioaren ondotik igarotzen gara.',
+    'M&aacute;s abajo entramos en una especie de antigua calzada, con alg&uacute;n tramo de piedra y una bajada con escalones. Hay alguna zona algo rota, pero se puede hacer encima de la bici si se tiene cierta habilidad. Quien no quiera complicarse puede hacer esta parte por asfalto y llegar igualmente hasta Bolibar.':
+        'Beherago galtzada zahar moduko batean sartzen gara, harrizko zatiren batekin eta mailadun jaitsiera batekin. Zati batzuk apur bat hautsita daude, baina trebetasun pixka bat izanez gero bizikleta gainean egin daiteke. Konplikatu nahi ez duenak zati hau asfaltotik egin dezake, eta Bolibarrera iritsiko da berdin-berdin.',
+    'Entramos finalmente en <b>Bolibar</b>, cruzamos el pueblo pasando junto a la iglesia y el monumento a Sim&oacute;n Bol&iacute;var y seguimos hasta la salida. Junto a la rotonda tomamos durante unos metros la direcci&oacute;n de <b>Markina-Xemein</b> y enseguida giramos a la derecha para comenzar otra subida, esta vez hacia el barrio de <b>Arta</b>.':
+        'Azkenean <b>Bolibar</b>ren sartzen gara, eta herria zeharkatzen dugu eliza eta Simon Bolivarren monumentuaren ondotik, irteeraraino. Biribilgunearen ondoan metro batzuetan <b>Markina-Xemein</b>go norabidea hartu, eta berehala eskuinera egiten dugu beste igoera bati ekiteko, oraingoan <b>Arta</b> auzorantz.',
+    'Desde Arta volvemos a cruzar por el monte hasta enlazar con <b>Gerea</b>. En esta subida encontraremos alguna puerta que tendremos que abrir y volver a dejar cerrada, como siempre. Una vez en Gerea ya queda la parte m&aacute;s sencilla de la vuelta: aproximadamente cuatro kil&oacute;metros por carretera hasta regresar a <b>Trabakua</b>.':
+        'Artatik berriro menditik zeharkatzen dugu <b>Gerea</b>rekin lotu arte. Igoera honetan ateren bat aurkituko dugu, ireki eta berriro itxita utzi beharko duguna, beti bezala. Gerean gaudela, itzuliko zatirik errazena baino ez da geratzen: lau bat kilometro errepidez <b>Trabakua</b>ra itzuli arte.',
+    'Es una ruta muy bonita y muy variada, con pistas amplias, senderos, bajadas largas y muchos cambios de terreno a lo largo de toda la vuelta.':
+        'Ibilbide oso polita eta oso aldakorra da, pista zabalak, bidezidorrak, jaitsiera luzeak eta lur-aldaketa ugari dituena itzuli osoan zehar.',
+}
+
 LONGAURJAUZIAK = {
     'alt="Camino de hierba entre prados, con la cresta de Iturzuri coronada por los aerogeneradores"':
         'alt="Belarrezko bidea soroen artean, Iturzuriko gailurra eolikoez koroatuta"',
@@ -5324,6 +5437,7 @@ LONGAURJAUZIAK = {
 }
 
 PAGE_STRINGS = {
+    'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
     'ahuntzen': AHUNTZEN,
     'sancristobalgaraiandikoa': SANCRISTOBALGARAIANDIKOA,
