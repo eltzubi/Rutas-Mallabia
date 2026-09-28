@@ -5317,6 +5317,10 @@ LONGAURJAUZIAK = {
         'Hemendik aurrera, <b>Longa</b>rainoko tartea desegin eta <b>Trabakua</b>ra itzultzea besterik ez da geratzen.',
     'Tambi&eacute;n existe la posibilidad de comenzar la ruta cerca de <b>Longa</b> y hacer &uacute;nicamente la parte de las cascadas. Hay alg&uacute;n lugar donde dejar el coche junto al cruce, pero el espacio es muy limitado y no conviene contar con sitio para varios veh&iacute;culos. Por eso planteamos la ruta saliendo desde <b>Trabakua</b>, donde resulta mucho m&aacute;s sencillo empezar y terminar el recorrido.':
         'Ibilbidea <b>Longa</b> inguruan hastea eta ur-jauzien zatia bakarrik egitea ere posible da. Badago autoa bidegurutzearen ondoan uzteko lekuren bat, baina lekua oso mugatua da eta ez da komeni hainbat ibilgailurentzako lekua izango denik pentsatzea. Horregatik, ibilbidea <b>Trabakua</b>tik abiatuta planteatzen dugu, non askoz errazagoa baita ibilbidea hastea eta amaitzea.',
+    'alt="Bloques de roca cubiertos de musgo y helechos en la ladera del pinar, con troncos ca&iacute;dos entre los &aacute;rboles"':
+        'alt="Goroldioz eta iratzez estalitako harkaitzak pinudiko maldan, enbor eroriak zuhaitzen artean"',
+    'alt="Senda entre troncos gruesos de con&iacute;feras, cubierta de ac&iacute;culas y con un peque&ntilde;o hito de piedras al fondo"':
+        'alt="Bidezidorra konifera-enbor lodien artean, orratzez estalita eta harri-pila txiki bat atzealdean"',
 }
 
 PAGE_STRINGS = {
