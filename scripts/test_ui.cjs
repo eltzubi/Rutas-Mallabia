@@ -137,6 +137,17 @@ test('empty-result recovery finds results while keeping activity',()=>{
   e.one('#recoverFilters').click();assert(visible(e).length>0);
   assert.equal(e.one('.activity-chip[data-activity="bici"]').getAttribute('aria-pressed'),'true');
 });
+test('search ignores accents and case, needs every word and finds places only in data-places',()=>{
+  const e=env();e.run('filters.js');const box=e.one('#routeSearch');
+  const find=q=>{box.value=q;box.dispatchEvent({type:'input'});return visible(e).map(c=>c.getAttribute('href'));};
+  const kort=find('KORTAGUREN');assert.ok(kort.includes('astorkigane.html'),'place only in data-places');
+  assert.deepEqual(find('kórtagúren'),kort,'accents and case do not matter');
+  const oiz=find('oiz'),both=find('zenarruza oiz');
+  assert.ok(both.length>0 && both.length<=oiz.length && both.every(h=>oiz.includes(h)),'every word must match');
+  assert.deepEqual(find('markina xemein'),find('Markina-Xemein'),'hyphens are spaces');
+  assert.equal(find('zzzz no existe').length,0);
+  assert.equal(find('').length,totalRoutes(e));
+});
 test('invalid storage is safe; old preferences migrate',()=>{
   for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],view:'unknown'})]){
     const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));

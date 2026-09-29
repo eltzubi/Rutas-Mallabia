@@ -28,13 +28,28 @@
   // lugares por los que el GPX real pasa muy cerca sin que el texto visible
   // los mencione (verificado contra el track, sin tocar titulo ni
   // descripcion): solo alimenta la busqueda, nunca se muestra en pantalla.
+  // Sin tildes, sin mayusculas y sin guiones: "Bolíbar", "bolibar" y
+  // "BOLIBAR" son la misma busqueda, y "Markina-Xemein" se encuentra con
+  // "markina xemein".
+  function fold(s){
+    s = (s || '').toLowerCase();
+    if (s.normalize) s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return s.replace(/[^a-z0-9]+/g, ' ').trim();
+  }
   var cardNames = new Map();
   cards.forEach(function(c){
     var name = (c.querySelector('.route-card-name') || {}).textContent || '';
     var desc = (c.querySelector('.route-card-desc') || {}).textContent || '';
     var places = c.dataset.places || '';
-    cardNames.set(c, (name + ' ' + desc + ' ' + places).toLowerCase());
+    cardNames.set(c, ' ' + fold(name + ' ' + desc + ' ' + places) + ' ');
   });
+  // Varias palabras: la ruta tiene que tenerlas todas, en cualquier orden
+  // ("oiz zenarruza" encuentra las que pasan por los dos).
+  function matchesSearch(card){
+    if (!searchTerm) return true;
+    var hay = cardNames.get(card);
+    return searchTerm.split(' ').every(function(w){ return hay.indexOf(w) !== -1; });
+  }
   var eu = document.documentElement.lang === 'eu';
   var words = eu ? {
     one: 'ibilbide', many: 'ibilbide', show: function(n){ return n + ' ibilbide ikusi'; },
@@ -85,7 +100,7 @@
       (s.elevation === 'low' && gain <= 500) ||
       (s.elevation === 'medium' && gain > 500 && gain <= 1000) ||
       (s.elevation === 'high' && gain > 1000);
-    var searchOK = !searchTerm || cardNames.get(card).indexOf(searchTerm) !== -1;
+    var searchOK = matchesSearch(card);
     return (s.activity === 'all' || card.dataset.activity.split(',').indexOf(s.activity) !== -1) &&
       (s.difficulty === 'all' || card.dataset.difficulty === s.difficulty) && distanceOK && elevationOK && searchOK;
   }
@@ -224,7 +239,7 @@
     apply();
   });
   if (searchInput) {
-    searchInput.addEventListener('input', function(){ searchTerm = searchInput.value.trim().toLowerCase(); apply(); });
+    searchInput.addEventListener('input', function(){ searchTerm = fold(searchInput.value); apply(); });
   }
 
   // The same controls move into a native modal on small screens. Native
