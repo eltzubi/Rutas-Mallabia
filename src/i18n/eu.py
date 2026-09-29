@@ -3620,8 +3620,8 @@ TRABAKUAMALLABIA = {
         '<span>E-bike</span>',
     '<span>Circuito</span>':
         '<span>Zirkuitua</span>',
-    '<h2>BTT exigente de distancia media</h2>':
-        '<h2>BTT eskatzailea, distantzia ertainekoa</h2>',
+    '<h2>Ruta de e-bike exigente, de distancia media</h2>':
+        '<h2>E-bike ibilbide eskatzailea, distantzia ertainekoa</h2>',
     'Ruta para ciclistas de montaña con experiencia en terreno técnico y buena forma física. Combina pistas de asfalto, tierra y tramos técnicos, con varios ascensos sostenidos y descensos rápidos. Requiere concentración y control en bicicleta.':
         'Terreno teknikoan esperientzia eta forma fisiko ona duten mendiko txirrindularientzako ibilbidea. Asfaltozko pista, lur bide eta tarte teknikoak konbinatzen ditu, hainbat igoera jarraitu eta jaitsiera azkarrekin. Kontzentrazioa eta bizikletaren kontrol ona eskatzen ditu.',
     'Tramo del recorrido con vistas a las montañas circundantes':
@@ -4265,8 +4265,8 @@ SANCRISTOBALOIZ = {
         'alt="Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozgurenen ibilbidearen argazki handitua"',
 
     # para quien es
-    '<h2>Una ruta larga en BTT</h2>':
-        '<h2>BTTko ibilbide luzea</h2>',
+    '<h2>Una ruta larga en e-bike</h2>':
+        '<h2>E-bike ibilbide luzea</h2>',
     '<p>30,97 km y +1.028 m de desnivel en un circuito de dificultad media, con superficie mixta entre pista y algo de sendero. Hay agua junto a una fuente en la zona de San Kristobal Txiki y en la Fuente Oiz (km 12,8), bastante escondida justo detr&aacute;s de la ermita de San Crist&oacute;bal.</p>':
         '<p>30,97 km eta +1.028 m-ko desnibela zailtasun ertaineko zirkuitu batean, azalera nahasiarekin, pista eta bidezidor pixka bat tartekatuz. Ura badago San Kristobal Txikiko iturri baten ondoan, eta Oiz Iturrian (12,8 km), San Kristobal ermitaren atzean, nahiko ezkutatuta.</p>',
 
