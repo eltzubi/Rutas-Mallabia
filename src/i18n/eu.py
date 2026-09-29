@@ -332,8 +332,8 @@ ROUTE = {
 }
 
 HOME = {
-    '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s</h3>':
-        '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Santo Tomas</h3>',
+    '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Bolibar</h3>':
+        '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Bolibar</h3>',
     '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
         '<p class="route-card-desc">E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
     'alt="Cruce de pistas de cemento entre prados, con una granja y la ladera del Oiz"':
@@ -3367,7 +3367,7 @@ AIXOLA = {
 }
 
 TITLES = {
-    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Santo Tomas · E-bike ibilbidea — Herriko ibilbideak',
+    'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
     'mallabia': 'Trabakutik · Herriko ibilbideak · Oinez eta e-bikez Bizkaian',
@@ -5267,12 +5267,12 @@ AHUNTZEN = {
 
 
 ASTORKIGANE = {
-    '<p class="eyebrow"><span>Pista, sendero y carretera</span><span class="sep">/</span><span>Astorkigane, Zenarruza y Santo Tom&aacute;s</span><span class="sep">/</span><span>Circuito</span></p>':
-        '<p class="eyebrow"><span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Astorkigane, Zenarruza eta Santo Tomas</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<p class="eyebrow"><span>Pista, sendero y carretera</span><span class="sep">/</span><span>Astorkigane, Zenarruza y Bolibar</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Astorkigane, Zenarruza eta Bolibar</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<span class="v">Pista, sendero y carretera</span>':
         '<span class="v">Pista, bidezidorra eta errepidea</span>',
-    '<h1>Trabakua, Astorkigane<br><em>Zenarruza y Santo Tom&aacute;s</em></h1>':
-        '<h1>Trabakua, Astorkigane<br><em>Zenarruza eta Santo Tomas</em></h1>',
+    '<h1>Trabakua, Astorkigane<br><em>Zenarruza y Bolibar</em></h1>':
+        '<h1>Trabakua, Astorkigane<br><em>Zenarruza eta Bolibar</em></h1>',
     '<p class="full-name">Circuito largo de e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
         '<p class="full-name">E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena</p>',
     'perfil real del track &middot; 38,90 km':
@@ -5283,12 +5283,12 @@ ASTORKIGANE = {
         '<title>Zenarruzako monasterioa &middot; 28,7 km &middot; 293 m</title>',
     '<p class="facts-note">&mdash; <b>Distancia</b>, calculada a partir del track GPX real. <b>Desnivel</b>, +1400 m seg&uacute;n el dato de la ruta. El GPX puede dar una cifra algo distinta seg&uacute;n el suavizado de cada aplicaci&oacute;n.</p>':
         '<p class="facts-note">&mdash; <b>Distantzia</b>, benetako GPX tracketik kalkulatua. <b>Desnibela</b>, +1400 m ibilbideko datu gisa. GPXak zertxobait bestelako kopurua eman dezake aplikazio bakoitzak egiten duen leuntzearen arabera.</p>',
-    'alt="Foto ampliada del recorrido de Trabakua, Astorkigane, Zenarruza y Santo Tom&aacute;s"':
-        'alt="Trabakua, Astorkigane, Zenarruza eta Santo Tomas ibilbidearen argazki handitua"',
-    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.gpx"':
-        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.gpx"',
-    'download="Trabakua, Astorkigane, Zenarruza y Santo Tomás.kml"':
-        'download="Trabakua, Astorkigane, Zenarruza eta Santo Tomas.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Astorkigane, Zenarruza y Bolibar"':
+        'alt="Trabakua, Astorkigane, Zenarruza eta Bolibar ibilbidearen argazki handitua"',
+    'download="Trabakua, Astorkigane, Zenarruza y Bolibar.gpx"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Bolibar.gpx"',
+    'download="Trabakua, Astorkigane, Zenarruza y Bolibar.kml"':
+        'download="Trabakua, Astorkigane, Zenarruza eta Bolibar.kml"',
     'alt="El monasterio de Zenarruza tras una campa con &aacute;rboles, con los montes al fondo"':
         'alt="Zenarruzako monasterioa zuhaitzak dituen zelai baten atzean, mendiak atzealdean"',
     'alt="Pista ancha de tierra subiendo entre matorrales, con una senda que se separa a la izquierda"':
