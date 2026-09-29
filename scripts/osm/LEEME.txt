@@ -1,0 +1,12 @@
+Copia fija de datos de OpenStreetMap que usa scripts/make_places.py para el
+buscador de la portada. Datos (c) colaboradores de OpenStreetMap, licencia ODbL
+(https://www.openstreetmap.org/copyright). Bajados de Overpass el 2026-09-29.
+
+places.json:
+[out:json][timeout:120];node["place"~"^(village|hamlet|neighbourhood|locality|town|suburb)$"](43.10,-2.72,43.33,-2.40);out;
+
+pois.json:
+[out:json][timeout:120];(node["natural"~"^(peak|saddle)$"]["name"](43.10,-2.72,43.33,-2.40);node["mountain_pass"="yes"]["name"](43.10,-2.72,43.33,-2.40);nwr["amenity"="place_of_worship"]["name"](43.10,-2.72,43.33,-2.40);nwr["waterway"="waterfall"]["name"](43.10,-2.72,43.33,-2.40););out center;
+
+Si alguna ruta sale del recuadro 43.10-43.33 N / 2.40-2.72 O, amplialo en las
+dos consultas antes de volver a bajarlas.

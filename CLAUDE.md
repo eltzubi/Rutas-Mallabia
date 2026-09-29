@@ -62,6 +62,18 @@ python3 scripts/check_site.py          # 1.965 comprobaciones sobre el sitio ya 
 python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favicon.svg
 ```
 
+```
+python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
+```
+
+`make_places.py` feeds the home-page search. For every card it writes `data-places` (never shown, only
+searched) with the places its real track (`data/<name>.json`) passes: the hand-written ones already there,
+the page's own numbered waypoints, and OpenStreetMap villages, neighbourhoods, localities, peaks, passes,
+churches/hermitages and waterfalls within a per-type distance (`MAX_M`). OSM comes from a fixed snapshot in
+`scripts/osm/` (query and date in its `LEEME.txt`), so it runs offline and is reproducible. Re-run it when a
+route joins the home page. The search itself (`src/js/filters.js`) ignores accents, case and hyphens and
+requires every typed word.
+
 `check_site.py` is the closest thing to a test suite: read-only, stdlib only, run it after `build.py`.
 Besides the page/marker/download/asset checks it already had, it now contrasts every route page against
 its own GPX and against its Basque twin:
