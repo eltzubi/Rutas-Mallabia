@@ -185,8 +185,8 @@ COMMON = {
         '<h3 class="route-card-name">Zengotitagane, Askako eta Garai</h3>',
     '<h3 class="route-card-name">Zengotitagane, Axmakur y Oiz</h3>':
         '<h3 class="route-card-name">Zengotitagane, Axmakur eta Oiz</h3>',
-    '<h3 class="route-card-name">Osmagain y Arietzu desde la Ermita de San Juan</h3>':
-        '<h3 class="route-card-name">Osmagain eta Arietzu San Juan ermitatik</h3>',
+    '<h3 class="route-card-name">Osmagain y Arietzu desde Zengotita</h3>':
+        '<h3 class="route-card-name">Osmagain eta Arietzu Zengotitatik</h3>',
     '<h3 class="route-card-name">Trabakua, Zengotita, Osmagain y Arietzu</h3>':
         '<h3 class="route-card-name">Trabakua, Zengotita, Osmagain eta Arietzu</h3>',
     '<h3 class="route-card-name">Asuntza bira por Arteta</h3>':
@@ -1380,17 +1380,17 @@ OIZ = {
 }
 
 ARIETZU = {
-    'download="Osmagain y Arietzu desde la Ermita de San Juan.gpx"':
-        'download="Osmagain eta Arietzu San Juan ermitatik.gpx"',
-    'download="Osmagain y Arietzu desde la Ermita de San Juan.kml"':
-        'download="Osmagain eta Arietzu San Juan ermitatik.kml"',
-    'alt="Foto ampliada del recorrido de Osmagain y Arietzu desde la Ermita de San Juan"':
-        'alt="Osmagain eta Arietzu San Juan ermitatik ibilbidearen argazki handitua"',
+    'download="Osmagain y Arietzu desde Zengotita.gpx"':
+        'download="Osmagain eta Arietzu Zengotitatik.gpx"',
+    'download="Osmagain y Arietzu desde Zengotita.kml"':
+        'download="Osmagain eta Arietzu Zengotitatik.kml"',
+    'alt="Foto ampliada del recorrido de Osmagain y Arietzu desde Zengotita"':
+        'alt="Osmagain eta Arietzu Zengotitatik ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Osmagain y Arietzu</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Osmagain eta Arietzu</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Osmagain y Arietzu<br><em>desde la Ermita de San Juan</em></h1>':
-        '<h1>Osmagain eta Arietzu<br><em>San Juan ermitatik</em></h1>',
+    '<h1>Osmagain y Arietzu<br><em>desde Zengotita</em></h1>':
+        '<h1>Osmagain eta Arietzu<br><em>Zengotitatik</em></h1>',
     'Circuito desde la Ermita de San Juan': 'Zirkuitua San Juan ermitatik',
     'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
     'pista serpenteando entre los montes"':
@@ -3388,7 +3388,7 @@ TITLES = {
     'gerea': 'Gereako ur-jauzia · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitagane': 'Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
-    'arietzu': 'Osmagain eta Arietzu San Juan ermitatik · Oinezko ibilbidea — Herriko ibilbideak',
+    'arietzu': 'Osmagain eta Arietzu Zengotitatik · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Askako eta Garai · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
