@@ -1427,7 +1427,7 @@ ARIETZU = {
         'txilarren arteko bidezidor batekin"',
     'data-marker-title="Ermita de San Juan (salida y llegada)"':
         'data-marker-title="San Juan ermita (irteera eta helmuga)"',
-    '<span class="v">Ermita de San Juan</span>': '<span class="v">San Juan ermita</span>',
+    '<span class="v">Zengotita</span>': '<span class="v">Zengotita</span>',
     'Circuito corto desde la Ermita de San Juan, en el barrio de Zengotita, hasta '
     '<b>Osmagain</b> (km 0,7, 527 m), con una cruz en el alto y muy buenas vistas desde el '
     'cresterío: hacia Berriz y los montes del Duranguesado a un lado, hacia los barrios de '
