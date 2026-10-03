@@ -185,8 +185,12 @@ COMMON = {
         '<h3 class="route-card-name">Zengotitagane, Askako eta Garai</h3>',
     '<h3 class="route-card-name">Zengotitagane, Axmakur y Oiz</h3>':
         '<h3 class="route-card-name">Zengotitagane, Axmakur eta Oiz</h3>',
-    '<h3 class="route-card-name">Osmagain y Arietzu</h3>':
-        '<h3 class="route-card-name">Osmagain eta Arietzu</h3>',
+    '<h3 class="route-card-name">Osmagain y Arietzu desde la Ermita de San Juan</h3>':
+        '<h3 class="route-card-name">Osmagain eta Arietzu San Juan ermitatik</h3>',
+    '<h3 class="route-card-name">Trabakua, Zengotita, Osmagain y Arietzu</h3>':
+        '<h3 class="route-card-name">Trabakua, Zengotita, Osmagain eta Arietzu</h3>',
+    '<h3 class="route-card-name">Asuntza bira por Arteta</h3>':
+        '<h3 class="route-card-name">Asuntza bira Artetatik</h3>',
     '<h3 class="route-card-name">Trabakua, Asuntza y Urko</h3>':
         '<h3 class="route-card-name">Trabakua, Asuntza eta Urko</h3>',
     '<h3 class="route-card-name">Trabakua Mendibil</h3>':
@@ -1374,14 +1378,17 @@ OIZ = {
 }
 
 ARIETZU = {
-    'download="Osmagain y Arietzu.gpx"': 'download="Osmagain eta Arietzu.gpx"',
-    'download="Osmagain y Arietzu.kml"': 'download="Osmagain eta Arietzu.kml"',
-    'alt="Foto ampliada del recorrido de Arietzu"':
-        'alt="Arietzuko ibilbidearen argazki handitua"',
+    'download="Osmagain y Arietzu desde la Ermita de San Juan.gpx"':
+        'download="Osmagain eta Arietzu San Juan ermitatik.gpx"',
+    'download="Osmagain y Arietzu desde la Ermita de San Juan.kml"':
+        'download="Osmagain eta Arietzu San Juan ermitatik.kml"',
+    'alt="Foto ampliada del recorrido de Osmagain y Arietzu desde la Ermita de San Juan"':
+        'alt="Osmagain eta Arietzu San Juan ermitatik ibilbidearen argazki handitua"',
     '<span>Sendero</span><span class="sep">/</span><span>Osmagain y Arietzu</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Osmagain eta Arietzu</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Osmagain<br><em>y Arietzu</em></h1>': '<h1>Osmagain<br><em>eta Arietzu</em></h1>',
+    '<h1>Osmagain y Arietzu<br><em>desde la Ermita de San Juan</em></h1>':
+        '<h1>Osmagain eta Arietzu<br><em>San Juan ermitatik</em></h1>',
     'Circuito desde la Ermita de San Juan': 'Zirkuitua San Juan ermitatik',
     'alt="Vista del valle desde la ruta, con caser&iacute;os, un prado con caballos y una '
     'pista serpenteando entre los montes"':
@@ -3379,7 +3386,7 @@ TITLES = {
     'gerea': 'Gereako ur-jauzia · Oinezko ibilbidea — Herriko ibilbideak',
     'zengotitagane': 'Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'oiz': 'Oiz, Trabakuatik · Oinezko ibilbidea — Herriko ibilbideak',
-    'arietzu': 'Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
+    'arietzu': 'Osmagain eta Arietzu San Juan ermitatik · Oinezko ibilbidea — Herriko ibilbideak',
     'urko': 'Trabakua, Asuntza eta Urko · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'sancristobal': 'Zengotitagane, Askako eta Garai · Bizikleta '
         'ibilbidea — Herriko ibilbideak',
@@ -3409,7 +3416,7 @@ TITLES = {
     'betzun': 'Zengotita, Iturzurigaina eta Betzun · Oinezko eta e-bike ibilbidea — Herriko ibilbideak',
     'sarrimendi': 'Oiz, Sarrionamendia, Arietzu eta Mendibil · Trail running eta oinezko ibilbidea — Herriko ibilbideak',
     'longa': 'Trabakua, Zengotitagane, Iturzuri eta Longa · Oinezko ibilbidea — Herriko ibilbideak',
-    'zengotitaosmagain': 'Trabakua, Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
+    'zengotitaosmagain': 'Trabakua, Zengotita, Osmagain eta Arietzu · Oinezko ibilbidea — Herriko ibilbideak',
     'axmakuriturrizuri': 'Axmakur, Iturzuri eta Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
@@ -3418,7 +3425,7 @@ TITLES = {
     'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · E-bike ibilbidea — Herriko ibilbideak',
     'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · E-bike ibilbidea — Herriko ibilbideak',
-    'asuntzabira': 'Asuntza bira · E-bike ibilbidea — Herriko ibilbideak',
+    'asuntzabira': 'Asuntza bira Artetatik · E-bike ibilbidea — Herriko ibilbideak',
     'gereaoculta': 'Gerea, ibilbide ezezagunak · E-bike ibilbidea — Herriko ibilbideak',
     'sancristobalgaraiandikoa': 'Trabakua, San Kristobal Txiki, Garai eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
     'zengotitaiturzuri': 'Zengotita, Iturzuri eta Zengotitagane · Oinezko ibilbidea — Herriko ibilbideak',
@@ -3900,16 +3907,16 @@ LONGA = {
 ZENGOTITAOSMAGAIN = {
     '<span>Pista y monte</span><span class="sep">/</span><span>Osmagain y Arietzu</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista eta mendia</span><span class="sep">/</span><span>Osmagain eta Arietzu</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Osmagain<br><em>y Arietzu</em></h1>':
-        '<h1>Trabakua, Osmagain<br><em>eta Arietzu</em></h1>',
+    '<h1>Trabakua, Zengotita<br><em>Osmagain y Arietzu</em></h1>':
+        '<h1>Trabakua, Zengotita<br><em>Osmagain eta Arietzu</em></h1>',
     '<p class="full-name">Circuito de senderismo desde Trabakua por Osmagain y Arietzu, por tramos del 7 Pago Mendi Lasterketa</p>':
         '<p class="full-name">Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
     'Cruz de piedra en la cima, entre &aacute;rboles y rocas cubiertas de musgo':
         'Harrizko gurutzea gailurrean, zuhaitz eta goroldiozko harrien artean',
     'Fuente Zengotita': 'Zengotitako iturria',
     'Ermita de Zengotita': 'Zengotitako baseliza',
-    'Foto ampliada del recorrido de Osmagain y Arietzu':
-        'Osmagain eta Arietzu ibilbidearen argazki handitua',
+    'Foto ampliada del recorrido de Trabakua, Zengotita, Osmagain y Arietzu':
+        'Trabakua, Zengotita, Osmagain eta Arietzu ibilbidearen argazki handitua',
     'Vista panor&aacute;mica del valle con caser&iacute;os, un caballo pastando y una pista de hormig&oacute;n':
         'Haranaren ikuspegi panoramikoa baserriekin, zaldi bat bazkan eta zementuzko pista batekin',
     'Arroyo entre helechos y hojarasca en un bosque de con&iacute;feras':
@@ -3948,10 +3955,10 @@ ZENGOTITAOSMAGAIN = {
         'Zengotitara iritsitakoan, berriro ere baselizaren ondotik pasatuko gara, eta oraingoan errepidetik Trabakuara itzuliko gara, non ibilbidea amaituko dugun.',
     'Tambi&eacute;n existe la posibilidad de empezar directamente junto a la ermita de Zengotita, donde hay un buen aparcamiento. De esta forma se eliminan los kil&oacute;metros de ida y vuelta desde Trabakua y parte del recorrido por carretera, dejando una vuelta bastante m&aacute;s corta, especialmente interesante si queremos hacerla con ni&ntilde;os.':
         'Zengotitako baselizaren ondoan zuzenean hastea ere posible da, aparkaleku ona baitago. Horrela, Trabakuatik joan-etorriko kilometroak eta errepideko ibilbidearen zati bat ezabatzen dira, ibilbide askoz laburragoa utziz, bereziki interesgarria haurrekin egin nahi badugu.',
-    'download="Osmagain y Arietzu.gpx"':
-        'download="Osmagain eta Arietzu.gpx"',
-    'download="Osmagain y Arietzu.kml"':
-        'download="Osmagain eta Arietzu.kml"',
+    'download="Trabakua, Zengotita, Osmagain y Arietzu.gpx"':
+        'download="Trabakua, Zengotita, Osmagain eta Arietzu.gpx"',
+    'download="Trabakua, Zengotita, Osmagain y Arietzu.kml"':
+        'download="Trabakua, Zengotita, Osmagain eta Arietzu.kml"',
 }
 
 AXMAKURITURRIZURI = {
@@ -4725,15 +4732,21 @@ MARKINABOLIBAR = {
 }
 
 ASUNTZABIRA = {
-    # hero — "Asuntza bira" es el mismo nombre en los dos idiomas
+    # hero
+    '<h1>Asuntza bira<br><em>por Arteta</em></h1>':
+        '<h1>Asuntza bira<br><em>Artetatik</em></h1>',
+    'download="Asuntza bira por Arteta.gpx"':
+        'download="Asuntza bira Artetatik.gpx"',
+    'download="Asuntza bira por Arteta.kml"':
+        'download="Asuntza bira Artetatik.kml"',
     '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta y Asuntza</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista</span><span class="sep">/</span><span>Donagarai, Arteta eta Asuntza</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<p class="full-name">Circuito de e-bike desde Trabakua por Donagarai, Arteta y el collado de Asuntza, en su mayor parte por pistas poco conocidas de la Diputaci&oacute;n</p>':
         '<p class="full-name">E-bike zirkuitua Trabakuatik, Donagarai, Arteta eta Asuntzako lepotik igarota, gehienbat foru aldundiko pista gutxi ezagunetatik</p>',
     'alt="Muro de piedra junto al camino con ovejas pastando y monta&ntilde;as al fondo"':
         'alt="Harrizko horma bidearen ondoan, ardiak larrean eta mendiak hondoan"',
-    'alt="Foto ampliada del recorrido de Asuntza bira"':
-        'alt="Asuntza bira ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Asuntza bira por Arteta"':
+        'alt="Asuntza bira Artetatik ibilbidearen argazki handitua"',
     'alt="Vista panor&aacute;mica de un valle con caser&iacute;os de tejado rojo, prados y monta&ntilde;as boscosas al fondo bajo un cielo de nubes altas"':
         'alt="Harana ikuspegi panoramikoan, teilatu gorriko baserriekin, larreekin eta mendi basotsuak hondoan, hodei goiko zeru batekin"',
     'alt="Pista de tierra junto a un muro de piedra, entre arbustos y pinos j&oacute;venes"':
