@@ -1275,13 +1275,13 @@ ZENGOTITAGANE = {
         'harrizko pistarekin lotu arte, goiko iturriraino, goi-goian. Handik behera hasten '
         'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
         'da, eolikoen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
-    'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute; y, un poco '
-    'm&aacute;s adelante, el de <b>Besoita</b> (km 17,1, 302 m), justo antes de cruzar '
+    'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
+    '(km 17,1, 302 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
     'de vuelta a Trabakua.':
-        'Abiadura betean jarraitzen dugu behera San Jos&eacute; auzoraino eta, pixka bat '
-        'aurrerago, <b>Besoita</b> auzoraino (17,1 km, 302 m), Trabakua eta Berriz '
+        'Abiadura betean jarraitzen dugu behera <b>Besoita</b> auzoraino '
+        '(17,1 km, 302 m), Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatu aurretik. Gurutzatu eta errepide zaharretik gora '
         'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura jaitsi aurretik.',
     '21,98 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
@@ -1604,13 +1604,13 @@ SANCRISTOBAL = {
         'Garaiko igoera <b>San Kristobal Txiki ermita</b>raino (20,3 km &middot; 493 m) '
         'harrizko pista batetik egiten da, goiko San Kristobal ermitatik bereizteko '
         '&mdash;Oiz aldeko haize-errotak inguruan dituen ermitarekin.',
-    'Continuamos a toda velocidad cuesta abajo hasta el barrio de San Jos&eacute; y, un poco '
-    'm&aacute;s adelante, el de <b>Besoita</b> (km 22,4, 308 m), justo antes de cruzar '
+    'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
+    '(km 22,4, 308 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
     'de vuelta a Trabakua.':
-        'Handik beherantz abiadura handian jaisten gara San Jos&eacute; auzoraino eta, pixka '
-        'bat aurrerago, <b>Besoita</b> auzoraino (22,4 km &middot; 308 m), Trabakua eta '
+        'Handik beherantz abiadura handian jaisten gara <b>Besoita</b> auzoraino '
+        '(22,4 km &middot; 308 m), Trabakua eta '
         'Berriz lotzen dituen errepide nagusia zeharkatu aurretik. Zeharkatu eta errepide '
         'zaharretik igotzen da Zengotita auzorantz, zirkuitua ixteko puntura iritsi aurretik, '
         'Trabakuara berriro jaitsi baino lehen.',
