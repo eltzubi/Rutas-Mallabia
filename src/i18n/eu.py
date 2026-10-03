@@ -512,6 +512,8 @@ HOME = {
         '<p class="route-card-desc">Zirkuitu teknikoa e-bikean Trabakuatik, igoerak eta Durangaldeko ikuspegiarekin</p>',
     'alt="Tramo del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
         'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen zatia"',
+    '<h3 class="route-card-name">Trabakua, Zengotita, Aitzu, Mallabia y Osmagain</h3>':
+        '<h3 class="route-card-name">Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain</h3>',
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
         'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
