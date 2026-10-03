@@ -1278,12 +1278,13 @@ ZENGOTITAGANE = {
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
     '(km 17,1, 302 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
-    'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
-    'de vuelta a Trabakua.':
+    'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de volver '
+    'a Trabakua, ya casi en llano.':
         'Abiadura betean jarraitzen dugu behera <b>Besoita</b> auzoraino '
         '(17,1 km, 302 m), Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatu aurretik. Gurutzatu eta errepide zaharretik gora '
-        'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura jaitsi aurretik.',
+        'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura itzuli aurretik, '
+        'ia lauan.',
     '21,98 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
@@ -1607,13 +1608,13 @@ SANCRISTOBAL = {
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
     '(km 22,4, 308 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
-    'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de bajar '
-    'de vuelta a Trabakua.':
+    'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de volver '
+    'a Trabakua, ya casi en llano.':
         'Handik beherantz abiadura handian jaisten gara <b>Besoita</b> auzoraino '
         '(22,4 km &middot; 308 m), Trabakua eta '
         'Berriz lotzen dituen errepide nagusia zeharkatu aurretik. Zeharkatu eta errepide '
         'zaharretik igotzen da Zengotita auzorantz, zirkuitua ixteko puntura iritsi aurretik, '
-        'Trabakuara berriro jaitsi baino lehen.',
+        'Trabakuara itzuli baino lehen, ia lauan.',
     '25,98 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
