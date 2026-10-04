@@ -748,13 +748,15 @@ footer a:hover{ text-decoration:underline; }
     linear-gradient(90deg, rgba(9,11,7,.66) 0%, rgba(9,11,7,.22) 46%, rgba(9,11,7,0) 70%);
 }
 /* El titular lleva el mismo codigo de color que las fichas y la leyenda del
-   mapa: lima para lo de andar, teal para lo de la bici. */
-.hero-compact h1 em .pie{ color:var(--violet); font-style:italic; }
-.hero-compact h1 em .bici{ color:var(--teal); font-style:italic; }
+   mapa: lima para lo de andar, teal para lo de la bici. Valores fijos, no
+   tokens: la foto de debajo es oscura en los dos temas, asi que --violet y
+   --teal (que en claro son verde y azul oscuros) se volvian ilegibles. */
+.hero-compact h1 em .pie{ color:#A6FF4D; font-style:italic; }
+.hero-compact h1 em .bici{ color:#2FE0F5; font-style:italic; }
 .hero-compact-stats{
   margin-top:14px;
   font-family:'IBM Plex Mono',monospace; font-size:clamp(1rem,2.2vw,1.35rem);
-  letter-spacing:.04em; color:var(--ink);
+  letter-spacing:.04em; color:#F7F5EF;
   text-shadow:0 1px 3px rgba(0,0,0,.94), 0 2px 12px rgba(0,0,0,.82), 0 5px 28px rgba(0,0,0,.55);
 }
 /* El texto cae justo sobre la banda naranja del amanecer, que es la zona mas
@@ -762,7 +764,7 @@ footer a:hover{ text-decoration:underline; }
    blanco entero y con sombra doble (una pegada que recorta la letra y otra
    abierta que apaga el fondo). */
 .hero-compact-content .eyebrow{
-  color:var(--ink); font-weight:500;
+  color:rgba(247,245,239,.96); font-weight:500;
   text-shadow:0 1px 2px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,.95),
               0 4px 18px rgba(0,0,0,.85), 0 8px 38px rgba(0,0,0,.6);
 }
