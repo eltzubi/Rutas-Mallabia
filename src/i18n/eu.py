@@ -504,8 +504,8 @@ HOME = {
         'alt="Harrizko gurutzea bere oinarriaren gainean goialdean, harkaitzezko monolito baten ondoan eta ikurrina bat atzean haizetan, belar altu eta pinudiaren artean"',
     '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Goierri, Elgeta, la presa de Aixola, Eitzaga, Zaldibar, Olabe y Berriz</p>':
         '<p class="route-card-desc">E-bike zirkuitu luzea Trabakuatik, Goierri, Elgeta, Aixolako urtegia, Eitzaga, Zaldibar, Olabe eta Berriztik igarota</p>',
-    '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</h3>':
-        '<h3 class="route-card-name">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</h3>',
+    '<h3 class="route-card-name">Muniozguren, Oiz y San Kristobal Txiki por la Potrera</h3>':
+        '<h3 class="route-card-name">Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena</h3>',
     '<p class="route-card-desc">Circuito de e-bike desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
         '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
     '<p class="route-card-desc">Circuito de BTT exigente desde Trabakua, con ascensos técnicos y vistas del Duranguesado</p>':
@@ -3155,8 +3155,8 @@ POTRERA = {
     # hero
     '<span>Mixta</span><span class="sep">/</span><span>Oiz y San Kristobal Txiki</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Oiz eta San Kristobal Txiki</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Muniozguren<br><em>Oiz y San Kristobal Txiki</em></h1>':
-        '<h1>Trabakua, Muniozguren<br><em>Oiz eta San Kristobal Txiki</em></h1>',
+    '<h1>Muniozguren, Oiz y San Kristobal Txiki<br><em>por la Potrera</em></h1>':
+        '<h1>Muniozguren, Oiz eta San Kristobal Txiki<br><em>Potreratik barrena</em></h1>',
     '<p class="full-name">Circuito de e-bike desde Trabakua por Muniozguren, el cordal de Oiz y San Kristobal Txiki</p>':
         '<p class="full-name">E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
 
@@ -3173,8 +3173,8 @@ POTRERA = {
     # photos
     'alt="Bicicleta de monta&ntilde;a apoyada en un abrevadero de piedra en el cordal, con los aerogeneradores y la cima del Oiz al fondo"':
         'alt="Mendiko bizikleta harrizko aska baten kontra jarrita gailurrean, eolikoak eta Oizko tontorra atzealdean"',
-    'alt="Foto ampliada del recorrido de Trabakua, Muniozguren, Oiz y San Kristobal Txiki"':
-        'alt="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Muniozguren, Oiz y San Kristobal Txiki por la Potrera"':
+        'alt="Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena ibilbidearen argazki handitua"',
     'alt="La bicicleta junto al abrevadero de piedra, entre margaritas y dientes de le&oacute;n, con los aerogeneradores del Oiz detr&aacute;s"':
         'alt="Bizikleta harrizko askaren ondoan, bitxilore eta txikorien artean, Oizko eolikoak atzean dituela"',
     'alt="Vacas pastando en el cordal, bajo dos aerogeneradores, con nubes y cielo azul"':
@@ -3191,10 +3191,10 @@ POTRERA = {
         'alt="Behiak goialdeko landan, bordaren teilatua eskuinean eta inguruko haranak atzealdean"',
 
     # wikiloc / gpx
-    'download="Trabakua, Muniozguren, Oiz y San Kristobal Txiki.gpx"':
-        'download="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki.gpx"',
-    'download="Trabakua, Muniozguren, Oiz y San Kristobal Txiki.kml"':
-        'download="Trabakua, Muniozguren, Oiz eta San Kristobal Txiki.kml"',
+    'download="Muniozguren, Oiz y San Kristobal Txiki por la Potrera.gpx"':
+        'download="Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena.gpx"',
+    'download="Muniozguren, Oiz y San Kristobal Txiki por la Potrera.kml"':
+        'download="Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena.kml"',
 
     # body copy
     'Salimos de <b>Trabakua</b>, entre los dos bares del puerto, tomando la carretera que sube en direcci&oacute;n a Gerea. Continuamos por ella sin desviarnos, avanzando tranquilamente entre caser&iacute;os y prados hasta llegar a <b>Muniozguren</b>.':
@@ -3411,7 +3411,7 @@ TITLES = {
     'exigente': 'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane · '
         'E-bike ibilbidea — Herriko ibilbideak',
     'aixola': 'Trabakua, Goierri, Aixola eta Eitzaga · E-bike ibilbidea — Herriko ibilbideak',
-    'potrera': 'Trabakua, Muniozguren, Oiz eta San Kristobal Txiki · E-bike ibilbidea — Herriko ibilbideak',
+    'potrera': 'Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena · E-bike ibilbidea — Herriko ibilbideak',
     'artetaasuntza': 'Arteta, Asuntza eta bien arteko pasabideak · E-bike ibilbidea — Herriko ibilbideak',
     'intxorta': 'Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza · Oinezko ibilbidea — Herriko ibilbideak',
     'trabakuamallabia': 'Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain · E-bike ibilbidea — Herriko ibilbideak',
@@ -3989,8 +3989,8 @@ AXMAKURITURRIZURI = {
     'Txabola de piedra en lo alto de un prado, con aerogeneradores al fondo':
         'Harrizko txabola larre baten goialdean, aerosorgailuekin atzealdean',
     'Fuente de Iturzuri': 'Iturzuriko iturria',
-    'Esta ruta sigue pr&aacute;cticamente el mismo recorrido que <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, pero en una versi&oacute;n m&aacute;s corta y directa. En esta ocasi&oacute;n evitamos las bajadas hacia la zona de la potrera y otros desv&iacute;os de aquella vuelta, manteni&eacute;ndonos en la parte alta y reduciendo as&iacute; bastante el recorrido.':
-        'Ibilbide honek <a href="potrera.html">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</a> ibilbidearen antzeko bidea jarraitzen du, baina bertsio laburrago eta zuzenago batean. Oraingoan, korta ingururako jaitsierak eta beste ibilbide hartako desbideratzeak saihesten ditugu, goiko aldean mantenduz eta, horrela, ibilbidea nabarmen murriztuz.',
+    'Esta ruta sigue pr&aacute;cticamente el mismo recorrido que <a href="potrera.html">Muniozguren, Oiz y San Kristobal Txiki por la Potrera</a>, pero en una versi&oacute;n m&aacute;s corta y directa. En esta ocasi&oacute;n evitamos las bajadas hacia la zona de la potrera y otros desv&iacute;os de aquella vuelta, manteni&eacute;ndonos en la parte alta y reduciendo as&iacute; bastante el recorrido.':
+        'Ibilbide honek <a href="potrera.html">Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena</a> ibilbidearen antzeko bidea jarraitzen du, baina bertsio laburrago eta zuzenago batean. Oraingoan, korta ingururako jaitsierak eta beste ibilbide hartako desbideratzeak saihesten ditugu, goiko aldean mantenduz eta, horrela, ibilbidea nabarmen murriztuz.',
     'Salimos de <b>Trabakua</b>, entre los dos bares del puerto, tomando la carretera que sube en direcci&oacute;n a Gerea. Continuamos por ella sin desviarnos, avanzando tranquilamente entre caser&iacute;os y prados hasta llegar a <b>Muniozguren</b>.':
         '<b>Trabakua</b>tik abiatzen gara, portuko bi tabernen artean, Gerea aldera igotzen den errepidea hartuz. Errepide horretatik jarraitzen dugu, desbideratu gabe, baserri eta larreen artean lasai aurrera eginez <b>Muniozguren</b>era iritsi arte.',
     'En Muniozguren termina el cemento. Al fondo cogemos la pista de piedra que sale a la izquierda y continuamos subiendo por ella, ganando altura poco a poco. Seguimos siempre por la pista principal, sin desviarnos, en una subida bastante suave y llevadera.':
@@ -4013,8 +4013,8 @@ AXMAKURITURRIZURI = {
         'Zengotitagane aldera Osma aldera jaisten hasten gara egoera onean dagoen pista batetik, nahiz eta nahiko aldapatsua izan. Jaitsiera zuzena da eta errepide nagusira ateratzen gaitu.',
     'Aqu&iacute; giramos a la izquierda y afrontamos ya el &uacute;ltimo tramo de la ruta. Solo nos quedan unos 2 kil&oacute;metros por carretera para regresar a Trabakua y cerrar la vuelta.':
         'Hemen ezkerrera biratu eta ibilbidearen azken zatia egiten dugu. Trabakuara itzuli eta buelta ixteko 2 kilometro inguru baino ez zaizkigu geratzen errepidetik.',
-    'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT. Esto es algo que podemos hacer en esta versi&oacute;n m&aacute;s corta, ya que en la ruta <a href="potrera.html">Trabakua, Muniozguren, Oiz y San Kristobal Txiki</a>, por el tipo de terreno y algunos de sus tramos, hacerla en sentido contrario ser&iacute;a pr&aacute;cticamente impensable.':
-        'Ibilbidea norabide honetan deskribatuta dagoen arren, alderantziz egitea gomendatzen dugu. Horrela, eramangarriagoa da eta, batez ere, jaitsierak erakargarriagoak eta entretenigarriagoak dira, eta horregatik uste dugu BTTn askoz gehiago gozatzen dela. Hau bertsio labur honetan egin dezakegun zerbait da, <a href="potrera.html">Trabakua, Muniozguren, Oiz eta San Kristobal Txiki</a> ibilbidean, lur motagatik eta bere tarte batzuengatik, kontrako norabidean egitea ia pentsaezina izango litzatekeelako.',
+    'Aunque la ruta est&aacute; descrita en este sentido, recomendamos hacerla al rev&eacute;s. De esta forma resulta m&aacute;s llevadera y, sobre todo, los descensos son m&aacute;s atractivos y entretenidos, por lo que creemos que se disfruta bastante m&aacute;s en BTT. Esto es algo que podemos hacer en esta versi&oacute;n m&aacute;s corta, ya que en la ruta <a href="potrera.html">Muniozguren, Oiz y San Kristobal Txiki por la Potrera</a>, por el tipo de terreno y algunos de sus tramos, hacerla en sentido contrario ser&iacute;a pr&aacute;cticamente impensable.':
+        'Ibilbidea norabide honetan deskribatuta dagoen arren, alderantziz egitea gomendatzen dugu. Horrela, eramangarriagoa da eta, batez ere, jaitsierak erakargarriagoak eta entretenigarriagoak dira, eta horregatik uste dugu BTTn askoz gehiago gozatzen dela. Hau bertsio labur honetan egin dezakegun zerbait da, <a href="potrera.html">Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena</a> ibilbidean, lur motagatik eta bere tarte batzuengatik, kontrako norabidean egitea ia pentsaezina izango litzatekeelako.',
     'download="Axmakur, Iturzuri y Zengotitagane.gpx"':
         'download="Axmakur, Iturzuri eta Zengotitagane.gpx"',
     'download="Axmakur, Iturzuri y Zengotitagane.kml"':
