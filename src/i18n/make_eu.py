@@ -64,6 +64,10 @@ SPANISH_TELLS = [
     "recorrido", "subiendo", "aerogeneradores", "montes", "valle", "entre",
     "sobre", "paseo", "Paseo", "corto", "corta", "accesible", "cualquiera",
     "carretera", "izquierda", "derecha", "privacidad",
+    # La tarjeta de trabakuamallabia se publico en castellano en la portada
+    # en euskera y paso este control: "Trabakua, Zengotita, Aitzu, Mallabia y
+    # Osmagain" no tiene mas palabra castellana que la "y".
+    "y",
 ]
 
 
