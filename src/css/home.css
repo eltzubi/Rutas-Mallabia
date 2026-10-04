@@ -728,3 +728,31 @@ footer a:hover{ text-decoration:underline; }
  .open-filters{ padding:6px 10px; }
  .route-card-body{ padding:16px; }
 }
+
+/* --- Hero de la portada -------------------------------------------------
+   Va al final a proposito: mas arriba hay un bloque posterior ("Visual
+   review") y una media query de 659px que vuelven a fijar la altura y el
+   estilo de las cifras, y pisaban estas reglas estuvieran donde estuvieran. */
+.hero-compact{ min-height:420px; max-height:none; }
+@media (min-width:1024px){ .hero-compact{ min-height:520px; } }
+@media (max-width:659px){ .hero-compact{ min-height:400px; } }
+/* En movil el encuadre se corre a la derecha para que entren las dos figuras;
+   centrado, la de la bici se queda fuera. */
+.hero-compact img{ object-position:66% 46%; }
+@media (min-width:768px){ .hero-compact img{ object-position:50% 46%; } }
+/* Oscurece por abajo y por la izquierda, donde va el texto, en vez de velar la
+   foto entera por igual: asi el cielo se ve y el titular sigue legible. */
+.hero-compact-scrim{
+  background:
+    linear-gradient(180deg, rgba(9,11,7,.04) 0%, rgba(9,11,7,.14) 46%, rgba(9,11,7,.88) 100%),
+    linear-gradient(90deg, rgba(9,11,7,.66) 0%, rgba(9,11,7,.22) 46%, rgba(9,11,7,0) 70%);
+}
+/* El titular lleva el mismo codigo de color que las fichas y la leyenda del
+   mapa: lima para lo de andar, teal para lo de la bici. */
+.hero-compact h1 em .pie{ color:var(--violet); font-style:italic; }
+.hero-compact h1 em .bici{ color:var(--teal); font-style:italic; }
+.hero-compact-stats{
+  margin-top:14px;
+  font-family:'IBM Plex Mono',monospace; font-size:clamp(1rem,2.2vw,1.35rem);
+  letter-spacing:.04em; color:var(--ink); text-shadow:0 2px 10px #000a;
+}

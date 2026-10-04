@@ -565,14 +565,12 @@ HOME = {
         'alt="Korrikalari bat 7 Pagoko dortsalarekin hatz lodia gora eginez baso-zati batean, beste korrikalari bat atzean eta mendiak atzealdean, 37 dortsala"',
 
     # hero
-    'alt="Persona con los brazos en alto en la cima de un monte al amanecer, con el foco '
-    'frontal encendido y el mar al fondo"':
-        'alt="Pertsona bat besoak gora dituela mendi baten gailurrean egunsentian, aurreko '
-        'fokua piztuta eta itsasoa atzealdean"',
+    'alt="Dos personas en la cima de un monte al atardecer, una con los brazos en alto y otra junto a su bicicleta de monta&ntilde;a, con el valle y el mar al fondo"':
+        'alt="Bi pertsona mendi baten gailurrean ilunabarrean, bata besoak gora dituela eta bestea bere mendiko bizikletaren ondoan, harana eta itsasoa atzealdean"',
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
-    '<h1>Mallabia<br><em>a pie y en bici</em></h1>':
-        '<h1>Mallabia<br><em>oinez eta bizikletaz</em></h1>',
+    '<h1>Mallabia<br><em><span class="pie">a pie</span> y <span class="bici">en bici</span></em></h1>':
+        '<h1>Mallabia<br><em><span class="pie">oinez</span> eta <span class="bici">bizikletaz</span></em></h1>',
     'Rutas por los barrios, montes y pueblos del entorno de Mallabia. '
     'Documentadas sobre el terreno, con datos de verdad, no de folleto.':
         'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
