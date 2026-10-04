@@ -69,7 +69,7 @@ COMMON = {
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
     '<h3 class="route-card-name">Zengotita, Iturzurigaina y Betzun</h3>':
         '<h3 class="route-card-name">Zengotita, Iturzurigaina eta Betzun</h3>',
-    '<p class="route-card-desc">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Crist&oacute;bal y Besoita</p>':
+    '<p class="route-card-desc">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Kristobal y Besoita</p>':
         '<p class="route-card-desc">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota</p>',
     '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu y Mendibil</h3>':
         '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu eta Mendibil</h3>',
@@ -123,7 +123,7 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Elgeta eta Argi&ntilde;etako Nekropolitik</p>',
     '<p class="route-card-desc">Circuito a la cascada de Gerea desde Trabakua</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik Gereako ur-jauzira</p>',
-    '<p class="route-card-desc">Circuito desde Trabakua, con la ermita de San Crist&oacute;bal Txiki y el barrio de Besoita</p>':
+    '<p class="route-card-desc">Circuito desde Trabakua, con la ermita de San Kristobal Txiki y el barrio de Besoita</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin</p>',
     '<p class="route-card-desc">Ida y vuelta desde Trabakua hasta el Oiz</p>':
         '<p class="route-card-desc">Joan-etorria Trabakuatik Oizeraino</p>',
@@ -131,7 +131,7 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua San Juan ermitatik</p>',
     '<p class="route-card-desc">Circuito de senderismo y trail running desde Trabakua, por Arandomendi, Urko y el Collado de Asuntza</p>':
         '<p class="route-card-desc">Trail running eta oinezko zirkuitua Trabakuatik, Arandomendi, Urko eta Asuntzako lepotik</p>',
-    '<p class="route-card-desc">Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de San Crist&oacute;bal Txiki y el barrio de Besoita</p>':
+    '<p class="route-card-desc">Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de San Kristobal Txiki y el barrio de Besoita</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Barinaga hasta Iturreta y Mendibil</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Barinaga, Iturreta eta Mendibiletik igarota</p>',
@@ -179,7 +179,7 @@ COMMON = {
         '<h3 class="route-card-name">Trabakua, Goita auzoko paseoa</h3>',
     '<h3 class="route-card-name">Hiru Txikiak, Urko, Oiz y Egoarbitza desde Ermua</h3>':
         '<h3 class="route-card-name">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</h3>',
-    '<h3 class="route-card-name">Zengotitagane, Iturzurigaina y San Crist&oacute;bal Txiki</h3>':
+    '<h3 class="route-card-name">Zengotitagane, Iturzurigaina y San Kristobal Txiki</h3>':
         '<h3 class="route-card-name">Zengotitagane, Iturzurigaina eta San Kristobal Txiki</h3>',
     '<h3 class="route-card-name">Zengotitagane, Askako y Garai</h3>':
         '<h3 class="route-card-name">Zengotitagane, Askako eta Garai</h3>',
@@ -351,9 +351,9 @@ HOME = {
     '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>': '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>',
     '<p class="route-card-desc">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
     'alt="Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo"': 'alt="Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean"',
-    'Trabakua, San Cristóbal Txiki, Garai y Andikoa':
+    'Trabakua, San Kristobal Txiki, Garai y Andikoa':
         'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
-    'Circuito por San Cristóbal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
+    'Circuito por San Kristobal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
         'San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua, pista, bidezidor eta Asto Traileko tarteekin',
     'Claro junto a un antiguo edificio de piedra y una gran campa':
         'Harrizko eraikin zahar baten ondoko zabalgunea',
@@ -443,9 +443,9 @@ HOME = {
     # sancristobaloiz card
     'alt="Fuente de piedra con dos ca&ntilde;os y musgo en el canal de agua"':
         'alt="Harrizko iturria, bi txorrotarekin eta ur-kanalean goroldioa duena"',
-    '<h3 class="route-card-name">San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</h3>':
+    '<h3 class="route-card-name">San Kristobal (Oiz), Zenarruza y Muniozguren</h3>':
         '<h3 class="route-card-name">San Kristobal (Oiz), Zenarruza eta Muniozguren</h3>',
-    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</p>':
+    '<p class="route-card-desc">Circuito de e-bike desde Trabakua por San Kristobal (Oiz), Zenarruza y Muniozguren</p>':
         '<p class="route-card-desc">E-bike zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota</p>',
 
     # sanpedrobidarte card
@@ -1225,8 +1225,8 @@ GEREA = {
 }
 
 ZENGOTITAGANE = {
-    'download="Zengotitagane, Iturzurigaina y San Cristóbal Txiki.gpx"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.gpx"',
-    'download="Zengotitagane, Iturzurigaina y San Cristóbal Txiki.kml"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.kml"',
+    'download="Zengotitagane, Iturzurigaina y San Kristobal Txiki.gpx"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.gpx"',
+    'download="Zengotitagane, Iturzurigaina y San Kristobal Txiki.kml"': 'download="Zengotitagane, Iturzurigaina eta San Kristobal Txiki.kml"',
     'alt="Caballos pastando en un prado cercado en lo alto, con los aerogeneradores del cordal recortados al fondo y el arbolado dando sombra a un lado"':
         'alt="Zaldiak hesitutako belardi batean goialdean, gandorreko eolikoak hondoan eta zuhaitzak alde batean itzala ematen"',
     'alt="Foto ampliada del recorrido de Zengotitagane"':
@@ -1236,9 +1236,9 @@ ZENGOTITAGANE = {
         '<span>Errepidea eta pista</span><span class="sep">/</span>'
         '<span>Zengotitagane, Iturzurigaina eta ermitak</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
-    '<h1>Zengotitagane, Iturzurigaina<br><em>y San Crist&oacute;bal Txiki</em></h1>':
+    '<h1>Zengotitagane, Iturzurigaina<br><em>y San Kristobal Txiki</em></h1>':
         '<h1>Zengotitagane, Iturzurigaina<br><em>eta San Kristobal Txiki</em></h1>',
-    'Circuito desde Trabakua, con la ermita de San Crist&oacute;bal Txiki y el barrio de Besoita':
+    'Circuito desde Trabakua, con la ermita de San Kristobal Txiki y el barrio de Besoita':
         'Zirkuitua Trabakuatik, San Kristobal Txiki ermitarekin eta Besoita auzoarekin',
     'alt="Vistas hacia el Anboto y el Alluitz, con Durango al fondo, desde lo alto de la ruta"':
         'alt="Anboto eta Alluitzerako ikuspegiak, Durango atzealdean, ibilbidearen goialdetik"',
@@ -1272,9 +1272,9 @@ ZENGOTITAGANE = {
     'por una de piedra, con un canal de agua acompa&ntilde;ando el camino. Poco despu&eacute;s '
     'giramos a la izquierda para encarar una pista trialera corta pero intensa, hasta '
     'enganchar con la pista de piedra que sube desde Garai hasta la fuente de arriba, en lo '
-    'alto. Desde ah&iacute; empezamos a bajar hasta la <b>Ermita de San Crist&oacute;bal '
+    'alto. Desde ah&iacute; empezamos a bajar hasta la <b>Ermita de San Kristobal '
     'Txiki</b> (km 15,4, 495 m) &mdash;as&iacute; se conoce, para distinguirla de la otra '
-    'Ermita de San Crist&oacute;bal, la de arriba, junto a los aerogeneradores.':
+    'Ermita de San Kristobal, la de arriba, junto a los aerogeneradores.':
         'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
         'harrizko batetik, ur-kanal batek bidea lagunduta. Handik pixka batera ezkerrera '
         'jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik igotzen den '
@@ -1300,7 +1300,7 @@ ZENGOTITAGANE = {
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko aldean, '
         'San Kristobal Txiki ermitaren aurretik.',
-    'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
+    'Ermita de San Kristobal Txiki': 'San Kristobal Txiki ermita',
     'Besoita': 'Besoita',
 }
 
@@ -1539,8 +1539,8 @@ URKO = {
 }
 
 SANCRISTOBAL = {
-    'download="Zengotitagane, Askako y San Cristóbal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
-    'download="Zengotitagane, Askako y San Cristóbal.kml"': 'download="Zengotitagane, Askako eta San Kristobal.kml"',
+    'download="Zengotitagane, Askako y San Kristobal.gpx"': 'download="Zengotitagane, Askako eta San Kristobal.gpx"',
+    'download="Zengotitagane, Askako y San Kristobal.kml"': 'download="Zengotitagane, Askako eta San Kristobal.kml"',
     'alt="Foto ampliada del recorrido de Zengotitagane, Askako y Garai"':
         'alt="Zengotitagane, Askako eta Garai ibilbidearen argazki '
         'handitua"',
@@ -1552,7 +1552,7 @@ SANCRISTOBAL = {
     '<h1>Zengotitagane, Askako<br><em>y Garai</em></h1>':
         '<h1>Zengotitagane, Askako<br><em>eta Garai</em></h1>',
     'Circuito desde Trabakua, por Zengotitagane y Askako, con la ermita de '
-    'San Crist&oacute;bal Txiki y el barrio de Besoita':
+    'San Kristobal Txiki y el barrio de Besoita':
         'Zirkuitua Trabakuatik, Zengotitagane eta Askakotik, San Kristobal '
         'Txiki ermitarekin eta Besoita auzoarekin',
     'alt="Pista junto a los aerogeneradores del parque e&oacute;lico, con niebla cubriendo la '
@@ -1607,9 +1607,9 @@ SANCRISTOBAL = {
         'Handik behera, Garaialdera jaisten gara pago-baso zoragarri baten bidez, ibilbideko '
         'jaitsierarik gozagarrienetako batean. Garaitik irten bezain pronto, iturri bat dago '
         'ezkerrean, urte osoan ura duena.',
-    'La subida de Garai hasta la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 20,3, 493 m) '
+    'La subida de Garai hasta la <b>Ermita de San Kristobal Txiki</b> (km 20,3, 493 m) '
     'la hacemos por una pista de piedra &mdash;as&iacute; se conoce esta ermita, para '
-    'distinguirla de la otra Ermita de San Crist&oacute;bal, la de arriba, junto a los '
+    'distinguirla de la otra Ermita de San Kristobal, la de arriba, junto a los '
     'aerogeneradores.':
         'Garaiko igoera <b>San Kristobal Txiki ermita</b>raino (20,3 km &middot; 493 m) '
         'harrizko pista batetik egiten da, goiko San Kristobal ermitatik bereizteko '
@@ -1628,13 +1628,13 @@ SANCRISTOBAL = {
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
     'agua cerca de Iturzurigaina (km 4,8) y en una fuente a la salida de Garai, con agua todo '
-    'el a&ntilde;o, antes de la Ermita de San Crist&oacute;bal Txiki.':
+    'el a&ntilde;o, antes de la Ermita de San Kristobal Txiki.':
         '25,98 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko '
         'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
         'aurretik.',
-    'Ermita de San Crist&oacute;bal Txiki': 'San Kristobal Txiki ermita',
+    'Ermita de San Kristobal Txiki': 'San Kristobal Txiki ermita',
     'Besoita': 'Besoita',
 }
 
@@ -2631,11 +2631,11 @@ MAGUNA = {
     # elevation profile markers + legend (used twice: hero chart and map section)
     '<title>Dolmen de Iturzurigaina &middot; 4,6 km &middot; 843 m</title>':
         '<title>Iturzurigainako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
-    '<title>Ermita de San Crist&oacute;bal Txiki &middot; 26,8 km &middot; 496 m</title>':
+    '<title>Ermita de San Kristobal Txiki &middot; 26,8 km &middot; 496 m</title>':
         '<title>San Kristobal Txiki ermita &middot; 26,8 km &middot; 496 m</title>',
     '<title>Besoita &middot; 28,4 km &middot; 324 m</title>':
         '<title>Besoita &middot; 28,4 km &middot; 324 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Crist&oacute;bal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Besoita</span>':
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Kristobal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Besoita</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigainako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki ermita</span> <span class="elev-legend-item"><span class="num">5</span>Besoita</span>',
 
     # photos
@@ -2671,7 +2671,7 @@ MAGUNA = {
         '<b>Trabakua</b>tik Osma aldera ateratzen gara errepidez. 2 km pasatxo egin ondoren, eskuinera biratu eta <b>Zengotitagane</b>ra (3,6 km &middot; 788 m) igotzen den pista hartzen dugu, parke eolikoko aerosorgailuen artean. Maldak oso gogorrak dira, eta ia ezinezkoa da bizikleta arrunt batekin igotzeko.',
     'Tras Zengotitagane seguimos por la cresta hasta el <b>Dolmen de Iturzurigaina</b> (km 4,6 &middot; 843 m), con buenas vistas hacia los dos lados. Quien necesite coger agua puede desviarse unos metros a la derecha.':
         'Zengotitagane igaro ondoren, gailurretik jarraitzen dugu <b>Iturzurigaina</b> trikuharrira (4,6 km &middot; 843 m), bi aldeetara ikuspegi ederrak ditugula. Ura hartu behar duenak eskuinera metro batzuk desbidera daiteke.',
-    'Continuamos por la parte alta del <b>Oiz</b>, avanzando en paralelo a los aerogeneradores, hasta salir a la pista de cemento que sube desde <b>Garai</b> a San Crist&oacute;bal de Oiz. Subimos por ella unos 300 metros y enseguida nos desviamos a la izquierda por una pista de tierra.':
+    'Continuamos por la parte alta del <b>Oiz</b>, avanzando en paralelo a los aerogeneradores, hasta salir a la pista de cemento que sube desde <b>Garai</b> a San Kristobal de Oiz. Subimos por ella unos 300 metros y enseguida nos desviamos a la izquierda por una pista de tierra.':
         '<b>Oiz</b>en goialdetik jarraitzen dugu, aerosorgailuen azpitik eta norabide berean, <b>Garai</b>tik San Kristobal Oizerako porlanezko pistara irten arte. Handik 300 metro inguru igotzen gara, eta berehala ezkerrera desbideratzen gara lurrezko pista batetik.',
     'Al principio avanzamos pr&aacute;cticamente en transversal, pero poco a poco el terreno empieza a inclinarse y entramos de lleno en la bajada. El camino tiene alg&uacute;n tramo algo abrupto, aunque en general se circula bien. M&aacute;s abajo hay que estar atentos para localizar, a mano derecha, un sendero medio escondido entre los eucaliptos.':
         'Hasieran ia zeharka egiten dugu aurrera, baina pixkanaka malda handitzen hasten da eta jaitsieran bete-betean sartzen gara. Bideak tarte malkartsuren bat badu ere, oro har ondo ibiltzen da. Beherago adi egon behar dugu, eskuinaldean eukaliptoen artean erdi ezkutatuta dagoen bidezidor bat aurkitzeko.',
@@ -2693,9 +2693,9 @@ MAGUNA = {
         'Hemendik aurrera jaitsiera eder eta luze bat dugu zain, ohiko autoentzat baino gehiago bizikleta eta 4x4 ibilgailuentzat egokia. Jaitsieran zehar, pistaren ondoan zenbait puntutan, ur-kanal zaharren tarteak ikusiko ditugu.',
     'Despu&eacute;s de perder bastante altura salimos a la carretera que comunica la zona de <b>Sarria</b> con Garai. Giramos unos metros a la izquierda y enseguida volvemos a girar con fuerza hacia la izquierda para afrontar otra subida.':
         'Garaiera dezente galdu ondoren, <b>Sarria</b>tik Garaira doan errepidera irteten gara. Metro batzuk ezkerrera egin, eta berehala berriro ezkerrera gogor biratu eta beste igoera bati ekiten diogu.',
-    'Nos dirigimos ahora hacia la <b>Ermita de San Crist&oacute;bal Txiki</b> (km 26,8 &middot; 496 m). Alcanzado el punto m&aacute;s alto, encontraremos una fuente a mano izquierda, un buen lugar para rellenar agua antes de comenzar nuevamente el descenso.':
+    'Nos dirigimos ahora hacia la <b>Ermita de San Kristobal Txiki</b> (km 26,8 &middot; 496 m). Alcanzado el punto m&aacute;s alto, encontraremos una fuente a mano izquierda, un buen lugar para rellenar agua antes de comenzar nuevamente el descenso.':
         'Orain <b>San Kristobal Txiki ermita</b>ra (26,8 km &middot; 496 m) goaz. Punturik gorenera iritsitakoan, ezkerrean iturri bat aurkituko dugu, berriro jaitsiera hasi aurretik ura betetzeko leku aproposa.',
-    'Desde aqu&iacute; bajamos hacia San Crist&oacute;bal Txiki y enlazamos con una bajada larga, r&aacute;pida y muy disfrutona que nos lleva hasta el barrio de <b>Besoita</b> (km 28,4 &middot; 324 m). Continuamos descendiendo hasta encontrarnos con la carretera general que une Trabakua con Berriz.':
+    'Desde aqu&iacute; bajamos hacia San Kristobal Txiki y enlazamos con una bajada larga, r&aacute;pida y muy disfrutona que nos lleva hasta el barrio de <b>Besoita</b> (km 28,4 &middot; 324 m). Continuamos descendiendo hasta encontrarnos con la carretera general que une Trabakua con Berriz.':
         'Hemendik San Kristobal Txikirantz jaisten gara, eta jaitsiera luze, azkar eta oso gozagarri batekin jarraitzen dugu <b>Besoita</b> auzoraino (28,4 km &middot; 324 m). Jaisten jarraitzen dugu Trabakua eta Berriz lotzen dituen errepide nagusia aurkitu arte.',
     'La cruzamos all&iacute; mismo, con mucho cuidado, y cogemos enfrente la antigua carretera que sube hacia Zengotita. El ascenso es ya mucho m&aacute;s suave y, a estas alturas, se agradece.':
         'Han bertan zeharkatzen dugu, kontu handiz, eta aurrean Zengotitara igotzen den errepide zaharra hartzen dugu. Igoera askoz leunagoa da jada, eta une honetan eskertzen da.',
@@ -2705,7 +2705,7 @@ MAGUNA = {
     # para quién es
     '<h2>Un circuito largo en e-bike</h2>':
         '<h2>E-bikearekin egiteko ibilbide luzea</h2>',
-    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigaina (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Crist&oacute;bal Txiki (km 26,8).':
+    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigaina (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Kristobal Txiki (km 26,8).':
         '33,44 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzurigainatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
 }
 
@@ -3137,10 +3137,10 @@ EXIGENTE = {
     'Desde el r&iacute;o comenzamos a subir hacia <b><a href="iturreta.html">Iturreta</a></b>. Pasamos junto a la ermita (km 12,3 &middot; 366 m) y una fuente de agua antes de cruzar hacia la vertiente de <b><a href="iruzubieta.html">Iruzubieta</a></b>, por uno de los tramos m&aacute;s entretenidos de la ruta, alternando peque&ntilde;as subidas, bajadas y cambios de terreno. Una buena bajada nos deja junto al Camino de Santiago, que seguimos entre pastos, caser&iacute;os y ganado hasta <b>Bolibar</b>.':
         'Ibaiaren ondotik <b><a href="iturreta.html">Iturreta</a></b>rako igoerari ekingo diogu, ermita baten (12,3 km &middot; 366 m) eta ur-iturri baten ondotik igaro ondoren, <b><a href="iruzubieta.html">Iruzubieta</a></b>ko isurialderantz joko dugu, ibilbideko tarterik entretenigarrienetako batean: igoera eta jaitsiera txikiak eta lur mota desberdinak tartekatzen dira. Beherakada on batek Donejakue Bidera eramango gaitu, eta handik <b>Bolibar</b>rerantz jarraituko dugu, larre, baserri eta abereen artean.',
 
-    'Desde Bolibar subimos por asfalto hasta el <b><a href="zenarruza.html">monasterio de Ziortza</a></b> (km 20,7 &middot; 300 m). Por detr&aacute;s comienza una larga subida por pista de piedra que poco a poco va ganando pendiente hasta alcanzar <b>Kortaun</b>, ya con buenas vistas hacia las lomas del <b><a href="oiz.html">Oiz</a></b>. A partir de aqu&iacute; disfrutamos de unos kil&oacute;metros m&aacute;s tranquilos antes de afrontar la fuerte subida hacia la <b>ermita de San Crist&oacute;bal</b> (km 29,9 &middot; 797 m), desde donde se abren bonitas vistas hacia las monta&ntilde;as del Duranguesado y, mirando atr&aacute;s, hacia Gernika y la costa.':
+    'Desde Bolibar subimos por asfalto hasta el <b><a href="zenarruza.html">monasterio de Ziortza</a></b> (km 20,7 &middot; 300 m). Por detr&aacute;s comienza una larga subida por pista de piedra que poco a poco va ganando pendiente hasta alcanzar <b>Kortaun</b>, ya con buenas vistas hacia las lomas del <b><a href="oiz.html">Oiz</a></b>. A partir de aqu&iacute; disfrutamos de unos kil&oacute;metros m&aacute;s tranquilos antes de afrontar la fuerte subida hacia la <b>ermita de San Kristobal</b> (km 29,9 &middot; 797 m), desde donde se abren bonitas vistas hacia las monta&ntilde;as del Duranguesado y, mirando atr&aacute;s, hacia Gernika y la costa.':
         'Bolibarretik asfaltotik igoko gara <b><a href="zenarruza.html">Ziortzako monasterioa</a></b>raino (20,7 km &middot; 300 m). Monasterioaren atzean harrizko pista luze bat hasten da; pixkanaka aldapa handitzen doa <b>Kortaun</b>era iritsi arte, dagoeneko <b><a href="oiz.html">Oiz</a></b>ko muinoetarako ikuspegi ederrekin. Hemendik aurrera kilometro lasaiago batzuk izango ditugu, <b>San Kristobal ermita</b>rako igoera gogorrari ekin aurretik (29,9 km &middot; 797 m). Behin goian, Durangaldeko mendietarako ikuspegi ederrak zabaltzen dira eta, atzera begiratuz gero, Gernika eta kostaldea ikus daitezke.',
 
-    'Desde San Crist&oacute;bal seguimos ganando altura hasta alcanzar las antenas de la cima del <b><a href="oiz.html">Oiz</a></b> (km 32,0 &middot; 1.020 m), punto m&aacute;s alto de la ruta y un lugar privilegiado para disfrutar de unas vistas de 360 grados.':
+    'Desde San Kristobal seguimos ganando altura hasta alcanzar las antenas de la cima del <b><a href="oiz.html">Oiz</a></b> (km 32,0 &middot; 1.020 m), punto m&aacute;s alto de la ruta y un lugar privilegiado para disfrutar de unas vistas de 360 grados.':
         'San Kristobaletik garaiera irabazten jarraituko dugu <b><a href="oiz.html">Oiz</a></b>ko gailurreko antenetara iritsi arte (32,0 km &middot; 1.020 m). Hau izango da ibilbideko punturik garaiena, inguruko paisaiaz 360 graduko ikuspegiarekin gozatzeko leku paregabea.',
 
     'La bajada comienza hacia los aerogeneradores por un tramo corto pero muy rocoso, donde lo m&aacute;s recomendable es bajarse de la bici y llevarla a mano. Despu&eacute;s seguimos hacia <b>Iturzurigaina</b> (km 34,8 &middot; 852 m) y <b><a href="zengotitagane.html">Zengotitagane</a></b> (km 36,0 &middot; 806 m), pasando cerca de un refugio y una fuente, antes de afrontar la r&aacute;pida y pronunciada bajada de cemento hacia <b>Osma</b>.':
@@ -3710,13 +3710,13 @@ BETZUN = {
         '<p class="eyebrow"><span>Pista eta bidezidorra</span><span class="sep">/</span><span>Zengotita, Iturzurigaina eta Betzun</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Zengotita, Iturzurigaina<br><em>y Betzun</em></h1>':
         '<h1>Zengotita, Iturzurigaina<br><em>eta Betzun</em></h1>',
-    '<p class="full-name">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Crist&oacute;bal y Besoita</p>':
+    '<p class="full-name">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Kristobal y Besoita</p>':
         '<p class="full-name">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota</p>',
 
     # perfil: marcadores y leyenda
-    '<title>San Crist&oacute;bal &middot; 6,0 km &middot; 496 m</title>':
+    '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>':
         '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Crist&oacute;bal</span>':
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal</span>',
 
     # fotos
@@ -3772,7 +3772,7 @@ BETZUN = {
         '<p>Betzunen bi aukera ditugu. Baserria iristen den zementuzko bidea jarraitzen badugu, Zengotitara zuzenean itzul gaitezke, eta horrela itzuli polit eta azkar bat osatu.</p>',
     '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
         '<p>Gu, ordea, ibilbidea pixka bat gehiago luzatuko dugu. Betzunen eskuinera biratu eta isurialde hau zeharkatzen jarraitzen uzten digun pista txiki batetik jarraituko dugu.</p>',
-    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Crist&oacute;bal</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
+    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Kristobal</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
         '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m). Garaitik datorren pista honetan sartzen gara.</p>',
     '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a Besoita, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
         '<p>Hemendik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu Besoita aldera, Durangaldeko mendietara ikuspegi ederrekin tarte honen zati handi batean.</p>',
@@ -3780,7 +3780,7 @@ BETZUN = {
         '<p><b>Besoita</b> auzora iristen gara (7,6 km &middot; 315 m) eta jaisten jarraitzen dugu errepide nagusira iritsi arte. Errepidea gurutzatu eta, beste aldean, Zengotitara igotzen den errepide zaharra hartzen dugu.</p>',
     '<p>Solo nos queda remontar por esta carretera hasta regresar al barrio, exactamente al punto donde hab&iacute;amos comenzado el track, y cerrar la vuelta.</p>':
         '<p>Errepide honetatik igotzea besterik ez zaigu geratzen auzora itzultzeko, ibilbidea hasi dugun leku berera, eta itzulia ixteko.</p>',
-    '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Crist&oacute;bal y Besoita para completar el recorrido entero.</p>':
+    '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Kristobal y Besoita para completar el recorrido entero.</p>':
         '<p>Ibilbide nahiko azkarra eta oso interesgarria da, Zengotitatik Iturzurigainera igotzeko beste modu bat ezagutzeko eta kontrako isurialdetik itzultzeko. Gainera, Betzunera iristean, bi aukera ditugu: Zengotitara zuzenean itzuli, itzuli laburrago bat egiteko, edo San Kristobal eta Besoita aldera jarraitu, ibilbide osoa osatzeko.</p>',
     '<p>Una vuelta sencilla de seguir, con una buena subida inicial, un descenso r&aacute;pido y buenas vistas, que adem&aacute;s nos permite conocer varios caminos &uacute;tiles para enlazar despu&eacute;s con otras rutas de la zona.</p>':
         '<p>Itzuli erraz bat da jarraitzeko, hasierako igoera on batekin, jaitsiera azkar batekin eta ikuspegi ederrekin, gainera, inguruko beste ibilbide batzuekin lotzeko baliagarriak diren hainbat bide ezagutzeko aukera ematen diguna.</p>',
@@ -3797,7 +3797,7 @@ SARRIMENDI = {
         'Ondoren, haize-sorgailuen ondotik Garairantz jaisten den pista hartuko dugu eta <b><a href="potrera.html">Potrerako bihurgune</a></b>raino (9,8 km &middot; 714 m) jarraituko dugu. Han, ezkerrera biratu eta jaitsiera harritsu batean sartuko gara, bidearen ondoan dagoen zaldi-potrera txikiagatik horrela deitua.',
     'Descendemos hasta una fuente, situada pr&aacute;cticamente a la altura de la pista que viene de Garai. Cruzamos esta pista de frente y subimos hacia <b>Sarrionamendia</b> (km 11,7 &middot; 597 m), un corto desv&iacute;o que merece la pena por las buenas vistas sobre los montes y valles de alrededor.':
         'Iturri bateraino jaitsiko gara, Garaitik datorren pistaren parean. Pista hau zeharkatu eta <b>Sarrionamendia</b>rantz (11,7 km &middot; 597 m) igoko gara, desbideratze labur bat, inguruko mendi eta haranen ikuspegi ederrak eskaintzen dituena.',
-    'Regresamos por el mismo camino hasta la fuente y giramos a la derecha para bajar hacia <b>San Crist&oacute;bal Txiki</b> (km 13,0 &middot; 497 m). Poco antes de llegar nos desviamos a la izquierda y comenzamos a subir hacia el caser&iacute;o de <b><a href="betzun.html">Betzun</a></b>. Una vez pasado el caser&iacute;o, cambia la tendencia del terreno y comenzamos el descenso hacia <b>Zengotita</b> (km 15,5 &middot; 411 m).':
+    'Regresamos por el mismo camino hasta la fuente y giramos a la derecha para bajar hacia <b>San Kristobal Txiki</b> (km 13,0 &middot; 497 m). Poco antes de llegar nos desviamos a la izquierda y comenzamos a subir hacia el caser&iacute;o de <b><a href="betzun.html">Betzun</a></b>. Una vez pasado el caser&iacute;o, cambia la tendencia del terreno y comenzamos el descenso hacia <b>Zengotita</b> (km 15,5 &middot; 411 m).':
         'Itzulerako bide beretik iturriraino itzuliko gara eta eskuinera biratuko dugu <b>San Kristobal Txiki</b>rantz (13,0 km &middot; 497 m) jaisteko. Iritsi baino pixka bat lehenago, ezkerrera desbideratuko gara eta <b><a href="betzun.html">Betzun</a></b> baserrirantz igotzen hasiko gara. Baserria pasata, lurzoruaren joera aldatu eta <b>Zengotita</b>rantz (15,5 km &middot; 411 m) jaisten hasiko gara.',
     'En Zengotita tenemos otra fuente. Adem&aacute;s, es un buen punto para abandonar la ruta si vamos cansados o surge alg&uacute;n problema: desde aqu&iacute; podemos regresar a Trabakua por la carretera general en unos 2,5 kil&oacute;metros.':
         'Zengotitan beste iturri bat dugu. Gainera, nekatuta bagaude edo arazoren bat sortzen bada, ibilbidea bertan behera uzteko puntu egokia da: hemendik Trabakuara itzul gaitezke errepide nagusitik 2,5 kilometro ingurutan.',
@@ -3827,7 +3827,7 @@ SARRIMENDI = {
         '28,35 km eta +1.366 m-ko desnibela zirkuitu bakarrean. Ibilbide gogor hau trail running edo iraupen luzeko mendi-ibilietarako pentsatuta dago batez ere. Itzuli luze eta askotarikoa da, Oiz mendigunearen zati bat eta Mallabiako zati handi bat zeharkatuko ditugu, goi-eremuak, auzoak, mendi-bideak eta hain ohikoak ez diren zati batzuk lotuz. Ibilbidean zehar, ura hartzeko hainbat puntu izango ditugu: Iturzuri, Zengotita, Mallabia eta Artetako iturria, azken hau Mendibilera igotzen hasi aurretik.',
     'La Potrera':
         'Potrera',
-    'San Crist&oacute;bal Txiki':
+    'San Kristobal Txiki':
         'San Kristobal Txiki',
     'Arietxu':
         'Arietzu',
@@ -4263,21 +4263,21 @@ SANPEDROBIDARTE = {
 
 SANCRISTOBALOIZ = {
     # hero
-    '<span>Mixta</span><span class="sep">/</span><span>San Crist&oacute;bal, Zenarruza y Muniozguren</span><span class="sep">/</span><span>Circuito</span>':
+    '<span>Mixta</span><span class="sep">/</span><span>San Kristobal, Zenarruza y Muniozguren</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>San Kristobal, Zenarruza eta Muniozguren</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, San Crist&oacute;bal (Oiz)<br><em>Zenarruza y Muniozguren</em></h1>':
+    '<h1>Trabakua, San Kristobal (Oiz)<br><em>Zenarruza y Muniozguren</em></h1>':
         '<h1>Trabakua, San Kristobal (Oiz)<br><em>Zenarruza eta Muniozguren</em></h1>',
-    '<p class="full-name">Circuito en e-bike desde Trabakua por San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren, en sentido contrario a las rutas ya publicadas por la zona de Ziortza</p>':
+    '<p class="full-name">Circuito en e-bike desde Trabakua por San Kristobal (Oiz), Zenarruza y Muniozguren, en sentido contrario a las rutas ya publicadas por la zona de Ziortza</p>':
         '<p class="full-name">E-bike zirkuitua Trabakuatik, San Kristobal (Oiz), Zenarruza eta Muniozgurenetik igarota, Ziortza inguruan argitaratutako ibilbideen kontrako norabidean</p>',
     'alt="Fuente de piedra con dos ca&ntilde;os y musgo en el canal de agua"':
         'alt="Harrizko iturria, bi txorrotarekin eta ur-kanalean goroldioa duena"',
-    'alt="Foto ampliada del recorrido de Trabakua, San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren"':
+    'alt="Foto ampliada del recorrido de Trabakua, San Kristobal (Oiz), Zenarruza y Muniozguren"':
         'alt="Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozgurenen ibilbidearen argazki handitua"',
 
     # para quien es
     '<h2>Una ruta larga en e-bike</h2>':
         '<h2>E-bike ibilbide luzea</h2>',
-    '<p>30,97 km y +1.028 m de desnivel en un circuito de dificultad media, con superficie mixta entre pista y algo de sendero. Hay agua junto a una fuente en la zona de San Kristobal Txiki y en la Fuente Oiz (km 12,8), bastante escondida justo detr&aacute;s de la ermita de San Crist&oacute;bal.</p>':
+    '<p>30,97 km y +1.028 m de desnivel en un circuito de dificultad media, con superficie mixta entre pista y algo de sendero. Hay agua junto a una fuente en la zona de San Kristobal Txiki y en la Fuente Oiz (km 12,8), bastante escondida justo detr&aacute;s de la ermita de San Kristobal.</p>':
         '<p>30,97 km eta +1.028 m-ko desnibela zailtasun ertaineko zirkuitu batean, azalera nahasiarekin, pista eta bidezidor pixka bat tartekatuz. Ura badago San Kristobal Txikiko iturri baten ondoan, eta Oiz Iturrian (12,8 km), San Kristobal ermitaren atzean, nahiko ezkutatuta.</p>',
 
     # galeria
@@ -4301,19 +4301,19 @@ SANCRISTOBALOIZ = {
         'alt="Lur-pista basotarra bizikletaren manetatik ikusia, atzeko ispilua ikusgai"',
 
     # descargas
-    'download="Trabakua, San Cristóbal (Oiz), Zenarruza y Muniozguren.gpx"':
+    'download="Trabakua, San Kristobal (Oiz), Zenarruza y Muniozguren.gpx"':
         'download="Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren.gpx"',
-    'download="Trabakua, San Cristóbal (Oiz), Zenarruza y Muniozguren.kml"':
+    'download="Trabakua, San Kristobal (Oiz), Zenarruza y Muniozguren.kml"':
         'download="Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren.kml"',
 
     # perfil: marcadores y leyenda
     '<title>Ermita de Urdaixa &middot; 7,1 km &middot; 385 m</title>':
         '<title>Urdaixako ermita &middot; 7,1 km &middot; 385 m</title>',
-    '<title>San Crist&oacute;bal &middot; 12,5 km &middot; 787 m</title>':
+    '<title>San Kristobal &middot; 12,5 km &middot; 787 m</title>':
         '<title>San Kristobal &middot; 12,5 km &middot; 787 m</title>',
     '<title>Fuente Oiz &middot; 12,8 km &middot; 780 m</title>':
         '<title>Oiz Iturria &middot; 12,8 km &middot; 780 m</title>',
-    '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> <span class="elev-legend-item"><span class="num">3</span>San Crist&oacute;bal</span> <span class="elev-legend-item"><span class="num">4</span>Fuente Oiz</span> <span class="elev-legend-item"><span class="num">5</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">6</span>Muniozguren</span></div>':
+    '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Ermita de Urdaixa</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span> <span class="elev-legend-item"><span class="num">4</span>Fuente Oiz</span> <span class="elev-legend-item"><span class="num">5</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">6</span>Muniozguren</span></div>':
         '<div class="elev-legend"><span class="elev-legend-item"><span class="num">1</span>Betzun</span> <span class="elev-legend-item"><span class="num">2</span>Urdaixako ermita</span> <span class="elev-legend-item"><span class="num">3</span>San Kristobal</span> <span class="elev-legend-item"><span class="num">4</span>Oiz Iturria</span> <span class="elev-legend-item"><span class="num">5</span>Zenarruza</span> <span class="elev-legend-item"><span class="num">6</span>Muniozguren</span></div>',
 
     # --- relato ---
@@ -4709,9 +4709,9 @@ MARKINABOLIBAR = {
         'download="Trabakua, Zenarruza, Zeinka, Urregarai eta Markina.kml"',
 
     # --- relato ---
-    'Como en la ruta de <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz), Zenarruza y Muniozguren</a>, salimos de <b>Trabakua</b> y subimos por <b>Gerea</b> hasta el caser&iacute;o de <b><a href="muniozguren.html">Muniozguren</a></b> (540 m). Desde all&iacute; bajamos hacia el monasterio de <b><a href="zenarruza.html">Zenarruza</a></b> (km 8,97 &middot; 312 m), donde empieza de verdad esta ruta.':
+    'Como en la ruta de <a href="sancristobaloiz.html">San Kristobal (Oiz), Zenarruza y Muniozguren</a>, salimos de <b>Trabakua</b> y subimos por <b>Gerea</b> hasta el caser&iacute;o de <b><a href="muniozguren.html">Muniozguren</a></b> (540 m). Desde all&iacute; bajamos hacia el monasterio de <b><a href="zenarruza.html">Zenarruza</a></b> (km 8,97 &middot; 312 m), donde empieza de verdad esta ruta.':
         '<a href="sancristobaloiz.html">San Kristobal (Oiz), Zenarruza eta Muniozguren</a> ibilbidean bezala, <b>Trabakua</b>tik abiatu eta <b>Gerea</b>tik gora egiten dugu <b><a href="muniozguren.html">Muniozguren</a></b>go baserriraino (540 m). Handik <b><a href="zenarruza.html">Zenarruza</a></b>ko monasteriorantz jaisten gara (8,97 km &middot; 312 m), eta hor hasten da benetan ibilbide hau.',
-    'Pasado el monasterio, un poco m&aacute;s adelante encontramos un cruce: a la izquierda sale el camino hacia <a href="sancristobaloiz.html">San Crist&oacute;bal (Oiz)</a>, y nosotros seguimos a la derecha, por el mismo trazado del Camino de Santiago, comenzando a subir hacia el puerto de <b>Gontzagarai</b>. La subida es bonita y muy entretenida, un poco t&eacute;cnica en alg&uacute;n punto: puede que en alg&uacute;n paso haya que bajar de la bici, pero nada del otro mundo. Atraviesa arboledas cerradas y bosque. Una vez arriba dejamos atr&aacute;s el recorrido que siguen los peregrinos, cruzamos la carretera general y nos adentramos hacia el barrio de <b>Gerrika</b>, todav&iacute;a en ascenso. Es una zona muy agradable y muy ciclable.':
+    'Pasado el monasterio, un poco m&aacute;s adelante encontramos un cruce: a la izquierda sale el camino hacia <a href="sancristobaloiz.html">San Kristobal (Oiz)</a>, y nosotros seguimos a la derecha, por el mismo trazado del Camino de Santiago, comenzando a subir hacia el puerto de <b>Gontzagarai</b>. La subida es bonita y muy entretenida, un poco t&eacute;cnica en alg&uacute;n punto: puede que en alg&uacute;n paso haya que bajar de la bici, pero nada del otro mundo. Atraviesa arboledas cerradas y bosque. Una vez arriba dejamos atr&aacute;s el recorrido que siguen los peregrinos, cruzamos la carretera general y nos adentramos hacia el barrio de <b>Gerrika</b>, todav&iacute;a en ascenso. Es una zona muy agradable y muy ciclable.':
         'Monasterioa pasata, aurreraxeago bidegurutze bat aurkituko dugu: ezkerretara <a href="sancristobaloiz.html">San Kristobal (Oiz)</a> aldera doan bidea dago, eta guk eskuinetara jarraitzen dugu, Done Jakue bidearen trazadura beretik, <b>Gontzagarai</b> mendaterantz igotzen hasita. Igoera polita eta oso entretenigarria da, puntu batean pixka bat teknikoa: baliteke pauso batean bizikletatik jaitsi behar izatea, baina ez da ezer larria. Baso itxi eta arboladaz zeharkatzen da. Goian, erromesen ibilbidea atzean utzi, errepide nagusia gurutzatu, eta <b>Gerrika</b> auzorantz sartzen gara, oraindik ere gorantz. Eremu oso atsegina da, bizikletaz ibiltzeko oso egokia.',
     'Una vez arriba continuamos hacia <b>Zeinka</b> (km 12,74 &middot; 356 m), atravesando una zona muy bonita, entre caser&iacute;os y prados, con buenas vistas que se van abriendo a medida que avanzamos.':
         'Gora iritsitakoan, <b>Zeinka</b>rantz jarraitzen dugu (12,74 km &middot; 356 m), oso inguru polit bat zeharkatuz, baserri eta zelai artean, ikuspegi ederrekin, aurrera egin ahala zabaltzen direnak.',
@@ -5127,9 +5127,9 @@ SANCRISTOBALGARAIANDIKOA = {
         '<title>Iturria &middot; 14,8 km</title>',
     '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Garai · Andikoa</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Garai · Andikoa</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>San Cristóbal Txiki<br><em>Garai y Andikoa</em></h1>':
+    '<h1>San Kristobal Txiki<br><em>Garai y Andikoa</em></h1>':
         '<h1>San Kristobal Txiki<br><em>Garai eta Andikoa</em></h1>',
-    '<p class="full-name">Circuito desde Trabakua por San Cristóbal Txiki, Garai y Andikoa</p>':
+    '<p class="full-name">Circuito desde Trabakua por San Kristobal Txiki, Garai y Andikoa</p>':
         '<p class="full-name">Trabakutik San Kristobal Txiki, Garai eta Andikoa zeharkatzen dituen zirkuitua</p>',
     'Camino entre árboles y un murete cubierto de musgo':
         'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
@@ -5151,11 +5151,11 @@ SANCRISTOBALGARAIANDIKOA = {
         'Zuhaitz arteko bidezidor estu eta hostotsua',
     'Pequeño río entre piedras y musgo en el bosque':
         'Erreka txikia harri eta goroldio artean',
-    '<p>Salimos de Trabakua con esos primeros dos kilómetros y pico que suben tranquilos hacia Zengotita. Es un tramo sencillo, sin misterio, solo un cruce antes de entrar al barrio, ideal para ir calentando sin pensar demasiado. Al llegar a Zengotita toca girar a la izquierda y seguir la carretera hasta el caserío <a href="betzun.html">Betzun</a>, donde el asfalto se acaba. Allí cogemos la pista de la izquierda, cruzamos el río y empezamos a bajar hacia <a href="sancristobal.html">San Cristóbal Txiki</a>. En el cruce giramos a la derecha y volvemos a subir, una subida corta pero constante que te mete ya en la ruta de verdad.</p>':
+    '<p>Salimos de Trabakua con esos primeros dos kilómetros y pico que suben tranquilos hacia Zengotita. Es un tramo sencillo, sin misterio, solo un cruce antes de entrar al barrio, ideal para ir calentando sin pensar demasiado. Al llegar a Zengotita toca girar a la izquierda y seguir la carretera hasta el caserío <a href="betzun.html">Betzun</a>, donde el asfalto se acaba. Allí cogemos la pista de la izquierda, cruzamos el río y empezamos a bajar hacia <a href="sancristobal.html">San Kristobal Txiki</a>. En el cruce giramos a la derecha y volvemos a subir, una subida corta pero constante que te mete ya en la ruta de verdad.</p>':
         '<p>Trabakuatik abiatzen gara, Zengotitarantz igotzen diren lehen bi kilometro eta erdi lasai horiekin. Zati erraza da, misteriorik gabea, auzora sartu aurretik bidegurutze bat baino ez, gehiegi pentsatu gabe berotzen joateko aproposa. Zengotitara iristean, ezkerrera biratu eta <a href="betzun.eu.html">Betzun</a> baserriraino errepideari jarraitu behar zaio, asfaltoa amaitzen den lekura. Han, ezkerreko pista hartzen dugu, erreka zeharkatu eta <a href="sancristobal.eu.html">San Kristobal Txiki</a>rantz jaisten hasten gara. Bidegurutzean eskuinera biratu eta berriro igotzen gara, igoera laburra baina etengabea, benetako ibilbidean sartzen zaituena.</p>',
     '<p>Arriba aparece la fuente de siempre, la que sale en tantas rutas. Justo ahí enlazamos con el trazado del <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer">Asto Trail</a>, que baja desde <a href="sarrimendi.html">Sarrionamendi</a>. A partir de aquí la vuelta cambia de tono. Empezamos a bajar y, unos trescientos metros más adelante, dejamos la pista para entrar a la derecha en uno de los tramos más disfrutones del día. El sendero arranca muy juguetón, enlazando curvas rápidas. Hay un paso algo roto, pero se pasa sin problema. Luego el camino se estrecha, se cierra un poco y gana encanto. De repente aparece un entorno lleno de musgo, muy verde, muy húmedo. Cruzamos un pequeño río y empezamos a subir. El sendero está limpio, cuidado, se nota que por aquí pasa la carrera y es un tramo muy agradecido tanto para correr como para la bici.</p>':
         '<p>Goian betiko iturria agertzen da, hainbat ibilbidetan agertzen dena. Hain zuzen ere, hor <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer">Asto Trail</a>en trazadurarekin bat egiten dugu, <a href="sarrimendi.eu.html">Sarrionamendi</a>tik jaisten dena. Hemendik aurrera, itzuliak tonua aldatzen du. Jaisten hasten gara, eta, handik hirurehun bat metrora, pista utzi eta eskuinera sartzen gara eguneko zatirik atseginenetako batean. Bidezidorra oso jostalaria da, bihurgune azkarrak lotuz. Pasabide bat apur bat hautsita dago, baina arazorik gabe pasatzen da. Gero, bidea estutu egiten da, itxi egiten da apur bat eta xarma irabazten du. Bat-batean, goroldioz betetako ingurune bat agertzen da, oso berdea, oso hezea. Erreka txiki bat zeharkatu eta igotzen hasten gara. Bidezidorra garbi dago, zainduta, nabari da hemendik lasterketa pasatzen dela eta oso zati eskertzekoa dela, bai korrika egiteko bai bizikletarako.</p>',
-    '<p>El sendero nos deja en la carretera que sube hacia el cruce entre San Cristóbal Txiki y <a href="zengotitagane.html">Zengotitagane</a>. Giramos a la izquierda y bajamos hacia <a href="garaimaguna.html">Garai</a>, aunque el asfalto dura muy poco. Enseguida lo dejamos por la izquierda para volver a entrar en el recorrido del Asto Trail. Aquí llega otra bajada buena. Primero vamos por terreno abierto, con vistas y espacio para soltar un poco el freno. Luego entramos en un hayedo donde todo cambia: senderos estrechos, curvas, algún paso tipo descenso de BTT, nada complicado pero con ese punto justo que hace que disfrutes cada metro.</p>':
+    '<p>El sendero nos deja en la carretera que sube hacia el cruce entre San Kristobal Txiki y <a href="zengotitagane.html">Zengotitagane</a>. Giramos a la izquierda y bajamos hacia <a href="garaimaguna.html">Garai</a>, aunque el asfalto dura muy poco. Enseguida lo dejamos por la izquierda para volver a entrar en el recorrido del Asto Trail. Aquí llega otra bajada buena. Primero vamos por terreno abierto, con vistas y espacio para soltar un poco el freno. Luego entramos en un hayedo donde todo cambia: senderos estrechos, curvas, algún paso tipo descenso de BTT, nada complicado pero con ese punto justo que hace que disfrutes cada metro.</p>':
         '<p>Bidezidorrak San Kristobal Txiki eta <a href="zengotitagane.eu.html">Zengotitagane</a> arteko bidegurutzera igotzen den errepidera eramaten gaitu. Ezkerrera biratu eta <a href="garaimaguna.eu.html">Garai</a>rantz jaisten gara, nahiz eta asfaltoak oso gutxi irauten duen. Berehala utzi eta Asto Traileko ibilbidera itzultzen gara. Hemen beste jaitsiera on bat dator. Lehenik, eremu irekian goaz, bistekin eta balazta pixka bat askatzeko lekuarekin. Gero, pagadi batean sartzen gara, non dena aldatzen den: bidezidor estuak, bihurguneak, BTT jaitsiera moduko pasabideren bat, ezer zailik ez, baina metro bakoitza gozatzera eramaten zaituen puntu horrekin.</p>',
     '<p>Al salir del hayedo enlazamos con una pista de piedra que nos deja en Garai. En este punto dejamos ya el último tramo del recorrido de la carrera. A la entrada del pueblo giramos a la izquierda y encontramos una fuente junto a un lavadero antiguo, buen sitio para rellenar agua antes de seguir. Continuamos entre barrios en dirección a Sarria, ahora por la parte baja. Más adelante aparece el cruce hacia <a href="axmakurandikoa.html">Andikoa</a>, giramos a la izquierda y toca subir. Es una zona muy agradecida: pastizales, caseríos, vistas hacia las montañas de enfrente. Atravesamos Andikoa y seguimos hacia Besoita.</p>':
         '<p>Pagaditik ateratzean, Garaira eramaten gaituen harrizko pista batekin bat egiten dugu. Puntu honetan lasterketaren ibilbideko azken zatia uzten dugu. Herriaren sarreran ezkerrera biratu eta iturri bat aurkitzen dugu garbitoki zahar baten ondoan, ura betetzeko leku ona, aurrera jarraitu aurretik. Auzoen artean jarraitzen dugu Sarriarantz, orain behealdetik. Aurrerago, <a href="axmakurandikoa.eu.html">Andikoa</a>rako bidegurutzea agertzen da, ezkerrera biratu eta igotzea tokatzen da. Oso zati atsegina da: larreak, baserriak, aurreko mendietarako bistak. Andikoa zeharkatu eta Besoitarantz jarraitzen dugu.</p>',
@@ -5183,7 +5183,7 @@ SANCRISTOBALGARAIANDIKOA = {
         'Iturria · 14,8 km',
     'alt="Camino entre árboles y un murete cubierto de musgo"':
         'alt="Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan"',
-    'alt="Foto ampliada del recorrido de San Cristóbal Txiki, Garai y Andikoa"':
+    'alt="Foto ampliada del recorrido de San Kristobal Txiki, Garai y Andikoa"':
         'alt="San Kristobal Txiki, Garai eta Andikoa ibilbideko argazkia handituta"',
     'alt="Corredores avanzando por un sendero entre helechos y árboles"':
         'alt="Korrikalariak iratze eta zuhaitz arteko bidezidorrean"',
@@ -5201,9 +5201,9 @@ SANCRISTOBALGARAIANDIKOA = {
         'alt="Zuhaitz arteko bidezidor estu eta hostotsua"',
     'alt="Pequeño río entre piedras y musgo en el bosque"':
         'alt="Erreka txikia harri eta goroldio artean"',
-    'download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.gpx"':
+    'download="Trabakua, San Kristobal Txiki, Garai y Andikoa.gpx"':
         'download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.gpx"',
-    'download="Trabakua, San Cristóbal Txiki, Garai y Andikoa.kml"':
+    'download="Trabakua, San Kristobal Txiki, Garai y Andikoa.kml"':
         'download="Trabakua, San Kristobal Txiki, Garai eta Andikoa.kml"',
     'placeholder="p. ej. km 8, cerca de la fuente..."':
         'placeholder="adib. 8. km, iturritik gertu..."',
@@ -5363,7 +5363,7 @@ ASTORKIGANE = {
         'Erreka ingurura iritsi ondoren, igoera berriro hasten da eta bidea pixkanaka hobetzen doa. Zelai batera irten, hura zeharkatu, eta bi baserriren ondora iristen gara. Hemendik aurrera ibilbidea guztiz aldatzen da: arazoak desagertzen dira eta berriro egoera onean dauden pista zabaletatik goaz.',
     'Seguimos ganando altura hasta llegar a <b>Kortaguren</b>. Desde aqu&iacute; continuamos por pistas muy amplias y bonitas, con buenas vistas hacia la zona de <b>Oiz</b>. M&aacute;s adelante giramos por una pista de cemento en direcci&oacute;n a <b>Munitibar</b>.':
         'Altuera irabazten jarraitzen dugu <b>Kortaguren</b>era iritsi arte. Hemendik pista oso zabal eta politetatik jarraitzen dugu, <b>Oiz</b> aldera bista ederrak ditugula. Aurrerago zementuzko pista bat hartzen dugu, <b>Munitibar</b> aldera.',
-    'Llegamos despu&eacute;s al cruce que permite subir hacia <b><a href="sancristobaloiz.html">San Crist&oacute;bal</a></b>, una subida que ya hemos utilizado m&aacute;s de una vez en otras rutas. Esta vez la dejamos a un lado y giramos a la derecha. M&aacute;s adelante enlazamos con el GR y entramos en un sendero algo marcado por el paso de motos, pero todav&iacute;a bonito y con bastante hierba, hasta salir a la carretera que baja hacia <b>Gerrikaitz</b>.':
+    'Llegamos despu&eacute;s al cruce que permite subir hacia <b><a href="sancristobaloiz.html">San Kristobal</a></b>, una subida que ya hemos utilizado m&aacute;s de una vez en otras rutas. Esta vez la dejamos a un lado y giramos a la derecha. M&aacute;s adelante enlazamos con el GR y entramos en un sendero algo marcado por el paso de motos, pero todav&iacute;a bonito y con bastante hierba, hasta salir a la carretera que baja hacia <b>Gerrikaitz</b>.':
         'Gero <b><a href="sancristobaloiz.html">San Kristobal</a></b>era igotzeko bidegurutzera iristen gara, beste ibilbide batzuetan behin baino gehiagotan erabili dugun igoera. Oraingoan alde batera utzi eta eskuinera egiten dugu. Aurrerago GRarekin lotu eta motoen pasoak markatutako bidezidor batean sartzen gara, baina oraindik polita eta belar askokoa, <b>Gerrikaitz</b>era jaisten den errepidera irten arte.',
     'En un principio pens&aacute;bamos bajar directamente hacia Munitibar, pero para evitar el asfalto decidimos seguir explorando. Continuamos un tramo m&aacute;s por el GR y enlazamos con unas pistas reci&eacute;n abiertas, sin saber muy bien d&oacute;nde acabar&iacute;amos. El descenso fue largo, r&aacute;pido y muy bonito, pero acabamos casi en la zona de <b>Mendata</b> y no qued&oacute; otra que recuperar despu&eacute;s unos cinco kil&oacute;metros por carretera. Aun as&iacute;, el descenso mereci&oacute; la pena.':
         'Hasieran zuzenean Munitibar aldera jaistea genuen buruan, baina asfaltoa saihesteko esploratzen jarraitzea erabaki genuen. GRtik beste zati batez jarraitu, eta berriki irekitako pista batzuekin lotu genuen, non amaituko genuen ondo jakin gabe. Jaitsiera luzea, azkarra eta oso polita izan zen, baina ia <b>Mendata</b> aldean amaitu genuen, eta gero bost bat kilometro errepidez berreskuratzea beste erremediorik ez zen izan. Hala ere, jaitsierak merezi izan zuen.',
