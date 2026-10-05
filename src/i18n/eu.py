@@ -223,6 +223,10 @@ COMMON = {
         '<h3 class="route-card-name">Trabakua, Zengotitagane eta Maguna</h3>',
     '<h3 class="route-card-name">Trabakua, Aixola y Berriz</h3>':
         '<h3 class="route-card-name">Trabakua, Aixola eta Berriz</h3>',
+    '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta y Eibar</h3>':
+        '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta eta Eibar</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita</p>',
 
     # facts values
     '<span class="v">Circuito</span>': '<span class="v">Zirkuitua</span>',
@@ -755,6 +759,10 @@ HOME = {
     # maguna card
     'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
         'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
+
+    # karabieta card
+    'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"':
+        'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
 
     # zaldibar card
     'alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"':
@@ -3257,6 +3265,7 @@ DESCRIPTIONS = {
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik: 5,34 km eta +200 m, erraza eta ia edonork egiteko modukoa. Argazkiekin eta GPX trackarekin.',
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
+    'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
         'Trikuharritik igarota Magunaraino',
     '7pago': '7 Pago Mendi Lasterketaren benetako ibilbidea (trail running), Oizko gailurretik igarota',
@@ -3401,6 +3410,7 @@ TITLES = {
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
     'zaldibar': 'Trabakua, Aixola eta Berriz · E-bike ibilbidea — Herriko ibilbideak',
+    'karabieta': 'Trabakua, Elgeta, Karabieta eta Eibar · E-bike ibilbidea — Herriko ibilbideak',
     'maguna': 'Trabakua, Zengotitagane eta Maguna · E-bike ibilbidea — Herriko ibilbideak',
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
@@ -5450,7 +5460,84 @@ LONGAURJAUZIAK = {
         'alt="Bidezidorra konifera-enbor lodien artean, orratzez estalita eta harri-pila txiki bat atzealdean"',
 }
 
+KARABIETA = {
+    # hero
+    '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Elgeta, Karabieta y Azkonabieta</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Elgeta, Karabieta eta Azkonabieta</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Elgeta, Karabieta<br><em>y Eibar</em></h1>':
+        '<h1>Trabakua, Elgeta, Karabieta<br><em>eta Eibar</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita</p>',
+
+    # el perfil: los siete puntos son nombres propios, iguales en los dos idiomas
+    '<span class="elev-legend-item"><span class="num">1</span>Goierri</span> '
+    '<span class="elev-legend-item"><span class="num">2</span>Elgeta</span> '
+    '<span class="elev-legend-item"><span class="num">3</span>Karabieta</span> '
+    '<span class="elev-legend-item"><span class="num">4</span>Eibar</span> '
+    '<span class="elev-legend-item"><span class="num">5</span>Ermua</span> '
+    '<span class="elev-legend-item"><span class="num">6</span>Berano</span> '
+    '<span class="elev-legend-item"><span class="num">7</span>Arteta</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Goierri</span> '
+        '<span class="elev-legend-item"><span class="num">2</span>Elgeta</span> '
+        '<span class="elev-legend-item"><span class="num">3</span>Karabieta</span> '
+        '<span class="elev-legend-item"><span class="num">4</span>Eibar</span> '
+        '<span class="elev-legend-item"><span class="num">5</span>Ermua</span> '
+        '<span class="elev-legend-item"><span class="num">6</span>Berano</span> '
+        '<span class="elev-legend-item"><span class="num">7</span>Arteta</span>',
+
+    # cifras y descargas
+    '<div class="fact"><span class="v">Pista, sendero y carretera</span><span class="k">Superficie</span></div>':
+        '<div class="fact"><span class="v">Pista, bidezidorra eta errepidea</span><span class="k">Azalera</span></div>',
+    'download="Trabakua, Elgeta, Karabieta y Eibar.gpx"':
+        'download="Trabakua, Elgeta, Karabieta eta Eibar.gpx"',
+    'download="Trabakua, Elgeta, Karabieta y Eibar.kml"':
+        'download="Trabakua, Elgeta, Karabieta eta Eibar.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Karabieta y Eibar"':
+        'alt="Trabakua, Elgeta, Karabieta eta Eibar ibilbidearen argazki handitua"',
+
+    # para quien es
+    '<p>39,56 km y +1.011 m en un solo circuito, que se sale de Mallabia para dar la vuelta por '
+    '<b>Elgeta</b>, <b>Karabieta</b> y Azkonabieta y volver por <b>Eibar</b>, <b>Ermua</b> y <b>Berano</b>. '
+    'Hay agua en <b>Goierri</b> (km 6,65) y junto al front&oacute;n de Elgeta (km 16,83), donde adem&aacute;s '
+    'hay un punto para limpiar la bici con agua a presi&oacute;n.</p>':
+        '<p>39,56 km eta +1.011 m zirkuitu bakarrean, Mallabiatik kanpora joan eta '
+        '<b>Elgeta</b>, <b>Karabieta</b> eta Azkonabietatik bira emateko, <b>Eibar</b>, <b>Ermua</b> eta <b>Berano</b>tik itzulita. '
+        'Ura dago <b>Goierri</b>n (6,65 km) eta Elgetako frontoiaren ondoan (16,83 km), non bizikleta '
+        'presiozko urarekin garbitzeko puntu bat ere baitago.</p>',
+
+    # pies de foto (invisibles: solo para el lector de pantalla y para Google)
+    'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"': 'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
+    'alt="Hilera de &aacute;rboles junto a un camino asfaltado, con prados al otro lado de la alambrada"': 'alt="Zuhaitz ilara asfaltozko bide baten ondoan, larreak hesiaren beste aldean"',
+    'alt="Panor&aacute;mica del valle con caser&iacute;os y el Anboto al fondo"': 'alt="Haranaren panoramika baserriekin, Anboto atzealdean"',
+    'alt="Horma de piedra seca junto a la pista, con un endrino en flor"': 'alt="Harrizko horma lehorra pistaren ondoan, elorri beltza loretan"',
+    'alt="Pista de tierra subiendo entre pinares, junto a una alambrada"': 'alt="Lur-pista pinudien artean igotzen, hesi baten ondoan"',
+    'alt="Pista de monte entre pinos, abierta a una loma de praderas enfrente"': 'alt="Mendiko pista pinuen artean, aurrean larreen bizkar bat zabalik"',
+    'alt="Caser&iacute;os del valle al amanecer, entre bruma"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean"',
+    'alt="Caballos pastando en las campas, con los aerogeneradores del Oiz en el cordal"': 'alt="Zaldiak larreetan bazkatzen, Oizko eolikoak gailurrean"',
+
+    # el texto del autor, parrafo a parrafo
+    '<p>Salimos de <b>Trabakua</b> en direcci&oacute;n a Zengotita. Al llegar a la zona de la ermita seguimos por el camino que empieza a bajar poco a poco hasta enlazar con las marcas del GR y continuar hacia Goierri.</p>':
+        '<p><b>Trabakua</b>tik abiatzen gara Zengotitarantz. Baselizaren ingurura iristean, poliki-poliki jaisten hasten den bidea hartzen dugu, GRaren markekin bat egin eta Goierrirantz jarraitzeko.</p>',
+    '<p>Al acercarnos a <b>Goierri</b> (6,65 km &middot; 319 m) pasamos junto a una fuente, un buen sitio para coger agua antes de seguir. Desde aqu&iacute; ponemos rumbo a Elgeta por pista de piedra, pasando por la zona de Santruan y continuando despu&eacute;s hasta salir a la carretera.</p>':
+        '<p><b>Goierri</b>ra hurbiltzean (6,65 km &middot; 319 m), iturri batetik igarotzen gara, ura hartzeko leku aproposa aurrera jarraitu aurretik. Hemendik, Elgetarantz abiatzen gara harrizko pistatik, Santruango ingurutik igaroz eta gero errepidera irten arte.</p>',
+    '<p>Una vez en el asfalto giramos a la izquierda y nos quedan unos dos kil&oacute;metros aproximadamente hasta <b>Elgeta</b> (16,83 km &middot; 461 m). Al llegar al pueblo merece la pena hacer una peque&ntilde;a parada junto al front&oacute;n, donde tenemos una fuente y tambi&eacute;n un punto para limpiar las bicicletas con agua a presi&oacute;n.</p>':
+        '<p>Asfaltoan, ezkerrera biratzen dugu eta bi kilometro inguru geratzen zaizkigu <b>Elgeta</b>ra iritsi arte (16,83 km &middot; 461 m). Herrira iristean, merezi du geldialdi txiki bat egitea frontoiaren ondoan, non iturri bat eta bizikletak garbitzeko ur-presiodun puntu bat ditugun.</p>',
+    '<p>Salimos de Elgeta hacia el norte, pero en lugar de continuar directamente por la carretera general nos desviamos a la izquierda. La vuelta se alarga un poco, pero merece la pena. Rodeamos Goikomendi por detr&aacute;s y vamos ganando altura poco a poco por un sendero muy bonito que termina acerc&aacute;ndonos a Karabieta.</p>':
+        '<p>Elgetatik iparralderantz ateratzen gara, baina errepide nagusitik zuzenean jarraitu beharrean, ezkerrera desbideratzen gara. Itzulia apur bat luzatzen da, baina merezi du. Goikomendi atzetik inguratzen dugu eta altuera irabazten goaz poliki-poliki, Karabietara hurbiltzen gaituen bidezidor eder batetik.</p>',
+    '<p>Al llegar a <b>Karabieta</b> (20,11 km &middot; 560 m) cruzamos la carretera y cogemos la pista que tenemos enfrente. Seguimos subiendo poco a poco hacia la zona de Azkonabieta. Nos acercamos bastante a la punta, aunque no llegamos a subirla, sino que la bordeamos para continuar hacia Eibar.</p>':
+        '<p><b>Karabieta</b>ra iristean (20,11 km &middot; 560 m), errepidea gurutzatzen dugu eta aurrean dugun pista hartzen dugu. Poliki-poliki igotzen jarraitzen dugu Azkonabietako ingururantz. Tontorrera nahiko hurbiltzen gara, baina ez gara igotzen, baizik eta inguratu egiten dugu Eibarrerantz jarraitzeko.</p>',
+    '<p>A partir de aqu&iacute; cambia bastante el terreno. Vamos enlazando senderos y pistas, con una bajada muy bonita entre bosque que nos lleva hacia la parte alta de Eibar. Terminamos saliendo junto a la zona deportiva de Unbe.</p>':
+        '<p>Hemendik aurrera, lurra asko aldatzen da. Bidezidorrak eta pistak lotzen ditugu, eta jaitsiera eder bat egiten dugu basoan barrena, Eibarko goiko aldera eramaten gaituena. Unbeko kirol-gunera iristen gara azkenean.</p>',
+    '<p>Desde Unbe bajamos hacia la zona central de <b>Eibar</b> (26,74 km &middot; 155 m) y atravesamos pr&aacute;cticamente todo el pueblo. Seguimos despu&eacute;s hacia <b>Ermua</b> (30,36 km &middot; 178 m), que tambi&eacute;n cruzamos de abajo arriba, y continuamos hacia la salida. All&iacute;, junto al cementerio, cogemos a mano derecha una cuesta grande que nos adentra hacia el barrio de <b>Berano</b> (32,70 km &middot; 322 m).</p>':
+        '<p>Unbetik <b>Eibar</b>ko erdigunerantz (26,74 km &middot; 155 m) jaisten gara eta herri osoa zeharkatzen dugu. Gero, <b>Ermua</b>rantz jarraitzen dugu (30,36 km &middot; 178 m), hau ere behetik gora zeharkatzen dugu, eta irteerarantz jarraitzen dugu. Han, hilerriaren ondoan, eskuinera aldapa handi bat hartzen dugu, <b>Berano</b> auzorantz (32,70 km &middot; 322 m) sartzen gaituena.</p>',
+    '<p>Una vez arriba volvemos a tener buenas vistas. Continuamos y cogemos la pista de piedra que sube para <b>Arteta</b> (35,66 km &middot; 462 m). Antes de llegar al cruce de Arteta dejamos la pista y nos metemos por sendero y pista de tierra hacia la fuente de Arteta (km 36,30). M&aacute;s adelante alcanzamos la parte alta y volvemos a coger la misma pista, pero por el otro lado. Ah&iacute; vamos a la izquierda, en busca de la bajada hacia Donagarai, donde salimos a la carretera y subimos hacia Trabakua para acabar la ruta.</p>':
+        '<p>Behin goian, berriro ikuspegi ederrak ditugu. Aurrera jarraitzen dugu eta <b>Arteta</b>rantz igotzen den (35,66 km &middot; 462 m) harrizko pista hartzen dugu. Artetako bidegurutzera iritsi aurretik, pista utzi eta bidezidorretik eta lur-pistatik jotzen dugu Artetako iturrirantz (36,30 km). Aurrerago goiko aldera iristen gara eta pista bera hartzen dugu berriro, baina beste aldetik. Han ezkerrera jotzen dugu, Donagarairako jaitsieraren bila; errepidera irten eta Trabakuarantz igotzen gara ibilbidea amaitzeko.</p>',
+    '<p>Es una ruta muy completa y con bastantes cambios a lo largo del recorrido. Tiene pistas, senderos, zonas de bosque, algo de carretera y varios tramos muy bonitos, sobre todo el rodeo de Goikomendi, la zona de Karabieta y Azkonabieta y la bajada hacia Unbe. El regreso atravesando Eibar y Ermua, para volver despu&eacute;s por Berano y Arteta, hace que la vuelta sea muy variada de principio a fin.</p>':
+        '<p>Ibilbide osoa eta aldaketa askokoa da. Pistak, bidezidorrak, baso-inguruak, errepide pixka bat eta zati oso politak ditu, batez ere Goikomendiko ingurabidea, Karabietako ingurua eta Azkonabietako ingurua, eta Unberako jaitsiera. Eibar eta Ermua zeharkatuz itzultzeak, gero Berano eta Artetatik itzultzeko, ibilbidea oso anitza egiten du hasieratik amaierara.</p>',
+}
+
 PAGE_STRINGS = {
+    'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
     'ahuntzen': AHUNTZEN,

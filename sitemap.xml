@@ -572,6 +572,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/astorkigane.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/karabieta.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/karabieta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/karabieta.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/karabieta.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/karabieta.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/karabieta.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aviso-legal.eu.html"/>

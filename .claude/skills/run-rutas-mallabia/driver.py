@@ -33,6 +33,14 @@ ANCHOS = (320, 360, 390, 768, 1280)   # 360 es el ancho real de muchos moviles
 JS_CORTE = "() => { const out = []; for (const e of document.querySelectorAll('.hero-compact-stats, .hero-compact h1, .hero-compact-content .eyebrow, .route-card-name')) {  if (getComputedStyle(e).whiteSpace.indexOf('nowrap') < 0) continue;  const r = document.createRange(); r.selectNodeContents(e);  const texto = Math.ceil(r.getBoundingClientRect().width);  const caja = Math.floor(e.getBoundingClientRect().width);  if (texto > caja + 1) out.push((e.className || e.tagName) + ': ' + (texto - caja) + 'px de mas'); } return out; }"
 
 
+def paginas():
+    """La lista de paginas del sitio, leida de src/build.py. Asi una ruta nueva
+    no hace fallar las comprobaciones que cuentan tarjetas."""
+    sys.path.insert(0, str(RAIZ / "src"))
+    import build
+    return build.PAGES
+
+
 def navegador():
     """Playwright busca una version de Chromium que aqui no esta; se le da la
     que hay. Sin esto falla con 'Executable doesn't exist'."""
@@ -208,8 +216,11 @@ def cmd_filtros(a):
         visibles = lambda: pg.evaluate(
             "() => [...document.querySelectorAll('a.route-card')]"
             ".filter(c => c.offsetParent !== null).length")
+        # cuantas rutas hay se saca de build.py, no de un numero a mano: cada
+        # ruta nueva hacia fallar esta comprobacion sin que nada estuviera mal.
+        esperadas = len([p for p in paginas() if p not in ("mallabia", "aviso-legal")])
         total = visibles(); print(f"  sin filtrar            {total} tarjetas")
-        assert total == 56, f"se esperaban 56, hay {total}"
+        assert total == esperadas, f"se esperaban {esperadas}, hay {total}"
 
         pg.fill(".route-search input", "cascada")
         pg.wait_for_timeout(600)
