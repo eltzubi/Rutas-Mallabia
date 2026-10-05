@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Capturas del driver de la skill run-rutas-mallabia: son de usar y tirar.
+.claude/skills/run-rutas-mallabia/capturas/
