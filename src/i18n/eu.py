@@ -574,7 +574,7 @@ HOME = {
     '<span>Barrios, montes y pueblos del entorno</span>':
         '<span>Inguruko auzoak, mendiak eta herriak</span>',
     '<h1>Trabakutik<br><em><span class="pie">a pie</span> y <span class="bici">en e-bike</span></em></h1>':
-        '<h1>Trabakutik<br><em><span class="pie">oinez</span> eta <span class="bici">bizikletaz</span></em></h1>',
+        '<h1>Trabakutik<br><em><span class="pie">oinez</span> eta <span class="bici">e-bikez</span></em></h1>',
     'Rutas por los barrios, montes y pueblos del entorno de Mallabia. '
     'Documentadas sobre el terreno, con datos de verdad, no de folleto.':
         'Mallabia inguruko auzoak, mendiak eta herriak zeharkatzen dituzten ibilbideak. '
