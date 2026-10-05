@@ -185,9 +185,15 @@ invented numbers. `data/trailhead.json` holds every route's track for the home-p
 **A GPX must never start or end at the user's house — always at Trabakua (the pass) or thereabouts.**
 He has asked for this explicitly, for every route, standing instruction. A track recorded from home
 starts/ends however far his house is from Trabakua's shared reference point (`43.210466, -2.5460838`,
-the same one in every route's `marker.at`); every other route on the site starts/ends within roughly
-30-160 m of it. If a freshly uploaded GPX's first/last point is markedly farther than that from
-Trabakua, don't publish it as-is and don't ask him for his address either — check first whether an
+the same one in every route's `marker.at`). **Do not judge this by raw distance from that point.**
+Measured over the 56 published routes, 27 of them start more than 200 m away and `ahuntzen` starts
+9.5 km away — they simply begin at a different trailhead, so "far from Trabakua" flags half the site
+as suspect. The reliable signal is isolation from the trail network: every published route's
+first/last point sits within **88 m** of some point on another route's own track (`src/*.gpx`), and
+most within 11 m. A real trailhead or junction is shared trail; a private approach from home is not.
+So the test is: measure the new track's first/last point against every other route's track, and if
+the nearest one is well beyond ~90 m, treat it as a track recorded from home. Then don't publish it
+as-is and don't ask him for his address either — check first whether an
 already-published route's own GPX (`src/<other-route>.gpx`) happens to pass close to the new track's
 actual start/end (a shared road several routes use to leave Trabakua often does); if so, splice in the
 real segment of that other GPX between Trabakua and the join point, and trim any leftover tail that
