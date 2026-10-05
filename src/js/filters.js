@@ -161,9 +161,15 @@
     }
     var totals = document.querySelector('[data-route-totals]');
     if (totals) {
+      // toLocaleString('es-ES') deja los numeros de cuatro cifras sin separar
+      // (1209, no 1.209), que es lo correcto en espanol pero no lo que hace el
+      // resto de la web: las fichas escriben +1.453 m y +2.291 m a mano. Se
+      // iguala a eso para que la portada no cante al lado de las tarjetas.
+      var miles = function(x){
+        return String(Math.round(x)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      };
       totals.textContent = n + ' ' + (eu ? 'ibilbide' : 'rutas') + ' · ' +
-        Math.round(totalKm).toLocaleString('es-ES') + ' km · ' +
-        Math.round(totalGain).toLocaleString('es-ES') + ' m+';
+        miles(totalKm) + ' km · ' + miles(totalGain) + ' m+';
     }
     var extraCount = ['distance','difficulty','elevation'].filter(function(k){return state[k] !== 'all';}).length;
     badge('filterBadge', extraCount);
