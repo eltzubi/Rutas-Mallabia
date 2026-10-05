@@ -226,8 +226,10 @@ There's no automated test suite — verification is manual:
   easy to accidentally stage an unrelated change. `optimize_images.py` no longer rewrites untouched
   photos, but check anyway after `--force`.
 - **For a brand-new route page, or one you're doing major surgery on: before calling it done, diff
-  its `_tail.html` structurally against a known-good page's (e.g. `arteta_tail.html`), or run the
-  `web-auditor` agent on it.** `trabakuamallabia` shipped missing the map/JS, the `<footer>`, the
+  its `_tail.html` structurally against a known-good page's (e.g. `arteta_tail.html`), and run
+  `python3 .claude/skills/run-rutas-mallabia/driver.py todo`, which opens the built site in a real
+  browser and checks layout at four widths in both themes, the search and filters, the map, the hero
+  colours and the offline mode.** `trabakuamallabia` shipped missing the map/JS, the `<footer>`, the
   `#toTop` button, the elevation-profile markers, with a duplicated icon and untranslated strings —
   none of it caught because each fix only checked the one thing just reported, never the whole page
   against the template every other route already follows. Checking piecemeal, one user-reported bug
