@@ -173,8 +173,14 @@ visitor saw looked right, but the toggle button's own init code (`src/js/app.js`
 storage on that first load, so the second page (or the home page, if visited first) came up dark anyway.
 
 **Route data pipeline.** Each route has a `src/<name>.gpx` (the real recorded track) and a
-`data/<name>.json` (resampled `tracks[].points` lat/lon pairs + `marker`/`waypoints`, consumed by
-`src/js/map.js` via `data-map-src` on the page's map container). The elevation-profile SVG in the
+`data/<name>.json` (`tracks[].points` lat/lon pairs + `marker`/`waypoints`, consumed by
+`src/js/map.js` via `data-map-src` on the page's map container). Those points are written by
+`python3 scripts/make_map_data.py`, which also rewrites `data/trailhead.json` — **re-run it after
+adding or replacing any GPX.** It simplifies with Douglas-Peucker (1 m on a route page, 10 m on the
+home overview, which is seen far away), not by keeping one point in N. Decimation was what made the
+tracks look hand-drawn: the site used to draw 16.556 of the GPXs' 427.501 points, 4%, and every bend
+came out as a straight line. Keep it that way — the whole of `data/` is 2 MB on a 587 MB site, and
+the heaviest route map is 53 kB. The elevation-profile SVG in the
 route hero and the numbered waypoint markers are derived from the GPX by hand (Haversine cumulative
 distance, local-maxima detection for peaks) when a page is built — there's no script that regenerates
 them automatically; distance/elevation-gain figures in `.facts` are meant to reflect the real GPX, not
