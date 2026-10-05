@@ -15,6 +15,7 @@ Ordenes:
   audit [pagina]              desborde horizontal a 320/390/768/1280, en los dos temas
   probe <pagina> --sel S      color/fondo/tipografia calculados de un selector
   filtros                     flujo real de busqueda y filtros de la portada
+  renombrar <slug> ...        cambia el titulo de una ruta en los nueve sitios
   temas [pagina]              el texto del heroe se lee igual en claro y oscuro\n  mapa [pagina]               comprueba que Leaflet pinta el track
   offline [pagina]            registra el service worker, corta la red y recarga
   todo                        audit + filtros + mapa + temas + offline
@@ -22,7 +23,7 @@ Ordenes:
 Las paginas se nombran como el fichero: index.html (euskera), index.es.html
 (castellano), longaurjauziak.html, betzun.eu.html...
 """
-import argparse, contextlib, glob, http.server, os, socket, subprocess, sys, threading
+import argparse, contextlib, glob, http.server, os, re, socket, subprocess, sys, threading
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[3]
@@ -305,6 +306,122 @@ def cmd_temas(a):
     return 1 if mal else 0
 
 
+def _lee_actuales(slug):
+    """Lee de los ficheros lo que la ruta se llama AHORA. No se supone nada: el
+    titulo plano sale de la tarjeta de la portada, el h1 de la propia ficha y el
+    nombre de descarga de su atributo, que en 8 rutas es mas corto a proposito."""
+    a = {}
+    home = (RAIZ / "src/mallabia_tail.html").read_text(encoding="utf-8")
+    m = re.search(rf'<a class="route-card" href="{slug}\.html".*?'
+                  rf'<h3 class="route-card-name">(.*?)</h3>', home, re.S)
+    if not m:
+        raise SystemExit(f"{slug}: no tiene tarjeta en src/mallabia_tail.html")
+    a["es_plano"] = " ".join(m.group(1).split())
+
+    tail = (RAIZ / f"src/{slug}_tail.html").read_text(encoding="utf-8")
+    m = re.search(r"<h1>(.*?)<br><em>(.*?)</em></h1>", tail, re.S)
+    if not m:
+        raise SystemExit(f"{slug}: su <h1> no tiene la forma linea1<br><em>linea2</em>")
+    a["es_h1"] = (m.group(1).strip(), m.group(2).strip())
+    m = re.search(r'download="([^"]+)\.gpx"', tail)
+    a["descarga"] = m.group(1) if m else None
+
+    eu_home = (RAIZ / "src/mallabia_tail.eu.html").read_text(encoding="utf-8")
+    m = re.search(rf'<a class="route-card" href="{slug}\.eu\.html".*?'
+                  rf'<h3 class="route-card-name">(.*?)</h3>', eu_home, re.S)
+    a["eu_plano"] = " ".join(m.group(1).split()) if m else None
+    eu_tail = (RAIZ / f"src/{slug}_tail.eu.html").read_text(encoding="utf-8")
+    m = re.search(r"<h1>(.*?)<br><em>(.*?)</em></h1>", eu_tail, re.S)
+    a["eu_h1"] = (m.group(1).strip(), m.group(2).strip()) if m else None
+    m = re.search(r'download="([^"]+)\.gpx"', eu_tail)
+    a["eu_descarga"] = m.group(1) if m else None
+    return a
+
+
+def cmd_renombrar(a):
+    """Renombrar una ruta toca nueve sitios y se me escapo uno las tres veces
+    que lo hice a mano. Aqui van todos, contados, y por defecto sin escribir."""
+    v = _lee_actuales(a.slug)
+    n_es_h1 = tuple(x.strip() for x in a.es_h1.split("|"))
+    n_eu_h1 = tuple(x.strip() for x in a.eu_h1.split("|"))
+    if len(n_es_h1) != 2 or len(n_eu_h1) != 2:
+        raise SystemExit("--es-h1 y --eu-h1 se escriben 'primera linea|segunda linea'")
+
+    print(f"  ahora      ES  {v['es_plano']}")
+    print(f"             EU  {v['eu_plano']}")
+    print(f"  pasaria a  ES  {a.es}")
+    print(f"             EU  {a.eu}")
+    print("")
+
+    h1 = lambda par: f"<h1>{par[0]}<br><em>{par[1]}</em></h1>"
+    cambios = []
+
+    def anota(rel, viejo, nuevo):
+        if viejo and nuevo and viejo != nuevo:
+            cambios.append((rel, viejo, nuevo))
+
+    anota(f"src/{a.slug}_tail.html", h1(v["es_h1"]), h1(n_es_h1))
+    anota("src/i18n/eu.py", h1(v["es_h1"]), h1(n_es_h1))
+    if v["eu_h1"]:
+        anota("src/i18n/eu.py", h1(v["eu_h1"]), h1(n_eu_h1))
+    # El titulo plano esta en el <title>, el og:title, los DOS bloques JSON-LD,
+    # el alt de la foto ampliada, la tarjeta de la portada y las claves de eu.py.
+    for rel in (f"src/{a.slug}_tail.html", f"src/{a.slug}_head.html",
+                "src/mallabia_tail.html", "src/i18n/eu.py"):
+        anota(rel, v["es_plano"], a.es)
+    anota("src/i18n/eu.py", v["eu_plano"], a.eu)
+
+    if v["descarga"] == v["es_plano"]:
+        for ext in ("gpx", "kml"):
+            for rel in (f"src/{a.slug}_tail.html", "src/i18n/eu.py"):
+                anota(rel, f'download="{v["descarga"]}.{ext}"', f'download="{a.es}.{ext}"')
+        if v["eu_descarga"] and v["eu_descarga"] == v["eu_plano"]:
+            for ext in ("gpx", "kml"):
+                anota("src/i18n/eu.py", f'download="{v["eu_descarga"]}.{ext}"',
+                      f'download="{a.eu}.{ext}"')
+    else:
+        print(f"  (la descarga se llama «{v['descarga']}», distinto del titulo: se deja)")
+        print("")
+
+    # Enlaces entrantes que usan el titulo ENTERO. Los que usan el nombre corto
+    # («Oiz», «Gerea») son 221 en el sitio y se quedan como estan, a proposito.
+    for f in sorted(glob.glob(str(RAIZ / "src/*_tail.html"))):
+        if f.endswith(".eu.html"):
+            continue
+        anota(os.path.relpath(f, RAIZ),
+              f'<a href="{a.slug}.html">{v["es_plano"]}</a>',
+              f'<a href="{a.slug}.html">{a.es}</a>')
+
+    total, tocados = 0, set()
+    for rel, viejo, nuevo in cambios:
+        c = (RAIZ / rel).read_text(encoding="utf-8").count(viejo)
+        if c:
+            total += c; tocados.add(rel)
+            print(f"  {c:>3}x  {rel:<34} {viejo[:62]}")
+    if not total:
+        print("  nada que cambiar"); return 1
+    print("")
+    print(f"  {total} sustitucion(es) en {len(tocados)} fichero(s)")
+
+    if not a.aplica:
+        print("")
+        print("  simulacro. Repite con --aplica para escribirlo.")
+        return 0
+
+    for rel, viejo, nuevo in cambios:
+        p = RAIZ / rel
+        t = p.read_text(encoding="utf-8")
+        if viejo in t:
+            p.write_text(t.replace(viejo, nuevo), encoding="utf-8")
+    print("")
+    print("  escrito. Reconstruyendo:")
+    for paso in (("python3", "src/i18n/make_eu.py"), ("python3", "src/build.py"),
+                 ("python3", "scripts/bundle_gpx.py")):   # el ZIP nombra sus entradas con las tarjetas
+        if corre(*paso, callado=True) != 0:
+            return 1
+    return corre("python3", "scripts/check_site.py")
+
+
 def cmd_todo(a):
     fallos = 0
     for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
@@ -340,6 +457,14 @@ def main():
     s.add_argument("pagina"); s.add_argument("--sel", required=True)
     s.add_argument("--ancho", type=int, default=1280)
     s.add_argument("--tema", choices=("light", "dark"))
+
+    s = sub.add_parser("renombrar"); s.set_defaults(fn=cmd_renombrar)
+    s.add_argument("slug")
+    s.add_argument("--es", required=True, help="titulo plano en castellano")
+    s.add_argument("--es-h1", required=True, help="'primera linea|segunda linea'")
+    s.add_argument("--eu", required=True, help="titulo plano en euskera")
+    s.add_argument("--eu-h1", required=True, help="'lehen lerroa|bigarren lerroa'")
+    s.add_argument("--aplica", action="store_true", help="sin esto solo simula")
 
     s = sub.add_parser("temas"); s.set_defaults(fn=cmd_temas)
     s.add_argument("pagina", nargs="?", default="index.es.html")

@@ -79,6 +79,52 @@ Salida real de `filtros` y de `offline`:
   contenido servido     56 bloque(s)
 ```
 
+## Renombrar una ruta
+
+Cambiar el título de una ruta toca **nueve sitios**, y a mano se escapa alguno
+—las cuatro apariciones del `_head.html` son `<title>`, `og:title` y los **dos**
+bloques JSON-LD—. Esta orden los hace todos:
+
+```bash
+python3 .claude/skills/run-rutas-mallabia/driver.py renombrar betzun \
+  --es "Zengotita, Iturzurigaina y Betzun por San Kristobal Txiki" \
+  --es-h1 "Zengotita, Iturzurigaina|y Betzun por San Kristobal Txiki" \
+  --eu "Zengotita, Iturzurigaina eta Betzun San Kristobal Txikitik" \
+  --eu-h1 "Zengotita, Iturzurigaina|eta Betzun San Kristobal Txikitik"
+```
+
+**Por defecto solo simula**: imprime cada sustitución con su recuento y no
+escribe nada. Añade `--aplica` para escribirlo; entonces encadena `make_eu.py`,
+`build.py`, `bundle_gpx.py` (el ZIP nombra sus entradas con las tarjetas) y
+`check_site.py`.
+
+No se le dice el título viejo: lo lee él de los ficheros —el plano de la tarjeta
+de la portada, el `h1` de la ficha, el de descarga de su atributo—. El `|` separa
+las dos líneas del `h1` (lo de antes del `<br>` y lo de dentro del `<em>`).
+
+Simulacro real sobre `betzun`:
+
+```
+    1x  src/betzun_tail.html    <h1>Zengotita, Iturzurigaina<br><em>y Betzun</em></h1>
+    4x  src/betzun_head.html    Zengotita, Iturzurigaina y Betzun
+    1x  src/mallabia_tail.html  Zengotita, Iturzurigaina y Betzun
+    5x  src/i18n/eu.py          Zengotita, Iturzurigaina y Betzun
+    6x  src/i18n/eu.py          Zengotita, Iturzurigaina eta Betzun
+  29 sustitucion(es) en 4 fichero(s)
+```
+
+Dos cosas que hace a propósito:
+
+- **No toca el nombre de descarga si hoy no es el título.** 8 de las 56 rutas lo
+  tienen más corto aposta (`hirutxikiak` descarga «Hiru Txikiak»). Lo avisa y lo
+  deja.
+- **Solo reescribe los enlaces entrantes que usan el título entero.** Los 221
+  que usan el nombre corto («Oiz», «Gerea», «Osmagain») se quedan como están,
+  que es lo correcto.
+
+Probado con una ida y vuelta: renombrar y volver a renombrar al nombre
+original deja el árbol de git idéntico.
+
 ## Pasar los tests
 
 ```bash
