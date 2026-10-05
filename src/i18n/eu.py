@@ -1293,7 +1293,7 @@ ZENGOTITAGANE = {
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
     'agua cerca de Iturzurigaina (km 4,8) y en la zona de Garai, antes de la Ermita de San '
-    'Crist&oacute;bal Txiki.':
+    'Kristobal Txiki.':
         '21,98 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
         'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko aldean, '
@@ -3708,14 +3708,14 @@ BETZUN = {
         '<p class="eyebrow"><span>Pista eta bidezidorra</span><span class="sep">/</span><span>Zengotita, Iturzurigaina eta Betzun</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Zengotita, Iturzurigaina<br><em>y Betzun</em></h1>':
         '<h1>Zengotita, Iturzurigaina<br><em>eta Betzun</em></h1>',
-    '<p class="full-name">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Kristobal y Besoita</p>':
-        '<p class="full-name">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota</p>',
+    '<p class="full-name">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Kristobal Txiki y Besoita</p>':
+        '<p class="full-name">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal Txiki eta Besoitatik igarota</p>',
 
     # perfil: marcadores y leyenda
-    '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>':
-        '<title>San Kristobal &middot; 6,0 km &middot; 496 m</title>',
-    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal</span>':
-        '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal</span>',
+    '<title>San Kristobal Txiki &middot; 6,0 km &middot; 496 m</title>':
+        '<title>San Kristobal Txiki &middot; 6,0 km &middot; 496 m</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Betzun</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki</span>',
 
     # fotos
     'alt="Foto ampliada del recorrido de Zengotita, Iturzurigaina y Betzun"':
@@ -3770,16 +3770,16 @@ BETZUN = {
         '<p>Betzunen bi aukera ditugu. Baserria iristen den zementuzko bidea jarraitzen badugu, Zengotitara zuzenean itzul gaitezke, eta horrela itzuli polit eta azkar bat osatu.</p>',
     '<p>Nosotros, sin embargo, vamos a alargar un poco m&aacute;s el recorrido. En Betzun giramos a la derecha y continuamos por una peque&ntilde;a pista que nos permite seguir recorriendo esta otra vertiente.</p>':
         '<p>Gu, ordea, ibilbidea pixka bat gehiago luzatuko dugu. Betzunen eskuinera biratu eta isurialde hau zeharkatzen jarraitzen uzten digun pista txiki batetik jarraituko dugu.</p>',
-    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Kristobal</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
-        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal</b> ingurura iritsi arte (6,0 km &middot; 496 m). Garaitik datorren pista honetan sartzen gara.</p>',
+    '<p>Seguimos por ella hasta llegar a un r&iacute;o. Lo cruzamos y continuamos descendiendo hasta alcanzar la zona de <b>San Kristobal Txiki</b> (km 6,0 &middot; 496 m), donde enlazamos con una pista de piedra que viene desde Garai.</p>':
+        '<p>Pista horretatik jarraitzen dugu ibai batera iritsi arte. Ibaia zeharkatu eta jaisten jarraitzen dugu <b>San Kristobal Txiki</b> ingurura iritsi arte (6,0 km &middot; 496 m). Garaitik datorren pista honetan sartzen gara.</p>',
     '<p>A partir de aqu&iacute; el terreno se vuelve m&aacute;s c&oacute;modo. Continuamos por la pista en direcci&oacute;n a Besoita, con muy buenas vistas hacia las monta&ntilde;as del Duranguesado durante buena parte de este tramo.</p>':
         '<p>Hemendik aurrera, lurra erosoagoa bihurtzen da. Pistatik jarraitzen dugu Besoita aldera, Durangaldeko mendietara ikuspegi ederrekin tarte honen zati handi batean.</p>',
     '<p>Llegamos al barrio de <b>Besoita</b> (km 7,6 &middot; 315 m) y seguimos descendiendo hasta alcanzar la carretera general. La cruzamos y, al otro lado, cogemos la carretera vieja que sube hacia Zengotita.</p>':
         '<p><b>Besoita</b> auzora iristen gara (7,6 km &middot; 315 m) eta jaisten jarraitzen dugu errepide nagusira iritsi arte. Errepidea gurutzatu eta, beste aldean, Zengotitara igotzen den errepide zaharra hartzen dugu.</p>',
     '<p>Solo nos queda remontar por esta carretera hasta regresar al barrio, exactamente al punto donde hab&iacute;amos comenzado el track, y cerrar la vuelta.</p>':
         '<p>Errepide honetatik igotzea besterik ez zaigu geratzen auzora itzultzeko, ibilbidea hasi dugun leku berera, eta itzulia ixteko.</p>',
-    '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Kristobal y Besoita para completar el recorrido entero.</p>':
-        '<p>Ibilbide nahiko azkarra eta oso interesgarria da, Zengotitatik Iturzurigainera igotzeko beste modu bat ezagutzeko eta kontrako isurialdetik itzultzeko. Gainera, Betzunera iristean, bi aukera ditugu: Zengotitara zuzenean itzuli, itzuli laburrago bat egiteko, edo San Kristobal eta Besoita aldera jarraitu, ibilbide osoa osatzeko.</p>',
+    '<p>Es una ruta relativamente r&aacute;pida y muy interesante para conocer otra forma de subir desde Zengotita hasta Iturzurigaina y regresar por la vertiente contraria. Adem&aacute;s, al llegar a Betzun podemos elegir entre volver directamente a Zengotita para hacer una vuelta m&aacute;s corta o continuar hacia San Kristobal Txiki y Besoita para completar el recorrido entero.</p>':
+        '<p>Ibilbide nahiko azkarra eta oso interesgarria da, Zengotitatik Iturzurigainera igotzeko beste modu bat ezagutzeko eta kontrako isurialdetik itzultzeko. Gainera, Betzunera iristean, bi aukera ditugu: Zengotitara zuzenean itzuli, itzuli laburrago bat egiteko, edo San Kristobal Txiki eta Besoita aldera jarraitu, ibilbide osoa osatzeko.</p>',
     '<p>Una vuelta sencilla de seguir, con una buena subida inicial, un descenso r&aacute;pido y buenas vistas, que adem&aacute;s nos permite conocer varios caminos &uacute;tiles para enlazar despu&eacute;s con otras rutas de la zona.</p>':
         '<p>Itzuli erraz bat da jarraitzeko, hasierako igoera on batekin, jaitsiera azkar batekin eta ikuspegi ederrekin, gainera, inguruko beste ibilbide batzuekin lotzeko baliagarriak diren hainbat bide ezagutzeko aukera ematen diguna.</p>',
 }
