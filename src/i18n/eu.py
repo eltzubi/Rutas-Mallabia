@@ -5514,6 +5514,7 @@ KARABIETA = {
     'alt="Pista de tierra subiendo entre pinares, junto a una alambrada, en la zona de Berano y Arteta"': 'alt="Lur-pista pinudien artean igotzen, hesi baten ondoan, Berano eta Arteta inguruan"',
     'alt="Pista de monte entre pinos en la zona de Berano y Arteta, abierta a una loma de praderas"': 'alt="Mendiko pista pinuen artean, Berano eta Arteta inguruan, larreen bizkar bat zabalik aurrean"',
     'alt="Caser&iacute;os del valle al amanecer, entre bruma, desde la zona de Berano y Arteta"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean, Berano eta Arteta ingurutik"',
+    'alt="Poste indicador de madera en el bosque, con las flechas a Santruan (Elorrio), a 6 km, y a Santa Marina, a 2 km"': 'alt="Egurrezko seinale-zutoina basoan, Santruanerako (Elorrio) geziarekin, 6 km-ra, eta Santa Marinarakoarekin, 2 km-ra"',
     'alt="Caballos pastando en las campas, con los aerogeneradores del Oiz en el cordal"': 'alt="Zaldiak larreetan bazkatzen, Oizko eolikoak gailurrean"',
 
     # el texto del autor, parrafo a parrafo
