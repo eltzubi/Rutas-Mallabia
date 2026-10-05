@@ -5500,10 +5500,11 @@ KARABIETA = {
     '<b>Elgeta</b>, <b>Karabieta</b> y Azkonabieta y volver por <b>Eibar</b>, <b>Ermua</b> y <b>Berano</b>. '
     'Hay agua en <b>Goierri</b> (km 6,65) y junto al front&oacute;n de Elgeta (km 16,83), donde adem&aacute;s '
     'hay un punto para limpiar la bici con agua a presi&oacute;n.</p>':
-        '<p>39,56 km eta +1.011 m ibilbide bakar batean, Mallabiatik ateratzen dena '
-        '<b>Elgeta</b>, <b>Karabieta</b> eta Azkonabietatik buelta emateko eta <b>Eibar</b>, <b>Ermua</b> eta <b>Berano</b>tik itzultzeko. '
-        'Ura dago <b>Goierri</b>n (6,65 km) eta Elgetako frontoiaren ondoan (16,83 km), non, gainera, '
-        'bizikleta ur-presioarekin garbitzeko puntu bat dagoen.</p>',
+        '<p>39,56 km eta +1.011 m desnibel positibo, zirkuitu bakarrean. Ibilbidea Mallabiatik abiatzen da, '
+        'eta buelta ematen du <b>Elgeta</b>, <b>Karabieta</b> eta Azkonabieta zeharkatuz; handik berriro '
+        'itzultzen da <b>Eibar</b>, <b>Ermua</b> eta <b>Berano</b> pasatuz. Ura hartzeko aukera dago '
+        '<b>Goierri</b>n (6,65 km) eta Elgetako frontoiaren ondoan (16,83 km), eta bertan gainera badago '
+        'bizikleta ur-presioz garbitzeko gunea.</p>',
 
     # pies de foto (invisibles: solo para el lector de pantalla y para Google)
     'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"': 'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
