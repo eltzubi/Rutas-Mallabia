@@ -52,7 +52,7 @@ D=.claude/skills/run-rutas-mallabia/driver.py
 python3 $D todo                                    # audit + filtros + mapa + temas + offline (~60 s)
 
 python3 $D shot index.es.html --ancho 390 --tema light --sel .hero-compact
-python3 $D audit index.es.html                     # desborde a 320/390/768/1280, dos temas (~40 s)
+python3 $D audit index.es.html                     # desborde a 320/360/390/768/1280, dos temas (~60 s)
 python3 $D probe index.es.html --sel ".hero-compact h1"   # color/fondo/tipo/sombra calculados
 python3 $D temas                                   # el héroe se lee igual en claro y oscuro
 python3 $D filtros                                 # escribe en el buscador y pulsa los chips
@@ -180,6 +180,17 @@ Sirve la raíz y se queda en primer plano. Ctrl-C para parar. Equivale a
   claro son tinta, verde y azul oscuros) lo vuelven ilegible. `temas` lo caza:
   con el bug reintroducido a propósito sale
   `MAL .hero-compact h1 em .pie  rgb(166,255,77) -> rgb(58,107,21)` y código 1.
+
+- **El desborde de la página no lo ve todo.** El héroe recorta por dentro
+  (`overflow:hidden`), así que una línea que no cabe se corta en silencio sin
+  que `scrollWidth` se entere. `audit` mide además el texto contra su caja en
+  los elementos que no pueden partirse en dos líneas. Pasó de verdad: la línea
+  de cifras se comía el «+» final en móviles de 320-360 px y a 390 px entraba
+  por 5 px, que es justo donde yo hacía las capturas.
+
+- **El euskera es más largo que el castellano.** «56 ibilbide» frente a «56
+  rutas». Si algo va justo de ancho, revisa `index.html` antes que
+  `index.es.html`.
 
 - **`index.html` es la portada en euskera**, no la castellana. La castellana es
   `index.es.html`. `index.eu.html` es una redirección heredada de 356 bytes.

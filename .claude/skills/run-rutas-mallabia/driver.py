@@ -28,7 +28,9 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[3]
 CAPTURAS = RAIZ / ".claude" / "skills" / "run-rutas-mallabia" / "capturas"
-ANCHOS = (320, 390, 768, 1280)
+ANCHOS = (320, 360, 390, 768, 1280)   # 360 es el ancho real de muchos moviles
+# Texto que no cabe en su caja: solo cuenta donde no puede partirse en dos lineas.
+JS_CORTE = "() => { const out = []; for (const e of document.querySelectorAll('.hero-compact-stats, .hero-compact h1, .hero-compact-content .eyebrow, .route-card-name')) {  if (getComputedStyle(e).whiteSpace.indexOf('nowrap') < 0) continue;  const r = document.createRange(); r.selectNodeContents(e);  const texto = Math.ceil(r.getBoundingClientRect().width);  const caja = Math.floor(e.getBoundingClientRect().width);  if (texto > caja + 1) out.push((e.className || e.tagName) + ': ' + (texto - caja) + 'px de mas'); } return out; }"
 
 
 def navegador():
@@ -162,11 +164,19 @@ def cmd_audit(a):
             for tema in ("dark", "light"):
                 with pagina(base, a.pagina, ancho, tema) as pg:
                     real = pg.evaluate("document.body.scrollWidth")
-                    ok = real <= ancho
+                    # El desborde de la pagina no lo ve todo: el heroe recorta por
+                    # dentro (overflow:hidden), asi que una linea que no cabe se
+                    # corta en silencio. Hay que medir el texto contra su caja. La
+                    # linea de cifras se comia el «+» en moviles de 320-360 px y a
+                    # 390 px entraba por 5 px, por eso no salia en las capturas.
+                    cortados = pg.evaluate(JS_CORTE)
+                    ok = real <= ancho and not cortados
                     mal += 0 if ok else 1
                     err = f"  JS: {pg.errores[0][:60]}" if pg.errores else ""
+                    if cortados:
+                        err += "  TEXTO CORTADO: " + "; ".join(cortados)
                     print(f"  {ancho:>5}px {tema:<5}  scrollWidth {real:<5} "
-                          f"{'ok' if ok else 'DESBORDA'}{err}")
+                          f"{'ok' if ok else 'MAL'}{err}")
                     pg.screenshot(path=str(CAPTURAS / f"audit-{a.pagina.replace('.html','')}"
                                                       f"-{ancho}-{tema}.png"))
     print(f"\n{'todo dentro del ancho' if not mal else f'{mal} desbordes'}"

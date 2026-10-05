@@ -755,7 +755,12 @@ footer a:hover{ text-decoration:underline; }
 .hero-compact h1 em .bici{ color:#2FE0F5; font-style:italic; }
 .hero-compact-stats{
   margin-top:14px;
-  font-family:'IBM Plex Mono',monospace; font-size:clamp(1rem,2.2vw,1.35rem);
+  /* En euskera la linea es mas larga («56 ibilbide» frente a «56 rutas») y con
+     los puntos de los miles llega a 34 caracteres. A 16px fijos en monoespaciada
+     no cabe en un movil estrecho y se comia el «+» final: el minimo del clamp
+     baja y el tramo en vw sube para que encoja de verdad. */
+  white-space:nowrap;
+  font-family:'IBM Plex Mono',monospace; font-size:clamp(.8rem,3.7vw,1.35rem);
   letter-spacing:.04em; color:#F7F5EF;
   text-shadow:0 1px 3px rgba(0,0,0,.94), 0 2px 12px rgba(0,0,0,.82), 0 5px 28px rgba(0,0,0,.55);
 }
