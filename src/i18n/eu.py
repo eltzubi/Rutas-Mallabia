@@ -5508,12 +5508,12 @@ KARABIETA = {
 
     # pies de foto (invisibles: solo para el lector de pantalla y para Google)
     'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"': 'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
-    'alt="Hilera de &aacute;rboles junto a un camino asfaltado, con prados al otro lado de la alambrada"': 'alt="Zuhaitz ilara asfaltozko bide baten ondoan, larreak hesiaren beste aldean"',
-    'alt="Panor&aacute;mica del valle con caser&iacute;os y el Anboto al fondo"': 'alt="Haranaren panoramika baserriekin, Anboto atzealdean"',
-    'alt="Horma de piedra seca junto a la pista, con un endrino en flor"': 'alt="Harrizko horma lehorra pistaren ondoan, elorri beltza loretan"',
-    'alt="Pista de tierra subiendo entre pinares, junto a una alambrada"': 'alt="Lur-pista pinudien artean igotzen, hesi baten ondoan"',
-    'alt="Pista de monte entre pinos, abierta a una loma de praderas enfrente"': 'alt="Mendiko pista pinuen artean, aurrean larreen bizkar bat zabalik"',
-    'alt="Caser&iacute;os del valle al amanecer, entre bruma"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean"',
+    'alt="Hilera de &aacute;rboles junto a un camino asfaltado en Berano, con prados al otro lado de la alambrada"': 'alt="Zuhaitz ilara Beranoko asfaltozko bide baten ondoan, larreak hesiaren beste aldean"',
+    'alt="Panor&aacute;mica del valle entre Berano y Arteta, con caser&iacute;os y el Anboto al fondo"': 'alt="Haranaren panoramika Berano eta Artetaren artean, baserriekin eta Anboto atzealdean"',
+    'alt="Horma de piedra seca junto a la pista entre Berano y Arteta, con un endrino en flor"': 'alt="Harrizko horma lehorra pistaren ondoan, Berano eta Artetaren artean, elorri beltza loretan"',
+    'alt="Pista de tierra subiendo entre pinares, junto a una alambrada, en la zona de Berano y Arteta"': 'alt="Lur-pista pinudien artean igotzen, hesi baten ondoan, Berano eta Arteta inguruan"',
+    'alt="Pista de monte entre pinos en la zona de Berano y Arteta, abierta a una loma de praderas"': 'alt="Mendiko pista pinuen artean, Berano eta Arteta inguruan, larreen bizkar bat zabalik aurrean"',
+    'alt="Caser&iacute;os del valle al amanecer, entre bruma, desde la zona de Berano y Arteta"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean, Berano eta Arteta ingurutik"',
     'alt="Caballos pastando en las campas, con los aerogeneradores del Oiz en el cordal"': 'alt="Zaldiak larreetan bazkatzen, Oizko eolikoak gailurrean"',
 
     # el texto del autor, parrafo a parrafo
