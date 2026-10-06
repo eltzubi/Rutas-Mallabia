@@ -706,6 +706,11 @@
           miniSvg = heroSvg.cloneNode(true);
           miniWrap.appendChild(miniSvg);
           mapBox.parentNode.insertBefore(miniWrap, mapBox.nextSibling);
+          // La lista de puntos numerados estaba encima del mapa, y con el
+          // perfil ya debajo los numeros quedaban lejos del dibujo que los
+          // usa. Baja con el: mapa, luego los nombres, luego el perfil.
+          var leyenda = mapSection.querySelector('.elev-legend');
+          if (leyenda) mapBox.parentNode.insertBefore(leyenda, miniWrap);
         }
 
         addChart(heroSvg);
