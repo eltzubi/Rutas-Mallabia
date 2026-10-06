@@ -183,6 +183,8 @@ ASSETS = {
 FONT_FILES = [
     "fraunces-italic.woff2",
     "fraunces-normal.woff2",
+    "sourceserif.woff2",
+    "sourceserif-italic.woff2",
     "ibmplexmono-500.woff2",
     "ibmplexmono-600.woff2",
     "karla.woff2",
