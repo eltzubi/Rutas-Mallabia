@@ -369,35 +369,36 @@ def add_similar_routes(page_html, page, cards, lang):
 
 
 def add_jump_to_map(page_html, lang):
-    """Un atajo al mapa desde arriba de la ficha.
+    """Un atajo al mapa, en la misma fila que las descargas.
 
     El mapa esta al final, detras del texto de la ruta, y quien abre la ficha
-    desde el movil muchas veces lo que quiere es verlo ya. El enlace va justo
-    debajo de las cifras, que es hasta donde llega casi todo el mundo sin
-    hacer scroll, y lleva al mapa sin pasar por el texto.
+    desde el movil muchas veces lo que quiere es verlo ya. El enlace va junto
+    al GPX y al KML, que es donde el autor lo quiere: lo que uno viene a
+    buscar, todo en el mismo sitio.
     """
     # Sin sangria en ahuntzen, con dos espacios en las demas.
-    seccion = re.search(r'<section class="map-section">', page_html)
-    if not seccion or 'class="jump-to-map"' in page_html:
+    if '<section class="map-section">' not in page_html or 'class="jump-to-map"' in page_html:
         return page_html
     page_html = page_html.replace('<section class="map-section">',
                                   '<section class="map-section" id="mapa">', 1)
     texto = eu.COMMON["Ver el mapa"] if lang == "eu" else "Ver el mapa"
-    enlace = ('  <p class="jump-to-map"><a class="wikiloc-link ghost" href="#mapa">'
+    enlace = ('<a class="wikiloc-link ghost jump-to-map" href="#mapa">'
               '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
               ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
               '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/>'
               '<polyline points="2 12 12 17 22 12"/></svg>'
-              + texto + '</a></p>\n')
-    # Detras de la nota de las cifras si la hay, y si no detras de las propias
-    # cifras: cuatro fichas (longa, asuntzabira, zengotitaosmagain y
-    # axmakuriturrizuri) no llevan esa nota, y a ahuntzen le falta la sangria.
-    marca = re.search(r'[ \t]*<p class="facts-note">[\s\S]*?</p>\n', page_html)
-    if not marca:
-        marca = re.search(r'[ \t]*<div class="facts">[\s\S]*?</div>\n', page_html)
+              + texto + '</a>')
+    # Detras del KML, que es el ultimo de los dos enlaces de descarga. Asi
+    # queda GPX / KML / Mapa seguidos, y el aviso de incidencia al final.
+    marca = re.search(r'<a href="src/[\w.-]+\.kml"[\s\S]*?</a>\n?', page_html)
     if not marca:
         return page_html
-    return page_html[:marca.end()] + enlace + page_html[marca.end():]
+    sangria = re.search(r'\n([ \t]*)<a href="src/[\w.-]+\.kml"', page_html)
+    pico = sangria.group(1) if sangria else ''
+    corte = marca.end()
+    texto_nuevo = (enlace if page_html[corte - 1] != '\n'
+                   else pico + enlace + '\n')
+    return page_html[:corte] + texto_nuevo + page_html[corte:]
 
 
 def add_prev_next(page_html, page, cards, lang):

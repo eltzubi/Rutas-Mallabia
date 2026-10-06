@@ -82,14 +82,11 @@
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
       expandBtn.classList.toggle('is-active', expanded);
       if (expanded) {
-        // Scroll to the mini elevation chart when there is one (it sits
-        // right above the map box, inside the same .map-section) so
-        // expanding the map doesn't push it off the top of the screen --
-        // otherwise the elevation<->map link has nothing to show up next
-        // to once the map takes over most of the viewport.
-        var mapSection = el.closest('.map-section');
-        var miniChart = mapSection && mapSection.querySelector('.mini-elev-chart');
-        (miniChart || el.parentElement).scrollIntoView(scrollOpts());
+        // El perfil pequeno esta debajo del mapa, asi que lo que se lleva
+        // arriba es la caja del mapa: el perfil queda justo a continuacion.
+        // Antes estaba encima y habia que subir hasta el, que es lo que ya
+        // no hace falta.
+        el.parentElement.scrollIntoView(scrollOpts());
       } else if (resetView) {
         // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
         // la vista pequena; y asi queda una forma clara de reencuadrar.
@@ -689,14 +686,17 @@
           return chart;
         }
 
-        // A second, compact copy of the same profile right above the map:
+        // A second, compact copy of the same profile right BELOW the map:
         // on a phone the hero chart (top of page) and the map (much lower
         // down) are never both on screen together, so hovering one to see
-        // it move on the other was invisible in practice. Cloned -- same
-        // <path> "d", so the same x/y coordinate space -- BEFORE the hero
-        // gets its own cursor line/dot below, so there's nothing to strip
-        // back out of the clone. Placed right next to the map this way,
-        // with no need to touch every route's own _tail.html by hand.
+        // it move on the other was invisible in practice. Debajo y no
+        // encima porque el autor lo pidio asi: con el perfil arriba, la
+        // mano que arrastra el dedo tapa justo el mapa que se quiere mirar.
+        // Cloned -- same <path> "d", so the same x/y coordinate space --
+        // BEFORE the hero gets its own cursor line/dot below, so there's
+        // nothing to strip back out of the clone. Placed right next to the
+        // map this way, with no need to touch every route's own
+        // _tail.html by hand.
         var mapSection = el.closest('.map-section');
         var mapBox = mapSection && mapSection.querySelector('.route-map-box');
         var miniSvg = null;
@@ -705,7 +705,7 @@
           miniWrap.className = 'mini-elev-chart';
           miniSvg = heroSvg.cloneNode(true);
           miniWrap.appendChild(miniSvg);
-          mapBox.parentNode.insertBefore(miniWrap, mapBox);
+          mapBox.parentNode.insertBefore(miniWrap, mapBox.nextSibling);
         }
 
         addChart(heroSvg);

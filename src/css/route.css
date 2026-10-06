@@ -147,10 +147,11 @@
 /* Compact copy of the hero elevation profile, cloned in right above the
    map by js/map.js -- keeps the elevation<->map hover link visible on a
    phone, where the hero chart (top of page) and the map (much lower) are
-   never both on screen at once. */
+   never both on screen at once. Debajo del mapa y no encima: con el perfil
+   arriba, la mano que arrastra el dedo tapa justo el mapa que se mira. */
 .mini-elev-chart{
   background:var(--ground-raised); border:1px solid var(--line);
-  border-radius:14px; overflow:hidden; margin-bottom:14px;
+  border-radius:14px; overflow:hidden; margin-top:14px;
 }
 .mini-elev-chart svg{ display:block; width:100%; height:90px; }
 
@@ -282,9 +283,9 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   display:flex; align-items:center; justify-content:center;
 }
 
-/* El atajo al mapa, debajo de las cifras. scroll-margin-top deja sitio para
-   la cabecera pegajosa, que si no tapa el titulo del mapa al llegar. */
-.jump-to-map{ margin:14px 24px 0; }
+/* El atajo al mapa va en la fila de las descargas, junto al GPX y al KML.
+   scroll-margin-top deja sitio para la cabecera pegajosa, que si no tapa el
+   titulo del mapa al llegar. */
 .map-section{ scroll-margin-top:84px; }
 
 .wikiloc-row{
