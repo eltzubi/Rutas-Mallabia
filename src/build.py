@@ -368,6 +368,52 @@ def add_similar_routes(page_html, page, cards, lang):
     return page_html.replace(anchor, bloque + anchor, 1)
 
 
+def add_prev_next(page_html, page, cards, lang):
+    """Pasar de una ruta a la de al lado sin volver a la portada.
+
+    El orden es el mismo que se ve en la portada: la mas nueva primero. Es el
+    unico orden que el visitante ya conoce, asi que «siguiente» le lleva a la
+    tarjeta que tenia justo debajo. La primera no tiene anterior y la ultima no
+    tiene siguiente: ahi se pone una sola, en vez de dar la vuelta al listado,
+    que haria creer que despues de la ultima ruta hay mas.
+    """
+    # El tail de ahuntzen viene sin sangrar, asi que buscar la cadena con dos
+    # espacios delante no lo encontraba y esa ficha se quedaba sin el paso.
+    marca = re.search(r'[ \t]*<div class="back-home">', page_html)
+    slugs = list(cards)
+    if page not in slugs or not marca:
+        return page_html
+    anchor = marca.group(0)
+    i = slugs.index(page)
+    pasos = []
+    for etiqueta, vecino, rel, flecha in (
+            ("Anterior", slugs[i - 1] if i > 0 else None, "prev", "M15 18l-6-6 6-6"),
+            ("Siguiente", slugs[i + 1] if i + 1 < len(slugs) else None, "next", "M9 18l6-6-6-6")):
+        if not vecino:
+            continue
+        c = cards[vecino]
+        texto = eu.COMMON[etiqueta] if lang == "eu" else etiqueta
+        pasos.append(
+            f'    <a class="route-step is-{rel}" href="{c["href"]}" rel="{rel}">\n'
+            f'      <svg class="route-step-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none"'
+            f' stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"'
+            f' aria-hidden="true"><path d="{flecha}"/></svg>\n'
+            f'      <span class="route-step-text">\n'
+            f'        <span class="route-step-k">{texto}</span>\n'
+            f'        <span class="route-step-name">{c["name"]}</span>\n'
+            f'        <span class="route-step-stats">{c["stats"]}</span>\n'
+            f'      </span>\n'
+            f'    </a>')
+    if not pasos:
+        return page_html
+    rotulo = "Ruta anterior y siguiente"
+    if lang == "eu":
+        rotulo = eu.COMMON[rotulo]
+    bloque = ('  <nav class="route-steps" aria-label="' + rotulo + '">\n'
+              + "\n".join(pasos) + '\n  </nav>\n\n')
+    return page_html.replace(anchor, bloque + anchor, 1)
+
+
 def add_ui_text(page_html, cards, lang):
     """Attach translated runtime labels to stable elements, not removed controls."""
     def attrs(values):
@@ -658,6 +704,7 @@ def main():
             page_html = add_ui_text(page_html, cards[lang], lang)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
+            page_html = add_prev_next(page_html, name, cards[lang], lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)

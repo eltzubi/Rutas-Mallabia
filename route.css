@@ -71,6 +71,45 @@
 /* Rutas parecidas: hasta ahora una ficha terminaba en "volver a rutas" y ahi
    se acababa la visita. Las elige build.py por actividad y distancia, con los
    datos reales de las tarjetas de la portada. */
+/* Pasar a la ruta de al lado sin volver a la portada. Mismo orden que la
+   portada: la mas nueva primero. La flecha va fuera en «anterior» y dentro
+   en «siguiente», para que el gesto apunte hacia donde lleva. */
+.route-steps{
+  display:grid; gap:10px; margin:36px 24px 0;
+}
+@media (min-width:640px){ .route-steps{ grid-template-columns:1fr 1fr; } }
+.route-steps + .back-home{ margin-top:28px; }
+.route-step{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 16px; border:1px solid var(--line); border-radius:14px;
+  background:var(--ground-raised); color:var(--ink); text-decoration:none;
+  transition:border-color .2s ease, color .2s ease;
+}
+.route-step:hover{ border-color:var(--teal); }
+.route-step:hover .route-step-name{ color:var(--teal); }
+.route-step-arrow{ flex-shrink:0; color:var(--ink-dim); }
+.route-step:hover .route-step-arrow{ color:var(--teal); }
+.route-step-text{ display:flex; flex-direction:column; gap:5px; min-width:0; }
+.route-step-k{
+  font:600 10.5px 'IBM Plex Mono',monospace; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--ink-dim);
+}
+.route-step-name{
+  font-family:'Fraunces',serif; font-size:16px; line-height:1.22;
+  letter-spacing:-.01em; text-wrap:pretty; transition:color .2s ease;
+}
+.route-step-stats{ font:400 13px/1.4 'Karla',sans-serif; color:var(--ink-dim); }
+/* «Siguiente» se alinea a la derecha y la flecha se va al final: la fila
+   entera apunta hacia delante. En una sola columna (movil) el bloque solo de
+   «siguiente» ocuparia el ancho entero igual, asi que el empuje lo da
+   grid-column, no un margen. */
+.route-step.is-next{ justify-content:flex-end; text-align:right; }
+.route-step.is-next .route-step-arrow{ order:2; }
+.route-step.is-next .route-step-text{ align-items:flex-end; }
+@media (min-width:640px){
+  .route-steps > .route-step.is-next:only-child{ grid-column:2; }
+}
+
 .next-routes{ margin:56px 24px 0; }   /* el mismo margen lateral que .map-section y .back-home */
 .next-routes + .back-home{ margin-top:28px; }
 .next-route-list{ display:grid; gap:10px; }

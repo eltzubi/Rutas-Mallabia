@@ -35,6 +35,11 @@ COMMON = {
     # src/build.py, que lee esta pareja de aqui: es texto de la web y le toca
     # vivir en este fichero como todo lo demas.
     'Rutas parecidas': 'Antzeko ibilbideak',
+    # El paso de una ruta a la siguiente, al pie de cada ficha. Lo pone
+    # build.py, no el tail, asi que se traduce desde aqui.
+    'Anterior': 'Aurrekoa',
+    'Siguiente': 'Hurrengoa',
+    'Ruta anterior y siguiente': 'Aurreko eta hurrengo ibilbidea',
     # Footer: mismo texto en la portada (legal-pill) y en las 49 rutas
     # (underline-link) -- tiene que vivir en COMMON, no en ROUTE (que solo se
     # aplica a las paginas de ruta) ni en HOME (solo a la portada).
