@@ -21,10 +21,11 @@ body{
 ::selection{ background:var(--teal); color:var(--ground); }
 .masthead .place{ color:var(--ink); font-weight:600; }
 /* Los dos idiomas a la vista, el de la pagina en claro y el otro como enlace.
-   Las palabras enteras no caben en un movil estrecho junto al «Mallabia .
-   Bizkaia» y el boton de tema, asi que por debajo de 360 px se quedan en
-   EU / ES -- que es justo lo que pidio el autor: enteras si entran, si no las
-   siglas. Las dos formas estan en el HTML y solo cambia cual se muestra. */
+   En las fichas van las palabras enteras, y en la portada las siglas: lo pidio
+   asi el autor. Por debajo de 360 px tambien las fichas pasan a las siglas,
+   porque «Mallabia . Bizkaia» se parte en dos lineas y queda feo. Las dos
+   formas estan en el HTML y solo cambia cual se muestra; sin JavaScript.
+   La portada hace lo suyo en home.css. */
 .lang-switch{
   display:inline-flex; align-items:center; gap:5px; flex-shrink:0;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
