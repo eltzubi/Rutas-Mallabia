@@ -282,47 +282,19 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   display:flex; align-items:center; justify-content:center;
 }
 
-/* El track es lo que viene a buscar quien abre una ficha, asi que las dos
-   descargas van primero y grandes, y Wikiloc y el aviso de incidencia detras
-   y discretos. Antes era al reves: Wikiloc era el unico boton lleno y el GPX
-   un enlace fino como los demas. El orden del HTML no cambia (Wikiloc sigue
-   siendo el primer enlace del bloque); lo que manda aqui es «order», para no
-   tocar las 57 fichas por un asunto de presentacion. */
 .wikiloc-row{
-  margin:14px 24px 0; display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  margin:14px 24px 0; display:flex; flex-wrap:wrap; gap:10px;
 }
 .wikiloc-link{
-  display:inline-flex; align-items:center; gap:7px; order:2;
+  display:inline-flex; align-items:center; gap:7px;
   font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;
-  color:var(--ink); background:none; border:1px solid var(--line);
+  color:var(--ground); background:var(--teal);
   padding:9px 14px; text-decoration:none;
 }
 .wikiloc-link.ghost{
   color:var(--ink); background:none; border:1px solid var(--line);
 }
-.wikiloc-link.is-download{
-  order:1; font-size:14px; font-weight:600; letter-spacing:.02em;
-  padding:14px 22px; border-radius:10px; border:1.5px solid var(--teal);
-  white-space:nowrap;
-  color:var(--teal); background:none;
-}
-.wikiloc-link.is-download.is-primary{
-  color:var(--ground); background:var(--teal); border-color:var(--teal);
-}
-.wikiloc-link.is-download:hover{ box-shadow:0 0 18px -4px var(--teal); }
-.wikiloc-link.is-download svg{ width:17px; height:17px; }
 .wikiloc-link svg{ flex-shrink:0; }
-@media (max-width:420px){
-  /* Las dos descargas, a mitad de ancho cada una: quedan como un par y no
-     empujan a Wikiloc y al aviso a una linea suelta. */
-  .wikiloc-link.is-download{ flex:1 1 calc(50% - 5px); justify-content:center; padding:14px 10px; }
-}
-@media (max-width:360px){
-  /* Por debajo de 360 px «Descargar GPX» y «Descargar KML» no caben lado a
-     lado sin partirse en dos lineas dentro del boton, que queda raro. Una
-     debajo de otra, de lado a lado: ademas son mas faciles de acertar. */
-  .wikiloc-link.is-download{ flex:1 1 100%; }
-}
 
 .facts{ display:flex; flex-wrap:wrap; gap:9px; margin:40px 24px 0; }
 .fact{ border:1px solid var(--line); padding:11px 15px; min-width:96px; background:var(--ground-raised); }
