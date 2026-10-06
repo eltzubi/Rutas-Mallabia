@@ -41,7 +41,7 @@
     var box = el.parentElement;
     if (box) {
       box.classList.remove('is-expanded');
-      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers-btn'),
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers'),
         function(b){ b.hidden = true; });
     }
   }
@@ -242,7 +242,11 @@
     // route's own map, but plain OSM streets on the home page's overview
     // (trailhead.json) -- that map shows every route at once, where the
     // cycling-specific rendering adds less than it does on a single track.
-    var isOverview = el.dataset.mapSrc === 'data/trailhead.json';
+    // Sin quitar el ?v=<hash> que le pone build.py para que el navegador no
+    // sirva un mapa viejo, esta comparacion no acertaba nunca y la portada
+    // se trataba como si fuera una ficha: salia con la capa ciclista en vez
+    // de la de calles, que es la que toca cuando se ven las 57 rutas juntas.
+    var isOverview = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
     var cycleLayer = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
@@ -260,77 +264,47 @@
       attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
     });
     var layerDefs = isOverview ? [
-      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles' },
-      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite' },
-      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico' }
+      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
+      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
+      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico', short: 'Topo' }
     ] : [
-      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista' },
-      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite' },
-      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico' }
+      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
+      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
+      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico', short: 'Topo' }
     ];
+    // Las capas, a la vista: antes eran un icono de tres rombos que abria un
+    // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
+    // botones, con el activo encendido, como en cualquier mapa de movil.
     var layerIndex = 0;
     layerDefs[layerIndex].layer.addTo(map);
-    var layersBtn = document.createElement('button');
-    layersBtn.type = 'button';
-    layersBtn.className = 'map-layers-btn';
-    layersBtn.setAttribute('aria-label', isEu ? 'Aldatu mapa mota' : 'Cambiar tipo de mapa');
-    layersBtn.setAttribute('aria-haspopup', 'true');
-    layersBtn.setAttribute('aria-expanded', 'false');
-    layersBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>';
-    var layersMenu = document.createElement('div');
-    layersMenu.className = 'map-layers-menu';
-    layersMenu.setAttribute('role', 'menu');
-    layersMenu.hidden = true;
-    function closeLayersMenu(){
-      layersMenu.hidden = true;
-      layersBtn.setAttribute('aria-expanded', 'false');
-    }
-    function openLayersMenu(){
-      layersMenu.hidden = false;
-      layersBtn.setAttribute('aria-expanded', 'true');
-    }
-    layerDefs.forEach(function(def, i){
-      var item = document.createElement('button');
-      item.type = 'button';
-      item.className = 'map-layers-item' + (i === 0 ? ' is-selected' : '');
-      item.setAttribute('role', 'menuitemradio');
-      item.setAttribute('aria-checked', String(i === 0));
-      item.textContent = def.label;
-      item.addEventListener('click', function(){
-        if (i !== layerIndex) {
-          map.removeLayer(layerDefs[layerIndex].layer);
-          layerIndex = i;
-          layerDefs[layerIndex].layer.addTo(map);
-          Array.from(layersMenu.children).forEach(function(child, j){
-            child.classList.toggle('is-selected', j === layerIndex);
-            child.setAttribute('aria-checked', String(j === layerIndex));
-          });
-          layersBtn.classList.toggle('is-active', layerIndex !== 0);
-        }
-        closeLayersMenu();
+    var layersBar = document.createElement('div');
+    layersBar.className = 'map-layers';
+    layersBar.setAttribute('role', 'group');
+    layersBar.setAttribute('aria-label', isEu ? 'Mapa mota' : 'Tipo de mapa');
+    var layerBtns = layerDefs.map(function(def, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'map-layer-btn' + (i === 0 ? ' is-selected' : '');
+      b.setAttribute('aria-pressed', String(i === 0));
+      b.textContent = def.short;
+      b.title = def.label;
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (i === layerIndex) return;
+        map.removeLayer(layerDefs[layerIndex].layer);
+        layerIndex = i;
+        layerDefs[layerIndex].layer.addTo(map);
+        layerBtns.forEach(function(other, j){
+          other.classList.toggle('is-selected', j === layerIndex);
+          other.setAttribute('aria-pressed', String(j === layerIndex));
+        });
       });
-      layersMenu.appendChild(item);
+      layersBar.appendChild(b);
+      return b;
     });
-    layersBtn.addEventListener('click', function(e){
-      e.stopPropagation();
-      if (layersMenu.hidden) openLayersMenu(); else closeLayersMenu();
-    });
-    var closeLayersMenuOnOutsideClick = function(e){
-      if (!layersMenu.hidden && e.target !== layersBtn && !layersMenu.contains(e.target)) closeLayersMenu();
-    };
-    var closeLayersMenuOnEscape = function(e){
-      if (e.key === 'Escape' && !layersMenu.hidden) { closeLayersMenu(); layersBtn.focus(); }
-    };
-    document.addEventListener('click', closeLayersMenuOnOutsideClick);
-    document.addEventListener('keydown', closeLayersMenuOnEscape);
-    cleanups.push(function(){
-      document.removeEventListener('click', closeLayersMenuOnOutsideClick);
-      document.removeEventListener('keydown', closeLayersMenuOnEscape);
-    });
-    el.parentElement.appendChild(layersBtn);
-    el.parentElement.appendChild(layersMenu);
+    el.parentElement.appendChild(layersBar);
 
     // On a page with several routes (the home overview), clicking one opens
     // a bottom info panel instead of a Leaflet popup anchored to the click
@@ -929,7 +903,7 @@
     if (map) { map.remove(); map = null; }
     resetView = null;
     onRouteFilterChange = null;
-    Array.prototype.forEach.call(el.parentElement.querySelectorAll('.map-layers-btn, .route-info-panel'),
+    Array.prototype.forEach.call(el.parentElement.querySelectorAll('.map-layers, .route-info-panel'),
       function(node){ node.remove(); });
     loading = false;
     showUnavailable(loadMap);

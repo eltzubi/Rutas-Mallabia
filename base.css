@@ -100,35 +100,38 @@ body{
    next tap. */
 .leaflet-interactive[role="button"]:focus,
 .leaflet-interactive[role="button"]:focus-visible{ outline:none; }
-.map-expand-btn[hidden], .map-layers-btn[hidden]{ display:none; }
+.map-expand-btn[hidden], .map-layers[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
-.map-layers-btn{
-  position:absolute; z-index:400; top:10px; right:52px;
-  display:flex; align-items:center; justify-content:center;
-  width:32px; height:32px; padding:0; border:1px solid var(--line); border-radius:8px;
-  background:var(--ground); color:var(--ink); opacity:.85; cursor:pointer;
-  transition:opacity .2s ease, color .2s ease;
-  background:color-mix(in srgb, var(--ground) 72%, transparent);
+/* Las cuatro capas, a la vista y en una sola pastilla, centrada arriba del
+   mapa. Antes era un icono de tres rombos que abria un menu: nadie pulsa un
+   icono que no dice que hace, asi que el satelite y el topografico estaban
+   ahi sin que nadie los encontrara. El boton de ampliar sigue a la derecha,
+   y por eso la barra se para antes de llegar a el (right:52px). */
+.map-layers{
+  position:absolute; z-index:400; top:10px; left:52px; right:52px;
+  display:flex; justify-content:center; gap:2px; padding:3px;
+  border:1px solid var(--line); border-radius:999px;
+  background:var(--ground); box-shadow:0 4px 16px rgba(0,0,0,.3);
+  background:color-mix(in srgb, var(--ground) 80%, transparent);
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
 }
-.map-layers-btn:hover{ opacity:1; }
-.map-layers-btn.is-active{ color:var(--teal); opacity:1; }
-.map-layers-menu{
-  position:absolute; z-index:401; top:48px; right:10px; min-width:136px;
-  display:flex; flex-direction:column; gap:2px; padding:6px;
-  border:1px solid var(--line); border-radius:12px;
-  background:var(--ground); box-shadow:0 8px 24px rgba(0,0,0,.35);
-  background:color-mix(in srgb, var(--ground) 92%, transparent);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+.map-layer-btn{
+  flex:0 1 auto; min-width:0; border:0; border-radius:999px;
+  padding:6px 11px; background:none; color:var(--ink-dim); cursor:pointer;
+  font:600 11.5px 'IBM Plex Mono',monospace; letter-spacing:.02em;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  transition:background .15s ease, color .15s ease;
 }
-.map-layers-menu[hidden]{ display:none; }
-.map-layers-item{
-  display:block; width:100%; text-align:left; border:0; border-radius:8px;
-  padding:8px 10px; background:none; color:var(--ink-dim); cursor:pointer;
-  font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.02em;
+.map-layer-btn:hover{ color:var(--ink); }
+.map-layer-btn.is-selected{ background:var(--teal); color:var(--ground); }
+/* En un movil el hueco entre el zoom y el boton de ampliar es de unos 180 px,
+   asi que las cuatro entran solo apretando la letra y el relleno. Abajo no
+   pueden ir: la linea de creditos cambia de alto segun la capa (la de
+   OpenTopoMap ocupa tres lineas) y se las comeria. */
+@media (max-width:420px){
+  .map-layers{ left:48px; right:48px; padding:2px; gap:0; }
+  .map-layer-btn{ padding:6px 6px; font-size:10px; letter-spacing:0; }
 }
-.map-layers-item:hover{ background:var(--ground-raised); color:var(--ink); }
-.map-layers-item.is-selected{ background:var(--teal); color:var(--ground); }
 .eyebrow .sep{ opacity:.5; }
 .lightbox{
   position:fixed; inset:0; z-index:100;

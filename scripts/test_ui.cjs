@@ -180,7 +180,13 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert(e.doc.activeElement===line.path,'Focus returns to route');
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
-  const layers=e.one('.map-layers-btn');layers.click();assert.equal(layers.getAttribute('aria-expanded'),'true');
+  // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
+  // con el activo marcado. Se comprueba que al pulsar otro se cambia el activo.
+  const capas=e.all('.map-layer-btn');assert.equal(capas.length,4);
+  assert.equal(capas[0].getAttribute('aria-pressed'),'true');
+  capas[2].click();
+  assert.equal(capas[0].getAttribute('aria-pressed'),'false');
+  assert.equal(capas[2].getAttribute('aria-pressed'),'true');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{
@@ -197,7 +203,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
-    assert.equal(e.all('.map-layers-btn').length,1);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layer-btn').length,4);assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
