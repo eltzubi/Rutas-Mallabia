@@ -368,6 +368,38 @@ def add_similar_routes(page_html, page, cards, lang):
     return page_html.replace(anchor, bloque + anchor, 1)
 
 
+def add_jump_to_map(page_html, lang):
+    """Un atajo al mapa desde arriba de la ficha.
+
+    El mapa esta al final, detras del texto de la ruta, y quien abre la ficha
+    desde el movil muchas veces lo que quiere es verlo ya. El enlace va justo
+    debajo de las cifras, que es hasta donde llega casi todo el mundo sin
+    hacer scroll, y lleva al mapa sin pasar por el texto.
+    """
+    # Sin sangria en ahuntzen, con dos espacios en las demas.
+    seccion = re.search(r'<section class="map-section">', page_html)
+    if not seccion or 'class="jump-to-map"' in page_html:
+        return page_html
+    page_html = page_html.replace('<section class="map-section">',
+                                  '<section class="map-section" id="mapa">', 1)
+    texto = eu.COMMON["Ver el mapa"] if lang == "eu" else "Ver el mapa"
+    enlace = ('  <p class="jump-to-map"><a class="wikiloc-link ghost" href="#mapa">'
+              '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+              ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+              '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/>'
+              '<polyline points="2 12 12 17 22 12"/></svg>'
+              + texto + '</a></p>\n')
+    # Detras de la nota de las cifras si la hay, y si no detras de las propias
+    # cifras: cuatro fichas (longa, asuntzabira, zengotitaosmagain y
+    # axmakuriturrizuri) no llevan esa nota, y a ahuntzen le falta la sangria.
+    marca = re.search(r'[ \t]*<p class="facts-note">[\s\S]*?</p>\n', page_html)
+    if not marca:
+        marca = re.search(r'[ \t]*<div class="facts">[\s\S]*?</div>\n', page_html)
+    if not marca:
+        return page_html
+    return page_html[:marca.end()] + enlace + page_html[marca.end():]
+
+
 def add_prev_next(page_html, page, cards, lang):
     """Pasar de una ruta a la de al lado sin volver a la portada.
 
@@ -705,6 +737,7 @@ def main():
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_prev_next(page_html, name, cards[lang], lang)
+            page_html = add_jump_to_map(page_html, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)

@@ -282,6 +282,11 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
   display:flex; align-items:center; justify-content:center;
 }
 
+/* El atajo al mapa, debajo de las cifras. scroll-margin-top deja sitio para
+   la cabecera pegajosa, que si no tapa el titulo del mapa al llegar. */
+.jump-to-map{ margin:14px 24px 0; }
+.map-section{ scroll-margin-top:84px; }
+
 .wikiloc-row{
   margin:14px 24px 0; display:flex; flex-wrap:wrap; gap:10px;
 }

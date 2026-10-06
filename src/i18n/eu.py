@@ -40,6 +40,7 @@ COMMON = {
     'Anterior': 'Aurrekoa',
     'Siguiente': 'Hurrengoa',
     'Ruta anterior y siguiente': 'Aurreko eta hurrengo ibilbidea',
+    'Ver el mapa': 'Ikusi mapa',
     # Footer: mismo texto en la portada (legal-pill) y en las 49 rutas
     # (underline-link) -- tiene que vivir en COMMON, no en ROUTE (que solo se
     # aplica a las paginas de ruta) ni en HOME (solo a la portada).
