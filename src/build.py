@@ -157,9 +157,11 @@ def retarget_home_links(page_html, lang):
     # no pasan por el swap de EU_OF, asi que enlazan la portada como
     # index.eu.html, que ahora es solo la redireccion heredada.
     page_html = page_html.replace('href="index.eu.html"', 'href="index.html"')
+    # El conmutador es ahora los dos idiomas a la vista, asi que el enlace al
+    # castellano es el <a> con hreflang="es": el unico de la pagina.
     return page_html.replace(
-        '<a class="lang-switch" href="index.html"',
-        '<a class="lang-switch" href="index.es.html"')
+        '<a href="index.html" hreflang="es" lang="es"',
+        '<a href="index.es.html" hreflang="es" lang="es"')
 
 
 # source asset -> file written at the repo root

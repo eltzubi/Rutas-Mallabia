@@ -20,20 +20,30 @@ body{
 }
 ::selection{ background:var(--teal); color:var(--ground); }
 .masthead .place{ color:var(--ink); font-weight:600; }
+/* Los dos idiomas a la vista, el de la pagina en claro y el otro como enlace.
+   Las palabras enteras no caben en un movil estrecho junto al «Mallabia .
+   Bizkaia» y el boton de tema, asi que por debajo de 360 px se quedan en
+   EU / ES -- que es justo lo que pidio el autor: enteras si entran, si no las
+   siglas. Las dos formas estan en el HTML y solo cambia cual se muestra. */
 .lang-switch{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-width:26px; height:26px; padding:0 7px; border-radius:13px;
-  border:1px solid var(--line); background:none;
-  color:var(--ink-dim); text-decoration:none;
+  display:inline-flex; align-items:center; gap:5px; flex-shrink:0;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
-  letter-spacing:.06em; flex-shrink:0;
+  letter-spacing:.06em; text-transform:uppercase; white-space:nowrap;
 }
-.lang-switch:hover{ border-color:var(--teal); color:var(--teal); box-shadow:0 0 14px -2px var(--teal); }
+.lang-switch a{ color:var(--ink-dim); text-decoration:none; }
+.lang-switch a:hover{ color:var(--teal); }
+.lang-sep{ color:var(--violet); }
+.lang-on{ color:var(--ink); }
+.lang-corta{ display:none; }
+@media (max-width:359px){
+  .lang-larga{ display:none; }
+  .lang-corta{ display:inline; }
+}
 .theme-toggle .icon-sun{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
-.lang-switch, .theme-toggle, .back-link{ position:relative; }
-.lang-switch::after, .theme-toggle::after{
+.lang-switch a, .theme-toggle, .back-link{ position:relative; }
+.lang-switch a::after, .theme-toggle::after{
   content:''; position:absolute; inset:-9px -7px;
 }
 .back-link::after{

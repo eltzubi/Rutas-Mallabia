@@ -149,9 +149,23 @@ def main():
             for es_file, eu_file in EU_OF.items():
                 out = out.replace(f'href="{es_file}"', f'href="{eu_file}"')
 
+            # El selector muestra los dos idiomas: el de la pagina en claro y el
+            # otro como enlace. Al pasar a euskera se intercambian los papeles.
             out = re.sub(
-                r'<a class="lang-switch" href="([\w.]+)\.eu\.html" hreflang="eu" lang="eu" title="Euskaraz">EU</a>',
-                r'<a class="lang-switch" href="\1.html" hreflang="es" lang="es" title="En castellano">ES</a>',
+                r'<span class="lang-switch">'
+                r'<a href="([\w.-]+)\.eu\.html" hreflang="eu" lang="eu" title="Euskaraz">'
+                r'<span class="lang-larga">Euskara</span><span class="lang-corta">EU</span></a>'
+                r'<span class="lang-sep" aria-hidden="true">/</span>'
+                r'<span class="lang-on" lang="es">'
+                r'<span class="lang-larga">Castellano</span><span class="lang-corta">ES</span></span>'
+                r'</span>',
+                r'<span class="lang-switch">'
+                r'<span class="lang-on" lang="eu">'
+                r'<span class="lang-larga">Euskara</span><span class="lang-corta">EU</span></span>'
+                r'<span class="lang-sep" aria-hidden="true">/</span>'
+                r'<a href="\1.html" hreflang="es" lang="es" title="En castellano">'
+                r'<span class="lang-larga">Castellano</span><span class="lang-corta">ES</span></a>'
+                r'</span>',
                 out,
             )
 
