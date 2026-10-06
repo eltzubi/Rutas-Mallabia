@@ -144,16 +144,19 @@
 
 .map-section .elev-legend{ padding:0 0 16px; }
 
-/* Compact copy of the hero elevation profile, cloned in right above the
-   map by js/map.js -- keeps the elevation<->map hover link visible on a
-   phone, where the hero chart (top of page) and the map (much lower) are
-   never both on screen at once. Debajo del mapa y no encima: con el perfil
-   arriba, la mano que arrastra el dedo tapa justo el mapa que se mira. */
-.mini-elev-chart{
+/* El perfil de alturas vive aqui abajo, con el mapa: js/map.js lo trae de la
+   cabecera, donde antes estaba el original y aqui una copia. Debajo del mapa
+   y no encima, porque con el perfil arriba la mano que arrastra el dedo tapa
+   justo el mapa que se quiere mirar. */
+.map-section .chart-visual{
   background:var(--ground-raised); border:1px solid var(--line);
   border-radius:14px; overflow:hidden; margin-top:14px;
 }
-.mini-elev-chart svg{ display:block; width:100%; height:90px; }
+.map-section .chart-visual svg{ display:block; width:100%; height:auto; }
+.map-section .elev-tags{ margin-top:10px; }
+/* Sin el perfil, la cabecera es solo el titulo y las cifras: el recuadro y la
+   animacion de entrada ya no pintan nada. */
+.hero-chart.sin-perfil{ border:0; background:none; animation:none; opacity:1; }
 
 /* Sin Leaflet (CDN caido o bloqueado) el mapa se queda en una caja vacia: al
    menos que diga por que, y que los botones que ya no mandan sobre nada

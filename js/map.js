@@ -686,35 +686,34 @@
           return chart;
         }
 
-        // A second, compact copy of the same profile right BELOW the map:
-        // on a phone the hero chart (top of page) and the map (much lower
-        // down) are never both on screen together, so hovering one to see
-        // it move on the other was invisible in practice. Debajo y no
-        // encima porque el autor lo pidio asi: con el perfil arriba, la
-        // mano que arrastra el dedo tapa justo el mapa que se quiere mirar.
-        // Cloned -- same <path> "d", so the same x/y coordinate space --
-        // BEFORE the hero gets its own cursor line/dot below, so there's
-        // nothing to strip back out of the clone. Placed right next to the
-        // map this way, with no need to touch every route's own
-        // _tail.html by hand.
+        // El perfil, una sola vez y abajo con el mapa. Antes estaba arriba
+        // en la cabecera y aqui se ponia una copia: dos dibujos iguales en
+        // la misma pagina. El autor quiere solo el de abajo, asi que se
+        // mueve el de verdad. Debajo del mapa y no encima porque con el
+        // perfil arriba la mano que arrastra el dedo tapa justo el mapa.
+        // Se mueve aqui y no en build.py para no recortar el HTML de las 57
+        // fichas a base de expresiones regulares: el DOM es un arbol y
+        // moverlo no puede dejar una etiqueta sin cerrar.
         var mapSection = el.closest('.map-section');
         var mapBox = mapSection && mapSection.querySelector('.route-map-box');
-        var miniSvg = null;
         if (mapSection && mapBox) {
-          var miniWrap = document.createElement('div');
-          miniWrap.className = 'mini-elev-chart';
-          miniSvg = heroSvg.cloneNode(true);
-          miniWrap.appendChild(miniSvg);
-          mapBox.parentNode.insertBefore(miniWrap, mapBox.nextSibling);
-          // La lista de puntos numerados estaba encima del mapa, y con el
-          // perfil ya debajo los numeros quedaban lejos del dibujo que los
-          // usa. Baja con el: mapa, luego los nombres, luego el perfil.
-          var leyenda = mapSection.querySelector('.elev-legend');
-          if (leyenda) mapBox.parentNode.insertBefore(leyenda, miniWrap);
+          var visual = heroSvg.parentNode;                       // .chart-visual
+          var cabecera = visual.parentNode;                      // .hero-chart
+          var tags = cabecera.querySelector('.elev-tags');
+          var sobra = cabecera.querySelector('.elev-legend');     // la de la cabecera
+          var nombres = mapSection.querySelector('.elev-legend'); // la del mapa, se queda
+          if (sobra) sobra.remove();
+          var detras = mapBox;
+          if (nombres) {
+            mapBox.parentNode.insertBefore(nombres, mapBox.nextSibling);
+            detras = nombres;
+          }
+          mapBox.parentNode.insertBefore(visual, detras.nextSibling);
+          if (tags) visual.parentNode.insertBefore(tags, visual.nextSibling);
+          cabecera.classList.add('sin-perfil');
         }
 
         addChart(heroSvg);
-        if (miniSvg) addChart(miniSvg);
 
         // Binary search along the (monotonic-in-x) stroke path for the y
         // at a given x -- there's no direct "value at x" query on <path>.
