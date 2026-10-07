@@ -211,21 +211,19 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
-  // Y el automatismo: la portada abre con el callejero, pasa al IGN al elegir
-  // una ruta y vuelve al cerrarla; en cuanto se toca un boton, manda el
-  // visitante y elegir rutas ya no se lo cambia.
+  // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
+  // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
   const c2=e2.all('.map-layer-btn');
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
+  e2.maps[0].setZoom(16);
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','acercarse no la cambia');
   abre();
-  assert.equal(c2[0].getAttribute('aria-pressed'),'true','al elegir una ruta pasa al IGN');
-  e2.one('.route-info-panel').dispatchEvent({type:'keydown',key:'Escape'});
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','al cerrarla vuelve a Calles');
-  c2[3].click();                     // el visitante elige satelite
-  abre();
-  assert.equal(c2[3].getAttribute('aria-pressed'),'true','elegida a mano, ya no se la cambian');
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','elegir una ruta tampoco');
+  c2[0].click();
+  assert.equal(c2[0].getAttribute('aria-pressed'),'true','el boton si');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{

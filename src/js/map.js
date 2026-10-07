@@ -264,11 +264,10 @@
     // La portada abre con las calles y pasa sola al IGN al acercarse, que es
     // como lo quiere el autor: de lejos, con las 57 rutas a la vez, lo que
     // situa es el callejero; de cerca, los rios y los toponimos del IGN. El
-    // cambio se hace al elegir una ruta, no al acercarse: mientras se ven las
-    // 57 a la vez manda el callejero, y en cuanto se pulsa una concreta valen
-    // los rios y los toponimos. Al cerrar el panel vuelve el callejero. En
-    // cuanto el visitante toca un boton de capa se acabo el automatismo:
-    // manda el.
+    // mapa no cambia solo nunca: ni al acercarse ni al elegir una ruta. Se
+    // probaron las dos cosas y el autor las quito: que el mapa cambie debajo
+    // sin haberlo pedido desconcierta mas de lo que ayuda. Solo lo cambian
+    // los botones.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
     var LABEL_MIN_ZOOM = 13;   // el zoom al que salen los kilometros de cada ruta
     var layerDefs = [
@@ -307,7 +306,6 @@
         b.setAttribute('aria-pressed', String(j === layerIndex));
       });
     }
-    var capaAutomatica = esPortada;
     var layerBtns = layerDefs.map(function(def, i){
       var b = document.createElement('button');
       b.type = 'button';
@@ -317,7 +315,6 @@
       b.title = def.label;
       b.addEventListener('click', function(e){
         e.stopPropagation();
-        capaAutomatica = false;
         ponerCapa(i);
       });
       layersBar.appendChild(b);
@@ -366,7 +363,6 @@
       panel.classList.remove('open');
       panel.hidden = true;
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
-      if (capaAutomatica) ponerCapa(2);   // sin ruta elegida, vuelve el callejero
       if (activeLine) {
         var path = activeLine.getElement();
         activeLine.setStyle({ color: activeBaseColor, weight: 4, opacity: baseOpacity });
@@ -398,10 +394,6 @@
       }
       activeLine = line; activeBaseColor = baseColor;
       userMoved = true;
-      // Elegida una ruta, el mapa pasa al IGN: a partir de aqui se esta
-      // mirando un recorrido concreto y lo que vale son los rios y los
-      // toponimos. Mientras se ven las 57 a la vez manda el callejero.
-      if (capaAutomatica) ponerCapa(0);
 
       // La ruta elegida manda visualmente: rojo fino por encima; el resto
       // conserva su color pero se apaga para no taparla ni ensuciar el mapa.
