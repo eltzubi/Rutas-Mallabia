@@ -249,6 +249,22 @@ def main():
                 f'arteta [{lang}]: manifest que no corresponde a su idioma')
         require('<meta name="theme-color"' in pagina, f'arteta [{lang}]: sin theme-color')
 
+    # Los botones de la fila de descargas llevan icono. Seis fichas se
+    # publicaron sin el (ahuntzen sin ninguno de los tres, y otras cinco sin el
+    # del aviso) y nadie lo vio hasta que la etiqueta se quedo corta y el hueco
+    # canto. Es justo el tipo de diferencia que no se nota mirando una pagina:
+    # hay que mirarlas las 57 a la vez.
+    for lang in build.LANGS:
+        for page in build.PAGES:
+            html_pagina = (ROOT / build.out_name(page, lang)).read_text()
+            for fila in re.findall(r'<div class="wikiloc-row">(.*?)</div>', html_pagina, re.S):
+                for boton in re.findall(
+                        r'<(?:a|button)\b[^>]*class="wikiloc-link[^"]*"[^>]*>(.*?)</(?:a|button)>',
+                        fila, re.S):
+                    require('<svg' in boton,
+                            f'{build.out_name(page, lang)}: botón sin icono en la fila de '
+                            f'descargas ({" ".join(boton.split())[:40]})')
+
     # Cada foto que pide una pagina tiene que existir Y estar publicada. Desde
     # que los originales de 1600 px viven en img/orig/, fuera del sitio (ver
     # _config.yml), una referencia olvidada a img/<foto>.jpg no daria error en
