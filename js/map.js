@@ -284,16 +284,27 @@
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
     // botones, con el activo encendido, como en cualquier mapa de movil.
     var layerIndex = esPortada ? 2 : 0;   // 2 = Calles, 0 = IGN
-    layerDefs[layerIndex].layer.addTo(map);
+    // El mapa de la portada nace dentro de un bloque oculto: hasta que el
+    // visitante no cambia a la vista de mapa mide 0x0. Y un contenedor de 0x0
+    // le hace creer a Leaflet que cabe todo a zoom maximo, asi que pedia las
+    // teselas del zoom 20 -- las mas detalladas que hay -- de un mapa que
+    // nadie estaba viendo, en cada visita a la portada. La capa no se engancha
+    // hasta que la caja mide algo; fit() lo hace en cuanto aparece.
+    var capaPuesta = false;
+    function asegurarCapa(){
+      if (capaPuesta || !el.clientWidth || !el.clientHeight) return;
+      capaPuesta = true;
+      layerDefs[layerIndex].layer.addTo(map);
+    }
     var layersBar = document.createElement('div');
     layersBar.className = 'map-layers';
     layersBar.setAttribute('role', 'group');
     layersBar.setAttribute('aria-label', isEu ? 'Mapa mota' : 'Tipo de mapa');
     function ponerCapa(i){
       if (i === layerIndex) return;
-      map.removeLayer(layerDefs[layerIndex].layer);
+      if (capaPuesta) map.removeLayer(layerDefs[layerIndex].layer);
       layerIndex = i;
-      layerDefs[layerIndex].layer.addTo(map);
+      if (capaPuesta) layerDefs[layerIndex].layer.addTo(map);
       layerBtns.forEach(function(b, j){
         b.classList.toggle('is-selected', j === layerIndex);
         b.setAttribute('aria-pressed', String(j === layerIndex));
@@ -893,10 +904,12 @@
     });
 
     function fit(){
+      if (!el.clientWidth || !el.clientHeight) return;   // todavia oculto
       map.invalidateSize();
+      asegurarCapa();
       if (!userMoved) map.fitBounds(bounds, { padding: [24, 24] });
     }
-    resetView = function(){ map.invalidateSize(); map.fitBounds(bounds, { padding: [24, 24] }); };
+    resetView = function(){ map.invalidateSize(); asegurarCapa(); map.fitBounds(bounds, { padding: [24, 24] }); };
     fit();
     updateLabelVisibility();
     if ('ResizeObserver' in window) {
