@@ -261,18 +261,6 @@
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
-    // Los senderos señalizados (PR, GR, SL) de Waymarked Trails: una capa
-    // transparente que se pone ENCIMA de la que haya, con las rutas
-    // homologadas que pasan por la zona dibujadas en naranja. No sustituye al
-    // mapa, lo completa: es lo que no sale ni en el IGN ni en el callejero.
-    // Sale apagada; la enciende el boton PR/GR. El track propio no queda
-    // debajo porque Leaflet pinta las lineas en otro panel, siempre por
-    // encima de cualquier tesela.
-    var trailsLayer = L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      opacity: 0.9,
-      attribution: '&copy; <a href="https://hiking.waymarkedtrails.org" target="_blank" rel="noopener">Waymarked Trails</a> (CC BY-SA 3.0)'
-    });
     // La portada abre con las calles y las fichas con el IGN, que es como lo
     // quiere el autor: en la vista de conjunto, con las 57 rutas a la vez, lo
     // que situa es el callejero; en una ruta, los rios, los toponimos y las
@@ -334,29 +322,17 @@
     });
     el.parentElement.appendChild(layersBar);
 
-    // Segunda fila, para lo que no es "que mapa" sino "que mas se ve encima".
+    // Segunda fila, para lo que no es "que mapa" sino como se pinta encima.
     // Va aparte de la pastilla de las capas a proposito: aquellas son
-    // excluyentes (una u otra) y esto es un interruptor independiente.
+    // excluyentes (una u otra) y esto son interruptores sueltos. Solo se
+    // cuelga del mapa si alguien le mete un boton: en la portada no lleva
+    // ninguno y una pastilla vacia no pinta nada ahi.
     var extrasBar = document.createElement('div');
     extrasBar.className = 'map-extras';
-    var trailsOn = false;
-    var trailsBtn = document.createElement('button');
-    trailsBtn.type = 'button';
-    trailsBtn.className = 'map-layer-btn';
-    trailsBtn.textContent = 'PR/GR';
-    trailsBtn.title = isEu ? 'Seinalizatutako bideak (PR, GR, SL)'
-                           : 'Senderos señalizados (PR, GR, SL)';
-    trailsBtn.setAttribute('aria-pressed', 'false');
-    trailsBtn.addEventListener('click', function(e){
-      e.stopPropagation();
-      trailsOn = !trailsOn;
-      if (trailsOn) trailsLayer.addTo(map);
-      else map.removeLayer(trailsLayer);
-      trailsBtn.classList.toggle('is-selected', trailsOn);
-      trailsBtn.setAttribute('aria-pressed', String(trailsOn));
-    });
-    extrasBar.appendChild(trailsBtn);
-    el.parentElement.appendChild(extrasBar);
+    function ponExtra(btn){
+      extrasBar.appendChild(btn);
+      if (!extrasBar.parentNode) el.parentElement.appendChild(extrasBar);
+    }
 
     // On a page with several routes (the home overview), clicking one opens
     // a bottom info panel instead of a Leaflet popup anchored to the click
@@ -754,7 +730,7 @@
         slopeBtn.classList.toggle('is-selected', pendienteOn);
         slopeBtn.setAttribute('aria-pressed', String(pendienteOn));
       });
-      extrasBar.appendChild(slopeBtn);
+      ponExtra(slopeBtn);
     }
 
     if (data.tracks.length === 1 && !track0.href && track0.points.length > 1) {

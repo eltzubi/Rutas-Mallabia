@@ -154,15 +154,17 @@ shell cache is named after its own hash, so it is dropped whole when any asset c
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
 
-**Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM, Spain's IGN and
-Waymarked Trails — volunteer-run servers whose usage policy forbids bulk caching. Without signal the
-track is drawn on an empty background, not on the map.
+**Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM and Spain's IGN —
+volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
+empty background, not on the map.
 
-The Waymarked Trails layer (`tile.waymarkedtrails.org/hiking`) is the only **overlay**: a transparent
-layer with the waymarked PR/GR/SL trails, drawn on top of whichever base map is selected, toggled by
-the `PR/GR` button in `.map-extras` (off by default, not remembered). The base layers stay mutually
-exclusive in `.map-layers` — don't merge the two bars, and note that `.map-layer-btn` now appears in
-both, so any selector counting them must be scoped (`scripts/test_ui.cjs` does).
+A **Waymarked Trails overlay** (the waymarked PR/GR/SL trails on top of the chosen base map) was
+built and published on 7 October 2026 and **removed the same day at the user's request** — don't
+re-add it. What it left behind is `.map-extras`, the second pill below `.map-layers`, which now holds
+only the slope toggle: it is attached to the map lazily (`ponExtra`), so a page with nothing to put
+in it — the home overview — gets no empty pill at all. The base layers stay mutually exclusive in
+`.map-layers`; `.map-layer-btn` appears in both bars, so any selector counting them must be scoped
+(`scripts/test_ui.cjs` does).
 
 If the service worker ever needs killing, publish a `sw.js` whose whole body is
 `self.registration.unregister()`; browsers that already have it will pick that up and detach themselves.

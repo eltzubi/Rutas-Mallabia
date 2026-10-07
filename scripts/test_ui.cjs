@@ -213,23 +213,10 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
-  // Los senderos señalizados son un interruptor aparte, no una capa mas de la
-  // pastilla: se ponen encima de la que haya. Nacen apagados y al encenderlos
-  // el mapa pasa a tener dos capas de teselas, no una.
-  // Uno y solo uno: el de la pendiente no sale en la portada, que son 57
-  // tracks a la vez y sin alturas.
-  const prgr=e.all('.map-extras .map-layer-btn');assert.equal(prgr.length,1);
-  assert.equal(prgr[0].getAttribute('aria-pressed'),'false','los PR/GR nacen apagados');
-  // De cuantas parta da igual (en la portada el mapa nace oculto y el fondo no
-  // se engancha hasta que mide algo): lo que importa es que suma una y resta
-  // esa misma, sin tocar la de debajo.
-  const fondo=e.maps[0].capas||0;
-  prgr[0].click();
-  assert.equal(prgr[0].getAttribute('aria-pressed'),'true');
-  assert.equal(e.maps[0].capas,fondo+1,'los senderos se ponen encima');
-  prgr[0].click();
-  assert.equal(prgr[0].getAttribute('aria-pressed'),'false');
-  assert.equal(e.maps[0].capas,fondo,'y se quitan sin tocar el fondo');
+  // La segunda pastilla (la de pintar por pendiente) es cosa de la ficha de
+  // una ruta: aqui son 57 tracks a la vez y sin alturas, asi que no se cuelga
+  // ninguna pastilla vacia del mapa.
+  assert.equal(e.all('.map-extras').length,0,'la portada no lleva segunda pastilla');
   // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
@@ -259,7 +246,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-extras .map-layer-btn').length,1);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-extras').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
