@@ -476,11 +476,12 @@ def add_ui_text(page_html, cards, lang):
     page_html = page_html.replace('<p class="hero-compact-stats" data-route-totals></p>',
                                   f'<p class="hero-compact-stats" data-route-totals>{summary}</p>')
     # «Ver todas las rutas» con una busqueda puesta se lee como «todas las de
-    # eso que he buscado», que es justo lo contrario de lo que hace el boton.
-    # Con el numero delante no hay forma de entenderlo mal: son las 57 que
-    # tiene la web. Lo pone build.py, que es quien las cuenta.
-    salida = (f'Ikusi {len(cards)} ibilbideak' if lang == "eu"
-              else f'Ver las {len(cards)} rutas')
+    # eso que he buscado», y «Ver las 57 rutas» tampoco lo arregla del todo:
+    # pueden entenderse como las 57 de Oiz. Diciendo primero que se quitan los
+    # filtros y luego cuantas quedan no hay forma de entenderlo mal. El numero
+    # lo pone build.py, que es quien las cuenta.
+    salida = (f'Iragazkirik gabe: {len(cards)} ibilbide' if lang == "eu"
+              else f'Sin filtros: {len(cards)} rutas')
     for viejo in ('Ver todas las rutas', 'Ikusi ibilbide guztiak'):
         page_html = page_html.replace(f'id="clearFilters">{viejo}</button>',
                                       f'id="clearFilters">{salida}</button>')
