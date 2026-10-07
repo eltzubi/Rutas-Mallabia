@@ -27,7 +27,7 @@ COMMON = {
     # El bloque de "rutas parecidas" del final de cada ficha lo genera
     # src/build.py, que lee esta pareja de aqui: es texto de la web y le toca
     # vivir en este fichero como todo lo demas.
-    'Rutas parecidas': 'Antzeko ibilbideak',
+    'Rutas por esta zona': 'Inguru honetako ibilbideak',
     # El paso de una ruta a la siguiente, al pie de cada ficha. Lo pone
     # build.py, no el tail, asi que se traduce desde aqui.
     'Anterior': 'Aurrekoa',

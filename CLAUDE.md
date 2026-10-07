@@ -148,6 +148,17 @@ going blank on 112 pages if that CDN has a bad day. `check_site.py` fails if any
 `<link rel=stylesheet|preconnect|preload>` ever points off-site again. The only thing still fetched from
 outside are the map tiles, and those are requested by the JS, not the HTML.
 
+**«Rutas por esta zona», en el build.** The three neighbouring routes at the foot of each page are
+chosen by `vecinas_cercanas()` in `src/build.py` from the real tracks in `data/trailhead.json`
+(coverage at 70 m and 250 m, score = shared×4 + nearby, hand-picked `VECINAS_FIJAS` first). This used
+to run in the browser: every route page downloaded `data/trailhead.json` (399 kB) **and the whole home
+page** (355 kB) to recompute a list that never changes between visits — 754 kB, half the weight of a
+route page. Moving it to the build cut a mobile route page from 1.564 to 805 kB, and the list is now
+visible to Google and without JavaScript. The Python reproduces the old JS point for point; the
+migration was checked by capturing what the browser rendered on all 114 pages first and requiring the
+generated HTML to match it exactly. `add_similar_routes` **replaces** a hand-written `next-routes`
+block if it finds one (ahuntzen had one, with figures copied by hand that nobody was updating).
+
 **Shared assets, not embedded per-page.** `css/home.css`, `css/route.css`,
 `fonts/inline_fonts.css` (self-hosted `@font-face`, base64) and `js/{app,map,filters}.js` live once
 in `src/` and are copied to the repo root by `build.py`, referenced by every page via a real `<link>`/

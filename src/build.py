@@ -57,6 +57,7 @@ Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
 import hashlib
+import math
 import xml.etree.ElementTree as ET
 import json
 import html.entities
@@ -310,6 +311,90 @@ VECINAS_FIJAS = {
 }
 
 
+_trailhead_cache = None
+
+
+def _trailhead():
+    """Los tracks de data/trailhead.json, tal cual los leia el navegador."""
+    global _trailhead_cache
+    if _trailhead_cache is None:
+        with open(os.path.join(ROOT, "data", "trailhead.json")) as f:
+            _trailhead_cache = json.load(f).get("tracks", [])
+    return _trailhead_cache
+
+
+def _metros(a, b):
+    lat = math.radians((a[0] + b[0]) / 2)
+    dy = (a[0] - b[0]) * 111320
+    dx = (a[1] - b[1]) * 111320 * math.cos(lat)
+    return math.hypot(dx, dy)
+
+
+def _cobertura(a, b, umbral):
+    """Que parte de A pasa cerca de B. Muestreada, como lo hacia el navegador."""
+    if not a or not b:
+        return 0.0
+    paso_a = max(1, len(a) // 120)
+    paso_b = max(1, len(b) // 160)
+    cerca = total = 0
+    for i in range(0, len(a), paso_a):
+        total += 1
+        for j in range(0, len(b), paso_b):
+            if _metros(a[i], b[j]) <= umbral:
+                cerca += 1
+                break
+    return cerca / total if total else 0.0
+
+
+def vecinas_cercanas(slug, cards, usados):
+    """Las tres rutas que de verdad pasan por donde esta.
+
+    Esto lo hacia el navegador: cada ficha se bajaba data/trailhead.json (399
+    kB) y la portada entera (355 kB) -- 754 kB por visita -- para recalcular
+    aqui mismo una lista que el servidor puede dejar escrita. Ademas, asi la
+    ven Google y quien tenga el JavaScript parado, y sigue estando sin
+    cobertura. La cuenta es la misma, punto por punto, que hacia js/app.js.
+    """
+    tracks = _trailhead()
+    mio = next((t for t in tracks if route_slug(t.get("href")) == slug), None)
+    if not mio:
+        return []
+    mis_puntos = mio.get("points") or []
+    marcadas = []
+    for t in tracks:
+        s = route_slug(t.get("href"))
+        if not s or s == slug or s in usados or s not in cards:
+            continue
+        puntos = t.get("points") or []
+        if not puntos:
+            continue
+        # 70 m premia el camino de verdad compartido; 250 m mantiene cerca las
+        # rutas de la misma ladera aunque suban por pistas paralelas.
+        comun = max(_cobertura(mis_puntos, puntos, 70), _cobertura(puntos, mis_puntos, 70))
+        cerca = max(_cobertura(mis_puntos, puntos, 250), _cobertura(puntos, mis_puntos, 250))
+        if comun >= 0.08 or cerca >= 0.22:
+            marcadas.append({"slug": s, "comun": comun, "cerca": cerca,
+                             "punt": comun * 4 + cerca})
+    marcadas.sort(key=lambda x: (-x["punt"], -x["comun"], -x["cerca"]))
+    # Las vecinas puestas a mano van primero aunque el track no las acerque:
+    # dos rutas pueden ir al mismo sitio por laderas distintas.
+    for s in reversed(VECINAS_FIJAS.get(slug, ())):
+        if s not in cards or s == slug or s in usados:
+            continue
+        hallada = next((x for x in marcadas if x["slug"] == s), None)
+        if hallada:
+            marcadas.remove(hallada)
+        else:
+            hallada = {"slug": s}
+        marcadas.insert(0, hallada)
+    return [cards[x["slug"]] for x in marcadas[:3]]
+
+
+def route_slug(href):
+    return (href or "").split("/")[-1].split("?")[0] \
+        .replace(".eu.html", "").replace(".html", "")
+
+
 def similar_routes(slug, cards, count=2):
     """Las rutas de al lado: misma actividad, y las que mas camino comparten.
 
@@ -344,12 +429,14 @@ def add_similar_routes(page_html, page, cards, lang):
     used_hrefs = set()
     if body_match:
         used_hrefs = set(re.findall(r'href="([^"]+)"', body_match.group(1)))
-    vecinas = [c for c in similar_routes(page, cards, count=len(cards))
-               if c["href"] not in used_hrefs][:2]
-    anchor = '  <div class="back-home">'
-    if not vecinas or anchor not in page_html:
+    usados = {route_slug(h) for h in used_hrefs}
+    vecinas = vecinas_cercanas(page, cards, usados)
+    if not vecinas:
+        vecinas = [c for c in similar_routes(page, cards, count=len(cards))
+                   if c["href"] not in used_hrefs][:2]
+    if not vecinas:
         return page_html
-    titulo = "Rutas parecidas"
+    titulo = "Rutas por esta zona"
     if lang == "eu":
         titulo = eu.COMMON[titulo]
     tarjetas = "\n".join(
@@ -357,15 +444,21 @@ def add_similar_routes(page_html, page, cards, lang):
         f'        <span class="next-route-name">{c["name"]}</span>\n'
         f'        <span class="next-route-stats">{c["stats"]}</span>\n'
         f'      </a>' for c in vecinas)
-    # Las fijas se declaran aqui para que el JS, que recalcula la lista en el
-    # navegador, las respete en vez de tirarlas.
-    fijas = " ".join(VECINAS_FIJAS.get(page, ()))
-    attr = f' data-fijas="{fijas}"' if fijas else ""
-    bloque = (f'  <section class="next-routes"{attr}>\n'
+    bloque = (f'  <section class="next-routes">\n'
               f'    <p class="eyebrow">{titulo}</p>\n'
               f'    <div class="next-route-list">\n{tarjetas}\n    </div>\n'
-              f'  </section>\n\n')
-    return page_html.replace(anchor, bloque + anchor, 1)
+              f'  </section>')
+    # Si la ficha ya trae un bloque escrito a mano, se sustituye: ahuntzen
+    # llevaba uno con los nombres y los kilometros copiados a pelo, que el JS
+    # tapaba en el navegador y que nadie actualizaba al cambiar una ruta.
+    viejo = re.search(r'[ \t]*<section class="next-routes"[\s\S]*?</section>\n?', page_html)
+    if viejo:
+        return page_html[:viejo.start()] + bloque + '\n' + page_html[viejo.end():]
+    # Si no, va justo antes del enlace de volver, lleve la sangria que lleve.
+    anchor = re.search(r'[ \t]*<div class="back-home">', page_html)
+    if not anchor:
+        return page_html
+    return page_html[:anchor.start()] + bloque + '\n\n' + page_html[anchor.start():]
 
 
 def add_jump_to_map(page_html, lang):
