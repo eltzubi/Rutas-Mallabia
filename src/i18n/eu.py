@@ -20,13 +20,6 @@ UI = {
     'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.':
         'Ezin izan da bidali. Saiatu berriro edo idatzi trabakutik@gmail.com helbidera.',
     'Incidencia en ruta:': 'Ibilbideko gorabehera:',
-    'aprox.': 'gutxi gorabehera',
-    'Todas': 'Guztiak',
-    'Todos': 'Guztiak',
-    'ruta encontrada': 'ibilbide aurkitu da',
-    'rutas encontradas': 'ibilbide aurkitu dira',
-    '(rango de distancia imposible)': '(ez dago distantzia-tarte horretako ibilbiderik)',
-    '(rango de desnivel imposible)': '(ez dago desnibel-tarte horretako ibilbiderik)',
 }
 
 # Shared across every page.

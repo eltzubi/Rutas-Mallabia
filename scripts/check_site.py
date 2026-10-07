@@ -152,9 +152,6 @@ def main():
                 gain = sum(int(n['attrs']['data-desnivel-m']) for n in cards)
                 expected = f'{len(cards)} {"ibilbide" if lang == "eu" else "rutas"} · {km:,} km · {gain:,} m+'.replace(',', '.')
                 require(text(total) == expected, f'{filename}: stale totals')
-                finder = next(n for n in nodes if n['attrs'].get('class') == 'finder')
-                require(finder['attrs']['data-count-many'] ==
-                        ('ibilbide aurkitu dira' if lang == 'eu' else 'rutas encontradas'), filename)
 
     # --- las cifras de la ficha contra el track real -----------------------
     # Aqui es donde se habria visto sola la tanda de rutas que daban mas

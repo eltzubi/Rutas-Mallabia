@@ -462,12 +462,6 @@ def add_ui_text(page_html, cards, lang):
         "error": "No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.",
         "subject-prefix": "Incidencia en ruta:",
     }) + '>')
-    page_html = page_html.replace('<section class="finder">', '<section class="finder"' + attrs({
-        "approx": "aprox.", "all-distance": "Todas", "all-desnivel": "Todos",
-        "count-one": "ruta encontrada", "count-many": "rutas encontradas",
-        "impossible-distance": "(rango de distancia imposible)",
-        "impossible-desnivel": "(rango de desnivel imposible)",
-    }) + '>')
     total_km = round(sum(c["km"] for c in cards.values()))
     total_gain = sum(c["desnivel"] for c in cards.values())
     route_word = "ibilbide" if lang == "eu" else "rutas"
