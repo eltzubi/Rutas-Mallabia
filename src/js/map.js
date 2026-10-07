@@ -235,7 +235,7 @@
     // route's own map alike. Four free layers, none needing an API key:
     // CyclOSM (bike-oriented rendering, surfaces, cycle lanes), OSM, Esri
     // World Imagery (aerial photo) and the Spanish IGN's own topographic
-    // map (contour lines, named streams). Default is CyclOSM on a
+    // map (contour lines, named streams). Default is the IGN one on a
     // route's own map, but plain OSM streets on the home page's overview
     // (trailhead.json) -- that map shows every route at once, where the
     // cycling-specific rendering adds less than it does on a single track.
@@ -274,10 +274,14 @@
       { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' }
     ] : [
+      // El IGN primero, que es el que sale al abrir una ficha: lo pidio el
+      // autor por los rios y los toponimos, que es lo que se busca cuando se
+      // mira el mapa de una ruta. La portada sigue abriendo con las calles:
+      // alli se ven las 57 rutas de golpe y manda el callejero.
+      { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
       { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
-      { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' }
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' }
     ];
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
