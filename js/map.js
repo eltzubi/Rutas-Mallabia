@@ -233,17 +233,10 @@
     });
     // Layer switcher, on every map -- the home page's overview and each
     // route's own map alike. Four free layers, none needing an API key:
-    // CyclOSM (bike-oriented rendering, surfaces, cycle lanes), OSM, Esri
-    // World Imagery (aerial photo) and the Spanish IGN's own topographic
-    // map (contour lines, named streams). Default is the IGN one on a
-    // route's own map, but plain OSM streets on the home page's overview
-    // (trailhead.json) -- that map shows every route at once, where the
-    // cycling-specific rendering adds less than it does on a single track.
-    // Sin quitar el ?v=<hash> que le pone build.py para que el navegador no
-    // sirva un mapa viejo, esta comparacion no acertaba nunca y la portada
-    // se trataba como si fuera una ficha: salia con la capa ciclista en vez
-    // de la de calles, que es la que toca cuando se ven las 57 rutas juntas.
-    var isOverview = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
+    // the Spanish IGN's topographic map (contour lines, named streams and
+    // villages), CyclOSM (bike-oriented rendering, surfaces, cycle lanes),
+    // OSM and Esri World Imagery (aerial photo). Same four and same default
+    // everywhere.
     var cycleLayer = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
@@ -268,16 +261,10 @@
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
-    var layerDefs = isOverview ? [
-      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
-      { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
-      { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' }
-    ] : [
-      // El IGN primero, que es el que sale al abrir una ficha: lo pidio el
-      // autor por los rios y los toponimos, que es lo que se busca cuando se
-      // mira el mapa de una ruta. La portada sigue abriendo con las calles:
-      // alli se ven las 57 rutas de golpe y manda el callejero.
+    // El IGN primero en todas partes, portada incluida: lo pidio el autor
+    // por los rios, los arroyos y los nombres de los pueblos, que ahi se leen
+    // mejor que en los demas. Los otros tres, a un toque.
+    var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
       { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
