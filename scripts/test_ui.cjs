@@ -84,10 +84,14 @@ function env(page='index.es.html', storage=new Map()) {
   Object.assign(win,{document:doc,scrollY:0,pageYOffset:0,innerHeight:800,scrollTo(){},matchMedia:()=>({matches:false}),location:{reload(){win.reloaded=true;}}});
   const maps=[],lines=[],errors=[];
   const L={
-    map(el){const m={el,on(){return this;},getContainer(){return el;},getZoom(){return 10;},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){},remove(){this.removed=true;}};maps.push(m);return m;},
+    // El stub guarda los manejadores y deja fijar el zoom, para poder probar
+    // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
+    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){},remove(){this.removed=true;}};maps.push(m);return m;},
     tileLayer(){return {addTo(){return this;}};},
     polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
-    marker(){return {addTo(){return this;},on(){return this;},getElement(){return null;}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
+    // getLatLng y latLngToContainerPoint los necesita repositionLabels, que
+    // salta en cada zoomend desde que el stub sabe disparar eventos.
+    marker(latlng){return {addTo(){return this;},on(){return this;},getElement(){return null;},getLatLng(){return latlng||[0,0];}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
   };
   const context=vm.createContext({window:win,document:doc,L,AbortController,navigator:{},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
@@ -181,12 +185,26 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
-  // con el activo marcado. Se comprueba que al pulsar otro se cambia el activo.
+  // con el activo marcado. La portada arranca en «Calles» (el tercero) y pasa
+  // sola al IGN (el primero) al acercarse; en cuanto se pulsa un boton, manda
+  // el visitante y el zoom deja de cambiarla.
   const capas=e.all('.map-layer-btn');assert.equal(capas.length,4);
+  assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en Calles');
+  capas[0].click();
+  assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
-  assert.equal(capas[0].getAttribute('aria-pressed'),'false');
-  assert.equal(capas[2].getAttribute('aria-pressed'),'true');
+  // Y el automatismo del zoom: solo manda mientras nadie haya tocado un boton.
+  const e2=env();e2.run('map.js');await settle();
+  const c2=e2.all('.map-layer-btn');
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
+  e2.maps[0].setZoom(15);
+  assert.equal(c2[0].getAttribute('aria-pressed'),'true','al acercarse pasa al IGN');
+  e2.maps[0].setZoom(12);
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','al alejarse vuelve a Calles');
+  c2[3].click();                     // el visitante elige satelite
+  e2.maps[0].setZoom(16);
+  assert.equal(c2[3].getAttribute('aria-pressed'),'true','elegida a mano, el zoom ya no la cambia');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{

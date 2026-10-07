@@ -261,9 +261,14 @@
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
-    // El IGN primero en todas partes, portada incluida: lo pidio el autor
-    // por los rios, los arroyos y los nombres de los pueblos, que ahi se leen
-    // mejor que en los demas. Los otros tres, a un toque.
+    // La portada abre con las calles y pasa sola al IGN al acercarse, que es
+    // como lo quiere el autor: de lejos, con las 57 rutas a la vez, lo que
+    // situa es el callejero; de cerca, los rios y los toponimos del IGN. El
+    // mapa general abre en zoom 10 y llega a 20, asi que el cambio se hace en
+    // el 15, pasada la mitad. En cuanto el visitante toca un boton de capa se
+    // acabo el automatismo: manda el, no el zoom.
+    var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
+    var ZOOM_IGN = 15;
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
@@ -273,29 +278,34 @@
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
     // botones, con el activo encendido, como en cualquier mapa de movil.
-    var layerIndex = 0;
+    var layerIndex = esPortada ? 2 : 0;   // 2 = Calles, 0 = IGN
     layerDefs[layerIndex].layer.addTo(map);
     var layersBar = document.createElement('div');
     layersBar.className = 'map-layers';
     layersBar.setAttribute('role', 'group');
     layersBar.setAttribute('aria-label', isEu ? 'Mapa mota' : 'Tipo de mapa');
+    function ponerCapa(i){
+      if (i === layerIndex) return;
+      map.removeLayer(layerDefs[layerIndex].layer);
+      layerIndex = i;
+      layerDefs[layerIndex].layer.addTo(map);
+      layerBtns.forEach(function(b, j){
+        b.classList.toggle('is-selected', j === layerIndex);
+        b.setAttribute('aria-pressed', String(j === layerIndex));
+      });
+    }
+    var capaAutomatica = esPortada;
     var layerBtns = layerDefs.map(function(def, i){
       var b = document.createElement('button');
       b.type = 'button';
-      b.className = 'map-layer-btn' + (i === 0 ? ' is-selected' : '');
-      b.setAttribute('aria-pressed', String(i === 0));
+      b.className = 'map-layer-btn' + (i === layerIndex ? ' is-selected' : '');
+      b.setAttribute('aria-pressed', String(i === layerIndex));
       b.textContent = def.short;
       b.title = def.label;
       b.addEventListener('click', function(e){
         e.stopPropagation();
-        if (i === layerIndex) return;
-        map.removeLayer(layerDefs[layerIndex].layer);
-        layerIndex = i;
-        layerDefs[layerIndex].layer.addTo(map);
-        layerBtns.forEach(function(other, j){
-          other.classList.toggle('is-selected', j === layerIndex);
-          other.setAttribute('aria-pressed', String(j === layerIndex));
-        });
+        capaAutomatica = false;
+        ponerCapa(i);
       });
       layersBar.appendChild(b);
       return b;
@@ -859,6 +869,9 @@
 
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
+    map.on('zoomend', function(){
+      if (capaAutomatica) ponerCapa(map.getZoom() >= ZOOM_IGN ? 0 : 2);
+    });
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
