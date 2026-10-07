@@ -86,8 +86,11 @@ function env(page='index.es.html', storage=new Map()) {
   const L={
     // El stub guarda los manejadores y deja fijar el zoom, para poder probar
     // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
-    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){},remove(){this.removed=true;}};maps.push(m);return m;},
-    tileLayer(){return {addTo(){return this;}};},
+    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
+    // El stub cuenta las capas de teselas que tiene puesto el mapa: asi se
+    // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
+    // fondo y no en su lugar.
+    tileLayer(){return {addTo(m){m.capas=(m.capas||0)+1;return this;}};},
     polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
     // getLatLng y latLngToContainerPoint los necesita repositionLabels, que
     // salta en cada zoomend desde que el stub sabe disparar eventos.
@@ -202,19 +205,33 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
-  // con el activo marcado. La portada arranca en «Calles» (el tercero) y pasa
-  // sola al IGN (el primero) al acercarse; en cuanto se pulsa un boton, manda
-  // el visitante y el zoom deja de cambiarla.
-  const capas=e.all('.map-layer-btn');assert.equal(capas.length,4);
+  // con el activo marcado. La portada arranca en «Calles» (el tercero) y de
+  // ahi no se mueve sola.
+  const capas=e.all('.map-layers .map-layer-btn');assert.equal(capas.length,4);
   assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en Calles');
   capas[0].click();
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
+  // Los senderos señalizados son un interruptor aparte, no una capa mas de la
+  // pastilla: se ponen encima de la que haya. Nacen apagados y al encenderlos
+  // el mapa pasa a tener dos capas de teselas, no una.
+  const prgr=e.all('.map-extras .map-layer-btn');assert.equal(prgr.length,1);
+  assert.equal(prgr[0].getAttribute('aria-pressed'),'false','los PR/GR nacen apagados');
+  // De cuantas parta da igual (en la portada el mapa nace oculto y el fondo no
+  // se engancha hasta que mide algo): lo que importa es que suma una y resta
+  // esa misma, sin tocar la de debajo.
+  const fondo=e.maps[0].capas||0;
+  prgr[0].click();
+  assert.equal(prgr[0].getAttribute('aria-pressed'),'true');
+  assert.equal(e.maps[0].capas,fondo+1,'los senderos se ponen encima');
+  prgr[0].click();
+  assert.equal(prgr[0].getAttribute('aria-pressed'),'false');
+  assert.equal(e.maps[0].capas,fondo,'y se quitan sin tocar el fondo');
   // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
-  const c2=e2.all('.map-layer-btn');
+  const c2=e2.all('.map-layers .map-layer-btn');
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
@@ -240,7 +257,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layer-btn').length,4);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-extras .map-layer-btn').length,1);assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{

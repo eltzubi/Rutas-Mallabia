@@ -41,7 +41,7 @@
     var box = el.parentElement;
     if (box) {
       box.classList.remove('is-expanded');
-      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers'),
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers, .map-extras'),
         function(b){ b.hidden = true; });
     }
   }
@@ -261,13 +261,25 @@
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
-    // La portada abre con las calles y pasa sola al IGN al acercarse, que es
-    // como lo quiere el autor: de lejos, con las 57 rutas a la vez, lo que
-    // situa es el callejero; de cerca, los rios y los toponimos del IGN. El
-    // mapa no cambia solo nunca: ni al acercarse ni al elegir una ruta. Se
-    // probaron las dos cosas y el autor las quito: que el mapa cambie debajo
-    // sin haberlo pedido desconcierta mas de lo que ayuda. Solo lo cambian
-    // los botones.
+    // Los senderos señalizados (PR, GR, SL) de Waymarked Trails: una capa
+    // transparente que se pone ENCIMA de la que haya, con las rutas
+    // homologadas que pasan por la zona dibujadas en naranja. No sustituye al
+    // mapa, lo completa: es lo que no sale ni en el IGN ni en el callejero.
+    // Sale apagada; la enciende el boton PR/GR. El track propio no queda
+    // debajo porque Leaflet pinta las lineas en otro panel, siempre por
+    // encima de cualquier tesela.
+    var trailsLayer = L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      opacity: 0.9,
+      attribution: '&copy; <a href="https://hiking.waymarkedtrails.org" target="_blank" rel="noopener">Waymarked Trails</a> (CC BY-SA 3.0)'
+    });
+    // La portada abre con las calles y las fichas con el IGN, que es como lo
+    // quiere el autor: en la vista de conjunto, con las 57 rutas a la vez, lo
+    // que situa es el callejero; en una ruta, los rios, los toponimos y las
+    // curvas de nivel del IGN. El mapa no cambia solo nunca: ni al acercarse
+    // ni al elegir una ruta. Se probaron las dos cosas y el autor las quito:
+    // que el mapa cambie debajo sin haberlo pedido desconcierta mas de lo que
+    // ayuda. Solo lo cambian los botones.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
     var LABEL_MIN_ZOOM = 13;   // el zoom al que salen los kilometros de cada ruta
     var layerDefs = [
@@ -321,6 +333,30 @@
       return b;
     });
     el.parentElement.appendChild(layersBar);
+
+    // Segunda fila, para lo que no es "que mapa" sino "que mas se ve encima".
+    // Va aparte de la pastilla de las capas a proposito: aquellas son
+    // excluyentes (una u otra) y esto es un interruptor independiente.
+    var extrasBar = document.createElement('div');
+    extrasBar.className = 'map-extras';
+    var trailsOn = false;
+    var trailsBtn = document.createElement('button');
+    trailsBtn.type = 'button';
+    trailsBtn.className = 'map-layer-btn';
+    trailsBtn.textContent = 'PR/GR';
+    trailsBtn.title = isEu ? 'Seinalizatutako bideak (PR, GR, SL)'
+                           : 'Senderos señalizados (PR, GR, SL)';
+    trailsBtn.setAttribute('aria-pressed', 'false');
+    trailsBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      trailsOn = !trailsOn;
+      if (trailsOn) trailsLayer.addTo(map);
+      else map.removeLayer(trailsLayer);
+      trailsBtn.classList.toggle('is-selected', trailsOn);
+      trailsBtn.setAttribute('aria-pressed', String(trailsOn));
+    });
+    extrasBar.appendChild(trailsBtn);
+    el.parentElement.appendChild(extrasBar);
 
     // On a page with several routes (the home overview), clicking one opens
     // a bottom info panel instead of a Leaflet popup anchored to the click
