@@ -473,8 +473,18 @@ def add_ui_text(page_html, cards, lang):
     route_word = "ibilbide" if lang == "eu" else "rutas"
     summary = (f'{len(cards)} {route_word} &middot; {total_km:,} km &middot; '
                f'{total_gain:,} m+').replace(',', '.')
-    return page_html.replace('<p class="hero-compact-stats" data-route-totals></p>',
-                             f'<p class="hero-compact-stats" data-route-totals>{summary}</p>')
+    page_html = page_html.replace('<p class="hero-compact-stats" data-route-totals></p>',
+                                  f'<p class="hero-compact-stats" data-route-totals>{summary}</p>')
+    # «Ver todas las rutas» con una busqueda puesta se lee como «todas las de
+    # eso que he buscado», que es justo lo contrario de lo que hace el boton.
+    # Con el numero delante no hay forma de entenderlo mal: son las 57 que
+    # tiene la web. Lo pone build.py, que es quien las cuenta.
+    salida = (f'Ikusi {len(cards)} ibilbideak' if lang == "eu"
+              else f'Ver las {len(cards)} rutas')
+    for viejo in ('Ver todas las rutas', 'Ikusi ibilbide guztiak'):
+        page_html = page_html.replace(f'id="clearFilters">{viejo}</button>',
+                                      f'id="clearFilters">{salida}</button>')
+    return page_html
 
 
 def map_legend(cards, lang):
