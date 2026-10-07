@@ -133,6 +133,23 @@ test('exclusive filters persist across languages and list/map',()=>{
   assert.equal(visible(eu).length,totalRoutes(eu));
   assert.equal(eu.one('#routeMapWrap').hidden,false);
 });
+test('la fila de filtros activos dice que hay puesto y lo quita todo',()=>{
+  // La unica salida estaba al fondo del dialogo de filtros, detras del boton
+  // «Filtrar»: nadie la encontraba. Esta sale encima de las tarjetas.
+  const e=env();e.run('filters.js');
+  const fila=e.one('#activeFilters');
+  const texto=()=>fila.querySelector('.filters-active-text').textContent;
+  assert(fila.hidden,'sin filtros no se ve');
+  e.one('.activity-chip[data-activity="bici"]').click();
+  assert(!fila.hidden,'con un filtro puesto se ve');
+  assert.match(texto(),/E-bike/);
+  e.one('#routeSearch').value='oiz';e.one('#routeSearch').dispatchEvent({type:'input'});
+  assert.match(texto(),/Buscando/,'tambien dice lo que se esta buscando');
+  e.one('#clearFilters').click();
+  assert(fila.hidden,'tras «Ver todas» desaparece');
+  assert.equal(e.one('#routeSearch').value,'','y vacia el buscador');
+  assert.equal(visible(e).length,totalRoutes(e),'y vuelven todas');
+});
 test('empty-result recovery finds results while keeping activity',()=>{
   const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="bici"]').click();
   e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});

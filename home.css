@@ -786,3 +786,25 @@ footer a:hover{ text-decoration:underline; }
 /* La portada lleva las siglas, no las palabras enteras: decision del autor. */
 .lang-larga{ display:none; }
 .lang-corta{ display:inline; }
+
+/* Lo que hay filtrado, y la salida. La unica forma de volver a verlas todas
+   estaba al fondo del dialogo de filtros, detras del boton «Filtrar»: nadie
+   la encontraba. Esta fila solo aparece cuando hay algo puesto, y entonces
+   esta justo encima de las tarjetas, que es donde se mira. */
+.filters-active{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  margin:0 0 14px; padding:10px 14px;
+  border:1px solid var(--line); border-radius:12px;
+  background:var(--ground-raised);
+}
+.filters-active[hidden]{ display:none; }
+.filters-active-text{
+  font:500 12px 'IBM Plex Mono',monospace; letter-spacing:.03em;
+  color:var(--ink-dim); flex:1 1 auto; min-width:0;
+}
+.filters-clear{
+  flex-shrink:0; border:0; border-radius:999px; cursor:pointer;
+  padding:8px 14px; background:var(--violet); color:var(--ground);
+  font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.03em;
+}
+.filters-clear:hover{ filter:brightness(1.08); }

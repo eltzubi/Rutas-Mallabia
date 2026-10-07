@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#0D0D0F">
 <link rel="stylesheet" href="fonts.css?v=1204aafe">
 <link rel="stylesheet" href="base.css?v=cd19e375">
-<link rel="stylesheet" href="home.css?v=e90835f1">
+<link rel="stylesheet" href="home.css?v=1b6b4f13">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -154,6 +154,11 @@
       <div id="mobileFilters"></div>
       <div class="filter-dialog-footer"><button type="button" class="filter-reset" data-extra-reset>Restablecer</button><button type="button" class="show-results" id="showResults">Ver rutas</button></div>
     </dialog>
+
+    <div class="filters-active" id="activeFilters" hidden>
+      <span class="filters-active-text"></span>
+      <button type="button" class="filters-clear" id="clearFilters">Ver todas las rutas</button>
+    </div>
 
     <div class="route-card-grid" id="routeResults">
 
@@ -1068,7 +1073,7 @@
     <img id="lightboxImg" src="" alt="Foto ampliada">
   </div>
 
-<script src="js/filters.js?v=24d074a4"></script>
+<script src="js/filters.js?v=f2895122"></script>
 <script src="js/app.js?v=e2b44465"></script>
 <script src="js/webmcp.js?v=ed4e6132"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->

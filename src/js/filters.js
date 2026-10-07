@@ -179,8 +179,16 @@
     if (state.distance !== 'all') labels.push(selectedLabel(distanceButtons,'distancePreset',state.distance));
     if (state.difficulty !== 'all') labels.push(optionLabel(difficulty));
     if (state.elevation !== 'all') labels.push((eu ? 'Desnibela: ' : 'Desnivel: ') + optionLabel(elevation));
+    if (searchTerm && searchInput) labels.push((eu ? 'Bilaketa: ' : 'Buscando: ') + '\u00ab' + searchInput.value.trim() + '\u00bb');
+    // La unica forma de volver a verlas todas estaba al fondo del dialogo de
+    // filtros, detras del boton «Filtrar»: nadie la encontraba. Ahora, en
+    // cuanto hay algo filtrado, sale aqui mismo encima de las tarjetas lo que
+    // esta puesto y un boton para quitarlo todo de una vez.
     var summary = document.getElementById('activeFilters');
-    if (summary) { summary.textContent = labels.join(' · '); summary.hidden = !labels.length; }
+    if (summary) {
+      summary.querySelector('.filters-active-text').textContent = labels.join(' \u00b7 ');
+      summary.hidden = !labels.length;
+    }
     finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.disabled = !labels.length;});
     empty.hidden = n !== 0; empty.classList.toggle('visible', n === 0);
     if (!n) {
@@ -238,6 +246,15 @@
     });
   }
   finder.querySelectorAll('[data-extra-reset]').forEach(function(b){b.addEventListener('click',function(){state=Object.assign({},defaults,{view:state.view,activity:state.activity});apply();});});
+  // Este quita todo, tambien la actividad y lo escrito en el buscador: es el
+  // «volver a empezar», no el «quitar los filtros de dentro del dialogo».
+  var clearAll = document.getElementById('clearFilters');
+  if (clearAll) clearAll.addEventListener('click', function(){
+    state = Object.assign({}, defaults, { view: state.view });
+    searchTerm = '';
+    if (searchInput) searchInput.value = '';
+    apply();
+  });
   recover.addEventListener('click',function(){
     if(!recoveryState) return;
     if (recoveryState === 'clear-search') { searchTerm=''; if(searchInput) searchInput.value=''; }
