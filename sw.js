@@ -5,8 +5,8 @@
    altitud, sus fotos y su GPX.
 
    Lo que NO se guarda son los tiles del mapa. Vienen de OpenStreetMap,
-   OpenTopoMap y CyclOSM, que son servidores de voluntarios y cuya politica de
-   uso prohibe expresamente cachearlos en bloque. Sin cobertura se vera el
+   CyclOSM y el IGN: los dos primeros son servidores de voluntarios y su
+   politica de uso prohibe expresamente cachearlos en bloque. Sin cobertura se vera el
    track sobre un fondo vacio, no el mapa.
 
    Para desactivarlo del todo si algun dia diera problemas: publicar un sw.js
@@ -14,14 +14,14 @@
    que ya lo tengan instalado lo recogeran y se desengancharan solos.
 
    build.py sustituye VERSION y CONCHA al escribirlo. */
-const VERSION = "5334cec7";
+const VERSION = "334a61e5";
 const CONCHA = [
   "base.css?v=cd19e375",
   "fonts.css?v=1204aafe",
   "home.css?v=e90835f1",
   "js/app.js?v=e2b44465",
   "js/filters.js?v=24d074a4",
-  "js/map.js?v=fa985c0f",
+  "js/map.js?v=14dd0047",
   "js/webmcp.js?v=ed4e6132",
   "route.css?v=ff06985a",
   "fonts/fraunces-italic.woff2",
@@ -96,8 +96,8 @@ self.addEventListener('fetch', function (evento) {
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
   // Solo lo que sirve este mismo sitio. Lo unico de fuera son los tiles del
   // mapa, y esos van a la red sin pasar por aqui: son de OpenStreetMap,
-  // OpenTopoMap y CyclOSM, servidores de voluntarios cuya politica de uso
-  // prohibe cachearlos en bloque. Leaflet ya no viene de un CDN, se sirve
+  // CyclOSM y el IGN; los dos primeros, servidores de voluntarios cuya
+  // politica de uso prohibe cachearlos en bloque. Leaflet ya no viene de un CDN, se sirve
   // desde vendor/leaflet, asi que entra por la via normal.
   if (url.origin !== self.location.origin) return;
 

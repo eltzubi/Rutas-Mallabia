@@ -154,7 +154,7 @@ shell cache is named after its own hash, so it is dropped whole when any asset c
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
 
-**Map tiles are deliberately never cached.** They come from OpenStreetMap, OpenTopoMap and CyclOSM —
+**Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
 empty background, not on the map.
 

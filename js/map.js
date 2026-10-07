@@ -234,8 +234,8 @@
     // Layer switcher, on every map -- the home page's overview and each
     // route's own map alike. Four free layers, none needing an API key:
     // CyclOSM (bike-oriented rendering, surfaces, cycle lanes), OSM, Esri
-    // World Imagery (aerial photo) and OpenTopoMap (contour lines --
-    // useful to gauge terrain at a glance). Default is CyclOSM on a
+    // World Imagery (aerial photo) and the Spanish IGN's own topographic
+    // map (contour lines, named streams). Default is CyclOSM on a
     // route's own map, but plain OSM streets on the home page's overview
     // (trailhead.json) -- that map shows every route at once, where the
     // cycling-specific rendering adds less than it does on a single track.
@@ -256,20 +256,28 @@
       maxZoom: 19,
       attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
     });
-    var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      maxZoom: 17,
-      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC-BY-SA</a>)'
+    // El topografico oficial español (el MTN de toda la vida) en vez del
+    // OpenTopoMap que habia. Por aqui OpenTopoMap dibuja los arroyos como un
+    // pelo azul sin nombre, cuando se molesta, y el autor echaba en falta los
+    // rios que si se ven en Wikiloc -- que usa precisamente este mapa. El IGN
+    // los dibuja gruesos y con su nombre, igual que los toponimos y las
+    // curvas de nivel. Llega hasta z20, tres mas que OpenTopoMap.
+    var topoLayer = L.tileLayer('https://www.ign.es/wmts/mapa-raster?layer=MTN&style=default' +
+      '&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0' +
+      '&Format=image/jpeg&TileMatrix={z}&TileCol={x}&TileRow={y}', {
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
     var layerDefs = isOverview ? [
       { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
       { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
-      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico', short: 'Topo' }
+      { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' }
     ] : [
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
       { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
       { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' },
-      { layer: topoLayer, label: isEu ? 'Topografikoa' : 'Topográfico', short: 'Topo' }
+      { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' }
     ];
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
