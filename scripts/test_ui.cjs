@@ -216,6 +216,8 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // Los senderos señalizados son un interruptor aparte, no una capa mas de la
   // pastilla: se ponen encima de la que haya. Nacen apagados y al encenderlos
   // el mapa pasa a tener dos capas de teselas, no una.
+  // Uno y solo uno: el de la pendiente no sale en la portada, que son 57
+  // tracks a la vez y sin alturas.
   const prgr=e.all('.map-extras .map-layer-btn');assert.equal(prgr.length,1);
   assert.equal(prgr[0].getAttribute('aria-pressed'),'false','los PR/GR nacen apagados');
   // De cuantas parta da igual (en la portada el mapa nace oculto y el fondo no

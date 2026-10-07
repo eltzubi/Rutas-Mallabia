@@ -654,6 +654,109 @@
     // by-hand elevation script this pipeline uses), so a screen-x fraction
     // maps directly onto the same fraction of this track's own point array.
     var track0 = data.tracks[0];
+
+    // El track pintado por pendiente, como en los editores de GPX: el mismo
+    // trazado, pero cada tramo del color de lo que empina. Es un interruptor,
+    // no el estado normal: el color de la ruta (verde a pie, azul en bici) es
+    // parte de la casa. Solo en la ficha de una ruta, y solo si sus puntos
+    // traen altura (el tercer numero que escribe make_map_data.py; la portada
+    // no la lleva).
+    //
+    // La pendiente no se mide entre dos puntos seguidos: el GPS se equivoca
+    // unos metros en vertical, y entre dos puntos a 3 m de distancia eso da
+    // pendientes del 100% que no existen. Se mide sobre VENTANA metros de
+    // recorrido, que es como la calculan los ciclometros.
+    if (data.tracks.length === 1 && !track0.href && track0.points.length > 2 &&
+        track0.points[0].length > 2) {
+      var VENTANA = 60;
+      var TRAMOS = [
+        { hasta: -8,       color: '#2f80c4' },
+        { hasta: -4,       color: '#7fb9e3' },
+        { hasta: 4,        color: '#6e7f86' },
+        { hasta: 8,        color: '#e8c34a' },
+        { hasta: 14,       color: '#e5853c' },
+        { hasta: Infinity, color: '#d4453c' }
+      ];
+      var pts = track0.points;
+      var acum = [0];
+      for (var ip = 1; ip < pts.length; ip++) {
+        acum.push(acum[ip - 1] + haversineMeters(pts[ip - 1], pts[ip]));
+      }
+      function claseEn(i){
+        var atras = i, alante = i;
+        while (atras > 0 && acum[i] - acum[atras] < VENTANA / 2) atras--;
+        while (alante < pts.length - 1 && acum[alante] - acum[i] < VENTANA / 2) alante++;
+        var corrido = acum[alante] - acum[atras];
+        if (corrido < 1) return 2;   // parado: llano
+        var pc = (pts[alante][2] - pts[atras][2]) / corrido * 100;
+        for (var c = 0; c < TRAMOS.length; c++) if (pc < TRAMOS[c].hasta) return c;
+        return TRAMOS.length - 1;
+      }
+      // Un trazo por tramo de pendiente, no uno por punto: los puntos
+      // seguidos que empinan igual van en la misma linea, y cada una empieza
+      // donde acaba la anterior para que no queden huecos.
+      var capaPendiente = L.layerGroup();
+      var claseAnterior = claseEn(0);
+      var desde = 0;
+      for (var i = 1; i < pts.length; i++) {
+        var clase = claseEn(i);
+        if (clase !== claseAnterior || i === pts.length - 1) {
+          L.polyline(pts.slice(desde, i + 1), {
+            color: TRAMOS[claseAnterior].color, weight: 5, opacity: 1,
+            lineCap: 'butt', lineJoin: 'round', interactive: false
+          }).addTo(capaPendiente);
+          desde = i;
+          claseAnterior = clase;
+        }
+      }
+
+      // La leyenda va debajo del mapa, en el flujo de la pagina, no flotando
+      // encima: abajo a la izquierda chocaria con la linea de creditos, que
+      // en un movil ocupa dos lineas.
+      var leyenda = document.createElement('div');
+      leyenda.className = 'slope-legend';
+      leyenda.hidden = true;
+      var titulo = document.createElement('span');
+      titulo.className = 'slope-legend-title';
+      titulo.textContent = isEu ? 'Malda (%)' : 'Pendiente (%)';
+      leyenda.appendChild(titulo);
+      ['< -8', '-8 / -4', '-4 / 4', '4 / 8', '8 / 14', '> 14'].forEach(function(txt, i){
+        var chip = document.createElement('span');
+        chip.className = 'slope-key';
+        var muestra = document.createElement('i');
+        muestra.style.background = TRAMOS[i].color;
+        chip.appendChild(muestra);
+        chip.appendChild(document.createTextNode(txt));
+        leyenda.appendChild(chip);
+      });
+      // Se coloca al encenderla, no ahora: el perfil y la lista de puntos se
+      // mudan a esta misma altura mas abajo en este fichero, y una leyenda
+      // puesta de antemano acababa la ultima de la seccion, lejos del mapa.
+      var mapBox = el.parentElement;
+      function ponLeyenda(){
+        mapBox.parentNode.insertBefore(leyenda, mapBox.nextSibling);
+      }
+
+      var pendienteOn = false;
+      var slopeBtn = document.createElement('button');
+      slopeBtn.type = 'button';
+      slopeBtn.className = 'map-layer-btn';
+      slopeBtn.textContent = isEu ? 'Malda' : 'Pendiente';
+      slopeBtn.title = isEu ? 'Ibilbidea maldaren arabera margotu'
+                            : 'Pintar el track según la pendiente';
+      slopeBtn.setAttribute('aria-pressed', 'false');
+      slopeBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        pendienteOn = !pendienteOn;
+        if (pendienteOn) { capaPendiente.addTo(map); ponLeyenda(); }
+        else map.removeLayer(capaPendiente);
+        leyenda.hidden = !pendienteOn;
+        slopeBtn.classList.toggle('is-selected', pendienteOn);
+        slopeBtn.setAttribute('aria-pressed', String(pendienteOn));
+      });
+      extrasBar.appendChild(slopeBtn);
+    }
+
     if (data.tracks.length === 1 && !track0.href && track0.points.length > 1) {
       // Direct child only: the hero-activity-badge's own small icon <svg>
       // also lives inside .chart-visual, ahead of the elevation profile

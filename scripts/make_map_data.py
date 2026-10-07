@@ -34,8 +34,23 @@ DECIMALES = 6
 
 
 def puntos_gpx(ruta):
-    return [(float(e.get('lat')), float(e.get('lon')))
-            for e in ET.parse(ruta).getroot().iter() if e.tag.endswith('trkpt')]
+    """(lat, lon, altura). La altura va en el tercer sitio porque Leaflet ya
+    la admite ahi y porque es lo que necesita el mapa para pintar el track por
+    pendiente. Si a algun punto le falta la altura, la ruta se queda sin
+    alturas entera: media pendiente inventada es peor que ninguna."""
+    puntos = []
+    completo = True
+    for e in ET.parse(ruta).getroot().iter():
+        if not e.tag.endswith('trkpt'):
+            continue
+        ele = e.find('{*}ele')
+        if ele is None or not (ele.text or '').strip():
+            completo = False
+        puntos.append((float(e.get('lat')), float(e.get('lon')),
+                       float(ele.text) if ele is not None and (ele.text or '').strip() else 0.0))
+    if not completo:
+        puntos = [(a, b, None) for a, b, _ in puntos]
+    return puntos
 
 
 def simplifica(pts, tol):
@@ -69,8 +84,10 @@ def simplifica(pts, tol):
     return [p for p, g in zip(pts, guarda) if g]
 
 
-def redondea(pts):
-    return [[round(a, DECIMALES), round(b, DECIMALES)] for a, b in pts]
+def redondea(pts, con_altura):
+    if con_altura:
+        return [[round(p[0], DECIMALES), round(p[1], DECIMALES), round(p[2])] for p in pts]
+    return [[round(p[0], DECIMALES), round(p[1], DECIMALES)] for p in pts]
 
 
 def main():
@@ -89,7 +106,13 @@ def main():
             print(f'  {slug}: tiene {len(datos.get("tracks", []))} tracks, lo dejo como esta')
             continue
         crudo = puntos_gpx(gpx)
-        nuevos = redondea(simplifica(crudo, TOLERANCIA))
+        # La altura solo en el mapa de cada ficha, que es donde se puede
+        # pintar la pendiente. En el de la portada son 57 tracks a la vez y
+        # nadie mira la pendiente de una ruta desde tan lejos.
+        con_altura = all(p[2] is not None for p in crudo)
+        nuevos = redondea(simplifica(crudo, TOLERANCIA), con_altura)
+        if not con_altura:
+            print(f'  {slug}: el GPX no trae todas las alturas, va sin ellas')
         antes += len(datos['tracks'][0]['points'])
         despues += len(nuevos)
         datos['tracks'][0]['points'] = nuevos
@@ -106,7 +129,7 @@ def main():
         gpx = os.path.join(ROOT, 'src', f'{slug}.gpx')
         if not os.path.exists(gpx):
             continue
-        nuevos = redondea(simplifica(puntos_gpx(gpx), TOLERANCIA_PORTADA))
+        nuevos = redondea(simplifica(puntos_gpx(gpx), TOLERANCIA_PORTADA), False)
         antes += len(track['points'])
         despues += len(nuevos)
         track['points'] = nuevos

@@ -221,6 +221,17 @@
   font-size:9px; font-weight:700;
   flex-shrink:0;
 }
+/* La escala de la pendiente, debajo del mapa y con la misma letra y el mismo
+   sitio que la lista de puntos numerados: aparece solo con el boton puesto. */
+.slope-legend{
+  display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px;
+  padding:12px 20px 0;
+  font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
+}
+.slope-legend[hidden]{ display:none; }
+.slope-legend-title{ text-transform:uppercase; letter-spacing:.06em; color:var(--ink); }
+.slope-key{ display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+.slope-key i{ width:14px; height:4px; border-radius:2px; flex-shrink:0; }
 .hero-label{ padding:18px 26px 26px; }
 .eyebrow{
   font-family:'IBM Plex Mono',monospace;
