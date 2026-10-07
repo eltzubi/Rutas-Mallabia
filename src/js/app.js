@@ -157,12 +157,15 @@
   if (!box || !boxImg || !close) return; // page has no photo gallery
   var lastTrigger = null;
   function open(src, trigger){
-    // El .jpg listado en data-lightbox-src siempre tiene un .webp hermano
-    // (optimize_images.py lo genera para cada foto) mas ligero -- lo
-    // probamos primero y caemos al jpg si por lo que sea no existe.
-    var webpSrc = src.replace(/\.jpg$/i, '.webp');
-    boxImg.onerror = function(){ boxImg.onerror = null; boxImg.src = src; };
-    boxImg.src = webpSrc;
+    // data-lightbox-src es el .webp de tamano completo, que es lo que ve
+    // casi todo el mundo. El respaldo es el -800.jpg, lo unico que puede
+    // abrir un navegador sin WebP: el original de 1600 ya no se publica
+    // (vive en img/orig/, ver _config.yml).
+    boxImg.onerror = function(){
+      boxImg.onerror = null;
+      boxImg.src = src.replace(/\.webp$/i, '-800.jpg');
+    };
+    boxImg.src = src;
     var triggerImg = trigger.querySelector('img');
     if (triggerImg && triggerImg.alt) boxImg.alt = triggerImg.alt;
     lastTrigger = trigger;

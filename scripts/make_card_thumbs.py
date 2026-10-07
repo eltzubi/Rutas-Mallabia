@@ -34,6 +34,7 @@ from PIL import Image, ImageEnhance, ImageOps, ImageStat
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 IMG_DIR = os.path.join(ROOT, "img")
+ORIG_DIR = os.path.join(IMG_DIR, "orig")  # los originales que no se publican
 HOME_TAIL = os.path.join(ROOT, "src", "mallabia_tail.html")
 
 CARD_WIDTH = 1100         # 2x del hueco mas grande de la tarjeta (517 px a 1440)
@@ -117,6 +118,8 @@ def igualar_tono(im):
 
 def make(name):
     src = os.path.join(IMG_DIR, name + ".jpg")
+    if not os.path.exists(src):
+        src = os.path.join(ORIG_DIR, name + ".jpg")
     if not os.path.exists(src):
         print("  falta %s.jpg" % name)
         return 0

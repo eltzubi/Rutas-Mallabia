@@ -252,6 +252,26 @@ def main():
                 f'arteta [{lang}]: manifest que no corresponde a su idioma')
         require('<meta name="theme-color"' in pagina, f'arteta [{lang}]: sin theme-color')
 
+    # Cada foto que pide una pagina tiene que existir Y estar publicada. Desde
+    # que los originales de 1600 px viven en img/orig/, fuera del sitio (ver
+    # _config.yml), una referencia olvidada a img/<foto>.jpg no daria error en
+    # local -- el fichero esta ahi -- y seria un hueco en la web de verdad.
+    sin_publicar = [linea.strip()[2:] for linea in
+                    (ROOT / '_config.yml').read_text().splitlines()
+                    if linea.strip().startswith('- ')]
+    for lang in build.LANGS:
+        for page in build.PAGES:
+            html = (ROOT / build.out_name(page, lang)).read_text()
+            fotos = set(re.findall(r'(?:src|data-lightbox-src)="(img/[^"]+)"', html))
+            for trozo in re.findall(r'srcset="([^"]+)"', html):
+                fotos.update(t.strip().split()[0] for t in trozo.split(',') if t.strip())
+            fotos = {f.split('?')[0] for f in fotos}   # algunas llevan ?v=
+            for foto in sorted(fotos):
+                require((ROOT / foto).exists(),
+                        f'{build.out_name(page, lang)}: falta {foto}')
+                require(not any(foto.startswith(x + '/') for x in sin_publicar),
+                        f'{build.out_name(page, lang)}: {foto} no se publica')
+
     for gpx in (ROOT / 'src').glob('*.gpx'):
         points = [(float(p.attrib['lon']), float(p.attrib['lat']), float(p.find('{*}ele').text))
                   for p in ET.parse(gpx).findall('.//{*}trkpt')]

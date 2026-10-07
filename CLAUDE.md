@@ -36,9 +36,23 @@ into an entity name) and fails loudly if it finds one.
 Other scripts:
 
 ```
-python3 scripts/optimize_images.py   # resize img/*.jpg to MAX_SIDE=1600px, recompress, write .webp
-python3 scripts/make_card_thumbs.py  # img/<name>-card.{jpg,webp}: the home page's card photos
+python3 scripts/optimize_images.py    # resize the master JPEGs to MAX_SIDE=1600px, recompress, write .webp
+python3 scripts/make_wide_variants.py # img/<name>-800.{webp,jpg}: what the gallery actually serves
+python3 scripts/make_card_thumbs.py   # img/<name>-card.{jpg,webp}: the home page's card photos
 ```
+
+**Where the photos live.** The 1600 px master JPEGs are in **`img/orig/`, which is not published**
+(`_config.yml` excludes it) — nobody was downloading them: the galleries serve WebP through
+`<source type="image/webp">`, the `<img src>` is only a fallback and now points at the 800 px JPEG,
+and the lightbox's `data-lightbox-src` is the full-size `.webp` (`src/js/app.js` falls back to
+`-800.jpg` on error). That took the published site from 529 to 393 MB of GitHub Pages' 1 GB limit.
+**The 57 masters still sitting in `img/` are the ones each route declares as `og:image`** — the
+social preview has to be a real, downloadable URL at a decent size, so those stay. So a master is in
+one of two places and the scripts look in both (`optimize_images.py`, `make_wide_variants.py`,
+`make_card_thumbs.py`); anything they generate always lands in `img/`, never in `img/orig/`.
+`check_site.py` now verifies that every `src`/`srcset`/`data-lightbox-src` in both languages exists
+**and is not inside an excluded path** — a reference to a master would work locally and 404 on the
+real site, which is exactly the mistake this guards against.
 
 `make_card_thumbs.py` is the one to re-run when a route joins the home page: the card `<picture>` points at
 `img/<name>-card.webp` (a 1100 px, 16:10 centre crop — the same crop `object-fit:cover` was doing in the
@@ -54,11 +68,11 @@ each pass, because it re-quantizes an already-quantized image. Pass `--force` to
 anyway. It also skips `-card` and `-800` files (`EXCLUIR`), which belong to the two scripts below: running
 it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, heavier one.
 
-`make_card_thumbs.py` derives its output from `<name>.jpg` rather than from its own previous output, so it
-is deterministic: re-running it rewrites byte-identical files and git sees no change.
+`make_card_thumbs.py` derives its output from the master `<name>.jpg` (in `img/` or `img/orig/`) rather
+than from its own previous output, so it is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
 ```
-python3 scripts/check_site.py          # 1.965 comprobaciones sobre el sitio ya construido
+python3 scripts/check_site.py          # 9.236 comprobaciones sobre el sitio ya construido
 python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favicon.svg
 ```
 

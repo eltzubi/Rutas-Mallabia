@@ -9,6 +9,13 @@
 exclude:
   # El registro de scripts/optimize_images.py: no forma parte del sitio.
   - img/.optimized.json
+  # Los JPEG originales de 1600 px. Las fotos se sirven en WebP (el <img> en
+  # .jpg es solo el respaldo, y para eso basta el de 800) y el visor tambien
+  # abre el WebP, asi que estos no se los bajaba nadie: 194 MB del sitio
+  # publicado por no servir a nadie. Se quedan en el repositorio como
+  # original de donde salen las demas versiones, pero fuera de la web.
+  # Los 57 que cada ficha declara como og:image siguen en img/, publicados.
+  - img/orig
   - src/vendor
   - src/*.webmanifest
   - src/build.py

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Resizes and recompresses img/*.jpg in place, and writes a .webp next to each.
+"""Resizes and recompresses the master JPEGs in place (img/ and img/orig/),
+and writes a .webp for each one in img/, que es lo que se publica.
 
 Run after adding new photos to img/:
 
@@ -32,6 +33,11 @@ from PIL import Image, ImageOps
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 IMG_DIR = os.path.join(ROOT, "img")
+# Los originales de 1600 px que no se publican (ver _config.yml). Los 57 que
+# siguen en img/ son los que cada ficha declara como og:image, y esos tienen
+# que seguir siendo descargables para que la vista previa al compartir salga
+# en condiciones.
+ORIG_DIR = os.path.join(IMG_DIR, "orig")
 
 MAX_SIDE = 1600
 JPEG_QUALITY = 80
@@ -109,12 +115,17 @@ def main():
     registro = {} if forzar else lee_registro()
     total_before = total_after = total_webp = 0
     hechas = saltadas = 0
-    names = sorted(f for f in os.listdir(IMG_DIR)
-                   if f.lower().endswith(".jpg")
-                   and not any(x in f for x in EXCLUIR))
-    for name in names:
-        path = os.path.join(IMG_DIR, name)
-        webp_path = os.path.splitext(path)[0] + ".webp"
+    originales = []
+    for carpeta in (IMG_DIR, ORIG_DIR):
+        if not os.path.isdir(carpeta):
+            continue
+        originales += [(f, os.path.join(carpeta, f)) for f in os.listdir(carpeta)
+                       if f.lower().endswith(".jpg")
+                       and not any(x in f for x in EXCLUIR)]
+    for name, path in sorted(originales):
+        # El .webp siempre en img/, se mire donde se mire el original: es el
+        # que de verdad reciben los navegadores.
+        webp_path = os.path.join(IMG_DIR, os.path.splitext(name)[0] + ".webp")
         apunte = registro.get(name)
         if not forzar:
             if apunte and os.path.exists(webp_path) \
