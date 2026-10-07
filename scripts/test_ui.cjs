@@ -194,17 +194,21 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
-  // Y el automatismo del zoom: solo manda mientras nadie haya tocado un boton.
+  // Y el automatismo: la portada abre con el callejero, pasa al IGN al elegir
+  // una ruta y vuelve al cerrarla; en cuanto se toca un boton, manda el
+  // visitante y elegir rutas ya no se lo cambia.
   const e2=env();e2.run('map.js');await settle();
   const c2=e2.all('.map-layer-btn');
+  const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
+                  l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
-  e2.maps[0].setZoom(13);   // el zoom al que salen los kilometros de cada ruta
-  assert.equal(c2[0].getAttribute('aria-pressed'),'true','al acercarse pasa al IGN');
-  e2.maps[0].setZoom(12);
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','al alejarse vuelve a Calles');
+  abre();
+  assert.equal(c2[0].getAttribute('aria-pressed'),'true','al elegir una ruta pasa al IGN');
+  e2.one('.route-info-panel').dispatchEvent({type:'keydown',key:'Escape'});
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','al cerrarla vuelve a Calles');
   c2[3].click();                     // el visitante elige satelite
-  e2.maps[0].setZoom(16);
-  assert.equal(c2[3].getAttribute('aria-pressed'),'true','elegida a mano, el zoom ya no la cambia');
+  abre();
+  assert.equal(c2[3].getAttribute('aria-pressed'),'true','elegida a mano, ya no se la cambian');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
 });
 test('map also catches filters changed while its request is pending',async()=>{

@@ -264,16 +264,13 @@
     // La portada abre con las calles y pasa sola al IGN al acercarse, que es
     // como lo quiere el autor: de lejos, con las 57 rutas a la vez, lo que
     // situa es el callejero; de cerca, los rios y los toponimos del IGN. El
-    // cambio se hace justo cuando aparecen los kilometros de cada ruta. En
+    // cambio se hace al elegir una ruta, no al acercarse: mientras se ven las
+    // 57 a la vez manda el callejero, y en cuanto se pulsa una concreta valen
+    // los rios y los toponimos. Al cerrar el panel vuelve el callejero. En
     // cuanto el visitante toca un boton de capa se acabo el automatismo:
-    // manda el, no el zoom.
+    // manda el.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
-    // El zoom al que la portada enseña los kilometros de cada ruta. El mismo
-    // que hace entrar el IGN: cuando aparecen las cifras ya no se esta mirando
-    // la comarca entera sino un sitio concreto, y es ahi donde valen los rios
-    // y los toponimos. Una sola constante para las dos cosas, para que no se
-    // puedan separar sin querer.
-    var LABEL_MIN_ZOOM = 13;
+    var LABEL_MIN_ZOOM = 13;   // el zoom al que salen los kilometros de cada ruta
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
@@ -369,6 +366,7 @@
       panel.classList.remove('open');
       panel.hidden = true;
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
+      if (capaAutomatica) ponerCapa(2);   // sin ruta elegida, vuelve el callejero
       if (activeLine) {
         var path = activeLine.getElement();
         activeLine.setStyle({ color: activeBaseColor, weight: 4, opacity: baseOpacity });
@@ -400,6 +398,10 @@
       }
       activeLine = line; activeBaseColor = baseColor;
       userMoved = true;
+      // Elegida una ruta, el mapa pasa al IGN: a partir de aqui se esta
+      // mirando un recorrido concreto y lo que vale son los rios y los
+      // toponimos. Mientras se ven las 57 a la vez manda el callejero.
+      if (capaAutomatica) ponerCapa(0);
 
       // La ruta elegida manda visualmente: rojo fino por encima; el resto
       // conserva su color pero se apaga para no taparla ni ensuciar el mapa.
@@ -884,9 +886,6 @@
 
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
-    map.on('zoomend', function(){
-      if (capaAutomatica) ponerCapa(map.getZoom() >= LABEL_MIN_ZOOM ? 0 : 2);
-    });
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
