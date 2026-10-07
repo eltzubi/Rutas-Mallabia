@@ -198,7 +198,7 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   const e2=env();e2.run('map.js');await settle();
   const c2=e2.all('.map-layer-btn');
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
-  e2.maps[0].setZoom(15);
+  e2.maps[0].setZoom(13);   // el zoom al que salen los kilometros de cada ruta
   assert.equal(c2[0].getAttribute('aria-pressed'),'true','al acercarse pasa al IGN');
   e2.maps[0].setZoom(12);
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','al alejarse vuelve a Calles');

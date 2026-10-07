@@ -264,11 +264,16 @@
     // La portada abre con las calles y pasa sola al IGN al acercarse, que es
     // como lo quiere el autor: de lejos, con las 57 rutas a la vez, lo que
     // situa es el callejero; de cerca, los rios y los toponimos del IGN. El
-    // mapa general abre en zoom 10 y llega a 20, asi que el cambio se hace en
-    // el 15, pasada la mitad. En cuanto el visitante toca un boton de capa se
-    // acabo el automatismo: manda el, no el zoom.
+    // cambio se hace justo cuando aparecen los kilometros de cada ruta. En
+    // cuanto el visitante toca un boton de capa se acabo el automatismo:
+    // manda el, no el zoom.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
-    var ZOOM_IGN = 15;
+    // El zoom al que la portada enseña los kilometros de cada ruta. El mismo
+    // que hace entrar el IGN: cuando aparecen las cifras ya no se esta mirando
+    // la comarca entera sino un sitio concreto, y es ahi donde valen los rios
+    // y los toponimos. Una sola constante para las dos cosas, para que no se
+    // puedan separar sin querer.
+    var LABEL_MIN_ZOOM = 13;
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
@@ -420,7 +425,6 @@
     // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
-    var LABEL_MIN_ZOOM = 13;
     var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
@@ -870,7 +874,7 @@
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
     map.on('zoomend', function(){
-      if (capaAutomatica) ponerCapa(map.getZoom() >= ZOOM_IGN ? 0 : 2);
+      if (capaAutomatica) ponerCapa(map.getZoom() >= LABEL_MIN_ZOOM ? 0 : 2);
     });
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
