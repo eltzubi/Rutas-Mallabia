@@ -596,56 +596,39 @@ HOME = {
         'aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3'
         'L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" '
         'x2="12.01" y2="17"/></svg>Irakurri irten aurretik</summary>',
-    'Las rutas est&aacute;n documentadas sobre el terreno, con informaci&oacute;n &uacute;til sobre fuentes, cruces, vistas y puntos de referencia.':
-        'Ibilbideak bertatik dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei eta erreferentzia-puntuei buruzko informazio baliagarriarekin.',
-
-    'No est&aacute;n se&ntilde;alizadas, por lo que <b>es imprescindible llevar el track cargado '
-    'en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n de la web sirve '
-    'como apoyo durante el recorrido, pero no sustituye al track.':
-        'Ez daude seinalizatuta, beraz <b>ezinbestekoa da trackea GPS, erloju edo '
-        'nabigazio-gailu batean kargatuta eramatea</b>. Webguneko informazioak ibilbidean zehar '
-        'laguntzeko balio du, baina ez du ordezten trackea.',
-
-    'Las rutas en bici se han realizado mayormente con asistencia el&eacute;ctrica est&aacute;ndar. '
-    'La dificultad y el esfuerzo pueden variar seg&uacute;n la bicicleta, el tipo de asistencia y '
-    'las caracter&iacute;sticas de cada ciclista.':
-        'Bizikletako ibilbideak gehienbat ohiko laguntza elektrikoarekin egin dira. Zailtasuna eta '
-        'ahalegina bizikletaren, laguntza motaren eta txirrindulari bakoitzaren ezaugarrien arabera '
-        'alda daitezke.',
-    'Con una BTT convencional, la mayor&iacute;a de las rutas tienen zonas complicadas: est&aacute;n pensadas para e-bike.':
-        'BTT arrunt batekin, ibilbide gehienek zati zailak dituzte: e-bikerako pentsatuta daude.',
-    'Casi todas las rutas de senderismo las hemos recorrido corriendo, ya sea como parte de nuestros '
-    'entrenamientos o para aprovechar el fin de semana y hacer recorridos m&aacute;s largos. Si las '
-    'haces andando, el recorrido es el mismo; simplemente necesitar&aacute;s algo m&aacute;s de tiempo '
-    'para completarlo.':
-        'Ia oinezko ibilbide guztiak korrika egin ditugu, gure entrenamenduen barruan edo asteburua '
-        'aprobetxatuz ibilbide luzeagoak egiteko. Oinez eginez gero, ibilbidea berbera da; denbora '
-        'pixka bat gehiago beharko duzu osatzeko.',
-    'El estado de caminos y senderos puede cambiar con el tiempo. La vegetaci&oacute;n, la lluvia, '
-    'el barro, los &aacute;rboles ca&iacute;dos u otros obst&aacute;culos pueden hacer que alg&uacute;n '
-    'tramo sea diferente a como lo encontramos y documentamos. Valora siempre las condiciones del '
-    'momento y, si un paso no te parece seguro, <b>busca una alternativa o da la vuelta</b>.':
-        'Bide eta bidezidorren egoera denborarekin alda daiteke. Landaretzak, euriak, lokatzak, erori '
-        'diren zuhaitzek edo beste oztopo batzuek zati bat guk aurkitu eta dokumentatu genuenetik '
-        'ezberdina izatea eragin dezakete. Balioetsi beti unean uneko baldintzak eta, pauso bat seguru '
-        'iruditzen ez bazaizu, <b>bilatu beste bide bat edo egin atzera</b>.',
-    'Durante el recorrido podemos encontrarnos con puertas, vallas, cierres, portillos u otros '
-    'elementos propios del terreno. Si abrimos una puerta o un cierre, lo dejamos exactamente como '
-    'lo encontramos: cerrado, con su pestillo o cerradura en su sitio.':
-        'Ibilbidean zehar ate, hesi, itxitura, portilo edo lurraldeko beste elementu batzuk aurki '
-        'ditzakegu. Ate edo itxitura bat irekitzen badugu, aurkitu bezala uzten dugu: itxita, bere '
-        'pestiloa edo giltza tokian duela.',
-    'Respetamos tambi&eacute;n los caminos, caser&iacute;os, terrenos y propiedades que atravesamos. '
-    'Pasamos sin molestar y dejamos todo tal y como estaba antes de nuestro paso.':
-        'Zeharkatzen ditugun bideak, baserriak, lurrak eta jabetzak ere errespetatzen ditugu. '
-        'Molestatu gabe pasatzen gara eta dena gure aurretik zegoen bezala uzten dugu.',
-    'Entre todos podemos disfrutar de estos lugares y ayudar a que sigan estando ah&iacute; para quienes vengan despu&eacute;s.':
-        'Denon artean toki hauetaz gozatu dezakegu, eta gerora etorriko direnentzat hor jarraitzen laguntu.',
-    'Si encuentras alg&uacute;n cambio, dificultad o incidencia en la ruta, puedes avisarme mediante '
-    'el bot&oacute;n &laquo;Reportar incidencia&raquo; que encontrar&aacute;s en cada recorrido.':
-        'Ibilbidean aldaketaren bat, zailtasunen bat edo arazoren bat aurkitzen baduzu, jakinarazi '
-        'diezadakezu ibilbide bakoitzean aurkituko duzun &laquo;Arazoa jakinarazi&raquo; botoiaren '
-        'bidez.',
+    'Las rutas no est&aacute;n se&ntilde;alizadas, as&iacute; que <b>es imprescindible llevar el '
+    'track cargado en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n de '
+    'la web sirve como apoyo, pero no sustituye al track.':
+        'Ibilbideak ez daude seinalizatuta, beraz <b>ezinbestekoa da trackea GPS, erloju edo '
+        'nabigazio-gailu batean kargatuta eramatea</b>. Webguneko informazioak laguntzeko balio du, '
+        'baina ez du ordezten trackea.',
+    'Las rutas est&aacute;n recorridas y documentadas sobre el terreno, con datos &uacute;tiles sobre '
+    'fuentes, cruces, vistas y puntos de referencia.':
+        'Ibilbideak bertatik ibilita eta dokumentatuta daude, ur-iturriei, bidegurutzeei, ikuspegiei '
+        'eta erreferentzia-puntuei buruzko datu baliagarriekin.',
+    'Las rutas en bici est&aacute;n pensadas principalmente para e-bike con asistencia '
+    'est&aacute;ndar. Con BTT convencional, muchas pueden resultar bastante exigentes o tener tramos '
+    'complicados.':
+        'Bizikletako ibilbideak e-bikerako pentsatuta daude batez ere, ohiko laguntzarekin. BTT '
+        'arruntarekin asko nahiko gogorrak izan daitezke edo zati zailak izan ditzakete.',
+    'Las rutas de senderismo se han recorrido en muchos casos corriendo. Si las haces andando, el '
+    'recorrido es el mismo, pero necesitar&aacute;s m&aacute;s tiempo.':
+        'Oinezko ibilbideak kasu askotan korrika egin ditugu. Oinez eginez gero, ibilbidea berbera '
+        'da, baina denbora gehiago beharko duzu.',
+    'El estado de caminos y senderos puede cambiar por barro, vegetaci&oacute;n, lluvia, '
+    '&aacute;rboles ca&iacute;dos u otros obst&aacute;culos. Si un tramo no parece seguro, '
+    '<b>busca una alternativa o da la vuelta</b>.':
+        'Bide eta bidezidorren egoera alda daiteke lokatzagatik, landaretzagatik, euriagatik, '
+        'eroritako zuhaitzengatik edo beste oztopo batzuengatik. Zati bat segurua ez badirudi, '
+        '<b>bilatu beste bide bat edo egin atzera</b>.',
+    'Respeta puertas, cierres, caminos, caser&iacute;os y propiedades. Deja todo exactamente como lo '
+    'encuentres.':
+        'Errespetatu ateak, itxiturak, bideak, baserriak eta jabetzak. Utzi dena aurkitu bezala, '
+        'zehatz-mehatz.',
+    'Si detectas alg&uacute;n cambio o problema, puedes avisar mediante &laquo;Reportar '
+    'incidencia&raquo; en cada ruta.':
+        'Aldaketaren bat edo arazoren bat ikusten baduzu, ibilbide bakoitzeko &laquo;Arazoa '
+        'jakinarazi&raquo; botoiaren bidez jakinarazi dezakezu.',
 
     '<button type="button" class="notice-close">Cerrar aviso</button>':
         '<button type="button" class="notice-close">Itxi</button>',
