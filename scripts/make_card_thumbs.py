@@ -38,6 +38,13 @@ ORIG_DIR = os.path.join(IMG_DIR, "orig")  # los originales que no se publican
 HOME_TAIL = os.path.join(ROOT, "src", "mallabia_tail.html")
 
 CARD_WIDTH = 1100         # 2x del hueco mas grande de la tarjeta (517 px a 1440)
+# Y dos tallas mas, para que cada pantalla se baje la suya. Medido en el
+# navegador: la tarjeta ocupa 286-506 px hasta 767 px de ventana, 351-430 entre
+# 768 y 1023, y 340 clavados de 1024 en adelante. Multiplicado por la densidad
+# de pantalla, eso pide 340 px en un escritorio normal, unos 700 en un movil
+# corriente y 1068 en uno muy fino: 450, 800 y 1100. El <picture> de
+# src/mallabia_tail.html las declara con su sizes y el navegador elige.
+CARD_WIDTHS = (450, 800)
 CARD_RATIO = 16 / 10      # el mismo aspect-ratio que .route-card-photo
 JPEG_QUALITY = 78
 WEBP_QUALITY = 68         # bajado desde 72: al nivelar el tono aflora algo de
@@ -147,6 +154,19 @@ def make(name):
     webp = os.path.join(IMG_DIR, name + SUFFIX + ".webp")
     im.save(jpg, "JPEG", quality=JPEG_QUALITY, optimize=True, progressive=True)
     im.save(webp, "WEBP", quality=WEBP_QUALITY, method=6)
+    # Las tallas pequenas salen de esta misma imagen ya nivelada de tono, no
+    # del original: asi las tres son la misma foto y cambiar de una a otra al
+    # girar el movil no se nota.
+    for ancho in CARD_WIDTHS:
+        chico = os.path.join(IMG_DIR, "%s%s-%d.webp" % (name, SUFFIX, ancho))
+        if im.size[0] <= ancho:
+            # Una foto que ya nace pequena no necesita talla menor: se copia
+            # para que el srcset no se quede sin candidato.
+            im.save(chico, "WEBP", quality=WEBP_QUALITY, method=6)
+            continue
+        alto = round(im.size[1] * ancho / im.size[0])
+        im.resize((ancho, alto), Image.LANCZOS).save(
+            chico, "WEBP", quality=WEBP_QUALITY, method=6)
     saved = os.path.getsize(src) - os.path.getsize(webp)
     print("  %-22s %5.0f KB -> %4.0f KB webp / %4.0f KB jpg" % (
         name, os.path.getsize(src) / 1024,

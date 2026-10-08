@@ -159,6 +159,15 @@ migration was checked by capturing what the browser rendered on all 114 pages fi
 generated HTML to match it exactly. `add_similar_routes` **replaces** a hand-written `next-routes`
 block if it finds one (ahuntzen had one, with figures copied by hand that nobody was updating).
 
+**Las tarjetas de la portada, en tres tallas.** `make_card_thumbs.py` escribe, además del
+`-card.webp` de 1100 px, un `-card-800.webp` y un `-card-450.webp`, y el `<picture>` de
+`src/mallabia_tail.html` los declara con `sizes="(min-width:1024px) 340px, (min-width:768px) 46vw,
+92vw"`. Medido en el navegador: la tarjeta ocupa 286-506 px por debajo de 768, 351-430 hasta 1023 y
+340 clavados de ahí en adelante, así que un escritorio normal se lleva la de 450, un móvil corriente
+la de 800 y uno muy fino (dpr3) la de 1100 — antes todos se bajaban la de 1100. Portada en un
+escritorio normal: 2.350 → 1.102 kB. Cuesta 5,4 MB en el repositorio. Las tallas pequeñas salen de la
+imagen ya nivelada de tono, no del original, para que las tres sean la misma foto.
+
 **La portada no pide sus tracks hasta que se abre el mapa.** `data/trailhead.json` son 399 kB —
 más que todas las fotos visibles de la portada juntas— y la portada arranca en vista de lista, con el
 mapa dentro de un bloque oculto que mide 0x0. `src/js/map.js` espera a que la caja mida algo (el mismo
