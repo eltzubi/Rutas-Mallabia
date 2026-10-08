@@ -62,7 +62,9 @@ class Element {
   click(){this.dispatchEvent({type:'click'});}
   focus(){this.ownerDocument.activeElement=this;}
   contains(el){return el===this || this.children.some(c=>typeof c!=='string'&&c.contains(el));}
-  appendChild(el){if(el.parentElement)el.remove();el.parentElement=this;this.children.push(el);return el;}
+  // Un nodo de texto aqui es la propia cadena, como en el resto del arbol
+  // de prueba (ver attach()).
+  appendChild(el){if(typeof el==='string'){this.children.push(el);return el;}if(el.parentElement)el.remove();el.parentElement=this;this.children.push(el);return el;}
   remove(){this.parentElement.children=this.parentElement.children.filter(c=>c!==this);}
   getBoundingClientRect(){return {top:0,width:800,height:200};}
   scrollIntoView(){}
@@ -79,6 +81,7 @@ function env(page='index.es.html', storage=new Map()) {
   doc.body=doc.querySelector('body'); doc.activeElement=doc.body;
   doc.getElementById=id=>doc.querySelector('#'+id);
   doc.createElement=tag=>new Element({tag,attrs:{},children:[]},doc);
+  doc.createTextNode=s=>String(s);
   const timers=new Map(); let timerId=0;
   const win=new Element({tag:'window',attrs:{},children:[]},doc);
   Object.assign(win,{document:doc,scrollY:0,pageYOffset:0,innerHeight:800,scrollTo(){},matchMedia:()=>({matches:false}),location:{reload(){win.reloaded=true;}}});
@@ -91,10 +94,14 @@ function env(page='index.es.html', storage=new Map()) {
     // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
     // fondo y no en su lugar.
     tileLayer(){return {addTo(m){m.capas=(m.capas||0)+1;return this;}};},
-    polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
+    polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){if(m&&m.el)m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
     // getLatLng y latLngToContainerPoint los necesita repositionLabels, que
     // salta en cada zoomend desde que el stub sabe disparar eventos.
-    marker(latlng){return {addTo(){return this;},on(){return this;},getElement(){return null;},getLatLng(){return latlng||[0,0];}};},divIcon:o=>o,DomEvent:{stopPropagation(){}}
+    marker(latlng){return {addTo(){return this;},on(){return this;},getElement(){return null;},getLatLng(){return latlng||[0,0];}};},
+    // La capa de pendiente es un grupo de trazos sueltos.
+    layerGroup(){return {trazos:[],addLayer(){return this;},addTo(m){m.capas=(m.capas||0)+1;return this;}};},
+    circleMarker(){return {addTo(){return this;},setLatLng(){},setStyle(){}};},
+    divIcon:o=>o,DomEvent:{stopPropagation(){}}
   };
   const context=vm.createContext({window:win,document:doc,L,AbortController,navigator:{},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
@@ -213,10 +220,10 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
   capas[2].click();
-  // La segunda pastilla (la de pintar por pendiente) es cosa de la ficha de
-  // una ruta: aqui son 57 tracks a la vez y sin alturas, asi que no se cuelga
-  // ninguna pastilla vacia del mapa.
-  assert.equal(e.all('.map-extras').length,0,'la portada no lleva segunda pastilla');
+  // El boton de pintar por pendiente es cosa de la ficha de una ruta: aqui
+  // son 57 tracks a la vez y sin alturas, asi que la pastilla lleva las
+  // cuatro capas y nada mas.
+  assert.equal(e.all('.map-layers .map-layers-sep').length,0,'la portada no lleva pendiente');
   // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
@@ -246,7 +253,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-extras').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
@@ -289,14 +296,19 @@ test('la portada no se baja los tracks hasta que se abre el mapa',async()=>{
 });
 test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el principio',async()=>{
   const e=env('trabakua.html');
-  let pedidas=0;const real=e.context.fetch;
-  e.context.fetch=(...a)=>{pedidas++;return real(...a);};
+  // Su propio data/<ruta>.json, no el de la portada: un solo track y con
+  // alturas, que es lo que hace falta para pintar la pendiente.
+  let pedidas=0;
+  e.context.fetch=async()=>{pedidas++;return {ok:true,
+    json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trabakua.json'),'utf8'))};};
   e.context.ResizeObserver=class {constructor(cb){this.cb=cb;}observe(){}disconnect(){}};
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   e.run('map.js');await settle();
   assert.equal(pedidas,1,'pide su track sin esperar a nadie');
   // Y sin «Calles»: el callejero solo situa en la vista de conjunto de la
-  // portada; dentro de una ruta lo que hace falta es el IGN.
+  // portada; dentro de una ruta lo que hace falta es el IGN. La pendiente va
+  // en la misma pastilla, detras de la raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').map(b=>b.textContent),
-                   ['IGN','Bici','Sat']);
+                   ['IGN','Bici','Sat','Pendiente']);
+  assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });

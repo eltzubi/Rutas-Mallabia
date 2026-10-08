@@ -100,7 +100,7 @@ body{
    next tap. */
 .leaflet-interactive[role="button"]:focus,
 .leaflet-interactive[role="button"]:focus-visible{ outline:none; }
-.map-expand-btn[hidden], .map-layers[hidden], .map-extras[hidden]{ display:none; }
+.map-expand-btn[hidden], .map-layers[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
 /* Las cuatro capas, a la vista y en una sola pastilla, centrada arriba del
    mapa. Antes era un icono de tres rombos que abria un menu: nadie pulsa un
@@ -128,21 +128,16 @@ body{
    asi que las cuatro entran solo apretando la letra y el relleno. Abajo no
    pueden ir: la linea de creditos cambia de alto segun la capa (la de
    OpenTopoMap ocupa tres lineas) y se las comeria. */
-/* Segunda fila, debajo de las capas y pegada a la izquierda: los senderos
-   señalizados no son "otro mapa" sino algo que se enciende encima, asi que no
-   van dentro de la misma pastilla. Pastilla propia, del ancho de su boton. */
-.map-extras{
-  position:absolute; z-index:400; top:52px; left:52px;
-  display:flex; gap:2px; padding:3px;
-  border:1px solid var(--line); border-radius:999px;
-  background:var(--ground); box-shadow:0 4px 16px rgba(0,0,0,.3);
-  background:color-mix(in srgb, var(--ground) 80%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+/* La raya que separa las capas (una u otra) del interruptor de la pendiente,
+   dentro de la misma pastilla. */
+.map-layers-sep{
+  width:1px; align-self:stretch; margin:3px 4px;
+  background:var(--line); flex:0 0 auto;
 }
 @media (max-width:420px){
   .map-layers{ left:48px; right:48px; padding:2px; gap:0; }
   .map-layer-btn{ padding:6px 6px; font-size:10px; letter-spacing:0; }
-  .map-extras{ left:48px; top:46px; padding:2px; }
+  .map-layers-sep{ margin:2px 2px; }
 }
 .eyebrow .sep{ opacity:.5; }
 .lightbox{

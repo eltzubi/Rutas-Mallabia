@@ -230,11 +230,10 @@ empty background, not on the map.
 
 A **Waymarked Trails overlay** (the waymarked PR/GR/SL trails on top of the chosen base map) was
 built and published on 7 October 2026 and **removed the same day at the user's request** — don't
-re-add it. What it left behind is `.map-extras`, the second pill below `.map-layers`, which now holds
-only the slope toggle: it is attached to the map lazily (`ponExtra`), so a page with nothing to put
-in it — the home overview — gets no empty pill at all. The base layers stay mutually exclusive in
-`.map-layers`; `.map-layer-btn` appears in both bars, so any selector counting them must be scoped
-(`scripts/test_ui.cjs` does).
+re-add it. The slope toggle lives **inside `.map-layers`**, after a `.map-layers-sep` hairline: it
+was in a second pill below the bar and the author wanted everything in one horizontal row. Only the
+route pages have it (the home has no elevations in `trailhead.json`), and `ponExtra` adds the
+separator the first time something is appended, so the home's bar stays as it was.
 
 If the service worker ever needs killing, publish a `sw.js` whose whole body is
 `self.registration.unregister()`; browsers that already have it will pick that up and detach themselves.

@@ -41,7 +41,7 @@
     var box = el.parentElement;
     if (box) {
       box.classList.remove('is-expanded');
-      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers, .map-extras'),
+      Array.prototype.forEach.call(box.querySelectorAll('.map-expand-btn, .map-layers'),
         function(b){ b.hidden = true; });
     }
   }
@@ -329,16 +329,19 @@
     });
     el.parentElement.appendChild(layersBar);
 
-    // Segunda fila, para lo que no es "que mapa" sino como se pinta encima.
-    // Va aparte de la pastilla de las capas a proposito: aquellas son
-    // excluyentes (una u otra) y esto son interruptores sueltos. Solo se
-    // cuelga del mapa si alguien le mete un boton: en la portada no lleva
-    // ninguno y una pastilla vacia no pinta nada ahi.
-    var extrasBar = document.createElement('div');
-    extrasBar.className = 'map-extras';
+    // Lo que no es "que mapa" sino como se pinta encima va en la misma
+    // pastilla, detras de una raya: estaba en una segunda pastilla debajo y
+    // el autor lo quiere todo seguido y en horizontal. La raya es lo unico
+    // que dice que es otra cosa -- las capas son excluyentes, esto es un
+    // interruptor suelto.
     function ponExtra(btn){
-      extrasBar.appendChild(btn);
-      if (!extrasBar.parentNode) el.parentElement.appendChild(extrasBar);
+      if (!layersBar.querySelector('.map-layers-sep')) {
+        var raya = document.createElement('span');
+        raya.className = 'map-layers-sep';
+        raya.setAttribute('aria-hidden', 'true');
+        layersBar.appendChild(raya);
+      }
+      layersBar.appendChild(btn);
     }
 
     // On a page with several routes (the home overview), clicking one opens
