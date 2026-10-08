@@ -279,7 +279,14 @@
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
     // botones, con el activo encendido, como en cualquier mapa de movil.
-    var layerIndex = esPortada ? 2 : 0;   // 2 = Calles, 0 = IGN
+    // El callejero solo en la portada, que es donde situa: ahi se ven las 57
+    // rutas de lejos y lo que ubica es el pueblo. Dentro de una ruta no
+    // pinta nada -- lo que hace falta son las curvas de nivel, los rios y los
+    // caminos -- y el autor lo ha quitado de las fichas.
+    if (!esPortada) {
+      layerDefs = layerDefs.filter(function(def){ return def.layer !== osmLayer; });
+    }
+    var layerIndex = esPortada ? 2 : 0;   // 2 = Calles en la portada, 0 = IGN en una ficha
     // El mapa de la portada nace dentro de un bloque oculto: hasta que el
     // visitante no cambia a la vista de mapa mide 0x0. Y un contenedor de 0x0
     // le hace creer a Leaflet que cabe todo a zoom maximo, asi que pedia las

@@ -213,6 +213,12 @@ shell cache is named after its own hash, so it is dropped whole when any asset c
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
 
+**Las capas, distintas en la portada y en una ficha.** La portada lleva las cuatro (IGN, Bici,
+Calles, Satélite) y abre en **Calles**: de lejos, con las 57 rutas a la vez, lo que sitúa es el
+callejero. Una ficha lleva **tres** — sin Calles — y abre en **IGN**: dentro de una ruta lo que hace
+falta son las curvas de nivel, los ríos y los caminos. Lo decidió el autor; `src/js/map.js` quita
+`osmLayer` de `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
+
 **Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
 empty background, not on the map.
