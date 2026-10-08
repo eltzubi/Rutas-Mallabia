@@ -305,15 +305,42 @@
     layersBar.className = 'map-layers';
     layersBar.setAttribute('role', 'group');
     layersBar.setAttribute('aria-label', isEu ? 'Mapa mota' : 'Tipo de mapa');
+    // Al cambiar de capa, la vieja no se quita hasta que la nueva esta
+    // pintada. Antes se quitaba primero, y con el mapa ciclista -- que lo
+    // sirve un servidor de voluntarios y tarda el triple que los demas (0,8 s
+    // por tesela frente a 0,3) -- el mapa se quedaba en blanco casi un
+    // segundo: parecia roto. Leaflet pone la capa nueva por encima de la
+    // vieja, asi que la va tapando segun llega.
+    var quitarPendiente = null;
     function ponerCapa(i){
       if (i === layerIndex) return;
-      if (capaPuesta) map.removeLayer(layerDefs[layerIndex].layer);
+      var vieja = layerDefs[layerIndex].layer;
+      var nueva = layerDefs[i].layer;
       layerIndex = i;
-      if (capaPuesta) layerDefs[layerIndex].layer.addTo(map);
       layerBtns.forEach(function(b, j){
         b.classList.toggle('is-selected', j === layerIndex);
+        b.classList.toggle('is-loading', j === layerIndex);
         b.setAttribute('aria-pressed', String(j === layerIndex));
       });
+      if (!capaPuesta) return;
+      if (quitarPendiente) { quitarPendiente(); quitarPendiente = null; }
+      nueva.addTo(map);
+      var hecho = false;
+      function listo(){
+        if (hecho) return;
+        hecho = true;
+        clearTimeout(reloj);
+        nueva.off('load', listo);
+        quitarPendiente = null;
+        if (vieja !== nueva && map.hasLayer(vieja)) map.removeLayer(vieja);
+        layerBtns.forEach(function(b){ b.classList.remove('is-loading'); });
+      }
+      // Y si las teselas no llegan nunca (sin cobertura en el monte), se
+      // quita igual pasados tres segundos: mejor el fondo vacio que dos
+      // mapas superpuestos para siempre.
+      var reloj = setTimeout(listo, 3000);
+      nueva.on('load', listo);
+      quitarPendiente = listo;
     }
     var layerBtns = layerDefs.map(function(def, i){
       var b = document.createElement('button');

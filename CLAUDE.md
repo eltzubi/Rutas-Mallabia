@@ -218,6 +218,14 @@ shell cache is named after its own hash, so it is dropped whole when any asset c
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
 
+**Cambiar de capa no deja el mapa en blanco.** `ponerCapa()` añade la nueva capa y **no quita la
+vieja hasta que la nueva dispara `load`** (con un plazo de 3 s por si las teselas no llegan nunca).
+Leaflet pinta la nueva encima, así que la va tapando según llega. Hacía falta por el mapa ciclista:
+CyclOSM lo sirve un servidor de voluntarios y tarda el triple que los demás — medido desde aquí,
+0,82 s por tesela de mediana frente a 0,34 del IGN, 0,29 de Esri y 0,17 de OSM, y además sus teselas
+pesan 39 kB frente a 13-23 kB. Antes se quitaba la capa vieja primero y el mapa se quedaba casi un
+segundo en blanco: parecía roto. El botón recién pulsado parpadea (`.is-loading`) mientras tanto.
+
 **El sentido de la marcha, en flechas.** El mapa de cada ficha dibuja de 6 a 14 flechas sobre el
 track (`.track-arrow` en `src/js/map.js`), repartidas **por distancia recorrida, no cada N puntos**:
 el GPX está más poblado en las curvas (Douglas-Peucker) y contando puntos se amontonarían justo donde

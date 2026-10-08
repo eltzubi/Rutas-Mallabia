@@ -196,3 +196,9 @@ body{
    es lo que las hace legibles igual sobre el verde del IGN, sobre el satelite
    y sobre el propio track. */
 .track-arrow svg{ display:block; filter:drop-shadow(0 0 1.5px rgba(0,0,0,.9)); }
+
+/* Mientras llegan las teselas de la capa recien elegida. Sin animacion para
+   quien la haya desactivado en su sistema. */
+.map-layer-btn.is-loading{ animation:map-cargando 1s ease-in-out infinite; }
+@keyframes map-cargando{ 50%{ opacity:.55; } }
+@media (prefers-reduced-motion: reduce){ .map-layer-btn.is-loading{ animation:none; } }
