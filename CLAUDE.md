@@ -218,6 +218,13 @@ shell cache is named after its own hash, so it is dropped whole when any asset c
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
 
+**El sentido de la marcha, en flechas.** El mapa de cada ficha dibuja de 6 a 14 flechas sobre el
+track (`.track-arrow` en `src/js/map.js`), repartidas **por distancia recorrida, no cada N puntos**:
+el GPX está más poblado en las curvas (Douglas-Peucker) y contando puntos se amontonarían justo donde
+estorban. El rumbo se calcula corrigiendo la longitud por el coseno de la latitud — sin eso apuntan
+torcido — y sale del propio orden de los puntos del track, que es el de la marcha. El mapa de la
+portada no las lleva: 57 tracks a la vez.
+
 **Las capas, distintas en la portada y en una ficha.** La portada lleva las cuatro (IGN, Bici,
 Calles, Satélite) y abre en **Calles**: de lejos, con las 57 rutas a la vez, lo que sitúa es el
 callejero. Una ficha lleva **tres** — sin Calles — y abre en **IGN**: dentro de una ruta lo que hace

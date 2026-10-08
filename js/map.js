@@ -172,6 +172,8 @@
             Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
     return 2 * R * Math.asin(Math.sqrt(x));
   }
+  // En la portada cada track lleva su href; el de una ficha no.
+  function track0bis(data){ return !!data.tracks[0].href; }
   function trackMidpoint(points) {
     var total = 0, cum = [0], i;
     for (i = 1; i < points.length; i++) {
@@ -616,6 +618,49 @@
           iconSize: [size, size], iconAnchor: [size / 2, size / 2]
         })
       }).addTo(map);
+    }
+
+    // El sentido de la marcha, con flechas sobre el trazado. Un circuito
+    // dibujado no dice por donde se empieza a girar, y hacerlo al reves
+    // cambia una ruta entera: las subidas son otras. Los numeros de los
+    // puntos ya lo insinuan, pero hay que pararse a leerlos.
+    //
+    // Van repartidas a lo largo del recorrido, no cada N puntos: el GPX
+    // esta mas poblado en las curvas (Douglas-Peucker), asi que contando
+    // puntos se amontonarian justo donde mas estorban.
+    if (data.tracks.length === 1 && !track0bis(data) && data.tracks[0].points.length > 8) {
+      var puntos = data.tracks[0].points;
+      var total = 0;
+      var acumulado = [0];
+      for (var ia = 1; ia < puntos.length; ia++) {
+        total += haversineMeters(puntos[ia - 1], puntos[ia]);
+        acumulado.push(total);
+      }
+      var CUANTAS = Math.max(6, Math.min(14, Math.round(total / 1500)));
+      for (var f = 1; f <= CUANTAS; f++) {
+        var meta = total * f / (CUANTAS + 1);
+        var j = 1;
+        while (j < acumulado.length - 1 && acumulado[j] < meta) j++;
+        var a = puntos[j - 1], b = puntos[j];
+        // Rumbo en pantalla: la longitud se encoge con el coseno de la
+        // latitud, y sin eso las flechas apuntan torcido.
+        var dx = (b[1] - a[1]) * Math.cos(a[0] * Math.PI / 180);
+        var dy = b[0] - a[0];
+        if (!dx && !dy) continue;
+        var giro = Math.atan2(dx, dy) * 180 / Math.PI;   // 0 = al norte
+        L.marker(b, {
+          interactive: false,
+          keyboard: false,
+          icon: L.divIcon({
+            className: 'track-arrow',
+            html: '<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" ' +
+                  'style="transform:rotate(' + giro.toFixed(1) + 'deg)">' +
+                  '<path d="M12 3 L19 20 L12 16 L5 20 Z" fill="' + ground + '" ' +
+                  'stroke="' + ground + '" stroke-width="2" stroke-linejoin="round"/></svg>',
+            iconSize: [13, 13], iconAnchor: [6.5, 6.5]
+          })
+        }).addTo(map);
+      }
     }
 
     (data.waypoints || []).forEach(function(pt, i){

@@ -191,3 +191,8 @@ body{
 .directions-cta svg{ flex-shrink:0; }
 .hero-chart svg path[fill="none"], .feat-chart svg path[fill="none"]{ filter:drop-shadow(0 0 6px var(--teal)); }
 .elev-marker circle{ filter:drop-shadow(0 0 5px var(--teal)); }
+
+/* Las flechas del sentido de la marcha, sobre el trazado. El contorno oscuro
+   es lo que las hace legibles igual sobre el verde del IGN, sobre el satelite
+   y sobre el propio track. */
+.track-arrow svg{ display:block; filter:drop-shadow(0 0 1.5px rgba(0,0,0,.9)); }
