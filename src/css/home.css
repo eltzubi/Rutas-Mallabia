@@ -808,3 +808,14 @@ footer a:hover{ text-decoration:underline; }
   font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.03em;
 }
 .filters-clear:hover{ filter:brightness(1.08); }
+
+/* La unica fecha del sitio: cual fue la ultima ruta en entrar. Debajo de los
+   totales, en la misma letra pequena, sin llamar mas la atencion que ellos. */
+.hero-compact-last{
+  margin:6px 0 0;
+  font:400 13px/1.5 'Karla',sans-serif;
+  color:var(--ink-dim);
+}
+.hero-compact-last a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); }
+.hero-compact-last a:hover{ border-bottom-color:var(--teal); }
+.hero-compact-last .sep{ opacity:.5; }
