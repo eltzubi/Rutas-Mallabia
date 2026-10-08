@@ -14,14 +14,14 @@
    que ya lo tengan instalado lo recogeran y se desengancharan solos.
 
    build.py sustituye VERSION y CONCHA al escribirlo. */
-const VERSION = "ff1222f4";
+const VERSION = "5323be5d";
 const CONCHA = [
   "base.css?v=d0770d32",
   "fonts.css?v=1204aafe",
   "home.css?v=1b6b4f13",
   "js/app.js?v=181222fd",
   "js/filters.js?v=f2895122",
-  "js/map.js?v=0de3c1cd",
+  "js/map.js?v=fa2e991c",
   "js/webmcp.js?v=ed4e6132",
   "route.css?v=661176b3",
   "fonts/fraunces-italic.woff2",

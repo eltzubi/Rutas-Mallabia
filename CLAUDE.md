@@ -159,6 +159,14 @@ migration was checked by capturing what the browser rendered on all 114 pages fi
 generated HTML to match it exactly. `add_similar_routes` **replaces** a hand-written `next-routes`
 block if it finds one (ahuntzen had one, with figures copied by hand that nobody was updating).
 
+**La portada no pide sus tracks hasta que se abre el mapa.** `data/trailhead.json` son 399 kB —
+más que todas las fotos visibles de la portada juntas— y la portada arranca en vista de lista, con el
+mapa dentro de un bloque oculto que mide 0x0. `src/js/map.js` espera a que la caja mida algo (el mismo
+`ResizeObserver` que ya avisa de cuándo aparece) antes de pedir nada; en una ficha de ruta el mapa está
+en la página desde el principio, así que ahí carga de inmediato, y sin `ResizeObserver` también, antes
+que dejar a nadie sin mapa. Portada en móvil: 1.895 → 1.496 kB. Los dos caminos están cubiertos en
+`scripts/test_ui.cjs` (los dos últimos tests).
+
 **Shared assets, not embedded per-page.** `css/home.css`, `css/route.css`,
 `fonts/inline_fonts.css` (self-hosted `@font-face`, base64) and `js/{app,map,filters}.js` live once
 in `src/` and are copied to the repo root by `build.py`, referenced by every page via a real `<link>`/

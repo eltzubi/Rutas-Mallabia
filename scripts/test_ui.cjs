@@ -264,3 +264,35 @@ test('theme and report runtime messages use the page language without sending re
   e.context.fetch=async()=>({ok:false});form.dispatchEvent({type:'submit'});await settle();
   assert.equal(e.one('#reportStatus').textContent,form.dataset.error);assert.equal(e.one('.report-submit').disabled,false);
 });
+test('la portada no se baja los tracks hasta que se abre el mapa',async()=>{
+  // 399 kB, mas que todas las fotos de la portada juntas, para una vista que
+  // mucha gente no abre. El mapa nace en un bloque oculto (mide 0x0) y
+  // map.js espera al ResizeObserver que ya avisa de cuando aparece.
+  const e=env();
+  let pedidas=0;const real=e.context.fetch;
+  e.context.fetch=(...a)=>{pedidas++;return real(...a);};
+  const observados=[];
+  e.context.ResizeObserver=class {
+    constructor(cb){this.cb=cb;}
+    observe(el){this.el=el;observados.push(this);}
+    disconnect(){this.muerto=true;}
+  };
+  e.run('map.js');await settle();
+  assert.equal(pedidas,0,'oculto: no pide nada');
+  assert.equal(observados.length,1,'se queda esperando a que se vea');
+  // Se pulsa «mapa»: la caja pasa a medir algo y el observador salta.
+  const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
+  observados[0].cb();await settle();
+  assert.equal(pedidas,1,'visible: ahora si');
+  assert.equal(e.lines.length,totalRoutes(e),'y pinta las 57 rutas');
+  assert.equal(observados[0].muerto,true,'y deja de escuchar');
+});
+test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el principio',async()=>{
+  const e=env('trabakua.html');
+  let pedidas=0;const real=e.context.fetch;
+  e.context.fetch=(...a)=>{pedidas++;return real(...a);};
+  e.context.ResizeObserver=class {constructor(cb){this.cb=cb;}observe(){}disconnect(){}};
+  const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
+  e.run('map.js');await settle();
+  assert.equal(pedidas,1,'pide su track sin esperar a nadie');
+});

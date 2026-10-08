@@ -1049,5 +1049,23 @@
     if (window.console) console.error('No se pudo cargar el mapa:', err);
     });
   }
-  loadMap();
+  // En la portada el mapa nace dentro de un bloque oculto: hasta que alguien
+  // no pulsa «mapa» mide 0x0 y nadie lo esta viendo. Pedir ahi sus tracks
+  // nada mas abrir la pagina son 399 kB -- lo mas pesado de la portada, mas
+  // que todas sus fotos juntas -- para una vista que mucha gente no llega a
+  // abrir. Se espera a que la caja mida algo, con el mismo ResizeObserver que
+  // ya avisa de cuando aparece. En la ficha de una ruta el mapa esta en la
+  // pagina desde el principio, asi que ahi carga de inmediato, como siempre;
+  // y sin ResizeObserver (un navegador viejo) tambien, antes que dejar a
+  // nadie sin mapa.
+  if ((el.clientWidth && el.clientHeight) || typeof ResizeObserver === 'undefined') {
+    loadMap();
+  } else {
+    var esperaVisible = new ResizeObserver(function(){
+      if (!el.clientWidth || !el.clientHeight) return;
+      esperaVisible.disconnect();
+      loadMap();
+    });
+    esperaVisible.observe(el);
+  }
 })();
