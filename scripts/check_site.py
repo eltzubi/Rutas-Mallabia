@@ -139,7 +139,8 @@ def main():
                 data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
                 require(len(names) == len(data.get('waypoints', [])), f'{filename}: waypoint/legend mismatch')
             elif page == 'mallabia':
-                cards = [n for n in nodes if n['attrs'].get('class') == 'route-card']
+                cards = [n for n in nodes
+                         if n['attrs'].get('class', '').split(' ')[0] == 'route-card']
                 # PAGES lleva la portada y las paginas que no son rutas (aviso-legal),
                 # y ninguna de las dos tiene tarjeta.
                 rutas = [p for p in build.PAGES if p not in ('mallabia', 'aviso-legal')]

@@ -162,11 +162,16 @@ block if it finds one (ahuntzen had one, with figures copied by hand that nobody
 **Última entrada, dificultad técnica y barra fija del móvil.** Tres datos nuevos en la ficha,
 los tres escritos por `src/build.py`:
 
-- `add_ultima_entrada` pone en la portada, debajo de los totales, **la última ruta publicada y su
-  fecha** (`ULTIMA_ENTRADA`, que **se cambia a mano al publicar una ruta nueva**). Es la única fecha
-  de todo el sitio. Antes se puso una fecha de revisión **en cada ficha**, sacada de la hora del
-  track, y el autor la quitó el mismo día: no quiere 57 fechas, quiere saber cuál es la última
-  entrada. No volver a ponerla por ruta.
+- `add_ultima_entrada` marca en la portada **la última ruta que entró**: va la primera de la rejilla
+  (el orden lo lleva a mano `src/mallabia_tail.html`) y lleva `class="route-card is-new"` más una
+  pastilla `.route-card-new` sobre la foto, «Nueva · 5 oct 2026». La fecha sale de `ULTIMA_ENTRADA`,
+  que **se cambia a mano al publicar una ruta nueva**, y es la única de todo el sitio. La pastilla va
+  en blanco/negro a propósito: el verde es «a pie» y el azul «en bici», y en uno de esos colores se
+  leería como la actividad de la ruta. Se probaron antes dos cosas que el autor quitó: una fecha de
+  revisión **en cada ficha** (no quiere 57 fechas) y esto mismo como **una línea de texto bajo los
+  totales** (lo prefiere en la tarjeta). El `is-new` obliga a que cualquier selector de
+  `class="route-card"` admita la clase extra — ya se arreglaron `check_site.py` y
+  `verify_route_consistency.py`; `build.py` lee el origen, donde no existe.
 - `add_tecnica` pone la **dificultad técnica** junto a la física, leyendo `TECNICA`, **que está vacío
   a propósito**: la física sale de la distancia y el desnivel, que son datos, pero la técnica depende
   de lo pedregoso, estrecho, expuesto o embarrado que esté un sendero y eso solo lo sabe quien lo ha

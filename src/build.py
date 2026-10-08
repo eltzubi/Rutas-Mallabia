@@ -533,26 +533,42 @@ ULTIMA_ENTRADA = ("karabieta", "2026-10-05")
 
 
 def add_ultima_entrada(page_html, cards, lang):
-    """La ultima ruta publicada y su fecha, debajo de los totales."""
+    """Senala en la portada la ultima ruta que entro, con su fecha.
+
+    Va la primera de la rejilla (el orden lo lleva a mano
+    src/mallabia_tail.html) y se distingue de las otras 56: pastilla violeta
+    sobre la foto y borde del mismo color. El violeta no lo usa ninguna otra
+    cosa de la rejilla -- el verde y el azul son las dos actividades -- asi
+    que no se confunde con un dato de la ruta.
+
+    Antes esto era una linea de texto debajo de los totales; el autor la
+    prefiere asi, en la propia tarjeta. Una sola fecha en todo el sitio.
+    """
     slug, fecha = ULTIMA_ENTRADA
     ficha = cards.get(slug)
-    if not ficha or 'hero-compact-stats' not in page_html:
+    if not ficha or 'class="route-card"' not in page_html:
         return page_html
     año, mes, dia = fecha.split('-')
-    meses = MESES_EU if lang == "eu" else MESES_ES
+    i = int(mes) - 1
     if lang == "eu":
-        cuando = f'{año}ko {meses[int(mes) - 1]}ren {int(dia)}a'
-        etiqueta = "Azken ibilbidea"
+        texto = f'Berria &middot; {año}ko {MESES_EU[i]}k {int(dia)}'
     else:
-        cuando = f'{int(dia)} de {meses[int(mes) - 1]} de {año}'
-        etiqueta = "&Uacute;ltima ruta"
-    linea = (f'\n      <p class="hero-compact-last">{etiqueta}: '
-             f'<a href="{ficha["href"]}">{ficha["name"]}</a>'
-             f'<span class="sep"> &middot; </span>{cuando}</p>')
-    return re.sub(r'(<p class="hero-compact-stats"[^>]*>[\s\S]*?</p>)',
-                  lambda m: m.group(1) + linea, page_html, count=1)
+        texto = f'Nueva &middot; {int(dia)} {MESES_ES_CORTO[i]} {año}'
+    marca = re.search(r'<a class="route-card" href="' + re.escape(ficha["href"]) +
+                      r'"([\s\S]*?)<div class="route-card-photo">', page_html)
+    if not marca:
+        return page_html
+    page_html = (page_html[:marca.start()]
+                 + marca.group(0).replace('class="route-card"', 'class="route-card is-new"', 1)
+                   .replace('<div class="route-card-photo">',
+                            '<div class="route-card-photo">\n          '
+                            f'<span class="route-card-new">{texto}</span>', 1)
+                 + page_html[marca.end():])
+    return page_html
 
 
+MESES_ES_CORTO = ("ene", "feb", "mar", "abr", "may", "jun", "jul",
+                  "ago", "sep", "oct", "nov", "dic")
 MESES_ES = ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
             "agosto", "septiembre", "octubre", "noviembre", "diciembre")
 MESES_EU = ("urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina",

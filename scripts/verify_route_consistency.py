@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CARD_RE = re.compile(
-    r'<a class="route-card" href="([^"]+)"([^>]*)>([\s\S]*?)</a>'
+    r'<a class="route-card(?: is-new)?" href="([^"]+)"([^>]*)>([\s\S]*?)</a>'
 )
 REQUIRED_ATTRS = (
     "data-activity",
