@@ -611,10 +611,10 @@ HOME = {
     'complicados.':
         'Bizikletako ibilbideak e-bikerako pentsatuta daude batez ere, ohiko laguntzarekin. BTT '
         'arruntarekin asko nahiko gogorrak izan daitezke edo zati zailak izan ditzakete.',
-    'Las rutas de senderismo se han recorrido en muchos casos corriendo. Si las haces andando, el '
-    'recorrido es el mismo, pero necesitar&aacute;s m&aacute;s tiempo.':
-        'Oinezko ibilbideak kasu askotan korrika egin ditugu. Oinez eginez gero, ibilbidea berbera '
-        'da, baina denbora gehiago beharko duzu.',
+    'Las rutas de senderismo se han recorrido en muchos casos corriendo, as&iacute; que '
+    'and&aacute;ndolas el recorrido es el mismo, pero necesitar&aacute;s bastante m&aacute;s tiempo.':
+        'Oinezko ibilbideak kasu askotan korrika egin ditugu, beraz oinez ibilbidea berbera da, '
+        'baina denbora dezente gehiago beharko duzu.',
     'El estado de caminos y senderos puede cambiar por barro, vegetaci&oacute;n, lluvia, '
     '&aacute;rboles ca&iacute;dos u otros obst&aacute;culos. Si un tramo no parece seguro, '
     '<b>busca una alternativa o da la vuelta</b>.':
