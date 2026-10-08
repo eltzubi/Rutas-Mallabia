@@ -494,6 +494,166 @@ def add_jump_to_map(page_html, lang):
     return page_html[:corte] + texto_nuevo + page_html[corte:]
 
 
+# La fecha en que cada ruta se piso por ultima vez. Sale del propio track: la
+# hora del primer punto del GPX, cuando los tiempos del fichero son los de una
+# salida de verdad (duracion y velocidad coherentes con su distancia) y no la
+# hora en que alguien exporto el fichero. Es un dato, no una estimacion, y la
+# nota de la ficha dice de donde viene.
+#
+# Las 17 rutas que no estan aqui son las que no se pueden fechar asi: su GPX no
+# trae tiempos, o los trae todos iguales porque viene de una descarga (las dos
+# carreras de 7 Pago, ahuntzen) o de un fichero reexportado. Para esas no se
+# escribe nada en la ficha, antes que poner una fecha inventada. Si el autor da
+# la fecha de alguna, se anade aqui a mano y manda sobre el GPX.
+REVISADAS = {
+    "aixola": "2024-05-31",
+    "amaraune": "2023-06-24",
+    "argineta": "2025-06-29",
+    "arietzu": "2026-05-07",
+    "arteta": "2025-09-28",
+    "artetaasuntza": "2026-01-14",
+    "astarlokoatxa": "2026-09-10",
+    "astorkigane": "2026-09-28",
+    "axmakuriturrizuri": "2024-03-08",
+    "barinaga": "2023-04-22",
+    "egoarbitza": "2021-05-09",
+    "exigente": "2025-10-28",
+    "garaimaguna": "2025-11-23",
+    "gerea": "2026-08-19",
+    "intxorta": "2023-07-02",
+    "iruzubieta": "2021-11-18",
+    "iturreta": "2026-08-23",
+    "iturrizuri": "2026-06-21",
+    "kalamua": "2023-08-12",
+    "karabieta": "2025-08-03",
+    "longaurjauziak": "2026-09-27",
+    "maguna": "2024-09-08",
+    "markinakobau": "2021-05-23",
+    "markinaurjauziak": "2026-09-23",
+    "mendibil": "2024-11-30",
+    "mundiokokoba": "2025-03-01",
+    "oiz": "2023-05-26",
+    "potrera": "2021-04-25",
+    "sancristobal": "2025-09-05",
+    "sanpedrobidarte": "2026-09-13",
+    "santamanazarandikoa": "2026-09-20",
+    "sarrimendi": "2021-07-04",
+    "trabakua": "2026-08-16",
+    "trabakuamallabia": "2026-09-06",
+    "urko": "2025-11-09",
+    "urregarai": "2021-01-17",
+    "zaldibar": "2025-08-13",
+    "zenarruza": "2026-02-01",
+    "zengotitagane": "2026-05-03",
+    "zengotitaosmagain": "2024-02-18",
+}
+
+
+# La dificultad tecnica de cada ruta: lo que cuesta el terreno, no el esfuerzo.
+# La fisica sale de la distancia y el desnivel, que son datos; esta no sale de
+# ningun numero -- depende de lo pedregoso, lo estrecho, lo expuesto y lo
+# embarrado que este un sendero, y eso solo lo sabe quien lo ha pisado. Asi que
+# la pone el autor a mano, ruta por ruta, y la ficha solo la ensena cuando esta
+# aqui. Valores: "F&aacute;cil", "Media" o "Dif&iacute;cil".
+TECNICA = {
+}
+
+
+def add_tecnica(page_html, page, lang):
+    """La dificultad del terreno, junto a la del esfuerzo (ver TECNICA)."""
+    valor = TECNICA.get(page)
+    if not valor or 'class="facts"' not in page_html:
+        return page_html
+    if lang == "eu":
+        valor = {"F&aacute;cil": "Erraza", "Media": "Ertaina",
+                 "Dif&iacute;cil": "Zaila"}.get(valor, valor)
+    etiqueta = "Zailtasun teknikoa" if lang == "eu" else "Dificultad t&eacute;cnica"
+    dato = (f'<div class="fact"><span class="v">{valor}</span>'
+            f'<span class="k">{etiqueta}</span></div>')
+    # Justo detras de la fisica, que es su pareja.
+    marca = re.search(r'<div class="fact"><span class="v">[^<]*</span>'
+                      r'<span class="k">(?:Dificultad f&iacute;sica|Zailtasun fisikoa)</span></div>',
+                      page_html)
+    if not marca:
+        return page_html
+    return page_html[:marca.end()] + '\n    ' + dato + page_html[marca.end():]
+
+
+MESES_ES = ("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+            "agosto", "septiembre", "octubre", "noviembre", "diciembre")
+MESES_EU = ("urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina",
+            "uztaila", "abuztua", "iraila", "urria", "azaroa", "abendua")
+
+
+def add_revisada(page_html, page, lang):
+    """La fecha en que se piso la ruta por ultima vez, con el resto de datos.
+
+    Lo primero que uno quiere saber de una ruta que no ha hecho es si lo que
+    lee sigue siendo verdad. Un «mayo de 2024» responde a eso mejor que
+    cualquier parrafo. Solo se escribe cuando se sabe de verdad (ver
+    REVISADAS); las rutas sin fecha fiable no llevan el dato.
+    """
+    fecha = REVISADAS.get(page)
+    if not fecha or 'class="facts"' not in page_html:
+        return page_html
+    año, mes, _ = fecha.split('-')
+    meses = MESES_EU if lang == "eu" else MESES_ES
+    texto = (f'{año}ko {meses[int(mes) - 1]}' if lang == "eu"
+             else f'{meses[int(mes) - 1]} de {año}')
+    etiqueta = "Azken berrikuspena" if lang == "eu" else "Revisada"
+    dato = (f'<div class="fact"><span class="v">{texto}</span>'
+            f'<span class="k">{etiqueta}</span></div>')
+    marca = page_html.rfind('</div>', 0, page_html.index('class="facts-note"')) \
+        if 'class="facts-note"' in page_html else -1
+    if marca == -1:
+        return page_html
+    # Detras del ultimo .fact, dentro de la rejilla.
+    corte = page_html.rfind('</div>', 0, marca)
+    page_html = (page_html[:corte + len('</div>')] + '\n    ' + dato
+                 + page_html[corte + len('</div>'):])
+    # Y la nota dice de donde sale la fecha, como dice de donde sale todo lo
+    # demas. Solo en las fichas que la llevan: las otras no la mencionan.
+    nota = (' <b>Azken berrikuspena</b>, trackaren data: ibilbidea azkenekoz egin genuen eguna.'
+            if lang == "eu"
+            else ' <b>Revisada</b>, la fecha del track: el &uacute;ltimo d&iacute;a que la recorrimos.')
+    return re.sub(r'(<p class="facts-note">[\s\S]*?)</p>',
+                  lambda m: m.group(1) + nota + '</p>', page_html, count=1)
+
+
+def add_quick_bar(page_html, lang):
+    """Mapa y GPX siempre a mano en el movil.
+
+    Una ficha mide metro y medio de pantalla: el mapa esta al final y las
+    descargas a media altura, asi que a mitad de lectura las dos cosas que
+    uno viene a buscar quedan lejos en las dos direcciones. En el movil se
+    quedan fijas abajo; en pantalla grande no hace falta (la fila de
+    descargas se ve de un vistazo) y la barra no aparece.
+    """
+    if 'class="quick-bar"' in page_html or '<section class="map-section"' not in page_html:
+        return page_html
+    gpx = re.search(r'<a href="(src/[\w.-]+\.gpx)" download="([^"]*)"', page_html)
+    if not gpx:
+        return page_html
+    etiqueta = "Sarbide azkarrak" if lang == "eu" else "Accesos r&aacute;pidos"
+    mapa = eu.COMMON["Ver el mapa"] if lang == "eu" else "Ver el mapa"
+    icono_mapa = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+                  ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                  '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/>'
+                  '<polyline points="2 12 12 17 22 12"/></svg>')
+    icono_gpx = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+                 ' stroke-width="2" aria-hidden="true">'
+                 '<path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>')
+    barra = (f'<nav class="quick-bar" aria-label="{etiqueta}">'
+             f'<a class="quick-bar-btn" href="#mapa" title="{mapa}">{icono_mapa}Mapa</a>'
+             f'<a class="quick-bar-btn is-primary" href="{gpx.group(1)}" '
+             f'download="{gpx.group(2)}" title="{"Deskargatu GPX" if lang == "eu" else "Descargar GPX"}">'
+             f'{icono_gpx}GPX</a></nav>\n')
+    marca = page_html.rfind('</main>')
+    if marca == -1:
+        return page_html
+    return page_html[:marca + len('</main>')] + '\n' + barra + page_html[marca + len('</main>'):]
+
+
 def add_prev_next(page_html, page, cards, lang):
     """Pasar de una ruta a la de al lado sin volver a la portada.
 
@@ -633,7 +793,7 @@ def add_tourist_trip_properties(page_html, name):
     gain = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
                       r'<span class="k">(?:Desnivel \+|Desnibela \+)</span>', page_html)
     diff = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
-                      r'<span class="k">(?:Dificultad|Zailtasuna)</span>', page_html)
+                      r'<span class="k">(?:Dificultad f&iacute;sica|Zailtasun fisikoa)</span>', page_html)
     if not (dist and gain and diff):
         return page_html
     props = (
@@ -837,6 +997,9 @@ def main():
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_prev_next(page_html, name, cards[lang], lang)
             page_html = add_jump_to_map(page_html, lang)
+            page_html = add_quick_bar(page_html, lang)
+            page_html = add_revisada(page_html, name, lang)
+            page_html = add_tecnica(page_html, name, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)

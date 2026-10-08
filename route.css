@@ -490,3 +490,32 @@ footer a:hover{ color:var(--violet); }
  .elev-tags .mid{ order:3; width:100%; text-align:center; }
  .elev-legend{ padding-inline:16px; }
 }
+
+/* Mapa y GPX, fijos abajo en el movil. Una ficha mide metro y medio de
+   pantalla: a mitad de lectura, el mapa (al final) y las descargas (a media
+   altura) quedan lejos en las dos direcciones. En pantalla grande la fila de
+   descargas se ve de un vistazo y la barra sobra. */
+.quick-bar{ display:none; }
+@media (max-width:767px){
+  .quick-bar{
+    position:fixed; left:0; right:0; bottom:0; z-index:70;
+    display:flex; gap:8px;
+    padding:8px 14px calc(8px + env(safe-area-inset-bottom, 0px));
+    border-top:1px solid var(--line);
+    background:var(--ground);
+    background:color-mix(in srgb, var(--ground) 88%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  .quick-bar-btn{
+    flex:1; display:inline-flex; align-items:center; justify-content:center; gap:7px;
+    padding:11px 10px; border-radius:12px;
+    border:1px solid var(--line); background:var(--ground-raised);
+    font:600 13px 'IBM Plex Mono',monospace; color:var(--ink);
+    text-decoration:none; white-space:nowrap;
+  }
+  .quick-bar-btn.is-primary{ background:var(--teal); color:var(--ground); border-color:transparent; }
+  /* Que la barra no tape el final de la pagina ni se monte con el boton de
+     volver arriba. */
+  body{ padding-bottom:62px; }
+  .to-top{ bottom:74px; }
+}

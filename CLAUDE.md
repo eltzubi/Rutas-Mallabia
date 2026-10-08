@@ -159,6 +159,24 @@ migration was checked by capturing what the browser rendered on all 114 pages fi
 generated HTML to match it exactly. `add_similar_routes` **replaces** a hand-written `next-routes`
 block if it finds one (ahuntzen had one, with figures copied by hand that nobody was updating).
 
+**Fecha de revisión, dificultad técnica y barra fija del móvil.** Tres datos nuevos en la ficha,
+los tres escritos por `src/build.py`:
+
+- `add_revisada` pone **«Revisada: agosto de 2026»** entre los datos, y añade a la `facts-note` la
+  frase que dice de dónde sale. El valor está en `REVISADAS`, sacado del propio GPX: la hora del
+  primer punto, **solo cuando los tiempos del fichero son los de una salida de verdad** (duración y
+  velocidad coherentes con la distancia) y no la hora en que alguien exportó el fichero. 40 rutas de
+  57 lo cumplen; las otras 17 no llevan el dato — no se inventa una fecha. Si el autor da la fecha de
+  alguna, se escribe a mano en `REVISADAS` y manda sobre el GPX.
+- `add_tecnica` pone la **dificultad técnica** junto a la física, leyendo `TECNICA`, **que está vacío
+  a propósito**: la física sale de la distancia y el desnivel, que son datos, pero la técnica depende
+  de lo pedregoso, estrecho, expuesto o embarrado que esté un sendero y eso solo lo sabe quien lo ha
+  pisado. La pone el autor ruta por ruta; sin valor, el dato no aparece. El antiguo «Dificultad» pasó
+  a llamarse **«Dificultad física»** en las 57 fichas, en la nota y en el JSON-LD.
+- `add_quick_bar` deja **Mapa y GPX fijos abajo en el móvil** (`.quick-bar`, solo por debajo de
+  768 px). El `body` gana 62 px de `padding-bottom` y el botón de volver arriba sube a 74 px para no
+  quedar debajo.
+
 **Las tarjetas de la portada, en tres tallas.** `make_card_thumbs.py` escribe, además del
 `-card.webp` de 1100 px, un `-card-800.webp` y un `-card-450.webp`, y el `<picture>` de
 `src/mallabia_tail.html` los declara con `sizes="(min-width:1024px) 340px, (min-width:768px) 46vw,

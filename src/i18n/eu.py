@@ -59,7 +59,7 @@ COMMON = {
     '<span class="k">Tipo</span>': '<span class="k">Mota</span>',
     '<span class="k">Actividad</span>': '<span class="k">Jarduera</span>',
     '<span class="k">Salida</span>': '<span class="k">Irteera</span>',
-    '<span class="k">Dificultad</span>': '<span class="k">Zailtasuna</span>',
+    '<span class="k">Dificultad f&iacute;sica</span>': '<span class="k">Zailtasun fisikoa</span>',
     # tarjeta de la portada: tiempo estimado a pie (siempre) y tiempo real
     # corriendo (solo si el usuario lo ha dado), calculados por build.py
     '<span class="k">A pie</span>': '<span class="k">Oinez</span>',
@@ -304,11 +304,11 @@ ROUTE = {
     '>Enviar reporte<': '>Bidali jakinarazpena<',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real '
     '(puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
-    '<b>Dificultad</b>, estimada a partir de ambos. '
+    '<b>Dificultad f&iacute;sica</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak '
         '(beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
-        '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
+        '<b>Zailtasun fisikoa</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<span class="k">Para quién es</span>': '<span class="k">Norentzat</span>',
     '<span class="k">Para qui&eacute;n es</span>': '<span class="k">Norentzat</span>',
@@ -2105,11 +2105,11 @@ IRUZUBIETA = {
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
     '<b>Distancia</b> y <b>Desnivel</b>, calculados a partir del track GPX real '
     '(puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). '
-    '<b>Dificultad</b>, estimada a partir de ambos. '
+    '<b>Dificultad f&iacute;sica</b>, estimada a partir de ambos. '
     '<b>Superficie</b> y <b>Tipo</b>, orientativos.':
         '<b>Distantzia</b> eta <b>Desnibela</b>, benetako GPX trackatik kalkulatuak '
         '(beste aplikazioekiko apur bat ezberdina izan daiteke, bakoitzak bere leuntze-metodoa baitu). '
-        '<b>Zailtasuna</b>, bien arabera zenbatetsia. '
+        '<b>Zailtasun fisikoa</b>, bien arabera zenbatetsia. '
         '<b>Azalera</b> eta <b>Mota</b>, orientagarriak.',
     '<h1>Trabakua, Iturreta<br><em>e Iruzubieta</em></h1>':
         '<h1>Trabakua, Iturreta<br><em>eta Iruzubieta</em></h1>',
@@ -2752,8 +2752,8 @@ PAGO7 = {
         'alt="Zaldiak basoko soilgune batean bazkan, aerosorgailuak atzealdean loma batean"',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad f&iacute;sica</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasun fisikoa</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
 
     # body copy
     'El trazado real de la 7 Pago Mendi Lasterketa, con paso por la cima del <b>Oiz</b>. Carrera de monta&ntilde;a que se celebra cada mayo en Mallabia.':
@@ -2831,8 +2831,8 @@ PAGO16 = {
         'alt="Korrikalariak harrizko horma zahar baten ondoan, lasterketako dortsalekin"',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Dificultad f&iacute;sica</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua. <b>Desnibela</b>, lasterketaren antolakuntzaren datu ofiziala. <b>Zailtasun fisikoa</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
 
     # body copy
     'El trazado real de la 7 Pago Mendi Lasterketa 16K, por los montes y barrios de Mallabia.':
@@ -4147,8 +4147,8 @@ GARAIMAGUNA = {
         'alt="Pista zabala pago gazteen artean, goroldioz estalitako harrizko horma batekin alde batean, baso-zati batean"',
     '32,46 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
         '32,46 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
-    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Dificultad</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
-        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, ibilbidearen benetakoa (+1.288&nbsp;m); GPX trackak +1.421&nbsp;m ematen du. <b>Zailtasuna</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
+    '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Dificultad f&iacute;sica</b>, estimada a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
+        '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, ibilbidearen benetakoa (+1.288&nbsp;m); GPX trackak +1.421&nbsp;m ematen du. <b>Zailtasun fisikoa</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<p>Con esta ruta proponemos otra forma de llegar a <b><a href="maguna.html">Maguna</a></b>, barrio de Muxika algo alejado de nuestros recorridos habituales. Esta vez entraremos por la parte baja, descubriendo muchos caminos, zonas nuevas y tramos entretenidos.</p>':
         '<p>Ibilbide honekin, <b><a href="maguna.html">Maguna</a></b>raino iristeko beste modu bat proposatzen dugu, Muxikako auzo bat, gure ohiko ibilbideetatik pixka bat urrun dagoena. Oraingoan beheko aldetik sartuko gara, bide asko, eremu berriak eta tarte entretenigarriak deskubrituz.</p>',
     '<p>Salimos de <b>Trabakua</b> por la carretera vieja de Zengotita hacia Berriz. Cruzamos la carretera general y subimos hacia Besoita, pasando por <b><a href="sancristobal.html">San Kristobal Txiki</a></b> hasta llegar a <b>Garai</b> (km 10,4 &middot; 274 m), donde podemos coger agua en la fuente situada junto al antiguo lavadero.</p>':
