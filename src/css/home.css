@@ -830,3 +830,19 @@ footer a:hover{ text-decoration:underline; }
   font:700 11px 'IBM Plex Mono',monospace; letter-spacing:.04em;
   white-space:nowrap; box-shadow:0 2px 12px rgba(0,0,0,.45);
 }
+
+/* La actividad, en pastilla de su color. Antes la actividad y la dificultad
+   eran dos textos de color seguidos y se leian como una sola cosa; ahora se
+   ve de un golpe si la ruta es a pie o en bici. Es lo unico que se queda de
+   la prueba del 9 de octubre: el perfil pegado a la foto y los iconos en los
+   datos no le gustaron al autor y se quitaron. */
+.route-card-tags{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.route-card-tags .v:first-child{
+  padding:3px 9px; border-radius:999px;
+  background:color-mix(in srgb, var(--teal) 18%, transparent);
+  color:var(--teal); font-weight:700; letter-spacing:.02em;
+}
+.route-card[data-activity="senderismo"] .route-card-tags .v:first-child{
+  background:color-mix(in srgb, var(--violet) 18%, transparent); color:var(--violet);
+}
+.route-card-tags .v:last-child{ color:var(--ink-dim); }
