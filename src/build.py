@@ -512,12 +512,12 @@ def add_tecnica(page_html, page, lang):
     if lang == "eu":
         valor = {"F&aacute;cil": "Erraza", "Media": "Ertaina",
                  "Dif&iacute;cil": "Zaila"}.get(valor, valor)
-    etiqueta = "Zailtasun teknikoa" if lang == "eu" else "Dificultad t&eacute;cnica"
+    etiqueta = "Lurra" if lang == "eu" else "Terreno"
     dato = (f'<div class="fact"><span class="v">{valor}</span>'
             f'<span class="k">{etiqueta}</span></div>')
     # Justo detras de la fisica, que es su pareja.
     marca = re.search(r'<div class="fact"><span class="v">[^<]*</span>'
-                      r'<span class="k">(?:Dificultad f&iacute;sica|Zailtasun fisikoa)</span></div>',
+                      r'<span class="k">(?:Esfuerzo|Esfortzua)</span></div>',
                       page_html)
     if not marca:
         return page_html
@@ -748,7 +748,7 @@ def add_tourist_trip_properties(page_html, name):
     gain = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
                       r'<span class="k">(?:Desnivel \+|Desnibela \+)</span>', page_html)
     diff = re.search(r'<div class="fact"><span class="v">([^<]*)</span>'
-                      r'<span class="k">(?:Dificultad f&iacute;sica|Zailtasun fisikoa)</span>', page_html)
+                      r'<span class="k">(?:Esfuerzo|Esfortzua)</span>', page_html)
     if not (dist and gain and diff):
         return page_html
     props = (

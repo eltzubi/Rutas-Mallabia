@@ -172,11 +172,15 @@ los tres escritos por `src/build.py`:
   totales** (lo prefiere en la tarjeta). El `is-new` obliga a que cualquier selector de
   `class="route-card"` admita la clase extra — ya se arreglaron `check_site.py` y
   `verify_route_consistency.py`; `build.py` lee el origen, donde no existe.
-- `add_tecnica` pone la **dificultad técnica** junto a la física, leyendo `TECNICA`, **que está vacío
-  a propósito**: la física sale de la distancia y el desnivel, que son datos, pero la técnica depende
+- `add_tecnica` pone **«Terreno»** junto a **«Esfuerzo»**, leyendo `TECNICA`, **que está vacío a
+  propósito**: el esfuerzo sale de la distancia y el desnivel, que son datos, pero el terreno depende
   de lo pedregoso, estrecho, expuesto o embarrado que esté un sendero y eso solo lo sabe quien lo ha
-  pisado. La pone el autor ruta por ruta; sin valor, el dato no aparece. El antiguo «Dificultad» pasó
-  a llamarse **«Dificultad física»** en las 57 fichas, en la nota y en el JSON-LD.
+  pisado. Lo pone el autor ruta por ruta; sin valor, el dato no aparece. **No derivarlo de
+  `Superficie`**: una reconstrucción del sitio que el autor trajo lo hacía así y le salían 45 de 57
+  rutas con la misma etiqueta — un dato que no distingue nada y que además afirma algo que no
+  sabemos. El antiguo «Dificultad» se llama ahora **«Esfuerzo»** en las 57 fichas, en el filtro de la
+  portada, en la nota y en el JSON-LD; los valores (Fácil/Media/Difícil) no cambian, que son los que
+  usa el filtro.
 - `add_quick_bar` deja **Mapa y GPX fijos abajo en el móvil** (`.quick-bar`, solo por debajo de
   768 px). El `body` gana 62 px de `padding-bottom` y el botón de volver arriba sube a 74 px para no
   quedar debajo.
