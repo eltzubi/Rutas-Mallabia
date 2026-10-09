@@ -608,9 +608,12 @@ HOME = {
         'eta erreferentzia-puntuei buruzko datu baliagarriekin.',
     'Las rutas en bici est&aacute;n pensadas principalmente para e-bike con asistencia '
     'est&aacute;ndar. Con BTT convencional, muchas pueden resultar bastante exigentes o tener tramos '
-    'complicados.':
+    'complicados. Est&aacute;n hechas con una Orbea Rise 2023, de 60 Nm. La mayor&iacute;a de '
+    'e-bikes tienen m&aacute;s fuerza &mdash;hasta 85 Nm&mdash; y eso se nota en las subidas.':
         'Bizikletako ibilbideak e-bikerako pentsatuta daude batez ere, ohiko laguntzarekin. BTT '
-        'arruntarekin asko nahiko gogorrak izan daitezke edo zati zailak izan ditzakete.',
+        'arruntarekin asko nahiko gogorrak izan daitezke edo zati zailak izan ditzakete. 2023ko '
+        'Orbea Rise batekin eginda daude, 60 Nm-koa. E-bike gehienek indar handiagoa dute '
+        '&mdash;85 Nm-raino&mdash; eta aldapetan nabaritzen da.',
     'Las rutas de senderismo se han recorrido en muchos casos corriendo, as&iacute; que '
     'and&aacute;ndolas el recorrido es el mismo, pero necesitar&aacute;s bastante m&aacute;s tiempo.':
         'Oinezko ibilbideak kasu askotan korrika egin ditugu, beraz oinez ibilbidea berbera da, '
