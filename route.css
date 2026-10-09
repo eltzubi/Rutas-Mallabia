@@ -58,16 +58,25 @@
    de los 44px que recomiendan iOS y Android. El ::after es invisible y solo
    agranda la zona sensible al dedo; el aspecto no cambia. */
 
+/* La salida de una ficha. Era un «← RUTAS» de 11 px en gris apagado y sin
+   contorno: se perdia entre el idioma y el tema, y es lo que mas se usa de
+   esa barra. Ahora es un boton con su filo, como el de volver arriba. */
 .back-link{
-  display:inline-flex; align-items:center; gap:5px;
-  color:var(--ink-dim);
+  display:inline-flex; align-items:center; gap:7px;
+  color:var(--ink);
   text-decoration:none;
   font-family:'IBM Plex Mono',monospace;
-  font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  font-size:13px; letter-spacing:.08em; text-transform:uppercase;
   cursor:pointer;
-  border:none; background:none; padding:0;
+  padding:8px 13px; border-radius:11px;
+  border:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  background:var(--ground-raised);
+  transition:color .15s ease, border-color .15s ease;
 }
-.back-link:hover{ color:var(--teal); }
+.back-link:hover{ color:var(--teal); border-color:var(--teal); }
+@media (max-width:359px){
+  .back-link{ font-size:12px; padding:7px 10px; letter-spacing:.04em; }
+}
 /* Rutas parecidas: hasta ahora una ficha terminaba en "volver a rutas" y ahi
    se acababa la visita. Las elige build.py por actividad y distancia, con los
    datos reales de las tarjetas de la portada. */
