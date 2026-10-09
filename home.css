@@ -846,3 +846,28 @@ footer a:hover{ text-decoration:underline; }
   background:color-mix(in srgb, var(--violet) 18%, transparent); color:var(--violet);
 }
 .route-card-tags .v:last-child{ color:var(--ink-dim); }
+
+/* La dificultad, en barritas: una encendida en Facil, dos en Media, tres en
+   Dificil. Es una escala de tres y asi se ve como tal, sin gastar un color:
+   el verde y el cian ya significan «a pie» y «en bici», y un semaforo
+   verde/ambar/rojo ademas convertiria un dato de esfuerzo en una
+   advertencia. Sale del data-difficulty que ya lleva cada tarjeta, asi que
+   no toca el marcado, y la palabra sigue escrita al lado para quien no
+   distinga bien los tonos. */
+.route-card-tags .v:last-child{ display:inline-flex; align-items:center; gap:7px; }
+.route-card-tags .v:last-child::before{
+  content:''; width:13px; height:11px; flex:0 0 13px;
+  --on:var(--ink-dim);
+  --off:color-mix(in srgb, var(--ink) 20%, transparent);
+  background:
+    linear-gradient(var(--b1),var(--b1)) 0 100%/3px 5px no-repeat,
+    linear-gradient(var(--b2),var(--b2)) 5px 100%/3px 8px no-repeat,
+    linear-gradient(var(--b3),var(--b3)) 10px 100%/3px 11px no-repeat;
+  --b1:var(--on); --b2:var(--off); --b3:var(--off);
+}
+.route-card[data-difficulty="media"] .route-card-tags .v:last-child::before{
+  --b1:var(--on); --b2:var(--on); --b3:var(--off);
+}
+.route-card[data-difficulty="dificil"] .route-card-tags .v:last-child::before{
+  --b1:var(--on); --b2:var(--on); --b3:var(--on);
+}
