@@ -595,10 +595,16 @@ footer a:hover{ text-decoration:underline; }
 
 .to-top{
   position:fixed; right:18px; bottom:18px; z-index:60;
-  width:46px; height:46px; border-radius:50%;
+  /* Al estilo del boton de 7pago.com, que es el que le gusta al autor:
+     cuadrado de 50 px con 14 de radio, fondo del propio panel, un filo muy
+     fino y la flecha en el color de acento -- en vez de la pastilla redonda
+     maciza de antes. Alli el filo es rgba(180,220,255,.25) sobre azul
+     marino; aqui sale del mismo sitio, el tono de la tinta rebajado. */
+  width:50px; height:50px; border-radius:14px;
   display:flex; align-items:center; justify-content:center;
-  background:var(--teal); color:var(--ground); border:none; cursor:pointer;
-  box-shadow:0 6px 20px rgba(20,23,15,.25);
+  background:var(--ground-raised); color:var(--teal); cursor:pointer;
+  border:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  box-shadow:0 8px 32px rgba(0,0,0,.37);
   opacity:0; transform:translateY(8px); pointer-events:none;
   transition:opacity .25s ease, transform .25s ease, background .2s ease;
 }
@@ -633,7 +639,7 @@ footer a:hover{ text-decoration:underline; }
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
 .theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
-.to-top{ box-shadow:0 4px 16px rgba(0,0,0,.5), 0 0 26px -8px var(--teal); }
+.to-top{ box-shadow:0 8px 32px rgba(0,0,0,.45); }
 .logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
 .wikiloc-link, .directions-cta, .back-home-link{
@@ -715,7 +721,7 @@ footer a:hover{ text-decoration:underline; }
 .route-card-tags .v,.route-card-time .v{ font-family:'Karla',sans-serif; text-transform:none; letter-spacing:0; }
 .route-card-body{ gap:9px; }
 .route-card-chart{ margin-bottom:4px; }
-.view-fab,.view-fab:hover,.to-top{ box-shadow:0 4px 16px #0005; }
+.view-fab,.view-fab:hover{ box-shadow:0 4px 16px #0005; }
 .theme-toggle:hover{ box-shadow:none; }
 @media(min-width:660px){
  .filter-controls{ display:flex; align-items:flex-end; flex-wrap:wrap; gap:6px 24px; }

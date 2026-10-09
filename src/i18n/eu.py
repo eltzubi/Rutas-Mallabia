@@ -15,8 +15,8 @@ UI = {
     'Cambiar a tema claro': 'Aldatu gai argira',
     'Cambiar a tema oscuro': 'Aldatu gai ilunera',
     'Enviando…': 'Bidaltzen…',
-    'Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.':
-        'Eskerrik asko. Abisua jaso dut, eta bertara joango naiz egiaztatzera, ibilbidearen fitxa eguneratu aurretik.',
+    'Gracias, he recibido el aviso. Lo tendré en cuenta y actualizaré la ficha si hace falta.':
+        'Eskerrik asko. Abisua jaso dut. Kontuan hartuko dut eta fitxa eguneratuko dut beharrezkoa bada.',
     'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.':
         'Ezin izan da bidali. Saiatu berriro edo idatzi trabakutik@gmail.com helbidera.',
     'Incidencia en ruta:': 'Ibilbideko gorabehera:',

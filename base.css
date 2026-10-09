@@ -174,7 +174,7 @@ body{
 .parada h2{ font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.5rem; margin:0; color:var(--ink); }
 .parada p{ font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink-dim); line-height:1.6; margin:2px 0 0; max-width:52ch; }
 .to-top.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
-.to-top:hover{ background:var(--violet); }
+.to-top:hover{ border-color:var(--teal); box-shadow:0 8px 32px rgba(0,0,0,.45), 0 0 0 1px var(--teal); }
 .wikiloc-link.ghost:hover{ box-shadow:0 0 20px -10px var(--teal); }
 .elev-tags .v{ text-shadow:0 0 14px currentColor; }
 .photo-slot, .gallery-item, .mini-gallery .gallery-item{ border-radius:16px; }

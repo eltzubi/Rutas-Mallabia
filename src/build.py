@@ -666,7 +666,7 @@ def add_ui_text(page_html, cards, lang):
     }))
     page_html = page_html.replace('<form id="reportForm">', '<form id="reportForm"' + attrs({
         "sending": "Enviando…",
-        "success": "Gracias, he recibido el aviso y lo revisaré en persona antes de actualizar la ruta.",
+        "success": "Gracias, he recibido el aviso. Lo tendré en cuenta y actualizaré la ficha si hace falta.",
         "error": "No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.",
         "subject-prefix": "Incidencia en ruta:",
     }) + '>')
