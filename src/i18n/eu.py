@@ -369,8 +369,10 @@ HOME = {
         '<h3 class="route-card-name">Zengotita, Iturzuri eta Zengotitagane</h3>',
     '<p class="route-card-desc">Vuelta corta desde Zengotita por el hayedo de Iturzuri y el cresterío de Zengotitagane</p>':
         '<p class="route-card-desc">Zengotitatik hasitako itzuli laburra, Iturzuriko pagadia eta Zengotitagineko gailurra zeharkatuz</p>',
-    'placeholder="Buscar ruta por nombre&hellip;" aria-label="Buscar ruta por nombre"':
-        'placeholder="Bilatu ibilbidea izenez&hellip;" aria-label="Bilatu ibilbidea izenez"',
+    'placeholder="Busca una ruta, un monte o un pueblo&hellip;" '
+    'aria-label="Busca una ruta, un monte o un pueblo"':
+        'placeholder="Bilatu ibilbide, mendi edo herri bat&hellip;" '
+        'aria-label="Bilatu ibilbide, mendi edo herri bat"',
 
     # mallukitoko card
     'alt="Panel informativo de un mirador con vistas al valle de Markina-Xemein entre nubes"':
