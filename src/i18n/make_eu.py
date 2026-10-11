@@ -203,9 +203,18 @@ def main():
                              f'<meta property="og:description" content="{eu_desc}">')
         head = head.replace('<meta property="og:locale" content="es_ES">',
                              '<meta property="og:locale" content="eu_ES">')
+        # Las etiquetas hreflang se quedan intactas: dicen cual es la version en
+        # cada idioma y son las MISMAS en las dos paginas. Si entraran en el
+        # cambio de abajo, la linea del castellano acabaria apuntando a la
+        # pagina en euskera y Google se encontraria las dos versiones diciendo
+        # ser la castellana. Se apartan, se hace el cambio y se devuelven.
+        alternos = re.findall(r'<link rel="alternate"[^>]*>', head)
+        head = re.sub(r'<link rel="alternate"[^>]*>', '\x00ALT\x00', head)
         for es_file, eu_file in EU_OF.items():
             head = head.replace(f'"https://trabakutik.com/{es_file}"',
                                  f'"https://trabakutik.com/{eu_file}"')
+        for alterno in alternos:
+            head = head.replace('\x00ALT\x00', alterno, 1)
         # La portada en euskera es justo la raiz, asi que su canonical/og:url/
         # JSON-LD se quedan tal cual estan en la fuente ("https://trabakutik.com/").
         # El que se mueve es el castellano, y de eso se encarga build.py al
