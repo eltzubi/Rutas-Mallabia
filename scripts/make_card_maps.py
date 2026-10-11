@@ -37,11 +37,30 @@ ROOT = os.path.dirname(HERE)
 IMG = os.path.join(ROOT, "img")
 TRAILHEAD = os.path.join(ROOT, "data", "trailhead.json")
 
-ANCHO, ALTO = 320, 200      # el doble de lo que mide en pantalla
-CALIDAD = 72
+# El encuadre es el que el autor dio por bueno. ESCALA solo sube la densidad
+# de pixeles: los nombres se ven del mismo tamanio, pero nitidos en un movil.
+ANCHO, ALTO = 320, 200
+ESCALA = 2
+CALIDAD = 76
 ESTILO = "https://tiles.openfreemap.org/styles/liberty"
 COLOR = {"bici": "#0f7d8c", "senderismo": "#3f6b14"}   # sobre mapa claro
-RELLENO = 16
+RELLENO = 30
+
+# Lo que estorba a este tamanio: iconos de bares y aparcamientos, numeros de
+# carretera, nombres de calle, rios y fronteras. Cada uno de esos rotulos le
+# quita el sitio a un nombre de pueblo, que es lo que dice por donde va la
+# ruta -- quitandolos caben bastantes mas.
+SOBRA = ("poi_r20", "poi_r7", "poi_r1", "poi_transit", "airport",
+         "highway-shield-non-us", "highway-shield-us-interstate",
+         "road_shield_us", "highway-name-path", "highway-name-minor",
+         "highway-name-major", "waterway_line_label", "water_name_point_label",
+         "water_name_line_label", "label_state", "label_country_1",
+         "label_country_2", "label_country_3")
+# Los nombres que se quedan: ciudades, pueblos, aldeas y -- la que importa
+# aqui -- label_other, que son los barrios, caserios y parajes por los que
+# pasan estas rutas. No se les toca el tamanio, que es el que el autor dio
+# por bueno; lo que cambia es cuantos caben.
+NOMBRES = ("label_city", "label_town", "label_village", "label_other")
 
 PLANTILLA = """<!doctype html><html><head><meta charset="utf-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
@@ -51,17 +70,45 @@ PLANTILLA = """<!doctype html><html><head><meta charset="utf-8">
 <body><div id="m"></div><script>
 window.listo = false;
 const puntos = %(puntos)s;
+const sobra = %(sobra)s;
+const nombres = %(nombres)s;
 const mapa = new maplibregl.Map({container:'m', style:'%(estilo)s',
   attributionControl:false, interactive:false, fadeDuration:0});
 mapa.on('load', () => {
+  sobra.forEach(id => { if (mapa.getLayer(id)) mapa.removeLayer(id); });
+  nombres.forEach(id => {
+    if (!mapa.getLayer(id)) return;
+    // Sin hueco obligatorio alrededor y pudiendo colocarse a un lado o a
+    // otro del punto, entran nombres que si no se descartaban por chocar.
+    mapa.setLayoutProperty(id, 'text-padding', 0);
+    mapa.setLayoutProperty(id, 'text-letter-spacing', 0);
+    mapa.setLayoutProperty(id, 'text-variable-anchor',
+      ['center','top','bottom','left','right','top-left','top-right',
+       'bottom-left','bottom-right']);
+    mapa.setLayoutProperty(id, 'text-radial-offset', 0.35);
+    mapa.setLayoutProperty(id, 'text-justify', 'auto');
+    // Halo blanco: es lo que los hace legibles sobre el verde del monte y
+    // sobre el propio trazado.
+    mapa.setPaintProperty(id, 'text-halo-color', '#ffffff');
+    mapa.setPaintProperty(id, 'text-halo-width', 1.4);
+    mapa.setPaintProperty(id, 'text-color', '#333333');
+  });
   mapa.addSource('track', {type:'geojson', data:{type:'Feature',
     geometry:{type:'LineString', coordinates:puntos}}});
+  mapa.addSource('salida', {type:'geojson', data:{type:'Feature',
+    geometry:{type:'Point', coordinates:puntos[0]}}});
+  const primero = nombres.find(id => mapa.getLayer(id));
   mapa.addLayer({id:'track-halo', type:'line', source:'track',
     paint:{'line-color':'#ffffff','line-width':6,'line-opacity':.85},
-    layout:{'line-cap':'round','line-join':'round'}});
+    layout:{'line-cap':'round','line-join':'round'}}, primero);
   mapa.addLayer({id:'track', type:'line', source:'track',
     paint:{'line-color':'%(color)s','line-width':3},
-    layout:{'line-cap':'round','line-join':'round'}});
+    layout:{'line-cap':'round','line-join':'round'}}, primero);
+  // La salida, que es por donde se empieza y por donde se vuelve en los
+  // circuitos. Es el primer punto del propio track, no un dato aparte.
+  mapa.addLayer({id:'salida', type:'circle', source:'salida',
+    paint:{'circle-radius':4.5, 'circle-color':'%(color)s',
+           'circle-stroke-color':'#ffffff', 'circle-stroke-width':2}}, primero);
   const caja = puntos.reduce((b,c) => b.extend(c),
     new maplibregl.LngLatBounds(puntos[0], puntos[0]));
   mapa.fitBounds(caja, {padding:%(relleno)d, duration:0});
@@ -122,14 +169,16 @@ def main():
                   "--use-gl=swiftshader", "--enable-unsafe-swiftshader"],
             proxy={"server": prox} if prox else None)
         pg = nav.new_page(viewport={"width": ANCHO, "height": ALTO},
-                          device_scale_factor=1)
+                          device_scale_factor=ESCALA)
         for slug, puntos, destino in pendientes:
             # MapLibre quiere lon,lat; el track viene en lat,lon.
             coords = [[round(q[1], 5), round(q[0], 5)] for q in puntos]
             html = PLANTILLA % {"ancho": ANCHO, "alto": ALTO, "estilo": ESTILO,
                                 "puntos": json.dumps(coords),
                                 "color": COLOR[actividad_de(slug)],
-                                "relleno": RELLENO}
+                                "relleno": RELLENO,
+                                "sobra": json.dumps(SOBRA),
+                                "nombres": json.dumps(NOMBRES)}
             with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False,
                                              encoding="utf-8") as f:
                 f.write(html)

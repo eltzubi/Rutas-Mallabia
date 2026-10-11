@@ -1103,7 +1103,7 @@ def mapa_de_la_tarjeta(href):
 
     La imagen esta dibujada aqui, no en el navegador de quien entra: la pinta
     scripts/make_card_maps.py con MapLibre y OpenFreeMap (datos de
-    OpenStreetMap) y la deja en img/mapa-<ruta>.webp, unos 5 kB. Por eso no
+    OpenStreetMap) y la deja en img/mapa-<ruta>.webp, unos 14 kB. Por eso no
     se puede usar cualquier mapa: las teselas del IGN y de OpenStreetMap no
     se pueden guardar en bloque, lo prohiben sus condiciones de uso;
     OpenFreeMap si lo permite -- gratis, sin clave y con uso comercial -- y
