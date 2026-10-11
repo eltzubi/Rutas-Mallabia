@@ -77,7 +77,7 @@ def ya_pasada(path, webp_path):
         return max(im.size) <= MAX_SIDE
 
 
-def process(path):
+def process(path, webp_path):
     name = os.path.basename(path)
     before = os.path.getsize(path)
 
@@ -97,7 +97,6 @@ def process(path):
     im.save(path, "JPEG", quality=JPEG_QUALITY, optimize=True, progressive=True)
     after = os.path.getsize(path)
 
-    webp_path = os.path.splitext(path)[0] + ".webp"
     im.save(webp_path, "WEBP", quality=WEBP_QUALITY, method=6)
     webp_size = os.path.getsize(webp_path)
 
@@ -137,7 +136,7 @@ def main():
                 registro[name] = {"jpg": sha(path), "webp": sha(webp_path)}
                 saltadas += 1
                 continue
-        b, a, w = process(path)
+        b, a, w = process(path, webp_path)
         registro[name] = {"jpg": sha(path), "webp": sha(webp_path)}
         hechas += 1
         total_before += b
@@ -146,7 +145,7 @@ def main():
     with open(REGISTRO, "w", encoding="utf-8") as f:
         json.dump(dict(sorted(registro.items())), f, indent=0, sort_keys=True)
         f.write("\n")
-    print(f"\n{len(names)} imagenes: {hechas} procesadas, {saltadas} ya estaban")
+    print(f"\n{len(originales)} imagenes: {hechas} procesadas, {saltadas} ya estaban")
     if hechas:
         print(f"jpg total:  {total_before/1024/1024:.2f} MB -> {total_after/1024/1024:.2f} MB")
         print(f"webp total: {total_webp/1024/1024:.2f} MB")

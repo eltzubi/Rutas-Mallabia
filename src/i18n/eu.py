@@ -772,8 +772,8 @@ HOME = {
         'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
 
     # karabieta card
-    'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"':
-        'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
+    'alt="El alto de Karabieta, con el cartel de 565 m y una caseta de madera pintada junto al cruce"':
+        'alt="Karabietako gaina, 565 m-ko kartelarekin eta egurrezko etxola margotu batekin bidegurutzearen ondoan"',
 
     # zaldibar card
     'alt="La presa de Aixola entre los &aacute;rboles, con la niebla asomando sobre el agua"':
@@ -5518,7 +5518,6 @@ KARABIETA = {
         'bizikleta ur-presioz garbitzeko gunea.</p>',
 
     # pies de foto (invisibles: solo para el lector de pantalla y para Google)
-    'alt="Ovejas pastando en las campas de Berano, con el Anboto al fondo"': 'alt="Ardiak Beranoko larreetan bazkatzen, Anboto atzealdean"',
     'alt="Hilera de &aacute;rboles junto a un camino asfaltado en Berano, con prados al otro lado de la alambrada"': 'alt="Zuhaitz ilara Beranoko asfaltozko bide baten ondoan, larreak hesiaren beste aldean"',
     'alt="Panor&aacute;mica del valle entre Berano y Arteta, con caser&iacute;os y el Anboto al fondo"': 'alt="Haranaren panoramika Berano eta Artetaren artean, baserriekin eta Anboto atzealdean"',
     'alt="Horma de piedra seca junto a la pista entre Berano y Arteta, con un endrino en flor"': 'alt="Harrizko horma lehorra pistaren ondoan, Berano eta Artetaren artean, elorri beltza loretan"',
@@ -5527,6 +5526,18 @@ KARABIETA = {
     'alt="Caser&iacute;os del valle al amanecer, entre bruma, desde la zona de Berano y Arteta"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean, Berano eta Arteta ingurutik"',
     'alt="Poste indicador de madera en el bosque, hacia el km 10, con las flechas a Santruan (Elorrio) y a Santa Marina"': 'alt="Egurrezko seinale-zutoina basoan, ibilbidearen 10. km inguruan, Santruanerako (Elorrio) eta Santa Marinarako geziekin"',
     'alt="Caballos pastando en las campas, con los aerogeneradores del Oiz en el cordal"': 'alt="Zaldiak larreetan bazkatzen, Oizko eolikoak gailurrean"',
+    'alt="Poste indicador de madera con los carteles de Goierri, Santruan (Elorrio) a 7,5 km y Zaldibar, junto a una pared de bloques"': 'alt="Egurrezko norabide-zutoina, Goierri, Santruan (Elorrio) 7,5 km eta Zaldibar karteldunekin, bloke-horma baten ondoan"',
+    'alt="Zona de lavado de bicicletas del Ayuntamiento de Elgeta, con la bici apoyada en el soporte"': 'alt="Elgetako Udalaren bizikletak garbitzeko gunea, bizikleta euskarrian bermatuta"',
+    'alt="Prados cercados sobre el pueblo del valle, con su iglesia y las laderas de monte alrededor"': 'alt="Hesitutako belardiak haraneko herriaren gainean, eliza eta inguruko mendi-hegalak ikusgai"',
+    'alt="Vista desde el manillar de una pista de tierra subiendo entre con&iacute;feras, con el GPS en primer plano"': 'alt="Lurrezko pista koniferoen artean gora, bizikletaren manillarretik ikusita, GPSa aurrean"',
+    'alt="Laderas de monte con repoblaciones j&oacute;venes y caser&iacute;os, y al fondo una cima con antena"': 'alt="Mendi-hegalak birlandaketa gazteekin eta baserriekin, eta hondoan antena duen gailur bat"',
+    'alt="Cima rematada por una antena de telecomunicaciones, con la ladera talada y repoblada"': 'alt="Telekomunikazio-antena bat duen gailurra, hegala moztuta eta birlandatuta"',
+    'alt="Estacas de madera reci&eacute;n cortadas de un cierre nuevo junto a la pista, en una zona de tala reciente"': 'alt="Hesi berri baten egur-estaka berriak pistaren ondoan, berriki moztutako eremuan"',
+    'alt="El alto de Karabieta, con el cartel de 565 m y una caseta de madera pintada junto al cruce"': 'alt="Karabietako gaina, 565 m-ko kartelarekin eta egurrezko etxola margotu batekin bidegurutzearen ondoan"',
+    'alt="Marca roja y blanca de PR pintada en la pista de cemento, con la cima de la antena al fondo"': 'alt="PR-aren marka gorri-zuria zementuzko pistan margotuta, antenaren gailurra hondoan"',
+    'alt="Panor&aacute;mica del valle con la pista serpenteando y las crestas rocosas al fondo"': 'alt="Haranaren panoramika, bidea bihurka eta harkaitzezko gailurrak hondoan"',
+    'alt="Pista de tierra por la ladera, entre con&iacute;feras j&oacute;venes, con los aerogeneradores del monte del fondo"': 'alt="Lurrezko pista hegalean, konifero gazteen artean, hondoko mendiko eolikoekin"',
+    'alt="Camino hondo y herboso entre &aacute;rboles y helechos, con el piso embarrado"': 'alt="Bide sakon eta belartsua zuhaitzen eta iratzeen artean, lokaztuta"',
 
     # el texto del autor, parrafo a parrafo
     '<p>Salimos de <b>Trabakua</b> en direcci&oacute;n a Zengotita. Al llegar a la zona de la ermita seguimos por el camino que empieza a bajar poco a poco hasta enlazar con las marcas del GR y continuar hacia Goierri.</p>':
