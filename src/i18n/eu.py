@@ -4918,8 +4918,8 @@ AVISO_LEGAL = {
     '<p><b>Enlaces a terceros.</b> Algunas páginas enlazan a Wikiloc, OpenStreetMap u otros servicios externos que el titular no controla ni de cuyo contenido responde.</p>':
         '<p><b>Hirugarrenen estekak.</b> Orrialde batzuek Wikiloc, OpenStreetMap edo bestelako kanpo-zerbitzuetara esteka egiten dute; titularrak ez ditu kontrolatzen eta ez du haien edukiaren erantzukizunik.</p>',
 
-    '<p><b>Responsable del tratamiento:</b> Zorion, contacto en <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
-        '<p><b>Tratamenduaren arduraduna:</b> Zorion, harremanetarako <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Responsable del tratamiento:</b> Zorion A., contacto en <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Tratamenduaren arduraduna:</b> Zorion A., harremanetarako <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
     '<p><b>Qué datos se recogen.</b> Esta web no tiene usuarios registrados ni analítica. El único dato personal que se recoge es el que se escribe voluntariamente en el formulario «Reportar incidencia» de cada ruta: el tipo de incidencia, su ubicación aproximada, una descripción y, opcionalmente, un email de contacto.</p>':
         '<p><b>Zer datu jasotzen dira.</b> Webgune honek ez du erabiltzaile erregistraturik ez analitikarik. Jasotzen den datu pertsonal bakarra ibilbide bakoitzeko «Reportar incidencia» formularioan borondatez idazten dena da: intzidentzia mota, gutxi gorabeherako kokapena, deskribapen bat eta, aukeran, harremanetarako email bat.</p>',
     '<p><b>Finalidad y base legal.</b> Esos datos se usan únicamente para revisar la incidencia y, si hace falta, responder a quien la reporta. La base legal es el consentimiento: se envían solo si decides rellenar y enviar el formulario.</p>':
