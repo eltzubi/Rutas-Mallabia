@@ -4926,8 +4926,8 @@ AVISO_LEGAL = {
     '<h2>Política de privacidad</h2>':
         '<h2>Pribatutasun politika</h2>',
 
-    '<p><b>Titular del sitio:</b> Zorion, persona física, sin actividad económica asociada a esta web. Contacto: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
-        '<p><b>Webgunearen titularra:</b> Zorion, pertsona fisikoa, webgune honi lotutako jarduera ekonomikorik gabe. Harremanetarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
+    '<p><b>Titular del sitio:</b> Zorion A., persona física, sin actividad económica asociada a esta web. Contacto: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
+        '<p><b>Webgunearen titularra:</b> Zorion A., pertsona fisikoa, webgune honi lotutako jarduera ekonomikorik gabe. Harremanetarako: <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>',
     'Para cualquier duda:': 'Zalantzarik baduzu:',
     '<p><b>Objeto.</b> Trabakutik es un proyecto personal, sin ánimo de lucro, que documenta rutas de senderismo y BTT alrededor de Mallabia (Bizkaia) con datos reales: tracks GPX grabados sobre el terreno y fotografías propias. No es un servicio comercial ni recoge pagos ni publicidad.</p>':
         '<p><b>Xedea.</b> Trabakutik proiektu pertsonala da, irabazi asmorik gabea, Mallabia (Bizkaia) inguruko oinezko eta BTT ibilbideak benetako datuekin jasotzen dituena: bertan grabatutako GPX trackak eta argazki propioak. Ez da zerbitzu komertziala, ez du ordainketarik jasotzen ez publizitaterik dauka.</p>',
