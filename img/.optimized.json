@@ -1131,10 +1131,6 @@
 "jpg": "bc6edea4b7fd7c5500c7a300fe3740768e162cddf68eaad48f8ff50ad31e3d5c",
 "webp": "2023ffdca5233ceb98ee398a0df380e6647f4810c4e91ebf57e5fe9d08d80939"
 },
-"karabieta-14.jpg": {
-"jpg": "5d6cd09916bdd143419e2482611814643cf35dfed79e26e8b9fddbbc6d77aa96",
-"webp": "1ac9c7aaf7e22bc79ed355a953eb4a509f71fa5b2435a5ed0cbadfb92f45dd49"
-},
 "karabieta-15.jpg": {
 "jpg": "2072a8ff18e2565143514bccf9c632d8edc00b2e0b96dc34241a5c87609d7a33",
 "webp": "6015754e3c72e317133c2fccb32ef276da58ddb0c5ec508551e5ab84cb745aa2"
@@ -1170,6 +1166,10 @@
 "karabieta-23.jpg": {
 "jpg": "3aa9e0ea2fe42108fd50fc43dfe9a1402ce48f11d3755c7199de241ed5f61c90",
 "webp": "0e5d7975d4c4b071399f55fb6fa6c799b19c6027eeb43ea51784f55e6480c29c"
+},
+"karabieta-24.jpg": {
+"jpg": "027c0ca720f25f6bdeb872039e5cc210768951598dfbd9334f2da709cb9be822",
+"webp": "4e43302a16c20d3e6adc7b25e57fa1eabc9943ca47ddb9abed4fafee1530e7fe"
 },
 "longa-01.jpg": {
 "jpg": "b79385f77a13513b67a38453d677ac7707ba88a11146cf76af29fe06cccc79fc",
