@@ -80,6 +80,21 @@ python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favic
 python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
 ```
 
+```
+python3 scripts/make_card_maps.py      # img/mapa-<ruta>.webp: la miniatura de mapa de cada tarjeta
+```
+
+`make_card_maps.py` dibuja, con MapLibre y **OpenFreeMap** dentro del Chromium del driver, la miniatura
+de mapa que lleva cada tarjeta de la portada en la esquina de la foto: el track sobre un mapa de verdad,
+con la salida marcada y los nombres de los pueblos por los que pasa. **Hay que volver a pasarlo al meter
+una ruta nueva**; si falta la imagen, `build.py` lo avisa por pantalla y esa tarjeta se queda sin
+miniatura (no sale un hueco roto). El mapa sale de OpenFreeMap y no del IGN ni de OpenStreetMap porque
+es de los pocos que **deja guardar las teselas** — las de los otros dos lo prohiben sus condiciones de
+uso. La atribucion va al pie de la portada. Se quitan del mapa los iconos, los numeros de carretera y
+los nombres de calle: cada uno de esos rotulos le quitaba el sitio a un nombre de pueblo. Donde
+alrededor no hay nada registrado en OpenStreetMap (longaurjauziak, por ejemplo) no sale ningun nombre,
+y es correcto que no salga.
+
 `make_places.py` feeds the home-page search. For every card it writes `data-places` (never shown, only
 searched) with the places its real track (`data/<name>.json`) passes: the hand-written ones already there,
 the page's own numbered waypoints, and OpenStreetMap villages, neighbourhoods, localities, peaks, passes,
@@ -162,8 +177,9 @@ the Spanish source and the `eu.py` translation values, never the `.eu.html` form
 match the SRI hashes the HTML used to declare while it came from jsdelivr, so it is exactly the same code
 that was already being served — only now without a CDN seeing every visitor's IP, and without the map
 going blank on 112 pages if that CDN has a bad day. `check_site.py` fails if any `<script src>` or
-`<link rel=stylesheet|preconnect|preload>` ever points off-site again. The only thing still fetched from
-outside are the map tiles, and those are requested by the JS, not the HTML.
+`<link rel=stylesheet|preconnect|preload>` ever points off-site again. Two things are still fetched
+from outside, both by the JS and never by the HTML: the **map tiles**, and the **weather forecast**
+(see below). Nothing else may be added without the user saying so.
 
 **«Rutas por esta zona», en el build.** The three neighbouring routes at the foot of each page are
 chosen by `vecinas_cercanas()` in `src/build.py` from the real tracks in `data/trailhead.json`
@@ -259,6 +275,27 @@ Calles, Satélite) y abre en **Calles**: de lejos, con las 57 rutas a la vez, lo
 callejero. Una ficha lleva **tres** — sin Calles — y abre en **IGN**: dentro de una ruta lo que hace
 falta son las curvas de nivel, los ríos y los caminos. Lo decidió el autor; `src/js/map.js` quita
 `osmLayer` de `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
+
+**El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
+del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del
+primer punto del track de esa ruta; `src/js/weather.js` pide el pronostico y lo rellena. Si no hay
+cobertura, si el servicio no responde o si la respuesta no trae lo esperado, **el bloque se queda
+oculto** y la ficha se ve igual que antes: un extra no puede romper la pagina.
+
+Los datos son de **Open-Meteo**, que es gratis, sin clave, sin cuenta y con CORS abierto — por eso se
+puede llamar desde el navegador en una web estatica. **AEMET** pide una clave que en un sitio estatico
+quedaria a la vista de cualquiera, y **met.no** exige identificarse en una cabecera `User-Agent` que un
+navegador no deja poner: ninguno de los dos vale aqui. La respuesta se guarda **una hora** en
+`sessionStorage` con las coordenadas redondeadas a 1 km, asi que mirar cuatro fichas que salen de
+Trabakua hace una sola peticion. El service worker no lo toca (solo atiende peticiones del propio
+origen), asi que nunca se sirve un pronostico viejo de la cache.
+
+Las etiquetas que escribe el JavaScript (Hoy/Mañana, los dias de la semana, los diez estados del cielo)
+viven en `eu.UI` como todas las demas y `build.py` se las pasa en un `data-textos` con JSON, en vez de
+duplicar las traducciones dentro del `.js` — que es uno solo para los dos idiomas.
+
+Esto suma **un tercero mas** a los que ya veian la IP de cada visitante al pintar el mapa; esta dicho
+en el aviso legal, en los dos idiomas, y al pie del propio bloque.
 
 **Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an

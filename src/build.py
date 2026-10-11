@@ -176,6 +176,7 @@ ASSETS = {
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",
     ("js", "webmcp.js"): "js/webmcp.js",
+    ("js", "weather.js"): "js/weather.js",
 }
 
 # Los .woff2 reales que referencia fonts.css (url('fonts/xxx.woff2')) --
@@ -958,6 +959,8 @@ def main():
             page_html = add_ultima_entrada(page_html, cards[lang], lang)
             if name == HOME:
                 page_html = add_card_shapes(page_html)
+            if name != HOME:
+                page_html = add_weather(page_html, name, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)
@@ -1130,6 +1133,71 @@ def add_card_shapes(page_html):
         return m.group(0).replace("</picture>", "</picture>" + img, 1)
     return re.sub(r'<a class="route-card[^"]*" href="([^"]+)"[\s\S]*?</picture>',
                   pon, page_html)
+
+
+DIAS_ES = ("dom", "lun", "mar", "mié", "jue", "vie", "sáb")
+CIELOS = (("despejado", "Despejado"), ("poco-nuboso", "Poco nuboso"),
+          ("nuboso", "Nuboso"), ("cubierto", "Cubierto"), ("niebla", "Niebla"),
+          ("llovizna", "Llovizna"), ("lluvia", "Lluvia"),
+          ("chubascos", "Chubascos"), ("nieve", "Nieve"),
+          ("tormenta", "Tormenta"))
+
+
+def salida_de(name):
+    """Las coordenadas del primer punto del track de una ruta."""
+    track = next((t for t in _trailhead()
+                  if route_slug(t.get("href")) == name), None)
+    puntos = (track or {}).get("points") or []
+    return puntos[0] if puntos else None
+
+
+def add_weather(page_html, name, lang):
+    """El tiempo de los proximos cuatro dias en la salida de la ruta.
+
+    Es lo primero que se mira antes de salir al monte y hasta ahora habia que
+    buscarlo fuera. El bloque se escribe vacio y oculto: lo rellena
+    js/weather.js con lo que devuelve Open-Meteo, y si no hay cobertura o el
+    servicio no responde se queda oculto y la ficha se ve igual que antes.
+
+    Open-Meteo es el unico servicio de fuera al que esta web le pide algo
+    aparte de las teselas del mapa. Se eligio porque es gratis, sin clave y
+    sin cuenta, y porque deja llamarlo desde el navegador: AEMET pide una
+    clave que en una web estatica quedaria a la vista de cualquiera, y met.no
+    exige identificarse en una cabecera que un navegador no deja poner. Esta
+    dicho en el aviso legal y al pie del propio bloque.
+
+    Las coordenadas son las del primer punto del track de cada ruta, no una
+    sola para todo el sitio: casi todas salen de Trabakua, pero no todas.
+    """
+    punto = salida_de(name)
+    if not punto:
+        return page_html
+    t = (lambda x: eu.UI[x]) if lang == "eu" else (lambda x: x)
+    textos = {
+        "hoy": t("Hoy"),
+        "maniana": t("Mañana"),
+        "dias": [t(d) for d in DIAS_ES],
+        "cielo": {clave: t(es) for clave, es in CIELOS},
+        "lluvia": t("prob. de lluvia"),
+    }
+    datos = html.escape(json.dumps(textos, ensure_ascii=False), quote=True)
+    bloque = (
+        '\n  <section class="weather" id="weather" hidden'
+        ' data-lat="%.4f" data-lon="%.4f" data-textos="%s">'
+        '\n    <p class="eyebrow">%s</p>'
+        '\n    <div class="weather-days" id="weatherDays"></div>'
+        '\n    <p class="weather-credit">%s</p>'
+        '\n  </section>\n'
+    ) % (punto[0], punto[1], datos, t("El tiempo en la salida"),
+         t('Pron\u00f3stico de <a href="https://open-meteo.com/"'
+           ' target="_blank" rel="noopener noreferrer">Open-Meteo</a>'))
+    marca = '  <div class="back-home">'
+    if marca not in page_html:
+        return page_html
+    page_html = page_html.replace(marca, bloque + marca, 1)
+    return page_html.replace(
+        '<script src="js/app.js"></script>',
+        '<script src="js/app.js"></script>\n<script src="js/weather.js"></script>', 1)
 
 
 def write_sitemap():

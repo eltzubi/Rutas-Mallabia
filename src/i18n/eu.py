@@ -20,6 +20,26 @@ UI = {
     'No se ha podido enviar. Prueba de nuevo o escribe a trabakutik@gmail.com.':
         'Ezin izan da bidali. Saiatu berriro edo idatzi trabakutik@gmail.com helbidera.',
     'Incidencia en ruta:': 'Ibilbideko gorabehera:',
+    # El tiempo de los proximos dias en la salida de cada ruta. Son etiquetas
+    # que escribe el JavaScript al recibir el pronostico, asi que viven aqui
+    # y no en el HTML: build.py se las pasa al navegador en data-textos.
+    'Hoy': 'Gaur',
+    'Mañana': 'Bihar',
+    'dom': 'ig.', 'lun': 'al.', 'mar': 'ar.', 'mié': 'az.',
+    'jue': 'og.', 'vie': 'or.', 'sáb': 'lr.',
+    'Despejado': 'Oskarbi',
+    'Poco nuboso': 'Hodei gutxi',
+    'Nuboso': 'Hodeitsu',
+    'Cubierto': 'Estalita',
+    'Niebla': 'Lainoa',
+    'Llovizna': 'Zirimiria',
+    'Lluvia': 'Euria',
+    'Chubascos': 'Zaparradak',
+    'Nieve': 'Elurra',
+    'Tormenta': 'Ekaitza',
+    'prob. de lluvia': 'euri aukera',
+    'El tiempo en la salida': 'Eguraldia irteeran',
+    'Pronóstico de <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>': '<a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>-ren iragarpena',
 }
 
 # Shared across every page.
@@ -4930,6 +4950,8 @@ AVISO_LEGAL = {
         '<p><b>Kontserbazioa.</b> Mezuak titularraren postan gordetzen dira intzidentzia aztertzeko behar den denboran; ez dago horiek pilatzen dituen datu-baserik.</p>',
     '<p><b>Tus derechos.</b> Puedes pedir acceder, corregir o borrar cualquier dato que hayas enviado, o retirar tu consentimiento, escribiendo a <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>.</p>':
         '<p><b>Zure eskubideak.</b> Bidali duzun edozein daturi sarbidea eskatu, zuzendu edo ezabatu, edo baimena kendu ahal duzu, <a href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a>era idatzita.</p>',
+    '<p><b>Servicios externos que carga la página.</b> Al abrir el mapa de una ruta, las imágenes del mapa se piden al IGN, a OpenStreetMap, a CyclOSM o a Esri según la capa elegida, y el bloque «El tiempo en la salida» pide el pronóstico a <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. Esas peticiones las hace tu navegador directamente, así que esos servicios ven tu dirección IP, como al visitar cualquier web. No se les envía ningún otro dato: solo las coordenadas de la ruta, que son las mismas para todo el mundo. Ni el titular ni esta web reciben nada de esas peticiones.</p>':
+        '<p><b>Orriak kargatzen dituen kanpoko zerbitzuak.</b> Ibilbide baten mapa irekitzean, maparen irudiak IGNri, OpenStreetMapi, CyclOSMi edo Esriri eskatzen zaizkie, aukeratutako geruzaren arabera, eta «Eguraldia irteeran» blokeak Open-Meteori eskatzen dio iragarpena. Eskaera horiek zure nabigatzaileak egiten ditu zuzenean, beraz zerbitzu horiek zure IP helbidea ikusten dute, edozein webgune bisitatzean bezala. Ez zaie beste daturik bidaltzen: ibilbidearen koordenatuak baino ez, eta horiek berdinak dira guztientzat. Ez titularrak ez webgune honek ez du ezer jasotzen eskaera horietatik.</p>',
     '<p><b>Cookies y almacenamiento local.</b> Esta web no usa cookies de rastreo ni analítica de ningún tipo. Guarda una sola preferencia en el <code>localStorage</code> del navegador (si has elegido tema claro u oscuro), que no sale de tu dispositivo y no identifica a nadie.</p>':
         '<p><b>Cookieak eta biltegiratze lokala.</b> Webgune honek ez du inolako jarraipen-cookierik ez analitikarik erabiltzen. Nabigatzailearen <code>localStorage</code>-n hobespen bakar bat gordetzen du (gai argia edo iluna aukeratu baduzu), zure gailutik atera ez eta inor identifikatzen ez duena.</p>',
 }

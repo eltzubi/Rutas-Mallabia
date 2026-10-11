@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#0D0D0F">
 <link rel="stylesheet" href="fonts.css?v=1204aafe">
 <link rel="stylesheet" href="base.css?v=d64f6291">
-<link rel="stylesheet" href="route.css?v=e86a4cd9">
+<link rel="stylesheet" href="route.css?v=f2ea65d8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,6 +292,12 @@
     </a>
   </nav>
 
+
+  <section class="weather" id="weather" hidden data-lat="43.2082" data-lon="-2.5524" data-textos="{&quot;hoy&quot;: &quot;Gaur&quot;, &quot;maniana&quot;: &quot;Bihar&quot;, &quot;dias&quot;: [&quot;ig.&quot;, &quot;al.&quot;, &quot;ar.&quot;, &quot;az.&quot;, &quot;og.&quot;, &quot;or.&quot;, &quot;lr.&quot;], &quot;cielo&quot;: {&quot;despejado&quot;: &quot;Oskarbi&quot;, &quot;poco-nuboso&quot;: &quot;Hodei gutxi&quot;, &quot;nuboso&quot;: &quot;Hodeitsu&quot;, &quot;cubierto&quot;: &quot;Estalita&quot;, &quot;niebla&quot;: &quot;Lainoa&quot;, &quot;llovizna&quot;: &quot;Zirimiria&quot;, &quot;lluvia&quot;: &quot;Euria&quot;, &quot;chubascos&quot;: &quot;Zaparradak&quot;, &quot;nieve&quot;: &quot;Elurra&quot;, &quot;tormenta&quot;: &quot;Ekaitza&quot;}, &quot;lluvia&quot;: &quot;euri aukera&quot;}">
+    <p class="eyebrow">Eguraldia irteeran</p>
+    <div class="weather-days" id="weatherDays"></div>
+    <p class="weather-credit"><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>-ren iragarpena</p>
+  </section>
   <div class="back-home">
     <a class="back-home-link" href="index.html">&larr; Itzuli ibilbideetara</a>
   </div>
@@ -311,6 +317,7 @@
 </button>
 
 <script src="js/app.js?v=181222fd"></script>
+<script src="js/weather.js?v=2703d827"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <script src="vendor/leaflet/leaflet.js"></script>

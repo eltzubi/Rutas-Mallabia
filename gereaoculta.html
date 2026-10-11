@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#0D0D0F">
 <link rel="stylesheet" href="fonts.css?v=1204aafe">
 <link rel="stylesheet" href="base.css?v=d64f6291">
-<link rel="stylesheet" href="route.css?v=e86a4cd9">
+<link rel="stylesheet" href="route.css?v=f2ea65d8">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -312,6 +312,12 @@
     </a>
   </nav>
 
+
+  <section class="weather" id="weather" hidden data-lat="43.2102" data-lon="-2.5465" data-textos="{&quot;hoy&quot;: &quot;Hoy&quot;, &quot;maniana&quot;: &quot;Mañana&quot;, &quot;dias&quot;: [&quot;dom&quot;, &quot;lun&quot;, &quot;mar&quot;, &quot;mié&quot;, &quot;jue&quot;, &quot;vie&quot;, &quot;sáb&quot;], &quot;cielo&quot;: {&quot;despejado&quot;: &quot;Despejado&quot;, &quot;poco-nuboso&quot;: &quot;Poco nuboso&quot;, &quot;nuboso&quot;: &quot;Nuboso&quot;, &quot;cubierto&quot;: &quot;Cubierto&quot;, &quot;niebla&quot;: &quot;Niebla&quot;, &quot;llovizna&quot;: &quot;Llovizna&quot;, &quot;lluvia&quot;: &quot;Lluvia&quot;, &quot;chubascos&quot;: &quot;Chubascos&quot;, &quot;nieve&quot;: &quot;Nieve&quot;, &quot;tormenta&quot;: &quot;Tormenta&quot;}, &quot;lluvia&quot;: &quot;prob. de lluvia&quot;}">
+    <p class="eyebrow">El tiempo en la salida</p>
+    <div class="weather-days" id="weatherDays"></div>
+    <p class="weather-credit">Pronóstico de <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p>
+  </section>
   <div class="back-home">
     <a class="back-home-link" href="index.es.html">&larr; Volver a rutas</a>
   </div>
@@ -331,6 +337,7 @@
 </button>
 
 <script src="js/app.js?v=181222fd"></script>
+<script src="js/weather.js?v=2703d827"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <script src="vendor/leaflet/leaflet.js"></script>
