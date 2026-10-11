@@ -5519,11 +5519,8 @@ KARABIETA = {
 
     # pies de foto (invisibles: solo para el lector de pantalla y para Google)
     'alt="Hilera de &aacute;rboles junto a un camino asfaltado en Berano, con prados al otro lado de la alambrada"': 'alt="Zuhaitz ilara Beranoko asfaltozko bide baten ondoan, larreak hesiaren beste aldean"',
-    'alt="Panor&aacute;mica del valle entre Berano y Arteta, con caser&iacute;os y el Anboto al fondo"': 'alt="Haranaren panoramika Berano eta Artetaren artean, baserriekin eta Anboto atzealdean"',
     'alt="Horma de piedra seca junto a la pista entre Berano y Arteta, con un endrino en flor"': 'alt="Harrizko horma lehorra pistaren ondoan, Berano eta Artetaren artean, elorri beltza loretan"',
     'alt="Pista de tierra subiendo entre pinares, junto a una alambrada, en la zona de Berano y Arteta"': 'alt="Lur-pista pinudien artean igotzen, hesi baten ondoan, Berano eta Arteta inguruan"',
-    'alt="Pista de monte entre pinos en la zona de Berano y Arteta, abierta a una loma de praderas"': 'alt="Mendiko pista pinuen artean, Berano eta Arteta inguruan, larreen bizkar bat zabalik aurrean"',
-    'alt="Caser&iacute;os del valle al amanecer, entre bruma, desde la zona de Berano y Arteta"': 'alt="Haraneko baserriak egunsentian, lanbroaren artean, Berano eta Arteta ingurutik"',
     'alt="Poste indicador de madera en el bosque, hacia el km 10, con las flechas a Santruan (Elorrio) y a Santa Marina"': 'alt="Egurrezko seinale-zutoina basoan, ibilbidearen 10. km inguruan, Santruanerako (Elorrio) eta Santa Marinarako geziekin"',
     'alt="Caballos pastando en las campas, con los aerogeneradores del Oiz en el cordal"': 'alt="Zaldiak larreetan bazkatzen, Oizko eolikoak gailurrean"',
     'alt="Poste indicador de madera con los carteles de Goierri, Santruan (Elorrio) a 7,5 km y Zaldibar, junto a una pared de bloques"': 'alt="Egurrezko norabide-zutoina, Goierri, Santruan (Elorrio) 7,5 km eta Zaldibar karteldunekin, bloke-horma baten ondoan"',
