@@ -63,6 +63,7 @@ import json
 import html.entities
 import os
 import re
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -1053,6 +1054,40 @@ def write_legacy_eu_home():
     print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
 
 
+_fechas_cache = {}
+
+
+def fecha_de_la_fuente(name):
+    """Cuando cambio por ultima vez el contenido de esta pagina, segun git.
+
+    Es la fecha del ultimo commit que toco sus fuentes (<pag>_head.html y
+    <pag>_tail.html), no la de la ultima vez que se construyo el sitio: un
+    retoque del CSS no cambia lo que cuenta una ruta, y poner la fecha de hoy
+    en las 118 paginas cada vez que se publica algo es mentirle al buscador
+    (y que deje de hacer caso al dato, que es lo que pasa cuando el lastmod
+    no es de fiar).
+
+    Sin git -- una copia descargada en zip, por ejemplo -- devuelve None y el
+    sitemap se escribe sin fechas, como hasta ahora.
+    """
+    if name in _fechas_cache:
+        return _fechas_cache[name]
+    fuentes = [os.path.join(HERE, f"{name}_head.html"),
+               os.path.join(HERE, f"{name}_tail.html")]
+    fuentes = [f for f in fuentes if os.path.exists(f)]
+    fecha = None
+    if fuentes:
+        try:
+            salida = subprocess.run(
+                ["git", "log", "-1", "--format=%cs", "--"] + fuentes,
+                cwd=ROOT, capture_output=True, text=True, timeout=20)
+            fecha = (salida.stdout or "").strip() or None
+        except (OSError, subprocess.SubprocessError):
+            fecha = None
+    _fechas_cache[name] = fecha
+    return fecha
+
+
 def write_sitemap():
     # One <url> per page, with an xhtml:link alternate for every language --
     # tells Google the es/eu pages are translations of each other rather
@@ -1069,7 +1104,9 @@ def write_sitemap():
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
                 for lang, href in alternates.items()
             )
-            urls.append(f"  <url>\n    <loc>{loc}</loc>\n{links}\n  </url>")
+            fecha = fecha_de_la_fuente(name)
+            cuando = f"    <lastmod>{fecha}</lastmod>\n" if fecha else ""
+            urls.append(f"  <url>\n    <loc>{loc}</loc>\n{cuando}{links}\n  </url>")
 
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'

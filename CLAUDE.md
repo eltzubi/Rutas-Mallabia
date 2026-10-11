@@ -131,6 +131,14 @@ same activity currently there, pushing that one down to resume its place in the 
 tail) rather than always slotting it first — recompute the interleave by hand, there's no script
 for this. Position 7 onward stays pure recency, untouched.
 
+**El sitemap lleva la fecha de cada página.** `fecha_de_la_fuente()` en `src/build.py` pregunta a
+git cuándo se tocó por última vez `<pag>_head.html`/`<pag>_tail.html` y la escribe como `<lastmod>`.
+**No vale la fecha de construcción**: un retoque del CSS no cambia lo que cuenta una ruta, y poner la
+fecha de hoy en las 118 páginas cada vez que se publica algo es mentirle al buscador — que entonces
+deja de hacer caso al dato. Sin git (una copia en zip) devuelve `None` y el sitemap sale sin fechas,
+como antes. Ojo: una edición global de las cabeceras o de las colas (un renombrado de etiqueta en las
+57 fichas, por ejemplo) sí pone a todas la misma fecha, y es correcto que lo haga.
+
 **hreflang, siempre absoluto.** Las etiquetas `<link rel="alternate" hreflang>` de cada
 `*_head.html` llevan la URL completa (`https://trabakutik.com/…`), no el nombre del fichero: Google
 pide URL absoluta en hreflang y las relativas se las puede saltar. Van **idénticas en las dos
