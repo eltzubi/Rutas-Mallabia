@@ -39,6 +39,9 @@ COMMON = {
     # (underline-link) -- tiene que vivir en COMMON, no en ROUTE (que solo se
     # aplica a las paginas de ruta) ni en HOME (solo a la portada).
     'Aviso legal y privacidad': 'Lege-oharra eta pribatutasuna',
+    # El credito de las miniaturas de mapa, al pie de la portada.
+    'Miniaturas de mapa:': 'Mapen miniaturak:',
+    'datos de OpenStreetMap': 'OpenStreetMap-eko datuak',
     'rutas en el mapa': 'ibilbide mapan',
     'en bici': 'bizikletaz',
     'a pie': 'oinez',

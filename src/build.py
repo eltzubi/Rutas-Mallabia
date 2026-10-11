@@ -956,6 +956,8 @@ def main():
             page_html = add_quick_bar(page_html, lang)
             page_html = add_tecnica(page_html, name, lang)
             page_html = add_ultima_entrada(page_html, cards[lang], lang)
+            if name == HOME:
+                page_html = add_card_shapes(page_html)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)
@@ -1086,6 +1088,48 @@ def fecha_de_la_fuente(name):
             fecha = None
     _fechas_cache[name] = fecha
     return fecha
+
+
+
+
+
+def mapa_de_la_tarjeta(href):
+    """La miniatura de mapa de una ruta, para su tarjeta de la portada.
+
+    Un recorrido dibujado a secas, sin nada detras, es un garabato: no dice
+    por donde cae, ni que pueblos toca, ni si sube al monte o va por el
+    fondo del valle. Sobre un mapa si lo dice, y eso es lo que se ve de un
+    vistazo antes de abrir la ficha.
+
+    La imagen esta dibujada aqui, no en el navegador de quien entra: la pinta
+    scripts/make_card_maps.py con MapLibre y OpenFreeMap (datos de
+    OpenStreetMap) y la deja en img/mapa-<ruta>.webp, unos 5 kB. Por eso no
+    se puede usar cualquier mapa: las teselas del IGN y de OpenStreetMap no
+    se pueden guardar en bloque, lo prohiben sus condiciones de uso;
+    OpenFreeMap si lo permite -- gratis, sin clave y con uso comercial -- y
+    la atribucion va en el pie de la portada.
+
+    Si falta el fichero la tarjeta se queda sin miniatura, que es mejor que
+    un hueco roto. Al meter una ruta nueva hay que volver a pasar el script.
+    """
+    slug = href.replace(".eu.html", "").replace(".html", "")
+    rel = f"img/mapa-{slug}.webp"
+    if not os.path.exists(os.path.join(ROOT, rel)):
+        print(f"  ojo: falta {rel} (python3 scripts/make_card_maps.py)")
+        return None
+    return (f'<img class="route-card-shape" src="{rel}" alt="" aria-hidden="true" '
+            f'width="320" height="200" loading="lazy" decoding="async">')
+
+
+def add_card_shapes(page_html):
+    """Mete la miniatura de mapa en la foto de cada tarjeta de la portada."""
+    def pon(m):
+        img = mapa_de_la_tarjeta(m.group(1))
+        if not img:
+            return m.group(0)
+        return m.group(0).replace("</picture>", "</picture>" + img, 1)
+    return re.sub(r'<a class="route-card[^"]*" href="([^"]+)"[\s\S]*?</picture>',
+                  pon, page_html)
 
 
 def write_sitemap():

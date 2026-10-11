@@ -277,7 +277,7 @@
 .route-card:active{ transform:scale(.995); }
 .route-card.is-hidden{ display:none; }
 .route-card-photo{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--ground); }
-.route-card-photo img{
+.route-card-photo img:not(.route-card-shape){
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   /* El contraste y la saturacion van grabados en el propio fichero
      (scripts/make_card_thumbs.py), junto con el igualado de tono entre las 28:
@@ -285,7 +285,7 @@
      foto. Si se vuelve a poner aqui, se aplicaria dos veces. */
   transition:transform .5s cubic-bezier(.2,.7,.2,1);
 }
-.route-card:hover .route-card-photo img{ transform:scale(1.06); }
+.route-card:hover .route-card-photo img:not(.route-card-shape){ transform:scale(1.06); }
 .route-card-body{ flex:1; display:flex; flex-direction:column; gap:8px; padding:16px 18px 18px; }
 .route-card-name{
   font-family:'Fraunces',serif; font-weight:700; font-style:italic;
@@ -533,6 +533,14 @@ footer a:hover{ text-decoration:underline; }
 }
 .legal-pill:hover{ border-color:var(--violet); color:var(--violet); text-decoration:none; }
 .legal-pill svg{ flex-shrink:0; }
+
+/* El credito de las miniaturas de mapa. OpenFreeMap deja usarlas y
+   guardarlas; lo que pide, como OpenStreetMap, es decir de donde salen. */
+.footer-credit{
+  margin:0; padding-top:14px; border-top:1px solid var(--line);
+  font-size:11.5px; line-height:1.7; color:var(--ink-dim); opacity:.85;
+}
+.footer-credit .credit-label{ color:var(--ink); }
 
 .footer-contact{
   display:flex; align-items:center; gap:12px; flex-wrap:wrap;
@@ -870,4 +878,18 @@ footer a:hover{ text-decoration:underline; }
 }
 .route-card[data-difficulty="dificil"] .route-card-tags .v:last-child::before{
   --b1:var(--on); --b2:var(--on); --b3:var(--on);
+}
+
+/* El mapa de la ruta, dentro de la foto. La foto dice como es el sitio; el
+   mapa dice donde cae, que pueblos toca y si es un circuito o una travesia.
+   Va en la esquina, con un marco claro para que se despegue de la foto, y
+   no le come sitio a lo que de verdad vende una ruta. La imagen esta
+   dibujada antes (scripts/make_card_maps.py), no se pide ningun mapa desde
+   el navegador: son 5 kB y entran con loading="lazy". */
+.route-card-shape{
+  position:absolute; right:8px; bottom:8px; z-index:2;
+  width:36%; max-width:132px; height:auto; display:block;
+  border-radius:8px;
+  border:2px solid color-mix(in srgb, #fff 82%, transparent);
+  box-shadow:0 2px 10px rgba(0,0,0,.35);
 }
