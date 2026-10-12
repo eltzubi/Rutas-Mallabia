@@ -5244,6 +5244,12 @@ SANCRISTOBALGARAIANDIKOA = {
 }
 
 AHUNTZEN = {
+    'alt="Tramo pedregoso y erosionado que sale de la pista de grava, con la pizarra suelta y los helechos a los lados"':
+        'alt="Zati harritsu eta higatua legarrezko pistatik ateratzen, arbel askea eta iratzeak alboetan"',
+    'alt="Sendero herboso bajando entre argomas y pinos j&oacute;venes, con las laderas de bosque enfrente"':
+        'alt="Bidezidor belartsua ota eta pinu gazteen artean behera, basozko hegalak parean"',
+    'alt="Pista de grava junto al embalse de Aixola, con la presa y los montes al fondo"':
+        'alt="Legarrezko pista Aixolako urtegiaren ondoan, presa eta mendiak hondoan"',
     'alt="Pista de tierra subiendo entre pinos j&oacute;venes hacia el hayedo de la loma"':
         'alt="Lurrezko pista pinu gazteen artean gora, bizkarreko pagadirantz"',
     'alt="El arco de entrada a Elgeta por dentro, con la calle y las casas del pueblo al fondo"':
