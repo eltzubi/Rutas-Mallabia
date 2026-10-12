@@ -14,8 +14,8 @@
   --readout-b:#A6FF4D;
 }
 :root[data-theme="light"]{
-  --ground:#FFFFFF;
-  --ground-raised:#F1F1EE;
+  --ground:#F5F5F3;
+  --ground-raised:#E9E9E5;
   --ink:#16210F;
   --ink-dim:#57624A;
   --teal:#006E86;

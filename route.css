@@ -11,8 +11,8 @@
   --line: rgba(234,245,226,.16);
 }
 :root[data-theme="light"]{
-  --ground:#FFFFFF;
-  --ground-raised:#F1F1EE;
+  --ground:#F4F7EF;
+  --ground-raised:#E8EEE0;
   --ink:#16210F;
   --ink-dim:#57624A;
   --teal:#006E86;
