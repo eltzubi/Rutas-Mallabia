@@ -381,7 +381,6 @@ HOME = {
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino</p>',
     '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>': '<h3 class="route-card-name">Ahuntzen Mendi Lasterketa</h3>',
     '<p class="route-card-desc">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, desde Elgeta por Goikomendi, Erdella e Intxorta</p>': '<p class="route-card-desc">Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua, Elgetatik Goikomendi, Erdella eta Intxortatik igarota</p>',
-    'alt="Iglesia de Elgeta vista desde la ladera, con niebla y montes al fondo"': 'alt="Elgetako eliza mendi-hegaletik ikusita, lainoa eta mendiak atzean"',
     'Trabakua, San Kristobal Txiki, Garai y Andikoa':
         'Trabakua, San Kristobal Txiki, Garai eta Andikoa',
     'Circuito por San Kristobal Txiki, Garai y Andikoa, con pistas, senderos y tramos del Asto Trail':
@@ -778,6 +777,10 @@ HOME = {
     # galdaraminio card
     'alt="El embalse de Aixola, con el agua verde entre las laderas de bosque"':
         'alt="Aixolako urtegia, ura berde basoz inguratutako hegalen artean"',
+
+    # ahuntzen card
+    'alt="El arco de entrada a Elgeta por dentro, con la calle y las casas del pueblo al fondo"':
+        'alt="Elgetako sarrerako arkua barrutik, herriko kalea eta etxeak hondoan"',
 
     # karabieta card
     'alt="El alto de Karabieta, con el cartel de 565 m y una caseta de madera pintada junto al cruce"':
@@ -5241,6 +5244,10 @@ SANCRISTOBALGARAIANDIKOA = {
 }
 
 AHUNTZEN = {
+    'alt="Pista de tierra subiendo entre pinos j&oacute;venes hacia el hayedo de la loma"':
+        'alt="Lurrezko pista pinu gazteen artean gora, bizkarreko pagadirantz"',
+    'alt="El arco de entrada a Elgeta por dentro, con la calle y las casas del pueblo al fondo"':
+        'alt="Elgetako sarrerako arkua barrutik, herriko kalea eta etxeak hondoan"',
     '<p class="eyebrow"><span>Trail running</span><span class="sep">/</span><span>Intxorta</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Trail running</span><span class="sep">/</span><span>Intxorta</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<p class="full-name">Circuito basado en el recorrido de la Ahuntzen Mendi Lasterketa, con salida y llegada en Elgeta</p>':
