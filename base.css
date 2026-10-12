@@ -67,7 +67,14 @@ body{
    tambien incluye la barra vertical y creaba desplazamiento horizontal. */
 .route-map-box.is-expanded{
   aspect-ratio:auto;
-  height:80vh; height:80dvh;
+  /* No el alto entero: por debajo del mapa van la leyenda de los puntos y
+     el perfil de altura, y la gracia de ampliar es ver las tres cosas a la
+     vez -- donde cae cada numero en el mapa y a que altura esta en el
+     perfil. Con 80vh el perfil se quedaba justo fuera de la pantalla y
+     habia que bajar a buscarlo. Los 250 px son lo que miden leyenda,
+     perfil y la fila de altitudes juntos. */
+  height:calc(100vh - 250px); height:calc(100dvh - 250px);
+  min-height:300px;
   width:auto;
   max-width:none;
   margin-inline:calc((100% - var(--map-viewport-width, 100%)) / 2);

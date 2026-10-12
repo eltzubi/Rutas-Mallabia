@@ -87,6 +87,9 @@
         // Antes estaba encima y habia que subir hasta el, que es lo que ya
         // no hace falta.
         el.parentElement.scrollIntoView(scrollOpts());
+        // Y se reencuadra: ampliar es para ver la ruta entera, no el trozo
+        // en el que te hubieras quedado despues de arrastrar o hacer zoom.
+        if (resetView) { userMoved = false; resetView(); }
       } else if (resetView) {
         // Al reducir el mapa se vuelve a ver todo, que es para lo que sirve
         // la vista pequena; y asi queda una forma clara de reencuadrar.
