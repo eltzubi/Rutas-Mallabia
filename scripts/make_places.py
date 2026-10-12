@@ -98,7 +98,8 @@ def dist_to_track(lat, lon, pts):
     best = float('inf')
     px, py = 0.0, 0.0
     prev = None
-    for a, b in pts:
+    for punto in pts:
+        a, b = punto[0], punto[1]
         x, y = (b - lon) * kx, (a - lat) * ky
         if prev is None:
             best = min(best, math.hypot(x, y))

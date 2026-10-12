@@ -246,6 +246,10 @@ COMMON = {
         '<h3 class="route-card-name">Trabakua, Zengotitagane eta Maguna</h3>',
     '<h3 class="route-card-name">Trabakua, Aixola y Berriz</h3>':
         '<h3 class="route-card-name">Trabakua, Aixola eta Berriz</h3>',
+    '<h3 class="route-card-name">Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar</h3>':
+        '<h3 class="route-card-name">Trabakua, Elgeta, Azkonabieta, Galdaramiño eta Eibar</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por la presa de Aixola, Elgeta, Azkonabieta y Galdarami&ntilde;o, con bajada t&eacute;cnica a Eibar y vuelta por Ermua y Goita</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita</p>',
     '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta y Eibar</h3>':
         '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta eta Eibar</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
@@ -770,6 +774,10 @@ HOME = {
     # maguna card
     'alt="Caballo pastando al atardecer en una cresta, con las monta&ntilde;as al fondo"':
         'alt="Zaldia bazkan ilunabarrean gandor batean, mendiak atzealdean dituela"',
+
+    # galdaraminio card
+    'alt="El embalse de Aixola, con el agua verde entre las laderas de bosque"':
+        'alt="Aixolako urtegia, ura berde basoz inguratutako hegalen artean"',
 
     # karabieta card
     'alt="El alto de Karabieta, con el cartel de 565 m y una caseta de madera pintada junto al cruce"':
@@ -3246,6 +3254,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'galdaraminio': 'Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita',
     'astorkigane': 'E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
     'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
     'ahuntzen': 'Ahuntzen Mendi Lasterketaren ibilbidean oinarritutako zirkuitua: 14,84 km eta +870 m, Elgetatik abiatu eta Goikomendi, Erdella eta Intxortatik igarota.',
@@ -3395,6 +3404,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'galdaraminio': 'Trabakua, Elgeta, Azkonabieta, Galdaramiño eta Eibar · E-bike ibilbidea — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
@@ -5559,14 +5569,69 @@ KARABIETA = {
         '<p>Ibilbide hau oso osatua da eta aldaketa ugari ditu: pistak, bideak, baso-tarteak, errepide pixka bat eta oso bide politak. Nabarmendu beharrekoak dira Goikomendiren ingurua, Karabieta eta Azkonabieta, eta Unberako jaitsiera. Itzulera ere oso aldakorra da: Eibar eta Ermua zeharkatuz, gero Berano eta Arteta pasatuz, hasierara itzultzen gara. Horrela, buelta osoa askotarikoa eta aberatsa da hasieratik amaierara.</p>',
 }
 
-# Trabakua - Elgeta - Azkonabieta - Galdaramino - Eibar - Trabakua.
-# Los dos textos los escribio el autor, en castellano y en euskera: van
-# emparejados parrafo a parrafo, tal cual los mando. El diccionario esta aqui
-# antes que la pagina -- falta el GPX para poder montarla -- y hasta entonces
-# no lo usa nadie: make_eu.py solo mira las paginas de su propia lista.
+
+
+# Trabakua - Elgeta - Azkonabieta - Galdaramino - Eibar - Trabakua. Los dos
+# textos del cuerpo los escribio el autor, en castellano y en euskera.
 GALDARAMINIO = {
+    '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Aixola, Elgeta y Galdarami&ntilde;o</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Aixola, Elgeta eta Galdarami&ntilde;o</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Elgeta, Azkonabieta<br><em>Galdarami&ntilde;o y Eibar</em></h1>':
+        '<h1>Trabakua, Elgeta, Azkonabieta<br><em>Galdarami&ntilde;o eta Eibar</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por la presa de Aixola, Elgeta, Azkonabieta y Galdarami&ntilde;o, con bajada t&eacute;cnica a Eibar y vuelta por Ermua y Goita</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdarami&ntilde;otik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita</p>',
+    '<span class="elev-legend-item"><span class="num">1</span>Goierri</span> <span class="elev-legend-item"><span class="num">2</span>Elgeta</span> <span class="elev-legend-item"><span class="num">3</span>Karabieta</span> <span class="elev-legend-item"><span class="num">4</span>Azkonabieta</span> <span class="elev-legend-item"><span class="num">5</span>Eibar</span> <span class="elev-legend-item"><span class="num">6</span>Ermua</span> <span class="elev-legend-item"><span class="num">7</span>Goita</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Goierri</span> <span class="elev-legend-item"><span class="num">2</span>Elgeta</span> <span class="elev-legend-item"><span class="num">3</span>Karabieta</span> <span class="elev-legend-item"><span class="num">4</span>Azkonabieta</span> <span class="elev-legend-item"><span class="num">5</span>Eibar</span> <span class="elev-legend-item"><span class="num">6</span>Ermua</span> <span class="elev-legend-item"><span class="num">7</span>Goita</span>',
+    '<div class="fact"><span class="v">Pista, sendero y carretera</span><span class="k">Superficie</span></div>':
+        '<div class="fact"><span class="v">Pista, bidezidorra eta errepidea</span><span class="k">Azalera</span></div>',
+    'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar.gpx"':
+        'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar.gpx"',
+    'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar.kml"':
+        'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar"':
+        'alt="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar ibilbidearen argazki handitua"',
     '<p>Una ruta de e-bike muy variada, con buenas subidas, senderos entretenidos y alguna bajada bastante t&eacute;cnica. Pasamos por la presa de Aixola, Elgeta, las laderas de Azkonabieta y Galdarami&ntilde;o, antes de bajar a Eibar y regresar a Trabakua. Algunos caminos los hemos probado sobre la marcha, sin saber muy bien lo que nos &iacute;bamos a encontrar. La bajada hacia Ipurua es especialmente exigente y no es apta para todos los ciclistas.</p>':
         '<p>E-bike ibilbide oso anitza, igoera onak, bidezidor entretenigarriak eta jaitsiera tekniko samarra dituena. Aixolako presatik, Elgetatik, Azkonabietako eta Galdarami&ntilde;oko maldetatik igaroko gara, Eibarrera jaitsi aurretik Trabakuara itzultzeko. Bide batzuk martxan probatu ditugu, zer aurkituko genuen oso ondo jakin gabe. Ipuruaranzko jaitsiera bereziki zorrotza da eta ez da txirrindulari guztientzat egokia.</p>',
+    'alt="Ermita de piedra junto al cruce de la carretera, con la pista que sale a su izquierda"':
+        'alt="Harrizko baseliza errepideko bidegurutzearen ondoan, pista ezkerretara ateratzen dela"',
+    'alt="Pista de tierra embarrada subiendo junto al asfalto, con un moj&oacute;n y los montes al fondo"':
+        'alt="Lurrezko pista lokaztua asfaltoaren ondotik gora, mugarri bat eta mendiak hondoan"',
+    'alt="La fuente de piedra de Goierri, junto al merendero con mesas bajo los robles"':
+        'alt="Goierriko harrizko iturria, haritzen azpian mahaiak dituen atsedenlekuaren ondoan"',
+    'alt="Pista de tierra entre bosque cerrado, con el talud cubierto de musgo y helechos"':
+        'alt="Lurrezko pista baso itxiaren artean, ezpondan goroldioa eta iratzeak"',
+    'alt="Cruce de pistas con un poste de madera, sobre las laderas de monte bajo un cielo nublado"':
+        'alt="Pisten bidegurutzea egurrezko zutoin batekin, mendi-hegalen gainean zeru lainotupean"',
+    'alt="El embalse de Aixola, con el agua verde entre las laderas de bosque"':
+        'alt="Aixolako urtegia, ura berde basoz inguratutako hegalen artean"',
+    'alt="Caser&iacute;o de piedra en un cruce de caminos, con la pista subiendo hacia el pinar"':
+        'alt="Harrizko baserria bideen bidegurutzean, pista pinudirantz gora"',
+    'alt="La zona de lavado de bicicletas de Elgeta, junto al front&oacute;n y el arco de entrada al pueblo"':
+        'alt="Elgetako bizikletak garbitzeko gunea, frontoiaren eta herriko sarrerako arkuaren ondoan"',
+    'alt="Pista con una hilera de &aacute;rboles sobre el valle, con el pol&iacute;gono abajo y las monta&ntilde;as al fondo"':
+        'alt="Pista zuhaitz-ilara batekin haranaren gainean, industrialdea behean eta mendiak hondoan"',
+    'alt="Sendero estrecho entre arbolado verde, con el piso de tierra batida"':
+        'alt="Bidezidor estua zuhaitz berdeen artean, lur zapalduzko zoruarekin"',
+    'alt="Pista de cemento subiendo junto a los caser&iacute;os, con el cartel del barrio y los montes al fondo"':
+        'alt="Zementuzko pista baserrien ondotik gora, auzoaren kartela eta mendiak hondoan"',
+    'alt="Sendero entre helechos secos hacia la loma, con las antenas en la cima"':
+        'alt="Bidezidorra iratze lehorren artean bizkarrerantz, antenak gailurrean"',
+    'alt="Pista de piedra subiendo entre el pinar, con el talud de helechos a la derecha"':
+        'alt="Harrizko pista pinudian gora, iratzezko ezponda eskuinean"',
+    'alt="Sendero estrecho y pendiente entre eucaliptos, con la hojarasca cubriendo el piso"':
+        'alt="Bidezidor estu eta aldapatsua eukaliptoen artean, orbela zorua estaltzen"',
+    'alt="Pista de grava subiendo entre el bosque, con la hojarasca en los m&aacute;rgenes"':
+        'alt="Legarrezko pista basoan gora, orbela bazterretan"',
+    'alt="Hayedo con la hojarasca cubriendo el suelo, en la ladera sobre el camino"':
+        'alt="Pagadia orbelak zorua estalita, bidearen gaineko hegalean"',
+    'alt="La entrada del sendero herboso junto a la carretera, con el poste de marcas a la derecha"':
+        'alt="Bidezidor belartsuaren sarrera errepidearen ondoan, marken zutoina eskuinean"',
+    'alt="Vista desde el manillar de la entrada del sendero al bosque, con el GPS en primer plano"':
+        'alt="Basorako bidezidorraren sarrera bizikletaren manillarretik ikusita, GPSa aurrean"',
+    'alt="La rueda delantera al borde de la bajada, con el sendero cayendo entre la hojarasca"':
+        'alt="Aurreko gurpila jaitsieraren ertzean, bidezidorra orbelaren artean behera"',
+    'alt="Pista junto al arroyo, con el agua saltando entre las losas de piedra"':
+        'alt="Pista errekaren ondoan, ura harlauzen artean jauzika"',
     '<p>Salimos de Trabakua en direcci&oacute;n a Zengotita. A unos 2,5 kil&oacute;metros, junto a la ermita, cogemos como tantas otras veces la pista del medio, que nos lleva hacia Goierri. Al llegar a la ermita aprovechamos para coger agua en la fuente y continuamos en direcci&oacute;n a Santruan.</p>':
         '<p>Trabakuatik abiatzen gara Zengotitarantz. 2,5 kilometro ingurura, ermitaren ondoan, beste askotan bezala, erdiko pista hartzen dugu, Goierrirantz doana. Ermitara iristean, iturrian ura hartzeko aprobetxatzen dugu eta Santruanerantz jarraitzen dugu.</p>',
     '<p>Nos esperan varios kil&oacute;metros por pista de piedra, aunque esta vez no vamos a seguirla hasta el final. Despu&eacute;s de avanzar un buen tramo, giramos a mano izquierda para bajar por un sendero hacia la presa de Aixola. Es una bajada muy bonita, de las que merece la pena incluir en la ruta.</p>':
@@ -5603,8 +5668,8 @@ GALDARAMINIO = {
         '<p>Ibilbide honek bidezidor berriak aurkitzeko eta jada ezagutzen genituen zati batzuk aldatzeko aukera eman digu. Oso atseginak diren eremuak ditu, baina baita jaitsiera serio bat ere, batez ere Galdarami&ntilde;otik Ipuruarakoa. Komeni da lur teknikoan esperientzia izatea eta ibilbidea ondo prestatuta eramatea.</p>',
 }
 
-
 PAGE_STRINGS = {
+    'galdaraminio': GALDARAMINIO,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
