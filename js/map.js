@@ -291,7 +291,13 @@
     if (!esPortada) {
       layerDefs = layerDefs.filter(function(def){ return def.layer !== osmLayer; });
     }
-    var layerIndex = esPortada ? 2 : 0;   // 2 = Calles en la portada, 0 = IGN en una ficha
+    // 2 = Calles en la portada; 1 = Bici en una ficha (quitado el callejero,
+    // la lista de una ficha queda IGN, Bici, Satelite). Lo pidio el autor.
+    // Ojo: CyclOSM lo sirve un servidor de voluntarios y tarda el triple que
+    // el IGN -- 0,82 s por tesela frente a 0,34, medido-- asi que una ficha
+    // tarda mas en pintar el mapa que antes. El cambio de capa ya no deja el
+    // mapa en blanco mientras tanto (ver ponerCapa).
+    var layerIndex = esPortada ? 2 : 1;
     // El mapa de la portada nace dentro de un bloque oculto: hasta que el
     // visitante no cambia a la vista de mapa mide 0x0. Y un contenedor de 0x0
     // le hace creer a Leaflet que cabe todo a zoom maximo, asi que pedia las
