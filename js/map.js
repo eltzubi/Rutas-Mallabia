@@ -485,8 +485,20 @@
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
     var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
+    // Un reborde blanco debajo del trazado, solo en las fichas. El verde de
+    // «a pie» en el tema claro es #3A6B15, oscuro, y sobre el verde del mapa
+    // del IGN casi no se distinguia; con el reborde el track se lee igual
+    // sobre el topografico, el satelite y el callejero. En la portada no va:
+    // son 57 tracks y serian 57 lineas mas que dibujar.
+    var unaSola = data.tracks.length === 1 && !track0bis(data);
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || COLORS.teal;
+      if (unaSola) {
+        L.polyline(t.points, {
+          color: '#ffffff', weight: 7, opacity: 0.75,
+          lineJoin: 'round', lineCap: 'round', interactive: false
+        }).addTo(map);
+      }
       var line = L.polyline(t.points, {
         color: baseColor,
         weight: 4,

@@ -694,11 +694,13 @@ footer a:hover{ text-decoration:underline; }
   mask-image:linear-gradient(to bottom, #000, transparent 75%);
   -webkit-mask-image:linear-gradient(to bottom, #000, transparent 75%);
 }
-:root[data-theme="light"] .fx-grid{ opacity:.05; }
+:root[data-theme="light"] .fx-grid{ display:none; }
 .fx-glow{ position:absolute; width:60vw; height:60vw; border-radius:50%; filter:blur(90px); opacity:.14; }
 .fx-glow.a{ top:-22vw; left:-16vw; background:var(--teal); }
 .fx-glow.b{ top:8vw; right:-22vw; background:var(--violet); }
-:root[data-theme="light"] .fx-glow{ opacity:.10; }
+:root[data-theme="light"] .fx-glow{ display:none; }
+/* Las dos manchas y la rejilla, solo en el tema oscuro: sobre blanco
+   teñían la pagina entera de verde palido y el fondo no era blanco. */
 
 /* Visual review: readable cards and a compact route finder. */
 :root:not([data-theme="light"]){ --ink-dim:#B2BDAA; }
