@@ -246,12 +246,12 @@ COMMON = {
         '<h3 class="route-card-name">Trabakua, Zengotitagane eta Maguna</h3>',
     '<h3 class="route-card-name">Trabakua, Aixola y Berriz</h3>':
         '<h3 class="route-card-name">Trabakua, Aixola eta Berriz</h3>',
-    '<h3 class="route-card-name">Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar</h3>':
-        '<h3 class="route-card-name">Trabakua, Elgeta, Azkonabieta, Galdaramiño eta Eibar</h3>',
+    '<h3 class="route-card-name">Trabakua, Elgeta, Galdarami&ntilde;o y Eibar por Ipurua</h3>':
+        '<h3 class="route-card-name">Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por la presa de Aixola, Elgeta, Azkonabieta y Galdarami&ntilde;o, con bajada t&eacute;cnica a Eibar y vuelta por Ermua y Goita</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita</p>',
-    '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta y Eibar</h3>':
-        '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta eta Eibar</h3>',
+    '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta y Eibar por Unbe</h3>':
+        '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta eta Eibar Unbetik</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita</p>',
 
@@ -3404,7 +3404,7 @@ AIXOLA = {
 }
 
 TITLES = {
-    'galdaraminio': 'Trabakua, Elgeta, Azkonabieta, Galdaramiño eta Eibar · E-bike ibilbidea — Herriko ibilbideak',
+    'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
@@ -3431,7 +3431,7 @@ TITLES = {
     'goita': 'Trabakua, Goita auzoko paseoa · Oinezko ibilbidea — Herriko ibilbideak',
     'hirutxikiak': 'Hiru Txikiak · Trail ibilbidea — Herriko ibilbideak',
     'zaldibar': 'Trabakua, Aixola eta Berriz · E-bike ibilbidea — Herriko ibilbideak',
-    'karabieta': 'Trabakua, Elgeta, Karabieta eta Eibar · E-bike ibilbidea — Herriko ibilbideak',
+    'karabieta': 'Trabakua, Elgeta, Karabieta eta Eibar Unbetik · E-bike ibilbidea — Herriko ibilbideak',
     'maguna': 'Trabakua, Zengotitagane eta Maguna · E-bike ibilbidea — Herriko ibilbideak',
     '7pago': '7 Pago Mendi Lasterketa · Ibilbide ofiziala 25K — Herriko ibilbideak',
     '7pago16': '7 Pago Mendi Lasterketa 16K · Ibilbide ofiziala — Herriko ibilbideak',
@@ -5485,8 +5485,8 @@ KARABIETA = {
     # hero
     '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Elgeta, Karabieta y Azkonabieta</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Elgeta, Karabieta eta Azkonabieta</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Elgeta, Karabieta<br><em>y Eibar</em></h1>':
-        '<h1>Trabakua, Elgeta, Karabieta<br><em>eta Eibar</em></h1>',
+    '<h1>Trabakua, Elgeta, Karabieta<br><em>y Eibar por Unbe</em></h1>':
+        '<h1>Trabakua, Elgeta, Karabieta<br><em>eta Eibar Unbetik</em></h1>',
     '<p class="full-name">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
         '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita</p>',
 
@@ -5509,12 +5509,12 @@ KARABIETA = {
     # cifras y descargas
     '<div class="fact"><span class="v">Pista, sendero y carretera</span><span class="k">Superficie</span></div>':
         '<div class="fact"><span class="v">Pista, bidezidorra eta errepidea</span><span class="k">Azalera</span></div>',
-    'download="Trabakua, Elgeta, Karabieta y Eibar.gpx"':
-        'download="Trabakua, Elgeta, Karabieta eta Eibar.gpx"',
-    'download="Trabakua, Elgeta, Karabieta y Eibar.kml"':
-        'download="Trabakua, Elgeta, Karabieta eta Eibar.kml"',
-    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Karabieta y Eibar"':
-        'alt="Trabakua, Elgeta, Karabieta eta Eibar ibilbidearen argazki handitua"',
+    'download="Trabakua, Elgeta, Karabieta y Eibar por Unbe.gpx"':
+        'download="Trabakua, Elgeta, Karabieta eta Eibar Unbetik.gpx"',
+    'download="Trabakua, Elgeta, Karabieta y Eibar por Unbe.kml"':
+        'download="Trabakua, Elgeta, Karabieta eta Eibar Unbetik.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Karabieta y Eibar por Unbe"':
+        'alt="Trabakua, Elgeta, Karabieta eta Eibar Unbetik ibilbidearen argazki handitua"',
 
     # para quien es
     '<p>39,56 km y +1.011 m en un solo circuito, que se sale de Mallabia para dar la vuelta por '
@@ -5576,7 +5576,7 @@ KARABIETA = {
 GALDARAMINIO = {
     '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Aixola, Elgeta y Galdarami&ntilde;o</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista, bidezidorra eta errepidea</span><span class="sep">/</span><span>Aixola, Elgeta eta Galdarami&ntilde;o</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Elgeta, Azkonabieta<br><em>Galdarami&ntilde;o y Eibar</em></h1>':
+    '<h1>Trabakua, Elgeta, Galdarami&ntilde;o<br><em>y Eibar por Ipurua</em></h1>':
         '<h1>Trabakua, Elgeta, Azkonabieta<br><em>Galdarami&ntilde;o eta Eibar</em></h1>',
     '<p class="full-name">Circuito en e-bike desde Trabakua por la presa de Aixola, Elgeta, Azkonabieta y Galdarami&ntilde;o, con bajada t&eacute;cnica a Eibar y vuelta por Ermua y Goita</p>':
         '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdarami&ntilde;otik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita</p>',
@@ -5584,12 +5584,12 @@ GALDARAMINIO = {
         '<span class="elev-legend-item"><span class="num">1</span>Goierri</span> <span class="elev-legend-item"><span class="num">2</span>Elgeta</span> <span class="elev-legend-item"><span class="num">3</span>Karabieta</span> <span class="elev-legend-item"><span class="num">4</span>Azkonabieta</span> <span class="elev-legend-item"><span class="num">5</span>Eibar</span> <span class="elev-legend-item"><span class="num">6</span>Ermua</span> <span class="elev-legend-item"><span class="num">7</span>Goita</span>',
     '<div class="fact"><span class="v">Pista, sendero y carretera</span><span class="k">Superficie</span></div>':
         '<div class="fact"><span class="v">Pista, bidezidorra eta errepidea</span><span class="k">Azalera</span></div>',
-    'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar.gpx"':
-        'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar.gpx"',
-    'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar.kml"':
-        'download="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar.kml"',
-    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o y Eibar"':
-        'alt="Trabakua, Elgeta, Azkonabieta, Galdarami&ntilde;o eta Eibar ibilbidearen argazki handitua"',
+    'download="Trabakua, Elgeta, Galdarami&ntilde;o y Eibar por Ipurua.gpx"':
+        'download="Trabakua, Elgeta, Galdarami&ntilde;o eta Eibar Ipuruatik.gpx"',
+    'download="Trabakua, Elgeta, Galdarami&ntilde;o y Eibar por Ipurua.kml"':
+        'download="Trabakua, Elgeta, Galdarami&ntilde;o eta Eibar Ipuruatik.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Elgeta, Galdarami&ntilde;o y Eibar por Ipurua"':
+        'alt="Trabakua, Elgeta, Galdarami&ntilde;o eta Eibar Ipuruatik ibilbidearen argazki handitua"',
     '<p>Una ruta de e-bike muy variada, con buenas subidas, senderos entretenidos y alguna bajada bastante t&eacute;cnica. Pasamos por la presa de Aixola, Elgeta, las laderas de Azkonabieta y Galdarami&ntilde;o, antes de bajar a Eibar y regresar a Trabakua. Algunos caminos los hemos probado sobre la marcha, sin saber muy bien lo que nos &iacute;bamos a encontrar. La bajada hacia Ipurua es especialmente exigente y no es apta para todos los ciclistas.</p>':
         '<p>E-bike ibilbide oso anitza, igoera onak, bidezidor entretenigarriak eta jaitsiera tekniko samarra dituena. Aixolako presatik, Elgetatik, Azkonabietako eta Galdarami&ntilde;oko maldetatik igaroko gara, Eibarrera jaitsi aurretik Trabakuara itzultzeko. Bide batzuk martxan probatu ditugu, zer aurkituko genuen oso ondo jakin gabe. Ipuruaranzko jaitsiera bereziki zorrotza da eta ez da txirrindulari guztientzat egokia.</p>',
     'alt="Ermita de piedra junto al cruce de la carretera, con la pista que sale a su izquierda"':
@@ -5650,6 +5650,8 @@ GALDARAMINIO = {
         '<p>Goimendirantz jaisten jarraitzen dugu. Zementuzko errepidearen zati bat saihesteko, une batez ateratzea eta bidezidor batetik jaitsiera txiki bat egitea erabakitzen dugu Santiagoko ermitaren inguruan. Ondoren, auzora hurbiltzen gaituen bidearekin lotzen gara berriro.</p>',
     '<p>Atravesamos Goimendi y, en lugar de continuar por el sendero que baja hacia Unbe, en direcci&oacute;n a Eibar, cogemos un cruce a mano izquierda nada m&aacute;s salir del barrio. Vemos una indicaci&oacute;n hacia Unbe y Galdarami&ntilde;o y nos animamos a probarlo, sin saber muy bien ad&oacute;nde nos llevar&aacute;, simplemente por cambiar de recorrido y conocer alg&uacute;n camino nuevo.</p>':
         '<p>Goimendi zeharkatzen dugu, eta, Unberantz, Eibarantz, jaisten den bidezidorretik jarraitu beharrean, auzotik irten bezain laster ezkerretara bidegurutze bat hartzen dugu. Unbe eta Galdarami&ntilde;orako seinale bat ikusten dugu eta probatzea animatzen gara, nora eramango gaituen oso ondo jakin gabe, ibilbidea aldatzeko eta bide berriren bat ezagutzeko besterik ez.</p>',
+    '<p>Quien prefiera evitar la bajada de Galdarami&ntilde;o puede seguir de frente a la salida del barrio, por el sendero que baja hacia Unbe, y enlazar con el recorrido de <a href="karabieta.html">Trabakua, Elgeta, Karabieta y Eibar por Unbe</a>, que llega a Eibar por ah&iacute;. El tramo que se evita son 4,9 km.</p>':
+        '<p>Galdarami&ntilde;oko jaitsiera saihestu nahi duenak auzotik irtetean aurrera jarrai dezake, Unberantz jaisten den bidezidorretik, eta <a href="karabieta.html">Trabakua, Elgeta, Karabieta eta Eibar Unbetik</a> ibilbidearekin lotu, handik iristen baita Eibarrera. Saihesten den zatia 4,9 km da.</p>',
     '<p>Al principio subimos suavemente, pero poco a poco la pendiente va aumentando. La zona es muy bonita, con tramos de bosque y alguna rampa en la que toca apretar bastante. Todo va bien hasta que encontramos una zona de pinar reci&eacute;n talado. Aunque el terreno est&aacute; limpio, el camino no est&aacute; bien marcado y cuesta encontrar por d&oacute;nde continuar.</p>':
         '<p>Hasieran leunki igotzen gara, baina pixkanaka-pixkanaka malda handitzen doa. Eremua oso polita da, baso-zati batzuekin eta malda batzuekin, non nahiko gogor estutu behar den. Dena ondo doa moztu berri den pinudi batekin topo egin arte. Lurra garbi dagoen arren, bidea ez dago ondo markatuta eta kostatzen da aurrera nola jarraitu aurkitzea.</p>',
     '<p>Nos guiamos un poco por la orientaci&oacute;n y conseguimos continuar de frente, pasando por un lateral de Galdarami&ntilde;o. M&aacute;s adelante volvemos a encontrarnos con varios senderos y no est&aacute; demasiado claro cu&aacute;l debemos seguir. Elegimos uno de ellos y enseguida comprobamos que nos hemos metido en una bajada de BTT bastante t&eacute;cnica.</p>':
