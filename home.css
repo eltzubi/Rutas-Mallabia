@@ -991,9 +991,7 @@ footer a:hover{ text-decoration:underline; }
   18%    { box-shadow:0 0 26px 7px color-mix(in srgb, var(--violet) 75%, transparent); }
   40%    { box-shadow:0 0 0 0 transparent; }
 }
-/* Ya leido, o alguien que ha pedido que no se mueva nada en pantalla. */
-.aviso-pulso.ya-visto .aviso-aro{ animation:none; opacity:0; }
-.aviso-pulso.ya-visto .aviso-boton{ animation:none; }
+/* Alguien que ha pedido que no se mueva nada en pantalla. */
 @media (prefers-reduced-motion: reduce){
   .aviso-aro{ animation:none; opacity:0; }
   .aviso-boton{ animation:none; }
@@ -1010,18 +1008,18 @@ footer a:hover{ text-decoration:underline; }
   scroll-margin-top:72px;
 }
 
-/* Los alojamientos de Mallabia: nombre, donde esta y el telefono, que en un
-   movil se marca tocandolo. Lista y no parrafo seguido porque son cuatro
-   fichas de datos, no una frase. */
-.sleep-list{ list-style:none; margin:10px 0 0; padding:0; display:grid; gap:14px; }
-.sleep-list li{ display:grid; gap:2px; }
-.sleep-list b{ font-weight:700; color:var(--ink); }
+/* Los alojamientos de Mallabia -- y los tres sitios donde comer -- con el
+   nombre, donde esta y el telefono, que en un movil se marca tocandolo.
+   Lista y no parrafo seguido porque son fichas de datos, no una frase. */
+.place-list{ list-style:none; margin:10px 0 0; padding:0; display:grid; gap:14px; }
+.place-list li{ display:grid; gap:2px; }
+.place-list b{ font-weight:700; color:var(--ink); }
 /* Sin esto el nombre se quedaba con el enlace que pinta el navegador por su
    cuenta -- morado, el de siempre -- que no es de esta web. Mismo trato que
    los demas enlaces de este panel (.map-note a). */
-.sleep-list b a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
-.sleep-list b a:hover{ color:var(--violet); }
-.sleep-list .sleep-where,
-.sleep-list .sleep-tel{ font-size:14px; color:var(--ink-dim); }
-.sleep-list .sleep-tel a{ color:var(--teal); text-decoration:none; }
-.sleep-list .sleep-tel a:hover{ text-decoration:underline; }
+.place-list b a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+.place-list b a:hover{ color:var(--violet); }
+.place-list .place-where,
+.place-list .place-tel{ font-size:14px; color:var(--ink-dim); }
+.place-list .place-tel a{ color:var(--teal); text-decoration:none; }
+.place-list .place-tel a:hover{ text-decoration:underline; }

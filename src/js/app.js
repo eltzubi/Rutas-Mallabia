@@ -125,6 +125,12 @@
 // hace aqui y no en el HTML a proposito: si esto no llega a ejecutarse, la
 // pagina se queda con la barra de siempre, que es un <details> nativo y
 // funciona sin JavaScript.
+//
+// Late siempre. Se probo a que dejara de latir una vez abierto el aviso
+// (guardado en localStorage) y el efecto era que, tras mirarlo una vez, ya
+// no volvia a parpadear nunca: el autor lo quiere latiendo. Lo unico que lo
+// para es que la persona haya pedido que no se mueva nada en pantalla
+// (prefers-reduced-motion), que eso no es decoracion.
 (function(){
   var seccion = document.getElementById('beforeYouGo');
   var insignia = document.getElementById('noticeBadge');
@@ -136,9 +142,6 @@
   seccion.classList.add('solo-insignia');
   insignia.hidden = false;
 
-  // Quien ya lo abrio alguna vez no necesita que le siga parpadeando.
-  try { if (localStorage.getItem('rutas-mallabia-aviso')) insignia.classList.add('ya-visto'); } catch(err){}
-
   detalle.addEventListener('toggle', function(){
     boton.setAttribute('aria-expanded', detalle.open ? 'true' : 'false');
   });
@@ -146,8 +149,6 @@
   boton.addEventListener('click', function(){
     var abrir = !detalle.open;
     detalle.open = abrir;
-    insignia.classList.add('ya-visto');
-    try { localStorage.setItem('rutas-mallabia-aviso', '1'); } catch(err){}
     if (!abrir) return;
     var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     detalle.scrollIntoView({ block:'start', behavior: quieto ? 'auto' : 'smooth' });
