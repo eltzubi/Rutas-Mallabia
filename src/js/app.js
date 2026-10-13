@@ -145,7 +145,16 @@
   // Si ya se ha leido el aviso en esta visita, la insignia sale directamente
   // apagada. Va en sessionStorage y no en localStorage a proposito: dura lo
   // que dure la pestaña abierta, asi que volver a la portada desde una ficha
-  // no vuelve a encender los circulos, pero al entrar otro dia late otra vez.
+  // no vuelve a encender las ondas, pero al entrar otro dia late otra vez.
+  //
+  // Recargar la pagina a mano la devuelve al principio. Es lo que pide quien
+  // le da a recargar: volver a empezar. Se distingue de «he vuelto de una
+  // ficha» por el tipo de navegacion que declara el propio navegador --
+  // 'reload' solo cuando se ha recargado de verdad.
+  try {
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'reload') sessionStorage.removeItem('rutas-mallabia-aviso');
+  } catch(err){}
   try { if (sessionStorage.getItem('rutas-mallabia-aviso')) insignia.classList.add('ya-visto'); } catch(err){}
 
   detalle.addEventListener('toggle', function(){

@@ -1005,9 +1005,14 @@ footer a:hover{ text-decoration:underline; }
    ir a una ficha y volver a la portada no vuelve a encender los circulos,
    pero al entrar otro dia late otra vez. */
 .aviso-pulso.ya-visto{
-  --aro:color-mix(in srgb, var(--violet) 22%, transparent);
-  --brillo:color-mix(in srgb, var(--violet) 25%, transparent);
+  --aro:color-mix(in srgb, var(--violet) 12%, transparent);
+  --brillo:color-mix(in srgb, var(--violet) 14%, transparent);
 }
+/* Y ademas queda una sola onda en vez de cuatro: asi no hay nunca dos o tres
+   circulos cruzando las fichas mientras se lee la portada. */
+.aviso-pulso.ya-visto .aviso-aro.r2,
+.aviso-pulso.ya-visto .aviso-aro.r3,
+.aviso-pulso.ya-visto .aviso-aro.r4{ display:none; }
 /* El boton tambien se suaviza: el filo y el triangulo bajan de tono. Sigue
    leyendose y sigue abriendo el aviso, pero deja de ser lo mas llamativo de
    la pantalla cuando ya se ha leido. */
