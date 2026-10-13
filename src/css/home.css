@@ -893,3 +893,51 @@ footer a:hover{ text-decoration:underline; }
   border:2px solid color-mix(in srgb, #fff 82%, transparent);
   box-shadow:0 2px 10px rgba(0,0,0,.35);
 }
+
+/* ---- cabecera: el titular sobre el fondo de la pagina, la foto en banda ----
+
+   Antes el texto iba encima de la foto, y eso obligaba a todo lo demas: un
+   velo oscuro por abajo y por la izquierda, sombras dobles en cada linea y
+   los colores del titular puestos a mano, porque los del tema (verde y azul
+   oscuros en claro) no se leian sobre la foto.
+
+   Sacando el texto de la foto se cae todo eso: el titular va en el color de
+   la pagina, sin sombra ninguna, y se lee igual de bien a cualquier hora y
+   en los dos temas. La foto se queda en una banda de arriba, que ademas en
+   un movil roba 50 px menos que la cabecera entera de antes.
+
+   Las reglas van al final porque mas arriba hay tres bloques que fijan la
+   altura, el velo y las sombras, y a igual especificidad gana el ultimo. */
+.hero-compact{
+  display:block; overflow:visible;
+  min-height:0; max-height:none; background:none; border-radius:0;
+}
+@media (min-width:1024px){ .hero-compact{ min-height:0; } }
+@media (max-width:659px){ .hero-compact{ min-height:0; } }
+.hero-compact picture{
+  position:relative; display:block; overflow:hidden;
+  height:clamp(170px, 24vw, 290px); border-radius:18px;
+}
+.hero-compact img{ position:absolute; inset:0; object-position:50% 44%; }
+.hero-compact-scrim{ display:none; }
+.hero-compact-content{ position:relative; padding:22px 2px 0; }
+@media (max-width:659px){ .hero-compact-content{ padding:20px 2px 0; } }
+.hero-compact-content .eyebrow{
+  color:var(--ink-dim); font-weight:500; text-shadow:none;
+}
+.hero-compact h1{
+  color:var(--ink); text-shadow:none;
+  font-size:clamp(2.5rem, 9.5vw, 4.2rem); line-height:1.02; margin:0 0 12px;
+}
+/* Vuelven los colores del tema: el lima y el azul claro estaban a mano
+   porque la foto es oscura en los dos temas. Sobre el fondo de la pagina,
+   en claro, no se verian. */
+.hero-compact h1 em .pie{ color:var(--violet); }
+.hero-compact h1 em .bici{ color:var(--teal); }
+.hero-compact-lead{
+  color:var(--ink-dim); text-shadow:none; font-size:17px; max-width:54ch;
+  margin:0 0 10px;
+}
+.hero-compact-stats{
+  color:var(--ink); text-align:left; text-shadow:none; margin-top:14px;
+}

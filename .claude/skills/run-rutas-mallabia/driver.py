@@ -305,25 +305,70 @@ def cmd_offline(a):
 
 
 def cmd_temas(a):
-    """Sobre la foto del heroe el texto va en blanco siempre: la foto es oscura
-    en los dos temas. Usar tokens (--ink, --violet, --teal) hace que en claro
-    salga tinta oscura sobre foto oscura. Ya paso una vez."""
+    """El titular ya no va sobre la foto, sino sobre el fondo de la pagina.
+
+    Antes esta comprobacion exigia que los seis colores del heroe fueran
+    identicos en los dos temas: la foto es oscura siempre, asi que una tinta
+    de tema (--ink, --violet, --teal) desaparecia en claro. Al sacar el texto
+    de la foto esa regla deja de valer -- ahora los colores DEBEN cambiar con
+    el tema -- y lo que hay que vigilar es otra cosa: que cada linea tenga
+    contraste suficiente contra el fondo real que tiene detras, en los dos
+    temas. Se mide como manda la WCAG: 4.5:1 para el texto normal y 3:1 para
+    el grande (el h1 y las cifras, que pasan de 24 px)."""
+    GRANDE = (".hero-compact h1", ".hero-compact h1 em .pie",
+              ".hero-compact h1 em .bici", ".hero-compact-stats")
     SELECTORES = (".hero-compact-content .eyebrow", ".hero-compact h1",
                   ".hero-compact h1 em .pie", ".hero-compact h1 em .bici",
                   ".hero-compact-lead", ".hero-compact-stats")
+    JS = """ss => {
+      const rgb = s => (s.match(/[\\d.]+/g) || []).slice(0,3).map(Number);
+      const opaco = e => {           // el primer fondo que no sea transparente
+        for (let n = e; n; n = n.parentElement) {
+          const c = getComputedStyle(n).backgroundColor;
+          const a = (c.match(/[\\d.]+/g) || [])[3];
+          if (c && c !== 'transparent' && a !== '0') return c;
+        }
+        return getComputedStyle(document.body).backgroundColor;
+      };
+      return ss.map(s => { const e = document.querySelector(s);
+        return e ? [getComputedStyle(e).color, opaco(e)] : null; });
+    }"""
+
+    def canal(v):
+        v /= 255.0
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+
+    def luz(c):
+        r, g, b = [canal(x) for x in c]
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+    def contraste(txt, fondo):
+        a, b = luz(txt), luz(fondo)
+        if a < b: a, b = b, a
+        return (a + 0.05) / (b + 0.05)
+
+    def numeros(css):
+        return [float(x) for x in re.findall(r"[\d.]+", css)[:3]]
+
     with servidor() as base:
-        colores = {}
+        lecturas = {}
         for tema in ("dark", "light"):
             with pagina(base, a.pagina, 1280, tema) as pg:
-                colores[tema] = pg.evaluate(
-                    """ss => ss.map(s => {const e=document.querySelector(s);
-                       return e ? getComputedStyle(e).color : 'NO EXISTE';})""", list(SELECTORES))
+                lecturas[tema] = pg.evaluate(JS, list(SELECTORES))
     mal = 0
-    for sel, osc, cla in zip(SELECTORES, colores["dark"], colores["light"]):
-        igual = osc == cla
-        mal += 0 if igual else 1
-        print(f"  {'ok ' if igual else 'MAL'} {sel:<34} {osc}" + ("" if igual else f"  ->  {cla}"))
-    print(f"\n{'el heroe se lee igual en los dos temas' if not mal else f'{mal} color(es) cambian con el tema sobre la foto'}")
+    for tema in ("dark", "light"):
+        print(f"  tema {tema}")
+        for sel, par in zip(SELECTORES, lecturas[tema]):
+            if par is None:
+                print(f"    --  {sel:<32} no existe en la pagina"); continue
+            minimo = 3.0 if sel in GRANDE else 4.5
+            r = contraste(numeros(par[0]), numeros(par[1]))
+            bien = r >= minimo
+            mal += 0 if bien else 1
+            print(f"    {'ok ' if bien else 'MAL'} {sel:<32} {r:4.1f}:1 "
+                  f"(min {minimo}) {par[0]} sobre {par[1]}")
+    print("\n" + ("el heroe tiene contraste de sobra en los dos temas" if not mal
+                  else f"{mal} linea(s) del heroe sin contraste suficiente"))
     return 1 if mal else 0
 
 
