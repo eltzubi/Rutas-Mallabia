@@ -120,6 +120,40 @@
   window.addEventListener('scroll', onScroll, { passive:true });
 })();
 
+// --- el aviso «Léelo antes de salir», en la insignia de la esquina ---
+// La barra de ancho completo se cambia por una insignia que late. Todo se
+// hace aqui y no en el HTML a proposito: si esto no llega a ejecutarse, la
+// pagina se queda con la barra de siempre, que es un <details> nativo y
+// funciona sin JavaScript.
+(function(){
+  var seccion = document.getElementById('beforeYouGo');
+  var insignia = document.getElementById('noticeBadge');
+  if (!seccion || !insignia) return;
+  var detalle = seccion.querySelector('details');
+  var boton = insignia.querySelector('.aviso-boton');
+  if (!detalle || !boton) return;
+
+  seccion.classList.add('solo-insignia');
+  insignia.hidden = false;
+
+  // Quien ya lo abrio alguna vez no necesita que le siga parpadeando.
+  try { if (localStorage.getItem('rutas-mallabia-aviso')) insignia.classList.add('ya-visto'); } catch(err){}
+
+  detalle.addEventListener('toggle', function(){
+    boton.setAttribute('aria-expanded', detalle.open ? 'true' : 'false');
+  });
+
+  boton.addEventListener('click', function(){
+    var abrir = !detalle.open;
+    detalle.open = abrir;
+    insignia.classList.add('ya-visto');
+    try { localStorage.setItem('rutas-mallabia-aviso', '1'); } catch(err){}
+    if (!abrir) return;
+    var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    detalle.scrollIntoView({ block:'start', behavior: quieto ? 'auto' : 'smooth' });
+  });
+})();
+
 // --- light/dark theme toggle ---
 (function(){
   var btn = document.getElementById('themeToggle');

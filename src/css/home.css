@@ -944,3 +944,64 @@ footer a:hover{ text-decoration:underline; }
 .hero-compact-stats{
   color:var(--ink); text-align:left; text-shadow:none; margin-top:6px;
 }
+
+/* ---- el aviso, en una insignia que late en la esquina ----
+
+   La barra «Léelo antes de salir» ocupaba una franja entera de ancho
+   completo justo debajo del titular, y el aviso solo hay que leerlo una
+   vez. Pasa a ser una insignia redonda en la esquina de abajo a la
+   izquierda (la de abajo a la derecha es la del «subir» y el centro es la
+   del mapa) con el mismo latido que el boton «Eman izena» de 7pago.com:
+   tres aros que salen del boton cada 0,8 s y un resplandor en el propio
+   boton. Mismos tiempos y misma curva que alli.
+
+   Quien la pulsa abre el aviso de siempre, en su sitio de siempre; a
+   partir de ahi deja de latir (se recuerda en el navegador) pero la
+   insignia se queda, que el aviso tiene que poder abrirse otra vez.
+
+   Sin JavaScript la insignia no sale (lleva hidden en el HTML) y la barra
+   se queda como estaba: un <details> nativo que funciona solo. */
+.aviso-pulso{ position:fixed; left:18px; bottom:18px; z-index:60; display:inline-flex; }
+.aviso-boton{
+  position:relative; z-index:1;
+  width:46px; height:46px; border-radius:50%; padding:0; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--violet); background:var(--ground-raised); color:var(--violet);
+  animation:avisoResplandor 2.4s ease-in-out infinite;
+}
+.aviso-aro{
+  position:absolute; left:50%; top:50%; width:2px; height:2px;
+  border-radius:999px; border:3px solid var(--violet);
+  transform:translate(-50%,-50%); pointer-events:none; z-index:0;
+  animation:avisoAro 2.4s cubic-bezier(.15,.7,.3,1) infinite;
+}
+.aviso-aro.r2{ animation-delay:.8s; }
+.aviso-aro.r3{ animation-delay:1.6s; }
+@keyframes avisoAro{
+  0%  { width:2px; height:2px; opacity:1; border-width:4px; }
+  55% { opacity:.55; }
+  100%{ width:124px; height:124px; opacity:0; border-width:.5px; }
+}
+@keyframes avisoResplandor{
+  0%,100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--violet) 55%, transparent); }
+  18%    { box-shadow:0 0 26px 7px color-mix(in srgb, var(--violet) 75%, transparent); }
+  40%    { box-shadow:0 0 0 0 transparent; }
+}
+/* Ya leido, o alguien que ha pedido que no se mueva nada en pantalla. */
+.aviso-pulso.ya-visto .aviso-aro{ animation:none; opacity:0; }
+.aviso-pulso.ya-visto .aviso-boton{ animation:none; }
+@media (prefers-reduced-motion: reduce){
+  .aviso-aro{ animation:none; opacity:0; }
+  .aviso-boton{ animation:none; }
+}
+/* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
+   hasta que el aviso se abre. */
+#beforeYouGo.solo-insignia{ margin:0 auto; }
+#beforeYouGo.solo-insignia > .notice-details > summary{ display:none; }
+#beforeYouGo.solo-insignia > .notice-details[open]{
+  border:1px solid var(--violet); border-radius:14px;
+  padding:4px 14px; margin-top:14px;
+  /* La cabecera va pegada arriba: sin esto, al abrir el aviso la primera
+     linea se queda debajo de ella. */
+  scroll-margin-top:72px;
+}

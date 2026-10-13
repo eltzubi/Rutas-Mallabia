@@ -624,6 +624,12 @@ HOME = {
         'aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3'
         'L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" '
         'x2="12.01" y2="17"/></svg>Irakurri irten aurretik</summary>',
+
+    # La etiqueta de la insignia que late en la esquina: misma frase que la
+    # barra, pero como aria-label, que es lo unico que lee un lector de
+    # pantalla cuando el boton solo lleva el dibujo del triangulo.
+    'aria-label="L&eacute;elo antes de salir"':
+        'aria-label="Irakurri irten aurretik"',
     'Las rutas no est&aacute;n se&ntilde;alizadas, as&iacute; que <b>es imprescindible llevar el '
     'track cargado en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n de '
     'la web sirve como apoyo, pero no sustituye al track.':
