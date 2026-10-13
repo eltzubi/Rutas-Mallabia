@@ -25,6 +25,7 @@ exclude:
   - src/fonts
   - src/i18n
   - scripts
+  - skills-lock.json
   - CLAUDE.md
   - DESIGN.md
   - README.md
