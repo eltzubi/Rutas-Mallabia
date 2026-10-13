@@ -1200,6 +1200,55 @@ def add_weather(page_html, name, lang):
         '<script src="js/app.js"></script>\n<script src="js/weather.js"></script>', 1)
 
 
+_superficial = None
+
+
+def repo_superficial():
+    """True si este clon no trae el historial, o si no hay git.
+
+    Es lo que pasa en GitHub Actions: actions/checkout se baja un solo
+    commit. Entonces «git log -- <fichero>» no devuelve nada para ninguna
+    fuente que ese commit no tocara, las 120 fechas desaparecian del
+    sitemap y el verificador -- que exige que lo construido coincida con lo
+    que hay en el repositorio -- fallaba en cada envio.
+    """
+    global _superficial
+    if _superficial is None:
+        try:
+            r = subprocess.run(["git", "rev-parse", "--is-shallow-repository"],
+                               cwd=ROOT, capture_output=True, text=True, timeout=20)
+            _superficial = (r.stdout or "").strip() != "false"
+        except (OSError, subprocess.SubprocessError):
+            _superficial = True
+    return _superficial
+
+
+_fechas_publicadas = None
+
+
+def fechas_publicadas():
+    """Las fechas que ya lleva el sitemap del repositorio, por URL.
+
+    Sin historial no hay forma de recalcularlas, y escribir el sitemap sin
+    fechas seria peor que conservarlas: son correctas, las calculo un clon
+    completo la ultima vez que se publico.
+    """
+    global _fechas_publicadas
+    if _fechas_publicadas is None:
+        _fechas_publicadas = {}
+        try:
+            with open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8") as f:
+                xml = f.read()
+        except OSError:
+            return _fechas_publicadas
+        for bloque in re.findall(r"<url>(.*?)</url>", xml, re.S):
+            loc = re.search(r"<loc>(.*?)</loc>", bloque)
+            mod = re.search(r"<lastmod>(.*?)</lastmod>", bloque)
+            if loc and mod:
+                _fechas_publicadas[loc.group(1)] = mod.group(1)
+    return _fechas_publicadas
+
+
 def write_sitemap():
     # One <url> per page, with an xhtml:link alternate for every language --
     # tells Google the es/eu pages are translations of each other rather
@@ -1216,7 +1265,11 @@ def write_sitemap():
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
                 for lang, href in alternates.items()
             )
-            fecha = fecha_de_la_fuente(name)
+            # Con historial, la fecha del ultimo commit que toco la fuente.
+            # Sin el, la que ya esta publicada: asi construir en un clon
+            # superficial devuelve el mismo fichero, byte a byte.
+            fecha = (fechas_publicadas().get(loc) if repo_superficial()
+                     else fecha_de_la_fuente(name))
             cuando = f"    <lastmod>{fecha}</lastmod>\n" if fecha else ""
             urls.append(f"  <url>\n    <loc>{loc}</loc>\n{cuando}{links}\n  </url>")
 
