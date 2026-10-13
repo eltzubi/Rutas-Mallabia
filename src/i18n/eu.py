@@ -565,7 +565,7 @@ HOME = {
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',
     'D&oacute;nde comer': 'Non jan',
-    'Dos est&aacute;n en el alto de Trabakua, al lado del aparcamiento; el tercero, en el pueblo.':
+    'Dos est&aacute;n en el puerto de Trabakua, al lado del aparcamiento; el tercero, en el pueblo.':
         'Bi Trabakuko mendatean daude, aparkalekuaren ondoan; hirugarrena, herrian.',
     'Dormir cerca': 'Non lo egin',
 

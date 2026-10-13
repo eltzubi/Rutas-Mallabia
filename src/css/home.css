@@ -1005,6 +1005,13 @@ footer a:hover{ text-decoration:underline; }
   --aro:color-mix(in srgb, var(--violet) 22%, transparent);
   --brillo:color-mix(in srgb, var(--violet) 25%, transparent);
 }
+/* El boton tambien se suaviza: el filo y el triangulo bajan de tono. Sigue
+   leyendose y sigue abriendo el aviso, pero deja de ser lo mas llamativo de
+   la pantalla cuando ya se ha leido. */
+.aviso-pulso.ya-visto .aviso-boton{
+  border-color:color-mix(in srgb, var(--ink) 28%, transparent);
+  color:var(--ink-dim);
+}
 /* Alguien que ha pedido que no se mueva nada en pantalla. */
 @media (prefers-reduced-motion: reduce){
   .aviso-aro{ animation:none; opacity:0; }
