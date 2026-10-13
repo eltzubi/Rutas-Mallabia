@@ -920,8 +920,8 @@ footer a:hover{ text-decoration:underline; }
 }
 .hero-compact img{ position:absolute; inset:0; object-position:50% 44%; }
 .hero-compact-scrim{ display:none; }
-.hero-compact-content{ position:relative; padding:22px 2px 0; }
-@media (max-width:659px){ .hero-compact-content{ padding:20px 2px 0; } }
+.hero-compact-content{ position:relative; padding:22px 2px 14px; }
+@media (max-width:659px){ .hero-compact-content{ padding:20px 2px 14px; } }
 .hero-compact-content .eyebrow{
   color:var(--ink-dim); font-weight:500; text-shadow:none;
 }
@@ -938,6 +938,9 @@ footer a:hover{ text-decoration:underline; }
   color:var(--ink-dim); text-shadow:none; font-size:17px; max-width:54ch;
   margin:0 0 10px;
 }
+/* La linea de las cifras estaba pegada al aviso de abajo (10 px) y suelta
+   por arriba (24 px). Se sube un poco y se le deja aire debajo: 16 px por
+   arriba y 24 por abajo, que es como respira. */
 .hero-compact-stats{
-  color:var(--ink); text-align:left; text-shadow:none; margin-top:14px;
+  color:var(--ink); text-align:left; text-shadow:none; margin-top:6px;
 }
