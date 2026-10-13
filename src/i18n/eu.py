@@ -688,11 +688,10 @@ HOME = {
         'Aparkalekuaren ondoan bi taberna daude, aukera ona kafe bat hartzeko hasi aurretik edo zerbait jateko ibilbidea amaitutakoan.',
     'C&oacute;mo llegar': 'Nola iritsi',
     # Los alojamientos: la lista (nombres, direcciones y telefonos) es la misma
-    # en los dos idiomas, que las direcciones no se traducen. Solo cambian la
-    # linea de entrada y la de la fuente.
+    # en los dos idiomas, que las direcciones no se traducen. Lo unico que
+    # cambia de idioma es la linea de entrada.
     'Si quieres quedarte a dormir por la zona, estos son los alojamientos de Mallabia:':
         'Inguruan lo egin nahi baduzu, hauek dira Mallabiako ostatuak:',
-    'Datos del Ayuntamiento de Mallabia.': 'Mallabiko Udalaren datuak.',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
