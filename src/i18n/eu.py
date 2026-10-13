@@ -566,7 +566,7 @@ HOME = {
     'D&oacute;nde aparcar': 'Non aparkatu',
     'D&oacute;nde comer': 'Non jan',
     'Dos est&aacute;n en el alto de Trabakua, al lado del aparcamiento; el tercero, en el pueblo.':
-        'Bi Trabakuko goienean daude, aparkalekuaren ondoan; hirugarrena, herrian.',
+        'Bi Trabakuko mendatean daude, aparkalekuaren ondoan; hirugarrena, herrian.',
     'Dormir cerca': 'Non lo egin',
 
     # route-card photos for routes without a former feat-panel (redesign)
