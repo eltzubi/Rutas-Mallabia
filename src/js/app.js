@@ -142,6 +142,12 @@
   seccion.classList.add('solo-insignia');
   insignia.hidden = false;
 
+  // Si ya se ha leido el aviso en esta visita, la insignia sale directamente
+  // apagada. Va en sessionStorage y no en localStorage a proposito: dura lo
+  // que dure la pestaña abierta, asi que volver a la portada desde una ficha
+  // no vuelve a encender los circulos, pero al entrar otro dia late otra vez.
+  try { if (sessionStorage.getItem('rutas-mallabia-aviso')) insignia.classList.add('ya-visto'); } catch(err){}
+
   detalle.addEventListener('toggle', function(){
     boton.setAttribute('aria-expanded', detalle.open ? 'true' : 'false');
   });
@@ -150,8 +156,8 @@
     var abrir = !detalle.open;
     detalle.open = abrir;
     // A partir de aqui las ondas bajan de intensidad: ya ha mirado el aviso.
-    // Solo en esta visita; al volver a entrar late como siempre.
     insignia.classList.add('ya-visto');
+    try { sessionStorage.setItem('rutas-mallabia-aviso', '1'); } catch(err){}
     if (!abrir) return;
     var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     detalle.scrollIntoView({ block:'start', behavior: quieto ? 'auto' : 'smooth' });

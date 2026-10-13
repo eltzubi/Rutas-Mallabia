@@ -967,9 +967,11 @@ footer a:hover{ text-decoration:underline; }
 .aviso-pulso{
   position:fixed; left:18px; bottom:18px; z-index:60; display:inline-flex;
   /* El color del aro y el del resplandor salen de aqui para poder bajarlos
-     de golpe cuando el aviso ya se ha abierto (.ya-visto, mas abajo). */
-  --aro:var(--violet);
-  --brillo:var(--violet);
+     de golpe cuando el aviso ya se ha abierto (.ya-visto, mas abajo). El
+     aro no va al color entero ni estando «encendido»: a plena intensidad
+     tapaba la foto de la primera ficha. */
+  --aro:color-mix(in srgb, var(--violet) 70%, transparent);
+  --brillo:color-mix(in srgb, var(--violet) 80%, transparent);
 }
 .aviso-boton{
   position:relative; z-index:1;
@@ -999,8 +1001,9 @@ footer a:hover{ text-decoration:underline; }
 }
 /* Ya pulsada: las ondas siguen, pero muy bajas. La idea es que deje de pedir
    atencion a quien ya ha leido el aviso, sin que la insignia desaparezca ni
-   se quede muerta. No se recuerda de una visita a otra: en la siguiente
-   vuelve a latir fuerte, que es lo que el autor quiere. */
+   se quede muerta. Dura lo que dure la pestaña abierta (sessionStorage):
+   ir a una ficha y volver a la portada no vuelve a encender los circulos,
+   pero al entrar otro dia late otra vez. */
 .aviso-pulso.ya-visto{
   --aro:color-mix(in srgb, var(--violet) 22%, transparent);
   --brillo:color-mix(in srgb, var(--violet) 25%, transparent);
