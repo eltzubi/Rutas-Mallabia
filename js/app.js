@@ -149,6 +149,9 @@
   boton.addEventListener('click', function(){
     var abrir = !detalle.open;
     detalle.open = abrir;
+    // A partir de aqui las ondas bajan de intensidad: ya ha mirado el aviso.
+    // Solo en esta visita; al volver a entrar late como siempre.
+    insignia.classList.add('ya-visto');
     if (!abrir) return;
     var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     detalle.scrollIntoView({ block:'start', behavior: quieto ? 'auto' : 'smooth' });
