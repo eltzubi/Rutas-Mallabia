@@ -9,7 +9,19 @@
    .theme-toggle...) se quedan donde estan, porque moverlas cambiaria quien
    gana la cascada. */
 
+/* Lo que pinta el navegador por su cuenta -- la barra de desplazamiento, los
+   desplegables de los filtros, los campos -- no sabe que tema lleva la pagina
+   y lo dibuja siempre en claro. Con esto se entera. */
+:root{ color-scheme: dark; }
+:root[data-theme="light"]{ color-scheme: light; }
+
 *{box-sizing:border-box;}
+/* En un movil, tocar un enlace tenia 300 ms de espera: el navegador aguarda
+   por si viene un segundo toque para ampliar. Con esto no espera, y el pellizco
+   para ampliar sigue funcionando igual. Y fuera el recuadro gris por defecto,
+   que no pega con nada: cada cosa ya tiene su propio aviso al pulsarla. */
+html{ -webkit-tap-highlight-color: transparent; }
+a, button, summary, label, input, select{ touch-action: manipulation; }
 html,body{margin:0;padding:0;}
 picture{display:contents;}
 body{
@@ -149,6 +161,8 @@ body{
 .eyebrow .sep{ opacity:.5; }
 .lightbox{
   position:fixed; inset:0; z-index:100;
+  /* Al arrastrar sobre la foto ampliada se movia la pagina de detras. */
+  overscroll-behavior:contain;
   background:rgba(10,12,8,.92);
   display:none; align-items:center; justify-content:center;
   padding:24px;

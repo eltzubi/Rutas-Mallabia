@@ -135,12 +135,24 @@
     var eff = effectiveTheme();
     btn.setAttribute('aria-label', eff === 'dark' ? btn.dataset.labelLight : btn.dataset.labelDark);
   }
+  // La barra de arriba del navegador, en el movil, llevaba siempre el color
+  // oscuro: con el tema claro la pagina era clara y la barra negra. Se pone
+  // el fondo de verdad, leido del CSS, que no es el mismo en la portada que
+  // en una ficha.
+  function pintarBarra(){
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) return;
+    var fondo = getComputedStyle(root).getPropertyValue('--ground').trim();
+    if (fondo) meta.setAttribute('content', fondo);
+  }
   function applyTheme(theme){
     if (theme === 'light') root.setAttribute('data-theme', 'light');
     else root.removeAttribute('data-theme');
     updateLabel();
+    pintarBarra();
   }
   updateLabel();
+  pintarBarra();
   btn.addEventListener('click', function(){
     var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
     applyTheme(next);
