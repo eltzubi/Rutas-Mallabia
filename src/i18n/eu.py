@@ -687,20 +687,12 @@ HOME = {
     'Justo al lado del aparcamiento hay dos bares, una buena opci&oacute;n para tomar un caf&eacute; antes de empezar o comer algo al terminar la ruta.':
         'Aparkalekuaren ondoan bi taberna daude, aukera ona kafe bat hartzeko hasi aurretik edo zerbait jateko ibilbidea amaitutakoan.',
     'C&oacute;mo llegar': 'Nola iritsi',
-    'Si quieres quedarte a dormir por la zona, hay casas rurales muy cerca: '
-    '<a href="https://www.euskadi.eus/gobierno-vasco/-/es/alojamientos/casa-rural-trabaku-goiko/" target="_blank" rel="noopener noreferrer">Trabaku Goiko</a>, '
-    'junto al propio puerto de Trabakua; '
-    '<a href="https://www.nekatur.net/longa" target="_blank" rel="noopener noreferrer">Longa Nagusia</a>, '
-    'en el barrio de Geria; y '
-    '<a href="https://www.turismo.euskadi.eus/es/alojamientos/casa-rural-zelai-baserria/aa30-12375/es/" target="_blank" rel="noopener noreferrer">Zelai Baserria</a>, '
-    'en el barrio de Goita.':
-        'Inguruan lo egin nahi baduzu, oso gertu daude landetxe batzuk: '
-        '<a href="https://www.euskadi.eus/gobierno-vasco/-/es/alojamientos/casa-rural-trabaku-goiko/" target="_blank" rel="noopener noreferrer">Trabaku Goiko</a>, '
-        'Trabakuko mendatean bertan; '
-        '<a href="https://www.nekatur.net/longa" target="_blank" rel="noopener noreferrer">Longa Nagusia</a>, '
-        'Geria auzoan; eta '
-        '<a href="https://www.turismo.euskadi.eus/es/alojamientos/casa-rural-zelai-baserria/aa30-12375/es/" target="_blank" rel="noopener noreferrer">Zelai Baserria</a>, '
-        'Goita auzoan.',
+    # Los alojamientos: la lista (nombres, direcciones y telefonos) es la misma
+    # en los dos idiomas, que las direcciones no se traducen. Solo cambian la
+    # linea de entrada y la de la fuente.
+    'Si quieres quedarte a dormir por la zona, estos son los alojamientos de Mallabia:':
+        'Inguruan lo egin nahi baduzu, hauek dira Mallabiako ostatuak:',
+    'Datos del Ayuntamiento de Mallabia.': 'Mallabiko Udalaren datuak.',
     'data-marker-title="Puerto de Trabakua (aparcamiento)"':
         'data-marker-title="Trabakuko mendatea (aparkalekua)"',
     'aria-label="Ampliar mapa"': 'aria-label="Handitu mapa"',
