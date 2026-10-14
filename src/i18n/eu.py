@@ -252,6 +252,10 @@ COMMON = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita</p>',
     '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta y Eibar por Unbe</h3>':
         '<h3 class="route-card-name">Trabakua, Elgeta, Karabieta eta Eibar Unbetik</h3>',
+    '<h3 class="route-card-name">Trabakua, Andikoa, Garai y Gaztelu</h3>':
+        '<h3 class="route-card-name">Trabakua, Andikoa, Garai eta Gaztelu</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Andikoa, Sarria y Garai, con vuelta por Matiena, Gaztelu y Berriz</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita</p>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Elgeta, Karabieta y Azkonabieta, con vuelta por Eibar, Ermua y Berano</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita</p>',
 
@@ -781,6 +785,10 @@ HOME = {
     # ahuntzen card
     'alt="El arco de entrada a Elgeta por dentro, con la calle y las casas del pueblo al fondo"':
         'alt="Elgetako sarrerako arkua barrutik, herriko kalea eta etxeak hondoan"',
+
+    # garaigaztelu card
+    'alt="Vacas pastando en un prado cercado, con el Anboto y los montes del entorno al fondo"':
+        'alt="Behiak zelai itxi batean bazkatzen, Anboto eta inguruko mendiak hondoan"',
 
     # karabieta card
     'alt="El alto de Karabieta, con el cartel de 565 m y una caseta de madera pintada junto al cruce"':
@@ -3288,6 +3296,7 @@ DESCRIPTIONS = {
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik: 5,34 km eta +200 m, erraza eta ia edonork egiteko modukoa. Argazkiekin eta GPX trackarekin.',
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
+    'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
         'Trikuharritik igarota Magunaraino',
@@ -3408,6 +3417,7 @@ AIXOLA = {
 
 TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
+    'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
@@ -5683,8 +5693,98 @@ GALDARAMINIO = {
         '<p>Ibilbide honek bidezidor berriak aurkitzeko eta jada ezagutzen genituen zati batzuk aldatzeko aukera eman digu. Oso atseginak diren eremuak ditu, baina baita jaitsiera serio bat ere, batez ere Galdarami&ntilde;otik Ipuruarakoa. Komeni da lur teknikoan esperientzia izatea eta ibilbidea ondo prestatuta eramatea.</p>',
 }
 
+GARAIGAZTELU = {
+    '<span>Carretera, pista y sendero</span><span class="sep">/</span><span>Andikoa, Sarria, Garai y Gaztelu</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Errepidea, pista eta bidezidorra</span><span class="sep">/</span><span>Andikoa, Sarria, Garai eta Gaztelu</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Andikoa, Garai<br><em>y Gaztelu por Berriz</em></h1>':
+        '<h1>Trabakua, Andikoa, Garai<br><em>eta Gaztelu Berriztik</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Andikoa, Sarria y Garai, con vuelta por Matiena, Gaztelu y Berriz</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita</p>',
+    '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>San Kristobal Txiki</span> <span class="elev-legend-item"><span class="num">3</span>Andikoa</span> <span class="elev-legend-item"><span class="num">4</span>Garai</span> <span class="elev-legend-item"><span class="num">5</span>Sarria</span> <span class="elev-legend-item"><span class="num">6</span>Matiena</span> <span class="elev-legend-item"><span class="num">7</span>Gaztelu</span> <span class="elev-legend-item"><span class="num">8</span>Berriz</span>':
+        '<span class="elev-legend-item"><span class="num">1</span>Zengotita</span> <span class="elev-legend-item"><span class="num">2</span>San Kristobal Txiki</span> <span class="elev-legend-item"><span class="num">3</span>Andikoa</span> <span class="elev-legend-item"><span class="num">4</span>Garai</span> <span class="elev-legend-item"><span class="num">5</span>Sarria</span> <span class="elev-legend-item"><span class="num">6</span>Matiena</span> <span class="elev-legend-item"><span class="num">7</span>Gaztelu</span> <span class="elev-legend-item"><span class="num">8</span>Berriz</span>',
+    '<div class="fact"><span class="v">Carretera, pista y sendero</span><span class="k">Superficie</span></div>':
+        '<div class="fact"><span class="v">Errepidea, pista eta bidezidorra</span><span class="k">Azalera</span></div>',
+    'download="Trabakua, Andikoa, Garai y Gaztelu.gpx"':
+        'download="Trabakua, Andikoa, Garai eta Gaztelu Berriztik.gpx"',
+    'download="Trabakua, Andikoa, Garai y Gaztelu.kml"':
+        'download="Trabakua, Andikoa, Garai eta Gaztelu Berriztik.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Andikoa, Garai y Gaztelu"':
+        'alt="Trabakua, Andikoa, Garai eta Gaztelu Berriztik ibilbidearen argazki handitua"',
+    '<p>35,89 km y +1.100 m en un solo circuito que se sale de Mallabia para recorrer los barrios de <b>Andikoa</b>, <b>Sarria</b>, <b>Garai</b> y <b>Gaztelu</b>, y volver por <b>Berriz</b>. Predomina el asfalto, pero casi siempre por carreteras de barrio con muy poco tr&aacute;fico. Hay agua en el alto de <b>San Kristobal Txiki</b> (km 7,71) y a la entrada de <b>Garai</b> (km 13,23), donde la fuente comparte sitio con un antiguo lavadero.</p>':
+        '<p>35,89 km eta +1.100 m zirkuitu bakarrean, Mallabiatik irten eta <b>Andikoa</b>, <b>Sarria</b>, <b>Garai</b> eta <b>Gaztelu</b> auzoak zeharkatzeko, <b>Berriz</b>tik itzulita. Asfaltoa nagusi da, baina ia beti trafiko gutxiko auzo-errepideetatik. Ura <b>San Kristobal Txiki</b>ko goienean dago (7,71 km) eta <b>Garai</b>ko sarreran (13,23 km), non iturriak garbitegi zahar batekin partekatzen duen lekua.</p>',
+    'alt="Vacas pastando en un prado cercado, con el Anboto y los montes del entorno al fondo"':
+        'alt="Behiak zelai itxi batean bazkatzen, Anboto eta inguruko mendiak hondoan"',
+    'alt="Pista de piedra en alto sobre el valle, con prados y caser&iacute;os en la ladera y los montes al fondo"':
+        'alt="Harrizko pista garaian, haranaren gainean, zelaiak eta baserriak hegalean eta mendiak hondoan"',
+    'alt="Ermita de piedra con p&oacute;rtico de madera y tejado de teja, rodeada de pinos y robles"':
+        'alt="Harrizko baseliza, egurrezko atariarekin eta teila-teilatuarekin, pinu eta haritzez inguratuta"',
+    'alt="Pista de tierra entre hayas, con una borda de piedra y un prado cerrado con alambrada al lado"':
+        'alt="Lurrezko pista pagadi artean, harrizko borda bat eta alanbre-hesiz itxitako zelai bat alboan"',
+    'alt="Sendero estrecho de subida entre helechos, visto desde el manillar de la e-bike"':
+        'alt="Bidezidor estua gora, iratze artean, e-bikearen eskulekutik ikusita"',
+    'alt="Camino con muro de piedra sobre un caser&iacute;o, con las monta&ntilde;as al fondo"':
+        'alt="Harrizko hormadun bidea baserri baten gainetik, mendiak hondoan"',
+    'alt="Escalones de piedra cubiertos de hojas en un sendero del bosque, junto a la rueda de la bici"':
+        'alt="Harrizko mailak hostoz estalita basoko bidezidor batean, bizikletaren gurpilaren ondoan"',
+    'alt="Canal de agua junto a una carretera estrecha, con una pasarela de madera cruz&aacute;ndolo"':
+        'alt="Ur-kanala errepide estu baten ondoan, egurrezko pasabide batek zeharkatuta"',
+    'alt="Ca&ntilde;o de una fuente de piedra cubierta de musgo, con el agua cayendo al pil&oacute;n"':
+        'alt="Goroldioz estalitako harrizko iturriaren kanoia, ura askara erortzen"',
+    'alt="Plaza de un barrio con caser&iacute;os de piedra y la ladera boscosa detr&aacute;s"':
+        'alt="Auzo bateko plaza, harrizko baserriekin eta basoko hegala atzean"',
+    'alt="Sendero de tierra junto a un puente de piedra sobre un arroyo, entre vegetaci&oacute;n"':
+        'alt="Lurrezko bidezidorra erreka gaineko harrizko zubi baten ondoan, landaredi artean"',
+    'alt="Campo reci&eacute;n arado junto a la pista, con las monta&ntilde;as del entorno al fondo"':
+        'alt="Soro goldatu berria pistaren ondoan, inguruko mendiak hondoan"',
+    'alt="Pasarela de madera para peatones sobre la carretera, con las monta&ntilde;as al fondo"':
+        'alt="Oinezkoentzako egurrezko pasabidea errepidearen gainetik, mendiak hondoan"',
+    'alt="Prados y caser&iacute;os con las crestas calizas del entorno al fondo"':
+        'alt="Zelaiak eta baserriak, inguruko harkaitz-gailurrak hondoan"',
+    'alt="T&uacute;nel de piedra bajo la v&iacute;a, con el camino de tierra saliendo al otro lado"':
+        'alt="Harrizko tunela bidearen azpian, lurrezko bidea beste aldetik ateratzen"',
+    '<p>Una ruta bastante variada en la que recorreremos numerosos barrios rurales, pasando por <b>Andikoa</b>, <b>Sarria</b> y <b>Garai</b>, antes de bajar hacia <b>Matiena</b> y regresar por <b>Berriz</b>. Esta vez pisaremos bastante asfalto, pero por carreteras de barrio donde apenas encontraremos tr&aacute;fico. Un recorrido entre caser&iacute;os, prados y bonitas vistas hacia las monta&ntilde;as del entorno.</p>':
+        '<p>Ibilbide nahiko anitza da, non landa-auzo ugari zeharkatuko ditugun, <b>Andikoa</b>, <b>Sarria</b> eta <b>Garai</b> igaroz, <b>Matiena</b>ra jaitsi aurretik, <b>Berriz</b>tik itzultzeko. Oraingoan asfalto dezente zapalduko dugu, baina trafiko gutxiko auzo-errepideetatik. Baserri, zelai eta inguruko mendietara begira ikuspegi ederrez gozatzeko ibilbidea da.</p>',
+    '<p>Salimos de <b>Trabakua</b>, como tantas otras veces, en direcci&oacute;n a <b>Zengotita</b>, a unos 3 kil&oacute;metros. Al llegar a la ermita cogemos la carretera vieja que baja hacia Berriz. Una vez abajo, cruzamos con cuidado la carretera general y comenzamos a subir hacia el barrio de <b>Besoita</b>.</p>':
+        '<p><b>Trabakua</b>tik abiatuko gara, beste hainbatetan bezala, <b>Zengotita</b>rantz, 3 kilometrora. Baselizara iristean, Berrizerantz jaisten den errepide zaharra hartuko dugu. Behin behean, kontu handiz zeharkatuko dugu errepide nagusia eta <b>Besoita</b> auzorantz igotzen hasiko gara.</p>',
+    '<p>Atravesamos el barrio y seguimos de frente para continuar subiendo por pistas hacia <b>San Kristobal Txiki</b>. Aqu&iacute; tambi&eacute;n tenemos la opci&oacute;n de seguir por la carretera asfaltada que sale a mano izquierda, que nos llevar&iacute;a igualmente a Andikoa. Sin embargo, esta vez preferimos hacerlo por el monte, ya que ser&aacute; pr&aacute;cticamente el &uacute;nico tramo de estas caracter&iacute;sticas en toda la ruta.</p>':
+        '<p>Auzoa zeharkatu eta aurrera jarraituko dugu, <b>San Kristobal Txiki</b>rantz pista batetik igotzen jarraitzeko. Hemen ere ezkerretara ateratzen den errepide asfaltatutik jarraitzeko aukera dugu, Andikoara eramango gintuzkeena. Hala ere, oraingoan menditik egitea nahiago dugu, ibilbide osoan ezaugarri horietako tarte bakarra izango baita.</p>',
+    '<p>Seguimos subiendo por pistas de piedra hasta llegar a la ermita de San Kristobal Txiki. Avanzamos un poco m&aacute;s hasta alcanzar el punto m&aacute;s alto, donde encontramos una fuente que ya hemos mencionado en otras rutas. Junto a ella enlaza tambi&eacute;n la pista que baja de <a href="sarrimendi.html">Sarrionamendi</a>, por la que hemos pasado en alguna ocasi&oacute;n.</p>':
+        '<p>Harrizko pistetatik igotzen jarraituko dugu San Kristobal Txiki baselizara iritsi arte. Aurrerago joango gara, puntu gorenera iritsi arte, non beste ibilbide batzuetan aipatu dugun iturria aurkituko dugun. Ondoan, <a href="sarrimendi.html">Sarrionamendi</a>tik jaisten den pista ere lotzen da, noizbait pasa garen lekutik.</p>',
+    '<p>Aprovechamos para coger agua y retrocedemos un poco para tomar un peque&ntilde;o sendero de bajada. M&aacute;s abajo enlazamos con una pista que nos lleva hacia el barrio de Andikoa.</p>':
+        '<p>Ura hartzeko aprobetxatuko dugu eta pixka bat atzera egingo dugu jaitsierako bidezidor txiki bat hartzeko. Beherago, Andikoa auzora eramango gaituen pista batekin lotuko gara.</p>',
+    '<p>Llegamos a <b>Andikoa</b>, una zona muy bonita, con caser&iacute;os y buenas vistas del entorno. Salimos a la carretera del barrio y descendemos un poco m&aacute;s hasta llegar a la iglesia. All&iacute; giramos a mano derecha para seguir la GR que nos lleva hacia la zona alta de <b>Sarria</b>.</p>':
+        '<p><b>Andikoa</b>ra iritsiko gara, oso leku polita, baserriekin eta inguruko ikuspegi ederrekin. Auzoko errepidera aterako gara eta pixka bat gehiago jaitsiko gara elizara iritsi arte. Han eskuinera joko dugu, <b>Sarria</b>ko goiko aldera eramango gaituen GRa jarraitzeko.</p>',
+    '<p>Este tramo es algo m&aacute;s entretenido, con varias peque&ntilde;as puertas met&aacute;licas que tendremos que abrir y cerrar, adem&aacute;s de algunos escalones que se pueden bajar montados en la bicicleta. De todas formas, no hay ning&uacute;n problema en bajarse y hacerlos andando, ya que son pasos muy cortos.</p>':
+        '<p>Tarte hau entretenigarriagoa da, ireki eta itxi beharko ditugun zenbait ate metaliko txikirekin, baita bizikleta gainean jaitsi daitezkeen zenbait mailarekin ere. Hala ere, ez dago arazorik jaitsi eta oinez egiteko, oso tarte laburrak baitira.</p>',
+    '<p>Descendemos hasta enlazar con la carretera que va desde Sarria Baja hacia <b>Garai</b>. Giramos a la derecha y pasamos junto a la central el&eacute;ctrica. Poco despu&eacute;s veremos una pista que sale a mano derecha y que tambi&eacute;n permite subir hacia San Kristobal Txiki, enlazando con la zona que hemos recorrido anteriormente.</p>':
+        '<p>Sarria Baja eta <b>Garai</b> arteko errepidearekin lotu arte jaitsiko gara. Eskuinera joko dugu eta zentral elektrikoaren ondotik pasatuko gara. Handik gutxira, eskuinera ateratzen den pista bat ikusiko dugu, San Kristobal Txikira igotzeko aukera ematen duena, lehenago zeharkatu dugun eremuarekin lotuz.</p>',
+    '<p>Algo m&aacute;s adelante encontramos otra carretera asfaltada, con bastante pendiente, que asciende a media ladera del <b>Oiz</b> y permite llegar hasta la zona situada entre San Kristobal y Zengotitagane. Nosotros dejamos atr&aacute;s estos desv&iacute;os y continuamos hacia Garai.</p>':
+        '<p>Aurrerago, malda handiko errepide asfaltatu bat aurkituko dugu, <b>Oiz</b>ko mendi-hegalean gora doana eta San Kristobal eta Zengotitagane arteko eremura iristeko aukera ematen duena. Guk atzean utziko ditugu desbideratze horiek eta Garairentzako bideari jarraituko diogu.</p>',
+    '<p>A la entrada de <b>Garai</b> encontramos una buena fuente y un antiguo lavadero. Desde aqu&iacute; subimos un poco hacia la zona del cementerio, donde hay un parque muy bonito. Despu&eacute;s bajamos por un camino peatonal bastante ancho en direcci&oacute;n a Gerediaga.</p>':
+        '<p><b>Garai</b>ko sarreran iturri on bat eta garbitegi zahar bat aurkituko ditugu. Hemendik pixka bat igoko gara hilerriaren ingurura, parke oso polita baitago. Ondoren, Gerediagarantz doan oinezkoentzako bide zabal batetik jaitsiko gara.</p>',
+    '<p>Como estamos haciendo una ruta circular, intentamos evitar pasar dos veces por el mismo sitio. Siempre que podemos buscamos caminos diferentes, aprovechando para conocer otros rincones y disfrutar de nuevas vistas del entorno.</p>':
+        '<p>Ibilbide zirkular bat egiten ari garenez, leku beretik bi aldiz pasatzea saihesten saiatzen gara. Ahal dugun guztietan, bide desberdinak bilatzen ditugu, beste txoko batzuk ezagutzeko eta inguruko ikuspegi berriez gozatzeko aprobetxatuz.</p>',
+    '<p>Bajamos por caminos entre caser&iacute;os y prados hasta llegar a <b>Gerediaga</b>, desde donde tenemos acceso a Matiena.</p>':
+        '<p>Baserri eta zelai arteko bideetatik jaitsiko gara <b>Gerediaga</b>ra iritsi arte, eta handik Matienara joateko aukera izango dugu.</p>',
+    '<p>Continuamos en direcci&oacute;n a <b>Matiena</b> por un sendero que nos lleva entre diferentes caser&iacute;os. Al llegar, cruzamos el puente y atravesamos la zona urbana hasta salir hacia el barrio de <b>Gaztelu</b>. Giramos a la izquierda y comenzamos a subir por la carretera que nos lleva hacia este bonito barrio rural.</p>':
+        '<p><b>Matiena</b>rantz jarraituko dugu, hainbat baserritatik igarotzen den bidezidor batetik. Iritsitakoan, zubia zeharkatu eta hirigunea zeharkatuko dugu <b>Gaztelu</b> auzorantz ateratzeko. Ezkerrera joko dugu eta landa-auzo polit honetara eramango gaituen errepidetik igotzen hasiko gara.</p>',
+    '<p>Gaztelu es otra de las zonas agradables de la ruta, con caser&iacute;os, prados y buenas vistas hacia las monta&ntilde;as que nos rodean. Seguimos la carretera hasta el final del barrio, donde enlazamos con una pista de piedra.</p>':
+        '<p>Gaztelu ibilbideko beste leku atsegin bat da, baserri, zelai eta inguruko mendietara begira ikuspegi ederrekin. Auzoaren amaieraraino jarraituko dugu errepidea, harrizko pista batekin lotu arte.</p>',
+    '<p>Continuamos por esta pista y, m&aacute;s adelante, giramos a la izquierda para ir regresando hacia Berriz. El camino es bueno, alternando zonas de piedra y algo de tierra, hasta que enlazamos con una carretera de barrio.</p>':
+        '<p>Pista honetatik jarraituko dugu eta, aurrerago, ezkerrera joko dugu Berrizerantz itzultzeko. Bidea ona da, harrizko eta lur pixka bateko eremuak txandakatuz, auzo-errepide batekin lotu arte.</p>',
+    '<p>Cruzamos la carretera y comenzamos a subir hacia el barrio de <b>Murgoitio</b>. Una vez arriba, llegamos junto a una ermita, donde giramos a la izquierda para comenzar el descenso hacia Berriz. La primera parte de la bajada combina pistas con alg&uacute;n peque&ntilde;o sendero.</p>':
+        '<p>Errepidea zeharkatu eta <b>Murgoitio</b> auzorantz igotzen hasiko gara. Goian, baseliza baten ondoan iritsiko gara, eta han ezkerrera joko dugu Berrizerantz jaisten hasteko. Jaitsieraren lehen zatian pistak eta bidezidor txikiren bat konbinatzen dira.</p>',
+    '<p>Finalmente salimos a la carretera de entrada a <b>Berriz</b>, cerca de una rotonda. Al llegar a ella, buscamos el bidegorri que discurre junto al r&iacute;o y nos permite atravesar Berriz de abajo arriba, sin necesidad de circular por las calles del pueblo.</p>':
+        '<p>Azkenik, <b>Berriz</b> sarrerako errepidera aterako gara, biribilgune batetik gertu. Iritsitakoan, ibaia ondoan doan bidegorria bilatuko dugu, Berriz behetik gora zeharkatzeko aukera ematen diguna, herriko kaleetatik ibili beharrik gabe.</p>',
+    '<p>Seguimos por el bidegorri hasta llegar al cementerio de Berriz. All&iacute; salimos a la carretera general, por la que circulamos hasta llegar a la altura de Besoita. En ese punto volvemos a coger la carretera vieja por la que hab&iacute;amos bajado anteriormente desde Zengotita. Ahora la recorremos en sentido contrario, subiendo hasta la ermita, desde donde regresamos a Trabakua por el mismo camino del comienzo.</p>':
+        '<p>Bidegorritik jarraituko dugu Berrizko hilerrira iritsi arte. Han, errepide nagusira aterako gara, eta handik Besoita ingurura iritsi arte zirkulatuko dugu. Puntu horretan, lehenago Zengotitatik jaitsi garen errepide zaharra hartuko dugu berriro. Orain kontrako noranzkoan zeharkatuko dugu, baselizara igo arte, eta handik Trabakuara itzuliko gara hasierako bide beretik.</p>',
+    '<p>En conjunto, es una ruta muy entretenida para conocer los barrios de la zona. Aunque predomina el asfalto, casi todo discurre por peque&ntilde;as carreteras rurales con muy poco tr&aacute;fico. Los caser&iacute;os, los prados y las vistas hacia la monta&ntilde;a acompa&ntilde;an durante buena parte del recorrido. Adem&aacute;s, los tramos de monte del principio y algunos senderos de enlace aportan variedad al recorrido.</p>':
+        '<p>Oro har, oso ibilbide entretenigarria da inguruko auzoak ezagutzeko. Asfaltoa nagusi den arren, ia dena trafiko gutxiko landa-errepide txikietatik doa. Baserriek, zelaiak eta mendirako ikuspegiek ibilbidearen zati handi batean laguntzen dute. Gainera, hasierako mendi-tarteek eta lotzeko bidezidor batzuek aniztasuna ematen diote ibilbideari.</p>',
+}
+
 PAGE_STRINGS = {
     'galdaraminio': GALDARAMINIO,
+    'garaigaztelu': GARAIGAZTELU,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,

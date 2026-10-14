@@ -710,6 +710,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/galdaraminio.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/garaigaztelu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/garaigaztelu.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/garaigaztelu.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/garaigaztelu.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/garaigaztelu.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/garaigaztelu.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/aviso-legal.html</loc>
     <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/aviso-legal.html"/>
