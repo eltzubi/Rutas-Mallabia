@@ -5716,8 +5716,8 @@ GARAIGAZTELU = {
         'alt="Behiak zelai itxi batean bazkatzen, Anboto eta inguruko mendiak hondoan"',
     'alt="Pista de piedra en alto sobre el valle, con prados y caser&iacute;os en la ladera y los montes al fondo"':
         'alt="Harrizko pista garaian, haranaren gainean, zelaiak eta baserriak hegalean eta mendiak hondoan"',
-    'alt="Edificio de piedra con p&oacute;rtico de madera y tejado de teja junto a la pista, entre pinos y robles"':
-        'alt="Harrizko eraikina, egurrezko atariarekin eta teila-teilatuarekin, pistaren ondoan, pinu eta haritzen artean"',
+    'alt="La ermita de San Kristobal Txiki, de piedra, con p&oacute;rtico de madera y tejado de teja, entre pinos y robles"':
+        'alt="San Kristobal Txiki baseliza, harrizkoa, egurrezko atariarekin eta teila-teilatuarekin, pinu eta haritzen artean"',
     'alt="Pista de tierra entre hayas, con una borda de piedra y un prado cerrado con alambrada al lado"':
         'alt="Lurrezko pista pagadi artean, harrizko borda bat eta alanbre-hesiz itxitako zelai bat alboan"',
     'alt="Sendero estrecho de subida entre helechos, visto desde el manillar de la e-bike"':
@@ -5740,8 +5740,8 @@ GARAIGAZTELU = {
         'alt="Oinezkoentzako egurrezko pasabidea errepidearen gainetik, mendiak hondoan"',
     'alt="Prados y caser&iacute;os con las crestas calizas del entorno al fondo"':
         'alt="Zelaiak eta baserriak, inguruko harkaitz-gailurrak hondoan"',
-    'alt="Paso bajo un arco de piedra, con el camino de tierra saliendo al otro lado"':
-        'alt="Harrizko arku baten azpiko pasabidea, lurrezko bidea beste aldetik ateratzen"',
+    'alt="Paso bajo la v&iacute;a del tren en Berriz, con el camino de tierra saliendo al otro lado"':
+        'alt="Trenbidearen azpiko pasabidea Berrizen, lurrezko bidea beste aldetik ateratzen"',
     '<p>Una ruta bastante variada en la que recorreremos numerosos barrios rurales, pasando por <b>Andikoa</b>, <b>Sarria</b> y <b>Garai</b>, antes de bajar hacia <b>Matiena</b> y regresar por <b>Berriz</b>. Esta vez pisaremos bastante asfalto, pero por carreteras de barrio donde apenas encontraremos tr&aacute;fico. Un recorrido entre caser&iacute;os, prados y bonitas vistas hacia las monta&ntilde;as del entorno.</p>':
         '<p>Ibilbide nahiko anitza da, non landa-auzo ugari zeharkatuko ditugun, <b>Andikoa</b>, <b>Sarria</b> eta <b>Garai</b> igaroz, <b>Matiena</b>ra jaitsi aurretik, <b>Berriz</b>tik itzultzeko. Oraingoan asfalto dezente zapalduko dugu, baina trafiko gutxiko auzo-errepideetatik. Baserri, zelai eta inguruko mendietara begira ikuspegi ederrez gozatzeko ibilbidea da.</p>',
     '<p>Salimos de <b>Trabakua</b>, como tantas otras veces, en direcci&oacute;n a <b>Zengotita</b>, a unos 3 kil&oacute;metros. Al llegar a la ermita cogemos la carretera vieja que baja hacia Berriz. Una vez abajo, cruzamos con cuidado la carretera general y comenzamos a subir hacia el barrio de <b>Besoita</b>.</p>':
