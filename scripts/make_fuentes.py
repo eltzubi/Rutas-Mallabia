@@ -64,8 +64,10 @@ FUENTES = [
         "zona": "trabakua",
         "es": "Fuente del alto de Trabakua",
         "eu": "Trabakuko mendateko iturria",
+        # Coordenada medida por el autor, a 6,7 m del punto de referencia del
+        # puerto que comparten 30 rutas: la fuente esta en el alto mismo.
+        "coord": (43.210466, -2.546084),
         "punto": ("trabakua", "salida"),
-        "aprox": True,
         "nota_es": "En el alto, junto al bar de arriba y los columpios.",
         "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
         "rutas": ["mendibil", "urko", "hirutxikiak"],
