@@ -14,6 +14,12 @@ que poder llenar el bidon. El script comprueba que el track de cada una de
 esas rutas pase de verdad a menos de MAX_RUTA_M de la fuente, y falla si no
 -- es la red que impide que una errata en la tabla publique un dato falso.
 
+Hay una segunda forma de declararla, "coord": la coordenada medida sobre el
+terreno por el autor. Manda sobre el waypoint cuando la da, porque el
+waypoint es un punto del recorrido -- donde pasa el camino -- y la fuente
+suele estar unos metros a un lado. Entonces "punto" solo dice de que ruta se
+saca la altura.
+
 Las que llevan aprox=True no tienen una coordenada propia: la posicion es la
 del lugar (el pueblo, la presa, el alto) y el texto del sitio dice donde esta
 la fuente dentro de el ("junto al fronton", "unos metros a la izquierda").
@@ -203,8 +209,15 @@ FUENTES = [
         "zona": "aixola",
         "es": "Larrosako Iturri",
         "eu": "Larrosako Iturri",
+        # Coordenada medida por el autor, a 32 m del waypoint de argineta: la
+        # fuente esta al lado del camino, no sobre el.
+        "coord": (43.149030, -2.501700),
         "punto": ("argineta", 4),
-        "rutas": ["argineta"],
+        "nota_es": "Sale directamente de la pared de la monta\u00f1a, al salir "
+                   "de la presa camino de Elgeta.",
+        "nota_eu": "Zuzenean mendiaren hormatik ateratzen da, presatik "
+                   "irtetean Elgetarako bidean.",
+        "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
         "id": "drogeten",
@@ -251,6 +264,8 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente del Camino de Santiago",
         "eu": "Done Jakue bideko iturria",
+        # Coordenada medida por el autor, a 41 m del waypoint de santaeufemia.
+        "coord": (43.257042, -2.526330),
         "punto": ("santaeufemia", 1),
         "nota_es": "Junto al camino, entre Markina-Xemein e Iruzubieta.",
         "nota_eu": "Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.",
@@ -353,7 +368,16 @@ def main():
     problemas = []
     for f in FUENTES:
         slug, n = f["punto"]
-        pt = waypoint(slug, n)
+        pt = tuple(f["coord"]) if "coord" in f else waypoint(slug, n)
+        if "coord" in f:
+            # No se acepta a ciegas: si la coordenada medida se va lejos del
+            # waypoint que decia ser la misma fuente, es que una de las dos
+            # esta mal, y eso hay que mirarlo, no publicarlo.
+            desvio = haversine(pt, waypoint(slug, n))
+            if desvio > MAX_RUTA_M:
+                problemas.append(
+                    f"{f['id']}: la coordenada dada esta a {desvio:.0f} m del "
+                    f"waypoint {n} de {slug}; o es otra fuente o uno de los dos esta mal")
         for ruta in f["rutas"]:
             d = distancia_al_track(ruta, pt)
             if d > MAX_RUTA_M:
