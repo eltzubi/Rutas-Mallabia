@@ -12,6 +12,8 @@ already Basque and stay as they are.
 
 # Runtime labels are attached to the rendered HTML by build.py.
 UI = {
+    'Posici\u00f3n aproximada': 'Gutxi gorabeherako kokapena',
+    'Rutas que pasan': 'Hemendik pasatzen diren ibilbideak',
     'Cambiar a tema claro': 'Aldatu gai argira',
     'Cambiar a tema oscuro': 'Aldatu gai ilunera',
     'Enviando…': 'Bidaltzen…',
@@ -371,6 +373,11 @@ ROUTE = {
 }
 
 HOME = {
+    'D&oacute;nde hay agua': 'Non dago ura',
+    '<p class="map-note">Un mapa solo con los puntos de agua de todas las rutas, para saber d&oacute;nde llenar el bid&oacute;n antes de salir.</p>':
+        '<p class="map-note">Ibilbide guztietako ur puntuak baino ez dituen mapa bat, irten aurretik bidoia non bete jakiteko.</p>',
+    'Ver el mapa de fuentes <span aria-hidden="true">&rarr;</span>':
+        'Ikusi iturrien mapa <span aria-hidden="true">&rarr;</span>',
     '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza y Bolibar</h3>':
         '<h3 class="route-card-name">Trabakua, Astorkigane, Zenarruza eta Bolibar</h3>',
     '<p class="route-card-desc">Circuito largo de e-bike desde Trabakua por Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza y Bolibar</p>':
@@ -3265,6 +3272,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
     'galdaraminio': 'Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita',
     'astorkigane': 'E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
     'longaurjauziak': 'Oinezko zirkuitua Trabakuatik, Longatik gora eta behera, Gereako ur-jauzietaraino',
@@ -3416,6 +3424,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'agua': 'Ur iturriak · Herriko ibilbideak',
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
@@ -4979,6 +4988,19 @@ AVISO_LEGAL = {
         '<p><b>Cookieak eta biltegiratze lokala.</b> Webgune honek ez du inolako jarraipen-cookierik ez analitikarik erabiltzen. Nabigatzailearen <code>localStorage</code>-n hobespen bakar bat gordetzen du (gai argia edo iluna aukeratu baduzu), zure gailutik atera ez eta inor identifikatzen ez duena.</p>',
 }
 
+AGUA = {
+    '<p class="eyebrow"><span>Agua</span></p>':
+        '<p class="eyebrow"><span>Ura</span></p>',
+    '<h1>D&oacute;nde hay <em>agua</em></h1>':
+        '<h1>Non dago <em>ura</em></h1>',
+    '<p class="full-name">Las fuentes que salen en las rutas de esta web, todas juntas en un mapa: d&oacute;nde llenar el bid&oacute;n y qu&eacute; rutas pasan por cada una.</p>':
+        '<p class="full-name">Webgune honetako ibilbideetan agertzen diren iturriak, denak mapa batean: non bete bidoia eta zein ibilbide pasatzen diren bakoitzetik.</p>',
+    '<p class="wikiloc-credit">Mapa sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> y el <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; cada punto sale de un waypoint de su ruta</p>':
+        '<p class="wikiloc-credit">Oinarria: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> eta <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; puntu bakoitza bere ibilbideko mugarri batetik dator</p>',
+    '<p class="agua-nota-general">El caudal de una fuente cambia con la &eacute;poca del a&ntilde;o; donde la ruta dice que lleva agua todo el a&ntilde;o, est&aacute; anotado. Las marcadas como <b>posici&oacute;n aproximada</b> llevan la coordenada del sitio &mdash;el pueblo, el alto, la presa&mdash; y la nota dice d&oacute;nde est&aacute; la fuente dentro de &eacute;l.</p>':
+        '<p class="agua-nota-general">Iturri baten emaria urtaroaren arabera aldatzen da; ibilbideak urte osoan ura duela esaten duenean, hala jasota dago. <b>Gutxi gorabeherako kokapena</b> dutenek lekuaren koordenatua daramate &mdash;herria, mendatea, presa&mdash; eta oharrak esaten du iturria non dagoen haren barruan.</p>',
+}
+
 MARKINAURJAUZIAK = {
     '<span>Mixta</span><span class="sep">/</span><span>Cascadas de Gerea</span><span class="sep">/</span><span>Traves&iacute;a</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Gereako ur-jauziak</span><span class="sep">/</span><span>Zeharkaldia</span>',
@@ -5843,5 +5865,6 @@ PAGE_STRINGS = {
     'mallukitoko': MALLUKITOKO,
     'santaeufemia': SANTAEUFEMIA,
     'markinaurjauziak': MARKINAURJAUZIAK,
+    'agua': AGUA,
     'aviso-legal': AVISO_LEGAL,
 }

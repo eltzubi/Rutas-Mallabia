@@ -97,6 +97,11 @@ def text(node):
     return node if isinstance(node, str) else ''.join(text(c) for c in node['children'])
 
 
+# Las paginas que no son fichas de ruta: no tienen GPX, ni perfil, ni
+# formulario de incidencias, ni tarjeta en la portada.
+NO_RUTA = ('mallabia', 'agua', 'aviso-legal')
+
+
 def main():
     if len(sys.argv) == 3 and sys.argv[1] == '--fixture':
         print(json.dumps(Document((ROOT / sys.argv[2]).read_text()).root))
@@ -125,7 +130,7 @@ def main():
                     f'{filename}: missing theme translations')
             require(theme['attrs']['data-label-dark'] ==
                     ('Aldatu gai ilunera' if lang == 'eu' else 'Cambiar a tema oscuro'), filename)
-            if page not in ('mallabia', 'aviso-legal'):
+            if page not in NO_RUTA:
                 form = next(n for n in nodes if n['attrs'].get('id') == 'reportForm')
                 require(all(form['attrs'].get('data-' + k) for k in ['sending', 'success', 'error', 'subject-prefix']),
                         f'{filename}: missing report translations')
@@ -143,7 +148,7 @@ def main():
                          if n['attrs'].get('class', '').split(' ')[0] == 'route-card']
                 # PAGES lleva la portada y las paginas que no son rutas (aviso-legal),
                 # y ninguna de las dos tiene tarjeta.
-                rutas = [p for p in build.PAGES if p not in ('mallabia', 'aviso-legal')]
+                rutas = [p for p in build.PAGES if p not in NO_RUTA]
                 require(len(cards) == len(rutas), f'{filename}: missing card')
                 for slug in ('muniozguren', 'iruzubieta'):
                     card = next(n for n in cards if n['attrs'].get('href') == slug + suffix + '.html')
@@ -158,7 +163,7 @@ def main():
     # Aqui es donde se habria visto sola la tanda de rutas que daban mas
     # kilometros que su GPX, en vez de descubrirla leyendo fichas a mano.
     for page in build.PAGES:
-        if page in ('mallabia', 'aviso-legal'):
+        if page in NO_RUTA:
             continue
         gpx = ROOT / 'src' / f'{page}.gpx'
         require(gpx.exists(), f'{page}: falta su GPX')
@@ -186,7 +191,7 @@ def main():
     # (a ahuntzen le faltaban las seis). Las NEGRITAS no se comparan: el autor
     # marca a veces un nombre distinto en cada idioma, y es decision suya.
     for page in build.PAGES:
-        if page in ('mallabia', 'aviso-legal'):
+        if page in NO_RUTA:
             continue
         es = (ROOT / f'{page}.html').read_text()
         eu_html = (ROOT / f'{page}.eu.html').read_text()
@@ -285,6 +290,40 @@ def main():
                         f'{build.out_name(page, lang)}: falta {foto}')
                 require(not any(foto.startswith(x + '/') for x in sin_publicar),
                         f'{build.out_name(page, lang)}: {foto} no se publica')
+
+    # --- agua.html: la lista contra sus datos -----------------------------
+    # La lista la escribe el build desde data/fuentes.json, y el mapa la lee de
+    # la propia lista. Si la pagina se quedara sin ella (una marca renombrada,
+    # por ejemplo) el mapa saldria vacio sin que fallara nada.
+    fuentes = json.loads((ROOT / 'data/fuentes.json').read_text())['fuentes']
+    require(bool(fuentes), 'data/fuentes.json esta vacio')
+    for lang, (_, suffix) in build.LANGS.items():
+        pagina = (ROOT / build.out_name('agua', lang)).read_text()
+        require(pagina.count('class="agua-item"') == len(fuentes),
+                f'agua [{lang}]: la lista no tiene las {len(fuentes)} fuentes')
+        for fuente in fuentes:
+            require(f'data-lat="{fuente["lat"]}"' in pagina,
+                    f'agua [{lang}]: falta la coordenada de {fuente["id"]}')
+            for ruta in fuente[lang]['rutas']:
+                destino = ruta['href'][:-len('.html')] + suffix + '.html'
+                require((ROOT / destino).exists(),
+                        f'agua [{lang}]: {fuente["id"]} enlaza {destino}, que no existe')
+                require(f'>{ruta["nombre"]}</a>' in pagina,
+                        f'agua [{lang}]: {fuente["id"]} sin el nombre de {destino}')
+
+    # --- las capas del mapa, iguales en los dos ficheros -------------------
+    # js/agua.js lleva su propia copia de las cuatro capas de teselas porque
+    # js/map.js son 1.100 lineas atadas a los tracks y partirlo para compartir
+    # treinta era arriesgar las 118 fichas por una pagina. La copia solo vale
+    # si no se queda atras: si manana se cambia una URL en uno de los dos, esto
+    # lo dice.
+    mapa_js = (ROOT / 'src/js/map.js').read_text()
+    agua_js = (ROOT / 'src/js/agua.js').read_text()
+    plantillas = re.findall(r"L\.tileLayer\('([^']+)'", mapa_js)
+    require(len(plantillas) == 4, f'map.js: esperaba 4 capas, encuentro {len(plantillas)}')
+    for plantilla in plantillas:
+        require(plantilla in agua_js,
+                f'js/agua.js no tiene la capa de map.js: {plantilla[:60]}')
 
     for gpx in (ROOT / 'src').glob('*.gpx'):
         points = [(float(p.attrib['lon']), float(p.attrib['lat']), float(p.find('{*}ele').text))

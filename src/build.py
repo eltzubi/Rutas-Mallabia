@@ -104,7 +104,7 @@ def assemble_page(name, suffix=""):
 
 
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "aviso-legal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "agua", "aviso-legal"]
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
@@ -177,6 +177,7 @@ ASSETS = {
     ("js", "filters.js"): "js/filters.js",
     ("js", "webmcp.js"): "js/webmcp.js",
     ("js", "weather.js"): "js/weather.js",
+    ("js", "agua.js"): "js/agua.js",
 }
 
 # Los .woff2 reales que referencia fonts.css (url('fonts/xxx.woff2')) --
@@ -961,6 +962,7 @@ def main():
                 page_html = add_card_shapes(page_html)
             if name != HOME:
                 page_html = add_weather(page_html, name, lang)
+            page_html = add_fuentes(page_html, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)
@@ -984,6 +986,63 @@ def main():
     write_offline_page(versions)
     write_service_worker(versions)
     write_sitemap()
+
+
+def add_fuentes(page_html, lang):
+    """La lista de fuentes de agua.html, escrita desde data/fuentes.json.
+
+    La escribe el build y no esta a mano en la fuente HTML por dos razones.
+    Una, que asi hay una sola verdad: el mapa y la lista salen del mismo
+    fichero, que a su vez genera scripts/make_fuentes.py resolviendo cada
+    fuente contra el waypoint de su ruta. Y dos, que la lista queda en el
+    HTML servido -- visible para Google y para quien tenga el JavaScript
+    desactivado -- en vez de pintarla el navegador.
+
+    js/agua.js no vuelve a pedir el JSON: lee de esta misma lista las
+    coordenadas (data-lat/data-lon) y los textos de cada globo, igual que
+    js/map.js lee los nombres de los waypoints de la leyenda ya pintada.
+    """
+    marca = '<section class="agua-zonas" id="aguaLista"></section>'
+    if marca not in page_html:
+        return page_html
+    with open(os.path.join(ROOT, "data", "fuentes.json"), encoding="utf-8") as f:
+        fuentes = json.load(f)["fuentes"]
+    t = (lambda x: eu.UI[x]) if lang == "eu" else (lambda x: x)
+    partes = []
+    zona_actual = None
+    for fu in fuentes:
+        d = fu[lang]
+        if d["zona"] != zona_actual:
+            if zona_actual is not None:
+                partes.append("      </ul>\n    </div>")
+            zona_actual = d["zona"]
+            partes.append('    <div class="agua-zona">\n'
+                          '      <h2>%s</h2>\n'
+                          '      <ul class="agua-lista">' % html.escape(zona_actual))
+        # El JSON guarda el nombre de fichero en castellano. Esta lista la
+        # escribe el build, despues de que make_eu.py haya hecho su cambio de
+        # href, asi que el .eu.html hay que ponerlo aqui o la pagina en
+        # euskera enlazaria las fichas en castellano.
+        suf = LANGS[lang][1]
+        rutas = " ".join(
+            '<a href="%s%s.html">%s</a>' % (r["href"][:-len(".html")], suf, r["nombre"])
+            for r in d["rutas"])
+        item = ['        <li class="agua-item" id="agua-%s" data-lat="%s" data-lon="%s"%s>'
+                % (fu["id"], fu["lat"], fu["lon"], ' data-aprox="1"' if fu["aprox"] else "")]
+        alt = ('<span class="agua-alt">%d m</span>' % fu["ele"]) if fu["ele"] is not None else ""
+        item.append('          <p class="agua-nombre">%s %s</p>' % (d["nombre"], alt))
+        if fu["aprox"]:
+            item.append('          <p class="agua-aprox">%s</p>' % t("Posici\u00f3n aproximada"))
+        if d["nota"]:
+            item.append('          <p class="agua-nota">%s</p>' % d["nota"])
+        item.append('          <p class="agua-rutas"><span class="agua-rutas-et">%s</span> %s</p>'
+                    % (t("Rutas que pasan"), rutas))
+        item.append("        </li>")
+        partes.append("\n".join(item))
+    partes.append("      </ul>\n    </div>")
+    lista = ('<section class="agua-zonas" id="aguaLista">\n'
+             + "\n".join(partes) + "\n  </section>")
+    return page_html.replace(marca, lista, 1)
 
 
 def add_manifest(lang):

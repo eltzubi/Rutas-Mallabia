@@ -587,3 +587,88 @@ footer a:hover{ color:var(--violet); }
   body{ padding-bottom:62px; }
   .to-top{ bottom:74px; }
 }
+
+/* ---- agua.html: el mapa de fuentes y su lista -------------------------- */
+/* Comparte cascaron con las fichas (masthead, hero-label, .route-map-box,
+   .map-layers, footer), asi que aqui solo esta lo propio de esta pagina. */
+
+.agua-map-box{ aspect-ratio:auto; height:clamp(340px,62vh,640px); }
+@media (min-width:640px){ .agua-map-box{ aspect-ratio:auto; } }
+
+.agua-marker{ background:none; border:0; }
+
+.agua-nota-general{
+  margin:18px 24px 0; max-width:72ch;
+  font:400 14px/1.65 'Karla',sans-serif; color:var(--ink-dim);
+}
+.agua-nota-general b{ color:var(--ink); font-weight:600; }
+
+.agua-zonas{ margin:38px 24px 0; }
+.agua-zona + .agua-zona{ margin-top:34px; }
+.agua-zona h2{
+  margin:0 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line);
+  font:600 1.05rem/1.2 'IBM Plex Mono',monospace; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--ink-dim);
+}
+.agua-lista{ list-style:none; margin:0; padding:0; display:grid; gap:18px; align-items:start; }
+@media (min-width:860px){ .agua-lista{ grid-template-columns:1fr 1fr; gap:18px 28px; } }
+
+.agua-item{
+  padding:14px 16px; border:1px solid var(--line); border-radius:14px;
+  background:var(--ground-raised); scroll-margin-top:72px;
+}
+.agua-nombre{
+  margin:0; display:flex; align-items:baseline; flex-wrap:wrap; gap:8px;
+  font:600 16px/1.35 'Karla',sans-serif; color:var(--ink);
+}
+.agua-alt{
+  font:500 12px 'IBM Plex Mono',monospace; color:var(--ink-dim);
+  font-variant-numeric:tabular-nums;
+}
+.agua-ver{
+  margin-left:auto; font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
+  color:var(--teal); background:none; border:0; padding:2px 0; cursor:pointer;
+  text-decoration:underline; text-underline-offset:3px;
+}
+.agua-ver:hover{ color:var(--violet); }
+.agua-aprox, .agua-popup-aprox{
+  margin:6px 0 0; font:500 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
+  text-transform:uppercase; color:var(--ink-dim);
+}
+.agua-nota, .agua-popup-nota{
+  margin:6px 0 0; font:400 14px/1.6 'Karla',sans-serif; color:var(--ink);
+}
+.agua-rutas, .agua-popup-rutas{
+  margin:9px 0 0; font:400 13.5px/1.7 'Karla',sans-serif; color:var(--ink-dim);
+}
+.agua-rutas-et{
+  display:block; font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
+  text-transform:uppercase; color:var(--ink-dim); margin-bottom:2px;
+}
+.agua-rutas a, .agua-popup-rutas a{
+  color:var(--teal); text-decoration:underline; text-underline-offset:2px;
+}
+.agua-rutas a:hover, .agua-popup-rutas a:hover{ color:var(--violet); }
+/* Los nombres de ruta son largos: una coma no se ve entre dos subrayados, y
+   un punto medio si separa sin parecer parte del enlace. */
+.agua-rutas a + a::before, .agua-popup-rutas a + a::before{
+  content:'\00a0\00b7\00a0'; color:var(--ink-dim);
+  display:inline-block; text-decoration-line:none;
+}
+
+/* El globo del mapa: en las fichas no hay ninguno, asi que su estilo vive
+   aqui y no en base.css. */
+.leaflet-popup-content-wrapper{
+  background:var(--ground-raised); color:var(--ink);
+  border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.leaflet-popup-tip{ background:var(--ground-raised); border:1px solid var(--line); }
+.leaflet-popup-content{ margin:12px 14px; font-family:'Karla',sans-serif; min-width:190px; }
+.leaflet-popup-close-button{ color:var(--ink-dim); }
+.agua-popup-nombre{
+  margin:0; font:600 15px/1.35 'Karla',sans-serif; color:var(--ink);
+}
+
+@media (max-width:659px){
+  .agua-nota-general, .agua-zonas{ margin-left:16px; margin-right:16px; }
+}
