@@ -657,14 +657,18 @@ footer a:hover{ color:var(--violet); }
 }
 
 /* El globo del mapa: en las fichas no hay ninguno, asi que su estilo vive
-   aqui y no en base.css. */
+   aqui y no en base.css.
+   Con !important porque vendor/leaflet/leaflet.css se carga al final del
+   <body>, detras de esta hoja, y su «background:white» gana por orden: sin
+   esto el globo salia blanco con el texto claro encima, ilegible en tema
+   oscuro. Es lo mismo que ya hacia home.css con el pico del globo. */
 .leaflet-popup-content-wrapper{
-  background:var(--ground-raised); color:var(--ink);
+  background:var(--ground-raised) !important; color:var(--ink) !important;
   border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
-.leaflet-popup-tip{ background:var(--ground-raised); border:1px solid var(--line); }
+.leaflet-popup-tip{ background:var(--ground-raised) !important; border:1px solid var(--line); }
 .leaflet-popup-content{ margin:12px 14px; font-family:'Karla',sans-serif; min-width:190px; }
-.leaflet-popup-close-button{ color:var(--ink-dim); }
+.leaflet-popup-close-button{ color:var(--ink-dim) !important; }
 .agua-popup-nombre{
   margin:0; font:600 15px/1.35 'Karla',sans-serif; color:var(--ink);
 }

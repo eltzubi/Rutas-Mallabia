@@ -180,7 +180,13 @@
       globo.appendChild(r);
     }
     var m = L.marker([f.lat, f.lon], { title: f.nombre, icon: icono(f.aprox) })
-      .bindPopup(globo, { maxWidth: 260 })
+      // La barra de capas flota sobre el mapa y tapaba el nombre del globo
+      // cuando se abria arriba del todo. El relleno de autoPan le deja sitio.
+      .bindPopup(globo, {
+        maxWidth: 260,
+        autoPanPaddingTopLeft: L.point(14, 74),
+        autoPanPaddingBottomRight: L.point(14, 24)
+      })
       .addTo(map);
     marcadores.push(m);
 
