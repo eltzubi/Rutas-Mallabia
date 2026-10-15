@@ -594,6 +594,10 @@ footer a:hover{ color:var(--violet); }
 
 .agua-map-box{ aspect-ratio:auto; height:clamp(340px,62vh,640px); }
 @media (min-width:640px){ .agua-map-box{ aspect-ratio:auto; } }
+/* Ampliado se lleva casi toda la pantalla: a diferencia de una ficha, aqui
+   no hay leyenda ni perfil de altura debajo que haya que seguir viendo, asi
+   que los 250 px que reserva .route-map-box.is-expanded sobran. */
+.agua-map-box.is-expanded{ height:calc(100vh - 110px); height:calc(100dvh - 110px); }
 
 .agua-marker{ background:none; border:0; }
 

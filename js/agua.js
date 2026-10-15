@@ -210,6 +210,49 @@
     nombre.appendChild(boton);
   });
 
-  map.fitBounds(L.featureGroup(marcadores).getBounds(), { padding: [34, 34] });
+  var limites = L.featureGroup(marcadores).getBounds();
+  map.fitBounds(limites, { padding: [34, 34] });
+
+  // Ampliar el mapa, como en las fichas: mismo boton, misma clase y el mismo
+  // apano del ancho -- clientWidth y no 100vw, que incluye la barra de
+  // desplazamiento y creaba desbordamiento horizontal.
+  var movido = false;
+  ['wheel', 'touchstart', 'dblclick', 'pointerdown'].forEach(function(ev){
+    caja.addEventListener(ev, function(){ movido = true; }, { passive: true });
+  });
+  function anchoUtil(){
+    caja.parentElement.style.setProperty(
+      '--map-viewport-width', document.documentElement.clientWidth + 'px');
+  }
+  anchoUtil();
+  window.addEventListener('resize', anchoUtil, { passive: true });
+  var botonAmpliar = caja.parentElement.querySelector('.map-expand-btn');
+  if (botonAmpliar) {
+    botonAmpliar.addEventListener('click', function(){
+      anchoUtil();
+      var abierto = caja.parentElement.classList.toggle('is-expanded');
+      botonAmpliar.classList.toggle('is-active', abierto);
+      botonAmpliar.setAttribute('aria-label', abierto ?
+        botonAmpliar.dataset.labelCollapse : botonAmpliar.dataset.labelExpand);
+      caja.parentElement.scrollIntoView({
+        behavior: (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+          ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      // Al ampliar y al reducir se vuelve a ver todo: es para lo que sirve.
+      movido = false;
+      map.invalidateSize();
+      map.fitBounds(limites, { padding: [34, 34] });
+    });
+  }
+  // La caja cambia de tamanio al ampliar y al girar el movil, y Leaflet no se
+  // entera solo.
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(function(){
+      if (!caja.clientWidth || !caja.clientHeight) return;
+      map.invalidateSize();
+      if (!movido) map.fitBounds(limites, { padding: [34, 34] });
+    }).observe(caja);
+  }
   caja.setAttribute('aria-busy', 'false');
 })();

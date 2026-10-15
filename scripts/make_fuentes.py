@@ -129,9 +129,14 @@ FUENTES = [
         "zona": "zengotita",
         "es": "Fuente de Maguna",
         "eu": "Magunako iturria",
+        # El autor dice que esta en el casco del barrio, y el waypoint caia
+        # 300 m al norte: es el punto del RECORRIDO, no el del barrio. La
+        # coordenada es la del nucleo de Maguna en OpenStreetMap (hamlet).
+        "coord": (43.22822, -2.63766),
         "punto": ("maguna", 3),
-        "nota_es": "En el barrio, en un entorno muy tranquilo.",
-        "nota_eu": "Auzoan bertan, inguru oso lasaian.",
+        "aprox": True,
+        "nota_es": "En el casco del barrio.",
+        "nota_eu": "Auzoaren erdigunean.",
         "rutas": ["maguna"],
     },
     {
@@ -256,7 +261,12 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Markina",
         "eu": "Markinako iturria",
+        # Junto a la iglesia del Carmen, dice el autor, y el waypoint caia
+        # 279 m al norte. La coordenada es la de la iglesia (Karmengo eliza
+        # eta komentua) en OpenStreetMap; la ruta pasa a 32 m de ella.
+        "coord": (43.26702, -2.49879),
         "punto": ("urregarai", 2),
+        "aprox": True,
         "nota_es": "Fuente grande, junto a la iglesia del Carmen.",
         "nota_eu": "Iturri handia, Karmengo elizaren ondoan.",
         "rutas": ["urregarai"],
