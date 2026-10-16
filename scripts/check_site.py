@@ -311,6 +311,56 @@ def main():
                 require(f'>{ruta["nombre"]}</a>' in pagina,
                         f'agua [{lang}]: {fuente["id"]} sin el nombre de {destino}')
 
+    # --- nada publicado pasa por el domicilio del autor --------------------
+    # Un GPX grabado saliendo de casa dice donde vive quien lo grabo. En
+    # agosto de 2026 se limpiaron de golpe las rutas que habia entonces, pero
+    # aquello fue una limpieza puntual y no una regla: las que entraron
+    # despues volvieron a traer el arranque real y nadie lo vio en meses.
+    # Esto lo convierte en una comprobacion, y mira LOS CUATRO SITIOS por los
+    # que ese dato sale publicado, no solo el GPX.
+    #
+    # El punto vive en scripts/.punto-privado.json, excluido de git porque
+    # este repositorio es publico. Sin el, esta comprobacion se salta sola.
+    punto = ROOT / 'scripts' / '.punto-privado.json'
+    if punto.exists():
+        cfg = json.loads(punto.read_text())
+        casa = (cfg['lat'], cfg['lon'])
+        tope = float(cfg['margen_paso_m'])
+
+        def metros(a, b):
+            r = 6371000.0
+            p1, p2 = math.radians(a[0]), math.radians(b[0])
+            dp = math.radians(b[0] - a[0]); dl = math.radians(b[1] - a[1])
+            return 2 * r * math.asin(math.sqrt(
+                math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2))
+
+        def mas_cerca(puntos):
+            return min((metros(casa, q) for q in puntos), default=1e9)
+
+        for gpx in sorted((ROOT / 'src').glob('*.gpx')):
+            ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
+                  for p in ET.parse(gpx).findall('.//{*}trkpt')]
+            d = mas_cerca(ps)
+            require(d >= tope, f'{gpx.name}: pasa a {d:.0f} m del domicilio (minimo {tope:.0f} m)')
+            kml = gpx.with_suffix('.kml')
+            co = ET.parse(kml).find('.//{*}coordinates').text.split()
+            d = mas_cerca([(float(c.split(',')[1]), float(c.split(',')[0])) for c in co])
+            require(d >= tope, f'{kml.name}: pasa a {d:.0f} m del domicilio')
+
+        for datos in sorted((ROOT / 'data').glob('*.json')):
+            if datos.name == 'fuentes.json':
+                continue
+            for pista in json.loads(datos.read_text()).get('tracks', []):
+                d = mas_cerca([(q[0], q[1]) for q in pista.get('points', [])])
+                require(d >= tope, f'data/{datos.name}: pasa a {d:.0f} m del domicilio')
+
+        with zipfile.ZipFile(ROOT / 'src/todas-las-rutas.zip') as z:
+            for nombre in z.namelist():
+                ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
+                      for p in ET.fromstring(z.read(nombre)).findall('.//{*}trkpt')]
+                d = mas_cerca(ps)
+                require(d >= tope, f'ZIP/{nombre}: pasa a {d:.0f} m del domicilio')
+
     # --- las capas del mapa, iguales en los dos ficheros -------------------
     # js/agua.js lleva su propia copia de las cuatro capas de teselas porque
     # js/map.js son 1.100 lineas atadas a los tracks y partirlo para compartir

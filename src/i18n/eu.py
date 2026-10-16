@@ -2431,8 +2431,8 @@ ARTETA = {
 GOITA = {
     '<h2>Un paseo corto y accesible para (casi) cualquiera</h2>':
         '<h2>Paseoa labur eta erraza (ia) edonorentzat</h2>',
-    '<title>Polígono de Anbre · 2,39 km · 229 m</title>':
-        '<title>Anbre industrialdea · 2,39 km · 229 m</title>',
+    '<title>Polígono de Anbre · 2,86 km · 229 m</title>':
+        '<title>Anbre industrialdea · 2,86 km · 229 m</title>',
     '<span class="num">1</span>Polígono de Anbre':
         '<span class="num">1</span>Anbre industrialdea',
     '<span>Carretera y pista</span><span class="sep">/</span><span>Goita</span>':
@@ -2672,12 +2672,12 @@ MAGUNA = {
         '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako Trikuharritik igarota Magunaraino</p>',
 
     # elevation profile markers + legend (used twice: hero chart and map section)
-    '<title>Dolmen de Iturzurigaina &middot; 4,6 km &middot; 843 m</title>':
-        '<title>Iturzurigainako Trikuharria &middot; 4,6 km &middot; 843 m</title>',
-    '<title>Ermita de San Kristobal Txiki &middot; 26,8 km &middot; 496 m</title>':
-        '<title>San Kristobal Txiki ermita &middot; 26,8 km &middot; 496 m</title>',
-    '<title>Besoita &middot; 28,4 km &middot; 324 m</title>':
-        '<title>Besoita &middot; 28,4 km &middot; 324 m</title>',
+    '<title>Dolmen de Iturzurigaina &middot; 5,3 km &middot; 843 m</title>':
+        '<title>Iturzurigainako Trikuharria &middot; 5,3 km &middot; 843 m</title>',
+    '<title>Ermita de San Kristobal Txiki &middot; 27,4 km &middot; 496 m</title>':
+        '<title>San Kristobal Txiki ermita &middot; 27,4 km &middot; 496 m</title>',
+    '<title>Besoita &middot; 29,0 km &middot; 324 m</title>':
+        '<title>Besoita &middot; 29,0 km &middot; 324 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Dolmen de Iturzurigaina</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>Ermita de San Kristobal Txiki</span> <span class="elev-legend-item"><span class="num">5</span>Besoita</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotitagane</span> <span class="elev-legend-item"><span class="num">2</span>Iturzurigainako Trikuharria</span> <span class="elev-legend-item"><span class="num">3</span>Maguna</span> <span class="elev-legend-item"><span class="num">4</span>San Kristobal Txiki ermita</span> <span class="elev-legend-item"><span class="num">5</span>Besoita</span>',
 
@@ -2964,7 +2964,7 @@ BARINAGA = {
     '<span class="mid">perfil real del track &middot; 27,0 km</span>':
         '<span class="mid">trackaren benetako profila &middot; 27,0 km</span>',
 
-    '<span class="v">27,0 km</span>': '<span class="v">27,0 km</span>',
+    '<span class="v">26,5 km</span>': '<span class="v">26,5 km</span>',
     '<span class="v">+1.453 m</span>': '<span class="v">+1.453 m</span>',
 
     'Subimos desde <b>Trabakua</b> hasta <b>Urko</b> (km 7,9 &middot; 790 m) &mdash;una subida de unos 6,6 km y +410 m&mdash; siguiendo el mismo recorrido que la ruta de <a href="urko.html">Trabakua, Asuntza y Urko</a>. Desde la cima comenzamos el descenso por el cordal en direcci&oacute;n a Ixua, con Eibar al otro lado de la monta&ntilde;a, hasta alcanzar el puerto. All&iacute; cruzamos la carretera general junto a un restaurante y comenzamos la subida hacia <b>Kalamua</b>.':
@@ -3117,44 +3117,44 @@ EXIGENTE = {
     'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
         'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
 
-    'Iturreta &middot; 12,3 km &middot; 366 m':
-        'Iturreta &middot; 12,3 km &middot; 366 m',
+    'Iturreta &middot; 11,7 km &middot; 366 m':
+        'Iturreta &middot; 11,7 km &middot; 366 m',
 
     '<span class="num">1</span>Iturreta':
         '<span class="num">1</span>Iturreta',
 
-    'Bolibar &middot; 18,7 km &middot; 172 m':
-        'Bolibar &middot; 18,7 km &middot; 172 m',
+    'Bolibar &middot; 18,1 km &middot; 172 m':
+        'Bolibar &middot; 18,1 km &middot; 172 m',
 
     '<span class="num">2</span>Bolibar':
         '<span class="num">2</span>Bolibar',
 
-    'Monasterio de Zenarruza &middot; 20,7 km &middot; 300 m':
-        'Zenarruzako monasterioa &middot; 20,7 km &middot; 300 m',
+    'Monasterio de Zenarruza &middot; 20,1 km &middot; 300 m':
+        'Zenarruzako monasterioa &middot; 20,1 km &middot; 300 m',
 
     '<span class="num">3</span>Monasterio de Zenarruza':
         '<span class="num">3</span>Zenarruzako monasterioa',
 
-    'Ermita San Krist&oacute;bal &middot; 29,9 km &middot; 797 m':
-        'San Kristobal ermita &middot; 29,9 km &middot; 797 m',
+    'Ermita San Krist&oacute;bal &middot; 29,3 km &middot; 797 m':
+        'San Kristobal ermita &middot; 29,3 km &middot; 797 m',
 
     '<span class="num">4</span>Ermita San Krist&oacute;bal':
         '<span class="num">4</span>San Kristobal ermita',
 
-    'Oiz &middot; 32,0 km &middot; 1.020 m':
-        'Oiz &middot; 32,0 km &middot; 1.020 m',
+    'Oiz &middot; 31,4 km &middot; 1020 m':
+        'Oiz &middot; 31,4 km &middot; 1020 m',
 
     '<span class="num">5</span>Oiz':
         '<span class="num">5</span>Oiz',
 
-    'Dolmen Iturzurigaina &middot; 34,8 km &middot; 852 m':
-        'Iturzurigainako trikuharria &middot; 34,8 km &middot; 852 m',
+    'Dolmen Iturzurigaina &middot; 34,2 km &middot; 852 m':
+        'Iturzurigainako trikuharria &middot; 34,2 km &middot; 852 m',
 
     '<span class="num">6</span>Dolmen Iturzurigaina':
         '<span class="num">6</span>Iturzurigainako trikuharria',
 
-    'Zengotitagane &middot; 36,0 km &middot; 806 m':
-        'Zengotitagane &middot; 36,0 km &middot; 806 m',
+    'Zengotitagane &middot; 35,4 km &middot; 806 m':
+        'Zengotitagane &middot; 35,4 km &middot; 806 m',
 
     '<span class="num">7</span>Zengotitagane':
         '<span class="num">7</span>Zengotitagane',
@@ -3204,12 +3204,12 @@ POTRERA = {
         '<p class="full-name">E-bike zirkuitua Trabakuatik, Muniozguren, Oizko gailurra eta San Kristobal Txikitik igarota</p>',
 
     # elevation profile markers + legend
-    '<title>El repecho &middot; 10,3 km &middot; 754 m</title>':
-        '<title>Aldapa gogorra &middot; 10,3 km &middot; 754 m</title>',
-    '<title>Cordal de Oiz &middot; 11,6 km &middot; 927 m</title>':
-        '<title>Oizko gailurra &middot; 11,6 km &middot; 927 m</title>',
-    '<title>La Potrera &middot; 14 km &middot; 714 m</title>':
-        '<title>Potrera &middot; 14 km &middot; 714 m</title>',
+    '<title>El repecho &middot; 9,8 km &middot; 754 m</title>':
+        '<title>Aldapa gogorra &middot; 9,8 km &middot; 754 m</title>',
+    '<title>Cordal de Oiz &middot; 11,1 km &middot; 927 m</title>':
+        '<title>Oizko gailurra &middot; 11,1 km &middot; 927 m</title>',
+    '<title>La Potrera &middot; 13,5 km &middot; 714 m</title>':
+        '<title>Potrera &middot; 13,5 km &middot; 714 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Muniozguren</span> <span class="elev-legend-item"><span class="num">2</span>El repecho</span> <span class="elev-legend-item"><span class="num">3</span>Cordal de Oiz</span> <span class="elev-legend-item"><span class="num">4</span>La Potrera</span> <span class="elev-legend-item"><span class="num">5</span>San Kristobal Txiki</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Muniozguren</span> <span class="elev-legend-item"><span class="num">2</span>Aldapa gogorra</span> <span class="elev-legend-item"><span class="num">3</span>Oizko gailurra</span> <span class="elev-legend-item"><span class="num">4</span>Potrera</span> <span class="elev-legend-item"><span class="num">5</span>San Kristobal Txiki</span>',
 
@@ -3413,10 +3413,10 @@ AIXOLA = {
         'BTT arruntarekin zein e-bikearekin egiteko moduko ibilbidea da, eta aukera polita da Trabakua, Goierri, Elgeta, Aixola, Eitzaga, Zaldibar, Berriz eta Zengotita inguruak buelta berean lotzeko.',
 
     # --- perfil: marcadores y leyenda ---
-    '<title>Ermita de Zengotita &middot; 2,4 km &middot; 411 m</title>':
-        '<title>Zengotitako ermita &middot; 2,4 km &middot; 411 m</title>',
-    '<title>Presa de Aixola &middot; 20 km &middot; 313 m</title>':
-        '<title>Aixolako presa &middot; 20 km &middot; 313 m</title>',
+    '<title>Ermita de Zengotita &middot; 2,9 km &middot; 411 m</title>':
+        '<title>Zengotitako ermita &middot; 2,9 km &middot; 411 m</title>',
+    '<title>Presa de Aixola &middot; 20,5 km &middot; 313 m</title>':
+        '<title>Aixolako presa &middot; 20,5 km &middot; 313 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Ermita de Zengotita</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Zengotitako ermita</span>',
     '<span class="elev-legend-item"><span class="num">4</span>Presa de Aixola</span>':
@@ -3500,8 +3500,8 @@ INTXORTA = {
         '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota</p>',
 
     # perfil: marcadores y leyenda
-    '<title>Presa de Aixola &middot; 25,5 km &middot; 314 m</title>':
-        '<title>Aixolako presa &middot; 25,5 km &middot; 314 m</title>',
+    '<title>Presa de Aixola &middot; 26,0 km &middot; 314 m</title>':
+        '<title>Aixolako presa &middot; 26,0 km &middot; 314 m</title>',
     '<span class="elev-legend-item"><span class="num">6</span>Presa de Aixola</span>':
         '<span class="elev-legend-item"><span class="num">6</span>Aixolako presa</span>',
 
@@ -3596,12 +3596,12 @@ ARTETAASUNTZA = {
         'Zirkuitua e-bikez Trabakuatik, Arteta, San Juan ermita eta Asuntzako lepotik, bi bideak lotzen dituzten pasabideak zeharkatuz',
     '<span class="elev-legend-item"><span class="num">4</span>Fuente de Arteta</span>':
         '<span class="elev-legend-item"><span class="num">4</span>Artetako iturria</span>',
-    '<title>Fuente de Arteta &middot; 8,0 km &middot; 464 m</title>':
-        '<title>Artetako iturria &middot; 8,0 km &middot; 464 m</title>',
-    '<title>Ermita de San Juan &middot; 3,4 km &middot; 448 m</title>':
-        '<title>San Juan ermita &middot; 3,4 km &middot; 448 m</title>',
-    '<title>Collado de Asuntza &middot; 16,4 km &middot; 479 m</title>':
-        '<title>Asuntzako lepoa &middot; 16,4 km &middot; 479 m</title>',
+    '<title>Fuente de Arteta &middot; 7,4 km &middot; 464 m</title>':
+        '<title>Artetako iturria &middot; 7,4 km &middot; 464 m</title>',
+    '<title>Ermita de San Juan &middot; 2,8 km &middot; 448 m</title>':
+        '<title>San Juan ermita &middot; 2,8 km &middot; 448 m</title>',
+    '<title>Collado de Asuntza &middot; 15,8 km &middot; 479 m</title>':
+        '<title>Asuntzako lepoa &middot; 15,8 km &middot; 479 m</title>',
     '<span class="elev-legend-item"><span class="num">3</span>Ermita de San Juan</span>':
         '<span class="elev-legend-item"><span class="num">3</span>San Juan ermita</span>',
     '<span class="elev-legend-item"><span class="num">5</span>Collado de Asuntza</span>':
@@ -4816,10 +4816,10 @@ ASUNTZABIRA = {
         'alt="Lurrezko bidea zuhaitzen artean, huntzaz estalitako enbor batekin lehen planoan"',
     'alt="Pista asfaltada entre robles junto a un camino cercado, con prados al fondo"':
         'alt="Pista asfaltatua haritzen artean, hesitutako bide baten ondoan, larreak hondoan"',
-    '<title>Arteta (parte alta) &middot; 3,08 km &middot; 484 m</title>':
-        '<title>Arteta (goiko aldea) &middot; 3,08 km &middot; 484 m</title>',
-    '<title>Arteta (parte baja) &middot; 9,94 km &middot; 489 m</title>':
-        '<title>Arteta (beheko aldea) &middot; 9,94 km &middot; 489 m</title>',
+    '<title>Arteta (parte alta) &middot; 2,45 km &middot; 484 m</title>':
+        '<title>Arteta (goiko aldea) &middot; 2,45 km &middot; 484 m</title>',
+    '<title>Arteta (parte baja) &middot; 9,32 km &middot; 489 m</title>':
+        '<title>Arteta (beheko aldea) &middot; 9,32 km &middot; 489 m</title>',
     '<span class="elev-legend-item"><span class="num">2</span>Arteta (parte alta)</span>':
         '<span class="elev-legend-item"><span class="num">2</span>Arteta (goiko aldea)</span>',
     '<span class="elev-legend-item"><span class="num">6</span>Arteta (parte baja)</span>':
@@ -5238,8 +5238,8 @@ SANCRISTOBALGARAIANDIKOA = {
         'Jaitsiera',
     'Sendero':
         'Bidezidorra',
-    'Fuente · 5,5 km':
-        'Iturria · 5,5 km',
+    'Fuente · 14,8 km':
+        'Iturria · 14,8 km',
     'Carretera · 9,5 km':
         'Errepidea · 9,5 km',
     'Bajada · 11,9 km':

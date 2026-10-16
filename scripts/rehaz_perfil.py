@@ -64,6 +64,26 @@ def en_km(ps, acum, punto):
     return acum[j] / 1000, ps[j][2]
 
 
+_KM_TITULO = re.compile(
+    r'<title>[^<]*?(?:&middot;|\u00b7) (\d+),(\d+) km( (?:&middot;|\u00b7) [\d.]+ m)?</title>')
+
+
+def _forma_original(slug, actual):
+    """Como escribia cada punto su kilometro: decimales y si lleva altura.
+
+    Se mira la version de git y no la del disco, porque si esta ficha ya se
+    ha reescrito una vez el dato de origen se habria perdido. Importa porque
+    no todas las fichas lo escriben igual: unas con un decimal y otras con
+    dos, y sancristobalgaraiandikoa sin altura. Cambiarlo seria tocar algo
+    que nadie ha pedido -- y ademas rompe las claves de src/i18n/eu.py.
+    """
+    import subprocess
+    r = subprocess.run(["git", "show", "HEAD:src/%s_tail.html" % slug],
+                       capture_output=True, text=True, cwd=ROOT)
+    fuente = r.stdout or actual
+    return [(len(m.group(2)), bool(m.group(3))) for m in _KM_TITULO.finditer(fuente)]
+
+
 def rehaz(slug):
     ps, acum = track(slug)
     alt = muestras(ps, acum)
@@ -79,6 +99,7 @@ def rehaz(slug):
 
     ruta = os.path.join(ROOT, "src", slug + "_tail.html")
     t = open(ruta, encoding="utf-8").read()
+    forma = _forma_original(slug, t)
 
     largos = re.findall(r'<path d="(M[^"]{200,})"', t)
     if len(largos) != 2:
@@ -87,16 +108,30 @@ def rehaz(slug):
 
     def nuevo_marcador(m, i):
         km, ele = en_km(ps, acum, tuple(wps[i]))
-        x = km * 1000 / (acum[-1] / 1000) / 1000 * 1000
         x = km / (acum[-1] / 1000) * 1000
         y = 285 - (ele - mn) / (mx - mn) * 270
-        nombre = re.search(r"<title>(.*?) &middot;", m.group(0)).group(1)
-        return ('<g class="elev-marker"><title>%s &middot; %s km &middot; %s m</title>'
-                '<circle cx="%.1f" cy="%.1f" r="9" fill="var(--teal)" stroke="var(--ground)" stroke-width="2.5"/>'
-                '<text x="%.1f" y="%.1f" text-anchor="middle" dominant-baseline="central" '
-                'font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" '
-                'fill="var(--ground)">%d</text></g>'
-                % (nombre, ("%.1f" % km).replace(".", ","), "%.0f" % ele, x, y, x, y, i + 1))
+        # Unas fichas escriben el separador como &middot; y otras como el
+        # caracter · tal cual: se respeta el que ya tuviera.
+        cab = re.search(r"<title>(.*?) (&middot;|·) ", m.group(0))
+        if cab is None:
+            raise SystemExit("%s: no entiendo el titulo %r" % (slug, m.group(0)[:90]))
+        nombre, sep = cab.group(1), cab.group(2)
+        # Cada ficha escribe el kilometro con uno o con dos decimales, y a
+        # veces mezcla las dos cosas. Se conserva el que ya tenia ese punto:
+        # cambiarlo seria tocar algo que nadie ha pedido.
+        dec, con_altura = forma[i] if i < len(forma) else (1, True)
+        cuerpo = ('<title>%s {s} %s km {s} %s m</title>' if con_altura
+                  else '<title>%s {s} %s km</title>')
+        plantilla = (
+            '<g class="elev-marker">' + cuerpo +
+            '<circle cx="%.1f" cy="%.1f" r="9" fill="var(--teal)" stroke="var(--ground)" stroke-width="2.5"/>'
+            '<text x="%.1f" y="%.1f" text-anchor="middle" dominant-baseline="central" '
+            'font-family="IBM Plex Mono, monospace" font-size="10" font-weight="700" '
+            'fill="var(--ground)">%d</text></g>').replace("{s}", sep)
+        datos = [nombre, ("%.*f" % (dec, km)).replace(".", ",")]
+        if con_altura:
+            datos.append("%.0f" % ele)
+        return plantilla % tuple(datos + [x, y, x, y, i + 1])
 
     n = [0]
     def reemplaza(m):
