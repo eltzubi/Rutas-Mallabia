@@ -2583,14 +2583,14 @@ ZALDIBAR = {
         '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino</p>',
 
     # elevation profile markers + legend (used twice: hero chart and map section)
-    '<title>Collado de Asuntza &middot; 5,2 km &middot; 499 m</title>':
-        '<title>Asuntzako lepoa &middot; 5,2 km &middot; 499 m</title>',
-    '<title>Presa de Aixola &middot; 13,1 km &middot; 308 m</title>':
-        '<title>Aixolako presa &middot; 13,1 km &middot; 308 m</title>',
-    '<title>Eitzaga &middot; 11,1 km &middot; 179 m</title>':
-        '<title>Eitzaga &middot; 11,1 km &middot; 179 m</title>',
-    '<title>Besoita &middot; 38,1 km &middot; 276 m</title>':
-        '<title>Besoita &middot; 38,1 km &middot; 276 m</title>',
+    '<title>Collado de Asuntza &middot; 4,6 km &middot; 499 m</title>':
+        '<title>Asuntzako lepoa &middot; 4,6 km &middot; 499 m</title>',
+    '<title>Presa de Aixola &middot; 12,5 km &middot; 308 m</title>':
+        '<title>Aixolako presa &middot; 12,5 km &middot; 308 m</title>',
+    '<title>Eitzaga &middot; 10,5 km &middot; 179 m</title>':
+        '<title>Eitzaga &middot; 10,5 km &middot; 179 m</title>',
+    '<title>Besoita &middot; 37,5 km &middot; 276 m</title>':
+        '<title>Besoita &middot; 37,5 km &middot; 276 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Collado de Asuntza</span> '
     '<span class="elev-legend-item"><span class="num">2</span>Eitzaga</span> '
     '<span class="elev-legend-item"><span class="num">3</span>Presa de Aixola</span> '
