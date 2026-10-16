@@ -261,11 +261,12 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Markina",
         "eu": "Markinako iturria",
-        # Junto a la iglesia del Carmen, dice el autor, y el waypoint caia
-        # 279 m al norte. Se partio de la iglesia (Karmengo eliza eta
-        # komentua, en OpenStreetMap) y el autor la corrigio 20 m al este,
-        # que es donde esta la fuente; por eso ya no va como aproximada.
-        "coord": (43.267020, -2.498543),
+        # El punto que senalo el autor sobre el mapa, junto a Karmengo kalea.
+        # Se llego a el en dos pasos: primero la iglesia del Carmen (Karmengo
+        # eliza eta komentua, en OpenStreetMap), porque el waypoint de la ruta
+        # caia 279 m al norte, y despues esta correccion suya. Ya no va como
+        # aproximada: esta donde el dice que esta.
+        "coord": (43.267060, -2.497890),
         "punto": ("urregarai", 2),
         "nota_es": "Fuente grande, junto a la iglesia del Carmen.",
         "nota_eu": "Iturri handia, Karmengo elizaren ondoan.",
