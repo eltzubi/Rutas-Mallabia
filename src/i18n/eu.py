@@ -2748,8 +2748,8 @@ MAGUNA = {
     # para quién es
     '<h2>Un circuito largo en e-bike</h2>':
         '<h2>E-bikearekin egiteko ibilbide luzea</h2>',
-    '33,44 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigaina (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Kristobal Txiki (km 26,8).':
-        '33,44 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzurigainatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
+    '34,52 km y +1.215 m de desnivel en un solo circuito, con la subida m&aacute;s dura nada m&aacute;s salir hacia Zengotitagane y un recorrido bastante m&aacute;s largo que el resto de rutas de la zona del Oiz. Hay agua cerca de Iturzurigaina (km 4,6), en Maguna (km 15) y en una fuente junto a la Ermita de San Kristobal Txiki (km 26,8).':
+        '34,52 km eta +1.215 m-ko desnibela, zirkuitu bakarrean. Igoerarik gogorrena hasieran bertan dator, Trabakuatik Zengotitaganera bidean, eta ibilbidea Oiz inguruko gainerako ibilbideak baino dezente luzeagoa da. Ura hartzeko aukera dago Iturzurigainatik gertu (4,6 km), Magunan (15 km) eta San Kristobal Txiki ermitaren inguruko iturrian (26,8 km).',
 }
 
 PAGO7 = {
@@ -2961,8 +2961,8 @@ BARINAGA = {
     'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta y Mendibil.kml"':
         'download="Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil.kml"',
 
-    '<span class="mid">perfil real del track &middot; 27,0 km</span>':
-        '<span class="mid">trackaren benetako profila &middot; 27,0 km</span>',
+    '<span class="mid">perfil real del track &middot; 26,5 km</span>':
+        '<span class="mid">trackaren benetako profila &middot; 26,5 km</span>',
 
     '<span class="v">26,5 km</span>': '<span class="v">26,5 km</span>',
     '<span class="v">+1.453 m</span>': '<span class="v">+1.453 m</span>',
@@ -3141,8 +3141,8 @@ EXIGENTE = {
     '<span class="num">4</span>Ermita San Krist&oacute;bal':
         '<span class="num">4</span>San Kristobal ermita',
 
-    'Oiz &middot; 31,4 km &middot; 1020 m':
-        'Oiz &middot; 31,4 km &middot; 1020 m',
+    'Oiz &middot; 31,4 km &middot; 1.020 m':
+        'Oiz &middot; 31,4 km &middot; 1.020 m',
 
     '<span class="num">5</span>Oiz':
         '<span class="num">5</span>Oiz',
@@ -3162,8 +3162,8 @@ EXIGENTE = {
     '<span class="v">Dif&iacute;cil</span>':
         '<span class="v">Zaila</span>',
 
-    '39,87 km y +1.700 m de desnivel en un solo circuito, combinando tramos de varias rutas ya publicadas. Es una ruta exigente, con subidas duras y descensos t&eacute;cnicos, pensada para quien busca un recorrido largo y completo por el Oiz y sus alrededores.':
-        '39,87 km eta +1.700 m-ko desnibela zirkuitu bakarrean, dagoeneko argitaratutako hainbat ibilbideren zatiak konbinatuz. Ibilbide eskatzailea da, aldapa gogorrekin eta jaitsiera teknikoekin, Oiz eta bere inguruko ibilbide luze eta oso bat bilatzen duenarentzat pentsatua.',
+    '39,69 km y +1.700 m de desnivel en un solo circuito, combinando tramos de varias rutas ya publicadas. Es una ruta exigente, con subidas duras y descensos t&eacute;cnicos, pensada para quien busca un recorrido largo y completo por el Oiz y sus alrededores.':
+        '39,69 km eta +1.700 m-ko desnibela zirkuitu bakarrean, dagoeneko argitaratutako hainbat ibilbideren zatiak konbinatuz. Ibilbide eskatzailea da, aldapa gogorrekin eta jaitsiera teknikoekin, Oiz eta bere inguruko ibilbide luze eta oso bat bilatzen duenarentzat pentsatua.',
 
     'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane.gpx"':
         'download="Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane.gpx"',
@@ -3266,8 +3266,8 @@ POTRERA = {
         'Hemendik aurrera beherantz jarraituko dugu <b>Zengotita</b> auzora iritsi arte. Lan handiena eginda izango dugu ordurako, eta 2,5 kilometro inguru baino ez zaizkigu geratuko Trabakuan ibilbidea amaitzeko. Azken tarte lasaiagoa, hankak pixka bat askatu eta azken kilometroez gozatzeko, berriro abiapuntura iritsi aurretik.',
 
     # para quién es
-    '20,43 km y +660 m con kil&oacute;metros de pista, una subida larga y llevadera, un repecho corto y muy fuerte, y la bajada de la Potrera en terreno t&eacute;cnico. Pide paciencia: ese repecho es pr&aacute;cticamente impedaleable y en la Potrera hay tramos rotos y alg&uacute;n bache que obligan a echar pie a tierra.':
-        '20,43 km eta +660 m, pista-kilometroekin, igoera luze eta eramangarri batekin, aldapa labur eta oso gogor batekin, eta Potrerako jaitsierarekin lur teknikoan. Pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zulo batzuk daude, oinez jaitsi beharra ematen dutenak.',
+    '20,71 km y +660 m con kil&oacute;metros de pista, una subida larga y llevadera, un repecho corto y muy fuerte, y la bajada de la Potrera en terreno t&eacute;cnico. Pide paciencia: ese repecho es pr&aacute;cticamente impedaleable y en la Potrera hay tramos rotos y alg&uacute;n bache que obligan a echar pie a tierra.':
+        '20,71 km eta +660 m, pista-kilometroekin, igoera luze eta eramangarri batekin, aldapa labur eta oso gogor batekin, eta Potrerako jaitsierarekin lur teknikoan. Pazientzia eskatzen du: aldapa hori ia ezin da pedalkatu, eta Potreran tarte hautsiak eta zulo batzuk daude, oinez jaitsi beharra ematen dutenak.',
 }
 
 # <meta name="description"> per page (head files)
@@ -3580,8 +3580,8 @@ INTXORTA = {
         'Goierritik GRa hartuko dugu berriro Zengotita aldera. Zengotita zeharkatu ondoren, Trabakuara itzultzeko azken zatia egingo dugu, bertan ibilbideari amaiera emanez.',
 
     # --- para quien es ---
-    'Son 36,31 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
-        '36,31 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
+    'Son 37,32 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
+        '37,32 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
     'Funciona bien como salida larga de <b>trail running</b> o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
         'Ibilbidea <b>trail running</b> irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker beharrezkoa baino gehiago kargatu gabe atera daiteke.',
 }
@@ -3617,8 +3617,8 @@ ARTETAASUNTZA = {
 
     # -- para quien es --
     '<h2>E-bike</h2>': '<h2>E-bike</h2>',
-    '21,78 km y +962 m que no van de encadenar cimas, sino de conocer el terreno: los pasos peque&ntilde;os que unen el camino alto de Asuntza y Arteta con el de abajo, hacia Berano Txiki. Se sube por unos y se baja por otros, cruzando la zona varias veces.':
-        '21,78 km eta +962 m, gailurrak kateatzeko baino, ingurua ezagutzeko: Asuntza eta Artetako goiko bidea behekoarekin, Berano Txiki aldera, lotzen duten pasabide txikiak. Batzuetatik gora eta besteetatik behera, ingurua behin baino gehiagotan zeharkatuz.',
+    '20,56 km y +962 m que no van de encadenar cimas, sino de conocer el terreno: los pasos peque&ntilde;os que unen el camino alto de Asuntza y Arteta con el de abajo, hacia Berano Txiki. Se sube por unos y se baja por otros, cruzando la zona varias veces.':
+        '20,56 km eta +962 m, gailurrak kateatzeko baino, ingurua ezagutzeko: Asuntza eta Artetako goiko bidea behekoarekin, Berano Txiki aldera, lotzen duten pasabide txikiak. Batzuetatik gora eta besteetatik behera, ingurua behin baino gehiagotan zeharkatuz.',
     'Pide algo de manejo con la bici: por estos pasos hay que tener cierta soltura, no es una vuelta para iniciarse. Va bien para quien ya conoce la circular habitual y quiere sacarle m&aacute;s partido, porque una vez localizados estos pasos se pueden acortar, alargar o darle la vuelta a la ruta de muchas maneras. Por el camino se pasa por la <b>fuente de Arteta</b>, uno de los pocos puntos de agua de la zona.':
         'Bizikletarekin trebetasun pixka bat eskatzen du: pasabide hauetan eskarmentua komeni da, ez da hasiberrientzako buelta. Ohiko zirkularra ezagutzen duenarentzat da egokia, hari etekin gehiago atera nahi badio: pasabide horiek behin ezagututa, ibilbidea laburtu, luzatu edo buelta eman daiteke modu askotan. Bidean <b>Artetako iturria</b>tik pasatzen gara, inguruko ur-puntu bakanetako bat.',
 
@@ -4205,8 +4205,8 @@ GARAIMAGUNA = {
         'alt="Erreka bat hormigoizko pista baten gainean zeharkatzen, ur-jauzi txiki baten ondoan enbor eroriekin, bizikletaren manetatik ikusita"',
     'alt="Pista amplia entre hayas j&oacute;venes con un muro de piedra musgoso a un lado, en un tramo de bosque"':
         'alt="Pista zabala pago gazteen artean, goroldioz estalitako harrizko horma batekin alde batean, baso-zati batean"',
-    '32,46 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
-        '32,46 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
+    '33,81 km y +1.288 m de desnivel en un solo circuito, con tramos de asfalto, pista y alg&uacute;n sendero t&eacute;cnico. Otra forma de llegar a <b>Maguna</b> entrando por la parte baja, con varios tramos y zonas nuevas respecto a nuestras otras rutas.':
+        '33,81 km eta +1.288 m-ko desnibela zirkuitu bakarrean, asfaltozko, pistazko eta bidezidor tekniko batzuetako zatiekin. <b>Maguna</b>raino iristeko beste modu bat, beheko aldetik sartuta, gure beste ibilbideekiko zati eta eremu berriekin.',
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, el real de la ruta (+1.288&nbsp;m); el track GPX da +1.421&nbsp;m. <b>Esfuerzo</b>, estimado a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
         '&mdash; <b>Distantzia</b>, benetako GPX trackatik kalkulatua (apur bat alda daiteke beste aplikazioekiko, bakoitzak bere leuntzea aplikatzen baitu). <b>Desnibela</b>, ibilbidearen benetakoa (+1.288&nbsp;m); GPX trackak +1.421&nbsp;m ematen du. <b>Esfortzua</b>, bien arabera zenbatetsia. <b>Azalera</b> eta <b>Mota</b>, bertatik bertara ikusiak.',
     '<p>Con esta ruta proponemos otra forma de llegar a <b><a href="maguna.html">Maguna</a></b>, barrio de Muxika algo alejado de nuestros recorridos habituales. Esta vez entraremos por la parte baja, descubriendo muchos caminos, zonas nuevas y tramos entretenidos.</p>':
@@ -4825,8 +4825,8 @@ ASUNTZABIRA = {
     '<span class="elev-legend-item"><span class="num">6</span>Arteta (parte baja)</span>':
         '<span class="elev-legend-item"><span class="num">6</span>Arteta (beheko aldea)</span>',
     '<h2>E-bike</h2>': '<h2>E-bike</h2>',
-    '<p>18,64 km y +589 m de desnivel en un recorrido que discurre casi en su totalidad por pista limpia y firme de piedra, sin senderos ni tramos t&eacute;cnicos. Hay alg&uacute;n repecho con buena pendiente y buenas bajadas para soltar el freno, pero en general es una vuelta c&oacute;moda, en una zona bastante poco conocida.</p>':
-        '<p>18,64 km eta +589 m-ko desnibela ibilbide batean, ia osorik harrizko pista garbi eta sendotik, bidezidorrik eta zati teknikorik gabe. Malda oneko aldapa bat edo beste egongo da, eta jaitsiera onak ere balazta askatzeko, baina, oro har, buelta erosoa da, gutxi ezagutzen den eremu batean.</p>',
+    '<p>17,44 km y +589 m de desnivel en un recorrido que discurre casi en su totalidad por pista limpia y firme de piedra, sin senderos ni tramos t&eacute;cnicos. Hay alg&uacute;n repecho con buena pendiente y buenas bajadas para soltar el freno, pero en general es una vuelta c&oacute;moda, en una zona bastante poco conocida.</p>':
+        '<p>17,44 km eta +589 m-ko desnibela ibilbide batean, ia osorik harrizko pista garbi eta sendotik, bidezidorrik eta zati teknikorik gabe. Malda oneko aldapa bat edo beste egongo da, eta jaitsiera onak ere balazta askatzeko, baina, oro har, buelta erosoa da, gutxi ezagutzen den eremu batean.</p>',
 
     # --- relato ---
     'Salimos de <b>Trabakua</b> en direcci&oacute;n a Ermua por la carretera general. Antes de llegar a los 2 kil&oacute;metros, como hacemos habitualmente, giramos a la izquierda en <b>Donagarai</b> (km 1,61 &middot; 377 m), junto a un caser&iacute;o, para coger el recorrido hacia Asuntza, dejando atr&aacute;s la carretera y entrando en una zona mucho m&aacute;s tranquila, rodeada de monta&ntilde;as.':
@@ -5238,8 +5238,8 @@ SANCRISTOBALGARAIANDIKOA = {
         'Jaitsiera',
     'Sendero':
         'Bidezidorra',
-    'Fuente · 14,8 km':
-        'Iturria · 14,8 km',
+    'Fuente · 5,5 km':
+        'Iturria · 5,5 km',
     'Carretera · 9,5 km':
         'Errepidea · 9,5 km',
     'Bajada · 11,9 km':
@@ -5565,11 +5565,11 @@ KARABIETA = {
         'alt="Trabakua, Elgeta, Karabieta eta Eibar Unbetik ibilbidearen argazki handitua"',
 
     # para quien es
-    '<p>39,56 km y +1.011 m en un solo circuito, que se sale de Mallabia para dar la vuelta por '
+    '<p>39,60 km y +1.011 m en un solo circuito, que se sale de Mallabia para dar la vuelta por '
     '<b>Elgeta</b>, <b>Karabieta</b> y Azkonabieta y volver por <b>Eibar</b>, <b>Ermua</b> y <b>Berano</b>. '
     'Hay agua en <b>Goierri</b> (km 6,65) y junto al front&oacute;n de Elgeta (km 16,83), donde adem&aacute;s '
     'hay un punto para limpiar la bici con agua a presi&oacute;n.</p>':
-        '<p>39,56 km eta +1.011 m desnibel positibo, zirkuitu bakarrean. Ibilbidea Mallabiatik abiatzen da, '
+        '<p>39,60 km eta +1.011 m desnibel positibo, zirkuitu bakarrean. Ibilbidea Mallabiatik abiatzen da, '
         'eta buelta ematen du <b>Elgeta</b>, <b>Karabieta</b> eta Azkonabieta zeharkatuz; handik berriro '
         'itzultzen da <b>Eibar</b>, <b>Ermua</b> eta <b>Berano</b> pasatuz. Ura hartzeko aukera dago '
         '<b>Goierri</b>n (6,65 km) eta Elgetako frontoiaren ondoan (16,83 km), eta bertan gainera badago '

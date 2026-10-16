@@ -325,7 +325,8 @@ def main():
     if punto.exists():
         cfg = json.loads(punto.read_text())
         casa = (cfg['lat'], cfg['lon'])
-        tope = float(cfg['margen_paso_m'])
+        tope = float(cfg['margen_paso_m'])       # pasar por delante
+        extremo = float(cfg['margen_extremo_m'])  # empezar o acabar ahi
 
         def metros(a, b):
             r = 6371000.0
@@ -342,6 +343,10 @@ def main():
                   for p in ET.parse(gpx).findall('.//{*}trkpt')]
             d = mas_cerca(ps)
             require(d >= tope, f'{gpx.name}: pasa a {d:.0f} m del domicilio (minimo {tope:.0f} m)')
+            for cual, q in (('empieza', ps[0]), ('acaba', ps[-1])):
+                d = mas_cerca([q])
+                require(d >= extremo, f'{gpx.name}: {cual} a {d:.0f} m del '
+                                      f'domicilio (minimo {extremo:.0f} m)')
             kml = gpx.with_suffix('.kml')
             co = ET.parse(kml).find('.//{*}coordinates').text.split()
             d = mas_cerca([(float(c.split(',')[1]), float(c.split(',')[0])) for c in co])
@@ -350,9 +355,22 @@ def main():
         for datos in sorted((ROOT / 'data').glob('*.json')):
             if datos.name == 'fuentes.json':
                 continue
-            for pista in json.loads(datos.read_text()).get('tracks', []):
+            crudo = json.loads(datos.read_text())
+            for pista in crudo.get('tracks', []):
                 d = mas_cerca([(q[0], q[1]) for q in pista.get('points', [])])
                 require(d >= tope, f'data/{datos.name}: pasa a {d:.0f} m del domicilio')
+            # El pin de salida y los puntos numerados tambien se dibujan en el
+            # mapa, y el pin es el que mas canta: senala el sitio exacto. Siete
+            # rutas lo tenian clavado en la casa aunque su track ya no pasara.
+            pin = (crudo.get('marker') or {}).get('at')
+            if pin:
+                d = mas_cerca([(pin[0], pin[1])])
+                require(d >= extremo,
+                        f'data/{datos.name}: el pin de salida esta a {d:.0f} m '
+                        f'del domicilio (minimo {extremo:.0f} m)')
+            for wp in crudo.get('waypoints', []):
+                d = mas_cerca([(wp[0], wp[1])])
+                require(d >= tope, f'data/{datos.name}: un punto numerado esta a {d:.0f} m')
 
         with zipfile.ZipFile(ROOT / 'src/todas-las-rutas.zip') as z:
             for nombre in z.namelist():

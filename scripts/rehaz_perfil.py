@@ -65,7 +65,8 @@ def en_km(ps, acum, punto):
 
 
 _KM_TITULO = re.compile(
-    r'<title>[^<]*?(?:&middot;|\u00b7) (\d+),(\d+) km( (?:&middot;|\u00b7) [\d.]+ m)?</title>')
+    r'<title>[^<]*?(?:&middot;|\u00b7) (\d+)(?:,(\d+))? km'
+    r'( (?:&middot;|\u00b7) [\d.]+ m)?</title>')
 
 
 def _forma_original(slug, actual):
@@ -81,7 +82,8 @@ def _forma_original(slug, actual):
     r = subprocess.run(["git", "show", "HEAD:src/%s_tail.html" % slug],
                        capture_output=True, text=True, cwd=ROOT)
     fuente = r.stdout or actual
-    return [(len(m.group(2)), bool(m.group(3))) for m in _KM_TITULO.finditer(fuente)]
+    return [(len(m.group(2) or ''), bool(m.group(3)))
+            for m in _KM_TITULO.finditer(fuente)]
 
 
 def rehaz(slug):
@@ -130,7 +132,8 @@ def rehaz(slug):
             'fill="var(--ground)">%d</text></g>').replace("{s}", sep)
         datos = [nombre, ("%.*f" % (dec, km)).replace(".", ",")]
         if con_altura:
-            datos.append("%.0f" % ele)
+            # Mil y pico metros se escribe «1.020 m» en todas las fichas.
+            datos.append("{:,.0f}".format(ele).replace(",", "."))
         return plantilla % tuple(datos + [x, y, x, y, i + 1])
 
     n = [0]
