@@ -267,7 +267,11 @@ FUENTES = [
         "eu": "Larrosako Iturri",
         # Coordenada medida por el autor, a 32 m del waypoint de argineta: la
         # fuente esta al lado del camino, no sobre el.
-        "coord": (43.149030, -2.501700),
+        # Enganchada al camino: la medida que dio el autor caia 30 m dentro
+        # del monte y la fuente esta en el camino mismo, asi que se usa el
+        # punto del track mas cercano -- el de galdaramino, que a esa altura
+        # coincide con argineta, zaldibar y aixola a menos de 6 m.
+        "coord": (43.149112, -2.502047),
         "punto": ("argineta", 4),
         "nota_es": "Sale directamente de la pared de la monta\u00f1a, al salir "
                    "de la presa camino de Elgeta.",
@@ -286,6 +290,36 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino que sube a Kalamua.",
         "nota_eu": "Kalamuara igotzen den bidean.",
+        "rutas": ["kalamua", "barinaga"],
+    },
+    {
+        "id": "urkieta",
+        "zona": "markina",
+        "es": "Fuente de Urkieta",
+        "eu": "Urkietako iturria",
+        # Medida por el autor: la tercera de la subida a Kalamua, entre la de
+        # Usartza (864 m mas abajo) y la de Intxaurkorta (552 m mas arriba).
+        # El nombre sale del paraje de al lado en OpenStreetMap (250 m); si el
+        # autor la llama de otra forma, se cambia aqui.
+        "coord": (43.217490, -2.471804),
+        "punto": ("kalamua", None),
+        "nota_es": "En el camino a Kalamua, entre la de Usartza y la de Intxaurkorta.",
+        "nota_eu": "Kalamuarako bidean, Usartzakoaren eta Intxaurkortakoaren artean.",
+        "rutas": ["kalamua", "barinaga"],
+    },
+    {
+        "id": "intxaurkorta",
+        "zona": "markina",
+        "es": "Fuente de Intxaurkorta",
+        "eu": "Intxaurkortako iturria",
+        # Medida por el autor, 1,3 km por encima de la de Usartza: la segunda
+        # de las «varias fuentes en la subida a Kalamua». El nombre sale del
+        # paraje que tiene al lado en OpenStreetMap (212 m); si el autor la
+        # llama de otra forma, se cambia aqui.
+        "coord": (43.221017, -2.467010),
+        "punto": ("kalamua", None),
+        "nota_es": "M\u00e1s arriba en el camino a Kalamua, pasada la de Usartza.",
+        "nota_eu": "Kalamuarako bidean gorago, Usartzakoa pasata.",
         "rutas": ["kalamua", "barinaga"],
     },
     {
@@ -315,7 +349,9 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Iturreta",
         "eu": "Iturretako iturria",
-        "coord": (43.243311, -2.510540),
+        # 10 m al este de la primera medida: el autor la corrigio porque
+        # aquella caia en mitad de la campa y la fuente esta junto al sendero.
+        "coord": (43.243311, -2.510417),
         "punto": ("exigente", 1),
         "nota_es": "Junto a la ermita.",
         "nota_eu": "Baselizaren ondoan.",
