@@ -4,13 +4,13 @@
   --ground-raised:#17171A;
   --ink:#EAF5E2;
   --ink-dim:#8FA382;
-  --teal:#2FE0F5;
-  --teal-soft:rgba(47,224,245,.14);
+  --teal:#FF9C3B;
+  --teal-soft:rgba(255,156,59,.14);
   --violet:#A6FF4D;
   --violet-soft:rgba(166,255,77,.14);
   --line: rgba(234,245,226,.16);
   --ink-deep:#050805;
-  --readout-a:#2FE0F5;
+  --readout-a:#FF9C3B;
   --readout-b:#A6FF4D;
 }
 :root[data-theme="light"]{
@@ -18,13 +18,13 @@
   --ground-raised:#E9E9E5;
   --ink:#16210F;
   --ink-dim:#57624A;
-  --teal:#006E86;
-  --teal-soft:#CFE9EF;
+  --teal:#A75C00;
+  --teal-soft:#FFE9D4;
   --violet:#3A6B15;
   --violet-soft:#DEEFC9;
   --line: rgba(22,33,15,.14);
   --ink-deep:#14170F;
-  --readout-a:#0089A8;
+  --readout-a:#C97A00;
   --readout-b:#4E8F1C;
 }
 
@@ -768,7 +768,7 @@ footer a:hover{ text-decoration:underline; }
    tokens: la foto de debajo es oscura en los dos temas, asi que --violet y
    --teal (que en claro son verde y azul oscuros) se volvian ilegibles. */
 .hero-compact h1 em .pie{ color:#A6FF4D; font-style:italic; }
-.hero-compact h1 em .bici{ color:#2FE0F5; font-style:italic; }
+.hero-compact h1 em .bici{ color:#FF9C3B; font-style:italic; }
 .hero-compact-stats{
   margin-top:14px;
   /* En euskera la linea es mas larga («56 ibilbide» frente a «56 rutas») y con
