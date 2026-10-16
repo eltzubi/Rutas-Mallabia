@@ -372,6 +372,57 @@ def main():
                 d = mas_cerca([(wp[0], wp[1])])
                 require(d >= tope, f'data/{datos.name}: un punto numerado esta a {d:.0f} m')
 
+        # Lo que se ve en el mapa no son los puntos, son las RECTAS entre
+        # punto y punto. Mirar solo los puntos daba verde mientras el dibujo
+        # cortaba la curva y entraba por el camino particular. Asi que cerca
+        # del domicilio se comprueban los TRAMOS: que ninguno se separe de la
+        # BI-633 (la de galdaramino, que el autor dio por buena) y que no haya
+        # rectas largas, que son las que se inventan trazado.
+        aviso = float(cfg['aviso_m'])
+        fuera_max = float(cfg['fuera_max_m'])
+        recta_max = float(cfg['recta_max_m'])
+        kcos = math.cos(math.radians(casa[0]))
+
+        def plano(q):
+            return ((q[1] - casa[1]) * 111320 * kcos, (q[0] - casa[0]) * 110540)
+
+        def a_la_recta(q, a, b):
+            qx, qy = plano(q); ax, ay = plano(a); bx, by = plano(b)
+            dx, dy = bx - ax, by - ay
+            L = dx * dx + dy * dy
+            s = 0.0 if L == 0 else max(0.0, min(1.0, ((qx - ax) * dx + (qy - ay) * dy) / L))
+            return math.hypot(qx - ax - s * dx, qy - ay - s * dy)
+
+        general = [(float(p.attrib['lat']), float(p.attrib['lon']))
+                   for p in ET.parse(ROOT / 'src/galdaraminio.gpx').findall('.//{*}trkpt')]
+        general = [q for q in general if metros(q, casa) < 900]
+
+        def de_la_general(q):
+            return min(a_la_recta(q, general[i], general[i + 1])
+                       for i in range(len(general) - 1))
+
+        for gpx in sorted((ROOT / 'src').glob('*.gpx')):
+            ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
+                  for p in ET.parse(gpx).findall('.//{*}trkpt')]
+            for i in range(1, len(ps)):
+                a, b = ps[i - 1], ps[i]
+                medio = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+                if min(metros(a, casa), metros(b, casa), metros(medio, casa)) > aviso:
+                    continue
+                largo = metros(a, b)
+                require(largo <= recta_max,
+                        f'{gpx.name}: una recta de {largo:.0f} m junto al '
+                        f'domicilio; el dibujo se inventa por donde pasa')
+                n = max(2, int(largo // 3))
+                for k in range(n + 1):
+                    q = (a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n)
+                    if metros(q, casa) > aviso:
+                        continue
+                    d = de_la_general(q)
+                    require(d <= fuera_max,
+                            f'{gpx.name}: junto al domicilio se separa {d:.0f} m '
+                            f'de la BI-633; ahi esta el camino particular')
+
         with zipfile.ZipFile(ROOT / 'src/todas-las-rutas.zip') as z:
             for nombre in z.namelist():
                 ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
