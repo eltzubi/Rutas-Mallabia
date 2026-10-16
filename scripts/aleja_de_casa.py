@@ -67,8 +67,8 @@ def privado():
             "Sin el no se puede saber que punto hay que evitar.")
     with open(PUNTO, encoding="utf-8") as f:
         d = json.load(f)
-    return ((d["lat"], d["lon"]), d["margen_extremo_m"],
-            d["margen_paso_m"], d["margen_carretera_m"])
+    d["casa"] = (d["lat"], d["lon"])
+    return d
 
 
 def haversine(a, b):
@@ -78,6 +78,18 @@ def haversine(a, b):
     dl = math.radians(b[1] - a[1])
     return 2 * r * math.asin(math.sqrt(
         math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2))
+
+
+def a_la_recta(q, a, b, lat0):
+    """Distancia de q al segmento a-b, en metros."""
+    k = math.cos(math.radians(lat0))
+    def xy(p):
+        return ((p[1] - a[1]) * 111320 * k, (p[0] - a[0]) * 110540)
+    qx, qy = xy(q)
+    bx, by = xy(b)
+    largo2 = bx * bx + by * by
+    s = 0.0 if largo2 == 0 else max(0.0, min(1.0, (qx * bx + qy * by) / largo2))
+    return math.hypot(qx - s * bx, qy - s * by)
 
 
 def leer(slug):
@@ -97,8 +109,12 @@ def largo(ps):
     return sum(haversine(ps[i - 1], ps[i]) for i in range(1, len(ps))) / 1000
 
 
-def arregla(slug, casa, margen, margen_paso, margen_carretera, donante):
+def arregla(slug, cfg, donante):
     """Devuelve (puntos nuevos, lista de lo que se ha hecho, hubo_empalme)."""
+    casa = cfg["casa"]
+    margen = cfg["margen_extremo_m"]
+    margen_paso = cfg["margen_paso_m"]
+    margen_carretera = cfg["margen_carretera_m"]
     ps, _ = leer(slug)
     hechos = []
     empalme = False
@@ -164,6 +180,50 @@ def arregla(slug, casa, margen, margen_paso, margen_carretera, donante):
         hechos.append("desviado a la BI-633 un paso por delante (%.2f km)" % largo(puente))
         nuevos = nuevos[:a + 1] + puente + nuevos[b:]
         empalme = True
+
+    # El camino particular. Cerca de la casa hay dos vias casi paralelas: la
+    # BI-633, por la que el autor da por bueno pasar, y su camino, que sale de
+    # ella y pasa por delante. Las dos quedan a parecida distancia de la casa,
+    # asi que no se distinguen por eso: se distinguen por separarse de la
+    # general. Lo que ande cerca de la casa y a mas de margen_fuera de la
+    # BI-633 se cambia por la BI-633, enganchando el puente donde el track ya
+    # va pegado a ella.
+    radio = cfg["radio_delante_m"]
+    fuera_max = cfg["margen_fuera_m"]
+    pegado = cfg["pegado_carretera_m"]
+    cerca_casa = [d for d in donante if haversine(d, casa) < 800]
+
+    def fuera(q):
+        return min(a_la_recta(q, cerca_casa[i], cerca_casa[i + 1], casa[0])
+                   for i in range(len(cerca_casa) - 1))
+
+    while True:
+        malos = [i for i, q in enumerate(nuevos)
+                 if haversine(q, casa) < radio and fuera(q) > fuera_max]
+        if not malos:
+            break
+        a, b = malos[0] - 1, malos[0]
+        for i in malos:
+            if i <= b + 5:
+                b = i
+            else:
+                break
+        b = min(b + 1, len(nuevos) - 1)
+        # El puente tiene que nacer y morir con el track ya encima de la
+        # general; si no, deja un cabo suelto apuntando al camino.
+        while a > 0 and fuera(nuevos[a]) > pegado:
+            a -= 1
+        while b < len(nuevos) - 1 and fuera(nuevos[b]) > pegado:
+            b += 1
+        if a < 0 or b >= len(nuevos) - 1:
+            raise SystemExit(f"{slug}: el camino particular llega a un extremo; revisalo a mano")
+        ja = min(range(len(donante)), key=lambda k: haversine(donante[k], nuevos[a]))
+        jb = min(range(len(donante)), key=lambda k: haversine(donante[k], nuevos[b]))
+        puente = donante[ja:jb + 1] if ja <= jb else donante[jb:ja + 1][::-1]
+        hechos.append("sacado del camino particular y devuelto a la BI-633 (%.2f km)"
+                      % largo(puente))
+        nuevos = nuevos[:a + 1] + puente + nuevos[b:]
+        empalme = True
     return nuevos, hechos, empalme
 
 
@@ -185,7 +245,8 @@ def escribe(slug, puntos, con_tiempos):
 
 
 def main():
-    casa, margen, margen_paso, margen_carretera = privado()
+    cfg = privado()
+    casa, margen_paso = cfg["casa"], cfg["margen_paso_m"]
     solo_revisa = "--revisa" in sys.argv
     slugs = [a for a in sys.argv[1:] if not a.startswith("--")]
     donante, _ = leer(DONANTE)
@@ -200,8 +261,7 @@ def main():
             if antes < margen_paso:
                 print("  %-28s a %3.0f m del punto" % (slug, antes))
             continue
-        nuevos, hechos, empalme = arregla(
-            slug, casa, margen, margen_paso, margen_carretera, donante)
+        nuevos, hechos, empalme = arregla(slug, cfg, donante)
         despues = min(haversine(p, casa) for p in nuevos)
         print("== %s" % slug)
         for h in hechos:
