@@ -71,11 +71,11 @@
     : { map: 'mapa', list: 'lista', toMap: 'Ver como mapa', toList: 'Ver como lista' };
   var MAP_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>';
   var LIST_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
-  var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list'};
+  var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list', fav:false};
   var state = Object.assign({}, defaults);
   var allowed = {
     activity:['all','senderismo','bici'], distance:['all','corto','media1','media2','larga'],
-    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','map']
+    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','map'], fav:[false]
   };
   try {
     var saved = JSON.parse(localStorage.getItem('trabakutik_filters'));
@@ -101,6 +101,7 @@
       (s.elevation === 'medium' && gain > 500 && gain <= 1000) ||
       (s.elevation === 'high' && gain > 1000);
     var searchOK = matchesSearch(card);
+    if (s.fav && window.trabakutikFavs && !window.trabakutikFavs.has(window.trabakutikFavs.slugOf(card.getAttribute('href')))) return false;
     return (s.activity === 'all' || card.dataset.activity.split(',').indexOf(s.activity) !== -1) &&
       (s.difficulty === 'all' || card.dataset.difficulty === s.difficulty) && distanceOK && elevationOK && searchOK;
   }
@@ -174,7 +175,9 @@
     var extraCount = ['distance','difficulty','elevation'].filter(function(k){return state[k] !== 'all';}).length;
     badge('filterBadge', extraCount);
     badge('advancedBadge', Number(state.difficulty !== 'all') + Number(state.elevation !== 'all'));
+    paintFavChip();
     var labels = [];
+    if (state.fav) labels.push(eu ? 'Nire ibilbideak' : 'Mis rutas');
     if (state.activity !== 'all') labels.push(selectedLabel(activityButtons,'activity',state.activity));
     if (state.distance !== 'all') labels.push(selectedLabel(distanceButtons,'distancePreset',state.distance));
     if (state.difficulty !== 'all') labels.push(optionLabel(difficulty));
@@ -221,6 +224,30 @@
     window.trabakutikActivity = state.activity;
     document.dispatchEvent(new CustomEvent('routefilters:apply', {detail:{visibleHrefs:visible, activity:state.activity}}));
     try { localStorage.setItem('trabakutik_filters', JSON.stringify(Object.assign({version:2},state))); } catch (_) {}
+  }
+  // «Mis rutas»: el corazon lo pone js/app.js en cada tarjeta; aqui solo el
+  // boton que deja ver nada mas las guardadas.
+  // js/app.js se carga despues que este fichero, asi que se espera a que
+  // termine de leerse la pagina para poner el boton.
+  var favChip = null;
+  document.addEventListener('DOMContentLoaded', function(){
+    if (!window.trabakutikFavs) return;
+    // Fila propia encima de las tarjetas: en la barra de arriba no cabe en
+    // un movil sin pisar «E-bike» y «Filtrar».
+    var favRow = document.createElement('div'); favRow.className = 'fav-row';
+    favChip = document.createElement('button');
+    favChip.type = 'button'; favChip.className = 'activity-chip fav-chip';
+    favRow.appendChild(favChip);
+    results.parentNode.insertBefore(favRow, results);
+    favChip.addEventListener('click', function(){ state.fav = !state.fav; apply(); });
+    document.addEventListener('favs:change', function(){ if (state.fav) apply(); else paintFavChip(); });
+    apply();
+  });
+  function paintFavChip(){
+    if (!favChip) return;
+    var n = window.trabakutikFavs.list().length;
+    favChip.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>' + (eu ? 'Nire ibilbideak' : 'Mis rutas') + (n ? ' (' + n + ')' : '');
+    favChip.classList.toggle('active', !!state.fav); favChip.setAttribute('aria-pressed', String(!!state.fav));
   }
   activityButtons.forEach(function(b){b.addEventListener('click',function(){state.activity=b.dataset.activity;apply();});});
   distanceButtons.forEach(function(b){b.addEventListener('click',function(){state.distance=b.dataset.distancePreset;apply();});});

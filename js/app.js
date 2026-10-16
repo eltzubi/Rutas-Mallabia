@@ -299,3 +299,102 @@
     navigator.serviceWorker.register('sw.js').catch(function(){});
   });
 })();
+
+
+/* Mis rutas y Compartir.
+   Mis rutas: un corazon en cada tarjeta de la portada y en cada ficha. Lo
+   guardado se queda solo en este navegador (localStorage), no viaja a ningun
+   sitio. El filtro «Mis rutas» de la portada lo lleva js/filters.js.
+   Compartir: en la ficha, abre el menu de compartir del movil si existe; si
+   no, WhatsApp con el nombre, los km, el desnivel y el enlace. */
+(function(){
+  var KEY = 'trabakutik_favs';
+  var eu = document.documentElement.lang === 'eu';
+  function read(){
+    try { var v = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(v) ? v : []; }
+    catch (_) { return []; }
+  }
+  function slugOf(href){
+    return String(href || '').split('/').pop().split('?')[0].split('#')[0]
+      .replace(/\.eu\.html$/, '').replace(/\.html$/, '');
+  }
+  var favs = read();
+  function has(slug){ return favs.indexOf(slug) !== -1; }
+  function toggle(slug){
+    favs = has(slug) ? favs.filter(function(s){ return s !== slug; }) : favs.concat(slug);
+    try { localStorage.setItem(KEY, JSON.stringify(favs)); } catch (_) {}
+    document.dispatchEvent(new CustomEvent('favs:change', { detail: { favs: favs.slice() } }));
+  }
+  window.trabakutikFavs = { has: has, toggle: toggle, slugOf: slugOf, list: function(){ return favs.slice(); } };
+
+  var HEART = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+  var SHARE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+  var W = eu
+    ? { save: 'Gorde Nire ibilbideetan', remove: 'Kendu Nire ibilbideetatik', saveShort: 'Gorde', saved: 'Gordeta', share: 'Partekatu', copied: 'Esteka kopiatuta' }
+    : { save: 'Guardar en Mis rutas', remove: 'Quitar de Mis rutas', saveShort: 'Guardar', saved: 'Guardada', share: 'Compartir', copied: 'Enlace copiado' };
+
+  function paintHeart(btn, on){
+    btn.classList.toggle('is-fav', on);
+    btn.setAttribute('aria-pressed', String(on));
+    btn.setAttribute('aria-label', on ? W.remove : W.save);
+    btn.title = on ? W.remove : W.save;
+  }
+
+  // Portada: corazon en la esquina de arriba a la derecha de la foto (la de
+  // la izquierda es la pastilla «Nueva», la de abajo la miniatura del mapa).
+  document.querySelectorAll('.route-card[href] .route-card-photo').forEach(function(photo){
+    var card = photo.closest('.route-card');
+    var slug = slugOf(card.getAttribute('href'));
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'fav-heart'; btn.innerHTML = HEART;
+    paintHeart(btn, has(slug));
+    btn.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      toggle(slug); paintHeart(btn, has(slug));
+    });
+    photo.appendChild(btn);
+  });
+
+  // Ficha: Guardar y Compartir en la misma fila que GPX y KML.
+  var row = document.querySelector('.wikiloc-row');
+  if (!row) return;
+  var slug = slugOf(location.pathname) || 'index';
+  var fav = document.createElement('button');
+  fav.type = 'button'; fav.className = 'wikiloc-link ghost fav-action';
+  function paintFav(){
+    var on = has(slug);
+    fav.innerHTML = HEART.replace('width="18" height="18"', 'width="15" height="15"') + (on ? W.saved : W.saveShort);
+    paintHeart(fav, on);
+  }
+  paintFav();
+  fav.addEventListener('click', function(){ toggle(slug); paintFav(); });
+
+  var share = document.createElement('button');
+  share.type = 'button'; share.className = 'wikiloc-link ghost share-action';
+  share.innerHTML = SHARE + W.share;
+  share.addEventListener('click', function(){
+    var h1 = document.querySelector('h1');
+    var name = h1 ? (h1.innerText || h1.textContent).replace(/\s+/g, ' ').trim() : document.title;
+    var facts = Array.from(document.querySelectorAll('.facts .fact .v')).map(function(v){ return v.textContent.trim(); });
+    var km = facts.find(function(t){ return / km$/.test(t); }) || '';
+    var up = facts.find(function(t){ return /^\+.* m$/.test(t); }) || '';
+    var line = [name, km, up].filter(Boolean).join(' · ') + ' · Trabakutik';
+    var url = location.href.split('#')[0];
+    if (navigator.share) {
+      navigator.share({ title: name, text: line, url: url }).catch(function(){});
+      return;
+    }
+    var w = window.open('https://wa.me/?text=' + encodeURIComponent(line + '\n' + url), '_blank');
+    if (w) { try { w.opener = null; } catch (_) {} }
+    else if (navigator.clipboard) {
+      navigator.clipboard.writeText(line + '\n' + url).then(function(){
+        share.lastChild.textContent = W.copied;
+        setTimeout(function(){ share.lastChild.textContent = W.share; }, 2000);
+      });
+    }
+  });
+  var gpx = row.querySelector('a[href$=".gpx"]');
+  var after = row.querySelector('a[href$=".kml"]') || gpx;
+  if (after) { after.after(share); after.after(fav); }
+  else { row.appendChild(fav); row.appendChild(share); }
+})();
