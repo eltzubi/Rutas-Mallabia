@@ -73,7 +73,9 @@
 
   <section class="map-section" id="mapa">
     <div class="route-map-box agua-map-box">
-      <div id="aguaMap" style="width:100%;height:100%;" data-fuentes-mapa></div>
+      <div id="aguaMap" style="width:100%;height:100%;" data-fuentes-mapa
+           data-salida="43.210451,-2.546004"
+           data-marker-title="Trabakua (irteera)"></div>
       <button type="button" class="map-expand-btn" aria-label="Handitu mapa"
               data-label-expand="Handitu mapa" data-label-collapse="Txikitu mapa">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
@@ -82,7 +84,7 @@
     <p class="wikiloc-credit">Oinarria: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> eta <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; puntu bakoitza bere ibilbideko mugarri batetik dator</p>
   </section>
 
-  <p class="agua-nota-general">Iturri baten emaria urtaroaren arabera aldatzen da; ibilbideak urte osoan ura duela esaten duenean, hala jasota dago. <b>Gutxi gorabeherako kokapena</b> dutenek lekuaren koordenatua daramate &mdash;herria, mendatea, presa&mdash; eta oharrak esaten du iturria non dagoen haren barruan.</p>
+  <p class="agua-nota-general">Iturri baten emaria urtaroaren arabera aldatzen da; ibilbideak urte osoan ura duela esaten duenean, hala jasota dago. Puntu gorria Trabakuko mendatea da, ia dena hortik ateratzen baita.</p>
 
   <section class="agua-zonas" id="aguaLista">
     <div class="agua-zona">
@@ -113,8 +115,8 @@
           <p class="agua-nota">Auzoaren sarreran, eskuinaldean. Ura urte osoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="zengotitaosmagain.eu.html">Trabakua, Zengotita, Osmagain eta Arietzu</a> <a href="betzun.eu.html">Zengotita, Iturzurigaina eta Betzun</a> <a href="intxorta.eu.html">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</a> <a href="egoarbitza.eu.html">Urko, Egoarbitza, Santama&ntilde;azar eta Zengotitagane</a> <a href="sarrimendi.eu.html">Oiz, Sarrionamendia, Arietxu eta Mendibil</a> <a href="trabakuamallabia.eu.html">Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain</a> <a href="hirutxikiak.eu.html">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</a></p>
         </li>
-        <li class="agua-item" id="agua-sancristobaltxiki" data-lat="43.19857" data-lon="-2.58186">
-          <p class="agua-nombre">San Kristobal Txikiko iturria <span class="agua-alt">489 m</span></p>
+        <li class="agua-item" id="agua-sancristobaltxiki" data-lat="43.19907" data-lon="-2.58313">
+          <p class="agua-nombre">San Kristobal Txikiko iturria <span class="agua-alt">501 m</span></p>
           <p class="agua-nota">Goian, baselizaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="sancristobalgaraiandikoa.eu.html">Trabakua, San Kristobal Txiki, Garai eta Andikoa</a> <a href="garaigaztelu.eu.html">Trabakua, Andikoa, Garai eta Gaztelu</a> <a href="maguna.eu.html">Trabakua, Zengotitagane eta Maguna</a> <a href="potrera.eu.html">Muniozguren, Oiz eta San Kristobal Txiki Potreratik barrena</a></p>
         </li>
@@ -123,9 +125,8 @@
           <p class="agua-nota">Nahiko ezkutuan dago eta erraz pasa daiteke ohartu gabe.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="sancristobaloiz.eu.html">San Kristobal (Oiz), Zenarruza eta Muniozguren</a></p>
         </li>
-        <li class="agua-item" id="agua-maguna" data-lat="43.22822" data-lon="-2.63766" data-aprox="1">
-          <p class="agua-nombre">Magunako iturria <span class="agua-alt">417 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-maguna" data-lat="43.22864" data-lon="-2.6372">
+          <p class="agua-nombre">Magunako iturria <span class="agua-alt">425 m</span></p>
           <p class="agua-nota">Auzoaren erdigunean.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="maguna.eu.html">Trabakua, Zengotitagane eta Maguna</a></p>
         </li>
@@ -134,8 +135,8 @@
     <div class="agua-zona">
       <h2>Garai, Berriz eta Gaztelu</h2>
       <ul class="agua-lista">
-        <li class="agua-item" id="agua-garai" data-lat="43.19515" data-lon="-2.61112">
-          <p class="agua-nombre">Garaiko iturria <span class="agua-alt">281 m</span></p>
+        <li class="agua-item" id="agua-garai" data-lat="43.19535" data-lon="-2.61083">
+          <p class="agua-nombre">Garaiko iturria <span class="agua-alt">278 m</span></p>
           <p class="agua-nota">Antzinako garbitokiarekin batera dago.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="sancristobalgaraiandikoa.eu.html">Trabakua, San Kristobal Txiki, Garai eta Andikoa</a> <a href="garaimaguna.eu.html">Garai, Maguna, Axmakur eta Zengotitagane</a> <a href="garaigaztelu.eu.html">Trabakua, Andikoa, Garai eta Gaztelu</a></p>
         </li>
@@ -159,22 +160,35 @@
           <p class="agua-nota">Baselizaren eta merenderoaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="argineta.eu.html">Trabakua, Elgeta eta Argi&ntilde;eta</a> <a href="karabieta.eu.html">Trabakua, Elgeta, Karabieta eta Eibar Unbetik</a> <a href="galdaraminio.eu.html">Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik</a> <a href="intxorta.eu.html">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</a> <a href="aixola.eu.html">Trabakua, Goierri, Aixola eta Eitzaga</a> <a href="hirutxikiak.eu.html">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</a></p>
         </li>
-        <li class="agua-item" id="agua-aixola" data-lat="43.16204" data-lon="-2.51043" data-aprox="1">
-          <p class="agua-nombre">Aixolako presako iturria <span class="agua-alt">312 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-aixola" data-lat="43.15789" data-lon="-2.50523">
+          <p class="agua-nombre">Aixolako presako iturria <span class="agua-alt">315 m</span></p>
           <p class="agua-nota">Ura urte osoan. Presako bidera iristean, metro batzuk ezkerrera jo behar da.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="egoarbitza.eu.html">Urko, Egoarbitza, Santama&ntilde;azar eta Zengotitagane</a> <a href="zaldibar.eu.html">Trabakua, Aixola eta Berriz</a> <a href="hirutxikiak.eu.html">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</a></p>
+        </li>
+        <li class="agua-item" id="agua-zaldibar" data-lat="43.17182" data-lon="-2.53834">
+          <p class="agua-nombre">Zaldibarko poligonoko iturria <span class="agua-alt">220 m</span></p>
+          <p class="agua-nota">Poligonoaren ondoan, Zaldibarrerako bidean.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="aixola.eu.html">Trabakua, Goierri, Aixola eta Eitzaga</a> <a href="zaldibar.eu.html">Trabakua, Aixola eta Berriz</a></p>
         </li>
         <li class="agua-item" id="agua-eitzaga" data-lat="43.17566" data-lon="-2.50614">
           <p class="agua-nombre">Eitzagako iturria <span class="agua-alt">179 m</span></p>
           <p class="agua-nota">Auzoan, Aixolako presara jaitsi aurretik.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="zaldibar.eu.html">Trabakua, Aixola eta Berriz</a> <a href="hirutxikiak.eu.html">Hiru Txikiak, Urko, Oiz eta Egoarbitza Ermuatik</a></p>
         </li>
-        <li class="agua-item" id="agua-elgeta" data-lat="43.1373" data-lon="-2.48692" data-aprox="1">
-          <p class="agua-nombre">Elgetako iturria <span class="agua-alt">474 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-elgeta" data-lat="43.13701" data-lon="-2.48843">
+          <p class="agua-nombre">Elgetako iturria <span class="agua-alt">463 m</span></p>
           <p class="agua-nota">Herrian, kiroldegiaren eta pilotalekuaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="zaldibar.eu.html">Trabakua, Aixola eta Berriz</a></p>
+        </li>
+        <li class="agua-item" id="agua-sansalvador" data-lat="43.13332" data-lon="-2.48974">
+          <p class="agua-nombre">San Salvador baselizako iturria <span class="agua-alt">510 m</span></p>
+          <p class="agua-nota">Baselizaren ondoan, Intxortatik Elgetara jaistean.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="intxorta.eu.html">Trabakua, Zengotitagane, Erdella, Intxorta eta Egoarbitza</a></p>
+        </li>
+        <li class="agua-item" id="agua-arginieta" data-lat="43.13955" data-lon="-2.53592">
+          <p class="agua-nombre">Argiñetako iturria <span class="agua-alt">238 m</span></p>
+          <p class="agua-nota">Argiñetako nekropoliaren ondoan.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="argineta.eu.html">Trabakua, Elgeta eta Argi&ntilde;eta</a></p>
         </li>
         <li class="agua-item" id="agua-larrosa" data-lat="43.14903" data-lon="-2.5017">
           <p class="agua-nombre">Larrosako Iturri <span class="agua-alt">354 m</span></p>
@@ -186,19 +200,22 @@
     <div class="agua-zona">
       <h2>Urko eta Markina</h2>
       <ul class="agua-lista">
+        <li class="agua-item" id="agua-usartza" data-lat="43.20972" data-lon="-2.47195">
+          <p class="agua-nombre">Usartzako iturria <span class="agua-alt">581 m</span></p>
+          <p class="agua-nota">Kalamuara igotzen den bidean.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="kalamua.eu.html">Urko, Kalamua, San Migel eta Mendibil</a> <a href="barinaga.eu.html">Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil</a></p>
+        </li>
         <li class="agua-item" id="agua-drogeten" data-lat="43.19432" data-lon="-2.50243">
           <p class="agua-nombre">Drogeten Iturria <span class="agua-alt">187 m</span></p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="sanpedrobidarte.eu.html">Arteta, Drogeten Iturria eta San Pedro Bidarte ermita</a></p>
         </li>
-        <li class="agua-item" id="agua-barinaga" data-lat="43.23389" data-lon="-2.49715" data-aprox="1">
-          <p class="agua-nombre">Barinagako iturria <span class="agua-alt">150 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-barinaga" data-lat="43.23668" data-lon="-2.49202">
+          <p class="agua-nombre">Barinagako iturria <span class="agua-alt">138 m</span></p>
           <p class="agua-nota">Herrian, pilotalekuaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="barinaga.eu.html">Trabakua, Urko, Kalamua, Barinaga, Iturreta eta Mendibil</a></p>
         </li>
-        <li class="agua-item" id="agua-iturreta" data-lat="43.2404" data-lon="-2.5111" data-aprox="1">
-          <p class="agua-nombre">Iturretako iturria <span class="agua-alt">366 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-iturreta" data-lat="43.24331" data-lon="-2.51054">
+          <p class="agua-nombre">Iturretako iturria <span class="agua-alt">382 m</span></p>
           <p class="agua-nota">Baselizaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="exigente.eu.html">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane</a> <a href="urregarai.eu.html">Iturreta, Markina eta Urregarai</a></p>
         </li>
@@ -207,14 +224,28 @@
           <p class="agua-nota">Iturri handia, Karmengo elizaren ondoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="urregarai.eu.html">Iturreta, Markina eta Urregarai</a></p>
         </li>
+        <li class="agua-item" id="agua-bolibar" data-lat="43.24988" data-lon="-2.54952">
+          <p class="agua-nombre">Bolibarko iturria <span class="agua-alt">171 m</span></p>
+          <p class="agua-nota">Herrian, Simon Bolivarren monumentuaren ondoan.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="markinabolibar.eu.html">Zenarruza, Zeinka, Urregarai eta Markina</a> <a href="astorkigane.eu.html">Trabakua, Astorkigane, Zenarruza eta Bolibar</a> <a href="markinaurjauziak.eu.html">Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak</a> <a href="urregarai.eu.html">Iturreta, Markina eta Urregarai</a> <a href="exigente.eu.html">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane</a></p>
+        </li>
+        <li class="agua-item" id="agua-ziortza" data-lat="43.24564" data-lon="-2.55706">
+          <p class="agua-nombre">Zenarruzarako bideko iturria <span class="agua-alt">254 m</span></p>
+          <p class="agua-nota">Bolibartik Zenarruzako Kolegiatara igotzen den galtzadan.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="markinaurjauziak.eu.html">Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak</a> <a href="markinabolibar.eu.html">Zenarruza, Zeinka, Urregarai eta Markina</a> <a href="exigente.eu.html">Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane</a> <a href="urregarai.eu.html">Iturreta, Markina eta Urregarai</a></p>
+        </li>
+        <li class="agua-item" id="agua-munitibar" data-lat="43.2656" data-lon="-2.59261">
+          <p class="agua-nombre">Munitibarko iturria <span class="agua-alt">184 m</span></p>
+          <p class="agua-nota">Herriko plazan.</p>
+          <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="astorkigane.eu.html">Trabakua, Astorkigane, Zenarruza eta Bolibar</a></p>
+        </li>
         <li class="agua-item" id="agua-camino" data-lat="43.25704" data-lon="-2.52633">
           <p class="agua-nombre">Done Jakue bideko iturria <span class="agua-alt">116 m</span></p>
           <p class="agua-nota">Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="santaeufemia.eu.html">Markina-Xemein, Santa Eufemia</a> <a href="markinaurjauziak.eu.html">Markina-Xemein, Bolibar, Muniozguren eta Gereako ur-jauziak</a> <a href="markinabolibar.eu.html">Zenarruza, Zeinka, Urregarai eta Markina</a></p>
         </li>
-        <li class="agua-item" id="agua-atxagarai" data-lat="43.28139" data-lon="-2.53086" data-aprox="1">
-          <p class="agua-nombre">Atxagaraiko iturria <span class="agua-alt">575 m</span></p>
-          <p class="agua-aprox">Gutxi gorabeherako kokapena</p>
+        <li class="agua-item" id="agua-atxagarai" data-lat="43.28132" data-lon="-2.53227">
+          <p class="agua-nombre">Atxagaraiko iturria <span class="agua-alt">563 m</span></p>
           <p class="agua-nota">Aterpearen eta bolatokiaren parean, Urregaraiko lepoan.</p>
           <p class="agua-rutas"><span class="agua-rutas-et">Hemendik pasatzen diren ibilbideak</span> <a href="santaeufemia.eu.html">Markina-Xemein, Santa Eufemia</a> <a href="markinabolibar.eu.html">Zenarruza, Zeinka, Urregarai eta Markina</a> <a href="urregarai.eu.html">Iturreta, Markina eta Urregarai</a></p>
         </li>
@@ -242,6 +273,6 @@
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <script src="vendor/leaflet/leaflet.js"></script>
-<script src="js/agua.js?v=a94e861d"></script>
+<script src="js/agua.js?v=2ec3b80c"></script>
 </body>
 </html>

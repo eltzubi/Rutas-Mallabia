@@ -4997,8 +4997,11 @@ AGUA = {
         '<p class="full-name">Webgune honetako ibilbideetan agertzen diren iturriak, denak mapa batean: non bete bidoia eta zein ibilbide pasatzen diren bakoitzetik.</p>',
     '<p class="wikiloc-credit">Mapa sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> y el <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; cada punto sale de un waypoint de su ruta</p>':
         '<p class="wikiloc-credit">Oinarria: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> eta <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; puntu bakoitza bere ibilbideko mugarri batetik dator</p>',
-    '<p class="agua-nota-general">El caudal de una fuente cambia con la &eacute;poca del a&ntilde;o; donde la ruta dice que lleva agua todo el a&ntilde;o, est&aacute; anotado. Las marcadas como <b>posici&oacute;n aproximada</b> llevan la coordenada del sitio &mdash;el pueblo, el alto, la presa&mdash; y la nota dice d&oacute;nde est&aacute; la fuente dentro de &eacute;l.</p>':
-        '<p class="agua-nota-general">Iturri baten emaria urtaroaren arabera aldatzen da; ibilbideak urte osoan ura duela esaten duenean, hala jasota dago. <b>Gutxi gorabeherako kokapena</b> dutenek lekuaren koordenatua daramate &mdash;herria, mendatea, presa&mdash; eta oharrak esaten du iturria non dagoen haren barruan.</p>',
+    '<p class="agua-nota-general">El caudal de una fuente cambia con la &eacute;poca del a&ntilde;o; donde la ruta dice que lleva agua todo el a&ntilde;o, est&aacute; anotado. El punto rojo es el alto de Trabakua, de donde sale casi todo.</p>':
+        '<p class="agua-nota-general">Iturri baten emaria urtaroaren arabera aldatzen da; ibilbideak urte osoan ura duela esaten duenean, hala jasota dago. Puntu gorria Trabakuko mendatea da, ia dena hortik ateratzen baita.</p>',
+    '<p class="agua-nota-general" id="aguaNotaAprox">Las marcadas como <b>posici&oacute;n aproximada</b> llevan la coordenada del sitio &mdash;el pueblo, el alto, la presa&mdash; y la nota dice d&oacute;nde est&aacute; la fuente dentro de &eacute;l.</p>':
+        '<p class="agua-nota-general" id="aguaNotaAprox"><b>Gutxi gorabeherako kokapena</b> dutenek lekuaren koordenatua daramate &mdash;herria, mendatea, presa&mdash; eta oharrak esaten du iturria non dagoen haren barruan.</p>',
+    'data-marker-title="Trabakua (salida)"': 'data-marker-title="Trabakua (irteera)"',
 }
 
 MARKINAURJAUZIAK = {

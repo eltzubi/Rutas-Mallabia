@@ -109,6 +109,9 @@ FUENTES = [
         "zona": "zengotita",
         "es": "Fuente de San Kristobal Txiki",
         "eu": "San Kristobal Txikiko iturria",
+        # Medida por el autor, 117 m al oeste del waypoint: la fuente esta en
+        # el cruce de caminos, no donde pasaba el punto del recorrido.
+        "coord": (43.199073, -2.583126),
         "punto": ("sancristobalgaraiandikoa", 1),
         "nota_es": "Arriba, junto a la ermita.",
         "nota_eu": "Goian, baselizaren ondoan.",
@@ -132,9 +135,8 @@ FUENTES = [
         # El autor dice que esta en el casco del barrio, y el waypoint caia
         # 300 m al norte: es el punto del RECORRIDO, no el del barrio. La
         # coordenada es la del nucleo de Maguna en OpenStreetMap (hamlet).
-        "coord": (43.22822, -2.63766),
+        "coord": (43.228643, -2.637205),
         "punto": ("maguna", 3),
-        "aprox": True,
         "nota_es": "En el casco del barrio.",
         "nota_eu": "Auzoaren erdigunean.",
         "rutas": ["maguna"],
@@ -144,6 +146,8 @@ FUENTES = [
         "zona": "garai",
         "es": "Fuente de Garai",
         "eu": "Garaiko iturria",
+        # Medida por el autor, a 32 m del waypoint.
+        "coord": (43.195352, -2.610833),
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
@@ -184,11 +188,27 @@ FUENTES = [
         "zona": "aixola",
         "es": "Fuente de la presa de Aixola",
         "eu": "Aixolako presako iturria",
-        "punto": ("egoarbitza", 4),
-        "aprox": True,
+        # Medida por el autor, 625 m al sur del waypoint de egoarbitza que
+        # se usaba antes: aquel era el punto del RECORRIDO. Se contrasta con
+        # el de aixola, que es el que cae cerca (95 m).
+        "coord": (43.157893, -2.505235),
+        "punto": ("aixola", 4),
         "nota_es": "Agua todo el año. Hay que desviarse unos metros a la izquierda al llegar al camino de la presa.",
         "nota_eu": "Ura urte osoan. Presako bidera iristean, metro batzuk ezkerrera jo behar da.",
         "rutas": ["egoarbitza", "zaldibar", "hirutxikiak"],
+    },
+    {
+        "id": "zaldibar",
+        "zona": "aixola",
+        "es": "Fuente del pol\u00edgono de Zaldibar",
+        "eu": "Zaldibarko poligonoko iturria",
+        # Medida por el autor. Ninguna ficha la menciona, asi que las rutas
+        # son las que pasan por el punto: aixola a 8 m y zaldibar a 11 m.
+        "coord": (43.171824, -2.538339),
+        "punto": ("zaldibar", None),
+        "nota_es": "Junto al pol\u00edgono, de camino a Zaldibar.",
+        "nota_eu": "Poligonoaren ondoan, Zaldibarrerako bidean.",
+        "rutas": ["aixola", "zaldibar"],
     },
     {
         "id": "eitzaga",
@@ -205,11 +225,40 @@ FUENTES = [
         "zona": "aixola",
         "es": "Fuente de Elgeta",
         "eu": "Elgetako iturria",
+        "coord": (43.137005, -2.488427),
         "punto": ("zaldibar", 4),
-        "aprox": True,
         "nota_es": "En el pueblo, junto al polideportivo y el frontón.",
         "nota_eu": "Herrian, kiroldegiaren eta pilotalekuaren ondoan.",
         "rutas": ["zaldibar"],
+    },
+    {
+        "id": "sansalvador",
+        "zona": "aixola",
+        "es": "Fuente de San Salvador",
+        "eu": "San Salvador baselizako iturria",
+        # Medida por el autor. intxorta la citaba ("pasar junto a la ermita de
+        # San Salvador, donde encontraremos tambien una fuente") pero no habia
+        # forma de situarla: su waypoint mas cercano queda a 811 m, asi que la
+        # ruta solo sirve aqui para sacar la altura.
+        "coord": (43.133318, -2.489740),
+        "punto": ("intxorta", None),
+        "nota_es": "Junto a la ermita, bajando de Intxorta hacia Elgeta.",
+        "nota_eu": "Baselizaren ondoan, Intxortatik Elgetara jaistean.",
+        "rutas": ["intxorta"],
+    },
+    {
+        "id": "arginieta",
+        "zona": "aixola",
+        "es": "Fuente de Argi\u00f1eta",
+        "eu": "Argi\u00f1etako iturria",
+        # Medida por el autor. argineta la citaba ("hay tambien una fuente
+        # junto a la necropolis para llenar cantimploras") pero no habia
+        # forma de situarla.
+        "coord": (43.139550, -2.535917),
+        "punto": ("argineta", 7),
+        "nota_es": "Junto a la nec\u00f3polis de Argi\u00f1eta.",
+        "nota_eu": "Argi\u00f1etako nekropoliaren ondoan.",
+        "rutas": ["argineta"],
     },
     {
         "id": "larrosa",
@@ -227,6 +276,19 @@ FUENTES = [
         "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
+        "id": "usartza",
+        "zona": "markina",
+        "es": "Fuente de Usartza",
+        "eu": "Usartzako iturria",
+        # Medida por el autor. Es una de las «varias fuentes en la subida a
+        # Kalamua» que citan kalamua y barinaga sin decir donde estaban.
+        "coord": (43.209722, -2.471947),
+        "punto": ("kalamua", None),
+        "nota_es": "En el camino que sube a Kalamua.",
+        "nota_eu": "Kalamuara igotzen den bidean.",
+        "rutas": ["kalamua", "barinaga"],
+    },
+    {
         "id": "drogeten",
         "zona": "markina",
         "es": "Drogeten Iturria",
@@ -239,8 +301,11 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Barinaga",
         "eu": "Barinagako iturria",
-        "punto": ("barinaga", 3),
-        "aprox": True,
+        # Medida por el autor, a 519 m del waypoint «Barinaga» de la ruta,
+        # que es por donde pasa el recorrido y no donde esta la fuente; por
+        # eso la ruta solo sirve aqui para sacar la altura.
+        "coord": (43.236678, -2.492017),
+        "punto": ("barinaga", None),
         "nota_es": "En el pueblo, junto al frontón.",
         "nota_eu": "Herrian, pilotalekuaren ondoan.",
         "rutas": ["barinaga"],
@@ -250,8 +315,8 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Iturreta",
         "eu": "Iturretako iturria",
+        "coord": (43.243311, -2.510540),
         "punto": ("exigente", 1),
-        "aprox": True,
         "nota_es": "Junto a la ermita.",
         "nota_eu": "Baselizaren ondoan.",
         "rutas": ["exigente", "urregarai"],
@@ -273,6 +338,46 @@ FUENTES = [
         "rutas": ["urregarai"],
     },
     {
+        "id": "bolibar",
+        "zona": "markina",
+        "es": "Fuente de Bolibar",
+        "eu": "Bolibarko iturria",
+        # Medida por el autor. Ninguna ficha decia que hubiera agua aqui, asi
+        # que las rutas de la lista son las que pasan por el punto: las cinco
+        # que cruzan el pueblo, todas a menos de 20 m.
+        "coord": (43.249883, -2.549516),
+        "punto": ("markinabolibar", None),
+        "nota_es": "En el pueblo, junto al monumento a Sim\u00f3n Bol\u00edvar.",
+        "nota_eu": "Herrian, Simon Bolivarren monumentuaren ondoan.",
+        "rutas": ["markinabolibar", "astorkigane", "markinaurjauziak", "urregarai", "exigente"],
+    },
+    {
+        "id": "ziortza",
+        "zona": "markina",
+        "es": "Fuente del camino de Zenarruza",
+        "eu": "Zenarruzarako bideko iturria",
+        # Medida por el autor, en la calzada del Camino de Santiago que sube
+        # de Bolibar a Ziortza, 500 m antes de la Colegiata. El nombre es
+        # provisional: ninguna ficha la menciona, asi que no hay uno suyo.
+        "coord": (43.245637, -2.557064),
+        "punto": ("markinabolibar", None),
+        "nota_es": "En la calzada que sube de Bolibar a la Colegiata de Zenarruza.",
+        "nota_eu": "Bolibartik Zenarruzako Kolegiatara igotzen den galtzadan.",
+        "rutas": ["markinaurjauziak", "markinabolibar", "exigente", "urregarai"],
+    },
+    {
+        "id": "munitibar",
+        "zona": "markina",
+        "es": "Fuente de Munitibar",
+        "eu": "Munitibarko iturria",
+        # Medida por el autor. Solo pasa por aqui astorkigane, a 3 m.
+        "coord": (43.265603, -2.592610),
+        "punto": ("astorkigane", None),
+        "nota_es": "En la plaza del pueblo.",
+        "nota_eu": "Herriko plazan.",
+        "rutas": ["astorkigane"],
+    },
+    {
         "id": "camino",
         "zona": "markina",
         "es": "Fuente del Camino de Santiago",
@@ -289,8 +394,8 @@ FUENTES = [
         "zona": "markina",
         "es": "Fuente de Atxagarai",
         "eu": "Atxagaraiko iturria",
+        "coord": (43.281323, -2.532273),
         "punto": ("santaeufemia", 2),
-        "aprox": True,
         "nota_es": "Frente al refugio y la bolera, en el collado de Urregarai.",
         "nota_eu": "Aterpearen eta bolatokiaren parean, Urregaraiko lepoan.",
         "rutas": ["santaeufemia", "markinabolibar", "urregarai"],
@@ -326,7 +431,12 @@ def track(slug):
 
 
 def waypoint(slug, n):
-    """El waypoint numero n (base 1) de una ruta, tal como lo pinta su mapa."""
+    """El waypoint numero n (base 1) de una ruta, tal como lo pinta su mapa.
+
+    n puede ser None: entonces la ruta solo sirve para sacar la altura, porque
+    la fuente no cae cerca de ningun waypoint suyo. Pasa con las que el autor
+    ha medido en sitios por los que la ruta pasa sin pararse a numerarlos.
+    """
     with open(os.path.join(ROOT, "data", slug + ".json"), encoding="utf-8") as f:
         datos = json.load(f)
     if n == "salida":
@@ -382,7 +492,7 @@ def main():
     for f in FUENTES:
         slug, n = f["punto"]
         pt = tuple(f["coord"]) if "coord" in f else waypoint(slug, n)
-        if "coord" in f:
+        if "coord" in f and n is not None:
             # No se acepta a ciegas: si la coordenada medida se va lejos del
             # waypoint que decia ser la misma fuente, es que una de las dos
             # esta mal, y eso hay que mirarlo, no publicarlo.

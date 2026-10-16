@@ -711,6 +711,35 @@
       }
     }
 
+    // Las fuentes de agua de esta ruta, en gota azul. El dato lo escribe
+    // add_fuentes_ficha() en src/build.py desde data/fuentes.json, en el
+    // idioma de la pagina; no viene en data/<ruta>.json porque ese fichero
+    // lo reescribe make_map_data.py cada vez que se toca un GPX.
+    //
+    // Azul y con forma de gota a proposito: los puntos de referencia son
+    // circulos de color --teal con su numero dentro, y el agua tiene que
+    // distinguirse de ellos sin leer nada.
+    if (el.dataset.fuentes) {
+      var agua;
+      try { agua = JSON.parse(el.dataset.fuentes); } catch (e) { agua = []; }
+      (agua || []).forEach(function(f){
+        if (!f || !f.at) return;
+        L.marker(f.at, {
+          title: f.nombre || '',
+          icon: L.divIcon({
+            className: '',
+            html: '<span style="display:flex;align-items:center;justify-content:center;' +
+                  'width:20px;height:20px;border-radius:50%;background:#3B82F6;' +
+                  'border:2px solid ' + ground + ';box-shadow:0 0 0 1.5px #3B82F6;">' +
+                  '<svg viewBox="0 0 24 24" width="11" height="11" fill="#fff" aria-hidden="true">' +
+                  '<path d="M12 2.5c3.8 4.6 6 7.9 6 10.6a6 6 0 0 1-12 0c0-2.7 2.2-6 6-10.6z"/>' +
+                  '</svg></span>',
+            iconSize: [20, 20], iconAnchor: [10, 10]
+          })
+        }).addTo(map);
+      });
+    }
+
     (data.waypoints || []).forEach(function(pt, i){
       L.marker(pt, {
         title: wpNames[i] || '',

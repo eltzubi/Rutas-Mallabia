@@ -154,7 +154,26 @@
     });
   }
 
+  // La salida de Trabakua, en rojo: situa el resto. Va antes que las fuentes
+  // para que ninguna quede debajo de ella -- hay una fuente a 7 m, la del
+  // alto, y al alejarse se montan.
   var marcadores = [];
+  if (caja.dataset.salida) {
+    var salida = caja.dataset.salida.split(',').map(Number);
+    if (salida.length === 2 && isFinite(salida[0]) && isFinite(salida[1])) {
+      marcadores.push(L.marker(salida, {
+        title: caja.dataset.markerTitle || '',
+        icon: L.divIcon({
+          className: 'agua-marker',
+          html: '<span style="display:block;width:16px;height:16px;border-radius:50%;' +
+                'background:#E24C4C;border:3px solid ' + GROUND + ';' +
+                'box-shadow:0 0 0 1.5px #E24C4C;"></span>',
+          iconSize: [16, 16], iconAnchor: [8, 8]
+        })
+      }).addTo(map));
+    }
+  }
+
   fuentes.forEach(function(f){
     var globo = document.createElement('div');
     globo.className = 'agua-popup';

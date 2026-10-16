@@ -963,6 +963,7 @@ def main():
             if name != HOME:
                 page_html = add_weather(page_html, name, lang)
             page_html = add_fuentes(page_html, lang)
+            page_html = add_fuentes_ficha(page_html, name, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)
@@ -1005,8 +1006,7 @@ def add_fuentes(page_html, lang):
     marca = '<section class="agua-zonas" id="aguaLista"></section>'
     if marca not in page_html:
         return page_html
-    with open(os.path.join(ROOT, "data", "fuentes.json"), encoding="utf-8") as f:
-        fuentes = json.load(f)["fuentes"]
+    fuentes = _fuentes()
     t = (lambda x: eu.UI[x]) if lang == "eu" else (lambda x: x)
     partes = []
     zona_actual = None
@@ -1042,7 +1042,55 @@ def add_fuentes(page_html, lang):
     partes.append("      </ul>\n    </div>")
     lista = ('<section class="agua-zonas" id="aguaLista">\n'
              + "\n".join(partes) + "\n  </section>")
-    return page_html.replace(marca, lista, 1)
+    page_html = page_html.replace(marca, lista, 1)
+    # El parrafo que explica la marca de «posicion aproximada» solo sale si
+    # queda alguna: el autor ha ido midiendo las suyas sobre el terreno y hoy
+    # no queda ninguna, asi que explicarla seria hablar de algo que no se ve.
+    if not any(fu["aprox"] for fu in fuentes):
+        page_html = re.sub(
+            r'\n *<p class="agua-nota-general" id="aguaNotaAprox">.*?</p>', "",
+            page_html, count=1, flags=re.S)
+    return page_html
+
+
+def add_fuentes_ficha(page_html, name, lang):
+    """Las fuentes de agua, tambien en el mapa de cada ruta.
+
+    Hasta ahora el agua solo estaba en agua.html, y es justo el dato que se
+    mira estando en la ficha de la ruta que vas a hacer. Van como un
+    marcador propio -- gota azul, no el circulo numerado de los puntos de
+    referencia -- para que se distingan de un vistazo.
+
+    Se pasan en un atributo y no en data/<ruta>.json porque ese fichero lo
+    reescribe scripts/make_map_data.py cada vez que se toca un GPX, y lo que
+    metieramos ahi se perderia. Aqui salen de data/fuentes.json, que es la
+    unica lista, en el idioma de la pagina.
+
+    Solo las que esa ruta declara: pasar cerca no es lo mismo que poder
+    llenar el bidon, y esa decision ya esta tomada en scripts/make_fuentes.py.
+    """
+    marca = f'data-map-src="data/{name}.json"'
+    if marca not in page_html:
+        return page_html
+    ruta = f"{name}.html"
+    mias = [fu for fu in _fuentes()
+            if any(r["href"] == ruta for r in fu[lang]["rutas"])]
+    if not mias:
+        return page_html
+    datos = [{"at": [fu["lat"], fu["lon"]], "nombre": fu[lang]["nombre"]} for fu in mias]
+    attr = html.escape(json.dumps(datos, ensure_ascii=False), quote=True)
+    return page_html.replace(marca, marca + f'\n           data-fuentes="{attr}"', 1)
+
+
+_fuentes_cache = None
+
+
+def _fuentes():
+    global _fuentes_cache
+    if _fuentes_cache is None:
+        with open(os.path.join(ROOT, "data", "fuentes.json"), encoding="utf-8") as f:
+            _fuentes_cache = json.load(f)["fuentes"]
+    return _fuentes_cache
 
 
 def add_manifest(lang):

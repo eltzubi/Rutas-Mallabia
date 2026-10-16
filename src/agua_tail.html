@@ -24,7 +24,9 @@
 
   <section class="map-section">
     <div class="route-map-box agua-map-box">
-      <div id="aguaMap" style="width:100%;height:100%;" data-fuentes-mapa></div>
+      <div id="aguaMap" style="width:100%;height:100%;" data-fuentes-mapa
+           data-salida="43.210451,-2.546004"
+           data-marker-title="Trabakua (salida)"></div>
       <button type="button" class="map-expand-btn" aria-label="Ampliar mapa"
               data-label-expand="Ampliar mapa" data-label-collapse="Reducir mapa">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
@@ -33,7 +35,8 @@
     <p class="wikiloc-credit">Mapa sobre <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> y el <a href="https://www.ign.es" target="_blank" rel="noopener noreferrer">IGN</a> &middot; cada punto sale de un waypoint de su ruta</p>
   </section>
 
-  <p class="agua-nota-general">El caudal de una fuente cambia con la &eacute;poca del a&ntilde;o; donde la ruta dice que lleva agua todo el a&ntilde;o, est&aacute; anotado. Las marcadas como <b>posici&oacute;n aproximada</b> llevan la coordenada del sitio &mdash;el pueblo, el alto, la presa&mdash; y la nota dice d&oacute;nde est&aacute; la fuente dentro de &eacute;l.</p>
+  <p class="agua-nota-general">El caudal de una fuente cambia con la &eacute;poca del a&ntilde;o; donde la ruta dice que lleva agua todo el a&ntilde;o, est&aacute; anotado. El punto rojo es el alto de Trabakua, de donde sale casi todo.</p>
+  <p class="agua-nota-general" id="aguaNotaAprox">Las marcadas como <b>posici&oacute;n aproximada</b> llevan la coordenada del sitio &mdash;el pueblo, el alto, la presa&mdash; y la nota dice d&oacute;nde est&aacute; la fuente dentro de &eacute;l.</p>
 
   <section class="agua-zonas" id="aguaLista"></section>
 
