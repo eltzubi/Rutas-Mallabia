@@ -156,7 +156,8 @@
 
   // La salida de Trabakua, en rojo: situa el resto. Va antes que las fuentes
   // para que ninguna quede debajo de ella -- hay una fuente a 7 m, la del
-  // alto, y al alejarse se montan.
+  // alto, y al alejarse se montan. La salida va en aro hueco y grande para que
+  // la gota de la fuente se siga viendo dentro del aro.
   var marcadores = [];
   if (caja.dataset.salida) {
     var salida = caja.dataset.salida.split(',').map(Number);
@@ -165,10 +166,10 @@
         title: caja.dataset.markerTitle || '',
         icon: L.divIcon({
           className: 'agua-marker',
-          html: '<span style="display:block;width:16px;height:16px;border-radius:50%;' +
-                'background:#E24C4C;border:3px solid ' + GROUND + ';' +
-                'box-shadow:0 0 0 1.5px #E24C4C;"></span>',
-          iconSize: [16, 16], iconAnchor: [8, 8]
+          html: '<span style="display:block;width:32px;height:32px;border-radius:50%;' +
+                'background:transparent;border:3px solid #E24C4C;' +
+                'box-shadow:0 0 0 1.5px rgba(226,76,76,.35);"></span>',
+          iconSize: [32, 32], iconAnchor: [16, 16]
         })
       }).addTo(map));
     }
