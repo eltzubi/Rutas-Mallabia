@@ -299,6 +299,7 @@
 .route-card-chart{ height:46px; margin:6px 0 2px; }
 .route-card-desc + .route-card-chart{ margin-top:auto; }
 .route-card-chart svg{ width:100%; height:100%; display:block; }
+.route-card[data-activity="senderismo"] .route-card-chart{ --teal:var(--violet); --teal-soft:var(--violet-soft); }
 .route-card-stats{
   font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600;
   color:var(--ink); margin:0; font-variant-numeric:tabular-nums;
