@@ -254,6 +254,11 @@
   border:1px solid var(--line);
 }
 .hero-activity-badge svg{ display:block; width:22px; height:22px; color:var(--ink); stroke-width:2.1; }
+/* La ficha entera toma el color de su actividad: verde a pie (el mismo de
+   la portada y el mapa) y naranja en bici. En senderismo, --teal pasa a ser
+   el verde: titulo, enlaces, perfil, numeritos y trazado se colorean. */
+main[data-activity="senderismo"]{ --teal: var(--violet); --teal-soft: var(--violet-soft); }
+main[data-activity] .hero-activity-badge svg{ color:var(--teal); }
 /* top/bottom/left are set per page as an inline style -- wherever the
    elevation profile leaves the most clearance, so the badge never overlaps
    the plotted line underneath it. */
