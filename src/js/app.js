@@ -110,12 +110,17 @@
 // button's position or the card layout.
 (function(){
   var fab = document.getElementById('viewFab');
-  if (!fab) return;
+  var aviso = document.getElementById('noticeBadge');
+  if (!fab && !aviso) return;
   var timer = null;
   function onScroll(){
-    fab.classList.add('is-scrolling');
+    if (fab) fab.classList.add('is-scrolling');
+    if (aviso) aviso.classList.add('is-scrolling');
     clearTimeout(timer);
-    timer = setTimeout(function(){ fab.classList.remove('is-scrolling'); }, 150);
+    timer = setTimeout(function(){
+      if (fab) fab.classList.remove('is-scrolling');
+      if (aviso) aviso.classList.remove('is-scrolling');
+    }, 150);
   }
   window.addEventListener('scroll', onScroll, { passive:true });
 })();
