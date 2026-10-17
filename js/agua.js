@@ -54,7 +54,7 @@
 
   if (typeof L === 'undefined') { noDisponible(); return; }
 
-  var css = getComputedStyle(document.documentElement);
+  var css = getComputedStyle(document.querySelector('main') || document.documentElement);
   function token(name, fallback){
     return css.getPropertyValue(name).trim() || fallback;
   }

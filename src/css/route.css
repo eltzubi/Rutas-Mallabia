@@ -258,6 +258,9 @@
    la portada y el mapa) y naranja en bici. En senderismo, --teal pasa a ser
    el verde: titulo, enlaces, perfil, numeritos y trazado se colorean. */
 main[data-activity="senderismo"]{ --teal: var(--violet); --teal-soft: var(--violet-soft); }
+/* agua.html: el acento es azul porque la pagina habla de agua. */
+main[data-agua]{ --teal:#3B82F6; --teal-soft:rgba(59,130,246,.16); }
+:root[data-theme="light"] main[data-agua]{ --teal:#1D4ED8; --teal-soft:#DBEAFE; }
 main[data-activity] .hero-activity-badge svg{ color:var(--teal); }
 /* top/bottom/left are set per page as an inline style -- wherever the
    elevation profile leaves the most clearance, so the badge never overlaps
