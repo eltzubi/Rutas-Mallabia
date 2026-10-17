@@ -1,1 +1,141 @@
-LyogU2VydmljZSB3b3JrZXIgZGUgdHJhYmFrdXRpay5jb20uCgogICBFc3RhIHdlYiBzZSBhYnJlIGVuIGVsIG1vbnRlLCBxdWUgZXMganVzdG8gZG9uZGUgbm8gaGF5IGNvYmVydHVyYS4gQ29uIGVzdG8sCiAgIHVuYSBmaWNoYSBxdWUgeWEgc2UgaGF5YSB2aXNpdGFkbyBzZSBhYnJlIHNpbiBkYXRvczogc3UgdGV4dG8sIHN1IHBlcmZpbCBkZQogICBhbHRpdHVkLCBzdXMgZm90b3MgeSBzdSBHUFguCgogICBMbyBxdWUgTk8gc2UgZ3VhcmRhIHNvbiBsb3MgdGlsZXMgZGVsIG1hcGEuIFZpZW5lbiBkZSBPcGVuU3RyZWV0TWFwLAogICBDeWNsT1NNIHkgZWwgSUdOOiBsb3MgZG9zIHByaW1lcm9zIHNvbiBzZXJ2aWRvcmVzIGRlIHZvbHVudGFyaW9zIHkgc3UKICAgcG9saXRpY2EgZGUgdXNvIHByb2hpYmUgZXhwcmVzYW1lbnRlIGNhY2hlYXJsb3MgZW4gYmxvcXVlLiBTaW4gY29iZXJ0dXJhIHNlIHZlcmEgZWwKICAgdHJhY2sgc29icmUgdW4gZm9uZG8gdmFjaW8sIG5vIGVsIG1hcGEuCgogICBQYXJhIGRlc2FjdGl2YXJsbyBkZWwgdG9kbyBzaSBhbGd1biBkaWEgZGllcmEgcHJvYmxlbWFzOiBwdWJsaWNhciB1biBzdy5qcwogICBjdXlvIGNvbnRlbmlkbyBzZWEgc29sbyAgc2VsZi5yZWdpc3RyYXRpb24udW5yZWdpc3RlcigpICAtLSBsb3MgbmF2ZWdhZG9yZXMKICAgcXVlIHlhIGxvIHRlbmdhbiBpbnN0YWxhZG8gbG8gcmVjb2dlcmFuIHkgc2UgZGVzZW5nYW5jaGFyYW4gc29sb3MuCgogICBidWlsZC5weSBzdXN0aXR1eWUgVkVSU0lPTiB5IENPTkNIQSBhbCBlc2NyaWJpcmxvLiAqLwpjb25zdCBWRVJTSU9OID0gIjQ3MjI1NTQ0IjsKY29uc3QgQ09OQ0hBID0gWwogICJiYXNlLmNzcz92PTYxMjBlOTUwIiwKICAiZm9udHMuY3NzP3Y9MTIwNGFhZmUiLAogICJob21lLmNzcz92PTdmOTg5NzUxIiwKICAianMvYWd1YS5qcz92PTJlYzNiODBjIiwKICAianMvYXBwLmpzP3Y9NjIwNzlmOTUiLAogICJqcy9maWx0ZXJzLmpzP3Y9OWZiYTczZDMiLAogICJqcy9tYXAuanM/dj00MDkwYWVhMyIsCiAgImpzL3dlYXRoZXIuanM/dj0yNzAzZDgyNyIsCiAgImpzL3dlYm1jcC5qcz92PWVkNGU2MTMyIiwKICAicm91dGUuY3NzP3Y9MTk3N2MyYjciLAogICJmb250cy9mcmF1bmNlcy1pdGFsaWMud29mZjIiLAogICJmb250cy9mcmF1bmNlcy1ub3JtYWwud29mZjIiLAogICJmb250cy9pYm1wbGV4bW9uby01MDAud29mZjIiLAogICJmb250cy9pYm1wbGV4bW9uby02MDAud29mZjIiLAogICJmb250cy9rYXJsYS53b2ZmMiIsCiAgImZvbnRzL3NvdXJjZXNlcmlmLWl0YWxpYy53b2ZmMiIsCiAgImZvbnRzL3NvdXJjZXNlcmlmLndvZmYyIiwKICAib2ZmbGluZS5odG1sIiwKICAiZmF2aWNvbi5zdmciLAogICJpY29uLTE5Mi5wbmciLAogICJ2ZW5kb3IvbGVhZmxldC9sZWFmbGV0LmNzcyIsCiAgInZlbmRvci9sZWFmbGV0L2xlYWZsZXQuanMiCl07Cgpjb25zdCBDQUNIRV9DT05DSEEgPSAnY29uY2hhLScgKyBWRVJTSU9OOwpjb25zdCBDQUNIRV9QQUdJTkFTID0gJ3BhZ2luYXMtdjEnOwpjb25zdCBDQUNIRV9NRURJT1MgPSAnbWVkaW9zLXYxJzsKY29uc3QgTUFYX01FRElPUyA9IDE1MDsgICAgICAgICAgLy8gfjE1MCBpbWFnZW5lcyBjYWNoZWFkYXM7IGxhcyBtYXMgdmllamFzIHNlIHZhbgpjb25zdCBGVUVSQSA9ICdvZmZsaW5lLmh0bWwnOwoKY29uc3QgTUVESU8gPSAvXC4od2VicHxqcGd8anBlZ3xwbmd8c3ZnfHdvZmYyKSQvaTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignaW5zdGFsbCcsIGZ1bmN0aW9uIChldmVudG8pIHsKICBldmVudG8ud2FpdFVudGlsKAogICAgY2FjaGVzLm9wZW4oQ0FDSEVfQ09OQ0hBKQogICAgICAudGhlbihmdW5jdGlvbiAoYykgeyByZXR1cm4gYy5hZGRBbGwoQ09OQ0hBKTsgfSkKICAgICAgLnRoZW4oZnVuY3Rpb24gKCkgeyByZXR1cm4gc2VsZi5za2lwV2FpdGluZygpOyB9KQogICk7Cn0pOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdhY3RpdmF0ZScsIGZ1bmN0aW9uIChldmVudG8pIHsKICBldmVudG8ud2FpdFVudGlsKAogICAgY2FjaGVzLmtleXMoKS50aGVuKGZ1bmN0aW9uIChub21icmVzKSB7CiAgICAgIHJldHVybiBQcm9taXNlLmFsbChub21icmVzLm1hcChmdW5jdGlvbiAobikgewogICAgICAgIC8vIExhIGNvbmNoYSBsbGV2YSBsYSB2ZXJzaW9uIGRlbnRybyBkZWwgbm9tYnJlOiBhbCBjYW1iaWFyIGN1YWxxdWllcgogICAgICAgIC8vIGNzcyBvIGpzLCBsYSBhbnRlcmlvciBlbnRlcmEgc2UgdGlyYS4gTGFzIHBhZ2luYXMgeSBsb3MgbWVkaW9zCiAgICAgICAgLy8gc29icmV2aXZlbiwgcXVlIGVzIGxvIHF1ZSBoYWNlIHV0aWwgc2VndWlyIHRlbmllbmRvbG9zIHNpbiBjb2JlcnR1cmEuCiAgICAgICAgaWYgKG4gPT09IENBQ0hFX1BBR0lOQVMgfHwgbiA9PT0gQ0FDSEVfTUVESU9TIHx8IG4gPT09IENBQ0hFX0NPTkNIQSkgcmV0dXJuIG51bGw7CiAgICAgICAgcmV0dXJuIGNhY2hlcy5kZWxldGUobik7CiAgICAgIH0pKTsKICAgIH0pLnRoZW4oZnVuY3Rpb24gKCkgeyByZXR1cm4gc2VsZi5jbGllbnRzLmNsYWltKCk7IH0pCiAgKTsKfSk7CgpmdW5jdGlvbiByZWNvcnRhcihjYWNoZSwgbWF4aW1vKSB7CiAgcmV0dXJuIGNhY2hlLmtleXMoKS50aGVuKGZ1bmN0aW9uIChjbGF2ZXMpIHsKICAgIGlmIChjbGF2ZXMubGVuZ3RoIDw9IG1heGltbykgcmV0dXJuIG51bGw7CiAgICByZXR1cm4gUHJvbWlzZS5hbGwoY2xhdmVzLnNsaWNlKDAsIGNsYXZlcy5sZW5ndGggLSBtYXhpbW8pCiAgICAgIC5tYXAoZnVuY3Rpb24gKGspIHsgcmV0dXJuIGNhY2hlLmRlbGV0ZShrKTsgfSkpOwogIH0pOwp9CgpmdW5jdGlvbiBndWFyZGFyKG5vbWJyZUNhY2hlLCBwZXRpY2lvbiwgcmVzcHVlc3RhLCBtYXhpbW8pIHsKICAvLyBTb2xvIHJlc3B1ZXN0YXMgY29tcGxldGFzIHkgcHJvcGlhczogdW5hIG9wYWNhICh0eXBlICdvcGFxdWUnKSBvY3VwYXJpYQogIC8vIHNpdGlvIHNpbiBxdWUgc2UgcHVlZGEgc2FiZXIgc2lxdWllcmEgc2kgdHJhZSB1biBlcnJvci4KICBpZiAoIXJlc3B1ZXN0YSB8fCAhcmVzcHVlc3RhLm9rIHx8IHJlc3B1ZXN0YS50eXBlID09PSAnb3BhcXVlJykgcmV0dXJuIHJlc3B1ZXN0YTsKICBjb25zdCBjb3BpYSA9IHJlc3B1ZXN0YS5jbG9uZSgpOwogIGNhY2hlcy5vcGVuKG5vbWJyZUNhY2hlKS50aGVuKGZ1bmN0aW9uIChjKSB7CiAgICByZXR1cm4gYy5wdXQocGV0aWNpb24sIGNvcGlhKS50aGVuKGZ1bmN0aW9uICgpIHsKICAgICAgcmV0dXJuIG1heGltbyA/IHJlY29ydGFyKGMsIG1heGltbykgOiBudWxsOwogICAgfSk7CiAgfSk7CiAgcmV0dXJuIHJlc3B1ZXN0YTsKfQoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGZ1bmN0aW9uIChldmVudG8pIHsKICBjb25zdCBwZXRpY2lvbiA9IGV2ZW50by5yZXF1ZXN0OwogIGlmIChwZXRpY2lvbi5tZXRob2QgIT09ICdHRVQnKSByZXR1cm47CiAgY29uc3QgdXJsID0gbmV3IFVSTChwZXRpY2lvbi51cmwpOwogIGlmICh1cmwucHJvdG9jb2wgIT09ICdodHRwOicgJiYgdXJsLnByb3RvY29sICE9PSAnaHR0cHM6JykgcmV0dXJuOwogIC8vIFNvbG8gbG8gcXVlIHNpcnZlIGVzdGUgbWlzbW8gc2l0aW8uIExvIHVuaWNvIGRlIGZ1ZXJhIHNvbiBsb3MgdGlsZXMgZGVsCiAgLy8gbWFwYSwgeSBlc29zIHZhbiBhIGxhIHJlZCBzaW4gcGFzYXIgcG9yIGFxdWk6IHNvbiBkZSBPcGVuU3RyZWV0TWFwLAogIC8vIEN5Y2xPU00geSBlbCBJR047IGxvcyBkb3MgcHJpbWVyb3MsIHNlcnZpZG9yZXMgZGUgdm9sdW50YXJpb3MgY3V5YQogIC8vIHBvbGl0aWNhIGRlIHVzbyBwcm9oaWJlIGNhY2hlYXJsb3MgZW4gYmxvcXVlLiBMZWFmbGV0IHlhIG5vIHZpZW5lIGRlIHVuIENETiwgc2Ugc2lydmUKICAvLyBkZXNkZSB2ZW5kb3IvbGVhZmxldCwgYXNpIHF1ZSBlbnRyYSBwb3IgbGEgdmlhIG5vcm1hbC4KICBpZiAodXJsLm9yaWdpbiAhPT0gc2VsZi5sb2NhdGlvbi5vcmlnaW4pIHJldHVybjsKCiAgLy8gUGFnaW5hczogcHJpbWVybyBsYSByZWQsIHBhcmEgcXVlIHF1aWVuIHRlbmdhIGNvYmVydHVyYSB2ZWEgc2llbXByZSBsYQogIC8vIHVsdGltYSB2ZXJzaW9uOyBsYSBjb3BpYSBndWFyZGFkYSBlcyBzb2xvIGVsIHBsYW4gQi4KICAvLwogIC8vIFkgbm8gc29sbyBhbCBuYXZlZ2FyOiBhcHAuanMgc2UgZGVzY2FyZ2EgbGEgcG9ydGFkYSBjb24gZmV0Y2goKSBwYXJhIHNhY2FyCiAgLy8gZGUgYWhpIGxvcyBub21icmVzIGRlIGxhcyBydXRhcyB2ZWNpbmFzLiBTaSBlc28gc2Ugc2lydmllcmEgZGUgbGEgY2FjaGUsCiAgLy8gcXVpZW4geWEgaHViaWVyYSB2aXNpdGFkbyBsYSB3ZWIgY29uc3RydWlyaWEgZXNhIGxpc3RhIGNvbiB1bmEgcG9ydGFkYQogIC8vIHZpZWphLCBzaW4gbGFzIHJ1dGFzIG51ZXZhcy4gQ3VhbHF1aWVyIEhUTUwgdmEgYSBsYSByZWQgcHJpbWVyby4KICBjb25zdCBlc1BhZ2luYSA9IHBldGljaW9uLm1vZGUgPT09ICduYXZpZ2F0ZScKICAgIHx8IHVybC5wYXRobmFtZSA9PT0gJy8nIHx8IHVybC5wYXRobmFtZS5lbmRzV2l0aCgnLycpCiAgICB8fCAvXC5odG1sJC8udGVzdCh1cmwucGF0aG5hbWUpOwogIGlmIChlc1BhZ2luYSkgewogICAgZXZlbnRvLnJlc3BvbmRXaXRoKAogICAgICBmZXRjaChwZXRpY2lvbikKICAgICAgICAudGhlbihmdW5jdGlvbiAocikgeyByZXR1cm4gZ3VhcmRhcihDQUNIRV9QQUdJTkFTLCBwZXRpY2lvbiwgcik7IH0pCiAgICAgICAgLmNhdGNoKGZ1bmN0aW9uICgpIHsKICAgICAgICAgIHJldHVybiBjYWNoZXMubWF0Y2gocGV0aWNpb24pLnRoZW4oZnVuY3Rpb24gKHIpIHsKICAgICAgICAgICAgcmV0dXJuIHIgfHwgY2FjaGVzLm1hdGNoKEZVRVJBKSB8fCBSZXNwb25zZS5lcnJvcigpOwogICAgICAgICAgfSk7CiAgICAgICAgfSkKICAgICk7CiAgICByZXR1cm47CiAgfQoKICAvLyBMbyBkZW1hczogcHJpbWVybyBsbyBndWFyZGFkby4gTG9zIGNzcyB5IGpzIGxsZXZhbiA/dj08aGFzaD4gZW4gbGEgVVJMLCBkZQogIC8vIG1vZG8gcXVlIGFsIGNhbWJpYXIgZWwgZmljaGVybyBjYW1iaWEgbGEgVVJMIHkgbm8gaGF5IGNvcGlhIHZpZWphIHBvc2libGUuCiAgZXZlbnRvLnJlc3BvbmRXaXRoKAogICAgY2FjaGVzLm1hdGNoKHBldGljaW9uKS50aGVuKGZ1bmN0aW9uIChndWFyZGFkbykgewogICAgICBpZiAoZ3VhcmRhZG8pIHJldHVybiBndWFyZGFkbzsKICAgICAgcmV0dXJuIGZldGNoKHBldGljaW9uKS50aGVuKGZ1bmN0aW9uIChyKSB7CiAgICAgICAgY29uc3QgZXNNZWRpbyA9IE1FRElPLnRlc3QodXJsLnBhdGhuYW1lKTsKICAgICAgICByZXR1cm4gZ3VhcmRhcihlc01lZGlvID8gQ0FDSEVfTUVESU9TIDogQ0FDSEVfQ09OQ0hBLCBwZXRpY2lvbiwgciwKICAgICAgICAgICAgICAgICAgICAgICBlc01lZGlvID8gTUFYX01FRElPUyA6IDApOwogICAgICB9KTsKICAgIH0pCiAgKTsKfSk7Cg==
+/* Service worker de trabakutik.com.
+
+   Esta web se abre en el monte, que es justo donde no hay cobertura. Con esto,
+   una ficha que ya se haya visitado se abre sin datos: su texto, su perfil de
+   altitud, sus fotos y su GPX.
+
+   Lo que NO se guarda son los tiles del mapa. Vienen de OpenStreetMap,
+   CyclOSM y el IGN: los dos primeros son servidores de voluntarios y su
+   politica de uso prohibe expresamente cachearlos en bloque. Sin cobertura se vera el
+   track sobre un fondo vacio, no el mapa.
+
+   Para desactivarlo del todo si algun dia diera problemas: publicar un sw.js
+   cuyo contenido sea solo  self.registration.unregister()  -- los navegadores
+   que ya lo tengan instalado lo recogeran y se desengancharan solos.
+
+   build.py sustituye VERSION y CONCHA al escribirlo. */
+const VERSION = "47225544";
+const CONCHA = [
+  "base.css?v=6120e950",
+  "fonts.css?v=1204aafe",
+  "home.css?v=7f989751",
+  "js/agua.js?v=2ec3b80c",
+  "js/app.js?v=62079f95",
+  "js/filters.js?v=9fba73d3",
+  "js/map.js?v=4090aea3",
+  "js/weather.js?v=2703d827",
+  "js/webmcp.js?v=ed4e6132",
+  "route.css?v=1977c2b7",
+  "fonts/fraunces-italic.woff2",
+  "fonts/fraunces-normal.woff2",
+  "fonts/ibmplexmono-500.woff2",
+  "fonts/ibmplexmono-600.woff2",
+  "fonts/karla.woff2",
+  "fonts/sourceserif-italic.woff2",
+  "fonts/sourceserif.woff2",
+  "offline.html",
+  "favicon.svg",
+  "icon-192.png",
+  "vendor/leaflet/leaflet.css",
+  "vendor/leaflet/leaflet.js"
+];
+
+const CACHE_CONCHA = 'concha-' + VERSION;
+const CACHE_PAGINAS = 'paginas-v1';
+const CACHE_MEDIOS = 'medios-v1';
+const MAX_MEDIOS = 150;          // ~150 imagenes cacheadas; las mas viejas se van
+const FUERA = 'offline.html';
+
+const MEDIO = /\.(webp|jpg|jpeg|png|svg|woff2)$/i;
+
+self.addEventListener('install', function (evento) {
+  evento.waitUntil(
+    caches.open(CACHE_CONCHA)
+      .then(function (c) { return c.addAll(CONCHA); })
+      .then(function () { return self.skipWaiting(); })
+  );
+});
+
+self.addEventListener('activate', function (evento) {
+  evento.waitUntil(
+    caches.keys().then(function (nombres) {
+      return Promise.all(nombres.map(function (n) {
+        // La concha lleva la version dentro del nombre: al cambiar cualquier
+        // css o js, la anterior entera se tira. Las paginas y los medios
+        // sobreviven, que es lo que hace util seguir teniendolos sin cobertura.
+        if (n === CACHE_PAGINAS || n === CACHE_MEDIOS || n === CACHE_CONCHA) return null;
+        return caches.delete(n);
+      }));
+    }).then(function () { return self.clients.claim(); })
+  );
+});
+
+function recortar(cache, maximo) {
+  return cache.keys().then(function (claves) {
+    if (claves.length <= maximo) return null;
+    return Promise.all(claves.slice(0, claves.length - maximo)
+      .map(function (k) { return cache.delete(k); }));
+  });
+}
+
+function guardar(nombreCache, peticion, respuesta, maximo) {
+  // Solo respuestas completas y propias: una opaca (type 'opaque') ocuparia
+  // sitio sin que se pueda saber siquiera si trae un error.
+  if (!respuesta || !respuesta.ok || respuesta.type === 'opaque') return respuesta;
+  const copia = respuesta.clone();
+  caches.open(nombreCache).then(function (c) {
+    return c.put(peticion, copia).then(function () {
+      return maximo ? recortar(c, maximo) : null;
+    });
+  });
+  return respuesta;
+}
+
+self.addEventListener('fetch', function (evento) {
+  const peticion = evento.request;
+  if (peticion.method !== 'GET') return;
+  const url = new URL(peticion.url);
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+  // Solo lo que sirve este mismo sitio. Lo unico de fuera son los tiles del
+  // mapa, y esos van a la red sin pasar por aqui: son de OpenStreetMap,
+  // CyclOSM y el IGN; los dos primeros, servidores de voluntarios cuya
+  // politica de uso prohibe cachearlos en bloque. Leaflet ya no viene de un CDN, se sirve
+  // desde vendor/leaflet, asi que entra por la via normal.
+  if (url.origin !== self.location.origin) return;
+
+  // Paginas: primero la red, para que quien tenga cobertura vea siempre la
+  // ultima version; la copia guardada es solo el plan B.
+  //
+  // Y no solo al navegar: app.js se descarga la portada con fetch() para sacar
+  // de ahi los nombres de las rutas vecinas. Si eso se sirviera de la cache,
+  // quien ya hubiera visitado la web construiria esa lista con una portada
+  // vieja, sin las rutas nuevas. Cualquier HTML va a la red primero.
+  const esPagina = peticion.mode === 'navigate'
+    || url.pathname === '/' || url.pathname.endsWith('/')
+    || /\.html$/.test(url.pathname);
+  if (esPagina) {
+    evento.respondWith(
+      fetch(peticion)
+        .then(function (r) { return guardar(CACHE_PAGINAS, peticion, r); })
+        .catch(function () {
+          return caches.match(peticion).then(function (r) {
+            return r || caches.match(FUERA) || Response.error();
+          });
+        })
+    );
+    return;
+  }
+
+  // Lo demas: primero lo guardado. Los css y js llevan ?v=<hash> en la URL, de
+  // modo que al cambiar el fichero cambia la URL y no hay copia vieja posible.
+  evento.respondWith(
+    caches.match(peticion).then(function (guardado) {
+      if (guardado) return guardado;
+      return fetch(peticion).then(function (r) {
+        const esMedio = MEDIO.test(url.pathname);
+        return guardar(esMedio ? CACHE_MEDIOS : CACHE_CONCHA, peticion, r,
+                       esMedio ? MAX_MEDIOS : 0);
+      });
+    })
+  );
+});
