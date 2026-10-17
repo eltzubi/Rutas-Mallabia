@@ -345,7 +345,10 @@
 .practical-info .info-details{ border:none; border-radius:0; background:none; }
 .practical-info .info-details + .info-details{ border-top:1px solid var(--line); }
 .practical-info .info-details summary{ padding:12px 16px; }
-.practical-info .info-details summary:hover{ background:var(--teal-soft); }
+/* En el móvil el toque deja el estado "hover" pegado y la fila se queda
+   pintada de color hasta que tocas otra cosa. Solo la coloreamos donde
+   hay ratón, y en un gris suave: el naranja se queda para la e-bike. */
+@media (hover:hover){ .practical-info .info-details summary:hover{ background:color-mix(in srgb, var(--ink) 6%, transparent); } }
 .practical-info .info-details summary::after{ color:var(--ink-dim); }
 .info-summary-label{ display:flex; align-items:center; gap:10px; }
 .info-icon{
