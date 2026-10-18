@@ -103,7 +103,14 @@ function env(page='index.es.html', storage=new Map()) {
     circleMarker(){return {addTo(){return this;},setLatLng(){},setStyle(){}};},
     divIcon:o=>o,DomEvent:{stopPropagation(){}}
   };
-  const context=vm.createContext({window:win,document:doc,L,AbortController,navigator:{},
+  // La ficha saca su slug de location.pathname y comparte location.href; sin
+  // esto el banco de pruebas no tiene location y app.js revienta al cargarse.
+  // win.location ya traia reload() para la prueba del mapa sin Leaflet; se le
+  // anaden los campos que usa la ficha para su slug y para compartir.
+  Object.assign(win.location,{pathname:'/trabakua.html',search:'',
+    href:'https://trabakutik.com/trabakua.html',origin:'https://trabakutik.com'});
+  const location=win.location;
+  const context=vm.createContext({window:win,document:doc,L,AbortController,navigator:{},location,
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     CustomEvent:class {constructor(type,options){this.type=type;Object.assign(this,options);}},
     FormData:class {constructor(form){this.form=form;}},

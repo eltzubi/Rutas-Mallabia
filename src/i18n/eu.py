@@ -1293,6 +1293,8 @@ ZENGOTITAGANE = {
         'alt="Gurutze bat ibilbideko goi batean, harana eta errepidea atzealdean"',
     'alt="Aerogeneradores en fila sobre una cresta de monte, con un cielo tormentoso al fondo"':
         'alt="Eoliko ilara mendi-gailurraren gainean, zeru ekaiztsua atzealdean"',
+    'V&eacute;rtice geod&eacute;sico en Iturzurigaina, el punto m&aacute;s alto de la ruta, con vistas alrededor':
+        'Bertize geodesikoa Iturzurigainan, ibilbideko punturik altuenean, inguruko ikuspegiekin',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
@@ -1378,6 +1380,10 @@ OIZ = {
         'alt="Ilunabar gorrixka Oiztik"',
     'alt="Caballo junto a una charca de piedras en la cima del Oiz"':
         'alt="Zaldia Oizko gailurreko harrizko putzu baten ondoan"',
+    'V&eacute;rtice geod&eacute;sico en el Oiz de noche, con las luces rojas de los aerogeneradores al fondo':
+        'Bertize geodesikoa Oizen gauez, eolikoen argi gorriak atzealdean',
+    'La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo':
+        'Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, ganadua larreetan eta inguruko mendiak hondoan',
     'Salimos de Trabakua y subimos hasta <b>Zengotitagane</b> (km 2,1, 810 m) &mdash;una '
     'subida muy fuerte, aunque corta, casi recta, que sale arriba entre el segundo y el '
     'tercer aerogenerador. A partir de ah&iacute;, hacia el Oiz, la pendiente se '
@@ -1468,6 +1474,16 @@ ARIETZU = {
     'helechos y brezo"':
         'alt="Harrizko gurutzea ibilbideko goialde batean, zuhaitzen artean eta iratze eta '
         'txilarren arteko bidezidor batekin"',
+    'Una cruz en uno de los altos de la ruta, entre hierba seca y con vistas a un monte al fondo':
+        'Gurutze bat ibilbideko goi batean, belar lehorren artean eta mendi bat atzealdean ikusten dela',
+    'La pista de tierra subiendo junto a una alambrada de postes de madera, con la ladera de hierba a un lado y el pinar arriba':
+        'Lur-pista igotzen, egurrezko zutoinen hesiaren ondotik, belardia alde batera eta pinudia goian',
+    'Vista del valle con el pueblo abajo y una sierra rocosa al fondo, desde detr&aacute;s de los helechos':
+        'Haranaren ikuspegia, herria behean eta harkaitzezko mendilerroa atzealdean, iratzeen atzetik',
+    'El sendero por la cresta entre helechos, con un corredor al fondo y las pistas serpenteando por la ladera de enfrente':
+        'Bidezidorra gailurrean iratzeen artean, korrikalari bat atzealdean eta pistak aurreko hegalean bihurgunez',
+    'Cruz de piedra en un alto de la ruta, entre &aacute;rboles y un sendero entre helechos y brezo':
+        'Harrizko gurutzea ibilbideko goialde batean, zuhaitzen artean eta iratze eta txilarren arteko bidezidor batekin',
     'data-marker-title="Ermita de San Juan (salida y llegada)"':
         'data-marker-title="San Juan ermita (irteera eta helmuga)"',
     '<span class="v">Zengotita</span>': '<span class="v">Zengotita</span>',
@@ -1619,6 +1635,8 @@ SANCRISTOBAL = {
         'alt="Bidezidor teknikoa pagoen eta iratzeen artean, argia adarren artetik iragazten dela"',
     'alt="Sendero estrecho entre &aacute;rboles j&oacute;venes, en un tramo de bosque cerrado"':
         'alt="Bidezidor estua zuhaitz gazteen artean, baso itxiko zati batean"',
+    'Descenso por un camino de piedra hacia Garai, con un paso canadiense entre la niebla':
+        'Jaitsiera harrizko bide batetik Garairantz, pasabide kanadiar batekin lainoen artean',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
     '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
@@ -2185,6 +2203,8 @@ IRUZUBIETA = {
         'atzealdean"',
     'alt="Camino hundido entre helechos y árboles, cubierto de hojas secas"':
         'alt="Bide hondoratua iratzeen eta zuhaitzen artean, hosto lehorrez estalia"',
+    'Una cancela de madera junto a un prado con ganado, con niebla entre los montes al fondo':
+        'Zurezko atetxo bat larre baten ondoan abereekin, lainoa mendien artean atzealdean',
     'download="Trabakua, Iturreta e Iruzubieta.gpx"':
         'download="Trabakua, Iturreta eta Iruzubieta.gpx"',
     'download="Trabakua, Iturreta e Iruzubieta.kml"':
@@ -2277,6 +2297,8 @@ MENDIBIL = {
     'las monta&ntilde;as del entorno al fondo"':
         'alt="Heldu bat eta haur bat ardo-zahato batekin posatzen Mendibilgo gailurrean, '
         'inguruko mendiak atzealdean"',
+    'Un adulto y un ni&ntilde;o posando con una bota de vino en la cima del Mendibil, con las monta&ntilde;as del entorno al fondo':
+        'Heldu bat eta haur bat ardo-zahato batekin posatzen Mendibilgo gailurrean, inguruko mendiak atzealdean',
     '<span>Sendero</span><span class="sep">/</span><span>Mendibil</span>':
         '<span>Bidezidorra</span><span class="sep">/</span><span>Mendibil</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
@@ -2377,6 +2399,20 @@ ARTETA = {
     'en la vaguada"':
         'alt="Soilgunea pinu eta eukalipto birlandaketen artean, larre eta zuhaitz '
         'gazteekin haran-hondoan"',
+    'Vista de los montes del entorno con los aerogeneradores del Oiz al fondo, y el valle con caser&iacute;os en primer plano, entre pinos j&oacute;venes':
+        'Inguruko mendien ikuspegia, Oizeko eolikoak atzealdean eta harana baserriekin aurrealdean, pinu gazteen artean',
+    'V&eacute;rtice geod&eacute;sico en la cima de Olamendi, con el parque e&oacute;lico del Oiz al fondo entre nubes':
+        'Gailur geodesikoa Olamendiko tontorrean, Oizeko parke eolikoa atzealdean hodeien artean',
+    'Un caser&iacute;o en lo alto de una loma, rodeado de prados y bosque, con montes al fondo':
+        'Baserri bat muino baten gainean, larre eta basoz inguratuta, mendiak atzealdean',
+    'El sol entrando entre los &aacute;rboles en un tramo de bosque, con troncos ca&iacute;dos y roca cubierta de musgo al borde del camino':
+        'Eguzkia zuhaitzen artetik sartzen baso-tarte batean, enbor eroriak eta goroldioz estalitako harkaitza bidearen ertzean',
+    'Una pista de cemento subiendo entre el arbolado, con una se&ntilde;al de prohibido el paso al fondo':
+        'Zementuzko pista bat zuhaitzen artetik gora, sarrera debekatua dagoela dioen seinale batekin atzealdean',
+    'Vistas desde lo alto a un caser&iacute;o rodeado de prados, con el mar y las monta&ntilde;as del entorno al fondo':
+        'Goitik ikusitako baserri bat larrez inguratuta, itsasoa eta inguruko mendiak atzealdean',
+    'Claro entre repoblaciones de pino y eucalipto, con un prado y arbolado joven en la vaguada':
+        'Soilgunea pinu eta eukalipto birlandaketen artean, larre eta zuhaitz gazteekin haran-hondoan',
     '<span>Mixta</span><span class="sep">/</span><span>Mendibil, Olamendi y Arteta</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Mendibil, Olamendi eta Arteta</span>',
     '<span>Circuito</span></p>': '<span>Zirkuitua</span></p>',
@@ -2468,6 +2504,12 @@ GOITA = {
         'hodei luzatuak zeruan"',
     'alt="Casas del valle entre prados y bosque, con nubes de tormenta acerc&aacute;ndose"':
         'alt="Haraneko etxeak belardi eta basoen artean, ekaitz-hodeiak hurbiltzen"',
+    'Vistas al atardecer sobre los valles y montes del entorno, con un mont&oacute;n de piedras en primer plano':
+        'Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila batekin',
+    'Ermita de San Mart&iacute;n de Apoita, con su peque&ntilde;a espada&ntilde;a de piedra, y los aerogeneradores del Oiz al fondo':
+        'Apoitako San Martin ermita, harrizko espadaina txikiarekin, eta Oizeko aerosorgailuak atzealdean',
+    'Vistas amplias sobre los valles del entorno, con una monta&ntilde;a de doble pico al fondo y nubes alargadas en el cielo':
+        'Inguruko haranen ikuspegi zabalak, bi tontorreko mendi bat atzealdean eta hodei luzatuak zeruan',
     'download="Trabakua paseo barrio Goita.gpx"':
         'download="Trabakua, Goita auzoko paseoa.gpx"',
     'download="Trabakua paseo barrio Goita.kml"':
@@ -2538,6 +2580,8 @@ HIRUTXIKIAK = {
         'alt="Bidearen baliza berdea harkaitzen artean, kresta-lerroan aerosorgailu ilara batekin eta harana atzealdean"',
     'alt="Foto ampliada del recorrido de Hiru Txikiak"':
         'alt="Hiru Txikiak ibilbidearen argazki handitua"',
+    'La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo':
+        'Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, ganadua larreetan eta inguruko mendiak hondoan',
 
     # body copy
     'La <a href="https://hirutxikiak.com/" target="_blank" rel="noopener noreferrer">Hiru Txikiak Trail</a> es una carrera de trail organizada por el club Korrikazaleak, con salida y meta en Ermua, que sube a tres cumbres muy conocidas de la zona: <b><a href="urko.html">Urko</a></b>, <b><a href="oiz.html">Oiz</a></b> y <b><a href="egoarbitza.html">Egoarbitza</a></b>. Es una carrera dura y exigente &mdash;m&aacute;s de 40 km y m&aacute;s de 2.000 m de desnivel positivo&mdash; en la que, desde casi el principio, toca subir.':
@@ -2617,6 +2661,10 @@ ZALDIBAR = {
         'alt="Kirol-gunea eta haurren parkea gauean argiztatuta, ikastetxe baten ondoan"',
     'alt="La presa de Aixola en un d&iacute;a soleado, con la torre de la toma de agua asomando sobre el embalse"':
         'alt="Aixolako presa egun eguzkitsu batean, ur-hartuneko dorrea urtegiaren gainean ageri dela"',
+    'alt="Pista de grava que bordea el embalse de Aixola, con el agua en calma y el muro de la presa al fondo entre las laderas"':
+        'alt="Aixolako urtegia alboan duen legarrezko pista, ura geldi eta presaren horma hondoan, mendi-hegalen artean"',
+    'alt="Send&aacute; estrecha de tierra que sube entre matorral y &aacute;rboles por la ladera, bajo un cielo nublado"':
+        'alt="Lurrezko bide estua, sasi eta zuhaitzen artean mendi-hegala gora, zeru hodeitsuaren azpian"',
 
     # wikiloc / gpx
     'download="Trabakua, Aixola y Berriz.gpx"':
@@ -2804,6 +2852,8 @@ PAGO7 = {
         'alt="Zuhaitz bakartia belar-hegal batean, lainoarekin eta bide bat ondoan"',
     'alt="Caballos pastando en un claro del bosque, con aerogeneradores al fondo en una loma"':
         'alt="Zaldiak basoko soilgune batean bazkan, aerosorgailuak atzealdean loma batean"',
+    'La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo':
+        'Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, ganadua larreetan eta inguruko mendiak hondoan',
 
     # facts note (custom wording: Desnivel is the race's official figure, not raw GPX)
     '&mdash; <b>Distancia</b>, calculada a partir del track GPX real (puede variar ligeramente respecto a otras apps, cada una aplica su propio suavizado). <b>Desnivel</b>, dato oficial de la organizaci&oacute;n de la carrera. <b>Esfuerzo</b>, estimado a partir de ambos. <b>Superficie</b> y <b>Tipo</b>, observados sobre el terreno.':
@@ -3192,6 +3242,28 @@ EXIGENTE = {
     'Desde all&iacute; solo queda salir a la carretera general y remontar los &uacute;ltimos dos kil&oacute;metros hasta Trabakua, cerrando una ruta que combina pr&aacute;cticamente de todo: pistas r&aacute;pidas, caminos de piedra y tierra, buenas subidas, zonas tranquilas entre caser&iacute;os y el paso por la cima del Oiz.':
         'Handik errepide nagusira ateratzea eta Trabakuara itzultzeko azken bi kilometroak igotzea besterik ez zaigu geratuko. Horrela amaituko dugu ia denetarik eskaintzen duen ibilbidea: pista azkarrak, harrizko eta lurrezko bideak, igoera ederrak, baserri arteko tarte lasaiak eta Oizko gailurretik igarotzea.',
 
+    'Foto ampliada del recorrido de Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz y Zengotitagane':
+        'Trabakua, Barinaga, Iturreta, Bolibar, Zenarruza, Oiz eta Zengotitagane ibilbidearen argazki handitua',
+    'Plaza de Bolibar al amanecer, con un monumento de piedra en el centro y el sol asomando entre los edificios':
+        'Bolibarko plaza egunsentian, harrizko monumentu bat erdian eta eguzkia eraikinen artetik agertzen',
+    'Ruinas del monasterio de Zenarruza con un &aacute;rbol centenario y una escalinata de piedra':
+        'Zenarruzako monasterioaren hondakinak, mende askoko zuhaitz batekin eta harrizko eskailera batekin',
+    'Pista de tierra entre &aacute;rboles en oto&ntilde;o, cubierta de hojas ca&iacute;das':
+        'Lurrezko pista zuhaitzen artean udazkenean, erorritako hostoz estalia',
+    'Aerogeneradores del parque e&oacute;lico del Oiz al anochecer, vistos desde las rocas':
+        'Oizko parke eolikoaren aerosorgailuak ilunabarrean, harrietatik ikusita',
+    'Bicicleta apoyada en el moj&oacute;n de la cima del Oiz al atardecer, con un mar de nubes y monta&ntilde;as al fondo':
+        'Bizikleta Oizko gailurreko mugarrian bermatuta ilunabarrean, hodei-itsaso bat eta mendiak atzealdean',
+    'Camino asfaltado que se adentra en un pinar, con dos paneles informativos junto a la entrada':
+        'Pinudi batean sartzen den asfaltozko bidea, sarreran bi panel informatibo dituela',
+    'Aerogeneradores sobre un mar de nubes desde la cima, con el sol asomando entre las nubes':
+        'Aerosorgailuak hodei-itsaso baten gainetik gailurretik ikusita, eguzkia hodeien artetik agertzen',
+    'Moj&oacute;n de la cima del Oiz (1.026 m) junto a una cruz de piedra, con los aerogeneradores y las monta&ntilde;as al atardecer':
+        'Oizko gailurreko mugarria (1.026 m) harrizko gurutze baten ondoan, aerosorgailuak eta mendiak ilunabarrean',
+    'Dolmen de Iturzurigaina, con el valle y las monta&ntilde;as del entorno al fondo':
+        'Iturzurigainako trikuharria, harana eta inguruko mendiak atzealdean',
+    'La hilera de aerogeneradores del parque e&oacute;lico recorriendo el cordal del Oiz, con grandes rocas en primer plano, ganado en los pastos y las monta&ntilde;as del entorno al fondo':
+        'Parke eolikoaren aerosorgailuen ilara Oizko gailurrean, harri handiak lehen planoan, ganadua larreetan eta inguruko mendiak hondoan',
 }
 
 POTRERA = {
@@ -3669,6 +3741,28 @@ TRABAKUAMALLABIA = {
         'Paisaiaren ikuspegiak Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain ibilbidean',
     'alt="Foto ampliada del recorrido de Trabakua, Zengotita, Aitzu, Mallabia y Osmagain"':
         'alt="Trabakua, Zengotita, Aitzu, Mallabia eta Osmagaingo ibilbidearen argazki handitua"',
+    'Vistas del paisaje durante la ruta Trabakua, Zengotita, Aitzu, Mallabia y Osmagain':
+        'Paisaiaren ikuspegiak Trabakua, Zengotita, Aitzu, Mallabia eta Osmagain ibilbidean',
+    'Tramo del recorrido con vistas a las montañas circundantes':
+        'Ibilbidearen tartea inguruko mendien ikuspegiarekin',
+    'Vista panorámica durante la subida hacia Zengotitagane':
+        'Ikuspegi panoramikoa Zengotitaganera igotzen denean',
+    'Paisaje de montaña con vegetación y caseríos':
+        'Mendizabal-paisaia begetazioarekin eta baserriekin',
+    'Manillar en marcha durante un tramo técnico':
+        'Manillarra martxan, tarte tekniko batean zehar',
+    'Descenso técnico entre árboles':
+        'Beherakada teknikoa zuhaitzen artean',
+    'Vista de Mallabia desde la ruta':
+        'Mallabiren ikuspegi ibilbidean',
+    'Tramo de asfalto en descenso':
+        'Asfalto-tartea beherakadan',
+    'Cruce de pistas durante el circuito':
+        'Pistaren gurutzaketa zirkuituan',
+    'Últimos kilómetros de descenso':
+        'Beherakadaren azken kilometroak',
+    'Vista final del recorrido cerca de Trabakua':
+        'Ibilbidearen ikuspegia Trabakuaren inguruan',
     '<span class="elev-legend-item"><span class="num">4</span>Bajada del sendero</span>':
         '<span class="elev-legend-item"><span class="num">4</span>Bidezidorreko jaitsiera</span>',
     'Bajada del sendero':
@@ -3906,6 +4000,28 @@ SARRIMENDI = {
         'Ardi-taldea garo artean bidezidor batean',
     'Hito de Sarrionamendia, una figura de metal con una campana, atado con un lazo rojo, sobre una roca entre pinos y niebla':
         'Sarrionamendiko mugarria, kanpaia duen metalezko irudia, lazo gorriz lotuta, harri baten gainean, pinuen eta lainoaren artean',
+    'Foto ampliada del recorrido de Oiz, Sarrionamendia, Arietxu y Mendibil':
+        'Oiz, Sarrionamendia, Arietzu eta Mendibil ibilbidearen argazki handitua',
+    'Hayedo con hojas ca&iacute;das en el suelo, en la subida hacia Iturzuri':
+        'Pagadia hosto erorien artean, Iturzurirako igoeran',
+    'Hayedo con nieve en el suelo y el sol entre las ramas desnudas':
+        'Pagadia elurrez estalita, eguzkia adar hutsen artetik',
+    'Aerogeneradores del parque e&oacute;lico del Oiz vistos desde un prado con valla de madera':
+        'Oizko parke eolikoko aerosorgailuak, egurrezko hesidun larre batetik ikusita',
+    'Caballos pastando junto a los aerogeneradores del Oiz, con una borda de piedra al fondo':
+        'Zaldiak bazkan Oizko aerosorgailuen ondoan, harrizko borda bat atzealdean',
+    'Caballo pastando junto a los aerogeneradores del parque e&oacute;lico del Oiz':
+        'Zaldia bazkan Oizko parke eolikoko aerosorgailuen ondoan',
+    'Cima herbosa con un peque&ntilde;o moj&oacute;n y un caballo pastando al fondo, con las monta&ntilde;as del entorno':
+        'Gailur belartsua, mugarri txiki batekin eta zaldi bat bazkan atzealdean, inguruko mendiekin',
+    'V&eacute;rtice geod&eacute;sico y cruz en la cumbre del Oiz, con los aerogeneradores del parque e&oacute;lico al fondo':
+        'Bertize geodesikoa eta gurutzea Oizko gailurrean, parke eolikoko aerosorgailuak atzealdean',
+    'Reba&ntilde;o de ovejas caminando por un sendero entre helechos':
+        'Ardi-taldea garo artean bidezidor batean',
+    'Fuente r&uacute;stica de piedra con agua en un bosque de pinos, con el suelo de tierra y hojarasca':
+        'Pinudiaren artean dagoen iturri landua, urez beteta, lurra hostoz eta lokaz estuta',
+    'Hito de Sarrionamendia, una figura de metal con una campana, atado con un lazo rojo, sobre una roca entre pinos y niebla':
+        'Sarrionamendiko mugarria, kanpaia duen metalezko irudia, lazo gorriz lotuta, harri baten gainean, pinuen eta lainoaren artean',
 }
 
 LONGA = {
@@ -3955,6 +4071,24 @@ LONGA = {
         'download="Trabakua, Zengotitagane, Iturzuri eta Longa.gpx"',
     'download="Trabakua, Zengotitagane, Iturzuri y Longa.kml"':
         'download="Trabakua, Zengotitagane, Iturzuri eta Longa.kml"',
+    'Entrada a un hayedo por un camino de tierra entre setos, con aerogeneradores al fondo':
+        'Pagadi baterako sarrera lur bidetik hesien artean, aerosorgailuak atzealdean',
+    'Foto ampliada del recorrido de Trabakua, Zengotitagane, Iturzuri y Longa':
+        'Trabakua, Zengotitagane, Iturzuri eta Longa ibilbidearen argazki handitua',
+    'Fila de aerogeneradores sobre la loma, con un bosque de repoblaci&oacute;n y una valla de madera en primer plano':
+        'Aerosorgailu ilara lepoaren gainean, birlandatutako baso batekin eta egurrezko hesi batekin aurrealdean',
+    'Vacas pastando junto a los aerogeneradores del parque e&oacute;lico':
+        'Behiak bazkan parke eolikoko aerosorgailuen ondoan',
+    'Hayedo con las hojas verdes y un tronco ca&iacute;do entre los &aacute;rboles':
+        'Pagadia hosto berdeekin eta enbor erori bat zuhaitzen artean',
+    'Camino entre hayas sin hojas, con el sol filtr&aacute;ndose entre las ramas':
+        'Bidea hosto gabeko pagoen artean, eguzkia adarren artetik iragazten',
+    'Fuente de Iturzuri, entre brezo y argoma en flor':
+        'Iturzuriko iturria, txilar eta otalore artean',
+    'Vista panor&aacute;mica desde la loma hacia los caser&iacute;os y montes del entorno':
+        'Ikuspegi panoramikoa lepotik inguruko baserri eta mendietara',
+    'Calavera de vaca colgada en un poste de la valla, entre zarzas y helechos, con el prado en la niebla al fondo':
+        'Behi-burezur bat hesiko zutoin batean zintzilik, sasi eta iratzeen artean, larrea lainotan atzealdean',
 }
 
 ZENGOTITAOSMAGAIN = {
@@ -4012,6 +4146,26 @@ ZENGOTITAOSMAGAIN = {
         'download="Trabakua, Zengotita, Osmagain eta Arietzu.gpx"',
     'download="Trabakua, Zengotita, Osmagain y Arietzu.kml"':
         'download="Trabakua, Zengotita, Osmagain eta Arietzu.kml"',
+    'Foto ampliada del recorrido de Trabakua, Zengotita, Osmagain y Arietzu':
+        'Trabakua, Zengotita, Osmagain eta Arietzu ibilbidearen argazki handitua',
+    'Vista panor&aacute;mica del valle con caser&iacute;os, un caballo pastando y una pista de hormig&oacute;n':
+        'Haranaren ikuspegi panoramikoa baserriekin, zaldi bat bazkan eta zementuzko pista batekin',
+    'Cruz de piedra en la cima, entre &aacute;rboles y rocas cubiertas de musgo':
+        'Harrizko gurutzea gailurrean, zuhaitz eta goroldiozko harrien artean',
+    'Sendero de hierba subiendo hacia una cima arbolada':
+        'Belar-bidezidorra zuhaitzez betetako gailur batera igotzen',
+    'Cruz de madera en la cima, con vistas a las monta&ntilde;as del entorno':
+        'Egurrezko gurutzea gailurrean, inguruko mendien ikuspegiarekin',
+    'Hayas trasmochas entre helechos en una ladera boscosa':
+        'Pago motzak garo artean basoko malda batean',
+    'Sendero de tierra entre musgo y helechos en un tramo de bosque':
+        'Lurrezko bidezidorra goroldio eta garo artean, baso-tarte batean',
+    'Pista de tierra junto a una valla, subiendo entre pinares':
+        'Lurrezko pista hesi baten ondoan, pinudi artean gora',
+    'Cruz de piedra con vistas al valle, con claros de bosque talado al fondo':
+        'Harrizko gurutzea haranaren ikuspegiarekin, atzealdean moztutako basoko soroak dituela',
+    'Cruz de piedra a contraluz, con las monta&ntilde;as y el valle al fondo':
+        'Harrizko gurutzea kontraargitan, atzealdean mendiak eta harana dituela',
 }
 
 AXMAKURITURRIZURI = {
@@ -4070,6 +4224,20 @@ AXMAKURITURRIZURI = {
         'download="Axmakur, Iturzuri eta Zengotitagane.gpx"',
     'download="Axmakur, Iturzuri y Zengotitagane.kml"':
         'download="Axmakur, Iturzuri eta Zengotitagane.kml"',
+    'Foto ampliada del recorrido de Axmakur, Iturzuri y Zengotitagane':
+        'Axmakur, Iturzuri eta Zengotitagane ibilbidearen argazki handitua',
+    'Bicicleta apoyada en un &aacute;rbol en una ladera con hojas oto&ntilde;ales':
+        'Bizikleta zuhaitz baten kontra, hosto oreztatuak dituen malda batean',
+    'Vista desde el manillar de la bicicleta junto a los aerogeneradores del cordal':
+        'Bizikletaren eskulekutik ikusitako gandorreko aerosorgailuak',
+    'Bicicleta junto a un moj&oacute;n de piedra, con amplias vistas a los montes':
+        'Bizikleta harrizko mugarri baten ondoan, mendietara ikuspegi zabalekin',
+    'Sendero herboso descendiendo entre pinos y robles con hojas oto&ntilde;ales, con vistas a las monta&ntilde;as al fondo':
+        'Belarrezko bidezidorra pinu eta haritzen artean jaisten, hosto oreztatuekin eta atzealdean mendietara ikuspegiarekin',
+    'Sendero herboso ascendiendo entre pinos, con hojas oto&ntilde;ales a ambos lados':
+        'Belarrezko bidezidorra pinuen artean igotzen, alde bietan hosto oreztatuekin',
+    'Txabola de piedra en lo alto de un prado, con aerogeneradores al fondo':
+        'Harrizko txabola larre baten goialdean, aerosorgailuekin atzealdean',
 }
 
 AMARAUNE = {

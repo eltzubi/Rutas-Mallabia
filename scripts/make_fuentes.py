@@ -80,7 +80,7 @@ FUENTES = [
         "punto": ("arteta", 3),
         "nota_es": "Agua todo el año. Brota de la roca y está algo escondida entre los árboles.",
         "nota_eu": "Ura urte osoan. Harkaitzetik sortzen da eta zuhaitzen artean ezkutatuta dago.",
-        "rutas": ["arteta", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta"],
+        "rutas": ["arteta", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
     },
     {
         "id": "iturzuri",
@@ -91,7 +91,7 @@ FUENTES = [
         "nota_es": "Junto al refugio, en lo alto.",
         "nota_eu": "Aterpearen ondoan, goialdean.",
         "rutas": ["iturrizuri", "axmakuriturrizuri", "zengotitaiturzuri", "longa", "betzun",
-                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak"],
+                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak", "7pago", "garaimaguna"],
     },
     {
         "id": "zengotita",
@@ -102,7 +102,7 @@ FUENTES = [
         "nota_es": "A la entrada del barrio, a mano derecha. Agua todo el año.",
         "nota_eu": "Auzoaren sarreran, eskuinaldean. Ura urte osoan.",
         "rutas": ["zengotitaosmagain", "betzun", "intxorta", "egoarbitza", "sarrimendi",
-                  "trabakuamallabia", "hirutxikiak"],
+                  "trabakuamallabia", "hirutxikiak", "7pago", "7pago16", "zengotitaiturzuri"],
     },
     {
         "id": "sancristobaltxiki",
@@ -115,7 +115,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 1),
         "nota_es": "Arriba, junto a la ermita.",
         "nota_eu": "Goian, baselizaren ondoan.",
-        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera"],
+        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane"],
     },
     {
         "id": "oiz",
@@ -151,7 +151,17 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
-        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu"],
+        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal"],
+    },
+    {
+        "id": "errotatxo",
+        "zona": "garai",
+        "es": "Fuente de Errotatxo",
+        "eu": "Errotatxoko iturria",
+        # Coordenada medida por el autor.
+        "coord": (43.169057, -2.571949),
+        "punto": ("garaigaztelu", None),
+        "rutas": ["zaldibar", "argineta", "garaigaztelu"],
     },
     {
         "id": "sanmartin",
@@ -161,7 +171,7 @@ FUENTES = [
         "punto": ("garaigaztelu", 8),
         "nota_es": "Junto a la ermita de San Martín, en Gaztelu.",
         "nota_eu": "San Martin baselizaren ondoan, Gaztelun.",
-        "rutas": ["garaigaztelu"],
+        "rutas": ["garaigaztelu", "santamanazarandikoa"],
     },
     {
         "id": "berriozabaleta",
@@ -181,7 +191,7 @@ FUENTES = [
         "punto": ("argineta", 2),
         "nota_es": "Junto a la ermita y el merendero.",
         "nota_eu": "Baselizaren eta merenderoaren ondoan.",
-        "rutas": ["argineta", "karabieta", "galdaraminio", "intxorta", "aixola", "hirutxikiak"],
+        "rutas": ["argineta", "karabieta", "galdaraminio", "intxorta", "aixola", "hirutxikiak", "egoarbitza", "santamanazarandikoa"],
     },
     {
         "id": "aixola",
@@ -195,7 +205,7 @@ FUENTES = [
         "punto": ("aixola", 4),
         "nota_es": "Agua todo el año. Hay que desviarse unos metros a la izquierda al llegar al camino de la presa.",
         "nota_eu": "Ura urte osoan. Presako bidera iristean, metro batzuk ezkerrera jo behar da.",
-        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak"],
+        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak", "aixola"],
     },
     {
         "id": "zaldibar",
@@ -218,7 +228,7 @@ FUENTES = [
         "punto": ("zaldibar", 2),
         "nota_es": "En el barrio, antes de bajar hacia la presa de Aixola.",
         "nota_eu": "Auzoan, Aixolako presara jaitsi aurretik.",
-        "rutas": ["zaldibar", "hirutxikiak"],
+        "rutas": ["zaldibar", "hirutxikiak", "aixola"],
     },
     {
         "id": "elgeta",
@@ -229,7 +239,7 @@ FUENTES = [
         "punto": ("zaldibar", 4),
         "nota_es": "En el pueblo, junto al polideportivo y el frontón.",
         "nota_eu": "Herrian, kiroldegiaren eta pilotalekuaren ondoan.",
-        "rutas": ["zaldibar"],
+        "rutas": ["zaldibar", "argineta", "galdaraminio", "karabieta"],
     },
     {
         "id": "sansalvador",
@@ -244,7 +254,7 @@ FUENTES = [
         "punto": ("intxorta", None),
         "nota_es": "Junto a la ermita, bajando de Intxorta hacia Elgeta.",
         "nota_eu": "Baselizaren ondoan, Intxortatik Elgetara jaistean.",
-        "rutas": ["intxorta"],
+        "rutas": ["intxorta", "ahuntzen"],
     },
     {
         "id": "arginieta",
@@ -328,7 +338,7 @@ FUENTES = [
         "es": "Drogeten Iturria",
         "eu": "Drogeten Iturria",
         "punto": ("sanpedrobidarte", 3),
-        "rutas": ["sanpedrobidarte"],
+        "rutas": ["sanpedrobidarte", "zaldibar"],
     },
     {
         "id": "barinaga",
@@ -355,7 +365,7 @@ FUENTES = [
         "punto": ("exigente", 1),
         "nota_es": "Junto a la ermita.",
         "nota_eu": "Baselizaren ondoan.",
-        "rutas": ["exigente", "urregarai"],
+        "rutas": ["exigente", "urregarai", "kalamua"],
     },
     {
         "id": "markina",
@@ -371,7 +381,7 @@ FUENTES = [
         "punto": ("urregarai", 2),
         "nota_es": "Fuente grande, junto a la iglesia del Carmen.",
         "nota_eu": "Iturri handia, Karmengo elizaren ondoan.",
-        "rutas": ["urregarai"],
+        "rutas": ["urregarai", "kalamua"],
     },
     {
         "id": "bolibar",
@@ -423,7 +433,7 @@ FUENTES = [
         "punto": ("santaeufemia", 1),
         "nota_es": "Junto al camino, entre Markina-Xemein e Iruzubieta.",
         "nota_eu": "Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.",
-        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar"],
+        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente"],
     },
     {
         "id": "atxagarai",

@@ -8,6 +8,7 @@ Allow: /src/*.gpx
 Allow: /src/*.kml
 Allow: /src/*.zip
 Disallow: /scripts/
+Disallow: /trabakutik/
 Disallow: /CLAUDE.md
 Disallow: /DESIGN.md
 Disallow: /README.md

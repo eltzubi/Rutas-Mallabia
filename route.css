@@ -4,8 +4,8 @@
   --ground-raised:#131C10;
   --ink:#EAF5E2;
   --ink-dim:#8FA382;
-  --teal:#2FE0F5;
-  --teal-soft:rgba(47,224,245,.14);
+  --teal:#FF9C3B;
+  --teal-soft:rgba(255,156,59,.14);
   --violet:#A6FF4D;
   --violet-soft:rgba(166,255,77,.14);
   --line: rgba(234,245,226,.16);
@@ -15,8 +15,8 @@
   --ground-raised:#E8EEE0;
   --ink:#16210F;
   --ink-dim:#57624A;
-  --teal:#006E86;
-  --teal-soft:#CFE9EF;
+  --teal:#A75C00;
+  --teal-soft:#FFE9D4;
   --violet:#3A6B15;
   --violet-soft:#DEEFC9;
   --line: rgba(22,33,15,.14);
@@ -173,7 +173,7 @@
 /* Un toque de color solo donde dice algo: sol y agua. El resto en el gris
    del texto, para que el bloque no parezca un semaforo. */
 .weather-icon.is-despejado, .weather-icon.is-poco-nuboso, .weather-icon.is-chubascos{ stroke:#F5B942; }
-.weather-icon.is-lluvia, .weather-icon.is-llovizna, .weather-icon.is-tormenta{ stroke:var(--teal); }
+.weather-icon.is-lluvia, .weather-icon.is-llovizna, .weather-icon.is-tormenta{ stroke:var(--ink); }
 .weather-sky{
   margin:0; font-family:'Karla',sans-serif; font-size:11.5px; line-height:1.3;
   color:var(--ink-dim); overflow-wrap:anywhere;
@@ -185,7 +185,7 @@
 .weather-temp b{ color:var(--ink); font-weight:600; }
 .weather-rain{
   margin:0; font-family:'IBM Plex Mono',monospace; font-size:10px;
-  line-height:1.3; color:var(--teal); min-height:1.3em;
+  line-height:1.3; color:var(--ink); min-height:1.3em;
 }
 .weather-credit{
   margin-top:10px;
@@ -198,11 +198,11 @@
   display:inline-flex; align-items:center; gap:8px;
   font-family:'IBM Plex Mono',monospace; font-size:12.5px; font-weight:600;
   letter-spacing:.03em; text-transform:uppercase;
-  color:var(--ground); background:var(--teal);
+  color:var(--ink); background:var(--ground-raised); border:1px solid var(--line);
   padding:12px 19px; text-decoration:none;
   transition:background .2s ease;
 }
-.back-home-link:hover{ background:var(--violet); }
+.back-home-link:hover{ background:color-mix(in srgb, var(--ink) 10%, var(--ground-raised)); }
 
 .map-section .elev-legend{ padding:0 0 16px; }
 
@@ -228,7 +228,7 @@
   margin-top:10px;
   font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim);
 }
-.wikiloc-credit a{ color:var(--teal); text-decoration:underline; }
+.wikiloc-credit a{ color:var(--ink-dim); text-decoration:underline; }
 
 .hero{ padding:22px 24px 0; }
 .hero-chart{
@@ -254,6 +254,14 @@
   border:1px solid var(--line);
 }
 .hero-activity-badge svg{ display:block; width:22px; height:22px; color:var(--ink); stroke-width:2.1; }
+/* La ficha entera toma el color de su actividad: verde a pie (el mismo de
+   la portada y el mapa) y naranja en bici. En senderismo, --teal pasa a ser
+   el verde: titulo, enlaces, perfil, numeritos y trazado se colorean. */
+main[data-activity="senderismo"]{ --teal: var(--violet); --teal-soft: var(--violet-soft); }
+/* agua.html: el acento es azul porque la pagina habla de agua. */
+main[data-agua]{ --teal:#3B82F6; --teal-soft:rgba(59,130,246,.16); }
+:root[data-theme="light"] main[data-agua]{ --teal:#1D4ED8; --teal-soft:#DBEAFE; }
+main[data-activity] .hero-activity-badge svg{ color:var(--teal); }
 /* top/bottom/left are set per page as an inline style -- wherever the
    elevation profile leaves the most clearance, so the badge never overlaps
    the plotted line underneath it. */
@@ -370,7 +378,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
 .wikiloc-link{
   display:inline-flex; align-items:center; gap:7px;
   font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;
-  color:var(--ground); background:var(--teal);
+  color:var(--ink); background:var(--ground-raised); border:1px solid var(--line);
   padding:9px 14px; text-decoration:none;
 }
 .wikiloc-link.ghost{
@@ -389,7 +397,7 @@ h1 em{ font-style:italic; font-weight:600; color:var(--teal); }
 .fact:nth-last-of-type(-n+4) .v{ font-size:15px; }
 .fact:nth-last-of-type(-n+4) .k{ opacity:.8; }
 .facts-note{ margin:8px 24px 0; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--ink-dim); }
-.facts-note b{ color:var(--teal); }
+.facts-note b{ color:var(--ink); }
 
 .body-copy{ margin:42px 24px 0; max-width:60ch; }
 .body-copy p{ font-family:'Karla',sans-serif; font-size:17px; line-height:1.7; color:var(--ink); margin:0 0 18px; }
@@ -416,8 +424,8 @@ footer{
   font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
 }
 footer b{ color:var(--ink); font-weight:600; }
-footer a{ color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
-footer a:hover{ color:var(--violet); }
+footer a{ color:var(--ink-dim); text-decoration:underline; text-underline-offset:2px; }
+footer a:hover{ color:var(--ink); }
 
 @media (max-width:480px){
   .facts{ gap:7px; }
@@ -432,7 +440,7 @@ footer a:hover{ color:var(--violet); }
      marino; aqui sale del mismo sitio, el tono de la tinta rebajado. */
   width:50px; height:50px; border-radius:14px;
   display:flex; align-items:center; justify-content:center;
-  background:var(--ground-raised); color:var(--teal); cursor:pointer;
+  background:var(--ground-raised); color:var(--ink); cursor:pointer;
   border:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
   box-shadow:0 8px 32px rgba(0,0,0,.37);
   opacity:0; transform:translateY(8px); pointer-events:none;
@@ -443,16 +451,16 @@ footer a:hover{ color:var(--violet); }
 
 /* ---- Sendero de noche: glow + rounded language ---- */
 .theme-toggle{ border-radius:50%; }
-.theme-toggle:hover{ box-shadow:0 0 14px -2px var(--teal); }
+.theme-toggle:hover{ box-shadow:0 0 14px -2px color-mix(in srgb, var(--ink) 40%, transparent); }
 .to-top{ box-shadow:0 8px 32px rgba(0,0,0,.45); }
 .logo-photo{ box-shadow:0 0 0 4px var(--ground), 0 0 18px -4px var(--teal); }
 
 .wikiloc-link, .directions-cta, .back-home-link, .feat-cta{
   border-radius:12px;
-  box-shadow:0 0 24px -10px var(--teal);
+  box-shadow:none;
 }
 .wikiloc-link:hover, .directions-cta:hover, .back-home-link:hover, .feat-cta:hover{
-  box-shadow:0 0 30px -8px var(--violet);
+  box-shadow:none;
 }
 .wikiloc-link.ghost{ box-shadow:none; }
 
@@ -581,7 +589,7 @@ footer a:hover{ color:var(--violet); }
     font:600 13px 'IBM Plex Mono',monospace; color:var(--ink);
     text-decoration:none; white-space:nowrap;
   }
-  .quick-bar-btn.is-primary{ background:var(--teal); color:var(--ground); border-color:transparent; }
+  .quick-bar-btn.is-primary{ background:var(--ground-raised); color:var(--ink); border-color:var(--line); }
   /* Que la barra no tape el final de la pagina ni se monte con el boton de
      volver arriba. */
   body{ padding-bottom:62px; }
@@ -631,10 +639,10 @@ footer a:hover{ color:var(--violet); }
 }
 .agua-ver{
   margin-left:auto; font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
-  color:var(--teal); background:none; border:0; padding:2px 0; cursor:pointer;
+  color:var(--ink); background:none; border:0; padding:2px 0; cursor:pointer;
   text-decoration:underline; text-underline-offset:3px;
 }
-.agua-ver:hover{ color:var(--violet); }
+.agua-ver:hover{ color:var(--ink); }
 .agua-aprox, .agua-popup-aprox{
   margin:6px 0 0; font:500 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
   text-transform:uppercase; color:var(--ink-dim);
@@ -650,9 +658,9 @@ footer a:hover{ color:var(--violet); }
   text-transform:uppercase; color:var(--ink-dim); margin-bottom:2px;
 }
 .agua-rutas a, .agua-popup-rutas a{
-  color:var(--teal); text-decoration:underline; text-underline-offset:2px;
+  color:var(--ink); text-decoration:underline; text-underline-offset:2px;
 }
-.agua-rutas a:hover, .agua-popup-rutas a:hover{ color:var(--violet); }
+.agua-rutas a:hover, .agua-popup-rutas a:hover{ color:var(--ink); }
 /* Los nombres de ruta son largos: una coma no se ve entre dos subrayados, y
    un punto medio si separa sin parecer parte del enlace. */
 .agua-rutas a + a::before, .agua-popup-rutas a + a::before{

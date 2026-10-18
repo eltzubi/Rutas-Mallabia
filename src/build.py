@@ -873,6 +873,26 @@ def add_route_facts_time(page_html, page, cards, lang):
     return page_html[:insert_at] + '\n    ' + nuevo + page_html[insert_at:]
 
 
+def add_activity_color(page_html, name, cards, lang):
+    """La ficha toma el color de su actividad: verde a pie (el mismo de la
+    portada y del mapa) y naranja en bici. Antes toda ficha era naranja,
+    tambien las de senderismo. Mismo data-activity que colorea las tarjetas
+    de la portada; en rutas mixtas gana la bici, igual que en el mapa. La
+    portada y las paginas sin ficha no llevan el atributo y no cambian."""
+    if name == HOME or "<main" not in page_html:
+        return page_html
+    card = cards.get(name)
+    if not card:
+        return page_html
+    if "bici" in card["activities"]:
+        activity = "bici"
+    elif "senderismo" in card["activities"]:
+        activity = "senderismo"
+    else:
+        return page_html
+    return page_html.replace("<main", f'<main data-activity="{activity}"', 1)
+
+
 def add_data_cache_busting(page_html):
     # Lo mismo para los tracks (data-map-src en las fichas y en el mapa
     # general). Un GPX corregido conserva el nombre del fichero, asi que
@@ -966,6 +986,7 @@ def main():
             page_html = add_fuentes_ficha(page_html, name, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
+            page_html = add_activity_color(page_html, name, cards[lang], lang)
             page_html = compact_route_header(page_html)
             page_html = add_tourist_trip_properties(page_html, name)
             page_html = shorten_breadcrumb(page_html)

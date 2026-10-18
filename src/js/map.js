@@ -124,6 +124,12 @@
     parking: '#E24C4C'
   };
   var ground = token('--ground', '#0A0F0A');
+  // La ficha toma el color de su actividad (verde a pie, naranja en bici),
+  // leido del <main data-activity> que escribe build.py -- la misma fuente
+  // que colorea las tarjetas de la portada. Sin atributo (portada, paginas
+  // sin ficha) no cambia nada.
+  var actEl = document.querySelector('main[data-activity]');
+  var actColor = actEl ? (actEl.getAttribute('data-activity') === 'bici' ? COLORS.teal : COLORS.violet) : null;
 
   // Waypoint labels come from the elevation legend, in the same order.
   // Acotado a la leyenda del mapa: una ficha lleva dos leyendas iguales (la
@@ -498,7 +504,7 @@
     // son 57 tracks y serian 57 lineas mas que dibujar.
     var unaSola = data.tracks.length === 1 && !track0bis(data);
     data.tracks.forEach(function(t){
-      var baseColor = COLORS[t.color] || COLORS.teal;
+      var baseColor = COLORS[t.color] || actColor || COLORS.teal;
       if (unaSola) {
         L.polyline(t.points, {
           color: '#ffffff', weight: 7, opacity: 0.75,
@@ -746,7 +752,7 @@
         icon: L.divIcon({
           className: '',
           html: '<span style="display:flex;align-items:center;justify-content:center;' +
-                'width:18px;height:18px;border-radius:50%;background:' + COLORS.teal + ';' +
+                'width:18px;height:18px;border-radius:50%;background:' + (actColor || COLORS.teal) + ';' +
                 'border:2px solid ' + ground + ';color:' + ground + ';' +
                 'font:700 9px \'IBM Plex Mono\',monospace;">' + (i + 1) + '</span>',
           iconSize: [18, 18], iconAnchor: [9, 9]

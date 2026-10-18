@@ -25,6 +25,11 @@ exclude:
   - src/fonts
   - src/i18n
   - scripts
+  # El codigo fuente de la app de Lovable. Son fuentes, no un sitio construido:
+  # servirlas no hace nada util y deja publicos el package.json, el bun.lock y
+  # las notas del proyecto. Si algun dia se quiere publicar, lo que se publica
+  # es su carpeta de construccion, no esto.
+  - trabakutik
   - skills-lock.json
   - CLAUDE.md
   - DESIGN.md
