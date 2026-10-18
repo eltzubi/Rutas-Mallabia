@@ -202,7 +202,7 @@ los tres escritos por `src/build.py`:
   (el orden lo lleva a mano `src/mallabia_tail.html`) y lleva `class="route-card is-new"` más una
   pastilla `.route-card-new` sobre la foto, «Nueva · 5 oct 2026». La fecha sale de `ULTIMA_ENTRADA`,
   que **se cambia a mano al publicar una ruta nueva**, y es la única de todo el sitio. La pastilla va
-  en blanco/negro a propósito: el verde es «a pie» y el azul «en bici», y en uno de esos colores se
+  en blanco/negro a propósito: el verde es «a pie» y el naranja «en bici», y en uno de esos colores se
   leería como la actividad de la ruta. Se probaron antes dos cosas que el autor quitó: una fecha de
   revisión **en cada ficha** (no quiere 57 fechas) y esto mismo como **una línea de texto bajo los
   totales** (lo prefiere en la tarjeta). El `is-new` obliga a que cualquier selector de

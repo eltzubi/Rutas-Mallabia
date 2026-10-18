@@ -53,13 +53,13 @@ is the identity now, light is the opt-out"*.
 | `--ground-raised` | `#17171A` | Superficies elevadas: tarjetas, `.fact`, modales. |
 | `--ink` | `#EAF5E2` | Texto principal. Blanco tirando a verde, nunca blanco puro. |
 | `--ink-dim` | `#8FA382` | Texto secundario, etiquetas, cabecera. Verde apagado. |
-| `--teal` | `#2FE0F5` | Acento primario: cifras, línea del perfil, CTA, rutas de BTT. |
-| `--teal-soft` | `rgba(47,224,245,.14)` | Relleno bajo la línea del perfil de altura. |
+| `--teal` | `#FF9C3B` | Acento primario: cifras, línea del perfil, CTA, rutas de bici (naranja; el nombre `--teal` es de cuando era cian). |
+| `--teal-soft` | `rgba(255,156,59,.14)` | Relleno bajo la línea del perfil de altura. |
 | `--violet` | `#A6FF4D` | Acento secundario: senderismo, estado activo, hover. |
 | `--violet-soft` | `rgba(166,255,77,.14)` | Su equivalente de relleno. |
 | `--line` | `rgba(234,245,226,.16)` | **El separador de todo.** Bordes de 1px en vez de sombras. |
 | `--ink-deep` | `#050805` | Texto sobre fondos de acento (sobre turquesa o lima). |
-| `--readout-a` / `--readout-b` | `#2FE0F5` / `#A6FF4D` | Las dos cifras grandes del bloque de totales. |
+| `--readout-a` / `--readout-b` | `#FF9C3B` / `#A6FF4D` | Las dos cifras grandes del bloque de totales. |
 
 > **Ojo con `--violet`:** el nombre viene de una versión anterior, pero el valor es un
 > verde lima (`#A6FF4D`). Es intencionado. No lo "corrijas" a morado.
@@ -67,7 +67,7 @@ is the identity now, light is the opt-out"*.
 ### Tema claro (`:root[data-theme="light"]`)
 
 No es una inversión: los acentos bajan mucho de luminosidad para que sigan legibles sobre
-fondo claro. `--teal` pasa de `#2FE0F5` a `#006E86` y `--violet` de `#A6FF4D` a `#3A6B15`.
+fondo claro. `--teal` pasa de `#FF9C3B` a `#A75C00` y `--violet` de `#A6FF4D` a `#3A6B15`.
 El fondo es `#F5F5F3` y la tinta `#16210F`. Si añades un color, defínelo en los dos
 bloques.
 

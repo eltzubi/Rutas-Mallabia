@@ -771,7 +771,7 @@
 
     // El track pintado por pendiente, como en los editores de GPX: el mismo
     // trazado, pero cada tramo del color de lo que empina. Es un interruptor,
-    // no el estado normal: el color de la ruta (verde a pie, azul en bici) es
+    // no el estado normal: el color de la ruta (verde a pie, naranja en bici) es
     // parte de la casa. Solo en la ficha de una ruta, y solo si sus puntos
     // traen altura (el tercer numero que escribe make_map_data.py; la portada
     // no la lleva).
