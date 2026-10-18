@@ -832,7 +832,7 @@ footer a:hover{ text-decoration:underline; }
 
 /* La ultima ruta que entro: la primera de la rejilla y distinta de las otras
    56. En blanco sobre la foto y con el borde marcado, no en uno de los dos
-   colores de la casa: el verde es «a pie» y el azul «en bici», y una
+   colores de la casa: el verde es «a pie» y el naranja «en bici», y una
    pastilla de esos colores se leeria como la actividad de la ruta y no como
    lo que es. */
 .route-card.is-new{ border-color:var(--ink); }
