@@ -1248,6 +1248,13 @@ def mapa_de_la_tarjeta(href):
     if not os.path.exists(os.path.join(ROOT, rel)):
         print(f"  ojo: falta {rel} (python3 scripts/make_card_maps.py)")
         return None
+    # Con ?v=, como los tracks: el service worker sirve las imagenes desde lo
+    # guardado, y una miniatura redibujada con el mismo nombre no le llegaba
+    # nunca a quien ya habia visto la portada (paso al ponerse la bici naranja).
+    if rel not in _data_versions:
+        with open(os.path.join(ROOT, rel), "rb") as f:
+            _data_versions[rel] = hashlib.sha256(f.read()).hexdigest()[:8]
+    rel = f"{rel}?v={_data_versions[rel]}"
     return (f'<img class="route-card-shape" src="{rel}" alt="" aria-hidden="true" '
             f'width="320" height="200" loading="lazy" decoding="async">')
 
