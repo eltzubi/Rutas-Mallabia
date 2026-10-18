@@ -2663,7 +2663,7 @@ ZALDIBAR = {
         'alt="Aixolako presa egun eguzkitsu batean, ur-hartuneko dorrea urtegiaren gainean ageri dela"',
     'alt="Pista de grava que bordea el embalse de Aixola, con el agua en calma y el muro de la presa al fondo entre las laderas"':
         'alt="Aixolako urtegia alboan duen legarrezko pista, ura geldi eta presaren horma hondoan, mendi-hegalen artean"',
-    'alt="Send&aacute; estrecha de tierra que sube entre matorral y &aacute;rboles por la ladera, bajo un cielo nublado"':
+    'alt="Senda estrecha de tierra que sube entre matorral y &aacute;rboles por la ladera, bajo un cielo nublado"':
         'alt="Lurrezko bide estua, sasi eta zuhaitzen artean mendi-hegala gora, zeru hodeitsuaren azpian"',
 
     # wikiloc / gpx

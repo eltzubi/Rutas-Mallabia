@@ -49,6 +49,7 @@ MAX_RUTA_M = 350
 # de Trabakua hacia fuera.
 ZONAS = [
     ("trabakua", "Trabakua", "Trabakua"),
+    ("mallabia", "Mallabia", "Mallabia"),
     ("zengotita", "Zengotita y Oiz", "Zengotita eta Oiz"),
     ("garai", "Garai, Berriz y Gaztelu", "Garai, Berriz eta Gaztelu"),
     ("aixola", "Elgeta y Aixola", "Elgeta eta Aixola"),
@@ -81,6 +82,20 @@ FUENTES = [
         "nota_es": "Agua todo el año. Brota de la roca y está algo escondida entre los árboles.",
         "nota_eu": "Ura urte osoan. Harkaitzetik sortzen da eta zuhaitzen artean ezkutatuta dago.",
         "rutas": ["arteta", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
+    },
+    {
+        "id": "mallabia",
+        "zona": "mallabia",
+        "es": "Fuente de Mallabia",
+        "eu": "Mallabiko iturria",
+        # Coordenada medida por el autor, en el pueblo: a 69 m del centro de
+        # Mallabia segun OpenStreetMap.
+        "coord": (43.188942, -2.530128),
+        "punto": ("sarrimendi", None),
+        # Las dos 7 Pago salen y llegan a 18-23 m de aqui, medido en sus GPX.
+        "nota_es": "Junto a la salida de la 7 Pago.",
+        "nota_eu": "7 Pagoren irteeraren ondoan.",
+        "rutas": ["sarrimendi", "7pago", "7pago16"],
     },
     {
         "id": "iturzuri",
