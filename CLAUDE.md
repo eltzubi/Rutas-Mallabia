@@ -2,6 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+**Idioma: responde siempre en castellano**, incluidos los avisos intermedios, los mensajes de commit y
+las pull requests. El euskera solo para los textos de la web en euskera.
+
 ## What this is
 
 A static site of hiking/biking routes around Mallabia (Bizkaia), documented on the ground with real
