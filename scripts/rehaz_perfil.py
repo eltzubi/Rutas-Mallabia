@@ -22,6 +22,13 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 
+# Nueve fichas llevan los kilometros de sus puntos numerados sobre la base
+# antigua, anterior al commit e4967121, y el autor decidio dejarlos asi. Aqui
+# se respetan: se rehace el perfil y la distancia, pero no sus marcadores.
+# Ver «Content rules» en CLAUDE.md.
+BASE_ANTIGUA = ('sancristobal', 'trabakua', 'urregarai', 'zengotitagane',
+                'egoarbitza', 'kalamua', 'urko', 'arteta', 'zenarruza')
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 NS = "{http://www.topografix.com/GPX/1/1}"
@@ -58,9 +65,26 @@ def muestras(ps, acum):
     return out
 
 
-def en_km(ps, acum, punto):
-    """Kilometro y altura del track en el punto mas cercano a 'punto'."""
-    j = min(range(len(ps)), key=lambda i: haversine(ps[i], punto))
+def en_km(ps, acum, punto, pista=None):
+    """Kilometro y altura del track en el punto mas cercano a 'punto'.
+
+    Una ruta puede pasar dos veces por el mismo sitio, y entonces "el mas
+    cercano" no basta: trabakuamallabia pasa por Zengotita en el km 3,67 (a
+    2 m) y en el 14,71 (a 1 m), y coger el minimo movia el punto numerado
+    once kilometros. Si se sabe en que kilometro lo puso el autor, se elige
+    el paso que le corresponde.
+    """
+    d = [haversine(q, punto) for q in ps]
+    j = min(range(len(ps)), key=lambda i: d[i])
+    if pista is not None:
+        # todos los pasos que se acercan tanto como el mejor, con margen
+        tope = max(d[j] + 15.0, d[j] * 3)
+        pasos = []
+        for i in range(len(ps)):
+            if d[i] <= tope and all(abs(acum[i] - acum[k]) > 500 for k in pasos):
+                pasos.append(i)
+        if pasos:
+            j = min(pasos, key=lambda i: abs(acum[i] / 1000 - pista))
     return acum[j] / 1000, ps[j][2]
 
 
@@ -82,7 +106,8 @@ def _forma_original(slug, actual):
     r = subprocess.run(["git", "show", "HEAD:src/%s_tail.html" % slug],
                        capture_output=True, text=True, cwd=ROOT)
     fuente = r.stdout or actual
-    return [(len(m.group(2) or ''), bool(m.group(3)))
+    return [(len(m.group(2) or ''), bool(m.group(3)),
+             float(m.group(1) + "." + (m.group(2) or "0")))
             for m in _KM_TITULO.finditer(fuente)]
 
 
@@ -106,10 +131,22 @@ def rehaz(slug):
     largos = re.findall(r'<path d="(M[^"]{200,})"', t)
     if len(largos) != 2:
         raise SystemExit(f"{slug}: esperaba 2 trazados largos, encuentro {len(largos)}")
+    # No todas las fichas dibujan el perfil igual: trabakuamallabia lleva 201
+    # muestras repartidas por puntos del track y separadas por espacios, y
+    # zengotitagane 160. Redibujarlas con esta convencion no las corrige,
+    # las cambia de estilo sin que nadie lo haya pedido. Mejor pararse.
+    xs = re.findall(r'[ML]([\d.]+)[, ]', largos[1])
+    paso = [float(xs[i + 1]) - float(xs[i]) for i in range(len(xs) - 1)]
+    if len(xs) != N or max(paso) - min(paso) > 0.1 or "," not in largos[1]:
+        raise SystemExit(
+            "%s: el perfil no esta dibujado con esta convencion (%d muestras, "
+            "separador %r). Redibujarlo lo cambiaria de estilo: miralo a mano."
+            % (slug, len(xs), "," if "," in largos[1] else " "))
     t = t.replace(largos[0], relleno, 1).replace(largos[1], linea, 1)
 
     def nuevo_marcador(m, i):
-        km, ele = en_km(ps, acum, tuple(wps[i]))
+        km, ele = en_km(ps, acum, tuple(wps[i]),
+                        forma[i][2] if i < len(forma) else None)
         x = km / (acum[-1] / 1000) * 1000
         y = 285 - (ele - mn) / (mx - mn) * 270
         # Unas fichas escriben el separador como &middot; y otras como el
@@ -121,7 +158,7 @@ def rehaz(slug):
         # Cada ficha escribe el kilometro con uno o con dos decimales, y a
         # veces mezcla las dos cosas. Se conserva el que ya tenia ese punto:
         # cambiarlo seria tocar algo que nadie ha pedido.
-        dec, con_altura = forma[i] if i < len(forma) else (1, True)
+        dec, con_altura = forma[i][:2] if i < len(forma) else (1, True)
         cuerpo = ('<title>%s {s} %s km {s} %s m</title>' if con_altura
                   else '<title>%s {s} %s km</title>')
         plantilla = (
@@ -139,18 +176,32 @@ def rehaz(slug):
     n = [0]
     def reemplaza(m):
         i = n[0]; n[0] += 1
-        return nuevo_marcador(m, i)
+        return m.group(0) if slug in BASE_ANTIGUA else nuevo_marcador(m, i)
     t = re.sub(r'<g class="elev-marker">.*?</g>', reemplaza, t, flags=re.S)
     if n[0] != len(wps):
         raise SystemExit(f"{slug}: {n[0]} marcadores y {len(wps)} waypoints")
+
+    # La leyenda de debajo del perfil. Casi todas las fichas ponen ahi solo
+    # el nombre, pero sancristobalgaraiandikoa le pone tambien el kilometro, y
+    # si no se toca se queda contando otra cosa que el punto numerado.
+    kms = re.findall(r'<title>[^<]*?(?:&middot;|\u00b7) ([\d,]+) km', t)
+    leyenda = [0]
+
+    def pon_leyenda(m):
+        i = leyenda[0]; leyenda[0] += 1
+        return (m.group(1) + kms[i] + m.group(3)) if i < len(kms) else m.group(0)
+
+    t = re.sub(r'(<span class="elev-legend-item"><span class="num">\d+</span>'
+               r'[^<]*? (?:&middot;|\u00b7) )([\d,]+)( km</span>)', pon_leyenda, t)
 
     # la distancia de la ficha
     km_tot = ("%.2f" % (acum[-1] / 1000)).replace(".", ",")
     t = re.sub(r'(<div class="fact"><span class="v">)[\d.,]+( km</span>)',
                lambda m: m.group(1) + km_tot + m.group(2), t, count=1)
     open(ruta, "w", encoding="utf-8").write(t)
-    print("%s: %s km, %d puntos numerados, perfil entre %.0f y %.0f m"
-          % (slug, km_tot, len(wps), mn, mx))
+    print("%s: %s km, %d puntos numerados%s, perfil entre %.0f y %.0f m"
+          % (slug, km_tot, len(wps),
+             " (intactos: base antigua)" if slug in BASE_ANTIGUA else "", mn, mx))
     return km_tot
 
 

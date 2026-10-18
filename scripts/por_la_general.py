@@ -44,9 +44,10 @@ PUNTO = os.path.join(HERE, ".punto-privado.json")
 DONANTE = "galdaraminio"
 TRABAKUA = (43.210466, -2.5460838)
 
-AVISO = 150.0     # a esta distancia de la casa ya nos importa por donde va
-FUERA = 15.0      # mas que esto de la general es "no va por la general"
+AVISO = 150.0     # si un track entra aqui, hay que repasarle el paso
+VENTANA = 200.0   # y se le sustituye todo este entorno por la general
 SUTURA = 8.0      # el cosido tiene que caer encima de la general
+IGUAL = 4.0       # por debajo de esto el track ya ES la general
 ENTORNO = 900.0   # trozo de galdaramino que se usa como referencia
 
 ET.register_namespace("", "http://www.topografix.com/GPX/1/1")
@@ -143,11 +144,15 @@ def arregla(slug, casa, gen):
     d = [haversine(p, casa) for p in ps]
     if min(d) > AVISO:
         return None, []
-    malo = [i for i, p in enumerate(ps)
-            if d[i] < AVISO and gen.cerca(p)[0] > FUERA]
+    # Se sustituye TODO el entorno, no solo lo que se sale de la general.
+    # Cambiar unicamente los trozos malos dejaba puntos del track y puntos de
+    # galdaramino alternados, y como una grabacion va unos metros corrida
+    # respecto de la otra el dibujo iba y volvia: justo el gancho que se veia
+    # en axmakurandikoa. Pegado entero no hay donde alternar.
+    malo = [i for i, p in enumerate(ps) if d[i] < VENTANA]
     if not malo:
         return None, []
-    # los malos se agrupan: un track puede pasar dos veces
+    # los puntos se agrupan: un track puede pasar dos veces
     grupos, actual = [], [malo[0]]
     for i in malo[1:]:
         if i - actual[-1] <= 40:
@@ -158,11 +163,41 @@ def arregla(slug, casa, gen):
 
     hechos = []
     for g in reversed(grupos):           # de atras adelante, no mueve indices
+        # Un track puede asomarse al entorno y volverse por donde ha venido,
+        # sin llegar a pasar por delante. Eso no se toca: los dos cosidos
+        # caerian en el mismo sitio de la general y el cambio se comeria el
+        # recorrido.
+        ts = [gen.cerca(ps[i])[1] for i in g]
+        if abs(ts[-1] - ts[0]) < 5:
+            continue
+        # Y si ya es la general, tampoco. El margen es estrecho a proposito:
+        # una grabacion va unos metros corrida respecto de otra, y mezclar sus
+        # puntos con los de galdaramino dibuja idas y venidas aunque ninguno
+        # se salga de la carretera. Era el gancho que se veia en
+        # axmakurandikoa. Puesta entera, la ventana es galdaramino y ya esta.
+        # Se juzga por el nucleo (AVISO), no por todo el entorno: el punto
+        # del cosido vive en el borde y puede quedar a unos metros de la
+        # general sin que eso sea nada. Mirando el entorno entero el script
+        # se veia trabajo a si mismo cada vez que se pasaba.
+        nucleo = [i for i in g if d[i] < AVISO]
+        if nucleo and max(gen.cerca(ps[i])[0] for i in nucleo) <= IGUAL:
+            continue
+        if not nucleo:
+            continue
+        # El cosido se busca primero donde el track ES la general (IGUAL), y
+        # solo si no aparece en 400 m se conforma con SUTURA. Buscarlo con el
+        # margen ancho dejaba el propio punto del cosido unos metros fuera, y
+        # al volver a pasar el script lo veia como pendiente.
         a, b = g[0], g[-1]
-        while a > 0 and gen.cerca(ps[a])[0] > SUTURA:
-            a -= 1
-        while b < len(ps) - 1 and gen.cerca(ps[b])[0] > SUTURA:
-            b += 1
+        for tope in (IGUAL, SUTURA):
+            a, b = g[0], g[-1]
+            while a > 0 and gen.cerca(ps[a])[0] > tope and haversine(ps[a], casa) < 400:
+                a -= 1
+            while (b < len(ps) - 1 and gen.cerca(ps[b])[0] > tope
+                   and haversine(ps[b], casa) < 400):
+                b += 1
+            if gen.cerca(ps[a])[0] <= tope and gen.cerca(ps[b])[0] <= tope:
+                break
         if gen.cerca(ps[a])[0] > SUTURA or gen.cerca(ps[b])[0] > SUTURA:
             hechos.append("AVISO: el tramo llega a un extremo del track sin "
                           "tocar la general; hay que mirarlo a mano")
@@ -172,6 +207,14 @@ def arregla(slug, casa, gen):
         trozo = gen.trozo(t0, t1)
         quitado = sum(haversine(ps[i], ps[i + 1]) for i in range(a, b))
         puesto = sum(haversine(trozo[i], trozo[i + 1]) for i in range(len(trozo) - 1))
+        # Si el track entra y sale por el mismo lado, los dos cosidos caen en
+        # el mismo sitio de la general y el cambio se comeria el recorrido.
+        # Eso no es un paso por delante de la casa: es otra cosa, y se avisa.
+        if not 0.6 * quitado <= puesto <= 1.6 * quitado + 20:
+            hechos.append("AVISO: cambiarlo dejaria %.0f m donde hay %.0f m; "
+                          "no es un paso por la general, hay que mirarlo a mano"
+                          % (puesto, quitado))
+            continue
         ps = ps[:a + 1] + [(q[0], q[1], q[2], None) for q in trozo] + ps[b:]
         hechos.append("puesto por la general %.0f m donde habia %.0f m"
                       % (puesto, quitado))

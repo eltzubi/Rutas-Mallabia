@@ -338,28 +338,45 @@ invented numbers. `data/trailhead.json` holds every route's track for the home-p
 `src/js/map.js` reads waypoint labels straight from the page's already-rendered `.elev-legend` items
 (not duplicated in the JSON), and derives the route's compass heading itself.
 
-**A GPX must never start or end at the user's house — always at Trabakua (the pass) or thereabouts.**
-He has asked for this explicitly, for every route, standing instruction. A track recorded from home
-starts/ends however far his house is from Trabakua's shared reference point (`43.210466, -2.5460838`,
-the same one in every route's `marker.at`). **Do not judge this by raw distance from that point.**
-Measured over the 56 published routes, 27 of them start more than 200 m away and `ahuntzen` starts
-9.5 km away — they simply begin at a different trailhead, so "far from Trabakua" flags half the site
-as suspect. The reliable signal is isolation from the trail network: every published route's
-first/last point sits within **88 m** of some point on another route's own track (`src/*.gpx`), and
-most within 11 m. A real trailhead or junction is shared trail; a private approach from home is not.
-So the test is: measure the new track's first/last point against every other route's track, and if
-the nearest one is well beyond ~90 m, treat it as a track recorded from home. Then don't publish it
-as-is and don't ask him for his address either — check first whether an
-already-published route's own GPX (`src/<other-route>.gpx`) happens to pass close to the new track's
-actual start/end (a shared road several routes use to leave Trabakua often does); if so, splice in the
-real segment of that other GPX between Trabakua and the join point, and trim any leftover tail that
-drifts back out toward the house after the loop returns near Trabakua. Recompute distance, elevation
-gain/loss, min/max altitude, the elevation-profile SVG and every waypoint's km from the resulting
-track — all of it shifts with a new start point. This is exactly what `sancristobaloiz` needed: its
-own recording started 544 m from Trabakua and diverged from there, but `zengotitagane.gpx`'s track
-passed 28 m from that same start point, so the real 476 m stretch between them (in effect, the N-633
-from Trabakua to Zengotita) was spliced in — no coordinate in the published GPX/KML/map JSON was
-invented.
+**A GPX must never start or end at the user's house, and must never go in front of it — always
+along the BI-633.** Standing instruction, for every route. Two earlier attempts at this got it wrong
+and both shipped, so read this before touching any track near Trabakua:
+
+- The old rule measured **isolation from the trail network** (is the first point within ~90 m of
+  another route's track?). It reads 0-5 m here, because the house fronts a road a dozen routes use,
+  so it passed everything. Don't use it.
+- The second attempt measured **distance from the house, point by point**. That also passed, for two
+  reasons. First, what the map draws is the **straight lines between points**, and cutting a piece out
+  and splicing another in left chords of up to 40 m that crossed the bend and went through ground the
+  track had no point on. Second, beside the house there are **two ways that reach the same place**: the
+  BI-633, and the author's own road, which leaves it, passes in front of the house about 25 m away and
+  rejoins it 110 m to the south-west. Both sit a similar distance from the house, so distance alone
+  cannot tell them apart.
+
+What holds: **galdaramiño is the reference the author approved**, and it passes 39 m from the house.
+`scripts/por_la_general.py` replaces a track's whole neighbourhood of the house with galdaramiño's own
+points, stitched at two places where the track is already on the road (under 8 m), with the stitch ends
+computed on the line rather than rounded to the nearest vertex. So the passage in front of the house is,
+point for point, galdaramiño — there is no invented geometry. It is idempotent: running it twice changes
+nothing the second time. `scripts/check_site.py` checks **segments, not points**: near the house no
+segment may stray 15 m from the BI-633 nor be longer than 15 m. The margins live in
+`scripts/.punto-privado.json`, which is **excluded from git** because this repository is public —
+without it both scripts skip themselves and say so.
+
+Mixing two recordings makes the per-point `<time>` false, so the splice drops it, as was already done in
+sancristobaloiz, muniozguren and santaeufemia. Everything downstream shifts with the track and has to be
+regenerated: `make_kml.py`, `make_map_data.py`, `rehaz_perfil.py` (profile, numbered points, distance),
+`bundle_gpx.py`, the distance on the card and in the home page's `data-distance-km`, the kilometres the
+body copy quotes for each numbered point, and the Basque behind all of them. The cumulative elevation
+gain does **not** change: it comes from the route's own source, not from the GPX.
+
+`scripts/rehaz_perfil.py` has two locks worth knowing about. It keeps the nine routes on the old
+kilometre basis untouched (see "Content rules"), and it refuses to redraw a profile that is not drawn
+with the 161-evenly-spaced-sample convention — trabakuamallabia's has 201 samples spaced by track point
+and separated by spaces, and redrawing it would restyle it rather than correct it. It also picks which
+**pass** a numbered point belongs to by the kilometre the author already wrote, not by the nearest point
+on the track: trabakuamallabia goes through Zengotita at km 3,67 and again at km 14,71, and the nearest
+point is the second one.
 
 **Huge generated files.** Once a route page has embedded photos, `*_tail.html` and
 `fonts/inline_fonts.css` contain very long base64 lines. **Do not open these with a plain read/edit
