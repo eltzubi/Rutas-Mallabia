@@ -49,6 +49,8 @@ VENTANA = 200.0   # y se le sustituye todo este entorno por la general
 SUTURA = 8.0      # el cosido tiene que caer encima de la general
 IGUAL = 4.0       # por debajo de esto el track ya ES la general
 ENTORNO = 900.0   # trozo de galdaramino que se usa como referencia
+HUECO = 40.0      # a partir de aqui, un salto del GPS no se cruza con una recta
+PEGADO = 12.0     # y se cierra con la general si los dos extremos van por ella
 
 ET.register_namespace("", "http://www.topografix.com/GPX/1/1")
 
@@ -218,6 +220,24 @@ def arregla(slug, casa, gen):
         ps = ps[:a + 1] + [(q[0], q[1], q[2], None) for q in trozo] + ps[b:]
         hechos.append("puesto por la general %.0f m donde habia %.0f m"
                       % (puesto, quitado))
+    # Los huecos de la grabacion. Donde el GPS se quedo sin señal el fichero
+    # salta de un punto a otro y el mapa cruza el hueco con una recta: la de
+    # axmakurandikoa mide 316 m y se va 18 m de la carretera, dibujando una
+    # lazada que no existe. Si los dos extremos estan sobre la general, el
+    # hueco se rellena con la general, que es por donde iba.
+    i = 1
+    while i < len(ps):
+        salto = haversine(ps[i - 1], ps[i])
+        if salto > HUECO:
+            da, ta = gen.cerca(ps[i - 1])
+            db, tb = gen.cerca(ps[i])
+            if da <= PEGADO and db <= PEGADO:
+                trozo = gen.trozo(ta, tb)
+                ps = ps[:i] + [(q[0], q[1], q[2], None) for q in trozo] + ps[i:]
+                hechos.append("cerrado con la general un hueco de %.0f m de la grabacion"
+                              % salto)
+                i += len(trozo)
+        i += 1
     return ps, hechos
 
 

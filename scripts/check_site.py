@@ -401,18 +401,17 @@ def main():
             return min(a_la_recta(q, general[i], general[i + 1])
                        for i in range(len(general) - 1))
 
-        for gpx in sorted((ROOT / 'src').glob('*.gpx')):
-            ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
-                  for p in ET.parse(gpx).findall('.//{*}trkpt')]
+        def tramos(nombre, ps, tope_recta):
             for i in range(1, len(ps)):
                 a, b = ps[i - 1], ps[i]
                 medio = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
                 if min(metros(a, casa), metros(b, casa), metros(medio, casa)) > aviso:
                     continue
                 largo = metros(a, b)
-                require(largo <= recta_max,
-                        f'{gpx.name}: una recta de {largo:.0f} m junto al '
-                        f'domicilio; el dibujo se inventa por donde pasa')
+                if tope_recta is not None:
+                    require(largo <= tope_recta,
+                            f'{nombre}: una recta de {largo:.0f} m junto al '
+                            f'domicilio; el dibujo se inventa por donde pasa')
                 n = max(2, int(largo // 3))
                 for k in range(n + 1):
                     q = (a[0] + (b[0] - a[0]) * k / n, a[1] + (b[1] - a[1]) * k / n)
@@ -420,8 +419,29 @@ def main():
                         continue
                     d = de_la_general(q)
                     require(d <= fuera_max,
-                            f'{gpx.name}: junto al domicilio se separa {d:.0f} m '
+                            f'{nombre}: junto al domicilio se separa {d:.0f} m '
                             f'de la BI-633; ahi esta el camino particular')
+
+        for gpx in sorted((ROOT / 'src').glob('*.gpx')):
+            ps = [(float(p.attrib['lat']), float(p.attrib['lon']))
+                  for p in ET.parse(gpx).findall('.//{*}trkpt')]
+            tramos(gpx.name, ps, recta_max)
+
+        # Y lo mismo sobre data/*.json, que es lo que el mapa dibuja de verdad.
+        # El GPX puede estar impecable y el dibujo no: make_map_data.py
+        # simplifica con Douglas-Peucker y ahi se pierden puntos. Se le deja
+        # No se le mide el largo de las rectas: la simplificacion une puntos a
+        # proposito y en una recta de verdad eso esta bien. Lo que importa es
+        # que lo dibujado no se separe de la general, y eso si se mide -- fue
+        # lo que delato el hueco de 316 m de la grabacion de axmakurandikoa,
+        # que el mapa cruzaba con una recta a 18 m de la carretera.
+        for datos in sorted((ROOT / 'data').glob('*.json')):
+            if datos.name == 'fuentes.json':
+                continue
+            crudo = json.loads(datos.read_text())
+            for n, pista in enumerate(crudo.get('tracks', [])):
+                tramos(f'data/{datos.name}', [(q[0], q[1]) for q in pista.get('points', [])],
+                       None)
 
         with zipfile.ZipFile(ROOT / 'src/todas-las-rutas.zip') as z:
             for nombre in z.namelist():

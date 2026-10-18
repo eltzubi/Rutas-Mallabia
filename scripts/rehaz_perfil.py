@@ -137,7 +137,9 @@ def rehaz(slug):
     # las cambia de estilo sin que nadie lo haya pedido. Mejor pararse.
     xs = re.findall(r'[ML]([\d.]+)[, ]', largos[1])
     paso = [float(xs[i + 1]) - float(xs[i]) for i in range(len(xs) - 1)]
-    if len(xs) != N or max(paso) - min(paso) > 0.1 or "," not in largos[1]:
+    # El paso teorico es 1000/160 = 6,25, y escrito con un decimal sale unas
+    # veces 6,2 y otras 6,3: la holgura tiene que admitir ese redondeo.
+    if len(xs) != N or max(paso) - min(paso) > 0.2 or "," not in largos[1]:
         raise SystemExit(
             "%s: el perfil no esta dibujado con esta convencion (%d muestras, "
             "separador %r). Redibujarlo lo cambiaria de estilo: miralo a mano."

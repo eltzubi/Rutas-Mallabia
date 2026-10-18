@@ -126,6 +126,24 @@ self.addEventListener('fetch', function (evento) {
     return;
   }
 
+  // Los datos de una ruta: primero la red. El track, el perfil y el GPX pueden
+  // corregirse sin que cambie ni un css ni un js, y entonces la concha
+  // conserva su nombre y no se tira: quien ya hubiera abierto la ficha seguia
+  // viendo el track viejo para siempre. Paso justo con el trazado que se
+  // aparto del domicilio del autor -- se corrigio tres veces en el servidor y
+  // en el movil se seguia dibujando el de antes. Sin cobertura se sirve la
+  // copia, que es lo que hace util tener esto.
+  if (/^\/(data\/.*\.json|src\/.*\.(gpx|kml|zip))$/.test(url.pathname)) {
+    evento.respondWith(
+      fetch(peticion)
+        .then(function (r) { return guardar(CACHE_CONCHA, peticion, r); })
+        .catch(function () {
+          return caches.match(peticion).then(function (r) { return r || Response.error(); });
+        })
+    );
+    return;
+  }
+
   // Lo demas: primero lo guardado. Los css y js llevan ?v=<hash> en la URL, de
   // modo que al cambiar el fichero cambia la URL y no hay copia vieja posible.
   evento.respondWith(
