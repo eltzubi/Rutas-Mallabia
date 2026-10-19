@@ -67,8 +67,8 @@
   } : {
     inMap: function(n){ return n + ' rutas en el mapa'; }, bici: 'en bici', pie: 'a pie', ambas: 'en ambas'
   };
-  var fabWords = eu ? { map: 'mapa', list: 'zerrenda', toMap: 'Ikusi mapa gisa', toList: 'Ikusi zerrenda gisa' }
-    : { map: 'mapa', list: 'lista', toMap: 'Ver como mapa', toList: 'Ver como lista' };
+  var fabWords = eu ? { map: 'Mapa', list: 'Zerrenda', toMap: 'Ikusi mapa gisa', toList: 'Ikusi zerrenda gisa' }
+    : { map: 'Mapa', list: 'Lista', toMap: 'Ver como mapa', toList: 'Ver como lista' };
   var MAP_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>';
   var LIST_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>';
   var defaults = {activity:'all', distance:'all', difficulty:'all', elevation:'all', view:'list', fav:false};
