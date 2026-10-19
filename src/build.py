@@ -578,6 +578,29 @@ MESES_EU = ("urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina",
             "uztaila", "abuztua", "iraila", "urria", "azaroa", "abendua")
 
 
+def oculta_iconos(page_html):
+    """Marca como decorativos los iconos SVG que no dicen nada por si mismos.
+
+    Son 1.004 en las 127 paginas: la flecha de un enlace, la lupa, el sol y la
+    luna del tema, el icono de descarga... Todos viven dentro de un boton o un
+    enlace que YA tiene su nombre (texto visible o aria-label), asi que para un
+    lector de pantalla solo son ruido. Con aria-hidden desaparecen de la
+    lectura, y con focusable="false" dejan de ser una parada del tabulador en
+    Internet Explorer y en algunos lectores.
+
+    No toca los que ya llevan role, aria-label o aria-hidden: ahi entran el
+    perfil de altura y los mapas, que si tienen contenido que leer. Se hace
+    aqui y no en los 60 ficheros fuente para no repetirlo 1.004 veces.
+    """
+    def marca(m):
+        attrs = m.group(1)
+        if re.search(r'aria-hidden|aria-label|\brole=', attrs):
+            return m.group(0)
+        return '<svg aria-hidden="true" focusable="false"' + attrs + '>'
+
+    return re.sub(r'<svg\b([^>]*)>', marca, page_html)
+
+
 def add_quick_bar(page_html, lang):
     """Mapa y GPX siempre a mano en el movil.
 
@@ -990,6 +1013,7 @@ def main():
             page_html = compact_route_header(page_html)
             page_html = add_tourist_trip_properties(page_html, name)
             page_html = shorten_breadcrumb(page_html)
+            page_html = oculta_iconos(page_html)
             page_html = page_html.replace(
                 '<div class="map-legend" data-map-legend></div>',
                 f'<div class="map-legend">{map_legend(cards[lang], lang)}</div>')

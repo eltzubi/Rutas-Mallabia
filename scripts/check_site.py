@@ -450,6 +450,28 @@ def main():
                 d = mas_cerca(ps)
                 require(d >= tope, f'ZIP/{nombre}: pasa a {d:.0f} m del domicilio')
 
+    # --- la foto de vista previa existe y se publica -----------------------
+    # El og:image es la foto que sale al compartir la pagina en WhatsApp o en
+    # Twitter, y tiene que ser una URL de verdad: la declaran con el original
+    # de 1600 px, que vive unas veces en img/ y otras en img/orig/, y img/orig
+    # no se publica. ahuntzen y galdaraminio apuntaban ahi y compartian sin
+    # foto. Las comprobaciones de src/srcset no lo miraban: no es ni una cosa
+    # ni la otra, es un content= de una etiqueta <meta>.
+    for pagina in sorted(ROOT.glob('*.html')):
+        texto = pagina.read_text(encoding='utf-8')
+        for prop, url in re.findall(
+                r'(?:property|name)="((?:og|twitter):image)" content="([^"]+)"', texto):
+            camino = url.split('?')[0]
+            camino = camino.replace('https://trabakutik.com/', '')
+            require(not camino.startswith('http'),
+                    f'{pagina.name}: {prop} apunta fuera del sitio: {url[:60]}')
+            destino = ROOT / camino
+            require(destino.exists(),
+                    f'{pagina.name}: {prop} apunta a {camino}, que no existe')
+            require(not camino.startswith('img/orig/'),
+                    f'{pagina.name}: {prop} apunta a {camino}, que no se publica '
+                    f'(img/orig esta excluido en _config.yml)')
+
     # --- las capas del mapa, iguales en los dos ficheros -------------------
     # js/agua.js lleva su propia copia de las cuatro capas de teselas porque
     # js/map.js son 1.100 lineas atadas a los tracks y partirlo para compartir
