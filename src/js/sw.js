@@ -68,6 +68,21 @@ function guardar(nombreCache, peticion, respuesta, maximo) {
   return respuesta;
 }
 
+function aLaRed(peticion) {
+  // «Primero la red» no basta: GitHub Pages manda cache-control: max-age=600
+  // en el HTML, asi que el fetch del service worker se lo puede servir la
+  // cache del propio navegador sin preguntar al servidor, y durante diez
+  // minutos se sigue viendo la pagina vieja -- que ademas pide el css viejo
+  // por el ?v= y deja la web entera con el aspecto anterior. Con no-cache se
+  // revalida: si no ha cambiado, el servidor contesta 304 y no se baja nada.
+  //
+  // Se construye una peticion nueva desde la URL en vez de pasarle opciones a
+  // la que llega: una peticion de navegacion no se puede clonar con cambios.
+  return fetch(new Request(peticion.url, {
+    cache: 'no-cache', credentials: 'same-origin', redirect: 'follow'
+  }));
+}
+
 self.addEventListener('fetch', function (evento) {
   const peticion = evento.request;
   if (peticion.method !== 'GET') return;
@@ -92,7 +107,7 @@ self.addEventListener('fetch', function (evento) {
     || /\.html$/.test(url.pathname);
   if (esPagina) {
     evento.respondWith(
-      fetch(peticion)
+      aLaRed(peticion)
         .then(function (r) { return guardar(CACHE_PAGINAS, peticion, r); })
         .catch(function () {
           return caches.match(peticion).then(function (r) {
@@ -112,7 +127,7 @@ self.addEventListener('fetch', function (evento) {
   // copia, que es lo que hace util tener esto.
   if (/^\/(data\/.*\.json|src\/.*\.(gpx|kml|zip))$/.test(url.pathname)) {
     evento.respondWith(
-      fetch(peticion)
+      aLaRed(peticion)
         .then(function (r) { return guardar(CACHE_CONCHA, peticion, r); })
         .catch(function () {
           return caches.match(peticion).then(function (r) { return r || Response.error(); });
