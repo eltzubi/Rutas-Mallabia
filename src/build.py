@@ -56,6 +56,7 @@ Usage:
 Writes index.html, trabakua.html, iturrizuri.html, zenarruza.html and
 fonts.css to the repo root, which GitHub Pages serves.
 """
+import bisect
 import hashlib
 import math
 import xml.etree.ElementTree as ET
@@ -285,21 +286,73 @@ def home_cards(src_suffix):
 # es una forma barata de medir cuanto camino comparten sin comparar punto a
 # punto los 3.000-9.000 trkpt de cada una contra los de las otras 54.
 _CELDA = 0.00063
+# Uno de cada tres trkpt: con eso basta para saber por donde pasa.
+_CELDA_PASO = 3
 _celdas_cache = {}
+
+
+_celdas_disco = {}
+_CELDAS_SUCIO = False
+# Subir esto obliga a reanalizar los GPX aunque no hayan cambiado.
+_CELDAS_VERSION = "1"
+
+
+def _clave_celdas():
+    """Como se trocea el mapa y cada cuantos puntos se mira: si cambia
+    cualquiera de los dos, lo guardado ya no vale."""
+    return f"{_CELDA!r}|{_CELDA_PASO}|v{_CELDAS_VERSION}"
+
+
+def carga_celdas():
+    """Las celdas ya calculadas de cada GPX, guardadas con su huella.
+
+    Analizar los 60 GPX (51 MB de XML) costaba 2 s de cada build y el
+    resultado solo cambia cuando cambia el propio GPX. La huella es el
+    sha256 del fichero, asi que un track editado se vuelve a analizar y los
+    demas no: calcular las huellas cuesta 0,3 s frente a los 2 s de
+    analizarlos. La rejilla y el muestreo van en la clave general, para que
+    tocarlos tampoco pueda servir un resultado viejo.
+    """
+    global _celdas_disco
+    guardado = _lee_json(_CELDAS_FICHERO)
+    if guardado and guardado.get("clave") == _clave_celdas():
+        gpx = guardado.get("gpx")
+        if isinstance(gpx, dict):
+            _celdas_disco = gpx
+
+
+def guarda_celdas():
+    if not _CELDAS_SUCIO:
+        return
+    _escribe_json(_CELDAS_FICHERO,
+                  {"clave": _clave_celdas(), "gpx": _celdas_disco})
 
 
 def celdas_de(slug):
     """Las celdas por las que pasa el track de una ruta."""
+    global _CELDAS_SUCIO
     if slug not in _celdas_cache:
         ruta = os.path.join(HERE, f"{slug}.gpx")
         if not os.path.exists(ruta):
             _celdas_cache[slug] = frozenset()
         else:
-            puntos = ET.parse(ruta).findall(".//{*}trkpt")[::3]
-            _celdas_cache[slug] = frozenset(
-                (round(float(p.attrib["lat"]) / _CELDA),
-                 round(float(p.attrib["lon"]) / (_CELDA * 1.37)))
-                for p in puntos)
+            with open(ruta, "rb") as f:
+                huella = hashlib.sha256(f.read()).hexdigest()
+            guardado = _celdas_disco.get(slug)
+            if (isinstance(guardado, dict) and guardado.get("h") == huella
+                    and isinstance(guardado.get("c"), list)):
+                _celdas_cache[slug] = frozenset(
+                    (c[0], c[1]) for c in guardado["c"])
+            else:
+                puntos = ET.parse(ruta).findall(".//{*}trkpt")[::_CELDA_PASO]
+                celdas = frozenset(
+                    (round(float(p.attrib["lat"]) / _CELDA),
+                     round(float(p.attrib["lon"]) / (_CELDA * 1.37)))
+                    for p in puntos)
+                _celdas_cache[slug] = celdas
+                _celdas_disco[slug] = {"h": huella,
+                                       "c": [list(c) for c in sorted(celdas)]}
+                _CELDAS_SUCIO = True
     return _celdas_cache[slug]
 
 
@@ -333,23 +386,128 @@ def _metros(a, b):
     return math.hypot(dx, dy)
 
 
+# Los dos umbrales y los dos muestreos de la cuenta de solapes. Estan aqui
+# arriba, y no escritos a mano dentro de cada funcion, porque la clave de la
+# cache se forma con ellos: cambiar cualquiera de los cuatro invalida sola lo
+# guardado, sin tener que acordarse de nada.
+_UMBRAL_CERCA = 70
+_UMBRAL_LEJOS = 250
+_MUESTRA_A = 120
+_MUESTRA_B = 160
+
+
 def _cobertura(a, b, umbral):
-    """Que parte de A pasa cerca de B. Muestreada, como lo hacia el navegador."""
+    """Que parte de A pasa cerca de B. Muestreada, como lo hacia el navegador.
+
+    La cuenta es la misma de siempre, solo que sin mirar los puntos que no
+    pueden estar cerca: como la distancia nunca es menor que su componente
+    norte-sur, un punto cuya latitud se separa mas de `umbral` metros esta
+    fuera, seguro, sin necesidad de calcular nada. Asi que los puntos de B se
+    ordenan por latitud una sola vez y de cada punto de A se mira solo la
+    franja que cabe. Es una poda exacta, no una aproximacion: el resultado
+    sale identico par por par, y basta con eso para pasar de 165 millones de
+    distancias a unos pocos millones.
+    """
     if not a or not b:
         return 0.0
-    paso_a = max(1, len(a) // 120)
-    paso_b = max(1, len(b) // 160)
+    paso_a = max(1, len(a) // _MUESTRA_A)
+    paso_b = max(1, len(b) // _MUESTRA_B)
+    bs = sorted((b[j] for j in range(0, len(b), paso_b)), key=lambda q: q[0])
+    lats = [p[0] for p in bs]
+    margen = umbral / 111320.0
     cerca = total = 0
     for i in range(0, len(a), paso_a):
         total += 1
-        for j in range(0, len(b), paso_b):
-            if _metros(a[i], b[j]) <= umbral:
+        punto = a[i]
+        desde = bisect.bisect_left(lats, punto[0] - margen)
+        hasta = bisect.bisect_right(lats, punto[0] + margen)
+        for k in range(desde, hasta):
+            if _metros(punto, bs[k]) <= umbral:
                 cerca += 1
                 break
     return cerca / total if total else 0.0
 
 
 _SOLAPES = {}
+_SOLAPES_CLAVE = None
+_SOLAPES_SUCIO = False
+# Fuera de lo que se publica: esta en .gitignore y en _config.yml. Todo lo
+# que hay aqui se deriva de los tracks y se rehace solo si estos cambian;
+# se puede borrar entera sin perder nada.
+_CACHE_DIR = os.path.join(ROOT, ".cache-build")
+_SOLAPES_FICHERO = os.path.join(_CACHE_DIR, "solapes.json")
+_CELDAS_FICHERO = os.path.join(_CACHE_DIR, "celdas.json")
+# Subir esto obliga a recalcular aunque trailhead.json no haya cambiado.
+_SOLAPES_VERSION = "1"
+
+
+def _clave_solapes():
+    """La cuenta solo depende de los tracks y de los umbrales: esa es la clave."""
+    with open(os.path.join(ROOT, "data", "trailhead.json"), "rb") as f:
+        huella = hashlib.sha256(f.read()).hexdigest()
+    return (f"{huella}|{_UMBRAL_CERCA}|{_UMBRAL_LEJOS}"
+            f"|{_MUESTRA_A}|{_MUESTRA_B}|v{_SOLAPES_VERSION}")
+
+
+def _escribe_json(ruta, datos):
+    """Escribe entero o no escribe: temporal y renombrado, que es atomico.
+
+    Sin esto, un build interrumpido a mitad de la escritura -- o dos a la vez
+    -- dejan el fichero cortado o mezclado.
+    """
+    try:
+        os.makedirs(_CACHE_DIR, exist_ok=True)
+        tmp = f"{ruta}.{os.getpid()}.tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(datos, f)
+        os.replace(tmp, ruta)
+    except OSError as e:
+        print(f"aviso: no se pudo guardar {ruta}: {e}")
+
+
+def _lee_json(ruta):
+    """Lo guardado, o None si no esta o no se entiende. Nunca revienta el build:
+    la cache es un atajo, y un atajo roto solo tiene que costar tiempo."""
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            datos = json.load(f)
+    except (OSError, ValueError):
+        return None
+    return datos if isinstance(datos, dict) else None
+
+
+def carga_solapes():
+    """Trae del disco los solapes ya calculados, si son de estos mismos tracks.
+
+    El perfilador dice que el 99% del build se iba en esta sola cuenta:
+    165.054.409 distancias en Python puro para decidir las «Rutas por esta
+    zona». Y no depende de la pagina que se este montando ni del idioma, solo
+    de data/trailhead.json. Mientras ese fichero no cambie -- es decir,
+    mientras no se meta o se cambie un track -- el resultado es el mismo, asi
+    que se guarda en disco y el build deja de repetirlo. Si el fichero cambia,
+    la clave no coincide y se recalcula entero: nunca se sirve un solape de
+    unos tracks para otros.
+    """
+    global _SOLAPES_CLAVE
+    _SOLAPES_CLAVE = _clave_solapes()
+    guardado = _lee_json(_SOLAPES_FICHERO)
+    if not guardado or guardado.get("clave") != _SOLAPES_CLAVE:
+        return
+    for fila in guardado.get("pares") or ():
+        # [ruta_a, ruta_b, solape a 70 m, solape a 250 m]
+        if (isinstance(fila, list) and len(fila) == 4
+                and isinstance(fila[0], str) and isinstance(fila[1], str)):
+            _SOLAPES[(fila[0], fila[1])] = (fila[2], fila[3])
+
+
+def guarda_solapes():
+    """Deja en disco lo calculado. Si no habia nada nuevo, no toca el fichero."""
+    if not _SOLAPES_SUCIO:
+        return
+    _escribe_json(_SOLAPES_FICHERO,
+                  {"clave": _SOLAPES_CLAVE or _clave_solapes(),
+                   "pares": [[a, b, c, d]
+                             for (a, b), (c, d) in sorted(_SOLAPES.items())]})
 
 
 def _solape(a, b, pa, pb):
@@ -360,16 +518,20 @@ def _solape(a, b, pa, pb):
 
     La cuenta solo depende de los dos tracks, pero se pedia una vez por
     pagina y por idioma: 146 paginas x 58 rutas, y encima cada pareja en los
-    dos sentidos. Son 1.711 parejas distintas y se estaban calculando mas de
+    dos sentidos. Son 1.767 parejas distintas y se estaban calculando mas de
     ocho mil veces. Guardarlas no cambia ni un byte de lo que se escribe,
     solo deja de repetir la misma division.
     """
+    global _SOLAPES_SUCIO
     clave = (a, b) if a < b else (b, a)
     v = _SOLAPES.get(clave)
     if v is None:
+        _SOLAPES_SUCIO = True
         v = _SOLAPES[clave] = (
-            max(_cobertura(pa, pb, 70), _cobertura(pb, pa, 70)),
-            max(_cobertura(pa, pb, 250), _cobertura(pb, pa, 250)))
+            max(_cobertura(pa, pb, _UMBRAL_CERCA),
+                _cobertura(pb, pa, _UMBRAL_CERCA)),
+            max(_cobertura(pa, pb, _UMBRAL_LEJOS),
+                _cobertura(pb, pa, _UMBRAL_LEJOS)))
     return v
 
 
@@ -996,6 +1158,8 @@ def compact_route_header(page_html):
 
 
 def main():
+    carga_solapes()
+    carga_celdas()
     copy_font_files()
     copy_leaflet()
     versions = {}
@@ -1053,6 +1217,8 @@ def main():
     write_offline_page(versions)
     write_service_worker(versions)
     write_sitemap()
+    guarda_solapes()
+    guarda_celdas()
 
 
 def add_fuentes(page_html, lang):
@@ -1235,6 +1401,106 @@ def write_legacy_eu_home():
 _fechas_cache = {}
 
 
+_ultimo_commit = {}
+_fechas_leidas = False
+_prefijo_repo = None
+
+
+def _lee_fechas():
+    """Una sola pasada de git para las 63 paginas, en vez de 63 llamadas.
+
+    Preguntar `git log -1` fichero por fichero costaba 1,8 s de cada build
+    (64 procesos); una sola pasada tarda 0,55 s. Tres detalles para que de
+    exactamente lo mismo que daba antes:
+
+    - **Las fusiones.** `--name-only` no lista los ficheros de un commit de
+      fusion, pero `git log -1 -- fichero` si devolvia la fusion cuando esta
+      resolvia un conflicto sobre ese fichero. En la pasada esas fusiones
+      salen como un commit sin ningun fichero debajo (son las unicas que la
+      simplificacion de historia no se come), y a cada una se le pregunta
+      aparte con un diff *combinado*, que lista justo los ficheros que
+      difieren de **todos** los padres: ni mas ni menos que los que hacian
+      aparecer la fusion. Aqui son 11 fusiones de 3.000 commits.
+    - **`core.quotepath=false`**: con la configuracion por defecto git
+      escribe `src/caf\303\251_head.html` y el nombre no casaba.
+    - **El prefijo del repositorio**: git imprime las rutas desde la raiz del
+      repositorio, que no tiene por que ser la del sitio.
+
+    Lo que aun asi no aparezca se pregunta uno a uno, como antes. Sin git
+    esto no llega a ejecutarse: write_sitemap() ve que no hay repositorio (o
+    que es un clon superficial, como el que hace CI) y reutiliza las fechas
+    del sitemap ya publicado.
+    """
+    global _fechas_leidas, _prefijo_repo
+    if _fechas_leidas:
+        return
+    _fechas_leidas = True
+
+    def git(*args):
+        return subprocess.run(["git", "-c", "core.quotepath=false"] + list(args),
+                              cwd=ROOT, capture_output=True, text=True, timeout=60)
+    try:
+        pref = git("rev-parse", "--show-prefix")
+        if pref.returncode != 0:
+            return
+        _prefijo_repo = (pref.stdout or "").strip()
+        salida = git("log", "--format=%x00%cs%x00%H", "--name-only", "--", "src")
+        if salida.returncode != 0:
+            return
+    except (OSError, subprocess.SubprocessError):
+        return
+
+    orden = 0
+    pendientes = []          # fusiones mostradas sin ningun fichero debajo
+    actual = None            # [orden, fecha, sha, si ya trajo ficheros]
+    def anota(fichero, quien):
+        # El log va del mas reciente al mas antiguo, asi que gana el orden
+        # mas bajo. Las fusiones se resuelven despues y pueden ser mas
+        # recientes que lo ya anotado, de ahi la comparacion.
+        previo = _ultimo_commit.get(fichero)
+        if previo is None or quien[0] < previo[0]:
+            _ultimo_commit[fichero] = quien
+    for linea in (salida.stdout or "").splitlines():
+        if linea.startswith("\0"):
+            if actual and not actual[3]:
+                pendientes.append(actual)
+            orden += 1
+            partes = linea.split("\0")
+            actual = [orden, (partes[1].strip() or None if len(partes) > 1 else None),
+                      partes[2].strip() if len(partes) > 2 else "", False]
+        elif linea and actual and actual[1]:
+            actual[3] = True
+            anota(linea, (actual[0], actual[1]))
+    if actual and not actual[3]:
+        pendientes.append(actual)
+
+    for orden_f, fecha, sha, _ in pendientes:
+        if not fecha or not sha:
+            continue
+        try:
+            det = git("show", "--format=", "--name-only",
+                      "--diff-merges=combined", sha, "--", "src")
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if det.returncode != 0:
+            continue
+        for linea in (det.stdout or "").splitlines():
+            if linea:
+                anota(linea, (orden_f, fecha))
+
+
+def _fecha_suelta(fuentes):
+    """El metodo de siempre, para lo que la pasada no haya encontrado."""
+    try:
+        salida = subprocess.run(
+            ["git", "log", "-1", "--format=%cs", "--"]
+            + [os.path.join(ROOT, f) for f in fuentes],
+            cwd=ROOT, capture_output=True, text=True, timeout=20)
+        return (salida.stdout or "").strip() or None
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
 def fecha_de_la_fuente(name):
     """Cuando cambio por ultima vez el contenido de esta pagina, segun git.
 
@@ -1250,18 +1516,20 @@ def fecha_de_la_fuente(name):
     """
     if name in _fechas_cache:
         return _fechas_cache[name]
-    fuentes = [os.path.join(HERE, f"{name}_head.html"),
-               os.path.join(HERE, f"{name}_tail.html")]
-    fuentes = [f for f in fuentes if os.path.exists(f)]
-    fecha = None
-    if fuentes:
-        try:
-            salida = subprocess.run(
-                ["git", "log", "-1", "--format=%cs", "--"] + fuentes,
-                cwd=ROOT, capture_output=True, text=True, timeout=20)
-            fecha = (salida.stdout or "").strip() or None
-        except (OSError, subprocess.SubprocessError):
-            fecha = None
+    _lee_fechas()
+    fuentes = [f"src/{name}_head.html", f"src/{name}_tail.html"]
+    fuentes = [f for f in fuentes if os.path.exists(os.path.join(ROOT, f))]
+    vistas = [_ultimo_commit[_prefijo_repo + f] for f in fuentes
+              if _prefijo_repo + f in _ultimo_commit]
+    if vistas:
+        # El primero en el orden del log es el commit mas reciente que toco
+        # alguna de las dos fuentes, que es justo lo que daba `git log -1`
+        # preguntando por las dos a la vez.
+        fecha = min(vistas)[1]
+    elif fuentes and _fechas_leidas and _prefijo_repo is not None:
+        fecha = _fecha_suelta(fuentes)
+    else:
+        fecha = None
     _fechas_cache[name] = fecha
     return fecha
 

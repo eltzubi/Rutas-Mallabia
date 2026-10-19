@@ -44,12 +44,30 @@ python3 src/i18n/make_eu.py
 python3 src/build.py
 ```
 
+## Verificar antes de publicar: una sola orden, un solo veredicto
+
+```bash
+python3 .claude/skills/run-rutas-mallabia/driver.py verifica            # todo (~3 min)
+python3 .claude/skills/run-rutas-mallabia/driver.py verifica --rapido   # sin navegador (~50 s)
+```
+
+Construye, pasa la batería de ficheros y (sin `--rapido`) las cinco pruebas
+de navegador, y **termina en una sola línea**: `VERIFICACION CORRECTA (N
+pasos)` o `VERIFICACION FALLIDA: <qué pasos>`, con código de salida 0 o 1.
+
+**Usa esto y no encadenes las comprobaciones a mano.** Lo que se hacía antes
+—`python3 ... | grep -E "^# (pass|fail)" && echo "TODO CORRECTO"`— daba por
+bueno lo que no lo era: `grep` sale con éxito por haber *encontrado* la
+línea, diga «fail 0» o «fail 1». El 18 de octubre una misma salida dijo
+«# fail 1» y debajo «TODO CORRECTO».
+
 ## Manejar el sitio (lo que hace un agente)
 
 ```bash
 D=.claude/skills/run-rutas-mallabia/driver.py
 
 python3 $D todo                                    # audit + filtros + mapa + temas + offline (~60 s)
+                                                   # (lo incluye "verifica"; suelto, sólo el navegador)
 
 python3 $D shot index.es.html --ancho 390 --tema light --sel .hero-compact
 python3 $D audit index.es.html                     # desborde a 320/360/390/768/1280, dos temas (~60 s)

@@ -36,6 +36,27 @@ attribute values like `alt`/`title`/`data-marker-title`.
 `build.py` also validates HTML entities (catches things like `case&riacute;os` — a letter swallowed
 into an entity name) and fails loudly if it finds one.
 
+**`build.py` tarda 1,5-1,7 s, no 85.** El 99% del build se iba en una sola cuenta: las «Rutas por esta
+zona» comparaban punto a punto los tracks de las 60 rutas, 165.054.409 distancias en Python puro por
+construcción. Esa cuenta sólo depende de `data/trailhead.json`, así que ahora se guarda calculada en
+**`.cache-build/`** (fuera de git y fuera de la web) con la huella sha256 del fichero del que sale: si
+cambias un track, la huella no coincide y se recalcula entera; si no, se lee del disco. Lo mismo con
+las celdas de cada GPX (`celdas.json`, huella del propio `.gpx`), que costaban 2 s de analizar los
+60 GPX (51 MB de XML), y las fechas del sitemap, que eran 64 llamadas a `git log` y ahora son una sola pasada.
+**La carpeta `.cache-build/` se puede borrar entera sin perder nada**: la siguiente construcción la
+rehace (6 s en frío). Si tocas los umbrales de `vecinas_cercanas` o el muestreo de `_cobertura`,
+no hace falta acordarse de nada: la clave se forma con los propios
+valores (`_UMBRAL_CERCA`, `_UMBRAL_LEJOS`, `_MUESTRA_A`, `_MUESTRA_B`, `_CELDA`, `_CELDA_PASO`) y
+cambiar cualquiera caduca la caché sola. `_SOLAPES_VERSION` y `_CELDAS_VERSION` están para forzarlo
+a mano si alguna vez cambia el *algoritmo* sin cambiar ninguna constante.
+
+La poda de `_cobertura` (saltarse los puntos cuya latitud ya los deja fuera del umbral) es **exacta,
+no una aproximación**: la distancia nunca es menor que su componente norte-sur. Se comprobó par por
+par — los 1.767 pares dan exactamente los mismos dos números que antes, y una
+comparación exhaustiva de las 3.540 parejas ordenadas × los dos umbrales tampoco encuentra ni una
+diferencia — y la huella sha256 de los
+151 ficheros publicados es idéntica.
+
 Other scripts:
 
 ```
@@ -401,6 +422,13 @@ There's no automated test suite — verification is manual:
 - `git status` after `build.py` before committing — it regenerates files across the whole tree, so it's
   easy to accidentally stage an unrelated change. `optimize_images.py` no longer rewrites untouched
   photos, but check anyway after `--force`.
+- **Una sola orden para verificar, y se mira su código de salida:**
+  `python3 .claude/skills/run-rutas-mallabia/driver.py verifica` (todo, ~3 min) o
+  `verifica --rapido` (sin navegador, ~50 s). Termina en una línea: `VERIFICACION CORRECTA (N pasos)`
+  o `VERIFICACION FALLIDA: <pasos>`, con código 0 o 1. **No encadenes las comprobaciones a mano con
+  `| grep … && echo "TODO CORRECTO"`**: `grep` sale con éxito por haber *encontrado* la línea, diga
+  «fail 0» o «fail 1», y por eso el 18 de octubre una misma salida dijo «# fail 1» y debajo «TODO
+  CORRECTO». Si lo que escribes acaba en `&& echo` algo, estás a punto de repetir ese fallo.
 - **For a brand-new route page, or one you're doing major surgery on: before calling it done, diff
   its `_tail.html` structurally against a known-good page's (e.g. `arteta_tail.html`), and run
   `python3 .claude/skills/run-rutas-mallabia/driver.py todo`, which opens the built site in a real

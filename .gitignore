@@ -6,3 +6,8 @@ __pycache__/
 
 # El punto privado del autor: el repositorio es publico y esto no sale de aqui.
 scripts/.punto-privado.json
+
+# Lo que src/build.py se guarda calculado: los solapes entre tracks (de
+# data/trailhead.json) y las celdas de cada GPX. Se deriva de los tracks, se
+# rehace solo si estos cambian y se puede borrar entera.
+.cache-build/

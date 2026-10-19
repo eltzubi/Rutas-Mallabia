@@ -498,8 +498,42 @@ def cmd_todo(a):
                             ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html"))):
         print(f"\n=== {nombre}")
         fallos += 1 if fn(arg) else 0
-    print(f"\n{'TODO CORRECTO' if not fallos else f'{fallos} comprobacion(es) fallidas'}")
+    print("\n" + ("navegador: las 5 comprobaciones, correctas" if not fallos
+                   else f"navegador: {fallos} comprobacion(es) fallidas"))
     return 1 if fallos else 0
+
+
+def cmd_verifica(a):
+    """Todo lo que hay que pasar antes de publicar, en un solo codigo de salida.
+
+    Existe porque encadenar las comprobaciones a mano con `| grep ... && echo
+    TODO CORRECTO` daba por bueno lo que no lo era: grep sale con exito por
+    haber *encontrado* la linea, diga «fail 0» o «fail 1». Aqui manda el
+    codigo de salida de cada paso y el veredicto se imprime una sola vez, al
+    final. Con --rapido se salta el navegador (lo lento) y se queda en la
+    bateria de ficheros.
+    """
+    pasos = [("construir", cmd_build, a),
+             ("ficheros", cmd_check, a)]
+    if not getattr(a, "rapido", False):
+        pasos.append(("navegador", cmd_todo, a))
+    fallaron = []
+    for nombre, fn, arg in pasos:
+        print(f"\n===== {nombre}")
+        try:
+            malo = fn(arg)
+        except Exception as e:          # noqa: BLE001 -- un paso que revienta
+            # tambien es un paso que falla, y el veredicto tiene que salir
+            print(f"  EXCEPCION en {nombre}: {type(e).__name__}: {e}")
+            malo = True
+        if malo:
+            fallaron.append(nombre)
+    print()
+    if fallaron:
+        print("VERIFICACION FALLIDA: " + ", ".join(fallaron))
+        return 1
+    print(f"VERIFICACION CORRECTA ({len(pasos)} pasos)")
+    return 0
 
 
 def main():
@@ -511,6 +545,9 @@ def main():
     sub.add_parser("serve").set_defaults(fn=cmd_serve)
     sub.add_parser("filtros").set_defaults(fn=cmd_filtros)
     sub.add_parser("todo").set_defaults(fn=cmd_todo)
+    s = sub.add_parser("verifica"); s.set_defaults(fn=cmd_verifica)
+    s.add_argument("--rapido", action="store_true",
+                   help="sin el navegador: solo construir y la bateria de ficheros")
 
     s = sub.add_parser("shot"); s.set_defaults(fn=cmd_shot)
     s.add_argument("pagina"); s.add_argument("--ancho", type=int, default=1280)
