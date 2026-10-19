@@ -5988,8 +5988,8 @@ GARAIGAZTELU = {
 IXUAKALAMUA = {
     '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Asuntza, Ixua, Kalamua y Barinaga</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista, bidexka eta errepidea</span><span class="sep">/</span><span>Asuntza, Ixua, Kalamua eta Barinaga</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Trabakua, Aginaga, Ixua<br><em>y Kalamua por Barinaga</em></h1>':
-        '<h1>Trabakua, Aginaga, Ixua<br><em>eta Kalamua Barinagatik</em></h1>',
+    '<h1>Trabakua, Aginaga, Ixua<br><em>Kalamua y bajada a Barinaga</em></h1>':
+        '<h1>Trabakua, Aginaga, Ixua<br><em>Kalamua eta Barinagara jaitsiera</em></h1>',
     '<p class="full-name">Circuito en e-bike desde Trabakua por Asuntza, Aginaga y el antiguo camino de Ixua, con subida a Kalamua y vuelta por Barinaga y Aginaga</p>':
         '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita</p>',
     'class="elev-legend-item"><span class="num">1</span>Asuntza</span> <span class="elev-legend-item"><span class="num">2</span>Ixua</span> <span class="elev-legend-item"><span class="num">3</span>Usartza</span> <span class="elev-legend-item"><span class="num">4</span>Kalamua</span> <span class="elev-legend-item"><span class="num">5</span>Santa Cruz</span> <span class="elev-legend-item"><span class="num">6</span>Barinaga</span> <span class="elev-legend-item"><span class="num">7</span>Aginaga</span>':
@@ -6046,8 +6046,8 @@ IXUAKALAMUA = {
         '<p>Ibilbide honek bi helburu ditu: <b>Aginaga</b> eta <b>Ixua</b> arteko bide zaharra nola dagoen ikustea, eta <b>Barinaga</b>tik Trabakuara itzultzeko beste aukera bat bilatzea. Ixuarako bidea garai batean irekita egon zen, eta oraindik bizikletaz ibiltzeko moduan dagoen jakin nahi dugu.</p>',
     '<p>Salimos de <b>Trabakua</b> en direcci&oacute;n a Ermua. A 1,5 km, m&aacute;s o menos, junto al caser&iacute;o <b>Donagarai</b>, giramos a la izquierda y cogemos el camino que sube hacia <b>Arteta</b>.</p>':
         '<p><b>Trabakua</b>tik Ermuarantz irtengo gara. 1,5 km ingurura, <b>Donagarai</b> baserriaren ondoan, ezkerrera hartuko dugu <b>Arteta</b>ra igotzen den bidea.</p>',
-    '<p>En el cruce volvemos a girar a la izquierda y seguimos por pista de piedra hasta <b>Asuntza</b>, en el kil&oacute;metro 6.</p>':
-        '<p>Bidegurutzean berriro ezkerrera egingo dugu, eta harri-pistatik jarraituko dugu <b>Asuntza</b>raino, 6. kilometroan.</p>',
+    '<p>En el cruce volvemos a girar a la izquierda y seguimos por pista de piedra hasta <b>Asuntza</b>, en el kil&oacute;metro 4,8.</p>':
+        '<p>Bidegurutzean berriro ezkerrera egingo dugu, eta harri-pistatik jarraituko dugu <b>Asuntza</b>raino, 4,8 km-ra.</p>',
     '<p>Unos metros antes de llegar a Asuntza sale a la izquierda un camino de tierra que empieza bajando. Por &eacute;l llegamos a la parte alta de Aginaga, una zona de caser&iacute;os. La atravesamos y, a la salida, hay una fuente.</p>':
         '<p>Asuntzara iritsi baino metro batzuk lehenago, ezkerretara lurrezko bide bat ateratzen da, maldan behera hasten dena. Bide horretatik Aginagako goiko aldera iritsiko gara, baserri-gune batera. Auzunea zeharkatuko dugu, eta irteeran iturri bat dago.</p>',
     '<p>Aqu&iacute; empieza lo que ven&iacute;amos a investigar: el camino hacia Ixua.</p>':
