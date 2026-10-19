@@ -571,8 +571,8 @@ HOME = {
     'piedras en primer plano"':
         'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
         'batekin"',
-    'data-view="list">lista</button>': 'data-view="list">zerrenda</button>',
-    'data-view="map">mapa</button>': 'data-view="map">mapa</button>',
+    'data-view="list">Lista</button>': 'data-view="list">Zerrenda</button>',
+    'data-view="map">Mapa</button>': 'data-view="map">Mapa</button>',
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',
     'D&oacute;nde comer': 'Non jan',
