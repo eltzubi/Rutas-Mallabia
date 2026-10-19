@@ -121,6 +121,14 @@ def main():
         originales += [(f, os.path.join(carpeta, f)) for f in os.listdir(carpeta)
                        if f.lower().endswith(".jpg")
                        and not any(x in f for x in EXCLUIR)]
+    # El registro va por nombre, no por carpeta: una foto que esta a la vez en
+    # img/ y en img/orig/ pisa su propio apunte y se reprocesa en cada pasada,
+    # y de paso reescribe el .webp publicado (paso con sarrimendi-11).
+    nombres = [n for n, _ in originales]
+    repetidas = sorted({n for n in nombres if nombres.count(n) > 1})
+    if repetidas:
+        sys.exit("Fotos en img/ y en img/orig/ a la vez: " + ", ".join(repetidas)
+                 + "\nDeja una sola: en img/ si es el og:image de su ficha, si no en img/orig/.")
     for name, path in sorted(originales):
         # El .webp siempre en img/, se mire donde se mire el original: es el
         # que de verdad reciben los navegadores.
