@@ -1039,16 +1039,16 @@ footer a:hover{ text-decoration:underline; }
   .aviso-boton{ animation:none; }
 }
 /* En la barra de arriba (js/app.js la mueve ahi): ya no flota en la
-   esquina, va en su sitio entre el lugar y el idioma, algo mayor que el
-   boton del tema y con las ondas cortas para que no se salgan de la barra. */
+   esquina, va en su sitio entre el lugar y el idioma, del mismo tamano que
+   el boton del tema y con las ondas cortas para que no se salgan de la barra. */
 .masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
-.masthead .aviso-boton{ width:30px; height:30px; }
-.masthead .aviso-boton svg{ width:16px; height:16px; }
+.masthead .aviso-boton{ width:26px; height:26px; }
+.masthead .aviso-boton svg{ width:14px; height:14px; }
 .masthead .aviso-aro{ animation-name:avisoAroCabecera; }
 @keyframes avisoAroCabecera{
   0%  { width:2px; height:2px; opacity:.75; border-width:2px; }
   65% { opacity:.4; }
-  100%{ width:62px; height:62px; opacity:0; border-width:1px; }
+  100%{ width:54px; height:54px; opacity:0; border-width:1px; }
 }
 /* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
    hasta que el aviso se abre. */
