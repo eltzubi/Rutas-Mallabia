@@ -639,6 +639,12 @@ footer a:hover{ text-decoration:underline; }
   opacity:1; transition:opacity .2s ease;
 }
 .view-fab:hover{ background:color-mix(in srgb, var(--ink) 10%, var(--ground-raised)); box-shadow:0 4px 16px rgba(0,0,0,.5); }
+/* El fondo del boton (--ground-raised) es el mismo de las tarjetas, en los
+   dos temas, asi que encima de una no se veia un boton sino un borron
+   tapando el texto. Va en el color de la tinta, como el chip activo de
+   «Todas»: crema en oscuro y casi negro en claro. */
+.view-fab{ background:var(--ink); color:var(--ground); border-color:transparent; }
+.view-fab:hover{ background:color-mix(in srgb, var(--ground) 12%, var(--ink)); }
 /* Fixed position means it sits on top of whatever card scrolls past it --
    fading it out during the scroll gesture (JS toggles this class in app.js)
    keeps it from hiding card stats/tags mid-scroll, without moving it or
@@ -980,10 +986,6 @@ footer a:hover{ text-decoration:underline; }
   --aro:color-mix(in srgb, var(--violet) 32%, transparent);
   --brillo:color-mix(in srgb, var(--violet) 45%, transparent);
 }
-/* Igual que el boton flotante de mapa: se vuelve casi transparente mientras
-   se desliza la portada (js/app.js pone y quita esta clase) y recupera su
-   sitio entero ~150ms despues de parar, para no tapar las fichas. */
-.aviso-pulso.is-scrolling{ opacity:.25; }
 .aviso-boton{
   position:relative; z-index:1;
   width:46px; height:46px; border-radius:50%; padding:0; cursor:pointer;
@@ -1035,6 +1037,18 @@ footer a:hover{ text-decoration:underline; }
 @media (prefers-reduced-motion: reduce){
   .aviso-aro{ animation:none; opacity:0; }
   .aviso-boton{ animation:none; }
+}
+/* En la barra de arriba (js/app.js la mueve ahi): ya no flota en la
+   esquina, va en su sitio entre el lugar y el idioma, del mismo tamano que
+   el boton del tema y con las ondas cortas para que no se salgan de la barra. */
+.masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
+.masthead .aviso-boton{ width:26px; height:26px; }
+.masthead .aviso-boton svg{ width:14px; height:14px; }
+.masthead .aviso-aro{ animation-name:avisoAroCabecera; }
+@keyframes avisoAroCabecera{
+  0%  { width:2px; height:2px; opacity:.75; border-width:2px; }
+  65% { opacity:.4; }
+  100%{ width:54px; height:54px; opacity:0; border-width:1px; }
 }
 /* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
    hasta que el aviso se abre. */

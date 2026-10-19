@@ -110,17 +110,12 @@
 // button's position or the card layout.
 (function(){
   var fab = document.getElementById('viewFab');
-  var aviso = document.getElementById('noticeBadge');
-  if (!fab && !aviso) return;
+  if (!fab) return;
   var timer = null;
   function onScroll(){
-    if (fab) fab.classList.add('is-scrolling');
-    if (aviso) aviso.classList.add('is-scrolling');
+    fab.classList.add('is-scrolling');
     clearTimeout(timer);
-    timer = setTimeout(function(){
-      if (fab) fab.classList.remove('is-scrolling');
-      if (aviso) aviso.classList.remove('is-scrolling');
-    }, 150);
+    timer = setTimeout(function(){ fab.classList.remove('is-scrolling'); }, 150);
   }
   window.addEventListener('scroll', onScroll, { passive:true });
 })();
@@ -146,6 +141,13 @@
 
   seccion.classList.add('solo-insignia');
   insignia.hidden = false;
+
+  // Va en la barra de arriba, entre «Mallabia · Bizkaia» y el idioma: en la
+  // esquina de abajo pasaba por encima del texto de las tarjetas. El autor
+  // la quiso ahi.
+  var cabecera = document.querySelector('.masthead');
+  var derecha = cabecera && cabecera.querySelector('.masthead-right');
+  if (derecha) cabecera.insertBefore(insignia, derecha);
 
   // Si ya se ha leido el aviso en esta visita, la insignia sale directamente
   // apagada. Va en sessionStorage y no en localStorage a proposito: dura lo

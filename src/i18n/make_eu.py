@@ -24,12 +24,12 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "agua", "aviso-legal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"]
 # "aviso-legal" no es una ruta (sin facts/perfil/galeria), pero comparte el
 # mismo cascaron de pagina (masthead, back-link, footer, back-home) que las
 # rutas -- se mete aqui para heredar esas mismas cadenas compartidas (ROUTE)
 # y el swap de href a .eu.html, no porque sea una ruta real.
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "agua", "aviso-legal"}
+ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"}
 
 # Esta ficha se redactó ya en los dos idiomas durante su incorporación.
 # Hasta migrar sus textos al diccionario granular de eu.py, mantenemos su
@@ -54,7 +54,9 @@ SPANISH_TELLS = [
     "Sendero", "sendero", "Senderismo", "senderismo", "Bici", "Mixta", "Ampliar", "Cerrar",
     "Volver", "Descargar", "ruta", "Ruta", "rutas", "camino", "hacia", "desde",
     "sobre el terreno",
-    "Mapa", "Puerto", "aparcamiento", "aparcar", "cascada", "Cascada", "Fuente",
+    # "Mapa" no: en euskera se escribe igual, y el boton «Mapa» de la portada
+    # lo hacia saltar en la pagina en euskera. «Mapa de la ruta» ya lo caza "ruta".
+    "Puerto", "aparcamiento", "aparcar", "cascada", "Cascada", "Fuente",
     "Monasterio", "Ermita", "Dolmen", "Refugio", "Borda abandonada",
     "Altitud", "perfil real", "tema oscuro", "tema claro",
     # Dificultades y filtros: se colaron en las fichas de la portada.
