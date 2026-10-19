@@ -43,7 +43,7 @@ ANCHO, ALTO = 320, 200
 ESCALA = 2
 CALIDAD = 76
 ESTILO = "https://tiles.openfreemap.org/styles/liberty"
-COLOR = {"bici": "#0f7d8c", "senderismo": "#3f6b14"}   # sobre mapa claro
+COLOR = {"bici": "#A75C00", "senderismo": "#3f6b14"}   # sobre mapa claro: los de la web en tema claro
 RELLENO = 30
 
 # Lo que estorba a este tamanio: iconos de bares y aparcamientos, numeros de
