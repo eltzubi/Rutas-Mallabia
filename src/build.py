@@ -349,6 +349,30 @@ def _cobertura(a, b, umbral):
     return cerca / total if total else 0.0
 
 
+_SOLAPES = {}
+
+
+def _solape(a, b, pa, pb):
+    """Cuanto camino comparten dos rutas, calculado una sola vez.
+
+    70 m premia el camino de verdad compartido; 250 m mantiene cerca las rutas
+    de la misma ladera aunque suban por pistas paralelas.
+
+    La cuenta solo depende de los dos tracks, pero se pedia una vez por
+    pagina y por idioma: 146 paginas x 58 rutas, y encima cada pareja en los
+    dos sentidos. Son 1.711 parejas distintas y se estaban calculando mas de
+    ocho mil veces. Guardarlas no cambia ni un byte de lo que se escribe,
+    solo deja de repetir la misma division.
+    """
+    clave = (a, b) if a < b else (b, a)
+    v = _SOLAPES.get(clave)
+    if v is None:
+        v = _SOLAPES[clave] = (
+            max(_cobertura(pa, pb, 70), _cobertura(pb, pa, 70)),
+            max(_cobertura(pa, pb, 250), _cobertura(pb, pa, 250)))
+    return v
+
+
 def vecinas_cercanas(slug, cards, usados):
     """Las tres rutas que de verdad pasan por donde esta.
 
@@ -371,10 +395,7 @@ def vecinas_cercanas(slug, cards, usados):
         puntos = t.get("points") or []
         if not puntos:
             continue
-        # 70 m premia el camino de verdad compartido; 250 m mantiene cerca las
-        # rutas de la misma ladera aunque suban por pistas paralelas.
-        comun = max(_cobertura(mis_puntos, puntos, 70), _cobertura(puntos, mis_puntos, 70))
-        cerca = max(_cobertura(mis_puntos, puntos, 250), _cobertura(puntos, mis_puntos, 250))
+        comun, cerca = _solape(slug, s, mis_puntos, puntos)
         if comun >= 0.08 or cerca >= 0.22:
             marcadas.append({"slug": s, "comun": comun, "cerca": cerca,
                              "punt": comun * 4 + cerca})
