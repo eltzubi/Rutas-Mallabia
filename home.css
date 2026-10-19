@@ -1044,6 +1044,13 @@ footer a:hover{ text-decoration:underline; }
 .masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
 .masthead .aviso-boton{ width:26px; height:26px; }
 .masthead .aviso-boton svg{ width:14px; height:14px; }
+/* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
+   tienen el mismo radio, pero el del aviso se veia bastante mas gordo porque
+   el halo que late detras desborda el filo hacia dentro y hacia fuera -- 55
+   px de banda frente a los 32 del boton del tema. Quitandolo, el aro queda
+   igual de fino que el de la luna y el aviso sigue cantando por el color.
+   Las ondas no se tocan: salen del centro y no engordan el filo. */
+.masthead .aviso-boton{ animation:none; box-shadow:none; }
 .masthead .aviso-aro{ animation-name:avisoAroCabecera; }
 @keyframes avisoAroCabecera{
   0%  { width:2px; height:2px; opacity:.75; border-width:2px; }
