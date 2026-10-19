@@ -793,6 +793,14 @@ HOME = {
     'alt="El arco de entrada a Elgeta por dentro, con la calle y las casas del pueblo al fondo"':
         'alt="Elgetako sarrerako arkua barrutik, herriko kalea eta etxeak hondoan"',
 
+    # ixuakalamua card
+    '<h3 class="route-card-name">Trabakua, Aginaga, Ixua y Kalamua</h3>':
+        '<h3 class="route-card-name">Trabakua, Aginaga, Ixua eta Kalamua</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Asuntza, Aginaga y el antiguo camino de Ixua, con subida a Kalamua y vuelta por Barinaga y Aginaga</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita</p>',
+    'alt="La e-bike apoyada en las rocas de la cima de Kalamua, con los montes y el valle al fondo"':
+        'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
+
     # garaigaztelu card
     'alt="Vacas pastando en un prado cercado, con el Anboto y los montes del entorno al fondo"':
         'alt="Behiak zelai itxi batean bazkatzen, Anboto eta inguruko mendiak hondoan"',
@@ -3344,6 +3352,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
     'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
     'galdaraminio': 'Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita',
     'astorkigane': 'E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
@@ -3496,6 +3505,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'ixuakalamua': 'Trabakua, Aginaga, Ixua eta Kalamua · E-bike ibilbidea — Herriko ibilbideak',
     'agua': 'Ur iturriak · Herriko ibilbideak',
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
@@ -5975,7 +5985,109 @@ GARAIGAZTELU = {
         '<p>Oro har, oso ibilbide entretenigarria da inguruko auzoak ezagutzeko. Asfaltoa nagusi den arren, ia dena trafiko gutxiko landa-errepide txikietatik doa. Baserriek, zelaiek eta mendiko ikuspegiek ibilbidearen zati handi batean laguntzen dute. Gainera, hasierako mendi-tarteek eta lotzeko bidezidor batzuek aniztasuna ematen diote ibilbideari.</p>',
 }
 
+IXUAKALAMUA = {
+    '<span>Pista, sendero y carretera</span><span class="sep">/</span><span>Asuntza, Ixua, Kalamua y Barinaga</span><span class="sep">/</span><span>Circuito</span>':
+        '<span>Pista, bidexka eta errepidea</span><span class="sep">/</span><span>Asuntza, Ixua, Kalamua eta Barinaga</span><span class="sep">/</span><span>Zirkuitua</span>',
+    '<h1>Trabakua, Aginaga, Ixua<br><em>Kalamua y bajada a Barinaga</em></h1>':
+        '<h1>Trabakua, Aginaga, Ixua<br><em>Kalamua eta Barinagara jaitsiera</em></h1>',
+    '<p class="full-name">Circuito en e-bike desde Trabakua por Asuntza, Aginaga y el antiguo camino de Ixua, con subida a Kalamua y vuelta por Barinaga y Aginaga</p>':
+        '<p class="full-name">Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita</p>',
+    'class="elev-legend-item"><span class="num">1</span>Asuntza</span> <span class="elev-legend-item"><span class="num">2</span>Ixua</span> <span class="elev-legend-item"><span class="num">3</span>Usartza</span> <span class="elev-legend-item"><span class="num">4</span>Kalamua</span> <span class="elev-legend-item"><span class="num">5</span>Santa Cruz</span> <span class="elev-legend-item"><span class="num">6</span>Barinaga</span> <span class="elev-legend-item"><span class="num">7</span>Aginaga</span>':
+        'class="elev-legend-item"><span class="num">1</span>Asuntza</span> <span class="elev-legend-item"><span class="num">2</span>Ixua</span> <span class="elev-legend-item"><span class="num">3</span>Usartza</span> <span class="elev-legend-item"><span class="num">4</span>Kalamua</span> <span class="elev-legend-item"><span class="num">5</span>Santa Kruz</span> <span class="elev-legend-item"><span class="num">6</span>Barinaga</span> <span class="elev-legend-item"><span class="num">7</span>Aginaga</span>',
+    '<div class="fact"><span class="v">Pista, sendero y carretera</span><span class="k">Superficie</span></div>':
+        '<div class="fact"><span class="v">Pista, bidexka eta errepidea</span><span class="k">Azalera</span></div>',
+    'download="Trabakua, Aginaga, Ixua y Kalamua.gpx"':
+        'download="Trabakua, Aginaga, Ixua eta Kalamua.gpx"',
+    'download="Trabakua, Aginaga, Ixua y Kalamua.kml"':
+        'download="Trabakua, Aginaga, Ixua eta Kalamua.kml"',
+    'alt="Foto ampliada del recorrido de Trabakua, Aginaga, Ixua y Kalamua"':
+        'alt="Trabakua, Aginaga, Ixua eta Kalamua ibilbidearen argazki handitua"',
+    '<p>29,12 km con la subida a <b>Kalamua</b> (km 13,02), el punto m&aacute;s alto, y una bajada larga por la loma hasta <b>Barinaga</b>. Ojo con el antiguo camino entre <b>Aginaga</b> e <b>Ixua</b>: durante cerca de un kil&oacute;metro est&aacute; muy cerrado por las zarzas y en algunos tramos hay que bajarse de la bici. Hay agua a la salida de la parte alta de Aginaga, en <b>Usartza</b> (km 10,3), en dos fuentes de la subida a Kalamua y en Barinaga (km 18,42).</p>':
+        '<p>29,12 km, <b>Kalamua</b>ra igota (13,02 km), punturik altuena, eta bizkarretik <b>Barinaga</b>raino jaitsiera luzea eginda. Kontuz <b>Aginaga</b> eta <b>Ixua</b> arteko bide zaharrarekin: kilometro bat inguruz sasiz oso itxita dago, eta zati batzuetan bizikletatik jaitsi beharra dago. Ura dago Aginagako goiko aldearen irteeran, <b>Usartza</b>n (10,3 km), Kalamuarako igoerako bi iturritan eta Barinagan (18,42 km).</p>',
+    'alt="Camino de hierba que sale a la izquierda de la pista de piedra, junto a una alambrada y entre &aacute;rboles con colores de oto&ntilde;o"':
+        'alt="Belar-bidea harrizko pistatik ezkerretara ateratzen, alanbre-hesi baten ondoan eta udazkeneko koloreko zuhaitzen artean"',
+    'alt="Pista de piedra entre prados cercados, con un abrevadero de piedra con grifo en primer plano"':
+        'alt="Harrizko pista zelai itxien artean, txorrotadun harrizko aska bat aurrealdean"',
+    'alt="Bajada por placas de piedra entre eucaliptos, con un caser&iacute;o en el fondo del valle bajo un cielo de nubes"':
+        'alt="Harri-plaketatik behera eukalipto artean, baserri bat haranaren hondoan eta zerua hodeiz beteta"',
+    'alt="Camino de hierba con charcos entre eucaliptos y helechos, visto desde el manillar de la bici"':
+        'alt="Belar-bidea putzuekin eukalipto eta iratze artean, bizikletaren eskulekutik ikusita"',
+    'alt="Subida empinada con lajas de piedra y musgo entre pinos y helechos, vista desde el manillar de la e-bike"':
+        'alt="Igoera gogorra harri-lauza eta goroldioarekin pinu eta iratze artean, e-bikearen eskulekutik ikusita"',
+    'alt="Salida a la carretera junto a unos buzones verdes, con un edificio de tejado rojo y placas solares al otro lado"':
+        'alt="Errepidera irteera postontzi berde batzuen ondoan, teilatu gorriko eta eguzki-plakadun eraikin bat beste aldean"',
+    'alt="Carretera con quitamiedos en alto, con el valle y los montes al fondo bajo un cielo de nubes"':
+        'alt="Errepidea babes-hesiarekin goian, harana eta mendiak hondoan, zerua hodeiz beteta"',
+    'alt="Fuente de piedra y un panel de madera bajo los &aacute;rboles, junto a la pista"':
+        'alt="Harrizko iturria eta egurrezko panel bat zuhaitzen azpian, pistaren ondoan"',
+    'alt="Pista de tierra entre alerces y pinos, con helechos en la cuneta"':
+        'alt="Lurrezko pista alertze eta pinu artean, iratzeak bazterrean"',
+    'alt="Fuente con ca&ntilde;o y pila de piedra entre helechos, con el cartel &laquo;Ur tratatu gabea&raquo;, agua no tratada"':
+        'alt="Iturria kanoi eta harrizko askarekin iratze artean, «Ur tratatu gabea» kartelarekin"',
+    'alt="Prado con un mont&oacute;n de piedras y la subida hacia la cima al fondo, desde el manillar de la e-bike"':
+        'alt="Zelaia harri-pila batekin eta gailurrerako igoera hondoan, e-bikearen eskulekutik"',
+    'alt="La e-bike apoyada en las rocas de la cima de Kalamua, con los montes y el valle al fondo"':
+        'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
+    'alt="V&eacute;rtice geod&eacute;sico y mesa de orientaci&oacute;n en la cima de Kalamua, con los montes bajo un cielo azul"':
+        'alt="Erpin geodesikoa eta orientazio-mahaia Kalamuako gailurrean, mendiak zeru urdinaren azpian"',
+    'alt="Mesa de orientaci&oacute;n de la cima de Kalamua a contraluz, con la loma de hierba y los montes al fondo"':
+        'alt="Kalamuako gailurreko orientazio-mahaia kontraargitan, belarrezko bizkarra eta mendiak hondoan"',
+    'alt="Bajada por la loma de hierba entre tojos, vista desde el manillar, con los montes al fondo"':
+        'alt="Jaitsiera belarrezko bizkarretik otadi artean, eskulekutik ikusita, mendiak hondoan"',
+    'alt="Senda de piedra suelta bajando por la loma junto a un grupo de pinos, con los montes al fondo"':
+        'alt="Harri solteko bidezidorra bizkarretik behera pinu-multzo baten ondotik, mendiak hondoan"',
+    'alt="La ermita de la Santa Cruz, de piedra y encalada, en lo alto de un prado junto al camino"':
+        'alt="Santa Kruz ermita, harrizkoa eta karez zuritua, zelai baten goialdean bidearen ondoan"',
+    'alt="Puente de piedra cubierto de hiedra sobre el r&iacute;o, junto a una caseta de madera con tejado de teja"':
+        'alt="Huntzez estalitako harrizko zubia ibaiaren gainean, teila-teilatuko egurrezko etxola baten ondoan"',
+    'alt="Iglesia blanca con torre de campanario, vista entre higueras durante la subida"':
+        'alt="Eliza zuria kanpandorrearekin, igoeran pikondo artean ikusita"',
+    '<p>Esta ruta tiene dos objetivos: ver c&oacute;mo est&aacute; el antiguo camino entre <b>Aginaga</b> e <b>Ixua</b> y buscar otra forma de volver de <b>Barinaga</b> a Trabakua. El camino hacia Ixua estuvo abierto en su d&iacute;a, y queremos comprobar si sigue siendo transitable en bici.</p>':
+        '<p>Ibilbide honek bi helburu ditu: <b>Aginaga</b> eta <b>Ixua</b> arteko bide zaharra nola dagoen ikustea, eta <b>Barinaga</b>tik Trabakuara itzultzeko beste aukera bat bilatzea. Ixuarako bidea garai batean irekita egon zen, eta oraindik bizikletaz ibiltzeko moduan dagoen jakin nahi dugu.</p>',
+    '<p>Salimos de <b>Trabakua</b> en direcci&oacute;n a Ermua. A 1,5 km, m&aacute;s o menos, junto al caser&iacute;o <b>Donagarai</b>, giramos a la izquierda y cogemos el camino que sube hacia <b>Arteta</b>.</p>':
+        '<p><b>Trabakua</b>tik Ermuarantz irtengo gara. 1,5 km ingurura, <b>Donagarai</b> baserriaren ondoan, ezkerrera hartuko dugu <b>Arteta</b>ra igotzen den bidea.</p>',
+    '<p>En el cruce volvemos a girar a la izquierda y seguimos por pista de piedra hasta <b>Asuntza</b>, en el kil&oacute;metro 4,8.</p>':
+        '<p>Bidegurutzean berriro ezkerrera egingo dugu, eta harri-pistatik jarraituko dugu <b>Asuntza</b>raino, 4,8 km-ra.</p>',
+    '<p>Unos metros antes de llegar a Asuntza sale a la izquierda un camino de tierra que empieza bajando. Por &eacute;l llegamos a la parte alta de Aginaga, una zona de caser&iacute;os. La atravesamos y, a la salida, hay una fuente.</p>':
+        '<p>Asuntzara iritsi baino metro batzuk lehenago, ezkerretara lurrezko bide bat ateratzen da, maldan behera hasten dena. Bide horretatik Aginagako goiko aldera iritsiko gara, baserri-gune batera. Auzunea zeharkatuko dugu, eta irteeran iturri bat dago.</p>',
+    '<p>Aqu&iacute; empieza lo que ven&iacute;amos a investigar: el camino hacia Ixua.</p>':
+        '<p>Hemen hasten da ikertzera etorri garen zatia: Ixuarako bidea.</p>',
+    '<p>Al principio, todo bien. El camino est&aacute; abierto y tiene buena pinta. Bajamos un rato hasta dar con una cuesta bastante empinada, con placas de piedra algo resbaladizas, que toca subir.</p>':
+        '<p>Hasieran, dena ondo. Bidea irekita dago eta itxura ona du. Pixka bat jaitsi ondoren, aldapa gogor samar batekin egingo dugu topo; harri-plaka labain samarrak ditu, eta gora igo beharko dugu.</p>',
+    '<p>Pasada la cuesta, el camino empieza a cerrarse y llegan los primeros problemas. Se nota que por aqu&iacute; pasan motos, porque hay un carril marcado por las ruedas, pero el resto est&aacute; bastante tomado por las zarzas.</p>':
+        '<p>Aldapa gainditu ondoren, bidea ixten hasten da eta lehen arazoak agertzen dira. Hemendik motorrak pasatzen direla nabari da, gurpilek markatutako errei bat baitago, baina gainerakoa sasiz beteta dago.</p>',
+    '<p>Cuanto m&aacute;s avanzamos, m&aacute;s se cierra la vegetaci&oacute;n, y en algunos tramos es mejor bajarse de la bici y seguir andando. As&iacute; durante un kil&oacute;metro, m&aacute;s o menos. Al final se abre de nuevo, salimos a una zona limpia y volvemos a pedalear sin problemas.</p>':
+        '<p>Aurrera egin ahala, landarediak gero eta gehiago ixten du bidea, eta zati batzuetan hobe da bizikletatik jaitsi eta oinez jarraitzea. Horrela kilometro bat inguru. Azkenean bidea berriro zabaltzen da, gune garbi batera aterako gara eta arazorik gabe jarraituko dugu pedalez.</p>',
+    '<p>No es un camino que recomendar&iacute;a para la bici, pero, mientras no encontremos otra alternativa, nos sirve para enlazar con Ixua. Eso s&iacute;, las zarzas nos han regalado una sesi&oacute;n de acupuntura gratis.</p>':
+        '<p>Ez nuke bide hau bizikletarako gomendatuko, baina beste aukerarik aurkitzen ez dugun bitartean, Ixuarekin lotzeko balio digu. Hori bai, sasiek doako akupuntura saio bat oparitu digute.</p>',
+    '<p>En <b>Ixua</b> salimos a la carretera junto al restaurante y vamos hacia <b>Usartza</b>, donde hay otra fuente.</p>':
+        '<p><b>Ixua</b>n, jatetxearen ondoan errepidera aterako gara eta <b>Usartza</b>rantz joango gara; han beste iturri bat dago.</p>',
+    '<p>Un poco m&aacute;s adelante giramos a la izquierda, hacia <b>Kalamua</b>. Despu&eacute;s de pasar una puerta met&aacute;lica para el ganado empieza la subida a la cima.</p>':
+        '<p>Pixka bat aurrerago ezkerrera hartuko dugu, <b>Kalamua</b>rantz. Abereentzako ate metaliko bat pasatu ondoren, gailurrerako igoera hasten da.</p>',
+    '<p>Por el camino hay dos fuentes m&aacute;s. Seguimos ganando altura hasta <a href="kalamua.html">Kalamua</a>, donde las vistas se abren en todas direcciones. Merece la pena parar un rato arriba y disfrutar del panorama antes de empezar a bajar.</p>':
+        '<p>Bidean beste bi iturri daude. Altuera irabazten jarraituko dugu <a href="kalamua.html">Kalamua</a>ra iritsi arte, eta han ikuspegia alde guztietara zabaltzen da. Merezi du goian pixka bat gelditu eta paisaiaz gozatzea, jaitsierari ekin aurretik.</p>',
+    '<p>Desde la cima tiramos hacia el noroeste por la loma, en direcci&oacute;n a Barinaga. Nos espera una bajada larga y bonita. Al principio vamos por la loma y pasamos un par de puertas met&aacute;licas, f&aacute;ciles de pasar.</p>':
+        '<p>Gailurretik ipar-mendebalderantz joko dugu, bizkarrean behera, Barinagarantz. Jaitsiera luze eta polita dugu zain. Hasieran bizkarretik jarraituko dugu, eta erraz pasatzeko moduko pare bat ate metaliko igaroko ditugu.</p>',
+    '<p>Seg&uacute;n perdemos altura se ven <b>Markina</b> y <b>Etxebarria</b>, con el <b>Oiz</b> al fondo.</p>':
+        '<p>Altuera galdu ahala, <b>Markina</b> eta <b>Etxebarria</b> ikusten dira, eta <b>Oiz</b> urrunean.</p>',
+    '<p>Seguimos bajando hacia la ermita de la <b>Santa Cruz de Etxarte</b>, ya cerca de Barinaga. Pasamos junto a ella y continuamos hasta salir a la carretera general entre Etxebarria y Barinaga.</p>':
+        '<p><b>Etxarteko Santa Kruz</b> ermitarantz jaisten jarraituko dugu, Barinagatik gertu. Ondotik pasatu eta Etxebarria eta Barinaga lotzen dituen errepide nagusira aterako gara.</p>',
+    '<p>Abajo giramos a la izquierda y entramos en el barrio de <b>Barinaga</b>, pasando junto al front&oacute;n. Al fondo hay otra fuente.</p>':
+        '<p>Behean ezkerrera hartu eta <b>Barinaga</b> auzora sartuko gara, frontoiaren ondotik. Atzealdean beste iturri bat dago.</p>',
+    '<p>Desde Barinaga se puede subir a <a href="iturreta.html">Iturreta</a> y volver por el camino de siempre, como otras veces. Esta vez cambiamos y volvemos a Trabakua por Aginaga.</p>':
+        '<p>Barinagatik <a href="iturreta.html">Iturreta</a>ra igo eta ohiko bidetik itzul daiteke, beste batzuetan egin dugun bezala. Oraingoan, ordea, aldatu egingo dugu eta Aginagatik itzuliko gara Trabakuara.</p>',
+    '<p>Seguimos por la carretera hacia Aginaga, en un tramo que va junto al r&iacute;o, entre prados, caser&iacute;os y ganado. Para ser asfalto, es una zona muy bonita.</p>':
+        '<p>Errepidetik jarraituko dugu Aginagarantz, ibaiaren ondotik, belardi, baserri eta abere artean. Asfaltoa izanda ere, oso gune polita da.</p>',
+    '<p>Por la general llegamos al cruce se&ntilde;alizado de <b>Aginaga</b>. Ah&iacute; giramos a la derecha y empezamos a subir hacia la iglesia. Pasamos cerca de ella y seguimos subiendo hasta la parte alta de Aginaga, cerca de los caser&iacute;os del principio, aunque sin llegar a ellos.</p>':
+        '<p>Errepide nagusitik <b>Aginaga</b>rako bidegurutze seinaleztatura iritsiko gara. Han eskuinera hartu eta elizarantz igotzen hasiko gara. Elizaren ondotik pasatu eta gora jarraituko dugu Aginagako goiko aldera, hasieran zeharkatu ditugun baserrietatik gertu, baina haietara iritsi gabe.</p>',
+    '<p>Desde aqu&iacute; volvemos a Trabakua por el mismo camino de la ida, pasando otra vez por Asuntza.</p>':
+        '<p>Hemendik joaneko bide beretik itzuliko gara Trabakuara, berriro Asuntzatik pasatuz.</p>',
+    '<title>Santa Cruz &middot; 16,71 km &middot; 193 m</title>':
+        '<title>Santa Kruz &middot; 16,71 km &middot; 193 m</title>',
+}
+
 PAGE_STRINGS = {
+    'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
     'garaigaztelu': GARAIGAZTELU,
     'karabieta': KARABIETA,
