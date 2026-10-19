@@ -15,7 +15,7 @@
   --ground-raised:#E8EEE0;
   --ink:#16210F;
   --ink-dim:#57624A;
-  --teal:#A75C00;
+  --teal:#9D5600;
   --teal-soft:#FFE9D4;
   --violet:#3A6B15;
   --violet-soft:#DEEFC9;
@@ -651,14 +651,19 @@ footer a:hover{ color:var(--ink); }
   margin:6px 0 0; font:400 14px/1.6 'Karla',sans-serif; color:var(--ink);
 }
 .agua-rutas, .agua-popup-rutas{
-  margin:9px 0 0; font:400 13.5px/1.7 'Karla',sans-serif; color:var(--ink-dim);
+  margin:9px 0 0; font:400 13.5px/2 'Karla',sans-serif; color:var(--ink-dim);
 }
 .agua-rutas-et{
   display:block; font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.03em;
   text-transform:uppercase; color:var(--ink-dim); margin-bottom:2px;
 }
+/* Con 13,5 px el enlace mide 15 px de alto y en el movil se falla al tocarlo:
+   son listas de rutas, un enlace por linea, no texto corrido. El relleno
+   vertical sube la zona sensible a 25 px sin mover el texto de sitio, y el
+   interlineado de 2 deja que no se pisen entre lineas. */
 .agua-rutas a, .agua-popup-rutas a{
   color:var(--ink); text-decoration:underline; text-underline-offset:2px;
+  padding-block:5px;
 }
 .agua-rutas a:hover, .agua-popup-rutas a:hover{ color:var(--ink); }
 /* Los nombres de ruta son largos: una coma no se ve entre dos subrayados, y
