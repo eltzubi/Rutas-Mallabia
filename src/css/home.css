@@ -1212,7 +1212,9 @@ footer a:hover{ text-decoration:underline; }
 /* La insignia va la primera y «Mallabia · Bizkaia» justo detras: el margen
    automatico se come el hueco que sobra y empuja el resto a la derecha, que
    es lo que antes hacia el space-between con tres hijos sueltos. */
-.masthead .aviso-pulso + .place{ margin-right:auto; margin-left:10px; }
+/* 22 px y no 10: el aro llega a 31 px del centro del boton, asi que con
+   menos hueco la onda pasaba por encima de la primera letra de «MALLABIA». */
+.masthead .aviso-pulso + .place{ margin-right:auto; margin-left:22px; }
 .masthead .aviso-boton{ width:26px; height:26px; }
 .masthead .aviso-boton svg{ width:14px; height:14px; }
 /* En el movil la barra lleva ya seis cosas -- sitio, aviso, idioma, lupa,
@@ -1224,7 +1226,7 @@ footer a:hover{ text-decoration:underline; }
   /* Con el triangulo fuera de este grupo sobran 50 px: se reparten en aire
      entre los botones, que es lo que faltaba para acertarles con el dedo. */
   .masthead-right{ gap:13px; }
-  .masthead .aviso-pulso + .place{ margin-left:8px; }
+  .masthead .aviso-pulso + .place{ margin-left:22px; }
   .masthead .aviso-boton{ width:22px; height:22px; }
   .masthead .aviso-boton svg{ width:12px; height:12px; }
   .masthead .aviso-aro{ border-width:2px; }
@@ -1234,6 +1236,11 @@ footer a:hover{ text-decoration:underline; }
 /* Por debajo de 360 px «MALLABIA · BIZKAIA» se partia en dos lineas y la
    barra crecia. Con una pizca menos de letra y de espaciado entra de una. */
 @media(max-width:359px){
+  /* En 320 px no caben los 22: la barra entera se salia -- ahi no sobran
+     mas que un par de pixeles. El hueco se queda en 10 y, para que la onda
+     no pise la «M», el aro baja a 42. */
+  .masthead .aviso-pulso + .place{ margin-left:10px; }
+  .masthead .aviso-aro{ animation-name:avisoAroEstrecho; }
   .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
@@ -1253,6 +1260,11 @@ footer a:hover{ text-decoration:underline; }
    y empezando ya con cuerpo, con el filo de 3 px hasta bien avanzada la
    onda. 62 es lo que cabe sin que el aro se corte contra el borde de la
    pantalla: el centro del boton queda a 34 px del filo izquierdo. */
+@keyframes avisoAroEstrecho{
+  0%  { width:6px; height:6px; opacity:.9; border-width:3px; }
+  55% { opacity:.55; border-width:2px; }
+  100%{ width:42px; height:42px; opacity:0; border-width:1px; }
+}
 @keyframes avisoAroCabecera{
   0%  { width:6px; height:6px; opacity:.9; border-width:3px; }
   55% { opacity:.55; border-width:3px; }
