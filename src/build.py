@@ -61,6 +61,7 @@ import hashlib
 import math
 import xml.etree.ElementTree as ET
 import json
+import html
 import html.entities
 import os
 import re
@@ -784,6 +785,99 @@ def oculta_iconos(page_html):
     return re.sub(r'<svg\b([^>]*)>', marca, page_html)
 
 
+def escribe_rutas(cards):
+    """data/rutas.json: el nombre de cada ruta en los dos idiomas.
+
+    Lo necesita el panel «Lo mio»: las favoritas y las vistas hace poco se
+    guardan como slugs en el navegador, y para ensenarlas con su nombre hace
+    falta saberlo tambien desde una ficha, donde las tarjetas de la portada
+    no estan. Son 4 kB que solo se piden al abrir el panel, en vez de meter
+    la tabla entera en las 128 paginas.
+    """
+    datos = {}
+    for lang, tarjetas in cards.items():
+        # Sin entidades: el panel los escribe con textContent, que no las
+        # interpreta, y saldria un «&middot;» a la vista.
+        datos[lang] = {slug: {"h": c["href"],
+                              "n": html.unescape(c["name"]),
+                              "s": html.unescape(c["stats"])}
+                       for slug, c in sorted(tarjetas.items())}
+    ruta = os.path.join(ROOT, "data", "rutas.json")
+    cuerpo = json.dumps(datos, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    with open(ruta, "w", encoding="utf-8") as f:
+        f.write(cuerpo)
+    print(f"wrote {ruta} ({len(cuerpo)} bytes)")
+
+
+def add_mis_rutas(page_html, lang):
+    """El panel «Lo mio», en la barra de todas las paginas.
+
+    Las favoritas existian desde hacia tiempo -- el corazon de cada tarjeta y
+    el filtro de la portada -- pero no habia ningun sitio donde verlas
+    juntas, y desde una ficha no habia forma de llegar a ellas. Aqui estan
+    las favoritas, las ultimas fichas abiertas, el boton de guardarlas para
+    el monte y el correo.
+
+    Se inyecta desde el build y no se escribe en las 63 fuentes a mano, como
+    la barra rapida: es lo mismo en todas las paginas.
+    """
+    if 'id="mioDialog"' in page_html or 'class="theme-toggle"' not in page_html:
+        return page_html
+    eus = lang == "eu"
+    t = {
+        "abrir":   "Nirea" if eus else "Lo m&iacute;o",
+        "titulo":  "Nirea" if eus else "Lo m&iacute;o",
+        "cerrar":  "Itxi" if eus else "Cerrar",
+        "favs":    "Nire gogokoak" if eus else "Mis favoritas",
+        "favs0":   "Ukitu ibilbide baten bihotza hemen gordetzeko."
+                   if eus else "Toca el coraz&oacute;n de una ruta para guardarla aqu&iacute;.",
+        "guardar": "Gorde mendirako" if eus else "Guardar para el monte",
+        "guardaNota": "Gogokoak offline irekitzeko gordetzen ditu."
+                      if eus else "Las deja abribles sin cobertura.",
+        "vistas":  "Duela gutxi ikusitakoak" if eus else "Vistas hace poco",
+        "vistas0": "Hemen agertuko dira irekitzen dituzun azken ibilbideak."
+                   if eus else "Aqu&iacute; aparecer&aacute;n las &uacute;ltimas rutas que abras.",
+        "duda":    "Zalantzarik?" if eus else "&iquest;Alguna duda?",
+        "email":   "Idatzi emailez" if eus else "Escribe por email",
+    }
+    icono = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+             ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+             '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5'
+             ' 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>')
+    boton = (f'<button type="button" class="mio-abrir" id="mioAbrir" aria-label="{t["abrir"]}"'
+             f' aria-haspopup="dialog" aria-controls="mioDialog" hidden>{icono}'
+             f'<span class="mio-cuenta" id="mioCuenta" hidden></span></button>\n      ')
+    page_html = page_html.replace('<button type="button" class="theme-toggle"',
+                                  boton + '<button type="button" class="theme-toggle"', 1)
+    panel = (
+        f'<dialog class="mio-dialog" id="mioDialog" aria-labelledby="mioTitulo">\n'
+        f'  <div class="mio-cabecera"><h2 id="mioTitulo">{t["titulo"]}</h2>'
+        f'<button type="button" class="mio-cerrar" id="mioCerrar" aria-label="{t["cerrar"]}">'
+        f'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
+        f' stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/>'
+        f'</svg></button></div>\n'
+        f'  <section class="mio-bloque"><h3>{t["favs"]}</h3>'
+        f'<ul class="mio-lista" id="mioFavs"></ul>'
+        f'<p class="mio-vacio" id="mioFavsVacio">{t["favs0"]}</p>'
+        f'<button type="button" class="mio-accion" id="mioGuardar" hidden>{t["guardar"]}</button>'
+        f'<p class="mio-nota" id="mioGuardarNota">{t["guardaNota"]}</p></section>\n'
+        f'  <section class="mio-bloque"><h3>{t["vistas"]}</h3>'
+        f'<ul class="mio-lista" id="mioVistas"></ul>'
+        f'<p class="mio-vacio" id="mioVistasVacio">{t["vistas0"]}</p></section>\n'
+        f'  <section class="mio-bloque"><h3>{t["duda"]}</h3>'
+        f'<a class="mio-accion" href="mailto:trabakutik@gmail.com">{t["email"]}</a></section>\n'
+        f'</dialog>\n')
+    # Antes del primer <script>, no antes de </body>: los scripts van al final
+    # y si el panel se metia detras de ellos, app.js corria con el dialogo
+    # todavia sin existir y no se enganchaba a nada.
+    marca = page_html.find('<script src="js/')
+    if marca == -1:
+        marca = page_html.rfind('</body>')
+    if marca == -1:
+        return page_html
+    return page_html[:marca] + panel + page_html[marca:]
+
+
 def add_quick_bar(page_html, lang):
     """Mapa y GPX siempre a mano en el movil.
 
@@ -1184,6 +1278,7 @@ def main():
             page_html = add_prev_next(page_html, name, cards[lang], lang)
             page_html = add_jump_to_map(page_html, lang)
             page_html = add_quick_bar(page_html, lang)
+            page_html = add_mis_rutas(page_html, lang)
             page_html = add_tecnica(page_html, name, lang)
             page_html = add_ultima_entrada(page_html, cards[lang], lang)
             if name == HOME:
@@ -1216,6 +1311,7 @@ def main():
     write_legacy_eu_home()
     write_offline_page(versions)
     write_service_worker(versions)
+    escribe_rutas(cards)
     write_sitemap()
     guarda_solapes()
     guarda_celdas()

@@ -405,3 +405,117 @@
   if (after) { after.after(share); after.after(fav); }
   else { row.appendChild(fav); row.appendChild(share); }
 })();
+
+/* «Lo mio»: favoritas, vistas hace poco y contacto, en la barra de todas las
+   paginas. Las favoritas existian desde hacia tiempo -- el corazon de cada
+   tarjeta y el filtro de la portada -- pero no habia ningun sitio donde
+   verlas juntas, y desde una ficha no habia forma de llegar a ellas.
+
+   Los nombres de las rutas salen de data/rutas.json, que se pide una sola vez
+   al abrir el panel: guardar la tabla entera en las 128 paginas costaba 4 kB
+   en cada una para algo que casi nunca se abre. */
+(function(){
+  var VISTAS = 'trabakutik_vistas';
+  var MAX_VISTAS = 6;
+  var eu = document.documentElement.lang === 'eu';
+  var T = eu
+    ? { guardando:'Gordetzen…', hecho:'Mendirako prest', fallo:'Ezin izan dira denak gorde' }
+    : { guardando:'Guardando…', hecho:'Listas para el monte', fallo:'No se pudieron guardar todas' };
+
+  function lee(clave){
+    try { var v = JSON.parse(localStorage.getItem(clave) || '[]'); return Array.isArray(v) ? v : []; }
+    catch (_) { return []; }
+  }
+  // Apuntar la ficha que se esta viendo. Se hace siempre, aunque el panel no
+  // se abra nunca: es lo que lo llena cuando se abre.
+  var aqui = location.pathname.split('/').pop().replace(/\.eu\.html$/,'').replace(/\.html$/,'');
+  if (aqui && aqui !== 'index' && aqui !== 'agua' && aqui !== 'aviso-legal' && aqui !== '') {
+    var vistas = lee(VISTAS).filter(function(s){ return s !== aqui; });
+    vistas.unshift(aqui);
+    try { localStorage.setItem(VISTAS, JSON.stringify(vistas.slice(0, MAX_VISTAS))); } catch (_) {}
+  }
+
+  var abrir = document.getElementById('mioAbrir');
+  var panel = document.getElementById('mioDialog');
+  if (!abrir || !panel || typeof panel.showModal !== 'function') return;
+  abrir.hidden = false;
+
+  var cuenta = document.getElementById('mioCuenta');
+  var listaFavs = document.getElementById('mioFavs');
+  var vacioFavs = document.getElementById('mioFavsVacio');
+  var listaVistas = document.getElementById('mioVistas');
+  var vacioVistas = document.getElementById('mioVistasVacio');
+  var guardar = document.getElementById('mioGuardar');
+  var nota = document.getElementById('mioGuardarNota');
+  var cerrar = document.getElementById('mioCerrar');
+  var rutas = null;
+
+  function favoritas(){
+    return (window.trabakutikFavs ? window.trabakutikFavs.list() : lee('trabakutik_favs'));
+  }
+  function pintaInsignia(){
+    var n = favoritas().length;
+    abrir.classList.toggle('tiene', n > 0);
+    if (cuenta) { cuenta.textContent = n > 9 ? '9+' : String(n); cuenta.hidden = n === 0; }
+  }
+  pintaInsignia();
+  document.addEventListener('favs:change', pintaInsignia);
+
+  function pinta(lista, vacio, slugs){
+    lista.innerHTML = '';
+    var hay = 0;
+    slugs.forEach(function(slug){
+      var r = rutas && rutas[slug];
+      if (!r) return;                       // una ruta que ya no existe no se ensena
+      hay++;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = r.h;
+      a.innerHTML = '<span class="mio-nombre"></span><span class="mio-datos"></span>';
+      a.querySelector('.mio-nombre').textContent = r.n;
+      a.querySelector('.mio-datos').textContent = r.s;
+      li.appendChild(a); lista.appendChild(li);
+    });
+    vacio.hidden = hay > 0;
+    return hay;
+  }
+
+  function rellena(){
+    var favs = favoritas();
+    var n = pinta(listaFavs, vacioFavs, favs);
+    pinta(listaVistas, vacioVistas, lee(VISTAS).filter(function(s){ return s !== aqui; }));
+    if (guardar) guardar.hidden = n === 0;
+    if (nota) nota.hidden = n === 0;
+  }
+
+  function abre(){
+    panel.showModal();
+    if (rutas) { rellena(); return; }
+    fetch('data/rutas.json').then(function(r){ return r.json(); }).then(function(d){
+      rutas = (d && d[eu ? 'eu' : 'es']) || {};
+      rellena();
+    }).catch(function(){ rellena(); });   // sin red se queda con los textos de «aun no hay»
+  }
+  abrir.addEventListener('click', abre);
+  if (cerrar) cerrar.addEventListener('click', function(){ panel.close(); });
+  panel.addEventListener('click', function(ev){ if (ev.target === panel) panel.close(); });
+
+  /* Guardar para el monte: pedir cada favorita hace que el service worker la
+     guarde, que es lo que luego la abre sin cobertura. No se inventa ninguna
+     cache nueva: se usa la que ya hay. */
+  if (guardar) guardar.addEventListener('click', function(){
+    var favs = favoritas().filter(function(s){ return rutas && rutas[s]; });
+    if (!favs.length) return;
+    guardar.disabled = true;
+    if (nota) { nota.hidden = false; nota.textContent = T.guardando; }
+    var fallos = 0;
+    Promise.all(favs.map(function(slug){
+      return fetch(rutas[slug].h, { cache: 'reload' })
+        .then(function(r){ if (!r.ok) fallos++; })
+        .catch(function(){ fallos++; });
+    })).then(function(){
+      guardar.disabled = false;
+      if (nota) nota.textContent = fallos ? T.fallo : T.hecho;
+    });
+  });
+})();

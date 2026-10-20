@@ -1182,6 +1182,26 @@ footer a:hover{ text-decoration:underline; }
 .masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
 .masthead .aviso-boton{ width:26px; height:26px; }
 .masthead .aviso-boton svg{ width:14px; height:14px; }
+/* En el movil la barra lleva ya seis cosas -- sitio, aviso, idioma, lupa,
+   «Lo mio» y tema -- y «MALLABIA · BIZKAIA» se partia en dos lineas. El
+   triangulo se encoge y el aire entre botones se aprieta: el aviso sigue
+   llamando la atencion con su aro, que es lo suyo, sin empujar al resto. */
+@media(max-width:659px){
+  .masthead{ padding:7px 14px; }
+  .masthead-right{ gap:9px; }
+  .masthead .aviso-boton{ width:22px; height:22px; }
+  .masthead .aviso-boton svg{ width:12px; height:12px; }
+  .masthead .aviso-aro{ border-width:2px; }
+  .theme-toggle, .buscador-abrir, .mio-abrir{ width:24px; height:24px; }
+  .theme-toggle svg, .buscador-abrir svg, .mio-abrir svg{ width:13px; height:13px; }
+}
+/* Por debajo de 360 px «MALLABIA · BIZKAIA» se partia en dos lineas y la
+   barra crecia. Con una pizca menos de letra y de espaciado entra de una. */
+@media(max-width:359px){
+  .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
+  .masthead .place{ white-space:nowrap; }
+  .masthead-right{ gap:8px; }
+}
 /* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
    tienen el mismo radio, pero el del aviso se veia bastante mas gordo porque
    el halo que late detras desborda el filo hacia dentro y hacia fuera -- 55

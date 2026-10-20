@@ -501,16 +501,58 @@ def cmd_renombrar(a):
     return corre("python3", "scripts/check_site.py")
 
 
+def cmd_mio(a):
+    """El panel «Lo mio»: que liste las favoritas con su nombre de verdad.
+
+    Lo que se comprueba es lo que fallaba al montarlo: el panel se inyecta al
+    final de la pagina y, si cae detras de los <script>, app.js corre con el
+    dialogo todavia sin existir y el boton no se engancha a nada. Aqui se
+    guardan dos favoritas a mano, se abre y se exige que salgan sus nombres,
+    que es lo que prueba que data/rutas.json ha llegado y se ha leido.
+    """
+    with servidor() as base:
+        for pag, idioma in (("index.es.html", "es"), ("trabakua.html", "es"),
+                            ("index.html", "eu")):
+            with pagina(base, pag, ancho=390, alto=844) as pg:
+                pg.evaluate("localStorage.setItem('trabakutik_favs',"
+                            " JSON.stringify(['oiz','urko']))")
+                pg.reload(wait_until="load"); pg.wait_for_timeout(1400)
+                assert not pg.eval_on_selector("#mioAbrir", "n => n.hidden"), \
+                    f"{pag}: el boton de «Lo mio» sigue oculto"
+                pg.click("#mioAbrir"); pg.wait_for_timeout(900)
+                datos = pg.evaluate("""() => ({
+                    abierto: document.getElementById('mioDialog').open,
+                    favs: [...document.querySelectorAll('#mioFavs .mio-nombre')]
+                            .map(n => n.textContent),
+                    cuenta: document.getElementById('mioCuenta').textContent,
+                    guardar: !document.getElementById('mioGuardar').hidden })""")
+                assert datos["abierto"], f"{pag}: el panel no se abrio"
+                assert len(datos["favs"]) == 2, f"{pag}: {datos['favs']}"
+                assert all(datos["favs"]), f"{pag}: alguna favorita sin nombre"
+                assert datos["cuenta"] == "2", f"{pag}: la insignia dice {datos['cuenta']}"
+                assert datos["guardar"], f"{pag}: no sale «guardar para el monte»"
+                pg.click("#mioCerrar"); pg.wait_for_timeout(400)
+                assert not pg.eval_on_selector("#mioDialog", "n => n.open"), \
+                    f"{pag}: no se cerro"
+                print(f"  {pag:16} [{idioma}] {len(datos['favs'])} favoritas: "
+                      f"{datos['favs'][0][:34]}…")
+                if pg.errores:
+                    print("   errores:", pg.errores[:2]); return 1
+    print("\n«Lo mio», correcto")
+    return 0
+
+
 def cmd_todo(a):
     fallos = 0
     for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
                             ("filtros", cmd_filtros, a),
                             ("mapa", cmd_mapa, argparse.Namespace(pagina="longaurjauziak.html")),
                             ("temas", cmd_temas, argparse.Namespace(pagina="index.es.html")),
-                            ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html"))):
+                            ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html")),
+                            ("mio", cmd_mio, a)):
         print(f"\n=== {nombre}")
         fallos += 1 if fn(arg) else 0
-    print("\n" + ("navegador: las 5 comprobaciones, correctas" if not fallos
+    print("\n" + ("navegador: las 6 comprobaciones, correctas" if not fallos
                    else f"navegador: {fallos} comprobacion(es) fallidas"))
     return 1 if fallos else 0
 
@@ -556,6 +598,7 @@ def main():
     sub.add_parser("check").set_defaults(fn=cmd_check)
     sub.add_parser("serve").set_defaults(fn=cmd_serve)
     sub.add_parser("filtros").set_defaults(fn=cmd_filtros)
+    sub.add_parser("mio").set_defaults(fn=cmd_mio)
     sub.add_parser("todo").set_defaults(fn=cmd_todo)
     s = sub.add_parser("verifica"); s.set_defaults(fn=cmd_verifica)
     s.add_argument("--rapido", action="store_true",
