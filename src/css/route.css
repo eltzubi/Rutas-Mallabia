@@ -4,15 +4,15 @@
      peticion del autor, porque el negro puro se veia duro. Comprobado
      que el contraste aguanta de sobra: el peor par (texto atenuado
      sobre tarjeta) se queda en 5,6:1, y el minimo exigible es 4,5. */
-  --ground:#0A152B;
-  --ground-raised:#141D33;
-  --ink:#EAF5E2;
-  --ink-dim:#93A0B4;
+  --ground:#020617;
+  --ground-raised:#0F172A;
+  --ink:#F8FAFC;
+  --ink-dim:#94A3B8;
   --teal:#FF9C3B;
   --teal-soft:rgba(255,156,59,.14);
   --violet:#A6FF4D;
   --violet-soft:rgba(166,255,77,.14);
-  --line: rgba(234,245,226,.16);
+  --line: rgba(248,250,252,.16);
 }
 :root[data-theme="light"]{
   --ground:#F4F7EF;
@@ -78,6 +78,16 @@
   transition:color .15s ease, border-color .15s ease;
 }
 .back-link:hover{ color:var(--teal); border-color:var(--teal); }
+/* Una ficha no tenia los resplandores de la portada y su fondo quedaba
+   plano. Dos manchas muy suaves, fijas al mirador, en los colores de la casa
+   -- naranja «en bici» y verde «a pie» --, a imagen de los dos
+   radial-gradient que lleva 7pago sobre su body. En el tema claro no van. */
+:root:not([data-theme="light"]) body{
+  background-image:
+    radial-gradient(circle at 82% 0,   rgba(255,156,59,.07) 0%, transparent 52%),
+    radial-gradient(circle at 8% 38%,  rgba(166,255,77,.055) 0%, transparent 52%);
+  background-attachment:fixed;
+}
 @media (max-width:359px){
   .back-link{ font-size:12px; padding:7px 10px; letter-spacing:.04em; }
 }
@@ -556,7 +566,11 @@ footer a:hover{ color:var(--ink); }
 
 
 /* Visual review: name and facts before the elevation profile. */
-:root:not([data-theme="light"]){ --ink-dim:#B2BDAA; }
+/* Aqui habia un :root{--ink-dim:#B2BDAA} que pisaba el de arriba sin que se
+   viera: el token se definia en la cabecera del fichero y esta linea, 800
+   lineas mas abajo y con la misma especificidad, ganaba por ir la ultima.
+   Se quito el 20-oct-2026, al descubrir que un cambio del token no hacia
+   nada. Si hay que retocar el gris atenuado, se retoca arriba. */
 .hero-label{ padding:24px 24px 8px; }
 .hero-label h1{ font-size:clamp(1.8rem,4.6vw,2.8rem); line-height:1.12; }
 .full-name{ font:400 16px/1.5 'Karla',sans-serif; max-width:70ch; }

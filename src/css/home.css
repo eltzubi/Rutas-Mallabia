@@ -4,15 +4,15 @@
      peticion del autor, porque el negro puro se veia duro. Comprobado
      que el contraste aguanta de sobra: el peor par (texto atenuado
      sobre tarjeta) se queda en 5,6:1, y el minimo exigible es 4,5. */
-  --ground:#0A152B;
-  --ground-raised:#141D33;
-  --ink:#EAF5E2;
-  --ink-dim:#93A0B4;
+  --ground:#020617;
+  --ground-raised:#0F172A;
+  --ink:#F8FAFC;
+  --ink-dim:#94A3B8;
   --teal:#FF9C3B;
   --teal-soft:rgba(255,156,59,.14);
   --violet:#A6FF4D;
   --violet-soft:rgba(166,255,77,.14);
-  --line: rgba(234,245,226,.16);
+  --line: rgba(248,250,252,.16);
   --link:#93B3C8;
   --ink-deep:#050805;
   --readout-a:#FF9C3B;
@@ -849,8 +849,16 @@ footer a:hover{ text-decoration:underline; }
 :root[data-theme="light"] .fx-glow{ opacity:.10; }
 
 /* Visual review: readable cards and a compact route finder. */
-:root:not([data-theme="light"]){ --ink-dim:#B2BDAA; }
-.fx-glow{ opacity:.035; }
+/* Aqui habia un :root{--ink-dim:#B2BDAA} que pisaba el de arriba sin que se
+   viera: el token se definia en la cabecera del fichero y esta linea, 800
+   lineas mas abajo y con la misma especificidad, ganaba por ir la ultima.
+   Se quito el 20-oct-2026, al descubrir que un cambio del token no hacia
+   nada. Si hay que retocar el gris atenuado, se retoca arriba. */
+/* Subidos de 0,035 a 0,11: a 0,035 no se veian y el fondo quedaba plano.
+   Es lo mismo que hace 7pago con dos radial-gradient sobre el body, pero en
+   los colores de esta web -- naranja «en bici» y verde «a pie» -- y no en su
+   cian y su morado, que aqui no significarian nada. */
+.fx-glow{ opacity:.11; }
 :root[data-theme="light"] .fx-glow{ opacity:.025; }
 .fx-grid{ display:none; }
 .hero-compact img{ filter:contrast(1.08) saturate(1.08); }
