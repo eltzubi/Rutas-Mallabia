@@ -246,7 +246,91 @@
 @media(max-width:659px){
   #beforeYouGo{padding:0 16px; margin-top:8px; margin-bottom:8px;}
   .finder{margin-top:6px;padding:0 16px;}
-  .finder-toolbar{gap:8px;row-gap:10px;flex-wrap:wrap;padding:0 0 12px;}
+  /* En el movil la barra de filtros deja de colgar del techo y se pega al
+     suelo: arriba estaba siempre visible, si, pero a trasmano del pulgar, y
+     se comia 58 px de los de arriba, que es donde esta mirando la vista. La
+     forma no cambia -- son las mismas pastillas -- solo el sitio. */
+  .finder-toolbar{
+    position:fixed; left:0; right:0; bottom:0; top:auto; z-index:70;
+    gap:8px; flex-wrap:nowrap; margin:0;
+    padding:5px 14px calc(5px + env(safe-area-inset-bottom, 0px));
+    border-top:1px solid var(--line);
+  }
+  .finder-toolbar::before{ inset:0; border-radius:0; }
+  /* Dentro de la barra el boton de mapa deja de flotar y es uno mas de la
+     fila. Pierde la sombra, que ahi no pinta nada, y el atenuado que llevaba
+     al hacer scroll: eso era para no tapar las tarjetas, y ahora no las tapa. */
+  /* Los cinco, del mismo ancho y en rejilla, no en fila elastica: asi
+     ninguno manda sobre los demas y la barra se lee como cinco cajones
+     iguales. El grupo de actividad era una pastilla con tres chips dentro;
+     display:contents lo disuelve y sus tres hijos pasan a ser celdas de la
+     rejilla como las otras dos, sin tocar el HTML ni perder su role="group".
+     El orden lo da el propio HTML: Mapa, Todas, A pie, E-bike, Filtrar. */
+  .finder-toolbar{ display:grid; grid-template-columns:repeat(5,1fr); gap:2px; }
+  .activity-filter{ display:contents; }
+  .finder-toolbar .view-fab,
+  .finder-toolbar .activity-chip,
+  .finder-toolbar .open-filters{
+    display:inline-flex; align-items:center; justify-content:center; gap:4px;
+    width:100%; min-width:0; margin:0; flex:none; order:0;
+    /* Menos redondeado: cajones, no pastillas. */
+    border-radius:12px; padding:8px 2px; min-height:40px;
+    font-size:11px; white-space:nowrap;
+  }
+  .finder-toolbar .view-fab{
+    position:static; transform:none; left:auto; bottom:auto; box-shadow:none;
+  }
+  .finder-toolbar .view-fab.is-scrolling,
+  .finder-toolbar .view-fab.is-hidden-behind-panel{ opacity:1; pointer-events:auto; }
+  .finder-toolbar .view-fab svg{ width:13px; height:13px; flex-shrink:0; }
+  /* Plano, como una barra de pestanas: ni pastillas ni recuadros. El icono
+     encima y el rotulo debajo, los dos del mismo color, y el activo pintado
+     con el color de acento en vez de relleno. Los iconos van por mask-image
+     y no en el HTML a proposito: asi no cambia ni una cadena traducible ni
+     los chips que el mismo boton tiene dentro del dialogo de filtros. */
+  .finder-toolbar .view-fab,
+  .finder-toolbar .activity-chip,
+  .finder-toolbar .open-filters{
+    position:relative;
+    flex-direction:column; gap:4px;
+    border:0; background:none; box-shadow:none;
+    border-radius:8px; padding:7px 2px 5px; min-height:44px;
+    /* El rotulo, en la misma voz que la barra de arriba: mono, versalitas y
+       con aire entre letras. Es lo que ata esta barra al resto de la web y
+       no a una app cualquiera. */
+    font:600 9px/1 'IBM Plex Mono',monospace;
+    letter-spacing:.11em; text-transform:uppercase;
+    color:var(--ink-dim);
+  }
+  /* El activo se marca con un filo de 2 px arriba, como una pestana de
+     verdad, ademas del color. Solo el color no se ve a la primera. */
+  .finder-toolbar .activity-chip.active::after{
+    content:""; position:absolute; top:-5px; left:50%; transform:translateX(-50%);
+    width:22px; height:2px; border-radius:2px; background:currentColor;
+  }
+  .finder-toolbar .activity-chip::before,
+  .finder-toolbar .open-filters::before{
+    content:""; width:18px; height:18px; flex-shrink:0;
+    background-color:currentColor;
+    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+    -webkit-mask-position:center; mask-position:center;
+    -webkit-mask-size:contain; mask-size:contain;
+  }
+  .finder-toolbar .activity-chip[data-activity="all"]::before{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 3 7.5l9 4.5 9-4.5L12 3Z'/%3E%3Cpath d='m3 12.5 9 4.5 9-4.5'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 3 7.5l9 4.5 9-4.5L12 3Z'/%3E%3Cpath d='m3 12.5 9 4.5 9-4.5'/%3E%3C/svg%3E"); }
+  .finder-toolbar .activity-chip[data-activity="senderismo"]::before{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13.5' cy='4' r='1.7'/%3E%3Cpath d='m15.5 20-3-6 1.8-3.6 2.7 2.8 2.8 1'/%3E%3Cpath d='m8.5 21 2.8-6.5'/%3E%3Cpath d='m10.3 10.4-2.8 1.8-1.9-1'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='13.5' cy='4' r='1.7'/%3E%3Cpath d='m15.5 20-3-6 1.8-3.6 2.7 2.8 2.8 1'/%3E%3Cpath d='m8.5 21 2.8-6.5'/%3E%3Cpath d='m10.3 10.4-2.8 1.8-1.9-1'/%3E%3C/svg%3E"); }
+  .finder-toolbar .activity-chip[data-activity="bici"]::before{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5.6' cy='17.4' r='3.3'/%3E%3Ccircle cx='18.4' cy='17.4' r='3.3'/%3E%3Ccircle cx='15' cy='5' r='1.1'/%3E%3Cpath d='M12 17.4 9.2 9.2l2.9-2.9 2.9 3.9h2.8'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5.6' cy='17.4' r='3.3'/%3E%3Ccircle cx='18.4' cy='17.4' r='3.3'/%3E%3Ccircle cx='15' cy='5' r='1.1'/%3E%3Cpath d='M12 17.4 9.2 9.2l2.9-2.9 2.9 3.9h2.8'/%3E%3C/svg%3E"); }
+  .finder-toolbar .open-filters::before{ -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h4M12 7h8M4 17h8M16 17h4'/%3E%3Ccircle cx='10' cy='7' r='2'/%3E%3Ccircle cx='14' cy='17' r='2'/%3E%3C/svg%3E"); mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 7h4M12 7h8M4 17h8M16 17h4'/%3E%3Ccircle cx='10' cy='7' r='2'/%3E%3Ccircle cx='14' cy='17' r='2'/%3E%3C/svg%3E"); }
+  .finder-toolbar .view-fab svg{ width:18px; height:18px; stroke-width:1.6; }
+  .finder-toolbar .activity-chip.active{
+    background:none; box-shadow:none; color:var(--teal);
+  }
+  .finder-toolbar .activity-chip:hover:not(.active){ background:none; color:var(--ink); }
+  /* El contador de filtros puestos, pegado al rotulo y no al icono. */
+  .finder-toolbar .open-filters #filterBadge{ margin-left:3px; }
+  /* El hueco que deja de ocupar en el flujo, para que la ultima tarjeta y el
+     pie no se queden debajo de la barra. */
+  .finder{ padding-bottom:0; }
+  body{ padding-bottom:64px; }
   .activity-filter{flex:1;min-width:0;padding:2px;gap:2px;order:1;}
   .activity-chip{flex:1;padding:4px 8px;font-size:11px;white-space:nowrap;}
   .open-filters{display:inline-flex;align-items:center;padding:4px 12px;font-size:11px;order:2;}
@@ -770,6 +854,17 @@ footer a:hover{ text-decoration:underline; }
 .buscador-barra input{ font-size:16px; }
 .finder-toolbar{ padding:6px 0; margin-bottom:4px; }
 .finder-toolbar::before{ inset:0; border-radius:14px; }
+/* Fija abajo tambien aqui, que es el mismo movil con la letra mas grande. */
+@media(max-width:659px){
+  .finder-toolbar{ padding:5px 14px calc(5px + env(safe-area-inset-bottom, 0px)); margin:0; }
+  .finder-toolbar::before{ border-radius:0; }
+  body{ padding-bottom:72px; }
+  /* El boton de volver arriba sube por encima de la barra; si no, se queda
+     justo encima de «Filtrar» y lo tapa. Va aqui abajo y no junto al resto
+     de reglas del movil porque la regla base de .to-top esta mas adelante en
+     el fichero y, a igualdad de especificidad, gana la ultima. */
+  .to-top{ bottom:calc(18px + 56px); }
+}
 .activity-filter{ padding:3px; }
 .activity-chip,.distance-chip,.open-filters{ font-family:'Karla',sans-serif; font-size:14px; min-height:40px; }
 .filter-controls{ padding:8px 0 14px; margin-bottom:18px; }
