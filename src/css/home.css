@@ -1155,6 +1155,12 @@ footer a:hover{ text-decoration:underline; }
   animation:avisoAro 3s cubic-bezier(.15,.7,.3,1) infinite;
 }
 .aviso-aro.r2{ animation-delay:.75s; }
+/* En la barra salen mas seguidas (cada 0,55 s en vez de 0,75): asi casi
+   siempre hay dos aros a la vista y el latido se nota de lejos. */
+.masthead .aviso-aro{ animation-duration:2.2s; }
+.masthead .aviso-aro.r2{ animation-delay:.55s; }
+.masthead .aviso-aro.r3{ animation-delay:1.1s; }
+.masthead .aviso-aro.r4{ animation-delay:1.65s; }
 .aviso-aro.r3{ animation-delay:1.5s; }
 .aviso-aro.r4{ animation-delay:2.25s; }
 @keyframes avisoAro{
@@ -1196,7 +1202,13 @@ footer a:hover{ text-decoration:underline; }
 /* En la barra de arriba (js/app.js la mueve ahi): ya no flota en la
    esquina, va en su sitio entre el lugar y el idioma, del mismo tamano que
    el boton del tema y con las ondas cortas para que no se salgan de la barra. */
-.masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
+.masthead .aviso-pulso{
+  position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0;
+  /* Separada del filo: el aro sale del centro del boton, asi que lo que
+     cabe a la izquierda es lo que marca cuanto puede crecer. */
+  margin-left:9px;
+  --aro:color-mix(in srgb, var(--violet) 55%, transparent);
+}
 /* La insignia va la primera y «Mallabia · Bizkaia» justo detras: el margen
    automatico se come el hueco que sobra y empuja el resto a la derecha, que
    es lo que antes hacia el space-between con tres hijos sueltos. */
@@ -1237,10 +1249,14 @@ footer a:hover{ text-decoration:underline; }
 /* 44 px y no 54: desde que la insignia es lo primero de la barra, el aro
    tiene a su izquierda los 14 px del margen y nada mas. Con 54 se salia del
    filo de la barra y llegaba a tocar el borde de la pantalla. */
+/* Las ondas, mas grandes y mas vistas: el autor no las veia. De 44 a 62 px
+   y empezando ya con cuerpo, con el filo de 3 px hasta bien avanzada la
+   onda. 62 es lo que cabe sin que el aro se corte contra el borde de la
+   pantalla: el centro del boton queda a 34 px del filo izquierdo. */
 @keyframes avisoAroCabecera{
-  0%  { width:2px; height:2px; opacity:.75; border-width:2px; }
-  65% { opacity:.4; }
-  100%{ width:44px; height:44px; opacity:0; border-width:1px; }
+  0%  { width:6px; height:6px; opacity:.9; border-width:3px; }
+  55% { opacity:.55; border-width:3px; }
+  100%{ width:62px; height:62px; opacity:0; border-width:1px; }
 }
 /* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
    hasta que el aviso se abre. */
