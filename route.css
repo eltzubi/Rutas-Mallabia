@@ -34,12 +34,34 @@
 .page{ max-width:760px; margin:0 auto; padding:0 0 90px; }
 @media (min-width:1024px){ .page{ max-width:1100px; } }
 
+/* La misma pastilla flotante que la portada: al bajar se queda arriba, en
+   vez de irse con el resto de la pagina. Pedido por el autor -- «como en
+   inicio» --, y ademas en una ficha, que mide metro y medio, tener a mano
+   «← Rutas», guardar y compartir sin volver arriba es justo lo que hacia
+   falta. Los valores son los de home.css, no otros parecidos. */
 .masthead{
-  display:flex; align-items:baseline; justify-content:space-between;
-  padding:28px 24px 0;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:9px 18px;
   font-family:'IBM Plex Mono',monospace;
   font-size:11px; letter-spacing:.1em; text-transform:uppercase;
   color:var(--ink-dim);
+  max-width:820px; margin:12px auto 0;
+  position:sticky; top:10px; z-index:70;
+  border:1px solid var(--line); border-radius:16px;
+  transform:translateZ(0); will-change:transform;
+  isolation:isolate;
+}
+/* El cristal va en su propia capa, detras del contenido, y no sobre el
+   elemento sticky: Chrome en Android parpadea cuando un position:sticky
+   lleva el backdrop-filter encima mientras se recoloca al hacer scroll.
+   Es la misma solucion que en la portada. */
+.masthead::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  border-radius:inherit;
+  background:var(--ground);
+  background:color-mix(in srgb, var(--ground) 74%, transparent);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
 }
 
 /* Small phones: the masthead carries brand + place + language + theme, which
