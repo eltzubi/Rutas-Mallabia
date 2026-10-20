@@ -1197,6 +1197,10 @@ footer a:hover{ text-decoration:underline; }
    esquina, va en su sitio entre el lugar y el idioma, del mismo tamano que
    el boton del tema y con las ondas cortas para que no se salgan de la barra. */
 .masthead .aviso-pulso{ position:relative; left:auto; bottom:auto; z-index:1; flex-shrink:0; }
+/* La insignia va la primera y «Mallabia · Bizkaia» justo detras: el margen
+   automatico se come el hueco que sobra y empuja el resto a la derecha, que
+   es lo que antes hacia el space-between con tres hijos sueltos. */
+.masthead .aviso-pulso + .place{ margin-right:auto; margin-left:10px; }
 .masthead .aviso-boton{ width:26px; height:26px; }
 .masthead .aviso-boton svg{ width:14px; height:14px; }
 /* En el movil la barra lleva ya seis cosas -- sitio, aviso, idioma, lupa,
@@ -1205,7 +1209,10 @@ footer a:hover{ text-decoration:underline; }
    llamando la atencion con su aro, que es lo suyo, sin empujar al resto. */
 @media(max-width:659px){
   .masthead{ padding:7px 14px; }
-  .masthead-right{ gap:9px; }
+  /* Con el triangulo fuera de este grupo sobran 50 px: se reparten en aire
+     entre los botones, que es lo que faltaba para acertarles con el dedo. */
+  .masthead-right{ gap:13px; }
+  .masthead .aviso-pulso + .place{ margin-left:8px; }
   .masthead .aviso-boton{ width:22px; height:22px; }
   .masthead .aviso-boton svg{ width:12px; height:12px; }
   .masthead .aviso-aro{ border-width:2px; }
@@ -1227,10 +1234,13 @@ footer a:hover{ text-decoration:underline; }
    Las ondas no se tocan: salen del centro y no engordan el filo. */
 .masthead .aviso-boton{ animation:none; box-shadow:none; }
 .masthead .aviso-aro{ animation-name:avisoAroCabecera; }
+/* 44 px y no 54: desde que la insignia es lo primero de la barra, el aro
+   tiene a su izquierda los 14 px del margen y nada mas. Con 54 se salia del
+   filo de la barra y llegaba a tocar el borde de la pantalla. */
 @keyframes avisoAroCabecera{
   0%  { width:2px; height:2px; opacity:.75; border-width:2px; }
   65% { opacity:.4; }
-  100%{ width:54px; height:54px; opacity:0; border-width:1px; }
+  100%{ width:44px; height:44px; opacity:0; border-width:1px; }
 }
 /* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
    hasta que el aviso se abre. */

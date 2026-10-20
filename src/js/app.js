@@ -233,12 +233,15 @@
   seccion.classList.add('solo-insignia');
   insignia.hidden = false;
 
-  // Va en la barra de arriba, entre «Mallabia · Bizkaia» y el idioma: en la
-  // esquina de abajo pasaba por encima del texto de las tarjetas. El autor
-  // la quiso ahi.
+  // Va en la barra de arriba, la primera de todo, delante de «Mallabia ·
+  // Bizkaia»: en la esquina de abajo pasaba por encima del texto de las
+  // tarjetas, y en medio de la barra apretaba contra EU/ES, que es lo mas
+  // pequeno que hay ahi y lo que mas cuesta acertar con el dedo.
   var cabecera = document.querySelector('.masthead');
+  var sitio = cabecera && cabecera.querySelector('.place');
   var derecha = cabecera && cabecera.querySelector('.masthead-right');
-  if (derecha) cabecera.insertBefore(insignia, derecha);
+  if (sitio) cabecera.insertBefore(insignia, sitio);
+  else if (derecha) cabecera.insertBefore(insignia, derecha);
 
   // Si ya se ha leido el aviso en esta visita, la insignia sale directamente
   // apagada. Va en sessionStorage y no en localStorage a proposito: dura lo

@@ -56,7 +56,14 @@ body{
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 .lang-switch a, .theme-toggle, .back-link{ position:relative; }
-.lang-switch a::after, .theme-toggle::after{
+/* El area de toque, mas grande que la letra. «EU» son 14x14 px de tinta:
+   el autor avisa de que cuesta meter el dedo, y midiendo era un objetivo de
+   28x32. Con esto queda en 40x38, que ya se acierta sin mirar. El de EU/ES
+   se estira mas que el del tema porque el boton del tema ya mide 24 px. */
+.lang-switch a::after{
+  content:''; position:absolute; inset:-12px -13px;
+}
+.theme-toggle::after{
   content:''; position:absolute; inset:-9px -7px;
 }
 .back-link::after{
