@@ -423,7 +423,14 @@
     try { localStorage.setItem(KEY, JSON.stringify(favs)); } catch (_) {}
     document.dispatchEvent(new CustomEvent('favs:change', { detail: { favs: favs.slice() } }));
   }
-  window.trabakutikFavs = { has: has, toggle: toggle, slugOf: slugOf, list: function(){ return favs.slice(); } };
+  function clear(){
+    if (!favs.length) return;
+    favs = [];
+    try { localStorage.removeItem(KEY); } catch (_) {}
+    document.dispatchEvent(new CustomEvent('favs:change', { detail: { favs: [] } }));
+  }
+  window.trabakutikFavs = { has: has, toggle: toggle, clear: clear, slugOf: slugOf,
+                            list: function(){ return favs.slice(); } };
 
   var HEART = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>';
   var SHARE = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
@@ -450,6 +457,9 @@
       e.preventDefault(); e.stopPropagation();
       toggle(slug); paintHeart(btn, has(slug));
     });
+    // Se pueden vaciar desde «Lo mio» sin tocar este corazon: hay que
+    // repintarlo tambien cuando el cambio viene de fuera.
+    document.addEventListener('favs:change', function(){ paintHeart(btn, has(slug)); });
     photo.appendChild(btn);
   });
 
@@ -475,6 +485,7 @@
   }
   paintFav();
   fav.addEventListener('click', function(){ toggle(slug); paintFav(); });
+  document.addEventListener('favs:change', paintFav);
 
   var share = document.createElement('button');
   share.type = 'button';
@@ -534,8 +545,10 @@
   var MAX_VISTAS = 6;
   var eu = document.documentElement.lang === 'eu';
   var T = eu
-    ? { guardando:'Gordetzen…', hecho:'Mendirako prest', fallo:'Ezin izan dira denak gorde' }
-    : { guardando:'Guardando…', hecho:'Listas para el monte', fallo:'No se pudieron guardar todas' };
+    ? { guardando:'Gordetzen…', hecho:'Mendirako prest', fallo:'Ezin izan dira denak gorde',
+        confirma:'Ziur?' }
+    : { guardando:'Guardando…', hecho:'Listas para el monte', fallo:'No se pudieron guardar todas',
+        confirma:'\u00bfSeguro?' };
 
   function lee(clave){
     try { var v = JSON.parse(localStorage.getItem(clave) || '[]'); return Array.isArray(v) ? v : []; }
@@ -543,7 +556,10 @@
   }
   // Apuntar la ficha que se esta viendo. Se hace siempre, aunque el panel no
   // se abra nunca: es lo que lo llena cuando se abre.
-  var aqui = location.pathname.split('/').pop().replace(/\.eu\.html$/,'').replace(/\.html$/,'');
+  // Ojo con el .es: la portada en castellano es index.es.html, y quitando
+  // solo el .html se apuntaba a si misma como «index.es» — una ruta que no
+  // existe, ocupando uno de los seis sitios de la lista.
+  var aqui = location.pathname.split('/').pop().replace(/\.(eu|es)\.html$/,'').replace(/\.html$/,'');
   if (aqui && aqui !== 'index' && aqui !== 'agua' && aqui !== 'aviso-legal' && aqui !== '') {
     var vistas = lee(VISTAS).filter(function(s){ return s !== aqui; });
     vistas.unshift(aqui);
@@ -560,6 +576,8 @@
   var vacioFavs = document.getElementById('mioFavsVacio');
   var listaVistas = document.getElementById('mioVistas');
   var vacioVistas = document.getElementById('mioVistasVacio');
+  var borrarVistas = document.getElementById('mioBorrar');
+  var borrarFavs = document.getElementById('mioBorrarFavs');
   var guardar = document.getElementById('mioGuardar');
   var nota = document.getElementById('mioGuardarNota');
   var cerrar = document.getElementById('mioCerrar');
@@ -598,10 +616,45 @@
   function rellena(){
     var favs = favoritas();
     var n = pinta(listaFavs, vacioFavs, favs);
-    pinta(listaVistas, vacioVistas, lee(VISTAS).filter(function(s){ return s !== aqui; }));
+    var v = pinta(listaVistas, vacioVistas, lee(VISTAS).filter(function(s){ return s !== aqui; }));
+    if (borrarVistas) borrarVistas.hidden = v === 0;
+    if (borrarFavs) { borrarFavs.hidden = favs.length === 0; sinConfirmar(borrarFavs); }
     if (guardar) guardar.hidden = n === 0;
     if (nota) nota.hidden = n === 0;
   }
+
+  /* Quitar todas las favoritas pide un segundo toque. Las vistas se apuntan
+     solas y borrarlas no pierde nada; las favoritas las ha ido guardando el
+     que mira la web, una a una, y un roce no puede llevarselas todas. */
+  function sinConfirmar(b){
+    if (!b) return;
+    if (b.dataset) delete b.dataset.confirmando;
+    if (b.textContent !== rotuloBorrar) b.textContent = rotuloBorrar;
+    b.classList.remove('va-en-serio');
+  }
+  var rotuloBorrar = borrarFavs ? borrarFavs.textContent : '';
+  if (borrarFavs) borrarFavs.addEventListener('click', function(){
+    if (!(borrarFavs.dataset && borrarFavs.dataset.confirmando)) {
+      if (borrarFavs.dataset) borrarFavs.dataset.confirmando = '1';
+      borrarFavs.textContent = T.confirma;
+      borrarFavs.classList.add('va-en-serio');
+      setTimeout(function(){ sinConfirmar(borrarFavs); }, 4000);
+      return;
+    }
+    sinConfirmar(borrarFavs);
+    if (window.trabakutikFavs && window.trabakutikFavs.clear) window.trabakutikFavs.clear();
+    else { try { localStorage.removeItem('trabakutik_favs'); } catch (_) {} }
+    rellena();
+  });
+
+  /* Borrar las vistas hace poco. Es lo unico del panel que se apunta solo,
+     sin que nadie lo pida, asi que tiene que poder quitarse. Las favoritas
+     no llevan boton: esas se quitan con su propio corazon, una a una. */
+  if (borrarVistas) borrarVistas.addEventListener('click', function(){
+    try { localStorage.removeItem(VISTAS); } catch (_) {}
+    pinta(listaVistas, vacioVistas, []);
+    borrarVistas.hidden = true;
+  });
 
   function abre(){
     panel.showModal();

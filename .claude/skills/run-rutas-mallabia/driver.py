@@ -537,6 +537,8 @@ def cmd_mio(a):
             with pagina(base, pag, ancho=390, alto=844) as pg:
                 pg.evaluate("localStorage.setItem('trabakutik_favs',"
                             " JSON.stringify(['oiz','urko']))")
+                pg.evaluate("localStorage.setItem('trabakutik_vistas',"
+                            " JSON.stringify(['gerea','arteta']))")
                 pg.reload(wait_until="load"); pg.wait_for_timeout(1400)
                 assert not pg.eval_on_selector("#mioAbrir", "n => n.hidden"), \
                     f"{pag}: el boton de «Lo mio» sigue oculto"
@@ -552,11 +554,35 @@ def cmd_mio(a):
                 assert all(datos["favs"]), f"{pag}: alguna favorita sin nombre"
                 assert datos["cuenta"] == "2", f"{pag}: la insignia dice {datos['cuenta']}"
                 assert datos["guardar"], f"{pag}: no sale «guardar para el monte»"
+                # Borrar: las vistas de un toque, las favoritas de dos. Y los
+                # corazones de la portada tienen que apagarse solos, que el
+                # cambio les llega de otro sitio.
+                pg.click("#mioBorrar"); pg.wait_for_timeout(300)
+                pg.click("#mioBorrarFavs"); pg.wait_for_timeout(250)
+                pedido = pg.eval_on_selector("#mioBorrarFavs", "n => n.textContent")
+                assert pedido in ("\u00bfSeguro?", "Ziur?"), \
+                    f"{pag}: el primer toque no pide confirmacion ({pedido})"
+                assert pg.evaluate("() => JSON.parse(localStorage.getItem"
+                                   "('trabakutik_favs')||'[]').length") == 2, \
+                    f"{pag}: el primer toque ya borro las favoritas"
+                pg.click("#mioBorrarFavs"); pg.wait_for_timeout(400)
+                tras = pg.evaluate("""() => ({
+                    favs: JSON.parse(localStorage.getItem('trabakutik_favs')||'[]').length,
+                    vistas: JSON.parse(localStorage.getItem('trabakutik_vistas')||'[]').length,
+                    li: document.querySelectorAll('#mioFavs li').length,
+                    corazones: document.querySelectorAll('.fav-heart.is-fav').length,
+                    botones: document.getElementById('mioBorrarFavs').hidden
+                             && document.getElementById('mioBorrar').hidden })""")
+                assert tras["favs"] == 0 and tras["li"] == 0, f"{pag}: {tras}"
+                assert tras["vistas"] == 0, f"{pag}: quedan vistas: {tras}"
+                assert tras["corazones"] == 0, \
+                    f"{pag}: {tras['corazones']} corazon(es) siguen encendidos"
+                assert tras["botones"], f"{pag}: los «Borrar» siguen a la vista"
                 pg.click("#mioCerrar"); pg.wait_for_timeout(400)
                 assert not pg.eval_on_selector("#mioDialog", "n => n.open"), \
                     f"{pag}: no se cerro"
                 print(f"  {pag:16} [{idioma}] {len(datos['favs'])} favoritas: "
-                      f"{datos['favs'][0][:34]}…")
+                      f"{datos['favs'][0][:34]}… y se borran")
                 if pg.errores:
                     print("   errores:", pg.errores[:2]); return 1
     print("\n«Lo mio», correcto")

@@ -837,6 +837,11 @@ def add_mis_rutas(page_html, lang):
         "vistas":  "Duela gutxi ikusitakoak" if eus else "Vistas hace poco",
         "vistas0": "Hemen agertuko dira irekitzen dituzun azken ibilbideak."
                    if eus else "Aqu&iacute; aparecer&aacute;n las &uacute;ltimas rutas que abras.",
+        "borrar":  "Ezabatu" if eus else "Borrar",
+        "borrarA": "Duela gutxi ikusitakoen zerrenda ezabatu"
+                   if eus else "Borrar la lista de vistas hace poco",
+        "borrarFA": "Gogoko guztiak kendu"
+                    if eus else "Quitar todas las favoritas",
         "duda":    "Zalantzarik?" if eus else "&iquest;Alguna duda?",
         "email":   "Idatzi emailez" if eus else "Escribe por email",
     }
@@ -857,12 +862,18 @@ def add_mis_rutas(page_html, lang):
         f'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
         f' stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/>'
         f'</svg></button></div>\n'
-        f'  <section class="mio-bloque"><h3>{t["favs"]}</h3>'
+        f'  <section class="mio-bloque">'
+        f'<div class="mio-bloque-cab"><h3>{t["favs"]}</h3>'
+        f'<button type="button" class="mio-borrar" id="mioBorrarFavs"'
+        f' aria-label="{t["borrarFA"]}" hidden>{t["borrar"]}</button></div>'
         f'<ul class="mio-lista" id="mioFavs"></ul>'
         f'<p class="mio-vacio" id="mioFavsVacio">{t["favs0"]}</p>'
         f'<button type="button" class="mio-accion" id="mioGuardar" hidden>{t["guardar"]}</button>'
         f'<p class="mio-nota" id="mioGuardarNota">{t["guardaNota"]}</p></section>\n'
-        f'  <section class="mio-bloque"><h3>{t["vistas"]}</h3>'
+        f'  <section class="mio-bloque">'
+        f'<div class="mio-bloque-cab"><h3>{t["vistas"]}</h3>'
+        f'<button type="button" class="mio-borrar" id="mioBorrar"'
+        f' aria-label="{t["borrarA"]}" hidden>{t["borrar"]}</button></div>'
         f'<ul class="mio-lista" id="mioVistas"></ul>'
         f'<p class="mio-vacio" id="mioVistasVacio">{t["vistas0"]}</p></section>\n'
         f'  <section class="mio-bloque"><h3>{t["duda"]}</h3>'

@@ -342,6 +342,19 @@ body{
   font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.1em;
   text-transform:uppercase; color:var(--ink-dim);
 }
+/* Titulo de bloque con una accion a la derecha: «Vistas hace poco · Borrar».
+   El boton solo esta mientras haya algo que borrar. */
+.mio-bloque-cab{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+.mio-borrar{
+  flex-shrink:0; border:0; background:none; cursor:pointer;
+  margin:-4px 0 10px; padding:4px 2px;
+  font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-dim); text-decoration:underline; text-underline-offset:3px;
+}
+.mio-borrar[hidden]{ display:none; }
+.mio-borrar:hover{ color:var(--teal); }
+.mio-borrar.va-en-serio{ color:var(--ink); text-decoration-thickness:2px; }
+.mio-borrar:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; border-radius:6px; }
 .mio-lista{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; }
 .mio-lista a{
   display:flex; flex-direction:column; gap:2px;
