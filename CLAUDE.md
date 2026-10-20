@@ -452,6 +452,13 @@ There's no automated test suite — verification is manual:
   each marker's `cx`, changing the elevation profile of nine pages. Don't raise it again or change it
   unless he asks; `check_site.py` deliberately does not check it.
 
+- **Los huecos de grabación que quedan están decididos: no los vuelvas a plantear.** El autor los ha
+  mirado y le dan igual. `intxorta` tiene uno real de 644 m al principio y **ninguna otra ruta recorre
+  ese tramo entero**, así que cerrarlo exigiría inventarse el enlace. `longa` no tiene huecos: es una
+  ruta **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m
+  exactos), y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay
+  original mejor que recuperar. Sus 52 tramos rectos no son fallos. Palabras del autor: «100 o 300
+  metros no me llevan a nada, no importa ese error». Déjalo estar salvo que él lo saque.
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
 - **Always tell the user about missing data or factual errors you notice, even when they didn't ask
