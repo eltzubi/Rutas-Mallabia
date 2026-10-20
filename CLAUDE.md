@@ -460,7 +460,10 @@ There's no automated test suite — verification is manual:
   sitio equivocado, una fuente que no existe.
 - **Los dos tracks que quedan con tramos rectos están decididos: no los vuelvas a plantear.**
   `intxorta` tiene un corte de grabación de 644 m al principio y **ninguna otra ruta recorre ese tramo
-  entero**, así que cerrarlo exigiría inventarse el enlace. `longa` no tiene cortes: es una ruta
+  entero**, así que cerrarlo exigiría inventarse el enlace. **El original de Wikiloc trae el mismo
+  corte**: el autor lo bajó el 20-oct-2026 y lleva el salto exacto, entre (43.20953,-2.54842) y
+  (43.21143,-2.55592), 644,4 m, los mismos metros y las mismas coordenadas. No es que el repositorio
+  tenga una copia recortada: es que el aparato dejó de grabar ese día. No hay nada que recuperar. `longa` no tiene cortes: es una ruta
   **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m exactos),
   y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay original
   mejor que recuperar. Sus 52 tramos rectos son como se trazó. Déjalo estar salvo que él lo saque.
