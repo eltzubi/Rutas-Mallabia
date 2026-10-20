@@ -182,6 +182,31 @@ body{
   background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
   color:#fff; font-size:16px; cursor:pointer;
 }
+/* Pasar fotos: con el dedo en el movil, y con estos botones en el raton,
+   que ahi no hay gesto que valga. Van por encima de la foto pero pegados a
+   los bordes, donde no tapan nada. */
+.lightbox-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
+  color:#fff; cursor:pointer; padding:0;
+}
+.lightbox-nav:hover{ background:rgba(255,255,255,.22); }
+.lightbox-nav:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+.lightbox-nav.is-prev{ left:10px; }
+.lightbox-nav.is-next{ right:10px; }
+.lightbox-cuenta{
+  position:absolute; left:0; right:0; bottom:14px; margin:0;
+  text-align:center; pointer-events:none;
+  font:600 12px 'IBM Plex Mono',monospace; letter-spacing:.1em;
+  color:rgba(255,255,255,.72);
+}
+/* En el movil no hacen falta: ahi se pasa con el dedo y los botones solo
+   taparian foto. Se quedan para quien navega con teclado. */
+@media (hover:none) and (pointer:coarse){
+  .lightbox-nav{ width:0; height:0; padding:0; border:0; overflow:hidden; opacity:0; }
+}
 .parada{
   margin:42px 24px 0;
   background:var(--violet-soft);

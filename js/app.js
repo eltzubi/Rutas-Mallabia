@@ -22,13 +22,34 @@
 })();
 
 // --- photo lightbox ---
+/* Abierta una foto, se pasa a la siguiente con el dedo, con las flechas del
+   teclado o con los botones de los lados, y se sale tocando fuera. Antes
+   habia que cerrar y volver a abrir para ver la de al lado.
+
+   No pesa en el sitio: las fotos ya estaban publicadas y se piden igual que
+   antes, una a una. Lo unico que se adelanta es la de delante y la de
+   detras, para que al pasar no haya parpadeo; las demas no se tocan hasta
+   que se llega a ellas. */
 (function(){
   var box = document.getElementById('lightbox');
   var boxImg = document.getElementById('lightboxImg');
   var close = document.getElementById('lightboxClose');
   if (!box || !boxImg || !close) return; // page has no photo gallery
-  var lastTrigger = null;
-  function open(src, trigger){
+  var eu = document.documentElement.lang === 'eu';
+  var T = eu ? { ant:'Aurrekoa', sig:'Hurrengoa', de:'/' }
+             : { ant:'Anterior', sig:'Siguiente', de:'/' };
+  var fotos = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox-src]'));
+  if (!fotos.length) return;
+  var indice = 0, lastTrigger = null;
+
+  function fuente(el){ return el.dataset.lightboxSrc; }
+  function adelanta(i){
+    if (i < 0 || i >= fotos.length) return;
+    var im = new Image(); im.src = fuente(fotos[i]);
+  }
+  function muestra(i){
+    indice = (i + fotos.length) % fotos.length;
+    var el = fotos[indice], src = fuente(el);
     // data-lightbox-src es el .webp de tamano completo, que es lo que ve
     // casi todo el mundo. El respaldo es el -800.jpg, lo unico que puede
     // abrir un navegador sin WebP: el original de 1600 ya no se publica
@@ -38,27 +59,97 @@
       boxImg.src = src.replace(/\.webp$/i, '-800.jpg');
     };
     boxImg.src = src;
-    var triggerImg = trigger.querySelector('img');
-    if (triggerImg && triggerImg.alt) boxImg.alt = triggerImg.alt;
-    lastTrigger = trigger;
+    var triggerImg = el.querySelector('img');
+    boxImg.alt = (triggerImg && triggerImg.alt) || '';
+    lastTrigger = el;
+    if (cuenta) cuenta.textContent = (indice + 1) + ' ' + T.de + ' ' + fotos.length;
+    adelanta(indice + 1); adelanta(indice - 1);
+  }
+  function pasa(n){
+    if (fotos.length > 1 && box.classList.contains('open')) muestra(indice + n);
+  }
+
+  // Los mandos se crean aqui y no en el HTML de las 63 fichas: sin
+  // JavaScript la foto ampliada no se abre, asi que tampoco harian nada.
+  var cuenta = null, antes = null, luego = null;
+  if (fotos.length > 1) {
+    cuenta = document.createElement('p');
+    cuenta.className = 'lightbox-cuenta';
+    box.appendChild(cuenta);
+    var flecha = function(clase, etiqueta, d){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'lightbox-nav ' + clase;
+      b.setAttribute('aria-label', etiqueta); b.title = etiqueta;
+      b.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"'
+        + ' stroke="currentColor" stroke-width="2" stroke-linecap="round"'
+        + ' stroke-linejoin="round" aria-hidden="true"><path d="M'
+        + (d < 0 ? '15 5 8 12l7 7' : '9 5 16 12l-7 7') + '"/></svg>';
+      b.addEventListener('click', function(ev){ ev.stopPropagation(); pasa(d); });
+      box.appendChild(b);
+      return b;
+    };
+    antes = flecha('is-prev', T.ant, -1);
+    luego = flecha('is-next', T.sig, 1);
+  }
+
+  function open(el){
+    muestra(fotos.indexOf(el));
     box.classList.add('open');
     document.body.style.overflow = 'hidden';
     close.focus();
   }
   function shut(){
     box.classList.remove('open');
+    // Quitar el respaldo antes de vaciar: si no, el src vacio cuenta como
+    // error y se pedia un -800.jpg que ya no hacia falta.
+    boxImg.onerror = null;
     boxImg.src='';
     document.body.style.overflow = '';
     if(lastTrigger) lastTrigger.focus();
   }
-  document.querySelectorAll('[data-lightbox-src]').forEach(function(el){
-    el.addEventListener('click', function(){ open(el.dataset.lightboxSrc, el); });
+  fotos.forEach(function(el){
+    el.addEventListener('click', function(){ open(el); });
   });
   close.addEventListener('click', shut);
-  box.addEventListener('click', function(e){ if(e.target === box) shut(); });
+  // Tocar fuera de la foto cierra. La foto no: ahi vive el gesto de pasar,
+  // y un arrastre que se queda corto no puede cerrar sin querer.
+  var pasadoHace = 0;
+  box.addEventListener('click', function(e){
+    // Un gesto de pasar termina con un click sintetico; si ese click cae en
+    // el fondo cerraria la foto recien abierta. Se ignora lo que llegue
+    // justo detras de un pase.
+    if (Date.now() - pasadoHace < 400) return;
+    if (e.target === box) shut();
+  });
+
+  // Arrastrar con el dedo. Se exige que el gesto sea mas horizontal que
+  // vertical para no robarle el scroll a nadie, y un recorrido minimo para
+  // que un toque torpe no cambie de foto sin querer.
+  var x0 = 0, y0 = 0, movido = false;
+  box.addEventListener('touchstart', function(e){
+    if (e.touches.length !== 1) return;
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; movido = false;
+  }, { passive: true });
+  box.addEventListener('touchmove', function(e){
+    if (e.touches.length !== 1) return;
+    if (Math.abs(e.touches[0].clientX - x0) > 10) movido = true;
+  }, { passive: true });
+  box.addEventListener('touchend', function(e){
+    if (!movido || !e.changedTouches.length) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    var dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      pasa(dx < 0 ? 1 : -1);
+      pasadoHace = Date.now();
+      movido = false;
+    }
+  });
+
   document.addEventListener('keydown', function(e){
     if (!box.classList.contains('open')) return;
     if (e.key === 'Escape') { shut(); return; }
+    if (e.key === 'ArrowRight') { pasa(1); return; }
+    if (e.key === 'ArrowLeft') { pasa(-1); return; }
     if (e.key === 'Tab') { e.preventDefault(); close.focus(); }
   });
 })();

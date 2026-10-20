@@ -563,6 +563,55 @@ def cmd_mio(a):
     return 0
 
 
+def cmd_visor(a):
+    """La foto ampliada: pasar de una a otra y salir tocando fuera.
+
+    Lo que se vigila es lo que fallo al montarlo: que un arrastre corto no
+    cambie de foto sin querer, y que el gesto de pasar no acabe cerrando la
+    foto -- un pase termina con un click sintetico que caia en el fondo.
+    """
+    gesto = """([a,b]) => {
+      const el=document.getElementById('lightbox');
+      const t=(tipo,x,fin)=>el.dispatchEvent(new TouchEvent(tipo,{bubbles:true,cancelable:true,
+        touches: fin?[]:[new Touch({identifier:1,target:el,clientX:x,clientY:400})],
+        changedTouches:[new Touch({identifier:1,target:el,clientX:x,clientY:400})]}));
+      t('touchstart',a,false); t('touchmove',(a+b)/2,false); t('touchend',b,true);
+    }"""
+    estado = """() => ({abierta: document.getElementById('lightbox').classList.contains('open'),
+        foto: (document.getElementById('lightboxImg').src||'').split('/').pop(),
+        cuenta: (document.querySelector('.lightbox-cuenta')||{}).textContent||''})"""
+    with servidor() as base:
+        with pagina(base, "trabakua.html", ancho=390, alto=844) as pg:
+            pg.eval_on_selector_all("[data-lightbox-src]", "n => n[0].click()")
+            pg.wait_for_timeout(800)
+            e = pg.evaluate(estado)
+            assert e["abierta"] and e["cuenta"].startswith("1 "), e
+            total = e["cuenta"].split("/")[-1].strip()
+            print(f"  abre la 1 de {total}")
+            primera = e["foto"]
+            pg.evaluate(gesto, [300, 120]); pg.wait_for_timeout(600)
+            e = pg.evaluate(estado)
+            assert e["abierta"], "el gesto de pasar cerro la foto"
+            assert e["foto"] != primera, "el dedo no paso de foto"
+            print(f"  con el dedo pasa a la {e['cuenta']}")
+            pg.evaluate(gesto, [120, 300]); pg.wait_for_timeout(600)
+            e = pg.evaluate(estado)
+            assert e["abierta"] and e["foto"] == primera, "al volver no quedo la primera"
+            pg.evaluate(gesto, [300, 280]); pg.wait_for_timeout(500)
+            e = pg.evaluate(estado)
+            assert e["abierta"] and e["foto"] == primera, "un arrastre corto cambio de foto"
+            print("  un arrastre corto no cambia de foto")
+            pg.keyboard.press("ArrowRight"); pg.wait_for_timeout(500)
+            assert pg.evaluate(estado)["foto"] != primera, "la flecha del teclado no paso"
+            pg.evaluate("document.getElementById('lightbox').click()"); pg.wait_for_timeout(500)
+            assert not pg.evaluate(estado)["abierta"], "tocando fuera no cerro"
+            print("  tocando fuera, cierra")
+            if pg.errores:
+                print("   errores:", pg.errores[:2]); return 1
+    print("\nvisor de fotos, correcto")
+    return 0
+
+
 def cmd_todo(a):
     fallos = 0
     for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
@@ -570,10 +619,11 @@ def cmd_todo(a):
                             ("mapa", cmd_mapa, argparse.Namespace(pagina="longaurjauziak.html")),
                             ("temas", cmd_temas, argparse.Namespace(pagina="index.es.html")),
                             ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html")),
-                            ("mio", cmd_mio, a)):
+                            ("mio", cmd_mio, a),
+                            ("visor", cmd_visor, a)):
         print(f"\n=== {nombre}")
         fallos += 1 if fn(arg) else 0
-    print("\n" + ("navegador: las 6 comprobaciones, correctas" if not fallos
+    print("\n" + ("navegador: las 7 comprobaciones, correctas" if not fallos
                    else f"navegador: {fallos} comprobacion(es) fallidas"))
     return 1 if fallos else 0
 
@@ -620,6 +670,7 @@ def main():
     sub.add_parser("serve").set_defaults(fn=cmd_serve)
     sub.add_parser("filtros").set_defaults(fn=cmd_filtros)
     sub.add_parser("mio").set_defaults(fn=cmd_mio)
+    sub.add_parser("visor").set_defaults(fn=cmd_visor)
     sub.add_parser("todo").set_defaults(fn=cmd_todo)
     s = sub.add_parser("verifica"); s.set_defaults(fn=cmd_verifica)
     s.add_argument("--rapido", action="store_true",
