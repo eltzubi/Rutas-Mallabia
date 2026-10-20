@@ -638,6 +638,50 @@ def cmd_visor(a):
     return 0
 
 
+def cmd_aviso(a):
+    """El aviso «Leelo antes de salir»: al cerrarlo, la portada vuelve donde estaba.
+
+    Lo que fallaba: el aviso se lee de arriba abajo y se cierra con su propio
+    boton, que esta al final del texto, asi que al cerrarlo te quedabas a
+    media pagina, en mitad del listado, mirando una tarjeta cualquiera. El
+    boton intentaba subir a la cabecera del <details>, pero con la insignia
+    puesta esa cabecera lleva display:none y scrollIntoView sobre algo oculto
+    no hace nada.
+    """
+    ABIERTO = "() => document.querySelector('#beforeYouGo details').open"
+    Y = "() => Math.round(window.scrollY)"
+    with servidor() as base:
+        for pag in ("index.es.html", "index.html"):
+            with pagina(base, pag, ancho=390, alto=844) as pg:
+                pg.wait_for_timeout(700)
+                for desde, por_el_boton in ((0, True), (240, True), (0, False)):
+                    pg.evaluate(f"window.scrollTo(0,{desde})"); pg.wait_for_timeout(350)
+                    antes = pg.evaluate(Y)
+                    pg.click(".aviso-boton"); pg.wait_for_timeout(1300)
+                    assert pg.evaluate(ABIERTO), f"{pag}: el aviso no se abrio"
+                    if por_el_boton:
+                        pg.evaluate("() => document.querySelector('.notice-close')"
+                                    ".scrollIntoView({block:'center'})")
+                        pg.wait_for_timeout(300)
+                        bajo = pg.evaluate(Y)
+                        assert bajo > antes + 300, \
+                            f"{pag}: leyendo el aviso no se ha bajado ({bajo})"
+                        pg.click(".notice-close")
+                    else:
+                        pg.click(".aviso-boton")
+                    pg.wait_for_timeout(1600)
+                    assert not pg.evaluate(ABIERTO), f"{pag}: el aviso no se cerro"
+                    fin = pg.evaluate(Y)
+                    assert abs(fin - antes) <= 2, \
+                        f"{pag}: al cerrar se queda en {fin} y abrio desde {antes}"
+                    print(f"  {pag:15} desde {antes:4} -> {'leido abajo' if por_el_boton else 'cerrado con la insignia':24}"
+                          f" -> vuelve a {fin}")
+                if pg.errores:
+                    print("   errores:", pg.errores[:2]); return 1
+    print("\nel aviso devuelve la portada a su sitio, correcto")
+    return 0
+
+
 def cmd_todo(a):
     fallos = 0
     for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
@@ -646,10 +690,11 @@ def cmd_todo(a):
                             ("temas", cmd_temas, argparse.Namespace(pagina="index.es.html")),
                             ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html")),
                             ("mio", cmd_mio, a),
-                            ("visor", cmd_visor, a)):
+                            ("visor", cmd_visor, a),
+                            ("aviso", cmd_aviso, a)):
         print(f"\n=== {nombre}")
         fallos += 1 if fn(arg) else 0
-    print("\n" + ("navegador: las 7 comprobaciones, correctas" if not fallos
+    print("\n" + ("navegador: las 8 comprobaciones, correctas" if not fallos
                    else f"navegador: {fallos} comprobacion(es) fallidas"))
     return 1 if fallos else 0
 
@@ -697,6 +742,7 @@ def main():
     sub.add_parser("filtros").set_defaults(fn=cmd_filtros)
     sub.add_parser("mio").set_defaults(fn=cmd_mio)
     sub.add_parser("visor").set_defaults(fn=cmd_visor)
+    sub.add_parser("aviso").set_defaults(fn=cmd_aviso)
     sub.add_parser("todo").set_defaults(fn=cmd_todo)
     s = sub.add_parser("verifica"); s.set_defaults(fn=cmd_verifica)
     s.add_argument("--rapido", action="store_true",

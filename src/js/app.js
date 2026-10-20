@@ -258,19 +258,37 @@
   } catch(err){}
   try { if (sessionStorage.getItem('rutas-mallabia-aviso')) insignia.classList.add('ya-visto'); } catch(err){}
 
+  function quieto(){
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+
+  /* Al cerrar, la pagina vuelve a donde estaba antes de abrir el aviso.
+     El aviso se lee de arriba abajo y se cierra con su propio boton, que
+     esta al final del texto: sin esto te quedabas a media pagina, en mitad
+     del listado de rutas, mirando una tarjeta cualquiera. El boton «Cerrar
+     aviso» ya intentaba subir, pero a la cabecera del <details>, que en este
+     modo lleva display:none -- scrollIntoView sobre algo oculto no hace
+     nada, asi que no subia. Se apunta la posicion al abrir y se vuelve a
+     ella al cerrar, venga el cierre del propio boton o de la insignia. */
+  var vuelta = null;
   detalle.addEventListener('toggle', function(){
     boton.setAttribute('aria-expanded', detalle.open ? 'true' : 'false');
+    if (detalle.open) return;
+    var destino = vuelta;
+    vuelta = null;
+    if (destino === null) { seccion.scrollIntoView({ block:'start' }); return; }
+    window.scrollTo({ top: destino, behavior: quieto() ? 'auto' : 'smooth' });
   });
 
   boton.addEventListener('click', function(){
     var abrir = !detalle.open;
+    if (abrir) vuelta = window.scrollY || window.pageYOffset || 0;
     detalle.open = abrir;
     // A partir de aqui las ondas bajan de intensidad: ya ha mirado el aviso.
     insignia.classList.add('ya-visto');
     try { sessionStorage.setItem('rutas-mallabia-aviso', '1'); } catch(err){}
     if (!abrir) return;
-    var quieto = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    detalle.scrollIntoView({ block:'start', behavior: quieto ? 'auto' : 'smooth' });
+    detalle.scrollIntoView({ block:'start', behavior: quieto() ? 'auto' : 'smooth' });
   });
 })();
 
