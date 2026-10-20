@@ -452,13 +452,18 @@ There's no automated test suite — verification is manual:
   each marker's `cx`, changing the elevation profile of nine pages. Don't raise it again or change it
   unless he asks; `check_site.py` deliberately does not check it.
 
-- **Los huecos de grabación que quedan están decididos: no los vuelvas a plantear.** El autor los ha
-  mirado y le dan igual. `intxorta` tiene uno real de 644 m al principio y **ninguna otra ruta recorre
-  ese tramo entero**, así que cerrarlo exigiría inventarse el enlace. `longa` no tiene huecos: es una
-  ruta **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m
-  exactos), y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay
-  original mejor que recuperar. Sus 52 tramos rectos no son fallos. Palabras del autor: «100 o 300
-  metros no me llevan a nada, no importa ese error». Déjalo estar salvo que él lo saque.
+- **Unos metros de diferencia en un track no son un error: no los trates como tal.** Lo dijo el autor
+  con todas las letras — «100 o 300 metros no me llevan a nada» — y tiene razón: a quien usa la web
+  para ir al monte, un tramo que en el mapa va por la recta en vez de por la curva no le cambia nada.
+  No es un fallo que haya que arreglar ni que avisar. Lo que sí son fallos, y hay que seguir diciendo,
+  son los datos que **contradicen** la realidad: una distancia que no cuadra con el GPX, un nombre de
+  sitio equivocado, una fuente que no existe.
+- **Los dos tracks que quedan con tramos rectos están decididos: no los vuelvas a plantear.**
+  `intxorta` tiene un corte de grabación de 644 m al principio y **ninguna otra ruta recorre ese tramo
+  entero**, así que cerrarlo exigiría inventarse el enlace. `longa` no tiene cortes: es una ruta
+  **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m exactos),
+  y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay original
+  mejor que recuperar. Sus 52 tramos rectos son como se trazó. Déjalo estar salvo que él lo saque.
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
 - **Always tell the user about missing data or factual errors you notice, even when they didn't ask
