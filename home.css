@@ -1,11 +1,11 @@
 :root{
   /* Sendero de noche: dark is the identity now, light is the opt-out.
-     El fondo no es negro del todo: se subio un punto el 20 oct 2026 a
+     El fondo no es negro del todo: se subio dos puntos el 20 oct 2026 a
      peticion del autor, porque el negro puro se veia duro. Comprobado
      que el contraste aguanta de sobra: el peor par (texto atenuado
-     sobre tarjeta) se queda en 6,2:1, y el minimo exigible es 4,5. */
-  --ground:#131316;
-  --ground-raised:#1D1D21;
+     sobre tarjeta) se queda en 5,6:1, y el minimo exigible es 4,5. */
+  --ground:#16161A;
+  --ground-raised:#212126;
   --ink:#EAF5E2;
   --ink-dim:#8FA382;
   --teal:#FF9C3B;
