@@ -840,10 +840,11 @@ def add_mis_rutas(page_html, lang):
         "duda":    "Zalantzarik?" if eus else "&iquest;Alguna duda?",
         "email":   "Idatzi emailez" if eus else "Escribe por email",
     }
+    # Una persona y no un corazon: en una ficha el corazon es «guardar esta
+    # ruta», que esta justo al lado, y dos corazones seguidos no dicen nada.
     icono = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"'
              ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-             '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5'
-             ' 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>')
+             '<circle cx="12" cy="8" r="3.6"/><path d="M4.8 20a7.2 7.2 0 0 1 14.4 0"/></svg>')
     boton = (f'<button type="button" class="mio-abrir" id="mioAbrir" aria-label="{t["abrir"]}"'
              f' aria-haspopup="dialog" aria-controls="mioDialog" hidden>{icono}'
              f'<span class="mio-cuenta" id="mioCuenta" hidden></span></button>\n      ')

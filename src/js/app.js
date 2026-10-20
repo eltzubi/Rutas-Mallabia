@@ -362,23 +362,34 @@
     photo.appendChild(btn);
   });
 
-  // Ficha: Guardar y Compartir en la misma fila que GPX y KML.
+  /* Ficha: Guardar y Compartir, arriba a la derecha, a la altura de
+     «← Rutas». Estaban en la fila de descargas, a media pagina: para
+     guardar una ruta recien abierta habia que bajar a buscarlos. Arriba
+     estan a la vista desde el primer momento. Van sin rotulo, como el resto
+     de la barra, con su title y su aria-label. */
+  var barraDerecha = document.querySelector('.masthead .masthead-right');
   var row = document.querySelector('.wikiloc-row');
-  if (!row) return;
+  if (!barraDerecha && !row) return;
   var slug = slugOf(location.pathname) || 'index';
+  var arriba = !!barraDerecha && !!document.querySelector('.back-link');
   var fav = document.createElement('button');
-  fav.type = 'button'; fav.className = 'wikiloc-link ghost fav-action';
+  fav.type = 'button';
+  fav.className = arriba ? 'mast-accion fav-action' : 'wikiloc-link ghost fav-action';
   function paintFav(){
     var on = has(slug);
-    fav.innerHTML = HEART.replace('width="18" height="18"', 'width="15" height="15"') + (on ? W.saved : W.saveShort);
+    fav.innerHTML = arriba
+      ? HEART.replace('width="18" height="18"', 'width="15" height="15"')
+      : HEART.replace('width="18" height="18"', 'width="15" height="15"') + (on ? W.saved : W.saveShort);
     paintHeart(fav, on);
   }
   paintFav();
   fav.addEventListener('click', function(){ toggle(slug); paintFav(); });
 
   var share = document.createElement('button');
-  share.type = 'button'; share.className = 'wikiloc-link ghost share-action';
-  share.innerHTML = SHARE + W.share;
+  share.type = 'button';
+  share.className = arriba ? 'mast-accion share-action' : 'wikiloc-link ghost share-action';
+  share.innerHTML = arriba ? SHARE : SHARE + W.share;
+  if (arriba) { share.title = W.share; share.setAttribute('aria-label', W.share); }
   share.addEventListener('click', function(){
     var h1 = document.querySelector('h1');
     var name = h1 ? (h1.innerText || h1.textContent).replace(/\s+/g, ' ').trim() : document.title;
@@ -395,15 +406,28 @@
     if (w) { try { w.opener = null; } catch (_) {} }
     else if (navigator.clipboard) {
       navigator.clipboard.writeText(line + '\n' + url).then(function(){
-        share.lastChild.textContent = W.copied;
-        setTimeout(function(){ share.lastChild.textContent = W.share; }, 2000);
+        if (arriba) {
+          share.title = W.copied;
+          setTimeout(function(){ share.title = W.share; }, 2000);
+        } else {
+          share.lastChild.textContent = W.copied;
+          setTimeout(function(){ share.lastChild.textContent = W.share; }, 2000);
+        }
       });
     }
   });
-  var gpx = row.querySelector('a[href$=".gpx"]');
-  var after = row.querySelector('a[href$=".kml"]') || gpx;
-  if (after) { after.after(share); after.after(fav); }
-  else { row.appendChild(fav); row.appendChild(share); }
+  if (arriba) {
+    // delante del idioma, para que los dos botones de la ruta queden juntos
+    // y el idioma, «Lo mio» y el tema sigan en su orden de siempre.
+    var idioma = barraDerecha.querySelector('.lang-switch');
+    if (idioma && idioma.before) { idioma.before(fav); idioma.before(share); }
+    else { barraDerecha.appendChild(fav); barraDerecha.appendChild(share); }
+  } else if (row) {
+    var gpx = row.querySelector('a[href$=".gpx"]');
+    var after = row.querySelector('a[href$=".kml"]') || gpx;
+    if (after) { after.after(share); after.after(fav); }
+    else { row.appendChild(fav); row.appendChild(share); }
+  }
 })();
 
 /* «Lo mio»: favoritas, vistas hace poco y contacto, en la barra de todas las

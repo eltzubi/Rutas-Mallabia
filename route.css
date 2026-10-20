@@ -81,6 +81,19 @@
 @media (max-width:359px){
   .back-link{ font-size:12px; padding:7px 10px; letter-spacing:.04em; }
 }
+/* En el movil la barra de una ficha lleva «← Rutas», guardar, compartir,
+   idioma, «Lo mio» y tema. «Mallabia · Bizkaia» no cabe -- se iba a tres
+   lineas y desbordaba la pagina a 390 px -- y ademas esta en el pie de cada
+   pagina, asi que ahi se quita y los botones se aprietan. */
+@media (max-width:659px){
+  .masthead{ padding:7px 12px; }
+  .masthead-right{ gap:8px; }
+  .masthead .place{ display:none; }
+  .lang-larga{ display:none; }
+  .lang-corta{ display:inline; }
+  .theme-toggle, .mio-abrir, .mast-accion{ width:24px; height:24px; }
+  .theme-toggle svg, .mio-abrir svg, .mast-accion svg{ width:13px; height:13px; }
+}
 /* Rutas parecidas: hasta ahora una ficha terminaba en "volver a rutas" y ahi
    se acababa la visita. Las elige build.py por actividad y distancia, con los
    datos reales de las tarjetas de la portada. */

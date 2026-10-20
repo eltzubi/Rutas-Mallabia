@@ -267,6 +267,19 @@ body{
   font:700 9px/14px 'IBM Plex Mono',monospace; text-align:center;
 }
 
+/* Guardar y compartir la ruta, en la barra de la ficha. Misma forma que el
+   resto de los botones de la barra; el corazon se rellena al guardarla. */
+.mast-accion{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:26px; height:26px; border-radius:50%;
+  border:1px solid var(--line); background:none; color:var(--ink-dim);
+  cursor:pointer; flex-shrink:0; padding:0;
+}
+.mast-accion:hover{ border-color:var(--teal); color:var(--teal); }
+.mast-accion:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+.mast-accion.is-fav{ color:var(--teal); border-color:var(--teal); }
+.mast-accion.is-fav svg{ fill:currentColor; }
+
 .mio-dialog{
   box-sizing:border-box; width:min(100% - 24px, 460px);
   max-height:calc(100dvh - 32px);
