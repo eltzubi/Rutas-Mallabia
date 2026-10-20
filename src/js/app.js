@@ -519,3 +519,44 @@
     });
   });
 })();
+
+/* La barra de filtros del movil se aparta al bajar y vuelve al subir.
+   Leyendo una lista de 60 tarjetas, 57 px fijos abajo se notan; en cuanto
+   haces ademan de volver atras, la barra ya esta ahi.
+
+   Solo por debajo de 660 px, que es donde la barra esta abajo (en pantalla
+   ancha sigue arriba y no estorba), y solo si no se ha pedido menos
+   movimiento: ahi aparecer y desaparecer de golpe molesta mas que ayudar. */
+(function(){
+  var barra = document.querySelector('.finder-toolbar');
+  if (!barra || !window.matchMedia) return;
+  var movil = window.matchMedia('(max-width:659px)');
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var DESDE = 320;   // por encima del heroe; arriba del todo nunca se aparta
+  var BAJA = 10;     // lo que hay que bajar para que se aparte
+  var SUBE = 6;      // y lo que hay que subir para que vuelva
+  var ultimo = window.pageYOffset || 0;
+  var pendiente = false;
+
+  function aparta(si){ barra.classList.toggle('se-aparta', si); }
+
+  function mira(){
+    pendiente = false;
+    if (!movil.matches || quieto.matches) { aparta(false); return; }
+    var y = window.pageYOffset || 0;
+    var fin = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
+    if (y <= DESDE || fin) { aparta(false); ultimo = y; return; }
+    if (y - ultimo > BAJA) { aparta(true); ultimo = y; }
+    else if (ultimo - y > SUBE) { aparta(false); ultimo = y; }
+  }
+  window.addEventListener('scroll', function(){
+    if (pendiente) return;
+    pendiente = true;
+    window.requestAnimationFrame(mira);
+  }, { passive: true });
+  // Si se abre un dialogo o se cambia de vista, que no se quede escondida.
+  document.addEventListener('click', function(ev){
+    if (ev.target.closest && ev.target.closest('.finder-toolbar, #mioAbrir, #openSearch')) aparta(false);
+  });
+  (movil.addEventListener ? movil : null) && movil.addEventListener('change', mira);
+})();

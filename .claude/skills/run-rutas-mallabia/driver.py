@@ -250,6 +250,23 @@ def cmd_filtros(a):
         pg.click('.activity-chip[data-activity="all"]')
         pg.wait_for_timeout(600)
         vuelta = visibles(); print(f"  de vuelta a todas      {vuelta}")
+
+        # La barra del movil se aparta al bajar y vuelve al subir. Se estrecha
+        # la ventana en vez de abrir otra pagina: Playwright no deja anidar
+        # dos sesiones sincronas.
+        pg.set_viewport_size({"width": 390, "height": 844})
+        pg.evaluate("window.scrollTo(0,0)"); pg.wait_for_timeout(400)
+        apartada = lambda: pg.eval_on_selector(
+            ".finder-toolbar", "n => n.classList.contains('se-aparta')")
+        assert not apartada(), "arriba del todo no deberia estar apartada"
+        pg.mouse.wheel(0, 900); pg.wait_for_timeout(500)
+        assert apartada(), "al bajar no se aparto"
+        pg.mouse.wheel(0, -200); pg.wait_for_timeout(500)
+        assert not apartada(), "al subir no volvio"
+        pg.evaluate("window.scrollTo(0, document.documentElement.scrollHeight)")
+        pg.wait_for_timeout(600)
+        assert not apartada(), "al final de la pagina tiene que verse"
+        print("  barra del movil        se aparta al bajar y vuelve al subir")
         assert vuelta == total, f"no volvio a {total}"
     print("\nbusqueda y filtros, correctos")
     return 0
