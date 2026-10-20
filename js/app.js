@@ -520,9 +520,17 @@
   });
 })();
 
-/* La barra de filtros del movil se aparta al bajar y vuelve al subir.
-   Leyendo una lista de 60 tarjetas, 57 px fijos abajo se notan; en cuanto
-   haces ademan de volver atras, la barra ya esta ahi.
+/* La barra de filtros del movil se aparta al bajar, y vuelve al subir o en
+   cuanto dejas de mover la pagina. Leyendo una lista de 60 tarjetas, 57 px
+   fijos abajo se notan; en cuanto paras o haces ademan de volver atras, la
+   barra ya esta ahi.
+
+   Vuelve tambien al parar, y no solo al subir, porque el autor conto que en
+   su movil desaparecia y no volvia. No se pudo reproducir aqui -- ni con
+   rueda, ni con frames perdidos, ni subiendo de tres en tres pixeles -- asi
+   que en vez de arreglar a ciegas lo que no se ve, se le quita al problema
+   el sitio donde esconderse: si la pagina lleva 600 ms quieta, la barra
+   vuelve, pase lo que pase con los eventos de scroll.
 
    Solo por debajo de 660 px, que es donde la barra esta abajo (en pantalla
    ancha sigue arriba y no estorba), y solo si no se ha pedido menos
@@ -534,14 +542,15 @@
   var quieto = window.matchMedia('(prefers-reduced-motion: reduce)');
   var DESDE = 320;   // por encima del heroe; arriba del todo nunca se aparta
   var BAJA = 10;     // lo que hay que bajar para que se aparte
-  var SUBE = 6;      // y lo que hay que subir para que vuelva
+  var SUBE = 4;      // y lo que hay que subir para que vuelva
+  var PARADA = 600;  // ms quieto tras los que vuelve sola
   var ultimo = window.pageYOffset || 0;
-  var pendiente = false;
+  var marco = 0, reloj = 0;
 
   function aparta(si){ barra.classList.toggle('se-aparta', si); }
 
   function mira(){
-    pendiente = false;
+    marco = 0;
     if (!movil.matches || quieto.matches) { aparta(false); return; }
     var y = window.pageYOffset || 0;
     var fin = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
@@ -549,14 +558,23 @@
     if (y - ultimo > BAJA) { aparta(true); ultimo = y; }
     else if (ultimo - y > SUBE) { aparta(false); ultimo = y; }
   }
-  window.addEventListener('scroll', function(){
-    if (pendiente) return;
-    pendiente = true;
-    window.requestAnimationFrame(mira);
-  }, { passive: true });
-  // Si se abre un dialogo o se cambia de vista, que no se quede escondida.
+
+  function alMover(){
+    // cancelar y volver a pedir, en vez de una bandera: si el navegador deja
+    // de dar frames (pestana al fondo, pantalla apagada), al volver se
+    // atiende la ultima peticion en vez de quedarse trabada para siempre.
+    if (marco) window.cancelAnimationFrame(marco);
+    marco = window.requestAnimationFrame(mira);
+    if (reloj) window.clearTimeout(reloj);
+    reloj = window.setTimeout(function(){ aparta(false); ultimo = window.pageYOffset || 0; }, PARADA);
+  }
+  window.addEventListener('scroll', alMover, { passive: true });
+  // Al volver a la pagina desde otra app, que no se quede escondida.
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) aparta(false); });
+  window.addEventListener('pageshow', function(){ aparta(false); });
+  // Si se abre un dialogo o se toca la propia barra, que este a la vista.
   document.addEventListener('click', function(ev){
     if (ev.target.closest && ev.target.closest('.finder-toolbar, #mioAbrir, #openSearch')) aparta(false);
   });
-  (movil.addEventListener ? movil : null) && movil.addEventListener('change', mira);
+  if (movil.addEventListener) movil.addEventListener('change', mira);
 })();

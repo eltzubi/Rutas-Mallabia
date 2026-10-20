@@ -259,14 +259,18 @@ def cmd_filtros(a):
         apartada = lambda: pg.eval_on_selector(
             ".finder-toolbar", "n => n.classList.contains('se-aparta')")
         assert not apartada(), "arriba del todo no deberia estar apartada"
-        pg.mouse.wheel(0, 900); pg.wait_for_timeout(500)
+        pg.mouse.wheel(0, 900); pg.wait_for_timeout(250)
         assert apartada(), "al bajar no se aparto"
-        pg.mouse.wheel(0, -200); pg.wait_for_timeout(500)
+        pg.wait_for_timeout(900)
+        assert not apartada(), "parada la pagina, tiene que volver sola"
+        pg.mouse.wheel(0, 600); pg.wait_for_timeout(250)
+        assert apartada(), "al bajar otra vez no se aparto"
+        pg.mouse.wheel(0, -200); pg.wait_for_timeout(300)
         assert not apartada(), "al subir no volvio"
         pg.evaluate("window.scrollTo(0, document.documentElement.scrollHeight)")
         pg.wait_for_timeout(600)
         assert not apartada(), "al final de la pagina tiene que verse"
-        print("  barra del movil        se aparta al bajar y vuelve al subir")
+        print("  barra del movil        se aparta al bajar; vuelve al parar y al subir")
         assert vuelta == total, f"no volvio a {total}"
     print("\nbusqueda y filtros, correctos")
     return 0
