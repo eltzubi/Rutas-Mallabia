@@ -186,6 +186,29 @@ test('search ignores accents and case, needs every word and finds places only in
   assert.equal(find('zzzz no existe').length,0);
   assert.equal(find('').length,totalRoutes(e));
 });
+test('la lupa abre el buscador encima de la barra, y al cerrar vuelven todas',()=>{
+  // El buscador dejo de ser una caja fija encima del listado: ahora es una
+  // lupa en la cabecera. Sin JavaScript no se ve ninguna de las dos cosas,
+  // asi que lo primero que se comprueba es que el JS las saca del hidden.
+  const e=env();
+  assert(e.one('#openSearch').hidden,'sin JS la lupa no esta');
+  assert(e.one('#searchBar').hidden,'ni el campo');
+  e.run('filters.js');
+  assert(!e.one('#openSearch').hidden,'con JS aparece la lupa');
+  assert(!e.one('#searchBar').classList.contains('is-open'),'pero cerrada');
+  e.one('#openSearch').click();
+  assert(e.one('#searchBar').classList.contains('is-open'),'al pulsarla se abre');
+  assert.equal(e.one('#openSearch').getAttribute('aria-expanded'),'true');
+  const box=e.one('#routeSearch');
+  box.value='oiz';box.dispatchEvent({type:'input'});
+  const conFiltro=visible(e).length;
+  assert.ok(conFiltro>0 && conFiltro<totalRoutes(e),'y filtra');
+  e.one('#closeSearch').click();
+  assert(!e.one('#searchBar').classList.contains('is-open'),'la X la cierra');
+  assert.equal(e.one('#openSearch').getAttribute('aria-expanded'),'false');
+  assert.equal(box.value,'','vacia lo escrito');
+  assert.equal(visible(e).length,totalRoutes(e),'y vuelven todas las rutas');
+});
 test('invalid storage is safe; old preferences migrate',()=>{
   for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],view:'unknown'})]){
     const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));

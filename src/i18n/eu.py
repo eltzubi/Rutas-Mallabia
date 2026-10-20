@@ -72,6 +72,8 @@ COMMON = {
     'Cambiar a tema oscuro': 'Aldatu gai ilunera',
     '<span class="place">Mallabia · Bizkaia</span>':
         '<span class="place">Mallabia · Bizkaia</span>',
+    'aria-label="Buscar una ruta"': 'aria-label="Bilatu ibilbide bat"',
+    'aria-label="Cerrar la b&uacute;squeda"': 'aria-label="Itxi bilaketa"',
     'aria-label="Volver arriba"': 'aria-label="Itzuli gora"',
     'aria-label="Foto ampliada"': 'aria-label="Argazki handitua"',
     'aria-label="Cerrar"': 'aria-label="Itxi"',

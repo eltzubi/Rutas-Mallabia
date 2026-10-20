@@ -21,6 +21,44 @@
   var searchInput = document.getElementById('routeSearch');
   if (!cards.length || !difficulty || !elevation) return;
   var searchTerm = '';
+
+  // La lupa de la cabecera abre el buscador encima de la propia barra. El
+  // boton y la tira van con hidden en el HTML: sin JavaScript el filtrado no
+  // funciona, asi que no se ensena un campo que no haria nada. Al cerrar se
+  // vacia la busqueda y se avisa con un evento input, para que el listado
+  // vuelva a estar entero y no se quede filtrado por algo que ya no se ve.
+  var openSearch = document.getElementById('openSearch');
+  var searchBar = document.getElementById('searchBar');
+  var closeSearch = document.getElementById('closeSearch');
+  if (openSearch && searchBar && searchInput) {
+    openSearch.hidden = false;
+    searchBar.hidden = false;      // deja de estar oculto por el atributo;
+    searchBar.classList.remove('is-open');  // lo oculta la clase, que si anima
+    var abre = function (si) {
+      searchBar.classList.toggle('is-open', si);
+      openSearch.setAttribute('aria-expanded', si ? 'true' : 'false');
+      if (si) {
+        searchInput.focus();
+      } else {
+        // Al cerrar se vacia la busqueda y se vuelve a filtrar, como hace
+        // «Ver todas»: si no, el listado se quedaria recortado por algo que
+        // ya no se ve escrito en ningun sitio.
+        if (searchInput.value || searchTerm) {
+          searchInput.value = '';
+          searchTerm = '';
+          apply();
+        }
+        openSearch.focus();
+      }
+    };
+    openSearch.addEventListener('click', function () {
+      abre(!searchBar.classList.contains('is-open'));
+    });
+    if (closeSearch) closeSearch.addEventListener('click', function () { abre(false); });
+    searchBar.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' || ev.key === 'Esc') { ev.stopPropagation(); abre(false); }
+    });
+  }
   // La descripcion de cada tarjeta ya nombra los barrios/pueblos por los que
   // pasa la ruta ("Circuito ... por Goierri, Elgeta, ... y Berriz"), asi que
   // una busqueda por un lugar que no esta en el titulo pero si en el

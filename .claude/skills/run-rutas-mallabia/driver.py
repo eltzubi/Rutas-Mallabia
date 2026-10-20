@@ -223,13 +223,25 @@ def cmd_filtros(a):
         total = visibles(); print(f"  sin filtrar            {total} tarjetas")
         assert total == esperadas, f"se esperaban {esperadas}, hay {total}"
 
-        pg.fill(".route-search input", "cascada")
+        # El buscador ya no es una caja fija: es la lupa de la cabecera, y
+        # hay que abrirla antes de poder escribir.
+        pg.click("#openSearch")
+        pg.wait_for_timeout(350)
+        assert pg.eval_on_selector("#searchBar", "n => n.classList.contains('is-open')"), \
+            "la lupa no abrio el buscador"
+        pg.fill("#routeSearch", "cascada")
         pg.wait_for_timeout(600)
         con_busqueda = visibles(); print(f"  buscando 'cascada'     {con_busqueda}")
         assert 0 < con_busqueda < total, "la busqueda no filtro nada"
 
-        pg.fill(".route-search input", "")
-        pg.wait_for_timeout(400)
+        # Y la X tiene que devolver el listado entero, no solo cerrar la tira.
+        pg.click("#closeSearch")
+        pg.wait_for_timeout(500)
+        assert not pg.eval_on_selector("#searchBar", "n => n.classList.contains('is-open')"), \
+            "la X no cerro el buscador"
+        tras_cerrar = visibles(); print(f"  tras cerrar la lupa    {tras_cerrar}")
+        assert tras_cerrar == total, "al cerrar el buscador no volvieron todas"
+
         pg.click('.activity-chip[data-activity="bici"]')
         pg.wait_for_timeout(600)
         bici = visibles(); print(f"  solo e-bike            {bici}")
