@@ -163,7 +163,9 @@ body{
   position:fixed; inset:0; z-index:100;
   /* Al arrastrar sobre la foto ampliada se movia la pagina de detras. */
   overscroll-behavior:contain;
-  background:rgba(10,12,8,.92);
+  /* Casi opaco: al 92% la barra de arriba y la de abajo se transparentaban
+     y la X de cerrar parecia uno mas de sus botones. */
+  background:rgba(6,9,16,.985);
   display:none; align-items:center; justify-content:center;
   padding:24px;
 }
@@ -177,11 +179,17 @@ body{
 }
 .lightbox.open{ display:flex; }
 .lightbox-close{
-  position:absolute; top:18px; right:18px;
-  width:38px; height:38px; border-radius:50%;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
-  color:#fff; font-size:16px; cursor:pointer;
+  position:absolute; top:14px; right:14px;
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:50%;
+  /* Oscura y con filo claro: asi se lee igual sobre un cielo blanco que
+     sobre un hayedo en sombra, que es lo que suele haber detras. */
+  background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.45);
+  color:#fff; font-size:18px; line-height:1; cursor:pointer;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
 }
+.lightbox-close:hover{ background:rgba(0,0,0,.75); border-color:#fff; }
+.lightbox-close:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
 /* Pasar fotos: con el dedo en el movil, y con estos botones en el raton,
    que ahi no hay gesto que valga. Van por encima de la foto pero pegados a
    los bordes, donde no tapan nada. */
@@ -189,10 +197,11 @@ body{
   position:absolute; top:50%; transform:translateY(-50%);
   display:inline-flex; align-items:center; justify-content:center;
   width:44px; height:44px; border-radius:50%;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3);
+  background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.45);
   color:#fff; cursor:pointer; padding:0;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
 }
-.lightbox-nav:hover{ background:rgba(255,255,255,.22); }
+.lightbox-nav:hover{ background:rgba(0,0,0,.75); border-color:#fff; }
 .lightbox-nav:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
 .lightbox-nav.is-prev{ left:10px; }
 .lightbox-nav.is-next{ right:10px; }
