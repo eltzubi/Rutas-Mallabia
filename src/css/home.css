@@ -1157,10 +1157,10 @@ footer a:hover{ text-decoration:underline; }
 .aviso-aro.r2{ animation-delay:.75s; }
 /* En la barra salen mas seguidas (cada 0,55 s en vez de 0,75): asi casi
    siempre hay dos aros a la vista y el latido se nota de lejos. */
-.masthead .aviso-aro{ animation-duration:2.2s; }
-.masthead .aviso-aro.r2{ animation-delay:.55s; }
-.masthead .aviso-aro.r3{ animation-delay:1.1s; }
-.masthead .aviso-aro.r4{ animation-delay:1.65s; }
+.masthead .aviso-aro{ animation-duration:2.9s; }
+.masthead .aviso-aro.r2{ animation-delay:.72s; }
+.masthead .aviso-aro.r3{ animation-delay:1.45s; }
+.masthead .aviso-aro.r4{ animation-delay:2.17s; }
 .aviso-aro.r3{ animation-delay:1.5s; }
 .aviso-aro.r4{ animation-delay:2.25s; }
 @keyframes avisoAro{
@@ -1207,7 +1207,10 @@ footer a:hover{ text-decoration:underline; }
   /* Separada del filo: el aro sale del centro del boton, asi que lo que
      cabe a la izquierda es lo que marca cuanto puede crecer. */
   margin-left:9px;
-  --aro:color-mix(in srgb, var(--violet) 55%, transparent);
+  /* Mas suave que el 55% con el que salio: el autor lo queria menos
+     marcado. Sigue viendose porque lo que lo hace visible es el tamano
+     de la onda, no lo fuerte del color. */
+  --aro:color-mix(in srgb, var(--violet) 38%, transparent);
 }
 /* La insignia va la primera y «Mallabia · Bizkaia» justo detras: el margen
    automatico se come el hueco que sobra y empuja el resto a la derecha, que
@@ -1215,8 +1218,8 @@ footer a:hover{ text-decoration:underline; }
 /* 22 px y no 10: el aro llega a 31 px del centro del boton, asi que con
    menos hueco la onda pasaba por encima de la primera letra de «MALLABIA». */
 .masthead .aviso-pulso + .place{ margin-right:auto; margin-left:22px; }
-.masthead .aviso-boton{ width:26px; height:26px; }
-.masthead .aviso-boton svg{ width:14px; height:14px; }
+.masthead .aviso-boton{ width:23px; height:23px; }
+.masthead .aviso-boton svg{ width:13px; height:13px; }
 /* En el movil la barra lleva ya seis cosas -- sitio, aviso, idioma, lupa,
    «Lo mio» y tema -- y «MALLABIA · BIZKAIA» se partia en dos lineas. El
    triangulo se encoge y el aire entre botones se aprieta: el aviso sigue
@@ -1227,8 +1230,8 @@ footer a:hover{ text-decoration:underline; }
      entre los botones, que es lo que faltaba para acertarles con el dedo. */
   .masthead-right{ gap:13px; }
   .masthead .aviso-pulso + .place{ margin-left:22px; }
-  .masthead .aviso-boton{ width:22px; height:22px; }
-  .masthead .aviso-boton svg{ width:12px; height:12px; }
+  .masthead .aviso-boton{ width:19px; height:19px; }
+  .masthead .aviso-boton svg{ width:11px; height:11px; }
   .masthead .aviso-aro{ border-width:2px; }
   .theme-toggle, .buscador-abrir, .mio-abrir{ width:24px; height:24px; }
   .theme-toggle svg, .buscador-abrir svg, .mio-abrir svg{ width:13px; height:13px; }
@@ -1261,13 +1264,13 @@ footer a:hover{ text-decoration:underline; }
    onda. 62 es lo que cabe sin que el aro se corte contra el borde de la
    pantalla: el centro del boton queda a 34 px del filo izquierdo. */
 @keyframes avisoAroEstrecho{
-  0%  { width:6px; height:6px; opacity:.9; border-width:3px; }
-  55% { opacity:.55; border-width:2px; }
+  0%  { width:6px; height:6px; opacity:.62; border-width:2px; }
+  55% { opacity:.34; border-width:2px; }
   100%{ width:42px; height:42px; opacity:0; border-width:1px; }
 }
 @keyframes avisoAroCabecera{
-  0%  { width:6px; height:6px; opacity:.9; border-width:3px; }
-  55% { opacity:.55; border-width:3px; }
+  0%  { width:6px; height:6px; opacity:.62; border-width:2px; }
+  55% { opacity:.34; border-width:2px; }
   100%{ width:62px; height:62px; opacity:0; border-width:1px; }
 }
 /* Con la insignia puesta, la barra desaparece y la seccion no ocupa nada
