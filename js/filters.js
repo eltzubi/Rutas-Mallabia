@@ -5,7 +5,9 @@
   var cards = Array.from(finder.querySelectorAll('.route-card[data-activity]'));
   var activityButtons = Array.from(finder.querySelectorAll('.activity-chip'));
   var distanceButtons = Array.from(finder.querySelectorAll('.distance-chip'));
-  var viewButtons = Array.from(finder.querySelectorAll('.view-toggle-btn'));
+  // Los de la barra (ocultos, para el boton flotante) y los chips que viven
+  // dentro de «Filtrar». Los dos juegos comparten estado y manejador.
+  var viewButtons = Array.from(finder.querySelectorAll('.view-toggle-btn, .vista-chip'));
   var difficulty = document.getElementById('difficultySelect');
   var elevation = document.getElementById('elevationSelect');
   var results = document.getElementById('routeResults');
@@ -113,7 +115,7 @@
   var state = Object.assign({}, defaults);
   var allowed = {
     activity:['all','senderismo','bici'], distance:['all','corto','media1','media2','larga'],
-    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','map'], fav:[false]
+    difficulty:['all','facil','media','dificil'], elevation:['all','low','medium','high'], view:['list','indice','map'], fav:[false]
   };
   try {
     var saved = JSON.parse(localStorage.getItem('trabakutik_filters'));
@@ -181,9 +183,12 @@
         if (hasBici && hasPie) ambas++;
       }
     });
-    results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
+    // «Indice» son las mismas tarjetas con otro vestido, asi que el bloque de
+    // resultados sale en las dos vistas de lista y solo lo esconde el mapa.
+    results.hidden = state.view === 'map'; mapWrap.hidden = state.view !== 'map';
+    results.classList.toggle('es-indice', state.view === 'indice');
     if (viewFab) {
-      var toMap = state.view === 'list';
+      var toMap = state.view !== 'map';
       viewFab.innerHTML = (toMap ? MAP_ICON : LIST_ICON) + '<span>' + (toMap ? fabWords.map : fabWords.list) + '</span>';
       viewFab.setAttribute('aria-label', toMap ? fabWords.toMap : fabWords.toList);
     }
@@ -289,8 +294,13 @@
     // Un solo boton, fijo en el mismo punto de la pantalla, que alterna entre
     // vistas: hace click por programa sobre el boton oculto correspondiente,
     // reutilizando su logica (estado + scroll al mapa) en vez de duplicarla.
+    // Con tres vistas el boton sigue siendo de dos posiciones: al mapa y de
+    // vuelta. Y vuelve a la vista de lista en la que estabas, no siempre a
+    // las fichas: si estabas en el indice, al indice.
+    var ultimaLista = 'list';
     viewFab.addEventListener('click', function(){
-      var target = state.view === 'list' ? 'map' : 'list';
+      if (state.view !== 'map') ultimaLista = state.view;
+      var target = state.view === 'map' ? ultimaLista : 'map';
       var btn = viewButtons.find(function(b){ return b.dataset.view === target; });
       if (btn) btn.click();
     });
