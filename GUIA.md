@@ -271,10 +271,70 @@ Lo que sí sirve:
 1. **Esto mismo** (Claude Code sobre el repositorio), que es como está hecho
    todo lo anterior.
 2. **Cualquier asistente con acceso al repositorio**, dándole este fichero y
-   `CLAUDE.md`.
+   `CLAUDE.md`. Para ChatGPT y Codex en concreto, mira el apartado 12: llegan,
+   pero con un agujero que conviene conocer antes.
 3. **A mano**: editar `src/`, pasar las dos órdenes del apartado 2, mirar
    `check_site.py` y empujar. No hace falta nada más instalado que Python 3.
 
 Lo que nunca debería pasar, lo trabaje quien lo trabaje: que alguien edite los
 `.html` de la raíz, que se publique sin pasar `check_site.py`, o que se invente
 un dato de una ruta.
+
+---
+
+## 12. ChatGPT y Codex: hasta dónde llegan
+
+La pregunta de siempre es si lo puede seguir ChatGPT. La respuesta depende de
+cuál de los dos ChatGPT, porque no son lo mismo.
+
+### Codex (el agente de OpenAI): sí, con un agujero
+
+Codex — en `codex.chatgpt.com` o su herramienta de línea de órdenes — clona el
+repositorio de verdad, ejecuta órdenes y hace commit. Sobre esto puede
+trabajar. Lo que le funciona y lo que no:
+
+| Orden | ¿Funciona? | Por qué |
+| --- | --- | --- |
+| `python3 src/i18n/make_eu.py` | Sí | Python de la biblioteca estándar, sin instalar nada |
+| `python3 src/build.py` | Sí | Igual |
+| `python3 scripts/check_site.py` | Sí | Las 26.451 comprobaciones, sin dependencias |
+| `node scripts/test_ui.cjs` | Sí | Node viene en el entorno |
+| `driver.py verifica` | **Probablemente no** | Necesita Chromium y Playwright |
+
+El agujero es el último y no es pequeño. El `driver.py` abre un navegador de
+verdad y comprueba ocho cosas que ningún script de texto puede ver: que el
+mapa cargue, que los filtros filtren, que los temas claro y oscuro cambien,
+que el sitio funcione sin conexión, que «Lo mío» recuerde las rutas, que el
+visor de fotos abra, que el aviso se cierre dejando la portada donde estaba, y
+la auditoría de la página. Para eso hace falta descargar Chromium, y los
+entornos de Codex vienen **con la red cortada por defecto**. Hay que
+activársela en los ajustes del entorno, y aun así no está garantizado.
+
+Sin el `driver.py`, Codex publica a ciegas en todo lo que sea JavaScript o
+mapa. Puede seguir añadiendo rutas y arreglando textos con bastante
+seguridad — eso lo cubre `check_site.py` —, pero no debería tocar
+`src/js/` sin alguien que mire la página después.
+
+### ChatGPT a secas (la ventana de chat): no
+
+Con el conector de GitHub puede leer el repositorio y explicarte cosas, y
+escribe bien. Pero **no ejecuta nada**: no construye, no verifica, no hace
+commit. Pegar fragmentos de un lado a otro con 61 páginas, dos idiomas y
+26.451 comprobaciones no acaba bien. Es exactamente lo mismo que pasa con
+Lovable (apartado 11). Para consultar y para escribir, bien; para construir,
+no.
+
+### Lo que hay que darle el primer día, sea la herramienta que sea
+
+1. **Este fichero y `CLAUDE.md`, enteros**, no resumidos.
+2. **`make_eu.py` antes que `build.py`, siempre, y en ese orden.** Si cambia
+   una frase en castellano y no se pasa `make_eu.py`, la traducción al
+   euskera se queda descolgada y el build falla a propósito. Es la trampa en
+   la que cae todo el que llega nuevo.
+3. **Nunca inventar un dato**: desniveles, tiempos, fuentes, nombres de
+   sitios. Lo que no esté en la fuente, se pregunta o se dice que falta
+   (apartado 7).
+4. **No reescribir el texto de las rutas.** Lo escribe el autor. Se corrige una
+   falta o se ajusta una frase si él lo pide, nada más.
+5. **Verificar antes de publicar**, y si no puede pasar el `driver.py`, que lo
+   diga en vez de dar por buena la parte que no ha mirado.
