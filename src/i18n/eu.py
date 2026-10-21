@@ -532,7 +532,7 @@ HOME = {
         'alt="Aixolako urtegia egunsentian, ura geldi mendi-hegalak islatzen, presaren horma hondoan eta eguzkia ertzeko zuhaitzen artetik ateratzen"',
 
     # finder (redesign)
-    'aria-label="Ver como fichas, &iacute;ndice o mapa"': 'aria-label="Ikusi fitxa, aurkibide edo mapa gisa"',
+    'aria-label="Ver como lista o mapa"': 'aria-label="Ikusi zerrenda edo mapa gisa"',
     '<h3 class="route-card-name">Trabakua, Goierri, Aixola y Eitzaga</h3>':
         '<h3 class="route-card-name">Trabakua, Goierri, Aixola eta Eitzaga</h3>',
     'alt="La e-bike apoyada junto a un puente de piedra de un solo arco, sobre el cauce cubierto de hojas secas"':
@@ -574,7 +574,6 @@ HOME = {
         'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
         'batekin"',
     'data-view="list">Lista</button>': 'data-view="list">Zerrenda</button>',
-    'data-view="indice">&Iacute;ndice</button>': 'data-view="indice">Aurkibidea</button>',
     'data-view="map">Mapa</button>': 'data-view="map">Mapa</button>',
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',
