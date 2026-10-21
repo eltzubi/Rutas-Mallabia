@@ -390,7 +390,23 @@
    vista y liberan el hueco que ocupaba aqui. Los botones siguen en el DOM
    (filters.js sigue pintando su estado y esos dos atajos les hacen click
    por programa) pero ya no se muestran directamente. */
-.view-toggle{display:none;}
+/* El grupo estuvo oculto mientras las vistas eran dos y el boton flotante
+   bastaba para ir y volver del mapa. Con la tercera («Indice») hace falta un
+   mando a la vista, asi que vuelve, pero solo con las dos vistas de lista:
+   el mapa se sigue llevando el boton flotante y no se repite aqui. */
+.view-toggle{
+  display:inline-flex; gap:2px; padding:2px; flex-shrink:0;
+  border:1px solid var(--line); border-radius:999px; background:var(--ground-raised);
+}
+.view-toggle-btn[data-view="map"]{ display:none; }
+.view-toggle-btn{
+  border:0; border-radius:999px; padding:7px 13px; min-height:34px;
+  background:none; color:var(--ink-dim); cursor:pointer; white-space:nowrap;
+  font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.05em; text-transform:uppercase;
+}
+.view-toggle-btn:hover{ color:var(--ink); }
+.view-toggle-btn.active{ background:var(--teal); color:var(--ground); }
+.view-toggle-btn:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
 .filter-reset{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--teal);background:none;border:0;border-radius:8px;padding:10px 4px;min-height:44px;cursor:pointer;white-space:nowrap;}
 .filter-reset:hover{text-decoration:underline;text-underline-offset:4px;}
 .filter-reset[hidden]{display:none;}
@@ -445,6 +461,44 @@
 .route-card-tags{ font-size:11px; margin:0; color:var(--ink-dim); }
 .route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
 .route-card-tags .v:first-child{ color:var(--teal); }
+
+/* ---- Vista «Indice» ---------------------------------------------------
+   Las mismas tarjetas, en una fila de texto. Una tarjeta mide 544 px en un
+   movil, asi que ver las 61 eran 39 pantallazos de uno en uno: no se podian
+   comparar dos ni volver a la que viste hace un rato. En fila son unos 70 px
+   y las 61 caben en cinco. No hay marcado nuevo ni dato nuevo: se esconde la
+   foto y la descripcion, y el perfil se queda de chispazo a la derecha,
+   que es lo que distingue una ruta de otra de un vistazo.                  */
+.route-card-grid.es-indice{ grid-template-columns:1fr; gap:2px; }
+.es-indice .route-card{
+  display:block; padding:10px 14px; border-radius:12px;
+  border-color:transparent; background:var(--ground-raised);
+}
+/* Sin el desplazamiento de las fichas: en una fila de 70 px el salto marea
+   y ademas movia a las vecinas. Aqui el aviso de que es pulsable es el color. */
+.es-indice .route-card:hover{ transform:none; box-shadow:none; border-color:var(--line); }
+.es-indice .route-card:hover .route-card-name{ color:var(--teal); }
+.es-indice .route-card:active{ transform:none; }
+.es-indice .route-card-photo,
+.es-indice .route-card-desc,
+.es-indice .route-card-new{ display:none; }
+.es-indice .route-card-body{
+  display:grid; grid-template-columns:1fr 62px; align-items:center;
+  column-gap:14px; row-gap:2px; padding:0; min-width:0;
+}
+.es-indice .route-card-name{ font-size:15px; line-height:1.25; grid-column:1; min-width:0; }
+/* En dos lineas y no en una: juntandolas con un punto, en un movil estrecho
+   las etiquetas se iban abajo igual y el separador se quedaba colgando al
+   final de la primera. */
+.es-indice .route-card-stats,
+.es-indice .route-card-tags{ font-size:11.5px; grid-column:1; }
+.es-indice .route-card-stats{ grid-column:1; }
+.es-indice .route-card-chart{
+  grid-column:2; grid-row:1 / span 2; height:30px; margin:0; opacity:.9;
+}
+/* La que acaba de entrar se sigue distinguiendo, pero con un filete y no con
+   la pastilla sobre la foto, que aqui no hay foto. */
+.es-indice .route-card.is-new{ border-color:var(--teal); }
 .route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
 /* Tiempo estimado a pie: solo en tarjetas con actividad senderismo, ver
    estimate_time_range() en build.py -- no se calcula en bici/e-bike porque
