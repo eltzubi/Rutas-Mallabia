@@ -344,17 +344,32 @@ body{
 }
 .mio-bloque{ margin:0 0 22px; }
 .mio-bloque:last-child{ margin-bottom:0; }
+/* El titulo de cada monton, en Fraunces y a toda tinta, con un guion verde
+   delante. En mono de 11px y a media tinta se perdian contra el fondo: lo que
+   se veia del panel eran las tarjetas, no de que iba cada bloque. El guion
+   repite el filete de color de .parada, que ya hace esto mismo en las fichas. */
 .mio-bloque h3{
-  margin:0 0 10px;
-  font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--ink-dim);
+  display:flex; align-items:center; gap:10px;
+  margin:0 0 12px;
+  font:600 16px/1.25 'Fraunces',serif; letter-spacing:-.01em;
+  text-transform:none; color:var(--ink);
+}
+.mio-bloque h3::before{
+  content:""; flex-shrink:0;
+  width:3px; height:16px; border-radius:99px; background:var(--teal);
 }
 /* Titulo de bloque con una accion a la derecha: «Vistas hace poco · Borrar».
-   El boton solo esta mientras haya algo que borrar. */
-.mio-bloque-cab{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+   El boton solo esta mientras haya algo que borrar. El hueco de debajo lo
+   pone la fila, no cada pieza: con margenes distintos en el titulo y en el
+   boton, centrarlos los dejaba desalineados 4 px. */
+.mio-bloque-cab{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  margin-bottom:12px;
+}
+.mio-bloque-cab h3{ margin-bottom:0; }
 .mio-borrar{
   flex-shrink:0; border:0; background:none; cursor:pointer;
-  margin:-4px 0 10px; padding:4px 2px;
+  margin:0; padding:4px 2px;
   font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.08em; text-transform:uppercase;
   color:var(--ink-dim); text-decoration:underline; text-underline-offset:3px;
 }
