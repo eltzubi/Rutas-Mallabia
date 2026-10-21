@@ -574,9 +574,6 @@ HOME = {
         'alt="Ilunabarreko ikuspegiak inguruko haran eta mendietara, aurrean harri-pila '
         'batekin"',
     'data-view="list">Lista</button>': 'data-view="list">Zerrenda</button>',
-    '<legend>C&oacute;mo verlas</legend>': '<legend>Nola ikusi</legend>',
-    'data-view="list">Fichas</button>': 'data-view="list">Fitxak</button>',
-    'data-view="indice">&Iacute;ndice</button>': 'data-view="indice">Aurkibidea</button>',
     'data-view="map">Mapa</button>': 'data-view="map">Mapa</button>',
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',

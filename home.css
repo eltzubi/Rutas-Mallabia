@@ -224,28 +224,6 @@
 .distance-filter{display:flex;flex-wrap:wrap;gap:8px;}
 .distance-chip{background:var(--ground-raised);font-size:12px;padding:10px 18px;white-space:nowrap;}
 .distance-chip.active{background:var(--teal-soft);border-color:color-mix(in srgb,var(--teal) 30%,transparent);color:var(--teal);}
-/* «Como verlas» va dentro de #filterControls y no en la barra de arriba:
-   asi se muda solo al dialogo por debajo de 660 px, como los demas mandos,
-   y la barra del buscador no gana ni un boton. Se intento antes sacando
-   .view-toggle de su display:none y metia dos piezas mas en una barra que
-   ya iba justa, descolocando lo que habia. */
-/* Sin filete de separacion: un <legend> muerde el borde de su <fieldset> y
-   la linea acababa atravesando el rotulo. El aire ya separa, y asi queda
-   igual que «Distancia» y «Esfuerzo». */
-.vista-group{margin:22px 0 0;padding:0;border:0;min-width:0;}
-.vista-group legend{font:600 12px 'IBM Plex Mono',monospace;color:var(--ink-dim);margin-bottom:12px;}
-.vista-filter{display:flex;flex-wrap:wrap;gap:8px;}
-.vista-chip{
-  font:600 12px 'IBM Plex Mono',monospace; cursor:pointer;
-  border:1px solid transparent; border-radius:999px;
-  padding:10px 18px; min-height:44px; white-space:nowrap;
-  color:var(--ink-dim); background:var(--ground-raised);
-  transition:background .18s ease,color .18s ease,border-color .18s ease;
-}
-.vista-chip:hover:not(.active){color:var(--ink);}
-.vista-chip.active{background:var(--teal-soft);border-color:color-mix(in srgb,var(--teal) 30%,transparent);color:var(--teal);}
-.vista-chip:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
-@media(prefers-reduced-motion:reduce){.vista-chip{transition:none;}}
 .advanced-filters{margin-top:14px;}
 .advanced-filters summary{display:flex;align-items:center;gap:8px;width:fit-content;cursor:pointer;font:600 12px 'IBM Plex Mono',monospace;color:var(--ink-dim);min-height:44px;list-style:none;border-radius:8px;}
 .advanced-filters summary::-webkit-details-marker{display:none;}
@@ -371,20 +349,16 @@
   /* El dialogo entero tiene que caber sin arrastrar, hasta «Restablecer»:
      en un movil de 740 px de alto se salia 74, y en uno de 667, 147. Lo que
      sobraba eran filas de mas, no contenido. Las cinco distancias pasan de
-     tres filas (una entera para «Todas» y dos de dos) a dos de tres; los dos
-     desplegables se ponen uno al lado del otro; y los huecos entre grupos se
-     ajustan. Se mantienen los 44 px de alto minimo en todo lo que se toca. */
+     tres filas (una entera para «Todas» y dos de dos) a dos de tres, y los
+     dos desplegables se ponen uno al lado del otro. Se mantienen los 44 px
+     de alto minimo en todo lo que se toca. */
   .filter-dialog .distance-filter{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
   .filter-dialog .distance-chip{min-height:44px;padding-inline:6px;font-size:11.5px;}
   .filter-dialog .advanced-fields{grid-template-columns:1fr 1fr;gap:10px;}
   .filter-dialog .advanced-filters summary{display:none;}
   .filter-dialog .advanced-filters{margin-top:16px;}
-  .filter-dialog .vista-filter{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-  .filter-dialog .vista-chip{min-height:44px;padding-inline:10px;}
-  .filter-dialog .vista-group{margin-top:16px;}
   .filter-dialog .dialog-activity-group{margin-bottom:14px;}
   .filter-dialog .distance-group legend,
-  .filter-dialog .vista-group legend,
   .filter-dialog .advanced-fields label{margin-bottom:8px;}
 }
 @media(prefers-reduced-motion:reduce){.activity-chip,.distance-chip,.open-filters{transition:none;}}
@@ -480,46 +454,6 @@
 .route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
 .route-card-tags .v:first-child{ color:var(--teal); }
 
-/* ---- Vista «Indice» ---------------------------------------------------
-   Las mismas tarjetas, en una fila de texto. Una tarjeta mide 544 px en un
-   movil, asi que ver las 61 eran 39 pantallazos de uno en uno: no se podian
-   comparar dos ni volver a la que viste hace un rato. En fila son 102 px y
-   la pagina entera baja de 33.154 a 9.040. No hay marcado nuevo ni dato
-   nuevo: se esconde la foto y la descripcion, y el perfil se queda de
-   chispazo a la derecha, que es lo que distingue una ruta de otra de un
-   vistazo. La vista de fichas no se toca y sigue siendo la de entrada.   */
-.route-card-grid.es-indice{ grid-template-columns:1fr; gap:2px; }
-.es-indice .route-card{
-  display:block; padding:10px 14px; border-radius:12px;
-  border-color:transparent; background:var(--ground-raised);
-}
-/* Sin el desplazamiento de las fichas: en una fila de 100 px el salto marea
-   y ademas movia a las vecinas. Aqui el aviso de que es pulsable es el color. */
-.es-indice .route-card:hover{ transform:none; box-shadow:none; border-color:var(--line); }
-.es-indice .route-card:hover .route-card-name{ color:var(--teal); }
-.es-indice .route-card:active{ transform:none; }
-.es-indice .route-card-photo,
-.es-indice .route-card-desc,
-.es-indice .route-card-new{ display:none; }
-.es-indice .route-card-body{
-  display:grid; grid-template-columns:1fr 62px; align-items:center;
-  column-gap:14px; row-gap:2px; padding:0; min-width:0;
-}
-.es-indice .route-card-name{ font-size:15px; line-height:1.25; grid-column:1; min-width:0; }
-/* En dos lineas y no en una: juntandolas con un punto, en un movil estrecho
-   las etiquetas se iban abajo igual y el separador se quedaba colgando al
-   final de la primera. */
-.es-indice .route-card-stats,
-.es-indice .route-card-tags{ font-size:11.5px; grid-column:1; }
-.es-indice .route-card-chart{
-  grid-column:2; grid-row:1 / span 2; height:30px; margin:0; opacity:.9;
-}
-/* La que acaba de entrar se sigue distinguiendo, pero con un filete y no con
-   la pastilla sobre la foto, que aqui no hay foto. */
-.es-indice .route-card.is-new{ border-color:var(--teal); }
-/* En pantalla ancha la rejilla es de dos o tres columnas; el indice es una
-   sola lista, siempre. */
-@media (min-width:660px){ .route-card-grid.es-indice{ grid-template-columns:1fr; } }
 .route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
 /* Tiempo estimado a pie: solo en tarjetas con actividad senderismo, ver
    estimate_time_range() en build.py -- no se calcula en bici/e-bike porque
