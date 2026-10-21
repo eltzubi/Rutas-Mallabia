@@ -233,7 +233,7 @@ FUENTES = [
         "punto": ("zaldibar", None),
         "nota_es": "Junto al pol\u00edgono, de camino a Zaldibar.",
         "nota_eu": "Poligonoaren ondoan, Zaldibarrerako bidean.",
-        "rutas": ["aixola", "zaldibar"],
+        "rutas": ["aixola", "zaldibar", "zaldibararnodeba"],
     },
     {
         "id": "eitzaga",
@@ -243,7 +243,7 @@ FUENTES = [
         "punto": ("zaldibar", 2),
         "nota_es": "En el barrio, antes de bajar hacia la presa de Aixola.",
         "nota_eu": "Auzoan, Aixolako presara jaitsi aurretik.",
-        "rutas": ["zaldibar", "hirutxikiak", "aixola"],
+        "rutas": ["zaldibar", "hirutxikiak", "aixola", "zaldibararnodeba"],
     },
     {
         "id": "elgeta",
@@ -305,6 +305,23 @@ FUENTES = [
         "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
+        "id": "arnoate",
+        "zona": "markina",
+        "es": "Fuente de Arnoate",
+        "eu": "Arnoateko iturria",
+        # El autor la marco en su track de Wikiloc: «Arnoate · Fuente ·
+        # Altitud 407 m», con foto del pilon de piedra. La coordenada es la
+        # del punto del track que esta a esa altura, en el km 21 de la
+        # travesia; la fuente queda justo al lado del camino, junto al
+        # caserio, asi que va como aproximada.
+        "aprox": True,
+        "coord": (43.26172, -2.42335),
+        "punto": ("zaldibararnodeba", None),
+        "nota_es": "Junto al camino, en Arnoate. El cartel avisa de que es agua sin tratar.",
+        "nota_eu": "Bidearen ondoan, Arnoaten. Kartelak tratatu gabeko ura dela ohartarazten du.",
+        "rutas": ["zaldibararnodeba"],
+    },
+    {
         "id": "usartza",
         "zona": "markina",
         "es": "Fuente de Usartza",
@@ -315,7 +332,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino que sube a Kalamua.",
         "nota_eu": "Kalamuara igotzen den bidean.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
     },
     {
         "id": "urkieta",
@@ -330,7 +347,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino a Kalamua, entre la de Usartza y la de Intxaurkorta.",
         "nota_eu": "Kalamuarako bidean, Usartzakoaren eta Intxaurkortakoaren artean.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
     },
     {
         "id": "intxaurkorta",
@@ -345,7 +362,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "M\u00e1s arriba en el camino a Kalamua, pasada la de Usartza.",
         "nota_eu": "Kalamuarako bidean gorago, Usartzakoa pasata.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
     },
     {
         "id": "drogeten",
