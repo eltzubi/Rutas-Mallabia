@@ -125,7 +125,7 @@
   text-wrap:balance; margin:0 0 8px; color:#F7F5EF;
   text-shadow:0 0 2px rgba(0,0,0,.95), 0 0 8px rgba(0,0,0,.85), 0 2px 6px rgba(0,0,0,.75);
 }
-.hero-compact h1 em{ font-style:italic; font-weight:700; color:var(--readout-a); }
+.hero-compact h1 em{ font-style:italic; font-weight:700; }
 .hero-compact-lead{
   font-family:'Karla',sans-serif; font-size:15.5px; line-height:1.5;
   color:rgba(245,243,236,.92); margin:0 0 10px; max-width:46ch;
@@ -1102,6 +1102,14 @@ footer a:hover{ text-decoration:underline; }
 /* Vuelven los colores del tema: el lima y el azul claro estaban a mano
    porque la foto es oscura en los dos temas. Sobre el fondo de la pagina,
    en claro, no se verian. */
+/* La «y» (y el «eta» del euskera) no es ni andar ni bici: va en el color
+   del propio titular, bajado de intensidad. Heredaba el del bloque, que en
+   oscuro es exactamente el naranja de «en e-bike» -- la «y» parecia parte
+   de la bici -- y en claro era un naranja distinto del suyo, dos tonos casi
+   iguales peleandose. El codigo de color se mantiene: lima lo de andar,
+   naranja lo de la bici, y el nexo de nadie. currentcolor aqui es el color
+   del h1, asi que sirve igual para los dos temas y los dos idiomas. */
+.hero-compact h1 em{ color:color-mix(in srgb, currentcolor 62%, transparent); }
 .hero-compact h1 em .pie{ color:var(--violet); }
 .hero-compact h1 em .bici{ color:var(--teal); }
 .hero-compact-lead{
