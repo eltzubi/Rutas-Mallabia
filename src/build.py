@@ -106,7 +106,7 @@ def assemble_page(name, suffix=""):
 
 
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"]
+PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "zaldibararnodeba", "agua", "aviso-legal"]
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
@@ -716,7 +716,7 @@ def add_tecnica(page_html, page, lang):
 # lo que sirve una fecha aqui. Se probo ponerla en cada ficha, sacada de la
 # hora del track, y el autor la quito: no quiere 57 fechas, quiere saber cual
 # es la ultima entrada. SE CAMBIA A MANO AL PUBLICAR UNA RUTA NUEVA.
-ULTIMA_ENTRADA = ("ixuakalamua", "2026-10-19")
+ULTIMA_ENTRADA = ("zaldibararnodeba", "2026-10-21")
 
 
 def add_ultima_entrada(page_html, cards, lang):

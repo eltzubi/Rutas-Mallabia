@@ -803,6 +803,14 @@ HOME = {
     'alt="La e-bike apoyada en las rocas de la cima de Kalamua, con los montes y el valle al fondo"':
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
+    # zaldibararnodeba card
+    '<h3 class="route-card-name">Zaldibar, Urko, Kalamua, Arno y Deba</h3>':
+        '<h3 class="route-card-name">Zaldibar, Urko, Kalamua, Arno eta Deba</h3>',
+    '<p class="route-card-desc">Traves&iacute;a a pie de Zaldibar a Deba por Urko, Kalamua, Urkarregi y Arno</p>':
+        '<p class="route-card-desc">Oinezko zeharkaldia Zaldibartik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota</p>',
+    'alt="Deba y su playa vistas desde lo alto de Arno, con el mar al fondo entre las ramas de una encina"':
+        'alt="Deba eta bere hondartza Arnoko goialdetik ikusita, itsasoa hondoan arte baten adarren artetik"',
+
     # garaigaztelu card
     'alt="Vacas pastando en un prado cercado, con el Anboto y los montes del entorno al fondo"':
         'alt="Behiak zelai itxi batean bazkatzen, Anboto eta inguruko mendiak hondoan"',
@@ -3387,6 +3395,7 @@ DESCRIPTIONS = {
     'goita': 'Ibilbide zirkularra Goita auzotik, Trabakuatik: 5,34 km eta +200 m, erraza eta ia edonork egiteko modukoa. Argazkiekin eta GPX trackarekin.',
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
+    'zaldibararnodeba': 'Oinezko zeharkaldia Zaldibartik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 31 km Bizkaitik Gipuzkoako itsasoraino',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
@@ -3511,6 +3520,7 @@ TITLES = {
     'agua': 'Ur iturriak · Herriko ibilbideak',
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
+    'zaldibararnodeba': 'Zaldibar, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
@@ -6088,10 +6098,60 @@ IXUAKALAMUA = {
         '<title>Santa Kruz &middot; 16,71 km &middot; 193 m</title>',
 }
 
+ZALDIBARARNODEBA = {
+    '<span>Mixta</span><span class="sep">/</span><span>Urko, Kalamua y Arno</span><span class="sep">/</span><span>Traves&iacute;a</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Urko, Kalamua eta Arno</span><span class="sep">/</span><span>Zeharkaldia</span>',
+    '<h1>Zaldibar, Urko, Kalamua<br><em>Arno y Deba</em></h1>':
+        '<h1>Zaldibar, Urko, Kalamua<br><em>Arno eta Deba</em></h1>',
+    '<p class="full-name">Traves&iacute;a a pie de Zaldibar a Deba por Urko, Kalamua, Urkarregi y Arno</p>':
+        '<p class="full-name">Oinezko zeharkaldia Zaldibartik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota</p>',
+    'alt="Foto ampliada del recorrido de Zaldibar, Urko, Kalamua, Arno y Deba"':
+        'alt="Zaldibar, Urko, Kalamua, Arno eta Deba ibilbidearen argazki handitua"',
+    'data-marker-title="Zaldibar (salida)"':
+        'data-marker-title="Zaldibar (irteera)"',
+    '<span>Traves&iacute;a &mdash; termina en Deba, no en la salida</span>':
+        '<span>Zeharkaldia &mdash; Deban amaitzen da, ez irteeran</span>',
+    'download="Zaldibar, Urko, Kalamua, Arno y Deba.gpx"':
+        'download="Zaldibar, Urko, Kalamua, Arno eta Deba.gpx"',
+    'download="Zaldibar, Urko, Kalamua, Arno y Deba.kml"':
+        'download="Zaldibar, Urko, Kalamua, Arno eta Deba.kml"',
+    'alt="Deba y su playa vistas desde lo alto de Arno, con el mar al fondo entre las ramas de una encina"':
+        'alt="Deba eta bere hondartza Arnoko goialdetik ikusita, itsasoa hondoan arte baten adarren artetik"',
+    'alt="Ladera de prados con una valla de postes de madera a primera hora de la ma&ntilde;ana, con un monte cubierto de pinos al fondo"':
+        'alt="Zelaien hegala egurrezko hesi batekin goizeko lehen orduan, pinuz estalitako mendi bat hondoan"',
+    'alt="V&eacute;rtice geod&eacute;sico del Urko, con los montes del Duranguesado al fondo"':
+        'alt="Urkoko bertize geodesikoa, Durangaldeko mendiak hondoan"',
+    'alt="Campa herbosa subiendo hacia la cumbre de Kalamua, con nubes blancas sobre el cordal"':
+        'alt="Belardi zabala Kalamuako gailurrerantz igotzen, hodei zuriak gailur-lerroaren gainean"',
+    'alt="Buz&oacute;n y rosa de los vientos en la cumbre de Kalamua, con los valles al fondo"':
+        'alt="Kalamuako gailurreko postontzia eta haizeen arrosa, haranak hondoan"',
+    'alt="Cordal cubierto de helechos con el mar asomando en el horizonte, pasado Kalamua"':
+        'alt="Iratzez estalitako gailur-lerroa, itsasoa zerumugan agertzen, Kalamua pasatu ondoren"',
+    'alt="Poste de se&ntilde;ales de madera en el bosque con las indicaciones hacia Arno y Ormola"':
+        'alt="Egurrezko seinale-zutoina basoan, Arno eta Ormolarako norabideekin"',
+    '    <p>31,10 km y +1.323 m de traves&iacute;a de punta a punta, de Zaldibar al mar de Deba, encadenando Urko, Kalamua y Arno. No es un circuito: se acaba a veinte kil&oacute;metros en l&iacute;nea recta de donde se empieza, as&iacute; que hay que mirar antes c&oacute;mo se vuelve. La subida al Urko es larga y a partir de ah&iacute; se va por lo alto casi todo el rato, subiendo y bajando sin parar.</p>':
+        '    <p>31,10 km eta +1.323 m muturretik muturrerako zeharkaldian, Zaldibartik Debako itsasoraino, Urko, Kalamua eta Arno kateatuta. Ez da zirkuitua: hasi den tokitik hogei kilometrora amaitzen da lerro zuzenean, beraz aurretik begiratu behar da nola itzuli. Urkorako igoera luzea da eta hortik aurrera goialdetik joaten da ia denbora osoan, igo eta jaitsi, etenik gabe.</p>',
+    '    <p>Una traves&iacute;a larga que cruza de Bizkaia a Gipuzkoa y termina en el mar, encadenando los tres montes grandes de la zona: <b><a href="urko.html">Urko</a></b>, <b><a href="kalamua.html">Kalamua</a></b> y <b>Arno</b>. No es un circuito: se acaba en <b>Deba</b>, a veinte kil&oacute;metros en l&iacute;nea recta de donde se empieza.</p>':
+        '    <p>Zeharkaldi luzea, Bizkaitik Gipuzkoara igaro eta itsasoan amaitzen dena, inguruko hiru mendi handiak kateatuta: <b><a href="urko.html">Urko</a></b>, <b><a href="kalamua.html">Kalamua</a></b> eta <b>Arno</b>. Ez da zirkuitua: <b>Deban</b> amaitzen da, hasi garen tokitik hogei kilometrora lerro zuzenean.</p>',
+    '    <p>Salimos de <b>Zaldibar</b> (191 m) y empezamos a subir en seguida hacia <b>Goierri</b> (km 2,06 &middot; 318 m). Luego el camino baja hasta <b>Eitzaga</b> (km 4,54 &middot; 179 m) y toca fondo poco despu&eacute;s, a 154 m. Ah&iacute; empieza la subida del d&iacute;a: casi cinco kil&oacute;metros seguidos hacia arriba, pasando por San Martin, Lindari y Lixibaeta.</p>':
+        '    <p><b>Zaldibartik</b> (191 m) irten eta berehala hasten gara igotzen <b>Goierri</b> aldera (2,06 km &middot; 318 m). Gero bidea <b>Eitzagaraino</b> jaisten da (4,54 km &middot; 179 m) eta handik gutxira jotzen du behea, 154 metrotan. Hor hasten da eguneko igoera: ia bost kilometro jarraian gora, San Martin, Lindari eta Lixibaetatik igarota.</p>',
+    '    <p>Arriba llegamos al <b>Urko</b> (km 10,30 &middot; 785 m), con su v&eacute;rtice geod&eacute;sico. Es el punto m&aacute;s alto de los municipios de Ermua y Eibar, y su cumbre marca la frontera entre Bizkaia y Gipuzkoa.</p>':
+        '    <p>Goian <b>Urkora</b> iristen gara (10,30 km &middot; 785 m), bere bertize geodesikoarekin. Ermua eta Eibarko udalerrietako punturik altuena da, eta haren gailurrak Bizkaia eta Gipuzkoaren arteko muga markatzen du.</p>',
+    '    <p>Desde aqu&iacute; seguimos por el cordal, pasando junto a Kanterako Atxa, hasta la cumbre de <b>Kalamua</b> (km 14,72 &middot; 769 m), donde hay una torreta, una rosa de los vientos y muy buenas vistas.</p>':
+        '    <p>Hemendik aurrera gailur-lerrotik jarraitzen dugu, Kanterako Atxaren ondotik, <b>Kalamuako</b> gailurreraino (14,72 km &middot; 769 m), non dorretxo bat, haizeen arrosa eta bista ederrak dauden.</p>',
+    '    <p>Bajamos hasta el collado de <b>Urkarregi</b> (km 17,36 &middot; 363 m), donde se cruza la carretera de San Migel, y volvemos a subir. Viene un tramo largo que va enlazando altos peque&ntilde;os &mdash;Gorosta (km 19,05), Egiluz (km 20,58), Amegikurutz (km 22,28)&mdash; sin bajar ya de los 400 m. Por aqu&iacute; pasa el Camino del Norte rumbo a Markina, as&iacute; que es f&aacute;cil cruzarse con peregrinos.</p>':
+        '    <p><b>Urkarregiko</b> leporaino jaisten gara (17,36 km &middot; 363 m), San Migelgo errepidea gurutzatzen den tokira, eta berriro igotzen hasten gara. Tarte luze bat dator, gain txikiak kateatzen &mdash;Gorosta (19,05 km), Egiluz (20,58 km), Amegikurutz (22,28 km)&mdash; 400 metrotik jaitsi gabe. Hemendik pasatzen da Iparraldeko Bidea Markinarantz, beraz erraza da erromesekin gurutzatzea.</p>',
+    '    <p>Despu&eacute;s entramos en <b>Arno</b>, un macizo de caliza cubierto por un encinar de los m&aacute;s grandes que quedan en el norte de la pen&iacute;nsula. El punto alto es <b>Banderako Puntea</b> (km 24,57 &middot; 608 m) y justo al lado est&aacute; la <b>cruz de Arno</b> (km 24,99), que se coloc&oacute; en 1901.</p>':
+        '    <p>Ondoren <b>Arnon</b> sartzen gara, kareharrizko mendigune bat, penintsulako iparraldean geratzen diren artadirik handienetako batez estalia. Punturik altuena <b>Banderako Puntea</b> da (24,57 km &middot; 608 m) eta ondoan bertan dago <b>Arnoko gurutzea</b> (24,99 km), 1901ean jarri zutena.</p>',
+    '    <p>Y ya solo queda bajar. Pasamos por Aitzgaizto (km 25,93 &middot; 402 m) y el collado de <b>Arribinieta</b> (km 28,03 &middot; 243 m), y de ah&iacute; todo para abajo, con el mar delante, hasta <b>Deba</b> (km 31,10 &middot; 20 m).</p>':
+        '    <p>Eta jaistea besterik ez da geratzen. Aitzgaiztotik (25,93 km &middot; 402 m) eta <b>Arribinietako</b> lepotik (28,03 km &middot; 243 m) pasatzen gara, eta handik behera dena, itsasoa aurrean dugula, <b>Debaraino</b> (31,10 km &middot; 20 m).</p>',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
     'garaigaztelu': GARAIGAZTELU,
+    'zaldibararnodeba': ZALDIBARARNODEBA,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
