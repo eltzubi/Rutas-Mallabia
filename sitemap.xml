@@ -3,13 +3,13 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://trabakutik.com/index.es.html</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/index.es.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/"/>
   </url>
   <url>
     <loc>https://trabakutik.com/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/index.es.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/"/>
   </url>
@@ -735,11 +735,13 @@
   </url>
   <url>
     <loc>https://trabakutik.com/zaldibararnodeba.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zaldibararnodeba.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zaldibararnodeba.eu.html"/>
   </url>
   <url>
     <loc>https://trabakutik.com/zaldibararnodeba.eu.html</loc>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/zaldibararnodeba.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/zaldibararnodeba.eu.html"/>
   </url>
