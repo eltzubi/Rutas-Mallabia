@@ -6161,8 +6161,8 @@ ZALDIBARARNODEBA = {
         '    <p><b>Arnoko aterpearen</b> ondotik pasatzen gara, non ingurua azaltzen duen panel bat eta iturri bat dauden. Ezin dugu ziurtatu urte osoan ura izango duenik, beraz hobe da harekin ez kontatzea ibilbidea osatzeko.</p>',
     '    <p>A partir de aqu&iacute; comienza el descenso hacia Deba. Pasamos por Aitzgaizto (km 25,93 &middot; 402 m) y el collado de <b>Arribinieta</b> (km 28,03 &middot; 243 m), antes de llegar al <b>alto del Calvario</b> (km 28,2). All&iacute; se encuentran la ermita y unas magn&iacute;ficas vistas de la costa. Es un paso conocido tambi&eacute;n por los peregrinos que llegan a Deba.</p>':
         '    <p>Hemendik aurrera Debarako jaitsiera hasten da. Aitzgaiztotik (25,93 km &middot; 402 m) eta <b>Arribinietako</b> lepotik (28,03 km &middot; 243 m) pasatzen gara, <b>Kalbario gainera</b> (28,2 km) iritsi aurretik. Han baseliza eta kostaldearen gaineko bista zoragarriak daude. Debara iristen diren erromesek ere ezagutzen duten pasabidea da.</p>',
-    '    <p>Desde el Calvario, el camino sigue bajando con el mar delante hasta entrar en <b>Deba</b> y terminar junto a la r&iacute;a, al lado de la playa.</p>':
-        '    <p>Kalbariotik, bideak behera jarraitzen du itsasoa aurrean dugula, <b>Deban</b> sartu eta itsasadarraren ondoan, hondartzaren alboan, amaitu arte.</p>',
+    '    <p>Desde el Calvario, el camino sigue bajando con el mar delante hasta entrar en <b>Deba</b> y terminar junto a la r&iacute;a.</p>':
+        '    <p>Kalbariotik, bideak behera jarraitzen du itsasoa aurrean dugula, <b>Deban</b> sartu eta itsasadarraren ondoan amaitu arte.</p>',
 }
 
 PAGE_STRINGS = {
