@@ -317,8 +317,8 @@ FUENTES = [
         "aprox": True,
         "coord": (43.26172, -2.42335),
         "punto": ("zaldibararnodeba", None),
-        "nota_es": "Junto al camino, en Arnoate. El cartel avisa de que es agua sin tratar.",
-        "nota_eu": "Bidearen ondoan, Arnoaten. Kartelak tratatu gabeko ura dela ohartarazten du.",
+        "nota_es": "Junto al camino, en Arnoate.",
+        "nota_eu": "Bidearen ondoan, Arnoaten.",
         "rutas": ["zaldibararnodeba"],
     },
     {
