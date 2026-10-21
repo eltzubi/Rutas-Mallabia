@@ -162,9 +162,6 @@
   }
   var recoveryState = null;
   function apply(){
-    // Sin rutas guardadas no tiene sentido seguir filtrando por ellas: se
-    // quita el filtro (y con él el boton, que solo se enseña con algo guardado).
-    if (state.fav && window.trabakutikFavs && !window.trabakutikFavs.list().length) state.fav = false;
     difficulty.value = state.difficulty; elevation.value = state.elevation;
     paintButtons(activityButtons, 'activity', state.activity);
     paintButtons(distanceButtons, 'distancePreset', state.distance);
@@ -216,9 +213,7 @@
     var extraCount = ['distance','difficulty','elevation'].filter(function(k){return state[k] !== 'all';}).length;
     badge('filterBadge', extraCount);
     badge('advancedBadge', Number(state.difficulty !== 'all') + Number(state.elevation !== 'all'));
-    paintFavChip();
     var labels = [];
-    if (state.fav) labels.push(eu ? 'Nire ibilbideak' : 'Mis rutas');
     if (state.activity !== 'all') labels.push(selectedLabel(activityButtons,'activity',state.activity));
     if (state.distance !== 'all') labels.push(selectedLabel(distanceButtons,'distancePreset',state.distance));
     if (state.difficulty !== 'all') labels.push(optionLabel(difficulty));
@@ -266,32 +261,17 @@
     document.dispatchEvent(new CustomEvent('routefilters:apply', {detail:{visibleHrefs:visible, activity:state.activity}}));
     try { localStorage.setItem('trabakutik_filters', JSON.stringify(Object.assign({version:2},state))); } catch (_) {}
   }
-  // «Mis rutas»: el corazon lo pone js/app.js en cada tarjeta; aqui solo el
-  // boton que deja ver nada mas las guardadas.
-  // js/app.js se carga despues que este fichero, asi que se espera a que
-  // termine de leerse la pagina para poner el boton.
-  var favChip = null, favRow = null;
+  // El boton «Mis rutas» estaba aqui, encima de las tarjetas, y se quito el
+  // 21 de octubre de 2026: con «Lo mio» en la barra de arriba, que ya enseña
+  // cuantas hay guardadas y las lista, ocupaba pantalla sin aportar nada. El
+  // filtro por favoritas se queda apagado para siempre (state.fav siempre
+  // false), que si no, a quien lo tuviera encendido se le quedaria la portada
+  // enseñando solo las suyas y sin boton para soltarlo.
   document.addEventListener('DOMContentLoaded', function(){
-    if (!window.trabakutikFavs) return;
-    // Fila propia encima de las tarjetas: en la barra de arriba no cabe en
-    // un movil sin pisar «E-bike» y «Filtrar».
-    favRow = document.createElement('div'); favRow.className = 'fav-row';
-    favChip = document.createElement('button');
-    favChip.type = 'button'; favChip.className = 'activity-chip fav-chip';
-    favRow.appendChild(favChip);
-    results.parentNode.insertBefore(favRow, results);
-    favChip.addEventListener('click', function(){ state.fav = !state.fav; apply(); });
-    document.addEventListener('favs:change', function(){ if (state.fav) apply(); else paintFavChip(); });
+    state.fav = false;
     apply();
   });
-  function paintFavChip(){
-    if (!favChip) return;
-    var n = window.trabakutikFavs.list().length;
-    // El boton solo ocupa pantalla cuando hay algo guardado.
-    if (favRow) favRow.style.display = n ? '' : 'none';
-    favChip.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>' + (eu ? 'Nire ibilbideak' : 'Mis rutas') + (n ? ' (' + n + ')' : '');
-    favChip.classList.toggle('active', !!state.fav); favChip.setAttribute('aria-pressed', String(!!state.fav));
-  }
+
   activityButtons.forEach(function(b){b.addEventListener('click',function(){state.activity=b.dataset.activity;apply();});});
   distanceButtons.forEach(function(b){b.addEventListener('click',function(){state.distance=b.dataset.distancePreset;apply();});});
   difficulty.addEventListener('change',function(){state.difficulty=difficulty.value;apply();});
