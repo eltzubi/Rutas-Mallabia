@@ -29,6 +29,7 @@ exclude:
   - src/i18n
   - scripts
   - skills-lock.json
+  - AGENTS.md
   - CLAUDE.md
   - DESIGN.md
   - README.md

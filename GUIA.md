@@ -326,7 +326,11 @@ no.
 
 ### Lo que hay que darle el primer día, sea la herramienta que sea
 
-1. **Este fichero y `CLAUDE.md`, enteros**, no resumidos.
+1. **Este fichero y `CLAUDE.md`, enteros**, no resumidos. En la raíz hay un
+   `AGENTS.md` que es justo eso en veinte líneas y que **Codex lee solo** en
+   cada sesión, sin que haya que decirle nada: es la convención de OpenAI,
+   igual que `CLAUDE.md` lo es de Claude. No sustituye a la guía, remite a
+   ella. Si cambia algo de fondo, hay que tocarlo también ahí.
 2. **`make_eu.py` antes que `build.py`, siempre, y en ese orden.** Si cambia
    una frase en castellano y no se pasa `make_eu.py`, la traducción al
    euskera se queda descolgada y el build falla a propósito. Es la trampa en
