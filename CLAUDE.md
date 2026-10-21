@@ -457,7 +457,9 @@ There's no automated test suite — verification is manual:
   para ir al monte, un tramo que en el mapa va por la recta en vez de por la curva no le cambia nada.
   No es un fallo que haya que arreglar ni que avisar. Lo que sí son fallos, y hay que seguir diciendo,
   son los datos que **contradicen** la realidad: una distancia que no cuadra con el GPX, un nombre de
-  sitio equivocado, una fuente que no existe.
+  sitio equivocado, una fuente que no existe. Esto vale igual para las **alturas**: un GPS tiene
+  error de hasta 15 m, así que si una cumbre aparece con 795, 791 y 783 m en tres sitios distintos,
+  es el mismo monte y no hay nada que contrastar ni que avisar. No descartes una fuente por eso.
 - **Los dos tracks que quedan con tramos rectos están decididos: no los vuelvas a plantear.**
   `intxorta` tiene un corte de grabación de 644 m al principio y **ninguna otra ruta recorre ese tramo
   entero**, así que cerrarlo exigiría inventarse el enlace. **El original de Wikiloc trae el mismo
