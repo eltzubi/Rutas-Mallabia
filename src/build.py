@@ -1321,7 +1321,9 @@ def main():
             print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
 
     write_legacy_eu_home()
+    write_legacy_redirects()
     write_offline_page(versions)
+    write_404_page(versions)
     write_service_worker(versions)
     escribe_rutas(cards)
     write_sitemap()
@@ -1454,6 +1456,22 @@ def write_offline_page(versions):
     print("wrote offline.html")
 
 
+def write_404_page(versions):
+    """La pagina que sirve GitHub Pages ante cualquier direccion que no existe.
+
+    Una sola para los dos idiomas, como offline.html: Pages solo admite un
+    404.html y no sabe de idiomas. Lleva el buscador de las 61 rutas sobre
+    data/rutas.json, que es lo unico util que se le puede ofrecer a quien
+    llega por un enlace roto. Pages la devuelve con estado 404 de verdad, asi
+    que no hay riesgo de que Google la tome por una pagina buena.
+    """
+    body = read("404.html")
+    body = add_cache_busting(body, versions)
+    with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
+        f.write(body)
+    print("wrote 404.html")
+
+
 # Lo que el service worker guarda nada mas instalarse: la tipografia, los
 # estilos, el javascript y la pagina de sin-conexion. Son unos 210 kB y es lo
 # que hace que una ficha ya visitada se vea entera y no en crudo. Las fichas y
@@ -1504,6 +1522,44 @@ def write_legacy_eu_home():
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
+
+
+# Paginas que estuvieron publicadas, se quitaron y Google todavia manda gente
+# a ellas. Cada una: el fichero, el idioma y a donde lleva ahora.
+#
+#   historias: «Rutas como historias», la vista inmersiva a pantalla completa.
+#   Vivio del 22-ago al 4-sep-2026. En Search Console sigue recibiendo visitas
+#   tres meses despues. Lo que buscaba esa gente son las rutas, y las rutas
+#   estan en la portada, asi que ahi van.
+#
+# El 404.html recoge todo lo demas; esto es solo para lo que tiene un destino
+# mejor que «no esta».
+HEREDADAS = (
+    ("historias.html",    "es", "index.es.html", "Trabakutik &mdash; Rutas de Mallabia"),
+    ("historias.eu.html", "eu", "./",            "Trabakutik &mdash; Mallabiako ibilbideak"),
+)
+
+
+def write_legacy_redirects():
+    """Puentes de 356 bytes para las direcciones retiradas que aun tienen uso."""
+    for fichero, lang, destino, texto in HEREDADAS:
+        canonico = SITE_URL if destino == "./" else f"{SITE_URL}{destino}"
+        html = (
+            f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'<link rel="canonical" href="{canonico}">\n'
+            # Igual que index.eu.html: el canonical absoluto es lo que se le
+            # declara a Google, y el salto relativo para que funcione tambien
+            # sirviendo el sitio desde otro sitio.
+            f'<meta http-equiv="refresh" content="0; url={destino}">\n'
+            "<title>Trabakutik</title>\n</head>\n<body>\n"
+            f'<p><a href="{destino}">{texto}</a></p>\n'
+            "</body>\n</html>\n"
+        )
+        out_path = os.path.join(ROOT, fichero)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
 
 
 _fechas_cache = {}

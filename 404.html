@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="eu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bidetik kanpo &middot; Te has salido del camino &middot; Trabakutik</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#020617">
+<script>(function(){try{if(localStorage.getItem('rutas-mallabia-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="fonts.css?v=1204aafe">
+<link rel="stylesheet" href="base.css?v=ddaf5eb7">
+<!-- route.css es la que trae los tokens de color; base.css solo lleva lo
+     comun. Mismo montaje que offline.html. -->
+<link rel="stylesheet" href="route.css?v=b748b399">
+<style>
+  .perdido{ max-width:38rem; margin:0 auto; padding:9vh 1.25rem 4rem; }
+
+  /* El dibujo es el perfil de altura del sitio, el mismo lenguaje que lleva
+     cada ficha: linea solida con su relleno, y donde se acaba el camino
+     conocido sigue una de puntos que se va y se desvanece. */
+  .perdido-perfil{ display:block; width:100%; height:auto; margin:0 0 1.75rem; overflow:visible; }
+  .perdido-perfil .trazo{ fill:none; stroke:var(--teal); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+  /* El relleno se apaga hacia la derecha en vez de cortarse en vertical: sin
+     esto el acantilado donde se acaba el camino parecia un recorte mal hecho. */
+  .perdido-perfil .relleno{ fill:url(#desvanece); stroke:none; }
+  .perdido-perfil .suelo{ stroke:var(--line); stroke-width:1; }
+  .perdido-perfil .fuga{
+    fill:none; stroke:url(#seva); stroke-width:3; stroke-linecap:round;
+    stroke-dasharray:1 11;
+  }
+  .perdido-perfil .hito{ fill:var(--teal); }
+  .perdido-perfil .parada{ stop-color:var(--teal-soft); }
+  .perdido-perfil .parada-ida{ stop-color:var(--teal-soft); stop-opacity:0; }
+  .perdido-perfil .rastro{ stop-color:var(--ink-dim); }
+  .perdido-perfil .rastro-ido{ stop-color:var(--ink-dim); stop-opacity:0; }
+
+  @media (prefers-reduced-motion:no-preference){
+    .perdido-perfil .fuga{ stroke-dashoffset:0; animation:fuga 1.5s ease-out .15s backwards; }
+    @keyframes fuga{ from{ stroke-dasharray:0 11; opacity:0; } }
+  }
+
+  .perdido h1{
+    font:600 clamp(2rem,8vw,3rem)/1.03 'Fraunces',serif;
+    letter-spacing:-.015em; margin:0 0 .75rem; text-wrap:balance;
+  }
+  .perdido h1 em{ display:block; font-style:italic; color:var(--teal); }
+  .perdido-dice{ font:400 15.5px/1.6 'Karla',sans-serif; color:var(--ink-dim); margin:0 0 .4rem; max-width:34rem; }
+  .perdido-dice[lang="es"]{ margin-bottom:2rem; }
+
+  /* El buscador: lo unico que esta pagina puede hacer de verdad por quien
+     llega. Las 61 rutas salen de data/rutas.json, 13 kB que el sitio ya usa
+     en «Lo mio», asi que no hay dato nuevo que mantener. */
+  .perdido-busca{ position:relative; margin:0 0 1rem; }
+  .perdido-busca input{
+    box-sizing:border-box; width:100%; min-height:52px;
+    padding:14px 16px 14px 44px;
+    border:1px solid var(--line); border-radius:14px;
+    background:var(--ground-raised); color:var(--ink);
+    font:500 15px 'Karla',sans-serif; -webkit-appearance:none;
+  }
+  .perdido-busca input::placeholder{ color:var(--ink-dim); }
+  .perdido-busca input:focus{ outline:none; border-color:var(--teal); }
+  .perdido-busca input:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+  .perdido-busca svg{ position:absolute; left:15px; top:50%; margin-top:-9px; color:var(--ink-dim); pointer-events:none; }
+
+  .perdido-cab{
+    font:600 11px 'IBM Plex Mono',monospace; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-dim); margin:0 0 .6rem;
+  }
+  .perdido-lista{ list-style:none; margin:0 0 2rem; padding:0; display:flex; flex-direction:column; gap:3px; }
+  .perdido-lista a{
+    display:flex; flex-direction:column; gap:2px;
+    padding:11px 13px; border-radius:12px;
+    background:var(--ground-raised); color:var(--ink); text-decoration:none;
+  }
+  .perdido-lista a:hover{ color:var(--teal); }
+  .perdido-lista a:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+  .perdido-lista .n{ font:600 15px/1.25 'Karla',sans-serif; }
+  .perdido-lista .s{ font:500 12px 'IBM Plex Mono',monospace; color:var(--ink-dim); }
+  .perdido-nada{ font:400 14px/1.5 'Karla',sans-serif; color:var(--ink-dim); margin:0 0 2rem; }
+
+  .perdido-salidas{ display:flex; flex-wrap:wrap; gap:10px; border-top:1px solid var(--line); padding-top:1.5rem; }
+  .perdido-salidas a{
+    display:inline-flex; align-items:center; min-height:44px; padding:10px 18px;
+    border:1px solid var(--line); border-radius:999px;
+    background:var(--ground-raised); color:var(--ink);
+    font:600 13px 'IBM Plex Mono',monospace; text-decoration:none;
+  }
+  .perdido-salidas a:hover{ border-color:var(--teal); color:var(--teal); }
+  .perdido-salidas a:focus-visible{ outline:3px solid var(--teal); outline-offset:2px; }
+</style>
+</head>
+<body>
+  <main class="perdido">
+    <svg class="perdido-perfil" viewBox="0 0 1010 300" role="img"
+         aria-label="Perfil de una ruta cuyo trazado se sale del camino y se pierde">
+      <defs>
+        <linearGradient id="desvanece" x1="0" x2="620" gradientUnits="userSpaceOnUse">
+          <stop class="parada" offset="0"/>
+          <stop class="parada" offset=".55"/>
+          <stop class="parada-ida" offset="1"/>
+        </linearGradient>
+        <linearGradient id="seva" x1="620" x2="1004" gradientUnits="userSpaceOnUse">
+          <stop class="rastro" offset="0"/>
+          <stop class="rastro" offset=".35"/>
+          <stop class="rastro-ido" offset="1"/>
+        </linearGradient>
+      </defs>
+      <line class="suelo" x1="0" y1="300" x2="1010" y2="300"/>
+      <path class="relleno" d="M0.0,285.0 L13.8,252.6 L27.6,219.2 L41.3,189.5 L55.1,165.7 L68.9,148.4 L82.7,137.1 L96.4,129.8 L110.2,124.1 L124.0,117.7 L137.8,108.8 L151.6,96.7 L165.3,81.8 L179.1,65.8 L192.9,51.0 L206.7,40.0 L220.4,35.0 L234.2,37.2 L248.0,46.7 L261.8,62.1 L275.6,81.2 L289.3,100.8 L303.1,118.0 L316.9,130.0 L330.7,135.4 L344.4,134.2 L358.2,127.4 L372.0,117.6 L385.8,107.6 L399.6,100.5 L413.3,98.6 L427.1,103.2 L440.9,114.5 L454.7,131.0 L468.4,150.7 L482.2,170.8 L496.0,188.8 L509.8,202.9 L523.6,212.1 L537.3,212.8 L551.1,202.3 L564.9,193.1 L578.7,187.9 L592.4,189.0 L606.2,197.7 L620.0,213.8 L620.0,300 L0.0,300 Z"/>
+      <path class="trazo" d="M0.0,285.0 L13.8,252.6 L27.6,219.2 L41.3,189.5 L55.1,165.7 L68.9,148.4 L82.7,137.1 L96.4,129.8 L110.2,124.1 L124.0,117.7 L137.8,108.8 L151.6,96.7 L165.3,81.8 L179.1,65.8 L192.9,51.0 L206.7,40.0 L220.4,35.0 L234.2,37.2 L248.0,46.7 L261.8,62.1 L275.6,81.2 L289.3,100.8 L303.1,118.0 L316.9,130.0 L330.7,135.4 L344.4,134.2 L358.2,127.4 L372.0,117.6 L385.8,107.6 L399.6,100.5 L413.3,98.6 L427.1,103.2 L440.9,114.5 L454.7,131.0 L468.4,150.7 L482.2,170.8 L496.0,188.8 L509.8,202.9 L523.6,212.1 L537.3,212.8 L551.1,202.3 L564.9,193.1 L578.7,187.9 L592.4,189.0 L606.2,197.7 L620.0,213.8"/>
+      <path class="fuga" d="M620.0,213.8 L644.9,203.2 L670.9,191.9 L698.9,187.5 L722.0,173.1 L747.0,166.6 L778.0,157.0 L807.7,147.3 L835.8,141.8 L863.9,127.0 L891.1,113.9 L919.5,109.6 L948.5,98.4 L973.9,94.5 L1003.9,84.8"/>
+      <circle class="hito" cx="620" cy="213.8" r="7"/>
+    </svg>
+
+    <h1 lang="eu">Bidetik kanpo<em lang="es">Te has salido del camino</em></h1>
+    <p class="perdido-dice" lang="eu">Orri hau ez dago hemen. Agian lekuz aldatu
+      da, agian inoiz ez zen egon. Ibilbide guztiak hor jarraitzen dute.</p>
+    <p class="perdido-dice" lang="es">Esta página no está aquí. A lo mejor se
+      movió, a lo mejor nunca estuvo. Las rutas siguen todas en su sitio.</p>
+
+    <div class="perdido-busca">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>
+      </svg>
+      <input type="search" id="buscaPerdido" autocomplete="off"
+             placeholder="Bilatu ibilbide bat &middot; Busca una ruta"
+             aria-label="Bilatu ibilbide bat &middot; Busca una ruta">
+    </div>
+
+    <p class="perdido-cab" id="perdidoCab">Azken ibilbideak &middot; Últimas rutas</p>
+    <ul class="perdido-lista" id="perdidoLista"></ul>
+    <p class="perdido-nada" id="perdidoNada" hidden>Ez dago horrelakorik &middot; No hay ninguna con ese nombre.</p>
+
+    <nav class="perdido-salidas">
+      <a href="./">Hasierara</a>
+      <a href="index.es.html">A la portada</a>
+    </nav>
+  </main>
+
+<script>
+// Las 61 rutas salen de data/rutas.json, el mismo fichero que ya usa «Lo mio»
+// en app.js: nombre, enlace y la linea de datos, en los dos idiomas. Aqui no
+// hay nada que mantener aparte.
+(function(){
+  var lista = document.getElementById('perdidoLista');
+  var nada  = document.getElementById('perdidoNada');
+  var cab   = document.getElementById('perdidoCab');
+  var caja  = document.getElementById('buscaPerdido');
+  // Una pagina sola para los dos idiomas: el navegador decide con que nombres
+  // se ve. Los enlaces los trae ya el propio JSON en el idioma que toca.
+  var eus = (navigator.language || '').toLowerCase().indexOf('eu') === 0;
+  var rutas = [];
+
+  // Sin tildes, sin mayusculas y sin guiones, igual que el buscador de la
+  // portada (src/js/filters.js): «argineta» tiene que encontrar «Argiñeta».
+  function llano(s){
+    return (s || '').toLowerCase().normalize('NFD')
+      .replace(/[̀-ͯ]/g, '').replace(/[-_]/g, ' ');
+  }
+
+  function pinta(items){
+    lista.textContent = '';
+    items.forEach(function(r){
+      var li = document.createElement('li');
+      var a  = document.createElement('a');
+      a.href = r.h;
+      var n = document.createElement('span'); n.className = 'n'; n.textContent = r.n;
+      var s = document.createElement('span'); s.className = 's'; s.textContent = r.s;
+      a.appendChild(n); a.appendChild(s); li.appendChild(a); lista.appendChild(li);
+    });
+    nada.hidden = items.length > 0;
+  }
+
+  function busca(){
+    var q = llano(caja.value).split(/\s+/).filter(Boolean);
+    if (!q.length){
+      cab.textContent = 'Azken ibilbideak · Últimas rutas';
+      pinta(rutas.slice(0, 4));
+      return;
+    }
+    var hay = rutas.filter(function(r){
+      var t = llano(r.n + ' ' + r.s);
+      return q.every(function(p){ return t.indexOf(p) !== -1; });
+    });
+    cab.textContent = hay.length + (eus ? ' ibilbide' : ' rutas');
+    pinta(hay.slice(0, 8));
+  }
+
+  fetch('data/rutas.json').then(function(r){ return r.json(); }).then(function(d){
+    var tabla = d[eus ? 'eu' : 'es'] || d.es || {};
+    // El JSON va por clave y no trae orden; las ultimas en entrar son las
+    // primeras de la portada, asi que aqui se toman las que la portada
+    // declara como recientes a traves del propio orden del fichero.
+    rutas = Object.keys(tabla).map(function(k){ return tabla[k]; });
+    rutas.reverse();
+    busca();
+  }).catch(function(){
+    // Sin datos la pagina sigue sirviendo: quedan los dos botones de salida.
+    cab.hidden = true; nada.hidden = true;
+  });
+
+  caja.addEventListener('input', busca);
+})();
+</script>
+</body>
+</html>
