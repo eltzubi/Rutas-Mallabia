@@ -233,7 +233,7 @@ FUENTES = [
         "punto": ("zaldibar", None),
         "nota_es": "Junto al pol\u00edgono, de camino a Zaldibar.",
         "nota_eu": "Poligonoaren ondoan, Zaldibarrerako bidean.",
-        "rutas": ["aixola", "zaldibar", "zaldibararnodeba"],
+        "rutas": ["aixola", "zaldibar"],
     },
     {
         "id": "eitzaga",
@@ -243,7 +243,7 @@ FUENTES = [
         "punto": ("zaldibar", 2),
         "nota_es": "En el barrio, antes de bajar hacia la presa de Aixola.",
         "nota_eu": "Auzoan, Aixolako presara jaitsi aurretik.",
-        "rutas": ["zaldibar", "hirutxikiak", "aixola", "zaldibararnodeba"],
+        "rutas": ["zaldibar", "hirutxikiak", "aixola"],
     },
     {
         "id": "elgeta",
@@ -316,10 +316,10 @@ FUENTES = [
         # caserio, asi que va como aproximada.
         "aprox": True,
         "coord": (43.26172, -2.42335),
-        "punto": ("zaldibararnodeba", None),
+        "punto": ("trabakuadeba", None),
         "nota_es": "Junto al camino, en Arnoate.",
         "nota_eu": "Bidearen ondoan, Arnoaten.",
-        "rutas": ["zaldibararnodeba"],
+        "rutas": ["trabakuadeba"],
     },
     {
         "id": "usartza",
@@ -332,7 +332,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino que sube a Kalamua.",
         "nota_eu": "Kalamuara igotzen den bidean.",
-        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "urkieta",
@@ -347,7 +347,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino a Kalamua, entre la de Usartza y la de Intxaurkorta.",
         "nota_eu": "Kalamuarako bidean, Usartzakoaren eta Intxaurkortakoaren artean.",
-        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "intxaurkorta",
@@ -362,7 +362,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "M\u00e1s arriba en el camino a Kalamua, pasada la de Usartza.",
         "nota_eu": "Kalamuarako bidean gorago, Usartzakoa pasata.",
-        "rutas": ["kalamua", "barinaga", "zaldibararnodeba"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "drogeten",
