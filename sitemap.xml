@@ -3,13 +3,13 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://trabakutik.com/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/index.eu.html"/>
   </url>
   <url>
     <loc>https://trabakutik.com/index.eu.html</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/index.eu.html"/>
   </url>
@@ -744,6 +744,16 @@
     <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuadeba.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuadeba.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/trabakuaondarroa.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuaondarroa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuaondarroa.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/trabakuaondarroa.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakuaondarroa.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/trabakuaondarroa.eu.html"/>
   </url>
   <url>
     <loc>https://trabakutik.com/agua.html</loc>

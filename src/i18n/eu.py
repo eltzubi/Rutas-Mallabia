@@ -804,6 +804,14 @@ HOME = {
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
     # trabakuadeba card
+    # trabakuaondarroa card
+    'alt="Ondarroa desde lo alto, con la r&iacute;a, el puente y la playa al fondo"':
+        'alt="Ondarroa goitik, itsasadarra, zubia eta hondartza atzealdean"',
+    '<h3 class="route-card-name">Trabakua, Atxagarai, Kurutzegana y Ondarroa</h3>':
+        '<h3 class="route-card-name">Trabakua, Atxagarai, Kurutzegana eta Ondarroa</h3>',
+    '<p class="route-card-desc">Traves&iacute;a corriendo de Trabakua a Ondarroa por la ladera de Oiz, Atxagarai y Kurutzegana</p>':
+        '<p class="route-card-desc">Korrika egindako zeharkaldia Trabakuatik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik igarota</p>',
+
     '<h3 class="route-card-name">Trabakua, Urko, Kalamua, Arno y Deba</h3>':
         '<h3 class="route-card-name">Trabakua, Urko, Kalamua, Arno eta Deba</h3>',
     '<p class="route-card-desc">Traves&iacute;a a pie de Trabakua a Deba por Urko, Kalamua, Urkarregi y Arno</p>':
@@ -3396,6 +3404,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
+    'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
@@ -3521,6 +3530,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
+    'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
     'ahuntzen': 'Ahuntzen Mendi Lasterketa · Elgeta, Erdella eta Intxorta — Trabakutik',
@@ -6163,11 +6173,63 @@ TRABAKUADEBA = {
         '    <p>Kalbariotik, bideak behera jarraitzen du itsasoa aurrean dugula, <b>Deban</b> sartu eta itsasadarraren ondoan amaitu arte.</p>',
 }
 
+TRABAKUAONDARROA = {
+    '<span>Mixta</span><span class="sep">/</span><span>Oiz, Atxagarai y Kurutzegana</span><span class="sep">/</span><span>Traves&iacute;a</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Oiz, Atxagarai eta Kurutzegana</span><span class="sep">/</span><span>Zeharkaldia</span>',
+    '<h1>Trabakua, Atxagarai, Kurutzegana<br><em>y Ondarroa</em></h1>':
+        '<h1>Trabakua, Atxagarai, Kurutzegana<br><em>eta Ondarroa</em></h1>',
+    '<p class="full-name">Traves&iacute;a corriendo de Trabakua a Ondarroa por la ladera de Oiz, Atxagarai y Kurutzegana</p>':
+        '<p class="full-name">Korrika egindako zeharkaldia Trabakuatik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik igarota</p>',
+    'alt="Foto ampliada del recorrido de Trabakua a Ondarroa"':
+        'alt="Trabakuatik Ondarroarako ibilbidearen argazki handitua"',
+    'alt="Mar de nubes al amanecer desde la media ladera de Oiz, con el sol bajo iluminando la niebla que llena los valles"':
+        'alt="Laino-itsasoa egunsentian, Oizen erdiko hegaletik, eguzki baxuak haranak betetzen dituen lainoa argitzen duela"',
+    'alt="El camino deshecho por las pisadas del ganado en la zona de Kortaguren, lleno de surcos y charcos"':
+        'alt="Abereen oinatzek hondatutako bidea Kortaguren inguruan, ildoz eta putzuz betea"',
+    'alt="Pista de cemento subiendo entre prados hacia Oiz, con un ternero en el camino, un caser&iacute;o y las antenas y los molinos de la cumbre al fondo"':
+        'alt="Zementuzko pista belardien artean Oizerantz igotzen, txahal bat bidean, baserri bat eta gailurreko antenak eta errotak atzealdean"',
+    'alt="La campa de Atxagarai, con la bolera al fondo y la pe&ntilde;a caliza de Urregarai por encima"':
+        'alt="Atxagaraiko zelaia, bolatokia atzean eta Urregaraiko kareharrizko harkaitza gainean"',
+    'alt="Sendero entre piedras cubiertas de musgo y helechos, en la bajada de Kurutzegana"':
+        'alt="Goroldioz estalitako harrien eta iratzeen arteko bidexka, Kurutzeganako jaitsieran"',
+    'alt="Ondarroa desde lo alto, con la r&iacute;a, el puente y la playa al fondo"':
+        'alt="Ondarroa goitik, itsasadarra, zubia eta hondartza atzealdean"',
+    '32,04 km y +860 m. Una traves&iacute;a larga pero sin grandes rampas: el desnivel se reparte en subidas cortas y seguidas. Lo que pide es fondo y cabeza con el agua, porque entre Atxagarai y Ondarroa hay quince kil&oacute;metros sin fuentes. Y ojo al terreno en dos puntos: los surcos del ganado antes de Kortaguren y las pistas estropeadas por las talas antes de Asterrika.':
+        '32,04 km eta +860 m. Zeharkaldi luzea da, baina aldapa handirik gabe: desnibela igoera labur eta jarraituetan banatzen da. Erresistentzia eskatzen du, eta urarekin burua, <b>Atxagarai</b> eta Ondarroa artean hamabost kilometro baitaude iturririk gabe. Eta kontuz lurrarekin bi puntutan: abereen ildoak Kortaguren aurretik, eta mozketek hondatutako pistak Asterrika aurretik.',
+    'Traves&iacute;a &mdash; termina en Ondarroa, no en la salida':
+        'Zeharkaldia &mdash; Ondarroan amaitzen da, ez irteeran',
+    'Trabakua, Atxagarai, Kurutzegana y Ondarroa.gpx': 'Trabakua, Atxagarai, Kurutzegana eta Ondarroa.gpx',
+    'Trabakua, Atxagarai, Kurutzegana y Ondarroa.kml': 'Trabakua, Atxagarai, Kurutzegana eta Ondarroa.kml',
+    '    <p>Una traves&iacute;a de 32 km desde el alto de <b>Trabakua</b> hasta <b>Ondarroa</b>, corriendo, que cruza la comarca de punta a punta y termina en la r&iacute;a. La primera mitad va por terreno conocido &mdash;Muniozguren, la media ladera de <b>Oiz</b> y la subida a <b>Atxagarai</b>&mdash;, y a partir de <b>Kurutzegana</b> empieza la bajada larga hacia la costa, enlazando barrios y pistas de monte hasta Ondarroa.</p>':
+        '    <p>32 km-ko zeharkaldia <b>Trabakua</b>ko gainetik <b>Ondarroa</b>raino, korrika, eskualdea muturretik muturrera zeharkatu eta itsasadarrean amaitzen duena. Lehen erdia lur ezagunetik doa &mdash;Muniozguren, <b>Oiz</b>en erdiko hegala eta <b>Atxagarai</b>rako igoera&mdash;, eta <b>Kurutzegana</b>tik aurrera kostalderako jaitsiera luzea hasten da, auzoak eta mendiko pistak lotuz Ondarroaraino.</p>',
+    '    <p>Atenci&oacute;n al agua: hay tres fuentes, la de Trabakua al salir, la de Zeinka en el km 11,9 y la de Atxagarai en el km 16,9. Desde esa &uacute;ltima quedan quince kil&oacute;metros hasta Ondarroa sin nada, as&iacute; que conviene cargar bien all&iacute;.</p>':
+        '    <p>Kontuz urarekin: hiru iturri daude, Trabakuakoa irteeran, <b>Zeinka</b>koa 11,9 km-an eta Atxagaraikoa 16,9 km-an. Azken horretatik hamabost kilometro geratzen dira Ondarroaraino ezer gabe, beraz komeni da han ondo betetzea.</p>',
+    '    <p>Salimos de Trabakua en direcci&oacute;n a <b>Muniozguren</b>, como tantas otras veces: unos seis kil&oacute;metros por asfalto.</p>':
+        '    <p>Trabakuatik irteten gara <b>Muniozguren</b> aldera, beste hainbat alditan bezala: sei bat kilometro asfaltotik.</p>',
+    '    <p>Una vez en Muniozguren optamos por seguir hacia <b>Kortaguren</b>. En su d&iacute;a este tramo era bueno: se pasaba en bici a media ladera de Oiz y era un buen acceso para dar la vuelta al monte. Pero con los a&ntilde;os se ha estropeado, y la parte final es la peor. En la zona de Kortaguren, donde hay un caser&iacute;o y una granja, las pisadas del ganado han dejado el camino lleno de surcos, impracticable. El primer tramo se mantiene bastante limpio; el segundo, ya con los surcos, es el que nos deja en Kortaguren.</p>':
+        '    <p>Muniozgurenen gaudela, <b>Kortaguren</b> alderantz jarraitzea aukeratzen dugu. Garai batean tarte hau ona zen: bizikletaz pasatzen zen Oizen erdiko hegaletik, eta sarbide ona zen mendiari bira emateko. Baina urteekin hondatu egin da, eta azken zatia da okerrena. Kortaguren inguruan, baserri bat eta granja bat dauden lekuan, abereen oinatzek bidea ildoz betea utzi dute, igarogaitza. Lehen tartea nahiko garbi dago; bigarrena, ildoekin, da Kortagurenera eramaten gaituena.</p>',
+    '    <p>En Kortaguren giramos a la derecha y empezamos a bajar por carretera hacia el puerto de <b>Gontzagarai</b>. Tras cruzar la carretera seguimos por asfalto hacia el barrio de <b>Gerrika</b> (km 10,72 &middot; 392 m), y aqu&iacute; ya se abren las vistas hacia Oiz, la zona que acabamos de dejar atr&aacute;s.</p>':
+        '    <p>Kortagurenen eskuinera jotzen dugu eta errepidetik behera hasten gara <b>Gontzagarai</b>ko gainerantz. Errepidea zeharkatu ondoren asfaltotik jarraitzen dugu <b>Gerrika</b> auzorantz (10,72 km &middot; 392 m), eta hemen zabaltzen dira Oizerako bistak, atzean utzi berri dugun ingurua.</p>',
+    '    <p>Seguimos hasta el barrio de <b>Zeinka</b> (km 12,11). Justo antes de entrar en el n&uacute;cleo, en el mismo dep&oacute;sito de agua, encontramos una fuente (km 11,9 &middot; 373 m). Desde Zeinka sale la pista de tierra que da acceso a la zona de <b>Santa Eufemia</b> y Atxagarai, pero antes hay que llegar al puerto de <b>Lekoitzgane</b>. Lo cruzamos y, justo enfrente, empezamos a subir por un camino de cemento hasta <b>Atxagarai</b> (km 17,10 &middot; 569 m). Arriba nos esperan una fuente, una bolera y el refugio. Cogemos agua en la fuente y nos acercamos a la bolera, porque es ah&iacute; donde cambia el entorno.</p>':
+        '    <p><b>Zeinka</b> auzoraino jarraitzen dugu (12,11 km). Gunean sartu aurretik bertan, auzoko ur-biltegian, iturri bat aurkitzen dugu (11,9 km &middot; 373 m). Zeinkatik ateratzen da <b>Santa Eufemia</b> eta Atxagarai ingurura sartzeko lurrezko pista, baina lehenago <b>Lekoitzgane</b>ko gainera iritsi behar da. Zeharkatu eta, parez pare, zementuzko bide batetik igotzen hasten gara <b>Atxagarai</b>raino (17,10 km &middot; 569 m). Goian iturri bat, bolatoki bat eta aterpetxea ditugu zain. Iturrian ura hartu eta bolatokira hurbiltzen gara, han aldatzen baita ingurua.</p>',
+    '    <p>Junto a la bolera empezamos a subir por zona pedregosa hacia la cumbre de <b>Kurutzegana</b> (km 17,67 &middot; 584 m). Desde arriba toca bajar. Los primeros metros son de sendero, pero est&aacute; bien definido entre la piedra y la hierba. Seguimos direcci&oacute;n norte en una bajada muy bonita, hasta salir de esa zona; un poco m&aacute;s adelante empieza otra de musgo y piedra, m&aacute;s bonita todav&iacute;a.</p>':
+        '    <p>Bolatokiaren ondoan harritzatik gora hasten gara <b>Kurutzegana</b>ko gailurrerantz (17,67 km &middot; 584 m). Goitik behera egitea tokatzen da. Lehen metroak bidexkakoak dira, baina ondo markatuta dago harriaren eta belarraren artean. Iparralderantz jarraitzen dugu jaitsiera oso polit batean, ingurune horretatik atera arte; pixka bat aurrerago goroldioa eta harria nagusi diren beste bat hasten da, are politagoa.</p>',
+    '    <p>Desde aqu&iacute; continuamos por caminos de montaña en direcci&oacute;n a Ondarroa. Poco a poco vamos pasando por <b>Ubilla-Urberuaga</b>, <b>Lauzirika</b>, <b>Saratsua</b> (km 20,69) y <b>Merelludi</b> (km 25,43 &middot; 181 m), enlazando distintos barrios y zonas de monte.</p>':
+        '    <p>Hemendik aurrera mendiko bideetatik jarraitzen dugu Ondarroa aldera. Pixkanaka <b>Ubilla-Urberuaga</b>, <b>Lauzirika</b>, <b>Saratsua</b> (20,69 km) eta <b>Merelludi</b> (25,43 km &middot; 181 m) igarotzen ditugu, auzoak eta mendi-inguruak lotuz.</p>',
+    '    <p>En Merelludi cruzamos el alto de <b>Milloi</b>, en la carretera de Markina a Lekeitio, y al otro lado el camino vuelve a subir. El recorrido contin&uacute;a por pistas forestales y caminos vecinales, pasando cerca de <b>Eizmendi</b>, del entorno de <b>San Antol&iacute;n</b> y de las laderas de <b>Kalamendi</b> (km 26,99 &middot; 273 m).</p>':
+        '    <p>Merelludin <b>Milloi</b>ko gaina zeharkatzen dugu, Markinatik Lekeitiorako errepidean, eta beste aldean bideak berriro gora egiten du. Ibilbideak baso-pistetatik eta auzo-bideetatik jarraitzen du, <b>Eizmendi</b>tik, <b>San Antolin</b> ingurutik eta <b>Kalamendi</b>ko hegaletatik gertu igarota (26,99 km &middot; 273 m).</p>',
+    '    <p>En algunos tramos, las talas de pinos han dejado la pista en malas condiciones, por lo que conviene prestar atenci&oacute;n al terreno. Seguimos hacia <b>Asterrika</b> (km 28,30 &middot; 223 m), donde enlazamos con el camino de bajada a Ondarroa.</p>':
+        '    <p>Tarte batzuetan pinu-mozketek pista egoera txarrean utzi dute, eta komeni da lurrari erreparatzea. <b>Asterrika</b> alderantz jarraitzen dugu (28,30 km &middot; 223 m), eta han lotzen gara Ondarroarako jaitsiera-bidearekin.</p>',
+    '    <p>Al llegar a Asterrika, dejamos a la izquierda el camino que va hacia <b>Mendexa</b> y seguimos a la derecha, en direcci&oacute;n a Ondarroa. Las marcas rojas y blancas nos gu&iacute;an en el descenso final. Ya abajo entramos pasando junto al cementerio, por un camino empedrado, hasta el primer ensanche, donde termina la traves&iacute;a.</p>':
+        '    <p>Asterrikara iristean, <b>Mendexa</b>rako bidea ezkerrean uzten dugu eta eskuinetik jarraitzen dugu, Ondarroa alderantz. Marka gorri-zuriek gidatzen gaituzte azken jaitsieran. Behean, hilerriaren ondotik sartzen gara, harrizko bide batetik, lehen zabalguneraino, eta han amaitzen da zeharkaldia.</p>',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
     'garaigaztelu': GARAIGAZTELU,
     'trabakuadeba': TRABAKUADEBA,
+    'trabakuaondarroa': TRABAKUAONDARROA,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,

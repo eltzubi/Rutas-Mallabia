@@ -71,7 +71,7 @@ FUENTES = [
         "punto": ("trabakua", "salida"),
         "nota_es": "En el alto, junto al bar de arriba y los columpios.",
         "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
-        "rutas": ["mendibil", "urko", "hirutxikiak"],
+        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa"],
     },
     {
         "id": "arteta",
@@ -305,6 +305,23 @@ FUENTES = [
         "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
+        "id": "zeinka",
+        "zona": "markina",
+        "es": "Fuente de Zeinka",
+        "eu": "Zeinkako iturria",
+        # Coordenada dada por el autor, exacta: cae a 1 m del track de
+        # trabakuaondarroa, en el km 11,86. Mana todo el ano porque es el
+        # agua del deposito del barrio.
+        "aprox": False,
+        "coord": (43.257986, -2.555616),
+        "punto": ("trabakuaondarroa", 2),
+        "nota_es": "Junto al deposito de agua del barrio, justo antes de "
+                   "entrar en el nucleo de Zeinka.",
+        "nota_eu": "Auzoko ur-biltegiaren ondoan, Zeinkako gunean sartu "
+                   "aurretik.",
+        "rutas": ["trabakuaondarroa"],
+    },
+    {
         "id": "arnoate",
         "zona": "markina",
         "es": "Fuente de Arnoate",
@@ -476,7 +493,7 @@ FUENTES = [
         "punto": ("santaeufemia", 2),
         "nota_es": "Frente al refugio y la bolera, en el collado de Urregarai.",
         "nota_eu": "Aterpearen eta bolatokiaren parean, Urregaraiko lepoan.",
-        "rutas": ["santaeufemia", "markinabolibar", "urregarai"],
+        "rutas": ["santaeufemia", "markinabolibar", "urregarai", "trabakuaondarroa"],
     },
 ]
 
