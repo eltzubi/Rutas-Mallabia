@@ -804,6 +804,14 @@ HOME = {
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
     # trabakuadeba card
+    # askakosantakataline card
+    'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
+        'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
+    '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona</h3>':
+        '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Askako, el &aacute;rea recreativa de Lasiar, Santa Kataline, Garai y Andikona</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikona zeharkatuz</p>',
+
     # trabakuaondarroa card
     'alt="Ondarroa desde lo alto, con la r&iacute;a, el puente y la playa al fondo"':
         'alt="Ondarroa goitik, itsasadarra, zubia eta hondartza atzealdean"',
@@ -3404,6 +3412,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
+    'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikona zeharkatuz',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
@@ -3530,6 +3539,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
+    'askakosantakataline': 'Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
@@ -6228,12 +6238,112 @@ TRABAKUAONDARROA = {
         '    <p>Asterrikara iristean, <b>Mendexa</b>rako bidea ezkerrean uzten dugu eta eskuinetik jarraitzen dugu, Ondarroa alderantz. Marka gorri-zuriek gidatzen gaituzte azken jaitsieran. Hilerritik gertu pasatzen gara eta harrizko kaletik behera jaisten gara, itsasadarraren ondoko plazatxo bateraino, eta han amaitzen da zeharkaldia.</p>',
 }
 
+ASKAKOSANTAKATALINE = {
+    '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai y Andikona</em></h1>':
+        '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai eta Andikona</em></h1>',
+    '<p class="full-name">Circuito desde Trabakua por Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai y Andikona</p>':
+        '<p class="full-name">Trabakutik Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai eta Andikona zeharkatzen dituen zirkuitua</p>',
+    'alt="Foto ampliada del recorrido de San Kristobal Txiki, Santa Kataline, Garai y Andikona"':
+        'alt="San Kristobal Txiki, Santa Kataline, Garai eta Andikonako ibilbidearen argazki handitua"',
+    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona.gpx"':
+        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona.gpx"',
+    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona.kml"':
+        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona.kml"',
+
+    'alt="Sendero hondo entre taludes cubiertos de musgo, en el hayedo camino de Santa Kataline"':
+        'alt="Bidexka sakona goroldioz estalitako ezpondan artean, Santa Kataline bidean dagoen pagadian"',
+    'alt="Carretera estrecha con parches de cemento subiendo entre caseríos hacia Zengotita"':
+        'alt="Errepide estua zementuzko adabakiekin, baserrien artean Zengotitarantz igotzen"',
+    'alt="Pista pedregosa subiendo entre pinos, con roderas marcadas en la tierra"':
+        'alt="Pista harritsua pinuen artean igotzen, lurrean arrasto markatuekin"',
+    'alt="El río que hay que cruzar pasado el caserío Betxun, con la bici parada sobre las piedras"':
+        'alt="Betxun baserria pasatuta zeharkatu behar den erreka, bizikleta harrien gainean geldirik"',
+    'alt="Sendero estrecho entre la vegetación, visto desde el manillar de la bici"':
+        'alt="Bidexka estua landarediaren artean, bizikletaren manillarretik ikusita"',
+    'alt="La cresta de Oiz con los molinos, las plantaciones de pino y una pista cruzando el valle"':
+        'alt="Oizko gailurra errotekin, pinudiak eta harana zeharkatzen duen pista bat"',
+    'alt="Prado en lo alto con el macizo de Anboto al fondo"':
+        'alt="Belardia goialdean, Anbotoko mendigunea atzealdean"',
+    'alt="Panorámica del Duranguesado, con Mugarra y Anboto cerrando el horizonte"':
+        'alt="Durangaldeko panoramika, Mugarrak eta Anbotok zerumuga ixten dutela"',
+    'alt="La bici apoyada en un tronco caído, en un pinar con helechos y el valle abajo"':
+        'alt="Bizikleta eroritako enbor baten kontra bermatuta, iratzedun pinudi batean eta harana behean"',
+    'alt="Sendero cubierto de pinaza entre los troncos de una plantación de pinos"':
+        'alt="Pinu-orbelez estalitako bidexka pinudi bateko enborren artean"',
+    'alt="Campa abierta entre pinos, con el suelo de tierra y grava"':
+        'alt="Zelai irekia pinuen artean, lurra eta legarra zorutzat"',
+    'alt="El área recreativa de Lasiar, con las mesas detrás de una valla de madera entre los pinos"':
+        'alt="Lasiarko aisialdi-gunea, mahaiak egurrezko hesi baten atzean pinuen artean"',
+    'alt="Hayedo con los troncos cubiertos de musgo y el suelo alfombrado de hojas"':
+        'alt="Pagadia enborrak goroldioz estalita eta zorua hostoz alfonbratuta"',
+    'alt="Pista de grava entre árboles, con el tendido eléctrico al fondo"':
+        'alt="Legarrezko pista zuhaitzen artean, argindar-linea atzealdean"',
+    'alt="Una sima abierta en el monte, con las paredes de roca cubiertas de hiedra"':
+        'alt="Mendian zabaldutako leize bat, harkaitzezko hormak huntzez estalita"',
+    'alt="La ermita de Santa Kataline, de piedra y tejado a cuatro aguas, junto a la carretera del barrio"':
+        'alt="Santa Katalineko ermita, harrizkoa eta lau isurkiko teilatuarekin, auzoko errepidearen ondoan"',
+    'alt="Calle de Garai, con un caserío de piedra, la farola y el seto de la esquina"':
+        'alt="Garaiko kalea, harrizko baserri batekin, farola eta izkinako heska"',
+    'alt="La fuente de Garai con el antiguo lavadero de hormigón al lado, y la bici apoyada"':
+        'alt="Garaiko iturria ondoan hormigoizko garbitoki zaharrarekin, eta bizikleta bermatuta"',
+    'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
+        'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
+
+    '<h2>E-bike</h2>': '<h2>E-bikea</h2>',
+    'Buena parte del recorrido va sobre el trazado del <b>Asto Trail de Garai</b>, así que lo que hay son senderos: tramos horizontales muy entretenidos, subidas ciclables y un par de bajadas escondidas entre la vegetación. Hay dos puntos que piden calma — el río que se cruza después de Betxun y el minuto largo que toca andar con la bici en la mano bajando hacia Santa Kataline —, y el resto se pasa rodando. Con casi treinta kilómetros y mil metros de desnivel, es una ruta de día entero para una bici normal; con e-bike entra en una mañana.':
+        'Ibilbidearen zati handi bat <b>Garaiko Asto Trail</b>aren trazaduraren gainetik doa, beraz bidexkak dira nagusi: tarte horizontal oso entretenigarriak, igoera ziklagarriak eta landarediaren artean ezkutatutako pare bat jaitsiera. Lasaitasuna eskatzen duten bi puntu daude — Betxun ostean zeharkatzen den erreka eta Santa Kataline alderantz bizikleta eskuan hartuta oinez egin behar den minutu luzea —, eta gainerakoa errodatuz pasatzen da. Ia hogeita hamar kilometro eta mila metroko desnibelarekin, egun osoko ibilbidea da bizikleta arruntarentzat; e-bikearekin goiz batean sartzen da.',
+
+    'Salimos de <b>Trabakua</b> en dirección a <b>Zengotita</b>. Tras unos 2,5 km, continuamos subiendo hasta llegar al propio barrio. Una vez arriba, cogemos el camino de la izquierda, una pista de cemento que nos lleva hasta el caserío <b>Betxun</b>, donde termina la carretera.':
+        '<b>Trabakua</b>tik abiatzen gara <b>Zengotita</b> norabidean. 2,5 bat kilometro egin ondoren, igotzen jarraitzen dugu auzoraino bertaraino. Behin goian, ezkerreko bidea hartzen dugu, zementuzko pista bat, <b>Betxun</b> baserriraino eramaten gaituena: han bukatzen da errepidea.',
+    'Pasamos el caserío y seguimos por la pista de la izquierda. Poco después encontramos un pequeño río que tenemos que cruzar. Se puede pasar, aunque conviene hacerlo con cuidado, ya que el paso no es del todo seguro. A partir de aquí, comenzamos a bajar hacia la ermita de <b>San Kristobal Txiki</b>. En este tramo encontramos varias charcas de agua que pueden obligarnos a bajarnos de la bici, pero no suponen mayor problema.':
+        'Baserria pasa eta ezkerreko pistatik jarraitzen dugu. Handik gutxira erreka txiki bat aurkitzen dugu, zeharkatu beharrekoa. Pasa daiteke, baina kontuz ibiltzea komeni da, pasabidea ez baita guztiz segurua. Hemendik aurrera, <b>San Kristobal Txiki</b>ko ermitarantz jaisten hasten gara. Tarte honetan ur-putzu batzuk daude, bizikletatik jaistera behartu gaitzaketenak, baina ez dira arazo handia.',
+    'A medida que nos acercamos a la ermita, cogemos el camino que sube del barrio de <b>Besoita</b>. Elegimos el ramal de la derecha, dejando la ermita a nuestra izquierda, y continuamos hasta alcanzar el punto más alto, donde encontramos la fuente a mano derecha y <b>Sarrionamendi</b> al otro lado.':
+        'Ermitara hurbildu ahala, <b>Besoita</b> auzotik igotzen den bidea hartzen dugu. Eskuineko adarra aukeratzen dugu, ermita ezkerrean utzita, eta gorengo punturaino jarraitzen dugu: han dago iturria eskuinean, eta <b>Sarrionamendi</b> beste aldean.',
+    'Desde el alto comenzamos a bajar y, a los pocos metros, abandonamos el camino para meternos a mano derecha por un sendero oculto entre los árboles. Comienza uno de los tramos más entretenidos de la ruta: avanzamos en horizontal, con pequeñas subidas y bajadas por un sendero bonito y muy divertido de recorrer en bici.':
+        'Goitik jaisten hasi eta, metro gutxira, bidea utzi eta eskuinetara sartzen gara zuhaitzen artean ezkutatutako bidexka batetik. Ibilbideko tarterik entretenigarrienetako bat hasten da hemen: horizontalean goaz, igoera eta jaitsiera txikiekin, bidexka ederra eta bizikletaz egiteko oso dibertigarria.',
+    'Este tramo coincide durante una buena parte con el recorrido de la carrera de montaña <b>Asto Trail</b>. Seguimos disfrutando del sendero hasta que empieza a ganar altura. Aunque hay que pedalear, es una subida muy ciclable y entretenida, que nos lleva hasta una carretera de cemento, cerca del cruce donde se separan los caminos hacia San Kristobal, <a href="zengotitagane.html">Zengotitagane</a> e <a href="zengotitaiturzuri.html">Iturzuri</a>.':
+        'Tarte hau <b>Asto Trail</b> mendi-lasterketaren ibilbidearekin bat dator zati handi batean. Bidexkaz gozatzen jarraitzen dugu altuera irabazten hasi arte. Pedalkadak eman behar diren arren, igoera oso ziklagarria eta entretenigarria da, eta zementuzko errepide bateraino eramaten gaitu, San Kristobal, <a href="zengotitagane.html">Zengotitagane</a> eta <a href="zengotitaiturzuri.html">Iturzuri</a>ko bideak banatzen diren bidegurutzetik gertu.',
+    'Nosotros giramos a la izquierda y avanzamos unos metros por el cemento, hasta que lo abandonamos de nuevo para adentrarnos en la zona de <b>Askako</b>. La subida nos lleva por pistas y senderos hasta la cima. Una vez arriba, atravesamos una zona cerrada entre árboles, pero con el sendero limpio y muy ciclable. A continuación, comenzamos un bonito descenso entre la vegetación, por un tramo algo escondido, muy entretenido y de los que merece la pena conocer.':
+        'Guk ezkerretara jotzen dugu eta metro batzuk egiten ditugu zementuaren gainetik, berriro utzi eta <b>Askako</b> aldera sartzeko. Igoerak pistetatik eta bidexketatik eramaten gaitu gailurreraino. Behin goian, zuhaitzen arteko gune itxi bat zeharkatzen dugu, baina bidexka garbi eta oso ziklagarria dago. Ondoren, landarediaren arteko jaitsiera polit bat hasten dugu, nolabait ezkutuko tarte batetik, oso entretenigarria eta ezagutzea merezi duten horietakoa.',
+    'Más abajo volvemos a enlazar con el camino que habíamos dejado y continuamos por varios tramos de subidas y bajadas muy bonitos y entretenidos, alternando senderos y pistas mientras vamos cruzando y dejando atrás la carretera de cemento en distintos puntos.':
+        'Beherago utzitako bidearekin lotzen gara berriro eta igoera eta jaitsiera tarte polit eta entretenigarri batzuetatik jarraitzen dugu, bidexkak eta pistak txandakatuz, zementuzko errepidea puntu desberdinetan zeharkatu eta atzean utziz.',
+    'Volvemos a salir a la carretera de cemento que sube desde <b>Garai</b>, aunque en esta ocasión lo hacemos en una curva situada algo más abajo. En este punto, el recorrido habitual de la carrera continúa de frente para bajar hacia Garai por un sendero espectacular, que ya tenemos recogido en <a href="sancristobalgaraiandikoa.html">otra de nuestras rutas</a>.':
+        '<b>Garai</b>tik igotzen den zementuzko errepidera ateratzen gara berriro, oraingoan apur bat beherago dagoen bihurgune batean. Puntu honetan, lasterketaren ohiko ibilbideak zuzen jarraitzen du Garairantz jaisteko bidexka ikusgarri batetik, <a href="sancristobalgaraiandikoa.html">gure beste ibilbide batean</a> jasota daukaguna.',
+    'Nosotros giramos a la derecha para bordear la zona y dirigirnos hacia el área recreativa de <b>Lasiar</b>, intentando evitar en lo posible las carreteras de montaña.':
+        'Guk eskuinetara jotzen dugu ingurua inguratzeko eta <b>Lasiar</b> aisialdi-gunerantz jotzeko, ahal den neurrian mendiko errepideak saihesten saiatuz.',
+    'Llegamos al área recreativa y volvemos a enlazar con la carretera que sube desde Garai. Recorremos rápidamente unos 500 metros antes de girar a la izquierda para adentrarnos en un bonito hayedo.':
+        'Aisialdi-gunera iristen gara eta Garaitik igotzen den errepidearekin lotzen gara berriro. 500 bat metro azkar egiten ditugu, ezkerretara jo eta pagadi eder batean sartu aurretik.',
+    'La carrera pasa también por esta zona, aunque nosotros buscamos un nuevo tramo para bajar a Garai a través del barrio de <b>Santa Kataline</b>, en lugar de seguir el recorrido habitual.':
+        'Lasterketa ere inguru honetatik pasatzen da, baina guk tarte berri bat bilatzen dugu Garaira jaisteko, <b>Santa Kataline</b> auzotik, ohiko ibilbideari jarraitu beharrean.',
+    'Tomamos una pista que, según el mapa, nos permite continuar por este nuevo tramo. Al principio está despejada, pero poco a poco la vegetación va cerrando el paso. Sigue siendo ciclable hasta que la pista prácticamente desaparece y da paso a un sendero que continúa de frente. Son solo unos metros, aunque la vegetación está bastante cerrada y toca bajarse de la bici y caminar con ella en la mano durante aproximadamente un minuto.':
+        'Mapak dioenaren arabera tarte berri honetatik jarraitzeko aukera ematen digun pista bat hartzen dugu. Hasieran garbi dago, baina pixkanaka landaredia pasabidea ixten doa. Ziklagarria izaten jarraitzen du pista ia desagertu eta zuzen jarraitzen duen bidexka bati lekua utzi arte. Metro gutxi batzuk besterik ez dira, baina landaredia nahiko itxita dago eta bizikletatik jaitsi eta eskuan hartuta minutu bat inguru oinez egitea tokatzen da.',
+    'No queda claro si es un sendero de paso o un camino de ganado, pero se puede atravesar. La pista buena se ve un poco más abajo y enseguida volvemos a encontrar un camino despejado. Es el único punto algo más sucio de este tramo, pero se pasa sin mayores complicaciones.':
+        'Ez dago argi pasabide-bidexka bat den edo abereen bidea den, baina zeharkatu daiteke. Pista ona apur bat beherago ikusten da eta berehala bide garbi batekin egiten dugu topo berriro. Tarte honetako puntu zikin bakarra da, baina konplikazio handirik gabe pasatzen da.',
+    'Continuamos bajando hasta llegar al barrio de Santa Kataline. Una vez abajo, salimos a la carretera general, giramos a la izquierda y seguimos aproximadamente un kilómetro en dirección a Garai.':
+        'Jaisten jarraitzen dugu Santa Kataline auzora iritsi arte. Behin behean, errepide nagusira ateratzen gara, ezkerretara jotzen dugu eta kilometro bat inguru egiten dugu Garai norabidean.',
+    'Al llegar al centro del barrio, nos desviamos a la izquierda para buscar la zona del parque y continuar hacia <b>Sarria</b>. A la salida encontramos una de las fuentes más conocidas de la zona, con agua durante todo el año y un antiguo lavadero junto a ella.':
+        'Auzoaren erdigunera iristean, ezkerretara desbideratzen gara parkearen gunea bilatzeko eta <b>Sarria</b> alderantz jarraitzeko. Irteeran inguruko iturririk ezagunenetako bat aurkitzen dugu, urte osoan ura duena eta ondoan garbitoki zahar bat.',
+    'Seguimos por este camino durante un buen rato, hasta abandonarlo para coger una pista que nos devuelve hacia la zona de San Kristobal Txiki, por donde hemos pasado en los primeros kilómetros de la ruta.':
+        'Bide honetatik jarraitzen dugu tarte on batez, utzi eta San Kristobal Txiki aldera itzultzen gaituen pista bat hartu arte, ibilbidearen lehen kilometroetan pasatu garen tokitik.',
+    'Subimos por la pista casi hasta arriba, pero antes de alcanzar la parte alta nos desviamos a la derecha por una buena pista de tierra. Este camino nos lleva hacia <b>Andikona</b>, primero ganando altura y después por una bajada increíblemente bonita. Por esta misma zona también pasa el recorrido de la Asto Trail, en sentido contrario.':
+        'Pistatik ia goraino igotzen gara, baina goiko aldera iritsi aurretik eskuinetara desbideratzen gara lurrezko pista on batetik. Bide honek <b>Andikona</b> aldera eramaten gaitu, lehenik altuera irabaziz eta gero izugarri polita den jaitsiera batetik. Inguru honetatik bertatik pasatzen da Asto Traileko ibilbidea ere, kontrako noranzkoan.',
+    'Una vez en Andikona, salimos a la carretera del barrio y giramos a la izquierda para dirigirnos hacia Besoita, un paso habitual en muchas de nuestras rutas. Desde allí llegamos a la carretera general, la cruzamos y cogemos la carretera vieja de Zengotita.':
+        'Behin Andikonan, auzoko errepidera ateratzen gara eta ezkerretara jotzen dugu Besoita alderantz joateko, gure ibilbide askotan ohikoa den pausoa. Handik errepide nagusira iristen gara, zeharkatu eta Zengotitako errepide zaharra hartzen dugu.',
+    'Subimos hasta Zengotita y, como en otras ocasiones, desde el barrio emprendemos el regreso hacia Trabakua.':
+        'Zengotitaraino igotzen gara eta, beste batzuetan bezala, auzotik Trabakuarako itzulerari ekiten diogu.',
+    'Una ruta muy recomendable, con senderos, hayedos, pistas y bajadas que merece la pena descubrir. Aprovechamos algunos tramos conocidos de la Asto Trail, pero también enlazamos caminos nuevos para explorar otras zonas de Garai y sus alrededores. Un recorrido variado y entretenido, perfecto para disfrutar de la bici cualquier día de la semana.':
+        'Oso ibilbide gomendagarria, bidexkak, pagadiak, pistak eta ezagutzea merezi duten jaitsierak dituena. Asto Traileko tarte ezagun batzuk aprobetxatzen ditugu, baina bide berriak ere lotzen ditugu Garai inguruko beste gune batzuk esploratzeko. Ibilbide anitza eta entretenigarria, astean edozein egunetan bizikletaz gozatzeko aproposa.',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
     'garaigaztelu': GARAIGAZTELU,
     'trabakuadeba': TRABAKUADEBA,
     'trabakuaondarroa': TRABAKUAONDARROA,
+    'askakosantakataline': ASKAKOSANTAKATALINE,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,

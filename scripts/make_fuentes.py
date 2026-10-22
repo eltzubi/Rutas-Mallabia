@@ -130,7 +130,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 1),
         "nota_es": "Arriba, junto a la ermita.",
         "nota_eu": "Goian, baselizaren ondoan.",
-        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane"],
+        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane", "askakosantakataline"],
     },
     {
         "id": "oiz",
@@ -166,7 +166,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
-        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal"],
+        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline"],
     },
     {
         "id": "errotatxo",
