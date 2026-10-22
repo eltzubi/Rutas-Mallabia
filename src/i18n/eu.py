@@ -796,8 +796,8 @@ HOME = {
         'alt="Elgetako sarrerako arkua barrutik, herriko kalea eta etxeak hondoan"',
 
     # ixuakalamua card
-    '<h3 class="route-card-name">Trabakua, Aginaga, Ixua y Kalamua</h3>':
-        '<h3 class="route-card-name">Trabakua, Aginaga, Ixua eta Kalamua</h3>',
+    '<h3 class="route-card-name">Trabakua, Aginaga, Ixua, Kalamua y bajada a Barinaga</h3>':
+        '<h3 class="route-card-name">Trabakua, Aginaga, Ixua, Kalamua eta Barinagara jaitsiera</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Asuntza, Aginaga y el antiguo camino de Ixua, con subida a Kalamua y vuelta por Barinaga y Aginaga</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita</p>',
     'alt="La e-bike apoyada en las rocas de la cima de Kalamua, con los montes y el valle al fondo"':
