@@ -703,7 +703,7 @@ def add_tecnica(page_html, page, lang):
 # lo que sirve una fecha aqui. Se probo ponerla en cada ficha, sacada de la
 # hora del track, y el autor la quito: no quiere 57 fechas, quiere saber cual
 # es la ultima entrada. SE CAMBIA A MANO AL PUBLICAR UNA RUTA NUEVA.
-ULTIMA_ENTRADA = ("trabakuaondarroa", "2026-10-22")
+ULTIMA_ENTRADA = ("ixuakalamua", "2026-10-19")
 
 
 def add_ultima_entrada(page_html, cards, lang):
