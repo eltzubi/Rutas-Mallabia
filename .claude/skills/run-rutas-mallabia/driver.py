@@ -20,7 +20,7 @@ Ordenes:
   offline [pagina]            registra el service worker, corta la red y recarga
   todo                        audit + filtros + mapa + temas + offline
 
-Las paginas se nombran como el fichero: index.html (euskera), index.es.html
+Las paginas se nombran como el fichero: index.html (castellano), index.eu.html
 (castellano), longaurjauziak.html, betzun.eu.html...
 """
 import argparse, contextlib, glob, http.server, os, re, socket, subprocess, sys, threading
@@ -212,7 +212,7 @@ def cmd_probe(a):
 def cmd_filtros(a):
     """El flujo real de la portada: escribir en el buscador y pulsar los chips.
     filters.js ignora tildes, mayusculas y guiones y exige todas las palabras."""
-    with servidor() as base, pagina(base, "index.es.html", 1280) as pg:
+    with servidor() as base, pagina(base, "index.html", 1280) as pg:
         visibles = lambda: pg.evaluate(
             "() => [...document.querySelectorAll('a.route-card')]"
             ".filter(c => c.offsetParent !== null).length")
@@ -532,8 +532,8 @@ def cmd_mio(a):
     que es lo que prueba que data/rutas.json ha llegado y se ha leido.
     """
     with servidor() as base:
-        for pag, idioma in (("index.es.html", "es"), ("trabakua.html", "es"),
-                            ("index.html", "eu")):
+        for pag, idioma in (("index.html", "es"), ("trabakua.html", "es"),
+                            ("index.eu.html", "eu")):
             with pagina(base, pag, ancho=390, alto=844) as pg:
                 pg.evaluate("localStorage.setItem('trabakutik_favs',"
                             " JSON.stringify(['oiz','urko']))")
@@ -651,7 +651,7 @@ def cmd_aviso(a):
     ABIERTO = "() => document.querySelector('#beforeYouGo details').open"
     Y = "() => Math.round(window.scrollY)"
     with servidor() as base:
-        for pag in ("index.es.html", "index.html"):
+        for pag in ("index.html", "index.eu.html"):
             with pagina(base, pag, ancho=390, alto=844) as pg:
                 pg.wait_for_timeout(700)
                 for desde, por_el_boton in ((0, True), (240, True), (0, False)):
@@ -684,11 +684,11 @@ def cmd_aviso(a):
 
 def cmd_todo(a):
     fallos = 0
-    for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
+    for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.html")),
                             ("filtros", cmd_filtros, a),
                             ("mapa", cmd_mapa, argparse.Namespace(pagina="longaurjauziak.html")),
-                            ("temas", cmd_temas, argparse.Namespace(pagina="index.es.html")),
-                            ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html")),
+                            ("temas", cmd_temas, argparse.Namespace(pagina="index.html")),
+                            ("offline", cmd_offline, argparse.Namespace(pagina="index.html")),
                             ("mio", cmd_mio, a),
                             ("visor", cmd_visor, a),
                             ("aviso", cmd_aviso, a)):
@@ -754,7 +754,7 @@ def main():
     s.add_argument("--salida"); s.add_argument("--completa", action="store_true")
 
     s = sub.add_parser("audit"); s.set_defaults(fn=cmd_audit)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     s = sub.add_parser("probe"); s.set_defaults(fn=cmd_probe)
     s.add_argument("pagina"); s.add_argument("--sel", required=True)
@@ -770,13 +770,13 @@ def main():
     s.add_argument("--aplica", action="store_true", help="sin esto solo simula")
 
     s = sub.add_parser("temas"); s.set_defaults(fn=cmd_temas)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     s = sub.add_parser("mapa"); s.set_defaults(fn=cmd_mapa)
     s.add_argument("pagina", nargs="?", default="longaurjauziak.html")
 
     s = sub.add_parser("offline"); s.set_defaults(fn=cmd_offline)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     a = ap.parse_args()
     sys.exit(a.fn(a))

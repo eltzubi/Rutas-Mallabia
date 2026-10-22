@@ -39,10 +39,11 @@ ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zeng
 MANUAL_EU_PAGES = set()
 
 # es filename -> eu filename, for the cross-language links.
-# La portada en euskera es la raiz del sitio, o sea index.html mismo: el
-# castellano es el que se va a index.es.html (lo reapunta build.py al escribir
-# la salida ES). Por eso aqui index.html se queda como esta.
-EU_OF = {"index.html": "index.html"}
+# La portada en castellano es la raiz del sitio, o sea index.html; la de
+# euskera se va a index.eu.html como cualquier otra pagina. El conmutador de
+# idioma se escribe despues (ver mas abajo) y apunta a index.html, que ya es
+# la castellana, asi que build.py no tiene que tocar nada de esto.
+EU_OF = {"index.html": "index.eu.html"}
 for _p in ROUTE_PAGES:
     EU_OF[f"{_p}.html"] = f"{_p}.eu.html"
 

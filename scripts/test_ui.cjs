@@ -73,7 +73,7 @@ class Element {
   close(){this.open=false;this.dispatchEvent({type:'close'});}
 }
 const fixtures = new Map();
-function env(page='index.es.html', storage=new Map()) {
+function env(page='index.html', storage=new Map()) {
   if(!fixtures.has(page)) fixtures.set(page, JSON.parse(execFileSync('python3',[path.join(__dirname,'check_site.py'),'--fixture',page],{maxBuffer:8e6})));
   const doc=new Element(fixtures.get(page));
   function attach(el){el.ownerDocument=doc;el.children.filter(c=>typeof c!=='string').forEach(attach);} attach(doc);
@@ -138,7 +138,7 @@ test('exclusive filters persist across languages and list/map',()=>{
   e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
   e.one('#elevationSelect').value='high';e.one('#elevationSelect').dispatchEvent({type:'change'});
   const selected=Array.from(e.win.trabakutikVisibleRoutes);assert(selected.length>0);
-  e.one('[data-view="map"]').click();const eu=env('index.html',e.storage);eu.run('filters.js');
+  e.one('[data-view="map"]').click();const eu=env('index.eu.html',e.storage);eu.run('filters.js');
   assert.deepEqual(Array.from(eu.win.trabakutikVisibleRoutes),selected);
   assert.match(eu.one('[data-route-totals]').textContent,/ibilbide/);
   assert.equal(eu.one('#difficultySelect').value,'dificil');assert.equal(eu.one('#elevationSelect').value,'high');
@@ -211,9 +211,9 @@ test('la lupa abre el buscador encima de la barra, y al cerrar vuelven todas',()
 });
 test('invalid storage is safe; old preferences migrate',()=>{
   for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],view:'unknown'})]){
-    const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
+    const e=env('index.eu.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
   }
-  const e=env('index.html',new Map([['trabakutik_filters',JSON.stringify({activities:['bici'],distancePreset:'media1',view:'map'})]]));e.run('filters.js');
+  const e=env('index.eu.html',new Map([['trabakutik_filters',JSON.stringify({activities:['bici'],distancePreset:'media1',view:'map'})]]));e.run('filters.js');
   assert(visible(e).length>0);assert(visible(e).every(c=>Number(c.dataset.distanceKm)>10&&Number(c.dataset.distanceKm)<=20));
   assert.equal(e.one('#routeMapWrap').hidden,false);
 });
@@ -287,7 +287,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
-  const e=env('index.html');delete e.context.L;e.run('map.js');
+  const e=env('index.eu.html');delete e.context.L;e.run('map.js');
   assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/Ezin izan da mapa/);
   e.one('.map-retry').click();assert.equal(e.win.reloaded,true);
 });

@@ -247,7 +247,7 @@ def main():
         datos = json.loads((ROOT / nombre).read_text())
         for icono in datos['icons']:
             require((ROOT / icono['src']).exists(), f'{nombre}: falta {icono["src"]}')
-        require(datos['start_url'] in ('/', '/index.es.html'), f'{nombre}: start_url raro')
+        require(datos['start_url'] in ('/', '/index.eu.html'), f'{nombre}: start_url raro')
     for lang, (_, suffix) in build.LANGS.items():
         esperado = 'manifest.webmanifest' if lang == 'eu' else 'manifest.es.webmanifest'
         pagina = (ROOT / build.out_name('arteta', lang)).read_text()
