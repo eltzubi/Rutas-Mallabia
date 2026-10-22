@@ -1286,6 +1286,7 @@ def main():
                 page_html = add_weather(page_html, name, lang)
             page_html = add_fuentes(page_html, lang)
             page_html = add_fuentes_ficha(page_html, name, lang)
+            page_html = add_agua_a_la_leyenda(page_html, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = add_activity_color(page_html, name, cards[lang], lang)
@@ -1409,6 +1410,29 @@ def add_fuentes_ficha(page_html, name, lang):
     datos = [{"at": [fu["lat"], fu["lon"]], "nombre": fu[lang]["nombre"]} for fu in mias]
     attr = html.escape(json.dumps(datos, ensure_ascii=False), quote=True)
     return page_html.replace(marca, marca + f'\n           data-fuentes="{attr}"', 1)
+
+
+def add_agua_a_la_leyenda(page_html, lang):
+    """«Agua», con su gota azul, al final de la lista de puntos numerados.
+
+    En el mapa el agua es una gota azul y los puntos de referencia circulos
+    con un numero; la lista de debajo solo explicaba los numeros, asi que el
+    punto azul habia que adivinarlo o tocarlo. Ahora se nombra, con el mismo
+    dibujo y el mismo azul que el marcador.
+
+    Va en las dos listas de la pagina -- la de la cabecera y la del mapa --
+    y solo en las fichas que declaran alguna fuente, que son las que pintan
+    gotas. Se llama despues de add_fuentes_ficha, que es quien deja el
+    data-fuentes del que esto se fia.
+    """
+    if 'data-fuentes="' not in page_html:
+        return page_html
+    gota = ('<svg viewBox="0 0 24 24" aria-hidden="true">'
+            '<path d="M12 2.5c3.8 4.6 6 7.9 6 10.6a6 6 0 0 1-12 0c0-2.7 2.2-6 6-10.6z"/></svg>')
+    texto = "Ura" if lang == "eu" else "Agua"
+    renglon = f' <span class="elev-legend-item"><span class="gota">{gota}</span>{texto}</span>'
+    return re.sub(r'(<div class="elev-legend">.*?)</div>',
+                  lambda m: m.group(1) + renglon + '</div>', page_html, flags=re.S)
 
 
 _fuentes_cache = None

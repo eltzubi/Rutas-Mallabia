@@ -140,7 +140,15 @@ def main():
                         yield n
                         for c in n['children']:
                             yield from walk(c)
-                names = [n for n in walk(section) if 'elev-legend-item' in n['attrs'].get('class', '').split()]
+                # El renglon del agua («Agua»/«Ura», gota azul) vive en la misma
+                # lista pero no es un punto numerado: lo pone add_agua_a_la_leyenda
+                # en src/build.py y no le corresponde ningun waypoint.
+                def _es_punto(n):
+                    if 'elev-legend-item' not in n['attrs'].get('class', '').split():
+                        return False
+                    return not any('gota' in c['attrs'].get('class', '').split()
+                                   for c in n['children'] if isinstance(c, dict))
+                names = [n for n in walk(section) if _es_punto(n)]
                 data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
                 require(len(names) == len(data.get('waypoints', [])), f'{filename}: waypoint/legend mismatch')
             elif page == 'mallabia':

@@ -340,6 +340,18 @@ main[data-activity] .hero-activity-badge svg{ color:var(--teal); }
   font-size:9px; font-weight:700;
   flex-shrink:0;
 }
+/* El agua en la lista de puntos: la misma gota azul que el mapa, al lado de
+   los circulos numerados, para saber que es el punto azul sin tener que
+   tocarlo. Sale sola en las fichas que declaran alguna fuente (add_agua_a_la
+   _leyenda en src/build.py), y el azul es el mismo #3B82F6 de src/js/map.js. */
+.elev-legend-item .gota{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:15px; height:15px; border-radius:50%;
+  background:#3B82F6; color:#fff;
+  flex-shrink:0;
+}
+.elev-legend-item .gota svg{ width:9px; height:9px; fill:currentColor; display:block; }
+
 /* La escala de la pendiente, debajo del mapa y con la misma letra y el mismo
    sitio que la lista de puntos numerados: aparece solo con el boton puesto. */
 .slope-legend{

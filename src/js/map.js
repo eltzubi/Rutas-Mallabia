@@ -137,10 +137,13 @@
   // el doble de items que waypoints y la correspondencia se sostenia de puro
   // milagro -- el dia que las dos dejasen de coincidir, etiquetas cambiadas.
   var legendScope = el.closest('.map-section') || document;
-  var wpNames = Array.prototype.map.call(
+  var wpNames = Array.prototype.filter.call(
     legendScope.querySelectorAll('.elev-legend-item'),
-    function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); }
-  );
+    // El renglon del agua vive en la misma lista y no es un punto numerado.
+    // Se filtra por .gota y no con :not(:has(.gota)) porque :has() no esta
+    // en todos los navegadores que abren esto en el monte.
+    function(item){ return !item.querySelector('.gota'); }
+  ).map(function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); });
 
   // Compass direction the route heads out into: bearing from the start
   // point to the point farthest from it (a loop's own "endpoint" isn't
