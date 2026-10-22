@@ -809,8 +809,8 @@ HOME = {
         'alt="Ondarroa goitik, itsasadarra, zubia eta hondartza atzealdean"',
     '<h3 class="route-card-name">Trabakua, Atxagarai, Kurutzegana y Ondarroa</h3>':
         '<h3 class="route-card-name">Trabakua, Atxagarai, Kurutzegana eta Ondarroa</h3>',
-    '<p class="route-card-desc">Traves&iacute;a corriendo de Trabakua a Ondarroa por la ladera de Oiz, Atxagarai y Kurutzegana</p>':
-        '<p class="route-card-desc">Korrika egindako zeharkaldia Trabakuatik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik igarota</p>',
+    '<p class="route-card-desc">Traves&iacute;a de Trabakua a Ondarroa por Muniozguren, Atxagarai y Kurutzegana</p>':
+        '<p class="route-card-desc">Zeharkaldia Trabakuatik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik igarota</p>',
 
     '<h3 class="route-card-name">Trabakua, Urko, Kalamua, Arno y Deba</h3>':
         '<h3 class="route-card-name">Trabakua, Urko, Kalamua, Arno eta Deba</h3>',
@@ -3404,7 +3404,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
-    'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
+    'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
     'maguna': 'Zirkuitua e-bikez Trabakuatik, Zengotitagane eta Iturzurigainako '
@@ -6174,12 +6174,12 @@ TRABAKUADEBA = {
 }
 
 TRABAKUAONDARROA = {
-    '<span>Mixta</span><span class="sep">/</span><span>Oiz, Atxagarai y Kurutzegana</span><span class="sep">/</span><span>Traves&iacute;a</span>':
-        '<span>Nahasia</span><span class="sep">/</span><span>Oiz, Atxagarai eta Kurutzegana</span><span class="sep">/</span><span>Zeharkaldia</span>',
+    '<span>Mixta</span><span class="sep">/</span><span>Muniozguren, Atxagarai y Kurutzegana</span><span class="sep">/</span><span>Traves&iacute;a</span>':
+        '<span>Nahasia</span><span class="sep">/</span><span>Muniozguren, Atxagarai eta Kurutzegana</span><span class="sep">/</span><span>Zeharkaldia</span>',
     '<h1>Trabakua, Atxagarai, Kurutzegana<br><em>y Ondarroa</em></h1>':
         '<h1>Trabakua, Atxagarai, Kurutzegana<br><em>eta Ondarroa</em></h1>',
-    '<p class="full-name">Traves&iacute;a corriendo de Trabakua a Ondarroa por la ladera de Oiz, Atxagarai y Kurutzegana</p>':
-        '<p class="full-name">Korrika egindako zeharkaldia Trabakuatik Ondarroaraino, Oizen hegaletik, Atxagaraitik eta Kurutzeganatik igarota</p>',
+    '<p class="full-name">Traves&iacute;a de Trabakua a Ondarroa por Muniozguren, Atxagarai y Kurutzegana</p>':
+        '<p class="full-name">Zeharkaldia Trabakuatik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik igarota</p>',
     'alt="Foto ampliada del recorrido de Trabakua a Ondarroa"':
         'alt="Trabakuatik Ondarroarako ibilbidearen argazki handitua"',
     'alt="Mar de nubes al amanecer desde la media ladera de Oiz, con el sol bajo iluminando la niebla que llena los valles"':
@@ -6200,14 +6200,14 @@ TRABAKUAONDARROA = {
         'Zeharkaldia &mdash; Ondarroan amaitzen da, ez irteeran',
     'Trabakua, Atxagarai, Kurutzegana y Ondarroa.gpx': 'Trabakua, Atxagarai, Kurutzegana eta Ondarroa.gpx',
     'Trabakua, Atxagarai, Kurutzegana y Ondarroa.kml': 'Trabakua, Atxagarai, Kurutzegana eta Ondarroa.kml',
-    '    <p>Una traves&iacute;a de 32 km desde el alto de <b>Trabakua</b> hasta <b>Ondarroa</b>, corriendo, que cruza la comarca de punta a punta y termina en la r&iacute;a. La primera mitad va por terreno conocido &mdash;Muniozguren, la media ladera de <b>Oiz</b> y la subida a <b>Atxagarai</b>&mdash;, y a partir de <b>Kurutzegana</b> empieza la bajada larga hacia la costa, enlazando barrios y pistas de monte hasta Ondarroa.</p>':
-        '    <p>32 km-ko zeharkaldia <b>Trabakua</b>ko gainetik <b>Ondarroa</b>raino, korrika, eskualdea muturretik muturrera zeharkatu eta itsasadarrean amaitzen duena. Lehen erdia lur ezagunetik doa &mdash;Muniozguren, <b>Oiz</b>en erdiko hegala eta <b>Atxagarai</b>rako igoera&mdash;, eta <b>Kurutzegana</b>tik aurrera kostalderako jaitsiera luzea hasten da, auzoak eta mendiko pistak lotuz Ondarroaraino.</p>',
+    '    <p>Una traves&iacute;a de 32 km desde el alto de <b>Trabakua</b> hasta <b>Ondarroa</b>, corriendo, que cruza la comarca de punta a punta y termina en la r&iacute;a. La primera mitad va por terreno conocido &mdash;Muniozguren, Kortaguren y la subida a <b>Atxagarai</b>&mdash;, y a partir de <b>Kurutzegana</b> empieza la bajada larga hacia la costa, enlazando barrios y pistas de monte hasta Ondarroa.</p>':
+        '    <p>32 km-ko zeharkaldia <b>Trabakua</b>ko gainetik <b>Ondarroa</b>raino, korrika, eskualdea muturretik muturrera zeharkatu eta itsasadarrean amaitzen duena. Lehen erdia lur ezagunetik doa &mdash;Muniozguren, Kortaguren eta <b>Atxagarai</b>rako igoera&mdash;, eta <b>Kurutzegana</b>tik aurrera kostalderako jaitsiera luzea hasten da, auzoak eta mendiko pistak lotuz Ondarroaraino.</p>',
     '    <p>Atenci&oacute;n al agua: hay tres fuentes, la de Trabakua al salir, la de Zeinka en el km 11,9 y la de Atxagarai en el km 16,9. Desde esa &uacute;ltima quedan quince kil&oacute;metros hasta Ondarroa sin nada, as&iacute; que conviene cargar bien all&iacute;.</p>':
         '    <p>Kontuz urarekin: hiru iturri daude, Trabakuakoa irteeran, <b>Zeinka</b>koa 11,9 km-an eta Atxagaraikoa 16,9 km-an. Azken horretatik hamabost kilometro geratzen dira Ondarroaraino ezer gabe, beraz komeni da han ondo betetzea.</p>',
     '    <p>Salimos de Trabakua en direcci&oacute;n a <b>Muniozguren</b>, como tantas otras veces: unos seis kil&oacute;metros por asfalto.</p>':
         '    <p>Trabakuatik irteten gara <b>Muniozguren</b> aldera, beste hainbat alditan bezala: sei bat kilometro asfaltotik.</p>',
-    '    <p>Una vez en Muniozguren optamos por seguir hacia <b>Kortaguren</b>. En su d&iacute;a este tramo era bueno: se pasaba en bici a media ladera de Oiz y era un buen acceso para dar la vuelta al monte. Pero con los a&ntilde;os se ha estropeado, y la parte final es la peor. En la zona de Kortaguren, donde hay un caser&iacute;o y una granja, las pisadas del ganado han dejado el camino lleno de surcos, impracticable. El primer tramo se mantiene bastante limpio; el segundo, ya con los surcos, es el que nos deja en Kortaguren.</p>':
-        '    <p>Muniozgurenen gaudela, <b>Kortaguren</b> alderantz jarraitzea aukeratzen dugu. Garai batean tarte hau ona zen: bizikletaz pasatzen zen Oizen erdiko hegaletik, eta sarbide ona zen mendiari bira emateko. Baina urteekin hondatu egin da, eta azken zatia da okerrena. Kortaguren inguruan, baserri bat eta granja bat dauden lekuan, abereen oinatzek bidea ildoz betea utzi dute, igarogaitza. Lehen tartea nahiko garbi dago; bigarrena, ildoekin, da Kortagurenera eramaten gaituena.</p>',
+    '    <p>Una vez en Muniozguren optamos por seguir hacia <b>Kortaguren</b>. Es un tramo que con los a&ntilde;os se ha estropeado, y la parte final es la peor. En la zona de Kortaguren, donde hay un caser&iacute;o y una granja, las pisadas del ganado han dejado el camino lleno de surcos, impracticable. El primer tramo se mantiene bastante limpio; el segundo, ya con los surcos, es el que nos deja en Kortaguren.</p>':
+        '    <p>Muniozgurenen gaudela, <b>Kortaguren</b> alderantz jarraitzea aukeratzen dugu. Urteekin hondatu den tartea da, eta azken zatia da okerrena. Kortaguren inguruan, baserri bat eta granja bat dauden lekuan, abereen oinatzek bidea ildoz betea utzi dute, igarogaitza. Lehen tartea nahiko garbi dago; bigarrena, ildoekin, da Kortagurenera eramaten gaituena.</p>',
     '    <p>En Kortaguren giramos a la derecha y empezamos a bajar por carretera hacia el puerto de <b>Gontzagarai</b>. Tras cruzar la carretera seguimos por asfalto hacia el barrio de <b>Gerrika</b> (km 10,72 &middot; 392 m), y aqu&iacute; ya se abren las vistas hacia Oiz, la zona que acabamos de dejar atr&aacute;s.</p>':
         '    <p>Kortagurenen eskuinera jotzen dugu eta errepidetik behera hasten gara <b>Gontzagarai</b>ko gainerantz. Errepidea zeharkatu ondoren asfaltotik jarraitzen dugu <b>Gerrika</b> auzorantz (10,72 km &middot; 392 m), eta hemen zabaltzen dira Oizerako bistak, atzean utzi berri dugun ingurua.</p>',
     '    <p>Seguimos hasta el barrio de <b>Zeinka</b> (km 12,11). Justo antes de entrar en el n&uacute;cleo, en el mismo dep&oacute;sito de agua, encontramos una fuente (km 11,9 &middot; 373 m). Desde Zeinka sale la pista de tierra que da acceso a la zona de <b>Santa Eufemia</b> y Atxagarai, pero antes hay que llegar al puerto de <b>Lekoitzgane</b>. Lo cruzamos y, justo enfrente, empezamos a subir por un camino de cemento hasta <b>Atxagarai</b> (km 17,10 &middot; 569 m). Arriba nos esperan una fuente, una bolera y el refugio. Cogemos agua en la fuente y nos acercamos a la bolera, porque es ah&iacute; donde cambia el entorno.</p>':
