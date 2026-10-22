@@ -6194,8 +6194,8 @@ TRABAKUAONDARROA = {
         'alt="Goroldioz estalitako harrien eta iratzeen arteko bidexka, Kurutzeganako jaitsieran"',
     'alt="Ondarroa desde lo alto, con la r&iacute;a, el puente y la playa al fondo"':
         'alt="Ondarroa goitik, itsasadarra, zubia eta hondartza atzealdean"',
-    '32,04 km y +860 m. Una traves&iacute;a larga pero sin grandes rampas: el desnivel se reparte en subidas cortas y seguidas. Lo que pide es fondo y cabeza con el agua, porque entre Atxagarai y Ondarroa hay quince kil&oacute;metros sin fuentes. Y ojo al terreno en dos puntos: los surcos del ganado antes de Kortaguren y las pistas estropeadas por las talas antes de Asterrika.':
-        '32,04 km eta +860 m. Zeharkaldi luzea da, baina aldapa handirik gabe: desnibela igoera labur eta jarraituetan banatzen da. Erresistentzia eskatzen du, eta urarekin burua, <b>Atxagarai</b> eta Ondarroa artean hamabost kilometro baitaude iturririk gabe. Eta kontuz lurrarekin bi puntutan: abereen ildoak Kortaguren aurretik, eta mozketek hondatutako pistak Asterrika aurretik.',
+    '32,04 km y +859 m. Una traves&iacute;a larga pero sin grandes rampas: el desnivel se reparte en subidas cortas y seguidas. Lo que pide es fondo y cabeza con el agua, porque entre Atxagarai y Ondarroa hay quince kil&oacute;metros sin fuentes. Y ojo al terreno en dos puntos: los surcos del ganado antes de Kortaguren y las pistas estropeadas por las talas antes de Asterrika.':
+        '32,04 km eta +859 m. Zeharkaldi luzea da, baina aldapa handirik gabe: desnibela igoera labur eta jarraituetan banatzen da. Erresistentzia eskatzen du, eta urarekin burua, <b>Atxagarai</b> eta Ondarroa artean hamabost kilometro baitaude iturririk gabe. Eta kontuz lurrarekin bi puntutan: abereen ildoak Kortaguren aurretik, eta mozketek hondatutako pistak Asterrika aurretik.',
     'Traves&iacute;a &mdash; termina en Ondarroa, no en la salida':
         'Zeharkaldia &mdash; Ondarroan amaitzen da, ez irteeran',
     'Trabakua, Atxagarai, Kurutzegana y Ondarroa.gpx': 'Trabakua, Atxagarai, Kurutzegana eta Ondarroa.gpx',
