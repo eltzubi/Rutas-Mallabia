@@ -807,8 +807,8 @@ HOME = {
     # askakosantakataline card
     'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
         'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
-    '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa</h3>':
-        '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa</h3>',
+    '<h3 class="route-card-name">Tramos del Asto Trail de Garai, por Askako, Santa Kataline y Andikoa</h3>':
+        '<h3 class="route-card-name">Garaiko Asto Traileko tarteak, Askako, Santa Kataline eta Andikoa zeharkatuz</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Askako, el &aacute;rea recreativa de Lasiar, Santa Kataline, Garai y Andikoa</p>':
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa zeharkatuz</p>',
 
@@ -3539,7 +3539,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
-    'askakosantakataline': 'Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa — Herriko ibilbideak',
+    'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
@@ -6241,8 +6241,8 @@ TRABAKUAONDARROA = {
 ASKAKOSANTAKATALINE = {
     '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai y Andikoa</em></h1>':
-        '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai eta Andikoa</em></h1>',
+    '<h1>Tramos del Asto Trail de Garai<br><em>Santa Kataline, Garai y Andikoa</em></h1>':
+        '<h1>Garaiko Asto Traileko tarteak<br><em>Santa Kataline, Garai eta Andikoa</em></h1>',
     '<p class="full-name">Circuito desde Trabakua por Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai y Andikoa</p>':
         '<p class="full-name">Trabakutik Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai eta Andikoa zeharkatzen dituen zirkuitua</p>',
     'alt="Foto ampliada del recorrido de San Kristobal Txiki, Santa Kataline, Garai y Andikoa"':
