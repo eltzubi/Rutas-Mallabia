@@ -805,8 +805,8 @@ HOME = {
 
     # trabakuadeba card
     # askakosantakataline card
-    'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
-        'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
+    'alt="Pueblo visto desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
+        'alt="Herria goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
     '<h3 class="route-card-name">Tramos del Asto Trail de Garai, por Askako, Santa Kataline y Andikoa</h3>':
         '<h3 class="route-card-name">Garaiko Asto Traileko tarteak, Askako, Santa Kataline eta Andikoa zeharkatuz</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Askako, el &aacute;rea recreativa de Lasiar, Santa Kataline, Garai y Andikoa</p>':
@@ -6252,44 +6252,44 @@ ASKAKOSANTAKATALINE = {
     'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa.kml"':
         'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa.kml"',
 
-    'alt="Sendero hondo entre taludes cubiertos de musgo, en el hayedo camino de Santa Kataline"':
-        'alt="Bidexka sakona goroldioz estalitako ezpondan artean, Santa Kataline bidean dagoen pagadian"',
-    'alt="Carretera estrecha con parches de cemento subiendo entre caseríos hacia Zengotita"':
-        'alt="Errepide estua zementuzko adabakiekin, baserrien artean Zengotitarantz igotzen"',
+    'alt="Sendero hondo entre taludes cubiertos de musgo, en un bosque de hayas jóvenes"':
+        'alt="Bidexka sakona goroldioz estalitako ezponden artean, pago gazteen baso batean"',
+    'alt="Carretera estrecha con parches de cemento subiendo entre caseríos"':
+        'alt="Errepide estua zementuzko adabakiekin, baserrien artean igotzen"',
     'alt="Pista pedregosa subiendo entre pinos, con roderas marcadas en la tierra"':
         'alt="Pista harritsua pinuen artean igotzen, lurrean arrasto markatuekin"',
-    'alt="El río que hay que cruzar pasado el caserío Betzun, con la bici parada sobre las piedras"':
-        'alt="Betzun baserria pasatuta zeharkatu behar den erreka, bizikleta harrien gainean geldirik"',
+    'alt="Cauce de un arroyo, con la bici parada sobre las piedras del paso"':
+        'alt="Erreka baten ibilgua, bizikleta pasabideko harrien gainean geldirik"',
     'alt="Sendero estrecho entre la vegetación, visto desde el manillar de la bici"':
         'alt="Bidexka estua landarediaren artean, bizikletaren manillarretik ikusita"',
-    'alt="La cresta de Oiz con los molinos, las plantaciones de pino y una pista cruzando el valle"':
-        'alt="Oizko gailurra errotekin, pinudiak eta harana zeharkatzen duen pista bat"',
-    'alt="Prado en lo alto con el macizo de Anboto al fondo"':
-        'alt="Belardia goialdean, Anbotoko mendigunea atzealdean"',
-    'alt="Panorámica del Duranguesado, con Mugarra y Anboto cerrando el horizonte"':
-        'alt="Durangaldeko panoramika, Mugarrak eta Anbotok zerumuga ixten dutela"',
+    'alt="Cordal con aerogeneradores, plantaciones de pino y una pista cruzando la ladera"':
+        'alt="Gailurra eolikoekin, pinudiak eta hegala zeharkatzen duen pista bat"',
+    'alt="Prado en lo alto, con las montañas del entorno al fondo"':
+        'alt="Belardia goialdean, inguruko mendiak atzealdean"',
+    'alt="Panorámica del valle, con un pueblo abajo y una sierra de roca cerrando el horizonte"':
+        'alt="Haranaren panoramika, herri bat behean eta harkaitzezko mendilerro batek zerumuga ixten duela"',
     'alt="La bici apoyada en un tronco caído, en un pinar con helechos y el valle abajo"':
         'alt="Bizikleta eroritako enbor baten kontra bermatuta, iratzedun pinudi batean eta harana behean"',
     'alt="Sendero cubierto de pinaza entre los troncos de una plantación de pinos"':
         'alt="Pinu-orbelez estalitako bidexka pinudi bateko enborren artean"',
     'alt="Campa abierta entre pinos, con el suelo de tierra y grava"':
         'alt="Zelai irekia pinuen artean, lurra eta legarra zorutzat"',
-    'alt="El área recreativa de Lasiar, con las mesas detrás de una valla de madera entre los pinos"':
-        'alt="Lasiarko aisialdi-gunea, mahaiak egurrezko hesi baten atzean pinuen artean"',
+    'alt="Área recreativa con mesas detrás de una valla de madera, entre los pinos"':
+        'alt="Aisialdi-gunea, mahaiak egurrezko hesi baten atzean, pinuen artean"',
     'alt="Hayedo con los troncos cubiertos de musgo y el suelo alfombrado de hojas"':
         'alt="Pagadia enborrak goroldioz estalita eta zorua hostoz alfonbratuta"',
     'alt="Pista de grava entre árboles, con el tendido eléctrico al fondo"':
         'alt="Legarrezko pista zuhaitzen artean, argindar-linea atzealdean"',
     'alt="Una sima abierta en el monte, con las paredes de roca cubiertas de hiedra"':
         'alt="Mendian zabaldutako leize bat, harkaitzezko hormak huntzez estalita"',
-    'alt="La ermita de Santa Kataline, de piedra y tejado a cuatro aguas, junto a la carretera del barrio"':
-        'alt="Santa Katalineko ermita, harrizkoa eta lau isurkiko teilatuarekin, auzoko errepidearen ondoan"',
-    'alt="Calle de Garai, con un caserío de piedra, la farola y el seto de la esquina"':
-        'alt="Garaiko kalea, harrizko baserri batekin, farola eta izkinako heska"',
-    'alt="La fuente de Garai con el antiguo lavadero de hormigón al lado, y la bici apoyada"':
-        'alt="Garaiko iturria ondoan hormigoizko garbitoki zaharrarekin, eta bizikleta bermatuta"',
-    'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
-        'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
+    'alt="Ermita de piedra con tejado a cuatro aguas, junto a la carretera del barrio"':
+        'alt="Harrizko ermita, lau isurkiko teilatuarekin, auzoko errepidearen ondoan"',
+    'alt="Calle del pueblo, con un caserío de piedra, la farola y el seto de la esquina"':
+        'alt="Herriko kalea, harrizko baserri batekin, farola eta izkinako hesia"',
+    'alt="Fuente con un antiguo lavadero de hormigón al lado, y la bici apoyada"':
+        'alt="Iturria, ondoan hormigoizko garbitoki zaharra, eta bizikleta bermatuta"',
+    'alt="Pueblo visto desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
+        'alt="Herria goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
 
     '<h2>E-bike</h2>': '<h2>E-bikea</h2>',
     'Buena parte del recorrido va sobre el trazado del <b>Asto Trail de Garai</b>, así que lo que hay son senderos: tramos horizontales muy entretenidos, subidas ciclables y un par de bajadas escondidas entre la vegetación. Hay dos puntos que piden calma — el río que se cruza después de Betzun y el minuto largo que toca andar con la bici en la mano bajando hacia Santa Kataline —, y el resto se pasa rodando.':
