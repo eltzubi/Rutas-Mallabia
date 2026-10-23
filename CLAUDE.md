@@ -308,6 +308,15 @@ pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Vo
 libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
 `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
 
+**El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
+encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
+zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra
+sobre las rutas visibles **aunque el visitante ya hubiera movido el mapa**, y marca `userMoved` para
+que el siguiente cambio de tamaño del contenedor no devuelva el encuadre general y lo deshaga. Solo
+se dispara **cuando el conjunto visible cambia de verdad** (la firma de los `href` visibles), para no
+dar un salto por cada tecla del buscador que no quita ninguna ruta; la primera vez solo se anota la
+firma, porque de ese encuadre inicial ya se ocupa `fit()`. Solo en la portada.
+
 **El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
 del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del
 primer punto del track de esa ruta; `src/js/weather.js` pide el pronostico y lo rellena. Si no hay

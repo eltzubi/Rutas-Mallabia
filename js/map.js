@@ -660,7 +660,41 @@
       });
       // Con menos etiquetas visibles cambia lo que se solapa entre si.
       updateLabelVisibility();
+      if (esPortada) encuadraVisibles();
     }
+
+    // El filtro reencuadra el mapa de la portada. Pasar de «A pie» a
+    // «E-bike» dejaba la vista donde estuviera -- a veces sin ninguna de las
+    // rutas que quedaban a la vista -- y lo pidio el autor: que se centre
+    // siempre. Se reencuadra aunque el visitante ya hubiera movido el mapa,
+    // y por eso cuenta como movimiento suyo: si no, el siguiente cambio de
+    // tamano del contenedor devolveria el encuadre general y desharia esto.
+    // Solo cuando el conjunto visible cambia de verdad, para no dar un salto
+    // por cada tecla del buscador que no quita ninguna ruta, y la primera
+    // vez solo se anota: de ese primer encuadre ya se ocupa fit().
+    var ultimoEncuadre = null;
+    function encuadraVisibles(){
+      if (!el.clientWidth || !el.clientHeight) return;
+      var visibles = Object.keys(hrefToLine).filter(function(h){
+        return labelFilterVisible[h] !== false;
+      }).sort();
+      var firma = visibles.join('|');
+      if (firma === ultimoEncuadre) return;
+      var primera = ultimoEncuadre === null;
+      ultimoEncuadre = firma;
+      if (primera || !visibles.length) return;
+      var caja = null;
+      visibles.forEach(function(h){
+        var b = hrefToLine[h].line.getBounds();
+        if (!b || !b.isValid()) return;
+        if (caja) caja.extend(b);
+        else caja = L.latLngBounds(b.getSouthWest(), b.getNorthEast());
+      });
+      if (!caja || !caja.isValid()) return;
+      userMoved = true;
+      map.fitBounds(caja, { padding: [24, 24] });
+    }
+
     applyRouteFilter(pendingVisibleHrefs, pendingActivity);
     onRouteFilterChange = applyRouteFilter;
 
