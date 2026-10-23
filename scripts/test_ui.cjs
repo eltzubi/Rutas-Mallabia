@@ -335,10 +335,10 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   e.run('map.js');await settle();
   assert.equal(pedidas,1,'pide su track sin esperar a nadie');
-  // Y sin «Calles»: el callejero solo situa en la vista de conjunto de la
-  // portada; dentro de una ruta lo que hace falta es el IGN. La pendiente va
-  // en la misma pastilla, detras de la raya, no en otra debajo.
+  // Y sin «Bici»: CyclOSM es la capa mas lenta y mas pesada, y era la que
+  // abria toda ficha. La pendiente va en la misma pastilla, detras de la
+  // raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').map(b=>b.textContent),
-                   ['IGN','Bici','Sat','Pendiente']);
+                   ['IGN','Calles','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });

@@ -293,19 +293,21 @@
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
     // botones, con el activo encendido, como en cualquier mapa de movil.
-    // El callejero solo en la portada, que es donde situa: ahi se ven las 57
-    // rutas de lejos y lo que ubica es el pueblo. Dentro de una ruta no
-    // pinta nada -- lo que hace falta son las curvas de nivel, los rios y los
-    // caminos -- y el autor lo ha quitado de las fichas.
+    // Dentro de una ruta no va la Bici, va el callejero de OSM. La ficha
+    // abria en CyclOSM, que es la capa mas lenta y mas pesada de las cuatro
+    // -- medido sobre Mallabia, 0,87 s y 42 kB por tesela, frente a 0,32 s y
+    // 25 kB del IGN y 0,13 s y 7 kB de OSM -- y eso era lo primero que veia
+    // quien entraba en una ruta. El callejero de OSM trae lo que hace falta
+    // en el monte (los senderos con nombre, las cimas con su altura, los
+    // arroyos), se lee limpio y es seis veces mas rapido; las curvas de
+    // nivel siguen en el IGN, a un toque. Se probaron antes OpenTopoMap
+    // (1,76 s por tesela), Esri World Topo y Street (limpios pero sin
+    // senderos), IGN Mapa Base (idem) y CARTO Voyager (pide clave de API).
     if (!esPortada) {
-      layerDefs = layerDefs.filter(function(def){ return def.layer !== osmLayer; });
+      layerDefs = layerDefs.filter(function(def){ return def.layer !== cycleLayer; });
     }
-    // 2 = Calles en la portada; 1 = Bici en una ficha (quitado el callejero,
-    // la lista de una ficha queda IGN, Bici, Satelite). Lo pidio el autor.
-    // Ojo: CyclOSM lo sirve un servidor de voluntarios y tarda el triple que
-    // el IGN -- 0,82 s por tesela frente a 0,34, medido-- asi que una ficha
-    // tarda mas en pintar el mapa que antes. El cambio de capa ya no deja el
-    // mapa en blanco mientras tanto (ver ponerCapa).
+    // 2 = Calles en la portada; 1 = Calles tambien en una ficha (quitada la
+    // Bici, la lista de una ficha queda IGN, Calles, Satelite).
     var layerIndex = esPortada ? 2 : 1;
     // El mapa de la portada nace dentro de un bloque oculto: hasta que el
     // visitante no cambia a la vista de mapa mide 0x0. Y un contenedor de 0x0

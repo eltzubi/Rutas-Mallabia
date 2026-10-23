@@ -296,9 +296,17 @@ portada no las lleva: 57 tracks a la vez.
 
 **Las capas, distintas en la portada y en una ficha.** La portada lleva las cuatro (IGN, Bici,
 Calles, Satélite) y abre en **Calles**: de lejos, con las 57 rutas a la vez, lo que sitúa es el
-callejero. Una ficha lleva **tres** — sin Calles — y abre en **IGN**: dentro de una ruta lo que hace
-falta son las curvas de nivel, los ríos y los caminos. Lo decidió el autor; `src/js/map.js` quita
-`osmLayer` de `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
+callejero. Una ficha lleva **tres** — sin Bici — y abre también en **Calles**. Hasta el 23 de octubre
+de 2026 era al revés (sin Calles, abriendo en Bici) y el autor avisó de que «al mapa bici le cuesta
+abrir mucho»: CyclOSM es la más lenta y la más pesada de las cuatro — medido sobre Mallabia, **0,87 s
+y 42 kB por tesela**, frente a 0,32 s y 25 kB del IGN y **0,13 s y 7 kB** de OSM — y era justo la que
+veía quien entraba en una ruta. El callejero de OSM trae lo que hace falta en el monte (los senderos
+con su nombre, las cimas con su altura, los arroyos), se lee limpio y es seis veces más rápido; las
+curvas de nivel siguen en el IGN, a un toque. Se compararon antes, tesela a tesela y mirando el
+dibujo: **OpenTopoMap** (1,76 s, el más lento), **Esri World Topo** y **Esri World Street** (limpios
+pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Voyager**, que ya no es
+libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
+`layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
 
 **El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
 del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del
