@@ -6258,8 +6258,8 @@ ASKAKOSANTAKATALINE = {
         'alt="Errepide estua zementuzko adabakiekin, baserrien artean Zengotitarantz igotzen"',
     'alt="Pista pedregosa subiendo entre pinos, con roderas marcadas en la tierra"':
         'alt="Pista harritsua pinuen artean igotzen, lurrean arrasto markatuekin"',
-    'alt="El río que hay que cruzar pasado el caserío Betxun, con la bici parada sobre las piedras"':
-        'alt="Betxun baserria pasatuta zeharkatu behar den erreka, bizikleta harrien gainean geldirik"',
+    'alt="El río que hay que cruzar pasado el caserío Betzun, con la bici parada sobre las piedras"':
+        'alt="Betzun baserria pasatuta zeharkatu behar den erreka, bizikleta harrien gainean geldirik"',
     'alt="Sendero estrecho entre la vegetación, visto desde el manillar de la bici"':
         'alt="Bidexka estua landarediaren artean, bizikletaren manillarretik ikusita"',
     'alt="La cresta de Oiz con los molinos, las plantaciones de pino y una pista cruzando el valle"':
@@ -6292,11 +6292,11 @@ ASKAKOSANTAKATALINE = {
         'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
 
     '<h2>E-bike</h2>': '<h2>E-bikea</h2>',
-    'Buena parte del recorrido va sobre el trazado del <b>Asto Trail de Garai</b>, así que lo que hay son senderos: tramos horizontales muy entretenidos, subidas ciclables y un par de bajadas escondidas entre la vegetación. Hay dos puntos que piden calma — el río que se cruza después de Betxun y el minuto largo que toca andar con la bici en la mano bajando hacia Santa Kataline —, y el resto se pasa rodando.':
-        'Ibilbidearen zati handi bat <b>Garaiko Asto Trail</b>aren trazaduraren gainetik doa, beraz bidexkak dira nagusi: tarte horizontal oso entretenigarriak, igoera ziklagarriak eta landarediaren artean ezkutatutako pare bat jaitsiera. Lasaitasuna eskatzen duten bi puntu daude — Betxun ostean zeharkatzen den erreka eta Santa Kataline alderantz bizikleta eskuan hartuta oinez egin behar den minutu luzea —, eta gainerakoa errodatuz pasatzen da.',
+    'Buena parte del recorrido va sobre el trazado del <b>Asto Trail de Garai</b>, así que lo que hay son senderos: tramos horizontales muy entretenidos, subidas ciclables y un par de bajadas escondidas entre la vegetación. Hay dos puntos que piden calma — el río que se cruza después de Betzun y el minuto largo que toca andar con la bici en la mano bajando hacia Santa Kataline —, y el resto se pasa rodando.':
+        'Ibilbidearen zati handi bat <b>Garaiko Asto Trail</b>aren trazaduraren gainetik doa, beraz bidexkak dira nagusi: tarte horizontal oso entretenigarriak, igoera ziklagarriak eta landarediaren artean ezkutatutako pare bat jaitsiera. Lasaitasuna eskatzen duten bi puntu daude — Betzun ostean zeharkatzen den erreka eta Santa Kataline alderantz bizikleta eskuan hartuta oinez egin behar den minutu luzea —, eta gainerakoa errodatuz pasatzen da.',
 
-    'Salimos de <b>Trabakua</b> en dirección a <b>Zengotita</b>. Tras unos 2,5 km, continuamos subiendo hasta llegar al propio barrio. Una vez arriba, cogemos el camino de la izquierda, una pista de cemento que nos lleva hasta el caserío <b>Betxun</b>, donde termina la carretera.':
-        '<b>Trabakua</b>tik abiatzen gara <b>Zengotita</b> norabidean. 2,5 bat kilometro egin ondoren, igotzen jarraitzen dugu auzoraino bertaraino. Behin goian, ezkerreko bidea hartzen dugu, zementuzko pista bat, <b>Betxun</b> baserriraino eramaten gaituena: han bukatzen da errepidea.',
+    'Salimos de <b>Trabakua</b> en dirección a <b>Zengotita</b>. Tras unos 2,5 km, continuamos subiendo hasta llegar al propio barrio. Una vez arriba, cogemos el camino de la izquierda, una pista de cemento que nos lleva hasta el caserío <b>Betzun</b>, donde termina la carretera.':
+        '<b>Trabakua</b>tik abiatzen gara <b>Zengotita</b> norabidean. 2,5 bat kilometro egin ondoren, igotzen jarraitzen dugu auzoraino bertaraino. Behin goian, ezkerreko bidea hartzen dugu, zementuzko pista bat, <b>Betzun</b> baserriraino eramaten gaituena: han bukatzen da errepidea.',
     'Pasamos junto al caserío y seguimos por la pista de la izquierda. Poco después encontramos un pequeño río que tenemos que cruzar. Se puede pasar, aunque conviene hacerlo con cuidado, ya que el paso no es del todo seguro. A partir de aquí, comenzamos a bajar hacia la ermita de <b>San Kristobal Txiki</b>. En este tramo encontramos varias charcas de agua que pueden obligarnos a bajarnos de la bici, pero no suponen mayor problema.':
         'Baserriaren ondotik pasa eta ezkerreko pistatik jarraitzen dugu. Handik gutxira erreka txiki bat aurkitzen dugu, zeharkatu beharrekoa. Pasa daiteke, baina kontuz ibiltzea komeni da, pasabidea ez baita guztiz segurua. Hemendik aurrera, <b>San Kristobal Txiki</b>ko ermitarantz jaisten hasten gara. Tarte honetan ur-putzu batzuk daude, bizikletatik jaistera behartu gaitzaketenak, baina ez dira arazo handia.',
     'A medida que nos acercamos a la ermita, cogemos el camino que sube del barrio de <b>Besoita</b>. Elegimos el ramal de la derecha, dejando la ermita a nuestra izquierda, y continuamos hasta alcanzar el punto más alto, donde encontramos la fuente a mano derecha y el camino de <b>Sarrionamendi</b> al otro lado, a la izquierda.':
