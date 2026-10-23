@@ -805,12 +805,12 @@ HOME = {
 
     # trabakuadeba card
     # garaikanala card
+    '<h3 class="route-card-name">Garai y el antiguo canal de agua</h3>':
+        '<h3 class="route-card-name">Garai eta antzinako ubidea</h3>',
     'alt="El valle entre las ramas, con el pueblo abajo y la pe&ntilde;a de Mugarra al fondo"':
         'alt="Harana adarren artean, herria behean eta Mugarrako haitza atzealdean"',
-    '<h3 class="route-card-name">El canal de agua de Garai</h3>':
-        '<h3 class="route-card-name">Garaiko ur-kanala</h3>',
     '<p class="route-card-desc">Paseo circular desde Garai siguiendo el canal de agua, con cangrejos en el cauce</p>':
-        '<p class="route-card-desc">Zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz, karramarroak ibilguan</p>',
+        '<p class="route-card-desc">Zirkuitu-ibilaldia Garaitik, ubideari jarraituz, karramarroak ibilguan</p>',
 
     # askakosantakataline card
     'alt="Garai visto desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
@@ -3420,7 +3420,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
-    'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz, karramarroak ibilguan, igande goiz batean umeekin egiteko aproposa',
+    'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, mendian ezkutatutako antzinako ubide batetik, karramarroak ibilguan: laburra, desnibel gutxikoa eta haurrekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
@@ -3548,7 +3548,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
-    'garaikanala': 'Garaiko ur-kanala — Herriko ibilbideak',
+    'garaikanala': 'Garai eta antzinako ubidea — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
@@ -6383,61 +6383,63 @@ ASKAKOSANTAKATALINE = {
 GARAIKANALA = {
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>El canal de agua<br><em>de Garai</em></h1>':
-        '<h1>Garaiko<br><em>ur-kanala</em></h1>',
+    '<h1>Garai y el antiguo<br><em>canal de agua</em></h1>':
+        '<h1>Garai eta antzinako<br><em>ubidea</em></h1>',
     '<p class="full-name">Paseo circular desde Garai siguiendo el canal de agua</p>':
-        '<p class="full-name">Zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz</p>',
+        '<p class="full-name">Zirkuitu-ibilaldia Garaitik, ubideari jarraituz</p>',
     'alt="Foto ampliada del recorrido del canal de agua de Garai"':
-        'alt="Garaiko ur-kanalaren ibilbidearen argazki handitua"',
-    'download="El canal de agua de Garai.gpx"': 'download="Garaiko ur-kanala.gpx"',
-    'download="El canal de agua de Garai.kml"': 'download="Garaiko ur-kanala.kml"',
+        'alt="Garaiko antzinako ubidearen ibilbidearen argazki handitua"',
+    'download="El canal de agua de Garai.gpx"': 'download="Garai eta antzinako ubidea.gpx"',
+    'download="El canal de agua de Garai.kml"': 'download="Garai eta antzinako ubidea.kml"',
     'data-marker-title="Garai (salida y llegada)"': 'data-marker-title="Garai (irteera eta helmuga)"',
-    '<b>&middot; Garai</b>': '<b>&middot; Garai</b>',
 
-    '<span class="num">1</span>Canal': '<span class="num">1</span>Kanala',
-    '<span class="num">2</span>Depósito': '<span class="num">2</span>Uraskak',
+    '<span class="num">1</span>Canal': '<span class="num">1</span>Ubidea',
+    '<span class="num">2</span>Depósito': '<span class="num">2</span>Biltegia',
     '<span class="num">3</span>Camino de Sarria': '<span class="num">3</span>Sarriako bidea',
-    'Canal &middot; 1,6 km': 'Kanala &middot; 1,6 km',
-    'Depósito &middot; 2,5 km': 'Uraskak &middot; 2,5 km',
+    'Canal &middot; 1,6 km': 'Ubidea &middot; 1,6 km',
+    'Depósito &middot; 2,5 km': 'Biltegia &middot; 2,5 km',
     'Camino de Sarria &middot; 3,4 km': 'Sarriako bidea &middot; 3,4 km',
 
     'alt="El canal de piedra cubierto de musgo, con el camino al lado y los helechos del talud"':
-        'alt="Harrizko kanala goroldioz estalita, bidea alboan eta ezpondako iratzeak"',
+        'alt="Harrizko ubidea goroldioz estalita, bidea alboan eta ezpondako iratzeak"',
     'alt="La presa del canal sobre el río, con el salto de agua y la toma al otro lado"':
-        'alt="Errekako presa, ur-jauziarekin eta kanalaren hartunea beste aldean"',
+        'alt="Ubidearen presa errekaren gainean, ur-jauziarekin eta hartunea beste aldean"',
     'alt="El canal de piedra entre los avellanos, con el camino cubierto de musgo a su lado"':
-        'alt="Harrizko kanala urritzen artean, goroldioz estalitako bidea alboan"',
+        'alt="Harrizko ubidea urritzen artean, goroldioz estalitako bidea alboan"',
     'alt="El canal bajando en pequeños saltos escalonados, entre helechos"':
-        'alt="Kanala jauzi txikitan jaisten, iratzeen artean"',
+        'alt="Ubidea jauzi txikitan jaisten, iratzeen artean"',
     'alt="Un corro de setas en el talud, entre hojas de haya y un erizo de castaña"':
         'alt="Perretxiko multzo bat ezpondan, pago-hostoen eta gaztaina-morkotz baten artean"',
     'alt="El arroyo saltando entre rocas cubiertas de musgo"':
         'alt="Erreka harri goroldiotsuen artean jauzika"',
     'alt="Un cangrejo de río en el fondo del canal, con las pinzas azuladas"':
-        'alt="Ibai-karramarro bat kanalaren hondoan, matxard urdinxkekin"',
+        'alt="Karramarro bat ubidearen hondoan, matxard urdinxkekin"',
     'alt="El canal en otoño, cubierto de hoja caída, con el camino a su derecha"':
-        'alt="Kanala udazkenean, eroritako hostoz estalita, bidea eskuinean"',
+        'alt="Ubidea udazkenean, eroritako hostoz estalita, bidea eskuinean"',
     'alt="Dos cangrejos en el fondo del canal y una babosa en el muro"':
-        'alt="Bi karramarro kanalaren hondoan eta bare bat horman"',
+        'alt="Bi karramarro ubidearen hondoan eta bare bat horman"',
     'alt="El valle entre las ramas, con el pueblo abajo y la peña de Mugarra al fondo"':
         'alt="Harana adarren artean, herria behean eta Mugarrako haitza atzealdean"',
 
     '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
-    'Ruta pequeña, ideal para hacer con niños un domingo a la mañana. Para hacer un poco de hambre.':
-        'Ibilbide txikia, igande goiz batean umeekin egiteko aproposa. Gosea pixka bat zabaltzeko.',
 
-    'Salimos de la zona del parque, junto al aparcamiento, y tiramos hacia el norte. Medio kilómetro en ascenso suave y aparece un desvío a mano derecha: ese es el que cogemos, y seguimos bajando.':
-        'Parkearen gunetik abiatzen gara, aparkalekuaren ondotik, eta iparralderantz jotzen dugu. Kilometro erdi igoera leunean eta eskuinetara desbideratze bat agertzen da: hori da hartzen duguna, eta jaisten jarraitzen dugu.',
-    'Más adelante conviene ir atento al track, porque cuando menos te lo esperas hay que coger a la derecha un camino medio oculto que enseguida se convierte en sendero. Es el que nos deja en el canal.':
-        'Aurrerago trackari adi egotea komeni da, gutxien espero duzunean eskuinetara erdi ezkutuan dagoen bide bat hartu behar baita, berehala bidexka bihurtzen dena. Horrek uzten gaitu kanalean.',
-    'El canal viene de más atrás, pero es a partir de aquí donde se puede seguir. Vamos con cuidado un kilómetro y pico pegados a él, disfrutando del paisaje y de los cangrejos, que en el agua los hay en abundancia. Entre hojas de otoño y poco más, así hasta salir a una pista de piedra.':
-        'Kanala atzerago hasten da, baina hemendik aurrera da jarraitzeko modukoa. Kontuz goaz kilometro eta piko bat haren ondotik, paisaiaz eta karramarroez gozatzen, urean ugari baitaude. Udazkeneko hostoen artean, horrela harrizko pista batera atera arte.',
-    'Es ahí donde aparece el depósito: donde acaba el canal y el agua se recoge en una tubería. El canal viene de mucho más arriba, y quedan tramos suyos bastante más arriba todavía.':
-        'Han agertzen dira uraskak: kanala bukatzen den tokia, ura hodi batean biltzen dena. Kanala askoz goragotik dator, eta haren zatiak askoz gorago ere badaude.',
-    'Esa pista sigue subiendo. Nosotros damos la vuelta, y es una pendiente bastante pronunciada, pero sin ningún problema. Abajo enlazamos con el camino que viene de <b>Sarria</b> a <b>Garai</b>.':
-        'Pista horrek gora jarraitzen du. Guk buelta ematen dugu, eta aldapa nahiko handia da, baina arazorik gabe. Behean <b>Sarria</b>tik <b>Garai</b>ra datorren bidearekin lotzen gara.',
-    'Giramos a la derecha y volvemos entre caseríos y prados hasta la zona de donde salimos. Un recorrido sencillo y rápido, y a la vuelta tenemos un bar para llenar el estómago.':
-        'Eskuinetara jotzen dugu eta baserri eta belardien artean itzultzen gara abiatu ginen tokira. Ibilbide sinple eta azkarra, eta bueltan taberna bat daukagu tripa betetzeko.',
+    'Una pequeña ruta ideal para una mañana de fin de semana, especialmente para hacer con niños y volver a tiempo para el aperitivo. El recorrido es corto, tiene poco desnivel y esconde un rincón curioso: un antiguo canal de agua que atraviesa el monte entre vegetación y hojas de otoño. Un paseo diferente, sin grandes exigencias, para disfrutar del entorno y descubrir un poco de la historia de <b>Garai</b>.':
+        'Asteburuko goiz baterako ibilbide txiki aproposa, batez ere haurrekin egiteko eta hamaiketakorako garaiz itzultzeko. Ibilbidea laburra da, desnibel gutxi du eta txoko bitxi bat ezkutatzen du: mendia landarediaren eta udazkeneko hostoen artean zeharkatzen duen antzinako ubide bat. Ibilaldi desberdin bat, eskakizun handirik gabe, inguruneaz gozatzeko eta <b>Garai</b>ko historiaren zati bat ezagutzeko.',
+
+    'Salimos de la zona del parque, junto al aparcamiento, y nos dirigimos hacia el norte por un camino de suave ascenso. Tras recorrer aproximadamente medio kilómetro, encontramos un desvío a mano derecha que tomamos para comenzar a bajar.':
+        'Parkearen eremutik abiatuko gara, aparkalekuaren ondotik, eta iparralderantz joko dugu, igoera leuneko bide batetik. Gutxi gorabehera kilometro erdi egin ondoren, eskuinetara desbideratze bat aurkituko dugu, jaisten hasteko.',
+    'Más adelante, conviene estar atentos al track, ya que tendremos que abandonar el camino por otro desvío a la derecha, algo escondido entre la vegetación. Este tramo se estrecha hasta convertirse en sendero y nos lleva hasta el antiguo canal de agua.':
+        'Aurrerago, komeni da trackari adi egotea, eskuinetara dagoen beste desbideratze batetik bidea utzi beharko baitugu, landarediaren artean ezkutatuta dagoena. Zati hau estutu egiten da, bidezidor bihurtu arte, eta antzinako ubideraino eramango gaitu.',
+    'A partir de aquí comienza la parte más especial del recorrido. Seguimos el canal durante algo más de un kilómetro, avanzando con cuidado junto a la conducción y disfrutando de un entorno tranquilo, entre hojas de otoño, vegetación y pequeños cangrejos que se mueven por el agua. Es un rincón diferente, donde el propio canal y el paisaje que lo rodea convierten un paseo sencillo en una experiencia que merece la pena.':
+        'Hemendik aurrera hasten da ibilbidearen zatirik bereziena. Ubidea jarraituko dugu kilometro bat baino gehixeagoan, kontu handiz aurrera eginez, ingurune lasai batean, udazkeneko hostoen, landarediaren eta uretan mugitzen diren karramarro txikien artean. Txoko desberdin bat da, non ubideak berak eta inguruko paisaiak ibilaldi erraz bat esperientzia interesgarri bihurtzen duten.',
+    'Hay que tener en cuenta que solo recorremos el tramo inferior del canal. Más arriba, en la ladera, se conservan otros tramos de estas conducciones de agua que no visitamos en esta ruta.':
+        'Kontuan izan behar da ubidearen beheko zatia bakarrik egingo dugula. Gorago, mendi-hegalean, ur-eroanbide horien beste zati batzuk daude, baina ez ditugu ibilbide honetan bisitatuko.',
+    'El sendero termina desembocando en una pista de piedra, donde encontramos un depósito relacionado con la conducción. En este punto dejamos el canal y continuamos por la pista hacia <b>Garai</b>. Si queremos explorar un poco más, también podemos seguir la pista cuesta arriba y buscar otros tramos del antiguo canal que discurren por la ladera.':
+        'Bidezidorra harrizko pista batean amaitzen da, non eroanbidearekin lotutako biltegi bat aurkituko dugun. Puntu honetan, ubidea utzi eta pistatik jarraituko dugu <b>Garai</b>rantz. Gehiago esploratu nahi badugu, pistatik gora ere jarrai dezakegu eta mendi-hegalean dauden antzinako ubidearen beste zati batzuk bilatu.',
+    'Continuamos por la pista, que presenta una pendiente bastante pronunciada, aunque se supera sin mayores problemas. Poco después enlazamos con el camino que desciende hacia Garai. Abajo giramos a la derecha y regresamos al punto de partida pasando junto a varios caseríos y prados.':
+        'Pistatik jarraituko dugu, nahiko aldapa handia duena, baina arazorik gabe gainditzen dena. Handik gutxira, Garaira jaisten den bidearekin bat egingo dugu. Behean eskuinetara joko dugu eta abiapuntura itzuliko gara, baserri eta larre batzuen ondotik pasatuz.',
+    'Una vuelta corta y sencilla, con poco desnivel, pero con el atractivo de recorrer un antiguo canal de agua escondido en el monte. Una buena opción para disfrutar del paisaje sin necesidad de afrontar grandes pendientes. Y, al terminar, tenemos un bar en Garai donde recuperar fuerzas antes de dar por cerrada la mañana.':
+        'Itzuli labur eta erraza, desnibel gutxikoa, baina mendian ezkutatuta dagoen antzinako ubide bat zeharkatzeko erakargarritasunarekin. Paisaiaz gozatzeko aukera ona, aldapa handiei aurre egin beharrik gabe. Eta, amaitzean, Garain taberna bat dugu indarrak berreskuratzeko, goiza amaitutzat eman aurretik.',
 }
 
 PAGE_STRINGS = {
