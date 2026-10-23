@@ -807,10 +807,10 @@ HOME = {
     # askakosantakataline card
     'alt="Garai desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
         'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
-    '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona</h3>':
-        '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona</h3>',
-    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Askako, el &aacute;rea recreativa de Lasiar, Santa Kataline, Garai y Andikona</p>':
-        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikona zeharkatuz</p>',
+    '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa</h3>':
+        '<h3 class="route-card-name">Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Zengotita, San Kristobal Txiki, Askako, el &aacute;rea recreativa de Lasiar, Santa Kataline, Garai y Andikoa</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa zeharkatuz</p>',
 
     # trabakuaondarroa card
     'alt="Ondarroa desde lo alto, con la r&iacute;a, el puente y la playa al fondo"':
@@ -3412,7 +3412,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
-    'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikona zeharkatuz',
+    'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa zeharkatuz',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
     'karabieta': 'Zirkuitua e-bikez Trabakuatik, Elgeta, Karabieta eta Azkonabietatik igarota, Eibar, Ermua eta Beranotik itzulita',
@@ -3539,7 +3539,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
-    'askakosantakataline': 'Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona — Herriko ibilbideak',
+    'askakosantakataline': 'Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
     'longaurjauziak': 'Trabakua, Longa eta Gereako ur-jauziak · Oinezko ibilbidea — Herriko ibilbideak',
@@ -6241,16 +6241,16 @@ TRABAKUAONDARROA = {
 ASKAKOSANTAKATALINE = {
     '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai y Andikona</em></h1>':
-        '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai eta Andikona</em></h1>',
-    '<p class="full-name">Circuito desde Trabakua por Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai y Andikona</p>':
-        '<p class="full-name">Trabakutik Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai eta Andikona zeharkatzen dituen zirkuitua</p>',
-    'alt="Foto ampliada del recorrido de San Kristobal Txiki, Santa Kataline, Garai y Andikona"':
-        'alt="San Kristobal Txiki, Santa Kataline, Garai eta Andikonako ibilbidearen argazki handitua"',
-    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona.gpx"':
-        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona.gpx"',
-    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikona.kml"':
-        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikona.kml"',
+    '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai y Andikoa</em></h1>':
+        '<h1>San Kristobal Txiki, Santa Kataline<br><em>Garai eta Andikoa</em></h1>',
+    '<p class="full-name">Circuito desde Trabakua por Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai y Andikoa</p>':
+        '<p class="full-name">Trabakutik Zengotita, San Kristobal Txiki, Askako, Lasiar, Santa Kataline, Garai eta Andikoa zeharkatzen dituen zirkuitua</p>',
+    'alt="Foto ampliada del recorrido de San Kristobal Txiki, Santa Kataline, Garai y Andikoa"':
+        'alt="San Kristobal Txiki, Santa Kataline, Garai eta Andikoako ibilbidearen argazki handitua"',
+    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa.gpx"':
+        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa.gpx"',
+    'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa.kml"':
+        'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa.kml"',
 
     'alt="Sendero hondo entre taludes cubiertos de musgo, en el hayedo camino de Santa Kataline"':
         'alt="Bidexka sakona goroldioz estalitako ezpondan artean, Santa Kataline bidean dagoen pagadian"',
@@ -6327,10 +6327,10 @@ ASKAKOSANTAKATALINE = {
         'Herriaren erdigunera iristean, ezkerretara desbideratzen gara parkearen gunea bilatzeko eta <b>Sarria</b> alderantz jarraitzeko. Irteeran inguruko iturririk ezagunenetako bat aurkitzen dugu, urte osoan ura duena eta ondoan garbitoki zahar bat.',
     'Seguimos por este camino durante un buen rato, hasta abandonarlo para coger una pista que nos devuelve hacia la zona de San Kristobal Txiki, por donde hemos pasado en los primeros kilómetros de la ruta.':
         'Bide honetatik jarraitzen dugu tarte on batez, utzi eta San Kristobal Txiki aldera itzultzen gaituen pista bat hartu arte, ibilbidearen lehen kilometroetan pasatu garen tokitik.',
-    'Subimos por la pista casi hasta arriba, pero antes de alcanzar la parte alta nos desviamos a la derecha por una buena pista de tierra. Este camino nos lleva hacia <b>Andikona</b>, primero ganando altura y después por una bajada increíblemente bonita. Por esta misma zona también pasa el recorrido de la Asto Trail, en sentido contrario.':
-        'Pistatik ia goraino igotzen gara, baina goiko aldera iritsi aurretik eskuinetara desbideratzen gara lurrezko pista on batetik. Bide honek <b>Andikona</b> aldera eramaten gaitu, lehenik altuera irabaziz eta gero izugarri polita den jaitsiera batetik. Inguru honetatik bertatik pasatzen da Asto Traileko ibilbidea ere, kontrako noranzkoan.',
-    'Una vez en Andikona, salimos a la carretera del barrio y giramos a la izquierda para dirigirnos hacia Besoita, un paso habitual en muchas de nuestras rutas. Desde allí llegamos a la carretera general, la cruzamos y cogemos la carretera vieja de Zengotita.':
-        'Behin Andikonan, auzoko errepidera ateratzen gara eta ezkerretara jotzen dugu Besoita alderantz joateko, gure ibilbide askotan ohikoa den pausoa. Handik errepide nagusira iristen gara, zeharkatu eta Zengotitako errepide zaharra hartzen dugu.',
+    'Subimos por la pista casi hasta arriba, pero antes de alcanzar la parte alta nos desviamos a la derecha por una buena pista de tierra. Este camino nos lleva hacia <b>Andikoa</b>, primero ganando altura y después por una bajada increíblemente bonita. Por esta misma zona también pasa el recorrido de la Asto Trail, en sentido contrario.':
+        'Pistatik ia goraino igotzen gara, baina goiko aldera iritsi aurretik eskuinetara desbideratzen gara lurrezko pista on batetik. Bide honek <b>Andikoa</b> aldera eramaten gaitu, lehenik altuera irabaziz eta gero izugarri polita den jaitsiera batetik. Inguru honetatik bertatik pasatzen da Asto Traileko ibilbidea ere, kontrako noranzkoan.',
+    'Una vez en Andikoa, salimos a la carretera del barrio y giramos a la izquierda para dirigirnos hacia Besoita, un paso habitual en muchas de nuestras rutas. Desde allí llegamos a la carretera general, la cruzamos y cogemos la carretera vieja de Zengotita.':
+        'Behin Andikoan, auzoko errepidera ateratzen gara eta ezkerretara jotzen dugu Besoita alderantz joateko, gure ibilbide askotan ohikoa den pausoa. Handik errepide nagusira iristen gara, zeharkatu eta Zengotitako errepide zaharra hartzen dugu.',
     'Subimos hasta Zengotita y, como en otras ocasiones, desde el barrio emprendemos el regreso hacia Trabakua.':
         'Zengotitaraino igotzen gara eta, beste batzuetan bezala, auzotik Trabakuarako itzulerari ekiten diogu.',
     'Una ruta muy recomendable, con senderos, hayedos, pistas y bajadas que merece la pena descubrir. Aprovechamos algunos tramos conocidos de la Asto Trail, pero también enlazamos caminos nuevos para explorar otras zonas de Garai y sus alrededores. Un recorrido variado y entretenido, perfecto para disfrutar de la bici cualquier día de la semana.':
