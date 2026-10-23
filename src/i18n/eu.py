@@ -6239,6 +6239,8 @@ TRABAKUAONDARROA = {
 }
 
 ASKAKOSANTAKATALINE = {
+    'Volvemos a salir a la carretera de cemento que sube desde <b>Garai</b>, aunque en esta ocasión lo hacemos en una curva situada algo más abajo. En este punto, el recorrido habitual de la carrera continúa de frente para bajar hacia Garai por un sendero espectacular, que ya tenemos recogido en <a href="sancristobalgaraiandikoa.html">otra de nuestras rutas</a>. Nosotros giramos a la derecha para bordear la zona y dirigirnos hacia el área recreativa de <b>Lasiar</b>, intentando evitar en lo posible las carreteras de montaña.':
+        'Azkenik, <b>Garai</b>ko igotzen den zementuzko errepidera itzultzen gara, baina oraingoan beherago dagoen bihurgune batean. Lasterketaren ohiko ibilbideak aurrera jarraitzen du Garaiko bide ikusgarri batetik jaisteko, <a href="sancristobalgaraiandikoa.html">gure beste ibilbide batean</a> jasota dagoena. Guk eskuinera biratu eta ingurua inguratu egiten dugu <b>Lasiar</b> aisialdi-eremurantz, ahal den neurrian mendiko errepideak saihestuz.',
     '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Asfaltoa, pista eta bidezidorra</span><span class="sep">/</span><span>Askako · Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Tramos del Asto Trail de Garai<br><em>Santa Kataline, Garai y Andikoa</em></h1>':
@@ -6295,31 +6297,32 @@ ASKAKOSANTAKATALINE = {
 
     'Salimos de <b>Trabakua</b> en dirección a <b>Zengotita</b>. Tras unos 2,5 km, continuamos subiendo hasta llegar al propio barrio. Una vez arriba, cogemos el camino de la izquierda, una pista de cemento que nos lleva hasta el caserío <b>Betzun</b>, donde termina la carretera.':
         
-        '<b>Trabakua</b>tik abiatu eta <b>Zengotita</b>rantz goaz. 2,5 km inguru egin ondoren, igotzen jarraitzen dugu auzora iritsi arte. Goian, ezkerreko bidea hartzen dugu, zementuzko pista bat, <b>Betzun</b> baserriraino eramaten gaituena, non errepidea amaitzen den.',
+        
+        '<b>Trabakua</b>tik abiatu eta <b>Zengotita</b>rantz goaz. 2,5 kilometro inguru egin ondoren, igoerak auzora eramaten gaitu. Goian, ezkerreko bidea hartzen dugu: zementuzko pista bat, <b>Betzun</b> baserriraino eramaten gaituena, eta han amaitzen da errepidea.',
     'Pasamos junto al caserío y seguimos por la pista de la izquierda. Poco después encontramos un pequeño río que tenemos que cruzar. Se puede pasar, aunque conviene hacerlo con cuidado, ya que el paso no es del todo seguro. A partir de aquí, comenzamos a bajar hacia la ermita de <b>San Kristobal Txiki</b>. En este tramo encontramos varias charcas de agua que pueden obligarnos a bajarnos de la bici, pero no suponen mayor problema.':
         
-        'Baserriaren ondotik pasatzen gara eta ezkerreko pistatik jarraitzen dugu. Handik gutxira, erreka txiki bat aurkitzen dugu, zeharkatu behar duguna. Pasatu daiteke, baina kontuz ibili behar da, pasabidea ez baita guztiz segurua. Hemendik aurrera, <b>San Kristobal Txiki</b> ermitarantz jaisten hasten gara. Zati honetan, bizikletatik jaistera behartzen gaituzten urmael batzuk aurkitzen ditugu, baina ez dute arazo handirik sortzen.',
+        
+        'Baserriaren ondotik pasatu eta ezkerreko pistatik jarraitzen dugu. Handik gutxira, erreka txiki bat zeharkatu behar dugu; pasabidea ez da guztiz segurua, beraz kontuz ibili. Hemendik aurrera, <b>San Kristobal Txiki</b> ermitarantz jaisten hasten gara. Tartean ur pilaketak agertzen dira, bizikletatik jaistera behartzen gaituztenak, baina ez dute arazo handirik sortzen.',
     'A medida que nos acercamos a la ermita, cogemos el camino que sube del barrio de <b>Besoita</b>. Elegimos el ramal de la derecha, dejando la ermita a nuestra izquierda, y continuamos hasta alcanzar el punto más alto, donde encontramos la fuente a mano derecha y el camino de <b>Sarrionamendi</b> al otro lado, a la izquierda.':
         
-        'Ermitara hurbiltzen garen heinean, <b>Besoita</b> auzotik igotzen den bidea hartzen dugu. Eskuineko adarra aukeratzen dugu, ermita gure ezkerrean utziz, eta gorantz jarraitzen dugu punturik altuenera iritsi arte, non iturria eskuinean eta <b>Sarrionamendi</b>ko bidea ezkerrean aurkitzen ditugun.',
+        
+        'Ermitara hurbiltzean, <b>Besoita</b> auzotik igotzen den bidea hartzen dugu. Eskuineko adarra aukeratzen dugu, ermita ezkerrean utzita, eta gorantz jarraitzen dugu punturik altuenera iritsi arte: eskuinean iturria, eta ezkerrean <b>Sarrionamendi</b>ko bidea.',
     'Desde el alto comenzamos a bajar y, a los pocos metros, abandonamos el camino para meternos a mano derecha por un sendero oculto entre los árboles. Comienza uno de los tramos más entretenidos de la ruta: avanzamos en horizontal, con pequeñas subidas y bajadas por un sendero bonito y muy divertido de recorrer en bici.':
         
-        'Goitik jaisten hasten gara, eta metro gutxira, bidea utzi eta eskuinean sartzen gara, zuhaitzen artean ezkutatuta dagoen bidezidor batetik. Ibilbideko zatirik entretenigarrienetako bat hasten da: horizontalean aurrera egiten dugu, igoera eta jaitsiera txikiekin, bizikletaz ibiltzeko oso polita eta dibertigarria den bidezidor batetik.',
+        
+        'Goitik jaisten hasten gara, eta metro gutxira bidea utzi eta eskuineko bidezidor ezkutu batean sartzen gara. Hemen hasten da ibilbideko zatirik entretenigarrienetako bat: horizontalean aurrera, igoera eta jaitsiera txikiekin, oso ziklagarria eta dibertigarria.',
     'Este tramo coincide con el recorrido de la carrera de montaña <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer"><b>Asto Trail de Garai</b></a>: serán los siguientes 6,5 kilómetros los que compartamos con ella. Seguimos disfrutando del sendero hasta que empieza a ganar altura. Aunque hay que pedalear, es una subida muy ciclable y entretenida, que nos lleva hasta una carretera de cemento, cerca del cruce donde se separan los caminos hacia San Kristobal, <a href="zengotitagane.html">Zengotitagane</a> e <a href="zengotitaiturzuri.html">Iturzuri</a>.':
         
-        'Zati hau <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer"><b>Garaiko Asto Trail</b></a> mendi lasterketaren ibilbidearekin bat dator: hurrengo 6,5 kilometroak harekin partekatuko ditugu. Bidezidorraz gozatzen jarraitzen dugu altuera irabazten hasten den arte. Pedalei eragin behar zaie, baina igoera oso ziklagarria eta entretenigarria da, zementuzko errepide batera eramaten gaituena, San Kristobal, <a href="zengotitagane.html">Zengotitagane</a> eta <a href="zengotitaiturzuri.html">Iturzuri</a>rako bideak banatzen diren bidegurutzetik gertu.',
+        
+        'Zati hau <a href="https://www.garaitt.com/" target="_blank" rel="noopener noreferrer"><b>Garaiko Asto Trail</b></a> lasterketaren ibilbidearekin bat dator, eta hurrengo 6,5 kilometroak harekin partekatzen ditugu. Bidezidorraz gozatzen jarraitzen dugu altuera irabazten hasten den arte. Igoera ziklagarria eta entretenigarria da, eta zementuzko errepide batera eramaten gaitu, San Kristobal, <a href="zengotitagane.html">Zengotitagane</a> eta <a href="zengotitaiturzuri.html">Iturzuri</a>rako bideak banatzen diren bidegurutzetik gertu.',
     'Nosotros giramos a la izquierda y avanzamos unos metros por el cemento, hasta que lo abandonamos de nuevo para adentrarnos en la zona de <b>Askako</b>. La subida nos lleva por pistas y senderos hasta la cima. Una vez arriba, atravesamos una zona cerrada entre árboles, pero con el sendero limpio y muy ciclable. A continuación, comenzamos un bonito descenso entre la vegetación, por un tramo algo escondido, muy entretenido y de los que merece la pena conocer.':
         
-        'Guk ezkerrera biratu eta metro batzuk aurrera egiten dugu zementuan, berriro utzi arte, <b>Askako</b> eremuan sartzeko. Igoerak pistetatik eta bidezidorretatik eramaten gaitu gailurrera. Goian, zuhaitzen artean itxitako eremu bat zeharkatzen dugu, baina bidezidorra garbi eta oso ziklagarria da. Ondoren, behera egiten dugu landarediaren artean, zati ezkutu samar batetik, oso entretenigarria eta ezagutzea merezi duena.',
+        
+        'Guk ezkerrera biratu eta metro batzuk egiten ditugu zementuan, berriro utzi arte, <b>Askako</b> eremuan sartzeko. Igoerak pistetatik eta bidezidorretatik eramaten gaitu gailurrera. Goian, zuhaitzen artean itxitako eremu bat zeharkatzen dugu, baina bidezidorra garbi eta ziklagarria da. Ondoren, behera egiten dugu landarediaren artean, zati ezkutu eta oso entretenigarri batetik.',
     'Más abajo volvemos a enlazar con el camino que habíamos dejado y continuamos por varios tramos de subidas y bajadas muy bonitos y entretenidos, alternando senderos y pistas mientras vamos cruzando y dejando atrás la carretera de cemento en distintos puntos.':
         
-        'Beherago, utzi dugun bidearekin bat egiten dugu berriro, eta igoera eta jaitsiera zati polit eta entretenigarri batzuetatik jarraitzen dugu, bidezidorrak eta pistak txandakatuz, zementuzko errepidea hainbat puntutan gurutzatu eta atzean utziz.',
-    'Volvemos a salir a la carretera de cemento que sube desde <b>Garai</b>, aunque en esta ocasión lo hacemos en una curva situada algo más abajo. En este punto, el recorrido habitual de la carrera continúa de frente para bajar hacia Garai por un sendero espectacular, que ya tenemos recogido en <a href="sancristobalgaraiandikoa.html">otra de nuestras rutas</a>.':
         
-        '<b>Garai</b>ko igotzen den zementuzko errepidera itzultzen gara, baina oraingoan beherago dagoen bihurgune batean egiten dugu. Puntu honetan, lasterketaren ohiko ibilbideak aurrera jarraitzen du Garaiko bide ikusgarri batetik jaisteko, <a href="sancristobalgaraiandikoa.html">gure beste ibilbide batean</a> jasota daukaguna.',
-    'Nosotros giramos a la derecha para bordear la zona y dirigirnos hacia el área recreativa de <b>Lasiar</b>, intentando evitar en lo posible las carreteras de montaña.':
-        
-        'Guk eskuinera biratu eta ingurua inguratu egiten dugu <b>Lasiar</b> aisialdi-eremurantz joateko, ahal den neurrian mendiko errepideak saihestuz.',
+        'Beherago, utzitako bidearekin bat egiten dugu berriro, eta igoera-jaitsiera politak dituen tarte batean jarraitzen dugu, pistak eta bidezidorrak txandakatuz, zementuzko errepidea hainbat puntutan gurutzatuz.',
     'Llegamos al área recreativa y volvemos a enlazar con la carretera que sube desde Garai. Recorremos rápidamente unos 500 metros antes de girar a la izquierda para adentrarnos en un bonito hayedo.':
         
         'Aisialdi-eremura iristen gara eta Garaiko igotzen den errepidearekin bat egiten dugu berriro. 500 metro inguru egiten ditugu azkar, ezkerrera biratu aurretik, pagadi polit batean sartzeko.',
@@ -6328,7 +6331,8 @@ ASKAKOSANTAKATALINE = {
         'Lasterketa ere inguru honetatik pasatzen da, baina guk zati berri bat bilatzen dugu Garaiko <b>Santa Kataline</b> auzotik jaisteko, ohiko ibilbidea jarraitu beharrean.',
     'Tomamos una pista que, según el mapa, nos permite continuar por este nuevo tramo. Al principio está despejada, pero poco a poco la vegetación va cerrando el paso. Sigue siendo ciclable hasta que la pista prácticamente desaparece y da paso a un sendero que continúa de frente. Son solo unos metros, aunque la vegetación está bastante cerrada y toca bajarse de la bici y caminar con ella en la mano durante aproximadamente un minuto.':
         
-        'Maparen arabera, zati berri honetatik jarraitzeko aukera ematen digun pista bat hartzen dugu. Hasieran garbi dago, baina pixkanaka landarediak bidea ixten du. Ziklagarria izaten jarraitzen du pistak ia desagertu eta aurrera jarraitzen duen bidezidor bati bide ematen dion arte. Metro batzuk baino ez dira, baina landaredia nahiko itxia dago eta bizikletatik jaitsi eta eskuan eraman behar da minutu bat inguru.',
+        
+        'Maparen arabera, zati berri honetatik jarraitzeko aukera ematen duen pista bat hartzen dugu. Hasieran garbi dago, baina pixkanaka landarediak bidea ixten du. Ziklagarria izaten jarraitzen du pistak ia desagertu eta aurrera jarraitzen duen bidezidor bati bide ematen dion arte. Metro gutxi batzuk dira, baina landaredia nahiko itxia da eta bizikletatik jaitsi eta minutu batez eskuan eraman behar da.',
     'No queda claro si es un sendero de paso o un camino de ganado, pero se puede atravesar. La pista buena se ve un poco más abajo y enseguida volvemos a encontrar un camino despejado. Es el único punto algo más sucio de este tramo, pero se pasa sin mayores complicaciones.':
         
         'Ez dago argi pasabide-bide bat edo abere-bide bat den, baina zeharkatu daiteke. Pista ona beherago ikusten da eta berehala bide garbi bat aurkitzen dugu berriro. Zati honetako punturik zikinena da, baina arazo handirik gabe pasatzen da.',
@@ -6337,22 +6341,27 @@ ASKAKOSANTAKATALINE = {
         'Jaisten jarraitzen dugu Santa Kataline auzora iritsi arte. Behin behean, errepide nagusira ateratzen gara, ezkerrera biratu eta kilometro bat inguru jarraitzen dugu Garaiko norabidean.',
     'Al llegar al centro del pueblo, nos desviamos a la izquierda para buscar la zona del parque y continuar hacia <b>Sarria</b>. A la salida encontramos una de las fuentes más conocidas de la zona, con agua durante todo el año y un antiguo lavadero junto a ella.':
         
-        'Herriaren erdigunera iristean, ezkerrera desbideratzen gara parkearen eremua bilatzeko eta <b>Sarria</b>rantz jarraitzeko. Irteeran, inguruko iturri ezagunenetako bat aurkitzen dugu, urte osoan zehar ura duena eta ondoan garbitoki zahar bat.',
+        
+        'Herriaren erdigunera iristean, ezkerrera desbideratzen gara parkearen eremua bilatzeko eta <b>Sarria</b>rantz jarraitzeko. Irteeran, inguruko iturri ezagunenetako bat aurkitzen dugu, urte osoan ura duena, eta ondoan garbitoki zahar bat.',
     'Seguimos por este camino durante un buen rato, hasta abandonarlo para coger una pista que nos devuelve hacia la zona de San Kristobal Txiki, por donde hemos pasado en los primeros kilómetros de la ruta.':
         
-        'Bide honetatik denbora luzez jarraitzen dugu, utzi arte, San Kristobal Txiki ingurura itzultzen gaituen pista bat hartzeko, ibilbidearen lehen kilometroetan pasa garen lekutik.',
+        
+        'Bide honetatik denbora luzez jarraitzen dugu, utzi arte, San Kristobal Txiki ingurura itzultzen gaituen pista bat hartzeko, ibilbidearen lehen kilometroetan pasa garen lekura.',
     'Subimos por la pista casi hasta arriba, pero antes de alcanzar la parte alta nos desviamos a la derecha por una buena pista de tierra. Este camino nos lleva hacia <b>Andikoa</b>, primero ganando altura y después por una bajada increíblemente bonita.':
         
-        'Pistatik ia goiko alderaino igotzen gara, baina goiko aldea lortu aurretik, eskuinera desbideratzen gara lur-pista on batetik. Bide honek <b>Andikoa</b>rantz eramaten gaitu, lehenik altuera irabaziz eta gero jaitsiera izugarri polit batean.',
+        
+        'Pistatik ia goiko alderaino igotzen gara, baina goiko aldea lortu aurretik, eskuinera desbideratzen gara lur-pista on batetik. Bide honek <b>Andikoa</b>rantz eramaten gaitu, lehenik altuera irabaziz eta gero jaitsiera oso polit batean.',
     'Una vez en Andikoa, salimos a la carretera del barrio y giramos a la izquierda para dirigirnos hacia Besoita, un paso habitual en muchas de nuestras rutas. Desde allí llegamos a la carretera general, la cruzamos y cogemos la carretera vieja de Zengotita.':
         
         'Andikoan, auzoko errepidera ateratzen gara eta ezkerrera biratu Besoitarantz joateko, gure ibilbide askotan ohiko pasabidea. Handik errepide nagusira iristen gara, gurutzatu eta Zengotitako errepide zaharra hartzen dugu.',
     'Subimos hasta Zengotita y, como en otras ocasiones, desde el barrio emprendemos el regreso hacia Trabakua.':
         
-        'Zengotitaraino igotzen gara eta, beste batzuetan bezala, auzotik Trabakuara itzultzen hasten gara.',
+        
+        'Zengotitaraino igotzen gara eta, beste batzuetan bezala, auzotik Trabakuara itzultzen gara.',
     'Una ruta muy recomendable, con senderos, hayedos, pistas y bajadas que merece la pena descubrir. Aprovechamos algunos tramos conocidos de la Asto Trail, pero también enlazamos caminos nuevos para explorar otras zonas de Garai y sus alrededores. Un recorrido variado y entretenido, perfecto para disfrutar de la bici cualquier día de la semana.':
         
-        'Oso ibilbide gomendagarria, bidezidorrak, pagadiak, pistak eta jaitsierak dituena, merezi du ezagutzea. Asto Traileko zati ezagun batzuk aprobetxatzen ditugu, baina bide berriak ere lotzen ditugu Garaiko eta inguruetako beste eremu batzuk esploratzeko. Ibilbide askotarikoa eta entretenigarria, bizikletaz edozein egunetan gozatzeko ezin hobea.',
+        
+        'Ibilbide askotarikoa eta oso gomendagarria: bidezidorrak, pagadiak, pistak eta jaitsiera politak ditu, Asto Traileko zati ezagunak eta bide berriak uztartuz. Edozein egunetan bizikletaz gozatzeko modukoa.',
 }
 
 PAGE_STRINGS = {
