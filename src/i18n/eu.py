@@ -804,6 +804,14 @@ HOME = {
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
     # trabakuadeba card
+    # garaikanala card
+    'alt="El valle entre las ramas, con el pueblo abajo y la pe&ntilde;a de Mugarra al fondo"':
+        'alt="Harana adarren artean, herria behean eta Mugarrako haitza atzealdean"',
+    '<h3 class="route-card-name">El canal de agua de Garai</h3>':
+        '<h3 class="route-card-name">Garaiko ur-kanala</h3>',
+    '<p class="route-card-desc">Paseo circular desde Garai siguiendo el canal de agua, con cangrejos en el cauce</p>':
+        '<p class="route-card-desc">Zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz, karramarroak ibilguan</p>',
+
     # askakosantakataline card
     'alt="Garai visto desde arriba, con la torre de la iglesia entre los tejados y los prados alrededor"':
         'alt="Garai goitik, elizaren dorrea teilatuen artean eta belardiak inguruan"',
@@ -3412,6 +3420,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
+    'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz, karramarroak ibilguan, igande goiz batean umeekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
     'garaigaztelu': 'Zirkuitua e-bikez Trabakuatik, Zengotita, San Kristobal Txiki, Andikoa, Sarria eta Garaitik igarota, Matiena, Gaztelu eta Berriztik itzulita',
@@ -3539,6 +3548,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
+    'garaikanala': 'Garaiko ur-kanala — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
@@ -6370,6 +6380,66 @@ ASKAKOSANTAKATALINE = {
         'Ibilbide askotarikoa eta oso gomendagarria: bidezidorrak, pagadiak, pistak eta jaitsiera politak ditu, Garaiko Asto Trail mendi-lasterketako zati ezagunak eta bide berriak uztartuz. Edozein egunetan bizikletaz gozatzeko modukoa.',
 }
 
+GARAIKANALA = {
+    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>El canal de agua<br><em>de Garai</em></h1>':
+        '<h1>Garaiko<br><em>ur-kanala</em></h1>',
+    '<p class="full-name">Paseo circular desde Garai siguiendo el canal de agua</p>':
+        '<p class="full-name">Zirkuitu-ibilaldia Garaitik, ur-kanalari jarraituz</p>',
+    'alt="Foto ampliada del recorrido del canal de agua de Garai"':
+        'alt="Garaiko ur-kanalaren ibilbidearen argazki handitua"',
+    'download="El canal de agua de Garai.gpx"': 'download="Garaiko ur-kanala.gpx"',
+    'download="El canal de agua de Garai.kml"': 'download="Garaiko ur-kanala.kml"',
+    'data-marker-title="Garai (salida y llegada)"': 'data-marker-title="Garai (irteera eta helmuga)"',
+    '<b>&middot; Garai</b>': '<b>&middot; Garai</b>',
+
+    '<span class="num">1</span>Canal': '<span class="num">1</span>Kanala',
+    '<span class="num">2</span>Depósito': '<span class="num">2</span>Uraskak',
+    '<span class="num">3</span>Camino de Sarria': '<span class="num">3</span>Sarriako bidea',
+    'Canal &middot; 1,6 km': 'Kanala &middot; 1,6 km',
+    'Depósito &middot; 2,5 km': 'Uraskak &middot; 2,5 km',
+    'Camino de Sarria &middot; 3,4 km': 'Sarriako bidea &middot; 3,4 km',
+
+    'alt="El canal de piedra cubierto de musgo, con el camino al lado y los helechos del talud"':
+        'alt="Harrizko kanala goroldioz estalita, bidea alboan eta ezpondako iratzeak"',
+    'alt="La presa del canal sobre el río, con el salto de agua y la toma al otro lado"':
+        'alt="Errekako presa, ur-jauziarekin eta kanalaren hartunea beste aldean"',
+    'alt="El canal de piedra entre los avellanos, con el camino cubierto de musgo a su lado"':
+        'alt="Harrizko kanala urritzen artean, goroldioz estalitako bidea alboan"',
+    'alt="El canal bajando en pequeños saltos escalonados, entre helechos"':
+        'alt="Kanala jauzi txikitan jaisten, iratzeen artean"',
+    'alt="Un corro de setas en el talud, entre hojas de haya y un erizo de castaña"':
+        'alt="Perretxiko multzo bat ezpondan, pago-hostoen eta gaztaina-morkotz baten artean"',
+    'alt="El arroyo saltando entre rocas cubiertas de musgo"':
+        'alt="Erreka harri goroldiotsuen artean jauzika"',
+    'alt="Un cangrejo de río en el fondo del canal, con las pinzas azuladas"':
+        'alt="Ibai-karramarro bat kanalaren hondoan, matxard urdinxkekin"',
+    'alt="El canal en otoño, cubierto de hoja caída, con el camino a su derecha"':
+        'alt="Kanala udazkenean, eroritako hostoz estalita, bidea eskuinean"',
+    'alt="Dos cangrejos en el fondo del canal y una babosa en el muro"':
+        'alt="Bi karramarro kanalaren hondoan eta bare bat horman"',
+    'alt="El valle entre las ramas, con el pueblo abajo y la peña de Mugarra al fondo"':
+        'alt="Harana adarren artean, herria behean eta Mugarrako haitza atzealdean"',
+
+    '<h2>Senderismo</h2>': '<h2>Oinez</h2>',
+    'Ruta pequeña, ideal para hacer con niños un domingo a la mañana. Para hacer un poco de hambre.':
+        'Ibilbide txikia, igande goiz batean umeekin egiteko aproposa. Gosea pixka bat zabaltzeko.',
+
+    'Salimos de la zona del parque, junto al aparcamiento, y tiramos hacia el norte. Medio kilómetro en ascenso suave y aparece un desvío a mano derecha: ese es el que cogemos, y seguimos bajando.':
+        'Parkearen gunetik abiatzen gara, aparkalekuaren ondotik, eta iparralderantz jotzen dugu. Kilometro erdi igoera leunean eta eskuinetara desbideratze bat agertzen da: hori da hartzen duguna, eta jaisten jarraitzen dugu.',
+    'Más adelante conviene ir atento al track, porque cuando menos te lo esperas hay que coger a la derecha un camino medio oculto que enseguida se convierte en sendero. Es el que nos deja en el canal.':
+        'Aurrerago trackari adi egotea komeni da, gutxien espero duzunean eskuinetara erdi ezkutuan dagoen bide bat hartu behar baita, berehala bidexka bihurtzen dena. Horrek uzten gaitu kanalean.',
+    'El canal viene de más atrás, pero es a partir de aquí donde se puede seguir. Vamos con cuidado un kilómetro y pico pegados a él, disfrutando del paisaje y de los cangrejos, que en el agua los hay en abundancia. Entre hojas de otoño y poco más, así hasta salir a una pista de piedra.':
+        'Kanala atzerago hasten da, baina hemendik aurrera da jarraitzeko modukoa. Kontuz goaz kilometro eta piko bat haren ondotik, paisaiaz eta karramarroez gozatzen, urean ugari baitaude. Udazkeneko hostoen artean, horrela harrizko pista batera atera arte.',
+    'Es ahí donde aparece el depósito: donde acaba el canal y el agua se recoge en una tubería. El canal viene de mucho más arriba, y quedan tramos suyos bastante más arriba todavía.':
+        'Han agertzen dira uraskak: kanala bukatzen den tokia, ura hodi batean biltzen dena. Kanala askoz goragotik dator, eta haren zatiak askoz gorago ere badaude.',
+    'Esa pista sigue subiendo. Nosotros damos la vuelta, y es una pendiente bastante pronunciada, pero sin ningún problema. Abajo enlazamos con el camino que viene de <b>Sarria</b> a <b>Garai</b>.':
+        'Pista horrek gora jarraitzen du. Guk buelta ematen dugu, eta aldapa nahiko handia da, baina arazorik gabe. Behean <b>Sarria</b>tik <b>Garai</b>ra datorren bidearekin lotzen gara.',
+    'Giramos a la derecha y volvemos entre caseríos y prados hasta la zona de donde salimos. Un recorrido sencillo y rápido, y a la vuelta tenemos un bar para llenar el estómago.':
+        'Eskuinetara jotzen dugu eta baserri eta belardien artean itzultzen gara abiatu ginen tokira. Ibilbide sinple eta azkarra, eta bueltan taberna bat daukagu tripa betetzeko.',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
@@ -6377,6 +6447,7 @@ PAGE_STRINGS = {
     'trabakuadeba': TRABAKUADEBA,
     'trabakuaondarroa': TRABAKUAONDARROA,
     'askakosantakataline': ASKAKOSANTAKATALINE,
+    'garaikanala': GARAIKANALA,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,

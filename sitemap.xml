@@ -768,6 +768,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/askakosantakataline.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/garaikanala.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/garaikanala.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/garaikanala.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/garaikanala.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/garaikanala.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/garaikanala.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/agua.html</loc>
     <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/agua.html"/>
