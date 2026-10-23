@@ -6260,8 +6260,8 @@ ASKAKOSANTAKATALINE = {
     'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai y Andikoa.kml"':
         'download="Trabakua, San Kristobal Txiki, Santa Kataline, Garai eta Andikoa.kml"',
 
-    'alt="Sendero hondo entre taludes cubiertos de musgo, en un bosque de hayas jóvenes"':
-        'alt="Bidexka sakona goroldioz estalitako ezponden artean, pago gazteen baso batean"',
+    'alt="Subiendo a la cima de Askako, por un sendero hondo entre taludes cubiertos de musgo"':
+        'alt="Askakoko gailurrera igotzen, goroldioz estalitako ezponden arteko bidexka sakon batetik"',
     'alt="Carretera estrecha con parches de cemento subiendo entre caseríos hacia Zengotita"':
         'alt="Errepide estua zementuzko adabakiekin, baserrien artean Zengotitarantz igotzen"',
     'alt="Pista pedregosa subiendo entre pinos, en la zona de Santa Kataline"':
