@@ -6364,10 +6364,10 @@ ASKAKOSANTAKATALINE = {
         
         
         'Zengotitaraino igotzen gara eta, beste batzuetan bezala, auzotik Trabakuara itzultzen gara.',
-    'Una ruta muy recomendable, con senderos, hayedos, pistas y bajadas que merece la pena descubrir. Aprovechamos algunos tramos conocidos de la Asto Trail, pero también enlazamos caminos nuevos para explorar otras zonas de Garai y sus alrededores. Un recorrido variado y entretenido, perfecto para disfrutar de la bici cualquier día de la semana.':
+    'Una ruta muy recomendable, con senderos, hayedos, pistas y bajadas que merece la pena descubrir. Aprovechamos algunos tramos conocidos de la carrera de montaña Asto Trail de Garai, pero también enlazamos caminos nuevos para explorar otras zonas de Garai y sus alrededores. Un recorrido variado y entretenido, perfecto para disfrutar de la bici cualquier día de la semana.':
         
         
-        'Ibilbide askotarikoa eta oso gomendagarria: bidezidorrak, pagadiak, pistak eta jaitsiera politak ditu, Asto Traileko zati ezagunak eta bide berriak uztartuz. Edozein egunetan bizikletaz gozatzeko modukoa.',
+        'Ibilbide askotarikoa eta oso gomendagarria: bidezidorrak, pagadiak, pistak eta jaitsiera politak ditu, Garaiko Asto Trail mendi-lasterketako zati ezagunak eta bide berriak uztartuz. Edozein egunetan bizikletaz gozatzeko modukoa.',
 }
 
 PAGE_STRINGS = {
