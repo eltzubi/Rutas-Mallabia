@@ -258,12 +258,14 @@ def home_cards(src_suffix):
     for href, activity, km, desnivel, rest_attrs, name, stats in pattern.findall(html_text):
         slug = href.replace(".eu.html", "").replace(".html", "")
         tiempo_match = re.search(r'data-tiempo-corriendo-min="(\d+)"', rest_attrs)
+        paseo_match = re.search(r'data-tiempo-paseando-min="(\d+)"', rest_attrs)
         cards[slug] = {
             "href": href,
             "activities": set(activity.split(",")),
             "km": float(km or 0),
             "desnivel": int(desnivel or 0),
             "tiempo_real": int(tiempo_match.group(1)) if tiempo_match else None,
+            "tiempo_paseo": int(paseo_match.group(1)) if paseo_match else None,
             "name": name.strip(),
             "stats": stats.strip(),
         }
@@ -1064,11 +1066,14 @@ def add_tourist_trip_properties(page_html, name):
 
 
 _CARD_RE = re.compile(
-    r'(<a class="route-card" href="[^"]+" data-activity="([^"]*)"'
+    # «route-card is-new»: la ruta mas nueva lleva una clase de mas y sin
+    # esto su tarjeta se quedaba sin la linea de tiempo (ver CLAUDE.md).
+    r'(<a class="route-card[^"]*" href="[^"]+" data-activity="([^"]*)"'
     r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"[^>]*>)'
     r'([\s\S]*?)(</a>)')
 _TAGS_RE = re.compile(r'(<p class="route-card-tags">.*?</p>)')
 _TIEMPO_REAL_RE = re.compile(r'data-tiempo-corriendo-min="(\d+)"')
+_TIEMPO_PASEO_RE = re.compile(r'data-tiempo-paseando-min="(\d+)"')
 
 # Ritmo a pie: 6 km/h en llano + 10 min por cada 100 m de desnivel positivo
 # (regla de Naismith moderada). No es el ritmo del autor -- las rutas de
@@ -1121,9 +1126,11 @@ def add_estimated_time(page_html, lang):
     """
     label_pie = '<span class="k">A pie</span>'
     label_corriendo = '<span class="k">Corriendo</span>'
+    label_paseo = '<span class="k">Paseando</span>'
     if lang == "eu":
         label_pie = eu.COMMON[label_pie]
         label_corriendo = eu.COMMON[label_corriendo]
+        label_paseo = eu.COMMON[label_paseo]
 
     def repl(m):
         open_tag, activity, km, desnivel, body, close_tag = m.groups()
@@ -1135,6 +1142,10 @@ def add_estimated_time(page_html, lang):
         if treal:
             corriendo = _fmt_minutes_exact(int(treal.group(1)))
             nuevo += f' &middot; {label_corriendo} <span class="v">{corriendo}</span>'
+        tpaseo = _TIEMPO_PASEO_RE.search(open_tag)
+        if tpaseo:
+            paseo = _fmt_minutes_exact(int(tpaseo.group(1)))
+            nuevo += f' &middot; {label_paseo} <span class="v">{paseo}</span>'
         body = _TAGS_RE.sub(
             lambda t: f'{t.group(1)}\n          <p class="route-card-time">{nuevo}</p>',
             body, count=1)
@@ -1157,14 +1168,19 @@ def add_route_facts_time(page_html, page, cards, lang):
         return page_html
     label_pie = '<span class="k">A pie</span>'
     label_corriendo = '<span class="k">Corriendo</span>'
+    label_paseo = '<span class="k">Paseando</span>'
     if lang == "eu":
         label_pie = eu.COMMON[label_pie]
         label_corriendo = eu.COMMON[label_corriendo]
+        label_paseo = eu.COMMON[label_paseo]
     rango = estimate_walk_time(card["km"], card["desnivel"])
     nuevo = f'<div class="fact"><span class="v">{rango}</span>{label_pie}</div>'
     if card["tiempo_real"]:
         corriendo = _fmt_minutes_exact(card["tiempo_real"])
         nuevo += f'\n    <div class="fact"><span class="v">{corriendo}</span>{label_corriendo}</div>'
+    if card["tiempo_paseo"]:
+        paseo = _fmt_minutes_exact(card["tiempo_paseo"])
+        nuevo += f'\n    <div class="fact"><span class="v">{paseo}</span>{label_paseo}</div>'
     matches = list(_FACT_ITEM_RE.finditer(page_html))
     if len(matches) < 2:
         return page_html

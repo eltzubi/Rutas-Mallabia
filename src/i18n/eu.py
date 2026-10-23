@@ -91,6 +91,7 @@ COMMON = {
     # corriendo (solo si el usuario lo ha dado), calculados por build.py
     '<span class="k">A pie</span>': '<span class="k">Oinez</span>',
     '<span class="k">Corriendo</span>': '<span class="k">Korrika</span>',
+    '<span class="k">Paseando</span>': '<span class="k">Paseoan</span>',
 
     # route list header + per-card descriptions (método antiguo)
     'aria-label="Filtrar por actividad"': 'aria-label="Iragazi jardueraren arabera"',
