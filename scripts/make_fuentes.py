@@ -142,6 +142,8 @@ FUENTES = [
         # barrio, no donde pasa el camino.
         "coord": (43.189508, -2.574173),
         "punto": ("askakosantakataline", 7),
+        "nota_es": "A la entrada del barrio, en un lateral.",
+        "nota_eu": "Auzoaren sarreran, alboan.",
         "rutas": ["askakosantakataline", "amaraune", "garaimaguna", "santamanazarandikoa",
                   "sancristobalgaraiandikoa", "betzun", "garaigaztelu", "sancristobal",
                   "maguna", "zengotitagane"],
