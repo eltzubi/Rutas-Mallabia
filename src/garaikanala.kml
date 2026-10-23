@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
-<name>El canal de agua de Garai</name>
+<name>Paseo por Garai y el antiguo canal de agua</name>
 <Style id="track">
 <LineStyle><color>ff2fe0f5</color><width>4</width></LineStyle>
 </Style>
 <Placemark>
-<name>El canal de agua de Garai</name>
+<name>Paseo por Garai y el antiguo canal de agua</name>
 <styleUrl>#track</styleUrl>
 <LineString>
 <tessellate>1</tessellate>

@@ -805,6 +805,14 @@ HOME = {
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
     # trabakuadeba card
+    # aixolaintxorta card
+    'alt="La cruz de Santama&ntilde;azar al atardecer, con el valle y los montes del Duranguesado al fondo"':
+        'alt="Santama&ntilde;azarko gurutzea ilunabarrean, harana eta Durangaldeko mendiak atzealdean"',
+    '<h3 class="route-card-name">Aixola, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</h3>':
+        '<h3 class="route-card-name">Aixola, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitza</h3>',
+    '<p class="route-card-desc">Circuito desde la presa de Aixola por Santama&ntilde;azar, Erdella, Intxorta, el lago de Asentzio, Elgeta y Egoarbitza</p>':
+        '<p class="route-card-desc">Zirkuitua Aixolako presatik, Santama&ntilde;azar, Erdella, Intxorta, Asentzioko lakua, Elgeta eta Egoarbitza zeharkatuz</p>',
+
     # garaikanala card
     '<h3 class="route-card-name">Paseo por Garai y el antiguo canal de agua</h3>':
         '<h3 class="route-card-name">Ibilaldia Garai eta antzinako ubidetik</h3>',
@@ -3421,6 +3429,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
+    'aixolaintxorta': '20 km-ko zirkuitua Aixolako presatik, Santamañazar, Erdella, Intxorta eta Egoarbitza zeharkatuz, Gerra Zibileko lubakiekin eta Asentzioko lakuarekin',
     'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, mendian ezkutatutako antzinako ubide batetik, karramarroak ibilguan: laburra, desnibel gutxikoa eta haurrekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
@@ -3549,6 +3558,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
+    'aixolaintxorta': 'Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza — Herriko ibilbideak',
     'garaikanala': 'Ibilaldia Garai eta antzinako ubidetik — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
@@ -6443,6 +6453,91 @@ GARAIKANALA = {
         'Itzuli labur eta erraza, desnibel gutxikoa, baina mendian ezkutatuta dagoen antzinako ubide bat zeharkatzeko erakargarritasunarekin. Paisaiaz gozatzeko aukera ona, aldapa handiei aurre egin beharrik gabe. Eta, amaitzean, Garain taberna bat dugu indarrak berreskuratzeko, goiza amaitutzat eman aurretik.',
 }
 
+AIXOLAINTXORTA = {
+    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Intxorta · Elgeta</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Intxorta · Elgeta</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>Aixola, Santama&ntilde;azar, Erdella<br><em>Intxorta y Egoarbitza</em></h1>':
+        '<h1>Aixola, Santama&ntilde;azar, Erdella<br><em>Intxorta eta Egoarbitza</em></h1>',
+    '<p class="full-name">Circuito desde la presa de Aixola por Santama&ntilde;azar, Erdella, Intxorta, el lago de Asentzio, Elgeta y Egoarbitza</p>':
+        '<p class="full-name">Zirkuitua Aixolako presatik, Santama&ntilde;azar, Erdella, Intxorta, Asentzioko lakua, Elgeta eta Egoarbitza zeharkatuz</p>',
+    'alt="Foto ampliada del recorrido de Aixola, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza"':
+        'alt="Aixola, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitzako ibilbidearen argazki handitua"',
+    'download="Aixola, Santamañazar, Erdella, Intxorta y Egoarbitza.gpx"':
+        'download="Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza.gpx"',
+    'download="Aixola, Santamañazar, Erdella, Intxorta y Egoarbitza.kml"':
+        'download="Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza.kml"',
+    'data-marker-title="Presa de Aixola (salida y llegada)"':
+        'data-marker-title="Aixolako presa (irteera eta helmuga)"',
+    '<b>&middot; Presa de Aixola</b>':
+        '<b>&middot; Aixolako presa</b>',
+    '<span class="num">4</span>Lago de Asentzio':
+        '<span class="num">4</span>Asentzioko lakua',
+    'Lago de Asentzio &middot; 12,1 km':
+        'Asentzioko lakua &middot; 12,1 km',
+    'alt="El embalse de Aixola, de agua turquesa, con la presa al fondo y los montes del entorno"':
+        'alt="Aixolako urtegia, ur turkesarekin, presa atzealdean eta inguruko mendiak"',
+    'alt="La cruz de Santama&ntilde;azar al atardecer, con el valle y los montes del Duranguesado al fondo"':
+        'alt="Santama&ntilde;azarko gurutzea ilunabarrean, harana eta Durangaldeko mendiak atzealdean"',
+    'alt="El monolito de Santama&ntilde;azar y la ikurri&ntilde;a, con Anboto nevado al fondo"':
+        'alt="Santama&ntilde;azarko monolitoa eta ikurri&ntilde;a, Anboto elurtua atzealdean"',
+    'alt="Hayedo en la zona de Erdella, con un poste y un pico atado con una tela negra"':
+        'alt="Pagadia Erdella inguruan, zutoin bat eta oihal beltz batez lotutako aitzur bat"',
+    'alt="La caseta de Intxorta con su veleta y la pintada &laquo;Justizia eta askatasuna&raquo;, con Udalatx al fondo"':
+        'alt="Intxortako etxola, bere haize-orratzarekin eta &laquo;Justizia eta askatasuna&raquo; pintadarekin, Udalatx atzealdean"',
+    'alt="El lago de Asentzio, rodeado de árboles, con la zona de mesas del merendero"':
+        'alt="Asentzioko lakua, zuhaitzez inguratua, merenderoko mahaien gunearekin"',
+    'alt="El lago de Asentzio con la caseta amarilla y el merendero entre los árboles"':
+        'alt="Asentzioko lakua etxola horiarekin eta merenderoa zuhaitzen artean"',
+    'alt="La pe&ntilde;a de Egoarbitza entre la niebla, con el refugio y la pista embarrada en primer plano"':
+        'alt="Egoarbitzako haitza lainoen artean, aterpea eta lokaztutako pista lehen planoan"',
+    'alt="La cima de Egoarbitza, con el v&eacute;rtice geod&eacute;sico y las monta&ntilde;as del entorno"':
+        'alt="Egoarbitzako gailurra, erpin geodesikoarekin eta inguruko mendiekin"',
+    'alt="El v&eacute;rtice de Egoarbitza con niebla, y el embalse de Aixola abajo"':
+        'alt="Egoarbitzako erpina lainoarekin, eta Aixolako urtegia behean"',
+    'Esta ruta ya la habíamos realizado anteriormente, aunque aquella vez salimos <a href="intxorta.html">desde Trabakua</a>. En esta ocasión partimos desde otro punto y hacemos algunas pequeñas modificaciones al recorrido. La principal novedad será el descenso desde <b>Intxorta</b> hacia el lago de <b>Asentzio</b>, donde queremos investigar una zona de trincheras que todavía no conocíamos y que conserva parte de la historia de la Guerra Civil. Desde allí continuaremos hacia <b>Elgeta</b> por otro camino, evitando las carreteras y enlazando diferentes pistas y senderos.':
+        'Ibilbide hau lehenago ere egina genuen, baina orduan <a href="intxorta.html">Trabakuatik</a> abiatu ginen. Oraingoan beste puntu batetik abiatzen gara eta aldaketa txiki batzuk egiten dizkiogu ibilbideari. Berritasun nagusia <b>Intxorta</b>tik <b>Asentzio</b>ko lakurako jaitsiera izango da, oraindik ezagutzen ez genuen lubaki-eremu bat ikertu nahi baitugu, Gerra Zibilaren historiaren zati bat gordetzen duena. Handik <b>Elgeta</b>rantz jarraituko dugu beste bide batetik, errepideak saihestuz eta pista eta bidexka desberdinak lotuz.',
+    'Comenzamos en la presa de <b>Aixola</b> y seguimos el camino que la bordea por su parte baja. Después de un par de curvas, abandonamos la pista del paseo y giramos a la derecha por un sendero que se dirige hacia el norte. Avanzamos entre la vegetación hasta enlazar con la pista de piedra que conecta la zona de Areitio con los caminos situados entre Ermua y Elgeta.':
+        '<b>Aixola</b>ko presan hasten gara eta beheko aldetik inguratzen duen bideari jarraitzen diogu. Pare bat bihurgune ondoren, paseoko pista utzi eta eskuinetara jotzen dugu iparralderantz doan bidexka batetik. Landarediaren artean aurrera egiten dugu, Areitio ingurua Ermua eta Elgeta arteko bideekin lotzen duen harrizko pistarekin bat egin arte.',
+    'Una vez en la pista, giramos a la derecha y continuamos durante unos dos kilómetros. Dejamos a un lado el camino que sigue hacia Areitio y tomamos otro que sale de frente, ligeramente a la izquierda. Comenzamos a ganar altura poco a poco por terreno de tierra hasta alcanzar la parte alta. En lugar de iniciar el descenso hacia Areitio, giramos a la izquierda para enlazar con el camino habitual que sube hacia <b>Santamañazar</b>.':
+        'Behin pistan, eskuinetara jotzen dugu eta bi kilometro inguru jarraitzen dugu. Areitiorantz doan bidea alde batera utzi eta aurrez aurre ateratzen den beste bat hartzen dugu, apur bat ezkerrera. Pixkanaka altuera irabazten hasten gara lurrezko terrenotik, goiko aldera iritsi arte. Areitiorako jaitsiera hasi beharrean, ezkerretara jotzen dugu <b>Santamañazar</b>era igotzen den ohiko bidearekin lotzeko.',
+    'La pista va ganando altura progresivamente hasta acercarnos a la parte alta. Allí alcanzamos Santamañazar, primera cima del recorrido, donde encontraremos una ikurriña, una cruz y varios elementos conmemorativos. Es un buen lugar para detenerse un momento y disfrutar de las vistas hacia el Duranguesado.':
+        'Pistak pixkanaka altuera irabazten du goiko aldera hurbildu arte. Han Santamañazar lortzen dugu, ibilbideko lehen gailurra, non ikurriña bat, gurutze bat eta hainbat oroitzapen-elementu aurkituko ditugun. Toki ona da une batez gelditzeko eta Durangalderako bistez gozatzeko.',
+    'Seguimos por el cordal en dirección a <b>Erdella</b>. El terreno alterna pequeños repechos con tramos bastante más cómodos, lo que nos permite avanzar sin perder demasiada altura. Poco a poco nos acercamos a nuestra segunda cima del día, Erdella (683 m), una cumbre más cerrada y rodeada de bosque.':
+        'Gailur-lerrotik jarraitzen dugu <b>Erdella</b> norabidean. Terrenoak aldapa txikiak eta askoz tarte erosoagoak txandakatzen ditu, eta horrek altuera gehiegi galdu gabe aurrera egiteko aukera ematen digu. Pixkanaka eguneko bigarren gailurrera hurbiltzen gara, Erdella (683 m), gailur itxiagoa eta basoz inguratua.',
+    'Desde Erdella comenzamos a bajar por la vertiente contraria. Perdemos altura entre pistas y caminos hasta alcanzar la carretera que une Elorrio con Elgeta. La cruzamos con cuidado y comenzamos directamente la subida hacia <b>Intxorta</b>.':
+        'Erdellatik kontrako isurialdetik jaisten hasten gara. Altuera galtzen dugu pisten eta bideen artean, Elorrio eta Elgeta lotzen dituen errepidera iritsi arte. Kontuz zeharkatzen dugu eta zuzenean <b>Intxorta</b>rako igoera hasten dugu.',
+    'Al principio, la pendiente es bastante llevadera, pero a medida que ganamos altura el camino se va poniendo más exigente. El último tramo concentra buena parte del esfuerzo, con una subida fuerte antes de alcanzar la zona alta.':
+        'Hasieran aldapa nahiko eramangarria da, baina altuera irabazi ahala bidea gero eta exijenteagoa bihurtzen da. Azken tarteak ahaleginaren zati handi bat biltzen du, igoera gogor batekin goiko aldera iritsi aurretik.',
+    'Llegamos finalmente a Intxorta, una cima que, además de ofrecer buenas vistas hacia Udalatx, Anboto y buena parte de las montañas del Duranguesado, conserva una importante huella de la Guerra Civil. Sus laderas fueron escenario de duros combates durante 1936 y 1937, y todavía se pueden encontrar restos de trincheras y antiguas posiciones defensivas.':
+        'Azkenean Intxortara iristen gara, Udalatx, Anboto eta Durangaldeko mendi askotarako bista onak eskaintzeaz gain, Gerra Zibilaren aztarna garrantzitsu bat gordetzen duen gailurra. Haren hegalak borroka gogorren agertoki izan ziren 1936an eta 1937an, eta oraindik lubakien eta defentsarako antzinako posizioen hondarrak aurki daitezke.',
+    '<b>Descenso de Intxorta hacia el lago de Asentzio</b>':
+        '<b>Intxortatik Asentzioko lakurako jaitsiera</b>',
+    'Comenzamos el descenso por el sendero en dirección sureste. Después de bajar la primera pendiente, cuando el terreno pierde inclinación, encontramos un sendero a mano izquierda por el que desciende la carrera <a href="ahuntzen.html">Ahuntzen Lasterketa</a> de Elgeta, en dirección a la ermita de San Salvador.':
+        'Hego-ekialderantz doan bidexkatik hasten dugu jaitsiera. Lehen aldapa jaitsi ondoren, terrenoak malda galtzen duenean, ezkerretara bidexka bat aurkitzen dugu, Elgetako <a href="ahuntzen.html">Ahuntzen Lasterketa</a> jaisten dena, San Salvador ermitarantz.',
+    'En esta ocasión dejamos ese desvío a un lado. Queremos explorar otra bajada que nos permita acercarnos a las trincheras y terminar en el lago de Asentzio. Además, el sendero que baja hacia la ermita suele estar bastante cerrado fuera de temporada. Es una alternativa que conviene tener en cuenta después de la carrera, cuando el paso de los participantes mantiene el recorrido limpio durante unos meses.':
+        'Oraingoan desbideratze hori alde batera uzten dugu. Beste jaitsiera bat esploratu nahi dugu, lubakietara hurbiltzeko eta Asentzioko lakuan bukatzeko. Gainera, ermitarantz jaisten den bidexka nahiko itxita egon ohi da denboralditik kanpo. Lasterketaren ondoren kontuan hartzeko moduko aukera da, parte-hartzaileen pausoak ibilbidea hilabete batzuetan garbi mantentzen baitu.',
+    'Nosotros continuamos perdiendo altura hacia el sureste. A medida que nos acercamos a la parte baja, empezamos a encontrar algunas trincheras junto al recorrido. Merece la pena detenerse a observar estos vestigios de la Guerra Civil antes de continuar hasta la carretera.':
+        'Guk altuera galtzen jarraitzen dugu hego-ekialderantz. Beheko aldera hurbildu ahala, lubaki batzuk aurkitzen hasten gara ibilbidearen ondoan. Merezi du gelditzea Gerra Zibilaren aztarna horiek behatzeko, errepideraino jarraitu aurretik.',
+    'La cruzamos y avanzamos unos pocos metros por el asfalto hasta llegar al lago de <b>Asentzio</b>, un pequeño lago rodeado de árboles. En sus inmediaciones encontraremos un refugio privado, una zona arbolada con mesas para merendar y una fuente de agua.':
+        'Zeharkatu eta metro gutxi batzuk egiten ditugu asfaltotik <b>Asentzio</b>ko lakura iritsi arte, zuhaitzez inguratutako laku txiki bat. Inguruan aterpe pribatu bat, merendatzeko mahaiak dituen zuhaitz-eremu bat eta ur-iturri bat aurkituko ditugu.',
+    '<b>De Asentzio a Elgeta y Egoarbitza</b>':
+        '<b>Asentziotik Elgetara eta Egoarbitzara</b>',
+    'Muy cerca de la fuente tomamos una pista señalizada que se adentra en el monte y nos conduce hacia <b>Elgeta</b>. Atravesamos el centro del pueblo, pasamos junto a la iglesia y salimos en dirección norte, hacia el cementerio. Un poco más adelante cruzamos la carretera que va hacia Eibar y, pocos metros después, tomamos una pista a mano izquierda para comenzar la subida hacia <b>Egoarbitza</b>.':
+        'Iturritik oso gertu, seinaleztatutako pista bat hartzen dugu, mendian barrena sartu eta <b>Elgeta</b>rantz eramaten gaituena. Herriaren erdigunea zeharkatzen dugu, elizaren ondotik pasatzen gara eta iparralderantz ateratzen gara, hilerrirantz. Pixka bat aurrerago Eibarrerantz doan errepidea zeharkatzen dugu eta, metro gutxi batzuk geroago, ezkerretara pista bat hartzen dugu <b>Egoarbitza</b>rako igoera hasteko.',
+    'La ascensión es progresiva y bastante cómoda. Poco a poco vamos ganando altura hasta llegar a la base de la montaña, donde encontraremos un refugio. Continuamos junto a él para afrontar los últimos metros de subida hasta la cima de Egoarbitza.':
+        'Igoera mailakatua eta nahiko erosoa da. Pixkanaka altuera irabazten joaten gara mendiaren oinarrira iritsi arte, non aterpe bat aurkituko dugun. Haren ondotik jarraitzen dugu Egoarbitzako gailurrerainoko azken metroei aurre egiteko.',
+    'Desde arriba, en un día despejado, disfrutaremos de unas vistas de 360 grados. Hacia abajo podremos distinguir la presa de Aixola y, alrededor, las montañas que hemos recorrido durante la jornada. Es un buen lugar para descansar un rato y disfrutar del paisaje antes de iniciar el último descenso.':
+        'Goitik, egun garbi batean, 360 graduko bistez gozatuko dugu. Behera begira Aixolako presa bereiziko dugu eta, inguruan, egunean zehar egin ditugun mendiak. Toki ona da pixka bat atseden hartzeko eta paisaiaz gozatzeko azken jaitsiera hasi aurretik.',
+    '<b>Regreso a la presa de Aixola</b>':
+        '<b>Aixolako presara itzulera</b>',
+    'Volvemos unos metros hacia la zona del refugio, pero esta vez nos desviamos por otro sendero que nos lleva a través de un hayedo. Después continuamos por un camino que desciende hacia Aixola, siguiendo un tramo que los participantes de la carrera <a href="hirutxikiak.html">Ermua Hiru Txikiak</a> realizan en sentido contrario, durante la subida.':
+        'Metro batzuk itzultzen gara aterpearen gunerantz, baina oraingoan beste bidexka batetik desbideratzen gara, pagadi batetik eramaten gaituena. Ondoren Aixolarantz jaisten den bide batetik jarraitzen dugu, <a href="hirutxikiak.html">Ermua Hiru Txikiak</a> lasterketako parte-hartzaileek kontrako noranzkoan egiten duten tarte bati jarraituz, igoeran.',
+    'La bajada nos permite perder altura rápidamente hasta regresar al entorno de la presa, donde ponemos punto final a esta ruta circular.':
+        'Jaitsierak altuera azkar galtzeko aukera ematen digu, presaren ingurura itzuli arte, non zirkuitu honi amaiera ematen diogun.',
+    'Un recorrido variado que combina varias cimas, pistas y senderos, con el atractivo añadido de descubrir una zona de trincheras en Intxorta. Además, el paso por el lago de Asentzio y la subida final a Egoarbitza nos permiten conocer diferentes montes y paisajes del entorno de Elgeta y la presa de Aixola.':
+        'Ibilbide anitza, hainbat gailur, pista eta bidexka konbinatzen dituena, Intxortan lubaki-eremu bat ezagutzeko erakargarritasun gehigarriarekin. Gainera, Asentzioko lakutik igarotzeak eta Egoarbitzarako azken igoerak Elgeta eta Aixolako presa inguruko mendi eta paisaia desberdinak ezagutzeko aukera ematen digute.',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
@@ -6451,6 +6546,7 @@ PAGE_STRINGS = {
     'trabakuaondarroa': TRABAKUAONDARROA,
     'askakosantakataline': ASKAKOSANTAKATALINE,
     'garaikanala': GARAIKANALA,
+    'aixolaintxorta': AIXOLAINTXORTA,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,
