@@ -5422,8 +5422,6 @@ SANCRISTOBALGARAIANDIKOA = {
         'Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan',
     '<p>Esta ruta coincide, sobre todo en su parte central, con el recorrido del <b>Asto Trail de Garai</b>, y eso ya nos da una buena idea de lo que vamos a encontrar. Senderos muy entretenidos, zonas de bosque, bajadas para disfrutar y rincones que merece la pena conocer. Una ruta muy bonita que, además, nos ha servido para descubrir nuevos caminos por esta zona.</p>':
         '<p>Ibilbide hau, batez ere erdialdean, <b>Garaiko Asto Trail</b> lasterketaren ibilbidearekin bat dator, eta horrek aurkituko dugunaren ideia ona ematen digu. Bidezidor oso dibertigarriak, baso tarteak, gozatzeko jaitsierak eta ezagutzea merezi duten txokoak. Oso ibilbide polita da, eta, gainera, inguru honetan bide berriak ezagutzeko balio izan digu.</p>',
-    'Corredores avanzando por un sendero entre helechos y árboles':
-        'Korrikalariak iratze eta zuhaitz arteko bidezidorrean',
     'Tramo de bosque cubierto de musgo junto al sendero':
         'Goroldioz estalitako basoko tartea',
     'Persona avanzando por una pista forestal':
@@ -5472,8 +5470,6 @@ SANCRISTOBALGARAIANDIKOA = {
         'alt="Zuhaitz arteko bidea, goroldioz estalitako hormatxo baten ondoan"',
     'alt="Foto ampliada del recorrido de San Kristobal Txiki, Garai y Andikoa"':
         'alt="San Kristobal Txiki, Garai eta Andikoa ibilbideko argazkia handituta"',
-    'alt="Corredores avanzando por un sendero entre helechos y árboles"':
-        'alt="Korrikalariak iratze eta zuhaitz arteko bidezidorrean"',
     'alt="Tramo de bosque cubierto de musgo junto al sendero"':
         'alt="Goroldioz estalitako basoko tartea"',
     'alt="Persona avanzando por una pista forestal"':
