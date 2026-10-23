@@ -805,8 +805,8 @@ HOME = {
 
     # trabakuadeba card
     # garaikanala card
-    '<h3 class="route-card-name">Garai y el antiguo canal de agua</h3>':
-        '<h3 class="route-card-name">Garai eta antzinako ubidea</h3>',
+    '<h3 class="route-card-name">Paseo por Garai y el antiguo canal de agua</h3>':
+        '<h3 class="route-card-name">Ibilaldia Garai eta antzinako ubidetik</h3>',
     'alt="El valle entre las ramas, con el pueblo abajo y la pe&ntilde;a de Mugarra al fondo"':
         'alt="Harana adarren artean, herria behean eta Mugarrako haitza atzealdean"',
     '<p class="route-card-desc">Paseo circular desde Garai siguiendo el canal de agua, con cangrejos en el cauce</p>':
@@ -3548,7 +3548,7 @@ TITLES = {
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
-    'garaikanala': 'Garai eta antzinako ubidea — Herriko ibilbideak',
+    'garaikanala': 'Ibilaldia Garai eta antzinako ubidetik — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
     'astorkigane': 'Trabakua, Astorkigane, Zenarruza eta Bolibar · E-bike ibilbidea — Herriko ibilbideak',
@@ -6383,14 +6383,14 @@ ASKAKOSANTAKATALINE = {
 GARAIKANALA = {
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>Garai y el antiguo<br><em>canal de agua</em></h1>':
-        '<h1>Garai eta antzinako<br><em>ubidea</em></h1>',
-    '<p class="full-name">Paseo circular desde Garai siguiendo el canal de agua</p>':
-        '<p class="full-name">Zirkuitu-ibilaldia Garaitik, ubideari jarraituz</p>',
+    '<h1>Paseo por<br>Garai y el antiguo<br><em>canal de agua</em></h1>':
+        '<h1>Ibilaldia<br>Garai eta antzinako<br><em>ubidetik</em></h1>',
+    '<p class="full-name">Circuito desde el parque de Garai siguiendo el antiguo canal</p>':
+        '<p class="full-name">Zirkuitua Garaiko parketik, antzinako ubideari jarraituz</p>',
     'alt="Foto ampliada del recorrido del canal de agua de Garai"':
         'alt="Garaiko antzinako ubidearen ibilbidearen argazki handitua"',
-    'download="El canal de agua de Garai.gpx"': 'download="Garai eta antzinako ubidea.gpx"',
-    'download="El canal de agua de Garai.kml"': 'download="Garai eta antzinako ubidea.kml"',
+    'download="Paseo por Garai y el antiguo canal de agua.gpx"': 'download="Garai eta antzinako ubidea.gpx"',
+    'download="Paseo por Garai y el antiguo canal de agua.kml"': 'download="Garai eta antzinako ubidea.kml"',
     'data-marker-title="Garai (salida y llegada)"': 'data-marker-title="Garai (irteera eta helmuga)"',
 
     '<span class="num">1</span>Canal': '<span class="num">1</span>Ubidea',
