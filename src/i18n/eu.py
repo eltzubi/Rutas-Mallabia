@@ -5392,6 +5392,16 @@ ZENGOTITAITURZURI = {
 }
 
 SANCRISTOBALGARAIANDIKOA = {
+    'alt="Paso de hormig&oacute;n sobre un arroyo, junto a un peque&ntilde;o puente de piedra cubierto de musgo, en un barranco con helechos"':
+        'alt="Hormigoizko pasabidea erreka baten gainean, goroldioz estalitako harrizko zubitxo baten ondoan, iratzedun sakonune batean"',
+    'alt="Caser&iacute;o de piedra con tejado rojo en lo alto de un prado con ovejas, y los montes del entorno al fondo"':
+        'alt="Harrizko baserria teilatu gorriarekin, ardiak dituen belardi baten goialdean, eta inguruko mendiak atzealdean"',
+    'alt="Sendero estrecho y bajo entre arbustos, visto desde el manillar de la bici"':
+        'alt="Bidexka estu eta baxua sastraken artean, bizikletaren manillarretik ikusita"',
+    'alt="Sendero pedregoso junto a un cauce con bloques cubiertos de musgo, visto desde el manillar"':
+        'alt="Bidexka harritsua goroldioz estalitako harritzarrak dituen ibilgu baten ondoan, manillarretik ikusita"',
+    'alt="Sendero de hierba entre helechos en un pinar, con una borda al fondo y un aerogenerador en la loma"':
+        'alt="Belarrezko bidexka iratzeen artean pinudi batean, borda bat atzean eta eoliko bat gainean"',
     '<title>Fuente &middot; 5,4 km</title>':
         '<title>Iturria &middot; 5,4 km</title>',
     '<title>Carretera &middot; 9,4 km</title>':
