@@ -283,7 +283,7 @@
     // que el mapa cambie debajo sin haberlo pedido desconcierta mas de lo que
     // ayuda. Solo lo cambian los botones.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
-    var LABEL_MIN_ZOOM = 13;   // el zoom al que salen los kilometros de cada ruta
+    var LABEL_MIN_ZOOM = 12;   // el zoom al que salen los kilometros de cada ruta
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
