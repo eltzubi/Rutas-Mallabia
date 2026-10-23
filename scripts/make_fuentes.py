@@ -142,7 +142,9 @@ FUENTES = [
         # barrio, no donde pasa el camino.
         "coord": (43.189508, -2.574173),
         "punto": ("askakosantakataline", 7),
-        "rutas": ["askakosantakataline"],
+        "rutas": ["askakosantakataline", "amaraune", "garaimaguna", "santamanazarandikoa",
+                  "sancristobalgaraiandikoa", "betzun", "garaigaztelu", "sancristobal",
+                  "maguna", "zengotitagane"],
     },
     {
         "id": "oiz",
