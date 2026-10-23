@@ -133,6 +133,18 @@ FUENTES = [
         "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane", "askakosantakataline"],
     },
     {
+        "id": "besoita",
+        "zona": "zengotita",
+        "es": "Fuente de Besoita",
+        "eu": "Besoitako iturria",
+        # Coordenada medida por el autor, a 54 m del waypoint de Besoita y a
+        # 58 m del nucleo del barrio segun OpenStreetMap: la fuente esta en el
+        # barrio, no donde pasa el camino.
+        "coord": (43.189508, -2.574173),
+        "punto": ("askakosantakataline", 7),
+        "rutas": ["askakosantakataline"],
+    },
+    {
         "id": "oiz",
         "zona": "zengotita",
         "es": "Fuente Oiz",
