@@ -6454,6 +6454,8 @@ GARAIKANALA = {
 }
 
 AIXOLAINTXORTA = {
+    'alt="Las trincheras de Intxorta: dos filas de sacos terreros junto al sendero, entre los &aacute;rboles, con un panel informativo a la izquierda"':
+        'alt="Intxortako lubakiak: lurrez betetako zakuen bi ilara bidexkaren ondoan, zuhaitzen artean, eta informazio-panel bat ezkerrean"',
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Intxorta · Elgeta</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Intxorta · Elgeta</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Aixola, Santama&ntilde;azar, Erdella<br><em>Intxorta y Egoarbitza</em></h1>':
