@@ -454,13 +454,23 @@ body{
 [data-map-src].is-drawing .leaflet-overlay-pane path:not(.draw-line){ opacity:.55; }
 .draw-readout{
   position:absolute; z-index:401; left:10px; bottom:10px;
-  max-width:min(340px, calc(100% - 70px));
+  max-width:min(380px, calc(100% - 70px));
   padding:9px 12px 10px; border-radius:12px;
   border:1px solid color-mix(in srgb, var(--trazo) 35%, var(--line));
   color:var(--ink); background:color-mix(in srgb, var(--ground) 88%, transparent);
   backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
   box-shadow:0 8px 24px rgba(0,0,0,.35); font-size:12.5px; line-height:1.4;
 }
+/* El perfil chiquito del trazado: dice de un vistazo si lo que acabas de
+   coger sube o baja, que en bici y andando no da igual. Va en el sentido de
+   la marcha y lleva una rayita en cada punto tocado. */
+.draw-perfil{ display:block; width:100%; height:42px; margin:0 0 5px; }
+.draw-perfil .rell{ fill:color-mix(in srgb, var(--trazo) 22%, transparent); }
+.draw-perfil .lin{ fill:none; stroke:var(--trazo); stroke-width:4; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+.draw-perfil .mrc line{ stroke:var(--ink-dim); stroke-width:1; opacity:.5; vector-effect:non-scaling-stroke; }
+.draw-perfil .ult{ fill:color-mix(in srgb, var(--trazo) 13%, transparent); }
+.draw-ult{ margin:0 0 3px; color:var(--ink); font:600 12px 'IBM Plex Mono',monospace; }
+.draw-ult[hidden]{ display:none; }
 .draw-tot{ margin:0 0 2px; font:600 16px 'IBM Plex Mono',monospace; color:var(--trazo); }
 .draw-tot span+span{ font-size:12.5px; font-weight:500; color:var(--ink-dim); }
 .draw-msg{ margin:0; color:var(--ink-dim); }

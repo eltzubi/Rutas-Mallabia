@@ -369,6 +369,11 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   `clientWidth`, no de `100vw`**: `100vw` incluye la barra de desplazamiento y dejaría la página
   moviéndose de lado. Medido: 388x709 en un móvil de 390x844 y 1278x822 en 1280x900, sin desbordar.
   Al salir se restaura todo.
+- **Un perfil pequeño en la pastilla**, en el sentido de la marcha, con una rayita en cada punto
+  tocado y **el último tramo sombreado**, más su propio «+69 / −52 m» debajo del total. Lo pidió el
+  autor: lo que quiere saber al enganchar un tramo es si lo coge de subida o de bajada, porque en
+  bici y andando no da igual. El desnivel se suma con el mismo umbral de 5 m que el total, para no
+  contar el ruido del GPS, y por eso va con un «aprox.» al lado.
 - Las opciones (deshacer, borrar, guardar, GPX, guardados) van **en columna dentro del mapa, justo
   debajo del lápiz**, en la esquina de arriba a la derecha, y los totales en una pastilla pequeña
   abajo a la izquierda. Se probaron antes dos sitios que el autor descartó: un panel flotante encima

@@ -42,7 +42,7 @@
       sinpaso: 'No hay camino hasta ahi dentro de la red.',
       deshacer: 'Deshacer', borrar: 'Borrar', guardar: 'Guardar', gpx: 'Bajar GPX',
       guardados: 'Guardados', abrirlo: 'Abrir', quitar: 'Quitar',
-      nombre: 'Trazado', aprox: 'aprox.', cargando: 'Preparando la red de caminos…',
+      nombre: 'Trazado', aprox: 'aprox.', ultimo: '\u00daltimo tramo', cargando: 'Preparando la red de caminos…',
       fallo: 'No se ha podido preparar la red. Prueba a recargar.',
       rodeo: 'Ese tramo da un rodeo de %s km: entre esos dos puntos no hay ning\u00fan camino grabado m\u00e1s corto. Deshazlo y prueba con un punto intermedio.',
       aviso: 'Esto lo dibujas tu: va por caminos que salen en las rutas, pero no es ninguna de ellas.'
@@ -55,7 +55,7 @@
       sinpaso: 'Ez dago biderik hormaino sarearen barruan.',
       deshacer: 'Desegin', borrar: 'Ezabatu', guardar: 'Gorde', gpx: 'GPXa jaitsi',
       guardados: 'Gordeta', abrirlo: 'Ireki', quitar: 'Kendu',
-      nombre: 'Marrazkia', aprox: 'gutxi gorabehera', cargando: 'Bideen sarea prestatzen…',
+      nombre: 'Marrazkia', aprox: 'gutxi gorabehera', ultimo: 'Azken tartea', cargando: 'Bideen sarea prestatzen…',
       fallo: 'Ezin izan da sarea prestatu. Saiatu orria berriro kargatzen.',
       rodeo: 'Tarte horrek %s km-ko bira ematen du: bi puntu horien artean ez dago grabatutako bide laburragorik. Desegin eta saiatu tarteko puntu batekin.',
       aviso: 'Hau zuk marrazten duzu: ibilbideetan agertzen diren bideetatik doa, baina ez da haietako bat.'
@@ -244,7 +244,9 @@
     var readout = document.createElement('div');
     readout.className = 'draw-readout';
     readout.hidden = true;
-    readout.innerHTML = '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
+    readout.innerHTML = '<div class="draw-perfil-caja"></div>' +
+                        '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
+                        '<p class="draw-ult" hidden></p>' +
                         '<p class="draw-msg"></p>';
     marco.appendChild(readout);
 
@@ -254,6 +256,8 @@
     marco.appendChild(saved);
 
     var elMsg = readout.querySelector('.draw-msg');
+    var elPerfil = readout.querySelector('.draw-perfil-caja');
+    var elUlt = readout.querySelector('.draw-ult');
     var elTot = readout.querySelector('.draw-tot');
     var elKm = readout.querySelector('.draw-km');
     var elDes = readout.querySelector('.draw-des');
@@ -328,15 +332,89 @@
     }
 
     function totales(){
-      var pts = recorrido(), km = 0, sub = 0, base = null;
+      var pts = recorrido(), km = 0, sub = 0, baj = 0, base = null, cima = null;
       for (var i = 1; i < pts.length; i++) km += metros(pts[i - 1], pts[i]);
       pts.forEach(function(p){
         if (typeof p[2] !== 'number') return;
-        if (base === null) { base = p[2]; return; }
+        if (base === null) { base = cima = p[2]; return; }
         if (p[2] > base + UMBRAL_SUBIDA_M) { sub += p[2] - base; base = p[2]; }
         else if (p[2] < base) base = p[2];
+        if (p[2] < cima - UMBRAL_SUBIDA_M) { baj += cima - p[2]; cima = p[2]; }
+        else if (p[2] > cima) cima = p[2];
       });
-      return { km: km / 1000, subida: Math.round(sub), conAltura: base !== null };
+      return { km: km / 1000, subida: Math.round(sub), bajada: Math.round(baj),
+               conAltura: base !== null };
+    }
+
+    // Un perfil pequeno debajo de los totales: lo pidio el autor para saber
+    // de un vistazo si el tramo que acaba de coger sube o baja, que en bici
+    // y andando no da igual. Se dibuja en el sentido de la marcha, de
+    // izquierda a derecha, con una rayita vertical en cada punto tocado para
+    // ver donde empieza y acaba cada tramo.
+    // Lo que sube y lo que baja un tramo suelto, con el mismo umbral que el
+    // total. Es la pregunta del autor: «¿este tramo lo cojo de subida?».
+    function desnivelDe(tr){
+      var sub = 0, baj = 0, base = null, cima = null;
+      tr.forEach(function(id){
+        var e = red.nodos[id][2];
+        if (typeof e !== 'number') return;
+        if (base === null) { base = cima = e; return; }
+        if (e > base + UMBRAL_SUBIDA_M) { sub += e - base; base = e; }
+        else if (e < base) base = e;
+        if (e < cima - UMBRAL_SUBIDA_M) { baj += cima - e; cima = e; }
+        else if (e > cima) cima = e;
+      });
+      return '+' + Math.round(sub) + ' / -' + Math.round(baj) + ' m';
+    }
+
+    function perfil(){
+      var pts = recorrido();
+      if (pts.length < 2) return '';
+      var acc = [0], i;
+      for (i = 1; i < pts.length; i++) acc.push(acc[i - 1] + metros(pts[i - 1], pts[i]));
+      var total = acc[acc.length - 1];
+      if (!total) return '';
+      var N = 120, W = 1000, H = 100, alt = [], ultima = null;
+      var j = 0;
+      for (var k = 0; k <= N; k++) {
+        var dd = total * k / N;
+        while (j < acc.length - 1 && acc[j + 1] < dd) j++;
+        var e = pts[j][2];
+        if (typeof e === 'number') ultima = e;
+        alt.push(typeof e === 'number' ? e : ultima);
+      }
+      var hay = alt.filter(function(e){ return typeof e === 'number'; });
+      if (hay.length < 2) return '';
+      var min = Math.min.apply(null, hay), max = Math.max.apply(null, hay);
+      var rango = Math.max(1, max - min);
+      var d = '', px = [];
+      for (k = 0; k <= N; k++) {
+        var x = (k * W / N).toFixed(1);
+        var y = (H - 6 - ((alt[k] === null ? min : alt[k]) - min) / rango * (H - 12)).toFixed(1);
+        d += (k ? ' L' : 'M') + x + ',' + y;
+        px.push([x, y]);
+      }
+      // una rayita en cada punto que ha tocado el visitante, y el ultimo
+      // tramo sombreado: es el que acaba de anadir y el que quiere mirar.
+      var marcas = '', llevo = 0, inicioUltimo = 0;
+      tramos.forEach(function(tr, idx){
+        if (!idx) return;
+        inicioUltimo = llevo;
+        for (var q = 1; q < tr.length; q++) {
+          llevo += metros(red.nodos[tr[q - 1]], red.nodos[tr[q]]);
+        }
+        var xm = (llevo / total * W).toFixed(1);
+        marcas += '<line x1="' + xm + '" y1="0" x2="' + xm + '" y2="' + H + '"/>';
+      });
+      var sombra = '';
+      if (tramos.length > 1) {
+        var x0 = inicioUltimo / total * W;
+        sombra = '<rect class="ult" x="' + x0.toFixed(1) + '" y="0" width="' +
+                 (W - x0).toFixed(1) + '" height="' + H + '"/>';
+      }
+      return '<svg class="draw-perfil" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none"' +
+        ' aria-hidden="true">' + sombra + '<path class="rell" d="' + d + ' L' + W + ',' + H + ' L0,' + H + ' Z"/>' +
+        '<path class="lin" d="' + d + '"/><g class="mrc">' + marcas + '</g></svg>';
     }
 
     function pinta(){
@@ -356,7 +434,11 @@
       var tt = totales();
       elTot.hidden = pts.length < 2;
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
-      elDes.textContent = tt.conAltura && tt.subida ? ' · +' + tt.subida + ' m ' + t.aprox : '';
+      elDes.textContent = tt.conAltura && (tt.subida || tt.bajada)
+        ? ' · +' + tt.subida + ' / -' + tt.bajada + ' m ' + t.aprox : '';
+      elPerfil.innerHTML = perfil();
+      elUlt.textContent = tramos.length > 1 ? t.ultimo + ' ' + desnivelDe(tramos[tramos.length - 1]) : '';
+      elUlt.hidden = tramos.length < 2;
       elMsg.textContent = anclas.length ? t.sigue : t.arranque;
     }
 
@@ -430,7 +512,11 @@
         map.fitBounds(linea[1].getBounds(), { padding: [30, 30] });
         elTot.hidden = false;
         elKm.textContent = g.km + ' km';
-        elDes.textContent = g.subida ? ' · +' + g.subida + ' m ' + t.aprox : '';
+        var tg = totales();
+        elDes.textContent = tg.conAltura && (tg.subida || tg.bajada)
+          ? ' · +' + tg.subida + ' / -' + tg.bajada + ' m ' + t.aprox : '';
+        elPerfil.innerHTML = perfil();
+        elUlt.hidden = true;
         elMsg.textContent = g.nombre;
         saved.hidden = true;
         return;
