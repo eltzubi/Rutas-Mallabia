@@ -321,6 +321,22 @@ FUENTES = [
         "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
+        "id": "asentzio",
+        "zona": "aixola",
+        "es": "Fuente del lago de Asentzio",
+        "eu": "Asentzioko lakuko iturria",
+        # Coordenada medida por el autor, a 4 m del track de aixolaintxorta y a
+        # 53 m de la ermita de Asentzio segun OpenStreetMap. No va con numero
+        # de waypoint: el punto 4 de esa ruta (el lago) queda a 358 m, mas de
+        # lo que admite MAX_RUTA_M, porque la fuente esta en el merendero y no
+        # donde el perfil marca el lago.
+        "coord": (43.123432, -2.479129),
+        "punto": ("aixolaintxorta", None),
+        "nota_es": "En el merendero del lago, junto a las mesas.",
+        "nota_eu": "Lakuko merenderoan, mahaien ondoan.",
+        "rutas": ["aixolaintxorta"],
+    },
+    {
         "id": "zeinka",
         "zona": "markina",
         "es": "Fuente de Zeinka",
