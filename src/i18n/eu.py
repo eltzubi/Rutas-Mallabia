@@ -6543,6 +6543,10 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
+    '<span class="faq-q">&iquest;Con una bici el&eacute;ctrica subo cualquier cosa?</span>':
+        '<span class="faq-q">Bizikleta elektrikoarekin edozer igotzen dut?</span>',
+    '<p>No. La ayuda empuja, pero no sube por ti. Cuenta la bici, y cuenta la fuerza que lleves ese d&iacute;a, pero sobre todo cuentas t&uacute;: la habilidad, la forma de pedalear y la postura. Y eso se nota justo donde m&aacute;s duele &mdash;en los tramos t&eacute;cnicos, en las rampas muy fuertes y donde el piso est&aacute; roto o suelto&mdash;. Suelen ser trozos cortos, pero intensos. Ah&iacute; da lo mismo que la bici sea el&eacute;ctrica o convencional: si no tienes la t&eacute;cnica, la mayor&iacute;a de las veces acabas bajándote y empujando.</p>':
+        '<p>Ez. Laguntzak bultzatu egiten du, baina ez du zure ordez igotzen. Bizikletak kontatzen du, eta egun hartan daramazun indarrak ere bai, baina batez ere zuk kontatzen duzu: trebetasunak, pedalkatzeko moduak eta jarrerak. Eta hori gehien min ematen duen tokian nabaritzen da: tarte teknikoetan, aldapa oso gogorretan eta lurra hautsita edo askatuta dagoen lekuetan. Tarte laburrak izaten dira, baina biziak. Han berdin dio bizikleta elektrikoa edo konbentzionala izatea: teknikarik ez baduzu, gehienetan jaitsi eta bultzatzen amaitzen duzu.</p>',
     '<span class="faq-q">&iquest;Con qu&eacute; bici haces las rutas?</span>':
         '<span class="faq-q">Zein bizikletarekin egiten dituzu ibilbideak?</span>',
     '<p>Una <b>Orbea Rise de 2023</b>, con bater&iacute;a de 500 Wh y el disco de freno delantero cambiado por uno m&aacute;s grande, de 203 mm. De las asistidas, es de las que m&aacute;s se parecen a una bici convencional: la ayuda es m&aacute;s discreta que la de otras el&eacute;ctricas y se pedalea de forma parecida a una bici normal.</p>':
