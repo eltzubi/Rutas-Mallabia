@@ -219,13 +219,25 @@
       '</div>' +
       '<div class="draw-saved"></div>' +
       '<p class="draw-nota">' + t.aviso + '</p>';
-    caja.parentElement.appendChild(panel);
+    // El panel va DEBAJO del mapa, no encima: flotando tapaba un buen
+    // trozo justo donde hay que ir tocando (lo pidio el autor, «que el
+    // mapa quede mas limpio»). Se cuelga detras de la caja del mapa, en
+    // el flujo normal de la pagina.
+    var marco = caja.parentElement;
+    marco.parentElement.insertBefore(panel, marco.nextSibling);
+    // Y con el ancho del mapa, no el de la columna: la caja del mapa es
+    // cuadrada y mas estrecha que el texto de alrededor.
+    function ajustaAncho(){ panel.style.maxWidth = marco.offsetWidth + 'px'; }
+    ajustaAncho();
+    if ('ResizeObserver' in window) new ResizeObserver(ajustaAncho).observe(marco);
+    else window.addEventListener('resize', ajustaAncho);
 
     var elMsg = panel.querySelector('.draw-msg');
     var elTot = panel.querySelector('.draw-tot');
     var elKm = panel.querySelector('.draw-km');
     var elDes = panel.querySelector('.draw-des');
     var elSaved = panel.querySelector('.draw-saved');
+    var fab = document.querySelector('.view-fab');
 
     function recorrido(){
       var out = [];
@@ -381,6 +393,7 @@
       btn.classList.remove('is-active');
       btn.setAttribute('aria-label', t.abrir);
       caja.classList.remove('is-drawing');
+      if (fab) fab.classList.remove('is-hidden-behind-panel');
       map.off('click', alTocar);
     }
 
@@ -390,15 +403,11 @@
       btn.classList.add('is-active');
       btn.setAttribute('aria-label', t.cerrar);
       caja.classList.add('is-drawing');
+      // El boton flotante de «Lista» se planta justo encima del panel. Ya
+      // existe la clase con la que el mapa lo aparta cuando abre la ficha de
+      // una ruta; se usa la misma.
+      if (fab) fab.classList.add('is-hidden-behind-panel');
       if (d.cerrarPanel) { try { d.cerrarPanel(); } catch (e) {} }
-      // En un movil el mapa de la portada mide 308x308 y el panel se come
-      // dos tercios: ahi no se puede dibujar. Al entrar en modo dibujo se
-      // amplia solo (592 px de alto, el panel baja al 26%). No se vuelve a
-      // encoger al salir: eso ya lo decide quien mira.
-      if (window.innerWidth < 768) {
-        var ampliar = caja.parentElement.querySelector('.map-expand-btn');
-        if (ampliar && !caja.parentElement.classList.contains('is-expanded')) ampliar.click();
-      }
       map.on('click', alTocar);
       pintaGuardados();
       if (red) { pinta(); return; }

@@ -437,13 +437,13 @@ body{
 /* Y se apagan un poco para que el trazo azul se vea encima de 65 tracks
    naranjas y verdes. El propio trazo lleva .draw-line y se queda entero. */
 [data-map-src].is-drawing .leaflet-overlay-pane path:not(.draw-line){ opacity:.3; }
+/* Debajo del mapa, no flotando encima: tapaba justo la zona donde hay que
+   ir tocando. Lo pidio el autor. */
 .draw-panel{
-  position:absolute; z-index:401; left:10px; bottom:10px;
-  width:min(300px, calc(100% - 20px)); max-height:min(62%, 420px); overflow:auto;
-  padding:12px 14px 13px; border:1px solid var(--line); border-radius:14px;
-  color:var(--ink); background:color-mix(in srgb, var(--ground) 92%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-  box-shadow:0 10px 30px rgba(0,0,0,.35); font-size:13px; line-height:1.45;
+  margin:10px auto 0; padding:12px 14px 13px;
+  border:1px solid color-mix(in srgb, var(--trazo) 35%, var(--line));
+  border-radius:14px; color:var(--ink); background:var(--ground-raised);
+  font-size:13px; line-height:1.45;
 }
 .draw-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
 .draw-head b{ color:var(--trazo); font-size:13px; letter-spacing:.02em; }
@@ -474,8 +474,7 @@ body{
 .draw-dot{ border-radius:50%; background:var(--trazo); box-shadow:0 0 0 2px var(--ground); }
 .draw-dot.is-first{ background:var(--ground); box-shadow:0 0 0 3px var(--trazo); }
 @media (max-width:480px){
-  .draw-panel{ left:8px; right:8px; width:auto; bottom:8px; padding:10px 12px 11px;
-               max-height:44%; font-size:12.5px; }
+  .draw-panel{ padding:10px 12px 11px; font-size:12.5px; }
   .draw-tot{ font-size:15px; margin-top:6px; }
   .draw-acts{ gap:5px; margin-top:8px; }
   .draw-b{ padding:6px 7px; font-size:11px; }

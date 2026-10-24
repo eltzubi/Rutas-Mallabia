@@ -362,9 +362,12 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   `.route-map-box` de fuera. Con ella, los 65 tracks y sus marcadores pierden el `pointer-events`:
   sin eso, tocar encima de una ruta abría su ficha y el toque nunca llegaba al mapa. Y se bajan al
   30 % de opacidad para que el trazo azul se vea; el propio trazo lleva `.draw-line` y se libra.
-- En un móvil el mapa de la portada mide 308x308 y el panel se comía dos tercios, así que al entrar
-  en modo dibujo **el mapa se amplía solo** (592 px de alto, el panel baja al 26 %). No se vuelve a
-  encoger al salir: eso ya lo decide quien mira.
+- El panel va **debajo del mapa, en el flujo de la página**, no flotando encima: ahí tapaba justo la
+  zona donde hay que ir tocando. Toma el ancho de la caja del mapa (un `ResizeObserver`), que es
+  cuadrada y más estrecha que el texto de alrededor, y mientras está abierto se aparta el botón
+  flotante de «Lista» con la clase `is-hidden-behind-panel`, la misma que ya usa el mapa al abrir la
+  ficha de una ruta. Antes de esto el modo dibujo ampliaba el mapa solo en el móvil, para que el
+  panel flotante no se comiera la pantalla; ya no hace falta y se quitó.
 - `map.js` no sabe nada de todo esto: al terminar de montar el mapa dispara un evento
   **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
   cargado, no pasa nada.
