@@ -6543,6 +6543,10 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
+    '<span class="faq-q">&iquest;Con qu&eacute; bici haces las rutas?</span>':
+        '<span class="faq-q">Zein bizikletarekin egiten dituzu ibilbideak?</span>',
+    '<p>Una <b>Orbea Rise de 2023</b>, con bater&iacute;a de 500 Wh y el disco de freno delantero cambiado por uno m&aacute;s grande, de 203 mm. De las asistidas, es de las que m&aacute;s se parecen a una bici convencional: la ayuda es m&aacute;s discreta que la de otras el&eacute;ctricas y se pedalea de forma parecida a una bici normal.</p>':
+        '<p>2023ko <b>Orbea Rise</b> bat, 500 Wh-ko bateriarekin eta aurreko balazta-diskoa handiago batengatik aldatuta, 203 mm-koa. Lagunduen artean, bizikleta konbentzional baten antz handiena dutenetakoa da: laguntza beste elektriko batzuena baino diskretuagoa da eta bizikleta arrunt baten antzera pedalkatzen da.</p>',
     '<p class="eyebrow"><span>Dudas</span><span class="sep">/</span><span>Las fichas por dentro</span></p>':
         '<p class="eyebrow"><span>Zalantzak</span><span class="sep">/</span><span>Fitxak barrutik</span></p>',
     '<h1>Preguntas <em>frecuentes</em></h1>':
