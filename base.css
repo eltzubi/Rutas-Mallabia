@@ -406,3 +406,78 @@ body{
   }
   .mio-dialog::before{ content:""; display:block; width:36px; height:4px; margin:0 auto 16px; background:var(--line); border-radius:99px; }
 }
+
+/* ---- Dibujar un trazado propio (js/trazado.js, solo portada) -------------
+   El boton no cabe en la pastilla de capas: en un movil ya van cuatro
+   apretadas entre el zoom y el de ampliar. Va debajo del de ampliar, en la
+   misma columna de la derecha. El color del trazo (--trazo) no es ninguna de
+   las dos actividades a proposito: lo que dibuja el visitante no es una ruta
+   de la web y no puede leerse como tal. */
+:root{ --trazo:#38BDF8; }
+:root[data-theme="light"]{ --trazo:#0369A1; }
+.map-draw-btn{
+  position:absolute; z-index:400; top:52px; right:10px;
+  width:34px; height:34px; display:grid; place-items:center;
+  border:1px solid var(--line); border-radius:10px; cursor:pointer;
+  color:var(--ink-dim); background:color-mix(in srgb, var(--ground) 80%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.map-draw-btn:hover{ color:var(--ink); }
+.map-draw-btn.is-active{ background:var(--trazo); border-color:var(--trazo); color:var(--ground); }
+.map-draw-btn:focus-visible{ outline:3px solid var(--trazo); outline-offset:2px; }
+/* La clase va en el propio contenedor del mapa ([data-map-src]), que es el
+   .leaflet-container, no en la caja de fuera. */
+[data-map-src].is-drawing{ cursor:crosshair; }
+/* Mientras se dibuja, los 65 tracks y sus marcadores dejan de recibir el
+   toque: si no, al tocar encima de una ruta se abre su ficha y el toque
+   nunca llega al mapa, que es justo donde hay que poner el punto. */
+[data-map-src].is-drawing .leaflet-overlay-pane path,
+[data-map-src].is-drawing .leaflet-marker-pane{ pointer-events:none; }
+/* Y se apagan un poco para que el trazo azul se vea encima de 65 tracks
+   naranjas y verdes. El propio trazo lleva .draw-line y se queda entero. */
+[data-map-src].is-drawing .leaflet-overlay-pane path:not(.draw-line){ opacity:.3; }
+.draw-panel{
+  position:absolute; z-index:401; left:10px; bottom:10px;
+  width:min(300px, calc(100% - 20px)); max-height:min(62%, 420px); overflow:auto;
+  padding:12px 14px 13px; border:1px solid var(--line); border-radius:14px;
+  color:var(--ink); background:color-mix(in srgb, var(--ground) 92%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35); font-size:13px; line-height:1.45;
+}
+.draw-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.draw-head b{ color:var(--trazo); font-size:13px; letter-spacing:.02em; }
+.draw-close{ border:0; background:none; color:var(--ink-dim); font-size:20px; line-height:1; cursor:pointer; padding:0 2px; }
+.draw-close:hover{ color:var(--ink); }
+.draw-msg{ margin:6px 0 0; color:var(--ink-dim); }
+.draw-tot{ margin:8px 0 0; font:600 17px 'IBM Plex Mono',monospace; color:var(--ink); }
+.draw-tot span+span{ font-size:13px; font-weight:500; color:var(--ink-dim); }
+.draw-acts{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.draw-b{
+  flex:1 1 auto; border:1px solid var(--line); border-radius:9px; padding:7px 9px;
+  background:none; color:var(--ink); cursor:pointer; font:600 11.5px 'IBM Plex Mono',monospace;
+}
+.draw-b:hover{ border-color:var(--trazo); color:var(--trazo); }
+.draw-saved{ margin-top:10px; }
+.draw-saved-t{ margin:0 0 4px; color:var(--ink-dim); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; }
+.draw-saved ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
+.draw-saved li{ display:flex; align-items:center; gap:6px; }
+.draw-open{
+  flex:1 1 auto; text-align:left; border:1px solid var(--line); border-radius:9px;
+  padding:6px 9px; background:none; color:var(--ink); cursor:pointer; font:inherit; font-size:12.5px;
+}
+.draw-open span{ color:var(--ink-dim); }
+.draw-open:hover{ border-color:var(--trazo); }
+.draw-del{ border:0; background:none; color:var(--ink-dim); font-size:17px; line-height:1; cursor:pointer; padding:0 4px; }
+.draw-del:hover{ color:var(--ink); }
+.draw-nota{ margin:10px 0 0; color:var(--ink-dim); font-size:11.5px; line-height:1.4; }
+.draw-dot{ border-radius:50%; background:var(--trazo); box-shadow:0 0 0 2px var(--ground); }
+.draw-dot.is-first{ background:var(--ground); box-shadow:0 0 0 3px var(--trazo); }
+@media (max-width:480px){
+  .draw-panel{ left:8px; right:8px; width:auto; bottom:8px; padding:10px 12px 11px;
+               max-height:44%; font-size:12.5px; }
+  .draw-tot{ font-size:15px; margin-top:6px; }
+  .draw-acts{ gap:5px; margin-top:8px; }
+  .draw-b{ padding:6px 7px; font-size:11px; }
+  .draw-nota{ margin-top:8px; font-size:10.5px; }
+}

@@ -102,6 +102,7 @@ python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favic
 
 ```
 python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
+python3 scripts/make_alturas.py        # data/alturas.json: la altura de cada punto del mapa de la portada
 ```
 
 ```
@@ -329,6 +330,43 @@ enlace las generales, que no es ninguna de las dos y por eso no se lee como una 
 **Sin JSON-LD de `FAQPage` a proposito**: desde agosto de 2023 Google solo muestra ese resultado
 enriquecido a webs oficiales de sanidad y administracion, asi que seria un segundo sitio donde
 mantener las mismas diez respuestas, en dos idiomas, a cambio de nada.
+
+**Dibujar un trazado propio, sobre los caminos de la web** (`src/js/trazado.js`, solo portada).
+Idea del autor: casi nadie se hace de una tirada una ruta de 37 km, y lo que pide la gente es unir
+dos, acortar una o montarse la suya. Dibujar a mano alzada se descartó — un garabato no va por los
+caminos y su kilometraje sería mentira —, así que **se dibuja tocando puntos y el camino entre dos
+toques se calcula sobre los tracks reales**.
+
+La red se construye en el navegador con los mismos tracks que la portada ya tiene
+(`data/trailhead.json`): los puntos se pegan a una rejilla de 15 m y cada celda es un nodo. Con los
+datos de hoy salen **8.418 nodos y 10.796 tramos, y forman una sola componente conexa** — desde
+cualquier punto de cualquier ruta se llega a cualquier otro sin salirse de terreno grabado —, así
+que **no hace falta ningún servicio de rutas de fuera**, que es la regla de esta web. El camino se
+busca con Dijkstra sobre montículo binario; un toque tarda milisegundos.
+
+Las alturas van aparte, en **`data/alturas.json`** (56 kB), que escribe `scripts/make_alturas.py`
+cogiendo para cada punto de la portada la altura del punto más cercano del `data/<ruta>.json` de esa
+misma ruta (esos sí las llevan). **Hay que volver a pasarlo después de `make_map_data.py`.** El
+fichero se baja solo al abrir el modo de dibujo: el mapa de la portada no necesita alturas y no hay
+por qué cobrárselas a todo el que lo abre.
+
+Tres cosas que costaron una vuelta y conviene no volver a tropezar:
+
+- La clase `is-drawing` va en **`[data-map-src]`**, que es el `.leaflet-container`, no en el
+  `.route-map-box` de fuera. Con ella, los 65 tracks y sus marcadores pierden el `pointer-events`:
+  sin eso, tocar encima de una ruta abría su ficha y el toque nunca llegaba al mapa. Y se bajan al
+  30 % de opacidad para que el trazo azul se vea; el propio trazo lleva `.draw-line` y se libra.
+- En un móvil el mapa de la portada mide 308x308 y el panel se comía dos tercios, así que al entrar
+  en modo dibujo **el mapa se amplía solo** (592 px de alto, el panel baja al 26 %). No se vuelve a
+  encoger al salir: eso ya lo decide quien mira.
+- `map.js` no sabe nada de todo esto: al terminar de montar el mapa dispara un evento
+  **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
+  cargado, no pasa nada.
+
+Lo que dibuja un visitante **no es una ruta de la web**: va en otro color (`--trazo`, que no es
+ninguna de las dos actividades a propósito), se llama «tu trazado», se guarda solo en su navegador
+(`localStorage`, hasta 12) y nunca aparece entre las 65. Se puede deshacer tramo a tramo, borrar,
+guardar, reabrir y bajar como GPX.
 
 **El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
 del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del

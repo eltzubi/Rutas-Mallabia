@@ -1210,6 +1210,17 @@
       expandBtn.setAttribute('aria-label', expanded ?
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
     }
+    // La herramienta de dibujar un trazado (js/trazado.js, solo en la
+    // portada) se engancha aqui: necesita el mapa ya montado, los tracks con
+    // los que construye su red y la caja. Va por evento y no por una
+    // variable global para que este fichero no sepa nada de ella: si
+    // trazado.js no esta cargado, no pasa absolutamente nada.
+    try {
+      document.dispatchEvent(new CustomEvent('mapa:listo', { detail: {
+        map: map, L: L, datos: data, esPortada: esPortada, caja: el,
+        cerrarPanel: closePanel
+      }}));
+    } catch (e) {}
     el.setAttribute('aria-busy', 'false');
     loading = false;
     }).catch(function(err){

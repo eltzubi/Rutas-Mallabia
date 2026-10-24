@@ -167,6 +167,7 @@ ASSETS = {
     ("js", "webmcp.js"): "js/webmcp.js",
     ("js", "weather.js"): "js/weather.js",
     ("js", "agua.js"): "js/agua.js",
+    ("js", "trazado.js"): "js/trazado.js",
 }
 
 # Los .woff2 reales que referencia fonts.css (url('fonts/xxx.woff2')) --

@@ -219,7 +219,7 @@ def cmd_filtros(a):
         # cuantas rutas hay se saca de build.py, no de un numero a mano: cada
         # ruta nueva hacia fallar esta comprobacion sin que nada estuviera mal.
         esperadas = len([p for p in paginas()
-                         if p not in ("mallabia", "agua", "aviso-legal")])
+                         if p not in ("mallabia", "preguntas", "agua", "aviso-legal")])
         total = visibles(); print(f"  sin filtrar            {total} tarjetas")
         assert total == esperadas, f"se esperaban {esperadas}, hay {total}"
 
