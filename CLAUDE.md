@@ -309,6 +309,13 @@ pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Vo
 libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
 `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
 
+**Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
+ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
+en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;
+al cerrar la ficha vuelven todas. Lo pidio el autor: «quedarse solo en la ruta limpia». Ojo: si al
+encuadrar la ruta el mapa baja del zoom 12 no se ve ninguna, y es correcto — por debajo de ese zoom
+no hay etiquetas.
+
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
 zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra

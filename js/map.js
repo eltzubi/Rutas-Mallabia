@@ -428,6 +428,11 @@
     // Hiding it while the panel is open removes the overlap outright instead
     // of fighting over z-index across two separate stacking contexts.
     var viewFab = document.getElementById('viewFab');
+    // Con una ruta elegida, los kilometros de las otras 64 siguen ahi y
+    // ensucian justo lo que el visitante ha ido a mirar. Mientras la ficha
+    // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
+    // todas. Lo pidio el autor: «quedarse solo en la ruta limpia».
+    var labelSoloHref = null;
     function closePanel(){
       if (!panel || !panel.classList.contains('open')) return;
       var returnFocus = panel.contains(document.activeElement);
@@ -442,6 +447,8 @@
           if (returnFocus) path.focus({ preventScroll: true });
         }
         activeLine = null;
+        labelSoloHref = null;
+        updateLabelVisibility();
         Object.keys(hrefToLine).forEach(function(href){
           var entry = hrefToLine[href];
           var entryPath = entry.line.getElement();
@@ -468,17 +475,20 @@
 
       // La ruta elegida manda visualmente: rojo fino por encima; el resto
       // conserva su color pero se apaga para no taparla ni ensuciar el mapa.
+      labelSoloHref = null;
       Object.keys(hrefToLine).forEach(function(href){
         var entry = hrefToLine[href];
         var entryPath = entry.line.getElement();
         var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
         if (entry.line === line) {
+          labelSoloHref = href;
           entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
           if (entry.line.bringToFront) entry.line.bringToFront();
         } else {
           entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4 });
         }
       });
+      updateLabelVisibility();
       line.getElement().setAttribute('aria-pressed', 'true');
       panelBody.innerHTML = html;
       panel.hidden = false;
@@ -1161,7 +1171,8 @@
       Object.keys(hrefToLabel).forEach(function(href){
         var labelEl = hrefToLabel[href].getElement();
         if (!labelEl) return;
-        var show = zoomOk && labelFilterVisible[href] !== false;
+        var show = zoomOk && labelFilterVisible[href] !== false &&
+                   (!labelSoloHref || href === labelSoloHref);
         labelEl.style.opacity = show ? '1' : '0';
         labelEl.style.pointerEvents = show ? '' : 'none';
       });
