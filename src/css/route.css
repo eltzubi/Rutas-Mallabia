@@ -758,3 +758,45 @@ footer a:hover{ color:var(--ink); }
 @media (max-width:659px){
   .agua-nota-general, .agua-zonas{ margin-left:16px; margin-right:16px; }
 }
+
+/* ---- Preguntas frecuentes (preguntas.html) -------------------------------
+   <details>/<summary> nativo: se abre y se cierra sin una linea de
+   JavaScript, funciona con el teclado y, si el navegador no entiende el
+   atributo name, lo unico que pasa es que se pueden quedar varias abiertas a
+   la vez. Con name="faq" el navegador cierra la anterior al abrir otra, que
+   es lo que pidio el autor: «que se cierren facil».
+   El color sale de la actividad, como en el resto del sitio: naranja las
+   preguntas de bici, verde las de andar, y el resto en el color de enlace,
+   que no es ninguna de las dos actividades y por eso no confunde. */
+.faq-list{ display:flex; flex-direction:column; gap:10px; margin:24px 0 30px; }
+.faq-item{
+  --acento: var(--link);
+  --acento-soft: color-mix(in srgb, var(--link) 12%, transparent);
+  border:1px solid var(--line); border-radius:16px;
+  background:var(--ground-raised); overflow:hidden;
+}
+.faq-item[data-tema="bici"]{ --acento: var(--teal); --acento-soft: var(--teal-soft); }
+.faq-item[data-tema="pie"]{ --acento: var(--violet); --acento-soft: var(--violet-soft); }
+.faq-item[open]{ border-color:color-mix(in srgb, var(--acento) 45%, transparent); }
+.faq-item summary{
+  display:flex; align-items:center; gap:14px;
+  padding:15px 18px; cursor:pointer; list-style:none;
+  font-weight:600; line-height:1.35; color:var(--ink);
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary:hover{ color:var(--acento); }
+.faq-item summary:focus-visible{ outline:3px solid var(--acento); outline-offset:-3px; border-radius:16px; }
+.faq-q{ flex:1 1 auto; }
+.faq-chevron{ flex:none; color:var(--acento); transition:transform .18s ease; }
+.faq-item[open] .faq-chevron{ transform:rotate(180deg); }
+.faq-item[open] summary{ color:var(--acento); }
+.faq-a{
+  padding:2px 18px 16px; background:var(--acento-soft);
+  border-top:1px solid color-mix(in srgb, var(--acento) 22%, transparent);
+}
+.faq-a p{ margin:14px 0 0; color:var(--ink); line-height:1.6; }
+.faq-a a{ color:var(--acento); text-decoration:underline; text-underline-offset:3px; }
+.faq-pie{ margin:0 0 8px; color:var(--ink-dim); font-size:15px; }
+@media (prefers-reduced-motion: reduce){
+  .faq-chevron{ transition:none; }
+}

@@ -805,6 +805,12 @@ HOME = {
         'alt="E-bikea Kalamuako gailurreko harkaitzetan bermatuta, mendiak eta harana hondoan"',
 
     # trabakuadeba card
+    '          Preguntas frecuentes\n':
+        '          Ohiko galderak\n',
+    '<p class="map-note">Qu&eacute; quiere decir cada dato de una ficha, de d&oacute;nde sale la distancia y el desnivel, y si la web funciona sin cobertura.</p>':
+        '<p class="map-note">Fitxa bateko datu bakoitzak zer esan nahi duen, nondik datozen distantzia eta desnibela, eta webak estaldurarik gabe funtzionatzen duen.</p>',
+    '<a class="directions-cta" href="preguntas.html">Ver las preguntas <span aria-hidden="true">&rarr;</span></a>':
+        '<a class="directions-cta" href="preguntas.html">Ikusi galderak <span aria-hidden="true">&rarr;</span></a>',
     # aixolaintxorta card
     'alt="La cruz de Santama&ntilde;azar al atardecer, con el valle y los montes del Duranguesado al fondo"':
         'alt="Santama&ntilde;azarko gurutzea ilunabarrean, harana eta Durangaldeko mendiak atzealdean"',
@@ -3396,6 +3402,7 @@ POTRERA = {
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
     'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
+    'preguntas': 'Fitxa bakoitzeko esfortzuak, azalerak eta denborek zer esan nahi duten, nondik datozen distantzia eta desnibela, bizikleta elektrikoa behar den eta webak estaldurarik gabe funtzionatzen duen',
     'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
     'galdaraminio': 'Zirkuitua e-bikez Trabakuatik, Aixolako presa, Elgeta, Azkonabieta eta Galdaramiñotik igarota, Eibarrerako jaitsiera teknikoarekin eta Ermua eta Goitatik itzulita',
     'astorkigane': 'E-bike zirkuitu luzea Trabakuatik, Kortaguren, Astorkigane lepoa, Munitibar, Zenarruza eta Bolibartik barrena',
@@ -3554,6 +3561,7 @@ AIXOLA = {
 
 TITLES = {
     'ixuakalamua': 'Trabakua, Aginaga, Ixua eta Kalamua · E-bike ibilbidea — Herriko ibilbideak',
+    'preguntas': 'Ohiko galderak · Herriko ibilbideak',
     'agua': 'Ur iturriak · Herriko ibilbideak',
     'galdaraminio': 'Trabakua, Elgeta, Galdaramiño eta Eibar Ipuruatik · E-bike ibilbidea — Herriko ibilbideak',
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
@@ -6534,6 +6542,58 @@ AIXOLAINTXORTA = {
         'Ibilbide askotarikoa da: gailurrak, pistak eta bidezidorrak tartekatzen dira, eta Intxortako lubaki-gunea ezagutzeko aukera ematen du. Asentzioko lakutik igarotzea eta Egoarbitzara egindako azken igoerak Elgetako inguruko mendi eta paisaia ezberdinak ezagutzeko aukera ematen dute.',
 }
 
+PREGUNTAS = {
+    '<p class="eyebrow"><span>Dudas</span><span class="sep">/</span><span>Las fichas por dentro</span></p>':
+        '<p class="eyebrow"><span>Zalantzak</span><span class="sep">/</span><span>Fitxak barrutik</span></p>',
+    '<h1>Preguntas <em>frecuentes</em></h1>':
+        '<h1>Ohiko <em>galderak</em></h1>',
+    '<p class="full-name">Qu&eacute; quiere decir cada dato de una ficha, de d&oacute;nde sale y qu&eacute; se puede hacer con &eacute;l. Toca una pregunta para abrirla.</p>':
+        '<p class="full-name">Fitxa bateko datu bakoitzak zer esan nahi duen, nondik datorren eta zertarako balio duen. Ukitu galdera bat irekitzeko.</p>',
+    '<span class="faq-q">&iquest;Hace falta una bici el&eacute;ctrica para estas rutas?</span>':
+        '<span class="faq-q">Bizikleta elektrikoa behar da ibilbide hauetarako?</span>',
+    '<p>Depende de la ruta. Las que llevan la etiqueta <b>E-bike</b> est&aacute;n grabadas con bici el&eacute;ctrica, y alguna tiene subidas que con una bici normal se hacen muy largas: la de cemento de Osma a Zengotitagane es el ejemplo m&aacute;s claro, y est&aacute; avisado en las fichas que pasan por ella. Muchas de las dem&aacute;s se pueden hacer sin motor; lo que cambia es el tiempo que echas y las ganas con las que llegas arriba.</p>':
+        '<p>Ibilbidearen araberakoa da. <b>E-bike</b> etiketa daramatenak bizikleta elektrikoz grabatuta daude, eta batzuek bizikleta arruntarekin oso luze egiten diren igoerak dituzte: Osmatik Zengotitaganerako zementuzkoa da adibiderik argiena, eta hortik pasatzen diren fitxetan abisatuta dago. Beste asko motorrik gabe egin daitezke; aldatzen dena denbora da, eta gora zer gogorekin iristen zaren.</p>',
+    '<span class="faq-q">&iquest;Qu&eacute; significa el &laquo;Esfuerzo&raquo;: F&aacute;cil, Media o Dif&iacute;cil?</span>':
+        '<span class="faq-q">Zer esan nahi du &laquo;Esfortzua&raquo;k: Erraza, Ertaina edo Zaila?</span>',
+    '<p>Lo que cuesta el recorrido por sus dos datos duros: la <b>distancia</b> y el <b>desnivel acumulado</b>. No habla de dificultad t&eacute;cnica, solo de cu&aacute;nto vas a trabajar. Hoy hay 15 rutas F&aacute;ciles, 28 Medias y 22 Dif&iacute;ciles, y el filtro de la portada deja quedarse con las de un solo nivel.</p>':
+        '<p>Ibilbideak zer kostatzen duen, bere bi datu gogorren arabera: <b>distantzia</b> eta <b>metatutako desnibela</b>. Ez du zailtasun teknikoaz hitz egiten, zenbat lan egin beharko duzun baizik. Gaur egun 15 ibilbide Errazak dira, 28 Ertainak eta 22 Zailak, eta azaleko iragazkiak maila bakar bateko ibilbideekin gelditzeko aukera ematen du.</p>',
+    '<span class="faq-q">&iquest;Y la &laquo;Superficie&raquo;: Pista, Sendero o Mixta?</span>':
+        '<span class="faq-q">Eta &laquo;Azalera&raquo;: Pista, Bidexka edo Nahasia?</span>',
+    '<p><b>Pista</b> cuando casi todo va por camino ancho, de esos por los que pasa un coche o un tractor. <b>Sendero</b> cuando va por caminos estrechos de monte. <b>Mixta</b> cuando alterna los dos, que por aqu&iacute; es lo m&aacute;s habitual.</p>':
+        '<p><b>Pista</b>, ia dena bide zabaletik doanean, auto bat edo traktore bat pasatzen den horietatik. <b>Bidexka</b>, mendiko bide estuetatik doanean. <b>Nahasia</b>, biak txandakatzen dituenean, hemen ohikoena dena.</p>',
+    '<span class="faq-q">&iquest;De d&oacute;nde salen la distancia y el desnivel?</span>':
+        '<span class="faq-q">Nondik ateratzen dira distantzia eta desnibela?</span>',
+    '<p>La <b>distancia</b> se mide sobre el track GPX real de ese d&iacute;a, punto a punto. El <b>desnivel acumulado</b> no: ese viene de la fuente de la ruta &mdash;Wikiloc o el organizador de la carrera&mdash; porque sumar en bruto las subidas de un GPX se dispara hasta un 40 % seg&uacute;n el ruido del GPS, y cada aplicaci&oacute;n lo suaviza a su manera. Si tu reloj te da un n&uacute;mero algo distinto, es normal.</p>':
+        '<p><b>Distantzia</b> egun hartako benetako GPX trackaren gainean neurtzen da, puntuz puntu. <b>Metatutako desnibela</b> ez: hori ibilbidearen iturritik dator &mdash;Wikiloc edo lasterketaren antolatzailea&mdash;, GPX baten igoerak gordinik batuz gero % 40raino puztu daitekeelako GPSaren zaratarekin, eta aplikazio bakoitzak bere erara leuntzen duelako. Zure erlojuak zenbaki apur bat desberdina ematen badizu, normala da.</p>',
+    '<span class="faq-q">&iquest;Qu&eacute; diferencia hay entre el tiempo &laquo;A pie&raquo; y el de &laquo;Corriendo&raquo;?</span>':
+        '<span class="faq-q">Zer alde dago &laquo;Oinez&raquo; denboraren eta &laquo;Korrika&raquo; denboraren artean?</span>',
+    '<p><b>A pie</b> es una estimaci&oacute;n, la misma cuenta para todas las rutas: 6 km/h en llano m&aacute;s 10 minutos por cada 100 metros de subida, con un margen del 10 %. No cuenta las paradas. <b>Corriendo</b> y <b>Paseando</b> no se estiman: son tiempos reales, los que se tard&oacute; el d&iacute;a de la grabaci&oacute;n, y por eso solo salen en las rutas donde existe esa medida.</p>':
+        '<p><b>Oinez</b> estimazio bat da, kontu bera ibilbide guztietarako: 6 km/h lauan, gehi 10 minutu igoerako 100 metroko, % 10eko tartearekin. Ez ditu geldialdiak kontuan hartzen. <b>Korrika</b> eta <b>Paseoan</b> ez dira estimatzen: benetako denborak dira, grabazio egunean behar izan zirenak, eta horregatik neurri hori dagoen ibilbideetan bakarrik agertzen dira.</p>',
+    '<span class="faq-q">&iquest;Funciona la web en el monte, sin cobertura?</span>':
+        '<span class="faq-q">Mendian funtzionatzen du webak, estaldurarik gabe?</span>',
+    '<p>S&iacute;, las p&aacute;ginas que ya hayas abierto alguna vez con datos. Se quedan guardadas enteras en el m&oacute;vil &mdash;el texto, el perfil, las fotos y el GPX&mdash; y ah&iacute; siguen aunque te quedes sin se&ntilde;al. Lo &uacute;nico que no se puede guardar es el mapa de fondo: las teselas son de OpenStreetMap y del IGN y sus condiciones de uso no dejan almacenarlas, as&iacute; que sin cobertura ver&aacute;s el trazado dibujado sobre un fondo vac&iacute;o.</p>':
+        '<p>Bai, datuekin noizbait ireki dituzun orrialdeak. Osorik gordetzen dira mugikorrean &mdash;testua, profila, argazkiak eta GPXa&mdash; eta hor jarraitzen dute seinalerik gabe geratuta ere. Gorde ezin dena atzeko mapa da: lauzak OpenStreetMaprenak eta IGNrenak dira eta haien erabilera baldintzek ez dute biltegiratzen uzten, beraz estaldurarik gabe trazadura hutsik dagoen hondo baten gainean marraztuta ikusiko duzu.</p>',
+    '<span class="faq-q">&iquest;Hay agua por el camino?</span>':
+        '<span class="faq-q">Urik ba al dago bidean?</span>',
+    '<p>Hay un mapa con las 35 fuentes que salen en las rutas, con una nota de d&oacute;nde est&aacute; cada una y qu&eacute; rutas pasan por ella: <a href="agua.html">el mapa de fuentes</a>. El caudal cambia con la &eacute;poca del a&ntilde;o; donde se sabe que lleva agua todo el a&ntilde;o, est&aacute; dicho.</p>':
+        '<p>Ibilbideetan agertzen diren 35 iturrien mapa bat dago, bakoitza non dagoen eta zein ibilbide pasatzen diren hortik esaten duen ohar batekin: <a href="agua.html">iturrien mapa</a>. Emaria urtaroarekin aldatzen da; urte osoan ura duela jakiten denean, esanda dago.</p>',
+    '<span class="faq-q">&iquest;Me puedo descargar los tracks?</span>':
+        '<span class="faq-q">Trackak jaitsi ditzaket?</span>',
+    '<p>Cada ruta tiene su <b>GPX</b> y su <b>KML</b> debajo del mapa, y el enlace a Wikiloc cuando lo hay. Y est&aacute;n tambi&eacute;n <b>las 65 juntas en un zip</b>, para meterlas de golpe en el GPS o en el m&oacute;vil.</p>':
+        '<p>Ibilbide bakoitzak bere <b>GPXa</b> eta bere <b>KMLa</b> ditu maparen azpian, eta Wikiloceko esteka dagoenean. Eta <b>65ak zip bakar batean</b> ere badaude, denak batera GPSan edo mugikorrean sartzeko.</p>',
+    '<span class="faq-q">&iquest;Hay rutas para ir con ni&ntilde;os?</span>':
+        '<span class="faq-q">Haurrekin joateko ibilbiderik ba al dago?</span>',
+    '<p>S&iacute;. En la portada, el filtro <b>Esfuerzo: F&aacute;cil</b> deja las 15 m&aacute;s cortas y con menos desnivel. Una buena para empezar es el <a href="garaikanala.html">paseo por Garai y el antiguo canal de agua</a>: 4 km casi llanos, con cangrejos en el cauce.</p>':
+        '<p>Bai. Azalean, <b>Esfortzua: Erraza</b> iragazkiak 15 laburrenak eta desnibel gutxienekoak uzten ditu. Hasteko ona da <a href="garaikanala.html">Garai eta antzinako ubidetik egiten den ibilaldia</a>: 4 km ia lauak, karramarroekin ibilguan.</p>',
+    '<span class="faq-q">&iquest;Por qu&eacute; algunas rutas coinciden con carreras de monta&ntilde;a?</span>':
+        '<span class="faq-q">Zergatik egiten dute bat ibilbide batzuek mendi lasterketekin?</span>',
+    '<p>Porque son los mismos caminos. Por esta zona pasan varias carreras de monta&ntilde;a &mdash;el Asto Trail de Garai, la <a href="ahuntzen.html">Ahuntzen Lasterketa</a> de Elgeta, las <a href="hirutxikiak.html">Hiru Txikiak</a> de Ermua&mdash; y cuando una ruta comparte tramo con alguna, se dice y se enlaza. Tiene una ventaja pr&aacute;ctica: los meses siguientes a la carrera el sendero est&aacute; pisado y limpio.</p>':
+        '<p>Bide berberak direlako. Inguru honetatik mendi lasterketa batzuk pasatzen dira &mdash;Garaiko Asto Traila, Elgetako <a href="ahuntzen.html">Ahuntzen Lasterketa</a>, Ermuko <a href="hirutxikiak.html">Hiru Txikiak</a>&mdash; eta ibilbide batek baten batekin tartea partekatzen duenean, esan eta lotu egiten da. Abantaila praktiko bat du: lasterketaren ondorengo hilabeteetan bidexka zapalduta eta garbi egoten da.</p>',
+    '<p class="faq-pie">&iquest;Falta alguna? Escr&iacute;beme a <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a> y la a&ntilde;ado.</p>':
+        '<p class="faq-pie">Besteren bat falta da? Idatzi <a class="underline-link" href="mailto:trabakutik@gmail.com">trabakutik@gmail.com</a> helbidera eta gehituko dut.</p>',
+}
+
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
@@ -6602,5 +6662,6 @@ PAGE_STRINGS = {
     'santaeufemia': SANTAEUFEMIA,
     'markinaurjauziak': MARKINAURJAUZIAK,
     'agua': AGUA,
+    'preguntas': PREGUNTAS,
     'aviso-legal': AVISO_LEGAL,
 }

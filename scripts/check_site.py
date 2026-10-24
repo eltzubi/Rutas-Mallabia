@@ -99,7 +99,7 @@ def text(node):
 
 # Las paginas que no son fichas de ruta: no tienen GPX, ni perfil, ni
 # formulario de incidencias, ni tarjeta en la portada.
-NO_RUTA = ('mallabia', 'agua', 'aviso-legal')
+NO_RUTA = ('mallabia', 'preguntas', 'agua', 'aviso-legal')
 
 
 def main():
@@ -122,7 +122,7 @@ def main():
             filename = build.out_name(page, lang)
             document = Document((ROOT / filename).read_text())
             nodes = document.nodes
-            if page != 'aviso-legal':   # la unica pagina sin mapa
+            if page not in ('aviso-legal', 'preguntas'):   # las dos paginas sin mapa
                 require(any('leaflet.css' in n['attrs'].get('href', '') for n in nodes),
                         f'{filename}: missing Leaflet stylesheet')
             theme = next(n for n in nodes if n['attrs'].get('id') == 'themeToggle')

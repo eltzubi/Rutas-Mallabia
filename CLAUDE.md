@@ -317,6 +317,19 @@ se dispara **cuando el conjunto visible cambia de verdad** (la firma de los `hre
 dar un salto por cada tecla del buscador que no quita ninguna ruta; la primera vez solo se anota la
 firma, porque de ese encuadre inicial ya se ocupa `fit()`. Solo en la portada.
 
+**Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
+`aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
+`NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y
+`preguntas` es ademas la segunda pagina sin mapa. Diez preguntas en `<details name="faq">` nativo:
+sin una linea de JavaScript, con teclado, y el propio navegador cierra la anterior al abrir otra
+(«que se cierren facil», lo pidio el autor). Si un navegador viejo no entiende `name`, lo unico que
+pasa es que se pueden quedar varias abiertas. El color sale de la actividad, como en todo el sitio:
+naranja las de bici (`data-tema="bici"`), verde las de andar (`data-tema="pie"`) y el color de
+enlace las generales, que no es ninguna de las dos y por eso no se lee como una actividad.
+**Sin JSON-LD de `FAQPage` a proposito**: desde agosto de 2023 Google solo muestra ese resultado
+enriquecido a webs oficiales de sanidad y administracion, asi que seria un segundo sitio donde
+mantener las mismas diez respuestas, en dos idiomas, a cambio de nada.
+
 **El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
 del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del
 primer punto del track de esa ruta; `src/js/weather.js` pide el pronostico y lo rellena. Si no hay

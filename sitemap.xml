@@ -788,6 +788,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/aixolaintxorta.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/preguntas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/preguntas.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/preguntas.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/preguntas.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/preguntas.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/preguntas.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/agua.html</loc>
     <lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/agua.html"/>
