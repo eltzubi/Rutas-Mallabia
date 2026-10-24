@@ -37,7 +37,7 @@
     es: {
       abrir: 'Dibujar un trazado', cerrar: 'Cerrar el dibujo',
       titulo: 'Tu trazado', arranque: 'Toca el mapa sobre un camino para empezar.',
-      sigue: 'Toca otro punto y el camino se calcula solo, por los senderos de las rutas.',
+      sigue: 'Toca otro punto: el camino va por los senderos de las rutas.',
       lejos: 'Ahi no pasa ninguna ruta. Toca mas cerca de un camino dibujado.',
       sinpaso: 'No hay camino hasta ahi dentro de la red.',
       deshacer: 'Deshacer', borrar: 'Borrar', guardar: 'Guardar', gpx: 'Bajar GPX',
@@ -50,7 +50,7 @@
     eu: {
       abrir: 'Marrazki bat egin', cerrar: 'Marrazkia itxi',
       titulo: 'Zure marrazkia', arranque: 'Ukitu mapa bide baten gainean hasteko.',
-      sigue: 'Ukitu beste puntu bat eta bidea bakarrik kalkulatzen da, ibilbideetako bidexketatik.',
+      sigue: 'Ukitu beste puntu bat: bidea ibilbideetako bidexketatik doa.',
       lejos: 'Hor ez da ibilbiderik pasatzen. Ukitu marraztutako bide batetik gertuago.',
       sinpaso: 'Ez dago biderik hormaino sarearen barruan.',
       deshacer: 'Desegin', borrar: 'Ezabatu', guardar: 'Gorde', gpx: 'GPXa jaitsi',
@@ -245,8 +245,9 @@
     readout.className = 'draw-readout';
     readout.hidden = true;
     readout.innerHTML = '<div class="draw-perfil-caja"></div>' +
+                        '<div class="draw-cifras">' +
                         '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
-                        '<p class="draw-ult" hidden></p>' +
+                        '<p class="draw-ult" hidden></p></div>' +
                         '<p class="draw-msg"></p>';
     marco.appendChild(readout);
 
