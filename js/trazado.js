@@ -191,6 +191,11 @@
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
+    function quitaLinea(){
+      if (!linea) return;
+      linea.forEach(function(l){ map.removeLayer(l); });
+      linea = null;
+    }
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -239,6 +244,23 @@
     var elSaved = panel.querySelector('.draw-saved');
     var fab = document.querySelector('.view-fab');
 
+    // El trazo lleva un reborde por debajo, del color del fondo de la web:
+    // asi se lee igual sobre el naranja de bici, el verde de a pie o el
+    // callejero, y no hace falta apagar los 65 tracks mas de la cuenta.
+    function dibujaLinea(coords){
+      var fondo = getComputedStyle(document.documentElement)
+        .getPropertyValue('--ground').trim() || '#020617';
+      var borde = L.polyline(coords, {
+        color: fondo, weight: 10, opacity: .55, lineCap: 'round',
+        interactive: false, className: 'draw-line'
+      }).addTo(map);
+      var trazo = L.polyline(coords, {
+        color: COLOR, weight: 5, opacity: 1, dashArray: '1 9', lineCap: 'round',
+        interactive: false, className: 'draw-line'
+      }).addTo(map);
+      return [borde, trazo];
+    }
+
     function recorrido(){
       var out = [];
       tramos.forEach(function(tr, i){
@@ -261,15 +283,10 @@
 
     function pinta(){
       var pts = recorrido();
-      if (linea) { map.removeLayer(linea); linea = null; }
+      quitaLinea();
       puntitos.forEach(function(m){ map.removeLayer(m); });
       puntitos = [];
-      if (pts.length > 1) {
-        linea = L.polyline(pts.map(function(p){ return [p[0], p[1]]; }), {
-          color: COLOR, weight: 5, opacity: 1, dashArray: '1 9', lineCap: 'round',
-          className: 'draw-line'
-        }).addTo(map);
-      }
+      if (pts.length > 1) linea = dibujaLinea(pts.map(function(p){ return [p[0], p[1]]; }));
       anclas.forEach(function(id, i){
         var n = red.nodos[id];
         puntitos.push(L.marker([n[0], n[1]], {
@@ -349,13 +366,10 @@
         var g = leeGuardados()[+b.dataset.i];
         if (!g) return;
         anclas = []; tramos = [];
-        if (linea) map.removeLayer(linea);
+        quitaLinea();
         puntitos.forEach(function(m){ map.removeLayer(m); }); puntitos = [];
-        linea = L.polyline(g.coords.map(function(p){ return [p[0], p[1]]; }), {
-          color: COLOR, weight: 5, opacity: 1, dashArray: '1 9', lineCap: 'round',
-          className: 'draw-line'
-        }).addTo(map);
-        map.fitBounds(linea.getBounds(), { padding: [30, 30] });
+        linea = dibujaLinea(g.coords.map(function(p){ return [p[0], p[1]]; }));
+        map.fitBounds(linea[1].getBounds(), { padding: [30, 30] });
         elTot.hidden = false;
         elKm.textContent = g.km + ' km';
         elDes.textContent = g.subida ? ' · +' + g.subida + ' m ' + t.aprox : '';

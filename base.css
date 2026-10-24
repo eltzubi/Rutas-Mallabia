@@ -436,7 +436,10 @@ body{
 [data-map-src].is-drawing .leaflet-marker-pane{ pointer-events:none; }
 /* Y se apagan un poco para que el trazo azul se vea encima de 65 tracks
    naranjas y verdes. El propio trazo lleva .draw-line y se queda entero. */
-[data-map-src].is-drawing .leaflet-overlay-pane path:not(.draw-line){ opacity:.3; }
+[data-map-src].is-drawing .leaflet-overlay-pane path:not(.draw-line){ opacity:.55; }
+/* Estaba en .3 y el autor avisó de que el verde y el naranja casi no se
+   veían. Con .55 se siguen leyendo y el trazo azul manda igual, porque
+   lleva su propio reborde debajo (ver trazado.js). */
 /* Debajo del mapa, no flotando encima: tapaba justo la zona donde hay que
    ir tocando. Lo pidio el autor. */
 .draw-panel{
