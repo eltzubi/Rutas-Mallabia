@@ -237,12 +237,41 @@
     if ('ResizeObserver' in window) new ResizeObserver(ajustaAncho).observe(marco);
     else window.addEventListener('resize', ajustaAncho);
 
+    // Con el mapa ampliado, el panel (Deshacer, Guardar, Bajar GPX) se iba
+    // por debajo de la pantalla y habia que ir bajando a buscarlo cada vez.
+    // Mientras se dibuja, el mapa se queda exactamente con el alto que sobra
+    // despues del panel y de la cabecera pegajosa, y la pagina se coloca
+    // encima: mapa entero y botones a la vista, sin scroll.
+    var CABECERA = 62;
+    var altoPrevio = '';
+    function encaja(){
+      if (!activo) return;
+      // En el movil la barra de «Lista / Todas / A pie…» va fija abajo y se
+      // come el final del panel: hay que descontarla.
+      var abajo = 0, barra = document.querySelector('.finder-toolbar');
+      if (barra) {
+        var r = barra.getBoundingClientRect();
+        if (getComputedStyle(barra).position === 'fixed' && r.bottom > window.innerHeight - 6) abajo = r.height;
+      }
+      var sitio = window.innerHeight - panel.offsetHeight - CABECERA - 26 - abajo;
+      marco.style.aspectRatio = 'auto';
+      marco.style.height = Math.max(260, sitio) + 'px';
+      if (map && map.invalidateSize) map.invalidateSize();
+    }
+    function sueltaEncaje(){
+      marco.style.aspectRatio = '';
+      marco.style.height = altoPrevio;
+      if (map && map.invalidateSize) setTimeout(function(){ map.invalidateSize(); }, 60);
+    }
+    window.addEventListener('resize', encaja);
+
     var elMsg = panel.querySelector('.draw-msg');
     var elTot = panel.querySelector('.draw-tot');
     var elKm = panel.querySelector('.draw-km');
     var elDes = panel.querySelector('.draw-des');
     var elSaved = panel.querySelector('.draw-saved');
     var fab = document.querySelector('.view-fab');
+    var arriba = document.getElementById('toTop');
 
     // El trazo lleva un reborde por debajo, del color del fondo de la web:
     // asi se lee igual sobre el naranja de bici, el verde de a pie o el
@@ -300,6 +329,9 @@
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
       elDes.textContent = tt.conAltura && tt.subida ? ' · +' + tt.subida + ' m ' + t.aprox : '';
       elMsg.textContent = anclas.length ? t.sigue : t.arranque;
+      // El panel crece al aparecer los totales o un aviso: el mapa tiene que
+      // devolver ese alto para que los botones no se vayan de la pantalla.
+      encaja();
     }
 
     function alTocar(e){
@@ -319,6 +351,7 @@
       var recto = metros(red.nodos[ultimo], red.nodos[n]);
       if (recto > 30 && largo > recto * 2.5 && largo - recto > 300) {
         elMsg.textContent = t.rodeo.replace('%s', (largo / 1000).toFixed(2).replace('.', ','));
+        encaja();
       }
     }
 
@@ -407,7 +440,9 @@
       btn.classList.remove('is-active');
       btn.setAttribute('aria-label', t.abrir);
       caja.classList.remove('is-drawing');
+      sueltaEncaje();
       if (fab) fab.classList.remove('is-hidden-behind-panel');
+      if (arriba) arriba.style.display = '';
       map.off('click', alTocar);
     }
 
@@ -421,9 +456,15 @@
       // existe la clase con la que el mapa lo aparta cuando abre la ficha de
       // una ruta; se usa la misma.
       if (fab) fab.classList.add('is-hidden-behind-panel');
+      // Y el boton de «volver arriba», que se planta encima de «Bajar GPX».
+      if (arriba) arriba.style.display = 'none';
       if (d.cerrarPanel) { try { d.cerrarPanel(); } catch (e) {} }
+      altoPrevio = marco.style.height || '';
       map.on('click', alTocar);
       pintaGuardados();
+      encaja();
+      window.scrollTo({ top: Math.max(0, marco.getBoundingClientRect().top + window.pageYOffset - CABECERA),
+                        behavior: 'smooth' });
       if (red) { pinta(); return; }
       if (cargando) return;
       cargando = true;

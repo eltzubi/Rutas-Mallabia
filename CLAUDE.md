@@ -362,6 +362,13 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   `.route-map-box` de fuera. Con ella, los 65 tracks y sus marcadores pierden el `pointer-events`:
   sin eso, tocar encima de una ruta abría su ficha y el toque nunca llegaba al mapa. Y se bajan al
   30 % de opacidad para que el trazo azul se vea; el propio trazo lleva `.draw-line` y se libra.
+- Al entrar en modo dibujo **el mapa se queda con el alto que sobra** después del panel, de la
+  cabecera pegajosa y, en el móvil, de la barra fija de abajo («Lista / Todas / A pie…»), y la
+  página se coloca encima. Con el mapa ampliado, el panel se iba por debajo de la pantalla y había
+  que bajar a buscar «Deshacer» o «Guardar» después de cada toque. Se recalcula cada vez que el
+  panel cambia de alto (aparecen los totales, sale el aviso de un rodeo) y al girar el móvil.
+  Mientras dura se esconden el botón flotante de «Lista» y el de «volver arriba», que caían encima
+  de los botones del panel.
 - El panel va **debajo del mapa, en el flujo de la página**, no flotando encima: ahí tapaba justo la
   zona donde hay que ir tocando. Toma el ancho de la caja del mapa (un `ResizeObserver`), que es
   cuadrada y más estrecha que el texto de alrededor, y mientras está abierto se aparta el botón
