@@ -99,9 +99,15 @@
       for (var i = 0; i < pts.length; i++) {
         if (i > 0) {
           var a = pts[i - 1], b = pts[i], largo = metros(a, b);
+          // La altura del punto de relleno se interpola entre los dos puntos
+          // grabados que tiene a los lados. Sin esto, el GPX que se baja
+          // salia con altura solo en uno de cada cinco puntos.
+          var ea = alt ? alt[i - 1] : null, eb = alt ? alt[i] : null;
+          var hayE = typeof ea === 'number' && typeof eb === 'number';
           for (var k = 1; k * PASO_M < largo; k++) {
             var f = k * PASO_M / largo;
             var m = id([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
+            if (hayE && nodos[m][2] === null) nodos[m][2] = Math.round(ea + (eb - ea) * f);
             if (prev >= 0) une(prev, m);
             prev = m;
           }
@@ -191,6 +197,10 @@
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
+    // Un trazado reabierto de los guardados no tiene anclas ni tramos: solo
+    // sus coordenadas. Sin esto, «Bajar GPX» no hacia nada despues de abrir
+    // uno guardado, porque el recorrido se armaba solo desde los tramos.
+    var cargado = null;
 
     function icono(p){
       return '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"' +
@@ -309,6 +319,7 @@
     }
 
     function recorrido(){
+      if (!tramos.length && cargado) return cargado;
       var out = [];
       tramos.forEach(function(tr, i){
         for (var k = (i ? 1 : 0); k < tr.length; k++) out.push(red.nodos[tr[k]]);
@@ -353,7 +364,7 @@
       if (!activo || !red) return;
       var n = nodoCerca(red, e.latlng.lat, e.latlng.lng);
       if (n < 0) { elMsg.textContent = t.lejos; return; }
-      if (!anclas.length) { anclas.push(n); tramos.push([n]); pinta(); return; }
+      if (!anclas.length) { cargado = null; anclas.push(n); tramos.push([n]); pinta(); return; }
       var ultimo = anclas[anclas.length - 1];
       var tr = camino(red, ultimo, n);
       if (!tr) { elMsg.textContent = t.sinpaso; return; }
@@ -412,6 +423,7 @@
         var g = leeGuardados()[+b.dataset.i];
         if (!g) return;
         anclas = []; tramos = [];
+        cargado = g.coords;
         quitaLinea();
         puntitos.forEach(function(m){ map.removeLayer(m); }); puntitos = [];
         linea = dibujaLinea(g.coords.map(function(p){ return [p[0], p[1]]; }));
@@ -432,8 +444,8 @@
       var b = e.target.closest('button');
       if (!b) return;
       var a = b.dataset.a;
-      if (a === 'undo') { anclas.pop(); tramos.pop(); pinta(); }
-      else if (a === 'clear') { anclas = []; tramos = []; pinta(); }
+      if (a === 'undo') { cargado = null; anclas.pop(); tramos.pop(); pinta(); }
+      else if (a === 'clear') { cargado = null; anclas = []; tramos = []; pinta(); }
       else if (a === 'gpx') { gpx(); }
       else if (a === 'list') { pintaGuardados(); saved.hidden = !saved.hidden; }
       else if (a === 'save') {
