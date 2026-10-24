@@ -184,94 +184,107 @@
   document.addEventListener('mapa:listo', function(ev){
     var d = ev.detail;
     if (!d.esPortada || !d.map || !d.L) return;
-    var L = d.L, map = d.map, caja = d.caja;
+    var L = d.L, map = d.map, caja = d.caja, marco = caja.parentElement;
     var t = T[document.documentElement.lang === 'eu' ? 'eu' : 'es'];
 
     var red = null, cargando = false;
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
-    function quitaLinea(){
-      if (!linea) return;
-      linea.forEach(function(l){ map.removeLayer(l); });
-      linea = null;
-    }
 
+    function icono(p){
+      return '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"' +
+        ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + '</svg>';
+    }
+    var ICO = {
+      lapiz: '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>' +
+             '<path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>',
+      undo:  '<path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10H9"/>',
+      clear: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/>',
+      save:  '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>',
+      gpx:   '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>',
+      lista: '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>'
+    };
+
+    // El lapiz, arriba a la derecha, debajo del boton de ampliar.
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'map-draw-btn';
     btn.setAttribute('aria-label', t.abrir);
     btn.title = t.abrir;
-    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"' +
-      ' stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-      '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>' +
-      '<path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>';
-    caja.parentElement.appendChild(btn);
+    btn.innerHTML = icono(ICO.lapiz);
+    marco.appendChild(btn);
 
-    var panel = document.createElement('div');
-    panel.className = 'draw-panel';
-    panel.hidden = true;
-    panel.innerHTML =
-      '<div class="draw-head"><b>' + t.titulo + '</b>' +
-      '<button type="button" class="draw-close" aria-label="' + t.cerrar + '">&times;</button></div>' +
-      '<p class="draw-msg"></p>' +
-      '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
-      '<div class="draw-acts">' +
-      '<button type="button" class="draw-b" data-a="undo">' + t.deshacer + '</button>' +
-      '<button type="button" class="draw-b" data-a="clear">' + t.borrar + '</button>' +
-      '<button type="button" class="draw-b" data-a="save">' + t.guardar + '</button>' +
-      '<button type="button" class="draw-b" data-a="gpx">' + t.gpx + '</button>' +
-      '</div>' +
-      '<div class="draw-saved"></div>' +
-      '<p class="draw-nota">' + t.aviso + '</p>';
-    // El panel va DEBAJO del mapa, no encima: flotando tapaba un buen
-    // trozo justo donde hay que ir tocando (lo pidio el autor, «que el
-    // mapa quede mas limpio»). Se cuelga detras de la caja del mapa, en
-    // el flujo normal de la pagina.
-    var marco = caja.parentElement;
-    marco.parentElement.insertBefore(panel, marco.nextSibling);
-    // Y con el ancho del mapa, no el de la columna: la caja del mapa es
-    // cuadrada y mas estrecha que el texto de alrededor.
-    function ajustaAncho(){ panel.style.maxWidth = marco.offsetWidth + 'px'; }
-    ajustaAncho();
-    if ('ResizeObserver' in window) new ResizeObserver(ajustaAncho).observe(marco);
-    else window.addEventListener('resize', ajustaAncho);
+    // Y las opciones en columna, justo debajo del lapiz y dentro del mapa:
+    // el autor las queria ahi, en una esquina y en vertical, para que el
+    // mapa se lleve casi toda la pantalla. Antes iban en un panel ancho
+    // debajo del mapa.
+    var tools = document.createElement('div');
+    tools.className = 'draw-tools';
+    tools.hidden = true;
+    tools.innerHTML = [['undo', t.deshacer], ['clear', t.borrar], ['save', t.guardar],
+                       ['gpx', t.gpx], ['list', t.guardados]].map(function(par){
+      var k = par[0] === 'list' ? 'lista' : par[0];
+      return '<button type="button" class="draw-t" data-a="' + par[0] + '" title="' + par[1] +
+             '" aria-label="' + par[1] + '">' + icono(ICO[k]) + '</button>';
+    }).join('');
+    marco.appendChild(tools);
 
-    // Con el mapa ampliado, el panel (Deshacer, Guardar, Bajar GPX) se iba
-    // por debajo de la pantalla y habia que ir bajando a buscarlo cada vez.
-    // Mientras se dibuja, el mapa se queda exactamente con el alto que sobra
-    // despues del panel y de la cabecera pegajosa, y la pagina se coloca
-    // encima: mapa entero y botones a la vista, sin scroll.
+    // Los totales y el aviso, en una pastilla pequena abajo a la izquierda.
+    var readout = document.createElement('div');
+    readout.className = 'draw-readout';
+    readout.hidden = true;
+    readout.innerHTML = '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
+                        '<p class="draw-msg"></p>';
+    marco.appendChild(readout);
+
+    var saved = document.createElement('div');
+    saved.className = 'draw-saved';
+    saved.hidden = true;
+    marco.appendChild(saved);
+
+    var elMsg = readout.querySelector('.draw-msg');
+    var elTot = readout.querySelector('.draw-tot');
+    var elKm = readout.querySelector('.draw-km');
+    var elDes = readout.querySelector('.draw-des');
+    var fab = document.querySelector('.view-fab');
+    var arriba = document.getElementById('toTop');
+
+    // Casi toda la pantalla para el mapa mientras se dibuja: se descuentan
+    // la cabecera pegajosa y, en el movil, la barra fija de abajo («Lista /
+    // Todas / A pie…»), que el autor quiere seguir viendo.
     var CABECERA = 62;
     var altoPrevio = '';
     function encaja(){
       if (!activo) return;
-      // En el movil la barra de «Lista / Todas / A pie…» va fija abajo y se
-      // come el final del panel: hay que descontarla.
       var abajo = 0, barra = document.querySelector('.finder-toolbar');
       if (barra) {
         var r = barra.getBoundingClientRect();
         if (getComputedStyle(barra).position === 'fixed' && r.bottom > window.innerHeight - 6) abajo = r.height;
       }
-      var sitio = window.innerHeight - panel.offsetHeight - CABECERA - 26 - abajo;
+      // De lado a lado: la caja del mapa vive en una columna centrada mas
+      // estrecha que la pantalla, asi que se la saca de ella con un margen
+      // negativo. El ancho se toma de clientWidth y no de 100vw, que incluye
+      // la barra de desplazamiento y dejaria la pagina moviendose de lado.
+      marco.style.marginLeft = '0px';
+      marco.style.width = '';
+      var izq = marco.getBoundingClientRect().left;
+      marco.style.marginLeft = (-izq) + 'px';
+      marco.style.width = document.documentElement.clientWidth + 'px';
+      marco.style.borderRadius = '0';
       marco.style.aspectRatio = 'auto';
-      marco.style.height = Math.max(260, sitio) + 'px';
+      marco.style.height = Math.max(300, window.innerHeight - CABECERA - abajo - 14) + 'px';
       if (map && map.invalidateSize) map.invalidateSize();
     }
     function sueltaEncaje(){
       marco.style.aspectRatio = '';
       marco.style.height = altoPrevio;
+      marco.style.marginLeft = '';
+      marco.style.width = '';
+      marco.style.borderRadius = '';
       if (map && map.invalidateSize) setTimeout(function(){ map.invalidateSize(); }, 60);
     }
     window.addEventListener('resize', encaja);
-
-    var elMsg = panel.querySelector('.draw-msg');
-    var elTot = panel.querySelector('.draw-tot');
-    var elKm = panel.querySelector('.draw-km');
-    var elDes = panel.querySelector('.draw-des');
-    var elSaved = panel.querySelector('.draw-saved');
-    var fab = document.querySelector('.view-fab');
-    var arriba = document.getElementById('toTop');
 
     // El trazo lleva un reborde por debajo, del color del fondo de la web:
     // asi se lee igual sobre el naranja de bici, el verde de a pie o el
@@ -288,6 +301,11 @@
         interactive: false, className: 'draw-line'
       }).addTo(map);
       return [borde, trazo];
+    }
+    function quitaLinea(){
+      if (!linea) return;
+      linea.forEach(function(l){ map.removeLayer(l); });
+      linea = null;
     }
 
     function recorrido(){
@@ -329,9 +347,6 @@
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
       elDes.textContent = tt.conAltura && tt.subida ? ' · +' + tt.subida + ' m ' + t.aprox : '';
       elMsg.textContent = anclas.length ? t.sigue : t.arranque;
-      // El panel crece al aparecer los totales o un aviso: el mapa tiene que
-      // devolver ese alto para que los botones no se vayan de la pantalla.
-      encaja();
     }
 
     function alTocar(e){
@@ -351,7 +366,6 @@
       var recto = metros(red.nodos[ultimo], red.nodos[n]);
       if (recto > 30 && largo > recto * 2.5 && largo - recto > 300) {
         elMsg.textContent = t.rodeo.replace('%s', (largo / 1000).toFixed(2).replace('.', ','));
-        encaja();
       }
     }
 
@@ -381,20 +395,19 @@
     }
     function pintaGuardados(){
       var v = leeGuardados();
-      if (!v.length) { elSaved.innerHTML = ''; return; }
+      if (!v.length) { saved.innerHTML = '<p class="draw-saved-t">' + t.guardados + '</p>'; return; }
       var html = '<p class="draw-saved-t">' + t.guardados + '</p><ul>';
       v.forEach(function(g, i){
         html += '<li><button type="button" class="draw-open" data-i="' + i + '">' +
           g.nombre + ' <span>' + g.km + ' km</span></button>' +
           '<button type="button" class="draw-del" data-i="' + i + '" aria-label="' + t.quitar + '">&times;</button></li>';
       });
-      elSaved.innerHTML = html + '</ul>';
+      saved.innerHTML = html + '</ul>';
     }
 
-    panel.addEventListener('click', function(e){
+    saved.addEventListener('click', function(e){
       var b = e.target.closest('button');
       if (!b) return;
-      if (b.classList.contains('draw-close')) { apaga(); return; }
       if (b.classList.contains('draw-open')) {
         var g = leeGuardados()[+b.dataset.i];
         if (!g) return;
@@ -407,15 +420,22 @@
         elKm.textContent = g.km + ' km';
         elDes.textContent = g.subida ? ' · +' + g.subida + ' m ' + t.aprox : '';
         elMsg.textContent = g.nombre;
+        saved.hidden = true;
         return;
       }
       if (b.classList.contains('draw-del')) {
-        var v = leeGuardados(); v.splice(+b.dataset.i, 1); escribeGuardados(v); pintaGuardados(); return;
+        var v = leeGuardados(); v.splice(+b.dataset.i, 1); escribeGuardados(v); pintaGuardados();
       }
+    });
+
+    tools.addEventListener('click', function(e){
+      var b = e.target.closest('button');
+      if (!b) return;
       var a = b.dataset.a;
       if (a === 'undo') { anclas.pop(); tramos.pop(); pinta(); }
       else if (a === 'clear') { anclas = []; tramos = []; pinta(); }
       else if (a === 'gpx') { gpx(); }
+      else if (a === 'list') { pintaGuardados(); saved.hidden = !saved.hidden; }
       else if (a === 'save') {
         var pts = recorrido();
         if (pts.length < 2) return;
@@ -431,14 +451,16 @@
         });
         escribeGuardados(v2.slice(0, 12));
         pintaGuardados();
+        saved.hidden = false;
       }
     });
 
     function apaga(){
       activo = false;
-      panel.hidden = true;
+      tools.hidden = true; readout.hidden = true; saved.hidden = true;
       btn.classList.remove('is-active');
       btn.setAttribute('aria-label', t.abrir);
+      btn.title = t.abrir;
       caja.classList.remove('is-drawing');
       sueltaEncaje();
       if (fab) fab.classList.remove('is-hidden-behind-panel');
@@ -448,20 +470,18 @@
 
     function enciende(){
       activo = true;
-      panel.hidden = false;
+      tools.hidden = false; readout.hidden = false;
       btn.classList.add('is-active');
       btn.setAttribute('aria-label', t.cerrar);
+      btn.title = t.cerrar;
       caja.classList.add('is-drawing');
-      // El boton flotante de «Lista» se planta justo encima del panel. Ya
-      // existe la clase con la que el mapa lo aparta cuando abre la ficha de
-      // una ruta; se usa la misma.
+      // El boton flotante de «Lista» y el de «volver arriba» caen justo
+      // encima de la pastilla y de la columna de opciones.
       if (fab) fab.classList.add('is-hidden-behind-panel');
-      // Y el boton de «volver arriba», que se planta encima de «Bajar GPX».
       if (arriba) arriba.style.display = 'none';
       if (d.cerrarPanel) { try { d.cerrarPanel(); } catch (e) {} }
       altoPrevio = marco.style.height || '';
       map.on('click', alTocar);
-      pintaGuardados();
       encaja();
       window.scrollTo({ top: Math.max(0, marco.getBoundingClientRect().top + window.pageYOffset - CABECERA),
                         behavior: 'smooth' });

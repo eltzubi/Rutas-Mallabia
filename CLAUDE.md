@@ -362,19 +362,20 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   `.route-map-box` de fuera. Con ella, los 65 tracks y sus marcadores pierden el `pointer-events`:
   sin eso, tocar encima de una ruta abría su ficha y el toque nunca llegaba al mapa. Y se bajan al
   30 % de opacidad para que el trazo azul se vea; el propio trazo lleva `.draw-line` y se libra.
-- Al entrar en modo dibujo **el mapa se queda con el alto que sobra** después del panel, de la
-  cabecera pegajosa y, en el móvil, de la barra fija de abajo («Lista / Todas / A pie…»), y la
-  página se coloca encima. Con el mapa ampliado, el panel se iba por debajo de la pantalla y había
-  que bajar a buscar «Deshacer» o «Guardar» después de cada toque. Se recalcula cada vez que el
-  panel cambia de alto (aparecen los totales, sale el aviso de un rodeo) y al girar el móvil.
-  Mientras dura se esconden el botón flotante de «Lista» y el de «volver arriba», que caían encima
-  de los botones del panel.
-- El panel va **debajo del mapa, en el flujo de la página**, no flotando encima: ahí tapaba justo la
-  zona donde hay que ir tocando. Toma el ancho de la caja del mapa (un `ResizeObserver`), que es
-  cuadrada y más estrecha que el texto de alrededor, y mientras está abierto se aparta el botón
-  flotante de «Lista» con la clase `is-hidden-behind-panel`, la misma que ya usa el mapa al abrir la
-  ficha de una ruta. Antes de esto el modo dibujo ampliaba el mapa solo en el móvil, para que el
-  panel flotante no se comiera la pantalla; ya no hace falta y se quitó.
+- **Todo vive dentro del mapa, y el mapa se lleva casi la pantalla entera.** Al entrar en modo
+  dibujo, `encaja()` le da a la caja el alto que queda tras la cabecera pegajosa y, en el móvil, la
+  barra fija de abajo («Lista / Todas / A pie…», que el autor quiere seguir viendo), y la saca de su
+  columna centrada con un margen negativo para que ocupe todo el ancho. **El ancho se toma de
+  `clientWidth`, no de `100vw`**: `100vw` incluye la barra de desplazamiento y dejaría la página
+  moviéndose de lado. Medido: 388x709 en un móvil de 390x844 y 1278x822 en 1280x900, sin desbordar.
+  Al salir se restaura todo.
+- Las opciones (deshacer, borrar, guardar, GPX, guardados) van **en columna dentro del mapa, justo
+  debajo del lápiz**, en la esquina de arriba a la derecha, y los totales en una pastilla pequeña
+  abajo a la izquierda. Se probaron antes dos sitios que el autor descartó: un panel flotante encima
+  del mapa (tapaba justo donde hay que tocar) y el mismo panel debajo del mapa, en el flujo de la
+  página (con el mapa grande se iba fuera de la pantalla y había que bajar a por «Deshacer» después
+  de cada toque). Mientras dura se esconden el botón flotante de «Lista» y el de «volver arriba»,
+  que caen encima de la columna y de la pastilla.
 - `map.js` no sabe nada de todo esto: al terminar de montar el mapa dispara un evento
   **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
   cargado, no pasa nada.
