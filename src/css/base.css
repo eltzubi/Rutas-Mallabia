@@ -435,6 +435,10 @@ body{
   position:absolute; z-index:400; top:94px; right:10px;
   display:flex; flex-direction:column; gap:6px;
 }
+/* El atributo hidden lo pone el navegador con display:none, pero una regla
+   de autor con display:flex le gana: sin esto la columna de opciones se veia
+   desde que se abre el mapa, antes de pulsar el lapiz. */
+.draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden]{ display:none; }
 /* La clase va en el propio contenedor del mapa ([data-map-src]), que es el
    .leaflet-container, no en la caja de fuera. */
 [data-map-src].is-drawing{ cursor:crosshair; }
