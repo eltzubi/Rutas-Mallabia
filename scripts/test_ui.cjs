@@ -120,7 +120,11 @@ function env(page='index.html', storage=new Map()) {
     fetch:async()=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trailhead.json'),'utf8'))})
   });
   win.console=context.console;
-  return {doc,win,context,storage,timers,maps,lines,errors,
+  // Desde que la portada dibuja un reborde oscuro bajo cada track, `lines`
+  // trae el doble: los rebordes van con pane:'rebordes' y no cuentan como
+  // rutas. `trazados()` deja solo los de verdad.
+  const trazados=()=>lines.filter(l=>l.style.pane!=='rebordes');
+  return {doc,win,context,storage,timers,maps,lines,trazados,errors,
     run(file){vm.runInContext(fs.readFileSync(path.join(root,'src/js',file),'utf8'),context,{filename:file});},
     one:s=>doc.querySelector(s),all:s=>doc.querySelectorAll(s)};
 }
@@ -232,15 +236,15 @@ test('mobile dialog reuses controls and reset keeps activity',()=>{
 });
 test('map catches filters loaded earlier; keyboard opens/closes and hidden routes leave tab order',async()=>{
   const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="bici"]').click();
-  e.run('map.js');await settle();assert.equal(e.errors.length,0);assert.equal(e.lines.length,totalRoutes(e));
-  assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  e.run('map.js');await settle();assert.equal(e.errors.length,0);assert.equal(e.trazados().length,totalRoutes(e));
+  assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   const line=e.lines.find(l=>l.path.getAttribute('tabindex')==='0');line.path.focus();
   line.path.dispatchEvent({type:'keydown',key:'Enter'});
   const panel=e.one('.route-info-panel');assert.equal(panel.hidden,false);
   assert.equal(line.path.getAttribute('aria-pressed'),'true');assert(e.doc.activeElement===e.one('.route-info-panel-close'),'Focus moves to panel close button');
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert(e.doc.activeElement===line.path,'Focus returns to route');
-  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
-  e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  e.one('[data-distance-preset="corto"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
+  e.one('[data-distance-preset="all"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
   // con el activo marcado. La portada arranca en «Calles» (el tercero) y de
   // ahi no se mueve sola.
@@ -273,7 +277,7 @@ test('map also catches filters changed while its request is pending',async()=>{
   const e=env();let release;e.context.fetch=()=>new Promise(r=>{release=r;});e.run('map.js');e.run('filters.js');
   e.one('.activity-chip[data-activity="bici"]').click();
   release({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trailhead.json')))});await settle();
-  assert.equal(e.errors.length,0);assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  assert.equal(e.errors.length,0);assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
 });
 test('HTTP, invalid JSON, invalid data and stalled map requests display an error and can retry',async()=>{
   for(const failure of ['http','json','data','timeout']){
@@ -282,7 +286,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     e.run('map.js');if(failure==='timeout')[...e.timers.values()].find(t=>t.ms===15000).fn();await settle();
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
-    assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
+    assert.equal(e.one('.map-retry'),null);assert.equal(e.trazados().length,totalRoutes(e));
     assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
@@ -321,7 +325,7 @@ test('la portada no se baja los tracks hasta que se abre el mapa',async()=>{
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   observados[0].cb();await settle();
   assert.equal(pedidas,1,'visible: ahora si');
-  assert.equal(e.lines.length,totalRoutes(e),'y pinta las 57 rutas');
+  assert.equal(e.trazados().length,totalRoutes(e),'y pinta las 65 rutas');
   assert.equal(observados[0].muerto,true,'y deja de escuchar');
 });
 test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el principio',async()=>{

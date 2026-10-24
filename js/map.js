@@ -455,9 +455,10 @@
           var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
           entry.line.setStyle({
             color: entry.currentColor,
-            weight: 4,
+            weight: 4.5,
             opacity: hidden ? 0.06 : baseOpacity
           });
+          if (entry.reborde) entry.reborde.setStyle({ opacity: hidden ? 0.04 : 0.55 });
         });
       }
       // Antes esto reencuadraba el mapa entero al cerrar la ficha (y como
@@ -485,8 +486,12 @@
           entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
           if (entry.line.bringToFront) entry.line.bringToFront();
         } else {
-          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4 });
+          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4.5 });
         }
+        // El reborde se apaga con su trazado: si no, al elegir una ruta
+        // quedarian 64 lineas oscuras marcando las que estan apagadas.
+        if (entry.reborde) entry.reborde.setStyle({
+          opacity: hidden ? 0.04 : (entry.line === line ? 0.55 : 0.1) });
       });
       updateLabelVisibility();
       line.getElement().setAttribute('aria-pressed', 'true');
@@ -511,24 +516,41 @@
     // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
-    var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
-    // Un reborde blanco debajo del trazado, solo en las fichas. El verde de
-    // «a pie» en el tema claro es #3A6B15, oscuro, y sobre el verde del mapa
-    // del IGN casi no se distinguia; con el reborde el track se lee igual
-    // sobre el topografico, el satelite y el callejero. En la portada no va:
-    // son 57 tracks y serian 57 lineas mas que dibujar.
+    var baseOpacity = 1;
+    // Un reborde debajo del trazado. En las fichas es blanco y ancho; en la
+    // portada, oscuro y algo mas fino. El verde de «a pie» es un lima que
+    // sobre el verde del campo del callejero casi no se veia, y el naranja
+    // se confundia con las carreteras naranjas del IGN -- el autor lo dijo:
+    // «el color en el mapa index es pobre». Se compararon cuatro arreglos
+    // (subir opacidad y grosor, este reborde, y colores mas vivos) y este es
+    // el unico que arregla las dos capas sin tocar la paleta de la web.
+    // Antes la portada no lo llevaba por no dibujar 57 lineas mas.
     var unaSola = data.tracks.length === 1 && !track0bis(data);
+    // Los rebordes van en su propio panel, por debajo del de los trazados:
+    // asi ninguno puede quedar por encima del track de otra ruta, cosa que
+    // pasaria si se intercalaran en el mismo panel.
+    if (!unaSola && map.createPane) {
+      var panelReborde = map.createPane('rebordes');
+      panelReborde.style.zIndex = 395;
+      panelReborde.style.pointerEvents = 'none';
+    }
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || actColor || COLORS.teal;
+      var reborde = null;
       if (unaSola) {
         L.polyline(t.points, {
           color: '#ffffff', weight: 7, opacity: 0.75,
           lineJoin: 'round', lineCap: 'round', interactive: false
         }).addTo(map);
+      } else {
+        reborde = L.polyline(t.points, {
+          color: '#0B1020', weight: 8, opacity: 0.55, pane: 'rebordes',
+          lineJoin: 'round', lineCap: 'round', interactive: false
+        }).addTo(map);
       }
       var line = L.polyline(t.points, {
         color: baseColor,
-        weight: 4,
+        weight: 4.5,
         opacity: baseOpacity,
         lineJoin: 'round'
       }).addTo(map);
@@ -620,7 +642,7 @@
           pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
           pathEl.addEventListener('blur', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
         }
-        hrefToLine[t.href] = { line: line, baseColor: baseColor, activity: activity, currentColor: baseColor };
+        hrefToLine[t.href] = { line: line, reborde: reborde, baseColor: baseColor, activity: activity, currentColor: baseColor };
       }
     });
 
@@ -656,8 +678,10 @@
           entry.line.setStyle({
             opacity: show ? (activeLine ? 0.22 : baseOpacity) : 0.06,
             color: color,
-            weight: 4
+            weight: 4.5
           });
+          if (entry.reborde) entry.reborde.setStyle({
+            opacity: show ? (activeLine ? 0.1 : 0.55) : 0.04 });
         }
         var pathEl = entry.line.getElement();
         if (pathEl) {

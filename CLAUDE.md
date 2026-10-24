@@ -309,6 +309,23 @@ pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Vo
 libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
 `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
 
+**El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
+pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
+llevaban las fichas, y en la portada se había descartado por no dibujar 57 líneas más. Sin él, el
+verde lima de «a pie» se funde con el verde del campo del callejero y el naranja se confunde con las
+carreteras naranjas del IGN. Se compararon cuatro arreglos sobre el mismo trozo de mapa y las dos
+capas: subir la opacidad y el grosor (mejora poco), **el reborde oscuro**, y colores más vivos
+(`#FF6A00` / `#43D419`, que funciona pero obliga a elegir entre dos verdes distintos en la misma
+página o a cambiar la paleta entera). Se eligió el reborde: arregla las dos capas **sin tocar ni un
+color de la web**.
+
+Va en **su propio panel** (`map.createPane('rebordes')`, `z-index` 395, bajo el de los trazados en
+400): intercalado en el mismo panel, el reborde de una ruta taparía el track de otra. Y **se apaga
+con su trazado** en los tres sitios donde se apagan las líneas (filtro, abrir ficha, cerrar ficha);
+si no, al elegir una ruta quedarían 64 líneas oscuras marcando justo las que están apagadas. Los
+tracks suben a opacidad 1 y 4,5 px. Medido: el mapa queda listo en **0,22 s** en escritorio y
+**0,75 s en un móvil con la CPU frenada 4x**, con 65 trazados y 65 rebordes.
+
 **Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
 ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
 en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;
