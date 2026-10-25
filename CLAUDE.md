@@ -340,7 +340,10 @@ Va en **su propio panel** (`map.createPane('rebordes')`, `z-index` 395, bajo el 
 400): intercalado en el mismo panel, el reborde de una ruta taparía el track de otra. Y **se apaga
 con su trazado** en los tres sitios donde se apagan las líneas (filtro, abrir ficha, cerrar ficha);
 si no, al elegir una ruta quedarían 64 líneas oscuras marcando justo las que están apagadas. Los
-tracks suben a opacidad 1 y 4,5 px. Medido: el mapa queda listo en **0,22 s** en escritorio y
+tracks suben a 4,5 px. La opacidad subió a 1 con el reborde y el autor la vio dura con los 66
+trazados a la vez sobre el mapa ciclista («hazlos un poco más suaves, solo un poquito»): **en la
+portada van al 0,85** y en una ficha, con un solo track y reborde blanco, se quedan en 1. Quien da
+la definición es el reborde, así que bajar la opacidad no devuelve el problema de antes. Medido: el mapa queda listo en **0,22 s** en escritorio y
 **0,75 s en un móvil con la CPU frenada 4x**, con 65 trazados y 65 rebordes.
 
 **Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian

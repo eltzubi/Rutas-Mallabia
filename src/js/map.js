@@ -548,7 +548,13 @@
     // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
-    var baseOpacity = 1;
+    // Los trazados de la portada van algo por debajo del opaco del todo: con
+    // los 66 a la vez, y sobre el verde y el naranja fuertes del mapa ciclista,
+    // al 100 % el autor los veia duros («hazlos un poco mas suaves, solo un
+    // poquito»). El reborde oscuro es el que da la definicion, asi que bajar
+    // esto no devuelve el problema de antes. En una ficha, con un solo track y
+    // reborde blanco, se queda opaco.
+    var baseOpacity = (data.tracks.length === 1 && !track0bis(data)) ? 1 : 0.85;
     // Un reborde debajo del trazado. En las fichas es blanco y ancho; en la
     // portada, oscuro y algo mas fino. El verde de «a pie» es un lima que
     // sobre el verde del campo del callejero casi no se veia, y el naranja
