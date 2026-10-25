@@ -6543,6 +6543,52 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
+    '<h2>C&oacute;mo montarte tu ruta, paso a paso</h2>':
+        '<h2>Nola osatu zure ibilbidea, urratsez urrats</h2>',
+    '<p class="guia-intro">Siete pasos. No hay que registrarse ni instalar nada, y lo que dibujes se queda solo en tu m&oacute;vil.</p>':
+        '<p class="guia-intro">Zazpi urrats. Ez dago izena eman beharrik ezta ezer instalatu beharrik ere, eta marrazten duzuna zure mugikorrean bakarrik geratzen da.</p>',
+    '<h3>1. Abre el mapa y busca el l&aacute;piz</h3>':
+        '<h3>1. Ireki mapa eta bilatu arkatza</h3>',
+    '<p>En la portada, pulsa <b>Mapa</b>. Arriba a la derecha, debajo del bot&oacute;n de ampliar, aparece un <b>l&aacute;piz</b>. Es lo &uacute;nico que ver&aacute;s de la herramienta hasta que lo pulses.</p>':
+        '<p>Azalean, sakatu <b>Mapa</b>. Goian eskuinean, handitzeko botoiaren azpian, <b>arkatz</b> bat agertzen da. Hori da tresnatik ikusiko duzun gauza bakarra sakatu arte.</p>',
+    'alt="El mapa de la portada con el bot&oacute;n del l&aacute;piz en la esquina de arriba a la derecha"':
+        'alt="Azaleko mapa, arkatzaren botoia goiko eskuineko izkinan"',
+    '<h3>2. P&uacute;lsalo y se despliegan las opciones</h3>':
+        '<h3>2. Sakatu eta aukerak zabaltzen dira</h3>',
+    '<p>El mapa se agranda hasta ocupar casi la pantalla y debajo del l&aacute;piz se despliegan cinco botones: <b>deshacer</b>, <b>borrar</b>, <b>guardar</b>, <b>bajar el GPX</b> y <b>los guardados</b>. Abajo a la izquierda sale una franja con las instrucciones.</p>':
+        '<p>Mapa ia pantaila osoa hartzeraino handitzen da eta arkatzaren azpian bost botoi zabaltzen dira: <b>desegin</b>, <b>ezabatu</b>, <b>gorde</b>, <b>GPXa jaitsi</b> eta <b>gordetakoak</b>. Behean ezkerrean argibideak dituen zerrenda bat ateratzen da.</p>',
+    'alt="El mapa en modo dibujo, con la columna de cinco botones bajo el l&aacute;piz"':
+        'alt="Mapa marrazteko moduan, bost botoiko zutabea arkatzaren azpian"',
+    '<h3>3. Toca dos puntos y el camino se calcula solo</h3>':
+        '<h3>3. Ukitu bi puntu eta bidea bakarrik kalkulatzen da</h3>',
+    '<p>Toca un punto sobre cualquier camino y luego otro. <b>La l&iacute;nea no va recta</b>: busca el camino m&aacute;s corto entre los dos por los senderos de las 65 rutas de esta web. Sigue tocando y el trazado se va alargando.</p>':
+        '<p>Ukitu puntu bat edozein bideren gainean eta gero beste bat. <b>Marra ez doa zuzen</b>: web honetako 65 ibilbideetako bidexketatik bien arteko biderik laburrena bilatzen du. Ukitzen jarraitu eta marrazkia luzatzen joango da.</p>',
+    'alt="Un trazado azul de tres puntos siguiendo los senderos entre las rutas"':
+        'alt="Hiru puntuko marrazki urdina, ibilbideen arteko bidexkei jarraituz"',
+    '<h3>4. Mira la franja de abajo antes de seguir</h3>':
+        '<h3>4. Begiratu beheko zerrendari jarraitu aurretik</h3>',
+    '<p>Ah&iacute; tienes los kil&oacute;metros, lo que sube y lo que baja, y un <b>perfil peque&ntilde;o en el sentido de la marcha</b>. El &uacute;ltimo tramo va sombreado y con su propio desnivel: es la forma de saber si el trozo que acabas de enganchar lo coges de subida o de bajada, que en bici y andando no da igual.</p>':
+        '<p>Han dituzu kilometroak, zenbat igotzen eta zenbat jaisten den, eta <b>profil txiki bat ibiltzeko noranzkoan</b>. Azken tartea itzaldurarekin doa eta bere desnibelarekin: lotu berri duzun zatia gorantz ala beherantz hartzen duzun jakiteko modua da, bizikletaz eta oinez ez baita berdin.</p>',
+    'alt="La franja con los kil&oacute;metros, el desnivel y el perfil del trazado"':
+        'alt="Marrazkiaren kilometroak, desnibela eta profila dituen zerrenda"',
+    '<h3>5. Cambia de mapa cuando quieras</h3>':
+        '<h3>5. Aldatu mapaz nahi duzunean</h3>',
+    '<p>Las cuatro capas siguen funcionando mientras dibujas. El <b>sat&eacute;lite</b> es el que m&aacute;s dice: ah&iacute; se ve si por donde quieres pasar hay pista, bosque cerrado o campo abierto.</p>':
+        '<p>Lau geruzek funtzionatzen jarraitzen dute marrazten duzun bitartean. <b>Satelitea</b> da gehien esaten duena: han ikusten da pasatu nahi duzun lekuan pista dagoen, baso itxia ala zelai zabala.</p>',
+    'alt="El mismo trazado sobre la vista de sat&eacute;lite, con las 65 rutas encima"':
+        'alt="Marrazki bera satelite ikuspegian, 65 ibilbideak gainean dituela"',
+    '<h3>6. Y con el ojo, quita las rutas para ver el fondo</h3>':
+        '<h3>6. Eta begiarekin, kendu ibilbideak hondoa ikusteko</h3>',
+    '<p>El bot&oacute;n <b>Rutas</b> &mdash;un ojo en el m&oacute;vil&mdash; esconde los 65 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
+        '<p><b>Ibilbideak</b> botoiak &mdash;begi bat mugikorrean&mdash; 65 marrazkiak ezkutatzen ditu eta mapa soilik uzten dizu. <b>Zure marrazkia geratzen da.</b> Bi gauzetarako balio du: handik nire ibilbideetakoa ez den bideren bat pasatzen den ikusteko, eta lotu duzun tartea benetako bide batetik doan ala zelai zabalean zehar doan egiaztatzeko.</p>',
+    'alt="El mismo trazado sobre el sat&eacute;lite con las 65 rutas escondidas"':
+        'alt="Marrazki bera satelitearen gainean, 65 ibilbideak ezkutatuta"',
+    '<h3>7. Gu&aacute;rdalo o baja el GPX</h3>':
+        '<h3>7. Gorde edo jaitsi GPXa</h3>',
+    '<p><b>Guardar</b> lo deja en tu m&oacute;vil, con su nombre y sus kil&oacute;metros, y se vuelve a abrir desde el bot&oacute;n de la lista (caben doce). <b>Bajar GPX</b> te da el fichero con las alturas, para meterlo en el reloj o en el GPS.</p>':
+        '<p><b>Gorde</b>k zure mugikorrean uzten du, bere izenarekin eta bere kilometroekin, eta zerrendaren botoitik irekitzen da berriro (hamabi sartzen dira). <b>GPXa jaitsi</b>k alturak dituen fitxategia ematen dizu, erlojuan edo GPSan sartzeko.</p>',
+    'alt="La lista de trazados guardados, abierta sobre el mapa"':
+        'alt="Gordetako marrazkien zerrenda, maparen gainean irekita"',
     '<span class="faq-q">&iquest;Con una bici el&eacute;ctrica subo cualquier cosa?</span>':
         '<span class="faq-q">Bizikleta elektrikoarekin edozer igotzen dut?</span>',
     '<p>No. La ayuda empuja, pero no sube por ti. Cuenta la bici, y cuenta la fuerza que lleves ese d&iacute;a, pero sobre todo cuentas t&uacute;: la habilidad, la forma de pedalear y la postura. Y eso se nota justo donde m&aacute;s duele &mdash;en los tramos t&eacute;cnicos, en las rampas muy fuertes y donde el piso est&aacute; roto o suelto&mdash;. Suelen ser trozos cortos, pero intensos. Ah&iacute; da lo mismo que la bici sea el&eacute;ctrica o convencional: si no tienes la t&eacute;cnica, la mayor&iacute;a de las veces acabas bajándote y empujando.</p>':

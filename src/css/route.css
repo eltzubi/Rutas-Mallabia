@@ -800,3 +800,34 @@ footer a:hover{ color:var(--ink); }
 @media (prefers-reduced-motion: reduce){
   .faq-chevron{ transition:none; }
 }
+
+/* ---- Guia paso a paso de «monta tu ruta» (preguntas.html) ---------------
+   Siete pasos con su captura. El numero va en un circulo del color del
+   trazado, que es el de la herramienta, y no del de ninguna actividad. */
+.guia{ margin:34px 0 10px; }
+.guia h2{ margin:0 0 4px; font-size:22px; }
+.guia-intro{ margin:0 0 20px; color:var(--ink-dim); }
+.guia-pasos{ list-style:none; margin:0; padding:0; counter-reset:paso;
+             display:flex; flex-direction:column; gap:26px; }
+.guia-pasos li{ counter-increment:paso; position:relative; padding-left:42px; }
+.guia-pasos li::before{
+  content:counter(paso);
+  position:absolute; left:0; top:1px; width:28px; height:28px;
+  display:grid; place-items:center; border-radius:50%;
+  background:var(--trazo); color:var(--ground);
+  font:700 14px 'IBM Plex Mono',monospace;
+}
+.guia-pasos h3{ margin:0 0 6px; font-size:16.5px; line-height:1.3; }
+.guia-pasos p{ margin:0 0 12px; color:var(--ink); line-height:1.6; }
+.guia-pasos img{
+  /* A su tamano real como mucho: las capturas son de 760 px y estirarlas a
+     la columna entera las deja borrosas. */
+  display:block; width:auto; max-width:100%; height:auto; border-radius:12px;
+  border:1px solid var(--line); background:var(--ground-raised);
+}
+@media (max-width:480px){
+  .guia-pasos li{ padding-left:36px; }
+  .guia-pasos li::before{ width:25px; height:25px; font-size:13px; }
+  .guia h2{ font-size:19px; }
+  .guia-pasos h3{ font-size:15.5px; }
+}

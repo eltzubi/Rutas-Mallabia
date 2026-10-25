@@ -372,6 +372,19 @@ enlace las generales, que no es ninguna de las dos y por eso no se lee como una 
 enriquecido a webs oficiales de sanidad y administracion, asi que seria un segundo sitio donde
 mantener las mismas diez respuestas, en dos idiomas, a cambio de nada.
 
+**La guía paso a paso de «monta tu ruta»** vive al pie de `preguntas.html`, debajo de las diez
+preguntas: siete pasos con su captura, del lápiz al GPX, incluido el ojo de «Rutas» para ver qué hay
+debajo (si por ahí pasa un camino que no es ninguna de las 65, o si el tramo enganchado cruza campo
+a través). Lo pidió el autor.
+
+Las capturas están en **`img/guia/`**, en WebP de 760 px y 545 kB en total, y **no pasan por el
+tren de imágenes**: `optimize_images.py` y compañía sólo miran los `.jpg` de `img/` y de `img/orig/`
+con `os.listdir`, así que una subcarpeta les es invisible, y eso es justo lo que se quiere — son
+pantallazos, no fotos, y reprocesarlos los estropearía. Se regeneran a mano con Playwright cuando la
+herramienta cambie de aspecto. Todas van `loading="lazy"` menos la primera, y se muestran **a su
+tamaño real como mucho** (`width:auto; max-width:100%`): estiradas a la columna entera se ven
+borrosas.
+
 **Dibujar un trazado propio, sobre los caminos de la web** (`src/js/trazado.js`, solo portada).
 Idea del autor: casi nadie se hace de una tirada una ruta de 37 km, y lo que pide la gente es unir
 dos, acortar una o montarse la suya. Dibujar a mano alzada se descartó — un garabato no va por los
