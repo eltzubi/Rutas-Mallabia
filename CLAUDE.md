@@ -362,6 +362,20 @@ se dispara **cuando el conjunto visible cambia de verdad** (la firma de los `hre
 dar un salto por cada tecla del buscador que no quita ninguna ruta; la primera vez solo se anota la
 firma, porque de ese encuadre inicial ya se ocupa `fit()`. Solo en la portada.
 
+**Compartir, también en la portada.** Lo pidió el autor: hasta ahora el botón sólo salía en las
+fichas y no había forma de pasarle la web entera a nadie desde la principal. Va en la misma barra de
+arriba y en el mismo sitio que en una ficha, delante del idioma. **Guardar no**, que ahí el corazón
+va en cada tarjeta y uno para «toda la web» no diría nada. El texto que comparte no sale del `h1`
+—que ya es «Trabakutik» y saldría repetido— sino de una línea propia con **las rutas contadas en el
+momento**, para que el número no se quede viejo: «Trabakutik · 66 rutas a pie y en e-bike por
+Mallabia y alrededores».
+
+Costó un arreglo de sitio: a **320 px** la barra ya iba al límite («ahí no sobran más que un par de
+píxeles», dice el comentario de `home.css`) y el botón la sacaba **30 px** de la pantalla. Por debajo
+de 360 px la portada deja el rótulo en **«Mallabia»** a secas (`.place-prov`, sólo en la portada):
+son 69 px que sobran de la provincia, de sobra para el botón y para la holgura que faltaba desde
+antes.
+
 **Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
 `aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
 `NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y

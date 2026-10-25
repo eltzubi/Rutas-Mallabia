@@ -493,7 +493,12 @@
   var row = document.querySelector('.wikiloc-row');
   if (!barraDerecha && !row) return;
   var slug = slugOf(location.pathname) || 'index';
-  var arriba = !!barraDerecha && !!document.querySelector('.back-link');
+  // La portada tambien lleva Compartir, que lo pidio el autor: hasta ahora
+  // solo lo tenian las fichas y no habia forma de pasarle la web entera a
+  // nadie desde la pagina principal. Guardar no: ahi el corazon va en cada
+  // tarjeta y uno para «toda la web» no significaria nada.
+  var esPortada = !!document.getElementById('routeResults');
+  var arriba = !!barraDerecha && (!!document.querySelector('.back-link') || esPortada);
   var fav = document.createElement('button');
   fav.type = 'button';
   fav.className = arriba ? 'mast-accion fav-action' : 'wikiloc-link ghost fav-action';
@@ -520,6 +525,16 @@
     var km = facts.find(function(t){ return / km$/.test(t); }) || '';
     var up = facts.find(function(t){ return /^\+.* m$/.test(t); }) || '';
     var line = [name, km, up].filter(Boolean).join(' · ') + ' · Trabakutik';
+    if (esPortada) {
+      // El h1 de la portada ya es «Trabakutik», asi que la linea de la ficha
+      // saldria repetida. Las rutas se cuentan en el momento para que el
+      // numero no se quede viejo.
+      var cuantas = document.querySelectorAll('.route-card[href]').length;
+      name = 'Trabakutik';
+      line = eu
+        ? 'Trabakutik \u00b7 ' + cuantas + ' ibilbide oinez eta e-bikez Mallabia inguruan'
+        : 'Trabakutik \u00b7 ' + cuantas + ' rutas a pie y en e-bike por Mallabia y alrededores';
+    }
     var url = location.href.split('#')[0];
     if (navigator.share) {
       navigator.share({ title: name, text: line, url: url }).catch(function(){});
@@ -543,8 +558,13 @@
     // delante del idioma, para que los dos botones de la ruta queden juntos
     // y el idioma, «Lo mio» y el tema sigan en su orden de siempre.
     var idioma = barraDerecha.querySelector('.lang-switch');
-    if (idioma && idioma.before) { idioma.before(fav); idioma.before(share); }
-    else { barraDerecha.appendChild(fav); barraDerecha.appendChild(share); }
+    if (idioma && idioma.before) {
+      if (!esPortada) idioma.before(fav);
+      idioma.before(share);
+    } else {
+      if (!esPortada) barraDerecha.appendChild(fav);
+      barraDerecha.appendChild(share);
+    }
   } else if (row) {
     var gpx = row.querySelector('a[href$=".gpx"]');
     var after = row.querySelector('a[href$=".kml"]') || gpx;

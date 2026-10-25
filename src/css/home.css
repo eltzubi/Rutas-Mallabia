@@ -1264,6 +1264,11 @@ footer a:hover{ text-decoration:underline; }
   .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
+  /* Con «Compartir» en la barra, a 320 px la fila se salia 30 px. Aqui
+     la provincia sobra: la pagina ya dice de donde es, y «Mallabia» sola
+     libera 69 px, de sobra para el boton nuevo y para el par de pixeles
+     que faltaban desde antes. */
+  .masthead .place-prov{ display:none; }
 }
 /* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
    tienen el mismo radio, pero el del aviso se veia bastante mas gordo porque
