@@ -825,6 +825,8 @@ footer a:hover{ color:var(--ink); }
   display:block; width:auto; max-width:100%; height:auto; border-radius:12px;
   border:1px solid var(--line); background:var(--ground-raised);
 }
+/* El paso del ojo lleva dos: el primer plano del boton y el mapa. */
+.guia-pasos img + img{ margin-top:12px; }
 @media (max-width:480px){
   .guia-pasos li{ padding-left:36px; }
   .guia-pasos li::before{ width:25px; height:25px; font-size:13px; }

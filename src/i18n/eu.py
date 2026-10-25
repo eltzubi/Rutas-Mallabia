@@ -6579,8 +6579,10 @@ PREGUNTAS = {
         'alt="Marrazki bera satelite ikuspegian, 65 ibilbideak gainean dituela"',
     '<h3>6. Y con el ojo, quita las rutas para ver el fondo</h3>':
         '<h3>6. Eta begiarekin, kendu ibilbideak hondoa ikusteko</h3>',
-    '<p>El bot&oacute;n <b>Rutas</b> &mdash;un ojo en el m&oacute;vil&mdash; esconde los 65 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
-        '<p><b>Ibilbideak</b> botoiak &mdash;begi bat mugikorrean&mdash; 65 marrazkiak ezkutatzen ditu eta mapa soilik uzten dizu. <b>Zure marrazkia geratzen da.</b> Bi gauzetarako balio du: handik nire ibilbideetakoa ez den bideren bat pasatzen den ikusteko, eta lotu duzun tartea benetako bide batetik doan ala zelai zabalean zehar doan egiaztatzeko.</p>',
+    '<p>El bot&oacute;n <b>Rutas</b> &mdash;que en el m&oacute;vil es un <b>ojo</b>, aqu&iacute; lo tienes encendido y apagado&mdash; esconde los 65 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
+        '<p><b>Ibilbideak</b> botoiak &mdash;mugikorrean <b>begi</b> bat da, hemen duzu piztuta eta itzalita&mdash; 65 marrazkiak ezkutatzen ditu eta mapa soilik uzten dizu. <b>Zure marrazkia geratzen da.</b> Bi gauzetarako balio du: handik nire ibilbideetakoa ez den bideren bat pasatzen den ikusteko, eta lotu duzun tartea benetako bide batetik doan ala zelai zabalean zehar doan egiaztatzeko.</p>',
+    'alt="El bot&oacute;n del ojo en la barra de capas, encendido con las rutas a la vista y apagado con el mapa limpio"':
+        'alt="Begiaren botoia geruzen barran, piztuta ibilbideak ikusgai eta itzalita mapa garbiarekin"',
     'alt="El mismo trazado sobre el sat&eacute;lite con las 65 rutas escondidas"':
         'alt="Marrazki bera satelitearen gainean, 65 ibilbideak ezkutatuta"',
     '<h3>7. Gu&aacute;rdalo o baja el GPX</h3>':
