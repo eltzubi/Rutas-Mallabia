@@ -811,6 +811,14 @@ HOME = {
         '<p class="map-note">Fitxa bateko datu bakoitzak zer esan nahi duen, nondik datozen distantzia eta desnibela, eta webak estaldurarik gabe funtzionatzen duen.</p>',
     '<a class="directions-cta" href="preguntas.html">Ver las preguntas <span aria-hidden="true">&rarr;</span></a>':
         '<a class="directions-cta" href="preguntas.html">Ikusi galderak <span aria-hidden="true">&rarr;</span></a>',
+    # zengotitamaguna card
+    'alt="El d&oacute;lmen, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
+        'alt="Trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
+    '<h3 class="route-card-name">Zengotitagane, los d&oacute;lmenes, Maguna y San Kristobal Txiki</h3>':
+        '<h3 class="route-card-name">Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki</h3>',
+    '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki y Betzun</p>':
+        '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki eta Betzun zeharkatuz</p>',
+
     # aixolaintxorta card
     'alt="La cruz de Santama&ntilde;azar al atardecer, con el valle y los montes del Duranguesado al fondo"':
         'alt="Santama&ntilde;azarko gurutzea ilunabarrean, harana eta Durangaldeko mendiak atzealdean"',
@@ -3436,6 +3444,7 @@ DESCRIPTIONS = {
     'hirutxikiak': 'Hiru Txikiak Trail, mendiko lasterketa: Urko, Oiz eta Egoarbitza Ermuatik',
     'zaldibar': 'Zirkuitua e-bikez Trabakuatik, Aixola, Elgeta eta Zaldibartik igarota Berrizeraino',
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
+    'zengotitamaguna': '32 km-ko zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigainako eta Ama Birjinen Basoko trikuharriak, Maguna, San Kristobal Txiki eta Betzun zeharkatuz',
     'aixolaintxorta': '20 km-ko zirkuitua Aixolako presatik, Santamañazar, Erdella, Intxorta eta Egoarbitza zeharkatuz, Gerra Zibileko lubakiekin eta Asentzioko lakuarekin',
     'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, mendian ezkutatutako antzinako ubide batetik, karramarroak ibilguan: laburra, desnibel gutxikoa eta haurrekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
@@ -3567,6 +3576,7 @@ TITLES = {
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
     'aixolaintxorta': 'Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza — Herriko ibilbideak',
+    'zengotitamaguna': 'Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki — Herriko ibilbideak',
     'garaikanala': 'Ibilaldia Garai eta antzinako ubidetik — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
     'trabakuaondarroa': 'Trabakua, Atxagarai eta Ondarroa · Zeharkaldia — Herriko ibilbideak',
@@ -6642,6 +6652,103 @@ PREGUNTAS = {
 }
 
 
+ZENGOTITAMAGUNA = {
+    '<p class="eyebrow"><span>Asfalto, pista y sendero</span><span class="sep">/</span><span>Maguna &middot; Garai</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Asfaltoa, pista eta bidexka</span><span class="sep">/</span><span>Maguna &middot; Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>Zengotitagane, los d&oacute;lmenes<br><em>Maguna y San Kristobal Txiki</em></h1>':
+        '<h1>Zengotitagane, trikuharriak<br><em>Maguna eta San Kristobal Txiki</em></h1>',
+    '<p class="full-name">Circuito desde Trabakua por Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki y Betzun</p>':
+        '<p class="full-name">Zirkuitua Trabakuatik, Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki eta Betzun zeharkatuz</p>',
+    'alt="Foto ampliada del recorrido de Zengotitagane, los d&oacute;lmenes, Maguna y San Kristobal Txiki"':
+        'alt="Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki ibilbideko argazkia handituta"',
+    'download="Zengotitagane, los dólmenes, Maguna y San Kristobal Txiki.gpx"':
+        'download="Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki.gpx"',
+    'download="Zengotitagane, los dólmenes, Maguna y San Kristobal Txiki.kml"':
+        'download="Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki.kml"',
+    'alt="El v&eacute;rtice geod&eacute;sico de Zengotitagane con la bici apoyada, los aerogeneradores a la derecha y los montes del entorno al fondo"':
+        'alt="Zengotitaganeko bertize geodesikoa, bizikleta bermatuta, eolikoak eskuinean eta inguruko mendiak atzealdean"',
+    'alt="Pista de cemento subiendo entre pinos y helechos hacia la parte alta"':
+        'alt="Zementuzko pista pinu eta iratzeen artean gora, goiko aldera"',
+    'alt="Vacas pastando junto al cordal, con la fila de aerogeneradores siguiendo la loma"':
+        'alt="Behiak bazkatzen gailurraren ondoan, eolikoen ilara muinoari jarraika"',
+    'alt="El d&oacute;lmen, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
+        'alt="Trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
+    'alt="Pista de tierra entre arbolado de oto&ntilde;o, con la ladera pelada y las antenas de la cima al fondo"':
+        'alt="Lurrezko pista udazkeneko zuhaitzen artean, hegal soila eta gailurreko antenak atzealdean"',
+    'alt="Bajada por un sendero pedregoso entre el arbolado, vista desde el manillar"':
+        'alt="Bidexka harritsu batetik beherako jaitsiera zuhaitzen artean, manillarretik ikusita"',
+    'alt="Sendero estrecho entre la vegetaci&oacute;n del bosque, vista desde el manillar"':
+        'alt="Bidexka estua basoko landaredian, manillarretik ikusita"',
+    'alt="Camino ancho cubierto de hojarasca bajo los robles"':
+        'alt="Bide zabala orbelez estalita haritzen azpian"',
+    'alt="Vista del valle con los montes del Duranguesado al fondo, entre los pinos j&oacute;venes"':
+        'alt="Haraneko ikuspegia, Durangaldeko mendiak atzealdean, pinu gazteen artetik"',
+    'alt="La fuente de Maguna, con el abrevadero de piedra, la bici apoyada y un perro al fondo"':
+        'alt="Magunako iturria, harrizko askarekin, bizikleta bermatuta eta txakur bat atzealdean"',
+    'alt="El centro de Maguna, con la iglesia, los caser&iacute;os de piedra y el poste del GR-38 hacia Gernika-Lumo y Oiz"':
+        'alt="Magunako erdigunea, eliza, harrizko baserriak eta GR-38ko zutoina Gernika-Lumo eta Oiz alderantz"',
+    'alt="Pista cubierta de hojas doradas entre el arbolado, con el sol entrando entre las ramas"':
+        'alt="Hosto urrekarez estalitako pista zuhaitzen artean, eguzkia adarren artetik sartzen"',
+    'alt="Pista de tierra entre un hayedo trasmocho"':
+        'alt="Lurrezko pista pago motzen arteko pagadi batean"',
+    'alt="Sendero empinado subiendo entre helechos secos, con el cable el&eacute;ctrico cruzando por encima"':
+        'alt="Bidexka aldapatsua iratze lehorren artetik gora, argindar-kablea gainetik igarotzen"',
+    'alt="Camino descarnado por la erosi&oacute;n, con dos surcos profundos abiertos por el agua"':
+        'alt="Higadurak larrutako bidea, urak irekitako bi ildo sakonekin"',
+    'alt="La bici en el cruce de un riachuelo, sobre las piedras del cauce"':
+        'alt="Bizikleta erreka txiki baten pasabidean, ibilguko harrien gainean"',
+    'Dolmen de Iturzurigaina':
+        'Iturzurigainako trikuharria',
+    'Dolmen de Ama Birjinen Baso':
+        'Ama Birjinen Basoko trikuharria',
+    '<h2>E-bike</h2>':
+        '<h2>E-bikea</h2>',
+    'Una ruta larga y variada, con mucha pista cómoda pero también con dos bajadas técnicas y una subida de las que obligan a empujar. La subida de cemento desde Osma hasta Zengotitagane es dura para una bici normal, recomendable con e-bike. Las dos trialeras piden costumbre de bajar por el monte; quien prefiera evitar la primera tiene la alternativa por pista explicada más abajo.':
+        'Ibilbide luze eta askotarikoa, pista eroso ugarirekin baina baita bi jaitsiera tekniko eta bultzatzera behartzen duten igoera batekin ere. Osmatik Zengotitaganerako zementuzko igoera gogorra da bizikleta arruntarentzat, e-bikearekin gomendagarria. Bi trialerek mendian jaisteko ohitura eskatzen dute; lehena saihestu nahi duenak beherago azaldutako pistako aukera du.',
+    'Nueva ruta por los montes de la zona de <b>Maguna</b>, combinando pistas de cemento, pistas de tierra y senderos que nos llevan a explorar nuevas alternativas por los alrededores.':
+        'Ibilbide berria <b>Maguna</b> inguruko mendietan, zementuzko pistak, lurrezko pistak eta bidexkak lotuz, inguruko aukera berriak arakatzera eramaten gaituztenak.',
+    'Salimos de Trabakua y, tras recorrer unos dos kilómetros, llegamos al barrio de <b>Osma</b>, donde cogemos el cruce a mano derecha para comenzar la subida hacia <b>Zengotitagane</b> y los eólicos. Ascendemos por una pista de cemento cómoda y llevadera, aunque con algunas rampas de cierta exigencia. Una subida bastante asequible para quienes están acostumbrados a andar en bici por el monte.':
+        'Trabakuatik abiatzen gara eta, bi bat kilometro egin ondoren, <b>Osma</b> auzora iristen gara; han eskuineko bidegurutzea hartzen dugu <b>Zengotitagane</b>ra eta eolikoetara igotzen hasteko. Zementuzko pista eroso eta eramangarri batetik igotzen gara, nahiz eta zenbait aldapa gogorxeago izan. Mendian bizikletan ibiltzera ohituta dagoenarentzat nahiko igoera lasaia.',
+    'Una vez arriba, disfrutamos de las vistas y continuamos por el cordal hasta <b>Iturzurigaina</b>, donde está el primero de los dos dólmenes del día, señalizado en la campa con una hilera de postes. Desde aquí comenzamos el descenso por el camino de cemento que viene de Garai, con buenas vistas mientras perdemos altura.':
+        'Goian gaudela, bistez gozatu eta gailurrez gailur jarraitzen dugu <b>Iturzurigaina</b>raino; han dago eguneko bi trikuharrietatik lehena, zelaian zutoin ilara batez markatuta. Hemendik Garaitik datorren zementuzko bidetik hasten gara jaisten, bista onekin altuera galtzen dugun bitartean.',
+    'La idea inicial es hacer un recorrido limpio por pista en la zona de Maguna, pero, como suele pasar, cuando veo algo nuevo que me llama la atención, me meto a probarlo.':
+        'Hasierako asmoa Maguna inguruan pistaz pista ibilbide garbi bat egitea da, baina, ohi bezala, arreta ematen didan zerbait berria ikusten dudanean, probatzera sartzen naiz.',
+    'En el kilómetro 10, poco después de pasar junto al segundo dolmen, el de <b>Ama Birjinen Baso</b>, abandonamos la carretera y cogemos un sendero de bajada. Lo que empieza como un pequeño atajo se convierte en una trialera bastante entretenida, con tramos que se complican y que pueden resultar difíciles para quien no esté acostumbrado a este tipo de terreno. No es una bajada para cualquiera, aunque con experiencia y buen control de la bici se puede hacer. Durante el descenso pasamos junto a pequeños riachuelos hasta salir más adelante a una pista por la que continúa el recorrido.':
+        '10. kilometroan, bigarren trikuharriaren ondotik &mdash;<b>Ama Birjinen Baso</b>koa&mdash; pasatu eta gutxira, errepidea utzi eta beheranzko bidexka bat hartzen dugu. Bide-laburtzaile txiki gisa hasten dena trialera nahiko dibertigarri bihurtzen da, zailtzen diren tarteekin, eta lurralde mota honetara ohituta ez dagoenarentzat gogorrak izan daitezke. Ez da edonorentzako jaitsiera, baina esperientziarekin eta bizikletaren kontrol onarekin egin daiteke. Jaitsieran erreka txikien ondotik pasatzen gara, aurrerago ibilbideak jarraitzen duen pista batera atera arte.',
+    'Si preferimos evitar este tramo, podemos continuar por la carretera hasta el cruce donde, al regresar de Maguna, volvemos a enlazar con esta misma pista. Allí giramos a la derecha y, en el siguiente cruce, volvemos a girar a la derecha para coger otra pista que nos permite continuar la ruta sin pasar por el sendero.':
+        'Tarte hau saihestu nahi badugu, errepidetik jarraitu dezakegu Magunatik itzultzean pista honekin berriro lotzen garen bidegurutzeraino. Han eskuinera jotzen dugu eta, hurrengo bidegurutzean, berriro eskuinera, bidexkatik pasatu gabe ibilbideari jarraitzeko beste pista bat hartzeko.',
+    'A partir de aquí, el recorrido hacia Maguna es más llevadero, con continuos sube y baja, aunque la tendencia general es perder altura. Esta ruta es nueva para nosotros: ya teníamos un trazado por la parte superior y otro más abajo, así que esta vez probamos una alternativa intermedia que resulta muy interesante.':
+        'Hemendik aurrera, Magunarako ibilbidea eramangarriagoa da, etengabeko igoera eta jaitsierekin, nahiz eta joera orokorra altuera galtzea izan. Ibilbide hau berria da guretzat: goiko aldetik bazen trazatu bat eta beheragotik beste bat, eta oraingoan tarteko aukera bat probatzen dugu, oso interesgarria.',
+    'Al acercarnos a Maguna, encontramos una verja que nos corta el paso. Hay un pequeño paso con dos escalones que permite salvar la alambrada. No tiene mayor complicación: basta con levantar la bici y pasarla por encima para continuar al otro lado.':
+        'Magunara hurbiltzean, bidea mozten digun hesi bat aurkitzen dugu. Bi mailako pasabide txiki bat dago alanbradaren gainetik pasatzeko. Ez du inolako zailtasunik: bizikleta jaso eta gainetik pasatzea besterik ez da, beste aldetik jarraitzeko.',
+    'En lugar de seguir por el camino habitual, que ya conocemos de otras rutas, giramos a la izquierda para explorar otra bajada. Al principio, la pista tiene buena pinta y parece estar bastante limpia, así que decido probarla. Sin embargo, a medida que avanzamos, el camino se va complicando y aparecen tramos menos limpios y algo más difíciles que el descenso que solemos hacer.':
+        'Ohiko bidetik jarraitu beharrean, beste ibilbide batzuetatik ezagutzen duguna, ezkerrera jotzen dugu beste jaitsiera bat arakatzeko. Hasieran pistak itxura ona du eta nahiko garbi dagoela dirudi, beraz probatzea erabakitzen dut. Hala ere, aurrera egin ahala, bidea zailduz doa eta ohi dugun jaitsiera baino garbitasun gutxiagoko eta zertxobait gogorragoko tarteak agertzen dira.',
+    'Aun así, conseguimos bajar hasta la carretera sin problemas. Como la anterior, pide cierta costumbre de bajar por el monte, pero se saca.':
+        'Hala ere, arazorik gabe jaistea lortzen dugu errepideraino. Aurrekoak bezala, mendian jaisteko ohitura pixka bat eskatzen du, baina ateratzen da.',
+    'Continuamos por la carretera y giramos a la izquierda para acercarnos a <b>Maguna</b>, donde podemos parar en la fuente a coger agua. Justo al lado está la ermita de San Lorentzo. Es un pueblo bonito y tranquilo, de esos lugares que merece la pena conocer mientras recorremos estos montes.':
+        'Errepidetik jarraitzen dugu eta ezkerrera jotzen dugu <b>Maguna</b>ra hurbiltzeko; han iturrian gelditu gaitezke ura hartzera. Alboan bertan San Lorentzo baseliza dago. Herri polita eta lasaia da, mendi hauetan zehar ibiltzean ezagutzea merezi duten horietakoa.',
+    'Dejamos Maguna atrás y, al llegar a un cruce, cogemos el camino de la izquierda para comenzar a subir por una pista de piedra que nos devuelve hacia la zona por la que hemos pasado anteriormente.':
+        'Maguna atzean uzten dugu eta, bidegurutze batera iristean, ezkerreko bidea hartzen dugu harrizko pista batetik igotzen hasteko, lehenago igaro garen zonaldera itzularazten gaituena.',
+    'Más adelante cruzamos la carretera que viene de Garai por un paso de madera habilitado para bicicletas y peatones. Al otro lado nos espera una buena bajada por una pista de piedra en dirección a Garai.':
+        'Aurrerago Garaitik datorren errepidea zeharkatzen dugu, bizikletentzat eta oinezkoentzat prestatutako egurrezko pasabide batetik. Beste aldean jaitsiera on bat zain dugu, harrizko pista batetik Garai alderantz.',
+    'Cuando estamos llegando casi abajo, veo un sendero a mano izquierda y decido abandonar el camino habitual para probar una nueva alternativa. Esta vez toca subir. El sendero es bastante exigente y hay que darlo todo para avanzar. Durante un tramo seguimos el trazado de un cable eléctrico, que nos sirve como referencia para orientarnos y seguir el camino.':
+        'Ia behera iristear gaudela, ezkerrean bidexka bat ikusten dut eta ohiko bidea uztea erabakitzen dut aukera berri bat probatzeko. Oraingoan igo egin behar. Bidexka nahiko gogorra da eta dena eman behar da aurrera egiteko. Tarte batean argindar-kable baten trazadurari jarraitzen diogu, orientatzeko eta bideari jarraitzeko erreferentzia gisa balio digula.',
+    'La subida se hace dura y en un par de ocasiones me toca empujar la bici durante aproximadamente medio minuto. Es una subida empinada, de las que obligan a esforzarse, pero conseguimos superarla y llegar a una zona que ya conocemos de otros recorridos.':
+        'Igoera gogorra egiten da eta pare bat alditan bizikleta bultzatzea tokatzen zait, minutu erdi inguruz. Aldapa handiko igoera da, esfortzua eskatzen duten horietakoa, baina gainditzea eta beste ibilbide batzuetatik ezagutzen dugun zonaldera iristea lortzen dugu.',
+    'Viendo cómo es el terreno, queda apuntado para otra ocasión: esta subida podría convertirse en una bajada interesante si hacemos el recorrido en sentido contrario.':
+        'Lurraldea nolakoa den ikusita, beste baterako apuntatuta geratzen da: igoera hau jaitsiera interesgarri bihur liteke ibilbidea alderantziz eginez gero.',
+    'Continuamos por otra pista a mano derecha, en dirección al camino que viene de Sarria hacia Garai. A mitad de la bajada, en plena curva, abandonamos la pista y cogemos un sendero que ya conocemos de otra ruta y que nos lleva hasta <b>San Kristobal Txiki</b>.':
+        'Eskuineko beste pista batetik jarraitzen dugu, Sarriatik Garaira datorren bidearen norabidean. Jaitsieraren erdian, bihurgune betean, pista utzi eta beste ibilbide batetik ezagutzen dugun bidexka bat hartzen dugu, <b>San Kristobal Txiki</b>raino eramaten gaituena.',
+    'Una vez en San Kristobal Txiki, giramos a la izquierda para coger la pista que sube hacia <b>Betzun</b>, el caserío que conecta con la zona de Zengotita.':
+        'San Kristobal Txikin gaudela, ezkerrera jotzen dugu <b>Betzun</b>era igotzen den pista hartzeko, Zengotita aldearekin lotzen duen baserria.',
+    'Este tramo tiene algunos baches y debemos cruzar un pequeño río, por lo que en algún momento puede tocar bajarse de la bici. Es un camino que ya hacía antes de tener la bicicleta eléctrica, así que se puede hacer tanto con una MTB convencional como con una eléctrica, siempre que nos guste andar por el monte y no nos importe afrontar algún tramo exigente.':
+        'Tarte honek zulo batzuk ditu eta erreka txiki bat zeharkatu behar dugu, beraz, baliteke uneren batean bizikletatik jaistea tokatzea. Bizikleta elektrikoa izan aurretik ere egiten nuen bidea da, beraz, MTB konbentzionalarekin zein elektrikoarekin egin daiteke, mendian ibiltzea gustatzen bazaigu eta tarteren bat gogorra izateak axola ez badigu.',
+    'Al llegar a Betzun, cogemos la carretera de cemento que baja hacia <b>Zengotita</b>. Una vez allí, enlazamos con la carretera principal y solo nos queda recorrer los últimos dos kilómetros y medio para regresar a Trabakua y dar por terminada esta ruta.':
+        'Betzunera iristean, <b>Zengotita</b>ra jaisten den zementuzko errepidea hartzen dugu. Behin han, errepide nagusiarekin lotzen gara eta azken bi kilometro eta erdiak egitea besterik ez zaigu geratzen Trabakuara itzuli eta ibilbide honi amaiera emateko.',
+    'En definitiva, un recorrido en el que hemos combinado caminos conocidos con nuevas alternativas, probando varios senderos y descubriendo alguna subida que merece la pena tener en cuenta para futuras rutas.':
+        'Azken batean, bide ezagunak aukera berriekin uztartu ditugun ibilbide bat, hainbat bidexka probatuz eta hurrengo ibilbideetarako kontuan hartzea merezi duen igoeraren bat deskubrituz.',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
@@ -6651,6 +6758,7 @@ PAGE_STRINGS = {
     'askakosantakataline': ASKAKOSANTAKATALINE,
     'garaikanala': GARAIKANALA,
     'aixolaintxorta': AIXOLAINTXORTA,
+    'zengotitamaguna': ZENGOTITAMAGUNA,
     'karabieta': KARABIETA,
     'astorkigane': ASTORKIGANE,
     'longaurjauziak': LONGAURJAUZIAK,

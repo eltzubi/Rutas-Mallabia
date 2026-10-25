@@ -71,7 +71,7 @@ FUENTES = [
         "punto": ("trabakua", "salida"),
         "nota_es": "En el alto, junto al bar de arriba y los columpios.",
         "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
-        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa"],
+        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna"],
     },
     {
         "id": "arteta",
@@ -106,7 +106,7 @@ FUENTES = [
         "nota_es": "Junto al refugio, en lo alto.",
         "nota_eu": "Aterpearen ondoan, goialdean.",
         "rutas": ["iturrizuri", "axmakuriturrizuri", "zengotitaiturzuri", "longa", "betzun",
-                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak", "7pago", "garaimaguna"],
+                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak", "7pago", "garaimaguna", "zengotitamaguna"],
     },
     {
         "id": "zengotita",
@@ -130,7 +130,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 1),
         "nota_es": "Arriba, junto a la ermita.",
         "nota_eu": "Goian, baselizaren ondoan.",
-        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane", "askakosantakataline"],
+        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane", "askakosantakataline", "zengotitamaguna"],
     },
     {
         "id": "besoita",
@@ -170,7 +170,7 @@ FUENTES = [
         "punto": ("maguna", 3),
         "nota_es": "En el casco del barrio.",
         "nota_eu": "Auzoaren erdigunean.",
-        "rutas": ["maguna"],
+        "rutas": ["maguna", "zengotitamaguna"],
     },
     {
         "id": "garai",
