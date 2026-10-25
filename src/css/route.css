@@ -803,11 +803,12 @@ footer a:hover{ color:var(--ink); }
 
 /* ---- Guia paso a paso de «monta tu ruta» (preguntas.html) ---------------
    Siete pasos con su captura. El numero va en un circulo del color del
-   trazado, que es el de la herramienta, y no del de ninguna actividad. */
-.guia{ margin:34px 0 10px; }
-.guia h2{ margin:0 0 4px; font-size:22px; }
-.guia-intro{ margin:0 0 20px; color:var(--ink-dim); }
-.guia-pasos{ list-style:none; margin:0; padding:0; counter-reset:paso;
+   trazado, que es el de la herramienta, y no del de ninguna actividad.
+   Vive dentro de un <details> mas de la lista de preguntas: lo pidio el
+   autor, que ocupaba media pagina abierta de por vida. Por eso la entradilla
+   necesita ganarle a «.faq-a p», que si no le come el margen de abajo. */
+.faq-a .guia-intro{ margin:14px 0 20px; color:var(--ink-dim); }
+.guia-pasos{ list-style:none; margin:0 0 6px; padding:0; counter-reset:paso;
              display:flex; flex-direction:column; gap:26px; }
 .guia-pasos li{ counter-increment:paso; position:relative; padding-left:42px; }
 .guia-pasos li::before{

@@ -6553,8 +6553,8 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
-    '<h2>C&oacute;mo montarte tu ruta, paso a paso</h2>':
-        '<h2>Nola osatu zure ibilbidea, urratsez urrats</h2>',
+    '<span class="faq-q">C&oacute;mo montarte tu ruta, paso a paso</span>':
+        '<span class="faq-q">Nola osatu zure ibilbidea, urratsez urrats</span>',
     '<p class="guia-intro">Siete pasos. No hay que registrarse ni instalar nada, y lo que dibujes se queda solo en tu m&oacute;vil.</p>':
         '<p class="guia-intro">Zazpi urrats. Ez dago izena eman beharrik ezta ezer instalatu beharrik ere, eta marrazten duzuna zure mugikorrean bakarrik geratzen da.</p>',
     '<h3>1. Abre el mapa y busca el l&aacute;piz</h3>':
@@ -6627,10 +6627,6 @@ PREGUNTAS = {
         '<span class="faq-q">Zer esan nahi du &laquo;Esfortzua&raquo;k: Erraza, Ertaina edo Zaila?</span>',
     '<p>Lo que cuesta el recorrido por sus dos datos duros: la <b>distancia</b> y el <b>desnivel acumulado</b>. No habla de dificultad t&eacute;cnica, solo de cu&aacute;nto vas a trabajar. Hoy hay 15 rutas F&aacute;ciles, 28 Medias y 22 Dif&iacute;ciles, y el filtro de la portada deja quedarse con las de un solo nivel.</p>':
         '<p>Ibilbideak zer kostatzen duen, bere bi datu gogorren arabera: <b>distantzia</b> eta <b>metatutako desnibela</b>. Ez du zailtasun teknikoaz hitz egiten, zenbat lan egin beharko duzun baizik. Gaur egun 15 ibilbide Errazak dira, 28 Ertainak eta 22 Zailak, eta azaleko iragazkiak maila bakar bateko ibilbideekin gelditzeko aukera ematen du.</p>',
-    '<span class="faq-q">&iquest;De d&oacute;nde salen la distancia y el desnivel?</span>':
-        '<span class="faq-q">Nondik ateratzen dira distantzia eta desnibela?</span>',
-    '<p>La <b>distancia</b> se mide sobre el track GPX real de ese d&iacute;a, punto a punto. El <b>desnivel acumulado</b> no: ese viene de la fuente de la ruta &mdash;Wikiloc o el organizador de la carrera&mdash; porque sumar en bruto las subidas de un GPX se dispara hasta un 40 % seg&uacute;n el ruido del GPS, y cada aplicaci&oacute;n lo suaviza a su manera. Si tu reloj te da un n&uacute;mero algo distinto, es normal.</p>':
-        '<p><b>Distantzia</b> egun hartako benetako GPX trackaren gainean neurtzen da, puntuz puntu. <b>Metatutako desnibela</b> ez: hori ibilbidearen iturritik dator &mdash;Wikiloc edo lasterketaren antolatzailea&mdash;, GPX baten igoerak gordinik batuz gero % 40raino puztu daitekeelako GPSaren zaratarekin, eta aplikazio bakoitzak bere erara leuntzen duelako. Zure erlojuak zenbaki apur bat desberdina ematen badizu, normala da.</p>',
     '<span class="faq-q">&iquest;Hay agua por el camino?</span>':
         '<span class="faq-q">Urik ba al dago bidean?</span>',
     '<p>Hay un mapa con las 35 fuentes que salen en las rutas, con una nota de d&oacute;nde est&aacute; cada una y qu&eacute; rutas pasan por ella: <a href="agua.html">el mapa de fuentes</a>. El caudal cambia con la &eacute;poca del a&ntilde;o; donde se sabe que lleva agua todo el a&ntilde;o, est&aacute; dicho.</p>':
@@ -6709,8 +6705,8 @@ ZENGOTITAMAGUNA = {
         'Ibilbide berria <b>Maguna</b> inguruko mendietan, zementuzko pistak, lurrezko pistak eta bidexkak lotuz, inguruko aukera berriak arakatzera eramaten gaituztenak.',
     'Salimos de Trabakua y, tras recorrer unos dos kilómetros, llegamos al barrio de <b>Osma</b>, donde cogemos el cruce a mano derecha para comenzar la subida hacia <b>Zengotitagane</b> y los eólicos. Ascendemos por una pista de cemento cómoda y llevadera, aunque con algunas rampas de cierta exigencia.':
         'Trabakuatik abiatzen gara eta, bi bat kilometro egin ondoren, <b>Osma</b> auzora iristen gara; han eskuineko bidegurutzea hartzen dugu <b>Zengotitagane</b>ra eta eolikoetara igotzen hasteko. Zementuzko pista eroso eta eramangarri batetik igotzen gara, nahiz eta zenbait aldapa gogorxeago izan.',
-    'Una vez arriba, disfrutamos de las vistas y continuamos por el cordal hasta <b>Iturzurigaina</b>, donde está el primero de los dos dólmenes del día, señalizado en la campa con una hilera de postes. Desde aquí comenzamos el descenso por el camino de cemento que viene de Garai, con buenas vistas mientras perdemos altura.':
-        'Goian gaudela, bistez gozatu eta gailurrez gailur jarraitzen dugu <b>Iturzurigaina</b>raino; han dago eguneko bi trikuharrietatik lehena, zelaian zutoin ilara batez markatuta. Hemendik Garaitik datorren zementuzko bidetik hasten gara jaisten, bista onekin altuera galtzen dugun bitartean.',
+    'Una vez arriba, disfrutamos de las vistas y continuamos por el cordal hasta <b>Iturzurigaina</b>, donde está el primero de los dos dólmenes del día, señalizado en la campa con una hilera de postes. A nuestra derecha, muy cerca, queda la fuente de Iturzuri, por si a alguien le hace falta agua; nosotros seguimos de frente. Desde aquí comenzamos el descenso por el camino de cemento que viene de Garai, con buenas vistas mientras perdemos altura.':
+        'Goian gaudela, bistez gozatu eta gailurrez gailur jarraitzen dugu <b>Iturzurigaina</b>raino; han dago eguneko bi trikuharrietatik lehena, zelaian zutoin ilara batez markatuta. Gure eskuinean, oso gertu, Iturzuriko iturria geratzen da, norbaitek ura behar badu; gu aurrera jarraitzen dugu. Hemendik Garaitik datorren zementuzko bidetik hasten gara jaisten, bista onekin altuera galtzen dugun bitartean.',
     'La idea inicial es hacer un recorrido limpio por pista en la zona de Maguna, pero, como suele pasar, cuando veo algo nuevo que me llama la atención, me meto a probarlo.':
         'Hasierako asmoa Maguna inguruan pistaz pista ibilbide garbi bat egitea da, baina, ohi bezala, arreta ematen didan zerbait berria ikusten dudanean, probatzera sartzen naiz.',
     'En el kilómetro 10, poco después de pasar junto al segundo dolmen, el de <b>Ama Birjinen Baso</b>, abandonamos la carretera y cogemos un sendero de bajada. Lo que empieza como un pequeño atajo se convierte en una trialera bastante entretenida, con tramos que se complican y que pueden resultar difíciles para quien no esté acostumbrado a este tipo de terreno. No es una bajada para cualquiera, aunque con experiencia y buen control de la bici se puede hacer. Durante el descenso pasamos junto a pequeños riachuelos hasta salir más adelante a una pista por la que continúa el recorrido.':

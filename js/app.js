@@ -767,3 +767,47 @@
   });
   if (movil.addEventListener) movil.addEventListener('change', mira);
 })();
+
+/* ---- Al abrir una pregunta, ponerla a la vista -------------------------
+   Lo pidio el autor. Con el <details name="faq"> nativo, abrir una de abajo
+   CIERRA la de arriba en el mismo paso, y la pagina se encoge de golpe: la
+   pregunta que acabas de tocar se te va hacia arriba, a veces debajo de la
+   cabecera pegajosa y a veces fuera de la pantalla.
+
+   Si la pregunta entera cabe en la pantalla se centra; si no cabe -- la guia
+   paso a paso con sus ocho capturas no cabe en ningun movil -- se lleva el
+   titulo justo debajo de la cabecera, que es lo util: centrar algo de tres
+   pantallas de alto deja el titulo fuera. Se espera dos fotogramas porque en
+   el primero el navegador todavia no ha recalculado el alto de la que se
+   cierra, y la cuenta saldria sobre la pagina de antes. */
+(function(){
+  var items = document.querySelectorAll('details.faq-item');
+  if (!items.length) return;
+  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cabecera = document.querySelector('.masthead');
+
+  function pon(d){
+    var alto = window.innerHeight;
+    var margen = (cabecera ? cabecera.getBoundingClientRect().height : 0) + 12;
+    var caja = d.getBoundingClientRect();
+    var destino;
+    if (caja.height + margen <= alto) {
+      destino = caja.top + window.pageYOffset - (alto - caja.height) / 2;
+    } else {
+      destino = caja.top + window.pageYOffset - margen;
+    }
+    destino = Math.max(0, Math.round(destino));
+    try {
+      window.scrollTo({ top: destino, behavior: quieto ? 'auto' : 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, destino);   // navegadores sin la forma de objeto
+    }
+  }
+
+  Array.prototype.forEach.call(items, function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ pon(d); }); });
+    });
+  });
+})();

@@ -362,7 +362,7 @@ firma, porque de ese encuadre inicial ya se ocupa `fit()`. Solo en la portada.
 **Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
 `aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
 `NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y
-`preguntas` es ademas la segunda pagina sin mapa. Diez preguntas en `<details name="faq">` nativo:
+`preguntas` es ademas la segunda pagina sin mapa. Nueve preguntas y la guía, en `<details name="faq">` nativo:
 sin una linea de JavaScript, con teclado, y el propio navegador cierra la anterior al abrir otra
 («que se cierren facil», lo pidio el autor). Si un navegador viejo no entiende `name`, lo unico que
 pasa es que se pueden quedar varias abiertas. El color sale de la actividad, como en todo el sitio:
@@ -372,10 +372,22 @@ enlace las generales, que no es ninguna de las dos y por eso no se lee como una 
 enriquecido a webs oficiales de sanidad y administracion, asi que seria un segundo sitio donde
 mantener las mismas diez respuestas, en dos idiomas, a cambio de nada.
 
-**La guía paso a paso de «monta tu ruta»** vive al pie de `preguntas.html`, debajo de las diez
-preguntas: siete pasos con su captura, del lápiz al GPX, incluido el ojo de «Rutas» para ver qué hay
-debajo (si por ahí pasa un camino que no es ninguna de las 65, o si el tramo enganchado cruza campo
-a través). Lo pidió el autor.
+**La guía paso a paso de «monta tu ruta»** es **un `<details>` más de la lista**, el último, con
+el mismo `name="faq"` que los demás: el autor no la quiere abierta de por vida ocupando media
+página. Va pegada a «¿Puedo montarme mi propia ruta?», que es su pregunta. Son siete pasos con su
+captura, del lápiz al GPX, incluido el ojo de «Rutas» para ver qué hay debajo (si por ahí pasa un
+camino que no es ninguna de las 65, o si el tramo enganchado cruza campo a través).
+
+**Las preguntas van agrupadas por tema**, no por orden de llegada: las tres de bici, luego las tres
+de elegir ruta (Esfuerzo, niños, carreras), luego las dos de campo (agua, tracks) y al final las dos
+de montarse la ruta. Lo pidió el autor: «las que más se parecen, juntas».
+
+**Al abrir una pregunta, la página la pone a la vista** (el bloque del final de `src/js/app.js`).
+Hace falta porque `<details name="faq">` cierra la anterior en el mismo paso y la página se encoge
+de golpe: lo que acabas de tocar se va hacia arriba, a veces debajo de la cabecera pegajosa. Si la
+pregunta cabe entera en la pantalla se centra; si no cabe —la guía mide 3.303 px en un móvil— se
+lleva el título justo debajo de la cabecera, que es lo útil. Se esperan **dos fotogramas** antes de
+medir: en el primero el navegador todavía no ha recalculado el alto de la que se cierra.
 
 Las capturas están en **`img/guia/`**, en WebP de 760 px y 545 kB en total, y **no pasan por el
 tren de imágenes**: `optimize_images.py` y compañía sólo miran los `.jpg` de `img/` y de `img/orig/`
