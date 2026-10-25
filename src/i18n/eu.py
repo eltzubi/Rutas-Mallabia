@@ -812,8 +812,8 @@ HOME = {
     '<a class="directions-cta" href="preguntas.html">Ver las preguntas <span aria-hidden="true">&rarr;</span></a>':
         '<a class="directions-cta" href="preguntas.html">Ikusi galderak <span aria-hidden="true">&rarr;</span></a>',
     # zengotitamaguna card
-    'alt="El d&oacute;lmen, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
-        'alt="Trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
+    'alt="El dolmen de Iturzurigaina, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
+        'alt="Iturzurigainako trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
     '<h3 class="route-card-name">Zengotitagane, los d&oacute;lmenes, Maguna y San Kristobal Txiki</h3>':
         '<h3 class="route-card-name">Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki</h3>',
     '<p class="route-card-desc">Circuito en e-bike desde Trabakua por Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki y Betzun</p>':
@@ -6671,8 +6671,8 @@ ZENGOTITAMAGUNA = {
         'alt="Zementuzko pista pinu eta iratzeen artean gora, goiko aldera"',
     'alt="Vacas pastando junto al cordal, con la fila de aerogeneradores siguiendo la loma"':
         'alt="Behiak bazkatzen gailurraren ondoan, eolikoen ilara muinoari jarraika"',
-    'alt="El d&oacute;lmen, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
-        'alt="Trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
+    'alt="El dolmen de Iturzurigaina, un t&uacute;mulo de piedras rodeado de postes con la punta naranja, junto al hayedo y los aerogeneradores"':
+        'alt="Iturzurigainako trikuharria, harri-pila bat punta laranjako zutoinez inguratuta, pagadiaren eta eolikoen ondoan"',
     'alt="Pista de tierra entre arbolado de oto&ntilde;o, con la ladera pelada y las antenas de la cima al fondo"':
         'alt="Lurrezko pista udazkeneko zuhaitzen artean, hegal soila eta gailurreko antenak atzealdean"',
     'alt="Bajada por un sendero pedregoso entre el arbolado, vista desde el manillar"':
