@@ -378,6 +378,38 @@
     });
     el.parentElement.appendChild(layersBar);
 
+    // «Rutas»: un interruptor para quitar los trazados y ver el mapa a pelo.
+    // Lo pidio el autor -- sobre el satelite, y donde se juntan varias rutas,
+    // los trazados tapan justo lo que quiere mirar. Va en la misma pastilla
+    // que las capas, detras de la raya, como el de la pendiente. No borra
+    // nada: solo los esconde, y el trazado que el visitante este dibujando
+    // (.draw-line) se queda, que para eso lo esta dibujando.
+    var rutasBtn = document.createElement('button');
+    rutasBtn.type = 'button';
+    rutasBtn.className = 'map-layer-btn map-rutas-btn is-selected';
+    // En un movil estrecho las cuatro capas ya van justas: ahi el boton se
+    // queda en un ojo, y el rotulo solo sale cuando hay sitio.
+    rutasBtn.innerHTML = '<span class="rutas-txt">' + (isEu ? 'Ibilbideak' : 'Rutas') + '</span>' +
+      '<svg class="rutas-ico" width="15" height="15" viewBox="0 0 24 24" fill="none"' +
+      ' stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' +
+      ' aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>' +
+      '<circle cx="12" cy="12" r="3"/></svg>';
+    rutasBtn.setAttribute('aria-label', isEu ? 'Ibilbideak' : 'Rutas');
+    rutasBtn.title = isEu ? 'Ibilbideak ezkutatu eta mapa soilik ikusi'
+                          : 'Esconder las rutas y ver solo el mapa';
+    rutasBtn.setAttribute('aria-pressed', 'true');
+    rutasBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var ocultas = el.classList.toggle('sin-rutas');
+      rutasBtn.classList.toggle('is-selected', !ocultas);
+      rutasBtn.setAttribute('aria-pressed', String(!ocultas));
+      rutasBtn.title = ocultas
+        ? (isEu ? 'Ibilbideak berriro erakutsi' : 'Volver a ver las rutas')
+        : (isEu ? 'Ibilbideak ezkutatu eta mapa soilik ikusi'
+                : 'Esconder las rutas y ver solo el mapa');
+    });
+    ponExtra(rutasBtn);
+
     // Lo que no es "que mapa" sino como se pinta encima va en la misma
     // pastilla, detras de una raya: estaba en una segunda pastilla debajo y
     // el autor lo quiere todo seguido y en horizontal. La raya es lo unico

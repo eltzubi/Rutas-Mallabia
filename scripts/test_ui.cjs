@@ -248,7 +248,7 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
   // con el activo marcado. La portada arranca en «Calles» (el tercero) y de
   // ahi no se mueve sola.
-  const capas=e.all('.map-layers .map-layer-btn');assert.equal(capas.length,4);
+  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
   assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en Calles');
   capas[0].click();
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
@@ -257,11 +257,14 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // El boton de pintar por pendiente es cosa de la ficha de una ruta: aqui
   // son 57 tracks a la vez y sin alturas, asi que la pastilla lleva las
   // cuatro capas y nada mas.
-  assert.equal(e.all('.map-layers .map-layers-sep').length,0,'la portada no lleva pendiente');
+  // La portada sigue sin «Pendiente», pero desde que existe el interruptor de
+  // «Rutas» si lleva la raya que lo separa de las capas.
+  assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya antes de «Rutas»');
+  assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>/Pendiente|Malda/.test(b.textContent||'')).length,0,'la portada no lleva pendiente');
   // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
-  const c2=e2.all('.map-layers .map-layer-btn');
+  const c2=e2.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
@@ -287,7 +290,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.trazados().length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
@@ -342,7 +345,7 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   // Y sin «Bici»: CyclOSM es la capa mas lenta y mas pesada, y era la que
   // abria toda ficha. La pendiente va en la misma pastilla, detras de la
   // raya, no en otra debajo.
-  assert.deepEqual(e.all('.map-layers .map-layer-btn').map(b=>b.textContent),
+  assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
                    ['IGN','Calles','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });

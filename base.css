@@ -160,6 +160,34 @@ body{
   width:1px; align-self:stretch; margin:3px 4px;
   background:var(--line); flex:0 0 auto;
 }
+.map-rutas-btn{ display:inline-flex; align-items:center; }
+.map-rutas-btn .rutas-ico{ display:none; }
+@media (max-width:420px){
+  /* Con cinco botones en la pastilla no caben los rotulos: el de
+     «Rutas» se queda en un ojo. */
+  .map-rutas-btn .rutas-txt{ display:none; }
+  .map-rutas-btn .rutas-ico{ display:block; }
+  .map-rutas-btn{ padding:6px 8px; }
+}
+@media (max-width:360px){
+  /* A 320 px la caja del mapa mide 238 y la pastilla 142: ni con el ojo
+     caben cinco. Ahi el ojo se sale de la pastilla y baja a la columna de
+     la derecha, debajo del boton de ampliar, y el lapiz se corre uno. */
+  .map-rutas-btn{
+    position:absolute; z-index:400; top:52px; right:10px;
+    width:34px; height:34px; padding:0; display:grid; place-items:center;
+    border:1px solid var(--line); border-radius:10px;
+    background:color-mix(in srgb, var(--ground) 82%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    box-shadow:0 4px 16px rgba(0,0,0,.3);
+  }
+  .map-rutas-btn.is-selected{ background:var(--teal); color:var(--ground); border-color:var(--teal); }
+  .map-draw-btn{ top:94px; }
+  .draw-tools{ top:136px; }
+  /* Y la raya de separacion sobra: aqui no separa nada y son 5 px que
+     le faltan a los rotulos de las capas para no salir cortados. */
+  .map-layers-sep{ display:none; }
+}
 @media (max-width:420px){
   .map-layers{ left:48px; right:48px; padding:2px; gap:0; }
   .map-layer-btn{ padding:6px 6px; font-size:10px; letter-spacing:0; }
@@ -441,6 +469,12 @@ body{
 .draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden]{ display:none; }
 /* La clase va en el propio contenedor del mapa ([data-map-src]), que es el
    .leaflet-container, no en la caja de fuera. */
+/* «Rutas» apagado: el mapa a pelo. Se esconden los trazados, sus rebordes
+   y los marcadores (salida, puntos numerados, kilometros), pero NO el
+   trazado que se este dibujando, que lleva .draw-line. */
+[data-map-src].sin-rutas .leaflet-overlay-pane path:not(.draw-line),
+[data-map-src].sin-rutas .leaflet-rebordes-pane,
+[data-map-src].sin-rutas .leaflet-marker-pane{ display:none; }
 [data-map-src].is-drawing{ cursor:crosshair; }
 /* Mientras se dibuja, los 65 tracks y sus marcadores dejan de recibir el
    toque: si no, al tocar encima de una ruta se abre su ficha y el toque

@@ -309,6 +309,23 @@ pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Vo
 libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
 `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
 
+**«Rutas»: el interruptor para ver el mapa a pelo.** Lo pidió el autor — sobre el satélite, y donde
+se juntan varias rutas, los trazados tapan justo lo que quiere mirar. Va **en la misma pastilla que
+las capas**, detrás de la raya, como el de la pendiente (`ponExtra`), y lo llevan la portada y las
+fichas. No borra nada: la clase `sin-rutas` en `[data-map-src]` esconde los trazados, sus rebordes y
+los marcadores (salida, puntos numerados, kilómetros), y **deja el trazado que se esté dibujando**,
+que lleva `.draw-line`.
+
+Dos cosas de sitio, medidas: por debajo de **420 px** el rótulo no cabe y el botón se queda en un
+ojo; por debajo de **360 px** no caben ni cinco botones en la pastilla (a 320 la caja del mapa mide
+238 px y la pastilla 142), así que ahí el ojo **se sale de la pastilla** y baja a la columna de la
+derecha, bajo el botón de ampliar, con el lápiz corrido a 94 px y las opciones de dibujo a 136.
+Ojo con `scripts/test_ui.cjs`: las comprobaciones de la barra cuentan **capas**, así que filtran
+`.map-rutas-btn`, y la portada ya sí tiene `.map-layers-sep` aunque no tenga «Pendiente».
+
+**Aparte:** a 320 px los rótulos «Bici» y «Calles» ya salían cortados **antes** de añadir este botón
+— comprobado contra la web publicada. Son 144 px de rótulos en una pastilla de 142.
+
 **El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
 pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
 llevaban las fichas, y en la portada se había descartado por no dibujar 57 líneas más. Sin él, el
