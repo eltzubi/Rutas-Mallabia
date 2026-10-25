@@ -4422,6 +4422,10 @@ ASTARLOKOATXA = {
 }
 
 GARAIMAGUNA = {
+    '<title>Cerca de Maguna &middot; 17,9 km &middot; 346 m</title>':
+        '<title>Magunatik gertu &middot; 17,9 km &middot; 346 m</title>',
+    '<span class="num">2</span>Cerca de Maguna':
+        '<span class="num">2</span>Magunatik gertu',
     '<span>Asfalto, pista y sendero t&eacute;cnico</span><span class="sep">/</span><span>Garai, Maguna y Axmakur</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Asfaltoa, pista eta bidezidor teknikoa</span><span class="sep">/</span><span>Garai, Maguna eta Axmakur</span><span class="sep">/</span><span>Zirkuitua</span>',
     '<h1>Garai, Maguna<br><em>Axmakur y Zengotitagane</em></h1>':
