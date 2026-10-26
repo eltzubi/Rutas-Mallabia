@@ -198,6 +198,7 @@ body{
   .map-calor-btn.is-selected{ background:#C026D3; color:#fff; border-color:#C026D3; }
   .map-draw-btn{ top:136px; }
   .draw-tools{ top:178px; }
+  .draw-redes{ top:178px; }
   /* Y la raya de separacion sobra: aqui no separa nada y son 5 px que
      le faltan a los rotulos de las capas para no salir cortados. */
   .map-layers-sep{ display:none; }
@@ -480,7 +481,41 @@ body{
 /* El atributo hidden lo pone el navegador con display:none, pero una regla
    de autor con display:flex le gana: sin esto la columna de opciones se veia
    desde que se abre el mapa, antes de pulsar el lapiz. */
-.draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden]{ display:none; }
+.draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden],
+.draw-redes[hidden]{ display:none; }
+/* El boton encendido cuando el lapiz puede salirse de las rutas del autor:
+   es un cambio grande y conviene que se vea sin abrir el panel. */
+.draw-t.is-on{ background:var(--trazo); border-color:var(--trazo); color:var(--ground); }
+/* Por donde se puede ir. Cuelga de la columna de opciones, a su izquierda,
+   para no tapar el mapa de lado a lado. */
+.draw-redes{
+  position:absolute; z-index:402; top:94px; right:54px;
+  width:min(230px, calc(100% - 70px));
+  display:flex; flex-direction:column; gap:4px;
+  padding:9px 10px 10px; border-radius:12px;
+  border:1px solid color-mix(in srgb, var(--trazo) 35%, var(--line));
+  color:var(--ink); background:color-mix(in srgb, var(--ground) 94%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,.4); font-size:12.5px;
+}
+.draw-red-op{
+  text-align:left; padding:6px 9px; border-radius:9px; cursor:pointer;
+  border:1px solid var(--line); background:none; color:var(--ink);
+  font:inherit; font-size:12.5px;
+}
+.draw-red-op:hover{ border-color:var(--trazo); }
+.draw-red-op[aria-pressed="true"]{
+  background:var(--trazo); border-color:var(--trazo); color:var(--ground); font-weight:600;
+}
+.draw-red-op:focus-visible{ outline:3px solid var(--trazo); outline-offset:2px; }
+/* El aviso de que esos caminos no los ha pisado nadie. No es un triangulo
+   rojo: es una linea, y solo sale cuando el lapiz puede usarlos. */
+.draw-red-nota{
+  margin:2px 0 0; color:var(--ink-dim); font-size:11px; line-height:1.35;
+  display:none;
+}
+/* La clase va en [data-map-src] y el panel es hermano suyo dentro del marco. */
+[data-map-src].red-osm ~ .draw-redes .draw-red-nota{ display:block; }
 /* La clase va en el propio contenedor del mapa ([data-map-src]), que es el
    .leaflet-container, no en la caja de fuera. */
 /* «Rutas» apagado: el mapa a pelo. Se esconden los trazados, sus rebordes

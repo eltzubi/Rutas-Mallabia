@@ -601,6 +601,52 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
   cargado, no pasa nada.
 
+**Dos redes: «solo mis rutas» y «todos los caminos del mapa».** Lo pidió el autor — «¿no pueden
+crear fuera de mis rutas, sobre el mapa?» — y lo dejó en dos opciones: las suyas, como siempre, y
+todos los caminos, «para que pueda crear una ruta suya». El botón de la bifurcación, el primero de
+la columna de opciones, abre un panel con tres: **Solo mis rutas** (lo de siempre, y el que abre),
+**Todos los caminos · a pie** y **Todos los caminos · en bici**.
+
+La red grande sale de **`data/caminos.json`** (`scripts/make_caminos.py`, 18.954 vías, 348 kB
+comprimidos), que **se baja sólo al elegir una de esas dos opciones**. Cada vía lleva una máscara de
+para qué actividad sirve: a pie vale todo menos lo marcado `foot=no`; en bici no valen las escaleras,
+las aceras ni las zonas peatonales salvo que OSM diga `bicycle=yes`, y fuera lo que tenga
+`access=private`. **El filtro no puede fiarse de las etiquetas** — de las 19.098 vías de la zona sólo
+512 dicen algo de la bici y 590 del pie —, así que va por tipo de camino y las etiquetas mandan sólo
+donde existen. **No se deriva dificultad de nada**: si un sendero está pedregoso o embarrado no lo
+dice ningún dato.
+
+**La red va en arrays tipados y la vecindad en CSR, y hay que dejarlo así.** Con los 66 tracks solos
+daba igual (46.226 nodos), pero con OSM son **354.216 nodos y 473.968 aristas**. Medido en el
+navegador, pasar de objetos con clave de texto a `Float64Array` + CSR con clave numérica lleva la
+construcción de **908 a 246 ms** en escritorio y de **3.383 a 1.417 ms** en un móvil con la CPU
+frenada 4x, y el consumo de memoria de **132 a 68 MB**. La celda se cifra en un solo número
+(`cx * 4194304 + cy`), que cabe de sobra en un double para este recuadro. `red.nodos[i]` ya no
+existe: se usan `red.pt(i)` (con la altura en el tercer sitio cuando la hay, que es lo que miran
+«Guardar» y el GPX), `red.alt(i)` y `red.largo(a, b)`. Las aristas **no se deduplican** a propósito:
+repetirlas no cambia el resultado de Dijkstra y buscarlas costaba más que las 95.000 que sobran.
+
+**Cambiar de red no borra lo dibujado.** Los nodos tocados son índices de la red vieja, así que antes
+de tirarla se guardan sus coordenadas y después se vuelven a enganchar con `nodoCerca` y se
+recalculan los tramos (`reengancha`). Si alguno deja de tener camino se para ahí y se queda lo que sí
+ha salido, en vez de borrarle el trabajo al visitante.
+
+**Lo que cuesta de verdad: las alturas.** Los caminos de OpenStreetMap **no traen ninguna**. Antes
+todos los nodos salían de los GPX, así que `conAltura` valía con que un punto la tuviera; con OSM
+dentro, eso sacaba un «+192 / −297 m» que parecía el desnivel del recorrido entero sumando sólo los
+trozos que sí la tenían. Ahora **`conAltura` exige que la tengan todos**, y si falta alguno el panel
+dice **«sin datos de altura»**, esconde la línea del último tramo y **no dibuja el perfil** — una
+línea que no es el terreno es peor que ninguna. Si algún día se quiere el perfil en ese modo, hay que
+hornear las alturas en el build (Open-Meteo tiene una API de elevación gratis y sin clave, unas 840
+peticiones para los 112.000 puntos); no se ha hecho.
+
+**Y se dice que no están comprobados.** En ese modo, y sólo en ese, el panel lleva una línea:
+«Caminos de OpenStreetMap, sin comprobar sobre el terreno». No es un aviso con triángulo, es una
+línea. El autor lo razonó él mismo — «¿por qué necesitaría todo fiable?» —: lo que dibuja un visitante
+es suyo y no tiene que estar pisado. Pero alguno estará cerrado con una alambrada o comido por la
+zarza, y la web no va a callárselo. Los kilómetros son **libres**: no hay objetivo que marcar, se
+suman según se dibuja («los kilómetros me gustaría que fueran libres»).
+
 Lo que dibuja un visitante **no es una ruta de la web**: va en otro color (`--trazo`, que no es
 ninguna de las dos actividades a propósito), se llama «tu trazado», se guarda solo en su navegador
 (`localStorage`, hasta 12) y nunca aparece entre las 65. Se puede deshacer tramo a tramo, borrar,
