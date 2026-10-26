@@ -160,17 +160,14 @@ body{
   width:1px; align-self:stretch; margin:3px 4px;
   background:var(--line); flex:0 0 auto;
 }
-.map-rutas-btn, .map-calor-btn{ display:inline-flex; align-items:center; }
-.map-rutas-btn .rutas-ico, .map-calor-btn .calor-ico{ display:none; }
-/* El calor encendido no va en naranja como los demas botones: el naranja es
-   la bici, y aqui lo que manda es la rampa violeta-rosa de las lineas. */
-.map-calor-btn.is-selected{ background:#C026D3; color:#fff; }
+.map-rutas-btn{ display:inline-flex; align-items:center; }
+.map-rutas-btn .rutas-ico{ display:none; }
 @media (max-width:420px){
-  /* Con tantos botones en la pastilla no caben los rotulos: «Rutas» y
-     «Calor» se quedan en su icono. */
-  .map-rutas-btn .rutas-txt, .map-calor-btn .calor-txt{ display:none; }
-  .map-rutas-btn .rutas-ico, .map-calor-btn .calor-ico{ display:block; }
-  .map-rutas-btn, .map-calor-btn{ padding:6px 8px; }
+  /* Con cinco botones en la pastilla no caben los rotulos: el de
+     «Rutas» se queda en un ojo. */
+  .map-rutas-btn .rutas-txt{ display:none; }
+  .map-rutas-btn .rutas-ico{ display:block; }
+  .map-rutas-btn{ padding:6px 8px; }
 }
 @media (max-width:360px){
   /* A 320 px la caja del mapa mide 238 y la pastilla 142: ni con el ojo
@@ -185,20 +182,8 @@ body{
     box-shadow:0 4px 16px rgba(0,0,0,.3);
   }
   .map-rutas-btn.is-selected{ background:var(--teal); color:var(--ground); border-color:var(--teal); }
-  /* Y con el calor son dos los que se salen: va debajo del ojo, y el lapiz
-     y sus opciones bajan otro escalon. */
-  .map-calor-btn{
-    position:absolute; z-index:400; top:94px; right:10px;
-    width:34px; height:34px; padding:0; display:grid; place-items:center;
-    border:1px solid var(--line); border-radius:10px;
-    background:color-mix(in srgb, var(--ground) 82%, transparent);
-    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-    box-shadow:0 4px 16px rgba(0,0,0,.3);
-  }
-  .map-calor-btn.is-selected{ background:#C026D3; color:#fff; border-color:#C026D3; }
-  .map-draw-btn{ top:136px; }
-  .draw-tools{ top:178px; }
-  .draw-redes{ top:178px; }
+  .map-draw-btn{ top:94px; }
+  .draw-tools{ top:136px; }
   /* Y la raya de separacion sobra: aqui no separa nada y son 5 px que
      le faltan a los rotulos de las capas para no salir cortados. */
   .map-layers-sep{ display:none; }
@@ -481,41 +466,7 @@ body{
 /* El atributo hidden lo pone el navegador con display:none, pero una regla
    de autor con display:flex le gana: sin esto la columna de opciones se veia
    desde que se abre el mapa, antes de pulsar el lapiz. */
-.draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden],
-.draw-redes[hidden]{ display:none; }
-/* El boton encendido cuando el lapiz puede salirse de las rutas del autor:
-   es un cambio grande y conviene que se vea sin abrir el panel. */
-.draw-t.is-on{ background:var(--trazo); border-color:var(--trazo); color:var(--ground); }
-/* Por donde se puede ir. Cuelga de la columna de opciones, a su izquierda,
-   para no tapar el mapa de lado a lado. */
-.draw-redes{
-  position:absolute; z-index:402; top:94px; right:54px;
-  width:min(230px, calc(100% - 70px));
-  display:flex; flex-direction:column; gap:4px;
-  padding:9px 10px 10px; border-radius:12px;
-  border:1px solid color-mix(in srgb, var(--trazo) 35%, var(--line));
-  color:var(--ink); background:color-mix(in srgb, var(--ground) 94%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-  box-shadow:0 10px 30px rgba(0,0,0,.4); font-size:12.5px;
-}
-.draw-red-op{
-  text-align:left; padding:6px 9px; border-radius:9px; cursor:pointer;
-  border:1px solid var(--line); background:none; color:var(--ink);
-  font:inherit; font-size:12.5px;
-}
-.draw-red-op:hover{ border-color:var(--trazo); }
-.draw-red-op[aria-pressed="true"]{
-  background:var(--trazo); border-color:var(--trazo); color:var(--ground); font-weight:600;
-}
-.draw-red-op:focus-visible{ outline:3px solid var(--trazo); outline-offset:2px; }
-/* El aviso de que esos caminos no los ha pisado nadie. No es un triangulo
-   rojo: es una linea, y solo sale cuando el lapiz puede usarlos. */
-.draw-red-nota{
-  margin:2px 0 0; color:var(--ink-dim); font-size:11px; line-height:1.35;
-  display:none;
-}
-/* La clase va en [data-map-src] y el panel es hermano suyo dentro del marco. */
-[data-map-src].red-osm ~ .draw-redes .draw-red-nota{ display:block; }
+.draw-tools[hidden], .draw-readout[hidden], .draw-saved[hidden]{ display:none; }
 /* La clase va en el propio contenedor del mapa ([data-map-src]), que es el
    .leaflet-container, no en la caja de fuera. */
 /* «Rutas» apagado: el mapa a pelo. Se esconden los trazados, sus rebordes
@@ -523,44 +474,7 @@ body{
    trazado que se este dibujando, que lleva .draw-line. */
 [data-map-src].sin-rutas .leaflet-overlay-pane path:not(.draw-line),
 [data-map-src].sin-rutas .leaflet-rebordes-pane,
-[data-map-src].sin-rutas .leaflet-calor-pane,
 [data-map-src].sin-rutas .leaflet-marker-pane{ display:none; }
-
-/* El mapa de calor sustituye a los trazados, no se suma a ellos: con los 66
-   debajo, la rampa violeta-rosa se perderia entre el naranja y el verde. Las
-   lineas de calor viven en su propio panel y solo se ven en ese modo. */
-[data-map-src]:not(.modo-calor) .leaflet-calor-pane{ display:none; }
-
-/* La leyenda del calor, abajo a la izquierda. Sin ella el mapa son cinco
-   colores que no dicen nada. Se va mientras se dibuja un trazado: ahi abajo
-   a la izquierda van los totales de la herramienta y se pisarian. */
-.calor-leyenda{
-  position:absolute; z-index:400; left:10px; bottom:26px;
-  display:none; flex-direction:column; gap:4px;
-  padding:7px 9px; border:1px solid var(--line); border-radius:12px;
-  background:color-mix(in srgb, var(--ground) 86%, transparent);
-  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-  box-shadow:0 4px 16px rgba(0,0,0,.3);
-  font:600 10.5px 'IBM Plex Mono',monospace; color:var(--ink-dim);
-  pointer-events:none;
-}
-[data-map-src].modo-calor:not(.is-drawing) .calor-leyenda{ display:flex; }
-.calor-leyenda-tit{ letter-spacing:.02em; }
-.calor-leyenda-escala{
-  display:flex; gap:7px; margin:0; padding:0; list-style:none;
-}
-.calor-leyenda-escala li{ display:flex; align-items:center; gap:3px; }
-.calor-leyenda-escala i{
-  width:11px; height:11px; border-radius:3px; display:block;
-}
-@media (max-width:420px){
-  .calor-leyenda{ font-size:9.5px; gap:3px; padding:6px 8px; }
-  .calor-leyenda-escala{ gap:5px; }
-  .calor-leyenda-escala i{ width:9px; height:9px; }
-}
-[data-map-src].modo-calor .leaflet-overlay-pane path:not(.draw-line),
-[data-map-src].modo-calor .leaflet-rebordes-pane,
-[data-map-src].modo-calor .leaflet-marker-pane{ display:none; }
 [data-map-src].is-drawing{ cursor:crosshair; }
 /* Mientras se dibuja, los 65 tracks y sus marcadores dejan de recibir el
    toque: si no, al tocar encima de una ruta se abre su ficha y el toque

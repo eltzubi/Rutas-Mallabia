@@ -103,12 +103,7 @@ python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favic
 ```
 python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
 python3 scripts/make_alturas.py        # data/alturas.json: la altura de cada punto del mapa de la portada
-python3 scripts/make_calor.py          # data/calor.json: por cuántas rutas pasa cada trozo de camino
-python3 scripts/make_caminos.py <v>    # data/caminos.json: la red de caminos de OSM (ver scripts/osm/LEEME.txt)
 ```
-
-`make_calor.py` **hay que volver a pasarlo después de `make_map_data.py`**, como `make_alturas.py`:
-sale de `data/trailhead.json` y con una ruta nueva cambia.
 
 ```
 python3 scripts/make_card_maps.py      # img/mapa-<ruta>.webp: la miniatura de mapa de cada tarjeta
@@ -352,58 +347,11 @@ los marcadores (salida, puntos numerados, kilómetros), y **deja el trazado que 
 que lleva `.draw-line`.
 
 Dos cosas de sitio, medidas: por debajo de **420 px** el rótulo no cabe y el botón se queda en un
-ojo; por debajo de **360 px** no caben los botones en la pastilla (a 320 la caja del mapa mide
+ojo; por debajo de **360 px** no caben ni cinco botones en la pastilla (a 320 la caja del mapa mide
 238 px y la pastilla 142), así que ahí el ojo **se sale de la pastilla** y baja a la columna de la
-derecha, bajo el botón de ampliar. Desde que existe «Calor» **son dos los que se salen** — el ojo a
-52 px y el calor a 94 —, con el lápiz corrido a 136 px y las opciones de dibujo a 178.
+derecha, bajo el botón de ampliar, con el lápiz corrido a 94 px y las opciones de dibujo a 136.
 Ojo con `scripts/test_ui.cjs`: las comprobaciones de la barra cuentan **capas**, así que filtran
 `.map-rutas-btn`, y la portada ya sí tiene `.map-layers-sep` aunque no tenga «Pendiente».
-
-**«Calor»: por cuántas rutas pasa cada camino** (`make_calor.py` → `data/calor.json`, dibujado por
-`src/js/map.js`, **sólo en la portada**). El autor preguntó por un mapa de calor «tipo Strava».
-
-**El de Strava no se puede y no hay que volver a intentarlo:** desde 2018 sus teselas exigen una
-sesión iniciada de Strava para cualquier zoom útil, y sus condiciones de uso no permiten usarlas
-fuera de su web. Lo mismo con Garmin. El dato de «por dónde pasa de verdad la gente» sólo lo tienen
-ellos y no lo prestan.
-
-Esto dice otra cosa, con datos propios: **por cuántas de las 66 rutas pasa cada trozo de camino**. Y
-hay que leerlo así y no como «por dónde se anda más» — un camino que usan cinco rutas no está más
-pisado que uno que el autor hace cada semana. Lo que mide es cuánto depende la red de ese camino, y
-el rótulo de la leyenda lo dice con esas palabras: «Rutas que pasan por aquí».
-
-Cómo se cuenta: cada track se rellena cada 10 m, sus puntos se pegan a una rejilla de 25 m, y el
-calor de un punto es **cuántas rutas distintas pasan por su celda o por alguna de las ocho de
-alrededor** — unos 25-35 m de margen, que es lo que se separan dos grabaciones del mismo camino.
-Sin ese margen, dos rutas por la misma pista caen en celdas distintas y las dos salen a 1.
-
-**Los cortes no son 1/2/3/4+**, y esto costó una vuelta: con esos, el **58 %** de los puntos caía en
-el último nivel y el mapa no distinguía nada. El reparto real tiene una cola larguísima — hay trozos
-por los que pasan **46 de las 66 rutas** —, así que van en **1 / 2-3 / 4-6 / 7-14 / 15 o más**, que
-deja entre el 14 y el 25 % en cada nivel. `make_calor.py` imprime el reparto: míralo antes de dar
-unos cortes nuevos por buenos.
-
-El fichero pesa **2,1 kB comprimidos** (va por tramos, «cuatro puntos a nivel 1, nueve a nivel 3»,
-que es justo como se dibuja: una línea por tramo, no una por punto) y **se baja sólo al pulsar el
-botón**. Salen 1.504 polilíneas en un panel propio (`calor`, z-index 398) y la clase `modo-calor` en
-`[data-map-src]` esconde los trazados normales: el calor **sustituye** a las rutas, no se suma a
-ellas, que con los 66 debajo la rampa se perdería. Se dibujan **por niveles de menos a más**, para
-que un tramo frío de la última ruta no tape el nervio caliente de debajo.
-
-La rampa es **violeta-rosa** (`#A78BFA` → `#F43F5E`), un cuarto idioma visual: ni el naranja de la
-bici, ni el verde de andar, ni el azul del trazado propio, para que nadie lea el calor como una
-actividad. El extremo frío arranca en **lila claro y no en violeta oscuro**: con el oscuro se
-confundía con las líneas azules que el propio CyclOSM pinta para sus rutas ciclistas, que es el mapa
-con el que abre la portada. El grosor va con el zoom, como el de los tracks (`ajustaCalorGrosor`).
-
-Se lleva bien con lo que ya había: **el ojo de «Rutas» lo apaga también** (si no, esconder las rutas
-dejaría el calor flotando) y **el filtro de actividad lo filtra** — con «solo a pie» se apagan 782
-líneas, con «solo bici» 679, y las 43 que quedan siempre son las rutas mixtas, que salen en los dos.
-El color no se recalcula al filtrar: sigue diciendo «de las 66», que es lo que promete la leyenda.
-
-Ojo con `scripts/test_ui.cjs`: sus comprobaciones cuentan **capas**, así que filtran
-`map-rutas-btn|map-calor-btn`. Cualquier botón nuevo en la pastilla hay que añadirlo a ese filtro o
-empiezan a fallar sin motivo aparente.
 
 **El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
 pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
@@ -600,85 +548,6 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
 - `map.js` no sabe nada de todo esto: al terminar de montar el mapa dispara un evento
   **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
   cargado, no pasa nada.
-
-**Dos redes: «solo mis rutas» y «todos los caminos del mapa».** Lo pidió el autor — «¿no pueden
-crear fuera de mis rutas, sobre el mapa?» — y lo dejó en dos opciones: las suyas, como siempre, y
-todos los caminos, «para que pueda crear una ruta suya». El botón de la bifurcación, el primero de
-la columna de opciones, abre un panel con tres: **Solo mis rutas** (lo de siempre, y el que abre),
-**Todos los caminos · a pie** y **Todos los caminos · en bici**.
-
-La red grande sale de **`data/caminos.json`** (`scripts/make_caminos.py`, 18.954 vías, 348 kB
-comprimidos), que **se baja sólo al elegir una de esas dos opciones**. Cada vía lleva una máscara de
-para qué actividad sirve: a pie vale todo menos lo marcado `foot=no`; en bici no valen las escaleras,
-las aceras ni las zonas peatonales salvo que OSM diga `bicycle=yes`, y fuera lo que tenga
-`access=private`. **El filtro no puede fiarse de las etiquetas** — de las 19.098 vías de la zona sólo
-512 dicen algo de la bici y 590 del pie —, así que va por tipo de camino y las etiquetas mandan sólo
-donde existen. **No se deriva dificultad de nada**: si un sendero está pedregoso o embarrado no lo
-dice ningún dato.
-
-**La red va en arrays tipados y la vecindad en CSR, y hay que dejarlo así.** Con los 66 tracks solos
-daba igual (46.226 nodos), pero con OSM son **354.216 nodos y 473.968 aristas**. Medido en el
-navegador, pasar de objetos con clave de texto a `Float64Array` + CSR con clave numérica lleva la
-construcción de **908 a 246 ms** en escritorio y de **3.383 a 1.417 ms** en un móvil con la CPU
-frenada 4x, y el consumo de memoria de **132 a 68 MB**. La celda se cifra en un solo número
-(`cx * 4194304 + cy`), que cabe de sobra en un double para este recuadro. `red.nodos[i]` ya no
-existe: se usan `red.pt(i)` (con la altura en el tercer sitio cuando la hay, que es lo que miran
-«Guardar» y el GPX), `red.alt(i)` y `red.largo(a, b)`. Las aristas **no se deduplican** a propósito:
-repetirlas no cambia el resultado de Dijkstra y buscarlas costaba más que las 95.000 que sobran.
-
-**Cambiar de red no borra lo dibujado.** Los nodos tocados son índices de la red vieja, así que antes
-de tirarla se guardan sus coordenadas y después se vuelven a enganchar con `nodoCerca` y se
-recalculan los tramos (`reengancha`). Si alguno deja de tener camino se para ahí y se queda lo que sí
-ha salido, en vez de borrarle el trabajo al visitante.
-
-**Lo que cuesta de verdad: las alturas.** Los caminos de OpenStreetMap **no traen ninguna**. Antes
-todos los nodos salían de los GPX, así que `conAltura` valía con que un punto la tuviera; con OSM
-dentro, eso sacaba un «+192 / −297 m» que parecía el desnivel del recorrido entero sumando sólo los
-trozos que sí la tenían. Ahora **`conAltura` exige que la tengan todos**, y si falta alguno el panel
-dice **«sin datos de altura»**, esconde la línea del último tramo y **no dibuja el perfil** — una
-línea que no es el terreno es peor que ninguna.
-
-**`scripts/make_alturas_caminos.py` → `data/alturas-caminos.json`** las trae, una sola vez y en el
-build, de la API de elevación de **Open-Meteo** (gratis, sin clave, la misma casa que el pronóstico
-de cada ficha; por debajo es el modelo Copernicus de 90 m). El autor lo pidió: «al marcar una ruta,
-¿por qué no me da la altura?».
-
-**El dato en bruto no vale, y esto es lo importante de no volver a tropezar.** Medido contra las
-alturas reales de las rutas de la web: cada punto se desvía **12-19 m de media**, y sumando las
-subidas punto a punto el desnivel sale **casi el doble** (trabakuaondarroa: 841 m reales → 1.849).
-Un modelo de 90 m muestreado cada pocos metros es una escalera y cada escalón se cuenta como subida.
-La solución es **remuestrear el perfil cada 300 m antes de sumar** (`PASO_DEM_M` en `trazado.js`).
-Probados cinco pasos contra el desnivel real de 14 rutas:
-
-| paso | error medio | mediana | peor |
-|---|---|---|---|
-| 200 m | 17,8 % | 17,9 % | 32,2 % |
-| 250 m | 13,1 % | 11,2 % | 40,6 % |
-| **300 m** | **6,0 %** | **5,0 %** | **16,2 %** |
-| 350 m | 8,5 % | 7,7 % | 20,6 % |
-| 400 m | 6,6 % | 7,3 % | 22,7 % |
-
-**Si se toca ese número, hay que volver a medirlo.** El remuestreo se aplica **sólo cuando hay
-alturas del modelo** en el recorrido: con las de los GPX se suma punto a punto como siempre, y el
-resultado de las rutas del autor no cambia ni un metro. Cada nodo lleva su procedencia en `FTE`
-(1 = GPX, 2 = modelo) y una celda que tocan las dos se queda con la del GPX. Cuando el número sale
-del modelo, el panel no dice «aprox.» sino **«del modelo del terreno, ±6 %»**.
-
-**Bajarlo cuesta pelearse con el proxy de salida.** Son 1.117 peticiones de 100 puntos. Tres cosas
-aprendidas a golpes: el proxy **corta conexiones TLS a media** (`SSLEOFError`) cada pocas peticiones,
-así que el reintento empieza en medio segundo y no en tres (con tres, los reintentos se comían la
-descarga y en doce minutos no avanzaba ni los primeros 5.000 puntos); **cada hilo se queda con su
-conexión abierta**, porque el saludo TLS es lo que cuesta y abriendo una por petición la descarga
-entera se iba a 72 minutos; y con 8 hilos y la conexión reutilizada **Open-Meteo devuelve 429**, así
-que son 3 hilos y 0,6 s de espera, unas 300 peticiones por minuto, la mitad del tope. Se guarda a
-medias en `.cache-build/` cada 4.000 puntos y **el script reanuda solo** si algo se corta.
-
-**Y se dice que no están comprobados.** En ese modo, y sólo en ese, el panel lleva una línea:
-«Caminos de OpenStreetMap, sin comprobar sobre el terreno». No es un aviso con triángulo, es una
-línea. El autor lo razonó él mismo — «¿por qué necesitaría todo fiable?» —: lo que dibuja un visitante
-es suyo y no tiene que estar pisado. Pero alguno estará cerrado con una alambrada o comido por la
-zarza, y la web no va a callárselo. Los kilómetros son **libres**: no hay objetivo que marcar, se
-suman según se dibuja («los kilómetros me gustaría que fueran libres»).
 
 Lo que dibuja un visitante **no es una ruta de la web**: va en otro color (`--trazo`, que no es
 ninguna de las dos actividades a propósito), se llama «tu trazado», se guarda solo en su navegador
