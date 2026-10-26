@@ -110,6 +110,7 @@ def main():
     sys.path.insert(0, str(ROOT / 'src'))
     import build
     checks = 0
+    avisos = []
 
     def require(condition, message):
         nonlocal checks
@@ -457,6 +458,17 @@ def main():
                       for p in ET.fromstring(z.read(nombre)).findall('.//{*}trkpt')]
                 d = mas_cerca(ps)
                 require(d >= tope, f'ZIP/{nombre}: pasa a {d:.0f} m del domicilio')
+    else:
+        # Y si no esta, QUE SE SEPA. Antes se saltaba en silencio: las 14.023
+        # comprobaciones salian correctas sin haber mirado el domicilio ni una
+        # vez, que es la unica instruccion permanente del autor sobre los
+        # tracks. Un aviso no puede tumbar el build -- sin el fichero no hay
+        # nada que comprobar y en GitHub Actions tampoco va a estar -- pero
+        # callarse hacia creer que estaba comprobado.
+        avisos.append(
+            'NO se ha comprobado que ningun track pase por el domicilio: '
+            'falta scripts/.punto-privado.json (excluido de git a proposito). '
+            'Esta comprobacion solo corre en la maquina que lo tenga.')
 
     # --- la foto de vista previa existe y se publica -----------------------
     # El og:image es la foto que sale al compartir la pagina en WhatsApp o en
@@ -507,7 +519,11 @@ def main():
             require(hashlib.sha256(gpx.read_bytes()).hexdigest() in hashes, f'ZIP omits {gpx.name}')
     for src, target in build.ASSETS.items():
         require((ROOT / 'src').joinpath(*src).read_bytes() == (ROOT / target).read_bytes(), f'Stale asset: {target}')
-    print(f'OK: {checks} comprobaciones de páginas, idiomas, marcadores, descargas y assets.')
+    for aviso in avisos:
+        print(f'AVISO: {aviso}')
+    cola = f'  ({len(avisos)} aviso{"s" if len(avisos) != 1 else ""})' if avisos else ''
+    print(f'OK: {checks} comprobaciones de páginas, idiomas, marcadores, '
+          f'descargas y assets.{cola}')
 
 
 if __name__ == '__main__':
