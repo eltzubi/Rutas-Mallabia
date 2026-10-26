@@ -397,6 +397,37 @@ toca **sólo el grosor**, nunca la opacidad: ésa la llevan el filtro y la ficha
 encendería rutas apagadas a propósito. Ojo al medir desde Playwright: los rebordes **no están en
 `.leaflet-overlay-pane`** sino en `.leaflet-rebordes-pane`, y buscarlos en el primero devuelve cero.
 
+**La ficha del mapa tapaba demasiado: panel sin foto y caja alta.** El autor, con la captura de su
+movil delante: «algún otro método que abra todo sin tapar tanto los mapas». Se midieron cuatro
+maneras sobre la misma ruta, en 393 px, contando el mapa que queda libre:
+
+| | mapa libre |
+|---|---|
+| **la caja crece a 72svh** | **68 %** |
+| **ficha sin foto** | 60 % |
+| ficha en un lateral | 43 % |
+| como estaba | 37 % |
+
+**El lateral se probó y se descartó con numeros, aunque fue idea del autor** («toda la información
+en un lateral del mapa»): la caja del mapa es **cuadrada**, no apaisada, así que un lateral de
+177 px sobre 311 deja una tira de 134 px —los textos se parten, tapa los botones de zoom y la ruta
+no cabe— y **en el ordenador sale aún peor** (54 % frente al 74 % de entonces), porque allí la caja
+también es cuadrada (718x718). No volver a proponerlo sin medirlo.
+
+Se hicieron las dos ganadoras y juntas dan **78 % libre en un movil de 393 px**:
+
+- **Sin foto ni perfil en la ficha** (`src/js/map.js`): solo nombre, datos y enlace. La foto se
+  clonaba de la tarjeta de la portada —donde el visitante ya la ha visto— y cuando no había foto
+  entraba el perfil de alturas en su lugar; entre las dos cosas, 195 px de ficha. Ahora son 134. En
+  escritorio tambien baja, de 184 a 102 px, y ahí el mapa libre sube del 74 al 86 %.
+- **La caja crece mientras hay una ficha abierta** (`.route-map-box.ficha-abierta`, **solo por
+  debajo de 768 px**): de 311x311 a 311x611. Por encima de 768 no se toca, que allí la caja ya mide
+  718x718 y ponerle 72svh la **encogería**. Va por clase y no por estilo en linea a propósito: el
+  modo de dibujar escribe el alto en linea y tiene que seguir mandando — comprobado, abrir el lápiz
+  con una ficha abierta la cierra y se queda con su propio alto, y al salir todo vuelve a 311x311.
+  Hay que llamar a `invalidateSize()` **antes** de encuadrar, o Leaflet encuadra sobre el alto viejo
+  y la ruta sale pequeña en la mitad de arriba.
+
 **La linea de creditos de Leaflet iba por encima de la ficha del mapa.** Lo vio el autor en su
 movil: al abrir una ruta en la portada, «© CyclOSM, © OpenStreetMap contributors» caia justo sobre el
 enlace naranja «Ver ruta completa» y lo dejaba ilegible. La causa es de libro: los controles de

@@ -463,6 +463,10 @@
     // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
     // todas. Lo pidio el autor: «quedarse solo en la ruta limpia».
     var labelSoloHref = null;
+    // La caja que envuelve al mapa: es la que crece con la ficha abierta.
+    // Solo existe en la portada; en una ficha de ruta no hay panel.
+    var marcoMapa = el.closest ? el.closest('.route-map-box') : null;
+
     var vigilaFicha = null;
     function marcaAltoFicha(alto){
       el.style.setProperty('--ficha-alto', Math.round(alto) + 'px');
@@ -483,6 +487,10 @@
       panel.classList.remove('open');
       panel.hidden = true;
       el.classList.remove('con-ficha');
+      if (marcoMapa && marcoMapa.classList.contains('ficha-abierta')) {
+        marcoMapa.classList.remove('ficha-abierta');
+        map.invalidateSize({ animate: false });
+      }
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
@@ -557,6 +565,16 @@
       // y seguian metidos debajo del panel.
       marcaAltoFicha(panelHeight);
       el.classList.add('con-ficha');
+      // Y la caja crece, que es lo que de verdad arregla el «tapa el mapa»
+      // (solo por debajo de 768 px; lo decide el CSS). Hay que avisar a
+      // Leaflet del tamano nuevo ANTES de encuadrar, o encuadra sobre el
+      // alto viejo y la ruta se queda pequena en la mitad de arriba.
+      if (marcoMapa) {
+        marcoMapa.classList.add('ficha-abierta');
+        map.invalidateSize({ animate: false });
+        panelHeight = panel.getBoundingClientRect().height;
+        marcaAltoFicha(panelHeight);
+      }
       map.flyToBounds(line.getBounds(), {
         paddingTopLeft: [24, 24],
         paddingBottomRight: [24, panelHeight + 24],
@@ -649,19 +667,16 @@
         // linea aparte: en un movil la ficha mide 250 px y cada linea suelta
         // empujaba el boton fuera de la vista.
         facts += '<span>' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></span>';
-        // La foto sale de la propia tarjeta de la portada, clonada tal cual:
-        // asi no hay que deducir el nombre del fichero del href (que en la
-        // pagina en euskera acaba en .eu.html), el alt viene ya en el idioma
-        // correcto, y el navegador no descarga nada nuevo porque esa miniatura
-        // ya esta en la pagina.
-        var pic = sign && sign.querySelector('.route-card-photo picture');
-        var photo = pic ? '<div class="route-popup-photo">' + pic.outerHTML + '</div>' : '';
-        // El perfil solo cuando no hay foto. Los dos juntos no caben: la ficha
-        // mide como mucho el 78% del mapa, y en un movil eso son 229 px, que
-        // con foto y perfil dejaban el nombre y el boton fuera de vista.
-        var chart = (!photo && t.chart) ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
-          'preserveAspectRatio="none"><path d="' + t.chart + '" fill="var(--teal-soft)"/></svg>' : '';
-        var html = '<div class="route-popup">' + photo + chart + '<h3>' + name + '</h3>' +
+        // Ni foto ni perfil en la ficha: solo el nombre, los datos y el
+        // enlace. La ficha llevaba una foto clonada de la tarjeta (y, cuando
+        // no habia foto, el perfil de alturas en su lugar), y entre las dos
+        // cosas se comia 195 px de un mapa que en un movil mide 311: el 63 %.
+        // El autor se quejo de que la ficha tapaba el mapa, se le enseñaron
+        // cuatro maneras medidas y eligio esta -- mas la caja alta de abajo.
+        // La foto ya la ha visto en la tarjeta de la lista, asi que dentro
+        // de la ficha repetia. Sin ella el panel baja a 124 px: el 60 % del
+        // mapa queda libre en vez del 37 %.
+        var html = '<div class="route-popup"><h3>' + name + '</h3>' +
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });

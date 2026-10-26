@@ -593,6 +593,17 @@
 /* La foto va a sangre en la cabecera del panel: los margenes negativos son
    los rellenos del propio panel (16 arriba, 18 a la izquierda, 40 a la
    derecha por el boton de cerrar). */
+/* La caja del mapa crece mientras hay una ficha abierta, y solo en el movil.
+   Ahi es cuadrada y mide 311x311: con la ficha encima quedaba libre el 37 %
+   del mapa y el autor se quejo de que tapaba demasiado. Creciendo a 72svh la
+   caja pasa a 311x611 y queda libre el 68 %, con la ruta entera y los nombres
+   de los pueblos alrededor. Por encima de 768 px NO se toca: ahi la caja ya
+   mide 718x718, la ficha solo ocupa 184 px y deja libre el 74 % -- ponerle
+   72svh la encogeria. Va por clase y no por estilo en linea a proposito: el
+   modo de dibujar escribe el alto en linea y tiene que seguir mandando. */
+@media (max-width:767px){
+  .route-map-box.ficha-abierta{ aspect-ratio:auto; height:72svh; }
+}
 .route-popup-photo{ margin:-16px -40px 10px -18px; height:88px; overflow:hidden; }
 .route-popup-photo img{ width:100%; height:100%; object-fit:cover; display:block;
   filter:contrast(1.1) saturate(1.2); }
