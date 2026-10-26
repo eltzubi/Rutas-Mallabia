@@ -28,6 +28,15 @@
   var PASO_M = 5;                // se rellenan los tramos cada 5 m (ver construyeRed)
   var MAX_ENGANCHE_M = 120;      // mas lejos de esto, el toque no coge camino
   var UMBRAL_SUBIDA_M = 5;       // para no sumar el ruido del GPS como desnivel
+  // Con alturas del modelo de terreno no se suma punto a punto: el modelo es
+  // de 90 m y muestreado cada pocos metros es una escalera, asi que las
+  // subidas se cuentan el doble de lo que son (medido: 841 m reales -> 1.849
+  // en trabakuaondarroa). Remuestreando el perfil cada PASO_DEM_M antes de
+  // sumar, el error cae mucho. Se probaron cinco pasos contra el desnivel
+  // real de 14 rutas de la web: 200 m da un 17,8 % de error medio, 250 un
+  // 13,1 %, 350 un 8,5 %, 400 un 6,6 % y 300 un 6,0 % (mediana 5,0 %, el peor
+  // caso 16,2 %). Si se toca este numero, hay que volver a medirlo.
+  var PASO_DEM_M = 300;
   var ALMACEN = 'rutas-mallabia-trazados';
   var COLOR = '#38BDF8';
   var LAT0 = 43.2;
@@ -52,6 +61,7 @@
       sigueOsm: 'Toca otro punto: el camino va por cualquier sendero del mapa.',
       lejosOsm: 'Ahi no hay ningun camino registrado. Toca mas cerca de uno.',
       sinAltura: 'sin datos de altura',
+      delModelo: 'del modelo del terreno, ±6 %',
       cargandoOsm: 'Bajando los caminos del mapa\u2026'
     },
     eu: {
@@ -72,6 +82,7 @@
       sigueOsm: 'Ukitu beste puntu bat: bidea mapako edozein bidexkatatik doa.',
       lejosOsm: 'Hor ez dago erregistratutako biderik. Ukitu batetik gertuago.',
       sinAltura: 'altuera daturik gabe',
+      delModelo: 'lur-ereduaren arabera, ±%6',
       cargandoOsm: 'Maparen bideak jaisten…'
     }
   };
@@ -97,9 +108,9 @@
   // distintas, con lo que el cruce no existe y el calculo se va a buscar la
   // vuelta larga. Medido sobre 120 pares de puntos a 100-600 m: el rodeo
   // mediano baja de 1,94 a 1,58 veces la linea recta.
-  function construyeRed(tracks, alturas, caminos, actividad){
+  function construyeRed(tracks, alturas, caminos, actividad, alturasCaminos){
     var clave = new Map();
-    var lat = [], lon = [], alt = [];
+    var lat = [], lon = [], alt = [], fte = [];
     var ea = [], eb = [];
 
     function id(la, lo){
@@ -109,7 +120,7 @@
       var i = clave.get(k);
       if (i === undefined) {
         i = lat.length; clave.set(k, i);
-        lat.push(la); lon.push(lo); alt.push(NaN);
+        lat.push(la); lon.push(lo); alt.push(NaN); fte.push(0);
       }
       return i;
     }
@@ -120,7 +131,10 @@
     // alturas: un numero por punto de pts, o null. Los puntos de relleno la
     // interpolan entre los dos grabados que tienen a los lados; sin eso, el
     // GPX que se baja salia con altura en uno de cada cinco puntos.
-    function mete(pts, alts){
+    // fuente: 1 = del GPX de una ruta, 2 = del modelo de terreno. Importa,
+    // porque el desnivel no se suma igual con una que con la otra. Una celda
+    // que tocan las dos se queda con la del GPX, que es la buena.
+    function mete(pts, alts, fuente){
       var prev = -1;
       for (var i = 0; i < pts.length; i++) {
         if (i > 0) {
@@ -132,13 +146,17 @@
           for (var k = 1; k * PASO_M < largo; k++) {
             var f = k * PASO_M / largo;
             var m = id(A[0] + (B[0] - A[0]) * f, A[1] + (B[1] - A[1]) * f);
-            if (hayH && alt[m] !== alt[m]) alt[m] = Math.round(hA + (hB - hA) * f);
+            if (hayH && (alt[m] !== alt[m] || fte[m] > fuente)) {
+              alt[m] = Math.round(hA + (hB - hA) * f); fte[m] = fuente;
+            }
             if (prev >= 0) une(prev, m);
             prev = m;
           }
         }
         var n = id(pts[i][0], pts[i][1]);
-        if (alts && alt[n] !== alt[n] && typeof alts[i] === 'number') alt[n] = alts[i];
+        if (alts && typeof alts[i] === 'number' && (alt[n] !== alt[n] || fte[n] > fuente)) {
+          alt[n] = alts[i]; fte[n] = fuente;
+        }
         if (prev >= 0) une(prev, n);
         prev = n;
       }
@@ -146,16 +164,18 @@
 
     tracks.forEach(function(t){
       var clv = t.href ? String(t.href).split('/').pop().replace('.html', '') : null;
-      mete(t.points || [], (alturas && clv) ? alturas[clv] : null);
+      mete(t.points || [], (alturas && clv) ? alturas[clv] : null, 1);
     });
 
     // Los caminos de OpenStreetMap, si el visitante ha pedido verlos. Vienen
     // como diferencias entre puntos consecutivos y con una mascara de para
-    // que actividad sirve cada uno (1 = a pie, 2 = en bici). No traen altura:
-    // ahi el perfil y el desnivel se quedan sin dato, y el panel lo dice.
+    // que actividad sirve cada uno (1 = a pie, 2 = en bici). La altura va en
+    // otro fichero, tambien por diferencias y en el mismo orden; si no llega,
+    // la red se monta igual y el panel dice que no hay dato de altura.
     if (caminos && caminos.vias) {
       var esc = caminos.escala || 100000;
       var quiero = actividad === 'bici' ? 2 : 1;
+      var hs = (alturasCaminos && alturasCaminos.alturas) || null;
       for (var v = 0; v < caminos.vias.length; v++) {
         var via = caminos.vias[v];
         if (!(via[0] & quiero)) continue;
@@ -165,14 +185,19 @@
           la += via[j]; lo += via[j + 1];
           pts.push([la / esc, lo / esc]);
         }
-        mete(pts, null);
+        var alts = null;
+        if (hs && hs[v] && hs[v].length === pts.length) {
+          alts = [hs[v][0]];
+          for (var q = 1; q < hs[v].length; q++) alts.push(alts[q - 1] + hs[v][q]);
+        }
+        mete(pts, alts, 2);
       }
     }
 
     var N = lat.length, M = ea.length;
     var LA = Float64Array.from(lat), LO = Float64Array.from(lon);
-    var ALT = Float32Array.from(alt);
-    lat = lon = alt = null;
+    var ALT = Float32Array.from(alt), FTE = Uint8Array.from(fte);
+    lat = lon = alt = fte = null;
 
     // CSR: se cuenta el grado de cada nodo, se acumulan los desplazamientos
     // y se vuelcan las aristas. Dos arrays planos en vez de 354.216 arrays.
@@ -220,8 +245,9 @@
       // la traen y ahi salen dos elementos, como antes salian los puntos sin
       // altura conocida.
       pt: function(i){
-        return ALT[i] === ALT[i] ? [LA[i], LO[i], ALT[i]] : [LA[i], LO[i]];
+        return ALT[i] === ALT[i] ? [LA[i], LO[i], ALT[i], FTE[i]] : [LA[i], LO[i]];
       },
+      fte: function(i){ return FTE[i]; },
       alt: function(i){ return ALT[i] === ALT[i] ? ALT[i] : null; },
       largo: function(a, b){
         var dy = (LA[a] - LA[b]) * 111320, dx = (LO[a] - LO[b]) * KX;
@@ -303,7 +329,7 @@
     // 'mis' = solo los 66 tracks de la web, como siempre. 'pie' y 'bici' =
     // esos mas los caminos de OpenStreetMap que sirvan para esa actividad.
     var modoRed = 'mis';
-    var alturasDatos = null, caminosDatos = null;
+    var alturasDatos = null, caminosDatos = null, alturasCaminosDatos = null;
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
@@ -467,20 +493,46 @@
     // altura, y sumando solo los trozos que si la tienen salia un «+192 /
     // -297 m» que parecia el desnivel del recorrido entero y no lo era.
     // Antes no podia pasar, porque todos los nodos salian de los GPX.
+    // Suma lo que sube y lo que baja una lista de alturas, con el umbral que
+    // deja fuera el ruido. Es la cuenta de siempre, sacada aparte para poder
+    // pasarle el perfil remuestreado cuando las alturas son del modelo.
+    function acumula(hs){
+      var sub = 0, baj = 0, base = null, cima = null;
+      for (var i = 0; i < hs.length; i++) {
+        var h = hs[i];
+        if (base === null) { base = cima = h; continue; }
+        if (h > base + UMBRAL_SUBIDA_M) { sub += h - base; base = h; }
+        else if (h < base) base = h;
+        if (h < cima - UMBRAL_SUBIDA_M) { baj += cima - h; cima = h; }
+        else if (h > cima) cima = h;
+      }
+      return [Math.round(sub), Math.round(baj)];
+    }
+
+    // Un punto cada PASO_DEM_M metros de camino, contando siempre el ultimo.
+    function remuestrea(pts, paso){
+      var out = [pts[0][2]], llevo = 0;
+      for (var i = 1; i < pts.length; i++) {
+        llevo += metros(pts[i - 1], pts[i]);
+        if (llevo >= paso) { out.push(pts[i][2]); llevo = 0; }
+      }
+      if (out.length < 2) out.push(pts[pts.length - 1][2]);
+      return out;
+    }
+
     function totales(){
-      var pts = recorrido(), km = 0, sub = 0, baj = 0, base = null, cima = null;
-      var sinDato = 0;
+      var pts = recorrido(), km = 0, sinDato = 0, hayDem = false;
       for (var i = 1; i < pts.length; i++) km += metros(pts[i - 1], pts[i]);
-      pts.forEach(function(p){
-        if (typeof p[2] !== 'number') { sinDato++; return; }
-        if (base === null) { base = cima = p[2]; return; }
-        if (p[2] > base + UMBRAL_SUBIDA_M) { sub += p[2] - base; base = p[2]; }
-        else if (p[2] < base) base = p[2];
-        if (p[2] < cima - UMBRAL_SUBIDA_M) { baj += cima - p[2]; cima = p[2]; }
-        else if (p[2] > cima) cima = p[2];
-      });
-      return { km: km / 1000, subida: Math.round(sub), bajada: Math.round(baj),
-               conAltura: base !== null && sinDato === 0 };
+      for (var j = 0; j < pts.length; j++) {
+        if (typeof pts[j][2] !== 'number') sinDato++;
+        else if (pts[j][3] === 2) hayDem = true;
+      }
+      var con = pts.length > 0 && sinDato === 0;
+      var d = con ? acumula(hayDem ? remuestrea(pts, PASO_DEM_M)
+                                   : pts.map(function(p){ return p[2]; }))
+                  : [0, 0];
+      return { km: km / 1000, subida: d[0], bajada: d[1],
+               conAltura: con, delModelo: hayDem };
     }
 
     // Un perfil pequeno debajo de los totales: lo pidio el autor para saber
@@ -493,18 +545,18 @@
     // Devuelve null si a algun nodo del tramo le falta la altura: mas vale
     // no decir nada que dar un numero que no cubre todo el tramo.
     function desnivelDe(tr){
-      var sub = 0, baj = 0, base = null, cima = null, sinDato = 0;
-      tr.forEach(function(id){
-        var e = red.alt(id);
-        if (typeof e !== 'number') { sinDato++; return; }
-        if (base === null) { base = cima = e; return; }
-        if (e > base + UMBRAL_SUBIDA_M) { sub += e - base; base = e; }
-        else if (e < base) base = e;
-        if (e < cima - UMBRAL_SUBIDA_M) { baj += cima - e; cima = e; }
-        else if (e > cima) cima = e;
-      });
-      if (base === null || sinDato) return null;
-      return '+' + Math.round(sub) + ' / -' + Math.round(baj) + ' m';
+      var pts = [], hayDem = false;
+      for (var i = 0; i < tr.length; i++) {
+        var e = red.alt(tr[i]);
+        if (typeof e !== 'number') return null;
+        if (red.fte(tr[i]) === 2) hayDem = true;
+        var c = red.pt(tr[i]);
+        pts.push([c[0], c[1], e]);
+      }
+      if (!pts.length) return null;
+      var d = acumula(hayDem ? remuestrea(pts, PASO_DEM_M)
+                             : pts.map(function(p){ return p[2]; }));
+      return '+' + d[0] + ' / -' + d[1] + ' m';
     }
 
     function perfil(){
@@ -575,7 +627,9 @@
       elTot.hidden = pts.length < 2;
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
       elDes.textContent = tt.conAltura
-        ? ((tt.subida || tt.bajada) ? ' · +' + tt.subida + ' / -' + tt.bajada + ' m ' + t.aprox : '')
+        ? ((tt.subida || tt.bajada)
+            ? ' · +' + tt.subida + ' / -' + tt.bajada + ' m ' +
+              (tt.delModelo ? t.delModelo : t.aprox) : '')
         : (pts.length > 1 ? ' \u00b7 ' + t.sinAltura : '');
       // Sin altura en todos los puntos, el perfil dibujaria una linea que no
       // es el terreno: mejor no dibujar ninguna.
@@ -660,7 +714,9 @@
         elKm.textContent = g.km + ' km';
         var tg = totales();
         elDes.textContent = tg.conAltura
-          ? ((tg.subida || tg.bajada) ? ' · +' + tg.subida + ' / -' + tg.bajada + ' m ' + t.aprox : '')
+          ? ((tg.subida || tg.bajada)
+              ? ' · +' + tg.subida + ' / -' + tg.bajada + ' m ' +
+                (tg.delModelo ? t.delModelo : t.aprox) : '')
           : ' · ' + t.sinAltura;
         elPerfil.innerHTML = tg.conAltura ? perfil() : '';
         elUlt.hidden = true;
@@ -750,16 +806,24 @@
         : (caminosDatos ? Promise.resolve(caminosDatos)
             : fetch('data/caminos.json').then(function(r){ return r.ok ? r.json() : null; })
                 .catch(function(){ return null; })));
+      // Las alturas de esos caminos van aparte y son opcionales: si no
+      // llegan, la red se monta igual y el panel dice que no hay dato.
+      pide.push(!quiereOsm ? Promise.resolve(null)
+        : (alturasCaminosDatos ? Promise.resolve(alturasCaminosDatos)
+            : fetch('data/alturas-caminos.json').then(function(r){ return r.ok ? r.json() : null; })
+                .catch(function(){ return null; })));
       Promise.all(pide).then(function(r){
         alturasDatos = r[0] || alturasDatos;
         if (quiereOsm) {
           caminosDatos = r[1] || caminosDatos;
+          alturasCaminosDatos = r[2] || alturasCaminosDatos;
           // Si los caminos no llegan, no se deja al visitante con el modo
           // puesto y sin red: se vuelve a las rutas y se dice.
           if (!caminosDatos) { modoRed = 'mis'; marcaModo(); }
         }
         red = construyeRed(d.datos.tracks || [], alturasDatos,
-                           modoRed === 'mis' ? null : caminosDatos, modoRed);
+                           modoRed === 'mis' ? null : caminosDatos, modoRed,
+                           modoRed === 'mis' ? null : alturasCaminosDatos);
         cargando = false;
         if (puntosViejos) reengancha(puntosViejos);
         pinta();

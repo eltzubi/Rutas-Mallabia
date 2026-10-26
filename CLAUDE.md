@@ -636,9 +636,42 @@ todos los nodos salían de los GPX, así que `conAltura` valía con que un punto
 dentro, eso sacaba un «+192 / −297 m» que parecía el desnivel del recorrido entero sumando sólo los
 trozos que sí la tenían. Ahora **`conAltura` exige que la tengan todos**, y si falta alguno el panel
 dice **«sin datos de altura»**, esconde la línea del último tramo y **no dibuja el perfil** — una
-línea que no es el terreno es peor que ninguna. Si algún día se quiere el perfil en ese modo, hay que
-hornear las alturas en el build (Open-Meteo tiene una API de elevación gratis y sin clave, unas 840
-peticiones para los 112.000 puntos); no se ha hecho.
+línea que no es el terreno es peor que ninguna.
+
+**`scripts/make_alturas_caminos.py` → `data/alturas-caminos.json`** las trae, una sola vez y en el
+build, de la API de elevación de **Open-Meteo** (gratis, sin clave, la misma casa que el pronóstico
+de cada ficha; por debajo es el modelo Copernicus de 90 m). El autor lo pidió: «al marcar una ruta,
+¿por qué no me da la altura?».
+
+**El dato en bruto no vale, y esto es lo importante de no volver a tropezar.** Medido contra las
+alturas reales de las rutas de la web: cada punto se desvía **12-19 m de media**, y sumando las
+subidas punto a punto el desnivel sale **casi el doble** (trabakuaondarroa: 841 m reales → 1.849).
+Un modelo de 90 m muestreado cada pocos metros es una escalera y cada escalón se cuenta como subida.
+La solución es **remuestrear el perfil cada 300 m antes de sumar** (`PASO_DEM_M` en `trazado.js`).
+Probados cinco pasos contra el desnivel real de 14 rutas:
+
+| paso | error medio | mediana | peor |
+|---|---|---|---|
+| 200 m | 17,8 % | 17,9 % | 32,2 % |
+| 250 m | 13,1 % | 11,2 % | 40,6 % |
+| **300 m** | **6,0 %** | **5,0 %** | **16,2 %** |
+| 350 m | 8,5 % | 7,7 % | 20,6 % |
+| 400 m | 6,6 % | 7,3 % | 22,7 % |
+
+**Si se toca ese número, hay que volver a medirlo.** El remuestreo se aplica **sólo cuando hay
+alturas del modelo** en el recorrido: con las de los GPX se suma punto a punto como siempre, y el
+resultado de las rutas del autor no cambia ni un metro. Cada nodo lleva su procedencia en `FTE`
+(1 = GPX, 2 = modelo) y una celda que tocan las dos se queda con la del GPX. Cuando el número sale
+del modelo, el panel no dice «aprox.» sino **«del modelo del terreno, ±6 %»**.
+
+**Bajarlo cuesta pelearse con el proxy de salida.** Son 1.117 peticiones de 100 puntos. Tres cosas
+aprendidas a golpes: el proxy **corta conexiones TLS a media** (`SSLEOFError`) cada pocas peticiones,
+así que el reintento empieza en medio segundo y no en tres (con tres, los reintentos se comían la
+descarga y en doce minutos no avanzaba ni los primeros 5.000 puntos); **cada hilo se queda con su
+conexión abierta**, porque el saludo TLS es lo que cuesta y abriendo una por petición la descarga
+entera se iba a 72 minutos; y con 8 hilos y la conexión reutilizada **Open-Meteo devuelve 429**, así
+que son 3 hilos y 0,6 s de espera, unas 300 peticiones por minuto, la mitad del tope. Se guarda a
+medias en `.cache-build/` cada 4.000 puntos y **el script reanuda solo** si algo se corta.
 
 **Y se dice que no están comprobados.** En ese modo, y sólo en ese, el panel lleva una línea:
 «Caminos de OpenStreetMap, sin comprobar sobre el terreno». No es un aviso con triángulo, es una
