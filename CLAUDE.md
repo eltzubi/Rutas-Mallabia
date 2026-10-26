@@ -346,6 +346,20 @@ portada van al 0,85** y en una ficha, con un solo track y reborde blanco, se que
 la definición es el reborde, así que bajar la opacidad no devuelve el problema de antes. Medido: el mapa queda listo en **0,22 s** en escritorio y
 **0,75 s en un móvil con la CPU frenada 4x**, con 65 trazados y 65 rebordes.
 
+**El grosor de la portada va con el zoom** (`ajustaGrosor` / `pesosDeZoom` en `src/js/map.js`). El
+autor: «las líneas de las rutas en index que sean más estrechas, ocupan mucho en el mapa». Y es
+verdad de lejos —las 66 a la vez se juntan en una mancha— pero no de cerca, donde una línea fina
+cuesta de ver sobre el satélite y de acertarle con el dedo. Por eso no hay un número fijo: **3/5
+hasta el zoom 12**, **4,5/8 del 14 en adelante** y 3,75/6,5 en el escalón de en medio. La portada
+abre en zoom 10, así que lo que se ve al entrar es la fina. Se reengancha en `zoomend` y sale pronto
+si el peso no cambia, así que no recorre los 66 por cada rueda del ratón.
+
+Los pesos son ahora `pesoTrack`/`pesoReborde` y **no quedan literales**: el filtro, abrir ficha,
+cerrar ficha y el resalte del ratón los leen de ahí, que si no se pisan entre ellos. `ajustaGrosor`
+toca **sólo el grosor**, nunca la opacidad: ésa la llevan el filtro y la ficha abierta, y pisarla
+encendería rutas apagadas a propósito. Ojo al medir desde Playwright: los rebordes **no están en
+`.leaflet-overlay-pane`** sino en `.leaflet-rebordes-pane`, y buscarlos en el primero devuelve cero.
+
 **Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
 ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
 en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;

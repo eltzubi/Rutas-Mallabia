@@ -487,7 +487,7 @@
           var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
           entry.line.setStyle({
             color: entry.currentColor,
-            weight: 4.5,
+            weight: pesoTrack,
             opacity: hidden ? 0.06 : baseOpacity
           });
           if (entry.reborde) entry.reborde.setStyle({ opacity: hidden ? 0.04 : 0.55 });
@@ -518,7 +518,7 @@
           entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
           if (entry.line.bringToFront) entry.line.bringToFront();
         } else {
-          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4.5 });
+          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: pesoTrack });
         }
         // El reborde se apaga con su trazado: si no, al elegir una ruta
         // quedarian 64 lineas oscuras marcando las que estan apagadas.
@@ -555,6 +555,9 @@
     // esto no devuelve el problema de antes. En una ficha, con un solo track y
     // reborde blanco, se queda opaco.
     var baseOpacity = (data.tracks.length === 1 && !track0bis(data)) ? 1 : 0.85;
+    // El grosor no es fijo en la portada: ver mas abajo «ajustaGrosor».
+    var pesoTrack = 4.5;
+    var pesoReborde = 8;
     // Un reborde debajo del trazado. En las fichas es blanco y ancho; en la
     // portada, oscuro y algo mas fino. El verde de «a pie» es un lima que
     // sobre el verde del campo del callejero casi no se veia, y el naranja
@@ -582,13 +585,13 @@
         }).addTo(map);
       } else {
         reborde = L.polyline(t.points, {
-          color: '#0B1020', weight: 8, opacity: 0.55, pane: 'rebordes',
+          color: '#0B1020', weight: pesoReborde, opacity: 0.55, pane: 'rebordes',
           lineJoin: 'round', lineCap: 'round', interactive: false
         }).addTo(map);
       }
       var line = L.polyline(t.points, {
         color: baseColor,
-        weight: 4.5,
+        weight: pesoTrack,
         opacity: baseOpacity,
         lineJoin: 'round'
       }).addTo(map);
@@ -637,7 +640,7 @@
           '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
-        line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+        line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
         line.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
 
         // Etiqueta de distancia en el punto medio, solo en el mapa de
@@ -657,7 +660,7 @@
             L.DomEvent.stopPropagation(e);
             openPanel(line, hrefToLine[t.href].currentColor, html);
           });
-          labelMarker.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          labelMarker.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
           labelMarker.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
           hrefToLabel[t.href] = labelMarker;
         }
@@ -677,12 +680,43 @@
               e.preventDefault(); closePanel();
             }
           });
-          pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
           pathEl.addEventListener('blur', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
         }
         hrefToLine[t.href] = { line: line, reborde: reborde, baseColor: baseColor, activity: activity, currentColor: baseColor };
       }
     });
+
+    // ---- El grosor, segun lo lejos que se mire ----------------------------
+    // Lo pidio el autor: con las 66 rutas a la vez y el mapa entero a la
+    // vista, «ocupan mucho» y se juntan en una mancha naranja y verde. De
+    // cerca pasa justo lo contrario: una linea fina cuesta de ver sobre el
+    // satelite y de acertarle con el dedo. Asi que la linea se afina al
+    // alejarse y recupera su grosor al acercarse, en vez de elegir un numero
+    // que este mal en los dos sitios. Solo en la portada: una ficha tiene un
+    // track y no hay mancha que deshacer.
+    function pesosDeZoom(z){
+      if (z <= 12) return [3, 5];      // todo el mapa: 66 trazados a la vez
+      if (z >= 14) return [4.5, 8];    // una zona: como siempre
+      return [3.75, 6.5];              // el escalon de en medio
+    }
+    function ajustaGrosor(){
+      var p = pesosDeZoom(map.getZoom());
+      if (p[0] === pesoTrack) return;
+      pesoTrack = p[0];
+      pesoReborde = p[1];
+      Object.keys(hrefToLine).forEach(function(h){
+        var e = hrefToLine[h];
+        // Solo el grosor: la opacidad la llevan el filtro y la ficha abierta,
+        // y pisarla aqui encenderia rutas que estan apagadas a proposito.
+        e.line.setStyle({ weight: pesoTrack });
+        if (e.reborde) e.reborde.setStyle({ weight: pesoReborde });
+      });
+    }
+    if (!unaSola) {
+      map.on('zoomend', ajustaGrosor);
+      ajustaGrosor();
+    }
 
     // Fades out routes that the home page's activity/distance/desnivel
     // filters (js/filters.js) have hidden, instead of the map staying
@@ -716,7 +750,7 @@
           entry.line.setStyle({
             opacity: show ? (activeLine ? 0.22 : baseOpacity) : 0.06,
             color: color,
-            weight: 4.5
+            weight: pesoTrack
           });
           if (entry.reborde) entry.reborde.setStyle({
             opacity: show ? (activeLine ? 0.1 : 0.55) : 0.04 });
