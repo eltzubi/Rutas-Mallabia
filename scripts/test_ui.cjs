@@ -246,10 +246,11 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
-  // con el activo marcado. La portada arranca en «Calles» (el tercero) y de
-  // ahi no se mueve sola.
+  // con el activo marcado. La portada arranca en el callejero (HOT, el
+  // tercero) y de ahi no se mueve sola.
   const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
-  assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en Calles');
+  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','HOT','Sat']);
+  assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en el callejero');
   capas[0].click();
   assert.equal(capas[2].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
@@ -261,13 +262,13 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // «Rutas» si lleva la raya que lo separa de las capas.
   assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya antes de «Rutas»');
   assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>/Pendiente|Malda/.test(b.textContent||'')).length,0,'la portada no lleva pendiente');
-  // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
+  // La portada abre en el callejero y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
   const c2=e2.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
+  assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en el callejero');
   e2.maps[0].setZoom(16);
   assert.equal(c2[2].getAttribute('aria-pressed'),'true','acercarse no la cambia');
   abre();
@@ -346,6 +347,6 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   // abria toda ficha. La pendiente va en la misma pastilla, detras de la
   // raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
-                   ['IGN','Calles','Sat','Pendiente']);
+                   ['IGN','HOT','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });
