@@ -703,10 +703,10 @@
       // esto. Se apaga con el grosor y no con la opacidad a proposito: la
       // opacidad del reborde la llevan el filtro y la ficha abierta, y
       // tocarla aqui se pisaria con ellos.
-      if (z <= 10) return [3, 0];      // la vista de conjunto, sin reborde
-      if (z <= 12) return [3, 5];      // todo el mapa: 66 trazados a la vez
-      if (z >= 14) return [4.5, 8];    // una zona: como siempre
-      return [3.75, 6.5];              // el escalon de en medio
+      if (z <= 10) return [2.5, 0];    // la vista de conjunto, sin reborde
+      if (z <= 12) return [2.5, 4];    // todo el mapa: 66 trazados a la vez
+      if (z >= 14) return [3.5, 6];    // una zona
+      return [3, 5];                   // el escalon de en medio
     }
     function ajustaGrosor(){
       var p = pesosDeZoom(map.getZoom());

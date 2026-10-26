@@ -349,8 +349,9 @@ la definición es el reborde, así que bajar la opacidad no devuelve el problema
 **El grosor de la portada va con el zoom** (`ajustaGrosor` / `pesosDeZoom` en `src/js/map.js`). El
 autor: «las líneas de las rutas en index que sean más estrechas, ocupan mucho en el mapa». Y es
 verdad de lejos —las 66 a la vez se juntan en una mancha— pero no de cerca, donde una línea fina
-cuesta de ver sobre el satélite y de acertarle con el dedo. Por eso no hay un número fijo: **3/5
-hasta el zoom 12**, **4,5/8 del 14 en adelante** y 3,75/6,5 en el escalón de en medio. La portada
+cuesta de ver sobre el satélite y de acertarle con el dedo. Por eso no hay un número fijo: **2,5/4
+hasta el zoom 12**, **3,5/6 del 14 en adelante** y 3/5 en el escalón de en medio. (Arrancó en
+3/5–4,5/8 y el autor las quiso aún más finas: «así se verá mejor la información de fondo».) La portada
 abre en zoom 10, así que lo que se ve al entrar es la fina.
 
 **Y por debajo del 11 el reborde se va del todo** (grosor 0, que en SVG no dibuja nada): ahí las 66
