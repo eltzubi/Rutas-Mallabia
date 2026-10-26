@@ -5,7 +5,8 @@ description: Construye, sirve y maneja trabakutik.com (rutas-mallabia) en este c
 
 # Ejecutar y manejar rutas-mallabia
 
-Sitio estático bilingüe (ES/EU) de 57 páginas. No hay `package.json` ni
+Sitio estático bilingüe (ES/EU): 66 rutas más portada, preguntas, agua y
+aviso legal, en los dos idiomas. No hay `package.json` ni
 `Makefile`: el build es Python de la biblioteca estándar y se publica desde la
 **raíz del repo**, así que todos los `.html`, `.css` y `.js` de la raíz son
 artefactos generados.
@@ -51,7 +52,7 @@ python3 .claude/skills/run-rutas-mallabia/driver.py verifica            # todo (
 python3 .claude/skills/run-rutas-mallabia/driver.py verifica --rapido   # sin navegador (~50 s)
 ```
 
-Construye, pasa la batería de ficheros y (sin `--rapido`) las cinco pruebas
+Construye, pasa la batería de ficheros y (sin `--rapido`) las ocho pruebas
 de navegador, y **termina en una sola línea**: `VERIFICACION CORRECTA (N
 pasos)` o `VERIFICACION FALLIDA: <qué pasos>`, con código de salida 0 o 1.
 
@@ -80,21 +81,23 @@ python3 $D offline index.es.html                   # service worker + red cortad
 
 Las capturas van a `.claude/skills/run-rutas-mallabia/capturas/`.
 
-Las páginas se nombran como el fichero: `index.html` es **la portada en
-euskera**, `index.es.html` la castellana, `longaurjauziak.html`,
-`betzun.eu.html`...
+Las páginas se nombran como el fichero: **`index.html` es la portada en
+castellano** e **`index.eu.html` la de euskera**; luego
+`longaurjauziak.html`, `betzun.eu.html`... (`index.es.html` existe pero son
+352 bytes de redirección heredada: no lo captures, sale en blanco.)
 
 Salida real de `filtros` y de `offline`:
 
 ```
-  sin filtrar            56 tarjetas
+  sin filtrar            66 tarjetas
   buscando 'cascada'     7
-  solo e-bike            26
-  de vuelta a todas      56
+  tras cerrar la lupa    66
+  solo e-bike            32
+  de vuelta a todas      66
+  barra del movil        se aparta al bajar; vuelve al parar y al subir
 
   service worker        activo, controla la pagina
   sin red, recargada    «Trabakutik · Rutas Mallabia · Senderismo y e-bik»
-  contenido servido     56 bloque(s)
 ```
 
 ## Renombrar una ruta
@@ -149,9 +152,9 @@ original deja el árbol de git idéntico.
 python3 .claude/skills/run-rutas-mallabia/driver.py check
 ```
 
-Los tres que ejecuta CI: `scripts/check_site.py` (2.035 comprobaciones),
-`node scripts/test_ui.cjs` (61 asserts) y
-`scripts/verify_route_consistency.py`.
+Los tres que ejecuta CI: `scripts/check_site.py` (**14.023** comprobaciones),
+`node scripts/test_ui.cjs` (**14 tests**) y `scripts/verify_route_consistency.py`
+(66 tarjetas ES, 66 EU, 66 tracks).
 
 ## Servirlo a mano
 
@@ -161,6 +164,43 @@ python3 .claude/skills/run-rutas-mallabia/driver.py serve
 
 Sirve la raíz y se queda en primer plano. Ctrl-C para parar. Equivale a
 `python3 -m http.server` desde la raíz; el driver solo elige un puerto libre.
+
+## Manejar el mapa desde Playwright (recetas que funcionan)
+
+El driver cubre el sitio; para tocar el mapa punto por punto hace falta
+Playwright a pelo. Estas cuatro cosas cuestan media hora de descubrir y son el
+80 % de lo que hace falta. Todas ejecutadas en este contenedor:
+
+```python
+from playwright.sync_api import sync_playwright
+EXE = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'   # el -1243 no esta
+with sync_playwright() as p:
+    b = p.chromium.launch(executable_path=EXE)
+    pg = b.new_page(viewport={'width': 393, 'height': 852}, device_scale_factor=2)
+    # 1) coger el mapa: map.js dispara «mapa:listo» al terminar de montarlo
+    pg.add_init_script("document.addEventListener('mapa:listo',"
+                       "e=>{window.__m=e.detail.map;window.__L=e.detail.L;})")
+    pg.goto('http://localhost:8111/index.html', wait_until='load')
+    # 2) la portada arranca en lista y el mapa mide 0x0 hasta que se cambia.
+    #    El boton esta OCULTO por debajo de 360 px (ahi manda la barra fija de
+    #    abajo), asi que .click() de Playwright falla: se pulsan todos por JS.
+    pg.evaluate("document.querySelectorAll('[data-view=\"map\"]')"
+                ".forEach(b=>b.click())")
+    pg.wait_for_function("window.__m", timeout=30000)
+    pg.wait_for_timeout(2500)
+    # 3) abrir una ruta sin raton: Enter sobre su trazado
+    pg.evaluate("""()=>{const l=[...document.querySelectorAll(
+        '.leaflet-overlay-pane path[tabindex=\"0\"]')][20];
+        l.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));}""")
+    # 4) poner un punto del trazado propio: SIEMPRE con fire, nunca con el raton
+    pg.evaluate("window.__m.fire('click',{latlng:{lat:43.2096,lng:-2.5468}})")
+```
+
+Y el servidor, en otra terminal o en segundo plano:
+
+```bash
+(python3 -m http.server 8111 >/dev/null 2>&1 &)
+```
 
 ## Trampas
 
@@ -210,11 +250,46 @@ Sirve la raíz y se queda en primer plano. Ctrl-C para parar. Equivale a
   rutas». Si algo va justo de ancho, revisa `index.html` antes que
   `index.es.html`.
 
-- **`index.html` es la portada en euskera**, no la castellana. La castellana es
-  `index.es.html`. `index.eu.html` es una redirección heredada de 356 bytes.
+- **`index.html` es la portada en castellano** y `index.eu.html` la de
+  euskera. El que es una redirección heredada —352 bytes, sin contenido— es
+  **`index.es.html`**: capturarlo da una página en blanco. (Hasta octubre de
+  2026 era al revés y esta misma skill lo decía mal.)
 
 - **Las fotos y los `_tail.html` llevan líneas base64 larguísimas.** No los
   abras enteros ni los imprimas; filtra por longitud de línea.
+
+- **`verifica` falla a veces por un 429 de Open-Meteo, y no es tu código.** La
+  comprobación de «Lo mío» no admite **ningún** error de consola, y el bloque
+  del tiempo de cada ficha llama a `api.open-meteo.com`. Si se han hecho
+  muchas peticiones desde esta IP, devuelve *429 Too Many Requests* y la da
+  por fallida. Se distingue mirando la lista de errores que imprime: si lo
+  único que sale es ese 429, repite la pasada. Pasó de verdad el 26 de
+  octubre: tres ejecuciones seguidas del mismo código dieron correcta,
+  fallida y correcta.
+
+- **Leaflet pone la opacidad en `stroke-opacity`, no en `opacity` de CSS.**
+  Medir con `getComputedStyle(path).opacity` para ver si un trazado está
+  apagado devuelve `1` siempre y te hace creer que un filtro no funciona.
+  Lo que hay que leer es `path.getAttribute('stroke-opacity')`.
+
+- **Los rebordes de los trazados no están en `.leaflet-overlay-pane`** sino en
+  `.leaflet-rebordes-pane`, que `map.js` crea aparte con `z-index` 395.
+  Buscarlos en el primero devuelve cero.
+
+- **Los controles de Leaflet van en `z-index` 1000.** Cualquier panel propio
+  que se ponga encima del mapa tiene que ir por encima de eso, o la línea de
+  créditos le cae dentro. Ya pasó con la ficha de la portada.
+
+- **`pkill -f <patrón>` se mata a sí mismo.** El patrón aparece en la línea de
+  órdenes del propio shell, así que `pkill -f make_alturas` mata el shell
+  antes de ejecutar lo que venía detrás, y lo que creías haber hecho no se
+  hizo. Usa `kill <pid>` sacando el PID con `ps -eo pid,args | grep 'patr[ó]n'`
+  (con el corchete, que si no vuelves a lo mismo).
+
+- **Las comprobaciones de la pastilla del mapa en `test_ui.cjs` cuentan
+  capas**, así que filtran las clases de los botones que no lo son
+  (`map-rutas-btn`…). Si añades un botón a esa pastilla y no lo añades al
+  filtro, fallan dos tests sin motivo aparente.
 
 ## Si algo falla
 
@@ -226,3 +301,7 @@ Sirve la raíz y se queda en primer plano. Ctrl-C para parar. Equivale a
 | `Locator.screenshot() got an unexpected keyword argument 'full_page'` | `full_page` solo existe en `Page.screenshot()`, no en el de un `Locator`. |
 | 20 líneas de `BrokenPipeError` de `socketserver` | El navegador cortó descargas de fotos a medias al cerrarse. Inofensivo; el driver lo silencia. |
 | `check_site.py` falla con `ZIP omits <ruta>.gpx` | Tocaste un `.gpx` y no regeneraste el paquete: `python3 scripts/bundle_gpx.py`. |
+| `check_site.py` falla con `js/agua.js no tiene la capa de map.js: <url>` | Cambiaste una capa de teselas en `src/js/map.js` y no en `src/js/agua.js`, que lleva su propia copia. Las URL tienen que ser idénticas. |
+| `verifica` falla y los errores que imprime son sólo `429 (Too Many Requests)` | Cuota de Open-Meteo agotada desde esta IP. No es el código: repite la pasada. |
+| `build.py` avisa de que falta `img/mapa-<ruta>.webp` | Ruta nueva sin miniatura de mapa: `python3 scripts/make_card_maps.py`. |
+| Una captura de `index.es.html` sale en blanco | Es la redirección heredada de 352 bytes. La portada castellana es `index.html`. |
