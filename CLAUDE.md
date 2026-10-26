@@ -351,7 +351,16 @@ autor: «las líneas de las rutas en index que sean más estrechas, ocupan mucho
 verdad de lejos —las 66 a la vez se juntan en una mancha— pero no de cerca, donde una línea fina
 cuesta de ver sobre el satélite y de acertarle con el dedo. Por eso no hay un número fijo: **3/5
 hasta el zoom 12**, **4,5/8 del 14 en adelante** y 3,75/6,5 en el escalón de en medio. La portada
-abre en zoom 10, así que lo que se ve al entrar es la fina. Se reengancha en `zoomend` y sale pronto
+abre en zoom 10, así que lo que se ve al entrar es la fina.
+
+**Y por debajo del 11 el reborde se va del todo** (grosor 0, que en SVG no dibuja nada): ahí las 66
+están tan enredadas que no separa nada, sólo engorda la mancha. Lo pidió el autor sabiendo lo que
+cuesta. Dos avisos medidos: se apaga **con el grosor y no con la opacidad**, porque la opacidad del
+reborde la llevan el filtro y la ficha abierta y se pisarían; y la salida temprana de
+`ajustaGrosor` **compara los dos pesos**, que entre el zoom 10 y el 12 el trazado mide igual (3) y
+lo único que cambia es el reborde. Sobre satélite y sobre el callejero queda limpio; **sobre el IGN
+se paga**, que es donde el naranja de los tracks y el de sus carreteras vuelven a competir — es
+justo el problema que el reborde arregló en octubre, y a zoom 10 reaparece. Se reengancha en `zoomend` y sale pronto
 si el peso no cambia, así que no recorre los 66 por cada rueda del ratón.
 
 Los pesos son ahora `pesoTrack`/`pesoReborde` y **no quedan literales**: el filtro, abrir ficha,

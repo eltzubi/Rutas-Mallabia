@@ -696,13 +696,23 @@
     // que este mal en los dos sitios. Solo en la portada: una ficha tiene un
     // track y no hay mancha que deshacer.
     function pesosDeZoom(z){
+      // Por debajo del 11 el reborde se va del todo (grosor 0, que en SVG no
+      // dibuja nada). Lo pidio el autor y tiene sentido: ahi las 66 rutas
+      // estan tan enredadas que el reborde no separa nada, solo engorda la
+      // mancha. La portada abre en zoom 10, asi que lo primero que se ve es
+      // esto. Se apaga con el grosor y no con la opacidad a proposito: la
+      // opacidad del reborde la llevan el filtro y la ficha abierta, y
+      // tocarla aqui se pisaria con ellos.
+      if (z <= 10) return [3, 0];      // la vista de conjunto, sin reborde
       if (z <= 12) return [3, 5];      // todo el mapa: 66 trazados a la vez
       if (z >= 14) return [4.5, 8];    // una zona: como siempre
       return [3.75, 6.5];              // el escalon de en medio
     }
     function ajustaGrosor(){
       var p = pesosDeZoom(map.getZoom());
-      if (p[0] === pesoTrack) return;
+      // Los dos, no solo el trazado: entre el zoom 10 y el 12 el trazado mide
+      // igual y lo que cambia es el reborde.
+      if (p[0] === pesoTrack && p[1] === pesoReborde) return;
       pesoTrack = p[0];
       pesoReborde = p[1];
       Object.keys(hrefToLine).forEach(function(h){
