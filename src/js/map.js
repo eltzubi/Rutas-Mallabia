@@ -1186,6 +1186,38 @@
         // Every chart here is a clone of the same original, so they all
         // share one coordinate space and this one lookup serves them all.
         var pathLen = heroPath.getTotalLength();
+
+        // Los extremos reales del dibujo, leidos del propio trazado. Hacen
+        // falta para devolver la y a metros, y NO se pueden dar por sabidos:
+        // scripts/rehaz_perfil.py documenta y = 285 - (ele-min)/(max-min)*270,
+        // pero las fichas publicadas usan seis convenciones distintas -- 160,
+        // 161, 163, 200 y 201 muestras, y la y va de (0,300) en astarlokoatxa
+        // a (47,225) en oiz. Aqui habia un margen fijo de 8 px, es decir se
+        // suponia que la y iba de 8 a 292 siempre, y la lectura se iba
+        // **hasta 153 metros**: en zenarruza el punto mas bajo decia 385 m
+        // donde la ficha dice 232, y en oiz 547 donde dice 399. Midiendo los
+        // extremos del trazado sale exacto en las seis convenciones, y
+        // seguira saliendo si manana se dibuja de otra manera.
+        // Ojo: en dos fichas (axmakuriturrizuri y zengotitaosmagain) la
+        // LINEA arrastra el cierre del relleno -- acaba en «L1000,300 L0,300»
+        // --, asi que trae dos puntos de mas pegados al suelo del recuadro.
+        // Un perfil va siempre hacia la derecha, de modo que en cuanto la x
+        // retrocede se deja de contar: eso descarta el cierre sin tener que
+        // reconocerlo, y de paso protege la busqueda binaria de yAtX, que da
+        // por hecho que la x es monotona. Sin esto, esas dos fichas leian el
+        // punto mas bajo 46 m por encima de lo que dice su propio pie.
+        var yTope = Infinity, ySuelo = -Infinity, xPrev = -Infinity;
+        var pares = (heroPath.getAttribute('d') || '')
+          .match(/[ML]\s*-?[\d.]+[ ,]\s*-?[\d.]+/g) || [];
+        for (var pi = 0; pi < pares.length; pi++) {
+          var nn = pares[pi].match(/-?[\d.]+/g);
+          var xx = parseFloat(nn[0]), yy = parseFloat(nn[1]);
+          if (xx <= xPrev) break;
+          xPrev = xx;
+          if (yy < yTope) yTope = yy;
+          if (yy > ySuelo) ySuelo = yy;
+        }
+        var hayEscala = isFinite(yTope) && ySuelo - yTope > 1;
         function yAtX(x){
           var lo = 0, hi = pathLen, pt;
           for (var i = 0; i < 20; i++){
@@ -1208,8 +1240,8 @@
         function readoutLabel(frac, y){
           var km = fmtKm(frac * totalKm);
           if (!isFinite(y)) return km + ' km';
-          var pad = 8;
-          var ele = Math.round(minEle + (maxEle - minEle) * (1 - (y - pad) / (300 - 2 * pad)));
+          if (!hayEscala) return km + ' km';
+          var ele = Math.round(minEle + (maxEle - minEle) * ((ySuelo - y) / (ySuelo - yTope)));
           return km + ' km · ' + ele + ' m';
         }
         function showAtFraction(frac){

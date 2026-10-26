@@ -448,6 +448,38 @@ Requests» —porque se han hecho muchas peticiones desde esta IP— la da por f
 ninguna regresion. Se distingue mirando la lista de errores que imprime: si lo unico que sale es ese
 429, no es el codigo. A los visitantes no les afecta, que el limite es por IP.
 
+**La lectura del perfil de alturas se equivocaba hasta en 153 metros.** El perfil de cada ficha ya
+era interactivo desde antes (`map.js`: raya, bola, «12,3 km · 450 m» y un punto que se mueve por el
+track del mapa). Lo que estaba mal era devolver la `y` del dibujo a metros: usaba un **margen fijo
+de 8 px**, es decir daba por hecho que la `y` iba de 8 a 292 en todas las fichas.
+
+**No es así, y esto es lo que hay que recordar: las fichas publicadas usan seis convenciones
+distintas.** `scripts/rehaz_perfil.py` documenta 161 muestras con
+`y = 285 - (ele-min)/(max-min)*270`, pero lo que hay en la web son **160, 161, 163, 200 y 201**
+muestras, y la `y` va de `(0, 300)` en astarlokoatxa a `(47, 225)` en oiz. Medido sobre la web
+publicada, el error de la lectura llegaba a **153 m**: en zenarruza el punto más bajo decía 385 m
+donde su propio pie dice 232, y en oiz 547 donde dice 399.
+
+La escala se saca ahora **del propio trazado**: la `y` más alta es la altura mínima y la más baja la
+máxima, y esos dos números están escritos en `.elev-tags`. Se autocalibra, da igual con qué
+convención se dibujara la ficha y seguirá valiendo si mañana se dibuja de otra manera. Comprobado en
+18 fichas de todas las convenciones: el peor error pasa de 153 m a **6 m**, y lo que queda es la
+resolución del ratón sobre un pico estrecho, no la cuenta.
+
+**Y se dejan de contar los puntos en cuanto la x retrocede.** Dos fichas —`axmakuriturrizuri` y
+`zengotitaosmagain`, y sus gemelas en euskera— tienen la **línea** del perfil con el cierre del
+relleno pegado al final (`… L1000,300 L0,300`), así que traen dos puntos de más pegados al suelo del
+recuadro. Un perfil va siempre hacia la derecha, de modo que en cuanto la x retrocede se corta: eso
+descarta el cierre sin tener que reconocerlo y de paso protege la búsqueda binaria de `yAtX`, que da
+por hecho que la x es monótona. **Esas dos fichas tienen además una raya naranja sobrante cruzando
+el fondo del recuadro** — es el mismo cierre, dibujado. Está dicho al autor y pendiente de que
+decida; quitarlo es borrar ese trozo del `d` del trazado con `fill="none"`, sin tocar ningún número.
+
+**No hace falta escribir otro módulo para esto.** Se intentó (`src/js/perfil.js`, 26 de octubre de
+2026) sin haber mirado antes `map.js`, y salió un duplicado entero de algo que ya existía. Se
+retiró. Antes de dar por nueva una función del mapa o del perfil, buscar en `map.js`: son 1.400
+líneas y lleva dentro mucho más de lo que parece.
+
 **Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
 ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
 en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;
