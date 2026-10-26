@@ -408,6 +408,37 @@
     });
     ponExtra(rutasBtn);
 
+    // ---- el mapa de calor, solo en la portada ---------------------------
+    // El autor pregunto por uno «tipo Strava». El de Strava no se puede: sus
+    // teselas exigen sesion iniciada desde 2018 y sus condiciones no
+    // permiten usarlas fuera de su web. Y aunque se pudiera, diria por donde
+    // anda la gente, que es un dato que esta web no tiene. Este dice otra
+    // cosa, con datos propios: por cuantas de las 66 rutas pasa cada trozo
+    // de camino. No es «por donde se anda mas» -- un camino que usan cinco
+    // rutas no esta mas pisado que uno que el autor hace cada semana -- y
+    // por eso el rotulo dice literalmente «por cuantas rutas pasa».
+    var calorBtn = null;
+    if (esPortada) {
+      calorBtn = document.createElement('button');
+      calorBtn.type = 'button';
+      calorBtn.className = 'map-layer-btn map-calor-btn';
+      calorBtn.innerHTML = '<span class="calor-txt">' + (isEu ? 'Beroa' : 'Calor') + '</span>' +
+        '<svg class="calor-ico" width="15" height="15" viewBox="0 0 24 24" fill="none"' +
+        ' stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' +
+        ' aria-hidden="true"><path d="M12 2s5 4.5 5 9a5 5 0 0 1-10 0c0-1.6.6-3 1.4-4.2' +
+        'C9.2 9.4 10 11 11 11c.8 0 1-1 .6-2.3C11.2 7.2 12 4 12 2z"/>' +
+        '<path d="M7 14a7 7 0 0 0 10 0"/></svg>';
+      calorBtn.setAttribute('aria-label', isEu ? 'Beroa' : 'Calor');
+      calorBtn.setAttribute('aria-pressed', 'false');
+      calorBtn.title = isEu ? 'Zenbat ibilbide pasatzen diren bide bakoitzetik'
+                            : 'Por cuántas rutas pasa cada camino';
+      calorBtn.addEventListener('click', function(e){
+        L.DomEvent.stopPropagation(e);
+        alternaCalor();
+      });
+      ponExtra(calorBtn);
+    }
+
     // Lo que no es "que mapa" sino como se pinta encima va en la misma
     // pastilla, detras de una raya: estaba en una segunda pastilla debajo y
     // el autor lo quiere todo seguido y en horizontal. La raya es lo unico
@@ -720,6 +751,7 @@
         e.line.setStyle({ weight: pesoTrack });
         if (e.reborde) e.reborde.setStyle({ weight: pesoReborde });
       });
+      ajustaCalorGrosor();
     }
     if (!unaSola) {
       map.on('zoomend', ajustaGrosor);
@@ -774,7 +806,162 @@
       });
       // Con menos etiquetas visibles cambia lo que se solapa entre si.
       updateLabelVisibility();
+      aplicaCalorFiltro();
       if (esPortada) encuadraVisibles();
+    }
+
+    // ---- el mapa de calor ------------------------------------------------
+    // Cinco escalones, que los cortes no son 1/2/3/4+: con esos, el 58 % de
+    // los puntos caia en el ultimo y no distinguia nada. Van en 1 / 2-3 /
+    // 4-6 / 7-14 / 15 o mas (scripts/make_calor.py los escribe y los
+    // imprime), que deja entre el 14 y el 25 % en cada uno.
+    //
+    // El color no es ni el naranja de la bici ni el verde de andar ni el
+    // azul del trazado propio: es una rampa violeta-rosa, un cuarto idioma
+    // visual, para que nadie lea el calor como una actividad. El extremo
+    // frio arranca en lila claro y no en violeta oscuro: con el oscuro se
+    // confundia con las lineas azules que el propio CyclOSM pinta para sus
+    // rutas ciclistas, que es el mapa con el que abre la portada.
+    var CALOR_COLOR = ['#A78BFA', '#C084FC', '#D946EF', '#EC4899', '#F43F5E'];
+    var CALOR_FACTOR = [0.6, 0.85, 1.15, 1.5, 2];
+    var CALOR_OPACIDAD = [0.55, 0.7, 0.82, 0.92, 1];
+    var calorLineas = null;      // href -> [polilineas]
+    var calorPuesto = false;
+    var calorPidiendo = false;
+
+    function alternaCalor(){
+      if (!calorBtn) return;
+      if (calorPuesto) {
+        calorPuesto = false;
+        el.classList.remove('modo-calor');
+        calorBtn.classList.remove('is-selected');
+        calorBtn.setAttribute('aria-pressed', 'false');
+        return;
+      }
+      if (calorLineas) { enciendeCalor(); return; }
+      if (calorPidiendo) return;
+      calorPidiendo = true;
+      calorBtn.classList.add('is-loading');
+      fetch('data/calor.json').then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){
+          calorBtn.classList.remove('is-loading');
+          calorPidiendo = false;
+          if (!d || !d.tramos) return;
+          dibujaCalor(d);
+          enciendeCalor();
+        })
+        .catch(function(){
+          calorBtn.classList.remove('is-loading');
+          calorPidiendo = false;
+        });
+    }
+
+    function enciendeCalor(){
+      calorPuesto = true;
+      el.classList.add('modo-calor');
+      calorBtn.classList.add('is-selected');
+      calorBtn.setAttribute('aria-pressed', 'true');
+      aplicaCalorFiltro();
+    }
+
+    // Sin leyenda el mapa es bonito y mudo: cinco colores que no dicen nada.
+    // Los rotulos salen de los propios cortes del fichero, no escritos a
+    // mano, para que no se queden viejos si manana se cambian.
+    function ponLeyenda(cortes){
+      var caja = document.createElement('div');
+      caja.className = 'calor-leyenda';
+      var tit = document.createElement('span');
+      tit.className = 'calor-leyenda-tit';
+      tit.textContent = isEu ? 'Hemendik pasatzen diren ibilbideak'
+                             : 'Rutas que pasan por aquí';
+      caja.appendChild(tit);
+      var fila = document.createElement('ol');
+      fila.className = 'calor-leyenda-escala';
+      var bajo = 1;
+      for (var k = 0; k < CALOR_COLOR.length; k++) {
+        var etq;
+        if (k === CALOR_COLOR.length - 1) etq = bajo + '+';
+        else if (cortes[k] === bajo) etq = String(bajo);
+        else etq = bajo + '-' + cortes[k];
+        var li = document.createElement('li');
+        var tinta = document.createElement('i');
+        tinta.style.background = CALOR_COLOR[k];
+        li.appendChild(tinta);
+        li.appendChild(document.createTextNode(etq));
+        fila.appendChild(li);
+        if (k < CALOR_COLOR.length - 1) bajo = cortes[k] + 1;
+      }
+      caja.appendChild(fila);
+      el.appendChild(caja);
+    }
+
+    function dibujaCalor(d){
+      if (map.createPane && !map.getPane('calor')) {
+        var panel = map.createPane('calor');
+        panel.style.zIndex = 398;
+        panel.style.pointerEvents = 'none';
+      }
+      calorLineas = {};
+      ponLeyenda(d.cortes || [1, 3, 6, 14]);
+      // Por niveles y de menos a mas, para que los caminos mas repetidos
+      // queden por encima: dibujando ruta a ruta, un tramo frio de la ultima
+      // taparia el nervio caliente de debajo.
+      var porNivel = [[], [], [], [], []];
+      data.tracks.forEach(function(t, i){
+        var tramos = d.tramos[i];
+        if (!tramos) return;
+        var desde = 0;
+        tramos.forEach(function(tr){
+          var nivel = tr[0], cuantos = tr[1];
+          // Un punto de mas al final: si no, quedan huecos entre tramos.
+          var hasta = Math.min(desde + cuantos, t.points.length - 1);
+          if (hasta > desde) {
+            porNivel[nivel - 1].push([t.href || ('t' + i),
+                                      t.points.slice(desde, hasta + 1)]);
+          }
+          desde += cuantos;
+        });
+      });
+      porNivel.forEach(function(lista, k){
+        lista.forEach(function(par){
+          var linea = L.polyline(par[1], {
+            color: CALOR_COLOR[k],
+            weight: pesoTrack * CALOR_FACTOR[k],
+            opacity: CALOR_OPACIDAD[k],
+            lineJoin: 'round', lineCap: 'round',
+            interactive: false, pane: 'calor'
+          }).addTo(map);
+          linea._calorNivel = k;
+          (calorLineas[par[0]] = calorLineas[par[0]] || []).push(linea);
+        });
+      });
+    }
+
+    // El filtro de actividad tambien manda sobre el calor: si el visitante
+    // deja solo las de andar, las lineas de las de bici se van. El numero
+    // que pinta el color sigue siendo «de las 66», que es lo que dice el
+    // rotulo: lo que se esconde es el camino, no se recalcula el calor.
+    function aplicaCalorFiltro(){
+      if (!calorLineas) return;
+      Object.keys(calorLineas).forEach(function(href){
+        var entry = hrefToLine[href];
+        var oculta = false;
+        if (entry && entry.line.getElement()) {
+          oculta = entry.line.getElement().getAttribute('aria-hidden') === 'true';
+        }
+        calorLineas[href].forEach(function(l){
+          l.setStyle({ opacity: oculta ? 0 : CALOR_OPACIDAD[l._calorNivel] });
+        });
+      });
+    }
+
+    function ajustaCalorGrosor(){
+      if (!calorLineas) return;
+      Object.keys(calorLineas).forEach(function(href){
+        calorLineas[href].forEach(function(l){
+          l.setStyle({ weight: pesoTrack * CALOR_FACTOR[l._calorNivel] });
+        });
+      });
     }
 
     // El filtro reencuadra el mapa de la portada. Pasar de «A pie» a

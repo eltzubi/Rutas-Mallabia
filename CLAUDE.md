@@ -103,7 +103,12 @@ python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favic
 ```
 python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
 python3 scripts/make_alturas.py        # data/alturas.json: la altura de cada punto del mapa de la portada
+python3 scripts/make_calor.py          # data/calor.json: por cuántas rutas pasa cada trozo de camino
+python3 scripts/make_caminos.py <v>    # data/caminos.json: la red de caminos de OSM (ver scripts/osm/LEEME.txt)
 ```
+
+`make_calor.py` **hay que volver a pasarlo después de `make_map_data.py`**, como `make_alturas.py`:
+sale de `data/trailhead.json` y con una ruta nueva cambia.
 
 ```
 python3 scripts/make_card_maps.py      # img/mapa-<ruta>.webp: la miniatura de mapa de cada tarjeta
@@ -347,11 +352,58 @@ los marcadores (salida, puntos numerados, kilómetros), y **deja el trazado que 
 que lleva `.draw-line`.
 
 Dos cosas de sitio, medidas: por debajo de **420 px** el rótulo no cabe y el botón se queda en un
-ojo; por debajo de **360 px** no caben ni cinco botones en la pastilla (a 320 la caja del mapa mide
+ojo; por debajo de **360 px** no caben los botones en la pastilla (a 320 la caja del mapa mide
 238 px y la pastilla 142), así que ahí el ojo **se sale de la pastilla** y baja a la columna de la
-derecha, bajo el botón de ampliar, con el lápiz corrido a 94 px y las opciones de dibujo a 136.
+derecha, bajo el botón de ampliar. Desde que existe «Calor» **son dos los que se salen** — el ojo a
+52 px y el calor a 94 —, con el lápiz corrido a 136 px y las opciones de dibujo a 178.
 Ojo con `scripts/test_ui.cjs`: las comprobaciones de la barra cuentan **capas**, así que filtran
 `.map-rutas-btn`, y la portada ya sí tiene `.map-layers-sep` aunque no tenga «Pendiente».
+
+**«Calor»: por cuántas rutas pasa cada camino** (`make_calor.py` → `data/calor.json`, dibujado por
+`src/js/map.js`, **sólo en la portada**). El autor preguntó por un mapa de calor «tipo Strava».
+
+**El de Strava no se puede y no hay que volver a intentarlo:** desde 2018 sus teselas exigen una
+sesión iniciada de Strava para cualquier zoom útil, y sus condiciones de uso no permiten usarlas
+fuera de su web. Lo mismo con Garmin. El dato de «por dónde pasa de verdad la gente» sólo lo tienen
+ellos y no lo prestan.
+
+Esto dice otra cosa, con datos propios: **por cuántas de las 66 rutas pasa cada trozo de camino**. Y
+hay que leerlo así y no como «por dónde se anda más» — un camino que usan cinco rutas no está más
+pisado que uno que el autor hace cada semana. Lo que mide es cuánto depende la red de ese camino, y
+el rótulo de la leyenda lo dice con esas palabras: «Rutas que pasan por aquí».
+
+Cómo se cuenta: cada track se rellena cada 10 m, sus puntos se pegan a una rejilla de 25 m, y el
+calor de un punto es **cuántas rutas distintas pasan por su celda o por alguna de las ocho de
+alrededor** — unos 25-35 m de margen, que es lo que se separan dos grabaciones del mismo camino.
+Sin ese margen, dos rutas por la misma pista caen en celdas distintas y las dos salen a 1.
+
+**Los cortes no son 1/2/3/4+**, y esto costó una vuelta: con esos, el **58 %** de los puntos caía en
+el último nivel y el mapa no distinguía nada. El reparto real tiene una cola larguísima — hay trozos
+por los que pasan **46 de las 66 rutas** —, así que van en **1 / 2-3 / 4-6 / 7-14 / 15 o más**, que
+deja entre el 14 y el 25 % en cada nivel. `make_calor.py` imprime el reparto: míralo antes de dar
+unos cortes nuevos por buenos.
+
+El fichero pesa **2,1 kB comprimidos** (va por tramos, «cuatro puntos a nivel 1, nueve a nivel 3»,
+que es justo como se dibuja: una línea por tramo, no una por punto) y **se baja sólo al pulsar el
+botón**. Salen 1.504 polilíneas en un panel propio (`calor`, z-index 398) y la clase `modo-calor` en
+`[data-map-src]` esconde los trazados normales: el calor **sustituye** a las rutas, no se suma a
+ellas, que con los 66 debajo la rampa se perdería. Se dibujan **por niveles de menos a más**, para
+que un tramo frío de la última ruta no tape el nervio caliente de debajo.
+
+La rampa es **violeta-rosa** (`#A78BFA` → `#F43F5E`), un cuarto idioma visual: ni el naranja de la
+bici, ni el verde de andar, ni el azul del trazado propio, para que nadie lea el calor como una
+actividad. El extremo frío arranca en **lila claro y no en violeta oscuro**: con el oscuro se
+confundía con las líneas azules que el propio CyclOSM pinta para sus rutas ciclistas, que es el mapa
+con el que abre la portada. El grosor va con el zoom, como el de los tracks (`ajustaCalorGrosor`).
+
+Se lleva bien con lo que ya había: **el ojo de «Rutas» lo apaga también** (si no, esconder las rutas
+dejaría el calor flotando) y **el filtro de actividad lo filtra** — con «solo a pie» se apagan 782
+líneas, con «solo bici» 679, y las 43 que quedan siempre son las rutas mixtas, que salen en los dos.
+El color no se recalcula al filtrar: sigue diciendo «de las 66», que es lo que promete la leyenda.
+
+Ojo con `scripts/test_ui.cjs`: sus comprobaciones cuentan **capas**, así que filtran
+`map-rutas-btn|map-calor-btn`. Cualquier botón nuevo en la pastilla hay que añadirlo a ese filtro o
+empiezan a fallar sin motivo aparente.
 
 **El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
 pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
