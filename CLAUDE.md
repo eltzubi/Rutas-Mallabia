@@ -466,14 +466,17 @@ convención se dibujara la ficha y seguirá valiendo si mañana se dibuja de otr
 18 fichas de todas las convenciones: el peor error pasa de 153 m a **6 m**, y lo que queda es la
 resolución del ratón sobre un pico estrecho, no la cuenta.
 
-**Y se dejan de contar los puntos en cuanto la x retrocede.** Dos fichas —`axmakuriturrizuri` y
-`zengotitaosmagain`, y sus gemelas en euskera— tienen la **línea** del perfil con el cierre del
-relleno pegado al final (`… L1000,300 L0,300`), así que traen dos puntos de más pegados al suelo del
-recuadro. Un perfil va siempre hacia la derecha, de modo que en cuanto la x retrocede se corta: eso
-descarta el cierre sin tener que reconocerlo y de paso protege la búsqueda binaria de `yAtX`, que da
-por hecho que la x es monótona. **Esas dos fichas tienen además una raya naranja sobrante cruzando
-el fondo del recuadro** — es el mismo cierre, dibujado. Está dicho al autor y pendiente de que
-decida; quitarlo es borrar ese trozo del `d` del trazado con `fill="none"`, sin tocar ningún número.
+**Y se dejan de contar los puntos en cuanto la x retrocede.** `axmakuriturrizuri` y
+`zengotitaosmagain` tenían la **línea** del perfil con el cierre del relleno pegado al final
+(`… L1000,300 L0,300`): era copia literal del trazado de relleno, cierre incluido, así que traían
+dos puntos de más pegados al suelo y **una raya naranja sobrante cruzando el fondo del recuadro**.
+Ya se ha quitado ese trozo del `d` del trazado con `fill="none"` (el relleno sigue igual, y no se ha
+tocado ningún número), pero la defensa se queda puesta: un perfil va siempre hacia la derecha, así
+que en cuanto la x retrocede se corta. Eso protege además la búsqueda binaria de `yAtX`, que da por
+hecho que la x es monótona.
+
+Ojo: esas dos se generaron con otra receta — el relleno lleva `fill="url(#lg)"` y el trazado de la
+línea va **primero**, al revés que en las demás. Si aparece una tercera así, es el mismo molde.
 
 **No hace falta escribir otro módulo para esto.** Se intentó (`src/js/perfil.js`, 26 de octubre de
 2026) sin haber mirado antes `map.js`, y salió un duplicado entero de algo que ya existía. Se
@@ -806,6 +809,21 @@ There's no automated test suite — verification is manual:
   **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m exactos),
   y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay original
   mejor que recuperar. Sus 52 tramos rectos son como se trazó. Déjalo estar salvo que él lo saque.
+- **`garaimaguna` nombra Maguna en su título y la ruta pasa a 329 m. Está medido y NO es un error:
+  no volver a sacarlo.** Se midieron los 96 lugares nombrados en los títulos de todas las rutas
+  contra su propio GPX (de cada nombre repetido, el más cercano): la mediana es **16 m**, pero
+  `argineta` nombra **Trabakua a 763 m**, `iturreta` y `exigente` nombran **Barinaga a 495 m**, y 16
+  de 96 pasan de 150 m. Los títulos de esta web nombran los sitios por los que la ruta **pasa**, no
+  sólo los que pisa, y 329 m queda dentro de lo normal. El punto numerado, que es donde el dato
+  tiene que ser exacto, ya dice «Cerca de Maguna». Esto se le planteó al autor tres veces como si
+  fuera un fallo antes de molestarse en medirlo.
+
+- **Si falta `scripts/.punto-privado.json`, `check_site.py` lo dice ahora.** Esa comprobación —la
+  única instrucción permanente del autor sobre los tracks— se saltaba **en silencio** cuando el
+  fichero no estaba, y las 14.023 comprobaciones salían correctas sin haberla hecho ni una vez.
+  Ahora imprime `AVISO:` y lo cuenta al pie. No tumba el build a propósito: sin el fichero no hay
+  nada que comprobar, y en GitHub Actions tampoco va a estar.
+
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
 - **Always tell the user about missing data or factual errors you notice, even when they didn't ask
