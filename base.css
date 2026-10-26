@@ -128,7 +128,7 @@ body{
 .leaflet-interactive[role="button"]:focus-visible{ outline:none; }
 .map-expand-btn[hidden], .map-layers[hidden]{ display:none; }
 .map-expand-btn.is-active svg{ transform:rotate(180deg); }
-/* Las cuatro capas, a la vista y en una sola pastilla, centrada arriba del
+/* Las tres capas, a la vista y en una sola pastilla, centrada arriba del
    mapa. Antes era un icono de tres rombos que abria un menu: nadie pulsa un
    icono que no dice que hace, asi que el satelite y el topografico estaban
    ahi sin que nadie los encontrara. El boton de ampliar sigue a la derecha,
@@ -151,7 +151,7 @@ body{
 .map-layer-btn:hover{ color:var(--ink); }
 .map-layer-btn.is-selected{ background:var(--teal); color:var(--ground); }
 /* En un movil el hueco entre el zoom y el boton de ampliar es de unos 180 px,
-   asi que las cuatro entran solo apretando la letra y el relleno. Abajo no
+   asi que entran solo apretando la letra y el relleno. Abajo no
    pueden ir: la linea de creditos cambia de alto segun la capa (la de
    OpenTopoMap ocupa tres lineas) y se las comeria. */
 /* La raya que separa las capas (una u otra) del interruptor de la pendiente,

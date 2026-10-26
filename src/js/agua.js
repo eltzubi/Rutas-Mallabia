@@ -67,14 +67,6 @@
     maxZoom: 20,
     attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
   });
-  // El mismo callejero que el resto de la web: el estilo Humanitarian de
-  // OpenStreetMap, que rotula caserios y barrios y dibuja los caminos de
-  // monte con mas cuerpo. Las cuatro capas tienen que ser identicas a las de
-  // map.js -- check_site.py compara las URL una a una.
-  var hotLayer = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> &mdash; <a href="https://www.hotosm.org" target="_blank" rel="noopener">Humanitarian OSM Team</a>, <a href="https://openstreetmap.fr" target="_blank" rel="noopener">OSM France</a>'
-  });
   var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 19,
     attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
@@ -91,7 +83,6 @@
   var layerDefs = [
     { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
     { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
-    { layer: hotLayer, label: isEu ? 'OSMren mapa humanitarioa (HOT)' : 'Mapa humanitario de OSM (HOT)', short: 'HOT' },
     { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' }
   ];
   var layerIndex = 0;

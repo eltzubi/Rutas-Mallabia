@@ -295,43 +295,49 @@ estorban. El rumbo se calcula corrigiendo la longitud por el coseno de la latitu
 torcido — y sale del propio orden de los puntos del track, que es el de la marcha. El mapa de la
 portada no las lleva: 57 tracks a la vez.
 
-**Las capas, distintas en la portada y en una ficha.** La portada lleva las cuatro (IGN, Bici,
-**HOT**, Satélite) y abre en **HOT**, que es el callejero: de lejos, con las 57 rutas a la vez, lo
-que sitúa son los pueblos y las carreteras. Una ficha lleva **tres** — sin Bici — y abre también en
-HOT. Hasta el 23 de octubre de 2026 era al revés (sin callejero, abriendo en Bici) y el autor avisó
-de que «al mapa bici le cuesta abrir mucho»: CyclOSM es la más lenta y la más pesada de las cuatro —
-medido sobre Mallabia, **0,87 s y 42 kB por tesela**, frente a 0,32 s y 25 kB del IGN — y era justo
-la que veía quien entraba en una ruta. El callejero trae lo que hace falta en el monte (los senderos
-con su nombre, las cimas con su altura, los arroyos), se lee limpio y es mucho más rápido; las
-curvas de nivel siguen en el IGN, a un toque. Se compararon antes, tesela a tesela y mirando el
-dibujo: **OpenTopoMap** (el más lento), **Esri World Topo** y **Esri World Street** (limpios
-pero sin senderos: el monte sale vacío), **IGN Mapa Base** (ídem) y **CARTO Voyager**, que ya no es
-libre y devuelve una tesela con «API KEY REQUIRED» estampado. `src/js/map.js` quita `cycleLayer` de
-`layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
+**Las capas: tres, iguales en la portada y en una ficha, y las dos abren en Bici.**
+IGN, **Bici** (CyclOSM) y Satélite. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
+conviene leer el recorrido entero antes de volver a tocarlo, porque cada paso lo pidió el autor:
 
-**El callejero es el estilo Humanitarian (HOT), no el OSM de siempre.** Mismos datos de
-OpenStreetMap, otro dibujo: `https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png`, servido por OSM
-France, atribución a HOT y a OSM France. El autor pidió «un mapa muy detallado con rutas y calles,
-que se vean bien los nombres de lugares»; se midieron siete candidatos sobre 18 teselas reales de
-Mallabia a zoom 13-14 y **HOT es el más rápido y el más ligero de todos: 122 ms y 19,8 kB por
-tesela** (CyclOSM 125 ms / 41,3 kB, OpenTopoMap 129 / 44,5, Esri World Topo 167 / 18,4, OSM 180 /
-17,6; OSM France tardaba 2,6 s en cargar entera y se descartó). Primero entró **como quinta capa**,
-al lado del OSM de siempre, y el autor quitó el otro en cuanto los comparó: hacen lo mismo y éste se
-lee mejor.
+1. Hasta el 23 de octubre las fichas abrían en Bici. El autor avisó de que «al mapa bici le cuesta
+   abrir mucho» y se metió un callejero de OSM, que pasó a ser el que abría en las dos.
+2. El 26 pidió «un mapa muy detallado con rutas y calles, que se vean bien los nombres de lugares».
+   Se midieron siete candidatos sobre 18 teselas reales de Mallabia a zoom 13-14 y entró el estilo
+   **Humanitarian (HOT)** como quinta capa; el autor quitó «Calles» en cuanto los comparó.
+3. Horas después: **«no me gusta este mapa, Bici tiene más información»**. Y tiene razón — ver abajo.
+   Fuera HOT, y **Bici vuelve a ser la que abre**, también en las fichas.
 
-**El cambio no es gratis y conviene saberlo antes de darle vueltas.** Comparados los dos a zoom 14
-sobre Zaldibar: HOT saca **menos cimas con su altura** (Mendiburu 392, Larizgan 344, Ibañeta 527,
-Santamarinazar 668) que el OSM normal, que ahí rotula siete (Areatxua 486, Elorriagagana 334,
-Intxaurtxuaga 282, Gisasti 361, Goikoetxeko tontorra 196, Armotxa 306, Mendiburu 392). A cambio HOT
-saca **los nombres de caseríos y barrios** que el otro calla (Areitio, Goierri, Murgoitio) y dibuja
-los caminos de monte con más cuerpo. Y lo que más pesa para esta web: su paleta es **gris y malva en
-vez de naranja**, así que los tracks de bici ya no compiten con el color de las carreteras — que era
-justo el problema que reapareció al quitar el reborde por debajo del zoom 11.
+**La razón por la que la lentitud ya no cuenta** es que el autor la retiró con todas las letras: «no
+me preocupa lo que tarde en abrir en el monte, poca gente o ninguno; la ruta la organizo en casa».
+CyclOSM sigue siendo de las más pesadas (medido aquí, 125 ms y 41,3 kB por tesela frente a 122 ms y
+19,8 kB de HOT), pero eso ya no es un criterio. `ponerCapa()` tapa la capa vieja con la nueva, así
+que cambiar de capa no deja el mapa en blanco.
 
-**Una ventaja de regalo, medida:** con cuatro botones en vez de cinco, a 320 px **ya no se corta
-ningún rótulo** de la pastilla. Con «Calles» dentro eran 144 px de rótulos en una pastilla de 142 y
-«Bici» y «Calles» salían con puntos suspensivos; ahora IGN/Bici/HOT/Sat caben enteros, y en una
-ficha también IGN/HOT/Sat/Pendiente.
+**Por qué Bici gana, comparado sobre el mismo trozo de Zaldibar a zoom 14:** curvas de nivel con su
+altura, todas las cimas rotuladas con la suya, los arroyos con nombre (Zolduerreka), y cada pista y
+sendero dibujado con un trazo distinto según lo que sea. Ningún otro junta las cuatro cosas.
+
+**Los descartados, todos medidos y mirados, para no volver a probarlos:**
+
+| | por qué no |
+|---|---|
+| **HOT / Humanitarian** | rotula menos cimas que el OSM normal; el autor lo rechazó a la vista |
+| **Calles / OSM estándar** | menos información que Bici; lo quitó el autor |
+| **OSM Francia** | muchos topónimos pero **sin curvas de nivel** |
+| **OSM Alemania** | es el OSM de siempre con otro color; lento e irregular desde aquí |
+| **OpenTopoMap** | el que más cimas rotula, pero sus **carreteras son naranjas**, el mismo color que los tracks de bici |
+| **MTB Map** (mtbmap.cz) | el que más topónimos saca de todos, pero pinta las carreteras en rojo y amarillo chillón y lo sirve un servidor de aficionados **sin condiciones de uso publicadas** |
+| **CyclOSM-lite**, **4UMaps** | **muertos**: error en las doce teselas |
+| **Esri World Topo / Street**, **IGN Mapa Base** | limpios pero sin senderos: el monte sale vacío |
+| **CARTO Voyager** | ya no es libre: devuelve una tesela con «API KEY REQUIRED» estampado |
+| **Strava / Garmin (mapa de calor)** | **no se puede**: desde 2018 sus teselas exigen sesión iniciada y sus condiciones no permiten usarlas fuera de su web. No es cuestión de buscar la vuelta |
+
+`scripts/check_site.py` exige que `map.js` declare **tres** `L.tileLayer` y que `js/agua.js` lleve las
+mismas tres URL (su copia existe porque `map.js` son 1.100 líneas atadas a los tracks). `test_ui.cjs`
+comprueba la lista de botones y que la que abre es la segunda, en la portada y en una ficha.
+
+**Efecto secundario bueno, medido:** con tres botones, a 320 px **no se corta ningún rótulo**. Con
+cuatro eran 144 px de texto en una pastilla de 142 y «Bici» y «Calles» salían con puntos suspensivos.
 
 **«Rutas»: el interruptor para ver el mapa a pelo.** Lo pidió el autor — sobre el satélite, y donde
 se juntan varias rutas, los trazados tapan justo lo que quiere mirar. Va **en la misma pastilla que
@@ -346,9 +352,6 @@ ojo; por debajo de **360 px** no caben ni cinco botones en la pastilla (a 320 la
 derecha, bajo el botón de ampliar, con el lápiz corrido a 94 px y las opciones de dibujo a 136.
 Ojo con `scripts/test_ui.cjs`: las comprobaciones de la barra cuentan **capas**, así que filtran
 `.map-rutas-btn`, y la portada ya sí tiene `.map-layers-sep` aunque no tenga «Pendiente».
-
-**Aparte:** a 320 px los rótulos «Bici» y «Calles» ya salían cortados **antes** de añadir este botón
-— comprobado contra la web publicada. Son 144 px de rótulos en una pastilla de 142.
 
 **El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
 pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
@@ -572,7 +575,7 @@ duplicar las traducciones dentro del `.js` — que es uno solo para los dos idio
 Esto suma **un tercero mas** a los que ya veian la IP de cada visitante al pintar el mapa; esta dicho
 en el aviso legal, en los dos idiomas, y al pie del propio bloque.
 
-**Map tiles are deliberately never cached.** They come from OSM France (the HOT style), CyclOSM and Spain's IGN —
+**Map tiles are deliberately never cached.** They come from CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
 empty background, not on the map.
 

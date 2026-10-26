@@ -245,34 +245,34 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert(e.doc.activeElement===line.path,'Focus returns to route');
   e.one('[data-distance-preset="corto"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
   e.one('[data-distance-preset="all"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
-  // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
-  // con el activo marcado. La portada arranca en el callejero (HOT, el
-  // tercero) y de ahi no se mueve sola.
-  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
-  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','HOT','Sat']);
-  assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en el callejero');
+  // Las capas ya no son un menu que se abre: son tres botones a la vista,
+  // con el activo marcado. La portada arranca en Bici (el segundo) y de ahi
+  // no se mueve sola.
+  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,3);
+  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Sat']);
+  assert.equal(capas[1].getAttribute('aria-pressed'),'true','la portada abre en Bici');
   capas[0].click();
-  assert.equal(capas[2].getAttribute('aria-pressed'),'false');
+  assert.equal(capas[1].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
-  capas[2].click();
+  capas[1].click();
   // El boton de pintar por pendiente es cosa de la ficha de una ruta: aqui
   // son 57 tracks a la vez y sin alturas, asi que la pastilla lleva las
-  // cuatro capas y nada mas.
+  // tres capas y nada mas.
   // La portada sigue sin «Pendiente», pero desde que existe el interruptor de
   // «Rutas» si lleva la raya que lo separa de las capas.
   assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya antes de «Rutas»');
   assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>/Pendiente|Malda/.test(b.textContent||'')).length,0,'la portada no lleva pendiente');
-  // La portada abre en el callejero y ahi se queda: ni el zoom ni elegir una ruta
+  // La portada abre en Bici y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
   const c2=e2.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en el callejero');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','abre en Bici');
   e2.maps[0].setZoom(16);
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','acercarse no la cambia');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','acercarse no la cambia');
   abre();
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','elegir una ruta tampoco');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','elegir una ruta tampoco');
   c2[0].click();
   assert.equal(c2[0].getAttribute('aria-pressed'),'true','el boton si');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
@@ -291,7 +291,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.trazados().length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,3);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
@@ -343,10 +343,10 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   e.run('map.js');await settle();
   assert.equal(pedidas,1,'pide su track sin esperar a nadie');
-  // Y sin «Bici»: CyclOSM es la capa mas lenta y mas pesada, y era la que
-  // abria toda ficha. La pendiente va en la misma pastilla, detras de la
-  // raya, no en otra debajo.
+  // Con «Bici», que vuelve a las fichas: es el mapa que el autor quiere y
+  // la tardanza ya le da igual. La pendiente va en la misma pastilla,
+  // detras de la raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
-                   ['IGN','HOT','Sat','Pendiente']);
+                   ['IGN','Bici','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });

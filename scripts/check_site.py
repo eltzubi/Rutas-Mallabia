@@ -481,7 +481,7 @@ def main():
                     f'(img/orig esta excluido en _config.yml)')
 
     # --- las capas del mapa, iguales en los dos ficheros -------------------
-    # js/agua.js lleva su propia copia de las cuatro capas de teselas porque
+    # js/agua.js lleva su propia copia de las tres capas de teselas porque
     # js/map.js son 1.100 lineas atadas a los tracks y partirlo para compartir
     # treinta era arriesgar las 118 fichas por una pagina. La copia solo vale
     # si no se queda atras: si manana se cambia una URL en uno de los dos, esto
@@ -489,7 +489,7 @@ def main():
     mapa_js = (ROOT / 'src/js/map.js').read_text()
     agua_js = (ROOT / 'src/js/agua.js').read_text()
     plantillas = re.findall(r"L\.tileLayer\('([^']+)'", mapa_js)
-    require(len(plantillas) == 4, f'map.js: esperaba 4 capas, encuentro {len(plantillas)}')
+    require(len(plantillas) == 3, f'map.js: esperaba 3 capas, encuentro {len(plantillas)}')
     for plantilla in plantillas:
         require(plantilla in agua_js,
                 f'js/agua.js no tiene la capa de map.js: {plantilla[:60]}')
