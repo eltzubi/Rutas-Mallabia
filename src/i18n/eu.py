@@ -1157,11 +1157,11 @@ OSMA = {
     'Circuito desde Trabakua por Elgeta y la Necr&oacute;polis de Argi&ntilde;eta':
         'Zirkuitua Trabakuatik, Elgeta eta Argi&ntilde;etako Nekropolitik',
 
-    'alt="Sarc&oacute;fagos medievales de la Necr&oacute;polis de Argi&ntilde;eta, km 20,1 de la ruta"':
-        'alt="Erdi Aroko hilobiak Argi&ntilde;etako Nekropolian, ibilbideko 20,1 km"',
+    'alt="Sarc&oacute;fagos medievales de la Necr&oacute;polis de Argi&ntilde;eta, km 21,8 de la ruta"':
+        'alt="Erdi Aroko hilobiak Argi&ntilde;etako Nekropolian, ibilbideko 21,8 km"',
     'alt="Foto ampliada del recorrido de Trabakua, Elgeta y Argi&ntilde;eta"': 'alt="Trabakua, Elgeta eta Argi&ntilde;etako ibilbidearen argazki handitua"',
-    'alt="Presa de Aixola, junto a Larrosako Iturri, km 11,9 de la ruta"':
-        'alt="Aixolako presa, Larrosako Iturritik gertu, ibilbideko 11,9 km"',
+    'alt="Presa de Aixola, junto a Larrosako Iturri, km 13,6 de la ruta"':
+        'alt="Aixolako presa, Larrosako Iturritik gertu, ibilbideko 13,6 km"',
     'alt="Fila de sarc&oacute;fagos bajo los &aacute;rboles, Necr&oacute;polis de Argi&ntilde;eta"':
         'alt="Hilobi ilara zuhaitzen azpian, Argi&ntilde;etako Nekropolian"',
     'alt="Inscripci&oacute;n epigr&aacute;fica labrada en un sarc&oacute;fago, Necr&oacute;polis de Argi&ntilde;eta"':
@@ -1174,35 +1174,35 @@ OSMA = {
         'alt="Pista zelaien artean, zurezko hesi baten ondoan"',
     'alt="Panor&aacute;mica hacia Elorrio y el Duranguesado desde el barrio de Mendraca, con caballos pastando"':
         'alt="Elorrio eta Durangaldearen panoramika Mendraca auzotik, zaldiak bazkatzen"',
-    'alt="Tumbas de piedra junto a la ermita de San Juan Bautista de Murgoitio, km 24,3 de la ruta"':
-        'alt="Harrizko hilobiak San Juan Bataiatzailea Murgoitioko ermitaren ondoan, ibilbideko 24,3 km"',
+    'alt="Tumbas de piedra junto a la ermita de San Juan Bautista de Murgoitio, km 26,0 de la ruta"':
+        'alt="Harrizko hilobiak San Juan Bataiatzailea Murgoitioko ermitaren ondoan, ibilbideko 26,0 km"',
 
-    'Esta ruta sale de Trabakua hacia el suroeste, hasta el barrio de Zengotita (km 1,3 &middot; 412 '
+    'Esta ruta sale de Trabakua hacia el suroeste, hasta el barrio de Zengotita (km 3,0 &middot; 412 '
     'm), donde se coge la pista forestal que va hacia Areitio y enlaza con el GR &mdash;que va casi '
-    'en llano, en paralelo al monte Arietzu&mdash;, camino del barrio de Goierri (km 5,2 &middot; 319 '
+    'en llano, en paralelo al monte Arietzu&mdash;, camino del barrio de Goierri (km 6,9 &middot; 319 '
     'm), escondido entre robles. Se sigue ganando altura por esa pista hacia el sureste hasta '
     'dejarla, poco antes de la presa de Aixola, para bajar por un tramo de tierra juget&oacute;n hasta '
     'la propia presa &mdash;quien prefiera no perder desnivel puede seguir por la pista principal, '
     'que llega al mismo punto sin bajar. Despu&eacute;s de la presa, ya al empezar a subir hacia '
-    'Elgeta, est&aacute; <b>Larrosako Iturri</b> (km 11,9 &middot; 355 m), punto de agua a mitad de '
+    'Elgeta, est&aacute; <b>Larrosako Iturri</b> (km 13,6 &middot; 355 m), punto de agua a mitad de '
     'ruta.':
-        'Trabakuatik hego-mendebalderantz ateratzen da bidea, Zengotita auzoraino (1,3 km &middot; '
+        'Trabakuatik hego-mendebalderantz ateratzen da bidea, Zengotita auzoraino (3,0 km &middot; '
         '412 m), eta han hartzen da Areitiora doan pista forestala, GRarekin lotzen dena &mdash;ia '
-        'lauan doa, Arietzu mendia parez pare jarraituz&mdash;, Goierri auzorantz (5,2 km &middot; '
+        'lauan doa, Arietzu mendia parez pare jarraituz&mdash;, Goierri auzorantz (6,9 km &middot; '
         '319 m), hariztien artean ezkutatuta.</p>\n'
         '    <p>Handik aurrera, pistak hego-ekialderantz egiten du eta altuera irabazten jarraitzen '
         'da, Aixolako presatik gertu pista utzi arte. Tarte horretan, lurrezko jaitsiera jostagarri '
         'bat dago presaraino &mdash;desnibela galdu nahi ez duenak pista nagusitik jarrai dezake, '
         'puntu berera iristen baita. Presaren ondoren, Elgetarantz igotzen hasten denean, '
-        '<b>Larrosako Iturria</b> dago (11,9 km &middot; 355 m), ibilbidearen erdiko ur-puntua.',
+        '<b>Larrosako Iturria</b> dago (13,6 km &middot; 355 m), ibilbidearen erdiko ur-puntua.',
     'Desde ah&iacute; sigue subiendo hasta Elgeta, ya en el Duranguesado, y contin&uacute;a entre '
     'curvas '
     'por un tramo '
     'de asfalto hasta el cruce de bajada hacia Elorrio, por el barrio Aldape, antes de bajar de golpe '
-    '(km 18,8 &middot; '
+    '(km 20,5 &middot; '
     '286 m). Kil&oacute;metro y medio '
     'despu&eacute;s gira hacia el noroeste hasta la <b>Necr&oacute;polis de Argi&ntilde;eta</b> (km '
-    '20,1 &middot; 247 m): una veintena de sarc&oacute;fagos de '
+    '21,8 &middot; 247 m): una veintena de sarc&oacute;fagos de '
     'piedra y cinco estelas labradas en piedra del Oiz, de los siglos VII a IX &mdash;entre la '
     'epigraf&iacute;a cristiana m&aacute;s antigua encontrada en Bizkaia, Bien de Inter&eacute;s '
     'Cultural desde 1931. Las tumbas, repartidas originalmente por distintos barrios de Elorrio, se '
@@ -1210,48 +1210,48 @@ OSMA = {
     'una fuente junto a la necr&oacute;polis para llenar cantimploras.':
         'Handik gora, bideak Elgetara igotzen jarraitzen du, Durangaldeko sarreran, eta bihurgune '
         'artean jarraitzen du asfalto-tarte batean zehar, Aldape auzotik Elorrio aldera jaisten den '
-        'bidegurutzera iritsi arte (18,8 km &middot; 286 m).</p>\n'
+        'bidegurutzera iritsi arte (20,5 km &middot; 286 m).</p>\n'
         '    <p>Kilometro eta erdi geroago, bideak ipar-mendebalderantz egiten du <b>Argi&ntilde;etako '
-        'Nekropolira</b> iristeko (20,1 km &middot; 247 m): hogei bat harri-sarkofago eta bost '
+        'Nekropolira</b> iristeko (21,8 km &middot; 247 m): hogei bat harri-sarkofago eta bost '
         'estela, Oizko harrian landuak, VII&ndash;IX. mendekoak &mdash;Bizkaian aurkitutako epigrafia '
         'kristau zaharrenetakoak, Kultura Ondasun izendatuak 1931tik. Tumbak, jatorriz Elorrioko '
         'auzo desberdinetan sakabanatuta zeudenak, XIX. mendean bildu ziren hemen, Retolaza '
         'parrokoaren aginduz. Nekropoliaren ondoan iturri bat dago kantinplorak betetzeko.',
     'Desde ah&iacute; sigue subiendo hacia el barrio de Mendraca, donde el paisaje se abre en una '
     'panor&aacute;mica amplia hacia Elorrio y varias cumbres, como el Udalaitz, y el camino deja el '
-    'asfalto por sendero y pista de tierra (km 22,4 &middot; 312 m). Pasa por <b>San Juan Bautista de '
-    'Murgoitio</b> (km 24,3 &middot; 277 m) &mdash;con registros del siglo XVII de tumbas dobles nunca '
-    'excavadas, similares a las de Argi&ntilde;eta&mdash; y por el barrio de Olakueta (km 25,8 '
+    'asfalto por sendero y pista de tierra (km 24,1 &middot; 312 m). Pasa por <b>San Juan Bautista de '
+    'Murgoitio</b> (km 26,0 &middot; 277 m) &mdash;con registros del siglo XVII de tumbas dobles nunca '
+    'excavadas, similares a las de Argi&ntilde;eta&mdash; y por el barrio de Olakueta (km 27,5 '
     '&middot; 160 m), donde se pierde altura de golpe. Gira despu&eacute;s '
     'hacia el este, bordeando Zaldibar sin entrar en el pueblo, para subir hasta la <b>Ermita de San '
-    'Miguel de Okango</b> (km 28,4 &middot; 227 m), patrona del barrio y con fiestas el 29 de '
-    'septiembre entre bolos y morcilla, y baja de nuevo hasta <b>Berriz</b> (km 30,7 &middot; 187 m), '
+    'Miguel de Okango</b> (km 30,1 &middot; 227 m), patrona del barrio y con fiestas el 29 de '
+    'septiembre entre bolos y morcilla, y baja de nuevo hasta <b>Berriz</b> (km 32,4 &middot; 187 m), '
     'en el valle del Ibaizabal, al pie del Oiz.':
         'Handik gora, bideak Mendraca auzorantz igotzen jarraitzen du, eta paisaia zabaltzen da '
         'Elorrio eta inguruko gailurretara &mdash;tartean Udalaitz&mdash;. Bideak asfaltoa uzten du '
-        'bidezidor eta lur-pista bihurtzeko (22,4 km &middot; 312 m). Aurrerago, <b>San Juan '
-        'Bautista de Murgoitio</b> (24,3 km &middot; 277 m) igarotzen da &mdash;XVII. mendeko '
+        'bidezidor eta lur-pista bihurtzeko (24,1 km &middot; 312 m). Aurrerago, <b>San Juan '
+        'Bautista de Murgoitio</b> (26,0 km &middot; 277 m) igarotzen da &mdash;XVII. mendeko '
         'hilobi bikoitz dokumentatuak ditu, inoiz induskatu ez direnak, Argi&ntilde;etakoen '
-        'antzekoak&mdash; eta Olakueta auzotik pasatzen da (25,8 km &middot; 160 m), non altuera '
+        'antzekoak&mdash; eta Olakueta auzotik pasatzen da (27,5 km &middot; 160 m), non altuera '
         'galera handia dago.</p>\n'
         '    <p>Ondoren, bideak ekialderantz egiten du, Zaldibar ingurutik herrira sartu gabe, eta '
-        '<b>Okangoko San Migel ermitaraino</b> igotzen da (28,4 km &middot; 227 m), auzoko '
+        '<b>Okangoko San Migel ermitaraino</b> igotzen da (30,1 km &middot; 227 m), auzoko '
         'zaindaria, irailaren 29an ospatzen diren festekin (bolo-jokoa eta odolkia). Handik berriro '
-        'jaisten da <b>Berrizera</b> (30,7 km &middot; 187 m), Ibaizabal ibaiaren haranean, Oiz '
+        'jaisten da <b>Berrizera</b> (32,4 km &middot; 187 m), Ibaizabal ibaiaren haranean, Oiz '
         'mendiaren oinean.',
-    'Ya de vuelta, pasa por el barrio de San Lorenzo (Mend&iacute;bil-Sallobente) (km 32,1 &middot; '
+    'Ya de vuelta, pasa por el barrio de San Lorenzo (Mend&iacute;bil-Sallobente) (km 33,8 &middot; '
     '264 m), antes de subir sin parar los &uacute;ltimos 4,7 km y 143 m de '
     'desnivel de vuelta hasta Trabakua, para cerrar el c&iacute;rculo.':
-        'Bueltan, bideak San Lorentzo auzotik igarotzen da (Mend&iacute;bil-Sallobente) (32,1 km '
+        'Bueltan, bideak San Lorentzo auzotik igarotzen da (Mend&iacute;bil-Sallobente) (33,8 km '
         '&middot; 264 m), eta azken 4,7 km-etan eta 143 m-ko desnibelean etenik gabe igotzen da '
         'berriro Trabakuara, zirkuitua ixteko.',
 
-    '<p>36,36 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
-    'Duranguesado. Hay agua en Larrosako Iturri (km 11,9) y '
-    'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 20,1).</p>':
-        '<p>36,36 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
-        'artean. Ura dago Larrosako Iturrin (11,9 km) eta Argi&ntilde;etako '
-        'Nekropolitik gertu (20,1 km).</p>',
+    '<p>38,07 km y +1.002 m de desnivel en un solo circuito, entre ermitas y caser&iacute;os del '
+    'Duranguesado. Hay agua en Larrosako Iturri (km 13,6) y '
+    'junto a la Necr&oacute;polis de Argi&ntilde;eta (km 21,8).</p>':
+        '<p>38,07 km eta +1.002 m-ko desnibela zirkuitu bakarrean, Durangaldeko ermita eta baserrien '
+        'artean. Ura dago Larrosako Iturrin (13,6 km) eta Argi&ntilde;etako '
+        'Nekropolitik gertu (21,8 km).</p>',
 }
 
 GEREA = {
@@ -1366,20 +1366,20 @@ ZENGOTITAGANE = {
         'Bertize geodesikoa Iturzurigainan, ibilbideko punturik altuenean, inguruko ikuspegiekin',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
-    '(km 3,7, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
+    '(km 4,8, 820 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
     'duras, casi imposibles de subir con una bici normal &mdash;aunque en sentido contrario, '
     'con esta subida convertida en bajada, s&iacute; se puede hacer la ruta con una bici '
     'normal.':
         'Trabakuatik irten eta Osma norabidean egiten dugu errepidez. 2 km pasatxo geroago '
-        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (3,7 km, 820 m) igotzen duen pista '
+        'eskuinera jotzen dugu, <b>Zengotitagane</b>raino (4,8 km, 820 m) igotzen duen pista '
         'hartzeko, parke eolikoaren aerosorgailuen artean. Maldak oso gogorrak dira, ia '
         'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;alderantzizko norabidean, ordea, '
         'igoera hori jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arrunt batekin.',
     'Tras Zengotitagane seguimos por la cresta, con vistas a los dos lados &mdash;especialmente '
-    'bonitas hacia <b>Iturzurigaina</b> (km 4,8, 859 m), el punto m&aacute;s alto de la ruta. '
+    'bonitas hacia <b>Iturzurigaina</b> (km 5,9, 859 m), el punto m&aacute;s alto de la ruta. '
     'Quien quiera coger agua puede desviarse unos metros a la derecha.':
         'Zengotitagane igaro ondoren gailurraren bidetik jarraitzen dugu, bi aldeetara '
-        'ikuspegiekin &mdash;bereziki ederrak <b>Iturzurigaina</b>rantz (4,8 km, 859 m), '
+        'ikuspegiekin &mdash;bereziki ederrak <b>Iturzurigaina</b>rantz (5,9 km, 859 m), '
         'ibilbideko punturik altuena. Ura hartu nahi duenak eskuinera desbideratu ditzake '
         'metro batzuk.',
     'Empieza entonces la bajada hacia Garai, primero por una pista de cemento y despu&eacute;s '
@@ -1387,32 +1387,32 @@ ZENGOTITAGANE = {
     'giramos a la izquierda para encarar una pista trialera corta pero intensa, hasta '
     'enganchar con la pista de piedra que sube desde Garai hasta la fuente de arriba, en lo '
     'alto. Desde ah&iacute; empezamos a bajar hasta la <b>Ermita de San Kristobal '
-    'Txiki</b> (km 15,4, 495 m) &mdash;as&iacute; se conoce, para distinguirla de la otra '
+    'Txiki</b> (km 16,5, 495 m) &mdash;as&iacute; se conoce, para distinguirla de la otra '
     'Ermita de San Kristobal, la de arriba, junto a los aerogeneradores.':
         'Orduan hasten da Garairako jaitsiera, lehenengo zementuzko pista batetik eta gero '
         'harrizko batetik, ur-kanal batek bidea lagunduta. Handik pixka batera ezkerrera '
         'jotzen dugu, trial-pista labur baina bizi bati aurre egiteko, Garaitik igotzen den '
         'harrizko pistarekin lotu arte, goiko iturriraino, goi-goian. Handik behera hasten '
-        'gara <b>San Kristobal Txiki ermita</b>raino (15,4 km, 495 m) &mdash;horrela ezagutzen '
+        'gara <b>San Kristobal Txiki ermita</b>raino (16,5 km, 495 m) &mdash;horrela ezagutzen '
         'da, eolikoen ondoan dagoen beste San Kristobal ermitatik bereizteko.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
-    '(km 17,1, 302 m), justo antes de cruzar '
+    '(km 18,2, 302 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de volver '
     'a Trabakua, ya casi en llano.':
         'Abiadura betean jarraitzen dugu behera <b>Besoita</b> auzoraino '
-        '(17,1 km, 302 m), Trabakua eta Berriz '
+        '(18,2 km, 302 m), Trabakua eta Berriz '
         'arteko errepide nagusia gurutzatu aurretik. Gurutzatu eta errepide zaharretik gora '
         'egiten dugu Zengotita auzorantz, zirkulua ixteko zorian, Trabakura itzuli aurretik, '
         'ia lauan.',
-    '22,00 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    '23,07 km y +1.029 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
-    'agua cerca de Iturzurigaina (km 4,8) y en la zona de Garai, antes de la Ermita de San '
+    'agua cerca de Iturzurigaina (km 5,9) y en la zona de Garai, antes de la Ermita de San '
     'Kristobal Txiki.':
-        '22,00 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+        '23,07 km eta +1.029 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko aldean, '
+        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (5,9 km) eta Garaiko aldean, '
         'San Kristobal Txiki ermitaren aurretik.',
     'Ermita de San Kristobal Txiki': 'San Kristobal Txiki ermita',
     'Besoita': 'Besoita',
@@ -1708,27 +1708,27 @@ SANCRISTOBAL = {
         'Jaitsiera harrizko bide batetik Garairantz, pasabide kanadiar batekin lainoen artean',
     'Salimos de Trabakua en direcci&oacute;n Osma por carretera. Algo m&aacute;s de 2 km '
     'despu&eacute;s giramos a la derecha para coger la pista que sube hasta <b>Zengotitagane</b> '
-    '(km 3,7, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
+    '(km 4,8, 810 m), entre los aerogeneradores del parque e&oacute;lico. Las rampas son muy '
     'duras, casi imposibles de subir con una bici normal &mdash;aunque en sentido contrario, '
     'con esta subida convertida en bajada, s&iacute; se puede hacer la ruta con una bici '
     'normal.':
         'Trabakua mendatetik Osmarantz ateratzen gara errepidetik. 2 km pasatxo egin ondoren, '
-        'eskuinera biratzen dugu <b>Zengotitagane</b>raino igotzen den pista hartzeko (3,7 km '
+        'eskuinera biratzen dugu <b>Zengotitagane</b>raino igotzen den pista hartzeko (4,8 km '
         '&middot; 810 m), parke eolikoko haize-errotak artean. Malda oso gogorrak dira, ia '
         'ezinezkoak bizikleta arrunt batekin igotzeko &mdash;baina kontrako noranzkoan, hau '
         'jaitsiera bihurtuta, bai egin daiteke ibilbidea bizikleta arruntarekin.',
-    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigaina</b> (km 4,8, 858 m), con '
+    'Tras Zengotitagane seguimos por la cresta hasta <b>Iturzurigaina</b> (km 5,9, 858 m), con '
     'vistas a los dos lados. Quien quiera coger agua puede desviarse unos metros a la derecha. '
     'Un poco m&aacute;s adelante, tras cruzar en paralelo a los aerogeneradores la parte alta '
     'del Oiz, bajamos a una pista de cemento en busca de la subida a la zona de la cumbre de '
-    '<b>Askako</b> (km 5,7, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
+    '<b>Askako</b> (km 6,8, 681 m), que cruzamos por un precioso sendero semioculto bajo la '
     'vegetaci&oacute;n: parte del trazado cl&aacute;sico del <a href="https://www.instagram.com/astotrail" target="_blank" rel="noopener noreferrer">AstoTrail</a>, la exigente carrera de '
     'monta&ntilde;a que organiza el municipio de Garai.':
-        'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigaina</b>raino (4,8 km &middot; '
+        'Zengotitaganetik krestan jarraitzen dugu <b>Iturzurigaina</b>raino (5,9 km &middot; '
         '858 m), bi aldeetara bistak dituela. Ura hartu nahi duenak eskuinera metro gutxi '
         'batzuk desbideratu daiteke. Pixka bat aurrerago, haize-errotak paraleloan zeharkatuz '
         'Oizko goialdea, zementuzko pista batera jaisten gara, <b>Askako</b> gailur-ingurura '
-        'igotzeko (5,7 km &middot; 681 m). Gailur-inguru hori sasipean ezkutatuta doan bide '
+        'igotzeko (6,8 km &middot; 681 m). Gailur-inguru hori sasipean ezkutatuta doan bide '
         'zoragarri batez zeharkatzen da: <a href="https://www.instagram.com/astotrail" target="_blank" rel="noopener noreferrer">AstoTrail</a> lasterketa gogorraren ibilbide klasikoaren '
         'parte, Garaiko udalerriak antolatzen duen mendiko proba ospetsua.',
     'Bajamos entonces hacia Garai por un hayedo precioso, una de las bajadas que m&aacute;s '
@@ -1737,31 +1737,31 @@ SANCRISTOBAL = {
         'Handik behera, Garaialdera jaisten gara pago-baso zoragarri baten bidez, ibilbideko '
         'jaitsierarik gozagarrienetako batean. Garaitik irten bezain pronto, iturri bat dago '
         'ezkerrean, urte osoan ura duena.',
-    'La subida de Garai hasta la <b>Ermita de San Kristobal Txiki</b> (km 20,3, 493 m) '
+    'La subida de Garai hasta la <b>Ermita de San Kristobal Txiki</b> (km 21,4, 493 m) '
     'la hacemos por una pista de piedra &mdash;as&iacute; se conoce esta ermita, para '
     'distinguirla de la otra Ermita de San Kristobal, la de arriba, junto a los '
     'aerogeneradores.':
-        'Garaiko igoera <b>San Kristobal Txiki ermita</b>raino (20,3 km &middot; 493 m) '
+        'Garaiko igoera <b>San Kristobal Txiki ermita</b>raino (21,4 km &middot; 493 m) '
         'harrizko pista batetik egiten da, goiko San Kristobal ermitatik bereizteko '
         '&mdash;Oiz aldeko haize-errotak inguruan dituen ermitarekin.',
     'Continuamos a toda velocidad cuesta abajo hasta el barrio de <b>Besoita</b> '
-    '(km 22,4, 308 m), justo antes de cruzar '
+    '(km 23,5, 308 m), justo antes de cruzar '
     'la carretera general entre Trabakua y Berriz. La cruzamos y subimos por la carretera '
     'vieja hacia el barrio de Zengotita, ya cerca de cerrar el c&iacute;rculo, antes de volver '
     'a Trabakua, ya casi en llano.':
         'Handik beherantz abiadura handian jaisten gara <b>Besoita</b> auzoraino '
-        '(22,4 km &middot; 308 m), Trabakua eta '
+        '(23,5 km &middot; 308 m), Trabakua eta '
         'Berriz lotzen dituen errepide nagusia zeharkatu aurretik. Zeharkatu eta errepide '
         'zaharretik igotzen da Zengotita auzorantz, zirkuitua ixteko puntura iritsi aurretik, '
         'Trabakuara itzuli baino lehen, ia lauan.',
-    '25,98 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
+    '27,05 km y +1.248 m de desnivel en un solo circuito, con rampas muy duras nada m&aacute;s '
     'salir hacia Zengotitagane &mdash;casi imposibles de subir con una bici normal en este '
     'sentido. Hay '
-    'agua cerca de Iturzurigaina (km 4,8) y en una fuente a la salida de Garai, con agua todo '
+    'agua cerca de Iturzurigaina (km 5,9) y en una fuente a la salida de Garai, con agua todo '
     'el a&ntilde;o, antes de la Ermita de San Kristobal Txiki.':
-        '25,98 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
+        '27,05 km eta +1.248 m-ko desnibela zirkuitu bakarrean, malda oso gogorrekin '
         'Zengotitaganerako irteeran bertan &mdash;ia ezinezkoak bizikleta arrunt batekin '
-        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (4,8 km) eta Garaiko '
+        'igotzeko norabide honetan. Ura badago Iturzurigainatik gertu (5,9 km) eta Garaiko '
         'irteerako iturri batean, urtean zehar beti urarekin, San Kristobal Txiki ermitaren '
         'aurretik.',
     'Ermita de San Kristobal Txiki': 'San Kristobal Txiki ermita',
