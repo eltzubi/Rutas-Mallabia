@@ -359,6 +359,10 @@ ROUTE = {
     '&larr; Volver a rutas': '&larr; Itzuli ibilbideetara',
     '<b>· Puerto de Trabakua</b>': '<b>· Trabakuko mendatea</b>',
     '<b>&middot; Puerto de Trabakua</b>': '<b>&middot; Trabakuko mendatea</b>',
+    # betzun no sale de Trabakua: su GPX arranca a 24 m de la ermita, que es
+    # lo que ya decia su propio campo «Salida». El pie llevaba copiada la
+    # linea de las fichas que si salen del puerto, a 2,17 km de alli.
+    '<b>&middot; Ermita de Zengotita</b>': '<b>&middot; Zengotitako ermita</b>',
     'Circuito — vuelve casi al mismo punto': 'Zirkuitua — ia puntu berera itzultzen da',
     'Circuito &mdash; vuelve casi al mismo punto': 'Zirkuitua &mdash; ia puntu berera itzultzen da',
     'data-marker-title="Trabakua (salida y llegada)"':
