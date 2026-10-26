@@ -463,11 +463,26 @@
     // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
     // todas. Lo pidio el autor: «quedarse solo en la ruta limpia».
     var labelSoloHref = null;
+    var vigilaFicha = null;
+    function marcaAltoFicha(alto){
+      el.style.setProperty('--ficha-alto', Math.round(alto) + 'px');
+      if (vigilaFicha || typeof ResizeObserver === 'undefined') return;
+      // getBoundingClientRect y no contentRect: el panel lleva 16 px de
+      // relleno arriba y abajo, y contentRect los deja fuera.
+      vigilaFicha = new ResizeObserver(function(){
+        if (!el.classList.contains('con-ficha')) return;
+        el.style.setProperty('--ficha-alto',
+          Math.round(panel.getBoundingClientRect().height) + 'px');
+      });
+      vigilaFicha.observe(panel);
+    }
+
     function closePanel(){
       if (!panel || !panel.classList.contains('open')) return;
       var returnFocus = panel.contains(document.activeElement);
       panel.classList.remove('open');
       panel.hidden = true;
+      el.classList.remove('con-ficha');
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
@@ -530,6 +545,18 @@
       panel.classList.add('open');
       if (viewFab) viewFab.classList.add('is-hidden-behind-panel');
       var panelHeight = panel.getBoundingClientRect().height;
+      // La linea de creditos de Leaflet va en z-index 1000 y el panel en 500,
+      // asi que caia justo encima del enlace «Ver ruta completa» y lo tapaba
+      // -- lo vio el autor en su movil. El panel sube por encima de los
+      // controles y los creditos se corren hacia arriba lo que mide el
+      // panel, que no se pueden esconder: son la atribucion de OSM.
+      //
+      // La altura se vuelve a mirar con un ResizeObserver y no solo aqui: la
+      // foto de la ficha todavia no ha colocado cuando se mide, y el panel
+      // crece despues. Sin eso, los creditos se quedaban unos pixeles bajos
+      // y seguian metidos debajo del panel.
+      marcaAltoFicha(panelHeight);
+      el.classList.add('con-ficha');
       map.flyToBounds(line.getBounds(), {
         paddingTopLeft: [24, 24],
         paddingBottomRight: [24, panelHeight + 24],

@@ -623,8 +623,17 @@
   cursor:pointer;
 }
 .route-dist-label-inner:hover{ border-color:var(--teal); color:var(--teal); }
+/* Por encima de los controles de Leaflet, que van en z-index 1000: con 500,
+   la linea de creditos caia justo sobre el enlace «Ver ruta completa» y lo
+   tapaba. Y como los creditos no se pueden esconder -- son la atribucion de
+   OpenStreetMap y de quien sirve las teselas -- se corren hacia arriba lo
+   que mide el panel, con la altura que le pasa map.js en --ficha-alto. */
+[data-map-src].con-ficha .leaflet-bottom{
+  bottom:var(--ficha-alto, 0px);
+  transition:bottom .25s ease;
+}
 .route-info-panel{
-  position:absolute; left:0; right:0; bottom:0; z-index:500;
+  position:absolute; left:0; right:0; bottom:0; z-index:1100;
   max-height:85%; overflow-y:auto;
   background:var(--ground-raised); border-top:1px solid var(--line);
   box-shadow:0 -8px 24px rgba(0,0,0,.35);

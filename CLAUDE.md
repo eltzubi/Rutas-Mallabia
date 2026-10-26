@@ -397,6 +397,26 @@ toca **sólo el grosor**, nunca la opacidad: ésa la llevan el filtro y la ficha
 encendería rutas apagadas a propósito. Ojo al medir desde Playwright: los rebordes **no están en
 `.leaflet-overlay-pane`** sino en `.leaflet-rebordes-pane`, y buscarlos en el primero devuelve cero.
 
+**La linea de creditos de Leaflet iba por encima de la ficha del mapa.** Lo vio el autor en su
+movil: al abrir una ruta en la portada, «© CyclOSM, © OpenStreetMap contributors» caia justo sobre el
+enlace naranja «Ver ruta completa» y lo dejaba ilegible. La causa es de libro: los controles de
+Leaflet van en **`z-index` 1000** y `.route-info-panel` estaba en **500**. Ahora el panel va en
+**1100** y, como los creditos **no se pueden esconder** —son la atribucion de OpenStreetMap y de
+quien sirve las teselas—, se corren hacia arriba lo que mide el panel
+(`[data-map-src].con-ficha .leaflet-bottom{ bottom:var(--ficha-alto) }`).
+
+La altura la escribe `map.js` en `--ficha-alto`, y **no basta con medirla al abrir**: la foto de la
+ficha todavia no ha colocado y el panel crece despues, con lo que los creditos se quedaban unos
+pixeles bajos y seguian metidos debajo. La vigila un `ResizeObserver` sobre el panel, que mide con
+`getBoundingClientRect` y **no con `contentRect`** —el panel lleva 16 px de relleno arriba y abajo y
+`contentRect` los deja fuera—. Comprobado a 320, 390, 768 y 1280 en los dos idiomas.
+
+**Ojo al verificar: `driver.py verifica` falla a veces por un 429 de Open-Meteo.** La comprobacion
+de «Lo mio» no admite errores de consola, y si el servicio del tiempo devuelve «429 Too Many
+Requests» —porque se han hecho muchas peticiones desde esta IP— la da por fallida sin que haya
+ninguna regresion. Se distingue mirando la lista de errores que imprime: si lo unico que sale es ese
+429, no es el codigo. A los visitantes no les afecta, que el limite es por IP.
+
 **Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
 ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
 en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;
