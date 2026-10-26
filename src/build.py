@@ -709,6 +709,27 @@ def add_tecnica(page_html, page, lang):
 ULTIMA_ENTRADA = ("zengotitamaguna", "2026-10-25")
 
 
+# El numero de rutas, escrito por el build y no a mano. Lo pidio el autor
+# despues de encontrarselo viejo: la pagina de preguntas decia «las 65 rutas»
+# cuando ya eran 66, y el comentario de la 404 seguia en 61. Cada vez que
+# entra una ruta habia que acordarse de siete sitios. Ahora las fuentes
+# escriben {{RUTAS}} y aqui se cambia por las que haya de verdad.
+#
+# La cuenta sale de data/trailhead.json, que es la lista de tracks que dibuja
+# el mapa de la portada: es justo de lo que hablan esos textos («caminos
+# grabados en alguna de las N rutas», «esconde los N trazados»). Y es el mismo
+# fichero del que sale el zip, asi que las dos cifras no se pueden separar.
+MARCA_RUTAS = "{{RUTAS}}"
+
+
+def cuantas_rutas():
+    return len(_trailhead())
+
+
+def pon_cuantas_rutas(page_html):
+    return page_html.replace(MARCA_RUTAS, str(cuantas_rutas()))
+
+
 def add_ultima_entrada(page_html, cards, lang):
     """Senala en la portada la ultima ruta que entro, con su fecha.
 
@@ -1320,6 +1341,9 @@ def main():
             page_html = retarget_home_links(page_html, lang)
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
+            page_html = pon_cuantas_rutas(page_html)
+            if MARCA_RUTAS[:2] in page_html:
+                raise SystemExit(f"{name} [{lang}]: ha quedado una marca sin sustituir")
             out_path = os.path.join(ROOT, out_name(name, lang))
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
@@ -1488,13 +1512,19 @@ def write_404_page(versions):
     """La pagina que sirve GitHub Pages ante cualquier direccion que no existe.
 
     Una sola para los dos idiomas, como offline.html: Pages solo admite un
-    404.html y no sabe de idiomas. Lleva el buscador de las 66 rutas sobre
+    404.html y no sabe de idiomas. Lleva el buscador de todas las rutas sobre
     data/rutas.json, que es lo unico util que se le puede ofrecer a quien
     llega por un enlace roto. Pages la devuelve con estado 404 de verdad, asi
     que no hay riesgo de que Google la tome por una pagina buena.
     """
     body = read("404.html")
     body = add_cache_busting(body, versions)
+    # La 404 se escribe fuera del bucle de paginas, asi que la marca hay que
+    # cambiarla aqui tambien: sin esto el comentario se quedaba viejo (decia
+    # 61 cuando ya eran 66) y nadie lo miraba.
+    body = pon_cuantas_rutas(body)
+    if MARCA_RUTAS[:2] in body:
+        raise SystemExit("404.html: ha quedado una marca sin sustituir")
     with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
         f.write(body)
     print("wrote 404.html")

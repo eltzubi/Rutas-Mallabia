@@ -376,6 +376,19 @@ de 360 px la portada deja el rótulo en **«Mallabia»** a secas (`.place-prov`,
 son 69 px que sobran de la provincia, de sobra para el botón y para la holgura que faltaba desde
 antes.
 
+**El número de rutas lo escribe el build, no la mano.** Las fuentes ponen `{{RUTAS}}` y
+`pon_cuantas_rutas()` lo cambia por `len(_trailhead())`, que es la lista de tracks del mapa de la
+portada — justo de lo que hablan esos textos («caminos grabados en alguna de las N rutas», «esconde
+los N trazados») y el mismo fichero del que sale el zip, así que las dos cifras no se pueden
+separar. Lo pidió el autor después de encontrárselo viejo: la página de preguntas decía «las 65
+rutas» con 66 publicadas, el euskera «65ak zip bakar batean» y el comentario de la 404 seguía en 61.
+Eran **ocho sitios** que había que recordar en cada ruta nueva.
+
+Va al final de la cadena de cada página, y **la 404 se escribe fuera de ese bucle**, así que
+`write_404_page` lo llama aparte. Las dos comprueban que no quede ninguna marca sin sustituir y
+**paran el build** si queda. Probado de verdad: con un track de más en `trailhead.json` las páginas
+pasan a decir 67, y al quitarlo vuelven a 66.
+
 **Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
 `aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
 `NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y
