@@ -6594,8 +6594,8 @@ PREGUNTAS = {
         'alt="Mapa marrazteko moduan, bost botoiko zutabea arkatzaren azpian"',
     '<h3>3. Toca dos puntos y el camino se calcula solo</h3>':
         '<h3>3. Ukitu bi puntu eta ibilbidea berez kalkulatzen da</h3>',
-    '<p>Toca un punto sobre cualquier camino y luego otro. <b>La l&iacute;nea no va recta</b>: busca el camino m&aacute;s corto entre los dos por los senderos de las 65 rutas de esta web. Sigue tocando y el trazado se va alargando.</p>':
-        '<p>Ukitu puntu bat edozein bidearen gainean, eta gero beste bat. <b>Marra ez da zuzen joaten</b>: bi puntuen arteko biderik laburrena bilatzen du web honetako 65 ibilbideen bidez. Ukitzen jarraitzen baduzu, trazadura luzatzen joango da.</p>',
+    '<p>Toca un punto sobre cualquier camino y luego otro. <b>La l&iacute;nea no va recta</b>: busca el camino m&aacute;s corto entre los dos por los senderos de las 66 rutas de esta web. Sigue tocando y el trazado se va alargando.</p>':
+        '<p>Ukitu puntu bat edozein bidearen gainean, eta gero beste bat. <b>Marra ez da zuzen joaten</b>: bi puntuen arteko biderik laburrena bilatzen du web honetako 66 ibilbideen bidez. Ukitzen jarraitzen baduzu, trazadura luzatzen joango da.</p>',
     'alt="Un trazado azul de tres puntos siguiendo los senderos entre las rutas"':
         'alt="Hiru puntuko marrazki urdina, ibilbideen arteko bidexkei jarraituz"',
     '<h3>4. Mira la franja de abajo antes de seguir</h3>':
@@ -6608,16 +6608,16 @@ PREGUNTAS = {
         '<h3>5. Aldatu mapa mota nahi duzunean</h3>',
     '<p>Las cuatro capas siguen funcionando mientras dibujas. El <b>sat&eacute;lite</b> es el que m&aacute;s dice: ah&iacute; se ve si por donde quieres pasar hay pista, bosque cerrado o campo abierto.</p>':
         '<p>Lau geruzek funtzionatzen jarraitzen dute marrazten ari zaren bitartean. <b>Sateliteko geruza</b> da argiena: han ikusten da pasatu nahi duzun tokian pista dagoen, baso itxia den edo zelai irekia.</p>',
-    'alt="El mismo trazado sobre la vista de sat&eacute;lite, con las 65 rutas encima"':
-        'alt="Marrazki bera satelite ikuspegian, 65 ibilbideak gainean dituela"',
+    'alt="El mismo trazado sobre la vista de sat&eacute;lite, con las 66 rutas encima"':
+        'alt="Marrazki bera satelite ikuspegian, 66 ibilbideak gainean dituela"',
     '<h3>6. Y con el ojo, quita las rutas para ver el fondo</h3>':
         '<h3>6. Eta begiaren botoiarekin, kendu ibilbideak eta ikusi azpiko mapa</h3>',
-    '<p>El bot&oacute;n <b>Rutas</b> &mdash;que en el m&oacute;vil es un <b>ojo</b>, aqu&iacute; lo tienes encendido y apagado&mdash; esconde los 65 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
-        '<p><b>Ibilbideak</b> botoia &mdash;mugikorrean <b>begi</b> bat da&mdash; piztu eta itzali daiteke. Itzalita, 65 trazadurak ezkutatzen dira eta mapa garbi geratzen da. <b>Zure trazadura, ordea, mantentzen da.</b> Bi gauzarako balio du:</p><ul class="guia-lista"><li>Han pasatzen den beste bideren bat dagoen ikusteko.</li><li>Lotu duzun zatia benetako bide batetik doan ala zelai zeharkaldia den egiaztatzeko.</li></ul>',
+    '<p>El bot&oacute;n <b>Rutas</b> &mdash;que en el m&oacute;vil es un <b>ojo</b>, aqu&iacute; lo tienes encendido y apagado&mdash; esconde los 66 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
+        '<p><b>Ibilbideak</b> botoia &mdash;mugikorrean <b>begi</b> bat da&mdash; piztu eta itzali daiteke. Itzalita, 66 trazadurak ezkutatzen dira eta mapa garbi geratzen da. <b>Zure trazadura, ordea, mantentzen da.</b> Bi gauzarako balio du:</p><ul class="guia-lista"><li>Han pasatzen den beste bideren bat dagoen ikusteko.</li><li>Lotu duzun zatia benetako bide batetik doan ala zelai zeharkaldia den egiaztatzeko.</li></ul>',
     'alt="El bot&oacute;n del ojo en la barra de capas, encendido con las rutas a la vista y apagado con el mapa limpio"':
         'alt="Begiaren botoia geruzen barran, piztuta ibilbideak ikusgai eta itzalita mapa garbiarekin"',
-    'alt="El mismo trazado sobre el sat&eacute;lite con las 65 rutas escondidas"':
-        'alt="Marrazki bera satelitearen gainean, 65 ibilbideak ezkutatuta"',
+    'alt="El mismo trazado sobre el sat&eacute;lite con las 66 rutas escondidas"':
+        'alt="Marrazki bera satelitearen gainean, 66 ibilbideak ezkutatuta"',
     '<h3>7. Gu&aacute;rdalo o baja el GPX</h3>':
         '<h3>7. Gorde edo jaitsi GPX</h3>',
     '<p><b>Guardar</b> lo deja en tu m&oacute;vil, con su nombre y sus kil&oacute;metros, y se vuelve a abrir desde el bot&oacute;n de la lista (caben doce). <b>Bajar GPX</b> te da el fichero con las alturas, para meterlo en el reloj o en el GPS.</p>':
@@ -6630,8 +6630,8 @@ PREGUNTAS = {
         '<p>Ez. Laguntzak bultzatu egiten du, baina ez du zure ordez igotzen. Bizikletak kontatzen du, eta egun hartan daramazun indarrak ere bai, baina batez ere zuk kontatzen duzu: trebetasunak, pedalkatzeko moduak eta jarrerak. Eta hori gehien min ematen duen tokian nabaritzen da: tarte teknikoetan, aldapa oso gogorretan eta lurra hautsita edo askatuta dagoen lekuetan. Tarte laburrak izaten dira, baina biziak. Han berdin dio bizikleta elektrikoa edo konbentzionala izatea: teknikarik ez baduzu, gehienetan jaitsi eta bultzatzen amaitzen duzu.</p>',
     '<span class="faq-q">&iquest;Puedo montarme mi propia ruta?</span>':
         '<span class="faq-q">Nire ibilbidea neuk osatu dezaket?</span>',
-    '<p>S&iacute;. Abre el mapa de la portada y pulsa el bot&oacute;n del l&aacute;piz, arriba a la derecha. Toca un punto sobre cualquier camino y luego otro: el trazado no va en l&iacute;nea recta, se calcula <b>por los senderos de las rutas de esta web</b>. Vas viendo los kil&oacute;metros y el desnivel seg&uacute;n dibujas, puedes deshacer el &uacute;ltimo tramo, guardarlo en tu m&oacute;vil y baj&aacute;rtelo en GPX. Sirve para unir dos rutas, para acortar una larga volviendo por otra o para montarte la tuya. Dos avisos: solo pasa por caminos grabados en alguna de las 65 rutas, as&iacute; que si entre dos puntos no hay ninguno da un rodeo &mdash;y te lo dice&mdash;; y lo que dibujas <b>no es una ruta de esta web</b>, por eso va en azul y se llama &laquo;tu trazado&raquo;.</p>':
-        '<p>Bai. Ireki azaleko mapa eta sakatu arkatzaren botoia, goian eskuinean. Ukitu puntu bat edozein bideren gainean eta gero beste bat: marrazkia ez doa lerro zuzenean, <b>web honetako ibilbideen bidexketatik</b> kalkulatzen da. Marrazten duzun bitartean kilometroak eta desnibela ikusten dituzu, azken tartea desegin dezakezu, mugikorrean gorde eta GPX moduan jaitsi. Bi ibilbide lotzeko, luze bat beste batetik itzuliz laburtzeko edo zeurea osatzeko balio du. Bi ohar: 65 ibilbideetako batean grabatutako bideetatik bakarrik doa, beraz bi punturen artean bat ere ez badago, bira bat ematen du &mdash;eta esan egiten dizu&mdash;; eta marrazten duzuna <b>ez da web honetako ibilbide bat</b>, horregatik doa urdinez eta &laquo;zure marrazkia&raquo; deitzen da.</p>',
+    '<p>S&iacute;. Abre el mapa de la portada y pulsa el bot&oacute;n del l&aacute;piz, arriba a la derecha. Toca un punto sobre cualquier camino y luego otro: el trazado no va en l&iacute;nea recta, se calcula <b>por los senderos de las rutas de esta web</b>. Vas viendo los kil&oacute;metros y el desnivel seg&uacute;n dibujas, puedes deshacer el &uacute;ltimo tramo, guardarlo en tu m&oacute;vil y baj&aacute;rtelo en GPX. Sirve para unir dos rutas, para acortar una larga volviendo por otra o para montarte la tuya. Dos avisos: solo pasa por caminos grabados en alguna de las 66 rutas, as&iacute; que si entre dos puntos no hay ninguno da un rodeo &mdash;y te lo dice&mdash;; y lo que dibujas <b>no es una ruta de esta web</b>, por eso va en azul y se llama &laquo;tu trazado&raquo;.</p>':
+        '<p>Bai. Ireki azaleko mapa eta sakatu arkatzaren botoia, goian eskuinean. Ukitu puntu bat edozein bideren gainean eta gero beste bat: marrazkia ez doa lerro zuzenean, <b>web honetako ibilbideen bidexketatik</b> kalkulatzen da. Marrazten duzun bitartean kilometroak eta desnibela ikusten dituzu, azken tartea desegin dezakezu, mugikorrean gorde eta GPX moduan jaitsi. Bi ibilbide lotzeko, luze bat beste batetik itzuliz laburtzeko edo zeurea osatzeko balio du. Bi ohar: 66 ibilbideetako batean grabatutako bideetatik bakarrik doa, beraz bi punturen artean bat ere ez badago, bira bat ematen du &mdash;eta esan egiten dizu&mdash;; eta marrazten duzuna <b>ez da web honetako ibilbide bat</b>, horregatik doa urdinez eta &laquo;zure marrazkia&raquo; deitzen da.</p>',
     '<span class="faq-q">&iquest;Con qu&eacute; bici hago las rutas?</span>':
         '<span class="faq-q">Zein bizikletarekin egiten ditut ibilbideak?</span>',
     '<p>Una <b>Orbea Rise de 2023</b>, con bater&iacute;a de 500 Wh y el disco de freno delantero cambiado por uno m&aacute;s grande, de 203 mm. De las asistidas, es de las que m&aacute;s se parecen a una bici convencional: la ayuda es m&aacute;s discreta que la de otras el&eacute;ctricas y se pedalea de forma parecida a una bici normal.</p>':
@@ -6656,7 +6656,7 @@ PREGUNTAS = {
         '<p>Ibilbideetan agertzen diren 35 iturrien mapa bat dago, bakoitza non dagoen eta zein ibilbide pasatzen diren hortik esaten duen ohar batekin: <a href="agua.html">iturrien mapa</a>. Emaria urtaroarekin aldatzen da; urte osoan ura duela jakiten denean, esanda dago.</p>',
     '<span class="faq-q">&iquest;Me puedo descargar los tracks?</span>':
         '<span class="faq-q">Trackak jaitsi ditzaket?</span>',
-    '<p>Cada ruta tiene su <b>GPX</b> y su <b>KML</b> debajo del mapa, y el enlace a Wikiloc cuando lo hay. Y est&aacute;n tambi&eacute;n <b>las 65 juntas en un zip</b>, para meterlas de golpe en el GPS o en el m&oacute;vil.</p>':
+    '<p>Cada ruta tiene su <b>GPX</b> y su <b>KML</b> debajo del mapa, y el enlace a Wikiloc cuando lo hay. Y est&aacute;n tambi&eacute;n <b>las 66 juntas en un zip</b>, para meterlas de golpe en el GPS o en el m&oacute;vil.</p>':
         '<p>Ibilbide bakoitzak bere <b>GPXa</b> eta bere <b>KMLa</b> ditu maparen azpian, eta Wikiloceko esteka dagoenean. Eta <b>65ak zip bakar batean</b> ere badaude, denak batera GPSan edo mugikorrean sartzeko.</p>',
     '<span class="faq-q">&iquest;Hay rutas para ir con ni&ntilde;os?</span>':
         '<span class="faq-q">Haurrekin joateko ibilbiderik ba al dago?</span>',

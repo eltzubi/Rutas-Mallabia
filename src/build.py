@@ -1488,7 +1488,7 @@ def write_404_page(versions):
     """La pagina que sirve GitHub Pages ante cualquier direccion que no existe.
 
     Una sola para los dos idiomas, como offline.html: Pages solo admite un
-    404.html y no sabe de idiomas. Lleva el buscador de las 61 rutas sobre
+    404.html y no sabe de idiomas. Lleva el buscador de las 66 rutas sobre
     data/rutas.json, que es lo unico util que se le puede ofrecer a quien
     llega por un enlace roto. Pages la devuelve con estado 404 de verdad, asi
     que no hay riesgo de que Google la tome por una pagina buena.
