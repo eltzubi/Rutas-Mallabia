@@ -808,10 +808,13 @@ footer a:hover{ color:var(--ink); }
    autor, que ocupaba media pagina abierta de por vida. Por eso la entradilla
    necesita ganarle a «.faq-a p», que si no le come el margen de abajo. */
 .faq-a .guia-intro{ margin:14px 0 20px; color:var(--ink-dim); }
+/* El paso del ojo lleva dos vinetas solo en euskera: asi lo escribio el autor. */
+.faq-a .guia-lista{ margin:10px 0 0; padding-left:22px; list-style:disc; color:var(--ink); line-height:1.6; }
+.faq-a .guia-lista li{ margin:5px 0; }
 .guia-pasos{ list-style:none; margin:0 0 6px; padding:0; counter-reset:paso;
              display:flex; flex-direction:column; gap:26px; }
-.guia-pasos li{ counter-increment:paso; position:relative; padding-left:42px; }
-.guia-pasos li::before{
+.guia-pasos > li{ counter-increment:paso; position:relative; padding-left:42px; }
+.guia-pasos > li::before{
   content:counter(paso);
   position:absolute; left:0; top:1px; width:28px; height:28px;
   display:grid; place-items:center; border-radius:50%;
@@ -829,8 +832,8 @@ footer a:hover{ color:var(--ink); }
 /* El paso del ojo lleva dos: el primer plano del boton y el mapa. */
 .guia-pasos img + img{ margin-top:12px; }
 @media (max-width:480px){
-  .guia-pasos li{ padding-left:36px; }
-  .guia-pasos li::before{ width:25px; height:25px; font-size:13px; }
+  .guia-pasos > li{ padding-left:36px; }
+  .guia-pasos > li::before{ width:25px; height:25px; font-size:13px; }
   .guia h2{ font-size:19px; }
   .guia-pasos h3{ font-size:15.5px; }
 }

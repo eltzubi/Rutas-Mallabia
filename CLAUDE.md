@@ -406,6 +406,23 @@ pregunta cabe entera en la pantalla se centra; si no cabe —la guía mide 3.303
 lleva el título justo debajo de la cabecera, que es lo útil. Se esperan **dos fotogramas** antes de
 medir: en el primero el navegador todavía no ha recalculado el alto de la que se cierra.
 
+**Cada lengua tiene sus capturas.** Las de euskera son `img/guia/<paso>.eu.webp` y están hechas
+sobre `index.eu.html`, porque en el mapa cambian los rótulos (**Bizi**, **Kaleak**, **Satelitea**) y
+en la herramienta también. El cambio de ruta se hace con ocho claves de `img/guia/x.webp` a
+`img/guia/x.eu.webp` en el diccionario `PREGUNTAS`, y **los dos juegos miden exactamente lo mismo**,
+para que el `width`/`height` del marcado valga para ambos. Para rehacerlas: viewport de 390x844 y
+dpr 2 (la franja del perfil, a 800 de ancho, que es la proporción de 760x79), los puntos del trazado
+se meten con `window.__m.fire('click', {latlng})` y **no con el ratón** — traducir a coordenadas de
+pantalla falla en cuanto la página se desplaza un poco—, y el recorte se centra en el propio
+`.draw-line`. La lista de guardados se abre sola al pulsar «Gorde»: si además pulsas el botón de la
+lista, la cierras.
+
+El texto de la guía en euskera **lo escribió el autor entero**, y en el paso 6 lleva **dos viñetas**
+donde el castellano tiene una frase seguida. Ojo con eso: `.guia-pasos li::before` pintaba el número
+del paso también en las viñetas (salían «7» y «8»), así que el selector es **`.guia-pasos > li`**,
+sólo hijos directos. Y donde él escribió «Rutas botoia» va **«Ibilbideak»**: es como se llama el
+botón en la página en euskera, y además «Rutas» está en `SPANISH_TELLS` y tumbaría el build.
+
 Las capturas están en **`img/guia/`**, en WebP de 760 px y 545 kB en total, y **no pasan por el
 tren de imágenes**: `optimize_images.py` y compañía sólo miran los `.jpg` de `img/` y de `img/orig/`
 con `os.listdir`, así que una subcarpeta les es invisible, y eso es justo lo que se quiere — son

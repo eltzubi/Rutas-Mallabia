@@ -6557,52 +6557,71 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
+    # Las capturas de la guia, rehechas sobre la portada en euskera: los
+    # rotulos del mapa cambian (Bizi, Kaleak, Satelitea) y los de la
+    # herramienta tambien.
+    'img/guia/guia-1-lapiz.webp':
+        'img/guia/guia-1-lapiz.eu.webp',
+    'img/guia/guia-2-opciones.webp':
+        'img/guia/guia-2-opciones.eu.webp',
+    'img/guia/guia-3-dos-puntos.webp':
+        'img/guia/guia-3-dos-puntos.eu.webp',
+    'img/guia/guia-4-perfil.webp':
+        'img/guia/guia-4-perfil.eu.webp',
+    'img/guia/guia-5-con-rutas.webp':
+        'img/guia/guia-5-con-rutas.eu.webp',
+    'img/guia/guia-6-boton.webp':
+        'img/guia/guia-6-boton.eu.webp',
+    'img/guia/guia-6-ojo.webp':
+        'img/guia/guia-6-ojo.eu.webp',
+    'img/guia/guia-7-guardar.webp':
+        'img/guia/guia-7-guardar.eu.webp',
     '<span class="faq-q">C&oacute;mo montarte tu ruta, paso a paso</span>':
-        '<span class="faq-q">Nola osatu zure ibilbidea, urratsez urrats</span>',
+        '<span class="faq-q">Nola prestatu zure ibilbidea, pausoz pauso</span>',
     '<p class="guia-intro">Siete pasos. No hay que registrarse ni instalar nada, y lo que dibujes se queda solo en tu m&oacute;vil.</p>':
-        '<p class="guia-intro">Zazpi urrats. Ez dago izena eman beharrik ezta ezer instalatu beharrik ere, eta marrazten duzuna zure mugikorrean bakarrik geratzen da.</p>',
+        '<p class="guia-intro">Zazpi pauso. Ez da izenik eman behar, ez da ezer instalatu behar, eta marrazten duzun guztia zure mugikorrean bakarrik geratzen da.</p>',
     '<h3>1. Abre el mapa y busca el l&aacute;piz</h3>':
-        '<h3>1. Ireki mapa eta bilatu arkatza</h3>',
+        '<h3>1. Ireki mapa eta bilatu arkatzaren ikonoa</h3>',
     '<p>En la portada, pulsa <b>Mapa</b>. Arriba a la derecha, debajo del bot&oacute;n de ampliar, aparece un <b>l&aacute;piz</b>. Es lo &uacute;nico que ver&aacute;s de la herramienta hasta que lo pulses.</p>':
-        '<p>Azalean, sakatu <b>Mapa</b>. Goian eskuinean, handitzeko botoiaren azpian, <b>arkatz</b> bat agertzen da. Hori da tresnatik ikusiko duzun gauza bakarra sakatu arte.</p>',
+        '<p>Hasierako orrian, sakatu <b>Mapa</b>. Goian eskuinean, handitzeko botoiaren azpian, <b>arkatz</b> bat agertzen da. Sakatu arte, ez duzu tresnaren ezer gehiago ikusiko.</p>',
     'alt="El mapa de la portada con el bot&oacute;n del l&aacute;piz en la esquina de arriba a la derecha"':
         'alt="Azaleko mapa, arkatzaren botoia goiko eskuineko izkinan"',
     '<h3>2. P&uacute;lsalo y se despliegan las opciones</h3>':
-        '<h3>2. Sakatu eta aukerak zabaltzen dira</h3>',
+        '<h3>2. Sakatu eta aukerak zabalduko dira</h3>',
     '<p>El mapa se agranda hasta ocupar casi la pantalla y debajo del l&aacute;piz se despliegan cinco botones: <b>deshacer</b>, <b>borrar</b>, <b>guardar</b>, <b>bajar el GPX</b> y <b>los guardados</b>. Abajo a la izquierda sale una franja con las instrucciones.</p>':
-        '<p>Mapa ia pantaila osoa hartzeraino handitzen da eta arkatzaren azpian bost botoi zabaltzen dira: <b>desegin</b>, <b>ezabatu</b>, <b>gorde</b>, <b>GPXa jaitsi</b> eta <b>gordetakoak</b>. Behean ezkerrean argibideak dituen zerrenda bat ateratzen da.</p>',
+        '<p>Mapa handitu egiten da, ia pantaila osoa hartzeraino, eta arkatzaren azpian bost botoi agertzen dira: <b>desegin</b>, <b>ezabatu</b>, <b>gorde</b>, <b>GPX jaitsi</b> eta <b>gordetakoak</b>. Behean ezkerrean, jarraibideen banda agertzen da.</p>',
     'alt="El mapa en modo dibujo, con la columna de cinco botones bajo el l&aacute;piz"':
         'alt="Mapa marrazteko moduan, bost botoiko zutabea arkatzaren azpian"',
     '<h3>3. Toca dos puntos y el camino se calcula solo</h3>':
-        '<h3>3. Ukitu bi puntu eta bidea bakarrik kalkulatzen da</h3>',
+        '<h3>3. Ukitu bi puntu eta ibilbidea berez kalkulatzen da</h3>',
     '<p>Toca un punto sobre cualquier camino y luego otro. <b>La l&iacute;nea no va recta</b>: busca el camino m&aacute;s corto entre los dos por los senderos de las 65 rutas de esta web. Sigue tocando y el trazado se va alargando.</p>':
-        '<p>Ukitu puntu bat edozein bideren gainean eta gero beste bat. <b>Marra ez doa zuzen</b>: web honetako 65 ibilbideetako bidexketatik bien arteko biderik laburrena bilatzen du. Ukitzen jarraitu eta marrazkia luzatzen joango da.</p>',
+        '<p>Ukitu puntu bat edozein bidearen gainean, eta gero beste bat. <b>Marra ez da zuzen joaten</b>: bi puntuen arteko biderik laburrena bilatzen du web honetako 65 ibilbideen bidez. Ukitzen jarraitzen baduzu, trazadura luzatzen joango da.</p>',
     'alt="Un trazado azul de tres puntos siguiendo los senderos entre las rutas"':
         'alt="Hiru puntuko marrazki urdina, ibilbideen arteko bidexkei jarraituz"',
     '<h3>4. Mira la franja de abajo antes de seguir</h3>':
-        '<h3>4. Begiratu beheko zerrendari jarraitu aurretik</h3>',
+        '<h3>4. Begiratu beheko banda jarraitu aurretik</h3>',
     '<p>Ah&iacute; tienes los kil&oacute;metros, lo que sube y lo que baja, y un <b>perfil peque&ntilde;o en el sentido de la marcha</b>. El &uacute;ltimo tramo va sombreado y con su propio desnivel: es la forma de saber si el trozo que acabas de enganchar lo coges de subida o de bajada, que en bici y andando no da igual.</p>':
-        '<p>Han dituzu kilometroak, zenbat igotzen eta zenbat jaisten den, eta <b>profil txiki bat ibiltzeko noranzkoan</b>. Azken tartea itzaldurarekin doa eta bere desnibelarekin: lotu berri duzun zatia gorantz ala beherantz hartzen duzun jakiteko modua da, bizikletaz eta oinez ez baita berdin.</p>',
+        '<p>Han dituzu kilometroak, igoera, jaitsiera eta <b>profil txiki bat noranzkoan</b>. Azken zatia itzalpean agertzen da, bere desnibelarekin: horrela jakiten da lotu duzun zatia igoeran edo jaitsieran doan. Bizikletan eta oinez ez da gauza bera.</p>',
     'alt="La franja con los kil&oacute;metros, el desnivel y el perfil del trazado"':
         'alt="Marrazkiaren kilometroak, desnibela eta profila dituen zerrenda"',
     '<h3>5. Cambia de mapa cuando quieras</h3>':
-        '<h3>5. Aldatu mapaz nahi duzunean</h3>',
+        '<h3>5. Aldatu mapa mota nahi duzunean</h3>',
     '<p>Las cuatro capas siguen funcionando mientras dibujas. El <b>sat&eacute;lite</b> es el que m&aacute;s dice: ah&iacute; se ve si por donde quieres pasar hay pista, bosque cerrado o campo abierto.</p>':
-        '<p>Lau geruzek funtzionatzen jarraitzen dute marrazten duzun bitartean. <b>Satelitea</b> da gehien esaten duena: han ikusten da pasatu nahi duzun lekuan pista dagoen, baso itxia ala zelai zabala.</p>',
+        '<p>Lau geruzek funtzionatzen jarraitzen dute marrazten ari zaren bitartean. <b>Sateliteko geruza</b> da argiena: han ikusten da pasatu nahi duzun tokian pista dagoen, baso itxia den edo zelai irekia.</p>',
     'alt="El mismo trazado sobre la vista de sat&eacute;lite, con las 65 rutas encima"':
         'alt="Marrazki bera satelite ikuspegian, 65 ibilbideak gainean dituela"',
     '<h3>6. Y con el ojo, quita las rutas para ver el fondo</h3>':
-        '<h3>6. Eta begiarekin, kendu ibilbideak hondoa ikusteko</h3>',
+        '<h3>6. Eta begiaren botoiarekin, kendu ibilbideak eta ikusi azpiko mapa</h3>',
     '<p>El bot&oacute;n <b>Rutas</b> &mdash;que en el m&oacute;vil es un <b>ojo</b>, aqu&iacute; lo tienes encendido y apagado&mdash; esconde los 65 trazados y te deja el mapa a pelo. <b>Tu trazado se queda.</b> Sirve para dos cosas: ver si por ah&iacute; pasa alg&uacute;n camino que no es ninguna de mis rutas, y comprobar si el tramo que has enganchado va por un camino de verdad o cruza campo a trav&eacute;s.</p>':
-        '<p><b>Ibilbideak</b> botoiak &mdash;mugikorrean <b>begi</b> bat da, hemen duzu piztuta eta itzalita&mdash; 65 marrazkiak ezkutatzen ditu eta mapa soilik uzten dizu. <b>Zure marrazkia geratzen da.</b> Bi gauzetarako balio du: handik nire ibilbideetakoa ez den bideren bat pasatzen den ikusteko, eta lotu duzun tartea benetako bide batetik doan ala zelai zabalean zehar doan egiaztatzeko.</p>',
+        '<p><b>Ibilbideak</b> botoia &mdash;mugikorrean <b>begi</b> bat da&mdash; piztu eta itzali daiteke. Itzalita, 65 trazadurak ezkutatzen dira eta mapa garbi geratzen da. <b>Zure trazadura, ordea, mantentzen da.</b> Bi gauzarako balio du:</p><ul class="guia-lista"><li>Han pasatzen den beste bideren bat dagoen ikusteko.</li><li>Lotu duzun zatia benetako bide batetik doan ala zelai zeharkaldia den egiaztatzeko.</li></ul>',
     'alt="El bot&oacute;n del ojo en la barra de capas, encendido con las rutas a la vista y apagado con el mapa limpio"':
         'alt="Begiaren botoia geruzen barran, piztuta ibilbideak ikusgai eta itzalita mapa garbiarekin"',
     'alt="El mismo trazado sobre el sat&eacute;lite con las 65 rutas escondidas"':
         'alt="Marrazki bera satelitearen gainean, 65 ibilbideak ezkutatuta"',
     '<h3>7. Gu&aacute;rdalo o baja el GPX</h3>':
-        '<h3>7. Gorde edo jaitsi GPXa</h3>',
+        '<h3>7. Gorde edo jaitsi GPX</h3>',
     '<p><b>Guardar</b> lo deja en tu m&oacute;vil, con su nombre y sus kil&oacute;metros, y se vuelve a abrir desde el bot&oacute;n de la lista (caben doce). <b>Bajar GPX</b> te da el fichero con las alturas, para meterlo en el reloj o en el GPS.</p>':
-        '<p><b>Gorde</b>k zure mugikorrean uzten du, bere izenarekin eta bere kilometroekin, eta zerrendaren botoitik irekitzen da berriro (hamabi sartzen dira). <b>GPXa jaitsi</b>k alturak dituen fitxategia ematen dizu, erlojuan edo GPSan sartzeko.</p>',
+        '<p><b>Gorde</b> sakatuta, ibilbidea zure mugikorrean geratzen da, bere izenarekin eta kilometroekin, eta berriro ireki daiteke zerrendaren botoitik (hamabi sartzen dira). <b>GPX jaitsi</b> sakatuta, altuerak dituen fitxategia jasotzen duzu, erlojuan edo GPSan sartzeko.</p>',
     'alt="La lista de trazados guardados, abierta sobre el mapa"':
         'alt="Gordetako marrazkien zerrenda, maparen gainean irekita"',
     '<span class="faq-q">&iquest;Con una bici el&eacute;ctrica subo cualquier cosa?</span>':
