@@ -3372,6 +3372,10 @@ POTRERA = {
         'alt="Goiko landaren airetiko ikuspegia, bi lagun bertan oinez, pinudia magalean eta eolikoak gandorrean atzealdean"',
     'alt="La borda de piedra en la campa, con los aerogeneradores del cordal justo encima y el ganado alrededor"':
         'alt="Harrizko borda landan, gailurreko eolikoak justu gainean eta ganadua inguruan"',
+    'alt="Pista de cemento bajando por la ladera, con el valle y el pueblo al fondo y las cumbres calizas en el horizonte"':
+        'alt="Zementuzko pista magalean behera, harana eta herria atzealdean eta kareharrizko gailurrak zeruertzean"',
+    'alt="Camino de tierra junto a una cerca de madera en lo alto, con el valle y las cumbres calizas al fondo"':
+        'alt="Lurrezko bidea egurrezko hesiaren ondoan, goian, harana eta kareharrizko gailurrak atzealdean"',
     'alt="Vacas en la campa de la parte alta, con el tejado de la borda a la derecha y los valles del entorno al fondo"':
         'alt="Behiak goialdeko landan, bordaren teilatua eskuinean eta inguruko haranak atzealdean"',
 
