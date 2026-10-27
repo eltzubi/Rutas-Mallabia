@@ -554,6 +554,23 @@
       }
     });
 
+    // La tira de fichas de debajo del mapa se esconde mientras se dibuja --
+    // ahi manda el trazo, y tocar una ficha abriria una ruta encima de lo que
+    // se esta dibujando. La pinta map.js desde updateLabelVisibility(), que
+    // corre en zoomend y moveend: entrar o salir del lapiz no dispara
+    // ninguno de los dos, asi que hay que avisarle. Es el mismo gancho que
+    // usa filters.js al cambiar de vista, y tambien le viene bien el
+    // invalidateSize, que la caja acaba de cambiar de tamano.
+    // Y en la vista de mapa de la portada, con la tira escondida, la caja se
+    // baja hasta la barra para quedarse con esos 200 px en vez de dejar un
+    // hueco. Eso lo hace el CSS con body.dibujando.
+    function avisaAlMapa(){
+      if (document.body && document.body.classList) {
+        document.body.classList.toggle('dibujando', activo);
+      }
+      if (window.__avisaMapaTamano) { try { window.__avisaMapaTamano(); } catch (e) {} }
+    }
+
     function apaga(){
       activo = false;
       tools.hidden = true; readout.hidden = true; saved.hidden = true;
@@ -562,6 +579,7 @@
       btn.title = t.abrir;
       caja.classList.remove('is-drawing');
       sueltaEncaje();
+      avisaAlMapa();
       if (fab) fab.classList.remove('is-hidden-behind-panel');
       if (arriba) arriba.style.display = '';
       map.off('click', alTocar);
@@ -574,6 +592,7 @@
       btn.setAttribute('aria-label', t.cerrar);
       btn.title = t.cerrar;
       caja.classList.add('is-drawing');
+      avisaAlMapa();
       // El boton flotante de «Lista» y el de «volver arriba» caen justo
       // encima de la pastilla y de la columna de opciones.
       if (fab) fab.classList.add('is-hidden-behind-panel');

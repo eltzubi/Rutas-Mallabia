@@ -650,6 +650,11 @@
     width:auto !important; height:auto !important; margin:0 !important;
     aspect-ratio:auto !important; border:0; border-radius:0; z-index:150;
   }
+  /* Dibujando no hay tira, asi que la caja se queda tambien con su franja:
+     390x587 pasa a 390x787. La clase la pone trazado.js. */
+  body.vista-mapa.dibujando .route-map-box:not(.ficha-pleno){
+    bottom:var(--barra-alto, 57px);
+  }
   body.vista-mapa .map-cercanas{
     position:fixed; left:0; right:0; bottom:var(--barra-alto, 57px);
     z-index:151; margin:0; padding:7px 10px;
@@ -661,6 +666,76 @@
      atras, y sin el no hay manera de salir del mapa. */
   body.vista-mapa .map-legend,
   body.vista-mapa .map-zip-row{ display:none; }
+
+  /* LA FILA FINA DE ARRIBA: Todas / A pie / E-bike.
+     Lo pidio el autor: «muy disimulada, donde no ocupe; a pie o bicicleta o
+     todas, arriba, en una fila horizontal muy fina, por color verde o
+     naranja». Asi que va FLOTANDO SOBRE EL MAPA, no encima de el: translucida
+     y con desenfoque, como la pastilla de las capas, de modo que no le quita
+     ni un pixel de alto al mapa ni a la tira de fichas. Lo que baja son los
+     mandos de Leaflet, que si estaban ahi.
+
+     En la barra de abajo .activity-filter es display:contents -- se disuelve
+     para que sus tres chips sean celdas de la rejilla--, asi que aqui vuelve
+     a ser una caja de verdad y la rejilla se queda con dos columnas: Lista y
+     Filtrar, que son los dos botones que no caben arriba. */
+  body.vista-mapa .activity-filter{
+    display:flex; position:fixed; top:0; left:0; right:0; z-index:1;
+    height:var(--fila-act, 28px);
+    margin:0; padding:0; gap:0; border:0; border-radius:0;
+    border-bottom:1px solid var(--line);
+    background:color-mix(in srgb, var(--ground) 82%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  /* La barra sube POR ENCIMA DE LA CAJA DEL MAPA, y no basta con subir la
+     fila: .finder-toolbar lleva z-index:70, o sea que es su propio contexto
+     de apilamiento, y el 160 de la fila solo cuenta dentro de el. Con la
+     barra en 70 y la caja en 150, la fila salia dibujada pero el mapa se
+     quedaba con todos los toques: se veia y no se podia pulsar. */
+  body.vista-mapa .finder-toolbar{ z-index:160; grid-template-columns:repeat(2,1fr); }
+  /* La barra de abajo no se aparta aqui: no hay nada que desplazar con el
+     mapa a pantalla completa, y ademas un transform en ella la convertiria
+     en el marco de referencia de la fila fija de arriba, que dejaria de ir
+     pegada a la ventana. */
+  body.vista-mapa .finder-toolbar{ transform:none; }
+  body.vista-mapa .finder-toolbar .activity-chip{
+    flex:1 1 0; min-width:0;
+    flex-direction:row; gap:5px;
+    min-height:0; height:100%; padding:0;
+    border-radius:0;
+  }
+  body.vista-mapa .finder-toolbar .activity-chip::before{ width:13px; height:13px; }
+  /* El filo del activo pasa de ser una pestana de arriba a una raya de lado
+     a lado abajo: aqui la fila ES el filo. */
+  body.vista-mapa .finder-toolbar .activity-chip.active::after{
+    top:auto; bottom:0; left:0; transform:none;
+    width:100%; height:2px; border-radius:0;
+  }
+  /* El color que pidio: verde andando, naranja en bici -- los mismos de los
+     trazados del mapa y de toda la web. «Todas» no es ninguna actividad, asi
+     que va en el color del texto y no en uno de los dos. */
+  body.vista-mapa .finder-toolbar .activity-chip.active{ color:var(--ink); }
+  body.vista-mapa .finder-toolbar .activity-chip[data-activity="senderismo"].active{ color:var(--violet); }
+  body.vista-mapa .finder-toolbar .activity-chip[data-activity="bici"].active{ color:var(--teal); }
+  /* Los mandos de Leaflet (zoom, escala) y la pastilla de las capas bajan lo
+     que mide la fila, que si no se los come. */
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .leaflet-top{ top:var(--fila-act, 28px); }
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-layers{ top:calc(var(--fila-act, 28px) + 10px); }
+  /* La columna de la derecha (ampliar, lapiz y sus opciones) baja igual. Va
+     con translateY y no tocando su «top» porque cada uno tiene el suyo y por
+     debajo de 360 px todos cambian: asi vale para los dos repartos sin
+     repetir numeros. */
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-expand-btn,
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-draw-btn,
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .draw-tools{
+    transform:translateY(var(--fila-act, 28px));
+  }
+  @media (max-width:360px){
+    /* Ahi el ojo de «Rutas» se sale de la pastilla y baja a esa columna. */
+    body.vista-mapa .route-map-box:not(.ficha-pleno) .map-rutas-btn{
+      transform:translateY(var(--fila-act, 28px));
+    }
+  }
 }
 
 /* La tira de rutas que se ven ahora, debajo del mapa. Lo pidio el autor:

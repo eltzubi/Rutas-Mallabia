@@ -757,7 +757,47 @@ Tres cosas de las que acordarse:
 - **`:not(.ficha-pleno)`** en la regla de la caja: al abrir una ruta manda la otra regla, que es
   `inset:0`, y sin eso no ganaría por especificidad.
 - `filters.js` llama a **`window.__avisaMapaTamano()`**, que `map.js` publica sólo en la portada:
-  la caja cambia de tamaño por CSS y Leaflet no se entera solo.
+  la caja cambia de tamaño por CSS y Leaflet no se entera solo. **Lo llama también `trazado.js`**
+  al entrar y salir del lápiz: la tira se pinta desde `updateLabelVisibility()`, que corre en
+  `zoomend` y en `moveend`, y abrir el lápiz no dispara ninguno de los dos — sin el aviso la tira
+  se quedaba puesta mientras se dibujaba, y tocar una ficha abría una ruta encima del trazo.
+
+**Y el filtro de actividad, en una fila fina flotando sobre el mapa.** Lo pidió el autor: «muy
+disimulada, donde no ocupe; a pie o bicicleta o todas, arriba, en una fila horizontal muy fina, por
+color verde o naranja».
+
+Son 28 px translúcidos con desenfoque, como la pastilla de las capas, **encima del mapa y no antes
+de él**: así no le quita ni un píxel de alto ni al mapa ni a la tira de fichas — medido, la caja
+sigue siendo 390x587 y la tira 200 px. El color es el que pidió y es el de toda la web: **verde
+andando, naranja en bici**, y «Todas» en el color del texto, que no es ninguna de las dos
+actividades. Abajo quedan **Lista y Filtrar**, dos cajones anchos en vez de cinco estrechos.
+
+Cuatro cosas que costaron una vuelta:
+
+- **`.finder-toolbar` lleva `z-index:70`, o sea que es su propio contexto de apilamiento**, y el
+  `z-index` de la fila sólo cuenta dentro de él. Con la barra en 70 y la caja del mapa en 150, la
+  fila **se veía dibujada y no se podía pulsar**: todos los toques se los quedaba el mapa. Lo que
+  sube a 160 es la barra entera, no la fila.
+- En la barra `.activity-filter` es `display:contents` —se disuelve para que sus tres chips sean
+  celdas de la rejilla—, así que aquí vuelve a ser una caja de verdad y la rejilla baja a **dos
+  columnas**.
+- **La barra no se aparta en esta vista** (`transform:none`). Además de que no hay nada que
+  desplazar, un `transform` en ella la convertiría en el marco de referencia de la fila fija y ésta
+  dejaría de ir pegada a la ventana.
+- **Los mandos del mapa bajan los 28 px**: los de Leaflet por `.leaflet-top`, la pastilla de las
+  capas por su `top`, y la columna de la derecha (ampliar, lápiz, opciones y, por debajo de 360 px,
+  el ojo de «Rutas») con un `translateY` — cada uno tiene su propio `top` y por debajo de 360 todos
+  cambian, así que trasladarlos vale para los dos repartos sin repetir ni un número.
+
+Y **dibujando la caja se queda también con la franja de la tira** (390x787 en vez de 390x587), que
+ahí la tira no está. Lo marca `body.dibujando`, que pone `trazado.js`.
+
+**Ojo al mirar capturas de la portada en el móvil: hay un iframe de Google Maps detrás** (el de
+«Dónde aparcar», en el acordeón). Chromium lo compone en su propia capa y **en las capturas de
+Playwright el texto de alrededor aparece pintado por encima de la barra fija**, como si se
+transparentara. No es un fallo de CSS: `elementFromPoint` dice que arriba está la barra, y quitando
+el iframe del DOM la captura sale limpia. Se perdió un rato dándole vueltas a un `background`
+translúcido que no tenía nada que ver.
 
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
