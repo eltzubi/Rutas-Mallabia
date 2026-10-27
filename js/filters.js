@@ -182,6 +182,12 @@
       }
     });
     results.hidden = state.view !== 'list'; mapWrap.hidden = state.view !== 'map';
+    // En vista de mapa, el mapa se lleva la pantalla. Lo pidio el autor:
+    // «quisiera aprovechar todo lo mas posible, sobre todo trazado,
+    // kilometros y plantillas». El CSS hace el resto; aqui solo se marca el
+    // estado y se avisa al mapa de que ha cambiado de tamano.
+    document.body.classList.toggle('vista-mapa', state.view === 'map');
+    if (window.__avisaMapaTamano) window.__avisaMapaTamano();
     if (viewFab) {
       var toMap = state.view === 'list';
       viewFab.innerHTML = (toMap ? MAP_ICON : LIST_ICON) + '<span>' + (toMap ? fabWords.map : fabWords.list) + '</span>';

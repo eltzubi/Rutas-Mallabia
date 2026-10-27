@@ -673,13 +673,23 @@ que señala una zona y no un punto exacto.
 saber si estoy en Mallabia, si estoy en Durango o dónde, cuando tengo el zoom aumentado». Con el
 mapa muy cerca sólo se ven dos trazados sin nombre y el fondo no siempre rotula el pueblo.
 
-Debajo del mapa van **las rutas cuyo kilómetro se está viendo** —no todas las que caen en
-pantalla—, **con foto, título, distancia y desnivel**, y **cambian solas al mover o al acercar**.
-Lo corrigió el autor: «cuando aparecen los kilómetros de la ruta, si me aparecen 2 de ellos que
-aparezcan 2 plantillas de esas rutas». Las que todavía están dentro de un grupo no se ven una a
-una, así que tampoco tienen ficha: al acercarse, el grupo se abre, salen sus kilómetros y salen sus
-fichas. Medido, la correspondencia es exacta: 1 pastilla → 1 ficha a z10, 4 → 4 a z13, 5 → 5 a z14,
-2 → 2 a z15. Las pidió así: «si son 7, aunque aparezcan
+Debajo del mapa van **las rutas que se están viendo** —las que tienen algún punto de su track
+dentro del encuadre—, **con foto, título, distancia y desnivel**, y **cambian solas al mover o al
+acercar**.
+
+**La regla costó dos intentos, y el bueno es éste.** Primero fueron «todas las que caen en
+pantalla», y el autor lo corrigió: «cuando aparecen los kilómetros de la ruta, si me aparecen 2 de
+ellos que aparezcan 2 plantillas». Se pasó a mirar la pastilla de kilómetros… y eso rompía otra
+cosa: **«no veo las plantillas de bajada a Unbe y a Ipurua; por mucho que veo la ruta trazada no me
+abre ni una»**. Tenía razón: Unbe e Ipurua no son rutas, son sitios por los que pasan galdaramiño y
+karabieta, y **la pastilla va en el punto medio del recorrido**, que mirando ese tramo queda fuera
+de la pantalla. La regla que vale las cumple las dos: **si se ve el trazado, hay ficha.**
+
+**Y sin tope.** Lo hubo y era el mismo fallo con otra cara. Comprobadas **las 66 rutas una a una**
+—centrando el mapa en un punto al 15 % de cada track, lejos de su punto medio, a zoom 15— con tope
+12 se quedaban **20** sin ficha teniendo el trazado delante, con 25 todavía **4**, y sin tope
+**ninguna**. Cuesta unas decenas de nodos y las fotos ya están cargadas. Van ordenadas por cercanía
+al centro, así que las que de verdad miras son las primeras. Las pidió así: «si son 7, aunque aparezcan
 las primeras 4, las demás se quedan ocultas abajo» — en columna, con cuatro a la vista y el resto
 desplazándose. **Tocar una encuadra la ruta entera y abre su ficha**, igual que tocar su pastilla:
 medido, de zoom 15 pasa a 12 para que quepa completa. Eso responde a «¿pueden aparecer las rutas
@@ -693,7 +703,11 @@ Cómo está hecho:
 - Se rellena desde `updateLabelVisibility()`, que ya corre en `zoomend` y en `moveend`: **el
   conjunto que calcula para agrupar las pastillas es exactamente el que hace falta aquí**, así que
   no se recorre nada dos veces.
-- Las primeras son las más cercanas al centro de lo que se mira (`map.distance`), con tope de 12.
+- Las primeras son las más cercanas al centro de lo que se mira (`map.distance`), sin tope.
+- El encuadre se comprueba contra **los puntos del track** (`rutasEnVista`), no contra la etiqueta.
+  Son 66 rutas de unos 220 puntos y sale en cuanto encuentra el primero dentro, así que no se nota.
+  Lo que no coge: un track que cruce la pantalla de lado a lado sin ningún punto dentro; a estos
+  zooms no pasa, los puntos van cada 10 m.
 - La foto es la que ya muestra su tarjeta en la lista, por `src`: el navegador la tiene cargada y
   no descarga nada nuevo.
 - Se esconde con una ficha abierta o dibujando: ahí manda lo otro.
@@ -721,6 +735,29 @@ siguiente.
 La lección, por tercera vez en el mismo día: **cuando el test de interfaz muere con 137 o se cuelga
 sin imprimir, no es memoria — es que `map.js` está usando algo que su Leaflet o su DOM de mentira
 no implementan.**
+
+**La vista de mapa de la portada se lleva la pantalla (móvil).** Lo pidió el autor con su captura
+delante: «¿cuándo se agranda el mapa? Es posible que ocupe más pantalla, más arriba, más ajustado,
+para que abajo haya más sitio para las plantillas. Quisiera aprovechar todo lo más posible. Sobre
+todo trazado, kilómetros y plantillas, lo que más se vea. Lo demás no tiene importancia mientras
+esté a pantalla completa el mapa».
+
+Entre la cabecera y el mapa había una franja muerta y la primera ficha salía cortada. Con
+`body.vista-mapa` (lo pone `filters.js` al cambiar de vista) se esconde la cabecera, la caja se
+pone **fija de borde a borde** y la tira se lleva una franja de verdad justo encima de la barra de
+abajo. Medido en 390x844: la caja pasa de **310x310 a 390x587** —casi el doble de superficie— y la
+tira de quedarse cortada a **200 px**, tres fichas enteras y la cuarta asomando. El reparto es un
+solo número, `--tira-alto`.
+
+Tres cosas de las que acordarse:
+
+- **La barra de abajo se queda.** Es por donde se vuelve a la lista y donde están A pie / E-bike /
+  Filtrar. En una primera pasada se escondió también el botón flotante y **se quedó sin salida**:
+  ése es precisamente «Lista».
+- **`:not(.ficha-pleno)`** en la regla de la caja: al abrir una ruta manda la otra regla, que es
+  `inset:0`, y sin eso no ganaría por especificidad.
+- `filters.js` llama a **`window.__avisaMapaTamano()`**, que `map.js` publica sólo en la portada:
+  la caja cambia de tamaño por CSS y Leaflet no se entera solo.
 
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una

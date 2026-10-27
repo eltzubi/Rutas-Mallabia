@@ -952,7 +952,7 @@
           activity: activity, currentColor: baseColor,
           // para la tira de «lo que tienes delante»: el nombre y los km salen de
           // la tarjeta de la portada, que ya esta en la pagina y en su idioma
-          nombre: name, km: distanceKm, desnivel: desnivelM,
+          nombre: name, km: distanceKm, desnivel: desnivelM, puntos: t.points,
           foto: (sign && sign.querySelector('.route-card-photo img') &&
                  sign.querySelector('.route-card-photo img').getAttribute('src')) || '',
           abre: function(){ openPanel(line, hrefToLine[t.href].currentColor, html); } };
@@ -1601,7 +1601,13 @@
    * corre en zoomend y en moveend: el conjunto que calcula para agrupar es
    * exactamente el que hace falta aqui, asi que no se recorre nada dos veces.
    */
-  var TOPE_TIRA = 12;       // con mas, la tira deja de ayudar y estorba
+  // SIN TOPE. Lo hubo, y era el propio fallo: comprobadas las 66 una a una,
+  // con tope 12 veinte rutas tenian el track a la vista y se quedaban sin
+  // ficha, y con 25 todavia cuatro. La regla que pidio el autor es «si veo
+  // la ruta trazada, que me salga su plantilla», y un tope la rompe. Cuesta
+  // unas decenas de nodos y las fotos ya estan cargadas; van ordenadas por
+  // cercania al centro, asi que las que de verdad miras son las primeras.
+  var TOPE_TIRA = 999;
 
   function creaTira(){
     if (tiraCercanas || !esPortada) return;
@@ -1619,6 +1625,34 @@
     } else {
       (padre || el.parentElement).appendChild(tiraCercanas);
     }
+  }
+
+  // Que rutas se estan VIENDO. No vale mirar donde cae su pastilla de
+  // kilometros, que va en el punto medio del recorrido: el autor se quejo de
+  // que «no veo las plantillas de bajada a Unbe y a Ipurua, por mucho que veo
+  // la ruta trazada no me abre ni una». Y tenia razon -- Unbe e Ipurua no son
+  // rutas, son sitios por los que pasan galdaramino y karabieta, y mirando
+  // ese tramo el punto medio de esas rutas queda fuera de la pantalla.
+  //
+  // Asi que se mira el propio track: si alguno de sus puntos cae en lo que se
+  // ve, esa ruta tiene ficha. Son 66 rutas de unos 220 puntos y sale en
+  // cuanto encuentra el primero, asi que no se nota.
+  //
+  // Lo que no coge: un track que cruce la pantalla de lado a lado sin ningun
+  // punto dentro. A estos zooms no pasa -- los puntos van cada 10 m.
+  function rutasEnVista(){
+    var caja = null;
+    if (map.getBounds) { try { caja = map.getBounds().pad(0.08); } catch (e) { caja = null; } }
+    return Object.keys(hrefToLine).filter(function(href){
+      if (labelFilterVisible[href] === false) return false;
+      if (labelSoloHref && href !== labelSoloHref) return false;
+      var r = hrefToLine[href];
+      if (!caja || !caja.contains || !r.puntos) return true;
+      for (var i = 0; i < r.puntos.length; i++) {
+        if (caja.contains(r.puntos[i])) return true;
+      }
+      return false;
+    });
   }
 
   function pintaCercanas(hrefs){
@@ -1853,18 +1887,25 @@
         e2.style.pointerEvents = ver ? '' : 'none';
       });
       pintaGrupos(grupos, hrefs);
-      // La tira enseña **las rutas cuyo kilometro se esta viendo**, no todas
-      // las que caen en pantalla. Lo corrigio el autor: «cuando aparecen los
-      // kilometros de la ruta, si me aparecen 2 de ellos que aparezcan 2
-      // plantillas de esas rutas». Las que estan metidas en un grupo todavia
-      // no se ven una a una, asi que tampoco tienen ficha: al acercarse el
-      // grupo se abre, salen sus kilometros y salen sus fichas.
-      pintaCercanas(hrefs.filter(function(h){ return sueltas[h] === true; }));
+      // La tira enseña **las rutas que se estan viendo**, con el track dentro
+      // de la pantalla. Antes iba por la pastilla de kilometros y se perdian
+      // las que cruzan la vista con el punto medio fuera -- ver rutasEnVista.
+      pintaCercanas(rutasEnVista());
       repositionLabels();
     }
 
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
+    // Gancho para filters.js: al pasar de lista a mapa la caja cambia de
+    // tamano por CSS, y Leaflet no se entera solo.
+    if (esPortada) {
+      window.__avisaMapaTamano = function(){
+        setTimeout(function(){
+          map.invalidateSize({ animate: false });
+          updateLabelVisibility();
+        }, 60);
+      };
+    }
     // Y tambien al desplazar: lo que se agrupa es lo que hay delante, asi
     // que al moverse cambia. Son 66 puntos, el recalculo es instantaneo.
     if (esPortada) map.on('moveend', updateLabelVisibility);

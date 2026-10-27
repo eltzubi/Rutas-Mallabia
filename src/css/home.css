@@ -621,6 +621,48 @@
   color:var(--teal); text-decoration:none;
 }
 .route-popup a:hover{ text-decoration:underline; }
+/* VISTA DE MAPA EN EL MOVIL: el mapa se lleva la pantalla.
+   Lo pidio el autor con su captura delante: «¿cuando se agranda el mapa?
+   Es posible que ocupe mas pantalla, mas arriba, mas ajustado, para que
+   abajo haya mas sitio para las plantillas. Quisiera aprovechar todo lo mas
+   posible. Sobre todo trazado, kilometros y plantillas, lo que mas se vea.
+   Lo demas no tiene importancia mientras este a pantalla completa el mapa».
+
+   Entre la cabecera y el mapa habia una franja muerta y la primera ficha
+   salia cortada. Asi que en vista de mapa se esconde la cabecera, la caja
+   se pone fija de borde a borde y la tira se lleva una franja de verdad
+   justo encima de la barra de abajo -- que se queda, porque es por donde se
+   vuelve a la lista y donde estan A pie / E-bike / Filtrar.
+
+   Medido en 390x844: la caja pasa de 310x310 a 390x587 -- casi el doble de
+   superficie-- y la tira de quedarse cortada a 200 px, tres fichas enteras
+   y la cuarta asomando. El reparto es un solo numero, --tira-alto: subirlo
+   da mas fichas y menos mapa.
+
+   El :not(.ficha-pleno) es necesario: al abrir una ruta manda esa otra
+   regla, que es inset:0, y sin el no ganaria por especificidad. */
+@media (max-width:767px){
+  body.vista-mapa{ overflow:hidden; }
+  body.vista-mapa .masthead{ display:none !important; }
+  body.vista-mapa .route-map-box:not(.ficha-pleno){
+    position:fixed; left:0; right:0; top:0;
+    bottom:calc(var(--tira-alto, 200px) + var(--barra-alto, 57px));
+    width:auto !important; height:auto !important; margin:0 !important;
+    aspect-ratio:auto !important; border:0; border-radius:0; z-index:150;
+  }
+  body.vista-mapa .map-cercanas{
+    position:fixed; left:0; right:0; bottom:var(--barra-alto, 57px);
+    z-index:151; margin:0; padding:7px 10px;
+    max-height:var(--tira-alto, 200px);
+    background:var(--ground); border-top:1px solid var(--line);
+  }
+  /* La leyenda y el boton del zip se van detras del mapa fijo: en esta
+     vista estorban. El boton flotante NO se esconde: es «Lista», la vuelta
+     atras, y sin el no hay manera de salir del mapa. */
+  body.vista-mapa .map-legend,
+  body.vista-mapa .map-zip-row{ display:none; }
+}
+
 /* La tira de rutas que se ven ahora, debajo del mapa. Lo pidio el autor:
    con el zoom metido no se sabe si estas en Mallabia o en Durango, porque
    solo se ven dos trazados sin nombre. Cambia sola al mover o al acercar.
