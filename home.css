@@ -662,6 +662,70 @@
 }
 .route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
 .route-info-panel .route-popup h3{ padding-right:24px; }
+
+/* El panel, en el ordenador, va en un lateral del mapa y no abajo, y el mapa
+   se lleva la pantalla entera. Lo pidio el autor con la pantalla de AllTrails
+   delante: «el mapa ocupa la pantalla entera». El lateral solo por si mismo se
+   habia medido peor que la ficha de abajo (54% de mapa libre frente al 86%),
+   porque la caja del mapa es cuadrada y un lateral deja una tira; con la caja
+   a pantalla completa eso deja de ser cierto -- el mapa gana ancho en vez de
+   perderlo. Quien saca la caja de su columna es map.js, que escribe el alto y
+   el ancho en linea, igual que el modo de dibujar.
+
+   Por debajo de 768 px no se toca nada: ahi manda lo que el autor eligio en
+   octubre, ficha abajo y caja a 72svh. */
+@media (min-width:768px){
+  .route-map-box{ --ficha-ancho:320px; }
+  /* El panel es hermano del contenedor del mapa, no hijo: map.js lo cuelga
+     de .route-map-box. Por eso el combinador ~ y no :has(). */
+  [data-map-src].ficha-lateral ~ .route-info-panel{
+    top:0; bottom:0; right:auto;
+    width:var(--ficha-ancho);
+    max-height:none;
+    border-top:0; border-right:1px solid var(--line);
+    box-shadow:8px 0 24px rgba(0,0,0,.35);
+    padding:18px;
+    transform:translateX(-100%);
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel.open{ transform:translateX(0); }
+  /* Los margenes negativos de la foto tienen que cuadrar con el relleno del
+     panel, que aqui es 18 por los cuatro lados y no 16/40/16/18. */
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-photo{
+    margin:-18px -18px 12px; height:150px;
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-chart{
+    height:72px; margin-bottom:12px;
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup h3{
+    font-size:19px; line-height:1.2; margin-bottom:10px;
+  }
+  /* En una columna estrecha los cuatro datos en fila se parten por donde
+     caen; en vertical cada uno ocupa su linea y se leen de un vistazo. */
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-facts{
+    flex-direction:column; gap:6px; margin-bottom:14px;
+  }
+  .route-popup-desc{
+    margin:0 0 12px; font-size:13.5px; line-height:1.5; color:var(--ink-dim);
+  }
+  /* Los creditos vuelven abajo del todo: con el panel a la izquierda ya no
+     los tapa nadie, asi que el desplazamiento vertical sobra. Lo que si cae
+     debajo del panel son los botones de zoom y la escala, que Leaflet pone
+     arriba y abajo a la izquierda: se corren a la derecha del panel. */
+  [data-map-src].con-ficha.ficha-lateral .leaflet-bottom{ bottom:0; }
+  [data-map-src].con-ficha.ficha-lateral .leaflet-left{
+    left:var(--ficha-ancho);
+    transition:left .25s ease;
+  }
+  /* Y la pastilla de las capas, que va centrada entre left:52 y right:52 del
+     mapa entero: con el panel delante, «IGN» se quedaba medio tapado. */
+  [data-map-src].ficha-lateral ~ .map-layers{
+    left:calc(var(--ficha-ancho) + 52px);
+    transition:left .25s ease;
+  }
+}
+@media (min-width:768px) and (max-width:1023px){
+  .route-map-box{ --ficha-ancho:280px; }
+}
 /* En el movil la caja del mapa es cuadrada y pequena (~294 px de alto): con la
    foto dentro, el nombre largo de una ruta hacia que el boton "Ver ruta" se
    saliera del panel. Foto mas baja, titulo mas apretado y menos relleno. */

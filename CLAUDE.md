@@ -408,13 +408,51 @@ maneras sobre la misma ruta, en 393 px, contando el mapa que queda libre:
 | ficha en un lateral | 43 % |
 | como estaba | 37 % |
 
-**El lateral se probó y se descartó con numeros, aunque fue idea del autor** («toda la información
-en un lateral del mapa»): la caja del mapa es **cuadrada**, no apaisada, así que un lateral de
-177 px sobre 311 deja una tira de 134 px —los textos se parten, tapa los botones de zoom y la ruta
-no cabe— y **en el ordenador sale aún peor** (54 % frente al 74 % de entonces), porque allí la caja
-también es cuadrada (718x718). No volver a proponerlo sin medirlo.
+**El lateral se descartó en octubre y en noviembre se hizo, porque cambió la premisa.** Entonces se
+midió sobre la caja tal cual —**cuadrada**, no apaisada— y salía peor: un lateral de 177 px sobre
+311 deja una tira de 134 px en el móvil, y en el ordenador 54 % de mapa libre frente al 74 % de
+entonces, porque allí la caja también es cuadrada (718x718). Lo que faltaba era la otra mitad de la
+idea, que el autor dio después con la pantalla de AllTrails delante: **«el mapa ocupa la pantalla
+entera»**. Con eso el lateral deja de quitar sitio, porque la caja gana ancho en vez de perderlo.
+Medido en 1280x900: la caja pasa de 718x718 a **1280x824** y el mapa visible de 442.000 a
+**792.000 px²**, casi el doble que con la ficha abajo. La lección es la de siempre: la medida valía
+para la caja de entonces, no para siempre.
 
-Se hicieron las dos ganadoras y juntas dan **78 % libre en un movil de 393 px**:
+**El mapa a pantalla completa, y la ficha a un lado en el ordenador.** Al abrir una ruta, `map.js`
+saca la caja de su columna centrada con un margen negativo y le da todo lo que queda bajo la
+cabecera pegajosa (y, en el movil, sobre la barra fija de abajo) — **es la misma mecanica de
+`encaja()` en `trazado.js`**, ya probada ahi, y el ancho sale de `clientWidth` y no de `100vw` por
+la barra de desplazamiento. Lo pidio el autor dos veces y con las mismas palabras: «el mapa ocupa
+la pantalla entera», «pantalla completa».
+
+**Lo que cambia con el ancho es solo donde va la ficha**: de 768 px en adelante a la izquierda, de
+arriba abajo, 320 px (280 entre 768 y 1023); por debajo, abajo y escueta, como el autor eligio en
+octubre. Medido: el mapa libre pasa del 37 % al **82 % en un movil de 393 px** (la caja de 311x311
+a 390x711) y del 74 % al 75 % en 1280, pero ahi lo que cuenta es el absoluto — de 442.000 a
+792.000 px² de mapa, casi el doble.
+
+Tres cosas que hay que mover con ella y que costaron una vuelta:
+
+- **Los botones de zoom y la escala** van en `.leaflet-left` y caen debajo del panel: se corren a
+  `left:var(--ficha-ancho)`. Los creditos vuelven a `bottom:0`, que ahi ya no los tapa nadie.
+- **La pastilla de las capas** va centrada entre `left:52px` y `right:52px` del mapa entero, asi que
+  con el panel delante «IGN» se quedaba medio tapado. Se corre lo mismo.
+- **El encuadre se hace dos fotogramas despues.** Al crecer la caja salta el `ResizeObserver` de
+  `fit()`, que llama a `invalidateSize()`, y eso **corta el vuelo en seco**: la ruta se quedaba sin
+  acercar, con el mapa en la vista de conjunto. El observador corre tras el calculo de estilos y
+  antes de pintar, asi que al segundo `requestAnimationFrame` ya ha pasado. El hueco que se le pasa
+  a `flyToBounds` es de **ancho** (`paddingTopLeft`), no de alto.
+
+Y en el lateral **vuelven la foto y el perfil**, que se habian quitado por falta de sitio: en una
+columna alta sobran, y ahi no repiten porque no se ve la tarjeta de la que salen. Con ellos va la
+linea de resumen de la tarjeta, clonada tal cual — el autor lo autorizo con todas las letras: «si
+hace falta clona cosas de la pagina». Todo se clona del DOM que ya esta en la pagina, asi que viene
+en el idioma correcto y el navegador no descarga nada nuevo. Son **dos versiones de la ficha**
+(`breve` y `amplia`) y manda el ancho; si la ventana cruza los 768 px con la ficha abierta, se
+cambia de una a otra sin cerrarla.
+
+En el movil la ficha sigue siendo la escueta que el autor eligio en octubre, con las dos ganadoras
+de entonces (que por si solas daban **78 % libre en un movil de 393 px**):
 
 - **Sin foto ni perfil en la ficha** (`src/js/map.js`): solo nombre, datos y enlace. La foto se
   clonaba de la tarjeta de la portada —donde el visitante ya la ha visto— y cuando no había foto

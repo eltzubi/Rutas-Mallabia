@@ -430,6 +430,9 @@
     // never does, and its own height feeds back into the zoom padding so
     // the route never renders underneath it either.
     var panel = null, panelBody = null, panelClose = null, activeLine = null, activeBaseColor = null;
+    // Las dos versiones de la ficha abierta, para poder cambiar de una a otra
+    // si la ventana cruza los 768 px sin cerrarla.
+    var fichaHtml = null;
     function ensurePanel(){
       if (panel) return;
       panel = document.createElement('div');
@@ -458,6 +461,9 @@
     // Hiding it while the panel is open removes the overlap outright instead
     // of fighting over z-index across two separate stacking contexts.
     var viewFab = document.getElementById('viewFab');
+    // Con el mapa a pantalla entera, el boton de volver arriba cae encima de
+    // el (abajo a la derecha). El modo de dibujar ya lo esconde por lo mismo.
+    var botonArriba = document.getElementById('toTop');
     // Con una ruta elegida, los kilometros de las otras 64 siguen ahi y
     // ensucian justo lo que el visitante ha ido a mirar. Mientras la ficha
     // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
@@ -466,6 +472,76 @@
     // La caja que envuelve al mapa: es la que crece con la ficha abierta.
     // Solo existe en la portada; en una ficha de ruta no hay panel.
     var marcoMapa = el.closest ? el.closest('.route-map-box') : null;
+
+    // Con una ruta elegida, el mapa se queda con la pantalla entera y la
+    // ficha se pone en un lateral, como en AllTrails: lo pidio el autor con
+    // esa pantalla delante («el mapa ocupa la pantalla entera»). Es la misma
+    // mecanica que el modo de dibujar, ya probada ahi: se saca la caja de su
+    // columna centrada con un margen negativo y se le da el alto que queda
+    // bajo la cabecera pegajosa.
+    //
+    // Solo de 768 px en adelante. Por debajo manda lo que el autor eligio en
+    // octubre -- caja a 72svh y ficha abajo --, que ahi un lateral deja una
+    // tira de 134 px donde los textos se parten.
+    var CABECERA_FICHA = 62;
+    function reduceMovimiento(){
+      return !!(window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }
+    function esLateral(){
+      return !!(window.matchMedia && window.matchMedia('(min-width:768px)').matches);
+    }
+    function aPantallaEntera(){
+      if (!marcoMapa) return;
+      var abajo = 0, barra = document.querySelector('.finder-toolbar');
+      if (barra) {
+        var r = barra.getBoundingClientRect();
+        if (getComputedStyle(barra).position === 'fixed' &&
+            r.bottom > window.innerHeight - 6) abajo = r.height;
+      }
+      // El ancho sale de clientWidth y no de 100vw: 100vw cuenta la barra de
+      // desplazamiento y dejaria la pagina moviendose de lado.
+      marcoMapa.style.marginLeft = '0px';
+      marcoMapa.style.width = '';
+      var izq = marcoMapa.getBoundingClientRect().left;
+      marcoMapa.style.marginLeft = (-izq) + 'px';
+      marcoMapa.style.width = document.documentElement.clientWidth + 'px';
+      marcoMapa.style.borderRadius = '0';
+      marcoMapa.style.aspectRatio = 'auto';
+      marcoMapa.style.height =
+        Math.max(300, window.innerHeight - CABECERA_FICHA - abajo - 14) + 'px';
+    }
+    function sueltaPantallaEntera(){
+      if (!marcoMapa) return;
+      marcoMapa.style.aspectRatio = '';
+      marcoMapa.style.height = '';
+      marcoMapa.style.marginLeft = '';
+      marcoMapa.style.width = '';
+      marcoMapa.style.borderRadius = '';
+    }
+    // Si se gira el movil o se cambia el tamano de la ventana con la ficha
+    // abierta, la caja tiene que volver a cuadrar. Y si al redimensionar se
+    // cruza el corte de 768 px, se pasa de un modo al otro sin cerrarla.
+    var alRedimensionarFicha = null;
+    function vigilaTamanoFicha(encender){
+      if (encender && !alRedimensionarFicha) {
+        alRedimensionarFicha = function(){
+          if (!panel || !panel.classList.contains('open')) return;
+          var lat = esLateral();
+          el.classList.toggle('ficha-lateral', lat);
+          aPantallaEntera();
+          if (fichaHtml) {
+            var quiere = lat ? fichaHtml.amplia : fichaHtml.breve;
+            if (panelBody.innerHTML !== quiere) panelBody.innerHTML = quiere;
+          }
+          map.invalidateSize({ animate: false });
+        };
+        window.addEventListener('resize', alRedimensionarFicha);
+      } else if (!encender && alRedimensionarFicha) {
+        window.removeEventListener('resize', alRedimensionarFicha);
+        alRedimensionarFicha = null;
+      }
+    }
 
     var vigilaFicha = null;
     function marcaAltoFicha(alto){
@@ -487,10 +563,14 @@
       panel.classList.remove('open');
       panel.hidden = true;
       el.classList.remove('con-ficha');
+      el.classList.remove('ficha-lateral');
+      vigilaTamanoFicha(false);
       if (marcoMapa && marcoMapa.classList.contains('ficha-abierta')) {
         marcoMapa.classList.remove('ficha-abierta');
-        map.invalidateSize({ animate: false });
       }
+      sueltaPantallaEntera();
+      if (botonArriba) botonArriba.style.display = '';
+      map.invalidateSize({ animate: false });
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
@@ -548,7 +628,8 @@
       });
       updateLabelVisibility();
       line.getElement().setAttribute('aria-pressed', 'true');
-      panelBody.innerHTML = html;
+      fichaHtml = html;
+      panelBody.innerHTML = esLateral() ? html.amplia : html.breve;
       panel.hidden = false;
       panel.classList.add('open');
       if (viewFab) viewFab.classList.add('is-hidden-behind-panel');
@@ -565,22 +646,53 @@
       // y seguian metidos debajo del panel.
       marcaAltoFicha(panelHeight);
       el.classList.add('con-ficha');
+      var lateral = esLateral();
+      el.classList.toggle('ficha-lateral', lateral);
       // Y la caja crece, que es lo que de verdad arregla el «tapa el mapa»
       // (solo por debajo de 768 px; lo decide el CSS). Hay que avisar a
       // Leaflet del tamano nuevo ANTES de encuadrar, o encuadra sobre el
       // alto viejo y la ruta se queda pequena en la mitad de arriba.
       if (marcoMapa) {
         marcoMapa.classList.add('ficha-abierta');
+        // Pantalla completa en las dos, que es lo que pidio el autor: la caja
+        // sale de su columna centrada y se queda con todo lo que hay bajo la
+        // cabecera pegajosa (y, en el movil, sobre la barra fija de abajo).
+        // Lo que cambia con el ancho es donde va la ficha: a un lado de 768
+        // en adelante, y abajo por debajo.
+        aPantallaEntera();
+        if (botonArriba) botonArriba.style.display = 'none';
+        window.scrollTo({
+          top: Math.max(0, marcoMapa.getBoundingClientRect().top +
+                           window.pageYOffset - CABECERA_FICHA),
+          behavior: reduceMovimiento() ? 'auto' : 'smooth'
+        });
         map.invalidateSize({ animate: false });
         panelHeight = panel.getBoundingClientRect().height;
         marcaAltoFicha(panelHeight);
       }
-      map.flyToBounds(line.getBounds(), {
-        paddingTopLeft: [24, 24],
-        paddingBottomRight: [24, panelHeight + 24],
-        maxZoom: 15,
-        animate: !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-      });
+      vigilaTamanoFicha(true);
+      // Con el panel en un lateral el hueco que hay que dejar es de ancho,
+      // no de alto: si no, la ruta se encuadra por debajo de el.
+      var anchoPanel = lateral ? Math.round(panel.getBoundingClientRect().width) : 0;
+      var vuela = function(){
+        if (!panel.classList.contains('open')) return;
+        map.flyToBounds(line.getBounds(), {
+          paddingTopLeft: [anchoPanel + 24, 24],
+          paddingBottomRight: [24, lateral ? 24 : panelHeight + 24],
+          maxZoom: 15,
+          animate: !reduceMovimiento()
+        });
+      };
+      // Dos fotogramas de espera antes de encuadrar: al crecer la caja salta
+      // el ResizeObserver de fit(), que llama a invalidateSize(), y eso corta
+      // el vuelo en seco -- la ruta se quedaba sin acercar, con el mapa en la
+      // vista de conjunto. El ResizeObserver corre tras el calculo de estilos
+      // y antes de pintar, asi que al segundo fotograma ya ha pasado.
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(function(){ requestAnimationFrame(vuela); });
+      } else {
+        vuela();
+      }
       if (keyboard) panelClose.focus({ preventScroll: true });
     }
 
@@ -667,18 +779,38 @@
         // linea aparte: en un movil la ficha mide 250 px y cada linea suelta
         // empujaba el boton fuera de la vista.
         facts += '<span>' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></span>';
-        // Ni foto ni perfil en la ficha: solo el nombre, los datos y el
-        // enlace. La ficha llevaba una foto clonada de la tarjeta (y, cuando
-        // no habia foto, el perfil de alturas en su lugar), y entre las dos
-        // cosas se comia 195 px de un mapa que en un movil mide 311: el 63 %.
-        // El autor se quejo de que la ficha tapaba el mapa, se le enseñaron
-        // cuatro maneras medidas y eligio esta -- mas la caja alta de abajo.
-        // La foto ya la ha visto en la tarjeta de la lista, asi que dentro
-        // de la ficha repetia. Sin ella el panel baja a 124 px: el 60 % del
-        // mapa queda libre en vez del 37 %.
-        var html = '<div class="route-popup"><h3>' + name + '</h3>' +
-          '<div class="route-popup-facts">' + facts + '</div>' +
+        // Dos versiones de la ficha, y manda el sitio que hay:
+        //
+        // - **Breve** (movil, ficha abajo): solo nombre, datos y enlace. La
+        //   foto y el perfil se comian 195 px de un mapa que en un movil
+        //   mide 311 -- el 63 % --, el autor se quejo de que tapaba, se le
+        //   enseñaron cuatro maneras medidas y eligio esta.
+        // - **Amplia** (ordenador, panel lateral): con la foto y el perfil.
+        //   En una columna alta sobra sitio, y es lo que el autor pidio al
+        //   enseñar la pantalla de AllTrails: «si hace falta clona cosas de
+        //   la pagina». Aqui no repiten -- en el lateral no se ve la tarjeta
+        //   de la que salen.
+        //
+        // La foto se clona de la propia tarjeta: asi no hay que deducir el
+        // fichero del href (en euskera acaba en .eu.html), el alt ya viene en
+        // su idioma, y el navegador no descarga nada que no tuviera ya.
+        var pic = sign && sign.querySelector('.route-card-photo picture');
+        var foto = pic ? '<div class="route-popup-photo">' + pic.outerHTML + '</div>' : '';
+        var perfil = t.chart ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
+          'preserveAspectRatio="none" aria-hidden="true"><path d="' + t.chart +
+          '" fill="var(--teal-soft)"/></svg>' : '';
+        // La linea de resumen de la tarjeta, clonada tal cual (ya viene en
+        // su idioma). Solo en el panel lateral: en el movil la ficha tiene
+        // que seguir cabiendo en dos dedos de alto.
+        var desc = sign && sign.querySelector('.route-card-desc');
+        var resumen = desc ? '<p class="route-popup-desc">' + desc.innerHTML + '</p>' : '';
+        var datos = '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
+        var html = {
+          breve: '<div class="route-popup"><h3>' + name + '</h3>' + datos,
+          amplia: '<div class="route-popup">' + foto + perfil +
+                  '<h3>' + name + '</h3>' + resumen + datos
+        };
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
         line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
         line.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
