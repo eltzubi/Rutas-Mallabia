@@ -6808,10 +6808,10 @@ ZALDUTRAIL = {
         '<span class="num">4</span>Aixolako presa',
     'Presa de Aixola &middot; 12,0 km':
         'Aixolako presa &middot; 12,0 km',
-    '<span class="num">6</span>Ermita de San Lorenzo de Urizar':
-        '<span class="num">6</span>Urizarko San Lorentzo baseliza',
-    'Ermita de San Lorenzo de Urizar &middot; 18,1 km':
-        'Urizarko San Lorentzo baseliza &middot; 18,1 km',
+    '<span class="num">6</span>Ermita de San Lorenzo':
+        '<span class="num">6</span>San Lorentzo baseliza',
+    'Ermita de San Lorenzo &middot; 18,1 km':
+        'San Lorentzo baseliza &middot; 18,1 km',
     'alt="Amanecer desde Egoarbitza sobre un mar de nubes, con una persona junto al buz&oacute;n de la cima"':
         'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko postontziaren ondoan"',
     'alt="La cruz de piedra de Santama&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
