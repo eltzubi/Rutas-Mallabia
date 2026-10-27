@@ -135,7 +135,12 @@ body{
    y por eso la barra se para antes de llegar a el (right:52px). */
 .map-layers{
   position:absolute; z-index:400; top:10px; left:52px; right:52px;
-  display:flex; justify-content:center; gap:2px; padding:3px;
+  /* Con cuatro capas los rotulos ya no caben en una fila estrecha: a 320 px
+     la pastilla mide 142 y el texto 182, y en una ficha de ruta, con
+     «Pendiente», tampoco entra a 360 ni a 390. Antes salian con puntos
+     suspensivos («Eusk…»), que es peor que partir: ahora pasa a dos filas
+     y no se corta ninguno. Solo crece cuando hace falta. */
+  display:flex; flex-wrap:wrap; justify-content:center; gap:2px; padding:3px;
   border:1px solid var(--line); border-radius:999px;
   background:var(--ground); box-shadow:0 4px 16px rgba(0,0,0,.3);
   background:color-mix(in srgb, var(--ground) 80%, transparent);

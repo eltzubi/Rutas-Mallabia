@@ -80,9 +80,23 @@
 
   // Abre en el IGN, como las fichas: para buscar una fuente lo que situa son
   // los barrios, los arroyos y las curvas de nivel, no el callejero.
+  // El topografico del Gobierno Vasco (geoEuskadi). Es la unica carta de
+  // esta lista que la hace quien conoce el terreno: curvas de nivel mucho
+  // mas finas que las del IGN, los caserios con su nombre uno a uno
+  // (Etxebarri, Lexarraga) y los toponimos en euskera, que es como se
+  // llaman. Llega a z18 y cubre las 66 rutas enteras, Gipuzkoa incluida
+  // -- comprobado tesela a tesela en las cuatro esquinas del conjunto.
+  // Licencia CC BY: «se permite cualquier uso si se menciona la autoria».
+  var euskadiLayer = L.tileLayer('https://www.geo.euskadi.eus/geoeuskadi/rest/services/' +
+    'U11/WMTS_TOPO/MapServer/WMTS/tile/1.0.0/U11_WMTS_TOPO/default/' +
+    'GoogleMapsCompatible/{z}/{y}/{x}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> &mdash; Eusko Jaurlaritza / Gobierno Vasco'
+  });
   var layerDefs = [
     { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
     { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
+    { layer: euskadiLayer, label: isEu ? 'Euskadiko mapa topografikoa' : 'Mapa topográfico de Euskadi', short: 'Euskadi' },
     { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' }
   ];
   var layerIndex = 0;

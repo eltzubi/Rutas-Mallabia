@@ -248,8 +248,8 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // Las capas ya no son un menu que se abre: son tres botones a la vista,
   // con el activo marcado. La portada arranca en Bici (el segundo) y de ahi
   // no se mueve sola.
-  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,3);
-  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Sat']);
+  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
+  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Euskadi','Sat']);
   assert.equal(capas[1].getAttribute('aria-pressed'),'true','la portada abre en Bici');
   capas[0].click();
   assert.equal(capas[1].getAttribute('aria-pressed'),'false');
@@ -291,7 +291,7 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
     assert.equal(e.one('.map-retry'),null);assert.equal(e.trazados().length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,3);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
@@ -347,6 +347,6 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   // la tardanza ya le da igual. La pendiente va en la misma pastilla,
   // detras de la raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
-                   ['IGN','Bici','Sat','Pendiente']);
+                   ['IGN','Bici','Euskadi','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });
