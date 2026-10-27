@@ -501,7 +501,7 @@ def main():
     mapa_js = (ROOT / 'src/js/map.js').read_text()
     agua_js = (ROOT / 'src/js/agua.js').read_text()
     plantillas = re.findall(r"L\.tileLayer\('([^']+)'", mapa_js)
-    require(len(plantillas) == 4, f'map.js: esperaba 4 capas, encuentro {len(plantillas)}')
+    require(len(plantillas) == 5, f'map.js: esperaba 5 capas (4 de fondo + los rotulos del satelite), encuentro {len(plantillas)}')
     for plantilla in plantillas:
         require(plantilla in agua_js,
                 f'js/agua.js no tiene la capa de map.js: {plantilla[:60]}')

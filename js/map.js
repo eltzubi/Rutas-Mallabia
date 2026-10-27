@@ -294,11 +294,40 @@
     // ayuda. Solo lo cambian los botones.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
     var LABEL_MIN_ZOOM = 12;   // el zoom al que salen los kilometros de cada ruta
+    // Los nombres sobre el satelite. Lo pidio el autor: «el mapa sat, ¿pueden
+    // aparecer nombres?». Es una capa transparente de solo rotulos que se
+    // enciende con el satelite y se apaga con el. Va encima de las teselas y
+    // debajo de los trazados, que viven en otro panel.
+    //
+    // Se compararon dos sobre el mismo trozo de Berriz y Osmagain, a z12, z13
+    // y z16, y se eligio el hibrido de geoEuskadi:
+    //
+    // - Esri «World Boundaries and Places» pone solo los nombres y no toca la
+    //   imagen, pero es ESCUETISIMO: sobre toda la ruta de Zengotitagane, en
+    //   1280x900, saca UN SOLO rotulo («Garai»).
+    // - El hibrido de geoEuskadi saca treinta y tantos en ese mismo encuadre
+    //   -- Askako, Sarrimendi, Urdaia, Axmakurra, Iturrizu, Zengotitagana,
+    //   Kurutzetorri, Olatzamendi, Gaztelumendi, Osmagain, Sallobente,
+    //   Besoita, Andikoa, Momoitio, Galarraga... -- mas los arroyos y los
+    //   numeros de carretera.
+    //
+    // Se temia que pintara las carreteras de naranja y compitiera con los
+    // tracks de bici (es por lo que se descarto OpenTopoMap), pero sobre la
+    // foto las saca en AMARILLO, y el track va mas grueso y con flechas: se
+    // distinguen. Comprobado en la pagina de verdad y no en una tesela
+    // suelta. Pesa unos 10 kB por tesela y no anade ningun dominio nuevo,
+    // que geoEuskadi ya sirve la capa «Euskadi».
+    var nombresLayer = L.tileLayer('https://www.geo.euskadi.eus/geoeuskadi/rest/services/' +
+      'U11/WMTS_HIBRIDO/MapServer/WMTS/tile/1.0.0/U11_WMTS_HIBRIDO/default/' +
+      'GoogleMapsCompatible/{z}/{y}/{x}.png', {
+      maxZoom: 18, zIndex: 300,
+      attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> &mdash; Eusko Jaurlaritza / Gobierno Vasco'
+    });
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
       { layer: euskadiLayer, label: isEu ? 'Euskadiko mapa topografikoa' : 'Mapa topográfico de Euskadi', short: 'Euskadi' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' }
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat', rotulos: nombresLayer }
     ];
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
@@ -332,6 +361,7 @@
       if (capaPuesta || !el.clientWidth || !el.clientHeight) return;
       capaPuesta = true;
       layerDefs[layerIndex].layer.addTo(map);
+      if (layerDefs[layerIndex].rotulos) layerDefs[layerIndex].rotulos.addTo(map);
     }
     var layersBar = document.createElement('div');
     layersBar.className = 'map-layers';
@@ -357,6 +387,7 @@
       if (!capaPuesta) return;
       if (quitarPendiente) { quitarPendiente(); quitarPendiente = null; }
       nueva.addTo(map);
+      if (layerDefs[i].rotulos) layerDefs[i].rotulos.addTo(map);
       var hecho = false;
       function listo(){
         if (hecho) return;
@@ -365,6 +396,11 @@
         nueva.off('load', listo);
         quitarPendiente = null;
         if (vieja !== nueva && map.hasLayer(vieja)) map.removeLayer(vieja);
+        // los rotulos se van con su capa y no antes: si se quitaran ya, al
+        // cambiar de capa desapareceran mientras la nueva aun carga.
+        layerDefs.forEach(function(d, j){
+        if (d.rotulos && j !== layerIndex && map.hasLayer(d.rotulos)) map.removeLayer(d.rotulos);
+        });
         layerBtns.forEach(function(b){ b.classList.remove('is-loading'); });
       }
       // Y si las teselas no llegan nunca (sin cobertura en el monte), se

@@ -295,8 +295,8 @@ estorban. El rumbo se calcula corrigiendo la longitud por el coseno de la latitu
 torcido — y sale del propio orden de los puntos del track, que es el de la marcha. El mapa de la
 portada no las lleva: 57 tracks a la vez.
 
-**Las capas: tres, iguales en la portada y en una ficha, y las dos abren en Bici.**
-IGN, **Bici** (CyclOSM) y Satélite. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
+**Las capas: cuatro, iguales en la portada y en una ficha, y las dos abren en Bici.**
+IGN, **Bici** (CyclOSM), **Euskadi** y Satélite. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
 conviene leer el recorrido entero antes de volver a tocarlo, porque cada paso lo pidió el autor:
 
 1. Hasta el 23 de octubre las fichas abrían en Bici. El autor avisó de que «al mapa bici le cuesta
@@ -306,6 +306,58 @@ conviene leer el recorrido entero antes de volver a tocarlo, porque cada paso lo
    **Humanitarian (HOT)** como quinta capa; el autor quitó «Calles» en cuanto los comparó.
 3. Horas después: **«no me gusta este mapa, Bici tiene más información»**. Y tiene razón — ver abajo.
    Fuera HOT, y **Bici vuelve a ser la que abre**, también en las fichas.
+
+4. El 27 de octubre el autor pidió **una capa más**: «busca hasta encontrar algo que se te haya
+   pasado por alto, algo decente». Y había un hueco de verdad: **todo lo probado hasta entonces era
+   global** (OSM y sus derivados, Esri, el IGN estatal). Faltaba la cartografía **propia de
+   Euskadi**. Entró el **mapa topográfico del Gobierno Vasco (geoEuskadi)**.
+
+**Por qué el de Euskadi merece estar, mirado sobre el mismo trozo de Garai y Zengotitagane:** es la
+única carta de la lista que hace quien conoce el terreno. Rotula **los caseríos y los parajes uno a
+uno y en euskera** —Askako, Zazpiatxeta, Aretxerriaga, Urdaia, Sarrimendi, Gaztelumendi, Axmakurra,
+Iturrizuri, Zengotitagana, Kurutzetorri, Olatzamendi, Osmagain, Besoita, Galarraga—, que son
+literalmente los nombres de las rutas de esta web, y ninguno de los otros tres los saca. Las curvas
+de nivel son mucho más finas que las del IGN y van con sombreado del relieve.
+
+Datos del servicio, comprobados desde aquí y no leídos en su web:
+
+- WMTS con **`GoogleMapsCompatible`**, así que entra en Leaflet tal cual, sin reproyectar — y eso no
+  era de esperar, porque sus metadatos anuncian EPSG:25830. Probablemente sea la razón por la que
+  casi nadie lo usa fuera de su propio visor.
+  `https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/WMTS_TOPO/MapServer/WMTS/tile/1.0.0/U11_WMTS_TOPO/default/GoogleMapsCompatible/{z}/{y}/{x}.png`
+- Llega a **z18**. Teselas de 80-145 kB y 0,5-1 s: de las más pesadas, pero la tardanza ya no es un
+  criterio (ver abajo).
+- **Licencia CC BY**: «se permite cualquier uso si se menciona la autoría del siguiente modo: Eusko
+  Jaurlaritza / Gobierno Vasco». Es la más clara de todas las candidatas, mejor que la del IGN y que
+  la de CyclOSM.
+- **Cubre las 66 rutas enteras**, Gipuzkoa incluida: comprobadas tesela a tesela las cuatro esquinas
+  del conjunto (43,1234-43,3274 N, 2,6524-2,3561 O), todas con contenido.
+
+**Nombres sobre el satélite.** Lo pidió el autor: «el mapa sat, ¿pueden aparecer nombres?». Con el
+satélite se enciende además una capa transparente de rótulos, el **híbrido de geoEuskadi**, y se
+apaga al cambiar de capa. Va en `rotulos`, dentro del `layerDef` del satélite, y **se quita dentro
+de `listo()`, con su capa y no antes**: si se quitara en cuanto se pulsa otro botón, desaparecería
+mientras la capa nueva todavía está cargando. Se compararon dos sobre la ruta de Zengotitagane en
+1280x900:
+
+- **Esri «World Boundaries and Places»** pone sólo los nombres y no toca la imagen — pero es
+  escuetísimo: en ese encuadre saca **un solo rótulo** («Garai»).
+- **El híbrido de geoEuskadi** saca **treinta y tantos** —Askako, Sarrimendi, Urdaia, Axmakurra,
+  Iturrizu, Zengotitagana, Kurutzetorri, Olatzamendi, Gaztelumendi, Osmagain, Sallobente, Besoita,
+  Andikoa, Momoitio, Galarraga…— más los arroyos y los números de carretera.
+
+Se temía que pintara las carreteras de naranja y compitiera con los tracks de bici, que es por lo
+que se descartó OpenTopoMap; pero **sobre la foto las saca en amarillo**, y el track va más grueso y
+con flechas, así que se distinguen. Comprobado en la página de verdad y no en una tesela suelta.
+Pesa unos 10 kB por tesela y no añade ningún dominio nuevo. Cubre las cuatro esquinas del conjunto;
+la del noreste devuelve una tesela vacía de 192 bytes porque es **mar abierto al norte de Mutriku**,
+y es correcto que lo haga.
+
+**Cuatro botones ya no caben en una fila estrecha, y la pastilla pasa a dos filas.** A 320 px la
+pastilla mide 142 y el texto 182; en una ficha, con «Pendiente», tampoco entra a 360 ni a 390. Antes
+salían con puntos suspensivos, que es peor que partir: `.map-layers` lleva ahora `flex-wrap:wrap` y
+sólo crece cuando hace falta. Medido en las dos lenguas, en la portada y en una ficha, a
+320/360/390/768: **no se corta ningún rótulo en ninguna**.
 
 **La razón por la que la lentitud ya no cuenta** es que el autor la retiró con todas las letras: «no
 me preocupa lo que tarde en abrir en el monte, poca gente o ninguno; la ruta la organizo en casa».
@@ -330,14 +382,19 @@ sendero dibujado con un trazo distinto según lo que sea. Ningún otro junta las
 | **CyclOSM-lite**, **4UMaps** | **muertos**: error en las doce teselas |
 | **Esri World Topo / Street**, **IGN Mapa Base** | limpios pero sin senderos: el monte sale vacío |
 | **CARTO Voyager** | ya no es libre: devuelve una tesela con «API KEY REQUIRED» estampado |
+| **Hike & Bike Map** | **muerto**: ni `tiles.wmflabs.org` ni `a.tiles.hikebikemap.org` responden |
 | **Strava / Garmin (mapa de calor)** | **no se puede**: desde 2018 sus teselas exigen sesión iniciada y sus condiciones no permiten usarlas fuera de su web. No es cuestión de buscar la vuelta |
 
-`scripts/check_site.py` exige que `map.js` declare **tres** `L.tileLayer` y que `js/agua.js` lleve las
-mismas tres URL (su copia existe porque `map.js` son 1.100 líneas atadas a los tracks). `test_ui.cjs`
-comprueba la lista de botones y que la que abre es la segunda, en la portada y en una ficha.
+`scripts/check_site.py` exige que `map.js` declare **cinco** `L.tileLayer` —cuatro de fondo más los
+rótulos del satélite— y que `js/agua.js` lleve las mismas cinco URL (su copia existe porque `map.js`
+son 1.100 líneas atadas a los tracks). `test_ui.cjs` comprueba la lista de botones y que la que abre
+es la segunda, en la portada y en una ficha. **Al añadir o quitar una capa hay que tocar cuatro
+sitios**: `map.js`, `agua.js`, el número de `check_site.py` y las tres listas de `test_ui.cjs`.
 
-**Efecto secundario bueno, medido:** con tres botones, a 320 px **no se corta ningún rótulo**. Con
-cuatro eran 144 px de texto en una pastilla de 142 y «Bici» y «Calles» salían con puntos suspensivos.
+**Lo del ancho de los rótulos, que acabó arreglándose de otra manera:** en octubre, con cuatro
+botones, eran 144 px de texto en una pastilla de 142 y «Bici» y «Calles» salían con puntos
+suspensivos, y se resolvió quitando una capa. Al volver a cuatro en octubre se resolvió bien, con
+`flex-wrap`.
 
 **«Rutas»: el interruptor para ver el mapa a pelo.** Lo pidió el autor — sobre el satélite, y donde
 se juntan varias rutas, los trazados tapan justo lo que quiere mirar. Va **en la misma pastilla que
