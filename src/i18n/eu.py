@@ -825,8 +825,8 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki eta Betzun zeharkatuz</p>',
 
     # zaldutrail card
-    'alt="La cruz de piedra de Santama&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
-        'alt="Santama&ntilde;azarko harrizko gurutzea, zurezko monolitoa alboan eta Durangaldeko mendiak atzealdean"',
+    'alt="Amanecer desde Egoarbitza sobre un mar de nubes, con una persona junto al buz&oacute;n de la cima"':
+        'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko postontziaren ondoan"',
     '<h3 class="route-card-name">Zaldutrail: por los montes de Zaldibar, dura y hermosa</h3>':
         '<h3 class="route-card-name">Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra</h3>',
     '<p class="route-card-desc">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
