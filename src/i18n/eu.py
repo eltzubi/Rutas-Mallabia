@@ -825,12 +825,12 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki eta Betzun zeharkatuz</p>',
 
     # zaldutrail card
-    'alt="La cruz de piedra de Santamari&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
-        'alt="Santamari&ntilde;azarko harrizko gurutzea, egurrezko monolitoa alboan eta Durangaldeko mendiak atzealdean"',
-    '<h3 class="route-card-name">El ZalduTrail de Zaldibar, por Egoarbitza, Aixola y Santamari&ntilde;azar</h3>':
-        '<h3 class="route-card-name">Zaldibarko ZalduTrail-a, Egoarbitza, Aixola eta Santamari&ntilde;azar</h3>',
-    '<p class="route-card-desc">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santamari&ntilde;azar y la ermita de San Lorenzo de Urizar</p>':
-        '<p class="route-card-desc">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santamari&ntilde;azar eta Urizarko San Lorentzo baseliza zeharkatuz</p>',
+    'alt="La cruz de piedra de Santama&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
+        'alt="Santama&ntilde;azarko harrizko gurutzea, zurezko monolitoa alboan eta Durangaldeko mendiak atzealdean"',
+    '<h3 class="route-card-name">Zaldutrail: por los montes de Zaldibar, dura y hermosa</h3>':
+        '<h3 class="route-card-name">Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra</h3>',
+    '<p class="route-card-desc">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
+        '<p class="route-card-desc">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santama&ntilde;azar eta San Lorentzo zeharkatuz</p>',
 
     # aixolaintxorta card
     'alt="La cruz de Santama&ntilde;azar al atardecer, con el valle y los montes del Duranguesado al fondo"':
@@ -3463,7 +3463,7 @@ DESCRIPTIONS = {
     'trabakuadeba': 'Oinezko zeharkaldia Trabakuatik Debaraino, Urko, Kalamua, Urkarregi eta Arnotik igarota: 28 km Bizkaitik Gipuzkoako itsasoraino',
     'zengotitamaguna': '32 km-ko zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigainako eta Ama Birjinen Basoko trikuharriak, Maguna, San Kristobal Txiki eta Betzun zeharkatuz',
     'aixolaintxorta': '20 km-ko zirkuitua Aixolako presatik, Santamañazar, Erdella, Intxorta eta Egoarbitza zeharkatuz, Gerra Zibileko lubakiekin eta Asentzioko lakuarekin',
-    'zaldutrail': '20 km-ko zirkuitua Zaldibartik, Egoarbitza, Aixolako presa eta Santamariñazar zeharkatuz: ZalduTrail-eko ibilbide luzea, 1.178 metroko desnibelarekin',
+    'zaldutrail': '20 km-ko zirkuitua Zaldibartik, Egoarbitza, Aixolako urtegia eta Santamañazar zeharkatuz: Zaldutrail-eko ibilbide luzea, 1.178 metroko desnibelarekin',
     'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, mendian ezkutatutako antzinako ubide batetik, karramarroak ibilguan: laburra, desnibel gutxikoa eta haurrekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
     'trabakuaondarroa': '32 km-ko zeharkaldia Trabakuako gainetik Ondarroaraino, Muniozgurendik, Atxagaraitik eta Kurutzeganatik, Bizkaiko kostalderaino jaitsiz',
@@ -3594,7 +3594,7 @@ TITLES = {
     'garaigaztelu': 'Trabakua, Andikoa, Garai eta Gaztelu · E-bike ibilbidea — Herriko ibilbideak',
     'trabakuadeba': 'Trabakua, Urko, Kalamua, Arno eta Deba · Oinezko zeharkaldia — Herriko ibilbideak',
     'aixolaintxorta': 'Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza — Herriko ibilbideak',
-    'zaldutrail': 'Zaldibarko ZalduTrail-a, Egoarbitza, Aixola eta Santamariñazar — Herriko ibilbideak',
+    'zaldutrail': 'Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra — Herriko ibilbideak',
     'zengotitamaguna': 'Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki — Herriko ibilbideak',
     'garaikanala': 'Ibilaldia Garai eta antzinako ubidetik — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
@@ -6788,72 +6788,72 @@ ZENGOTITAMAGUNA = {
 }
 
 ZALDUTRAIL = {
-    'alt="Tres corredores en la cima de Egoarbitza, uno de ellos subido al v&eacute;rtice geod&eacute;sico"':
-        'alt="Hiru korrikalari Egoarbitzako gailurrean, haietako bat erpin geodesikoaren gainean"',
-    'alt="Llegada a meta bajo el arco de Zaldibar, con el reloj en 2:34:47 y un ni&ntilde;o corriendo al lado"':
-        'alt="Helmugaratzea Zaldibarko arkupean, erlojua 2:34:47an eta ume bat alboan korrika"',
-    'alt="El arco de salida del ZalduTrail en la plaza de Zaldibar, con el reloj a cero y la ikurri&ntilde;a al fondo"':
-        'alt="ZalduTrail-eko irteerako arkua Zaldibarko plazan, erlojua zeroan eta ikurri&ntilde;a atzealdean"',
-    'alt="Un corredor con el dorsal 2 subiendo por un sendero entre helechos y pinos"':
-        'alt="Korrikalari bat 2 dortsalarekin, bidexka batetik gora, iratzeen eta pinuen artean"',
-    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Egoarbitza · Santamari&ntilde;azar</span><span class="sep">/</span><span>Circuito</span></p>':
-        '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Egoarbitza · Santamari&ntilde;azar</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<b>&middot; Ayuntamiento de Zaldibar</b>':
-        '<b>&middot; Zaldibarko udaletxea</b>',
-    '<h1>El ZalduTrail de Zaldibar<br><em>Egoarbitza, Aixola y Santamari&ntilde;azar</em></h1>':
-        '<h1>Zaldibarko ZalduTrail-a<br><em>Egoarbitza, Aixola eta Santamari&ntilde;azar</em></h1>',
-    '<p class="full-name">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santamari&ntilde;azar y la ermita de San Lorenzo de Urizar</p>':
-        '<p class="full-name">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santamari&ntilde;azar eta Urizarko San Lorentzo baseliza zeharkatuz</p>',
-    'alt="Foto ampliada del recorrido del ZalduTrail de Zaldibar"':
-        'alt="Zaldibarko ZalduTrail-eko ibilbidearen argazki handitua"',
-    'download="ZalduTrail de Zaldibar.gpx"':
-        'download="Zaldibarko ZalduTrail.gpx"',
-    'download="ZalduTrail de Zaldibar.kml"':
-        'download="Zaldibarko ZalduTrail.kml"',
+    '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Circuito</span></p>':
+        '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Zirkuitua</span></p>',
+    '<h1>Zaldutrail<br><em>por los montes de Zaldibar, dura y hermosa</em></h1>':
+        '<h1>Zaldutrail<br><em>Zaldibarko mendietan barrena, gogorra eta ederra</em></h1>',
+    '<p class="full-name">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
+        '<p class="full-name">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santama&ntilde;azar eta San Lorentzo zeharkatuz</p>',
+    'alt="Foto ampliada del recorrido de la Zaldutrail de Zaldibar"':
+        'alt="Zaldibarko Zaldutrail-eko ibilbidearen argazki handitua"',
+    'download="Zaldutrail de Zaldibar.gpx"':
+        'download="Zaldibarko Zaldutrail.gpx"',
+    'download="Zaldutrail de Zaldibar.kml"':
+        'download="Zaldibarko Zaldutrail.kml"',
     'data-marker-title="Ayuntamiento de Zaldibar (salida y llegada)"':
         'data-marker-title="Zaldibarko udaletxea (irteera eta helmuga)"',
+    '<b>&middot; Ayuntamiento de Zaldibar</b>':
+        '<b>&middot; Zaldibarko udaletxea</b>',
     '<span class="num">4</span>Presa de Aixola':
         '<span class="num">4</span>Aixolako presa',
     'Presa de Aixola &middot; 12,0 km':
         'Aixolako presa &middot; 12,0 km',
     '<span class="num">6</span>Ermita de San Lorenzo de Urizar':
-        '<span class="num">7</span>Urizarko San Lorentzo baseliza',
+        '<span class="num">6</span>Urizarko San Lorentzo baseliza',
     'Ermita de San Lorenzo de Urizar &middot; 18,1 km':
         'Urizarko San Lorentzo baseliza &middot; 18,1 km',
     'alt="Amanecer desde Egoarbitza sobre un mar de nubes, con una persona junto al buz&oacute;n de la cima"':
-        'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko buzoiaren ondoan"',
-    'alt="La cruz de piedra de Santamari&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
-        'alt="Santamari&ntilde;azarko harrizko gurutzea, egurrezko monolitoa alboan eta Durangaldeko mendiak atzealdean"',
+        'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko postontziaren ondoan"',
+    'alt="La cruz de piedra de Santama&ntilde;azar, con el monolito de madera a su lado y los montes del Duranguesado al fondo"':
+        'alt="Santama&ntilde;azarko harrizko gurutzea, zurezko monolitoa alboan eta Durangaldeko mendiak atzealdean"',
     'alt="Un grupo de corredores subiendo por el cordal rocoso, bajo un cielo despejado"':
         'alt="Korrikalari talde bat gailur-lerro harritsutik gora, zeru garbiaren azpian"',
     'alt="Sendero de tierra y hojas entre el arbolado, con un corredor al fondo"':
         'alt="Lurrezko eta hostoz betetako bidexka zuhaitzen artean, korrikalari bat atzealdean"',
     'alt="La cima de Egoarbitza, con el v&eacute;rtice geod&eacute;sico y el buz&oacute;n met&aacute;lico en forma de seta"':
-        'alt="Egoarbitzako gailurra, erpin geodesikoarekin eta perretxiko itxurako buzoi metalikoarekin"',
+        'alt="Egoarbitzako gailurra, erpin geodesikoarekin eta perretxiko formako postontzi metalikoarekin"',
     'alt="Mar de nubes cubriendo el valle, con las cumbres asomando por encima"':
         'alt="Hodei itsasoa harana estaltzen, gailurrak gainetik agertzen direla"',
-    'alt="La cruz de Santamari&ntilde;azar entre la niebla, con dos monta&ntilde;eros junto a ella"':
-        'alt="Santamari&ntilde;azarko gurutzea lainoen artean, bi mendizale ondoan"',
-    'Este es el <b>recorrido largo del ZalduTrail</b>, la carrera de monta&ntilde;a que organiza el Zaldua Mendi Taldea en Zaldibar; el track es el de la primera edici&oacute;n, la del 30 de septiembre de 2023. Son 19,62 km con 1.178 m de desnivel, repartidos en <b>dos subidas grandes y seguidas</b>: primero Egoarbitza, de 182 m en Eitzaga a 723 m en la cima, y despu&eacute;s Santamari&ntilde;azar, de 317 m en la presa de Aixola a 672 m. Fuera de carrera se puede hacer andando en una jornada larga, y quien busque algo m&aacute;s corto tiene el otro recorrido de la prueba, de 14 km y unos 750 m.':
-        'Hau <b>ZalduTrail-eko ibilbide luzea</b> da, Zaldua Mendi Taldeak Zaldibarren antolatzen duen mendi lasterketa; tracka lehen edizioarena da, 2023ko irailaren 30ekoa. 19,62 km dira, 1.178 metroko desnibelarekin, <b>bi igoera handi eta jarraitutan</b> banatuta: lehenengo Egoarbitza, Eitzagako 182 metrotik gailurreko 723ra, eta gero Santamari&ntilde;azar, Aixolako presako 317 metrotik 672ra. Lasterketatik kanpo oinez egin daiteke egun luze batean, eta zerbait laburragoa nahi duenak probaren beste ibilbidea du, 14 kilometro eta 750 bat metrokoa.',
-    'Salimos de la plaza del <b>ayuntamiento de Zaldibar</b>, que es de donde arranca y donde acaba la carrera. El primer kil&oacute;metro va ganando altura en seguida: dejamos el pueblo atr&aacute;s y subimos hacia el barrio de <b>Goierri</b>, que queda en el kil&oacute;metro 1,8, y seguimos hasta los 435 m del kil&oacute;metro 2,6, el primer alto del d&iacute;a.':
-        '<b>Zaldibarko udaletxeko</b> plazatik ateratzen gara, lasterketa hortik abiatzen eta hor amaitzen baita. Lehen kilometroan berehala hasten gara altuera irabazten: herria atzean utzi eta <b>Goierri</b> auzorantz igotzen gara, 1,8 kilometroan dagoena, eta 2,6 kilometroko 435 metroetaraino jarraitzen dugu, eguneko lehen goia.',
-    'Desde ah&iacute; el recorrido baja. Pasamos por la zona de Arkatxe y perdemos altura hasta <b>Eitzaga</b>, en el kil&oacute;metro 5,2 y a 182 m: es el <b>punto m&aacute;s bajo de toda la ruta</b>. Conviene tenerlo presente, porque todo lo que viene despu&eacute;s es subir.':
-        'Hortik aurrera behera egiten du. Arkatxe inguruan barrena pasatzen gara eta altuera galtzen dugu <b>Eitzaga</b>raino, 5,2 kilometroan eta 182 metrotan: <b>ibilbide osoko punturik baxuena</b> da. Komeni da kontuan izatea, hemendik aurrera dena baita igotzea.',
-    'Seguimos hacia el este por el fondo del valle, pasamos cerca de <b>Sallabente</b> y de su ermita en el kil&oacute;metro 6,7, y empieza la primera subida de verdad. Se gana altura de forma continua por Aginde y Altzola Basoa, con el &uacute;ltimo tramo por Potzueta, ya en terreno abierto.':
-        'Ekialderantz jarraitzen dugu haranaren hondotik, <b>Sallabente</b>tik eta bere baselizatik gertu pasatzen gara 6,7 kilometroan, eta benetako lehen igoera hasten da. Altuera etengabe irabazten da Aginde eta Altzola Basotik, eta azken tartea Potzuetatik doa, jada leku zabalean.',
-    'En el kil&oacute;metro 9,4 llegamos a <b>Egoarbitza</b> (723 m), el techo del recorrido. Arriba est&aacute;n el v&eacute;rtice geod&eacute;sico y el buz&oacute;n met&aacute;lico con forma de seta, y en un d&iacute;a claro se ve la presa de Aixola abajo y buena parte de los montes del entorno. Es la misma cima a la que suben la ruta de <a href="egoarbitza.html">Egoarbitza</a> y la de <a href="aixolaintxorta.html">Aixola, Santama&ntilde;azar, Erdella, Intxorta y Egoarbitza</a>, aunque cada una llega por su lado.':
-        '9,4 kilometroan <b>Egoarbitza</b>ra iristen gara (723 m), ibilbideko punturik altuena. Goian erpin geodesikoa eta perretxiko itxurako buzoi metalikoa daude, eta egun argi batean Aixolako presa ikusten da behean, inguruko mendi gehienekin batera. <a href="egoarbitza.html">Egoarbitza</a>ko ibilbideak eta <a href="aixolaintxorta.html">Aixola, Santama&ntilde;azar, Erdella, Intxorta eta Egoarbitza</a>koak igotzen duten gailur bera da, bakoitza bere aldetik iristen den arren.',
-    'Bajamos unos metros hasta la <b>Borda Eguaspe</b>, en el kil&oacute;metro 9,8, y desde ah&iacute; empieza un descenso largo hacia el oeste. Son m&aacute;s de dos kil&oacute;metros perdiendo altura hasta la <b>presa de Aixola</b>, en el kil&oacute;metro 12 y a 317 m, el mismo embalse del que sale la ruta de <a href="aixola.html">Aixola</a>.':
-        'Metro batzuk jaisten gara <b>Borda Eguaspe</b>raino, 9,8 kilometroan, eta handik mendebalderanzko jaitsiera luzea hasten da. Bi kilometro baino gehiago dira altuera galtzen <b>Aixolako presa</b>raino, 12. kilometroan eta 317 metrotan, <a href="aixola.html">Aixola</a>ko ibilbidea ateratzen den urtegi bera.',
-    'Y vuelta a empezar: desde la presa arranca la segunda subida grande, por Berrenguren y Zabaldiak. En el kil&oacute;metro 15,5 estamos en <b>Santamari&ntilde;azar</b> (672 m), donde est&aacute;n la cruz de piedra y el monolito de madera, con el valle y los montes del Duranguesado delante.':
-        'Eta berriro hasi: presatik bigarren igoera handia abiatzen da, Berrenguren eta Zabaldiak zeharkatuz. 15,5 kilometroan <b>Santamari&ntilde;azar</b>ren gaude (672 m), harrizko gurutzea eta egurrezko monolitoa dauden lekuan, harana eta Durangaldeko mendiak aurrean ditugula.',
-    'Desde la cruz empieza la bajada final. El camino va perdiendo altura hacia el noroeste por Aginaga, Ai&ntilde;abar y Urizarburu.':
-        'Gurutzetik aurrera azken jaitsiera hasten da. Bideak altuera galtzen du ipar-mendebalderantz, Aginaga, Ai&ntilde;abar eta Urizarburutik.',
-    'En el kil&oacute;metro 18,1 llegamos a la <b>ermita de San Lorenzo de Urizar</b>, a 274 m, y ya solo quedan kil&oacute;metro y medio largo de bajada hasta el pueblo. Entramos en <b>Zaldibar</b> pasando junto al convento de las Carmelitas Descalzas y cerramos el c&iacute;rculo en la plaza del ayuntamiento, el mismo punto del que salimos.':
-        '18,1 kilometroan <b>Urizarko San Lorentzo baselizara</b> iristen gara, 274 metrotan, eta kilometro eta erdi luze bat baino ez zaigu geratzen herriraino jaisteko. <b>Zaldibar</b>ren sartzen gara Karmeldar Oinutsen komentuaren ondotik, eta udaletxeko plazan ixten dugu zirkulua, atera ginen puntu berean.',
-    'Un circuito corto en distancia pero exigente en desnivel, con dos subidas muy marcadas y dos cimas de verdad. La organizaci&oacute;n anunci&oacute; aquella primera edici&oacute;n con 20 km y 1.300 m de desnivel, con salida a las diez de la ma&ntilde;ana; las cifras de esta ficha son las que da el track GPX de la carrera. Las ediciones siguientes cambiaron el recorrido y lo partieron en dos, uno de 19 km y otro de 14 km con unos 750 m, los dos con salida y llegada en el ayuntamiento.':
-        'Distantzian zirkuitu laburra baina desnibelean gogorra, oso markatutako bi igoerarekin eta benetako bi gailurrekin. Antolakuntzak 20 kilometro eta 1.300 metroko desnibela iragarri zituen lehen edizio hartarako, goizeko hamarretan irteera; fitxa honetako zenbakiak lasterketaren GPX trackak ematen dituenak dira. Hurrengo edizioek ibilbidea aldatu eta bitan banatu zuten, bata 19 kilometrokoa eta bestea 14 kilometro eta 750 bat metrokoa, biak udaletxean irten eta amaituta.',
+    'alt="La cruz de Santama&ntilde;azar entre la niebla, con dos monta&ntilde;eros junto a ella"':
+        'alt="Santama&ntilde;azarko gurutzea lainoen artean, bi mendizale ondoan"',
+    'alt="El arco de salida del Zaldutrail en la plaza de Zaldibar, con el reloj a cero y la ikurri&ntilde;a al fondo"':
+        'alt="Zaldutrail-eko irteerako arkua Zaldibarko plazan, erlojua zeroan eta ikurri&ntilde;a atzealdean"',
+    'alt="Un corredor con el dorsal 2 subiendo por un sendero entre helechos y pinos"':
+        'alt="Korrikalari bat 2 dortsalarekin, bidexka batetik gora, iratzeen eta pinuen artean"',
+    'alt="Tres corredores en la cima de Egoarbitza, uno de ellos subido al v&eacute;rtice geod&eacute;sico"':
+        'alt="Hiru korrikalari Egoarbitzako gailurrean, haietako bat erpin geodesikoaren gainean"',
+    'alt="Llegada a meta bajo el arco de Zaldibar, con el reloj en 2:34:47 y un ni&ntilde;o corriendo al lado"':
+        'alt="Helmugaratzea Zaldibarko arkupean, erlojua 2:34:47an eta ume bat alboan korrika"',
+    'Este es el <b>recorrido largo del Zaldutrail</b>, la carrera de monta&ntilde;a que organiza el Zaldua Mendi Taldea en Zaldibar; el track es el de la primera edici&oacute;n, la del 30 de septiembre de 2023. Son 19,62 km con 1.178 m de desnivel, repartidos en <b>dos subidas grandes y seguidas</b>: primero Egoarbitza, de 182 m en Eitzaga a 723 m en la cima, y despu&eacute;s Santama&ntilde;azar, de 317 m en la presa de Aixola a 672 m. Fuera de carrera se puede hacer andando en una jornada larga, y quien busque algo m&aacute;s corto tiene el otro recorrido de la prueba, de 14 km y unos 750 m.':
+        'Hau <b>Zaldutrail-eko ibilbide luzea</b> da, Zaldua Mendi Taldeak Zaldibarren antolatzen duen mendi lasterketa; tracka lehen edizioarena da, 2023ko irailaren 30ekoa. 19,62 km dira, 1.178 metroko desnibelarekin, <b>bi igoera handi eta jarraitutan</b> banatuta: lehenengo Egoarbitza, Eitzagako 182 metrotik gailurreko 723ra, eta gero Santama&ntilde;azar, Aixolako presako 317 metrotik 672ra. Lasterketatik kanpo oinez egin daiteke egun luze batean, eta zerbait laburragoa nahi duenak probaren beste ibilbidea du, 14 kilometro eta 750 bat metrokoa.',
+    'La Zaldutrail arranca en la plaza del <b>Ayuntamiento</b>. Desde allí salimos hacia el este, atravesamos el polígono y seguimos carretera arriba en dirección a <b>Goierri</b>. A los pocos metros dejamos el asfalto y nos metemos en una pista; ahí empieza el monte de verdad.':
+        'Zaldutrail <b>Udaletxeko plaza</b>tik hasten da. Handik ekialderantz abiatu, industrialdea zeharkatu eta <b>Goierri</b>rako errepidean gora jarraitzen dugu. Metro gutxira, asfaltoa utzi eta pista batean sartzen gara; hortxe hasten da benetako mendia.',
+    'Las pistas se convierten en sendero, y volvemos a enlazar con otra pista más ancha. La subida progresiva calienta el cuerpo, y en el kilómetro 2,6 llegamos al primer alto: 435 metros. De aquí hacia abajo, bajada rápida.':
+        'Pistak bidexka bihurtzen dira, eta berriro pista zabalago batera lotzen gara. Igoera progresiboak gorputza berotzen du, eta 2,6 kilometroan lehen tontortxora iristen gara: 435 metro. Hemendik behera, jaitsiera azkarra dator.',
+    'Perdiendo altura llegamos a <b>Eitzaga</b>, en el kilómetro 5,2, a unos 182 metros. Es el punto más bajo del recorrido y un buen sitio para tomar aire: a partir de aquí vienen las dos grandes subidas del día.':
+        'Jaitsieran behera eginda, <b>Eitzaga</b>ra iristen gara, 5,2 kilometroan, 182 metro ingurura. Ibilbideko punturik baxuena da, eta atseden hartzeko leku aproposa: hemendik aurrera datoz eguneko bi igoera handiak.',
+    'En Eitzaga giramos a la derecha y seguimos hacia <b>Sallabente</b>. Pasamos por debajo del túnel de la autopista y nos desviamos a la izquierda, dejando la carretera. Desde ahí empezamos a ganar altura por una pista ancha que poco a poco se convierte en sendero. La subida se endurece, y en el último tramo la cuesta es tiesa, de las de apretar los dientes.':
+        'Eitzagan eskuinera biratu eta <b>Sallabente</b>rantz jarraitzen dugu. Autopistako tunelaren azpitik pasatu eta ezkerrera desbideratzen gara, errepidea utzita. Hortik aurrera, pista zabaletik altuera irabazten hasten gara, eta pixkanaka bidexka bihurtzen da. Igoerak gogortzen du, eta azken zatian aldapa tentea da, hortzak estutzeko modukoa.',
+    'Con el último esfuerzo, en el kilómetro 9,4, llegamos a <b>Egoarbitza</b>: 723 metros, el punto más alto de la Zaldutrail. En la cima están el vértice geodésico y el buzón metálico con forma de seta. Si el día está claro, se ven el embalse de Aixola y los montes del entorno.':
+        'Azken ahaleginarekin, 9,4 kilometroan, <b>Egoarbitza</b>ra iristen gara: 723 metro, Zaldutraileko punturik altuena. Gailurrean erpin geodesikoa eta perretxiko formako postontzi metalikoa daude. Eguna garbi bada, Aixolako urtegia eta inguruko mendiak ikusgarri daude.',
+    'Desde la cima viene una bajada larga, y en el kilómetro 12 llegamos al <b>embalse de Aixola</b>, a 317 metros de altitud. Este tramo sirve para recuperar el aire antes de empezar la segunda gran subida.':
+        'Gailurretik jaitsiera luzea dator, eta 12 kilometroan <b>Aixolako urtegi</b>ra iristen gara, 317 metroko altueran. Zati honek arnasa berreskuratzeko balio du, bigarren igoera handia hasi aurretik.',
+    'Cruzamos el embalse y otra vez para arriba. Los kilómetros están acumulados y la subida vuelve a exigir. En el kilómetro 15,5 llegamos a la cima de <b>Santamañazar</b>, a unos 672 metros. Allí están la cruz de piedra y el monolito de madera, y delante se abre el valle del Duranguesado.':
+        'Urtegia zeharkatu eta berriro gora. Kilometroak pilatuta daude, eta igoerak berriro eskatzen du. 15,5 kilometroan, <b>Santamañazarre</b> gailurrera iristen gara, 672 metro ingurura. Han harrizko gurutzea eta zurezko monolitoa daude, eta Durangaldeko harana zabaltzen da aurrean.',
+    'Dejamos Santamañazar y bajamos hacia Zaldibar. En el kilómetro 18,1 cruzamos el barrio de <b>San Lorenzo</b>, a unos 274 metros. Desde aquí entramos en el pueblo, y la recta final avisa de que la meta está cerca.':
+        'Santamañazarre utzi eta Zaldibarrerantz jaisten gara. 18,1 kilometroan, <b>San Lorentzo</b> auzoa zeharkatzen dugu, 274 metro ingurura. Hemendik aurrera, herrira sartzen gara, eta azken zuzenak helmuga gertu dagoela adierazten du.',
+    'Hechos los últimos metros, volvemos a la plaza del Ayuntamiento. La Zaldutrail no es larga en distancia, pero es dura en desnivel y exigente en cambios de ritmo. Las dos grandes subidas marcan la carrera, y la bajada de Aixola da la oportunidad de recuperar fuerzas. Al final, la cosa no es completar kilómetros: es gestionar las fuerzas y saber disfrutar del monte.':
+        'Azken metroak eginda, Udaletxeko plazara itzultzen gara. Zaldutrail ez da distantziaz luzea, baina desnibelean gogorra eta erritmo-aldaketetan eskatzailea. Bi igoera handiek markatzen dute lasterketa, eta Aixolako jaitsierak indarrak berreskuratzeko aukera ematen du. Azkenean, kontua ez da kilometroak osatzea: indarrak kudeatzea eta mendiaz gozatzen jakitea da.',
 }
 
 PAGE_STRINGS = {
