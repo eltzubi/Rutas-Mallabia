@@ -171,9 +171,14 @@
     var caja2 = document.getElementById('weatherLocal');
     if (!caja2 || !xml) return;
     var lengua = document.documentElement.lang === 'eu' ? 'eu' : 'es';
+    // Solo el de hoy. Entraban hoy y manana y eran dos parrafos largos
+    // debajo de cada ficha; el autor dijo «recorta». El de manana sigue
+    // llegando en el mismo fichero, asi que volver a ponerlo es cambiar
+    // este 1 por un 2.
+    var DIAS_LOCAL = 1;
     var dias = xml.getElementsByTagName('forecast');
     var puestos = 0;
-    for (var i = 0; i < dias.length && puestos < 2; i++) {
+    for (var i = 0; i < dias.length && puestos < DIAS_LOCAL; i++) {
       var cual = dias[i].getAttribute('forecastDay');
       var d = dias[i].getElementsByTagName('description')[0];
       var e = d && d.getElementsByTagName(lengua)[0];

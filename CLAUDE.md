@@ -898,6 +898,9 @@ leyendo sus webs:
   `opendata.euskadi.eus/contenidos/prevision_tiempo/met_forecast/opendata/met_forecast.xml`, que
   responde `Access-Control-Allow-Origin: *` y se actualiza a las 06:00. Trae el texto de la
   prevision **en castellano y en euskera**, escrito por quien pronostica este valle.
+- **Solo se enseña el de hoy.** Entraban hoy y manana y eran dos parrafos largos debajo de cada
+  ficha; el autor dijo «recorta». El de manana sigue llegando en el mismo fichero: volver a
+  ponerlo es cambiar `DIAS_LOCAL` de 1 a 2 en `src/js/weather.js`.
 - **Pero no sustituye a Open-Meteo**: solo da **hoy y manana**, sin probabilidad de lluvia, y sus
   temperaturas son de seis ciudades (Bilbao, Donostia, Vitoria, Pamplona, Mondragon, Laguardia),
   ninguna de por aqui. Por eso se **suma** debajo en vez de reemplazar la tira de cuatro dias.
