@@ -673,11 +673,20 @@ que señala una zona y no un punto exacto.
 saber si estoy en Mallabia, si estoy en Durango o dónde, cuando tengo el zoom aumentado». Con el
 mapa muy cerca sólo se ven dos trazados sin nombre y el fondo no siempre rotula el pueblo.
 
-Debajo del mapa van las rutas que caben en lo que se está mirando, **con foto, título, distancia y
-desnivel**, y **cambian solas al mover o al acercar**. Las pidió así: «si son 7, aunque aparezcan
+Debajo del mapa van **las rutas cuyo kilómetro se está viendo** —no todas las que caen en
+pantalla—, **con foto, título, distancia y desnivel**, y **cambian solas al mover o al acercar**.
+Lo corrigió el autor: «cuando aparecen los kilómetros de la ruta, si me aparecen 2 de ellos que
+aparezcan 2 plantillas de esas rutas». Las que todavía están dentro de un grupo no se ven una a
+una, así que tampoco tienen ficha: al acercarse, el grupo se abre, salen sus kilómetros y salen sus
+fichas. Medido, la correspondencia es exacta: 1 pastilla → 1 ficha a z10, 4 → 4 a z13, 5 → 5 a z14,
+2 → 2 a z15. Las pidió así: «si son 7, aunque aparezcan
 las primeras 4, las demás se quedan ocultas abajo» — en columna, con cuatro a la vista y el resto
-desplazándose. Tocar una abre su ficha, igual que tocar su pastilla de kilómetros. Comprobado: 12
-al abrir (el tope), **5 en Zengotitagane a z14, 1 en Markina a z13** y ninguna donde no hay rutas.
+desplazándose. **Tocar una encuadra la ruta entera y abre su ficha**, igual que tocar su pastilla:
+medido, de zoom 15 pasa a 12 para que quepa completa. Eso responde a «¿pueden aparecer las rutas
+enteras?» sin añadir nada.
+
+**Y los trazados NO se quitan del mapa.** Se planteó un mapa de sólo kilómetros y el autor lo
+paró: «yo no he dicho que no aparezcan los trazados». No volver a proponerlo.
 
 Cómo está hecho:
 

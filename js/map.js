@@ -1853,7 +1853,13 @@
         e2.style.pointerEvents = ver ? '' : 'none';
       });
       pintaGrupos(grupos, hrefs);
-      pintaCercanas(hrefs);
+      // La tira enseña **las rutas cuyo kilometro se esta viendo**, no todas
+      // las que caen en pantalla. Lo corrigio el autor: «cuando aparecen los
+      // kilometros de la ruta, si me aparecen 2 de ellos que aparezcan 2
+      // plantillas de esas rutas». Las que estan metidas en un grupo todavia
+      // no se ven una a una, asi que tampoco tienen ficha: al acercarse el
+      // grupo se abre, salen sus kilometros y salen sus fichas.
+      pintaCercanas(hrefs.filter(function(h){ return sueltas[h] === true; }));
       repositionLabels();
     }
 
