@@ -6788,6 +6788,10 @@ ZENGOTITAMAGUNA = {
 }
 
 ZALDUTRAIL = {
+    'alt="Un corredor subiendo entre helechos por la ladera, con una baliza naranja marcando el paso"':
+        'alt="Korrikalari bat iratzeen artean aldapan gora, baliza laranja batek bidea markatzen duela"',
+    'alt="Varios corredores encadenados por la cresta rocosa de la subida a Egoarbitza, con una baliza naranja y los montes al fondo entre nubes"':
+        'alt="Hainbat korrikalari Egoarbitzarako igoerako gailur-lerro harritsuan, baliza laranja bat eta mendiak atzean hodeien artean"',
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Zaldutrail<br><em>una ruta exigente por los montes de Zaldibar</em></h1>':
