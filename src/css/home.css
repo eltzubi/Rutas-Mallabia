@@ -640,8 +640,49 @@
    OpenStreetMap y de quien sirve las teselas -- se corren hacia arriba lo
    que mide el panel, con la altura que le pasa map.js en --ficha-alto. */
 [data-map-src].con-ficha .leaflet-bottom{
-  bottom:var(--ficha-alto, 0px);
+  bottom:calc(var(--ficha-alto, 0px) + var(--ficha-hueco, 0px));
   transition:bottom .25s ease;
+}
+
+/* PANTALLA COMPLETA EN EL MOVIL. Lo pidio el autor: «en el movil tambien lo
+   quiero a pantalla completa». Con una ruta abierta, la caja se pone fija
+   ocupando la ventana entera y se esconden la cabecera y la barra de abajo;
+   la ficha flota encima con margen, para que se vea mapa por los cuatro
+   lados. Se sale con la equis o tocando el mapa, que ya cerraba la ficha.
+
+   Medido en 390x844, mapa visible sobre el total de la pantalla:
+
+     asi, con la ficha flotando ...................... 84 %
+     igual pero la ficha pegada abajo ................ 85 %
+     solo sin cabecera, con la barra ................. 78 %
+     como estaba (caja de 390x711) ................... 69 %
+     la ficha en un lateral, como AllTrails .......... 52 %
+
+   El lateral se volvio a medir aqui a peticion del autor y vuelve a salir el
+   peor: 172 px de panel sobre 390 se comen casi la mitad de la pantalla. En
+   el ordenador si gana, y ahi esta puesto.
+
+   Se usa position:fixed y no el alto en linea que escribe map.js en el
+   ordenador: asi no hay que calcular ningun desplazamiento para pegar la
+   caja al borde de arriba, que con la cabecera escondida la pagina se
+   recoloca sola. */
+@media (max-width:767px){
+  body.mapa-pleno{ overflow:hidden; }
+  body.mapa-pleno .masthead,
+  body.mapa-pleno .finder-toolbar{ display:none !important; }
+  .route-map-box.ficha-pleno{
+    position:fixed; inset:0; z-index:200;
+    width:auto !important; height:auto !important;
+    margin:0 !important; aspect-ratio:auto !important;
+    border:0; border-radius:0;
+  }
+  .route-map-box.ficha-pleno .route-info-panel{
+    left:10px; right:10px; bottom:10px;
+    border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+  }
+  /* los creditos suben lo que mide la ficha mas su margen */
+  .route-map-box.ficha-pleno [data-map-src].con-ficha{ --ficha-hueco:10px; }
 }
 .route-info-panel{
   position:absolute; left:0; right:0; bottom:0; z-index:1100;

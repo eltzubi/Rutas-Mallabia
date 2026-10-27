@@ -426,10 +426,29 @@ la barra de desplazamiento. Lo pidio el autor dos veces y con las mismas palabra
 la pantalla entera», «pantalla completa».
 
 **Lo que cambia con el ancho es solo donde va la ficha**: de 768 px en adelante a la izquierda, de
-arriba abajo, 320 px (280 entre 768 y 1023); por debajo, abajo y escueta, como el autor eligio en
-octubre. Medido: el mapa libre pasa del 37 % al **82 % en un movil de 393 px** (la caja de 311x311
-a 390x711) y del 74 % al 75 % en 1280, pero ahi lo que cuenta es el absoluto — de 442.000 a
-792.000 px² de mapa, casi el doble.
+arriba abajo, 320 px (280 entre 768 y 1023); por debajo, flotando sobre el mapa con 10 px de margen
+y esquinas redondeadas, y escueta, como el autor eligio en octubre.
+
+**En el movil la caja va `position:fixed; inset:0`** y se esconden la cabecera y la barra de abajo
+(`body.mapa-pleno`, `.route-map-box.ficha-pleno`), no el alto en linea que escribe `map.js` para el
+ordenador: asi no hay que calcular ningun desplazamiento para pegarla al borde de arriba —con la
+cabecera escondida la pagina se recoloca sola— y la caja sigue a la ventana visible cuando el
+navegador del movil esconde o saca su barra de direcciones. Se sale con la equis o tocando el mapa.
+
+Medido en 390x844, el porcentaje de **pantalla** que es mapa visible:
+
+| | |
+|---|---|
+| **asi, con la ficha flotando** | **86 %** |
+| la ficha pegada abajo, sin margen | 85 % |
+| solo sin cabecera, con la barra | 78 % |
+| como estaba (caja de 390x711 bajo la cabecera) | 69 % |
+| la ficha en un lateral, como AllTrails | **52 %** |
+
+**El lateral se volvio a medir en el movil, ya con pantalla completa y a peticion del autor, y
+vuelve a salir el peor**: 172 px de panel sobre 390 se comen casi la mitad. En el ordenador si gana.
+En 1280 el porcentaje apenas se mueve (74 → 75 %), pero ahi lo que cuenta es el absoluto: de
+442.000 a **792.000 px² de mapa**, casi el doble.
 
 Tres cosas que hay que mover con ella y que costaron una vuelta:
 
@@ -451,7 +470,7 @@ en el idioma correcto y el navegador no descarga nada nuevo. Son **dos versiones
 (`breve` y `amplia`) y manda el ancho; si la ventana cruza los 768 px con la ficha abierta, se
 cambia de una a otra sin cerrarla.
 
-En el movil la ficha sigue siendo la escueta que el autor eligio en octubre, con las dos ganadoras
+La ficha del movil sigue siendo la escueta que el autor eligio en octubre, con las dos ganadoras
 de entonces (que por si solas daban **78 % libre en un movil de 393 px**):
 
 - **Sin foto ni perfil en la ficha** (`src/js/map.js`): solo nombre, datos y enlace. La foto se

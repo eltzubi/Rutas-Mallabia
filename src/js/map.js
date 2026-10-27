@@ -511,6 +511,12 @@
       marcoMapa.style.height =
         Math.max(300, window.innerHeight - CABECERA_FICHA - abajo - 14) + 'px';
     }
+    function ponPleno(si){
+      if (!marcoMapa) return;
+      marcoMapa.classList.toggle('ficha-pleno', !!si);
+      document.body.classList.toggle('mapa-pleno', !!si);
+      if (si) sueltaPantallaEntera();   // manda el CSS, no los estilos en linea
+    }
     function sueltaPantallaEntera(){
       if (!marcoMapa) return;
       marcoMapa.style.aspectRatio = '';
@@ -529,7 +535,8 @@
           if (!panel || !panel.classList.contains('open')) return;
           var lat = esLateral();
           el.classList.toggle('ficha-lateral', lat);
-          aPantallaEntera();
+          ponPleno(!lat);
+          if (lat) aPantallaEntera();
           if (fichaHtml) {
             var quiere = lat ? fichaHtml.amplia : fichaHtml.breve;
             if (panelBody.innerHTML !== quiere) panelBody.innerHTML = quiere;
@@ -568,6 +575,7 @@
       if (marcoMapa && marcoMapa.classList.contains('ficha-abierta')) {
         marcoMapa.classList.remove('ficha-abierta');
       }
+      ponPleno(false);
       sueltaPantallaEntera();
       if (botonArriba) botonArriba.style.display = '';
       map.invalidateSize({ animate: false });
@@ -659,13 +667,21 @@
         // cabecera pegajosa (y, en el movil, sobre la barra fija de abajo).
         // Lo que cambia con el ancho es donde va la ficha: a un lado de 768
         // en adelante, y abajo por debajo.
-        aPantallaEntera();
+        // En el movil, pantalla completa de verdad: la caja se pone fija
+        // ocupando la ventana entera y se esconden la cabecera y la barra de
+        // abajo (lo hace el CSS con estas dos clases). Asi no hay que
+        // calcular ningun desplazamiento. En el ordenador se queda la caja a
+        // lo ancho bajo la cabecera, con la ficha a un lado.
+        ponPleno(!lateral);
+        if (lateral) {
+          aPantallaEntera();
+          window.scrollTo({
+            top: Math.max(0, marcoMapa.getBoundingClientRect().top +
+                             window.pageYOffset - CABECERA_FICHA),
+            behavior: reduceMovimiento() ? 'auto' : 'smooth'
+          });
+        }
         if (botonArriba) botonArriba.style.display = 'none';
-        window.scrollTo({
-          top: Math.max(0, marcoMapa.getBoundingClientRect().top +
-                           window.pageYOffset - CABECERA_FICHA),
-          behavior: reduceMovimiento() ? 'auto' : 'smooth'
-        });
         map.invalidateSize({ animate: false });
         panelHeight = panel.getBoundingClientRect().height;
         marcaAltoFicha(panelHeight);
