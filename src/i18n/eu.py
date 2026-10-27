@@ -827,7 +827,7 @@ HOME = {
     # zaldutrail card
     'alt="Amanecer desde Egoarbitza sobre un mar de nubes, con una persona junto al buz&oacute;n de la cima"':
         'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko postontziaren ondoan"',
-    '<h3 class="route-card-name">Zaldutrail: por los montes de Zaldibar, dura y hermosa</h3>':
+    '<h3 class="route-card-name">Zaldutrail: una ruta exigente por los montes de Zaldibar</h3>':
         '<h3 class="route-card-name">Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra</h3>',
     '<p class="route-card-desc">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
         '<p class="route-card-desc">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santama&ntilde;azar eta San Lorentzo zeharkatuz</p>',
@@ -6790,7 +6790,7 @@ ZENGOTITAMAGUNA = {
 ZALDUTRAIL = {
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Egoarbitza · Santama&ntilde;azar</span><span class="sep">/</span><span>Zirkuitua</span></p>',
-    '<h1>Zaldutrail<br><em>por los montes de Zaldibar, dura y hermosa</em></h1>':
+    '<h1>Zaldutrail<br><em>una ruta exigente por los montes de Zaldibar</em></h1>':
         '<h1>Zaldutrail<br><em>Zaldibarko mendietan barrena, gogorra eta ederra</em></h1>',
     '<p class="full-name">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
         '<p class="full-name">Zirkuitua Zaldibartik, Goierri, Eitzaga, Egoarbitza, Aixolako presa, Santama&ntilde;azar eta San Lorentzo zeharkatuz</p>',
