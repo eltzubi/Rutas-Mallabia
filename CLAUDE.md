@@ -346,12 +346,27 @@ mientras la capa nueva todavía está cargando. Se compararon dos sobre la ruta 
   Iturrizu, Zengotitagana, Kurutzetorri, Olatzamendi, Gaztelumendi, Osmagain, Sallobente, Besoita,
   Andikoa, Momoitio, Galarraga…— más los arroyos y los números de carretera.
 
-Se temía que pintara las carreteras de naranja y compitiera con los tracks de bici, que es por lo
-que se descartó OpenTopoMap; pero **sobre la foto las saca en amarillo**, y el track va más grueso y
-con flechas, así que se distinguen. Comprobado en la página de verdad y no en una tesela suelta.
-Pesa unos 10 kB por tesela y no añade ningún dominio nuevo. Cubre las cuatro esquinas del conjunto;
-la del noreste devuelve una tesela vacía de 192 bytes porque es **mar abierto al norte de Mutriku**,
-y es correcto que lo haga.
+**Y al final se usan los dos, uno en cada mapa.** Sobre una ficha, con un solo track, el híbrido es
+el bueno: las carreteras las saca en amarillo, el track va más grueso y con flechas, y se
+distinguen. **Sobre la portada no**: con las 66 rutas a la vez, las carreteras amarillas se enredan
+con los trazados naranjas y verdes — «se lía buena», dijo el autor con la pantalla delante. Así que
+la portada lleva el de Esri (nombres y nada más) y la ficha y `agua.html` el de Euskadi. `agua.html`
+no dibuja ningún track, solo los puntos de agua, así que ahí no hay nada con lo que enredarse.
+
+Lo que se pierde en la portada: los rótulos de Esri **no están en euskera** (dice «Guipúzcoa», no
+«Gipuzkoa»). Es el mismo caso que el IGN y CyclOSM, que tampoco lo están.
+
+El híbrido pesa unos 10 kB por tesela y no añade ningún dominio nuevo. Cubre las cuatro esquinas del
+conjunto; la del noreste devuelve una tesela vacía de 192 bytes porque es **mar abierto al norte de
+Mutriku**, y es correcto que lo haga.
+
+**La línea de créditos ya no es un banderín blanco.** Con el satélite citando a Esri y a geoEuskadi
+se iba a **dos líneas** y cruzaba el mapa de lado a lado (390x34 px, medido en un móvil), con el
+fondo blanco al 80 % que trae Leaflet de serie — en una web oscura, un cartel. No se pueden
+esconder, son la atribución de quien sirve las teselas, así que se les puso el color de la web, 10,5
+px y una esquina redondeada, y los textos se acortaron a lo que cada licencia pide de verdad. Los
+rótulos de Esri van **sin `attribution` propia**: la foto de debajo ya cita a Esri y repetido salía
+«© Esri, Maxar, © Esri». Ahora son 125x15 px y una línea.
 
 **Cuatro botones ya no caben en una fila estrecha, y la pastilla pasa a dos filas.** A 320 px la
 pastilla mide 142 y el texto 182; en una ficha, con «Pendiente», tampoco entra a 360 ni a 390. Antes
@@ -385,8 +400,8 @@ sendero dibujado con un trazo distinto según lo que sea. Ningún otro junta las
 | **Hike & Bike Map** | **muerto**: ni `tiles.wmflabs.org` ni `a.tiles.hikebikemap.org` responden |
 | **Strava / Garmin (mapa de calor)** | **no se puede**: desde 2018 sus teselas exigen sesión iniciada y sus condiciones no permiten usarlas fuera de su web. No es cuestión de buscar la vuelta |
 
-`scripts/check_site.py` exige que `map.js` declare **cinco** `L.tileLayer` —cuatro de fondo más los
-rótulos del satélite— y que `js/agua.js` lleve las mismas cinco URL (su copia existe porque `map.js`
+`scripts/check_site.py` exige que `map.js` declare **seis** `L.tileLayer` —cuatro de fondo más los
+dos juegos de rótulos del satélite— y que `js/agua.js` lleve las mismas seis URL (su copia existe porque `map.js`
 son 1.100 líneas atadas a los tracks). `test_ui.cjs` comprueba la lista de botones y que la que abre
 es la segunda, en la portada y en una ficha. **Al añadir o quitar una capa hay que tocar cuatro
 sitios**: `map.js`, `agua.js`, el número de `check_site.py` y las tres listas de `test_ui.cjs`.

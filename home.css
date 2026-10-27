@@ -639,6 +639,20 @@
    tapaba. Y como los creditos no se pueden esconder -- son la atribucion de
    OpenStreetMap y de quien sirve las teselas -- se corren hacia arriba lo
    que mide el panel, con la altura que le pasa map.js en --ficha-alto. */
+/* Los creditos de Leaflet venian con su fondo blanco al 80 %, que en una web
+   oscura es un banderin que canta -- y con el satelite, que cita a Esri y a
+   geoEuskadi, se iba a DOS lineas y cruzaba el mapa de lado a lado (390 px de
+   ancho y 34 de alto, medido en un movil). No se pueden esconder: son la
+   atribucion de quien sirve las teselas. Se les pone el color de la web, se
+   bajan de tamano y se redondea la esquina, y los textos se acortaron a lo
+   que cada licencia pide de verdad. Ahora caben en una linea. */
+.leaflet-control-attribution{
+  background:color-mix(in srgb, var(--ground) 82%, transparent) !important;
+  color:var(--ink-dim); font-size:10.5px; line-height:1.45;
+  padding:2px 7px; border-radius:8px 0 0 0;
+}
+.leaflet-control-attribution a{ color:var(--ink-dim); }
+
 [data-map-src].con-ficha .leaflet-bottom{
   bottom:calc(var(--ficha-alto, 0px) + var(--ficha-hueco, 0px));
   transition:bottom .25s ease;

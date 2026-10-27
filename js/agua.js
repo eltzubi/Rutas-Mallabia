@@ -69,7 +69,7 @@
   });
   var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 19,
-    attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
+    attribution: '&copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a>, Maxar'
   });
   var topoLayer = L.tileLayer('https://www.ign.es/wmts/mapa-raster?layer=MTN&style=default' +
     '&tilematrixset=GoogleMapsCompatible&Service=WMTS&Request=GetTile&Version=1.0.0' +
@@ -120,7 +120,19 @@
     'U11/WMTS_HIBRIDO/MapServer/WMTS/tile/1.0.0/U11_WMTS_HIBRIDO/default/' +
     'GoogleMapsCompatible/{z}/{y}/{x}.png', {
     maxZoom: 18, zIndex: 300,
-    attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> &mdash; Eusko Jaurlaritza / Gobierno Vasco'
+    attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> / Gobierno Vasco'
+  });
+  // Y la alternativa, que es la que usa la PORTADA: Esri «World Boundaries
+  // and Places», solo nombres y sin pintar una sola carretera. Con las 66
+  // rutas a la vez sobre la foto, las carreteras amarillas del hibrido se
+  // enredaban con los trazados naranjas y verdes -- «se lia buena», dijo el
+  // autor con la pantalla delante. En una ficha hay un solo track y ahi si
+  // manda el de Euskadi, que trae treinta veces mas nombres.
+  var nombresEsri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' +
+    'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+    // sin attribution: la foto de debajo ya cita a Esri, y repetido salia
+    // «© Esri, Maxar, © Esri».
+    maxZoom: 19, zIndex: 300
   });
   var layerDefs = [
     { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
