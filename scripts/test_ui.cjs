@@ -89,7 +89,7 @@ function env(page='index.html', storage=new Map()) {
   const L={
     // El stub guarda los manejadores y deja fijar el zoom, para poder probar
     // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
-    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
+    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},containerPointToLatLng(){return [0,0];},getBounds(){return {pad(){return this;},contains(){return true;}};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
     // El stub cuenta las capas de teselas que tiene puesto el mapa: asi se
     // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
     // fondo y no en su lugar.
@@ -101,7 +101,7 @@ function env(page='index.html', storage=new Map()) {
     // La capa de pendiente es un grupo de trazos sueltos.
     layerGroup(){return {trazos:[],addLayer(){return this;},addTo(m){m.capas=(m.capas||0)+1;return this;}};},
     circleMarker(){return {addTo(){return this;},setLatLng(){},setStyle(){}};},
-    divIcon:o=>o,DomEvent:{stopPropagation(){}}
+    divIcon:o=>o,DomEvent:{stopPropagation(){}},point:(x,y)=>({x,y}),latLngBounds:p=>({pad(){return this;}}),layerGroup(){return {_c:[],addLayer(l){this._c.push(l);return this;},addTo(m){return this;}};}
   };
   // La ficha saca su slug de location.pathname y comparte location.href; sin
   // esto el banco de pruebas no tiene location y app.js revienta al cargarse.

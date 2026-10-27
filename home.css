@@ -634,6 +634,34 @@
   cursor:pointer;
 }
 .route-dist-label-inner:hover{ border-color:var(--teal); color:var(--teal); }
+/* La pastilla de un grupo: «18 rutas». Va mas marcada que una de kilometros
+   porque no es un dato, es un boton -- al tocarla el mapa se acerca a las
+   que la forman. Se dibuja cuando varias se pisan; medidos los puntos medios
+   de las 66 rutas, al zoom de apertura caben todos en 145x177 px, asi que
+   sin agrupar serian 717 parejas encima unas de otras. */
+/* La base nace en opacity:0 y la sube map.js solo en las de kilometros; la
+   de grupo la pone el propio agrupador, asi que se queda visible de serie. */
+.route-group-label{ opacity:1; }
+.route-group-label .route-dist-label-inner{
+  /* En blanco y negro a proposito, NO en naranja: en esta web el naranja es
+     «en bici» y el verde «a pie», y un grupo mezcla las dos. Es la misma
+     razon por la que la pastilla «Nueva» de la portada va en neutro. Se
+     distingue de una de kilometros por el tamaño y el peso, no por el color. */
+  background:var(--ink); color:var(--ground); border-color:var(--ink);
+  font-weight:700; padding:4px 10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+/* La pastilla de grupo se sube 16 px sobre su centro: la mas grande cae
+   justo encima de Trabakua, donde esta la marca roja de la salida, y el
+   punto quedaba clavado en medio del texto. Una pastilla de grupo señala una
+   zona, no un punto exacto, asi que moverla un poco no miente. */
+.route-group-label .route-dist-label-inner{ transform:translate(-50%, calc(-50% - 16px)); }
+.route-group-label.es-media .route-dist-label-inner{ font-size:12px; padding:5px 12px; }
+.route-group-label.es-grande .route-dist-label-inner{ font-size:13.5px; padding:7px 14px; }
+.route-group-label .route-dist-label-inner:hover{
+  color:var(--ground); filter:brightness(1.12);
+  border-color:var(--ink);
+}
 /* Por encima de los controles de Leaflet, que van en z-index 1000: con 500,
    la linea de creditos caia justo sobre el enlace «Ver ruta completa» y lo
    tapaba. Y como los creditos no se pueden esconder -- son la atribucion de

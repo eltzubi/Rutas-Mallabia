@@ -619,6 +619,56 @@ al cerrar la ficha vuelven todas. Lo pidio el autor: «quedarse solo en la ruta 
 encuadrar la ruta el mapa baja del zoom 12 no se ve ninguna, y es correcto — por debajo de ese zoom
 no hay etiquetas.
 
+**Las pastillas de kilómetros se agrupan cuando se pisan.** Idea del autor, con la pantalla de
+AllTrails delante: que el mapa de la portada sea un mapa de kilómetros por los que elegir, y que al
+tocar uno se abra esa ruta. «Los kilómetros los dejas donde están, por donde pasan» — en el punto
+medio del recorrido, no en la salida.
+
+**Por qué hacía falta agrupar, medido:** al zoom de apertura (10) los puntos medios de las 66 rutas
+caben **todos en un recuadro de 145x177 px**, y una pastilla de «32,46 km» mide 76x24. Son **717
+parejas pisándose**. No es un problema de código: las rutas viven en un valle de seis kilómetros y a
+esa escala caben en un sello. Por eso las etiquetas no salían por debajo del zoom 12.
+
+| zoom | sitio que ocupan las 66 | parejas que se pisan sin agrupar |
+|---|---|---|
+| 10 (al abrir) | 145x177 px | **717** |
+| 11 | 291x354 px | 245 |
+| 12 | 581x707 px | 69 |
+| 13 | 1163x1414 px | 23 |
+
+Con el agrupado, **cero solapamientos a cualquier zoom**: al abrir salen «38 rutas», «17 rutas»,
+«10 rutas» y un kilómetro suelto; al zoom 13, 15 grupos pequeños y 27 kilómetros sueltos. Suman
+siempre 66.
+
+Cómo está hecho, y las cuatro cosas que costaron:
+
+- **Agrupado codicioso por cercanía en píxeles** (`RADIO_GRUPO` 46) **más una segunda pasada que
+  funde los grupos cuyas pastillas aún se tocarían** (84x28 px). Sin esa segunda pasada quedaban 8
+  parejas solapadas al abrir: el radio junta *puntos*, pero lo que no puede pisarse es la *pastilla*.
+- **Se agrupa sólo lo que está en pantalla** (`map.getBounds().pad(0.15)`), y se recalcula también
+  en `moveend`. Lo pidió el autor: al moverse al norte salen las de allí. Si no, un grupo seguiría
+  diciendo «38 rutas» con cuatro en pantalla. Comprobado: en Markina salen 3 rutas, en Elorrio 7.
+- **`var grupoCapa` va declarada arriba, con el resto del estado de las etiquetas, no junto a su
+  función.** Estaba abajo con `= null`, y `updateLabelVisibility()` se llama durante el montaje,
+  **antes** de llegar a esa línea: la primera pasada creaba la capa y esa línea borraba después la
+  referencia, dejando los marcadores huérfanos para siempre. Se notó porque los grupos sumaban
+  **100 rutas** habiendo 66.
+- **`scripts/test_ui.cjs` usa un Leaflet de mentira** y no tenía `getBounds`, `containerPointToLatLng`,
+  `L.layerGroup`, `L.point` ni `L.latLngBounds`. Sin ellos el test moría con código 137 (parecía
+  falta de memoria y no lo era). Se le añadieron a la imitación, y `map.js` comprueba que existan
+  antes de usarlos.
+
+**La pastilla de grupo va en blanco y negro, no en naranja**, por la misma razón que la etiqueta
+«Nueva»: en esta web el naranja es «en bici» y el verde «a pie», y un grupo mezcla las dos. Se
+distingue de una de kilómetros por el tamaño y el peso. Crece con lo que agrupa (`es-media` a
+partir de 6, `es-grande` a partir de 20) — **esa idea sí es de Leaflet.markercluster**, pero la
+librería no se ha metido: son 66 puntos, lleva cinco años sin publicar versión y sería una
+dependencia nueva, que aquí no entra sin que lo diga el autor.
+
+**Y la salida sigue marcada en rojo, por encima de todo.** La pastilla de «38 rutas» cae justo
+sobre Trabakua: el marcador lleva `zIndexOffset: 2000` y la pastilla se sube 16 px sobre su centro,
+que señala una zona y no un punto exacto.
+
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
 zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra

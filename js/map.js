@@ -531,6 +531,13 @@
     // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
     // todas. Lo pidio el autor: «quedarse solo en la ruta limpia».
     var labelSoloHref = null;
+    // La capa de pastillas agrupadas. Va declarada AQUI y no junto a su
+    // funcion, que esta mas abajo: updateLabelVisibility() se llama durante
+    // el montaje, antes de llegar a aquella linea, y un «var x = null» alli
+    // volvia a poner la variable a cero DESPUES de que la primera pasada ya
+    // hubiera creado la capa. La referencia se perdia y los marcadores se
+    // quedaban huerfanos en el mapa: con 66 rutas salian grupos sumando 100.
+    var grupoCapa = null;
     // La caja que envuelve al mapa: es la que crece con la ficha abierta.
     // Solo existe en la portada; en una ficha de ruta no hay panel.
     var marcoMapa = el.closest ? el.closest('.route-map-box') : null;
@@ -1069,6 +1076,11 @@
       var size = data.marker.color === 'parking' ? 16 : 14;
       L.marker(data.marker.at, {
         title: el.dataset.markerTitle || '',
+        // Por encima de todo lo demas del panel de marcadores: con las
+        // pastillas agrupadas, la de «38 rutas» cae justo sobre Trabakua y
+        // tapaba la salida. El autor la quiere siempre a la vista: «la
+        // salida que siga marcada en rojo».
+        zIndexOffset: 2000,
         icon: L.divIcon({
           className: '',
           html: '<span style="display:block;width:' + size + 'px;height:' + size + 'px;' +
@@ -1554,21 +1566,168 @@
     // Solo con zoom alto (el visitante ya se ha acercado a una zona
     // concreta) se muestran las etiquetas; a la vista de conjunto quedarian
     // 46 numeros amontonados sobre Trabakua.
-    function updateLabelVisibility(){
-      var zoomOk = map.getZoom() >= LABEL_MIN_ZOOM;
-      Object.keys(hrefToLabel).forEach(function(href){
-        var labelEl = hrefToLabel[href].getElement();
-        if (!labelEl) return;
-        var show = zoomOk && labelFilterVisible[href] !== false &&
-                   (!labelSoloHref || href === labelSoloHref);
-        labelEl.style.opacity = show ? '1' : '0';
-        labelEl.style.pointerEvents = show ? '' : 'none';
+    // Las pastillas de kilometros, agrupadas cuando se pisan.
+    //
+    // Hasta ahora no salian por debajo del zoom 12, y con razon: medidos los
+    // puntos medios de las 66 rutas, al zoom de apertura (10) caben TODOS en
+    // un recuadro de 145x177 px, y una pastilla de «32,46 km» mide 76x24. Son
+    // 717 parejas pisandose. No es un problema de codigo: las rutas viven en
+    // un valle de seis kilometros y a esa escala caben en un sello.
+    //
+    //   z10  145x177 px   717 parejas se pisan
+    //   z11  291x354 px   245
+    //   z12  581x707 px    69
+    //   z13 1163x1414 px   23
+    //
+    // La salida es la que usa AllTrails y que el autor señalo en su captura:
+    // cuando varias se pisan, se juntan en una que dice cuantas hay («18
+    // rutas»), y al tocarla el mapa se acerca a ellas. Asi el mapa de
+    // conjunto ya dice algo en vez de estar mudo hasta el zoom 12.
+    var RADIO_GRUPO = 46;       // a menos de esto, dos puntos van al mismo grupo
+
+    function candidatasKm(){
+      // Las que podrian salir: ni filtradas fuera, ni tapadas por una ficha,
+      // y **dentro de lo que se esta mirando**. Lo pidio el autor: «que
+      // aparezcan las pastillas que estan en esa zona»; al moverse al norte,
+      // las de alli. Asi un grupo no se queda diciendo «38 rutas» cuando de
+      // esas 38 solo quedan cuatro en pantalla. El margen del 15 % evita que
+      // una pastilla aparezca y desaparezca al rozar el borde.
+      // getBounds/pad existen en Leaflet de verdad; la comprobacion es por si
+      // el mapa todavia no tiene vista (o por un Leaflet reducido, como el de
+      // scripts/test_ui.cjs), para no tumbar la pagina por una pastilla.
+      var caja = null;
+      if (esPortada && map.getBounds) {
+        try { caja = map.getBounds().pad(0.15); } catch (e) { caja = null; }
+      }
+      return Object.keys(hrefToLabel).filter(function(href){
+        if (labelFilterVisible[href] === false) return false;
+        if (labelSoloHref && href !== labelSoloHref) return false;
+        return !caja || !caja.contains || caja.contains(hrefToLabel[href].getLatLng());
       });
-      if (zoomOk) repositionLabels();
+    }
+
+    function agrupaKms(hrefs){
+      // agrupado codicioso por cercania en pixeles: se recorre en orden y
+      // cada una cae en el primer grupo que la acepte. Con 66 puntos es
+      // instantaneo y da grupos estables entre repintados.
+      var pts = hrefs.map(function(h){
+        return map.latLngToContainerPoint(hrefToLabel[h].getLatLng());
+      });
+      var grupos = [];
+      for (var i = 0; i < hrefs.length; i++) {
+        var metida = false;
+        for (var g = 0; g < grupos.length && !metida; g++) {
+          var dx = pts[i].x - grupos[g].x, dy = pts[i].y - grupos[g].y;
+          if (dx * dx + dy * dy < RADIO_GRUPO * RADIO_GRUPO) {
+            grupos[g].miembros.push(i);
+            // el centro se recalcula para que el grupo no se vaya con el
+            // primero que entro
+            grupos[g].x += (pts[i].x - grupos[g].x) / grupos[g].miembros.length;
+            grupos[g].y += (pts[i].y - grupos[g].y) / grupos[g].miembros.length;
+            metida = true;
+          }
+        }
+        if (!metida) grupos.push({ x: pts[i].x, y: pts[i].y, miembros: [i] });
+      }
+      // Segunda pasada: el radio de arriba junta PUNTOS, pero una pastilla
+      // «32 rutas» mide unos 76x24, asi que dos centros a 50 px todavia se
+      // pisan. Se funden los grupos cuyas pastillas se tocarian, y se repite
+      // hasta que no quede ninguno -- medido, con esto se pasa de 8 parejas
+      // solapadas a cero al zoom de apertura.
+      var ANCHO = 84, ALTO = 28, cambio = true;
+      while (cambio) {
+        cambio = false;
+        for (var a = 0; a < grupos.length && !cambio; a++) {
+          for (var c = a + 1; c < grupos.length && !cambio; c++) {
+            if (Math.abs(grupos[a].x - grupos[c].x) < ANCHO &&
+                Math.abs(grupos[a].y - grupos[c].y) < ALTO) {
+              var na = grupos[a].miembros.length, nc = grupos[c].miembros.length;
+              grupos[a].x = (grupos[a].x * na + grupos[c].x * nc) / (na + nc);
+              grupos[a].y = (grupos[a].y * na + grupos[c].y * nc) / (na + nc);
+              grupos[a].miembros = grupos[a].miembros.concat(grupos[c].miembros);
+              grupos.splice(c, 1);
+              cambio = true;
+            }
+          }
+        }
+      }
+      return grupos;
+    }
+
+    function pintaGrupos(grupos, hrefs){
+      if (grupoCapa) { map.removeLayer(grupoCapa); grupoCapa = null; }
+      var conVarias = grupos.filter(function(g){ return g.miembros.length > 1; });
+      if (!conVarias.length || !L.layerGroup || !map.containerPointToLatLng) return;
+      grupoCapa = L.layerGroup();
+      conVarias.forEach(function(g){
+        var puntos = g.miembros.map(function(i){ return hrefToLabel[hrefs[i]].getLatLng(); });
+        var cuantas = g.miembros.length;
+        var texto = cuantas + ' ' + (isEu ? 'ibilbide' : 'rutas');
+        // De Leaflet.markercluster se toma la idea, no el codigo: la pastilla
+        // crece con lo que agrupa, asi se ve de un vistazo donde esta el
+        // grueso. La libreria en si seria un canon para matar moscas -- son
+        // 66 puntos -- y lleva cinco años sin publicar version.
+        var talla = cuantas >= 20 ? ' es-grande' : (cuantas >= 6 ? ' es-media' : '');
+        var m = L.marker(map.containerPointToLatLng(L.point(g.x, g.y)), {
+          icon: L.divIcon({
+            className: 'route-dist-label route-group-label' + talla,
+            html: '<span class="route-dist-label-inner">' + texto + '</span>',
+            iconSize: null
+          }),
+          title: texto,
+          keyboard: true
+        });
+        m.on('click', function(e){
+          L.DomEvent.stopPropagation(e);
+          userMoved = true;
+          map.fitBounds(L.latLngBounds(puntos).pad(0.35), {
+            maxZoom: 15,
+            animate: !(window.matchMedia &&
+                       window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+          });
+        });
+        grupoCapa.addLayer(m);
+      });
+      grupoCapa.addTo(map);
+    }
+
+    function updateLabelVisibility(){
+      var hrefs = candidatasKm();
+      // En una ficha de ruta hay una sola etiqueta: ahi no hay nada que
+      // agrupar y se deja como estaba.
+      if (!esPortada) {
+        var zoomOk = map.getZoom() >= LABEL_MIN_ZOOM;
+        Object.keys(hrefToLabel).forEach(function(href){
+          var e1 = hrefToLabel[href].getElement();
+          if (!e1) return;
+          var ver = zoomOk && hrefs.indexOf(href) !== -1;
+          e1.style.opacity = ver ? '1' : '0';
+          e1.style.pointerEvents = ver ? '' : 'none';
+        });
+        if (zoomOk) repositionLabels();
+        return;
+      }
+      var grupos = agrupaKms(hrefs);
+      var sueltas = {};
+      grupos.forEach(function(g){
+        if (g.miembros.length === 1) sueltas[hrefs[g.miembros[0]]] = true;
+      });
+      Object.keys(hrefToLabel).forEach(function(href){
+        var e2 = hrefToLabel[href].getElement();
+        if (!e2) return;
+        var ver = sueltas[href] === true;
+        e2.style.opacity = ver ? '1' : '0';
+        e2.style.pointerEvents = ver ? '' : 'none';
+      });
+      pintaGrupos(grupos, hrefs);
+      repositionLabels();
     }
 
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
+    // Y tambien al desplazar: lo que se agrupa es lo que hay delante, asi
+    // que al moverse cambia. Son 66 puntos, el recalculo es instantaneo.
+    if (esPortada) map.on('moveend', updateLabelVisibility);
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
