@@ -621,6 +621,44 @@
   color:var(--teal); text-decoration:none;
 }
 .route-popup a:hover{ text-decoration:underline; }
+/* La tira de rutas que se ven ahora, debajo del mapa. Lo pidio el autor:
+   con el zoom metido no se sabe si estas en Mallabia o en Durango, porque
+   solo se ven dos trazados sin nombre. Cambia sola al mover o al acercar.
+
+   Va FUERA del mapa y no flotando encima: dentro taparia justo lo que se ha
+   ido a mirar, que es el problema que ya se arreglo con la ficha. En columna,
+   con las cuatro primeras a la vista y el resto desplazandose -- «si son 7,
+   aunque aparezcan las primeras 4, las demas se quedan ocultas abajo». */
+.map-cercanas{
+  display:flex; flex-direction:column; gap:6px;
+  max-height:264px; overflow-y:auto; overflow-x:hidden;
+  margin-top:10px; padding-right:2px;
+  scrollbar-width:thin;
+}
+.map-cercanas[hidden]{ display:none; }
+.map-cercana{
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:6px 10px 6px 7px; border-radius:12px; cursor:pointer; text-align:left;
+  background:var(--ground-raised); border:1px solid var(--line);
+  border-left-width:3px;
+}
+.map-cercana.is-bici{ border-left-color:var(--teal); }
+.map-cercana.is-pie{ border-left-color:var(--violet); }
+.map-cercana:hover{ border-color:var(--ink-dim); }
+.map-cercana-foto{
+  flex:0 0 auto; width:52px; height:52px; border-radius:8px;
+  object-fit:cover; display:block;
+}
+.map-cercana-txt{ min-width:0; display:flex; flex-direction:column; gap:2px; }
+.map-cercana-nombre{
+  font-size:13px; line-height:1.3; color:var(--ink);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.map-cercana-datos{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+}
+
 .route-dist-label{ background:none; border:none; opacity:0; transition:opacity .15s ease; }
 .route-dist-label-inner{
   position:absolute; left:0; top:0;

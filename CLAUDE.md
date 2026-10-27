@@ -669,6 +669,50 @@ dependencia nueva, que aquí no entra sin que lo diga el autor.
 sobre Trabakua: el marcador lleva `zIndexOffset: 2000` y la pastilla se sube 16 px sobre su centro,
 que señala una zona y no un punto exacto.
 
+**La tira de rutas que tienes delante, debajo del mapa.** Lo pidió el autor: «si no, es difícil
+saber si estoy en Mallabia, si estoy en Durango o dónde, cuando tengo el zoom aumentado». Con el
+mapa muy cerca sólo se ven dos trazados sin nombre y el fondo no siempre rotula el pueblo.
+
+Debajo del mapa van las rutas que caben en lo que se está mirando, **con foto, título, distancia y
+desnivel**, y **cambian solas al mover o al acercar**. Las pidió así: «si son 7, aunque aparezcan
+las primeras 4, las demás se quedan ocultas abajo» — en columna, con cuatro a la vista y el resto
+desplazándose. Tocar una abre su ficha, igual que tocar su pastilla de kilómetros. Comprobado: 12
+al abrir (el tope), **5 en Zengotitagane a z14, 1 en Markina a z13** y ninguna donde no hay rutas.
+
+Cómo está hecho:
+
+- Se rellena desde `updateLabelVisibility()`, que ya corre en `zoomend` y en `moveend`: **el
+  conjunto que calcula para agrupar las pastillas es exactamente el que hace falta aquí**, así que
+  no se recorre nada dos veces.
+- Las primeras son las más cercanas al centro de lo que se mira (`map.distance`), con tope de 12.
+- La foto es la que ya muestra su tarjeta en la lista, por `src`: el navegador la tiene cargada y
+  no descarga nada nuevo.
+- Se esconde con una ficha abierta o dibujando: ahí manda lo otro.
+
+**Y va DESPUÉS de la caja del mapa, no dentro.** Metida dentro queda recortada y no se ve, porque
+la caja tiene el alto fijo por `aspect-ratio`. Se inserta con `insertBefore` sobre el hermano
+siguiente.
+
+**Tres fallos propios al montarla, los tres del mismo tipo y por eso vale la pena recordarlos:**
+
+- **`var tiraCercanas` declarada debajo de su primer uso.** Es **exactamente** el fallo de
+  `grupoCapa` de unas horas antes, repetido: `pintaCercanas()` se llama durante el montaje, antes
+  de llegar a esa línea, así que la primera pasada creaba la tira y la línea borraba después la
+  referencia — y se creaba **una segunda tira**. Salían dos, una viva y otra congelada con 22
+  fichas. **Todo lo que se cree desde `updateLabelVisibility()` va declarado arriba, con
+  `labelSoloHref`.**
+- **La firma de «lo que ya está pintado» no puede ir en `dataset`.** El DOM de mentira de
+  `test_ui.cjs` devuelve un objeto **nuevo** en cada lectura de `dataset`, así que lo escrito se
+  perdía; y no tiene `childNodes`. Entre las dos cosas el test se colgaba **sin imprimir nada**.
+  Va en una variable del cierre.
+- **A ese DOM de mentira le faltaba `insertBefore`**, y el test moría con código 137, que parece
+  falta de memoria y no lo es. Se le añadieron `insertBefore`, `firstChild` y `nextSibling`, y
+  `map.js` comprueba que existan antes de usarlos.
+
+La lección, por tercera vez en el mismo día: **cuando el test de interfaz muere con 137 o se cuelga
+sin imprimir, no es memoria — es que `map.js` está usando algo que su Leaflet o su DOM de mentira
+no implementan.**
+
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
 zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra

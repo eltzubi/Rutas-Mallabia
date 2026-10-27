@@ -538,6 +538,14 @@
     // hubiera creado la capa. La referencia se perdia y los marcadores se
     // quedaban huerfanos en el mapa: con 66 rutas salian grupos sumando 100.
     var grupoCapa = null;
+    // La tira de «lo que tienes delante». Declarada AQUI por lo mismo que
+    // grupoCapa, y es que se repitio el fallo: pintaCercanas() se llama
+    // durante el montaje, antes de llegar a su funcion, asi que un
+    // «var tiraCercanas = null» alla abajo borraba la referencia despues de
+    // que la primera pasada ya hubiera creado la tira -- y se creaba una
+    // segunda. Salian dos tiras, una viva y otra congelada con 22 fichas.
+    var tiraCercanas = null;
+    var firmaTira = null;   // la firma, en variable y NO en dataset
     // La caja que envuelve al mapa: es la que crece con la ficha abierta.
     // Solo existe en la portada; en una ficha de ruta no hay panel.
     var marcoMapa = el.closest ? el.closest('.route-map-box') : null;
@@ -940,7 +948,14 @@
           pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
           pathEl.addEventListener('blur', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
         }
-        hrefToLine[t.href] = { line: line, reborde: reborde, baseColor: baseColor, activity: activity, currentColor: baseColor };
+        hrefToLine[t.href] = { line: line, reborde: reborde, baseColor: baseColor,
+          activity: activity, currentColor: baseColor,
+          // para la tira de «lo que tienes delante»: el nombre y los km salen de
+          // la tarjeta de la portada, que ya esta en la pagina y en su idioma
+          nombre: name, km: distanceKm, desnivel: desnivelM,
+          foto: (sign && sign.querySelector('.route-card-photo img') &&
+                 sign.querySelector('.route-card-photo img').getAttribute('src')) || '',
+          abre: function(){ openPanel(line, hrefToLine[t.href].currentColor, html); } };
       }
     });
 
@@ -1566,6 +1581,124 @@
     // Solo con zoom alto (el visitante ya se ha acercado a una zona
     // concreta) se muestran las etiquetas; a la vista de conjunto quedarian
     // 46 numeros amontonados sobre Trabakua.
+
+  /* ------------------------------------------------------------------ */
+  /* La tira de rutas que tienes delante.
+   *
+   * Lo pidio el autor: «si no, es dificil saber si estoy en Mallabia, si
+   * estoy en Durango o donde, cuando tengo el zoom aumentado». Con el mapa
+   * muy cerca solo se ven dos trazados sin nombre, y el mapa de fondo no
+   * siempre rotula el pueblo.
+   *
+   * Asi que debajo del mapa va una tira con las rutas que caben en lo que
+   * se esta mirando, con su nombre y sus kilometros, y **cambia sola al
+   * mover o al acercar**. Si entran dos, salen dos; si al subir al norte
+   * entran tres, salen esas tres. Tocar una abre su ficha, igual que tocar
+   * su pastilla de kilometros.
+   *
+   * Se cuelga del mismo sitio que la pastilla de las capas (hermana del
+   * contenedor del mapa) y se rellena desde updateLabelVisibility(), que ya
+   * corre en zoomend y en moveend: el conjunto que calcula para agrupar es
+   * exactamente el que hace falta aqui, asi que no se recorre nada dos veces.
+   */
+  var TOPE_TIRA = 12;       // con mas, la tira deja de ayudar y estorba
+
+  function creaTira(){
+    if (tiraCercanas || !esPortada) return;
+    tiraCercanas = document.createElement('div');
+    tiraCercanas.className = 'map-cercanas';
+    tiraCercanas.setAttribute('role', 'list');
+    tiraCercanas.setAttribute('aria-label',
+      isEu ? 'Ikusgai dauden ibilbideak' : 'Rutas que se ven ahora');
+    // DESPUES de la caja del mapa, no dentro: la caja tiene el alto fijo
+    // (aspect-ratio) y lo que se le mete debajo queda recortado y no se ve.
+    var cajaMapa = el.closest ? el.closest('.route-map-box') : null;
+    var padre = cajaMapa && cajaMapa.parentElement;
+    if (padre && padre.insertBefore) {
+      padre.insertBefore(tiraCercanas, cajaMapa.nextSibling || null);
+    } else {
+      (padre || el.parentElement).appendChild(tiraCercanas);
+    }
+  }
+
+  function pintaCercanas(hrefs){
+    if (!esPortada) return;
+    creaTira();
+    if (!tiraCercanas) return;
+    // Con una ficha abierta manda la ficha, y dibujando manda el trazo.
+    var fuera = labelSoloHref || el.classList.contains('is-drawing') || !hrefs.length;
+    if (fuera) {
+      if (firmaTira !== null) { tiraCercanas.innerHTML = ''; firmaTira = null; }
+      tiraCercanas.hidden = true;
+      return;
+    }
+    // Primero las mas cercanas al centro de lo que se esta mirando: son las
+    // que el visitante tiene de verdad delante.
+    var orden = hrefs.slice();
+    if (map.getCenter && map.distance) {
+      var centro = map.getCenter();
+      orden.sort(function(a, b){
+        return map.distance(centro, hrefToLabel[a].getLatLng()) -
+               map.distance(centro, hrefToLabel[b].getLatLng());
+      });
+    }
+    orden = orden.slice(0, TOPE_TIRA);
+    // Se repinta entera solo si cambia lo que hay: al arrastrar sin que
+    // entre ni salga ninguna no se toca el DOM ni se pierde el desplazado.
+    // La firma va en una variable del cierre y NO en tiraCercanas.dataset:
+    // el DOM de mentira de scripts/test_ui.cjs devuelve un dataset NUEVO en
+    // cada lectura, asi que lo escrito se perdia y ademas no tiene
+    // childNodes -- entre las dos cosas el test se colgaba sin imprimir
+    // nada, que parecia falta de memoria y no lo era.
+    var firma = orden.join('|');
+    if (firma === firmaTira) { tiraCercanas.hidden = false; return; }
+    firmaTira = firma;
+    tiraCercanas.innerHTML = '';
+    var puestas = 0;
+    orden.forEach(function(href){
+      var r = hrefToLine[href];
+      if (!r || !r.nombre) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'map-cercana is-' + (r.activity === 'bici' ? 'bici' : 'pie');
+      b.setAttribute('role', 'listitem');
+      if (r.foto) {
+        // La misma imagen que ya muestra su tarjeta en la lista: el
+        // navegador la tiene cargada, asi que no descarga nada nuevo.
+        var im = document.createElement('img');
+        im.className = 'map-cercana-foto';
+        im.src = r.foto;
+        im.alt = '';
+        im.loading = 'lazy';
+        im.decoding = 'async';
+        b.appendChild(im);
+      }
+      var txt = document.createElement('span');
+      txt.className = 'map-cercana-txt';
+      var n = document.createElement('span');
+      n.className = 'map-cercana-nombre';
+      n.textContent = r.nombre;
+      txt.appendChild(n);
+      var datos = [];
+      if (r.km) datos.push(r.km.replace('.', ',') + ' km');
+      if (r.desnivel) datos.push('+' + r.desnivel.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' m');
+      if (datos.length) {
+        var d = document.createElement('span');
+        d.className = 'map-cercana-datos';
+        d.textContent = datos.join(' \u00b7 ');
+        txt.appendChild(d);
+      }
+      b.appendChild(txt);
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (r.abre) r.abre();
+      });
+      tiraCercanas.appendChild(b);
+      puestas++;
+    });
+    tiraCercanas.hidden = !puestas;
+  }
+
     // Las pastillas de kilometros, agrupadas cuando se pisan.
     //
     // Hasta ahora no salian por debajo del zoom 12, y con razon: medidos los
@@ -1720,6 +1853,7 @@
         e2.style.pointerEvents = ver ? '' : 'none';
       });
       pintaGrupos(grupos, hrefs);
+      pintaCercanas(hrefs);
       repositionLabels();
     }
 

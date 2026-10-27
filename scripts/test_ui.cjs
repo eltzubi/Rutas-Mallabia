@@ -64,6 +64,9 @@ class Element {
   contains(el){return el===this || this.children.some(c=>typeof c!=='string'&&c.contains(el));}
   // Un nodo de texto aqui es la propia cadena, como en el resto del arbol
   // de prueba (ver attach()).
+  insertBefore(el,ref){if(el.parentElement)el.remove();el.parentElement=this;const i=ref?this.children.indexOf(ref):-1;if(i<0)this.children.push(el);else this.children.splice(i,0,el);return el;}
+  get firstChild(){return this.children[0]||null;}
+  get nextSibling(){const p=this.parentElement;if(!p)return null;const i=p.children.indexOf(this);return p.children[i+1]||null;}
   appendChild(el){if(typeof el==='string'){this.children.push(el);return el;}if(el.parentElement)el.remove();el.parentElement=this;this.children.push(el);return el;}
   remove(){this.parentElement.children=this.parentElement.children.filter(c=>c!==this);}
   getBoundingClientRect(){return {top:0,width:800,height:200};}
