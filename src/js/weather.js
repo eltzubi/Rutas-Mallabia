@@ -145,6 +145,80 @@
     caja.hidden = false;
   }
 
+
+  /* ------------------------------------------------------------------ */
+  /* El texto oficial de Euskalmet, debajo de los numeros.
+   *
+   * Lo pidio el autor despues de decir que el pronostico «no da una».
+   * Euskalmet es la agencia que pronostica este valle, y publica un fichero
+   * abierto que **no pide clave** y que deja llamarlo desde el navegador
+   * (Access-Control-Allow-Origin: *), comprobado. Trae el texto de hoy y de
+   * manana escrito en castellano y en euskera, que es justo lo que hace
+   * falta en una web en dos lenguas.
+   *
+   * No sustituye a Open-Meteo: solo da dos dias, sin probabilidad de lluvia,
+   * y sus temperaturas son de seis ciudades, ninguna de por aqui. Por eso se
+   * suma debajo en vez de reemplazar la tira de cuatro dias.
+   *
+   * El fichero viene en ISO-8859-1, asi que hay que decodificarlo a mano:
+   * con response.text() el navegador lo lee como UTF-8 y los acentos salen
+   * rotos. Y, como todo lo de este bloque, si algo falla no se enseña nada.
+   */
+  var EUSKALMET = 'https://opendata.euskadi.eus/contenidos/prevision_tiempo/' +
+                  'met_forecast/opendata/met_forecast.xml';
+
+  function pintaLocal(xml) {
+    var caja2 = document.getElementById('weatherLocal');
+    if (!caja2 || !xml) return;
+    var lengua = document.documentElement.lang === 'eu' ? 'eu' : 'es';
+    var dias = xml.getElementsByTagName('forecast');
+    var puestos = 0;
+    for (var i = 0; i < dias.length && puestos < 2; i++) {
+      var cual = dias[i].getAttribute('forecastDay');
+      var d = dias[i].getElementsByTagName('description')[0];
+      var e = d && d.getElementsByTagName(lengua)[0];
+      var txt = e && e.textContent ? e.textContent.trim() : '';
+      if (!txt) continue;
+      var p = document.createElement('p');
+      p.className = 'weather-local-day';
+      var cuando = document.createElement('b');
+      cuando.textContent = (cual === 'tomorrow' ? textos.maniana : textos.hoy) + ': ';
+      p.appendChild(cuando);
+      p.appendChild(document.createTextNode(txt));
+      caja2.appendChild(p);
+      puestos++;
+    }
+    if (!puestos) return;
+    var pie = document.createElement('p');
+    pie.className = 'weather-local-credit';
+    pie.textContent = textos.oficial;
+    caja2.appendChild(pie);
+    caja.hidden = false;
+  }
+
+  function pideLocal() {
+    var clave = 'euskalmet';
+    try {
+      var hay = JSON.parse(sessionStorage.getItem(clave) || 'null');
+      if (hay && Date.now() - hay.t < VIDA && hay.x) {
+        pintaLocal(new DOMParser().parseFromString(hay.x, 'application/xml'));
+        return;
+      }
+    } catch (e) { /* sin sessionStorage: se pide y ya */ }
+    fetch(EUSKALMET, { mode: 'cors' })
+      .then(function (r) { return r.ok ? r.arrayBuffer() : Promise.reject(r.status); })
+      .then(function (buf) {
+        // ISO-8859-1: con .text() los acentos saldrian rotos
+        var txt = new TextDecoder('iso-8859-1').decode(buf);
+        var xml = new DOMParser().parseFromString(txt, 'application/xml');
+        if (xml.getElementsByTagName('parsererror').length) return;
+        try { sessionStorage.setItem(clave, JSON.stringify({ t: Date.now(), x: txt })); }
+        catch (e) { /* cuota llena: da igual, es solo cache */ }
+        pintaLocal(xml);
+      })
+      .catch(function () { /* sin cobertura o servicio caido: no se enseña nada */ });
+  }
+
   function pide() {
     var url = 'https://api.open-meteo.com/v1/forecast'
       + '?latitude=' + lat.toFixed(4) + '&longitude=' + lon.toFixed(4)
@@ -157,13 +231,14 @@
   }
 
   var ya = guardado();
-  if (ya) { pinta(ya); return; }
+  if (ya) { pinta(ya); pideLocal(); return; }
 
   // Despues de lo que de verdad importa de la pagina: el texto, las fotos y
   // el mapa van primero.
+  function pideTodo() { pide(); pideLocal(); }
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(pide, { timeout: 3000 });
+    requestIdleCallback(pideTodo, { timeout: 3000 });
   } else {
-    setTimeout(pide, 600);
+    setTimeout(pideTodo, 600);
   }
 })();

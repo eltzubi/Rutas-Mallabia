@@ -1830,6 +1830,13 @@ def add_weather(page_html, name, lang):
     js/weather.js con lo que devuelve Open-Meteo, y si no hay cobertura o el
     servicio no responde se queda oculto y la ficha se ve igual que antes.
 
+    Debajo de los cuatro dias va el texto oficial de Euskalmet para hoy y
+    manana, en la lengua de la pagina. Lo pidio el autor despues de decir que
+    el pronostico «no da una»: Euskalmet es quien pronostica este valle, y su
+    fichero abierto no pide clave y deja llamarlo desde el navegador. Solo da
+    dos dias y sin probabilidad de lluvia, por eso no sustituye a Open-Meteo
+    sino que se suma.
+
     Open-Meteo es el unico servicio de fuera al que esta web le pide algo
     aparte de las teselas del mapa. Se eligio porque es gratis, sin clave y
     sin cuenta, y porque deja llamarlo desde el navegador: AEMET pide una
@@ -1850,6 +1857,7 @@ def add_weather(page_html, name, lang):
         "dias": [t(d) for d in DIAS_ES],
         "cielo": {clave: t(es) for clave, es in CIELOS},
         "lluvia": t("prob. de lluvia"),
+        "oficial": t("Previsi\u00f3n oficial de Euskalmet"),
     }
     datos = html.escape(json.dumps(textos, ensure_ascii=False), quote=True)
     bloque = (
@@ -1857,6 +1865,7 @@ def add_weather(page_html, name, lang):
         ' data-lat="%.4f" data-lon="%.4f" data-textos="%s">'
         '\n    <p class="eyebrow">%s</p>'
         '\n    <div class="weather-days" id="weatherDays"></div>'
+        '\n    <div class="weather-local" id="weatherLocal"></div>'
         '\n    <p class="weather-credit">%s</p>'
         '\n  </section>\n'
     ) % (punto[0], punto[1], datos, t("El tiempo en la salida"),

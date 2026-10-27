@@ -837,8 +837,36 @@ Las etiquetas que escribe el JavaScript (Hoy/Mañana, los dias de la semana, los
 viven en `eu.UI` como todas las demas y `build.py` se las pasa en un `data-textos` con JSON, en vez de
 duplicar las traducciones dentro del `.js` — que es uno solo para los dos idiomas.
 
-Esto suma **un tercero mas** a los que ya veian la IP de cada visitante al pintar el mapa; esta dicho
-en el aviso legal, en los dos idiomas, y al pie del propio bloque.
+**Y debajo de los cuatro dias, el texto oficial de Euskalmet.** Lo pidio el autor: «el tiempo creo
+que esta aplicacion no da una, busca otra alternativa». Se probaron las alternativas de verdad, no
+leyendo sus webs:
+
+- **Euskalmet si se puede usar, y es el hallazgo bueno.** Hay un fichero abierto **sin clave**,
+  `opendata.euskadi.eus/contenidos/prevision_tiempo/met_forecast/opendata/met_forecast.xml`, que
+  responde `Access-Control-Allow-Origin: *` y se actualiza a las 06:00. Trae el texto de la
+  prevision **en castellano y en euskera**, escrito por quien pronostica este valle.
+- **Pero no sustituye a Open-Meteo**: solo da **hoy y manana**, sin probabilidad de lluvia, y sus
+  temperaturas son de seis ciudades (Bilbao, Donostia, Vitoria, Pamplona, Mondragon, Laguardia),
+  ninguna de por aqui. Por eso se **suma** debajo en vez de reemplazar la tira de cuatro dias.
+- **Dos trampas al leerlo**: el fichero viene en **ISO-8859-1**, asi que hay que decodificarlo a
+  mano (`arrayBuffer()` + `TextDecoder('iso-8859-1')`); con `response.text()` los acentos salen
+  rotos. Y `pideLocal()` se llama **tambien en la rama de la cache**, que ahi habia un `return`
+  temprano y si no el texto no salia al volver a una ficha.
+
+**Lo que NO se hizo, y por que.** Se compararon ocho modelos para el mismo punto y dia y la
+probabilidad de lluvia iba de **30 %** (lo que da la mezcla por defecto, que es lo que usa la web) a
+**88 %** (ECMWF, MET Norway, UK Met Office). Tentaba cambiar de modelo, pero **el texto oficial de
+Euskalmet para ese dia no mencionaba lluvia**, asi que el 30 % se le parecia mas que el 88 %.
+Cambiar de modelo a ciegas podia empeorarlo, y no hay manera de saber cual acierta sin seguirlo
+varios dias. Tampoco sirve **pasarle la altura real** a Open-Meteo: el modelo ya situa Trabakua a
+430 m frente a los 412 reales, 0,1 oC de diferencia. AEMET y met.no siguen descartados por lo de
+siempre (clave a la vista, cabecera que un navegador no deja poner).
+
+Esto suma **dos terceros mas** a los que ya veian la IP de cada visitante al pintar el mapa
+—geoEuskadi por las teselas y Open Data Euskadi por este texto—; esta dicho en el aviso legal, en
+los dos idiomas, y al pie del propio bloque. **El aviso legal se habia quedado atras** cuando entro
+la capa de geoEuskadi: nombraba solo al IGN, CyclOSM, Esri y Open-Meteo. Al anadir una capa o un
+servicio hay que tocarlo, y su clave en `eu.py`.
 
 **Map tiles are deliberately never cached.** They come from CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an

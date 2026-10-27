@@ -837,3 +837,17 @@ footer a:hover{ color:var(--ink); }
   .guia h2{ font-size:19px; }
   .guia-pasos h3{ font-size:15.5px; }
 }
+
+/* El texto oficial de Euskalmet, debajo de la tira de cuatro dias. Va en
+   parrafo normal y no en columnas: es prosa, la escribe un meteorologo y se
+   lee seguida. Solo aparece si el fichero llega y trae texto. */
+.weather-local:empty{ display:none; }
+.weather-local{ margin-top:14px; border-top:1px solid var(--line); padding-top:12px; }
+.weather-local-day{
+  margin:0 0 8px; font-size:13.5px; line-height:1.55; color:var(--ink-dim);
+}
+.weather-local-day b{ color:var(--ink); }
+.weather-local-credit{
+  margin:0; font-family:'IBM Plex Mono',monospace; font-size:11px;
+  color:var(--ink-dim); opacity:.8;
+}
