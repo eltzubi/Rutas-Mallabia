@@ -844,8 +844,8 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigaina, Maguna, San Kristobal Txiki eta Betzun zeharkatuz</p>',
 
     # zaldutrail card
-    'alt="Amanecer desde Egoarbitza sobre un mar de nubes, con una persona junto al buz&oacute;n de la cima"':
-        'alt="Egunsentia Egoarbitzatik, hodei itsaso baten gainean, pertsona bat gailurreko postontziaren ondoan"',
+    'alt="Varios corredores encadenados por la cresta rocosa de la subida a Egoarbitza, con una baliza naranja y los montes al fondo entre nubes"':
+        'alt="Hainbat korrikalari Egoarbitzarako igoerako gailur-lerro harritsuan, baliza laranja bat eta mendiak atzean hodeien artean"',
     '<h3 class="route-card-name">Zaldutrail: una ruta exigente por los montes de Zaldibar</h3>':
         '<h3 class="route-card-name">Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra</h3>',
     '<p class="route-card-desc">Circuito desde Zaldibar por Goierri, Eitzaga, Egoarbitza, la presa de Aixola, Santama&ntilde;azar y San Lorenzo</p>':
