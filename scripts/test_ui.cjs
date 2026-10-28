@@ -89,6 +89,10 @@ function env(page='index.html', storage=new Map()) {
   const win=new Element({tag:'window',attrs:{},children:[]},doc);
   Object.assign(win,{document:doc,scrollY:0,pageYOffset:0,innerHeight:800,scrollTo(){},matchMedia:()=>({matches:false}),location:{reload(){win.reloaded=true;}}});
   const maps=[],lines=[],errors=[];
+  function makeBounds(points) {
+    return {points: points.slice(), extend(other){this.points.push(...other.points);return this;},
+      pad(){return makeBounds(this.points);}};
+  }
   const L={
     // El stub guarda los manejadores y deja fijar el zoom, para poder probar
     // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
@@ -97,7 +101,7 @@ function env(page='index.html', storage=new Map()) {
     // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
     // fondo y no en su lugar.
     tileLayer(){return {addTo(m){m.capas=(m.capas||0)+1;return this;}};},
-    polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){if(m&&m.el)m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
+    polyline(points,style){const line={points,bounds:makeBounds(points),style:{...style},events:{},path:doc.createElement('path'),addTo(m){if(m&&m.el)m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return this.bounds;},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
     // getLatLng y latLngToContainerPoint los necesita repositionLabels, que
     // salta en cada zoomend desde que el stub sabe disparar eventos.
     marker(latlng){return {addTo(){return this;},on(){return this;},getElement(){return null;},getLatLng(){return latlng||[0,0];}};},
@@ -352,4 +356,12 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
                    ['IGN','Bici','Topo','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
+});
+
+// El encuadre general no debe modificar los limites de la primera ruta.
+test('la primera ruta conserva su encuadre al añadir las demás al mapa',async()=>{
+  const e=env();e.run('map.js');await settle();
+  assert.equal(e.errors.length,0);
+  const first=e.trazados()[0];
+  assert.equal(first.getBounds().points.length,first.points.length);
 });
