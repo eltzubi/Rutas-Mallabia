@@ -838,6 +838,33 @@ idiomas. Resuelve las dos mitades del problema: el viaje y, sobre todo, **saber 
 Las rutas siguen siendo lo primero; se descartó subir el bloque entero encima de la rejilla, que
 cuesta unos 300 px y pone «Dónde aparcar» antes que las rutas.
 
+**Y va la primera de `<main>`, pegada a la cabecera y encima de la foto. No es capricho: es el
+único sitio donde la barra fija de abajo no se la come.** Nació debajo del aviso de «Léelo antes de
+salir» y el autor lo vio en su móvil: «está pegado a la barra de abajo, deja un margen pequeño para
+que se vea el círculo entero de alrededor». Medido a 390 px de ancho, ahí las pastillas acaban
+**siempre** en el píxel 555, pase lo que pase, porque lo que tienen encima (cabecera, foto,
+titular, entradilla y totales) no cambia de alto con la ventana. Lo que cambia es dónde empieza la
+barra:
+
+| ventana útil | aire hasta la barra |
+|---|---|
+| 844 | 232 px |
+| 700 | 88 px |
+| 620 | **8 px** |
+| 580 | **tapadas 32 px** |
+| 540 | **tapadas 72 px** |
+
+Un margen no arregla eso: la barra es fija y lo único que sube las pastillas es quitarles alto por
+encima. Se probó moverlas delante de `#beforeYouGo` y salió **4 px peor**, porque ese bloque
+plegado no ocupa alto. Arriba del todo quedan en el píxel 97 y les sobran **479 px** a 620 y 399 a
+540. De paso se ven al entrar, que era justo lo que se buscaba.
+
+**Y llevan el margen lateral de la página, que no lo tenían**: 16 px en el móvil, 24 de 660 para
+arriba y `max-width:1100px` de 1024 en adelante, como los demás bloques. Iban sin ninguno, así que
+la primera pastilla nacía pegada al filo de la pantalla con el borde redondo cortado —la otra mitad
+de lo del «círculo entero»— y en el ordenador la fila arrancaba **90 px a la izquierda** del
+titular y de las tarjetas.
+
 Dos cosas del montaje:
 
 - **El enlace solo no basta.** Ahí abajo hay `<details>` plegados, así que saltar al ancla deja al

@@ -1665,14 +1665,35 @@ footer a:hover{ text-decoration:underline; }
    razon, medido: la portada mide 43 pantallas en un movil y el bloque de
    «Donde aparcar» empieza en la 42. En vista de mapa si queda cerca, porque
    el mapa ocupa una pantalla, y por eso se nota la diferencia.
-   Esta fila va debajo de la cabecera, cuesta unos 40 px y resuelve las dos
-   mitades del problema: lleva alli de un toque y, sobre todo, dice que eso
-   existe. Las rutas siguen siendo lo primero. */
+   Esta fila cuesta unos 40 px y resuelve las dos mitades del problema:
+   lleva alli de un toque y, sobre todo, dice que eso existe. Las rutas
+   siguen siendo lo primero.
+
+   VA LA PRIMERA DE <main>, PEGADA A LA CABECERA Y ENCIMA DE LA FOTO, y eso
+   es a proposito. Estuvo debajo del aviso de «Leelo antes de salir», que es
+   donde cae justo encima de la barra fija de abajo: medido a 390 px de
+   ancho, las pastillas acaban en el pixel 555 pase lo que pase, asi que la
+   barra se las come en cuanto la ventana util baja de 620 px -- 8 px de aire
+   a 620, tapadas 32 px a 580 y 72 a 540. El autor lo vio en su movil:
+   «esta pegado a la barra de abajo, deja un margen pequeno para que se vea
+   el circulo entero de alrededor». Un margen no lo arregla: la barra es
+   fija y lo unico que mueve las pastillas es quitarles alto por encima.
+   Aqui arriba quedan en el pixel 78 y les sobran 450 px hasta la barra en
+   la ventana mas baja que se ha probado. Ademas se ven al entrar, que es lo
+   que se buscaba. */
 .atajos{
-  display:flex; gap:6px; margin:0 0 14px; padding:0 0 2px;
+  display:flex; gap:6px; margin:10px 0 14px;
+  /* El mismo margen lateral que el titular y las tarjetas (16 px en el
+     movil, 24 de 660 para arriba) y el mismo ancho maximo que los demas
+     bloques. Iba sin ninguno, asi que la primera pastilla nacia pegada al
+     filo de la pantalla con el borde redondo cortado, y en el ordenador la
+     fila arrancaba 90 px a la izquierda de todo lo demas. */
+  padding:2px 16px 3px;
   overflow-x:auto; -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
 }
+@media (min-width:660px){ .atajos{ padding:2px 24px 3px; } }
+@media (min-width:1024px){ .atajos{ max-width:1100px; margin-inline:auto; } }
 .atajos::-webkit-scrollbar{ display:none; }
 .atajos a{
   flex:0 0 auto; text-decoration:none;
