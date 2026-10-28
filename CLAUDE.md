@@ -799,6 +799,39 @@ transparentara. No es un fallo de CSS: `elementFromPoint` dice que arriba está 
 el iframe del DOM la captura sale limpia. Se perdió un rato dándole vueltas a un `background`
 translúcido que no tenía nada que ver.
 
+**Los atajos a la información del final.** Lo levantó el autor: «no creo que nadie baje hasta
+abajo, así que es posible que nunca lleguen a leer dónde comer o dónde dormir». Y tenía razón,
+medido: **la portada mide 43 pantallas en un móvil** (36.506 px con 67 tarjetas) y el bloque de
+«Dónde aparcar» empieza en la **42**; en el ordenador, 15 pantallas y empieza en la 15. En vista de
+mapa sí queda cerca, porque el mapa ocupa una pantalla y la información viene detrás, y por eso él
+notaba la diferencia.
+
+Debajo de la cabecera va ahora una fila fina de cinco pastillas —**Aparcar, Comer, Dormir, Agua,
+Preguntas**— que lleva allí de un toque. Cuesta **30 px** y cabe entera a 390 px en los dos
+idiomas. Resuelve las dos mitades del problema: el viaje y, sobre todo, **saber que eso existe**.
+Las rutas siguen siendo lo primero; se descartó subir el bloque entero encima de la rejilla, que
+cuesta unos 300 px y pone «Dónde aparcar» antes que las rutas.
+
+Dos cosas del montaje:
+
+- **El enlace solo no basta.** Ahí abajo hay `<details>` plegados, así que saltar al ancla deja al
+  visitante delante de un título cerrado. El bloque del final de `src/js/app.js` abre el que toca
+  antes de ir, y espera **dos fotogramas** antes de medir, como en las preguntas: al abrir el
+  `<details>` la página crece y la posición de antes ya no vale.
+- **El salto es instantáneo, no suave.** Son 35.000 px en un móvil; animarlos sería un viaje de
+  varios segundos.
+
+Ojo: la portada tiene **dos** `section.info-accordion`. La de arriba es `#beforeYouGo` («Léelo antes
+de salir») y la de abajo es `.practical-info`, que es ésta. Buscar por `info-accordion` a secas coge
+la de arriba.
+
+**La provincia se va de la barra en todo el móvil.** El autor lo vio en el suyo: «Bizkaia» acababa
+justo donde empiezan los iconos. Medido el hueco entre el rótulo y el primer botón: **0 px a 360, a
+390 y a 412** —se tocaban—, 17 a 430 y 67 a 480. Apretaba en todos los móviles corrientes, no sólo
+en el más estrecho, que es donde se había arreglado en octubre al entrar «Compartir». Ahora
+`.place-prov` se esconde hasta **479 px** y el hueco pasa a 24 / 54 / 76 / 94 px. De 480 en adelante
+se queda. Las fichas de ruta no se tocan: ahí sobran 204 px a 390, que llevan menos botones.
+
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
 zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra

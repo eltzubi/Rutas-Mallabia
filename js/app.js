@@ -831,3 +831,33 @@
     });
   });
 })();
+
+/* Los atajos de debajo de la cabecera llevan al bloque de informacion del
+   final de la portada. El enlace solo no basta: ahi abajo hay <details>
+   plegados, asi que saltar al ancla deja al visitante delante de un titulo
+   cerrado. Aqui se abre el que toca antes de ir.
+   El salto es instantaneo y no suave a proposito: son 35.000 px en un
+   movil, y animarlos seria un viaje de varios segundos.
+   Se esperan dos fotogramas antes de medir, como en las preguntas: al abrir
+   el <details> la pagina crece y la posicion de antes ya no vale. */
+(function(){
+  var atajos = document.querySelector('.atajos');
+  if (!atajos) return;
+  atajos.addEventListener('click', function(ev){
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var destino = document.getElementById(a.getAttribute('href').slice(1));
+    if (!destino) return;              // sin destino, que haga lo suyo el navegador
+    ev.preventDefault();
+    destino.open = true;
+    var cabecera = document.querySelector('.masthead');
+    var alto = cabecera ? cabecera.getBoundingClientRect().height : 0;
+    var ve = function(){
+      window.scrollTo(0, Math.max(0,
+        destino.getBoundingClientRect().top + window.pageYOffset - alto - 10));
+    };
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(function(){ requestAnimationFrame(ve); });
+    } else { ve(); }
+  });
+})();

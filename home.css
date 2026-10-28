@@ -1587,6 +1587,36 @@ footer a:hover{ text-decoration:underline; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
 }
+/* LOS ATAJOS A LA INFORMACION DEL FINAL.
+   Lo levanto el autor: «no creo que nadie baje hasta abajo, asi que es
+   posible que nunca lleguen a leer donde comer o donde dormir». Y tenia
+   razon, medido: la portada mide 43 pantallas en un movil y el bloque de
+   «Donde aparcar» empieza en la 42. En vista de mapa si queda cerca, porque
+   el mapa ocupa una pantalla, y por eso se nota la diferencia.
+   Esta fila va debajo de la cabecera, cuesta unos 40 px y resuelve las dos
+   mitades del problema: lleva alli de un toque y, sobre todo, dice que eso
+   existe. Las rutas siguen siendo lo primero. */
+.atajos{
+  display:flex; gap:6px; margin:0 0 14px; padding:0 0 2px;
+  overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.atajos::-webkit-scrollbar{ display:none; }
+.atajos a{
+  flex:0 0 auto; text-decoration:none;
+  border:1px solid var(--line); border-radius:999px;
+  padding:5px 12px; min-height:28px;
+  display:inline-flex; align-items:center;
+  font:600 10px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-dim); background:transparent;
+  transition:color .18s ease, border-color .18s ease;
+}
+.atajos a:hover{ color:var(--ink); border-color:var(--ink-dim); }
+.atajos a:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+/* En vista de mapa la pagina esta congelada detras del mapa: estorban. */
+body.vista-mapa .atajos{ display:none; }
+
 /* LA PROVINCIA SE VA EN EL MOVIL, no solo a 320 px.
    Lo vio el autor en el suyo: «Bizkaia» acaba justo donde empiezan los
    iconos y la barra se lee apretada. Medido el hueco entre el rotulo y el

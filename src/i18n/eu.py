@@ -381,6 +381,20 @@ ROUTE = {
 }
 
 HOME = {
+    # los atajos a la informacion del final
+    '<nav class="atajos" aria-label="Informaci&oacute;n pr&aacute;ctica">':
+        '<nav class="atajos" aria-label="Informazio praktikoa">',
+    '<a href="#info-aparcar">Aparcar</a>':
+        '<a href="#info-aparcar">Aparkatu</a>',
+    '<a href="#info-comer">Comer</a>':
+        '<a href="#info-comer">Jan</a>',
+    '<a href="#info-dormir">Dormir</a>':
+        '<a href="#info-dormir">Lo egin</a>',
+    '<a href="#info-agua">Agua</a>':
+        '<a href="#info-agua">Ura</a>',
+    '<a href="#info-preguntas">Preguntas</a>':
+        '<a href="#info-preguntas">Galderak</a>',
+
     'D&oacute;nde hay agua': 'Non dago ura',
     '<p class="map-note">Un mapa solo con los puntos de agua de todas las rutas, para saber d&oacute;nde llenar el bid&oacute;n antes de salir.</p>':
         '<p class="map-note">Ibilbide guztietako ur puntuak baino ez dituen mapa bat, irten aurretik bidoia non bete jakiteko.</p>',

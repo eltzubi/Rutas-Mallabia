@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#0D0D0F">
 <link rel="stylesheet" href="fonts.css?v=1204aafe">
 <link rel="stylesheet" href="base.css?v=b8167a31">
-<link rel="stylesheet" href="home.css?v=6c4edc26">
+<link rel="stylesheet" href="home.css?v=fef06637">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -114,6 +114,14 @@
       <button type="button" class="aviso-boton" aria-label="L&eacute;elo antes de salir" aria-expanded="false"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></button>
     </span>
   </section>
+
+  <nav class="atajos" aria-label="Informaci&oacute;n pr&aacute;ctica">
+    <a href="#info-aparcar">Aparcar</a>
+    <a href="#info-comer">Comer</a>
+    <a href="#info-dormir">Dormir</a>
+    <a href="#info-agua">Agua</a>
+    <a href="#info-preguntas">Preguntas</a>
+  </nav>
 
   <section class="finder">
     <div class="finder-toolbar">
@@ -1178,7 +1186,7 @@
 
 <section class="info-accordion practical-info">
   <div class="info-group">
-    <details class="info-details">
+    <details class="info-details" id="info-aparcar">
       <summary>
         <span class="info-summary-label">
           <span class="info-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 16V8h4a3 3 0 0 1 0 6H9"/></svg></span>
@@ -1195,7 +1203,7 @@
         <a class="directions-cta" href="https://www.google.com/maps/dir/?api=1&destination=43.210466,-2.5460838" target="_blank" rel="noopener noreferrer">C&oacute;mo llegar <span aria-hidden="true">&rarr;</span></a>
       </div>
     </details>
-    <details class="info-details">
+    <details class="info-details" id="info-comer">
       <summary>
         <span class="info-summary-label">
           <span class="info-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a2 2 0 0 0 4 0V3"/><path d="M8 10v11"/><path d="M17 3c-1.7 1.2-2.5 3-2.5 5.5S15.3 13 17 14v7"/></svg></span>
@@ -1223,7 +1231,7 @@
         </ul>
       </div>
     </details>
-    <details class="info-details">
+    <details class="info-details" id="info-dormir">
       <summary>
         <span class="info-summary-label">
           <span class="info-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 14h18"/><path d="M7 11V7"/></svg></span>
@@ -1258,7 +1266,7 @@
         </ul>
       </div>
     </details>
-    <details class="info-details">
+    <details class="info-details" id="info-agua">
       <summary>
         <span class="info-summary-label">
           <span class="info-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.6 4.4 5.7 7.6 5.7 10.2a5.7 5.7 0 0 1-11.4 0C6.3 10.6 8.4 7.4 12 3z"/></svg></span>
@@ -1270,7 +1278,7 @@
         <a class="directions-cta" href="agua.html">Ver el mapa de fuentes <span aria-hidden="true">&rarr;</span></a>
       </div>
     </details>
-    <details class="info-details">
+    <details class="info-details" id="info-preguntas">
       <summary>
         <span class="info-summary-label">
           <span class="info-icon" aria-hidden="true"><svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><path d="M12 17.5h.01"/></svg></span>
@@ -1320,7 +1328,7 @@
   <section class="mio-bloque"><h3>&iquest;Alguna duda?</h3><a class="mio-accion" href="mailto:trabakutik@gmail.com">Escribe por email</a></section>
 </dialog>
 <script src="js/filters.js?v=16e104fd"></script>
-<script src="js/app.js?v=eb0aaef9"></script>
+<script src="js/app.js?v=462bdb30"></script>
 <script src="js/webmcp.js?v=ed4e6132"></script>
 <!-- Leaflet, al final y detras de los scripts propios: ver el porque en src/js/map.js -->
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
