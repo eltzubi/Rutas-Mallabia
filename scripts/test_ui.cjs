@@ -252,7 +252,7 @@ test('map catches filters loaded earlier; keyboard opens/closes and hidden route
   // con el activo marcado. La portada arranca en Bici (el segundo) y de ahi
   // no se mueve sola.
   const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
-  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Euskadi','Sat']);
+  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Topo','Sat']);
   assert.equal(capas[1].getAttribute('aria-pressed'),'true','la portada abre en Bici');
   capas[0].click();
   assert.equal(capas[1].getAttribute('aria-pressed'),'false');
@@ -350,6 +350,6 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   // la tardanza ya le da igual. La pendiente va en la misma pastilla,
   // detras de la raya, no en otra debajo.
   assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
-                   ['IGN','Bici','Euskadi','Sat','Pendiente']);
+                   ['IGN','Bici','Topo','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
 });

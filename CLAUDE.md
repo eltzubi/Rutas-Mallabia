@@ -296,7 +296,33 @@ torcido — y sale del propio orden de los puntos del track, que es el de la mar
 portada no las lleva: 57 tracks a la vez.
 
 **Las capas: cuatro, iguales en la portada y en una ficha, y las dos abren en Bici.**
-IGN, **Bici** (CyclOSM), **Euskadi** y Satélite. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
+IGN, **Bici** (CyclOSM), **Topo** (OpenTopoMap) y Satélite.
+
+**El 28 de octubre salió «Euskadi» y entró OpenTopoMap, y conviene leer por qué antes de deshacerlo.**
+El autor: «el mapa Euskadi no me dice nada; quiero nombres abundantes y más curvas de nivel, para que
+al mover el mapa se sepa dónde andas buscando». Medido sobre **la misma tesela** de Mallabia a **zoom
+13**, que es el zoom al que uno busca:
+
+| capa | nombres | curvas |
+|---|---|---|
+| Euskadi (geoEuskadi topo) | **3**: Markina, Mallabia, Mendibil | sí, finas |
+| Bici (CyclOSM) | **0**, sólo «BI-633» | sí |
+| **OpenTopoMap** | **8, y con su altura**: Mendigaña 467, Mendibil 613, Olamendi 600, Arteta 514, Ariznabar 592, Galarraga 415, Trabakua 404, más la BI-633 | sí, **rotuladas** |
+
+Lo de Euskadi no era falso —rotula los caseríos uno a uno y en euskera— pero **sólo de z15 para
+arriba**: a la distancia a la que uno busca, callaba. Se probó además ponerle encima el híbrido de
+geoEuskadi y a z13 saca **los mismos tres**, así que no arreglaba nada. El autor las vio juntas y dijo
+«quita Euskadi».
+
+**El pero sigue en pie: las carreteras de OpenTopoMap son naranjas**, el mismo color que los trazados
+de bici, y es justo por lo que estaba descartada desde octubre. Pesa menos que entonces porque desde
+octubre los trazados llevan reborde oscuro, pero en la portada, al zoom de apertura y con las 67 a la
+vez, **se nota**. Si vuelve a salir el tema, es esto y no otra cosa.
+
+**El híbrido de geoEuskadi NO se fue**: sigue encendiéndose con el satélite en las fichas y en
+`agua.html`, así que geoEuskadi continúa en el aviso legal. Y **OpenTopoMap se añadió a esa lista**,
+que es un tercero nuevo: la sirve un proyecto de voluntarios, como CyclOSM, llega a **z17** y su
+licencia pide citar a OpenTopoMap y a OpenStreetMap. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
 conviene leer el recorrido entero antes de volver a tocarlo, porque cada paso lo pidió el autor:
 
 1. Hasta el 23 de octubre las fichas abrían en Bici. El autor avisó de que «al mapa bici le cuesta
@@ -392,7 +418,7 @@ sendero dibujado con un trazo distinto según lo que sea. Ningún otro junta las
 | **Calles / OSM estándar** | menos información que Bici; lo quitó el autor |
 | **OSM Francia** | muchos topónimos pero **sin curvas de nivel** |
 | **OSM Alemania** | es el OSM de siempre con otro color; lento e irregular desde aquí |
-| **OpenTopoMap** | el que más cimas rotula, pero sus **carreteras son naranjas**, el mismo color que los tracks de bici |
+| ~~**OpenTopoMap**~~ | **entró el 28 de octubre en lugar de «Euskadi»** — ver arriba. Lo de las carreteras naranjas sigue siendo verdad |
 | **MTB Map** (mtbmap.cz) | el que más topónimos saca de todos, pero pinta las carreteras en rojo y amarillo chillón y lo sirve un servidor de aficionados **sin condiciones de uso publicadas** |
 | **CyclOSM-lite**, **4UMaps** | **muertos**: error en las doce teselas |
 | **Esri World Topo / Street**, **IGN Mapa Base** | limpios pero sin senderos: el monte sale vacío |

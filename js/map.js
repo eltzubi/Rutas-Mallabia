@@ -279,11 +279,36 @@
     // llaman. Llega a z18 y cubre las 66 rutas enteras, Gipuzkoa incluida
     // -- comprobado tesela a tesela en las cuatro esquinas del conjunto.
     // Licencia CC BY: «se permite cualquier uso si se menciona la autoria».
-    var euskadiLayer = L.tileLayer('https://www.geo.euskadi.eus/geoeuskadi/rest/services/' +
-      'U11/WMTS_TOPO/MapServer/WMTS/tile/1.0.0/U11_WMTS_TOPO/default/' +
-      'GoogleMapsCompatible/{z}/{y}/{x}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> &mdash; Eusko Jaurlaritza / Gobierno Vasco'
+    // OPENTOPOMAP, en el sitio que ocupaba la de Euskadi. La pidio el autor:
+    // «el mapa Euskadi no me dice nada; quiero nombres abundantes y mas
+    // curvas de nivel, para que al mover el mapa se sepa donde andas
+    // buscando». Y tenia razon, medido sobre LA MISMA tesela de Mallabia a
+    // zoom 13, que es el zoom al que uno busca:
+    //
+    //   Euskadi (geoEuskadi topo)  3 nombres: Markina, Mallabia, Mendibil
+    //   Bici (CyclOSM)             0 nombres, solo «BI-633»
+    //   OpenTopoMap                8, Y CON SU ALTURA: Mendigana 467,
+    //                              Mendibil 613, Olamendi 600, Arteta 514,
+    //                              Ariznabar 592, Galarraga 415,
+    //                              Trabakua 404, mas la BI-633
+    //
+    // La de Euskadi si rotulaba los caserios uno a uno y en euskera, pero
+    // solo de z15 para arriba: a la distancia a la que uno busca, callaba.
+    // Se probo ponerle encima el hibrido de geoEuskadi y a z13 saca los
+    // mismos tres, asi que no arreglaba nada. El autor la quito al verlas
+    // juntas: «quita Euskadi».
+    //
+    // Estaba descartada desde octubre porque sus CARRETERAS SON NARANJAS, el
+    // mismo color que los trazados de bici. Sigue siendo verdad, pero pesa
+    // menos que entonces: desde octubre los trazados llevan reborde oscuro.
+    // Si vuelve a molestar en la portada, esta es la razon.
+    //
+    // Llega a z17 (de ahi para arriba no tiene teselas propias). La sirve un
+    // proyecto de voluntarios, igual que CyclOSM, y su licencia pide citar a
+    // OpenTopoMap y a OpenStreetMap: eso hace la atribucion.
+    var openTopoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      subdomains: 'abc', maxZoom: 17,
+      attribution: '&copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA), &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     });
     // La portada abre con las calles y las fichas con el IGN, que es como lo
     // quiere el autor: en la vista de conjunto, con las 57 rutas a la vez, lo
@@ -338,7 +363,7 @@
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
-      { layer: euskadiLayer, label: isEu ? 'Euskadiko mapa topografikoa' : 'Mapa topográfico de Euskadi', short: 'Euskadi' },
+      { layer: openTopoLayer, label: isEu ? 'OpenTopoMap mapa topografikoa' : 'Mapa topográfico OpenTopoMap', short: 'Topo' },
       { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat', rotulos: esPortada ? nombresEsri : nombresLayer }
     ];
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
