@@ -835,6 +835,27 @@ Va al final de la cadena de cada página, y **la 404 se escribe fuera de ese buc
 **paran el build** si queda. Probado de verdad: con un track de más en `trailhead.json` las páginas
 pasan a decir 67, y al quitarlo vuelven a 66.
 
+**Cuando el autor escribe el texto, manda el que escriba primero — y puede ser el euskera.** En
+`zaldutrail` dio su versión en castellano, luego la reescribió entera en **euskera** y dijo: «el
+euskera prioriza; si quieres dale el mismo tono al castellano». Así que el euskera entró tal cual
+—sólo se le pusieron los `<b>` en los mismos nombres y se normalizó un guion que no se parte
+(U+2011) en «erritmo-aldaketetan»— y el **castellano se rehízo detrás** para ir en paralelo: los
+mismos nueve párrafos, el mismo tono. Es al revés de lo normal en esta web, donde el castellano es
+la fuente y `eu.py` la traducción, pero la tabla funciona igual: la clave es el castellano y el
+valor su párrafo en euskera.
+
+Lo que no funcionó, por si vuelve a pasar: su euskera agrupaba los párrafos de otra manera (nueve
+frente a once del castellano), y no hay correspondencia uno a uno. Se probó una clave única con el
+bloque entero —`make_eu` sustituye cadenas literales de más larga a más corta, así que entra la
+primera y vale—, pero deja un diccionario ilegible. **Lo que vale es rehacer el castellano con los
+mismos cortes que el euskera** y volver a emparejar párrafo a párrafo.
+
+Y **el título no se traduce, se escribe dos veces**: el suyo en euskera era «Zaldibarko mendietan
+barrena, gogorra eta ederra», y pasarlo al castellano como «por los montes de Zaldibar, dura y
+hermosa» le sonó **hortera**. El castellano volvió al que él había escrito, «una ruta exigente por
+los montes de Zaldibar», y el euskera se quedó con el suyo. Las dos lenguas pueden tener títulos
+distintos; lo que no puede es inventarse uno en castellano a partir del otro.
+
 **Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
 `aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
 `NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y
@@ -1163,6 +1184,24 @@ There's no automated test suite — verification is manual:
   fichero no estaba, y las 14.023 comprobaciones salían correctas sin haberla hecho ni una vez.
   Ahora imprime `AVISO:` y lo cuenta al pie. No tumba el build a propósito: sin el fichero no hay
   nada que comprobar, y en GitHub Actions tampoco va a estar.
+
+- **Un nombre de sitio en la prosa tiene que estar donde dice el texto que pasamos, y el criterio ya
+  existe: el de `make_places.py`.** Un `locality` entra si el track pasa a menos de **70 m**, un
+  `hamlet` o un barrio a 200, una cima a 60. Montando la ficha de `zaldutrail` se colaron en el
+  cuerpo seis topónimos de OpenStreetMap que ese mismo criterio ya había rechazado — Arkatxe a
+  399 m, Zabaldiak a 335, Aginde a 244, Potzueta a 243, Aginaga a 224 y Berrenguren a 104 — y el
+  autor los sacó: «¿merece la pena meter estos nombres?». No. Un caserío suelto a 300 m no lo ve
+  quien va por el camino, no ayuda a orientarse y afirma algo que los datos no dan. Los nombres
+  eran reales; la afirmación, no. Para los **títulos** la regla es otra y más laxa (ver
+  `garaimaguna` más arriba): ahí se nombra por donde la ruta pasa, no sólo lo que pisa.
+
+- **Que un sitio no salga en `scripts/osm/` no quiere decir que no exista: la consulta sólo baja
+  PUNTOS.** El autor preguntó si el barrio del km 18,1 de `zaldutrail` podía ser **Gazaga**, y la
+  copia de OSM no tenía ningún Gazaga. Lo tenía, pero como **área administrativa**, y
+  `places.json`/`pois.json` sólo traen nodos. Se vio preguntándole a Nominatim por la ermita: su
+  dirección completa es «Ermita de San Lorenzo de Urizar, Bizkaiko Golkoko Autobidea, **Gatzaga**,
+  Zaldibar», y el mapa de Wikiloc rotula ahí mismo «Lugar Bo. Gazaga». Antes de dar un topónimo por
+  inexistente, preguntar a Nominatim por la dirección completa de algo que sí esté en ese punto.
 
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
