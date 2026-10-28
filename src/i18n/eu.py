@@ -3445,6 +3445,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'artetaberanoarandono': 'Trabakuatik Arteta, Berano Nagusi eta Arandoñoko auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
     'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
     'preguntas': 'Fitxa bakoitzeko esfortzuak, azalerak eta denborek zer esan nahi duten, nondik datozen distantzia eta desnibela, bizikleta elektrikoa behar den eta webak estaldurarik gabe funtzionatzen duen',
     'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
@@ -3606,6 +3607,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'artetaberanoarandono': 'Arteta, Berano Nagusi eta Arandoño · Oinezko ibilbidea — Herriko ibilbideak',
     'ixuakalamua': 'Trabakua, Aginaga, Ixua eta Kalamua · E-bike ibilbidea — Herriko ibilbideak',
     'preguntas': 'Ohiko galderak · Herriko ibilbideak',
     'agua': 'Ur iturriak · Herriko ibilbideak',
@@ -6879,6 +6881,52 @@ ZALDUTRAIL = {
         'Azken metroak eginda, Udaletxeko plazara itzultzen gara. <a href="https://www.instagram.com/zaldutrail" target="_blank" rel="noopener noreferrer">Zaldutrail</a> ez da distantziaz luzea, baina desnibelean gogorra eta erritmo-aldaketetan eskatzailea. Bi igoera handiek markatzen dute lasterketa, eta Aixolako jaitsierak indarrak berreskuratzeko aukera ematen du. Azkenean, kontua ez da kilometroak osatzea: indarrak kudeatzea eta mendiaz gozatzen jakitea da.',
 }
 
+ARTETABERANOARANDONO = {
+    'Arteta, Berano Nagusi y Arandoño': 'Arteta, Berano Nagusi eta Arandoño',
+    'Senderismo': 'Mendi-ibilia',
+    'Circuito': 'Zirkuitua',
+    'Mixta': 'Mistoa',
+    'Distancia aproximada del GPX': 'GPXaren gutxi gorabeherako distantzia',
+    'Desnivel + por verificar': 'Igoera metatua egiaztatzeko',
+    'Esfuerzo por verificar': 'Esfortzua egiaztatzeko',
+    'Superficie': 'Azalera',
+    'Tipo': 'Mota',
+    'Actividad': 'Jarduera',
+    'Salida': 'Irteera',
+    'Mapa de la ruta': 'Ibilbidearen mapa',
+    'Ampliar mapa': 'Mapa handitu',
+    'Reducir mapa': 'Mapa txikitu',
+    'Track GPX real sobre ': 'Benetako GPX tracka hemen: ',
+    'Rutas': 'Ibilbideak',
+    'Euskara': 'Euskara',
+    'Castellano': 'Gaztelania',
+    'Cambiar a tema oscuro': 'Aldatu gai ilunera',
+    'Volver a rutas': 'Ibilbideetara itzuli',
+    'Aviso legal y privacidad': 'Lege-oharra eta pribatutasuna',
+    'Una vuelta por los barrios de Arteta, Berano Nagusi y Arandoño, combinando pistas de piedra y tierra, algún tramo de bosque y caminos que enlazan distintos barrios rurales. Una ruta muy bonita para disfrutar de los caseríos, los prados y el ganado, con un recorrido tranquilo y entretenido que puede encajar muy bien para hacer con niños.':
+        'Arteta, Berano Nagusi eta Arandoño auzoetan barrena egindako ibilbidea da, harrizko eta lurrezko pistak, baso-zati bat eta landa-auzoak lotzen dituzten bideak tartekatuz. Oso ibilbide polita da baserriez, belardiez eta abereez gozatzeko. Lasai eta entretenigarria da, eta haurrekin egiteko egokia izan daiteke.',
+    'Salimos de Trabakua y bajamos algo más de un kilómetro por la carretera hasta Donagarai, donde también es posible aparcar si queremos acortar el recorrido. Desde allí dejamos la carretera general y giramos a la izquierda para comenzar a subir por el camino de cemento, como en otras ocasiones, hasta llegar al cruce de Arteta.':
+        'Trabakuatik aterako gara eta errepidetik kilometro bat baino gehixeago jaitsiko gara Donagarairaino. Ibilbidea laburtu nahi izanez gero, han aparkatzeko aukera ere badago. Handik errepide nagusia utzi eta ezkerrera egingo dugu, zementuzko bidetik igotzen hasteko, beste batzuetan bezala, Artetako bidegurutzera iritsi arte.',
+    'En lugar de completar la vuelta al barrio por las pistas de arriba o de abajo, nos metemos de frente por un sendero entre eucaliptos. Elegimos esta entrada para evitar un tramo de pista y disfrutar de un rincón que merece la pena. El sendero nos lleva hasta la fuente de Arteta, donde podemos parar a beber agua antes de continuar.':
+        'Auzoari goiko edo beheko pistetatik buelta osoa eman beharrean, eukaliptoen arteko bidezidorrean sartuko gara, aurrez aurre. Sarrera hau aukeratu dugu pista-zati bat saihesteko eta merezi duen txoko batez gozatzeko. Bidezidorra Artetako iturriraino iristen da; han ura edateko gelditu gaitezke aurrera jarraitu aurretik.',
+    'Desde la fuente salimos a la pista de arriba, pero apenas avanzamos unos metros antes de abandonarla por la derecha. Comenzamos a bajar en dirección sureste, atravesando una zona de bosque hasta acercarnos al barrio de Berano. Al terminar el descenso salimos a una carretera de cemento cerca de Berano Txiki, aunque sin entrar en el barrio, y continuamos hacia Berano Nagusi.':
+        'Iturritik goiko pistara aterako gara, baina metro gutxi batzuk egin ondoren eskuinetik utziko dugu. Hego-ekialderantz jaisten hasiko gara, basoa zeharkatuz Berano auzora hurbiltzeko. Jaitsiera amaitzean zementuzko errepide batera aterako gara, Berano Txikitik gertu baina auzoan sartu gabe, eta Berano Nagusirantz jarraituko dugu.',
+    'A partir de aquí cambia el recorrido. Durante varios kilómetros iremos enlazando barrios por caminos de cemento, pasando junto a caseríos, prados y zonas de pasto donde es habitual encontrar ganado. Es una parte especialmente bonita, para recorrer sin prisas y disfrutar del entorno rural de esta zona de Mallabia.':
+        'Hemendik aurrera ibilbidea aldatuko da. Hainbat kilometrotan auzoak lotuko ditugu zementuzko bideetatik, baserrien, belardien eta abereak egon ohi diren larreen ondotik igaroz. Zati bereziki polita da, presarik gabe ibiltzeko eta Mallabiko inguru honetako landa-paisaiaren gozatzeko.',
+    'Continuamos entre caseríos y pasamos junto a la ermita de San Antonio, en Berano Nagusi. Es un rincón con mucho encanto, rodeado de árboles y con una construcción de piedra que destaca en el paisaje. La ermita cuenta con referencias históricas que se remontan al menos a comienzos del siglo XVIII.':
+        'Baserrien artean jarraituko dugu eta Berano Nagusiko San Antonio ermitaren ondotik igaroko gara. Xarma handiko txokoa da, zuhaitzez inguratua, eta harrizko eraikina paisaian nabarmentzen da. Ermitari buruzko erreferentzia historikoak XVIII. mendearen hasierara iristen dira gutxienez.',
+    'Seguimos por el camino que atraviesa Berano hasta llegar a su parte baja. Desde aquí podríamos volver a subir por el camino que encontramos a mano derecha para recorrer también la parte alta del barrio, pero en esta ocasión seguimos bajando hacia la zona de Ambre, cerca del polígono, y continuamos hacia Arandoño sin necesidad de salir a la carretera general.':
+        'Berano zeharkatzen duen bidetik jarraituko dugu beheko aldera iritsi arte. Hemendik, eskuinean dagoen bidetik berriro igo gaitezke auzoaren goiko aldea ere zeharkatzeko; oraingoan, ordea, Ambre ingururantz jaisten jarraituko dugu, industrialdetik gertu, eta Arandoñorantz joko dugu errepide nagusira atera gabe.',
+    'Entramos en Arandoño y comenzamos el regreso hacia Trabakua por el propio barrio. Vamos ganando altura mientras disfrutamos de los caseríos, los prados y el entorno de Berano Nagusi y sus alrededores. Seguimos hasta la parte alta y, junto al caserío situado más arriba, tomamos una pista que nos permite enlazar con la zona baja de Arteta.':
+        'Arandoñon sartuko gara eta auzotik bertatik Trabakuarako itzulera hasiko dugu. Altuera irabazten goazen bitartean, baserriez, belardiez eta Berano Nagusiko inguruaz gozatuko dugu. Goiko aldera iritsi eta gorago dagoen baserriaren ondoan pista bat hartuko dugu, Artetako beheko aldearekin lotzeko.',
+    'Una vez en la pista, giramos a la izquierda y continuamos por un tramo de piedra. Más adelante la dejamos para meternos por otra pista de tierra, buscando variar el recorrido y conocer nuevos caminos antes de regresar a Arteta, donde cerramos esta vuelta.':
+        'Pistara iritsitakoan ezkerrera egingo dugu eta harrizko zati batetik jarraituko dugu. Aurrerago pista utzi eta lurrezko beste batean sartuko gara, ibilbidea pixka bat aldatzeko eta bide berriak ezagutzeko. Ondoren Artetara itzuliko gara eta buelta itxiko dugu.',
+    'Desde aquí solo queda deshacer el camino del inicio: bajar de nuevo hasta Donagarai y afrontar la subida final a Trabakua.':
+        'Hemendik hasierako bidea alderantziz egitea besterik ez da geratzen: Donagaraira jaitsi eta Trabakuarainoko azken igoerari ekin.',
+    'Una ruta que merece la pena por la tranquilidad de sus caminos y la belleza de sus barrios. Entre pistas, pequeños tramos de bosque, caseríos y prados, descubrimos una zona muy agradable para pasear y conocer mejor los alrededores de Arteta, Berano y Arandoño. Un recorrido para disfrutar del paisaje rural, también en familia, adaptándolo al ritmo de los más pequeños.':
+        'Ibilbide honek merezi du bideen lasaitasunagatik eta auzoen edertasunagatik. Pistak, baso-zati txikiak, baserriak eta belardiak tartekatuz, Arteta, Berano eta Arandoñoko ingurua ezagutzeko eta paseatzeko toki atsegina aurkituko dugu. Landa-paisaiaren gozatzeko ibilbidea da, familian ere egiteko modukoa, txikienen erritmora egokituta.',
+}
+
 PAGE_STRINGS = {
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
@@ -6915,6 +6963,7 @@ PAGE_STRINGS = {
     'iruzubieta': IRUZUBIETA,
     'mendibil': MENDIBIL,
     'arteta': ARTETA,
+    'artetaberanoarandono': ARTETABERANOARANDONO,
     'goita': GOITA,
     'hirutxikiak': HIRUTXIKIAK,
     'zaldibar': ZALDIBAR,
