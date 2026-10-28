@@ -1586,10 +1586,17 @@ footer a:hover{ text-decoration:underline; }
   .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
-  /* Con «Compartir» en la barra, a 320 px la fila se salia 30 px. Aqui
-     la provincia sobra: la pagina ya dice de donde es, y «Mallabia» sola
-     libera 69 px, de sobra para el boton nuevo y para el par de pixeles
-     que faltaban desde antes. */
+}
+/* LA PROVINCIA SE VA EN EL MOVIL, no solo a 320 px.
+   Lo vio el autor en el suyo: «Bizkaia» acaba justo donde empiezan los
+   iconos y la barra se lee apretada. Medido el hueco entre el rotulo y el
+   primer boton: 0 px a 360, a 390 y a 412 -- se tocan--, 17 px a 430 y 67 a
+   480. O sea que aprieta en todos los moviles corrientes y no solo en el
+   mas estrecho, que es donde se arreglo en octubre al entrar «Compartir».
+   Quitar « · Bizkaia» libera 77 px y deja 62 de hueco a 390.
+   De 480 en adelante se queda: la pagina ya dice de donde es, pero ahi no
+   estorba y en el ordenador el rotulo luce. */
+@media (max-width:479px){
   .masthead .place-prov{ display:none; }
 }
 /* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
