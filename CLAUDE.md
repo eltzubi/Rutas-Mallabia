@@ -923,12 +923,22 @@ actividad**: el verde y el naranja están cogidos y aquí dirían algo que no es
 el icono siempre teñido, y al abrir el círculo pasa a relleno, el título y el signo toman el acento y
 el cuerpo coge un lavado muy suave. Cerrado sigue siendo una lista tranquila.
 
-**La provincia se va de la barra en todo el móvil.** El autor lo vio en el suyo: «Bizkaia» acababa
-justo donde empiezan los iconos. Medido el hueco entre el rótulo y el primer botón: **0 px a 360, a
-390 y a 412** —se tocaban—, 17 a 430 y 67 a 480. Apretaba en todos los móviles corrientes, no sólo
-en el más estrecho, que es donde se había arreglado en octubre al entrar «Compartir». Ahora
-`.place-prov` se esconde hasta **479 px** y el hueco pasa a 24 / 54 / 76 / 94 px. De 480 en adelante
-se queda. Las fichas de ruta no se tocan: ahí sobran 204 px a 390, que llevan menos botones.
+**La provincia volvió a la barra del móvil el 28 de octubre, y sin el punto.** Estuvo escondida por
+debajo de 480 px un día: el autor la vio apretada —«Bizkaia acaba justo donde empiezan los
+iconos»— y se midió **0 px de hueco a 360, a 390 y a 412**. Al verla desaparecer dijo lo otro:
+«**Bizkaia es importante que aparezca, pero sin punto**». Y cabe, con dos cosas y ninguna es
+esconderla:
+
+- **Fuera el « · »**, que son 14 px. El espacio entre «Mallabia» y «Bizkaia» lo pone ahora el CSS
+  (`.place-prov::before`, dos espacios duros), no el HTML.
+- **El apretado que ya existía por debajo de 360 px sube hasta 479**: letra de 10 px, espaciado
+  .06em, relleno de 11 y los iconos a 8. Estaba escrito para que «MALLABIA · BIZKAIA» no se
+  partiera en dos líneas a 320, y sirve igual aquí.
+
+Medido el hueco entre el rótulo y el primer botón, con las dos: **16 px a 360, 31 a 375, 46 a 390,
+68 a 412, 86 a 430**. Por debajo de 360 la barra entera se saldría (a 320 se pasa 21 px), así que
+ahí —y sólo ahí— la provincia sigue escondida. Las fichas de ruta no se tocan: tienen su propio
+rótulo en `route.css`, con menos botones al lado, y **conservan el punto**.
 
 **El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
 encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
@@ -1005,6 +1015,13 @@ el mismo `name="faq"` que los demás: el autor no la quiere abierta de por vida 
 página. Va pegada a «¿Puedo montarme mi propia ruta?», que es su pregunta. Son siete pasos con su
 captura, del lápiz al GPX, incluido el ojo de «Rutas» para ver qué hay debajo (si por ahí pasa un
 camino que no es ninguna de las 65, o si el tramo enganchado cruza campo a través).
+
+**La lista de carreras de la pregunta «¿Por qué algunas rutas coinciden con carreras de
+montaña?» hay que tocarla al meter una ruta que sea una carrera.** Lo pilló el autor: «¿por qué
+algunas rutas coinciden con carreras de montaña? Falta zaldutrail». Van ahí el Asto Trail de
+Garai, la 7 Pago de Mallabia, la Amaraune de Berriz, la Ahuntzen de Elgeta, las Hiru Txikiak de
+Ermua y el **Zaldutrail de Zaldibar**. No hay script que lo rellene: es prosa, en el castellano y
+en su clave de `eu.py`.
 
 **Las preguntas van agrupadas por tema**, no por orden de llegada: las tres de bici, luego las tres
 de elegir ruta (Esfuerzo, niños, carreras), luego las dos de campo (agua, tracks) y al final las dos

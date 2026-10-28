@@ -1617,16 +1617,13 @@ footer a:hover{ text-decoration:underline; }
   .theme-toggle svg, .buscador-abrir svg, .mio-abrir svg{ width:13px; height:13px; }
 }
 /* Por debajo de 360 px «MALLABIA · BIZKAIA» se partia en dos lineas y la
-   barra crecia. Con una pizca menos de letra y de espaciado entra de una. */
+   barra crecia. El apretado que lo arreglaba -- letra de 10, espaciado .06em,
+   relleno de 11, hueco de 10 antes del rotulo y los iconos a 8-- vive ahora
+   mas abajo, en el bloque de 479 px, porque hace falta en todos los moviles
+   para que quepa «Bizkaia». Aqui solo queda lo propio de 320: para que la
+   onda del aviso no pise la «M», el aro baja a 42. */
 @media(max-width:359px){
-  /* En 320 px no caben los 22: la barra entera se salia -- ahi no sobran
-     mas que un par de pixeles. El hueco se queda en 10 y, para que la onda
-     no pise la «M», el aro baja a 42. */
-  .masthead .aviso-pulso + .place{ margin-left:10px; }
   .masthead .aviso-aro{ animation-name:avisoAroEstrecho; }
-  .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
-  .masthead .place{ white-space:nowrap; }
-  .masthead-right{ gap:8px; }
 }
 /* ORIENTARSE AHI ABAJO. Lo levanto el autor: «cuando uno abre dormir o
    aparcar no sabe en que parte de la pagina esta, ni como salir de ahi».
@@ -1718,18 +1715,35 @@ footer a:hover{ text-decoration:underline; }
 /* En vista de mapa la pagina esta congelada detras del mapa: estorban. */
 body.vista-mapa .atajos{ display:none; }
 
-/* LA PROVINCIA SE VA EN EL MOVIL, no solo a 320 px.
-   Lo vio el autor en el suyo: «Bizkaia» acaba justo donde empiezan los
-   iconos y la barra se lee apretada. Medido el hueco entre el rotulo y el
-   primer boton: 0 px a 360, a 390 y a 412 -- se tocan--, 17 px a 430 y 67 a
-   480. O sea que aprieta en todos los moviles corrientes y no solo en el
-   mas estrecho, que es donde se arreglo en octubre al entrar «Compartir».
-   Quitar « · Bizkaia» libera 77 px y deja 62 de hueco a 390.
-   De 480 en adelante se queda: la pagina ya dice de donde es, pero ahi no
-   estorba y en el ordenador el rotulo luce. */
+/* LA PROVINCIA VUELVE AL MOVIL, Y SIN EL PUNTO.
+   Estuvo escondida por debajo de 480 px desde el 27 de octubre, porque
+   «Bizkaia» acababa justo donde empiezan los iconos: medido el hueco entre
+   el rotulo y el primer boton, 0 px a 360, a 390 y a 412 -- se tocaban--.
+   El autor: «Bizkaia es importante que aparezca, pero sin punto».
+   Se arregla con dos cosas y ninguna es esconderla. La primera, quitar el
+   « · »: son 14 px. La segunda, que el apretado que ya existia por debajo
+   de 360 px -- letra de 10, espaciado .06em, relleno de 11 y los iconos a 8--
+   suba hasta 479 en vez de quedarse en 359. Medido el hueco con las dos:
+
+     320  se sale 21 px      375  31 px      430  86 px
+     344   2 px              390  46 px      479 135 px
+     360  16 px              412  68 px
+
+   Asi que de 360 para arriba sobra sitio y se queda puesta; por debajo de
+   360 la barra entera se saldria, y ahi -- y solo ahi-- sigue escondida.
+   Ojo: el espacio entre «Mallabia» y «Bizkaia» lo pone el CSS
+   (.place-prov::before), no el HTML, para que no se pierda al plegar la
+   etiqueta. */
 @media (max-width:479px){
+  .masthead .aviso-pulso + .place{ margin-left:10px; }
+  .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
+  .masthead .place{ white-space:nowrap; }
+  .masthead-right{ gap:8px; }
+}
+@media (max-width:359px){
   .masthead .place-prov{ display:none; }
 }
+.place-prov::before{ content:"\00a0\00a0"; }
 /* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
    tienen el mismo radio, pero el del aviso se veia bastante mas gordo porque
    el halo que late detras desborda el filo hacia dentro y hacia fuera -- 55
