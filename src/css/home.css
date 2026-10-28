@@ -495,6 +495,47 @@
    hay ratón, y en un gris suave: el naranja se queda para la e-bike. */
 @media (hover:hover){ .practical-info .info-details summary:hover{ background:color-mix(in srgb, var(--ink) 6%, transparent); } }
 .practical-info .info-details summary::after{ color:var(--ink-dim); }
+/* UN POCO DE VIDA EN LOS DESPLEGABLES DE ABAJO.
+   Lo pidio el autor viendolos en su movil: todo gris, cinco filas iguales,
+   el icono en un circulo apagado y el «+» del mismo color que el texto.
+   No se inventa ninguna paleta: es el mismo tratamiento que ya llevan los
+   desplegables de preguntas.html -- un --acento con su version suave -- y
+   el acento es var(--link), que es el que esa pagina usa para lo que NO es
+   una actividad. El verde y el naranja estan cogidos: significan «a pie» y
+   «en bici», y aqui dirian algo que no es.
+   Solo se enciende lo justo: el icono siempre, y el titulo, el signo y el
+   cuerpo cuando el desplegable esta abierto. Cerrado sigue siendo una lista
+   tranquila. */
+.practical-info{ --acento: var(--link); }
+.practical-info .info-icon{
+  background:color-mix(in srgb, var(--acento) 16%, transparent);
+  color:var(--acento);
+}
+/* El del abierto va relleno, no teñido: con el tinte solo, abierto y
+   cerrado se distinguian apenas y la fila seguia leyendose plana. */
+.practical-info .info-details[open] .info-icon{
+  background:var(--acento); color:var(--ground);
+}
+.practical-info .info-details[open] > summary{ color:var(--acento); }
+.practical-info .info-details[open] > summary::after{ color:var(--acento); }
+@media (hover:hover){
+  .practical-info .info-details > summary:hover .info-icon{
+    background:color-mix(in srgb, var(--acento) 26%, transparent);
+  }
+}
+.practical-info .info-details[open] > .info-details-body{
+  background:color-mix(in srgb, var(--acento) 7%, transparent);
+  border-top:1px solid color-mix(in srgb, var(--acento) 22%, transparent);
+  border-radius:0 0 12px 12px;
+  padding-top:14px;
+}
+.practical-info .info-details > summary:focus-visible{
+  outline:2px solid var(--acento); outline-offset:-2px; border-radius:10px;
+}
+@media (prefers-reduced-motion: no-preference){
+  .practical-info .info-icon{ transition:background .18s ease, color .18s ease; }
+}
+
 .info-summary-label{ display:flex; align-items:center; gap:10px; }
 .info-icon{
   display:inline-flex; align-items:center; justify-content:center;
