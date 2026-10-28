@@ -236,7 +236,7 @@ FUENTES = [
         "punto": ("aixola", 4),
         "nota_es": "Agua todo el año. Hay que desviarse unos metros a la izquierda al llegar al camino de la presa.",
         "nota_eu": "Ura urte osoan. Presako bidera iristean, metro batzuk ezkerrera jo behar da.",
-        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak", "aixola"],
+        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak", "aixola", "zaldutrail"],
     },
     {
         "id": "zaldibar",
@@ -249,7 +249,7 @@ FUENTES = [
         "punto": ("zaldibar", None),
         "nota_es": "Junto al pol\u00edgono, de camino a Zaldibar.",
         "nota_eu": "Poligonoaren ondoan, Zaldibarrerako bidean.",
-        "rutas": ["aixola", "zaldibar"],
+        "rutas": ["aixola", "zaldibar", "zaldutrail"],
     },
     {
         "id": "eitzaga",
@@ -259,7 +259,7 @@ FUENTES = [
         "punto": ("zaldibar", 2),
         "nota_es": "En el barrio, antes de bajar hacia la presa de Aixola.",
         "nota_eu": "Auzoan, Aixolako presara jaitsi aurretik.",
-        "rutas": ["zaldibar", "hirutxikiak", "aixola"],
+        "rutas": ["zaldibar", "hirutxikiak", "aixola", "zaldutrail"],
     },
     {
         "id": "elgeta",
