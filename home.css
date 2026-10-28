@@ -1682,7 +1682,7 @@ footer a:hover{ text-decoration:underline; }
    la ventana mas baja que se ha probado. Ademas se ven al entrar, que es lo
    que se buscaba. */
 .atajos{
-  display:flex; gap:6px; margin:10px 0 14px;
+  display:flex; gap:5px; margin:10px 0 14px;
   /* El mismo margen lateral que el titular y las tarjetas (16 px en el
      movil, 24 de 660 para arriba) y el mismo ancho maximo que los demas
      bloques. Iba sin ninguno, asi que la primera pastilla nacia pegada al
@@ -1695,13 +1695,21 @@ footer a:hover{ text-decoration:underline; }
 @media (min-width:660px){ .atajos{ padding:2px 24px 3px; } }
 @media (min-width:1024px){ .atajos{ max-width:1100px; margin-inline:auto; } }
 .atajos::-webkit-scrollbar{ display:none; }
+/* La letra baja de 10 a 9 px, la separacion entre letras de .1 a .08em, el
+   relleno de 12 a 10 px y el hueco de 6 a 5: lo pidio el autor, «que entren
+   enteras horizontalmente». Medida la fila entera (pastillas + huecos +
+   margenes laterales): en castellano 403 px y en euskera 389, o sea que a
+   390 px el castellano se salia 13 px y habia que arrastrarla. Asi quedan
+   en 352 y 340, y entra entera de 360 px para arriba en las dos lenguas.
+   Por debajo de 360 sigue arrastrandose, que para que entrara a 320
+   habria que bajar a 8,5 px y ahi ya no se lee. */
 .atajos a{
   flex:0 0 auto; text-decoration:none;
   border:1px solid var(--line); border-radius:999px;
-  padding:5px 12px; min-height:28px;
+  padding:5px 10px; min-height:28px;
   display:inline-flex; align-items:center;
-  font:600 10px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.1em; text-transform:uppercase;
+  font:600 9px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.08em; text-transform:uppercase;
   color:var(--ink-dim); background:transparent;
   transition:color .18s ease, border-color .18s ease;
 }

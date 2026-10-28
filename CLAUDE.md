@@ -296,7 +296,10 @@ torcido — y sale del propio orden de los puntos del track, que es el de la mar
 portada no las lleva: 57 tracks a la vez.
 
 **Las capas: cuatro, iguales en la portada y en una ficha, y las dos abren en Bici.**
-IGN, **Bici** (CyclOSM), **Topo** (OpenTopoMap) y Satélite.
+IGN, **Bici** (CyclOSM), **Topo** (OpenTopoMap) y Satélite. **`agua.html` abre en Topo**, que lo
+pidió el autor —«mapa agua que abra en topo»— y ahí encaja: es la capa que más nombres y más
+curvas de nivel saca al zoom al que uno busca, y esa página no pinta ningún trazado naranja con el
+que sus carreteras puedan enredarse. Antes abría en IGN.
 
 **El 28 de octubre salió «Euskadi» y entró OpenTopoMap, y conviene leer por qué antes de deshacerlo.**
 El autor: «el mapa Euskadi no me dice nada; quiero nombres abundantes y más curvas de nivel, para que
@@ -834,7 +837,8 @@ notaba la diferencia.
 
 Debajo de la cabecera va ahora una fila fina de cinco pastillas —**Aparcar, Comer, Dormir, Agua,
 Preguntas**— que lleva allí de un toque. Cuesta **30 px** y cabe entera a 390 px en los dos
-idiomas. Resuelve las dos mitades del problema: el viaje y, sobre todo, **saber que eso existe**.
+idiomas (con la letra a 9 px; ver abajo). Resuelve las dos mitades del problema: el viaje y, sobre
+todo, **saber que eso existe**.
 Las rutas siguen siendo lo primero; se descartó subir el bloque entero encima de la rejilla, que
 cuesta unos 300 px y pone «Dónde aparcar» antes que las rutas.
 
@@ -865,8 +869,22 @@ la primera pastilla nacía pegada al filo de la pantalla con el borde redondo co
 de lo del «círculo entero»— y en el ordenador la fila arrancaba **90 px a la izquierda** del
 titular y de las tarjetas.
 
-Dos cosas del montaje:
+**La letra son 9 px, no 10, y la fila entra entera de 360 px para arriba.** Lo pidio el autor:
+«minifica un poco la letra para que entren enteras horizontalmente». Medida la fila completa
+—pastillas, huecos y margenes laterales— iba en **403 px en castellano y 389 en euskera**, asi que a
+390 px el castellano se salía 13 px y había que arrastrarla con el dedo. Con 9 px, `letter-spacing`
+.08em, relleno de 10 y hueco de 5 quedan en **352 y 340**. Por debajo de 360 sigue arrastrándose, y
+se queda así: para que entrara a 320 habría que bajar a 8,5 px y ahí ya no se lee.
 
+Tres cosas del montaje:
+
+- **Cada atajo abre lo suyo y cierra los demás.** Antes solo abría el destino, así que pulsando
+  «Aparcar» y luego «Dormir» el bloque se encuadraba con «Aparcar» desplegado delante y «Dormir»
+  caía fuera de la pantalla. Medido antes de tocarlo, en 390x700: Aparcar aterrizaba en y 74,
+  Dormir en **780** y Agua en **1.229**. El autor: «cuando le doy a Dormir que abra esa
+  información; si le doy Agua, que abra esa. Cada cual la suya». Ahora los tres caen en 74, 175 y
+  226. Se cierran desde el propio manejador y **no con `name=` en los `<details>`**, que eso
+  cambiaría también lo que pasa al abrirlos a mano, y eso no lo ha pedido.
 - **El enlace solo no basta.** Ahí abajo hay `<details>` plegados, así que saltar al ancla deja al
   visitante delante de un título cerrado. El bloque del final de `src/js/app.js` abre el que toca
   antes de ir, y espera **dos fotogramas** antes de medir, como en las preguntas: al abrir el

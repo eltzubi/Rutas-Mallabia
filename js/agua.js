@@ -165,7 +165,12 @@
     { layer: openTopoLayer, label: isEu ? 'OpenTopoMap mapa topografikoa' : 'Mapa topográfico OpenTopoMap', short: 'Topo' },
     { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat', rotulos: nombresLayer }
   ];
-  var layerIndex = 0;
+  // Abre en Topo (OpenTopoMap), no en el IGN. Lo pidio el autor: «mapa agua
+  // que abra en topo». Es la capa que mas nombres y mas curvas de nivel saca
+  // al zoom al que uno busca, y aqui no hay ningun trazado naranja con el
+  // que puedan enredarse sus carreteras: esta pagina solo pinta los puntos
+  // de agua.
+  var layerIndex = 2;
   layerDefs[layerIndex].layer.addTo(map);
   if (layerDefs[layerIndex].rotulos) layerDefs[layerIndex].rotulos.addTo(map);
 

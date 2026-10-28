@@ -857,6 +857,19 @@
     var destino = document.getElementById(a.getAttribute('href').slice(1));
     if (!destino) return;              // sin destino, que haga lo suyo el navegador
     ev.preventDefault();
+    // Cada atajo abre LO SUYO Y SOLO LO SUYO. Antes solo abria el destino y
+    // dejaba puestos los que ya estuvieran abiertos, asi que pulsando
+    // «Aparcar» y luego «Dormir» el bloque se encuadraba con «Aparcar»
+    // desplegado delante y «Dormir» caia en el pixel 780, fuera de la
+    // pantalla: el autor pulsaba Dormir y veia Aparcar. Medido antes de
+    // tocarlo: Aparcar -> y 74 (a la vista), Dormir -> 780, Agua -> 1229.
+    var marco = destino.closest ? destino.closest('.info-accordion') : null;
+    if (marco && marco.querySelectorAll) {
+      var hermanos = marco.querySelectorAll('.info-details');
+      for (var i = 0; i < hermanos.length; i++) {
+        if (hermanos[i] !== destino) hermanos[i].open = false;
+      }
+    }
     destino.open = true;
     var cabecera = document.querySelector('.masthead');
     var alto = cabecera ? cabecera.getBoundingClientRect().height : 0;
@@ -866,7 +879,6 @@
     // el autor dijo. Los cinco plegados ocupan unos 250 px, asi que yendo al
     // principio del bloque se ven el titulo, las cinco filas y el que se
     // acaba de abrir.
-    var marco = destino.closest ? destino.closest('.info-accordion') : null;
     var ve = function(){
       var ref = marco || destino;
       window.scrollTo(0, Math.max(0,
