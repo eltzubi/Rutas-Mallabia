@@ -1022,6 +1022,16 @@ los dos idiomas, y al pie del propio bloque. **El aviso legal se habia quedado a
 la capa de geoEuskadi: nombraba solo al IGN, CyclOSM, Esri y Open-Meteo. Al anadir una capa o un
 servicio hay que tocarlo, y su clave en `eu.py`.
 
+**Y hay un iframe de Google Maps en la portada**, dentro del desplegable «Dónde aparcar»: marca el
+puerto de Trabakua, las mismas coordenadas que el marcador de aparcamiento del mapa propio. Va con
+`loading="lazy"`, así que sólo carga si alguien abre ese desplegable, pero cuando carga **Google
+pone sus cookies**, y eso contradecía dos frases del aviso legal: la lista cerrada de servicios
+externos (IGN, CyclOSM, geoEuskadi, Esri, Open-Meteo, Euskalmet) y el «esta web no usa cookies de
+rastreo ni analítica de ningún tipo». Se le planteó al autor quitarlo —el mapa de la web ya marca
+ese punto— y eligió dejarlo y declararlo, así que **el aviso legal lo nombra ahora en los dos
+idiomas** y la frase de las cookies dice «no pone ninguna cookie propia», con Google como única
+excepción. Si algún día entra otro contenido incrustado, lo mismo: mirar esas dos frases.
+
 **Map tiles are deliberately never cached.** They come from CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
 empty background, not on the map.
