@@ -81,7 +81,7 @@ FUENTES = [
         "punto": ("arteta", 3),
         "nota_es": "Agua todo el año. Brota de la roca y está algo escondida entre los árboles.",
         "nota_eu": "Ura urte osoan. Harkaitzetik sortzen da eta zuhaitzen artean ezkutatuta dago.",
-        "rutas": ["arteta", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
+        "rutas": ["arteta", "artetaberanoarandono", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
     },
     {
         "id": "mallabia",
