@@ -1628,6 +1628,37 @@ footer a:hover{ text-decoration:underline; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
 }
+/* ORIENTARSE AHI ABAJO. Lo levanto el autor: «cuando uno abre dormir o
+   aparcar no sabe en que parte de la pagina esta, ni como salir de ahi».
+   Medido: al saltar desde un atajo caes en el pixel 35.859 de 36.933, la
+   fila de atajos queda 35.332 px arriba y el bloque NO TENIA TITULO -- la
+   cabecera es la misma en toda la web, asi que no dice nada.
+   Dos cosas, y las dos en el flujo, no flotando: un titulo que diga donde
+   has caido y una salida escrita al final. El boton redondo de la esquina
+   si se ve ahi (comprobado), pero el autor no lo registro como la manera de
+   volver, que para el caso es como si no estuviera.
+   Se descarto una X: una X significa «cerrar lo que se ha abierto encima»,
+   y aqui no hay nada encima, solo has bajado -- y al pulsarla seguirias en
+   el pixel 36.000. */
+.info-titulo{
+  margin:0 0 10px; padding:0 16px;
+  font:600 11px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.volver-arriba{
+  display:inline-flex; align-items:center; gap:7px;
+  margin:16px 16px 0; padding:9px 16px;
+  border:1px solid var(--line); border-radius:999px;
+  font:600 10px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-dim); text-decoration:none;
+  transition:color .18s ease, border-color .18s ease;
+}
+.volver-arriba::before{ content:'\2191'; font-size:13px; line-height:1; }
+.volver-arriba:hover{ color:var(--ink); border-color:var(--ink-dim); }
+.volver-arriba:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+
 /* LOS ATAJOS A LA INFORMACION DEL FINAL.
    Lo levanto el autor: «no creo que nadie baje hasta abajo, asi que es
    posible que nunca lleguen a leer donde comer o donde dormir». Y tenia

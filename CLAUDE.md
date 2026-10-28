@@ -825,6 +825,33 @@ Ojo: la portada tiene **dos** `section.info-accordion`. La de arriba es `#before
 de salir») y la de abajo es `.practical-info`, que es ésta. Buscar por `info-accordion` a secas coge
 la de arriba.
 
+**Y una vez allí, saber dónde estás y cómo salir.** Lo levantó el autor en cuanto probó los atajos:
+«cuando uno abre dormir o aparcar no sabe en qué parte de la página está, ni cómo salir de ahí».
+Medido: caes en el **píxel 35.859 de 36.933**, la fila de atajos queda 35.332 px arriba y el bloque
+**no tenía título** — la cabecera es la misma en toda la web, así que no orienta. El botón redondo de
+«volver arriba» sí se ve ahí (comprobado, `y=720`, opacidad 1), pero él no lo registró como la salida,
+que para el caso es como si no estuviera.
+
+Dos cosas, las dos en el flujo y no flotando: un **título** al bloque («Información práctica») y un
+**«↑ Volver arriba» escrito al final**, que hace lo mismo que el botón redondo —se le engancha la
+misma función en `app.js`— para que no suba uno de golpe y el otro rodando.
+
+**Y el atajo encuadra el BLOQUE, no el apartado.** Con el apartado, saltando a «Dormir» el título se
+quedaba fuera de pantalla y seguías sin saber dónde habías caído. Los cinco plegados ocupan unos
+250 px, así que yendo al principio del bloque se ven el título, las cinco filas —puedes saltar de
+Dormir a Aparcar sin subir— y el que se acaba de abrir.
+
+**Se descartó una X**, que fue lo primero que él propuso: una X significa «cerrar lo que se ha abierto
+encima», aquí no hay nada encima —sólo has bajado— y al pulsarla seguirías en el píxel 36.000.
+También se descartó, de momento, repetir la fila de atajos dentro del bloque o dejarla pegada arriba.
+
+**Y un poco de color en esos desplegables.** El autor los vio en su móvil: todo gris, cinco filas
+iguales. Llevan ahora el mismo tratamiento que los de `preguntas.html` —un `--acento` con su versión
+suave— y el acento es **`var(--link)`**, que es el que esa página usa para lo que **no es una
+actividad**: el verde y el naranja están cogidos y aquí dirían algo que no es. Se enciende lo justo:
+el icono siempre teñido, y al abrir el círculo pasa a relleno, el título y el signo toman el acento y
+el cuerpo coge un lavado muy suave. Cerrado sigue siendo una lista tranquila.
+
 **La provincia se va de la barra en todo el móvil.** El autor lo vio en el suyo: «Bizkaia» acababa
 justo donde empiezan los iconos. Medido el hueco entre el rótulo y el primer botón: **0 px a 360, a
 390 y a 412** —se tocaban—, 17 a 430 y 67 a 480. Apretaba en todos los móviles corrientes, no sólo

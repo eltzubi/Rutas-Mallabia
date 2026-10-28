@@ -167,7 +167,7 @@
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
-  btn.addEventListener('click', function(){
+  function subir(){
     var root = document.documentElement;
     var masthead = document.querySelector('.masthead');
     root.classList.add('scrolling-to-top');
@@ -176,7 +176,15 @@
     var stop = function(){ root.classList.remove('scrolling-to-top'); };
     window.addEventListener('scrollend', stop, { once:true });
     setTimeout(stop, 1000);
-  });
+  }
+  btn.addEventListener('click', subir);
+  // El «Volver arriba» escrito al final de la informacion practica hace lo
+  // mismo que el boton redondo: si no, uno saltaria de golpe y el otro
+  // subiria rodando, y son la misma accion.
+  var enlaces = document.querySelectorAll('.volver-arriba');
+  for (var k = 0; k < enlaces.length; k++) {
+    enlaces[k].addEventListener('click', function(ev){ ev.preventDefault(); subir(); });
+  }
 })();
 
 // --- compact masthead on scroll (home page only) ---
@@ -852,9 +860,17 @@
     destino.open = true;
     var cabecera = document.querySelector('.masthead');
     var alto = cabecera ? cabecera.getBoundingClientRect().height : 0;
+    // Se encuadra el BLOQUE, no el apartado. Medido: saltando a «Dormir»
+    // el titulo «Informacion practica» se quedaba fuera de pantalla y el
+    // visitante aterrizaba sin saber donde habia caido, que es justo lo que
+    // el autor dijo. Los cinco plegados ocupan unos 250 px, asi que yendo al
+    // principio del bloque se ven el titulo, las cinco filas y el que se
+    // acaba de abrir.
+    var marco = destino.closest ? destino.closest('.info-accordion') : null;
     var ve = function(){
+      var ref = marco || destino;
       window.scrollTo(0, Math.max(0,
-        destino.getBoundingClientRect().top + window.pageYOffset - alto - 10));
+        ref.getBoundingClientRect().top + window.pageYOffset - alto - 10));
     };
     if (typeof requestAnimationFrame === 'function') {
       requestAnimationFrame(function(){ requestAnimationFrame(ve); });

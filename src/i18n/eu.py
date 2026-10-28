@@ -381,6 +381,11 @@ ROUTE = {
 }
 
 HOME = {
+    # el titulo del bloque de abajo y su salida
+    '<h2 class="info-titulo">Informaci&oacute;n pr&aacute;ctica</h2>':
+        '<h2 class="info-titulo">Informazio praktikoa</h2>',
+    '<a class="volver-arriba" href="#">Volver arriba</a>':
+        '<a class="volver-arriba" href="#">Gora itzuli</a>',
     # los atajos a la informacion del final
     '<nav class="atajos" aria-label="Informaci&oacute;n pr&aacute;ctica">':
         '<nav class="atajos" aria-label="Informazio praktikoa">',
