@@ -868,7 +868,9 @@
         opacity: baseOpacity,
         lineJoin: 'round'
       }).addTo(map);
-      bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds();
+      // El conjunto necesita su propia caja: extend() modifica el objeto.
+      // Compartir la caja de la primera linea la hacia abarcar todas las rutas.
+      bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds().pad(0);
 
       if (t.href) {
         var href = isEu ? t.href.replace(/\.html$/, '.eu.html') : t.href;

@@ -7013,3 +7013,9 @@ ARTETABERANOARANDONO['Arteta, Berano Nagusi <em>y Arandoño</em>'] = 'Arteta, Be
 ARTETABERANOARANDONO['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño'] = HOME['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño']
 
 ARTETABERANOARANDONO['Fuente de Arteta'] = 'Artetako iturria'
+
+ARTETABERANOARANDONO.pop('Ermita junto al camino, bajo las ramas', None)
+ARTETABERANOARANDONO.pop('Fuente de Arteta', None)
+ARTETABERANOARANDONO['Ermita de San Antonio'] = 'San Antonio ermita'
+
+ARTETABERANOARANDONO['Foto ampliada'] = 'Argazki handitua'
