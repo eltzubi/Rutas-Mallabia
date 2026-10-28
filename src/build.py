@@ -706,7 +706,7 @@ def add_tecnica(page_html, page, lang):
 # lo que sirve una fecha aqui. Se probo ponerla en cada ficha, sacada de la
 # hora del track, y el autor la quito: no quiere 57 fechas, quiere saber cual
 # es la ultima entrada. SE CAMBIA A MANO AL PUBLICAR UNA RUTA NUEVA.
-ULTIMA_ENTRADA = ("zaldutrail", "2026-10-27")
+ULTIMA_ENTRADA = ("artetaberanoarandono", "2026-10-28")
 
 
 # El numero de rutas, escrito por el build y no a mano. Lo pidio el autor

@@ -230,6 +230,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/arteta.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/artetaberanoarandono.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/artetaberanoarandono.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/artetaberanoarandono.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/artetaberanoarandono.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/artetaberanoarandono.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/artetaberanoarandono.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/goita.html</loc>
     <lastmod>2026-10-18</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/goita.html"/>
