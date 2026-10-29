@@ -1868,8 +1868,8 @@ body.vista-mapa .atajos{ display:none; }
 /* Panel compacto en forma de cápsula: conserva el diálogo accesible y sus pestañas. */
 .trip-info-dialog{
   width:min(94vw,620px);
-  height:min(76dvh,760px);
-  max-height:calc(100dvh - 34px);
+  height:calc(100dvh - 24px);
+  max-height:calc(100dvh - 24px);
   margin:auto;
   padding:8px 0 0;
   background:color-mix(in srgb, var(--ground-raised) 89%, transparent);
@@ -1921,6 +1921,6 @@ body.vista-mapa .atajos{ display:none; }
 .trip-info-panel{padding:17px 17px max(20px,env(safe-area-inset-bottom));}
 .trip-info-panel .parada h2{font-size:20px;}
 @keyframes tripCapsuleIn{from{opacity:0;transform:translateY(-11px) scale(.975);}to{opacity:1;transform:translateY(0) scale(1);}}
-@media(min-width:600px){.trip-info-dialog{height:min(75dvh,680px);}.trip-info-heading{margin-top:5px;}}
+@media(min-width:600px){.trip-info-dialog{height:min(88dvh,860px);}.trip-info-heading{margin-top:5px;}}
 @media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}.trip-info-tab{transition:none;}}
 
