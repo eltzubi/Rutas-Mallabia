@@ -603,6 +603,7 @@ HOME = {
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',
     'D&oacute;nde comer': 'Non jan',
+    'Temporalmente cerrado': 'Aldi baterako itxita',
     'Dos restaurantes est&aacute;n en el mismo puerto de Trabakua, junto al aparcamiento; el tercero, en el pueblo.':
         'Bi jatetxe Trabakuko mendatean bertan daude, aparkalekuaren ondoan; hirugarrena, herrian.',
     'Dormir cerca': 'Non lo egin',
