@@ -1796,3 +1796,71 @@ body.vista-mapa .atajos{ display:none; }
 .place-list .place-tel{ font-size:14px; color:var(--ink-dim); }
 .place-list .place-tel a{ color:var(--ink); text-decoration:none; }
 .place-list .place-tel a:hover{ text-decoration:underline; }
+
+/* Antes de salir: un único acceso; el contenido se mueve al diálogo con JS.
+   Sin JS siguen la fila de enlaces y los desplegables originales. */
+.trip-info-ready .atajos,
+.trip-info-ready #beforeYouGo,
+.trip-info-ready .practical-info{ display:none; }
+.trip-info-dialog:not([open]){ display:none; }
+.trip-info-dialog{
+  width:calc(100% - 20px); max-width:660px;
+  max-height:calc(100dvh - 28px); height:min(76dvh,660px);
+  margin:auto auto 10px; padding:10px 0 0;
+  color:var(--ink); background:var(--ground-raised);
+  border:1px solid color-mix(in srgb, var(--link) 45%, var(--line));
+  border-radius:24px; overflow:hidden;
+  box-shadow:0 -8px 40px rgba(0,0,0,.24), inset 0 1px 0 color-mix(in srgb, var(--ink) 9%, transparent);
+}
+.trip-info-dialog[open]{ display:flex; flex-direction:column; animation:tripInfoIn .2s ease-out; }
+.trip-info-dialog::backdrop{
+  background:rgba(0,0,0,.64);
+  backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
+}
+.trip-info-handle{ width:34px; height:4px; border-radius:4px; background:var(--ink-dim); opacity:.5; margin:0 auto 5px; flex-shrink:0; }
+.trip-info-heading{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 17px 10px; flex-shrink:0; }
+.trip-info-heading h2{ margin:0; font:600 19px/1.3 'Fraunces',serif; }
+.trip-info-close{
+  width:44px; height:44px; padding:0; display:grid; place-items:center;
+  border:1px solid var(--line); border-radius:50%; color:var(--ink);
+  background:var(--ground); cursor:pointer; flex-shrink:0;
+}
+.trip-info-tabs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; padding:0 17px 14px; flex-shrink:0; }
+.trip-info-tab{
+  display:flex; align-items:center; gap:9px; min-height:46px; min-width:0; padding:10px 12px;
+  font:500 12px/1.3 'IBM Plex Mono',monospace; color:var(--ink-dim);
+  background:var(--ground); border:1px solid var(--line); border-radius:12px;
+  text-align:left; cursor:pointer;
+}
+.trip-info-tab svg{ flex-shrink:0; width:18px; height:18px; }
+.trip-info-tab[aria-selected="true"]{
+  color:var(--ink); border-color:var(--link);
+  background:color-mix(in srgb, var(--link) 12%, var(--ground));
+}
+.trip-info-tab[aria-controls="tripPanel-gps"]::after{
+  content:''; width:5px; height:5px; border-radius:50%; background:var(--violet); margin-left:auto; flex-shrink:0;
+}
+.trip-info-tab:focus-visible,.trip-info-close:focus-visible{ outline:2px solid var(--link); outline-offset:2px; }
+.trip-info-content{ display:flex; flex:1; min-height:0; border-top:1px solid var(--line); }
+.trip-info-panel{ flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:17px 17px max(20px, env(safe-area-inset-bottom)); font-family:'Karla',sans-serif; letter-spacing:normal; }
+.trip-info-panel[hidden]{ display:none; }
+.trip-info-panel .info-details-body{ padding:0; }
+.trip-info-panel .parada{ margin:0; border:0; border-radius:0; background:none; padding:0; box-shadow:none; }
+.trip-info-panel .parada + .parada{ margin-top:22px; border-top:1px solid var(--line); padding-top:18px; }
+.trip-info-panel .parada .k{ display:none; }
+.trip-info-panel .parada h2{ margin:0 0 11px; font-size:19px; }
+.trip-info-panel .parada p{ font-size:15px; line-height:1.65; max-width:none; }
+.trip-info-panel .map-box{ margin:0 0 12px; }
+.trip-info-panel .map-box iframe{ max-height:220px; }
+.trip-info-panel .map-note:first-child{ margin-top:0; }
+.trip-info-panel .map-note{ font-family:'Karla',sans-serif; font-size:15px; line-height:1.6; letter-spacing:normal; }
+.trip-info-panel .place-list{ margin-top:8px; }
+.trip-info-panel .notice-close{ margin-top:12px; }
+@keyframes tripInfoIn{ from{ transform:translateY(16px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+@media(min-width:600px){
+  .trip-info-dialog{ margin:auto; height:min(78dvh,680px); max-height:calc(100dvh - 64px); padding-top:12px; }
+  .trip-info-tabs{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .trip-info-handle{ display:none; }
+  .trip-info-heading{ padding-top:4px; }
+}
+@media(prefers-reduced-motion:reduce){ .trip-info-dialog[open]{ animation:none; } }

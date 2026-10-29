@@ -1,5 +1,20 @@
 # CLAUDE.md
 
+## Panel de información de la portada (29 octubre 2026)
+
+El autor ha elegido agrupar GPS, Aparcar, Comer, Dormir, Agua y Preguntas en
+un solo acceso en la cabecera, con panel inferior en móvil y diálogo centrado
+en escritorio. Esta decisión sustituye la fila de cinco atajos que describen
+las notas históricas de abajo. El contenido original sigue en el HTML para
+lectura sin JavaScript; `src/js/info-panel.js` mueve sus nodos al diálogo y
+oculta los envoltorios originales al terminar de prepararlo. No clonar ni
+mantener una segunda copia de teléfonos, enlaces, mapas o textos.
+
+El botón usa `tripInfoBadge`: el controlador anterior de `noticeBadge` queda
+como compatibilidad para páginas antiguas. El panel usa `<dialog>` nativo,
+pestañas con teclado y devolución de foco sin cambiar el scroll. El chequeo
+`driver.py aviso` comprueba ahora este panel, no el antiguo salto hasta el aviso.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 **Idioma: responde siempre en castellano**, incluidos los avisos intermedios, los mensajes de commit y
