@@ -670,7 +670,7 @@ HOME = {
     # La etiqueta de la insignia que late en la esquina: misma frase que la
     # barra, pero como aria-label, que es lo unico que lee un lector de
     # pantalla cuando el boton solo lleva el dibujo del triangulo.
-    'aria-label="L&eacute;elo antes de salir"':
+    'aria-label="Abrir centro de mando"':
         'aria-label="Irakurri irten aurretik"',
     'Las rutas no est&aacute;n se&ntilde;alizadas, as&iacute; que <b>es imprescindible llevar el '
     'track cargado en un GPS, reloj o dispositivo de navegaci&oacute;n</b>. La informaci&oacute;n de '
@@ -7021,7 +7021,7 @@ ARTETABERANOARANDONO['Foto ampliada'] = 'Argazki handitua'
 
 # Panel compacto de información de la portada. Los textos largos se reutilizan.
 HOME.update({
-    '<h2 id="tripInfoTitle">Antes de salir</h2>': '<h2 id="tripInfoTitle">Irten aurretik</h2>',
+    '<h2 id="tripInfoTitle">Centro de mando</h2>': '<h2 id="tripInfoTitle">Irten aurretik</h2>',
     'aria-label="Informaci&oacute;n para la salida"': 'aria-label="Irteerarako informazioa"',
     '<span>Aviso GPS</span>': '<span>GPS oharra</span>',
     '<span>Aparcar</span>': '<span>Aparkatu</span>',
