@@ -3445,7 +3445,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'artetaberanoarandono': 'Trabakuatik Arteta, Berano Nagusi eta Arandoñoko auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
+    'artetaberanoarandono': 'Trabakuatik Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
     'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
     'preguntas': 'Fitxa bakoitzeko esfortzuak, azalerak eta denborek zer esan nahi duten, nondik datozen distantzia eta desnibela, bizikleta elektrikoa behar den eta webak estaldurarik gabe funtzionatzen duen',
     'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
@@ -7005,12 +7005,12 @@ PAGE_STRINGS = {
 # Fotografías de Arteta, Berano Nagusi y Arandoño.
 ARTETABERANOARANDONO.update({'Pista de piedra entre laderas de hierba y arbustos': 'Harrizko pista belar eta zuhaixkaz estalitako magalen artean', 'Camino de tierra entre prados y bosque': 'Lurrezko bidea belardi eta baso artean', 'Paso de piedras junto al arroyo, bajo los árboles': 'Erreka ondoko harrizko pasabidea, zuhaitzen azpian', 'Valle y montañas al fondo entre los árboles': 'Harana eta mendiak zuhaitzen artetik', 'Ladera con caseríos y montañas al fondo': 'Baserriak mendi-magalean eta mendiak atzean', 'Sendero junto a los árboles y una valla': 'Bidezidorra zuhaitzen eta hesi baten ondoan', 'Caseríos entre prados y laderas arboladas': 'Baserriak belardi eta basoz estalitako magalen artean', 'Prados y montañas al atardecer': 'Belardiak eta mendiak ilunabarrean', 'Prado al sol bajo los árboles': 'Belardia eguzkitan, zuhaitzen azpian', 'Ermita de piedra entre árboles de otoño': 'Harrizko ermita udazkeneko zuhaitzen artean', 'Ermita junto al camino, bajo las ramas': 'Baseliza bide ondoan, adarren azpian', 'Camino asfaltado entre prados y cercas': 'Asfaltozko bidea belardi eta hesien artean', 'Camino entre árboles junto a una cerca': 'Bidea zuhaitzen artean, hesi ondoan', 'Paso bajo la carretera con paredes pintadas': 'Errepide azpiko pasabidea, hormak margotuta'})
 HOME.update({k: ARTETABERANOARANDONO[k] for k in ('Arteta, Berano Nagusi y Arandoño', 'Prados y montañas al atardecer')})
-HOME['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño'] = 'Trabakuatik Arteta, Berano Nagusi eta Arandoñoko auzoetan barrena'
+HOME['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño'] = 'Trabakuatik Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena'
 for _k in ('Distancia aproximada del GPX', 'Desnivel + por verificar', 'Esfuerzo por verificar'):
     ARTETABERANOARANDONO.pop(_k, None)
 
 ARTETABERANOARANDONO['Arteta, Berano Nagusi <em>y Arandoño</em>'] = 'Arteta, Berano Nagusi <em>eta Arandoño</em>'
-ARTETABERANOARANDONO['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño'] = HOME['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño']
+ARTETABERANOARANDONO['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño'] = HOME['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño']
 
 ARTETABERANOARANDONO['Fuente de Arteta'] = 'Artetako iturria'
 
