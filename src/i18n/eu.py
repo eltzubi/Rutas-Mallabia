@@ -708,9 +708,6 @@ HOME = {
         'Aldaketaren bat edo arazoren bat ikusten baduzu, ibilbide bakoitzeko &laquo;Arazoa '
         'jakinarazi&raquo; botoiaren bidez jakinarazi dezakezu.',
 
-    '<button type="button" class="notice-close">Cerrar aviso</button>':
-        '<button type="button" class="notice-close">Itxi</button>',
-
     # route cards
     'alt="Pista de cemento y piedra en la ruta de Trabakua"':
         'alt="Zementuzko eta harrizko pista Trabakuako ibilbidean"',
