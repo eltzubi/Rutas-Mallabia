@@ -3445,7 +3445,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
-    'artetaberanoarandono': 'Trabakuatik Arteta, Berano Nagusi eta Arandoñoko auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
+    'artetaberanoarandono': 'Trabakuatik Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
     'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
     'preguntas': 'Fitxa bakoitzeko esfortzuak, azalerak eta denborek zer esan nahi duten, nondik datozen distantzia eta desnibela, bizikleta elektrikoa behar den eta webak estaldurarik gabe funtzionatzen duen',
     'agua': 'Mallabia, Oiz, Elgeta eta Markinako ibilbideetako ur puntuen mapa: non bete bidoia eta zein ibilbide pasatzen diren iturri bakoitzetik',
@@ -6907,8 +6907,8 @@ ARTETABERANOARANDONO = {
         'Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena egindako ibilbidea da, harrizko eta lurrezko pistak, baso-zati bat eta landa-auzoak lotzen dituzten bideak tartekatuz. Oso ibilbide polita da baserriez, belardiez eta abereez gozatzeko. Lasai eta entretenigarria da, eta haurrekin egiteko egokia izan daiteke.',
     'Salimos de Trabakua y bajamos algo más de un kilómetro por la carretera hasta Donagarai, donde también es posible aparcar si queremos acortar el recorrido. Desde allí dejamos la carretera general y giramos a la izquierda para comenzar a subir por el camino de cemento, como en otras ocasiones, hasta llegar al cruce de Arteta.':
         'Trabakuatik aterako gara eta errepidetik kilometro bat baino gehixeago jaitsiko gara Donagarairaino. Ibilbidea laburtu nahi izanez gero, han aparkatzeko aukera ere badago. Handik errepide nagusia utzi eta ezkerrera egingo dugu, zementuzko bidetik igotzen hasteko, beste batzuetan bezala, Artetako bidegurutzera iritsi arte.',
-    'En lugar de completar la vuelta al barrio por las pistas de arriba o de abajo, nos metemos de frente por un sendero entre eucaliptos. Elegimos esta entrada para evitar un tramo de pista y disfrutar de un rincón que merece la pena. El sendero nos lleva hasta la fuente de Arteta, donde podemos parar a beber agua antes de continuar.':
-        'Auzoari goiko edo beheko pistetatik buelta osoa eman beharrean, eukaliptoen arteko bidezidorrean sartuko gara, aurrez aurre. Sarrera hau aukeratu dugu pista-zati bat saihesteko eta merezi duen txoko batez gozatzeko. Bidezidorra Artetako iturriraino iristen da; han ura edateko gelditu gaitezke aurrera jarraitu aurretik.',
+    'En lugar de continuar por las pistas de la parte alta o baja de Arteta, seguimos de frente por un sendero entre eucaliptos. Elegimos esta entrada para evitar un tramo de pista y disfrutar de un rincón que merece la pena. El sendero nos lleva hasta la fuente de Arteta, donde podemos parar a beber agua antes de continuar.':
+        'Artetako goiko edo beheko pistetatik jarraitu beharrean, zuzen segituko dugu eukaliptoen arteko bidezidor batetik. Sarrera hau aukeratu dugu pista-zati bat saihesteko eta merezi duen txoko batez gozatzeko. Bidezidorra Artetako iturriraino iristen da; han ura edateko gelditu gaitezke aurrera jarraitu aurretik.',
     'Desde la fuente salimos a la pista de arriba, pero apenas avanzamos unos metros antes de abandonarla por la derecha. Comenzamos a bajar en dirección sureste, atravesando una zona de bosque hasta acercarnos al barrio de Berano. Al terminar el descenso salimos a una carretera de cemento cerca de Berano Txiki, aunque sin entrar en el barrio, y continuamos hacia Berano Nagusi.':
         'Iturritik goiko pistara aterako gara, baina metro gutxi batzuk egin ondoren eskuinetik utziko dugu. Hego-ekialderantz jaisten hasiko gara, basoa zeharkatuz Berano auzora hurbiltzeko. Jaitsiera amaitzean zementuzko errepide batera aterako gara, Berano Txikitik gertu baina auzoan sartu gabe, eta Berano Nagusirantz jarraituko dugu.',
     'A partir de aquí cambia el recorrido. Durante varios kilómetros iremos enlazando barrios por caminos de cemento, pasando junto a caseríos, prados y zonas de pasto donde es habitual encontrar ganado. Es una parte especialmente bonita, para recorrer sin prisas y disfrutar del entorno rural de esta zona de Mallabia.':
@@ -7005,12 +7005,12 @@ PAGE_STRINGS = {
 # Fotografías de Arteta, Berano Nagusi y Arandoño.
 ARTETABERANOARANDONO.update({'Pista de piedra entre laderas de hierba y arbustos': 'Harrizko pista belar eta zuhaixkaz estalitako magalen artean', 'Camino de tierra entre prados y bosque': 'Lurrezko bidea belardi eta baso artean', 'Paso de piedras junto al arroyo, bajo los árboles': 'Erreka ondoko harrizko pasabidea, zuhaitzen azpian', 'Valle y montañas al fondo entre los árboles': 'Harana eta mendiak zuhaitzen artetik', 'Ladera con caseríos y montañas al fondo': 'Baserriak mendi-magalean eta mendiak atzean', 'Sendero junto a los árboles y una valla': 'Bidezidorra zuhaitzen eta hesi baten ondoan', 'Caseríos entre prados y laderas arboladas': 'Baserriak belardi eta basoz estalitako magalen artean', 'Prados y montañas al atardecer': 'Belardiak eta mendiak ilunabarrean', 'Prado al sol bajo los árboles': 'Belardia eguzkitan, zuhaitzen azpian', 'Ermita de piedra entre árboles de otoño': 'Harrizko ermita udazkeneko zuhaitzen artean', 'Ermita junto al camino, bajo las ramas': 'Baseliza bide ondoan, adarren azpian', 'Camino asfaltado entre prados y cercas': 'Asfaltozko bidea belardi eta hesien artean', 'Camino entre árboles junto a una cerca': 'Bidea zuhaitzen artean, hesi ondoan', 'Paso bajo la carretera con paredes pintadas': 'Errepide azpiko pasabidea, hormak margotuta'})
 HOME.update({k: ARTETABERANOARANDONO[k] for k in ('Arteta, Berano Nagusi y Arandoño', 'Prados y montañas al atardecer')})
-HOME['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño'] = 'Trabakuatik Arteta, Berano Nagusi eta Arandoñoko auzoetan barrena'
+HOME['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño'] = 'Trabakuatik Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena'
 for _k in ('Distancia aproximada del GPX', 'Desnivel + por verificar', 'Esfuerzo por verificar'):
     ARTETABERANOARANDONO.pop(_k, None)
 
 ARTETABERANOARANDONO['Arteta, Berano Nagusi <em>y Arandoño</em>'] = 'Arteta, Berano Nagusi <em>eta Arandoño</em>'
-ARTETABERANOARANDONO['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño'] = HOME['Vuelta desde Trabakua por los barrios de Arteta, Berano Nagusi y Arandoño']
+ARTETABERANOARANDONO['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño'] = HOME['Vuelta desde Trabakua por la zona de Arteta y los barrios de Berano Nagusi y Arandoño']
 
 ARTETABERANOARANDONO['Fuente de Arteta'] = 'Artetako iturria'
 
