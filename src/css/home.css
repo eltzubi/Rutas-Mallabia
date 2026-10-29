@@ -1959,3 +1959,16 @@ body.vista-mapa .atajos{ display:none; }
 }
 @keyframes tripGpsPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--link) 40%,transparent);}55%{box-shadow:0 0 0 6px transparent;}}
 @media(prefers-reduced-motion:reduce){.trip-info-tab[aria-controls="tripPanel-gps"]::after{animation:none;}}
+
+/* Estado activo: el acceso abierto se reconoce a primera vista. */
+.trip-info-tab[aria-selected="true"],
+.trip-info-tab[aria-controls="tripPanel-gps"][aria-selected="true"]{
+  color:var(--ink);
+  background:color-mix(in srgb,var(--link) 24%,var(--ground-raised));
+  border:2px solid var(--link);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--link) 30%,transparent),
+             0 0 0 2px color-mix(in srgb,var(--link) 12%,transparent),
+             0 0 17px color-mix(in srgb,var(--link) 20%,transparent);
+  font-weight:700;
+}
+.trip-info-tab[aria-selected="true"] svg{color:var(--link);}
