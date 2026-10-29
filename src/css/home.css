@@ -1928,3 +1928,34 @@ body.vista-mapa .atajos{ display:none; }
 @media(min-width:600px){.trip-info-dialog{height:min(88dvh,860px);}.trip-info-heading{margin-top:5px;}}
 @media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}.trip-info-tab{transition:none;}}
 
+
+/* Centro de mando: seis accesos táctiles en dos columnas. */
+.trip-info-dialog{
+  border-color:color-mix(in srgb,var(--link) 55%,var(--line));
+  box-shadow:0 24px 75px rgba(0,0,0,.42),0 0 22px color-mix(in srgb,var(--link) 10%,transparent),inset 0 1px 0 color-mix(in srgb,var(--ink) 12%,transparent);
+}
+.trip-info-heading{
+  background:color-mix(in srgb,var(--ground-raised) 64%,transparent);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--link) 15%,transparent);
+}
+.trip-info-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+.trip-info-tab{
+  min-height:52px;
+  background:color-mix(in srgb,var(--ground-raised) 73%,transparent);
+  border-color:color-mix(in srgb,var(--ink) 13%,var(--line));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.trip-info-tab:hover{border-color:color-mix(in srgb,var(--link) 45%,var(--line));}
+.trip-info-tab[aria-controls="tripPanel-gps"]{
+  color:var(--ink);
+  border-color:color-mix(in srgb,var(--link) 64%,var(--line));
+  background:color-mix(in srgb,var(--link) 17%,var(--ground-raised));
+}
+.trip-info-tab[aria-controls="tripPanel-gps"]::after{
+  width:7px;height:7px;background:var(--link);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--link) 50%,transparent);
+  animation:tripGpsPulse 2.8s ease-out infinite;
+}
+@keyframes tripGpsPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--link) 40%,transparent);}55%{box-shadow:0 0 0 6px transparent;}}
+@media(prefers-reduced-motion:reduce){.trip-info-tab[aria-controls="tripPanel-gps"]::after{animation:none;}}
