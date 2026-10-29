@@ -1864,3 +1864,62 @@ body.vista-mapa .atajos{ display:none; }
   .trip-info-heading{ padding-top:4px; }
 }
 @media(prefers-reduced-motion:reduce){ .trip-info-dialog[open]{ animation:none; } }
+
+/* Panel compacto en forma de cápsula: conserva el diálogo accesible y sus pestañas. */
+.trip-info-dialog{
+  width:min(94vw,620px);
+  height:min(76dvh,760px);
+  max-height:calc(100dvh - 34px);
+  margin:auto;
+  padding:8px 0 0;
+  background:color-mix(in srgb, var(--ground-raised) 89%, transparent);
+  border:1px solid color-mix(in srgb, var(--link) 37%, var(--line));
+  border-radius:30px;
+  box-shadow:0 24px 75px rgba(0,0,0,.42), inset 0 1px 0 color-mix(in srgb,var(--ink) 10%,transparent);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.trip-info-dialog::backdrop{
+  background:rgba(3,7,10,.56);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.trip-info-dialog[open]{animation:tripCapsuleIn .26s cubic-bezier(.2,.75,.2,1);}
+.trip-info-heading{
+  margin:0 10px 12px;
+  padding:10px 10px 10px 17px;
+  min-height:60px;
+  border:1px solid color-mix(in srgb,var(--link) 34%,var(--line));
+  border-radius:999px;
+  background:color-mix(in srgb,var(--ground) 76%,transparent);
+}
+.trip-info-heading::before{
+  content:'';
+  width:28px;
+  height:28px;
+  flex-shrink:0;
+  border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--violet) 55%,var(--line));
+  background:radial-gradient(circle at center,var(--violet) 0 3px,transparent 4px);
+  box-shadow:0 0 12px color-mix(in srgb,var(--violet) 25%,transparent);
+}
+.trip-info-heading h2{flex:1;font-size:clamp(17px,4.5vw,22px);line-height:1.2;}
+.trip-info-close{width:40px;height:40px;background:transparent;}
+.trip-info-tabs{gap:7px;padding:0 13px 12px;}
+.trip-info-tab{
+  min-height:43px;
+  padding:8px 10px;
+  border-radius:15px;
+  background:color-mix(in srgb,var(--ground) 82%,transparent);
+  transition:background .16s ease,border-color .16s ease,transform .16s ease;
+}
+.trip-info-tab:active{transform:scale(.985);}
+.trip-info-tab[aria-selected="true"]{
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--link) 22%,transparent),0 0 12px color-mix(in srgb,var(--link) 10%,transparent);
+}
+.trip-info-content{margin:0 10px 10px;border:1px solid var(--line);border-radius:19px;overflow:hidden;background:color-mix(in srgb,var(--ground) 38%,transparent);}
+.trip-info-panel{padding:17px 17px max(20px,env(safe-area-inset-bottom));}
+.trip-info-panel .parada h2{font-size:20px;}
+@keyframes tripCapsuleIn{from{opacity:0;transform:translateY(-11px) scale(.975);}to{opacity:1;transform:translateY(0) scale(1);}}
+@media(min-width:600px){.trip-info-dialog{height:min(75dvh,680px);}.trip-info-heading{margin-top:5px;}}
+@media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}.trip-info-tab{transition:none;}}
