@@ -1923,3 +1923,43 @@ body.vista-mapa .atajos{ display:none; }
 @keyframes tripCapsuleIn{from{opacity:0;transform:translateY(-11px) scale(.975);}to{opacity:1;transform:translateY(0) scale(1);}}
 @media(min-width:600px){.trip-info-dialog{height:min(75dvh,680px);}.trip-info-heading{margin-top:5px;}}
 @media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}.trip-info-tab{transition:none;}}
+
+/* Cápsula desplegable real, debajo del botón y sin tapar toda la portada. */
+.trip-info-dialog{
+  position:fixed!important;
+  inset:auto!important;
+  top:var(--trip-top,64px)!important;
+  left:max(8px,calc((100vw - 620px)/2))!important;
+  width:min(calc(100vw - 16px),620px)!important;
+  height:auto!important;
+  max-height:var(--trip-max-height,75dvh)!important;
+  margin:0!important;
+  padding:8px 0 0!important;
+  border-radius:22px!important;
+  background:color-mix(in srgb,var(--ground-raised) 91%,transparent)!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.32)!important;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.trip-info-dialog[open]{display:flex;flex-direction:column;animation:tripDrop .23s cubic-bezier(.18,.8,.24,1);}
+.trip-info-dialog::backdrop{background:transparent!important;backdrop-filter:none!important;}
+.trip-info-dialog .trip-info-heading{
+  padding:4px 7px 5px 11px!important;
+  margin:0 9px 8px!important;
+  min-height:43px!important;
+}
+.trip-info-dialog .trip-info-handle{display:none;}
+.trip-info-dialog .trip-info-tabs{padding:0 10px 9px!important;gap:6px!important;}
+.trip-info-dialog .trip-info-tab{min-height:41px!important;}
+.trip-info-dialog .trip-info-content{
+  flex:0 1 auto!important;
+  min-height:0;
+  max-height:calc(var(--trip-max-height,75dvh) - 228px);
+  overflow:hidden;
+  margin:0 9px 9px!important;
+}
+.trip-info-dialog .trip-info-panel{max-height:100%;overflow-y:auto;}
+.masthead .aviso-pulso.trip-open .aviso-boton{box-shadow:0 0 0 4px color-mix(in srgb,var(--violet) 12%,transparent);}
+@keyframes tripDrop{from{opacity:0;transform:translateY(-10px) scale(.98);transform-origin:top center}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-height:600px){.trip-info-dialog .trip-info-content{max-height:calc(var(--trip-max-height,70dvh) - 208px);}}
+@media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}}
