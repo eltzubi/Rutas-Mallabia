@@ -32,7 +32,7 @@
 
   function positionPanel(){
     var rect = trigger.getBoundingClientRect();
-    var top = Math.max(6, rect.bottom + 8);
+    var top = Math.max(6, (rect.bottom !== undefined ? rect.bottom : rect.top + rect.height) + 8);
     dialog.style.setProperty('--trip-top', top + 'px');
     dialog.style.setProperty('--trip-max-height', Math.max(170, window.innerHeight - top - 12) + 'px');
   }
