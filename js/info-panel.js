@@ -79,7 +79,7 @@
   tabs.forEach(function(tab, i){
     tab.addEventListener('click', function(){ select(i, false); });
     tab.addEventListener('keydown', function(ev){
-      var columns = window.matchMedia('(min-width:600px)').matches ? 3 : 2;
+      var columns = 2;
       var delta = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: columns, ArrowUp: -columns };
       var index = ev.key === 'Home' ? 0 : ev.key === 'End' ? tabs.length - 1 :
         delta[ev.key] !== undefined ? (i + delta[ev.key] + tabs.length) % tabs.length : null;
