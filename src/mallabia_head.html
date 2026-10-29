@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Evita mostrar los atajos antiguos antes de preparar el panel.
+     Sin JS, los atajos originales permanecen visibles. -->
+<script>document.documentElement.classList.add('trip-info-loading');document.addEventListener('DOMContentLoaded',function(){document.documentElement.classList.remove('trip-info-loading');});</script>
+<style>html.trip-info-loading .atajos,html.trip-info-loading #beforeYouGo,html.trip-info-loading .practical-info{display:none!important}</style>
 <script>(function(){try{if(localStorage.getItem('rutas-mallabia-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 <title>Trabakutik · Rutas Mallabia · Senderismo y e-bike en Bizkaia</title>
 <meta name="description" content="Rutas de senderismo y e-bike o BTT por los barrios, montes y pueblos de alrededor de Mallabia. Documentadas sobre el terreno, con datos de verdad, no de folleto.">
