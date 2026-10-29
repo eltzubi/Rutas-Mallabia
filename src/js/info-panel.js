@@ -30,8 +30,12 @@
     if (sessionStorage.getItem('rutas-mallabia-aviso')) badge.classList.add('ya-visto');
   } catch(err){}
 
-  var overflowBefore = '';
-  var scrollBefore = 0;
+  function positionPanel(){
+    var rect = trigger.getBoundingClientRect();
+    var top = Math.max(6, rect.bottom + 8);
+    dialog.style.setProperty('--trip-top', top + 'px');
+    dialog.style.setProperty('--trip-max-height', Math.max(170, window.innerHeight - top - 12) + 'px');
+  }
   function select(index, focus){
     tabs.forEach(function(tab, i){
       tab.setAttribute('aria-selected', i === index ? 'true' : 'false');
@@ -47,14 +51,14 @@
   }
   function open(index){
     if (!dialog.open) {
-      overflowBefore = document.body.style.overflow;
-      scrollBefore = window.scrollY || window.pageYOffset || 0;
-      dialog.showModal();
-      document.body.style.overflow = 'hidden';
+      positionPanel();
+      if (typeof dialog.show === 'function') dialog.show();
+      else dialog.showModal();
       trigger.setAttribute('aria-expanded', 'true');
+      badge.classList.add('trip-open');
     }
     select(index || 0, false);
-    close.focus({ preventScroll: true });
+    tabs[index || 0].focus({ preventScroll: true });
   }
   function shut(){ if (dialog.open) dialog.close(); }
   trigger.addEventListener('click', function(){ if (dialog.open) shut(); else open(0); });
@@ -63,20 +67,15 @@
     button.addEventListener('click', shut);
   });
   dialog.addEventListener('close', function(){
-    document.body.style.overflow = overflowBefore;
     trigger.setAttribute('aria-expanded', 'false');
+    badge.classList.remove('trip-open');
     trigger.focus({ preventScroll: true });
-    // El fondo queda inmóvil al leer; no hay salto al principio al cerrar.
-    if (Math.abs((window.scrollY || 0) - scrollBefore) > 1) {
-      window.scrollTo({ top: scrollBefore, behavior: 'instant' });
-    }
   });
-  dialog.addEventListener('click', function(ev){
-    if (ev.target !== dialog) return;
-    var rect = dialog.getBoundingClientRect();
-    if (ev.clientX < rect.left || ev.clientX > rect.right ||
-        ev.clientY < rect.top || ev.clientY > rect.bottom) shut();
+  document.addEventListener('pointerdown', function(ev){
+    if (dialog.open && !dialog.contains(ev.target) && !badge.contains(ev.target)) shut();
   });
+  window.addEventListener('resize', function(){ if (dialog.open) positionPanel(); });
+  window.addEventListener('scroll', function(){ if (dialog.open) positionPanel(); }, { passive:true });
   tabs.forEach(function(tab, i){
     tab.addEventListener('click', function(){ select(i, false); });
     tab.addEventListener('keydown', function(ev){
