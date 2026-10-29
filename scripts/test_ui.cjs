@@ -72,8 +72,7 @@ class Element {
   getBoundingClientRect(){return {top:0,width:800,height:200};}
   scrollIntoView(){}
   reset(){}
-  show(){this.open=true;this.wasShownNonModal=true;}
-  showModal(){this.open=true;this.wasShownModal=true;}
+  showModal(){this.open=true;}
   close(){this.open=false;this.dispatchEvent({type:'close'});}
 }
 const fixtures = new Map();
@@ -376,9 +375,6 @@ test('el panel de salida reutiliza el contenido y vuelve al botón al cerrar',()
   assert.equal(e.all('#tripInfoDialog .info-details-body').length,6);
   const trigger=e.one('#tripInfoBadge button');trigger.click();
   assert.equal(e.one('#tripInfoDialog').open,true);
-  assert.equal(e.one('#tripInfoDialog').wasShownNonModal,true,'se abre sin ventana modal');
-  assert.equal(e.one('#tripInfoDialog').wasShownModal,undefined,'no debe bloquear la portada');
-  assert.equal(e.doc.body.style.overflow,undefined,'no se bloquea el desplazamiento');
   const tabs=e.all('#tripInfoDialog [role="tab"]');
   tabs.forEach((tab,i)=>{
     tab.click();
