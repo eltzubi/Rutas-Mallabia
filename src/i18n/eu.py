@@ -6882,6 +6882,7 @@ ZALDUTRAIL = {
 }
 
 ARTETABERANOARANDONO = {
+    'A lo largo de la ruta encontramos caseríos muy bonitos, pero hemos preferido no publicar fotos de cerca para respetar su privacidad.': 'Ibilbidean zehar baserri oso politak aurkituko ditugu, baina nahiago izan dugu gertutik ateratako argazkirik ez argitaratu, haien pribatutasuna errespetatzeko.',
     'Arteta, Berano Nagusi y Arandoño': 'Arteta, Berano Nagusi eta Arandoño',
     'Senderismo': 'Mendi-ibilia',
     'Circuito': 'Zirkuitua',
