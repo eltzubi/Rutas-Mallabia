@@ -7019,3 +7019,15 @@ ARTETABERANOARANDONO.pop('Fuente de Arteta', None)
 ARTETABERANOARANDONO['Ermita de San Antonio'] = 'San Antonio ermita'
 
 ARTETABERANOARANDONO['Foto ampliada'] = 'Argazki handitua'
+
+# Panel compacto de información de la portada. Los textos largos se reutilizan.
+HOME.update({
+    '<h2 id="tripInfoTitle">Antes de salir</h2>': '<h2 id="tripInfoTitle">Irten aurretik</h2>',
+    'aria-label="Informaci&oacute;n para la salida"': 'aria-label="Irteerarako informazioa"',
+    '<span>Aviso GPS</span>': '<span>GPS oharra</span>',
+    '<span>Aparcar</span>': '<span>Aparkatu</span>',
+    '<span>Comer</span>': '<span>Jan</span>',
+    '<span>Dormir</span>': '<span>Lo egin</span>',
+    '<span>Agua</span>': '<span>Ura</span>',
+    '<span>Preguntas</span>': '<span>Galderak</span>',
+})

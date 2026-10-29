@@ -365,3 +365,34 @@ test('la primera ruta conserva su encuadre al añadir las demás al mapa',async(
   const first=e.trazados()[0];
   assert.equal(first.getBounds().points.length,first.points.length);
 });
+
+test('el panel de salida reutiliza el contenido y vuelve al botón al cerrar',()=>{
+  const e=env();
+  const original=e.one('#info-comer .info-details-body');
+  e.run('app.js');e.run('info-panel.js');
+  assert(e.doc.body.classList.contains('trip-info-ready'));
+  assert(e.one('#tripPanel-comer').contains(original),'conserva el mismo nodo, con sus enlaces');
+  assert.equal(e.all('#tripInfoDialog .info-details-body').length,6);
+  const trigger=e.one('#tripInfoBadge button');trigger.click();
+  assert.equal(e.one('#tripInfoDialog').open,true);
+  const tabs=e.all('#tripInfoDialog [role="tab"]');
+  tabs.forEach((tab,i)=>{
+    tab.click();
+    assert.equal(tab.getAttribute('aria-selected'),'true');
+    assert.equal(e.all('#tripInfoDialog [role="tabpanel"]').filter(p=>!p.hidden).length,1);
+    assert.equal(e.one('#'+tab.getAttribute('aria-controls')).hidden,false);
+  });
+  tabs[0].dispatchEvent({type:'keydown',key:'ArrowDown'});
+  assert.equal(tabs[2].getAttribute('aria-selected'),'true');
+  e.one('#tripInfoClose').click();
+  assert.equal(e.one('#tripInfoDialog').open,false);
+  assert.equal(trigger.getAttribute('aria-expanded'),'false');
+  assert.equal(e.doc.activeElement,trigger);
+});
+
+test('sin diálogo nativo permanece la información original accesible',()=>{
+  const e=env();e.one('#tripInfoDialog').showModal=null;e.run('info-panel.js');
+  assert.equal(e.doc.body.classList.contains('trip-info-ready'),false);
+  assert(e.one('#info-comer .info-details-body'));
+  assert(e.one('#beforeYouGo .info-details-body'));
+});

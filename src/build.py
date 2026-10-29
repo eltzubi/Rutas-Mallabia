@@ -162,6 +162,7 @@ ASSETS = {
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
     ("js", "app.js"): "js/app.js",
+    ("js", "info-panel.js"): "js/info-panel.js",
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",
     ("js", "webmcp.js"): "js/webmcp.js",

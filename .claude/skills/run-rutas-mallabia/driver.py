@@ -639,46 +639,35 @@ def cmd_visor(a):
 
 
 def cmd_aviso(a):
-    """El aviso «Leelo antes de salir»: al cerrarlo, la portada vuelve donde estaba.
-
-    Lo que fallaba: el aviso se lee de arriba abajo y se cierra con su propio
-    boton, que esta al final del texto, asi que al cerrarlo te quedabas a
-    media pagina, en mitad del listado, mirando una tarjeta cualquiera. El
-    boton intentaba subir a la cabecera del <details>, pero con la insignia
-    puesta esa cabecera lleva display:none y scrollIntoView sobre algo oculto
-    no hace nada.
-    """
-    ABIERTO = "() => document.querySelector('#beforeYouGo details').open"
-    Y = "() => Math.round(window.scrollY)"
+    """El panel de salida abre seis secciones y devuelve el foco sin mover el fondo."""
     with servidor() as base:
         for pag in ("index.html", "index.eu.html"):
             with pagina(base, pag, ancho=390, alto=844) as pg:
-                pg.wait_for_timeout(700)
-                for desde, por_el_boton in ((0, True), (240, True), (0, False)):
-                    pg.evaluate(f"window.scrollTo(0,{desde})"); pg.wait_for_timeout(350)
-                    antes = pg.evaluate(Y)
-                    pg.click(".aviso-boton"); pg.wait_for_timeout(1300)
-                    assert pg.evaluate(ABIERTO), f"{pag}: el aviso no se abrio"
-                    if por_el_boton:
-                        pg.evaluate("() => document.querySelector('.notice-close')"
-                                    ".scrollIntoView({block:'center'})")
-                        pg.wait_for_timeout(300)
-                        bajo = pg.evaluate(Y)
-                        assert bajo > antes + 300, \
-                            f"{pag}: leyendo el aviso no se ha bajado ({bajo})"
-                        pg.click(".notice-close")
-                    else:
-                        pg.click(".aviso-boton")
-                    pg.wait_for_timeout(1600)
-                    assert not pg.evaluate(ABIERTO), f"{pag}: el aviso no se cerro"
-                    fin = pg.evaluate(Y)
-                    assert abs(fin - antes) <= 2, \
-                        f"{pag}: al cerrar se queda en {fin} y abrio desde {antes}"
-                    print(f"  {pag:15} desde {antes:4} -> {'leido abajo' if por_el_boton else 'cerrado con la insignia':24}"
-                          f" -> vuelve a {fin}")
+                assert pg.locator('.atajos').is_hidden(), pag + ": fila de accesos visible"
+                for desde in (0, 240):
+                    pg.evaluate("y => window.scrollTo(0,y)", desde)
+                    pg.wait_for_timeout(300)
+                    antes = pg.evaluate("Math.round(window.scrollY)")
+                    pg.click('.aviso-boton')
+                    assert pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                    assert pg.locator('#tripInfoDialog [role=tab]').count() == 6, pag
+                    for slug in ('gps', 'aparcar', 'comer', 'dormir', 'agua', 'preguntas'):
+                        pg.click('#tripTab-' + slug)
+                        assert pg.locator('#tripPanel-' + slug).is_visible(), pag + ": " + slug
+                        assert pg.locator('#tripInfoDialog [role=tabpanel]:visible').count() == 1, pag
+                    pg.click('#tripTab-gps')
+                    pg.locator('.notice-close').scroll_into_view_if_needed()
+                    assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
+                    pg.click('.notice-close')
+                    assert not pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                    assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
+                    assert pg.locator('.aviso-boton').evaluate("e => e === document.activeElement"), pag
+                pg.click('.aviso-boton')
+                pg.keyboard.press('Escape')
+                assert not pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                print("  " + pag + ": seis secciones, cierre y vuelta al mismo sitio correctos")
                 if pg.errores:
                     print("   errores:", pg.errores[:2]); return 1
-    print("\nel aviso devuelve la portada a su sitio, correcto")
     return 0
 
 

@@ -1,5 +1,23 @@
 # DESIGN.md — Trabakutik
 
+## Panel «Antes de salir»
+
+La portada agrupa el aviso GPS y la información práctica en un único botón
+de brújula en la cabecera. En móvil abre un panel inferior; desde 600 px,
+un diálogo centrado de hasta 660 px. Usa las superficies y tipografías del
+sitio, con borde fino en `--link`, sin usar los colores de actividad para
+la navegación general. Conserva el pulso del aviso y respeta movimiento reducido.
+
+Seis botones, dos columnas en móvil y tres en escritorio, cambian entre
+GPS, aparcamiento, comida, alojamiento, agua y preguntas. La cabecera y los
+botones permanecen a la vista; solo el contenido se desplaza. La X, Escape
+y tocar el fondo cierran y devuelven el foco al botón, conservando el scroll.
+El diálogo nativo mantiene el resto de la página inerte mientras está abierto.
+
+Los textos se trasladan desde los desplegables originales, sin duplicarlos.
+Si falta JavaScript o el navegador no dispone de diálogo nativo, permanecen
+los accesos y desplegables de siempre.
+
 Sistema de diseño de [trabakutik.com](https://trabakutik.com/), un sitio de rutas de
 senderismo y BTT por el entorno de Mallabia (Bizkaia).
 
