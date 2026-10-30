@@ -58,3 +58,14 @@ Botón prominente «↶ Volver al inicio» en modo navegación. Abre panel infer
 
 ## Límite de seguridad
 El navegador web depende de que la pantalla/sistema permitan seguir recibiendo ubicación. No es un sustituto de un GPS dedicado ni un mecanismo de rescate. Los cálculos se deben etiquetar como estimaciones, nunca certezas.
+
+## Representación simultánea de la alternativa (decisión del autor, 30 octubre)
+- El atajo aparece **solo al solicitar «Buscar atajo»**; no cambiar el track activo al mostrarlo.
+- Track original: verde lima sólido, siempre visible.
+- Tramo recorrido: azul, conservando su distinción.
+- Atajo validado: naranja sólido y suficientemente grueso sobre el mapa. Tramos hipotéticos sin validar: naranja discontinuo **solo como información**, nunca como navegación seleccionable.
+- Si ambos coinciden, dibujar la ruta original por debajo y la alternativa por encima con halo/contorno para que se distinga. Atender también a usuarios con dificultad para distinguir colores: sólido frente a punteado y leyenda clara.
+- Marcar bifurcación con icono y distancia real a ese punto, no en línea recta.
+- Panel compara kilómetros y desnivel restante con referencia a su GPX; botones «Seguir original» y «Usar atajo», este último únicamente si está validado.
+- Una vez aceptado el atajo, la línea naranja pasa a ser guía activa, pero la verde permanece visible con menor opacidad; opción de volver a la original.
+- Cuando no exista un atajo validado mostrar «No hay atajos comprobados para volver al inicio»; no inventar enlaces.
