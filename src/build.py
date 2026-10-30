@@ -105,6 +105,29 @@ def assemble_page(name, suffix=""):
     return read(f"{name}_head{suffix}.html") + read(f"{name}_tail{suffix}.html")
 
 
+# Navegación GPS: enlace único generado en cada ficha con GPX real.
+# Mantenerlo en el generador, nunca modificar las páginas publicadas a mano.
+def add_navigation_link(page_html, page, lang):
+    if not os.path.isfile(os.path.join(HERE, f"{page}.gpx")):
+        return page_html
+    label = "Navegar esta ruta" if lang == "es" else "Ibilbide honetan nabigatu"
+    destination = (
+        "https://eltzubi.github.io/trabakutik-gps-pruebas/nuevo.html"
+        f"?ruta={page}"
+    )
+    link = (
+        '<div class="gps-nav-entry" style="padding:12px 15px 0;'
+        'max-width:920px;margin:0 auto">'
+        f'<a href="{destination}" class="gps-nav-launch" '
+        'style="display:inline-flex;align-items:center;gap:8px;'
+        'border:1px solid #64dcf4;border-radius:999px;'
+        'padding:11px 17px;background:#102d3b;color:#d7fbff;'
+        'font:600 13px system-ui,sans-serif;text-decoration:none">'
+        f'&#10148; {label}</a></div>'
+    )
+    return page_html.replace("<main>", "<main>" + link, 1)
+
+
 # First entry is home; it's the one written to index.html.
 PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "artetaberanoarandono", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "trabakuadeba", "trabakuaondarroa", "askakosantakataline", "garaikanala", "aixolaintxorta", "zengotitamaguna", "zaldutrail", "preguntas", "agua", "aviso-legal"]
 # lang code -> (source-file suffix, output-file suffix)
@@ -1310,6 +1333,7 @@ def main():
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
+            page_html = add_navigation_link(page_html, name, lang)
             page_html = add_ui_text(page_html, cards[lang], lang)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
