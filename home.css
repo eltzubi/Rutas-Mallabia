@@ -1656,64 +1656,6 @@ footer a:hover{ text-decoration:underline; }
 .volver-arriba:hover{ color:var(--ink); border-color:var(--ink-dim); }
 .volver-arriba:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
 
-/* LOS ATAJOS A LA INFORMACION DEL FINAL.
-   Lo levanto el autor: «no creo que nadie baje hasta abajo, asi que es
-   posible que nunca lleguen a leer donde comer o donde dormir». Y tenia
-   razon, medido: la portada mide 43 pantallas en un movil y el bloque de
-   «Donde aparcar» empieza en la 42. En vista de mapa si queda cerca, porque
-   el mapa ocupa una pantalla, y por eso se nota la diferencia.
-   Esta fila cuesta unos 40 px y resuelve las dos mitades del problema:
-   lleva alli de un toque y, sobre todo, dice que eso existe. Las rutas
-   siguen siendo lo primero.
-
-   VA LA PRIMERA DE <main>, PEGADA A LA CABECERA Y ENCIMA DE LA FOTO, y eso
-   es a proposito. Estuvo debajo del aviso de «Leelo antes de salir», que es
-   donde cae justo encima de la barra fija de abajo: medido a 390 px de
-   ancho, las pastillas acaban en el pixel 555 pase lo que pase, asi que la
-   barra se las come en cuanto la ventana util baja de 620 px -- 8 px de aire
-   a 620, tapadas 32 px a 580 y 72 a 540. El autor lo vio en su movil:
-   «esta pegado a la barra de abajo, deja un margen pequeno para que se vea
-   el circulo entero de alrededor». Un margen no lo arregla: la barra es
-   fija y lo unico que mueve las pastillas es quitarles alto por encima.
-   Aqui arriba quedan en el pixel 78 y les sobran 450 px hasta la barra en
-   la ventana mas baja que se ha probado. Ademas se ven al entrar, que es lo
-   que se buscaba. */
-.atajos{
-  display:flex; gap:5px; margin:10px 0 14px;
-  /* El mismo margen lateral que el titular y las tarjetas (16 px en el
-     movil, 24 de 660 para arriba) y el mismo ancho maximo que los demas
-     bloques. Iba sin ninguno, asi que la primera pastilla nacia pegada al
-     filo de la pantalla con el borde redondo cortado, y en el ordenador la
-     fila arrancaba 90 px a la izquierda de todo lo demas. */
-  padding:2px 16px 3px;
-  overflow-x:auto; -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-}
-@media (min-width:660px){ .atajos{ padding:2px 24px 3px; } }
-@media (min-width:1024px){ .atajos{ max-width:1100px; margin-inline:auto; } }
-.atajos::-webkit-scrollbar{ display:none; }
-/* La letra baja de 10 a 9 px, la separacion entre letras de .1 a .08em, el
-   relleno de 12 a 10 px y el hueco de 6 a 5: lo pidio el autor, «que entren
-   enteras horizontalmente». Medida la fila entera (pastillas + huecos +
-   margenes laterales): en castellano 403 px y en euskera 389, o sea que a
-   390 px el castellano se salia 13 px y habia que arrastrarla. Asi quedan
-   en 352 y 340, y entra entera de 360 px para arriba en las dos lenguas.
-   Por debajo de 360 sigue arrastrandose, que para que entrara a 320
-   habria que bajar a 8,5 px y ahi ya no se lee. */
-.atajos a{
-  flex:0 0 auto; text-decoration:none;
-  border:1px solid var(--line); border-radius:999px;
-  padding:5px 10px; min-height:28px;
-  display:inline-flex; align-items:center;
-  font:600 9px/1 'IBM Plex Mono',monospace;
-  letter-spacing:.08em; text-transform:uppercase;
-  color:var(--ink-dim); background:transparent;
-  transition:color .18s ease, border-color .18s ease;
-}
-.atajos a:hover{ color:var(--ink); border-color:var(--ink-dim); }
-.atajos a:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
-/* En vista de mapa la pagina esta congelada detras del mapa: estorban. */
-body.vista-mapa .atajos{ display:none; }
 
 /* LA PROVINCIA VUELVE AL MOVIL, Y SIN EL PUNTO.
    Estuvo escondida por debajo de 480 px desde el 27 de octubre, porque
@@ -1799,7 +1741,6 @@ body.vista-mapa .atajos{ display:none; }
 
 /* Antes de salir: un único acceso; el contenido se mueve al diálogo con JS.
    Sin JS siguen la fila de enlaces y los desplegables originales. */
-.trip-info-ready .atajos,
 .trip-info-ready #beforeYouGo,
 .trip-info-ready .practical-info{ display:none; }
 .trip-info-dialog:not([open]){ display:none; }
