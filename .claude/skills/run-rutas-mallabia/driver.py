@@ -656,9 +656,13 @@ def cmd_aviso(a):
                         assert pg.locator('#tripPanel-' + slug).is_visible(), pag + ": " + slug
                         assert pg.locator('#tripInfoDialog [role=tabpanel]:visible').count() == 1, pag
                     pg.click('#tripTab-gps')
-                    pg.locator('.notice-close').scroll_into_view_if_needed()
+                    # El boton de cerrar del dialogo es #tripInfoClose. Decia
+                    # .notice-close, que era el del aviso viejo y ya no existe en
+                    # ninguna pagina construida (0 apariciones): la comprobacion
+                    # moria en el scroll_into_view con un timeout de 30 s.
+                    pg.locator('#tripInfoClose').scroll_into_view_if_needed()
                     assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
-                    pg.click('.notice-close')
+                    pg.click('#tripInfoClose')
                     assert not pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
                     assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
                     assert pg.locator('.aviso-boton').evaluate("e => e === document.activeElement"), pag
