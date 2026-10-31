@@ -42,6 +42,11 @@
       sinpaso: 'No hay camino hasta ahi dentro de la red.',
       deshacer: 'Deshacer', borrar: 'Borrar', guardar: 'Guardar', gpx: 'Bajar GPX',
       guardados: 'Guardados', abrirlo: 'Abrir', quitar: 'Quitar',
+      circulo: 'Cerrar el c\u00edrculo', vaiven: 'Ida y vuelta',
+      pocos: 'Marca al menos dos puntos antes.',
+      yacerrado: 'El trazado ya vuelve al punto de partida.',
+      nocierra: 'No hay camino de vuelta al principio dentro de la red.',
+      mueve: 'Arrastra un punto para cambiar por d\u00f3nde va.',
       nombre: 'Trazado', aprox: 'aprox.', ultimo: '\u00daltimo tramo', cargando: 'Preparando la red de caminos…',
       fallo: 'No se ha podido preparar la red. Prueba a recargar.',
       rodeo: 'Ese tramo da un rodeo de %s km: entre esos dos puntos no hay ning\u00fan camino grabado m\u00e1s corto. Deshazlo y prueba con un punto intermedio.',
@@ -55,6 +60,11 @@
       sinpaso: 'Ez dago biderik hormaino sarearen barruan.',
       deshacer: 'Desegin', borrar: 'Ezabatu', guardar: 'Gorde', gpx: 'GPXa jaitsi',
       guardados: 'Gordeta', abrirlo: 'Ireki', quitar: 'Kendu',
+      circulo: 'Zirkulua itxi', vaiven: 'Joan-etorria',
+      pocos: 'Markatu gutxienez bi puntu lehenago.',
+      yacerrado: 'Marrazkia abiapuntura itzultzen da jada.',
+      nocierra: 'Ez dago hasierara itzultzeko biderik sarearen barruan.',
+      mueve: 'Arrastatu puntu bat nondik doan aldatzeko.',
       nombre: 'Marrazkia', aprox: 'gutxi gorabehera', ultimo: 'Azken tartea', cargando: 'Bideen sarea prestatzen…',
       fallo: 'Ezin izan da sarea prestatu. Saiatu orria berriro kargatzen.',
       rodeo: 'Tarte horrek %s km-ko bira ematen du: bi puntu horien artean ez dago grabatutako bide laburragorik. Desegin eta saiatu tarteko puntu batekin.',
@@ -213,7 +223,9 @@
       clear: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/>',
       save:  '<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>',
       gpx:   '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>',
-      lista: '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>'
+      lista: '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>',
+      circulo: '<path d="M21 12a9 9 0 1 1-3.3-6.9"/><path d="M21 3v6h-6"/>',
+      vaiven: '<path d="M4 12h16"/><path d="M8 7l-4 5 4 5"/><path d="M16 7l4 5-4 5"/>'
     };
 
     // El lapiz, arriba a la derecha, debajo del boton de ampliar.
@@ -232,12 +244,19 @@
     var tools = document.createElement('div');
     tools.className = 'draw-tools';
     tools.hidden = true;
-    tools.innerHTML = [['undo', t.deshacer], ['clear', t.borrar], ['save', t.guardar],
+    // «Cerrar el circulo» e «Ida y vuelta» salen SOLO con dos puntos o mas
+    // (los pone y los quita pinta()): sin ellos no hacen nada y la columna
+    // de botones vive dentro del mapa, donde el alto cuenta.
+    tools.innerHTML = [['undo', t.deshacer], ['circulo', t.circulo], ['vaiven', t.vaiven],
+                       ['clear', t.borrar], ['save', t.guardar],
                        ['gpx', t.gpx], ['list', t.guardados]].map(function(par){
       var k = par[0] === 'list' ? 'lista' : par[0];
+      var extra = (par[0] === 'circulo' || par[0] === 'vaiven') ? ' hidden' : '';
       return '<button type="button" class="draw-t" data-a="' + par[0] + '" title="' + par[1] +
-             '" aria-label="' + par[1] + '">' + icono(ICO[k]) + '</button>';
+             '" aria-label="' + par[1] + '"' + extra + '>' + icono(ICO[k]) + '</button>';
     }).join('');
+    var btCirculo = tools.querySelector('[data-a="circulo"]');
+    var btVaiven = tools.querySelector('[data-a="vaiven"]');
     marco.appendChild(tools);
 
     // Los totales y el aviso, en una pastilla pequena abajo a la izquierda.
@@ -418,20 +437,88 @@
         '<path class="lin" d="' + d + '"/><g class="mrc">' + marcas + '</g></svg>';
     }
 
+    // CERRAR EL CIRCULO. 52 de las 68 rutas de la web empiezan y acaban a
+    // menos de 100 m: el circuito es lo normal aqui, y hasta ahora habia que
+    // volver al punto de partida a toques. Esto une el ultimo punto con el
+    // primero por el camino mas corto de la red, que es lo mismo que hace
+    // cualquier otro planificador («Loop to Start» en Garmin, «loop» en
+    // HiiKER). El nodo repetido al final es a proposito: asi el trazado
+    // sigue cumpliendo que tramos[k] va de anclas[k-1] a anclas[k].
+    function cierraCirculo(){
+      if (anclas.length < 2) { elMsg.textContent = t.pocos; return; }
+      var ini = anclas[0], fin = anclas[anclas.length - 1];
+      if (ini === fin) { elMsg.textContent = t.yacerrado; return; }
+      var tr = camino(red, fin, ini);
+      if (!tr) { elMsg.textContent = t.nocierra; return; }
+      anclas.push(ini); tramos.push(tr); cargado = null; pinta();
+    }
+
+    // IDA Y VUELTA. No calcula nada: copia los tramos en orden inverso y
+    // cada uno del reves, que es exactamente el camino de vuelta.
+    function idaYVuelta(){
+      if (anclas.length < 2) { elMsg.textContent = t.pocos; return; }
+      var i, maa = [], mtt = [];
+      for (i = tramos.length - 1; i >= 1; i--) {
+        mtt.push(tramos[i].slice().reverse());
+        maa.push(anclas[i - 1]);
+      }
+      anclas = anclas.concat(maa); tramos = tramos.concat(mtt);
+      cargado = null; pinta();
+    }
+
+    // ARRASTRAR UN PUNTO YA PUESTO. Antes, para corregir el segundo toque de
+    // ocho habia que deshacer los seis de despues. Aqui solo se recalculan
+    // los dos tramos que tocan al punto movido, y si alguno no sale no se
+    // toca nada. Si el trazado esta cerrado, el primer punto y el ultimo son
+    // el mismo nodo: hay que mover los dos o el circulo se abre.
+    function mueveAncla(i, lat, lon){
+      var n = nodoCerca(red, lat, lon);
+      if (n < 0) { elMsg.textContent = t.lejos; pinta(); return; }
+      var ult = anclas.length - 1;
+      var cerrado = ult > 1 && anclas[0] === anclas[ult];
+      var idx = (cerrado && i === ult) ? 0 : i;
+      var na = anclas.slice(), nt = tramos.slice(), tocar = [], k, j, tr;
+      na[idx] = n;
+      if (cerrado && idx === 0) na[ult] = n;
+      if (idx > 0) tocar.push(idx);
+      if (idx + 1 <= ult) tocar.push(idx + 1);
+      if (cerrado && idx === 0 && tocar.indexOf(ult) < 0) tocar.push(ult);
+      for (k = 0; k < tocar.length; k++) {
+        j = tocar[k];
+        tr = camino(red, na[j - 1], na[j]);
+        if (!tr) { elMsg.textContent = t.sinpaso; pinta(); return; }
+        nt[j] = tr;
+      }
+      if (idx === 0) nt[0] = [n];
+      anclas = na; tramos = nt; cargado = null; pinta();
+    }
+
     function pinta(){
       var pts = recorrido();
       quitaLinea();
       puntitos.forEach(function(m){ map.removeLayer(m); });
       puntitos = [];
       if (pts.length > 1) linea = dibujaLinea(pts.map(function(p){ return [p[0], p[1]]; }));
+      // Con el trazado cerrado, el ultimo punto es el mismo nodo que el
+      // primero: se dibuja uno solo, o quedarian dos bolas superpuestas y no
+      // se sabria cual estas arrastrando.
+      var cerrado = anclas.length > 2 && anclas[0] === anclas[anclas.length - 1];
       anclas.forEach(function(id, i){
+        if (cerrado && i === anclas.length - 1) return;
         var n = red.nodos[id];
-        puntitos.push(L.marker([n[0], n[1]], {
-          interactive: false,
+        var m = L.marker([n[0], n[1]], {
+          draggable: true, autoPan: true, keyboard: false,
           icon: L.divIcon({ className: 'draw-dot' + (i === 0 ? ' is-first' : ''),
                             iconSize: [12, 12], iconAnchor: [6, 6] })
-        }).addTo(map));
+        }).addTo(map);
+        m.on('dragend', function(ev){
+          var ll = ev.target.getLatLng();
+          mueveAncla(i, ll.lat, ll.lng);
+        });
+        puntitos.push(m);
       });
+      if (btCirculo) btCirculo.hidden = anclas.length < 2;
+      if (btVaiven) btVaiven.hidden = anclas.length < 2;
       var tt = totales();
       elTot.hidden = pts.length < 2;
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
@@ -440,7 +527,7 @@
       elPerfil.innerHTML = perfil();
       elUlt.textContent = tramos.length > 1 ? t.ultimo + ' ' + desnivelDe(tramos[tramos.length - 1]) : '';
       elUlt.hidden = tramos.length < 2;
-      elMsg.textContent = anclas.length ? t.sigue : t.arranque;
+      elMsg.textContent = !anclas.length ? t.arranque : (anclas.length > 1 ? t.mueve : t.sigue);
     }
 
     function alTocar(e){
@@ -532,6 +619,8 @@
       if (!b) return;
       var a = b.dataset.a;
       if (a === 'undo') { cargado = null; anclas.pop(); tramos.pop(); pinta(); }
+      else if (a === 'circulo') { cierraCirculo(); }
+      else if (a === 'vaiven') { idaYVuelta(); }
       else if (a === 'clear') { cargado = null; anclas = []; tramos = []; pinta(); }
       else if (a === 'gpx') { gpx(); }
       else if (a === 'list') { pintaGuardados(); saved.hidden = !saved.hidden; }

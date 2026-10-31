@@ -1128,6 +1128,46 @@ Tres cosas que costaron una vuelta y conviene no volver a tropezar:
   **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
   cargado, no pasa nada.
 
+**«Cerrar el círculo», «Ida y vuelta» y arrastrar un punto ya puesto (31 oct 2026).** Lo pidió el
+autor: «el trazado, la ruta la pega entera, más fácil, más limpia; mira en otros navegadores y saca
+ideas». Los tres botones que tenía el lápiz para dar forma a un trazado eran Deshacer y Borrar, y
+con eso **para corregir el segundo toque de ocho había que deshacer los seis de después**.
+
+Las dos medidas que mandaron en la decisión:
+
+- **52 de las 68 rutas (el 76 %) empiezan y acaban a menos de 100 m**: el circuito es lo normal
+  aquí, y cerrarlo había que hacerlo a toques. Por eso «Cerrar el círculo» es lo primero. Lo
+  tienen igual Garmin Connect («Loop to Start»), HiiKER, Komoot y Bikemap.
+- Las 68 rutas abarcan un recuadro de **24 x 22,7 km** y sólo el **26 %** de él está a menos de
+  120 m (`MAX_ENGANCHE_M`) de un camino grabado: **74 de cada 100 toques no enganchan nada**. Eso
+  no lo arregla ningún botón — es el techo de la red, que sólo lleva los 68 tracks propios— y es
+  la razón por la que la idea grande que queda pendiente es **alimentar la red con los caminos de
+  OpenStreetMap de la zona**, en una instantánea estática como la de `scripts/osm/`.
+
+Cómo están hechos, y lo que hay que respetar si se tocan:
+
+- **El invariante de siempre**: `tramos[k]` va de `anclas[k-1]` a `anclas[k]`, y `tramos[0]` es
+  `[anclas[0]]`. `recorrido()` se apoya en él (del tramo 0 coge todo y de los demás se salta el
+  primer punto). Las tres funciones nuevas lo mantienen.
+- **Cerrar el círculo** añade `anclas[0]` otra vez al final, con su tramo calculado. El nodo
+  repetido es a propósito: así el invariante se cumple sin casos especiales. `pinta()` **no dibuja
+  la bola del último punto cuando coincide con la del primero**, que si no quedan dos superpuestas
+  y no se sabe cuál arrastras.
+- **Ida y vuelta no calcula nada**: copia los tramos en orden inverso y cada uno del revés.
+  Comprobado en el navegador: 1,22 km pasan a 2,45, el doble exacto.
+- **Arrastrar un punto recalcula sólo sus dos tramos vecinos**, y si alguno no sale no se toca
+  nada. Con el trazado cerrado, el primer punto y el último son el mismo nodo y se mueven los dos,
+  o el círculo se abre.
+- **Los dos botones nuevos salen sólo con dos puntos o más**: la columna vive dentro del mapa y
+  son siete botones; sin eso ocuparían sitio para no hacer nada. Medido con el lápiz abierto en
+  390x844, la columna va del píxel 95 al 370 y sobra sitio, porque dibujar agranda el mapa.
+- La bola mide 12 px y con el dedo no se agarra: el área sensible se estira a 28 px con un
+  `::after` transparente en `.draw-dot`, sin tocar cómo se ve.
+
+Probado en un navegador de verdad sobre la red real: tres anclas 1,22 km → ida y vuelta 2,45 → dos
+deshacer 1,22 → cerrar el círculo 1,42 → arrastrar la segunda bola 1,79, sin un solo error de
+consola y con el círculo intacto después de arrastrar.
+
 Lo que dibuja un visitante **no es una ruta de la web**: va en otro color (`--trazo`, que no es
 ninguna de las dos actividades a propósito), se llama «tu trazado», se guarda solo en su navegador
 (`localStorage`, hasta 12) y nunca aparece entre las 65. Se puede deshacer tramo a tramo, borrar,

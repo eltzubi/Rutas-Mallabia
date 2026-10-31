@@ -538,8 +538,12 @@ body{
 .draw-open:hover{ border-color:var(--trazo); }
 .draw-del{ border:0; background:none; color:var(--ink-dim); font-size:17px; line-height:1; cursor:pointer; padding:0 4px; }
 .draw-del:hover{ color:var(--ink); }
-.draw-dot{ border-radius:50%; background:var(--trazo); box-shadow:0 0 0 2px var(--ground); }
+.draw-dot{ border-radius:50%; background:var(--trazo); box-shadow:0 0 0 2px var(--ground); cursor:grab; }
 .draw-dot.is-first{ background:var(--ground); box-shadow:0 0 0 3px var(--trazo); }
+/* La bola mide 12 px y con el dedo eso no se agarra. El area sensible se
+   estira a 28 px con un pseudoelemento transparente, sin tocar como se ve. */
+.draw-dot::after{ content:''; position:absolute; inset:-8px; border-radius:50%; }
+.leaflet-dragging .draw-dot{ cursor:grabbing; }
 @media (max-width:480px){
   .map-draw-btn, .draw-t{ width:32px; height:32px; }
   .draw-tools{ top:90px; gap:5px; }
