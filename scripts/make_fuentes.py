@@ -69,8 +69,8 @@ FUENTES = [
         # puerto que comparten 30 rutas: la fuente esta en el alto mismo.
         "coord": (43.210466, -2.546084),
         "punto": ("trabakua", "salida"),
-        "nota_es": "En el alto, junto al bar de arriba y los columpios.",
-        "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
+        "nota_es": "En el alto, junto al bar de arriba y el parque infantil.",
+        "nota_eu": "Mendatean bertan, goiko tabernaren eta haur-parke ondoan.",
         "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna", "zengotitagarai"],
     },
     {
