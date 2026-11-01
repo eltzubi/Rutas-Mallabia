@@ -508,8 +508,8 @@ HOME = {
     # sanpedrobidarte card
     'alt="Amanecer con niebla en el valle, con el sol saliendo tras los montes"':
         'alt="Egunsentia, harana lainoz betea, eguzkia mendien atzetik irteten"',
-    '<h3 class="route-card-name">Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte</h3>':
-        '<h3 class="route-card-name">Arteta, Drogeten Iturria eta San Pedro Bidarte ermita</h3>',
+    '<h3 class="route-card-name">Arteta, Drogeten Iturria y San Pedro de Bidarte</h3>':
+        '<h3 class="route-card-name">Arteta, Drogeten Iturria eta San Pedro Bidarte</h3>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Arteta, Ermua y la Ermita de San Pedro de Bidarte</p>':
         '<p class="route-card-desc">Zirkuitua Trabakuatik, Arteta, Ermua eta San Pedro Bidarte ermitatik igarota</p>',
 
@@ -3652,7 +3652,7 @@ TITLES = {
     'amaraune': 'Amaraune Mendi Lasterketa · Ibilbide ofiziala 19K — Herriko ibilbideak',
     'astarlokoatxa': 'Ur Jauziak eta Astarloko Atxa · Oinezko ibilbidea — Herriko ibilbideak',
     'garaimaguna': 'Garai, Maguna, Axmakur eta Zengotitagane · E-bike ibilbidea — Herriko ibilbideak',
-    'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte ermita · Oinezko ibilbidea — Herriko ibilbideak',
+    'sanpedrobidarte': 'Arteta, Drogeten Iturria eta San Pedro Bidarte · Oinezko ibilbidea — Herriko ibilbideak',
     'sancristobaloiz': 'Trabakua, San Kristobal (Oiz), Zenarruza eta Muniozguren · E-bike ibilbidea — Herriko ibilbideak',
     'axmakurandikoa': 'Trabakua, Zengotitagane, Axmakur eta Andikoa · E-bike ibilbidea — Herriko ibilbideak',
     'markinabolibar': 'Trabakua, Zenarruza, Zeinka, Urregarai eta Markina · E-bike ibilbidea — Herriko ibilbideak',
@@ -4512,14 +4512,14 @@ GARAIMAGUNA = {
 SANPEDROBIDARTE = {
     '<span>Sendero y pista</span><span class="sep">/</span><span>Arteta y San Pedro de Bidarte</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Bidezidorra eta pista</span><span class="sep">/</span><span>Arteta eta San Pedro Bidarte</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Arteta, Drogeten Iturria<br><em>y Ermita San Pedro de Bidarte</em></h1>':
+    '<h1>Arteta, Drogeten Iturria<br><em>y San Pedro de Bidarte</em></h1>':
         '<h1>Arteta, Drogeten Iturria<br><em>eta San Pedro Bidarte ermita</em></h1>',
     '<p class="full-name">Circuito de senderismo desde Trabakua por Arteta, Drogeten Iturria y la Ermita de San Pedro de Bidarte</p>':
-        '<p class="full-name">Zirkuitua Trabakuatik, Arteta, Drogeten Iturria eta San Pedro Bidarte ermitatik igarota</p>',
+        '<p class="full-name">Zirkuitua Trabakuatik, Arteta, Drogeten Iturria eta San Pedro Bidartetik igarota</p>',
     'alt="Amanecer con niebla en el valle, con el sol saliendo tras los montes"':
         'alt="Egunsentia, harana lainoz betea, eguzkia mendien atzetik irteten"',
-    'alt="Foto ampliada del recorrido de Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte"':
-        'alt="Arteta, Drogeten Iturria eta San Pedro Bidarte ermitaren ibilbidearen argazki handitua"',
+    'alt="Foto ampliada del recorrido de Arteta, Drogeten Iturria y San Pedro de Bidarte"':
+        'alt="Arteta, Drogeten Iturria eta San Pedro Bidarteren ibilbidearen argazki handitua"',
     '<p>14,12 km y +521 m de desnivel en un circuito de dificultad media, que apenas toca carretera: la mayor parte del recorrido va por senderos y pistas poco transitadas. Hay un tramo, al principio de la bajada de la fuente de Arteta, con senderos algo cerrados que exigen ir atentos al paso, aunque siempre practicables.</p>':
         '<p>14,12 km eta +521 m-ko desnibela, zailtasun ertaineko zirkuitu batean, errepidea ia ukitu gabe: ibilbidearen zati handiena bidezidor eta pista gutxi erabilietatik doa. Tarte bat dago, Artetako iturriaren jaitsieraren hasieran, bidezidor itxi samarrekin, adi ibiltzea eskatzen dutenak, nahiz eta beti pasatzeko modukoak izan.</p>',
     'alt="Pista de piedra y grava subiendo entre helechos y matorral"':
@@ -4584,10 +4584,10 @@ SANPEDROBIDARTE = {
         '<title>San Pedro Bidarte &middot; 9,2 km &middot; 257 m</title>',
     '<span class="elev-legend-item"><span class="num">1</span>Donagarai</span> <span class="elev-legend-item"><span class="num">2</span>Fuente de Arteta</span> <span class="elev-legend-item"><span class="num">3</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">4</span>Ongarai</span> <span class="elev-legend-item"><span class="num">5</span>San Pedro de Bidarte</span>':
         '<span class="elev-legend-item"><span class="num">1</span>Donagarai</span> <span class="elev-legend-item"><span class="num">2</span>Artetako iturria</span> <span class="elev-legend-item"><span class="num">3</span>Drogeten Iturria</span> <span class="elev-legend-item"><span class="num">4</span>Ongarai</span> <span class="elev-legend-item"><span class="num">5</span>San Pedro Bidarte</span>',
-    'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.gpx"':
-        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.gpx"',
-    'download="Arteta, Drogeten Iturria y Ermita San Pedro de Bidarte.kml"':
-        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte ermita.kml"',
+    'download="Arteta, Drogeten Iturria y San Pedro de Bidarte.gpx"':
+        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte.gpx"',
+    'download="Arteta, Drogeten Iturria y San Pedro de Bidarte.kml"':
+        'download="Arteta, Drogeten Iturria eta San Pedro Bidarte.kml"',
 }
 
 SANCRISTOBALOIZ = {
@@ -7083,3 +7083,4 @@ ZENGOTITAGARAI.update({
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
     '<span>Circuito — vuelve al punto de salida</span>': '<span>Zirkuitua — ia puntu berera itzultzen da</span>',
 })
+ARTETABERANOARANDONO['<span>Circuito — vuelve al punto de salida</span>'] = '<span>Zirkuitua — ia puntu berera itzultzen da</span>'

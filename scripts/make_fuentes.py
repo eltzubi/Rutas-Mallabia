@@ -71,7 +71,7 @@ FUENTES = [
         "punto": ("trabakua", "salida"),
         "nota_es": "En el alto, junto al bar de arriba y los columpios.",
         "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
-        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna"],
+        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna", "zengotitagarai"],
     },
     {
         "id": "arteta",
@@ -146,7 +146,7 @@ FUENTES = [
         "nota_eu": "Auzoaren sarreran, alboan.",
         "rutas": ["askakosantakataline", "amaraune", "garaimaguna", "santamanazarandikoa",
                   "sancristobalgaraiandikoa", "betzun", "garaigaztelu", "sancristobal",
-                  "maguna", "zengotitagane"],
+                  "maguna", "zengotitagane", "zengotitagarai"],
     },
     {
         "id": "oiz",
