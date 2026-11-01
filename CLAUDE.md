@@ -166,8 +166,11 @@ esta ruta» de cada ficha apunta a `nuevo.html?ruta=<slug>` del repositorio
 `check_site.py` busca el repositorio al lado de este (o donde diga `TRABAKUTIK_GPS=<ruta>`) y
 **falla** nombrando la ruta que falta. Si no lo encuentra lo dice con un `AVISO`, como con el
 domicilio: en GitHub Actions no va a estar y un aviso no puede tumbar el build por algo que alli
-no se puede mirar. **Al publicar una ruta hay que copiar `data/trailhead.json` a ese repositorio
-y subirlo tambien.**
+no se puede mirar. **Al publicar una ruta hay que copiar `data/trailhead.json` **y `data/rutas.json`** a ese
+repositorio y subirlos tambien**: el primero para que el boton encuentre la ruta, el segundo
+porque de ahi saca el navegador los **titulos** de su lista. Sin el enseñaba el nombre del
+archivo —«zengotitagarai», «askakosantakataline»— y no se sabia de que ruta se trataba.
+`check_site.py` comprueba los dos.
 
 It also does not check the waypoint kilometres in the elevation-profile markers — see the note in
 "Content rules" about them still being on the old distance basis.

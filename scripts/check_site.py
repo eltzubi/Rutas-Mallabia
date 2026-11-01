@@ -554,6 +554,20 @@ def main():
             avisos.append(
                 f'{copia} no es copia exacta de data/trailhead.json aunque '
                 'lleve las mismas rutas: los puntos pueden estar viejos.')
+        # Lo mismo con rutas.json, que es de donde el navegador saca los
+        # titulos de la lista. Sin el enseñaba el nombre del archivo
+        # («zengotitagarai») y no se sabia de que ruta se trataba.
+        nombres = copia.parent / 'rutas.json'
+        if nombres.is_file():
+            suyos = json.loads(nombres.read_text()).get('es', {})
+            for slug in sorted(t['href'][:-5] for t in aqui['tracks'] if t.get('href')):
+                require(slug in suyos,
+                        f'{nombres}: no tiene el titulo de {slug}. La lista del '
+                        f'navegador enseñara el nombre del archivo')
+        else:
+            avisos.append(
+                f'{copia.parent}/rutas.json no existe: la lista del navegador '
+                'enseñara nombres de archivo en vez de titulos.')
     else:
         avisos.append(
             'NO se ha comprobado la copia de trailhead.json del navegador GPS: '
