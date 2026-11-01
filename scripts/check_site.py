@@ -3,6 +3,7 @@
 import hashlib
 import json
 import math
+import os
 import re
 from html.parser import HTMLParser
 from pathlib import Path
@@ -519,6 +520,47 @@ def main():
             require(hashlib.sha256(gpx.read_bytes()).hexdigest() in hashes, f'ZIP omits {gpx.name}')
     for src, target in build.ASSETS.items():
         require((ROOT / 'src').joinpath(*src).read_bytes() == (ROOT / target).read_bytes(), f'Stale asset: {target}')
+    # --- el navegador GPS lleva su propia copia de trailhead.json --------
+    # nuevo.html, en el repositorio trabakutik-gps-pruebas, resuelve el
+    # ?ruta=<slug> del boton «Navegar esta ruta» contra SU copia de
+    # data/trailhead.json, no contra la de la web. Al publicar zengotitagarai
+    # esa copia se quedo en 68 rutas, el slug no estaba y el boton se quedaba
+    # cargando para siempre. No lo avisaba nada: ni el build ni estas
+    # comprobaciones, porque el fallo vive en otro repositorio.
+    #
+    # Si la copia esta a mano, se compara; si no, se dice que no se ha mirado,
+    # igual que con el domicilio. En GitHub Actions no va a estar, y un aviso
+    # no puede tumbar el build por algo que no se puede comprobar alli.
+    gps = os.environ.get('TRABAKUTIK_GPS')
+    candidatos = [Path(gps)] if gps else []
+    candidatos += [ROOT.parent / 'trabakutik-gps-pruebas',
+                   ROOT.parent / 'trabakutik-gps']
+    copia = next((c / 'data' / 'trailhead.json' for c in candidatos
+                  if (c / 'data' / 'trailhead.json').is_file()), None)
+    if copia is not None:
+        aqui = json.loads((ROOT / 'data' / 'trailhead.json').read_text())
+        alli = json.loads(copia.read_text())
+        mias = {t['href'] for t in aqui['tracks'] if t.get('href')}
+        suyas = {t['href'] for t in alli['tracks'] if t.get('href')}
+        for falta in sorted(mias - suyas):
+            require(False,
+                    f'{copia}: le falta {falta}. El boton «Navegar esta ruta» '
+                    f'de esa ficha no va a cargar')
+        require(not mias - suyas,
+                f'{copia}: tiene {len(suyas)} rutas y la web {len(mias)}')
+        for sobra in sorted(suyas - mias):
+            avisos.append(f'{copia} tiene una ruta que la web no publica: {sobra}')
+        if copia.read_bytes() != (ROOT / 'data' / 'trailhead.json').read_bytes():
+            avisos.append(
+                f'{copia} no es copia exacta de data/trailhead.json aunque '
+                'lleve las mismas rutas: los puntos pueden estar viejos.')
+    else:
+        avisos.append(
+            'NO se ha comprobado la copia de trailhead.json del navegador GPS: '
+            'no encuentro el repositorio trabakutik-gps-pruebas al lado de este. '
+            'Si esa copia se queda atras, el boton «Navegar esta ruta» de las '
+            'fichas nuevas no carga. Se puede indicar con TRABAKUTIK_GPS=<ruta>.')
+
     for aviso in avisos:
         print(f'AVISO: {aviso}')
     cola = f'  ({len(avisos)} aviso{"s" if len(avisos) != 1 else ""})' if avisos else ''

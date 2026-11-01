@@ -157,6 +157,18 @@ It deliberately does **not** check cumulative elevation gain: summing the GPX's 
 from the figure on the page, and even smoothed it stays around 9% on average. Those figures come from the
 route's own source (Wikiloc, the race organiser) and the page says so. Checking it would only cry wolf.
 
+**Y comprueba la copia de `trailhead.json` que lleva el navegador GPS.** El boton «Navegar
+esta ruta» de cada ficha apunta a `nuevo.html?ruta=<slug>` del repositorio
+**trabakutik-gps-pruebas**, y esa pagina resuelve el slug contra **su propia copia** de
+`data/trailhead.json`, no contra la de la web. Al publicar `zengotitagarai` esa copia se quedo en
+68 rutas: el slug no estaba y el boton se quedaba cargando para siempre, sin que lo avisara nada
+—ni el build ni estas comprobaciones, porque el fallo vive en otro repositorio—. Ahora
+`check_site.py` busca el repositorio al lado de este (o donde diga `TRABAKUTIK_GPS=<ruta>`) y
+**falla** nombrando la ruta que falta. Si no lo encuentra lo dice con un `AVISO`, como con el
+domicilio: en GitHub Actions no va a estar y un aviso no puede tumbar el build por algo que alli
+no se puede mirar. **Al publicar una ruta hay que copiar `data/trailhead.json` a ese repositorio
+y subirlo tambien.**
+
 It also does not check the waypoint kilometres in the elevation-profile markers — see the note in
 "Content rules" about them still being on the old distance basis.
 
