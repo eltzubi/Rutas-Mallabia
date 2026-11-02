@@ -7085,3 +7085,84 @@ ZENGOTITAGARAI.update({
     '<span>Circuito — vuelve al punto de salida</span>': '<span>Zirkuitua — ia puntu berera itzultzen da</span>',
 })
 ARTETABERANOARANDONO['<span>Circuito — vuelve al punto de salida</span>'] = '<span>Zirkuitua — ia puntu berera itzultzen da</span>'
+
+
+# ---------------------------------------------------------------------------
+# Circuito Iñaki Lejarreta de Berriz. El autor escribió el texto DIRECTAMENTE
+# en euskera, como en zaldutrail, así que manda el euskera y el castellano se
+# rehizo detrás con sus mismos cortes de párrafo. Lo que él no dio —los pies
+# de foto, los nombres de los puntos numerados y el párrafo del desvío del
+# km 3,2— está traducido aquí y queda pendiente de su revisión.
+# ---------------------------------------------------------------------------
+LEJARRETA = {
+    '<h1>Circuito I&ntilde;aki Lejarreta <em>de Berriz</em></h1>':
+        '<h1>Berrizko I&ntilde;aki Lejarreta <em>zirkuitua</em></h1>',
+    'Circuito I&ntilde;aki Lejarreta de Berriz': 'Berrizko I&ntilde;aki Lejarreta zirkuitua',
+    # La forma con «ñ» cruda solo sale en la cabecera, dentro del JSON-LD, y
+    # esa no se traduce en ninguna de las 69 rutas: el dato estructurado de la
+    # pagina en euskera lleva el nombre en castellano en todo el sitio. Como
+    # translate() exige que toda clave este en la COLA, aqui no pinta nada.
+    'Ruta de BTT para ni&ntilde;os sobre el vel&oacute;dromo de Berriz':
+        'Haurrentzako BTT ibilbidea Berrizko belodromoaren gainean',
+    '<span>Sendero</span>': '<span>Bidezidorra</span>',
+    '<span class="v">Sendero</span>': '<span class="v">Bidezidorra</span>',
+    '<span class="v">F&aacute;cil</span>': '<span class="v">Erraza</span>',
+    '<span class="v">Circuito</span>': '<span class="v">Zirkuitua</span>',
+    'Circuito': 'Zirkuitua',
+    'alt="Foto ampliada"': 'alt="Argazki handitua"',
+    '<span>Circuito — vuelve al punto de salida</span>':
+        '<span>Zirkuitua — ia puntu berera itzultzen da</span>',
+
+    # para quién es
+    'Para que los ni&ntilde;os empiecen a andar por senderos y vayan cogiendo confianza con la bici, sin prisa y a su ritmo.':
+        'Haurrek bidezidorretan ibiltzen hasi eta bizikletarekin konfiantza hartzen joan daitezen, presarik gabe eta beren erritmoan.',
+
+    # cuerpo
+    'En esta vuelta nos quedamos en la zona m&aacute;s f&aacute;cil, por encima del vel&oacute;dromo <b>Marino Lejarreta</b> y en paralelo a &eacute;l, en <b>Berriz</b>. El sendero pasa entre &aacute;rboles y tiene curvas f&aacute;ciles y alguna rampa corta. En el suelo hay tambi&eacute;n ra&iacute;ces y hojas, as&iacute; que permite probar c&oacute;mo se maneja la bici en el monte sin meterse en los tramos m&aacute;s dif&iacute;ciles.':
+        'Bira honetan, eremu errazenean geratuko gara, <b>Marino Lejarreta</b> belodromoaren gainean eta paraleloan, <b>Berriz</b>en. Bidezidorra zuhaitzen artean igarotzen da, eta bihurgune errazak eta aldapa labur batzuk ditu. Sustraiak eta hostoak ere badaude lurrean; beraz, bizikleta mendian nola moldatzen den probatzeko aukera ematen du, zati zailenetan sartu gabe.',
+    'M&aacute;s arriba, y m&aacute;s lejos del vel&oacute;dromo, hay otra zona, con toboganes y subidas y bajadas encadenadas. Tiene m&aacute;s movimiento y pide m&aacute;s soltura. Si alg&uacute;n tramo se les hace dif&iacute;cil, no hay por qu&eacute; empe&ntilde;arse: se puede saltar esa zona y seguir por el recorrido m&aacute;s f&aacute;cil.':
+        'Gorago, eta belodromotik urrunago, beste eremu bat dago, txirristekin eta igoera eta jaitsiera kateatuekin. Mugimendu gehiago du eta trebetasun handiagoa eskatzen du. Zati bat zaila egiten bazaie, ez dago tematu beharrik: eremu hori saltatu eta ibilbide errazenetik jarraitu daiteke.',
+    'Hacia el <b>kil&oacute;metro 3,2</b> se ve salir otro sendero de la zona sencilla. Est&aacute; abierto, pero se nota que no lo usa casi nadie y no est&aacute; limpio: mejor no meterse por ah&iacute;.':
+        '<b>3,2 kilometro</b> inguruan beste bidezidor bat ateratzen da eremu errazetik. Irekita dago, baina nabari da ia inork ez duela erabiltzen eta ez dago garbi: hobe hortik ez sartzea.',
+    'El track acumula m&aacute;s distancia porque damos varias vueltas a esta zona f&aacute;cil. As&iacute; los ni&ntilde;os pueden repetir el sendero, conocerlo y disfrutar de la salida.':
+        'Trackak distantzia gehiago pilatzen du, zati erraz honetan hainbat buelta ematen ditugulako. Horrela, haurrek bidezidorra errepikatu, ezagutu eta irteeraz gozatu dezakete.',
+    'Y el plan puede seguir despu&eacute;s de la vuelta en bici. Junto al aparcamiento hay un parque y una zona deportiva, con frontones, una cancha de baloncesto, un campo de f&uacute;tbol y un <b>pump track</b> para bicis y patinetes. Tambi&eacute;n se puede dar un paseo y disfrutar de las vistas al monte. Hay opciones para alargar la visita y pasar el rato en familia.':
+        'Eta planak bizikleta ibilaldiaren ondoren jarrai dezake. Aparkalekuaren ondoan, parke bat eta kirol-gune bat daude, frontoiekin, saskibaloi-pista batekin, futbol-zelai batekin eta bizikleta eta patineteentzako <b>pump track</b> batekin. Pasealdi bat ere egin daiteke eta mendirako bistez gozatu. Bisita luzatzeko eta familiarekin denbora pasatzeko aukerak daude.',
+
+    # puntos numerados
+    'Aparcamiento &middot; 0,0 km &middot; 225 m': 'Aparkalekua &middot; 0,0 km &middot; 225 m',
+    'Zona sencilla &middot; 0,5 km &middot; 236 m': 'Eremu erraza &middot; 0,5 km &middot; 236 m',
+    'Zona m&aacute;s avanzada &middot; 4,5 km &middot; 249 m': 'Eremu aurreratuagoa &middot; 4,5 km &middot; 249 m',
+    'Desv&iacute;o que no conviene tomar &middot; 3,2 km &middot; 224 m':
+        'Hartu behar ez den desbideratzea &middot; 3,2 km &middot; 224 m',
+    '<span class="num">1</span>Aparcamiento</span>': '<span class="num">1</span>Aparkalekua</span>',
+    '<span class="num">2</span>Zona sencilla</span>': '<span class="num">2</span>Eremu erraza</span>',
+    '<span class="num">3</span>Zona m&aacute;s avanzada</span>': '<span class="num">3</span>Eremu aurreratuagoa</span>',
+    '<span class="num">4</span>Desv&iacute;o que no conviene tomar</span>':
+        '<span class="num">4</span>Hartu behar ez den desbideratzea</span>',
+
+    # pies de foto
+    'Un ni&ntilde;o en bici por el camino que cruza el prado, con el monte al fondo':
+        'Ume bat bizikletan zelaia zeharkatzen duen bidetik, mendia atzean',
+    'El sendero ancho entre &aacute;rboles, cubierto de hojas':
+        'Bidezidor zabala zuhaitzen artean, hostoz estalita',
+    'El bosque con los postes de madera que marcan el sendero':
+        'Basoa, bidezidorra seinalatzen duten egurrezko zutoinekin',
+    'Una zona abierta del bosque, con las hojas cubriendo el suelo':
+        'Basoko eremu ireki bat, hostoek lurra estalita',
+    'El paso entre los pinos, con el suelo alfombrado de hojas':
+        'Pinuen arteko pasabidea, lurra hostoz alfonbratuta',
+    'Un ni&ntilde;o con casco azul por el sendero, junto a una valla de madera':
+        'Ume bat kasko urdinarekin bidezidorrean, egurrezko hesi baten ondoan',
+    'El mismo ni&ntilde;o pedaleando entre los &aacute;rboles': 'Ume bera zuhaitzen artean pedalkatzen',
+    'Un ni&ntilde;o cruzando el sendero por la ladera': 'Ume bat bidezidorra zeharkatzen, hegalean',
+    'Subiendo un repecho corto del sendero': 'Bidezidorreko aldapa labur bat igotzen',
+    'El sendero estrecho visto desde el manillar': 'Bidezidor estua, manillarretik ikusita',
+}
+PAGE_STRINGS['lejarreta'] = LEJARRETA
+TITLES['lejarreta'] = 'Berrizko I\u00f1aki Lejarreta zirkuitua \u00b7 Haurrentzako BTT ibilbidea \u2014 Herriko ibilbideak'
+DESCRIPTIONS['lejarreta'] = 'BTT zirkuitu erraza haurrentzat Berrizen, belodromoaren gainean: bidezidorra zuhaitzen artean, bihurgune errazak eta txirristadun eremu bat, saltatu daitekeena.'
+HOME.update({k: LEJARRETA[k] for k in (
+    'Circuito I&ntilde;aki Lejarreta de Berriz',
+    'Ruta de BTT para ni&ntilde;os sobre el vel&oacute;dromo de Berriz',
+    'Un ni&ntilde;o en bici por el camino que cruza el prado, con el monte al fondo')})
