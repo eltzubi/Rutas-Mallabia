@@ -7078,7 +7078,7 @@ DESCRIPTIONS['zengotitagarai'] = 'E-bike zirkuitua Trabakuatik Zengotitagane, tr
 HOME.update({k: ZENGOTITAGARAI[k] for k in (
     'Zengotitagane y bajada interesante hacia Garai',
     'Vuelta desde Trabakua por Zengotitagane, los d&oacute;lmenes y las bajadas hacia Garai',
-    'El valle y los caser&iacute;os desde la cresta')})
+    'Sendero entre helechos secos camino de los aerogeneradores')})
 ZENGOTITAGARAI.update({
     'Circuito': 'Zirkuitua',
     'alt="Foto ampliada"': 'alt="Argazki handitua"',
