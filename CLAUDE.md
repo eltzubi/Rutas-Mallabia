@@ -1291,6 +1291,19 @@ invented numbers. `data/trailhead.json` holds every route's track for the home-p
 `src/js/map.js` reads waypoint labels straight from the page's already-rendered `.elev-legend` items
 (not duplicated in the JSON), and derives the route's compass heading itself.
 
+**Desde el 3 de noviembre de 2026 los GPX de esta zona salen y llegan a Trabakua, y lo garantiza
+el autor en origen.** Sus palabras: «los últimos GPX salen y llegan a Trabakua. A partir de ahora
+será así. Siempre que sean de esta zona, a Trabakua; ninguna saldrá de casa, si saliera os avisaré
+siempre». Comprobado el día que lo dijo: 54 de los 70 GPX arrancan a menos de 300 m de Trabakua, y
+los 16 restantes son de otras zonas (Ahuntzen a 9,5 km, Markina a 7,5), que es lo que él mismo
+acota con «de esta zona».
+
+**Qué cambia:** no hace falta pedirle que pase `por_la_general.py --revisa` cada vez que publica una
+ruta nueva. Lo estaba haciendo y es ruido: el problema se evita en origen. **Si el autor no dice nada, despreocúpate: no hay que comprobar nada ni pedirle que compruebe nada.** Él avisa si alguna sale de su casa; mientras no avise, se da por bueno. Son sus palabras: «si algunas saliera de mi casa lo avisaré, si no despreocuparos». **Qué NO cambia:** el
+script, la comprobación de `check_site.py` y el AVISO cuando falta `.punto-privado.json` se quedan
+tal cual. No cuestan nada y son la red por si algún día entra un track de otra procedencia -uno que
+le pasen, o uno viejo-. Si él avisa de que una ruta sale de casa, entonces sí: `por_la_general.py`.
+
 **A GPX must never start or end at the user's house, and must never go in front of it — always
 along the BI-633.** Standing instruction, for every route. Two earlier attempts at this got it wrong
 and both shipped, so read this before touching any track near Trabakua:

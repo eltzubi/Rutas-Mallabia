@@ -38,26 +38,39 @@ verdad.
    nombres de sitios, ni el orden de los waypoints, ni dónde hay agua. Si no
    lo sabes, pregúntalo. Una ruta mal descrita manda a alguien al monte con
    información falsa.
-2. **Un GPX no puede empezar ni acabar en casa del autor, ni pasar por
-   delante.** Siempre por la BI-633. El autor tiene que ejecutar
-   `python3 scripts/por_la_general.py --revisa` **en su propia máquina**: el
+2. **Los GPX de esta zona salen y llegan a Trabakua, y lo garantiza el autor
+   en origen.** Lo dijo el 3 de noviembre de 2026: «siempre que sean de esta
+   zona, a Trabakua; ninguna saldrá de casa, si saliera os avisaré siempre».
+   Comprobado ese mismo día: 54 de los 70 GPX arrancan a menos de 300 m de
+   Trabakua, y los 16 restantes son de otras zonas (Ahuntzen a 9,5 km,
+   Markina a 7,5). **Así que no le pidas que revise cada ruta nueva**: se
+   estaba haciendo y es ruido, porque el problema se evita antes de empezar.
+   **Si el autor no dice nada, despreocúpate: no hay que comprobar nada ni
+   pedirle que compruebe nada.** Él avisa si alguna sale de su casa; mientras
+   no avise, se da por bueno. Sus palabras: «si algunas saliera de mi casa lo
+   avisaré, si no despreocuparos».
+   La regla de abajo sigue viva solo para cuando avise.
+3. **Un GPX no puede empezar ni acabar en casa del autor, ni pasar por
+   delante.** Siempre por la BI-633. Si el autor avisa de que una ruta sale
+   de casa, se arregla con `python3 scripts/por_la_general.py <ruta>`, que
+   tiene que ejecutar **en su propia máquina**: el
    archivo con la coordenada (`scripts/.punto-privado.json`) está excluido de
    git a propósito, porque el repositorio es público y meterlo ahí publicaría
    justo lo que se quiere esconder. Por eso `check_site.py` siempre avisa de
    que falta: **ese aviso es normal aquí, no es un fallo**.
-3. **No reescribas texto que no te hayan pedido tocar.** Ni para «mejorarlo».
+4. **No reescribas texto que no te hayan pedido tocar.** Ni para «mejorarlo».
    El texto de las rutas lo escribe el autor.
-4. **Avisa siempre de datos que faltan o de errores que veas**, aunque estén
+5. **Avisa siempre de datos que faltan o de errores que veas**, aunque estén
    fuera de lo que te han pedido.
-5. **Los kilómetros de los waypoints se quedan como están.** Están decididos.
-6. **Los tracks no se quitan del mapa.**
-7. **La subida de cemento de Osma a Zengotitagane es dura para una bici
+6. **Los kilómetros de los waypoints se quedan como están.** Están decididos.
+7. **Los tracks no se quitan del mapa.**
+8. **La subida de cemento de Osma a Zengotitagane es dura para una bici
    normal.** Si una ruta la usa, hay que decirlo en el apartado de «para quién
    es».
-8. **Nada de ermitas en los títulos de las rutas.**
-9. Cuando el autor escribe el texto primero en **euskera**, el euskera manda y
+9. **Nada de ermitas en los títulos de las rutas.**
+10. Cuando el autor escribe el texto primero en **euskera**, el euskera manda y
    el castellano se reescribe detrás con los mismos cortes de párrafo.
-10. Estilo en euskera: «eolikoak», nunca «aerosorgailuak». Siempre
+11. Estilo en euskera: «eolikoak», nunca «aerosorgailuak». Siempre
     «zirkuitua», nunca «zirkulua». La negrita solo en la raíz
     (`<b>Berriz</b>en`). Guiones ASCII normales, no rayas tipográficas.
 
@@ -322,8 +335,6 @@ Vale la pena leerlas: todas costaron tiempo.
 
 - El **terreno de la ruta `lejarreta` está vacío a propósito**. Hay una
   propuesta sacada del propio texto del autor: «Raíces y hojas». Él decide.
-- El autor tiene que pasar `python3 scripts/por_la_general.py --revisa` sobre
-  `src/lejarreta.gpx` **en su máquina**.
 - Le quedan por revisar, de `lejarreta`: los **diez pies de foto**, los
   **cuatro nombres de waypoint** (Aparkalekua, Eremu erraza, Eremu
   aurreratuagoa, Hartu behar ez den desbideratzea) y el **párrafo del desvío
