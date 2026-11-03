@@ -8,5 +8,14 @@ places.json:
 pois.json:
 [out:json][timeout:120];(node["natural"~"^(peak|saddle)$"]["name"](43.10,-2.72,43.33,-2.40);node["mountain_pass"="yes"]["name"](43.10,-2.72,43.33,-2.40);nwr["amenity"="place_of_worship"]["name"](43.10,-2.72,43.33,-2.40);nwr["waterway"="waterfall"]["name"](43.10,-2.72,43.33,-2.40););out center;
 
-Si alguna ruta sale del recuadro 43.10-43.33 N / 2.40-2.72 O, amplialo en las
-dos consultas antes de volver a bajarlas.
+Los CRUCES no se guardan aqui, sino ya hechos en data/cruces-zona.json, que es
+lo que baja el navegador GPS. Los hace scripts/make_cruces.py -pasalo sin
+argumentos y dice la consulta de Overpass que hay que bajar-. La respuesta cruda
+son 27 MB y no se guarda: de ella solo salen los nodos que tocan tres ramas o
+mas de camino. Un nodo de dos ramas NO es un cruce, es un camino partido en dos
+porque cambia el firme o el nombre, y en OSM eso pasa constantemente: en esta
+caja hay 245.402 nodos de dos ramas y 17.515 cruces de verdad.
+El fichero generado lleva dentro la fecha de los datos de OSM, en "fecha_osm".
+
+Si alguna ruta sale del recuadro 43.10-43.34 N / 2.34-2.72 O, amplialo en las
+tres consultas antes de volver a bajarlas.
