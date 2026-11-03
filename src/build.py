@@ -110,7 +110,7 @@ def assemble_page(name, suffix=""):
 def add_navigation_link(page_html, page, lang):
     if not os.path.isfile(os.path.join(HERE, f"{page}.gpx")):
         return page_html
-    label = "Navegar esta ruta" if lang == "es" else "Ibilbide honetan nabigatu"
+    label = "Navegar con la app" if lang == "es" else "Aplikazioarekin nabigatu"
     destination = (
         "https://eltzubi.github.io/trabakutik-gps-pruebas/nuevo.html"
         f"?ruta={page}"
