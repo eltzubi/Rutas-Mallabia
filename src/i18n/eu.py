@@ -7095,6 +7095,10 @@ ARTETABERANOARANDONO['<span>Circuito — vuelve al punto de salida</span>'] = '<
 # km 3,2— está traducido aquí y queda pendiente de su revisión.
 # ---------------------------------------------------------------------------
 LEJARRETA = {
+    'El vel&oacute;dromo Marino Lejarreta al atardecer': 'Marino Lejarreta belodromoa ilunabarrean',
+    'La entrada al sendero junto al vel&oacute;dromo': 'Belodromoaren ondoko bidezidorraren sarrera',
+    'Un ni&ntilde;o en bici entre los &aacute;rboles': 'Ume bat bizikletan zuhaitzen artean',
+    'El pump track de Berriz': 'Berrizko pump tracka',
     '<h1>Circuito I&ntilde;aki Lejarreta <em>de Berriz</em></h1>':
         '<h1>Berrizko I&ntilde;aki Lejarreta <em>zirkuitua</em></h1>',
     'Circuito I&ntilde;aki Lejarreta de Berriz': 'Berrizko I&ntilde;aki Lejarreta zirkuitua',
