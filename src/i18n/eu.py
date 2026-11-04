@@ -7150,12 +7150,8 @@ LEJARRETA = {
         'Ume bat bizikletan zelaia zeharkatzen duen bidetik, mendia atzean',
     'El sendero ancho entre &aacute;rboles, cubierto de hojas':
         'Bidezidor zabala zuhaitzen artean, hostoz estalita',
-    'El bosque con los postes de madera que marcan el sendero':
-        'Basoa, bidezidorra seinalatzen duten egurrezko zutoinekin',
     'El paso entre los pinos, con el suelo alfombrado de hojas':
         'Pinuen arteko pasabidea, lurra hostoz alfonbratuta',
-    'Un ni&ntilde;o con casco azul por el sendero, junto a una valla de madera':
-        'Ume bat kasko urdinarekin bidezidorrean, egurrezko hesi baten ondoan',
     'El mismo ni&ntilde;o pedaleando entre los &aacute;rboles': 'Ume bera zuhaitzen artean pedalkatzen',
     'Un ni&ntilde;o cruzando el sendero por la ladera': 'Ume bat bidezidorra zeharkatzen, hegalean',
     'Subiendo un repecho corto del sendero': 'Bidezidorreko aldapa labur bat igotzen',
