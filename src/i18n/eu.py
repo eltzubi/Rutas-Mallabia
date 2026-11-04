@@ -7152,8 +7152,6 @@ LEJARRETA = {
         'Bidezidor zabala zuhaitzen artean, hostoz estalita',
     'El bosque con los postes de madera que marcan el sendero':
         'Basoa, bidezidorra seinalatzen duten egurrezko zutoinekin',
-    'Una zona abierta del bosque, con las hojas cubriendo el suelo':
-        'Basoko eremu ireki bat, hostoek lurra estalita',
     'El paso entre los pinos, con el suelo alfombrado de hojas':
         'Pinuen arteko pasabidea, lurra hostoz alfonbratuta',
     'Un ni&ntilde;o con casco azul por el sendero, junto a una valla de madera':
