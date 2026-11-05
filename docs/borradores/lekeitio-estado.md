@@ -62,3 +62,12 @@ No confundir localizar los originales con incorporarlos al repositorio. No marca
 10. Comprobar la sincronización de `data/trailhead.json` y `data/rutas.json` con el GPS y, tras publicar, las comprobaciones y el despliegue de Pages.
 
 Estas notas permiten retomar el trabajo sin depender únicamente del historial del chat. No son una copia binaria de los adjuntos ni una garantía de conservación de la conversación.
+
+## Actualización: selección definitiva y material preparado (5 noviembre)
+
+- El autor ha elegido explícitamente como **portada** la foto original **`1000125894.jpg`** (puente de Lekeitio). Sustituye la propuesta anterior `1000125736.jpg`. No duplicarla en la galería.
+- Ha reenviado **25 fotografías originales**, registradas por nombres reales y orden de envío en tres notas `lekeitio-fotos-recibidas-05-11*.md`. Portada primera, 24 restantes en galería.
+- El GPX definitivo se ha abierto correctamente: **25.984 puntos**, longitud aproximada **32,74 km**. Desnivel **+1.533 m** confirmado por el autor.
+- Se ha generado en el entorno local un paquete ZIP verificando su CRC: contiene GPX, KML de todos los puntos, JPG originales y versiones web 800 px / completas WebP y JPG. **Este ZIP NO está en el repositorio GitHub**, solo se ha entregado como archivo descargable en la conversación. No publicar ni fusionar suponiendo que está incorporado.
+- Requisito explícito del autor: **mapa y perfil en ficha, descarga del GPX, enlace Navegar y visibilidad en Trabakutik GPS**, incluida entrada ES/EU en `data/rutas.json` y track en `data/trailhead.json` a través de generadores y sincronización.
+- **Bloqueante:** el entorno local no resuelve github.com por DNS para clonar/push; el conector GitHub funciona para texto, pero no transmite directamente los archivos binarios adjuntos. También falta validar el GPX contra los márgenes privados del autor antes de publicar. No se ha publicado ni verificado la ficha.
