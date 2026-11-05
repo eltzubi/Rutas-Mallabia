@@ -5,7 +5,7 @@ Trabajo en la rama `ruta-trabakua-lekeitio`, PR #461. Sigue siendo un borrador; 
 ## Material recuperado
 
 - Textos completos ES/EU: `docs/borradores/lekeitio.es.md` y `lekeitio.eu.md`. Leídos de nuevo, sin modificarlos.
-- GPX definitivo localizado entre los adjuntos guardados: `gerea-zapola-urregarai-bedartzandi-lekeitio.gpx`, 3.372.538 bytes. Todavía no se ha incorporado ni analizado. Sustituye al GPX anterior.
+- GPX definitivo aportado de nuevo el 5 de noviembre: `gerea-zapola-urregarai-bedartzandi-lekeitio.gpx`. Analizado localmente: 25.984 puntos GPS, 32,743 km por suma geodésica de segmentos, un track, datos de elevación en todos los puntos y sin saltos consecutivos superiores a 50 m. Desnivel positivo +1.533 m confirmado por el autor (no calculado sumando el ruido del GPX). El archivo binario aún NO está en el repositorio; la revisión local no equivale a subirlo. Sustituye al anterior.
 - Localizadas las 22 fotografías originales entre los adjuntos guardados; no es necesario volver a solicitarlas mientras sigan disponibles.
 - Las primeras veinte tienen descripciones ES/EU en `lekeitio-fotos.md` y `lekeitio-fotos-11-20.md`.
 - Las dos últimas, `1000125909.jpg` y `1000125913.jpg`, faltaban en las notas del PR. Ambas existen. Pendiente verlas para escribir sus textos alternativos y confirmar el orden de este último par.
@@ -44,13 +44,13 @@ Se conserva el orden documentado de las primeras veinte. La numeración del últ
 
 Leídos `AGENTS.md`, `GUIA.md` y `CLAUDE.md`. El PR contenía cuatro documentos de borrador, sin GPX, imágenes ni fuentes de ficha. Los textos conservan la advertencia sobre la subida directa a Santa Eufemia y el atajo anterior a Iturreta.
 
-La sesión no dispone de un entorno de ejecución: la llamada de prueba devuelve «No usable execution environment is available». Esto impide procesar las fotos, analizar el GPX, ejecutar Python/Node, construir el sitio y abrir el navegador de verificación. No se ha ejecutado ninguna prueba ni se ha publicado.
+Actualización: existe un entorno local para analizar el GPX recibido y se ha comprobado su lectura y continuidad de puntos. El acceso de red Git al repositorio desde ese entorno falla por resolución DNS, mientras que el conector GitHub sí permite editar textos. Todavía no se han incorporado el GPX binario ni las fotografías, ni se han ejecutado los generadores y pruebas sobre una copia completa del repositorio. No se ha publicado.
 
 No confundir localizar los originales con incorporarlos al repositorio. No marcar el PR como listo ni fusionarlo hasta completar la ficha y las comprobaciones.
 
 ## Trabajo pendiente
 
-1. Recuperar los archivos originales por sus nombres del inventario y el GPX definitivo. No utilizar el GPX anterior.
+1. Incorporar el GPX definitivo recibido y recuperar/incorporar las 22 fotografías binarias. No utilizar el GPX anterior.
 2. Obtener distancia, alturas y perfil del GPX. El desnivel acumulado y los tiempos necesitan la fuente del autor; no deducir el acumulado sumando elevaciones en bruto.
 3. Montar `src/lekeitio_head.html` y `src/lekeitio_tail.html` siguiendo una ficha completa como `arteta`, sin reescribir los textos guardados.
 4. Conservar mapa, perfil con puntos numerados, descargas, formulario de incidencias, pie, botón de volver arriba y scripts. Comparar estructura con la ficha de referencia.
