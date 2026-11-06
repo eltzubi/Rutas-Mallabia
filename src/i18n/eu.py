@@ -6262,6 +6262,10 @@ TRABAKUADEBA = {
 }
 
 TRABAKUAONDARROA = {
+    'Ladera rocosa con prados y bosque al fondo': 'Harkaitzezko hegala, larreak eta basoa atzean',
+    'Vistas de los montes y del mar al fondo': 'Mendien ikuspegia, itsasoa atzean',
+    'Señal de madera hacia Amoroto, junto al sendero': 'Amorotorako egurrezko seinalea, bidezidorraren ondoan',
+    'Poste con señales de madera en un cruce de caminos': 'Egurrezko seinaleak dituen zutoina bidegurutze batean',
     '<span>Mixta</span><span class="sep">/</span><span>Muniozguren, Atxagarai y Kurutzegana</span><span class="sep">/</span><span>Traves&iacute;a</span>':
         '<span>Nahasia</span><span class="sep">/</span><span>Muniozguren, Atxagarai eta Kurutzegana</span><span class="sep">/</span><span>Zeharkaldia</span>',
     '<h1>Trabakua, Atxagarai, Kurutzegana<br><em>y Ondarroa</em></h1>':
