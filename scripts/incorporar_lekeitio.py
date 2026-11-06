@@ -120,7 +120,7 @@ t=t.replace('ROUTE_PAGES = {"trabakua",','ROUTE_PAGES = {"lekeitio", "trabakua",
 t=t.replace('MANUAL_EU_PAGES = set()','MANUAL_EU_PAGES = {"lekeitio"}',1)
 save(p,t)
 p="src/build.py";t=load(p).replace('PAGES = ["mallabia",','PAGES = ["mallabia", "lekeitio",',1)
-t=re.sub(r'ULTIMA_ENTRADA = ([^)]*)','ULTIMA_ENTRADA = ("lekeitio", "2026-11-06")',t,count=1)
+t=re.sub(r'(?m)^ULTIMA_ENTRADA[^\\n]*$', 'ULTIMA_ENTRADA = ("lekeitio", "2026-11-06")', t, count=1)
 save(p,t)
 # Marcadores del mapa: sin waypoints numerados porque no están verificados individualmente.
 import importlib.util
