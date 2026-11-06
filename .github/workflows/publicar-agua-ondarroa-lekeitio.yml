@@ -59,7 +59,7 @@ jobs:
           for suffix in ('','.eu'):
               s=Path('lekeitio'+suffix+'.html').read_text()
               assert 'data-fuentes="' in s
-              assert s.count('class="gota"')==2
+              assert s.count('class="gota"')==1
               assert '<a href="trabakuaondarroa'+suffix+'.html">' in s
               assert s.count('class="elev-marker"')==4
               assert s.count('class="gallery-item"')==22
