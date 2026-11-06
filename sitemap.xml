@@ -14,6 +14,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/index.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/lekeitio.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/lekeitio.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/lekeitio.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/lekeitio.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/lekeitio.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/lekeitio.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/trabakua.html</loc>
     <lastmod>2026-10-11</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/trabakua.html"/>

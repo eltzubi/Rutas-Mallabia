@@ -3430,6 +3430,7 @@ POTRERA = {
 
 # <meta name="description"> per page (head files)
 DESCRIPTIONS = {
+    'lekeitio': 'Trabakuatik Lekeitiorako oinezko zeharkaldia, Mendibil, Mallukitokiko bunkerra, Zapola, Urregarai, Bedartzandi eta Amorototik.',
     'artetaberanoarandono': 'Trabakuatik Arteta inguruan eta Berano Nagusi eta Arandoño auzoetan barrena, baso eta landa-bideetatik egindako ibilbidea',
     'ixuakalamua': 'Zirkuitua e-bikez Trabakuatik, Asuntza, Aginaga eta Ixuarako bide zaharretik igarota, Kalamuara igo eta Barinaga eta Aginagatik itzulita',
     'preguntas': 'Fitxa bakoitzeko esfortzuak, azalerak eta denborek zer esan nahi duten, nondik datozen distantzia eta desnibela, bizikleta elektrikoa behar den eta webak estaldurarik gabe funtzionatzen duen',
@@ -3592,6 +3593,7 @@ AIXOLA = {
 }
 
 TITLES = {
+    'lekeitio': 'Trabakua, Mendibil, Mallukitoki, Urregarai, Bedartzandi eta Lekeitio · Oinezko zeharkaldia — Herriko ibilbideak',
     'artetaberanoarandono': 'Arteta, Berano Nagusi eta Arandoño · Oinezko ibilbidea — Herriko ibilbideak',
     'ixuakalamua': 'Trabakua, Aginaga, Ixua eta Kalamua · E-bike ibilbidea — Herriko ibilbideak',
     'preguntas': 'Ohiko galderak · Herriko ibilbideak',
@@ -6914,6 +6916,7 @@ ARTETABERANOARANDONO = {
 }
 
 PAGE_STRINGS = {
+    'lekeitio': {},
     'ixuakalamua': IXUAKALAMUA,
     'galdaraminio': GALDARAMINIO,
     'garaigaztelu': GARAIGAZTELU,
@@ -7164,3 +7167,6 @@ HOME.update({k: LEJARRETA[k] for k in (
     'Circuito I&ntilde;aki Lejarreta de Berriz',
     'Ruta de BTT para ni&ntilde;os sobre el vel&oacute;dromo de Berriz',
     'Un ni&ntilde;o en bici por el camino que cruza el prado, con el monte al fondo')})
+
+# Traducciones de la nueva tarjeta de Lekeitio
+HOME.update({'Trabakua, Mendibil, Mallukitoki, Urregarai, Bedartzandi y Lekeitio': 'Trabakua, Mendibil, Mallukitoki, Urregarai, Bedartzandi eta Lekeitio', 'Travesía a pie desde Trabakua hasta Lekeitio, por Mendibil, el búnker de Mallukitoki, Zapola, Urregarai, Bedartzandi y Amoroto.': 'Trabakuatik Lekeitiorako oinezko zeharkaldia, Mendibil, Mallukitokiko bunkerra, Zapola, Urregarai, Bedartzandi eta Amorototik.', 'Puente de piedra junto al río Lea': 'Harrizko zubia Lea ibaiaren ondoan'})
