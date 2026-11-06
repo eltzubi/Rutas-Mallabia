@@ -1224,8 +1224,8 @@
     // profile SVG in .hero-chart (the home overview map has many tracks
     // and no such SVG, so this stays off there). The profile's path is
     // drawn at N evenly-distance-spaced samples over x=[0,1000] (see the
-    // by-hand elevation script this pipeline uses), so a screen-x fraction
-    // maps directly onto the same fraction of this track's own point array.
+    // by-hand elevation script this pipeline uses). Los puntos del mapa se
+    // simplifican por geometria: su indice NO es una distancia recorrida.
     var track0 = data.tracks[0];
 
     // El track pintado por pendiente, como en los editores de GPX: el mismo
@@ -1339,6 +1339,27 @@
       if (heroSvg && heroPath) {
         var svgNS = 'http://www.w3.org/2000/svg';
         var charts = [];
+        var profileDistances = [0];
+        for (var pd = 1; pd < track0.points.length; pd++) {
+          profileDistances.push(profileDistances[pd - 1] +
+            haversineMeters(track0.points[pd - 1], track0.points[pd]));
+        }
+        var profileLength = profileDistances[profileDistances.length - 1];
+        function pointAtFraction(frac){
+          var target = frac * profileLength;
+          var lo = 0, hi = profileDistances.length - 1;
+          while (lo + 1 < hi) {
+            var mid = Math.floor((lo + hi) / 2);
+            if (profileDistances[mid] < target) lo = mid; else hi = mid;
+          }
+          var span = profileDistances[hi] - profileDistances[lo];
+          var mix = span > 0 ? (target - profileDistances[lo]) / span : 0;
+          var a = track0.points[lo], b = track0.points[hi];
+          var point = [a[0] + (b[0] - a[0]) * mix, a[1] + (b[1] - a[1]) * mix];
+          if (typeof a[2] === 'number' && typeof b[2] === 'number' &&
+              isFinite(a[2]) && isFinite(b[2])) point.push(a[2] + (b[2] - a[2]) * mix);
+          return point;
+        }
 
         // Parsed once from the page's own already-rendered figures (the
         // facts row and the elevation tags), rather than recomputed here:
@@ -1354,9 +1375,11 @@
         var totalKm = factsBox && parseNum(factsBox.querySelector('.fact .v').textContent);
         var minEle = tagsBox && parseNum(tagsBox.querySelector('.end.left .v').textContent);
         var maxEle = tagsBox && parseNum(tagsBox.querySelector('.end.right .v').textContent);
-        var hasReadout = totalKm != null && minEle != null && maxEle != null && maxEle > minEle;
+        var hasReadout = totalKm != null && isFinite(totalKm);
+        var hasElevationScale = minEle != null && maxEle != null && maxEle > minEle;
 
         function addChart(svg){
+          svg.style.touchAction = 'pan-y';
           var cursorLine = document.createElementNS(svgNS, 'line');
           cursorLine.setAttribute('y1', '0');
           cursorLine.setAttribute('y2', '300');
@@ -1501,10 +1524,13 @@
         // <b>-free plain format already used for every marker's km/ele pair
         // in the body copy (site-wide convention, see eu.py/CLAUDE.md).
         function fmtKm(km){ return km.toFixed(1).replace('.', ','); }
-        function readoutLabel(frac, y){
+        function readoutLabel(frac, y, point){
           var km = fmtKm(frac * totalKm);
-          if (!isFinite(y)) return km + ' km';
-          if (!hayEscala) return km + ' km';
+          // Una ficha sin cotas escritas sigue mostrando los kilometros.
+          // Si el track trae altura, se lee del mismo punto que marca el mapa.
+          if (!hasElevationScale || !isFinite(y) || !hayEscala) {
+            return km + ' km' + (point.length > 2 ? ' · ' + Math.round(point[2]) + ' m' : '');
+          }
           var ele = Math.round(minEle + (maxEle - minEle) * ((ySuelo - y) / (ySuelo - yTope)));
           return km + ' km · ' + ele + ' m';
         }
@@ -1512,14 +1538,17 @@
           frac = Math.max(0, Math.min(1, frac));
           var x = frac * 1000;
           var y = yAtX(x);
-          var idx = Math.round(frac * (track0.points.length - 1));
-          var label = hasReadout ? readoutLabel(frac, y) : null;
+          var point = pointAtFraction(frac);
+          var label = hasReadout ? readoutLabel(frac, y, point) : null;
           charts.forEach(function(c){
             c.line.setAttribute('x1', x); c.line.setAttribute('x2', x);
             c.line.setAttribute('opacity', '1');
             c.dot.setAttribute('cx', x); c.dot.setAttribute('cy', y);
             c.dot.setAttribute('opacity', '1');
             if (c.readout && label) {
+              // El SVG se encoge en movil; la lectura debe conservar 12 px.
+              var fontSize = Math.max(23, 12000 / Math.max(1, c.svg.getBoundingClientRect().width));
+              c.readoutText.setAttribute('font-size', fontSize);
               c.readoutText.textContent = label;
               // Measured after the text is set (its width depends on the
               // string), then the background rect and the whole group are
@@ -1529,16 +1558,18 @@
               var textWidth = c.readoutText.getComputedTextLength();
               var boxWidth = textWidth + 32;
               var boxX = Math.max(4, Math.min(1000 - boxWidth - 4, x - boxWidth / 2));
-              var boxY = Math.max(4, y - 48);
+              var boxHeight = fontSize + 15;
+              var boxY = Math.max(4, y - boxHeight - 10);
+              c.readoutBg.setAttribute('height', boxHeight);
               c.readoutBg.setAttribute('x', boxX);
               c.readoutBg.setAttribute('y', boxY);
               c.readoutBg.setAttribute('width', boxWidth);
               c.readoutText.setAttribute('x', boxX + boxWidth / 2);
-              c.readoutText.setAttribute('y', boxY + 25);
+              c.readoutText.setAttribute('y', boxY + fontSize + 2);
               c.readout.setAttribute('opacity', '1');
             }
           });
-          mapCursor.setLatLng(track0.points[idx]);
+          mapCursor.setLatLng(point);
           mapCursor.setStyle({ opacity: 1, fillOpacity: 1 });
         }
         function hideCursor(){
@@ -1566,7 +1597,7 @@
               var d = Math.pow(p[0] - e.latlng.lat, 2) + Math.pow(p[1] - e.latlng.lng, 2);
               if (d < best) { best = d; nearest = i; }
             }
-            showAtFraction(nearest / (track0.points.length - 1));
+            showAtFraction(profileLength > 0 ? profileDistances[nearest] / profileLength : 0);
           });
           trackLine.on('mouseout', hideCursor);
         }
