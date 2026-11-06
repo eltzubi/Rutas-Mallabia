@@ -1,0 +1,79 @@
+name: Publicar puntos verificados de Lekeitio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publicar-puntos-lekeitio.yml]
+permissions:
+  contents: write
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regenerar altimetría numerada desde el GPX original
+        run: python3 scripts/rehaz_perfil.py lekeitio
+      - name: Igualar perfil exacto en euskera manteniendo los nombres traducidos
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re,json
+          es=Path('src/lekeitio_tail.html').read_text()
+          eu=Path('src/lekeitio_tail.eu.html').read_text()
+          pattern=r'<svg viewBox="0 0 1000 300"[\s\S]*?</svg>'
+          m=re.search(pattern,es)
+          n=re.search(pattern,eu)
+          assert m and n
+          chart=m.group()
+          names={
+              'Fuente del Camino de Santiago':'Donejakue Bideko iturria',
+              'Collado de Urregarai (fuente cercana)':'Urregaraiko lepoa (iturria gertu)',
+          }
+          for a,b in names.items(): chart=chart.replace(a,b)
+          eu=eu[:n.start()]+chart+eu[n.end():]
+          Path('src/lekeitio_tail.eu.html').write_text(eu)
+          data=json.loads(Path('data/lekeitio.json').read_text())
+          assert len(data['waypoints'])==7
+          for name,html in [('ES',es),('EU',eu)]:
+              assert html.count('class="elev-marker"')==7, name
+              assert html.count('class="elev-legend-item"')==7, name
+              assert html.count('id="routeMap"')==1,name
+              assert html.count('class="gallery-item"')==24,name
+              assert html.index('class="hero-chart"')<html.index('class="map-section"'),name
+          print('Los 7 puntos están en el GPX, el perfil y las leyendas ES/EU')
+          PY
+      - name: Regenerar web bilingüe
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Pruebas de rutas, fotos, mapa y JavaScript
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Auditar en Chromium ambos mapas y centrado
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.eu.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.eu.html
+      - name: Guardar en main solo tras superar las pruebas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/publicar-puntos-lekeitio.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar puntos numerados de Lekeitio y altimetría bilingüe real"
+            git push origin HEAD:main
+          fi
