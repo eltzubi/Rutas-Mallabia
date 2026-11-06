@@ -514,7 +514,7 @@ FUENTES = [
         "punto": ("santaeufemia", 1),
         "nota_es": "Junto al camino, entre Markina-Xemein e Iruzubieta.",
         "nota_eu": "Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.",
-        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente"],
+        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente", "lekeitio"],
     },
     {
         "id": "atxagarai",
@@ -525,7 +525,7 @@ FUENTES = [
         "punto": ("santaeufemia", 2),
         "nota_es": "Frente al refugio y la bolera, en el collado de Urregarai.",
         "nota_eu": "Aterpearen eta bolatokiaren parean, Urregaraiko lepoan.",
-        "rutas": ["santaeufemia", "markinabolibar", "urregarai", "trabakuaondarroa"],
+        "rutas": ["santaeufemia", "markinabolibar", "urregarai", "trabakuaondarroa", "lekeitio"],
     },
 ]
 
