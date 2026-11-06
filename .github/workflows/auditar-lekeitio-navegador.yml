@@ -1,67 +1,70 @@
-name: Auditar Lekeitio con navegador real
+name: Regenerar y auditar Lekeitio en navegador
 on:
   push:
     branches: [main]
     paths: [.github/workflows/auditar-lekeitio-navegador.yml]
 permissions:
-  contents: read
+  contents: write
 jobs:
   revisar:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Instalar navegador de pruebas
+      - name: Instalar Chromium
         run: |
           python3 -m pip install playwright
           python3 -m playwright install --with-deps chromium
-      - name: Diagnosticar qué elemento desplaza la página
+      - name: Reconstruir desde fuentes
         run: |
-          python3 -m http.server 8765 >/tmp/trabakutik-server.log 2>&1 &
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Verificar estructura e integridad de todas las rutas
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
           python3 - <<'PY'
-          from playwright.sync_api import sync_playwright
-          with sync_playwright() as p:
-              browser=p.chromium.launch(args=['--no-sandbox'])
-              for page_file in ('lekeitio.html','arteta.html'):
-                  page=browser.new_page(viewport={'width':390,'height':844})
-                  page.goto('http://localhost:8765/'+page_file,wait_until='load')
-                  page.wait_for_timeout(1200)
-                  data=page.evaluate("""() => ({
-                    width: innerWidth, scrollWidth: document.body.scrollWidth,
-                    bad: [...document.querySelectorAll('body *')].map(e => {
-                      const r=e.getBoundingClientRect();
-                      const s=getComputedStyle(e);
-                      return {tag:e.tagName,cls:typeof e.className==='string'?e.className.slice(0,90):'',id:e.id, left:Math.round(r.left), right:Math.round(r.right), width:Math.round(r.width),overflow:s.overflowX};
-                    }).filter(x=>x.width>innerWidth+2||x.right>innerWidth+2||x.left < -3)
-                    .sort((a,b)=>b.right-a.right).slice(0,30)
-                  })""")
-                  print(page_file,data,flush=True)
-                  print('CONTAINERS',page_file,page.evaluate("""() => {
-                    let el=document.querySelector('.route-map-box');const result=[];
-                    while(el && result.length<12){
-                      const r=el.getBoundingClientRect(),c=getComputedStyle(el);
-                      result.push({tag:el.tagName,cls:typeof el.className==='string'?el.className:'',width:Math.round(r.width),left:Math.round(r.left),right:Math.round(r.right),display:c.display,minWidth:c.minWidth,gridTemplateColumns:c.gridTemplateColumns});
-                      el=el.parentElement;
-                    }
-                    return result;
-                  }"""),flush=True)
-                  page.close()
-              browser.close()
+          from pathlib import Path
+          import re,json
+          for suffix in ('','.eu'):
+              s=Path('lekeitio'+suffix+'.html').read_text()
+              assert s.count('id="routeMap"')==1
+              assert s.count('class="gallery-item"')==24
+              assert s.index('class="hero-chart"')<s.index('class="hero-label"')<s.index('class="map-section"')
+              assert 'min-height:320px' not in s
+              assert re.search(r'data-map-src="data/lekeitio.json(?:\\?v=[a-f0-9]+)?"',s)
+          d=json.loads(Path('data/lekeitio.json').read_text())
+          assert len(d['tracks'][0]['points'])>1000
+          assert len(d['marker']['at'])==2
+          print('Estructura ES/EU, ruta, fotos, marcador y mapas correctos')
           PY
-      - name: Comprobar desbordes horizontales en 5 anchos y 2 temas
+      - name: Auditar centrado a 320, 360, 390, 768 y 1280 píxeles
         run: |
           python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
           python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.eu.html
-      - name: Comprobar mapa y GPX con Leaflet
+      - name: Probar Leaflet con ruta dibujada
         run: |
           python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.html
           python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.eu.html
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: auditoria-visual-lekeitio
+          name: lekeitio-auditoria-final
           path: .claude/skills/run-rutas-mallabia/capturas/
           if-no-files-found: ignore
+      - name: Publicar HTML generado si todo ha pasado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/auditar-lekeitio-navegador.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar corrección de mapa centrado en Lekeitio ES y EU"
+            git push origin HEAD:main
+          fi
