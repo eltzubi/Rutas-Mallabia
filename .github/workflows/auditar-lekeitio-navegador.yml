@@ -1,0 +1,34 @@
+name: Auditar Lekeitio con navegador real
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/auditar-lekeitio-navegador.yml]
+permissions:
+  contents: read
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar navegador de pruebas
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Comprobar desbordes horizontales en 5 anchos y 2 temas
+        run: |
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.eu.html
+      - name: Comprobar mapa y GPX con Leaflet
+        run: |
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.eu.html
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: auditoria-visual-lekeitio
+          path: .claude/skills/run-rutas-mallabia/capturas/
+          if-no-files-found: ignore
