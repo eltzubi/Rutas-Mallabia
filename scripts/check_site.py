@@ -177,6 +177,17 @@ def main():
             continue
         gpx = ROOT / 'src' / f'{page}.gpx'
         require(gpx.exists(), f'{page}: falta su GPX')
+        # El marcador de salida debe llevar {"at":[lat, lon],"color":"..."}.
+        # Si se guarda como una lista [lat, lon], Leaflet intenta acceder a
+        # marker.at (undefined), deja el mapa en blanco e impide bajar el perfil.
+        map_data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
+        marker = map_data.get('marker')
+        if marker is not None:
+            require(isinstance(marker, dict) and isinstance(marker.get('at'), list)
+                    and len(marker['at']) == 2
+                    and all(isinstance(v, (int, float)) and math.isfinite(v)
+                            for v in marker['at']),
+                    f'{page}: marcador de salida invalido en data/{page}.json')
         km_real, alt_min, alt_max = datos_gpx(gpx)
         html = (ROOT / f'{page}.html').read_text()
 
