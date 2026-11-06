@@ -38,7 +38,7 @@ jobs:
               assert s.count('class="gallery-item"')==24
               assert s.index('class="hero-chart"')<s.index('class="hero-label"')<s.index('class="map-section"')
               assert 'min-height:320px' not in s
-              assert re.search(r'data-map-src="data/lekeitio.json(?:\\?v=[a-f0-9]+)?"',s)
+              assert re.search(r'data-map-src="data/lekeitio.json(?:\?v=[a-f0-9]+)?"',s)
           d=json.loads(Path('data/lekeitio.json').read_text())
           assert len(d['tracks'][0]['points'])>1000
           assert len(d['marker']['at'])==2
