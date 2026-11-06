@@ -59,6 +59,7 @@ def tail(lang):
     s=block(s,'<div class="hero-label">','</div>\n    </div>\n  </div>',hero.rsplit("</div>",1)[0])
     # Retirar marcadores de la ruta de plantilla: las cifras no son de Lekeitio.
     s=re.sub(r'<g class="elev-marker">.*?</g>','',s,flags=re.S)
+    s=re.sub(r'<div class="elev-legend">.*?</div>', '', s, flags=re.S)
     s=block(s,'<div class="elev-tags">','<div class="hero-label">',
         '<div class="elev-tags"><span class="end left"><span class="v">—</span><span class="k">'+('Gutxieneko altitudea' if eu else 'Altitud mín.')+'</span></span><span class="mid">'+('trackaren profila' if eu else 'perfil real del track')+' · 32,74 km</span><span class="end right"><span class="v">—</span><span class="k">'+('Gehieneko altitudea' if eu else 'Altitud máx.')+'</span></span></div>')
     cover_alt=ROWS[COVER-1][3 if eu else 2]
