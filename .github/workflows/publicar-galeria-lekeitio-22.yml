@@ -1,0 +1,71 @@
+name: Publicar galería Lekeitio sin dos fotos señaladas
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publicar-galeria-lekeitio-22.yml]
+permissions:
+  contents: write
+jobs:
+  verificar-y-publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar fotografías exactas en las fuentes
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          for suf in ('','.eu'):
+              s=Path('src/lekeitio_tail'+suf+'.html').read_text()
+              gallery=re.findall(r'class="gallery-item" data-lightbox-src="img/lekeitio-(\d\d)\.webp"',s)
+              assert len(gallery)==22 and len(set(gallery))==22,(suf,gallery)
+              assert '04' not in gallery and '07' not in gallery
+              assert gallery[-2:]==['25','24'],(suf,gallery[-2:])
+              assert 'id="photoTrigger" data-lightbox-src="img/lekeitio-23.webp"' in s
+              assert s.count('id="routeMap"')==1
+              assert s.count('class="elev-marker"')==6
+          print('22 fotos de galería + portada; retiradas 04 y 07 en ambos idiomas')
+          PY
+      - name: Regenerar páginas ES y EU
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Comprobar sitio, rutas y comportamiento JS
+        run: |
+          python3 scripts/check_site.py
+          python3 scripts/verify_route_consistency.py
+          node scripts/test_ui.cjs
+      - name: Comprobar resultado de ambas páginas
+        run: |
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          for suf in ('','.eu'):
+              s=Path('lekeitio'+suf+'.html').read_text()
+              gallery=re.findall(r'class="gallery-item" data-lightbox-src="img/lekeitio-(\d\d)\.webp"',s)
+              assert len(gallery)==22 and len(set(gallery))==22
+              assert '04' not in gallery and '07' not in gallery
+              assert gallery[-2:]==['25','24']
+              assert 'id="photoTrigger" data-lightbox-src="img/lekeitio-23.webp"' in s
+          print('HTML final verificado sin fotos señaladas')
+          PY
+      - name: Publicar en main y limpiar workflow provisional
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/publicar-galeria-lekeitio-22.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar galería Lekeitio sin fotos 04 y 07"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
