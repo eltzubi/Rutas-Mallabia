@@ -39,6 +39,15 @@ jobs:
                     .sort((a,b)=>b.right-a.right).slice(0,30)
                   })""")
                   print(page_file,data,flush=True)
+                  print('CONTAINERS',page_file,page.evaluate("""() => {
+                    let el=document.querySelector('.route-map-box');const result=[];
+                    while(el && result.length<12){
+                      const r=el.getBoundingClientRect(),c=getComputedStyle(el);
+                      result.push({tag:el.tagName,cls:typeof el.className==='string'?el.className:'',width:Math.round(r.width),left:Math.round(r.left),right:Math.round(r.right),display:c.display,minWidth:c.minWidth,gridTemplateColumns:c.gridTemplateColumns});
+                      el=el.parentElement;
+                    }
+                    return result;
+                  }"""),flush=True)
                   page.close()
               browser.close()
           PY
