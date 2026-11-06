@@ -1,0 +1,40 @@
+name: Reconstruir fichas por corrección de mapa Lekeitio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/reconstruir-lekeitio-mapa.yml]
+permissions:
+  contents: write
+jobs:
+  reconstruir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regenerar las páginas desde sus fuentes
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Comprobar mapas, rutas e interfaz
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Guardar solo si todo funciona
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git rm --cached .github/workflows/reconstruir-lekeitio-mapa.yml
+          rm .github/workflows/reconstruir-lekeitio-mapa.yml
+          if ! git diff --cached --quiet; then
+            git commit -m "Regenerar fichas Lekeitio con marcador de mapa corregido"
+            git push
+          fi
