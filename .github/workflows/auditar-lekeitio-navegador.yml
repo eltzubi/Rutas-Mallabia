@@ -18,6 +18,30 @@ jobs:
         run: |
           python3 -m pip install playwright
           python3 -m playwright install --with-deps chromium
+      - name: Diagnosticar qué elemento desplaza la página
+        run: |
+          python3 -m http.server 8765 >/tmp/trabakutik-server.log 2>&1 &
+          python3 - <<'PY'
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              browser=p.chromium.launch(args=['--no-sandbox'])
+              for page_file in ('lekeitio.html','arteta.html'):
+                  page=browser.new_page(viewport={'width':390,'height':844})
+                  page.goto('http://localhost:8765/'+page_file,wait_until='load')
+                  page.wait_for_timeout(1200)
+                  data=page.evaluate("""() => ({
+                    width: innerWidth, scrollWidth: document.body.scrollWidth,
+                    bad: [...document.querySelectorAll('body *')].map(e => {
+                      const r=e.getBoundingClientRect();
+                      const s=getComputedStyle(e);
+                      return {tag:e.tagName,cls:typeof e.className==='string'?e.className.slice(0,90):'',id:e.id, left:Math.round(r.left), right:Math.round(r.right), width:Math.round(r.width),overflow:s.overflowX};
+                    }).filter(x=>x.width>innerWidth+2||x.right>innerWidth+2||x.left < -3)
+                    .sort((a,b)=>b.right-a.right).slice(0,30)
+                  })""")
+                  print(page_file,data,flush=True)
+                  page.close()
+              browser.close()
+          PY
       - name: Comprobar desbordes horizontales en 5 anchos y 2 temas
         run: |
           python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
