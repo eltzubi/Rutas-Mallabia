@@ -1,0 +1,97 @@
+name: Verificar agua y enlace a Ondarroa en Lekeitio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publicar-agua-ondarroa-lekeitio.yml]
+permissions:
+  contents: write
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regenerar catálogo de fuentes desde coordenadas conocidas
+        run: python3 scripts/make_fuentes.py
+      - name: Verificar la fuente de las gotas y las cimas numeradas
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          d=json.loads(Path('data/lekeitio.json').read_text())
+          assert len(d['waypoints'])==4
+          aguas=json.loads(Path('data/fuentes.json').read_text())['fuentes']
+          candidatas=[f for f in aguas if f['id'] in ('camino','atxagarai')]
+          assert len(candidatas)==2
+          for f in candidatas:
+              for lang in ('es','eu'):
+                  assert 'lekeitio.html' in [r['href'] for r in f[lang]['rutas']],(lang,f['id'])
+          for suffix in ('','.eu'):
+              s=Path('src/lekeitio_tail'+suffix+'.html').read_text()
+              assert s.count('class="elev-marker"')==4
+              assert s.count('class="elev-legend-item"')==4
+              assert '<a href="trabakuaondarroa'+suffix+'.html">' in s
+              assert s.count('id="routeMap"')==1
+              assert s.count('class="gallery-item"')==22
+              items=re.findall(r'<span class="elev-legend-item"><span class="num">(\d+)</span>(.*?)</span>',s)
+              assert [num for num,_ in items]==['1','2','3','4'],items
+              assert all('fuente' not in name.lower() and 'iturria' not in name.lower() for _,name in items)
+          print('Fuentes vinculadas con gotas, 4 cimas y enlace a Ondarroa ES/EU correctos')
+          PY
+      - name: Generar traducciones y páginas, orden obligatorio
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Comprobar HTML generado, enlaces y datos de agua
+        run: |
+          python3 - <<'PY'
+          import re,html,json
+          from pathlib import Path
+          for suffix in ('','.eu'):
+              s=Path('lekeitio'+suffix+'.html').read_text()
+              assert 'data-fuentes="' in s
+              assert s.count('class="gota"')==2
+              assert '<a href="trabakuaondarroa'+suffix+'.html">' in s
+              assert s.count('class="elev-marker"')==4
+              assert s.count('class="gallery-item"')==22
+              assert s.count('id="routeMap"')==1
+              m=re.search(r'data-fuentes="([^"]+)"',s)
+              water=json.loads(html.unescape(m.group(1)))
+              assert len(water)==2
+              print(suffix or 'es',[(w['nombre'],w['at']) for w in water])
+          PY
+      - name: Pruebas de contenido, rutas y JavaScript
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Instalar Chromium para prueba real
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Auditar en navegador mapa y centrado en ambos idiomas
+        run: |
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.eu.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.eu.html
+      - name: Publicar fuentes y páginas verificadas sin sobrescribir main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/publicar-agua-ondarroa-lekeitio.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Mostrar fuentes como gotas y enlazar desviación hacia Ondarroa en Lekeitio"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
