@@ -1,4 +1,5 @@
 name: Finalizar corrección de mapa e icono Lekeitio
+# Corrección EU manual: validar icono único en los dos idiomas.
 on:
   push:
     branches: [main]
