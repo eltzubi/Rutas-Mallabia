@@ -112,7 +112,8 @@ assert "'lekeitio': {}" not in t
 t=t.replace("PAGE_STRINGS = {","PAGE_STRINGS = {\n    'lekeitio': {},",1)
 t=t.replace("TITLES = {","TITLES = {\n    'lekeitio': "+repr(EU_TITLE+" · Oinezko zeharkaldia — Herriko ibilbideak")+",",1)
 t=t.replace("DESCRIPTIONS = {","DESCRIPTIONS = {\n    'lekeitio': "+repr(EU_DESC)+",",1)
-t += "\n# Traducciones de la nueva tarjeta de Lekeitio\nHOME.update("+repr({ES_TITLE:EU_TITLE,ES_DESC:EU_DESC,"Puente de piedra junto al río Lea":"Harrizko zubia Lea ibaiaren ondoan"})+")\n"\nsave(p,t)
+t += "\n# Traducciones de la nueva tarjeta de Lekeitio\nHOME.update(" + repr({ES_TITLE: EU_TITLE, ES_DESC: EU_DESC, "Puente de piedra junto al río Lea": "Harrizko zubia Lea ibaiaren ondoan"}) + ")\n"
+save(p,t)
 p="src/i18n/make_eu.py";t=load(p)
 t=t.replace('PAGES = ["mallabia",','PAGES = ["mallabia", "lekeitio",',1)
 t=t.replace('ROUTE_PAGES = {"trabakua",','ROUTE_PAGES = {"lekeitio", "trabakua",',1)
