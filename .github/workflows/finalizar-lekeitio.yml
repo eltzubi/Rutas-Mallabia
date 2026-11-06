@@ -1,0 +1,62 @@
+name: Integrar y validar Lekeitio antes de fusionar
+on:
+  push:
+    branches: [ruta-trabakua-lekeitio]
+    paths: [.github/workflows/finalizar-lekeitio.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  preparar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Integrar main sin perder rutas nuevas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge --no-edit -X ours origin/main
+      - name: Normalizar listas y verificar perfil bilingüe
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('src/i18n/make_eu.py')
+          s=p.read_text()
+          s=s.replace('"longaurjauziak", "astorkigane", "longaurjauziak", "karabieta"', '"longaurjauziak", "astorkigane", "karabieta"')
+          p.write_text(s)
+          es=Path('src/lekeitio_tail.html').read_text()
+          eu=Path('src/lekeitio_tail.eu.html').read_text()
+          patron=r'<svg viewBox="0 0 1000 300"[\s\S]*?</svg>'
+          a=re.search(patron,es)
+          b=re.search(patron,eu)
+          if not a or not b or a.group()!=b.group():
+              raise SystemExit('Los perfiles ES/EU no coinciden con el track nuevo')
+          if 'lekeitio' not in es or 'lekeitio' not in eu:
+              raise SystemExit('No están las fichas ES/EU')
+          PY
+      - name: Volver a generar y validar la web
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Retirar paquete temporal y publicadores de una sola vez
+        run: |
+          git rm -f lekeitio-subida-github.zip scripts/incorporar_lekeitio.py .github/workflows/recibir-lekeitio.yml .github/workflows/generar-lekeitio.yml .github/workflows/finalizar-lekeitio.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Preparar Lekeitio limpio y actualizado para publicar"
+          fi
+          git push origin HEAD:ruta-trabakua-lekeitio
