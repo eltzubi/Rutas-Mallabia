@@ -25,14 +25,14 @@ def paras(name):
     ps=[p.strip().replace("\n"," ") for p in raw if p.strip() and not p.startswith("# ")]
     def fmt(p):
         t=escaped(p)
-        return re.sub(r"\\*\\*(.*?)\\*\\*",r"<b>\\1</b>",t)
+        return re.sub(r"\*\*(.*?)\*\*",r"<b>\1</b>",t)
     assert len(ps)>=20,(name,len(ps))
     return "\n".join("    <p>"+fmt(p)+"</p>" for p in ps)
 def photos():
     rows=[]
     for p in ("lekeitio-fotos-recibidas-05-11.md","lekeitio-fotos-recibidas-05-11-lote-2.md","lekeitio-fotos-recibidas-05-11-lote-3.md"):
         for l in load("docs/borradores/"+p).splitlines():
-            m=re.match(r"^\\|\\s*(\\d+)\\s*\\|\\s*(100012\\d+\\.jpg)\\s*\\|\\s*(.*?)\\s*\\|\\s*(.*?)\\s*\\|?$",l)
+            m=re.match(r"^\|\s*(\d+)\s*\|\s*(100012\d+\.jpg)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|?$",l)
             if m:rows.append((int(m.group(1)),m.group(2),m.group(3),m.group(4)))
     rows.sort()
     assert len(rows)==25 and [x[0] for x in rows]==list(range(1,26)),rows
@@ -56,7 +56,7 @@ def tail(lang):
         <h1>Trabakua, Mendibil,<br><em>{'Urregarai, Bedartzandi eta Lekeitio' if eu else 'Urregarai, Bedartzandi y Lekeitio'}</em></h1>
         <p class="full-name">{prefix}</p>
       </div>'''
-    s=block(s,'<div class="hero-label">','</div>\n    </div>\n  </div>',hero)
+    s=block(s,'<div class="hero-label">','</div>\n    </div>\n  </div>',hero.rsplit("</div>",1)[0])
     # Retirar marcadores de la ruta de plantilla: las cifras no son de Lekeitio.
     s=re.sub(r'<g class="elev-marker">.*?</g>','',s,flags=re.S)
     s=block(s,'<div class="elev-tags">','<div class="hero-label">',
@@ -112,7 +112,7 @@ assert "'lekeitio': {}" not in t
 t=t.replace("PAGE_STRINGS = {","PAGE_STRINGS = {\n    'lekeitio': {},",1)
 t=t.replace("TITLES = {","TITLES = {\n    'lekeitio': "+repr(EU_TITLE+" · Oinezko zeharkaldia — Herriko ibilbideak")+",",1)
 t=t.replace("DESCRIPTIONS = {","DESCRIPTIONS = {\n    'lekeitio': "+repr(EU_DESC)+",",1)
-save(p,t)
+t += "\n# Traducciones de la nueva tarjeta de Lekeitio\nHOME.update("+repr({ES_TITLE:EU_TITLE,ES_DESC:EU_DESC,"Puente de piedra junto al río Lea":"Harrizko zubia Lea ibaiaren ondoan"})+")\n"\nsave(p,t)
 p="src/i18n/make_eu.py";t=load(p)
 t=t.replace('PAGES = ["mallabia",','PAGES = ["mallabia", "lekeitio",',1)
 t=t.replace('ROUTE_PAGES = {"trabakua",','ROUTE_PAGES = {"lekeitio", "trabakua",',1)
