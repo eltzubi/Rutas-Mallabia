@@ -46,7 +46,7 @@ jobs:
               badge=re.search(r'<div class="hero-activity-badge"[^>]*>(.*?)</div>',page,re.S)
               assert badge and len(re.findall(r'<svg\b',badge.group(1)))==1, "Iconos incorrectos "+suffix
               assert re.search(r'data-map-src="data/lekeitio.json\?v=[0-9a-f]+"',page), "Version del mapa ausente "+suffix
-              assert '<section class="map-section">' in page, "No hay sección mapa "+suffix
+              assert re.search(r'<section\b[^>]*class="[^"]*map-section',page), "No hay sección mapa "+suffix
           PY
           python3 scripts/check_site.py
           node scripts/test_ui.cjs
