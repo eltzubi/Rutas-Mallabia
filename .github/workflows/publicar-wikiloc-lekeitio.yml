@@ -1,0 +1,77 @@
+name: Publicar enlace Wikiloc de Lekeitio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publicar-wikiloc-lekeitio.yml]
+permissions:
+  contents: write
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirmar URL y fila de botones en los dos idiomas
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__();self.links=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='a':self.links.append(dict(attrs))
+          for lang in ('','.eu'):
+              s=Path('src/lekeitio_tail'+lang+'.html').read_text()
+              p=Links();p.feed(s)
+              urls=[x['href'] for x in p.links if 'loc.wiki/t/294980049' in x.get('href','')]
+              assert len(urls)==2, (lang,urls)
+              assert all(u=='https://loc.wiki/t/294980049?wa=share&og=JzFsGY63NQ8' for u in urls)
+              assert s.count('class="wikiloc-row"')==1
+              assert 'href="src/lekeitio.gpx"' in s
+              assert 'href="src/lekeitio.kml"' in s
+              assert s.count('id="reportTrigger"')==1
+              assert s.count('class="gallery-item"')==24
+              assert s.count('id="routeMap"')==1
+          print('Enlace único de ruta y pie correctos, ambos idiomas')
+          PY
+      - name: Construir traducciones y páginas públicas
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Comprobar sitio, rutas y JS
+        run: |
+          python3 scripts/check_site.py
+          python3 scripts/verify_route_consistency.py
+          node scripts/test_ui.cjs
+      - name: Comprobar el enlace en ambas páginas finales
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for lang in ('','.eu'):
+              s=Path('lekeitio'+lang+'.html').read_text()
+              assert s.count('loc.wiki/t/294980049')==2,lang
+              assert 'href="src/lekeitio.gpx"' in s
+              assert 'href="src/lekeitio.kml"' in s
+              assert s.count('class="gallery-item"')==24
+          print('HTML de castellano y euskera listo')
+          PY
+      - name: Publicar actualización comprobada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/publicar-wikiloc-lekeitio.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar enlace Wikiloc en Lekeitio ES y EU"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
