@@ -255,24 +255,6 @@
 
 .map-section .elev-legend{ padding:0 0 16px; }
 
-/* Perfil de Lekeitio junto al mapa: no debe ensanchar la columna ni
-   desplazar la ficha hacia un lado en Android. */
-.route-elevation-near-map{
-  display:block;
-  width:100%;
-  max-width:100%;
-  min-width:0;
-  overflow:hidden;
-}
-.route-elevation-near-map .hero-chart{
-  width:100%;
-  max-width:100%;
-  min-width:0;
-}
-.route-elevation-near-map .chart-visual{ max-width:100%; }
-.route-elevation-near-map svg{ max-width:100%; }
-
-
 /* El perfil de alturas vive aqui abajo, con el mapa: js/map.js lo trae de la
    cabecera, donde antes estaba el original y aqui una copia. Debajo del mapa
    y no encima, porque con el perfil arriba la mano que arrastra el dedo tapa
