@@ -1,0 +1,56 @@
+name: Publicar párrafo sencillo de Amoroto
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publicar-parrafo-amoroto.yml]
+permissions:
+  contents: write
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Construir ambos idiomas
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Verificar párrafo exacto y componentes anteriores
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for ext, expected in [
+              ('', '<p>Nos acercamos a Amoroto y el mar se ve cada vez más cerca.</p>'),
+              ('.eu','<p>Amorotora hurbiltzen gara, eta itsasoa gero eta gertuago ikusten dugu.</p>')]:
+              s=Path('lekeitio'+ext+'.html').read_text()
+              assert expected in s
+              assert 'Esta parte era nueva para mí' not in s
+              assert 'Zati hau berria zen niretzat' not in s
+              assert 'class="gallery-item"' in s
+              assert 'data-fuentes="' in s
+              assert 'href="trabakuaondarroa'+ext+'.html"' in s
+          print('Párrafo breve y ruta conservada en los dos idiomas')
+          PY
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Publicar regeneración y retirar archivo provisional
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/publicar-parrafo-amoroto.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar párrafo breve sobre el mar al acercarse a Amoroto"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
