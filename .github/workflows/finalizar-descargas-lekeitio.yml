@@ -1,0 +1,77 @@
+name: Completar descargas y verificar Lekeitio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/finalizar-descargas-lekeitio.yml]
+permissions:
+  contents: write
+jobs:
+  construir-comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Comprobar descargas y botones antes de reconstruir
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          for ext in ('gpx','kml'):
+              f=Path('src/lekeitio.'+ext)
+              assert f.is_file() and f.stat().st_size>100, f
+          for suffix in ('','.eu'):
+              s=Path('src/lekeitio_tail'+suffix+'.html').read_text()
+              for needle in ('href="src/lekeitio.gpx"', 'href="src/lekeitio.kml"', 'id="reportTrigger"',
+                             'id="reportModal"', 'id="routeMap"', 'class="wikiloc-row"',
+                             'href="lekeitio'+suffix+'.html"'):
+                  assert needle in s, (suffix,needle)
+              assert s.count('id="reportTrigger"')==1
+              assert s.count('class="gallery-item"')==24
+              assert s.count('class="elev-marker"')==7
+              assert s.count('class="elev-legend-item"')==7
+          print('Descargas, acciones, fotografías y siete puntos correctos')
+          PY
+      - name: Reconstruir páginas en ambos idiomas
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Verificar integridad, consistencia y JavaScript
+        run: |
+          python3 scripts/check_site.py
+          python3 scripts/verify_route_consistency.py
+          node scripts/test_ui.cjs
+      - name: Comprobar rutas generadas y barra rápida del móvil
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for suffix in ('','.eu'):
+              s=Path('lekeitio'+suffix+'.html').read_text()
+              assert 'href="src/lekeitio.gpx"' in s
+              assert 'href="src/lekeitio.kml"' in s
+              assert 'class="quick-bar"' in s
+              assert 'gps-nav-launch' in s
+              assert 'id="reportTrigger"' in s
+              assert 'id="routeMap"' in s
+              assert 'class="gallery-item"' in s
+              assert s.count('class="gallery-item"')==24
+          print('Descargas, navegador, acciones y barra móvil generadas')
+          PY
+      - name: Guardar resultado validado en main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f .github/workflows/finalizar-descargas-lekeitio.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar descargas y controles completos de Lekeitio"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
