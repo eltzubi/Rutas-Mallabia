@@ -1,0 +1,63 @@
+name: Construir ruta Trabakua Lekeitio
+on:
+  push:
+    branches: [ruta-trabakua-lekeitio]
+    paths:
+      - scripts/incorporar_lekeitio.py
+      - .github/workflows/generar-lekeitio.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  montar-y-verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar procesador de portada
+        run: python3 -m pip install Pillow
+      - name: Preparar portada para vista previa en redes
+        run: |
+          python3 - <<'PY'
+          from PIL import Image
+          im = Image.open('img/lekeitio-23.webp').convert('RGB')
+          im.save('img/lekeitio-23.jpg', quality=85, optimize=True)
+          PY
+      - name: Preparar ficha, portada y datos GPS
+        run: python3 scripts/incorporar_lekeitio.py
+      - name: Regenerar perfil desde GPX
+        run: python3 scripts/rehaz_perfil.py lekeitio
+      - name: Reconstruir datos de mapas y altimetría GPS
+        run: |
+          python3 scripts/make_map_data.py
+          python3 scripts/make_alturas.py
+      - name: Regenerar descargas
+        run: |
+          python3 scripts/make_kml.py
+          python3 scripts/bundle_gpx.py
+      - name: Generar idiomas y páginas
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Comprobar web y JS
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+          python3 scripts/verify_route_consistency.py
+      - name: Guardar solo cuando se han superado las comprobaciones
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src data img/lekeitio-23.jpg index.html index.eu.html lekeitio.html lekeitio.eu.html . || true
+          git add -u
+          if ! git diff --cached --quiet; then
+            git commit -m "Construir ficha bilingüe Trabakua-Lekeitio con mapa y GPS"
+            git push
+          fi
