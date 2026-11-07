@@ -160,6 +160,20 @@ def main():
                 # y ninguna de las dos tiene tarjeta.
                 rutas = [p for p in build.PAGES if p not in NO_RUTA]
                 require(len(cards) == len(rutas), f'{filename}: missing card')
+                def descendants(node):
+                    for child in node['children']:
+                        if isinstance(child, dict):
+                            yield child
+                            yield from descendants(child)
+                for card in cards:
+                    chart = next((n for n in descendants(card)
+                                  if 'route-card-chart' in n['attrs'].get('class', '').split()), None)
+                    require(chart is not None,
+                            f"{filename}: falta el perfil en la tarjeta {card['attrs'].get('href')}")
+                    require(any(n['tag'] == 'path' and len(n['attrs'].get('d', '')) > 200
+                                for n in descendants(chart)),
+                            f"{filename}: perfil vacio en {card['attrs'].get('href')}")
+
                 for slug in ('muniozguren', 'iruzubieta'):
                     card = next(n for n in cards if n['attrs'].get('href') == slug + suffix + '.html')
                     require(set(card['attrs']['data-activity'].split(',')) == {'bici', 'senderismo'}, slug)
