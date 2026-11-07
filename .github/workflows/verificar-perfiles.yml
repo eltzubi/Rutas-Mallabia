@@ -1,0 +1,40 @@
+name: Verificar perfiles y navegador
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/check_site.py'
+      - '.github/workflows/verificar-perfiles.yml'
+permissions:
+  contents: read
+jobs:
+  navegador:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar Chromium
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Verificar web completa
+        run: python3 .claude/skills/run-rutas-mallabia/driver.py verifica
+      - name: Auditar ficha en ambos idiomas
+        run: |
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit lekeitio.eu.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa lekeitio.eu.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py shot index.html --ancho 390 --sel 'a.route-card[href="lekeitio.html"]'
+          python3 .claude/skills/run-rutas-mallabia/driver.py shot index.eu.html --ancho 390 --sel 'a.route-card[href="lekeitio.eu.html"]'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: capturas-perfiles
+          path: .claude/skills/run-rutas-mallabia/capturas/
