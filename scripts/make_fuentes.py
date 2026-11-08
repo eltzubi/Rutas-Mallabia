@@ -182,7 +182,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
-        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline"],
+        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline", "garaiurdaixa"],
     },
     {
         "id": "errotatxo",
