@@ -17,5 +17,16 @@ porque cambia el firme o el nombre, y en OSM eso pasa constantemente: en esta
 caja hay 245.402 nodos de dos ramas y 17.515 cruces de verdad.
 El fichero generado lleva dentro la fecha de los datos de OSM, en "fecha_osm".
 
-Si alguna ruta sale del recuadro 43.10-43.34 N / 2.34-2.72 O, amplialo en las
-tres consultas antes de volver a bajarlas.
+La caja de los cruces se amplio por el norte hasta 43.42 el 8 de noviembre de
+2026, al publicarse la ruta de Lekeitio: 5,08 de sus 32,38 km -el 16%, justo la
+bajada al pueblo- quedaban fuera y no tenian ni un aviso. NO se volvio a bajar
+la caja entera: Overpass responde 504 la mitad de las veces con 27 MB. Se bajo
+solo la franja 43.33-43.42 y se fusiono con lo que ya habia:
+
+  make_cruces.py --fusiona franja.json
+
+De ahi que el fichero lleve dos fechas de OSM en "fecha_osm": cada descarga
+trae la suya y se apuntan las dos en vez de fingir una sola.
+
+Si alguna ruta sale del recuadro 43.10-43.42 N / 2.34-2.72 O, amplialo en las
+consultas de places/pois y en BBOX de make_cruces.py antes de volver a bajarlas.

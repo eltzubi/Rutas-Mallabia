@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """Hace data/cruces-zona.json: los CRUCES de la zona, para el navegador GPS.
 
-    python3 scripts/make_cruces.py <respuesta-de-overpass.json>
+    python3 scripts/make_cruces.py <respuesta-de-overpass.json> [mas.json ...]
+    python3 scripts/make_cruces.py --fusiona <franja.json>
 
 Sin argumento solo dice la consulta que hay que bajar y se para.
+
+Con --fusiona NO se rehace el fichero entero: se le SUMAN los cruces de las
+descargas que se pasen, conservando los que ya estaban. Sirve para ampliar la
+caja sin volver a bajarla toda, que son 27 MB y el servidor de Overpass
+responde 504 la mitad de las veces. Asi se amplio por el norte hasta 43,42 el
+8 de noviembre de 2026, para que la ruta de Lekeitio tuviera cruces: 5,08 km
+de sus 32,38 -el 16%, justo la bajada al pueblo- se quedaban fuera.
 
 Por que existe esto. El navegador GPS (trabakutik-gps-pruebas/nuevo.html)
 avisaba de los giros deduciendolos del angulo del propio track: si la linea
@@ -51,7 +59,7 @@ ROOT = os.path.dirname(HERE)
 
 # La misma caja que scripts/osm/LEEME.txt, con sitio de sobra alrededor de las
 # rutas. Si alguna ruta se sale, ampliala ahi y aqui y vuelve a bajarlo.
-BBOX = [43.10, -2.72, 43.34, -2.34]
+BBOX = [43.10, -2.72, 43.42, -2.34]
 RAMAS_MIN = 3
 ESCALA = 100000  # cienmilesimas de grado, 1,1 m
 
@@ -59,16 +67,8 @@ CONSULTA = ('[out:json][timeout:600];way["highway"](%.2f,%.2f,%.2f,%.2f);'
             'out skel;>;out skel;' % tuple(BBOX))
 
 
-def main():
-    if len(sys.argv) < 2:
-        print("Falta la respuesta de Overpass. Bajala asi:\n")
-        print("  curl -s --data-urlencode 'data=%s' \\" % CONSULTA)
-        print("    https://overpass.kumi.systems/api/interpreter > /tmp/osm.json\n")
-        print("y vuelve a pasar:  python3 scripts/make_cruces.py /tmp/osm.json")
-        print("\nSon 27 MB y el servidor tarda un par de minutos.")
-        sys.exit(1)
-
-    osm = json.load(io.open(sys.argv[1], encoding="utf-8"))
+def cruces_de(osm):
+    """Los nodos de camino con RAMAS_MIN ramas o mas, redondeados."""
     nodos = {}
     vecinos = {}
     for e in osm["elements"]:
@@ -82,36 +82,86 @@ def main():
                     s.add(ns[i - 1])
                 if i < len(ns) - 1:
                     s.add(ns[i + 1])
+    dos = sum(1 for s in vecinos.values() if len(s) == 2)
+    cr = set((round(nodos[n][0], 5), round(nodos[n][1], 5))
+             for n, s in vecinos.items()
+             if len(s) >= RAMAS_MIN and n in nodos)
+    return cr, dos, sum(1 for e in osm["elements"] if e["type"] == "way"), len(nodos)
 
-    dos_ramas = sum(1 for s in vecinos.values() if len(s) == 2)
-    cruces = sorted((round(nodos[n][0], 5), round(nodos[n][1], 5))
-                    for n, s in vecinos.items()
-                    if len(s) >= RAMAS_MIN and n in nodos)
-    print("caminos leidos: %d   nodos: %d" % (
-        sum(1 for e in osm["elements"] if e["type"] == "way"), len(nodos)))
-    print("nodos de dos ramas (camino partido, NO son cruce): %d" % dos_ramas)
-    print("CRUCES (%d ramas o mas): %d" % (RAMAS_MIN, len(cruces)))
-    if not cruces:
-        sys.exit("No ha salido ningun cruce: revisa la respuesta de Overpass.")
 
+def ya_guardados():
+    """Los cruces que ya estan en data/cruces-zona.json, descifrados."""
+    f = os.path.join(ROOT, "data", "cruces-zona.json")
+    if not os.path.exists(f):
+        return set(), ""
+    d = json.load(io.open(f, encoding="utf-8"))
+    esc = d.get("escala", ESCALA)
+    out = set()
+    x = y = 0
+    dif = d.get("dif", [])
+    for i in range(0, len(dif) - 1, 2):
+        x += dif[i]
+        y += dif[i + 1]
+        out.add((round(x / esc, 5), round(y / esc, 5)))
+    return out, d.get("fecha_osm", "")
+
+
+def escribe(cruces, fecha):
     dif = []
     px = py = 0
-    for x, y in cruces:
+    for x, y in sorted(cruces):
         ex, ey = int(round(x * ESCALA)), int(round(y * ESCALA))
         dif.append(ex - px)
         dif.append(ey - py)
         px, py = ex, ey
-
     salida = os.path.join(ROOT, "data", "cruces-zona.json")
-    doc = {"bbox": BBOX,
-           "fecha_osm": osm.get("osm3s", {}).get("timestamp_osm_base", ""),
-           "ramas_min": RAMAS_MIN,
-           "escala": ESCALA,
-           "dif": dif}
+    doc = {"bbox": BBOX, "fecha_osm": fecha, "ramas_min": RAMAS_MIN,
+           "escala": ESCALA, "dif": dif}
     with io.open(salida, "w", encoding="utf-8") as f:
         json.dump(doc, f, separators=(",", ":"))
     print("escrito data/cruces-zona.json: %d cruces, %.0f KB, datos de OSM de %s"
-          % (len(cruces), os.path.getsize(salida) / 1024., doc["fecha_osm"] or "?"))
+          % (len(cruces), os.path.getsize(salida) / 1024., fecha or "?"))
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Falta la respuesta de Overpass. Bajala asi:\n")
+        print("  curl -s --data-urlencode 'data=%s' \\" % CONSULTA)
+        print("    https://overpass.kumi.systems/api/interpreter > /tmp/osm.json\n")
+        print("y vuelve a pasar:  python3 scripts/make_cruces.py /tmp/osm.json")
+        print("\nSon 27 MB y el servidor tarda un par de minutos.")
+        sys.exit(1)
+
+    fusiona = "--fusiona" in sys.argv[1:]
+    ficheros = [x for x in sys.argv[1:] if not x.startswith("--")]
+    if not ficheros:
+        sys.exit("Falta el fichero de Overpass.")
+
+    cruces = set()
+    fechas = []
+    if fusiona:
+        cruces, vieja = ya_guardados()
+        print("ya guardados: %d cruces (OSM de %s)" % (len(cruces), vieja or "?"))
+        if vieja:
+            fechas.append(vieja)
+
+    for f in ficheros:
+        osm = json.load(io.open(f, encoding="utf-8"))
+        nuevos, dos, vias, nodos = cruces_de(osm)
+        fecha = osm.get("osm3s", {}).get("timestamp_osm_base", "")
+        if fecha:
+            fechas.append(fecha)
+        antes = len(cruces)
+        cruces |= nuevos
+        print("%s: %d caminos, %d nodos, %d de dos ramas (no son cruce), "
+              "%d cruces -> %d nuevos" % (os.path.basename(f), vias, nodos,
+                                          dos, len(nuevos), len(cruces) - antes))
+
+    if not cruces:
+        sys.exit("No ha salido ningun cruce: revisa la respuesta de Overpass.")
+    # Dos descargas distintas pueden traer datos de fechas distintas: se
+    # apuntan las dos, que es la verdad, en vez de fingir una sola.
+    escribe(cruces, " y ".join(sorted(set(fechas))))
 
 
 if __name__ == "__main__":
