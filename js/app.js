@@ -167,7 +167,7 @@
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
-  btn.addEventListener('click', function(){
+  function subir(){
     var root = document.documentElement;
     var masthead = document.querySelector('.masthead');
     root.classList.add('scrolling-to-top');
@@ -176,7 +176,15 @@
     var stop = function(){ root.classList.remove('scrolling-to-top'); };
     window.addEventListener('scrollend', stop, { once:true });
     setTimeout(stop, 1000);
-  });
+  }
+  btn.addEventListener('click', subir);
+  // El «Volver arriba» escrito al final de la informacion practica hace lo
+  // mismo que el boton redondo: si no, uno saltaria de golpe y el otro
+  // subiria rodando, y son la misma accion.
+  var enlaces = document.querySelectorAll('.volver-arriba');
+  for (var k = 0; k < enlaces.length; k++) {
+    enlaces[k].addEventListener('click', function(ev){ ev.preventDefault(); subir(); });
+  }
 })();
 
 // --- compact masthead on scroll (home page only) ---
@@ -493,7 +501,12 @@
   var row = document.querySelector('.wikiloc-row');
   if (!barraDerecha && !row) return;
   var slug = slugOf(location.pathname) || 'index';
-  var arriba = !!barraDerecha && !!document.querySelector('.back-link');
+  // La portada tambien lleva Compartir, que lo pidio el autor: hasta ahora
+  // solo lo tenian las fichas y no habia forma de pasarle la web entera a
+  // nadie desde la pagina principal. Guardar no: ahi el corazon va en cada
+  // tarjeta y uno para «toda la web» no significaria nada.
+  var esPortada = !!document.getElementById('routeResults');
+  var arriba = !!barraDerecha && (!!document.querySelector('.back-link') || esPortada);
   var fav = document.createElement('button');
   fav.type = 'button';
   fav.className = arriba ? 'mast-accion fav-action' : 'wikiloc-link ghost fav-action';
@@ -520,6 +533,16 @@
     var km = facts.find(function(t){ return / km$/.test(t); }) || '';
     var up = facts.find(function(t){ return /^\+.* m$/.test(t); }) || '';
     var line = [name, km, up].filter(Boolean).join(' · ') + ' · Trabakutik';
+    if (esPortada) {
+      // El h1 de la portada ya es «Trabakutik», asi que la linea de la ficha
+      // saldria repetida. Las rutas se cuentan en el momento para que el
+      // numero no se quede viejo.
+      var cuantas = document.querySelectorAll('.route-card[href]').length;
+      name = 'Trabakutik';
+      line = eu
+        ? 'Trabakutik \u00b7 ' + cuantas + ' ibilbide oinez eta e-bikez Mallabia inguruan'
+        : 'Trabakutik \u00b7 ' + cuantas + ' rutas a pie y en e-bike por Mallabia y alrededores';
+    }
     var url = location.href.split('#')[0];
     if (navigator.share) {
       navigator.share({ title: name, text: line, url: url }).catch(function(){});
@@ -543,8 +566,13 @@
     // delante del idioma, para que los dos botones de la ruta queden juntos
     // y el idioma, «Lo mio» y el tema sigan en su orden de siempre.
     var idioma = barraDerecha.querySelector('.lang-switch');
-    if (idioma && idioma.before) { idioma.before(fav); idioma.before(share); }
-    else { barraDerecha.appendChild(fav); barraDerecha.appendChild(share); }
+    if (idioma && idioma.before) {
+      if (!esPortada) idioma.before(fav);
+      idioma.before(share);
+    } else {
+      if (!esPortada) barraDerecha.appendChild(fav);
+      barraDerecha.appendChild(share);
+    }
   } else if (row) {
     var gpx = row.querySelector('a[href$=".gpx"]');
     var after = row.querySelector('a[href$=".kml"]') || gpx;
@@ -766,4 +794,48 @@
     if (ev.target.closest && ev.target.closest('.finder-toolbar, #mioAbrir, #openSearch')) aparta(false);
   });
   if (movil.addEventListener) movil.addEventListener('change', mira);
+})();
+
+/* ---- Al abrir una pregunta, ponerla a la vista -------------------------
+   Lo pidio el autor. Con el <details name="faq"> nativo, abrir una de abajo
+   CIERRA la de arriba en el mismo paso, y la pagina se encoge de golpe: la
+   pregunta que acabas de tocar se te va hacia arriba, a veces debajo de la
+   cabecera pegajosa y a veces fuera de la pantalla.
+
+   Si la pregunta entera cabe en la pantalla se centra; si no cabe -- la guia
+   paso a paso con sus ocho capturas no cabe en ningun movil -- se lleva el
+   titulo justo debajo de la cabecera, que es lo util: centrar algo de tres
+   pantallas de alto deja el titulo fuera. Se espera dos fotogramas porque en
+   el primero el navegador todavia no ha recalculado el alto de la que se
+   cierra, y la cuenta saldria sobre la pagina de antes. */
+(function(){
+  var items = document.querySelectorAll('details.faq-item');
+  if (!items.length) return;
+  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cabecera = document.querySelector('.masthead');
+
+  function pon(d){
+    var alto = window.innerHeight;
+    var margen = (cabecera ? cabecera.getBoundingClientRect().height : 0) + 12;
+    var caja = d.getBoundingClientRect();
+    var destino;
+    if (caja.height + margen <= alto) {
+      destino = caja.top + window.pageYOffset - (alto - caja.height) / 2;
+    } else {
+      destino = caja.top + window.pageYOffset - margen;
+    }
+    destino = Math.max(0, Math.round(destino));
+    try {
+      window.scrollTo({ top: destino, behavior: quieto ? 'auto' : 'smooth' });
+    } catch (e) {
+      window.scrollTo(0, destino);   // navegadores sin la forma de objeto
+    }
+  }
+
+  Array.prototype.forEach.call(items, function(d){
+    d.addEventListener('toggle', function(){
+      if (!d.open) return;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ pon(d); }); });
+    });
+  });
 })();

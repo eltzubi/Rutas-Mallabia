@@ -4,7 +4,7 @@
   "description": "Rutas de senderismo y BTT por los montes y pueblos de alrededor de Mallabia, documentadas sobre el terreno.",
   "lang": "es",
   "dir": "ltr",
-  "start_url": "/index.es.html",
+  "start_url": "/",
   "scope": "/",
   "id": "/index.es.html",
   "display": "standalone",

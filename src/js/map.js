@@ -137,10 +137,13 @@
   // el doble de items que waypoints y la correspondencia se sostenia de puro
   // milagro -- el dia que las dos dejasen de coincidir, etiquetas cambiadas.
   var legendScope = el.closest('.map-section') || document;
-  var wpNames = Array.prototype.map.call(
+  var wpNames = Array.prototype.filter.call(
     legendScope.querySelectorAll('.elev-legend-item'),
-    function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); }
-  );
+    // El renglon del agua vive en la misma lista y no es un punto numerado.
+    // Se filtra por .gota y no con :not(:has(.gota)) porque :has() no esta
+    // en todos los navegadores que abren esto en el monte.
+    function(item){ return !item.querySelector('.gota'); }
+  ).map(function(item){ return item.textContent.replace(/^\s*\d+\s*/, '').trim(); });
 
   // Compass direction the route heads out into: bearing from the start
   // point to the point farthest from it (a loop's own "endpoint" isn't
@@ -243,22 +246,19 @@
       zoom: 13
     });
     // Layer switcher, on every map -- the home page's overview and each
-    // route's own map alike. Four free layers, none needing an API key:
+    // route's own map alike. Three free layers, none needing an API key:
     // the Spanish IGN's topographic map (contour lines, named streams and
-    // villages), CyclOSM (bike-oriented rendering, surfaces, cycle lanes),
-    // OSM and Esri World Imagery (aerial photo). Same four and same default
-    // everywhere.
+    // villages), CyclOSM (bike-oriented rendering: contour lines, named
+    // peaks and streams, every track and path drawn differently) and Esri
+    // World Imagery (aerial photo). Same three everywhere, opening in
+    // CyclOSM.
     var cycleLayer = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.cyclosm.org" target="_blank" rel="noopener">CyclOSM</a>, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
     });
-    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
-    });
     var satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
-      attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, Maxar, Earthstar Geographics'
+      attribution: '&copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a>, Maxar'
     });
     // El topografico oficial español (el MTN de toda la vida) en vez del
     // OpenTopoMap que habia. Por aqui OpenTopoMap dibuja los arroyos como un
@@ -272,6 +272,44 @@
       maxZoom: 20,
       attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geogr&aacute;fico Nacional de Espa&ntilde;a</a>'
     });
+    // El topografico del Gobierno Vasco (geoEuskadi). Es la unica carta de
+    // esta lista que la hace quien conoce el terreno: curvas de nivel mucho
+    // mas finas que las del IGN, los caserios con su nombre uno a uno
+    // (Etxebarri, Lexarraga) y los toponimos en euskera, que es como se
+    // llaman. Llega a z18 y cubre las 66 rutas enteras, Gipuzkoa incluida
+    // -- comprobado tesela a tesela en las cuatro esquinas del conjunto.
+    // Licencia CC BY: «se permite cualquier uso si se menciona la autoria».
+    // OPENTOPOMAP, en el sitio que ocupaba la de Euskadi. La pidio el autor:
+    // «el mapa Euskadi no me dice nada; quiero nombres abundantes y mas
+    // curvas de nivel, para que al mover el mapa se sepa donde andas
+    // buscando». Y tenia razon, medido sobre LA MISMA tesela de Mallabia a
+    // zoom 13, que es el zoom al que uno busca:
+    //
+    //   Euskadi (geoEuskadi topo)  3 nombres: Markina, Mallabia, Mendibil
+    //   Bici (CyclOSM)             0 nombres, solo «BI-633»
+    //   OpenTopoMap                8, Y CON SU ALTURA: Mendigana 467,
+    //                              Mendibil 613, Olamendi 600, Arteta 514,
+    //                              Ariznabar 592, Galarraga 415,
+    //                              Trabakua 404, mas la BI-633
+    //
+    // La de Euskadi si rotulaba los caserios uno a uno y en euskera, pero
+    // solo de z15 para arriba: a la distancia a la que uno busca, callaba.
+    // Se probo ponerle encima el hibrido de geoEuskadi y a z13 saca los
+    // mismos tres, asi que no arreglaba nada. El autor la quito al verlas
+    // juntas: «quita Euskadi».
+    //
+    // Estaba descartada desde octubre porque sus CARRETERAS SON NARANJAS, el
+    // mismo color que los trazados de bici. Sigue siendo verdad, pero pesa
+    // menos que entonces: desde octubre los trazados llevan reborde oscuro.
+    // Si vuelve a molestar en la portada, esta es la razon.
+    //
+    // Llega a z17 (de ahi para arriba no tiene teselas propias). La sirve un
+    // proyecto de voluntarios, igual que CyclOSM, y su licencia pide citar a
+    // OpenTopoMap y a OpenStreetMap: eso hace la atribucion.
+    var openTopoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      subdomains: 'abc', maxZoom: 17,
+      attribution: '&copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA), &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+    });
     // La portada abre con las calles y las fichas con el IGN, que es como lo
     // quiere el autor: en la vista de conjunto, con las 57 rutas a la vez, lo
     // que situa es el callejero; en una ruta, los rios, los toponimos y las
@@ -280,30 +318,75 @@
     // que el mapa cambie debajo sin haberlo pedido desconcierta mas de lo que
     // ayuda. Solo lo cambian los botones.
     var esPortada = el.dataset.mapSrc.split('?')[0] === 'data/trailhead.json';
-    var LABEL_MIN_ZOOM = 13;   // el zoom al que salen los kilometros de cada ruta
+    var LABEL_MIN_ZOOM = 12;   // el zoom al que salen los kilometros de cada ruta
+    // Los nombres sobre el satelite. Lo pidio el autor: «el mapa sat, ¿pueden
+    // aparecer nombres?». Es una capa transparente de solo rotulos que se
+    // enciende con el satelite y se apaga con el. Va encima de las teselas y
+    // debajo de los trazados, que viven en otro panel.
+    //
+    // Se compararon dos sobre el mismo trozo de Berriz y Osmagain, a z12, z13
+    // y z16, y se eligio el hibrido de geoEuskadi:
+    //
+    // - Esri «World Boundaries and Places» pone solo los nombres y no toca la
+    //   imagen, pero es ESCUETISIMO: sobre toda la ruta de Zengotitagane, en
+    //   1280x900, saca UN SOLO rotulo («Garai»).
+    // - El hibrido de geoEuskadi saca treinta y tantos en ese mismo encuadre
+    //   -- Askako, Sarrimendi, Urdaia, Axmakurra, Iturrizu, Zengotitagana,
+    //   Kurutzetorri, Olatzamendi, Gaztelumendi, Osmagain, Sallobente,
+    //   Besoita, Andikoa, Momoitio, Galarraga... -- mas los arroyos y los
+    //   numeros de carretera.
+    //
+    // Se temia que pintara las carreteras de naranja y compitiera con los
+    // tracks de bici (es por lo que se descarto OpenTopoMap), pero sobre la
+    // foto las saca en AMARILLO, y el track va mas grueso y con flechas: se
+    // distinguen. Comprobado en la pagina de verdad y no en una tesela
+    // suelta. Pesa unos 10 kB por tesela y no anade ningun dominio nuevo,
+    // que geoEuskadi ya sirve la capa «Euskadi».
+    var nombresLayer = L.tileLayer('https://www.geo.euskadi.eus/geoeuskadi/rest/services/' +
+      'U11/WMTS_HIBRIDO/MapServer/WMTS/tile/1.0.0/U11_WMTS_HIBRIDO/default/' +
+      'GoogleMapsCompatible/{z}/{y}/{x}.png', {
+      maxZoom: 18, zIndex: 300,
+      attribution: '&copy; <a href="https://www.geo.euskadi.eus" target="_blank" rel="noopener">geoEuskadi</a> / Gobierno Vasco'
+    });
+    // Y la alternativa, que es la que usa la PORTADA: Esri «World Boundaries
+    // and Places», solo nombres y sin pintar una sola carretera. Con las 66
+    // rutas a la vez sobre la foto, las carreteras amarillas del hibrido se
+    // enredaban con los trazados naranjas y verdes -- «se lia buena», dijo el
+    // autor con la pantalla delante. En una ficha hay un solo track y ahi si
+    // manda el de Euskadi, que trae treinta veces mas nombres.
+    var nombresEsri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' +
+      'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      // sin attribution: la foto de debajo ya cita a Esri, y repetido salia
+      // «© Esri, Maxar, © Esri».
+      maxZoom: 19, zIndex: 300
+    });
     var layerDefs = [
       { layer: topoLayer, label: isEu ? 'IGN mapa topografikoa' : 'Mapa topográfico del IGN', short: 'IGN' },
       { layer: cycleLayer, label: isEu ? 'Bizikleta' : 'Ciclista', short: isEu ? 'Bizi' : 'Bici' },
-      { layer: osmLayer, label: isEu ? 'Kaleak' : 'Calles', short: isEu ? 'Kaleak' : 'Calles' },
-      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat' }
+      { layer: openTopoLayer, label: isEu ? 'OpenTopoMap mapa topografikoa' : 'Mapa topográfico OpenTopoMap', short: 'Topo' },
+      { layer: satLayer, label: isEu ? 'Satelitea' : 'Satélite', short: 'Sat', rotulos: esPortada ? nombresEsri : nombresLayer }
     ];
     // Las capas, a la vista: antes eran un icono de tres rombos que abria un
     // menu, y un icono que no dice que hace no lo pulsa nadie. Ahora son
     // botones, con el activo encendido, como en cualquier mapa de movil.
-    // El callejero solo en la portada, que es donde situa: ahi se ven las 57
-    // rutas de lejos y lo que ubica es el pueblo. Dentro de una ruta no
-    // pinta nada -- lo que hace falta son las curvas de nivel, los rios y los
-    // caminos -- y el autor lo ha quitado de las fichas.
-    if (!esPortada) {
-      layerDefs = layerDefs.filter(function(def){ return def.layer !== osmLayer; });
-    }
-    // 2 = Calles en la portada; 1 = Bici en una ficha (quitado el callejero,
-    // la lista de una ficha queda IGN, Bici, Satelite). Lo pidio el autor.
-    // Ojo: CyclOSM lo sirve un servidor de voluntarios y tarda el triple que
-    // el IGN -- 0,82 s por tesela frente a 0,34, medido-- asi que una ficha
-    // tarda mas en pintar el mapa que antes. El cambio de capa ya no deja el
-    // mapa en blanco mientras tanto (ver ponerCapa).
-    var layerIndex = esPortada ? 2 : 1;
+    //
+    // Las mismas tres en la portada y en una ficha, y las dos abren en Bici.
+    // En octubre se saco la Bici de las fichas y se puso un callejero porque
+    // el autor avisó de que «al mapa bici le cuesta abrir mucho»; despues
+    // dijo que la tardanza le da igual («no me preocupa lo que tarde en el
+    // monte, la ruta la organizo en casa»), asi que la razon para no usarla
+    // desaparecio. Y es el mapa que quiere: comparados los ocho candidatos
+    // sobre el mismo trozo de Zaldibar, CyclOSM es el que mas informacion
+    // trae -- curvas de nivel con su altura, todas las cimas rotuladas, los
+    // arroyos con nombre, y cada pista y sendero con su propio trazo. Se
+    // probaron y se descartaron el callejero de OSM, el estilo Humanitarian
+    // («no me gusta este mapa»), OSM Francia y Alemania, OpenTopoMap (sus
+    // carreteras son naranjas, el mismo color que los tracks de bici) y MTB
+    // Map (el que mas toponimos saca, pero pinta las carreteras en rojo y
+    // amarillo chillon y lo sirve un servidor de aficionados sin condiciones
+    // de uso publicadas). CyclOSM-lite y 4UMaps estan muertos: devuelven
+    // error en las doce teselas.
+    var layerIndex = 1;
     // El mapa de la portada nace dentro de un bloque oculto: hasta que el
     // visitante no cambia a la vista de mapa mide 0x0. Y un contenedor de 0x0
     // le hace creer a Leaflet que cabe todo a zoom maximo, asi que pedia las
@@ -315,6 +398,7 @@
       if (capaPuesta || !el.clientWidth || !el.clientHeight) return;
       capaPuesta = true;
       layerDefs[layerIndex].layer.addTo(map);
+      if (layerDefs[layerIndex].rotulos) layerDefs[layerIndex].rotulos.addTo(map);
     }
     var layersBar = document.createElement('div');
     layersBar.className = 'map-layers';
@@ -340,6 +424,7 @@
       if (!capaPuesta) return;
       if (quitarPendiente) { quitarPendiente(); quitarPendiente = null; }
       nueva.addTo(map);
+      if (layerDefs[i].rotulos) layerDefs[i].rotulos.addTo(map);
       var hecho = false;
       function listo(){
         if (hecho) return;
@@ -348,6 +433,11 @@
         nueva.off('load', listo);
         quitarPendiente = null;
         if (vieja !== nueva && map.hasLayer(vieja)) map.removeLayer(vieja);
+        // los rotulos se van con su capa y no antes: si se quitaran ya, al
+        // cambiar de capa desapareceran mientras la nueva aun carga.
+        layerDefs.forEach(function(d, j){
+        if (d.rotulos && j !== layerIndex && map.hasLayer(d.rotulos)) map.removeLayer(d.rotulos);
+        });
         layerBtns.forEach(function(b){ b.classList.remove('is-loading'); });
       }
       // Y si las teselas no llegan nunca (sin cobertura en el monte), se
@@ -373,6 +463,38 @@
     });
     el.parentElement.appendChild(layersBar);
 
+    // «Rutas»: un interruptor para quitar los trazados y ver el mapa a pelo.
+    // Lo pidio el autor -- sobre el satelite, y donde se juntan varias rutas,
+    // los trazados tapan justo lo que quiere mirar. Va en la misma pastilla
+    // que las capas, detras de la raya, como el de la pendiente. No borra
+    // nada: solo los esconde, y el trazado que el visitante este dibujando
+    // (.draw-line) se queda, que para eso lo esta dibujando.
+    var rutasBtn = document.createElement('button');
+    rutasBtn.type = 'button';
+    rutasBtn.className = 'map-layer-btn map-rutas-btn is-selected';
+    // En un movil estrecho las cuatro capas ya van justas: ahi el boton se
+    // queda en un ojo, y el rotulo solo sale cuando hay sitio.
+    rutasBtn.innerHTML = '<span class="rutas-txt">' + (isEu ? 'Ibilbideak' : 'Rutas') + '</span>' +
+      '<svg class="rutas-ico" width="15" height="15" viewBox="0 0 24 24" fill="none"' +
+      ' stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' +
+      ' aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>' +
+      '<circle cx="12" cy="12" r="3"/></svg>';
+    rutasBtn.setAttribute('aria-label', isEu ? 'Ibilbideak' : 'Rutas');
+    rutasBtn.title = isEu ? 'Ibilbideak ezkutatu eta mapa soilik ikusi'
+                          : 'Esconder las rutas y ver solo el mapa';
+    rutasBtn.setAttribute('aria-pressed', 'true');
+    rutasBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var ocultas = el.classList.toggle('sin-rutas');
+      rutasBtn.classList.toggle('is-selected', !ocultas);
+      rutasBtn.setAttribute('aria-pressed', String(!ocultas));
+      rutasBtn.title = ocultas
+        ? (isEu ? 'Ibilbideak berriro erakutsi' : 'Volver a ver las rutas')
+        : (isEu ? 'Ibilbideak ezkutatu eta mapa soilik ikusi'
+                : 'Esconder las rutas y ver solo el mapa');
+    });
+    ponExtra(rutasBtn);
+
     // Lo que no es "que mapa" sino como se pinta encima va en la misma
     // pastilla, detras de una raya: estaba en una segunda pastilla debajo y
     // el autor lo quiere todo seguido y en horizontal. La raya es lo unico
@@ -395,6 +517,9 @@
     // never does, and its own height feeds back into the zoom padding so
     // the route never renders underneath it either.
     var panel = null, panelBody = null, panelClose = null, activeLine = null, activeBaseColor = null;
+    // Las dos versiones de la ficha abierta, para poder cambiar de una a otra
+    // si la ventana cruza los 768 px sin cerrarla.
+    var fichaHtml = null;
     function ensurePanel(){
       if (panel) return;
       panel = document.createElement('div');
@@ -423,11 +548,139 @@
     // Hiding it while the panel is open removes the overlap outright instead
     // of fighting over z-index across two separate stacking contexts.
     var viewFab = document.getElementById('viewFab');
+    // Con el mapa a pantalla entera, el boton de volver arriba cae encima de
+    // el (abajo a la derecha). El modo de dibujar ya lo esconde por lo mismo.
+    var botonArriba = document.getElementById('toTop');
+    // Con una ruta elegida, los kilometros de las otras 64 siguen ahi y
+    // ensucian justo lo que el visitante ha ido a mirar. Mientras la ficha
+    // este abierta solo se ve la etiqueta de la suya; al cerrarla vuelven
+    // todas. Lo pidio el autor: «quedarse solo en la ruta limpia».
+    var labelSoloHref = null;
+    // La capa de pastillas agrupadas. Va declarada AQUI y no junto a su
+    // funcion, que esta mas abajo: updateLabelVisibility() se llama durante
+    // el montaje, antes de llegar a aquella linea, y un «var x = null» alli
+    // volvia a poner la variable a cero DESPUES de que la primera pasada ya
+    // hubiera creado la capa. La referencia se perdia y los marcadores se
+    // quedaban huerfanos en el mapa: con 66 rutas salian grupos sumando 100.
+    var grupoCapa = null;
+    // La tira de «lo que tienes delante». Declarada AQUI por lo mismo que
+    // grupoCapa, y es que se repitio el fallo: pintaCercanas() se llama
+    // durante el montaje, antes de llegar a su funcion, asi que un
+    // «var tiraCercanas = null» alla abajo borraba la referencia despues de
+    // que la primera pasada ya hubiera creado la tira -- y se creaba una
+    // segunda. Salian dos tiras, una viva y otra congelada con 22 fichas.
+    var tiraCercanas = null;
+    var firmaTira = null;   // la firma, en variable y NO en dataset
+    // La caja que envuelve al mapa: es la que crece con la ficha abierta.
+    // Solo existe en la portada; en una ficha de ruta no hay panel.
+    var marcoMapa = el.closest ? el.closest('.route-map-box') : null;
+
+    // Con una ruta elegida, el mapa se queda con la pantalla entera y la
+    // ficha se pone en un lateral, como en AllTrails: lo pidio el autor con
+    // esa pantalla delante («el mapa ocupa la pantalla entera»). Es la misma
+    // mecanica que el modo de dibujar, ya probada ahi: se saca la caja de su
+    // columna centrada con un margen negativo y se le da el alto que queda
+    // bajo la cabecera pegajosa.
+    //
+    // Solo de 768 px en adelante. Por debajo manda lo que el autor eligio en
+    // octubre -- caja a 72svh y ficha abajo --, que ahi un lateral deja una
+    // tira de 134 px donde los textos se parten.
+    var CABECERA_FICHA = 62;
+    function reduceMovimiento(){
+      return !!(window.matchMedia &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }
+    function esLateral(){
+      return !!(window.matchMedia && window.matchMedia('(min-width:768px)').matches);
+    }
+    function aPantallaEntera(){
+      if (!marcoMapa) return;
+      var abajo = 0, barra = document.querySelector('.finder-toolbar');
+      if (barra) {
+        var r = barra.getBoundingClientRect();
+        if (getComputedStyle(barra).position === 'fixed' &&
+            r.bottom > window.innerHeight - 6) abajo = r.height;
+      }
+      // El ancho sale de clientWidth y no de 100vw: 100vw cuenta la barra de
+      // desplazamiento y dejaria la pagina moviendose de lado.
+      marcoMapa.style.marginLeft = '0px';
+      marcoMapa.style.width = '';
+      var izq = marcoMapa.getBoundingClientRect().left;
+      marcoMapa.style.marginLeft = (-izq) + 'px';
+      marcoMapa.style.width = document.documentElement.clientWidth + 'px';
+      marcoMapa.style.borderRadius = '0';
+      marcoMapa.style.aspectRatio = 'auto';
+      marcoMapa.style.height =
+        Math.max(300, window.innerHeight - CABECERA_FICHA - abajo - 14) + 'px';
+    }
+    function ponPleno(si){
+      if (!marcoMapa) return;
+      marcoMapa.classList.toggle('ficha-pleno', !!si);
+      document.body.classList.toggle('mapa-pleno', !!si);
+      if (si) sueltaPantallaEntera();   // manda el CSS, no los estilos en linea
+    }
+    function sueltaPantallaEntera(){
+      if (!marcoMapa) return;
+      marcoMapa.style.aspectRatio = '';
+      marcoMapa.style.height = '';
+      marcoMapa.style.marginLeft = '';
+      marcoMapa.style.width = '';
+      marcoMapa.style.borderRadius = '';
+    }
+    // Si se gira el movil o se cambia el tamano de la ventana con la ficha
+    // abierta, la caja tiene que volver a cuadrar. Y si al redimensionar se
+    // cruza el corte de 768 px, se pasa de un modo al otro sin cerrarla.
+    var alRedimensionarFicha = null;
+    function vigilaTamanoFicha(encender){
+      if (encender && !alRedimensionarFicha) {
+        alRedimensionarFicha = function(){
+          if (!panel || !panel.classList.contains('open')) return;
+          var lat = esLateral();
+          el.classList.toggle('ficha-lateral', lat);
+          ponPleno(!lat);
+          if (lat) aPantallaEntera();
+          if (fichaHtml) {
+            var quiere = lat ? fichaHtml.amplia : fichaHtml.breve;
+            if (panelBody.innerHTML !== quiere) panelBody.innerHTML = quiere;
+          }
+          map.invalidateSize({ animate: false });
+        };
+        window.addEventListener('resize', alRedimensionarFicha);
+      } else if (!encender && alRedimensionarFicha) {
+        window.removeEventListener('resize', alRedimensionarFicha);
+        alRedimensionarFicha = null;
+      }
+    }
+
+    var vigilaFicha = null;
+    function marcaAltoFicha(alto){
+      el.style.setProperty('--ficha-alto', Math.round(alto) + 'px');
+      if (vigilaFicha || typeof ResizeObserver === 'undefined') return;
+      // getBoundingClientRect y no contentRect: el panel lleva 16 px de
+      // relleno arriba y abajo, y contentRect los deja fuera.
+      vigilaFicha = new ResizeObserver(function(){
+        if (!el.classList.contains('con-ficha')) return;
+        el.style.setProperty('--ficha-alto',
+          Math.round(panel.getBoundingClientRect().height) + 'px');
+      });
+      vigilaFicha.observe(panel);
+    }
+
     function closePanel(){
       if (!panel || !panel.classList.contains('open')) return;
       var returnFocus = panel.contains(document.activeElement);
       panel.classList.remove('open');
       panel.hidden = true;
+      el.classList.remove('con-ficha');
+      el.classList.remove('ficha-lateral');
+      vigilaTamanoFicha(false);
+      if (marcoMapa && marcoMapa.classList.contains('ficha-abierta')) {
+        marcoMapa.classList.remove('ficha-abierta');
+      }
+      ponPleno(false);
+      sueltaPantallaEntera();
+      if (botonArriba) botonArriba.style.display = '';
+      map.invalidateSize({ animate: false });
       if (viewFab) viewFab.classList.remove('is-hidden-behind-panel');
       if (activeLine) {
         var path = activeLine.getElement();
@@ -437,15 +690,18 @@
           if (returnFocus) path.focus({ preventScroll: true });
         }
         activeLine = null;
+        labelSoloHref = null;
+        updateLabelVisibility();
         Object.keys(hrefToLine).forEach(function(href){
           var entry = hrefToLine[href];
           var entryPath = entry.line.getElement();
           var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
           entry.line.setStyle({
             color: entry.currentColor,
-            weight: 4,
+            weight: pesoTrack,
             opacity: hidden ? 0.06 : baseOpacity
           });
+          if (entry.reborde) entry.reborde.setStyle({ opacity: hidden ? 0.04 : 0.55 });
         });
       }
       // Antes esto reencuadraba el mapa entero al cerrar la ficha (y como
@@ -463,29 +719,98 @@
 
       // La ruta elegida manda visualmente: rojo fino por encima; el resto
       // conserva su color pero se apaga para no taparla ni ensuciar el mapa.
+      labelSoloHref = null;
       Object.keys(hrefToLine).forEach(function(href){
         var entry = hrefToLine[href];
         var entryPath = entry.line.getElement();
         var hidden = entryPath && entryPath.getAttribute('aria-hidden') === 'true';
         if (entry.line === line) {
+          labelSoloHref = href;
           entry.line.setStyle({ color: COLORS.parking, weight: 3, opacity: 1 });
           if (entry.line.bringToFront) entry.line.bringToFront();
         } else {
-          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: 4 });
+          entry.line.setStyle({ opacity: hidden ? 0.06 : 0.22, weight: pesoTrack });
         }
+        // El reborde se apaga con su trazado: si no, al elegir una ruta
+        // quedarian 64 lineas oscuras marcando las que estan apagadas.
+        if (entry.reborde) entry.reborde.setStyle({
+          opacity: hidden ? 0.04 : (entry.line === line ? 0.55 : 0.1) });
       });
+      updateLabelVisibility();
       line.getElement().setAttribute('aria-pressed', 'true');
-      panelBody.innerHTML = html;
+      fichaHtml = html;
+      panelBody.innerHTML = esLateral() ? html.amplia : html.breve;
       panel.hidden = false;
       panel.classList.add('open');
       if (viewFab) viewFab.classList.add('is-hidden-behind-panel');
       var panelHeight = panel.getBoundingClientRect().height;
-      map.flyToBounds(line.getBounds(), {
-        paddingTopLeft: [24, 24],
-        paddingBottomRight: [24, panelHeight + 24],
-        maxZoom: 15,
-        animate: !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-      });
+      // La linea de creditos de Leaflet va en z-index 1000 y el panel en 500,
+      // asi que caia justo encima del enlace «Ver ruta completa» y lo tapaba
+      // -- lo vio el autor en su movil. El panel sube por encima de los
+      // controles y los creditos se corren hacia arriba lo que mide el
+      // panel, que no se pueden esconder: son la atribucion de OSM.
+      //
+      // La altura se vuelve a mirar con un ResizeObserver y no solo aqui: la
+      // foto de la ficha todavia no ha colocado cuando se mide, y el panel
+      // crece despues. Sin eso, los creditos se quedaban unos pixeles bajos
+      // y seguian metidos debajo del panel.
+      marcaAltoFicha(panelHeight);
+      el.classList.add('con-ficha');
+      var lateral = esLateral();
+      el.classList.toggle('ficha-lateral', lateral);
+      // Y la caja crece, que es lo que de verdad arregla el «tapa el mapa»
+      // (solo por debajo de 768 px; lo decide el CSS). Hay que avisar a
+      // Leaflet del tamano nuevo ANTES de encuadrar, o encuadra sobre el
+      // alto viejo y la ruta se queda pequena en la mitad de arriba.
+      if (marcoMapa) {
+        marcoMapa.classList.add('ficha-abierta');
+        // Pantalla completa en las dos, que es lo que pidio el autor: la caja
+        // sale de su columna centrada y se queda con todo lo que hay bajo la
+        // cabecera pegajosa (y, en el movil, sobre la barra fija de abajo).
+        // Lo que cambia con el ancho es donde va la ficha: a un lado de 768
+        // en adelante, y abajo por debajo.
+        // En el movil, pantalla completa de verdad: la caja se pone fija
+        // ocupando la ventana entera y se esconden la cabecera y la barra de
+        // abajo (lo hace el CSS con estas dos clases). Asi no hay que
+        // calcular ningun desplazamiento. En el ordenador se queda la caja a
+        // lo ancho bajo la cabecera, con la ficha a un lado.
+        ponPleno(!lateral);
+        if (lateral) {
+          aPantallaEntera();
+          window.scrollTo({
+            top: Math.max(0, marcoMapa.getBoundingClientRect().top +
+                             window.pageYOffset - CABECERA_FICHA),
+            behavior: reduceMovimiento() ? 'auto' : 'smooth'
+          });
+        }
+        if (botonArriba) botonArriba.style.display = 'none';
+        map.invalidateSize({ animate: false });
+        panelHeight = panel.getBoundingClientRect().height;
+        marcaAltoFicha(panelHeight);
+      }
+      vigilaTamanoFicha(true);
+      // Con el panel en un lateral el hueco que hay que dejar es de ancho,
+      // no de alto: si no, la ruta se encuadra por debajo de el.
+      var anchoPanel = lateral ? Math.round(panel.getBoundingClientRect().width) : 0;
+      var vuela = function(){
+        if (!panel.classList.contains('open')) return;
+        map.flyToBounds(line.getBounds(), {
+          paddingTopLeft: [anchoPanel + 24, 24],
+          paddingBottomRight: [24, lateral ? 24 : panelHeight + 24],
+          maxZoom: 15,
+          animate: !reduceMovimiento()
+        });
+      };
+      // Dos fotogramas de espera antes de encuadrar: al crecer la caja salta
+      // el ResizeObserver de fit(), que llama a invalidateSize(), y eso corta
+      // el vuelo en seco -- la ruta se quedaba sin acercar, con el mapa en la
+      // vista de conjunto. El ResizeObserver corre tras el calculo de estilos
+      // y antes de pintar, asi que al segundo fotograma ya ha pasado.
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(function(){ requestAnimationFrame(vuela); });
+      } else {
+        vuela();
+      }
       if (keyboard) panelClose.focus({ preventScroll: true });
     }
 
@@ -496,28 +821,56 @@
     // Con las 46 rutas a la vista de conjunto, mostrar las etiquetas desde el
     // primer momento las amontona todas sobre Trabakua. Se quedan ocultas
     // hasta que el visitante se acerca de verdad a una zona del mapa.
-    var baseOpacity = data.tracks.length > 1 ? 0.85 : 0.9;
-    // Un reborde blanco debajo del trazado, solo en las fichas. El verde de
-    // «a pie» en el tema claro es #3A6B15, oscuro, y sobre el verde del mapa
-    // del IGN casi no se distinguia; con el reborde el track se lee igual
-    // sobre el topografico, el satelite y el callejero. En la portada no va:
-    // son 57 tracks y serian 57 lineas mas que dibujar.
+    // Los trazados de la portada van algo por debajo del opaco del todo: con
+    // los 66 a la vez, y sobre el verde y el naranja fuertes del mapa ciclista,
+    // al 100 % el autor los veia duros («hazlos un poco mas suaves, solo un
+    // poquito»). El reborde oscuro es el que da la definicion, asi que bajar
+    // esto no devuelve el problema de antes. En una ficha, con un solo track y
+    // reborde blanco, se queda opaco.
+    var baseOpacity = (data.tracks.length === 1 && !track0bis(data)) ? 1 : 0.85;
+    // El grosor no es fijo en la portada: ver mas abajo «ajustaGrosor».
+    var pesoTrack = 4.5;
+    var pesoReborde = 8;
+    // Un reborde debajo del trazado. En las fichas es blanco y ancho; en la
+    // portada, oscuro y algo mas fino. El verde de «a pie» es un lima que
+    // sobre el verde del campo del callejero casi no se veia, y el naranja
+    // se confundia con las carreteras naranjas del IGN -- el autor lo dijo:
+    // «el color en el mapa index es pobre». Se compararon cuatro arreglos
+    // (subir opacidad y grosor, este reborde, y colores mas vivos) y este es
+    // el unico que arregla las dos capas sin tocar la paleta de la web.
+    // Antes la portada no lo llevaba por no dibujar 57 lineas mas.
     var unaSola = data.tracks.length === 1 && !track0bis(data);
+    // Los rebordes van en su propio panel, por debajo del de los trazados:
+    // asi ninguno puede quedar por encima del track de otra ruta, cosa que
+    // pasaria si se intercalaran en el mismo panel.
+    if (!unaSola && map.createPane) {
+      var panelReborde = map.createPane('rebordes');
+      panelReborde.style.zIndex = 395;
+      panelReborde.style.pointerEvents = 'none';
+    }
     data.tracks.forEach(function(t){
       var baseColor = COLORS[t.color] || actColor || COLORS.teal;
+      var reborde = null;
       if (unaSola) {
         L.polyline(t.points, {
           color: '#ffffff', weight: 7, opacity: 0.75,
           lineJoin: 'round', lineCap: 'round', interactive: false
         }).addTo(map);
+      } else {
+        reborde = L.polyline(t.points, {
+          color: '#0B1020', weight: pesoReborde, opacity: 0.55, pane: 'rebordes',
+          lineJoin: 'round', lineCap: 'round', interactive: false
+        }).addTo(map);
       }
       var line = L.polyline(t.points, {
         color: baseColor,
-        weight: 4,
+        weight: pesoTrack,
         opacity: baseOpacity,
         lineJoin: 'round'
       }).addTo(map);
-      bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds();
+      // El conjunto necesita su propia caja: extend() modifica el objeto.
+      // Compartir la caja de la primera linea la hacia abarcar todas las rutas.
+      bounds = bounds ? bounds.extend(line.getBounds()) : line.getBounds().pad(0);
 
       if (t.href) {
         var href = isEu ? t.href.replace(/\.html$/, '.eu.html') : t.href;
@@ -546,23 +899,40 @@
         // linea aparte: en un movil la ficha mide 250 px y cada linea suelta
         // empujaba el boton fuera de la vista.
         facts += '<span>' + dirLabel + ': <b>' + directionLabel(t.points) + '</b></span>';
-        // La foto sale de la propia tarjeta de la portada, clonada tal cual:
-        // asi no hay que deducir el nombre del fichero del href (que en la
-        // pagina en euskera acaba en .eu.html), el alt viene ya en el idioma
-        // correcto, y el navegador no descarga nada nuevo porque esa miniatura
-        // ya esta en la pagina.
+        // Dos versiones de la ficha, y manda el sitio que hay:
+        //
+        // - **Breve** (movil, ficha abajo): solo nombre, datos y enlace. La
+        //   foto y el perfil se comian 195 px de un mapa que en un movil
+        //   mide 311 -- el 63 % --, el autor se quejo de que tapaba, se le
+        //   enseñaron cuatro maneras medidas y eligio esta.
+        // - **Amplia** (ordenador, panel lateral): con la foto y el perfil.
+        //   En una columna alta sobra sitio, y es lo que el autor pidio al
+        //   enseñar la pantalla de AllTrails: «si hace falta clona cosas de
+        //   la pagina». Aqui no repiten -- en el lateral no se ve la tarjeta
+        //   de la que salen.
+        //
+        // La foto se clona de la propia tarjeta: asi no hay que deducir el
+        // fichero del href (en euskera acaba en .eu.html), el alt ya viene en
+        // su idioma, y el navegador no descarga nada que no tuviera ya.
         var pic = sign && sign.querySelector('.route-card-photo picture');
-        var photo = pic ? '<div class="route-popup-photo">' + pic.outerHTML + '</div>' : '';
-        // El perfil solo cuando no hay foto. Los dos juntos no caben: la ficha
-        // mide como mucho el 78% del mapa, y en un movil eso son 229 px, que
-        // con foto y perfil dejaban el nombre y el boton fuera de vista.
-        var chart = (!photo && t.chart) ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
-          'preserveAspectRatio="none"><path d="' + t.chart + '" fill="var(--teal-soft)"/></svg>' : '';
-        var html = '<div class="route-popup">' + photo + chart + '<h3>' + name + '</h3>' +
-          '<div class="route-popup-facts">' + facts + '</div>' +
+        var foto = pic ? '<div class="route-popup-photo">' + pic.outerHTML + '</div>' : '';
+        var perfil = t.chart ? '<svg class="route-popup-chart" viewBox="0 0 1000 300" ' +
+          'preserveAspectRatio="none" aria-hidden="true"><path d="' + t.chart +
+          '" fill="var(--teal-soft)"/></svg>' : '';
+        // La linea de resumen de la tarjeta, clonada tal cual (ya viene en
+        // su idioma). Solo en el panel lateral: en el movil la ficha tiene
+        // que seguir cabiendo en dos dedos de alto.
+        var desc = sign && sign.querySelector('.route-card-desc');
+        var resumen = desc ? '<p class="route-popup-desc">' + desc.innerHTML + '</p>' : '';
+        var datos = '<div class="route-popup-facts">' + facts + '</div>' +
           '<a href="' + href + '">' + seeLabel + ' &rarr;</a></div>';
+        var html = {
+          breve: '<div class="route-popup"><h3>' + name + '</h3>' + datos,
+          amplia: '<div class="route-popup">' + foto + perfil +
+                  '<h3>' + name + '</h3>' + resumen + datos
+        };
         line.on('click', function(e){ L.DomEvent.stopPropagation(e); openPanel(line, hrefToLine[t.href].currentColor, html); });
-        line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+        line.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
         line.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
 
         // Etiqueta de distancia en el punto medio, solo en el mapa de
@@ -582,7 +952,7 @@
             L.DomEvent.stopPropagation(e);
             openPanel(line, hrefToLine[t.href].currentColor, html);
           });
-          labelMarker.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          labelMarker.on('mouseover', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
           labelMarker.on('mouseout', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
           hrefToLabel[t.href] = labelMarker;
         }
@@ -602,12 +972,60 @@
               e.preventDefault(); closePanel();
             }
           });
-          pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: 6 }); });
+          pathEl.addEventListener('focus', function(){ if (!activeLine) line.setStyle({ weight: pesoTrack + 1.5 }); });
           pathEl.addEventListener('blur', function(){ if (!activeLine) line.setStyle({ weight: 4 }); });
         }
-        hrefToLine[t.href] = { line: line, baseColor: baseColor, activity: activity, currentColor: baseColor };
+        hrefToLine[t.href] = { line: line, reborde: reborde, baseColor: baseColor,
+          activity: activity, currentColor: baseColor,
+          // para la tira de «lo que tienes delante»: el nombre y los km salen de
+          // la tarjeta de la portada, que ya esta en la pagina y en su idioma
+          nombre: name, km: distanceKm, desnivel: desnivelM, puntos: t.points,
+          foto: (sign && sign.querySelector('.route-card-photo img') &&
+                 sign.querySelector('.route-card-photo img').getAttribute('src')) || '',
+          abre: function(){ openPanel(line, hrefToLine[t.href].currentColor, html); } };
       }
     });
+
+    // ---- El grosor, segun lo lejos que se mire ----------------------------
+    // Lo pidio el autor: con las 66 rutas a la vez y el mapa entero a la
+    // vista, «ocupan mucho» y se juntan en una mancha naranja y verde. De
+    // cerca pasa justo lo contrario: una linea fina cuesta de ver sobre el
+    // satelite y de acertarle con el dedo. Asi que la linea se afina al
+    // alejarse y recupera su grosor al acercarse, en vez de elegir un numero
+    // que este mal en los dos sitios. Solo en la portada: una ficha tiene un
+    // track y no hay mancha que deshacer.
+    function pesosDeZoom(z){
+      // Por debajo del 11 el reborde se va del todo (grosor 0, que en SVG no
+      // dibuja nada). Lo pidio el autor y tiene sentido: ahi las 66 rutas
+      // estan tan enredadas que el reborde no separa nada, solo engorda la
+      // mancha. La portada abre en zoom 10, asi que lo primero que se ve es
+      // esto. Se apaga con el grosor y no con la opacidad a proposito: la
+      // opacidad del reborde la llevan el filtro y la ficha abierta, y
+      // tocarla aqui se pisaria con ellos.
+      if (z <= 10) return [2.5, 0];    // la vista de conjunto, sin reborde
+      if (z <= 12) return [2.5, 4];    // todo el mapa: 66 trazados a la vez
+      if (z >= 14) return [3.5, 6];    // una zona
+      return [3, 5];                   // el escalon de en medio
+    }
+    function ajustaGrosor(){
+      var p = pesosDeZoom(map.getZoom());
+      // Los dos, no solo el trazado: entre el zoom 10 y el 12 el trazado mide
+      // igual y lo que cambia es el reborde.
+      if (p[0] === pesoTrack && p[1] === pesoReborde) return;
+      pesoTrack = p[0];
+      pesoReborde = p[1];
+      Object.keys(hrefToLine).forEach(function(h){
+        var e = hrefToLine[h];
+        // Solo el grosor: la opacidad la llevan el filtro y la ficha abierta,
+        // y pisarla aqui encenderia rutas que estan apagadas a proposito.
+        e.line.setStyle({ weight: pesoTrack });
+        if (e.reborde) e.reborde.setStyle({ weight: pesoReborde });
+      });
+    }
+    if (!unaSola) {
+      map.on('zoomend', ajustaGrosor);
+      ajustaGrosor();
+    }
 
     // Fades out routes that the home page's activity/distance/desnivel
     // filters (js/filters.js) have hidden, instead of the map staying
@@ -641,8 +1059,10 @@
           entry.line.setStyle({
             opacity: show ? (activeLine ? 0.22 : baseOpacity) : 0.06,
             color: color,
-            weight: 4
+            weight: pesoTrack
           });
+          if (entry.reborde) entry.reborde.setStyle({
+            opacity: show ? (activeLine ? 0.1 : 0.55) : 0.04 });
         }
         var pathEl = entry.line.getElement();
         if (pathEl) {
@@ -655,7 +1075,41 @@
       });
       // Con menos etiquetas visibles cambia lo que se solapa entre si.
       updateLabelVisibility();
+      if (esPortada) encuadraVisibles();
     }
+
+    // El filtro reencuadra el mapa de la portada. Pasar de «A pie» a
+    // «E-bike» dejaba la vista donde estuviera -- a veces sin ninguna de las
+    // rutas que quedaban a la vista -- y lo pidio el autor: que se centre
+    // siempre. Se reencuadra aunque el visitante ya hubiera movido el mapa,
+    // y por eso cuenta como movimiento suyo: si no, el siguiente cambio de
+    // tamano del contenedor devolveria el encuadre general y desharia esto.
+    // Solo cuando el conjunto visible cambia de verdad, para no dar un salto
+    // por cada tecla del buscador que no quita ninguna ruta, y la primera
+    // vez solo se anota: de ese primer encuadre ya se ocupa fit().
+    var ultimoEncuadre = null;
+    function encuadraVisibles(){
+      if (!el.clientWidth || !el.clientHeight) return;
+      var visibles = Object.keys(hrefToLine).filter(function(h){
+        return labelFilterVisible[h] !== false;
+      }).sort();
+      var firma = visibles.join('|');
+      if (firma === ultimoEncuadre) return;
+      var primera = ultimoEncuadre === null;
+      ultimoEncuadre = firma;
+      if (primera || !visibles.length) return;
+      var caja = null;
+      visibles.forEach(function(h){
+        var b = hrefToLine[h].line.getBounds();
+        if (!b || !b.isValid()) return;
+        if (caja) caja.extend(b);
+        else caja = L.latLngBounds(b.getSouthWest(), b.getNorthEast());
+      });
+      if (!caja || !caja.isValid()) return;
+      userMoved = true;
+      map.fitBounds(caja, { padding: [24, 24] });
+    }
+
     applyRouteFilter(pendingVisibleHrefs, pendingActivity);
     onRouteFilterChange = applyRouteFilter;
 
@@ -664,6 +1118,11 @@
       var size = data.marker.color === 'parking' ? 16 : 14;
       L.marker(data.marker.at, {
         title: el.dataset.markerTitle || '',
+        // Por encima de todo lo demas del panel de marcadores: con las
+        // pastillas agrupadas, la de «38 rutas» cae justo sobre Trabakua y
+        // tapaba la salida. El autor la quiere siempre a la vista: «la
+        // salida que siga marcada en rojo».
+        zIndexOffset: 2000,
         icon: L.divIcon({
           className: '',
           html: '<span style="display:block;width:' + size + 'px;height:' + size + 'px;' +
@@ -765,8 +1224,8 @@
     // profile SVG in .hero-chart (the home overview map has many tracks
     // and no such SVG, so this stays off there). The profile's path is
     // drawn at N evenly-distance-spaced samples over x=[0,1000] (see the
-    // by-hand elevation script this pipeline uses), so a screen-x fraction
-    // maps directly onto the same fraction of this track's own point array.
+    // by-hand elevation script this pipeline uses). Los puntos del mapa se
+    // simplifican por geometria: su indice NO es una distancia recorrida.
     var track0 = data.tracks[0];
 
     // El track pintado por pendiente, como en los editores de GPX: el mismo
@@ -880,6 +1339,27 @@
       if (heroSvg && heroPath) {
         var svgNS = 'http://www.w3.org/2000/svg';
         var charts = [];
+        var profileDistances = [0];
+        for (var pd = 1; pd < track0.points.length; pd++) {
+          profileDistances.push(profileDistances[pd - 1] +
+            haversineMeters(track0.points[pd - 1], track0.points[pd]));
+        }
+        var profileLength = profileDistances[profileDistances.length - 1];
+        function pointAtFraction(frac){
+          var target = frac * profileLength;
+          var lo = 0, hi = profileDistances.length - 1;
+          while (lo + 1 < hi) {
+            var mid = Math.floor((lo + hi) / 2);
+            if (profileDistances[mid] < target) lo = mid; else hi = mid;
+          }
+          var span = profileDistances[hi] - profileDistances[lo];
+          var mix = span > 0 ? (target - profileDistances[lo]) / span : 0;
+          var a = track0.points[lo], b = track0.points[hi];
+          var point = [a[0] + (b[0] - a[0]) * mix, a[1] + (b[1] - a[1]) * mix];
+          if (typeof a[2] === 'number' && typeof b[2] === 'number' &&
+              isFinite(a[2]) && isFinite(b[2])) point.push(a[2] + (b[2] - a[2]) * mix);
+          return point;
+        }
 
         // Parsed once from the page's own already-rendered figures (the
         // facts row and the elevation tags), rather than recomputed here:
@@ -895,9 +1375,11 @@
         var totalKm = factsBox && parseNum(factsBox.querySelector('.fact .v').textContent);
         var minEle = tagsBox && parseNum(tagsBox.querySelector('.end.left .v').textContent);
         var maxEle = tagsBox && parseNum(tagsBox.querySelector('.end.right .v').textContent);
-        var hasReadout = totalKm != null && minEle != null && maxEle != null && maxEle > minEle;
+        var hasReadout = totalKm != null && isFinite(totalKm);
+        var hasElevationScale = minEle != null && maxEle != null && maxEle > minEle;
 
         function addChart(svg){
+          svg.style.touchAction = 'pan-y';
           var cursorLine = document.createElementNS(svgNS, 'line');
           cursorLine.setAttribute('y1', '0');
           cursorLine.setAttribute('y2', '300');
@@ -991,6 +1473,38 @@
         // Every chart here is a clone of the same original, so they all
         // share one coordinate space and this one lookup serves them all.
         var pathLen = heroPath.getTotalLength();
+
+        // Los extremos reales del dibujo, leidos del propio trazado. Hacen
+        // falta para devolver la y a metros, y NO se pueden dar por sabidos:
+        // scripts/rehaz_perfil.py documenta y = 285 - (ele-min)/(max-min)*270,
+        // pero las fichas publicadas usan seis convenciones distintas -- 160,
+        // 161, 163, 200 y 201 muestras, y la y va de (0,300) en astarlokoatxa
+        // a (47,225) en oiz. Aqui habia un margen fijo de 8 px, es decir se
+        // suponia que la y iba de 8 a 292 siempre, y la lectura se iba
+        // **hasta 153 metros**: en zenarruza el punto mas bajo decia 385 m
+        // donde la ficha dice 232, y en oiz 547 donde dice 399. Midiendo los
+        // extremos del trazado sale exacto en las seis convenciones, y
+        // seguira saliendo si manana se dibuja de otra manera.
+        // Ojo: en dos fichas (axmakuriturrizuri y zengotitaosmagain) la
+        // LINEA arrastra el cierre del relleno -- acaba en «L1000,300 L0,300»
+        // --, asi que trae dos puntos de mas pegados al suelo del recuadro.
+        // Un perfil va siempre hacia la derecha, de modo que en cuanto la x
+        // retrocede se deja de contar: eso descarta el cierre sin tener que
+        // reconocerlo, y de paso protege la busqueda binaria de yAtX, que da
+        // por hecho que la x es monotona. Sin esto, esas dos fichas leian el
+        // punto mas bajo 46 m por encima de lo que dice su propio pie.
+        var yTope = Infinity, ySuelo = -Infinity, xPrev = -Infinity;
+        var pares = (heroPath.getAttribute('d') || '')
+          .match(/[ML]\s*-?[\d.]+[ ,]\s*-?[\d.]+/g) || [];
+        for (var pi = 0; pi < pares.length; pi++) {
+          var nn = pares[pi].match(/-?[\d.]+/g);
+          var xx = parseFloat(nn[0]), yy = parseFloat(nn[1]);
+          if (xx <= xPrev) break;
+          xPrev = xx;
+          if (yy < yTope) yTope = yy;
+          if (yy > ySuelo) ySuelo = yy;
+        }
+        var hayEscala = isFinite(yTope) && ySuelo - yTope > 1;
         function yAtX(x){
           var lo = 0, hi = pathLen, pt;
           for (var i = 0; i < 20; i++){
@@ -1010,25 +1524,31 @@
         // <b>-free plain format already used for every marker's km/ele pair
         // in the body copy (site-wide convention, see eu.py/CLAUDE.md).
         function fmtKm(km){ return km.toFixed(1).replace('.', ','); }
-        function readoutLabel(frac, y){
+        function readoutLabel(frac, y, point){
           var km = fmtKm(frac * totalKm);
-          if (!isFinite(y)) return km + ' km';
-          var pad = 8;
-          var ele = Math.round(minEle + (maxEle - minEle) * (1 - (y - pad) / (300 - 2 * pad)));
+          // Una ficha sin cotas escritas sigue mostrando los kilometros.
+          // Si el track trae altura, se lee del mismo punto que marca el mapa.
+          if (!hasElevationScale || !isFinite(y) || !hayEscala) {
+            return km + ' km' + (point.length > 2 ? ' · ' + Math.round(point[2]) + ' m' : '');
+          }
+          var ele = Math.round(minEle + (maxEle - minEle) * ((ySuelo - y) / (ySuelo - yTope)));
           return km + ' km · ' + ele + ' m';
         }
         function showAtFraction(frac){
           frac = Math.max(0, Math.min(1, frac));
           var x = frac * 1000;
           var y = yAtX(x);
-          var idx = Math.round(frac * (track0.points.length - 1));
-          var label = hasReadout ? readoutLabel(frac, y) : null;
+          var point = pointAtFraction(frac);
+          var label = hasReadout ? readoutLabel(frac, y, point) : null;
           charts.forEach(function(c){
             c.line.setAttribute('x1', x); c.line.setAttribute('x2', x);
             c.line.setAttribute('opacity', '1');
             c.dot.setAttribute('cx', x); c.dot.setAttribute('cy', y);
             c.dot.setAttribute('opacity', '1');
             if (c.readout && label) {
+              // El SVG se encoge en movil; la lectura debe conservar 12 px.
+              var fontSize = Math.max(23, 12000 / Math.max(1, c.svg.getBoundingClientRect().width));
+              c.readoutText.setAttribute('font-size', fontSize);
               c.readoutText.textContent = label;
               // Measured after the text is set (its width depends on the
               // string), then the background rect and the whole group are
@@ -1038,16 +1558,18 @@
               var textWidth = c.readoutText.getComputedTextLength();
               var boxWidth = textWidth + 32;
               var boxX = Math.max(4, Math.min(1000 - boxWidth - 4, x - boxWidth / 2));
-              var boxY = Math.max(4, y - 48);
+              var boxHeight = fontSize + 15;
+              var boxY = Math.max(4, y - boxHeight - 10);
+              c.readoutBg.setAttribute('height', boxHeight);
               c.readoutBg.setAttribute('x', boxX);
               c.readoutBg.setAttribute('y', boxY);
               c.readoutBg.setAttribute('width', boxWidth);
               c.readoutText.setAttribute('x', boxX + boxWidth / 2);
-              c.readoutText.setAttribute('y', boxY + 25);
+              c.readoutText.setAttribute('y', boxY + fontSize + 2);
               c.readout.setAttribute('opacity', '1');
             }
           });
-          mapCursor.setLatLng(track0.points[idx]);
+          mapCursor.setLatLng(point);
           mapCursor.setStyle({ opacity: 1, fillOpacity: 1 });
         }
         function hideCursor(){
@@ -1075,7 +1597,7 @@
               var d = Math.pow(p[0] - e.latlng.lat, 2) + Math.pow(p[1] - e.latlng.lng, 2);
               if (d < best) { best = d; nearest = i; }
             }
-            showAtFraction(nearest / (track0.points.length - 1));
+            showAtFraction(profileLength > 0 ? profileDistances[nearest] / profileLength : 0);
           });
           trackLine.on('mouseout', hideCursor);
         }
@@ -1117,20 +1639,334 @@
     // Solo con zoom alto (el visitante ya se ha acercado a una zona
     // concreta) se muestran las etiquetas; a la vista de conjunto quedarian
     // 46 numeros amontonados sobre Trabakua.
-    function updateLabelVisibility(){
-      var zoomOk = map.getZoom() >= LABEL_MIN_ZOOM;
-      Object.keys(hrefToLabel).forEach(function(href){
-        var labelEl = hrefToLabel[href].getElement();
-        if (!labelEl) return;
-        var show = zoomOk && labelFilterVisible[href] !== false;
-        labelEl.style.opacity = show ? '1' : '0';
-        labelEl.style.pointerEvents = show ? '' : 'none';
+
+  /* ------------------------------------------------------------------ */
+  /* La tira de rutas que tienes delante.
+   *
+   * Lo pidio el autor: «si no, es dificil saber si estoy en Mallabia, si
+   * estoy en Durango o donde, cuando tengo el zoom aumentado». Con el mapa
+   * muy cerca solo se ven dos trazados sin nombre, y el mapa de fondo no
+   * siempre rotula el pueblo.
+   *
+   * Asi que debajo del mapa va una tira con las rutas que caben en lo que
+   * se esta mirando, con su nombre y sus kilometros, y **cambia sola al
+   * mover o al acercar**. Si entran dos, salen dos; si al subir al norte
+   * entran tres, salen esas tres. Tocar una abre su ficha, igual que tocar
+   * su pastilla de kilometros.
+   *
+   * Se cuelga del mismo sitio que la pastilla de las capas (hermana del
+   * contenedor del mapa) y se rellena desde updateLabelVisibility(), que ya
+   * corre en zoomend y en moveend: el conjunto que calcula para agrupar es
+   * exactamente el que hace falta aqui, asi que no se recorre nada dos veces.
+   */
+  // SIN TOPE. Lo hubo, y era el propio fallo: comprobadas las 66 una a una,
+  // con tope 12 veinte rutas tenian el track a la vista y se quedaban sin
+  // ficha, y con 25 todavia cuatro. La regla que pidio el autor es «si veo
+  // la ruta trazada, que me salga su plantilla», y un tope la rompe. Cuesta
+  // unas decenas de nodos y las fotos ya estan cargadas; van ordenadas por
+  // cercania al centro, asi que las que de verdad miras son las primeras.
+  var TOPE_TIRA = 999;
+
+  function creaTira(){
+    if (tiraCercanas || !esPortada) return;
+    tiraCercanas = document.createElement('div');
+    tiraCercanas.className = 'map-cercanas';
+    tiraCercanas.setAttribute('role', 'list');
+    tiraCercanas.setAttribute('aria-label',
+      isEu ? 'Ikusgai dauden ibilbideak' : 'Rutas que se ven ahora');
+    // DESPUES de la caja del mapa, no dentro: la caja tiene el alto fijo
+    // (aspect-ratio) y lo que se le mete debajo queda recortado y no se ve.
+    var cajaMapa = el.closest ? el.closest('.route-map-box') : null;
+    var padre = cajaMapa && cajaMapa.parentElement;
+    if (padre && padre.insertBefore) {
+      padre.insertBefore(tiraCercanas, cajaMapa.nextSibling || null);
+    } else {
+      (padre || el.parentElement).appendChild(tiraCercanas);
+    }
+  }
+
+  // Que rutas se estan VIENDO. No vale mirar donde cae su pastilla de
+  // kilometros, que va en el punto medio del recorrido: el autor se quejo de
+  // que «no veo las plantillas de bajada a Unbe y a Ipurua, por mucho que veo
+  // la ruta trazada no me abre ni una». Y tenia razon -- Unbe e Ipurua no son
+  // rutas, son sitios por los que pasan galdaramino y karabieta, y mirando
+  // ese tramo el punto medio de esas rutas queda fuera de la pantalla.
+  //
+  // Asi que se mira el propio track: si alguno de sus puntos cae en lo que se
+  // ve, esa ruta tiene ficha. Son 66 rutas de unos 220 puntos y sale en
+  // cuanto encuentra el primero, asi que no se nota.
+  //
+  // Lo que no coge: un track que cruce la pantalla de lado a lado sin ningun
+  // punto dentro. A estos zooms no pasa -- los puntos van cada 10 m.
+  function rutasEnVista(){
+    var caja = null;
+    if (map.getBounds) { try { caja = map.getBounds().pad(0.08); } catch (e) { caja = null; } }
+    return Object.keys(hrefToLine).filter(function(href){
+      if (labelFilterVisible[href] === false) return false;
+      if (labelSoloHref && href !== labelSoloHref) return false;
+      var r = hrefToLine[href];
+      if (!caja || !caja.contains || !r.puntos) return true;
+      for (var i = 0; i < r.puntos.length; i++) {
+        if (caja.contains(r.puntos[i])) return true;
+      }
+      return false;
+    });
+  }
+
+  function pintaCercanas(hrefs){
+    if (!esPortada) return;
+    creaTira();
+    if (!tiraCercanas) return;
+    // Con una ficha abierta manda la ficha, y dibujando manda el trazo.
+    var fuera = labelSoloHref || el.classList.contains('is-drawing') || !hrefs.length;
+    if (fuera) {
+      if (firmaTira !== null) { tiraCercanas.innerHTML = ''; firmaTira = null; }
+      tiraCercanas.hidden = true;
+      return;
+    }
+    // Primero las mas cercanas al centro de lo que se esta mirando: son las
+    // que el visitante tiene de verdad delante.
+    var orden = hrefs.slice();
+    if (map.getCenter && map.distance) {
+      var centro = map.getCenter();
+      orden.sort(function(a, b){
+        return map.distance(centro, hrefToLabel[a].getLatLng()) -
+               map.distance(centro, hrefToLabel[b].getLatLng());
       });
-      if (zoomOk) repositionLabels();
+    }
+    orden = orden.slice(0, TOPE_TIRA);
+    // Se repinta entera solo si cambia lo que hay: al arrastrar sin que
+    // entre ni salga ninguna no se toca el DOM ni se pierde el desplazado.
+    // La firma va en una variable del cierre y NO en tiraCercanas.dataset:
+    // el DOM de mentira de scripts/test_ui.cjs devuelve un dataset NUEVO en
+    // cada lectura, asi que lo escrito se perdia y ademas no tiene
+    // childNodes -- entre las dos cosas el test se colgaba sin imprimir
+    // nada, que parecia falta de memoria y no lo era.
+    var firma = orden.join('|');
+    if (firma === firmaTira) { tiraCercanas.hidden = false; return; }
+    firmaTira = firma;
+    tiraCercanas.innerHTML = '';
+    var puestas = 0;
+    orden.forEach(function(href){
+      var r = hrefToLine[href];
+      if (!r || !r.nombre) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'map-cercana is-' + (r.activity === 'bici' ? 'bici' : 'pie');
+      b.setAttribute('role', 'listitem');
+      if (r.foto) {
+        // La misma imagen que ya muestra su tarjeta en la lista: el
+        // navegador la tiene cargada, asi que no descarga nada nuevo.
+        var im = document.createElement('img');
+        im.className = 'map-cercana-foto';
+        im.src = r.foto;
+        im.alt = '';
+        im.loading = 'lazy';
+        im.decoding = 'async';
+        b.appendChild(im);
+      }
+      var txt = document.createElement('span');
+      txt.className = 'map-cercana-txt';
+      var n = document.createElement('span');
+      n.className = 'map-cercana-nombre';
+      n.textContent = r.nombre;
+      txt.appendChild(n);
+      var datos = [];
+      if (r.km) datos.push(r.km.replace('.', ',') + ' km');
+      if (r.desnivel) datos.push('+' + r.desnivel.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' m');
+      if (datos.length) {
+        var d = document.createElement('span');
+        d.className = 'map-cercana-datos';
+        d.textContent = datos.join(' \u00b7 ');
+        txt.appendChild(d);
+      }
+      b.appendChild(txt);
+      b.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (r.abre) r.abre();
+      });
+      tiraCercanas.appendChild(b);
+      puestas++;
+    });
+    tiraCercanas.hidden = !puestas;
+  }
+
+    // Las pastillas de kilometros, agrupadas cuando se pisan.
+    //
+    // Hasta ahora no salian por debajo del zoom 12, y con razon: medidos los
+    // puntos medios de las 66 rutas, al zoom de apertura (10) caben TODOS en
+    // un recuadro de 145x177 px, y una pastilla de «32,46 km» mide 76x24. Son
+    // 717 parejas pisandose. No es un problema de codigo: las rutas viven en
+    // un valle de seis kilometros y a esa escala caben en un sello.
+    //
+    //   z10  145x177 px   717 parejas se pisan
+    //   z11  291x354 px   245
+    //   z12  581x707 px    69
+    //   z13 1163x1414 px   23
+    //
+    // La salida es la que usa AllTrails y que el autor señalo en su captura:
+    // cuando varias se pisan, se juntan en una que dice cuantas hay («18
+    // rutas»), y al tocarla el mapa se acerca a ellas. Asi el mapa de
+    // conjunto ya dice algo en vez de estar mudo hasta el zoom 12.
+    var RADIO_GRUPO = 46;       // a menos de esto, dos puntos van al mismo grupo
+
+    function candidatasKm(){
+      // Las que podrian salir: ni filtradas fuera, ni tapadas por una ficha,
+      // y **dentro de lo que se esta mirando**. Lo pidio el autor: «que
+      // aparezcan las pastillas que estan en esa zona»; al moverse al norte,
+      // las de alli. Asi un grupo no se queda diciendo «38 rutas» cuando de
+      // esas 38 solo quedan cuatro en pantalla. El margen del 15 % evita que
+      // una pastilla aparezca y desaparezca al rozar el borde.
+      // getBounds/pad existen en Leaflet de verdad; la comprobacion es por si
+      // el mapa todavia no tiene vista (o por un Leaflet reducido, como el de
+      // scripts/test_ui.cjs), para no tumbar la pagina por una pastilla.
+      var caja = null;
+      if (esPortada && map.getBounds) {
+        try { caja = map.getBounds().pad(0.15); } catch (e) { caja = null; }
+      }
+      return Object.keys(hrefToLabel).filter(function(href){
+        if (labelFilterVisible[href] === false) return false;
+        if (labelSoloHref && href !== labelSoloHref) return false;
+        return !caja || !caja.contains || caja.contains(hrefToLabel[href].getLatLng());
+      });
+    }
+
+    function agrupaKms(hrefs){
+      // agrupado codicioso por cercania en pixeles: se recorre en orden y
+      // cada una cae en el primer grupo que la acepte. Con 66 puntos es
+      // instantaneo y da grupos estables entre repintados.
+      var pts = hrefs.map(function(h){
+        return map.latLngToContainerPoint(hrefToLabel[h].getLatLng());
+      });
+      var grupos = [];
+      for (var i = 0; i < hrefs.length; i++) {
+        var metida = false;
+        for (var g = 0; g < grupos.length && !metida; g++) {
+          var dx = pts[i].x - grupos[g].x, dy = pts[i].y - grupos[g].y;
+          if (dx * dx + dy * dy < RADIO_GRUPO * RADIO_GRUPO) {
+            grupos[g].miembros.push(i);
+            // el centro se recalcula para que el grupo no se vaya con el
+            // primero que entro
+            grupos[g].x += (pts[i].x - grupos[g].x) / grupos[g].miembros.length;
+            grupos[g].y += (pts[i].y - grupos[g].y) / grupos[g].miembros.length;
+            metida = true;
+          }
+        }
+        if (!metida) grupos.push({ x: pts[i].x, y: pts[i].y, miembros: [i] });
+      }
+      // Segunda pasada: el radio de arriba junta PUNTOS, pero una pastilla
+      // «32 rutas» mide unos 76x24, asi que dos centros a 50 px todavia se
+      // pisan. Se funden los grupos cuyas pastillas se tocarian, y se repite
+      // hasta que no quede ninguno -- medido, con esto se pasa de 8 parejas
+      // solapadas a cero al zoom de apertura.
+      var ANCHO = 84, ALTO = 28, cambio = true;
+      while (cambio) {
+        cambio = false;
+        for (var a = 0; a < grupos.length && !cambio; a++) {
+          for (var c = a + 1; c < grupos.length && !cambio; c++) {
+            if (Math.abs(grupos[a].x - grupos[c].x) < ANCHO &&
+                Math.abs(grupos[a].y - grupos[c].y) < ALTO) {
+              var na = grupos[a].miembros.length, nc = grupos[c].miembros.length;
+              grupos[a].x = (grupos[a].x * na + grupos[c].x * nc) / (na + nc);
+              grupos[a].y = (grupos[a].y * na + grupos[c].y * nc) / (na + nc);
+              grupos[a].miembros = grupos[a].miembros.concat(grupos[c].miembros);
+              grupos.splice(c, 1);
+              cambio = true;
+            }
+          }
+        }
+      }
+      return grupos;
+    }
+
+    function pintaGrupos(grupos, hrefs){
+      if (grupoCapa) { map.removeLayer(grupoCapa); grupoCapa = null; }
+      var conVarias = grupos.filter(function(g){ return g.miembros.length > 1; });
+      if (!conVarias.length || !L.layerGroup || !map.containerPointToLatLng) return;
+      grupoCapa = L.layerGroup();
+      conVarias.forEach(function(g){
+        var puntos = g.miembros.map(function(i){ return hrefToLabel[hrefs[i]].getLatLng(); });
+        var cuantas = g.miembros.length;
+        var texto = cuantas + ' ' + (isEu ? 'ibilbide' : 'rutas');
+        // De Leaflet.markercluster se toma la idea, no el codigo: la pastilla
+        // crece con lo que agrupa, asi se ve de un vistazo donde esta el
+        // grueso. La libreria en si seria un canon para matar moscas -- son
+        // 66 puntos -- y lleva cinco años sin publicar version.
+        var talla = cuantas >= 20 ? ' es-grande' : (cuantas >= 6 ? ' es-media' : '');
+        var m = L.marker(map.containerPointToLatLng(L.point(g.x, g.y)), {
+          icon: L.divIcon({
+            className: 'route-dist-label route-group-label' + talla,
+            html: '<span class="route-dist-label-inner">' + texto + '</span>',
+            iconSize: null
+          }),
+          title: texto,
+          keyboard: true
+        });
+        m.on('click', function(e){
+          L.DomEvent.stopPropagation(e);
+          userMoved = true;
+          map.fitBounds(L.latLngBounds(puntos).pad(0.35), {
+            maxZoom: 15,
+            animate: !(window.matchMedia &&
+                       window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+          });
+        });
+        grupoCapa.addLayer(m);
+      });
+      grupoCapa.addTo(map);
+    }
+
+    function updateLabelVisibility(){
+      var hrefs = candidatasKm();
+      // En una ficha de ruta hay una sola etiqueta: ahi no hay nada que
+      // agrupar y se deja como estaba.
+      if (!esPortada) {
+        var zoomOk = map.getZoom() >= LABEL_MIN_ZOOM;
+        Object.keys(hrefToLabel).forEach(function(href){
+          var e1 = hrefToLabel[href].getElement();
+          if (!e1) return;
+          var ver = zoomOk && hrefs.indexOf(href) !== -1;
+          e1.style.opacity = ver ? '1' : '0';
+          e1.style.pointerEvents = ver ? '' : 'none';
+        });
+        if (zoomOk) repositionLabels();
+        return;
+      }
+      var grupos = agrupaKms(hrefs);
+      var sueltas = {};
+      grupos.forEach(function(g){
+        if (g.miembros.length === 1) sueltas[hrefs[g.miembros[0]]] = true;
+      });
+      Object.keys(hrefToLabel).forEach(function(href){
+        var e2 = hrefToLabel[href].getElement();
+        if (!e2) return;
+        var ver = sueltas[href] === true;
+        e2.style.opacity = ver ? '1' : '0';
+        e2.style.pointerEvents = ver ? '' : 'none';
+      });
+      pintaGrupos(grupos, hrefs);
+      // La tira enseña **las rutas que se estan viendo**, con el track dentro
+      // de la pantalla. Antes iba por la pastilla de kilometros y se perdian
+      // las que cruzan la vista con el punto medio fuera -- ver rutasEnVista.
+      pintaCercanas(rutasEnVista());
+      repositionLabels();
     }
 
     map.on('click', closePanel);
     map.on('zoomend', updateLabelVisibility);
+    // Gancho para filters.js: al pasar de lista a mapa la caja cambia de
+    // tamano por CSS, y Leaflet no se entera solo.
+    if (esPortada) {
+      window.__avisaMapaTamano = function(){
+        setTimeout(function(){
+          map.invalidateSize({ animate: false });
+          updateLabelVisibility();
+        }, 60);
+      };
+    }
+    // Y tambien al desplazar: lo que se agrupa es lo que hay delante, asi
+    // que al moverse cambia. Son 66 puntos, el recalculo es instantaneo.
+    if (esPortada) map.on('moveend', updateLabelVisibility);
 
     // Cualquier cambio de tamano del contenedor (abrir el mapa grande, girar
     // el movil, o la barra del navegador que aparece y desaparece al hacer
@@ -1171,6 +2007,17 @@
       expandBtn.setAttribute('aria-label', expanded ?
         expandBtn.dataset.labelCollapse : expandBtn.dataset.labelExpand);
     }
+    // La herramienta de dibujar un trazado (js/trazado.js, solo en la
+    // portada) se engancha aqui: necesita el mapa ya montado, los tracks con
+    // los que construye su red y la caja. Va por evento y no por una
+    // variable global para que este fichero no sepa nada de ella: si
+    // trazado.js no esta cargado, no pasa absolutamente nada.
+    try {
+      document.dispatchEvent(new CustomEvent('mapa:listo', { detail: {
+        map: map, L: L, datos: data, esPortada: esPortada, caja: el,
+        cerrarPanel: closePanel
+      }}));
+    } catch (e) {}
     el.setAttribute('aria-busy', 'false');
     loading = false;
     }).catch(function(err){

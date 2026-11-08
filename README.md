@@ -1,31 +1,39 @@
-# Rutas Mallabia
+# Rutas Mallabia — trabakutik.com
 
-Sitio de rutas del pueblo de Mallabia (Bizkaia) — BTT y senderismo, documentadas sobre el terreno con datos reales (GPX, fotos propias).
+Sitio de rutas de senderismo y e-bike por Mallabia (Bizkaia) y alrededores,
+documentadas sobre el terreno con datos reales: tracks GPX grabados y fotos
+propias. En castellano y euskera.
 
-Publicado en: https://trabakutik.com/
+Publicado en **https://trabakutik.com/** con GitHub Pages, desde la rama `main`
+y sirviendo la raíz del repositorio.
 
 ## Cómo está hecho
 
-`index.html` (en la raíz, lo que sirve GitHub Pages) es un único archivo autocontenido: dos páginas completas (inicio y la ficha de la ruta Trabakua) embebidas dentro, con navegación interna entre ellas vía `postMessage` — no son enlaces normales entre páginas.
+Sitio estático: HTML, CSS y JavaScript escritos a mano, montados por unos
+scripts de Python (solo biblioteca estándar). Sin framework, sin servidor y sin
+base de datos. Cada ruta es una página de verdad (`urko.html`, `kalamua.html`…),
+y hay 61.
 
-El código fuente editable de verdad está en `src/`:
-
-- `mallabia_head.html` / `mallabia_tail.html` — página de inicio
-- `trabakua_head.html` / `trabakua_tail.html` — ficha de la ruta Trabakua
-- `fonts/inline_fonts.css` — tipografías (Fraunces, Karla, IBM Plex Mono) auto-alojadas como `@font-face` en base64, compartidas por ambas páginas
-- `trabakua.gpx` — track GPX real del que salen la distancia, el desnivel y el perfil de elevación
-- `build.py` — junta todo lo anterior y genera `index.html`
-
-**Para retomar el trabajo en una sesión nueva**: clona este repo, y para reconstruir el sitio tras editar algo en `src/`, ejecuta:
+**Los `.html`, `.css` y `.js` de la raíz son generados: no se editan a mano.**
+Se editan los fuentes de `src/` y se vuelve a construir:
 
 ```
-python3 src/build.py
+python3 src/i18n/make_eu.py    # regenera el euskera desde src/i18n/eu.py
+python3 src/build.py           # monta el sitio en la raíz
+python3 scripts/check_site.py  # 26.451 comprobaciones sobre lo construido
 ```
 
-Eso regenera `index.html` en la raíz. Hay que confirmarlo con git y hacer push para que se publique.
+Y antes de publicar, la verificación entera, que abre el sitio en un navegador
+de verdad:
 
-### Aviso importante para quien edite esto (humano o IA)
+```
+python3 .claude/skills/run-rutas-mallabia/driver.py verifica
+```
 
-`src/trabakua_tail.html`, `src/mallabia_tail.html` y `src/fonts/inline_fonts.css` contienen imágenes y tipografías embebidas en base64 — líneas de cientos de miles de caracteres. **No los abras con un editor de texto normal ni los leas enteros** con una IA (se satura el contexto o el propio editor). Para inspeccionarlos, usar un script (Python, por ejemplo) que filtre líneas por longitud (`if len(line) < 300`) para encontrar solo las líneas de código de verdad, y editar por reemplazo de texto (no a mano) cuando el archivo contiene base64.
+## Para seguir trabajando
 
-Antes de dar por bueno un cambio de maquetación (CSS, tamaños, mapas embebidos), verificar con Playwright en varios anchos de pantalla (320, 390, 768, 1280px como mínimo) que no hay desbordamiento horizontal, y revisar capturas de pantalla — no solo el código — antes de publicar.
+**[GUIA.md](GUIA.md)** lo cuenta todo: la estructura, las herramientas de
+`scripts/`, cómo se mete una ruta nueva paso a paso, las reglas de contenido
+—que son lo importante— y lo que está decidido y no se vuelve a plantear.
+
+`CLAUDE.md` es lo mismo con más detalle técnico, para un asistente de código.

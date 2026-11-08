@@ -105,21 +105,45 @@ def assemble_page(name, suffix=""):
     return read(f"{name}_head{suffix}.html") + read(f"{name}_tail{suffix}.html")
 
 
+# Navegación GPS: enlace único generado en cada ficha con GPX real.
+# Mantenerlo en el generador, nunca modificar las páginas publicadas a mano.
+def add_navigation_link(page_html, page, lang):
+    if not os.path.isfile(os.path.join(HERE, f"{page}.gpx")):
+        return page_html
+    label = "Navegar con la app" if lang == "es" else "Aplikazioarekin nabigatu"
+    destination = (
+        "https://eltzubi.github.io/trabakutik-gps-pruebas/nuevo.html"
+        f"?ruta={page}"
+    )
+    link = (
+        '<div class="gps-nav-entry" style="padding:12px 15px 0;'
+        'max-width:920px;margin:0 auto">'
+        f'<a href="{destination}" class="gps-nav-launch" '
+        'style="display:inline-flex;align-items:center;gap:8px;'
+        'border:1px solid #64dcf4;border-radius:999px;'
+        'padding:11px 17px;background:#102d3b;color:#d7fbff;'
+        'font:600 13px system-ui,sans-serif;text-decoration:none">'
+        f'&#10148; {label}</a></div>'
+    )
+    return page_html.replace("<main>", "<main>" + link, 1)
+
+
 # First entry is home; it's the one written to index.html.
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"]
+PAGES = ["mallabia", "lekeitio", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "artetaberanoarandono", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "trabakuadeba", "trabakuaondarroa", "askakosantakataline", "garaikanala", "aixolaintxorta", "zengotitamaguna", "zengotitagarai", "lejarreta", "zaldutrail", "preguntas", "agua", "aviso-legal"]
 # lang code -> (source-file suffix, output-file suffix)
 LANGS = {"es": ("", ""), "eu": (".eu", ".eu")}
 
 SITE_URL = "https://trabakutik.com/"
 
-# La portada es la excepcion: lo que sirve trabakutik.com/ es el euskera, asi
-# que el euskera se lleva el index.html a secas y el castellano se va a
-# index.es.html. Antes la raiz servia el castellano y redirigia al euskera por
-# JavaScript, lo que dejaba a Google con dos senales contradictorias (el
-# canonical decia una cosa y la redireccion llevaba a otra); sirviendo el
-# euskera de verdad en la raiz no hace falta redirigir nada.
+# La portada es la excepcion: lo que sirve trabakutik.com/ es el castellano,
+# asi que el castellano se lleva el index.html a secas y el euskera se va a
+# index.eu.html. La raiz es la URL que se teclea, la que se comparte y la que
+# recibe los enlaces de fuera, y lo que se busca es casi todo en castellano;
+# el 22-sep-2026 se probo al reves y el 22-oct se volvio. No hay redireccion
+# por JavaScript en medio: cada idioma se sirve de verdad en su direccion, y
+# las que quedan atras llevan su pagina puente (write_legacy_es_home).
 HOME = "mallabia"
-HOME_OUT = {"eu": "index.html", "es": "index.es.html"}
+HOME_OUT = {"es": "index.html", "eu": "index.eu.html"}
 
 
 def out_name(page, lang):
@@ -129,43 +153,29 @@ def out_name(page, lang):
 
 
 def retarget_home_links(page_html, lang):
-    """Reapunta los enlaces a la portada segun el idioma de la pagina.
+    """Ajusta la portada de la salida en euskera.
 
-    Las fuentes en castellano enlazan la portada como index.html y el
-    conmutador de idioma como index.eu.html. Con el euskera en la raiz eso se
-    invierte: en la salida ES la portada propia pasa a ser index.es.html y el
-    conmutador apunta a la raiz; en la salida EU los index.html que dejo
-    make_eu.py ya son la portada correcta y solo hay que sacar el conmutador
-    hacia el castellano.
+    Las fuentes se escriben en castellano enlazando la portada como
+    index.html y el euskera como index.eu.html, que es exactamente lo que
+    toca ahora en la salida ES: ahi no hay nada que reapuntar. En la salida
+    EU los enlaces los cambia ya EU_OF en make_eu.py; lo unico que queda es
+    la portada declarandose a si misma, porque en el fuente lo hace con la
+    raiz a secas y la raiz es la castellana.
     """
     if lang == "es":
-        # De golpe, no en dos pasadas: reescribir primero index.html dejaria
-        # el index.eu.html del conmutador apuntando a un sitio que ya no toca.
-        page_html = re.sub(
-            r'href="index(\.eu)?\.html"',
-            lambda m: 'href="index.html"' if m.group(1) else 'href="index.es.html"',
-            page_html)
-        page_html = page_html.replace(
-            '<link rel="canonical" href="https://trabakutik.com/">',
-            '<link rel="canonical" href="https://trabakutik.com/index.es.html">')
-        page_html = page_html.replace(
-            '<meta property="og:url" content="https://trabakutik.com/">',
-            '<meta property="og:url" content="https://trabakutik.com/index.es.html">')
-        # La raiz sin nombre de fichero solo la usa la portada, asi que esto no
-        # toca el JSON-LD de ninguna otra pagina.
-        page_html = page_html.replace(
-            '"url": "https://trabakutik.com/",',
-            '"url": "https://trabakutik.com/index.es.html",')
         return page_html
-    # Las fichas con el tail EU escrito a mano (MANUAL_EU_PAGES en make_eu.py)
-    # no pasan por el swap de EU_OF, asi que enlazan la portada como
-    # index.eu.html, que ahora es solo la redireccion heredada.
-    page_html = page_html.replace('href="index.eu.html"', 'href="index.html"')
-    # El conmutador es ahora los dos idiomas a la vista, asi que el enlace al
-    # castellano es el <a> con hreflang="es": el unico de la pagina.
-    return page_html.replace(
-        '<a href="index.html" hreflang="es" lang="es"',
-        '<a href="index.es.html" hreflang="es" lang="es"')
+    # La raiz sin nombre de fichero solo la usa la portada, asi que esto no
+    # toca ni el canonical ni el JSON-LD de ninguna otra pagina.
+    for antes, despues in (
+        ('<link rel="canonical" href="https://trabakutik.com/">',
+         '<link rel="canonical" href="https://trabakutik.com/index.eu.html">'),
+        ('<meta property="og:url" content="https://trabakutik.com/">',
+         '<meta property="og:url" content="https://trabakutik.com/index.eu.html">'),
+        ('"url": "https://trabakutik.com/",',
+         '"url": "https://trabakutik.com/index.eu.html",'),
+    ):
+        page_html = page_html.replace(antes, despues)
+    return page_html
 
 
 # source asset -> file written at the repo root
@@ -175,11 +185,13 @@ ASSETS = {
     ("css", "home.css"): "home.css",
     ("css", "route.css"): "route.css",
     ("js", "app.js"): "js/app.js",
+    ("js", "info-panel.js"): "js/info-panel.js",
     ("js", "map.js"): "js/map.js",
     ("js", "filters.js"): "js/filters.js",
     ("js", "webmcp.js"): "js/webmcp.js",
     ("js", "weather.js"): "js/weather.js",
     ("js", "agua.js"): "js/agua.js",
+    ("js", "trazado.js"): "js/trazado.js",
 }
 
 # Los .woff2 reales que referencia fonts.css (url('fonts/xxx.woff2')) --
@@ -271,12 +283,14 @@ def home_cards(src_suffix):
     for href, activity, km, desnivel, rest_attrs, name, stats in pattern.findall(html_text):
         slug = href.replace(".eu.html", "").replace(".html", "")
         tiempo_match = re.search(r'data-tiempo-corriendo-min="(\d+)"', rest_attrs)
+        paseo_match = re.search(r'data-tiempo-paseando-min="(\d+)"', rest_attrs)
         cards[slug] = {
             "href": href,
             "activities": set(activity.split(",")),
             "km": float(km or 0),
             "desnivel": int(desnivel or 0),
             "tiempo_real": int(tiempo_match.group(1)) if tiempo_match else None,
+            "tiempo_paseo": int(paseo_match.group(1)) if paseo_match else None,
             "name": name.strip(),
             "stats": stats.strip(),
         }
@@ -756,7 +770,26 @@ def add_fecha_carrera(page_html, page, lang):
 # lo que sirve una fecha aqui. Se probo ponerla en cada ficha, sacada de la
 # hora del track, y el autor la quito: no quiere 57 fechas, quiere saber cual
 # es la ultima entrada. SE CAMBIA A MANO AL PUBLICAR UNA RUTA NUEVA.
-ULTIMA_ENTRADA = ("ixuakalamua", "2026-10-19")
+ULTIMA_ENTRADA = ("lekeitio", "2026-11-06")
+# El numero de rutas, escrito por el build y no a mano. Lo pidio el autor
+# despues de encontrarselo viejo: la pagina de preguntas decia «las 65 rutas»
+# cuando ya eran 66, y el comentario de la 404 seguia en 61. Cada vez que
+# entra una ruta habia que acordarse de siete sitios. Ahora las fuentes
+# escriben {{RUTAS}} y aqui se cambia por las que haya de verdad.
+#
+# La cuenta sale de data/trailhead.json, que es la lista de tracks que dibuja
+# el mapa de la portada: es justo de lo que hablan esos textos («caminos
+# grabados en alguna de las N rutas», «esconde los N trazados»). Y es el mismo
+# fichero del que sale el zip, asi que las dos cifras no se pueden separar.
+MARCA_RUTAS = "{{RUTAS}}"
+
+
+def cuantas_rutas():
+    return len(_trailhead())
+
+
+def pon_cuantas_rutas(page_html):
+    return page_html.replace(MARCA_RUTAS, str(cuantas_rutas()))
 
 
 def add_ultima_entrada(page_html, cards, lang):
@@ -1117,11 +1150,14 @@ def add_tourist_trip_properties(page_html, name):
 
 
 _CARD_RE = re.compile(
-    r'(<a class="route-card" href="[^"]+" data-activity="([^"]*)"'
+    # «route-card is-new»: la ruta mas nueva lleva una clase de mas y sin
+    # esto su tarjeta se quedaba sin la linea de tiempo (ver CLAUDE.md).
+    r'(<a class="route-card[^"]*" href="[^"]+" data-activity="([^"]*)"'
     r' data-distance-km="([^"]*)" data-desnivel-m="([^"]*)"[^>]*>)'
     r'([\s\S]*?)(</a>)')
 _TAGS_RE = re.compile(r'(<p class="route-card-tags">.*?</p>)')
 _TIEMPO_REAL_RE = re.compile(r'data-tiempo-corriendo-min="(\d+)"')
+_TIEMPO_PASEO_RE = re.compile(r'data-tiempo-paseando-min="(\d+)"')
 
 # Ritmo a pie: 6 km/h en llano + 10 min por cada 100 m de desnivel positivo
 # (regla de Naismith moderada). No es el ritmo del autor -- las rutas de
@@ -1174,9 +1210,11 @@ def add_estimated_time(page_html, lang):
     """
     label_pie = '<span class="k">A pie</span>'
     label_corriendo = '<span class="k">Corriendo</span>'
+    label_paseo = '<span class="k">Paseando</span>'
     if lang == "eu":
         label_pie = eu.COMMON[label_pie]
         label_corriendo = eu.COMMON[label_corriendo]
+        label_paseo = eu.COMMON[label_paseo]
 
     def repl(m):
         open_tag, activity, km, desnivel, body, close_tag = m.groups()
@@ -1188,6 +1226,10 @@ def add_estimated_time(page_html, lang):
         if treal:
             corriendo = _fmt_minutes_exact(int(treal.group(1)))
             nuevo += f' &middot; {label_corriendo} <span class="v">{corriendo}</span>'
+        tpaseo = _TIEMPO_PASEO_RE.search(open_tag)
+        if tpaseo:
+            paseo = _fmt_minutes_exact(int(tpaseo.group(1)))
+            nuevo += f' &middot; {label_paseo} <span class="v">{paseo}</span>'
         body = _TAGS_RE.sub(
             lambda t: f'{t.group(1)}\n          <p class="route-card-time">{nuevo}</p>',
             body, count=1)
@@ -1210,14 +1252,19 @@ def add_route_facts_time(page_html, page, cards, lang):
         return page_html
     label_pie = '<span class="k">A pie</span>'
     label_corriendo = '<span class="k">Corriendo</span>'
+    label_paseo = '<span class="k">Paseando</span>'
     if lang == "eu":
         label_pie = eu.COMMON[label_pie]
         label_corriendo = eu.COMMON[label_corriendo]
+        label_paseo = eu.COMMON[label_paseo]
     rango = estimate_walk_time(card["km"], card["desnivel"])
     nuevo = f'<div class="fact"><span class="v">{rango}</span>{label_pie}</div>'
     if card["tiempo_real"]:
         corriendo = _fmt_minutes_exact(card["tiempo_real"])
         nuevo += f'\n    <div class="fact"><span class="v">{corriendo}</span>{label_corriendo}</div>'
+    if card["tiempo_paseo"]:
+        paseo = _fmt_minutes_exact(card["tiempo_paseo"])
+        nuevo += f'\n    <div class="fact"><span class="v">{paseo}</span>{label_paseo}</div>'
     matches = list(_FACT_ITEM_RE.finditer(page_html))
     if len(matches) < 2:
         return page_html
@@ -1324,6 +1371,7 @@ def main():
     for lang, (src_suffix, out_suffix) in LANGS.items():
         for name in PAGES:
             page_html = assemble_page(name, src_suffix)
+            page_html = add_navigation_link(page_html, name, lang)
             page_html = add_ui_text(page_html, cards[lang], lang)
             check_entities(page_html, f"{name} [{lang}]")
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
@@ -1340,6 +1388,7 @@ def main():
                 page_html = add_weather(page_html, name, lang)
             page_html = add_fuentes(page_html, lang)
             page_html = add_fuentes_ficha(page_html, name, lang)
+            page_html = add_agua_a_la_leyenda(page_html, lang)
             page_html = add_estimated_time(page_html, lang)
             page_html = add_route_facts_time(page_html, name, cards[lang], lang)
             page_html = add_activity_color(page_html, name, cards[lang], lang)
@@ -1356,13 +1405,18 @@ def main():
             page_html = retarget_home_links(page_html, lang)
             page_html = add_cache_busting(page_html, versions)
             page_html = add_data_cache_busting(page_html)
+            page_html = pon_cuantas_rutas(page_html)
+            if MARCA_RUTAS[:2] in page_html:
+                raise SystemExit(f"{name} [{lang}]: ha quedado una marca sin sustituir")
             out_path = os.path.join(ROOT, out_name(name, lang))
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(page_html)
             print(f"wrote {out_path} ({len(page_html)} bytes) [{lang}]")
 
-    write_legacy_eu_home()
+    write_legacy_es_home()
+    write_legacy_redirects()
     write_offline_page(versions)
+    write_404_page(versions)
     write_service_worker(versions)
     escribe_rutas(cards)
     write_sitemap()
@@ -1463,6 +1517,29 @@ def add_fuentes_ficha(page_html, name, lang):
     return page_html.replace(marca, marca + f'\n           data-fuentes="{attr}"', 1)
 
 
+def add_agua_a_la_leyenda(page_html, lang):
+    """«Agua», con su gota azul, al final de la lista de puntos numerados.
+
+    En el mapa el agua es una gota azul y los puntos de referencia circulos
+    con un numero; la lista de debajo solo explicaba los numeros, asi que el
+    punto azul habia que adivinarlo o tocarlo. Ahora se nombra, con el mismo
+    dibujo y el mismo azul que el marcador.
+
+    Va en las dos listas de la pagina -- la de la cabecera y la del mapa --
+    y solo en las fichas que declaran alguna fuente, que son las que pintan
+    gotas. Se llama despues de add_fuentes_ficha, que es quien deja el
+    data-fuentes del que esto se fia.
+    """
+    if 'data-fuentes="' not in page_html:
+        return page_html
+    gota = ('<svg viewBox="0 0 24 24" aria-hidden="true">'
+            '<path d="M12 2.5c3.8 4.6 6 7.9 6 10.6a6 6 0 0 1-12 0c0-2.7 2.2-6 6-10.6z"/></svg>')
+    texto = "Ura" if lang == "eu" else "Agua"
+    renglon = f' <span class="elev-legend-item"><span class="gota">{gota}</span>{texto}</span>'
+    return re.sub(r'(<div class="elev-legend">.*?)</div>',
+                  lambda m: m.group(1) + renglon + '</div>', page_html, flags=re.S)
+
+
 _fuentes_cache = None
 
 
@@ -1478,8 +1555,8 @@ def add_manifest(lang):
     """El manifest y el color de barra, en cada pagina.
 
     Hay uno por idioma y solo por el start_url: quien instale la web desde la
-    version en castellano tiene que abrirla en castellano, no en la portada en
-    euskera que cuelga de la raiz.
+    version en euskera tiene que abrirla en euskera, no en la portada en
+    castellano que cuelga de la raiz.
     """
     nombre = "manifest.webmanifest" if lang == "eu" else "manifest.es.webmanifest"
     return (f'<link rel="manifest" href="{nombre}">\n'
@@ -1493,6 +1570,28 @@ def write_offline_page(versions):
     with open(os.path.join(ROOT, "offline.html"), "w", encoding="utf-8") as f:
         f.write(body)
     print("wrote offline.html")
+
+
+def write_404_page(versions):
+    """La pagina que sirve GitHub Pages ante cualquier direccion que no existe.
+
+    Una sola para los dos idiomas, como offline.html: Pages solo admite un
+    404.html y no sabe de idiomas. Lleva el buscador de todas las rutas sobre
+    data/rutas.json, que es lo unico util que se le puede ofrecer a quien
+    llega por un enlace roto. Pages la devuelve con estado 404 de verdad, asi
+    que no hay riesgo de que Google la tome por una pagina buena.
+    """
+    body = read("404.html")
+    body = add_cache_busting(body, versions)
+    # La 404 se escribe fuera del bucle de paginas, asi que la marca hay que
+    # cambiarla aqui tambien: sin esto el comentario se quedaba viejo (decia
+    # 61 cuando ya eran 66) y nadie lo miraba.
+    body = pon_cuantas_rutas(body)
+    if MARCA_RUTAS[:2] in body:
+        raise SystemExit("404.html: ha quedado una marca sin sustituir")
+    with open(os.path.join(ROOT, "404.html"), "w", encoding="utf-8") as f:
+        f.write(body)
+    print("wrote 404.html")
 
 
 # Lo que el service worker guarda nada mas instalarse: la tipografia, los
@@ -1522,15 +1621,16 @@ def write_service_worker(versions):
     print(f"wrote sw.js (concha {version}, {len(concha)} ficheros) + manifests")
 
 
-def write_legacy_eu_home():
-    """index.eu.html: la portada en euskera cuando no estaba en la raiz.
+def write_legacy_es_home():
+    """index.es.html: la portada en castellano mientras el euskera tuvo la raiz.
 
-    Lleva tiempo indexada y compartida, asi que no puede quedarse en un 404 al
-    mudar el euskera a la raiz. El canonical le dice a Google cual es ahora la
-    buena y el refresh lleva a la persona alli sin que tenga que hacer nada.
+    Estuvo publicada del 22-sep al 22-oct-2026 y Google la indexo, asi que no
+    puede quedarse en un 404 al volver el castellano a la raiz. El canonical
+    le dice a Google cual es ahora la buena y el refresh lleva a la persona
+    alli sin que tenga que hacer nada.
     """
     html = (
-        '<!doctype html>\n<html lang="eu">\n<head>\n<meta charset="utf-8">\n'
+        '<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         f'<link rel="canonical" href="{SITE_URL}">\n'
         # El canonical va absoluto porque es la URL definitiva que se le declara
@@ -1538,13 +1638,51 @@ def write_legacy_eu_home():
         # sitio desde otro sitio (una vista previa local, github.io).
         '<meta http-equiv="refresh" content="0; url=./">\n'
         "<title>Trabakutik</title>\n</head>\n<body>\n"
-        '<p><a href="./">Trabakutik &mdash; Mallabiako ibilbideak</a></p>\n'
+        '<p><a href="./">Trabakutik &mdash; Rutas de Mallabia</a></p>\n'
         "</body>\n</html>\n"
     )
-    out_path = os.path.join(ROOT, "index.eu.html")
+    out_path = os.path.join(ROOT, "index.es.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
+
+
+# Paginas que estuvieron publicadas, se quitaron y Google todavia manda gente
+# a ellas. Cada una: el fichero, el idioma y a donde lleva ahora.
+#
+#   historias: «Rutas como historias», la vista inmersiva a pantalla completa.
+#   Vivio del 22-ago al 4-sep-2026. En Search Console sigue recibiendo visitas
+#   tres meses despues. Lo que buscaba esa gente son las rutas, y las rutas
+#   estan en la portada, asi que ahi van.
+#
+# El 404.html recoge todo lo demas; esto es solo para lo que tiene un destino
+# mejor que «no esta».
+HEREDADAS = (
+    ("historias.html",    "es", "./",             "Trabakutik &mdash; Rutas de Mallabia"),
+    ("historias.eu.html", "eu", "index.eu.html", "Trabakutik &mdash; Mallabiako ibilbideak"),
+)
+
+
+def write_legacy_redirects():
+    """Puentes de 356 bytes para las direcciones retiradas que aun tienen uso."""
+    for fichero, lang, destino, texto in HEREDADAS:
+        canonico = SITE_URL if destino == "./" else f"{SITE_URL}{destino}"
+        html = (
+            f'<!doctype html>\n<html lang="{lang}">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'<link rel="canonical" href="{canonico}">\n'
+            # Igual que index.eu.html: el canonical absoluto es lo que se le
+            # declara a Google, y el salto relativo para que funcione tambien
+            # sirviendo el sitio desde otro sitio.
+            f'<meta http-equiv="refresh" content="0; url={destino}">\n'
+            "<title>Trabakutik</title>\n</head>\n<body>\n"
+            f'<p><a href="{destino}">{texto}</a></p>\n'
+            "</body>\n</html>\n"
+        )
+        out_path = os.path.join(ROOT, fichero)
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(html)
+        print(f"wrote {out_path} ({len(html)} bytes) [redireccion heredada]")
 
 
 _fechas_cache = {}
@@ -1756,6 +1894,13 @@ def add_weather(page_html, name, lang):
     js/weather.js con lo que devuelve Open-Meteo, y si no hay cobertura o el
     servicio no responde se queda oculto y la ficha se ve igual que antes.
 
+    Debajo de los cuatro dias va el texto oficial de Euskalmet para hoy y
+    manana, en la lengua de la pagina. Lo pidio el autor despues de decir que
+    el pronostico «no da una»: Euskalmet es quien pronostica este valle, y su
+    fichero abierto no pide clave y deja llamarlo desde el navegador. Solo da
+    dos dias y sin probabilidad de lluvia, por eso no sustituye a Open-Meteo
+    sino que se suma.
+
     Open-Meteo es el unico servicio de fuera al que esta web le pide algo
     aparte de las teselas del mapa. Se eligio porque es gratis, sin clave y
     sin cuenta, y porque deja llamarlo desde el navegador: AEMET pide una
@@ -1776,6 +1921,7 @@ def add_weather(page_html, name, lang):
         "dias": [t(d) for d in DIAS_ES],
         "cielo": {clave: t(es) for clave, es in CIELOS},
         "lluvia": t("prob. de lluvia"),
+        "oficial": t("Previsi\u00f3n oficial de Euskalmet"),
     }
     datos = html.escape(json.dumps(textos, ensure_ascii=False), quote=True)
     bloque = (
@@ -1783,6 +1929,7 @@ def add_weather(page_html, name, lang):
         ' data-lat="%.4f" data-lon="%.4f" data-textos="%s">'
         '\n    <p class="eyebrow">%s</p>'
         '\n    <div class="weather-days" id="weatherDays"></div>'
+        '\n    <div class="weather-local" id="weatherLocal"></div>'
         '\n    <p class="weather-credit">%s</p>'
         '\n  </section>\n'
     ) % (punto[0], punto[1], datos, t("El tiempo en la salida"),
@@ -1854,9 +2001,9 @@ def write_sitemap():
     for name in PAGES:
         alternates = {lang: SITE_URL + out_name(name, lang) for lang in LANGS}
         if name == HOME:
-            # La portada en euskera es la raiz, no "index.html" (ver
+            # La portada en castellano es la raiz, no "index.html" (ver
             # mallabia_head.html): es la URL que se enlaza y se comparte.
-            alternates["eu"] = SITE_URL
+            alternates["es"] = SITE_URL
         for loc in alternates.values():
             links = "\n".join(
                 f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'

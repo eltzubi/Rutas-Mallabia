@@ -64,6 +64,9 @@ class Element {
   contains(el){return el===this || this.children.some(c=>typeof c!=='string'&&c.contains(el));}
   // Un nodo de texto aqui es la propia cadena, como en el resto del arbol
   // de prueba (ver attach()).
+  insertBefore(el,ref){if(el.parentElement)el.remove();el.parentElement=this;const i=ref?this.children.indexOf(ref):-1;if(i<0)this.children.push(el);else this.children.splice(i,0,el);return el;}
+  get firstChild(){return this.children[0]||null;}
+  get nextSibling(){const p=this.parentElement;if(!p)return null;const i=p.children.indexOf(this);return p.children[i+1]||null;}
   appendChild(el){if(typeof el==='string'){this.children.push(el);return el;}if(el.parentElement)el.remove();el.parentElement=this;this.children.push(el);return el;}
   remove(){this.parentElement.children=this.parentElement.children.filter(c=>c!==this);}
   getBoundingClientRect(){return {top:0,width:800,height:200};}
@@ -73,7 +76,7 @@ class Element {
   close(){this.open=false;this.dispatchEvent({type:'close'});}
 }
 const fixtures = new Map();
-function env(page='index.es.html', storage=new Map()) {
+function env(page='index.html', storage=new Map()) {
   if(!fixtures.has(page)) fixtures.set(page, JSON.parse(execFileSync('python3',[path.join(__dirname,'check_site.py'),'--fixture',page],{maxBuffer:8e6})));
   const doc=new Element(fixtures.get(page));
   function attach(el){el.ownerDocument=doc;el.children.filter(c=>typeof c!=='string').forEach(attach);} attach(doc);
@@ -86,22 +89,26 @@ function env(page='index.es.html', storage=new Map()) {
   const win=new Element({tag:'window',attrs:{},children:[]},doc);
   Object.assign(win,{document:doc,scrollY:0,pageYOffset:0,innerHeight:800,scrollTo(){},matchMedia:()=>({matches:false}),location:{reload(){win.reloaded=true;}}});
   const maps=[],lines=[],errors=[];
+  function makeBounds(points) {
+    return {points: points.slice(), extend(other){this.points.push(...other.points);return this;},
+      pad(){return makeBounds(this.points);}};
+  }
   const L={
     // El stub guarda los manejadores y deja fijar el zoom, para poder probar
     // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
-    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
+    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},containerPointToLatLng(){return [0,0];},getBounds(){return {pad(){return this;},contains(){return true;}};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
     // El stub cuenta las capas de teselas que tiene puesto el mapa: asi se
     // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
     // fondo y no en su lugar.
     tileLayer(){return {addTo(m){m.capas=(m.capas||0)+1;return this;}};},
-    polyline(points,style){const line={points,style:{...style},events:{},path:doc.createElement('path'),addTo(m){if(m&&m.el)m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return {extend(){return this;}};},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
+    polyline(points,style){const line={points,bounds:makeBounds(points),style:{...style},events:{},path:doc.createElement('path'),addTo(m){if(m&&m.el)m.el.appendChild(this.path);return this;},getElement(){return this.path;},getBounds(){return this.bounds;},setStyle(s){Object.assign(this.style,s);},on(t,fn){this.events[t]=fn;return this;}};lines.push(line);return line;},
     // getLatLng y latLngToContainerPoint los necesita repositionLabels, que
     // salta en cada zoomend desde que el stub sabe disparar eventos.
     marker(latlng){return {addTo(){return this;},on(){return this;},getElement(){return null;},getLatLng(){return latlng||[0,0];}};},
     // La capa de pendiente es un grupo de trazos sueltos.
     layerGroup(){return {trazos:[],addLayer(){return this;},addTo(m){m.capas=(m.capas||0)+1;return this;}};},
     circleMarker(){return {addTo(){return this;},setLatLng(){},setStyle(){}};},
-    divIcon:o=>o,DomEvent:{stopPropagation(){}}
+    divIcon:o=>o,DomEvent:{stopPropagation(){}},point:(x,y)=>({x,y}),latLngBounds:p=>({pad(){return this;}}),layerGroup(){return {_c:[],addLayer(l){this._c.push(l);return this;},addTo(m){return this;}};}
   };
   // La ficha saca su slug de location.pathname y comparte location.href; sin
   // esto el banco de pruebas no tiene location y app.js revienta al cargarse.
@@ -120,7 +127,11 @@ function env(page='index.es.html', storage=new Map()) {
     fetch:async()=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trailhead.json'),'utf8'))})
   });
   win.console=context.console;
-  return {doc,win,context,storage,timers,maps,lines,errors,
+  // Desde que la portada dibuja un reborde oscuro bajo cada track, `lines`
+  // trae el doble: los rebordes van con pane:'rebordes' y no cuentan como
+  // rutas. `trazados()` deja solo los de verdad.
+  const trazados=()=>lines.filter(l=>l.style.pane!=='rebordes');
+  return {doc,win,context,storage,timers,maps,lines,trazados,errors,
     run(file){vm.runInContext(fs.readFileSync(path.join(root,'src/js',file),'utf8'),context,{filename:file});},
     one:s=>doc.querySelector(s),all:s=>doc.querySelectorAll(s)};
 }
@@ -138,7 +149,7 @@ test('exclusive filters persist across languages and list/map',()=>{
   e.one('#difficultySelect').value='dificil';e.one('#difficultySelect').dispatchEvent({type:'change'});
   e.one('#elevationSelect').value='high';e.one('#elevationSelect').dispatchEvent({type:'change'});
   const selected=Array.from(e.win.trabakutikVisibleRoutes);assert(selected.length>0);
-  e.one('[data-view="map"]').click();const eu=env('index.html',e.storage);eu.run('filters.js');
+  e.one('[data-view="map"]').click();const eu=env('index.eu.html',e.storage);eu.run('filters.js');
   assert.deepEqual(Array.from(eu.win.trabakutikVisibleRoutes),selected);
   assert.match(eu.one('[data-route-totals]').textContent,/ibilbide/);
   assert.equal(eu.one('#difficultySelect').value,'dificil');assert.equal(eu.one('#elevationSelect').value,'high');
@@ -211,9 +222,9 @@ test('la lupa abre el buscador encima de la barra, y al cerrar vuelven todas',()
 });
 test('invalid storage is safe; old preferences migrate',()=>{
   for(const value of ['null','{broken',JSON.stringify({activities:['unknown'],view:'unknown'})]){
-    const e=env('index.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
+    const e=env('index.eu.html',new Map([['trabakutik_filters',value]]));e.run('filters.js');assert.equal(visible(e).length,totalRoutes(e));
   }
-  const e=env('index.html',new Map([['trabakutik_filters',JSON.stringify({activities:['bici'],distancePreset:'media1',view:'map'})]]));e.run('filters.js');
+  const e=env('index.eu.html',new Map([['trabakutik_filters',JSON.stringify({activities:['bici'],distancePreset:'media1',view:'map'})]]));e.run('filters.js');
   assert(visible(e).length>0);assert(visible(e).every(c=>Number(c.dataset.distanceKm)>10&&Number(c.dataset.distanceKm)<=20));
   assert.equal(e.one('#routeMapWrap').hidden,false);
 });
@@ -232,39 +243,43 @@ test('mobile dialog reuses controls and reset keeps activity',()=>{
 });
 test('map catches filters loaded earlier; keyboard opens/closes and hidden routes leave tab order',async()=>{
   const e=env();e.run('filters.js');e.one('.activity-chip[data-activity="bici"]').click();
-  e.run('map.js');await settle();assert.equal(e.errors.length,0);assert.equal(e.lines.length,totalRoutes(e));
-  assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  e.run('map.js');await settle();assert.equal(e.errors.length,0);assert.equal(e.trazados().length,totalRoutes(e));
+  assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
   const line=e.lines.find(l=>l.path.getAttribute('tabindex')==='0');line.path.focus();
   line.path.dispatchEvent({type:'keydown',key:'Enter'});
   const panel=e.one('.route-info-panel');assert.equal(panel.hidden,false);
   assert.equal(line.path.getAttribute('aria-pressed'),'true');assert(e.doc.activeElement===e.one('.route-info-panel-close'),'Focus moves to panel close button');
   panel.dispatchEvent({type:'keydown',key:'Escape'});assert.equal(panel.hidden,true);assert(e.doc.activeElement===line.path,'Focus returns to route');
-  e.one('[data-distance-preset="corto"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
-  e.one('[data-distance-preset="all"]').click();assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
-  // Las capas ya no son un menu que se abre: son cuatro botones a la vista,
-  // con el activo marcado. La portada arranca en «Calles» (el tercero) y de
-  // ahi no se mueve sola.
-  const capas=e.all('.map-layers .map-layer-btn');assert.equal(capas.length,4);
-  assert.equal(capas[2].getAttribute('aria-pressed'),'true','la portada abre en Calles');
+  e.one('[data-distance-preset="corto"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,shortActivityRoutes(e,'bici'));
+  e.one('[data-distance-preset="all"]').click();assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  // Las capas ya no son un menu que se abre: son tres botones a la vista,
+  // con el activo marcado. La portada arranca en Bici (el segundo) y de ahi
+  // no se mueve sola.
+  const capas=e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));assert.equal(capas.length,4);
+  assert.deepEqual(capas.map(b=>b.textContent),['IGN','Bici','Topo','Sat']);
+  assert.equal(capas[1].getAttribute('aria-pressed'),'true','la portada abre en Bici');
   capas[0].click();
-  assert.equal(capas[2].getAttribute('aria-pressed'),'false');
+  assert.equal(capas[1].getAttribute('aria-pressed'),'false');
   assert.equal(capas[0].getAttribute('aria-pressed'),'true');
-  capas[2].click();
+  capas[1].click();
   // El boton de pintar por pendiente es cosa de la ficha de una ruta: aqui
   // son 57 tracks a la vez y sin alturas, asi que la pastilla lleva las
-  // cuatro capas y nada mas.
-  assert.equal(e.all('.map-layers .map-layers-sep').length,0,'la portada no lleva pendiente');
-  // La portada abre en Calles y ahi se queda: ni el zoom ni elegir una ruta
+  // tres capas y nada mas.
+  // La portada sigue sin «Pendiente», pero desde que existe el interruptor de
+  // «Rutas» si lleva la raya que lo separa de las capas.
+  assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya antes de «Rutas»');
+  assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>/Pendiente|Malda/.test(b.textContent||'')).length,0,'la portada no lleva pendiente');
+  // La portada abre en Bici y ahi se queda: ni el zoom ni elegir una ruta
   // se la cambian. Solo los botones.
   const e2=env();e2.run('map.js');await settle();
-  const c2=e2.all('.map-layers .map-layer-btn');
+  const c2=e2.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||''));
   const abre=()=>{const l=e2.lines.find(l=>l.path.getAttribute('tabindex')==='0');
                   l.path.focus();l.path.dispatchEvent({type:'keydown',key:'Enter'});};
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','abre en Calles');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','abre en Bici');
   e2.maps[0].setZoom(16);
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','acercarse no la cambia');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','acercarse no la cambia');
   abre();
-  assert.equal(c2[2].getAttribute('aria-pressed'),'true','elegir una ruta tampoco');
+  assert.equal(c2[1].getAttribute('aria-pressed'),'true','elegir una ruta tampoco');
   c2[0].click();
   assert.equal(c2[0].getAttribute('aria-pressed'),'true','el boton si');
   e.one('.map-expand-btn').click();assert.equal(e.one('[data-map-src]').parentElement.style['--map-viewport-width'],'1348px');
@@ -273,7 +288,7 @@ test('map also catches filters changed while its request is pending',async()=>{
   const e=env();let release;e.context.fetch=()=>new Promise(r=>{release=r;});e.run('map.js');e.run('filters.js');
   e.one('.activity-chip[data-activity="bici"]').click();
   release({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trailhead.json')))});await settle();
-  assert.equal(e.errors.length,0);assert.equal(e.lines.filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
+  assert.equal(e.errors.length,0);assert.equal(e.trazados().filter(l=>l.path.getAttribute('tabindex')==='0').length,activityRoutes(e,'bici'));
 });
 test('HTTP, invalid JSON, invalid data and stalled map requests display an error and can retry',async()=>{
   for(const failure of ['http','json','data','timeout']){
@@ -282,12 +297,12 @@ test('HTTP, invalid JSON, invalid data and stalled map requests display an error
     e.run('map.js');if(failure==='timeout')[...e.timers.values()].find(t=>t.ms===15000).fn();await settle();
     assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/No se ha podido cargar/);assert(e.one('.map-retry'));assert.equal(e.one('.map-expand-btn').hidden,true);
     e.context.fetch=success;e.one('.map-retry').click();await settle();
-    assert.equal(e.one('.map-retry'),null);assert.equal(e.lines.length,totalRoutes(e));
-    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,0);assert.equal(e.one('.map-expand-btn').hidden,false);
+    assert.equal(e.one('.map-retry'),null);assert.equal(e.trazados().length,totalRoutes(e));
+    assert.equal(e.all('.map-layers').length,1);assert.equal(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).length,4);assert.equal(e.all('.map-layers .map-layers-sep').length,1,'la raya que separa el interruptor de «Rutas»');assert.equal(e.one('.map-expand-btn').hidden,false);
   }
 });
 test('missing Leaflet provides a localized reload action',()=>{
-  const e=env('index.html');delete e.context.L;e.run('map.js');
+  const e=env('index.eu.html');delete e.context.L;e.run('map.js');
   assert.match(e.one('[data-map-src]').querySelector('[role="status"]').textContent,/Ezin izan da mapa/);
   e.one('.map-retry').click();assert.equal(e.win.reloaded,true);
 });
@@ -321,7 +336,7 @@ test('la portada no se baja los tracks hasta que se abre el mapa',async()=>{
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   observados[0].cb();await settle();
   assert.equal(pedidas,1,'visible: ahora si');
-  assert.equal(e.lines.length,totalRoutes(e),'y pinta las 57 rutas');
+  assert.equal(e.trazados().length,totalRoutes(e),'y pinta las 65 rutas');
   assert.equal(observados[0].muerto,true,'y deja de escuchar');
 });
 test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el principio',async()=>{
@@ -335,10 +350,49 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   e.run('map.js');await settle();
   assert.equal(pedidas,1,'pide su track sin esperar a nadie');
-  // Y sin «Calles»: el callejero solo situa en la vista de conjunto de la
-  // portada; dentro de una ruta lo que hace falta es el IGN. La pendiente va
-  // en la misma pastilla, detras de la raya, no en otra debajo.
-  assert.deepEqual(e.all('.map-layers .map-layer-btn').map(b=>b.textContent),
-                   ['IGN','Bici','Sat','Pendiente']);
+  // Con «Bici», que vuelve a las fichas: es el mapa que el autor quiere y
+  // la tardanza ya le da igual. La pendiente va en la misma pastilla,
+  // detras de la raya, no en otra debajo.
+  assert.deepEqual(e.all('.map-layers .map-layer-btn').filter(b=>!/map-rutas-btn/.test(b.className||'')).map(b=>b.textContent),
+                   ['IGN','Bici','Topo','Sat','Pendiente']);
   assert.equal(e.all('.map-layers .map-layers-sep').length,1);
+});
+
+// El encuadre general no debe modificar los limites de la primera ruta.
+test('la primera ruta conserva su encuadre al añadir las demás al mapa',async()=>{
+  const e=env();e.run('map.js');await settle();
+  assert.equal(e.errors.length,0);
+  const first=e.trazados()[0];
+  assert.equal(first.getBounds().points.length,first.points.length);
+});
+
+test('el panel de salida reutiliza el contenido y vuelve al botón al cerrar',()=>{
+  const e=env();
+  const original=e.one('#info-comer .info-details-body');
+  e.run('app.js');e.run('info-panel.js');
+  assert(e.doc.body.classList.contains('trip-info-ready'));
+  assert(e.one('#tripPanel-comer').contains(original),'conserva el mismo nodo, con sus enlaces');
+  assert.equal(e.all('#tripInfoDialog .info-details-body').length,6);
+  const trigger=e.one('#tripInfoBadge button');trigger.click();
+  assert.equal(e.one('#tripInfoDialog').open,true);
+  const tabs=e.all('#tripInfoDialog [role="tab"]');
+  tabs.forEach((tab,i)=>{
+    tab.click();
+    assert.equal(tab.getAttribute('aria-selected'),'true');
+    assert.equal(e.all('#tripInfoDialog [role="tabpanel"]').filter(p=>!p.hidden).length,1);
+    assert.equal(e.one('#'+tab.getAttribute('aria-controls')).hidden,false);
+  });
+  tabs[0].dispatchEvent({type:'keydown',key:'ArrowDown'});
+  assert.equal(tabs[2].getAttribute('aria-selected'),'true');
+  e.one('#tripInfoClose').click();
+  assert.equal(e.one('#tripInfoDialog').open,false);
+  assert.equal(trigger.getAttribute('aria-expanded'),'false');
+  assert.equal(e.doc.activeElement,trigger);
+});
+
+test('sin diálogo nativo permanece la información original accesible',()=>{
+  const e=env();e.one('#tripInfoDialog').showModal=null;e.run('info-panel.js');
+  assert.equal(e.doc.body.classList.contains('trip-info-ready'),false);
+  assert(e.one('#info-comer .info-details-body'));
+  assert(e.one('#beforeYouGo .info-details-body'));
 });

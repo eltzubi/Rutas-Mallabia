@@ -20,7 +20,7 @@ Ordenes:
   offline [pagina]            registra el service worker, corta la red y recarga
   todo                        audit + filtros + mapa + temas + offline
 
-Las paginas se nombran como el fichero: index.html (euskera), index.es.html
+Las paginas se nombran como el fichero: index.html (castellano), index.eu.html
 (castellano), longaurjauziak.html, betzun.eu.html...
 """
 import argparse, contextlib, glob, http.server, os, re, socket, subprocess, sys, threading
@@ -212,14 +212,14 @@ def cmd_probe(a):
 def cmd_filtros(a):
     """El flujo real de la portada: escribir en el buscador y pulsar los chips.
     filters.js ignora tildes, mayusculas y guiones y exige todas las palabras."""
-    with servidor() as base, pagina(base, "index.es.html", 1280) as pg:
+    with servidor() as base, pagina(base, "index.html", 1280) as pg:
         visibles = lambda: pg.evaluate(
             "() => [...document.querySelectorAll('a.route-card')]"
             ".filter(c => c.offsetParent !== null).length")
         # cuantas rutas hay se saca de build.py, no de un numero a mano: cada
         # ruta nueva hacia fallar esta comprobacion sin que nada estuviera mal.
         esperadas = len([p for p in paginas()
-                         if p not in ("mallabia", "agua", "aviso-legal")])
+                         if p not in ("mallabia", "preguntas", "agua", "aviso-legal")])
         total = visibles(); print(f"  sin filtrar            {total} tarjetas")
         assert total == esperadas, f"se esperaban {esperadas}, hay {total}"
 
@@ -532,8 +532,8 @@ def cmd_mio(a):
     que es lo que prueba que data/rutas.json ha llegado y se ha leido.
     """
     with servidor() as base:
-        for pag, idioma in (("index.es.html", "es"), ("trabakua.html", "es"),
-                            ("index.html", "eu")):
+        for pag, idioma in (("index.html", "es"), ("trabakua.html", "es"),
+                            ("index.eu.html", "eu")):
             with pagina(base, pag, ancho=390, alto=844) as pg:
                 pg.evaluate("localStorage.setItem('trabakutik_favs',"
                             " JSON.stringify(['oiz','urko']))")
@@ -639,56 +639,49 @@ def cmd_visor(a):
 
 
 def cmd_aviso(a):
-    """El aviso «Leelo antes de salir»: al cerrarlo, la portada vuelve donde estaba.
-
-    Lo que fallaba: el aviso se lee de arriba abajo y se cierra con su propio
-    boton, que esta al final del texto, asi que al cerrarlo te quedabas a
-    media pagina, en mitad del listado, mirando una tarjeta cualquiera. El
-    boton intentaba subir a la cabecera del <details>, pero con la insignia
-    puesta esa cabecera lleva display:none y scrollIntoView sobre algo oculto
-    no hace nada.
-    """
-    ABIERTO = "() => document.querySelector('#beforeYouGo details').open"
-    Y = "() => Math.round(window.scrollY)"
+    """El panel de salida abre seis secciones y devuelve el foco sin mover el fondo."""
     with servidor() as base:
-        for pag in ("index.es.html", "index.html"):
+        for pag in ("index.html", "index.eu.html"):
             with pagina(base, pag, ancho=390, alto=844) as pg:
-                pg.wait_for_timeout(700)
-                for desde, por_el_boton in ((0, True), (240, True), (0, False)):
-                    pg.evaluate(f"window.scrollTo(0,{desde})"); pg.wait_for_timeout(350)
-                    antes = pg.evaluate(Y)
-                    pg.click(".aviso-boton"); pg.wait_for_timeout(1300)
-                    assert pg.evaluate(ABIERTO), f"{pag}: el aviso no se abrio"
-                    if por_el_boton:
-                        pg.evaluate("() => document.querySelector('.notice-close')"
-                                    ".scrollIntoView({block:'center'})")
-                        pg.wait_for_timeout(300)
-                        bajo = pg.evaluate(Y)
-                        assert bajo > antes + 300, \
-                            f"{pag}: leyendo el aviso no se ha bajado ({bajo})"
-                        pg.click(".notice-close")
-                    else:
-                        pg.click(".aviso-boton")
-                    pg.wait_for_timeout(1600)
-                    assert not pg.evaluate(ABIERTO), f"{pag}: el aviso no se cerro"
-                    fin = pg.evaluate(Y)
-                    assert abs(fin - antes) <= 2, \
-                        f"{pag}: al cerrar se queda en {fin} y abrio desde {antes}"
-                    print(f"  {pag:15} desde {antes:4} -> {'leido abajo' if por_el_boton else 'cerrado con la insignia':24}"
-                          f" -> vuelve a {fin}")
+                assert pg.locator('.atajos').is_hidden(), pag + ": fila de accesos visible"
+                for desde in (0, 240):
+                    pg.evaluate("y => window.scrollTo(0,y)", desde)
+                    pg.wait_for_timeout(300)
+                    antes = pg.evaluate("Math.round(window.scrollY)")
+                    pg.click('.aviso-boton')
+                    assert pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                    assert pg.locator('#tripInfoDialog [role=tab]').count() == 6, pag
+                    for slug in ('gps', 'aparcar', 'comer', 'dormir', 'agua', 'preguntas'):
+                        pg.click('#tripTab-' + slug)
+                        assert pg.locator('#tripPanel-' + slug).is_visible(), pag + ": " + slug
+                        assert pg.locator('#tripInfoDialog [role=tabpanel]:visible').count() == 1, pag
+                    pg.click('#tripTab-gps')
+                    # El boton de cerrar del dialogo es #tripInfoClose. Decia
+                    # .notice-close, que era el del aviso viejo y ya no existe en
+                    # ninguna pagina construida (0 apariciones): la comprobacion
+                    # moria en el scroll_into_view con un timeout de 30 s.
+                    pg.locator('#tripInfoClose').scroll_into_view_if_needed()
+                    assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
+                    pg.click('#tripInfoClose')
+                    assert not pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                    assert abs(pg.evaluate("Math.round(window.scrollY)") - antes) <= 2, pag
+                    assert pg.locator('.aviso-boton').evaluate("e => e === document.activeElement"), pag
+                pg.click('.aviso-boton')
+                pg.keyboard.press('Escape')
+                assert not pg.locator('#tripInfoDialog').evaluate("e => e.open"), pag
+                print("  " + pag + ": seis secciones, cierre y vuelta al mismo sitio correctos")
                 if pg.errores:
                     print("   errores:", pg.errores[:2]); return 1
-    print("\nel aviso devuelve la portada a su sitio, correcto")
     return 0
 
 
 def cmd_todo(a):
     fallos = 0
-    for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.es.html")),
+    for nombre, fn, arg in (("audit", cmd_audit, argparse.Namespace(pagina="index.html")),
                             ("filtros", cmd_filtros, a),
                             ("mapa", cmd_mapa, argparse.Namespace(pagina="longaurjauziak.html")),
-                            ("temas", cmd_temas, argparse.Namespace(pagina="index.es.html")),
-                            ("offline", cmd_offline, argparse.Namespace(pagina="index.es.html")),
+                            ("temas", cmd_temas, argparse.Namespace(pagina="index.html")),
+                            ("offline", cmd_offline, argparse.Namespace(pagina="index.html")),
                             ("mio", cmd_mio, a),
                             ("visor", cmd_visor, a),
                             ("aviso", cmd_aviso, a)):
@@ -754,7 +747,7 @@ def main():
     s.add_argument("--salida"); s.add_argument("--completa", action="store_true")
 
     s = sub.add_parser("audit"); s.set_defaults(fn=cmd_audit)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     s = sub.add_parser("probe"); s.set_defaults(fn=cmd_probe)
     s.add_argument("pagina"); s.add_argument("--sel", required=True)
@@ -770,13 +763,13 @@ def main():
     s.add_argument("--aplica", action="store_true", help="sin esto solo simula")
 
     s = sub.add_parser("temas"); s.set_defaults(fn=cmd_temas)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     s = sub.add_parser("mapa"); s.set_defaults(fn=cmd_mapa)
     s.add_argument("pagina", nargs="?", default="longaurjauziak.html")
 
     s = sub.add_parser("offline"); s.set_defaults(fn=cmd_offline)
-    s.add_argument("pagina", nargs="?", default="index.es.html")
+    s.add_argument("pagina", nargs="?", default="index.html")
 
     a = ap.parse_args()
     sys.exit(a.fn(a))

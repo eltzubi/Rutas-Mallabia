@@ -1,5 +1,20 @@
 # CLAUDE.md
 
+## Panel de información de la portada (29 octubre 2026)
+
+El autor ha elegido agrupar GPS, Aparcar, Comer, Dormir, Agua y Preguntas en
+un solo acceso en la cabecera, con panel inferior en móvil y diálogo centrado
+en escritorio. Esta decisión sustituye la fila de cinco atajos que describen
+las notas históricas de abajo. El contenido original sigue en el HTML para
+lectura sin JavaScript; `src/js/info-panel.js` mueve sus nodos al diálogo y
+oculta los envoltorios originales al terminar de prepararlo. No clonar ni
+mantener una segunda copia de teléfonos, enlaces, mapas o textos.
+
+El botón usa `tripInfoBadge`: el controlador anterior de `noticeBadge` queda
+como compatibilidad para páginas antiguas. El panel usa `<dialog>` nativo,
+pestañas con teclado y devolución de foco sin cambiar el scroll. El chequeo
+`driver.py aviso` comprueba ahora este panel, no el antiguo salto hasta el aviso.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 **Idioma: responde siempre en castellano**, incluidos los avisos intermedios, los mensajes de commit y
@@ -102,6 +117,7 @@ python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favic
 
 ```
 python3 scripts/make_places.py         # data-places de cada tarjeta: lugares por los que pasa su track
+python3 scripts/make_alturas.py        # data/alturas.json: la altura de cada punto del mapa de la portada
 ```
 
 ```
@@ -140,6 +156,21 @@ its own GPX and against its Basque twin:
 It deliberately does **not** check cumulative elevation gain: summing the GPX's climbs raw drifts up to 43%
 from the figure on the page, and even smoothed it stays around 9% on average. Those figures come from the
 route's own source (Wikiloc, the race organiser) and the page says so. Checking it would only cry wolf.
+
+**Y comprueba la copia de `trailhead.json` que lleva el navegador GPS.** El boton «Navegar
+esta ruta» de cada ficha apunta a `nuevo.html?ruta=<slug>` del repositorio
+**trabakutik-gps-pruebas**, y esa pagina resuelve el slug contra **su propia copia** de
+`data/trailhead.json`, no contra la de la web. Al publicar `zengotitagarai` esa copia se quedo en
+68 rutas: el slug no estaba y el boton se quedaba cargando para siempre, sin que lo avisara nada
+—ni el build ni estas comprobaciones, porque el fallo vive en otro repositorio—. Ahora
+`check_site.py` busca el repositorio al lado de este (o donde diga `TRABAKUTIK_GPS=<ruta>`) y
+**falla** nombrando la ruta que falta. Si no lo encuentra lo dice con un `AVISO`, como con el
+domicilio: en GitHub Actions no va a estar y un aviso no puede tumbar el build por algo que alli
+no se puede mirar. **Al publicar una ruta hay que copiar `data/trailhead.json` **y `data/rutas.json`** a ese
+repositorio y subirlos tambien**: el primero para que el boton encuentre la ruta, el segundo
+porque de ahi saca el navegador los **titulos** de su lista. Sin el enseñaba el nombre del
+archivo —«zengotitagarai», «askakosantakataline»— y no se sabia de que ruta se trataba.
+`check_site.py` comprueba los dos.
 
 It also does not check the waypoint kilometres in the elevation-profile markers — see the note in
 "Content rules" about them still being on the old distance basis.
@@ -294,11 +325,868 @@ estorban. El rumbo se calcula corrigiendo la longitud por el coseno de la latitu
 torcido — y sale del propio orden de los puntos del track, que es el de la marcha. El mapa de la
 portada no las lleva: 57 tracks a la vez.
 
-**Las capas, distintas en la portada y en una ficha.** La portada lleva las cuatro (IGN, Bici,
-Calles, Satélite) y abre en **Calles**: de lejos, con las 57 rutas a la vez, lo que sitúa es el
-callejero. Una ficha lleva **tres** — sin Calles — y abre en **IGN**: dentro de una ruta lo que hace
-falta son las curvas de nivel, los ríos y los caminos. Lo decidió el autor; `src/js/map.js` quita
-`osmLayer` de `layerDefs` cuando no es la portada, y `scripts/test_ui.cjs` comprueba las dos listas.
+**Las capas: cuatro, iguales en la portada y en una ficha, y las dos abren en Bici.**
+IGN, **Bici** (CyclOSM), **Topo** (OpenTopoMap) y Satélite. **`agua.html` abre en Topo**, que lo
+pidió el autor —«mapa agua que abra en topo»— y ahí encaja: es la capa que más nombres y más
+curvas de nivel saca al zoom al que uno busca, y esa página no pinta ningún trazado naranja con el
+que sus carreteras puedan enredarse. Antes abría en IGN.
+
+**El 28 de octubre salió «Euskadi» y entró OpenTopoMap, y conviene leer por qué antes de deshacerlo.**
+El autor: «el mapa Euskadi no me dice nada; quiero nombres abundantes y más curvas de nivel, para que
+al mover el mapa se sepa dónde andas buscando». Medido sobre **la misma tesela** de Mallabia a **zoom
+13**, que es el zoom al que uno busca:
+
+| capa | nombres | curvas |
+|---|---|---|
+| Euskadi (geoEuskadi topo) | **3**: Markina, Mallabia, Mendibil | sí, finas |
+| Bici (CyclOSM) | **0**, sólo «BI-633» | sí |
+| **OpenTopoMap** | **8, y con su altura**: Mendigaña 467, Mendibil 613, Olamendi 600, Arteta 514, Ariznabar 592, Galarraga 415, Trabakua 404, más la BI-633 | sí, **rotuladas** |
+
+Lo de Euskadi no era falso —rotula los caseríos uno a uno y en euskera— pero **sólo de z15 para
+arriba**: a la distancia a la que uno busca, callaba. Se probó además ponerle encima el híbrido de
+geoEuskadi y a z13 saca **los mismos tres**, así que no arreglaba nada. El autor las vio juntas y dijo
+«quita Euskadi».
+
+**El pero sigue en pie: las carreteras de OpenTopoMap son naranjas**, el mismo color que los trazados
+de bici, y es justo por lo que estaba descartada desde octubre. Pesa menos que entonces porque desde
+octubre los trazados llevan reborde oscuro, pero en la portada, al zoom de apertura y con las 67 a la
+vez, **se nota**. Si vuelve a salir el tema, es esto y no otra cosa.
+
+**El híbrido de geoEuskadi NO se fue**: sigue encendiéndose con el satélite en las fichas y en
+`agua.html`, así que geoEuskadi continúa en el aviso legal. Y **OpenTopoMap se añadió a esa lista**,
+que es un tercero nuevo: la sirve un proyecto de voluntarios, como CyclOSM, llega a **z17** y su
+licencia pide citar a OpenTopoMap y a OpenStreetMap. Esto se movió mucho entre el 23 y el 26 de octubre de 2026 y
+conviene leer el recorrido entero antes de volver a tocarlo, porque cada paso lo pidió el autor:
+
+1. Hasta el 23 de octubre las fichas abrían en Bici. El autor avisó de que «al mapa bici le cuesta
+   abrir mucho» y se metió un callejero de OSM, que pasó a ser el que abría en las dos.
+2. El 26 pidió «un mapa muy detallado con rutas y calles, que se vean bien los nombres de lugares».
+   Se midieron siete candidatos sobre 18 teselas reales de Mallabia a zoom 13-14 y entró el estilo
+   **Humanitarian (HOT)** como quinta capa; el autor quitó «Calles» en cuanto los comparó.
+3. Horas después: **«no me gusta este mapa, Bici tiene más información»**. Y tiene razón — ver abajo.
+   Fuera HOT, y **Bici vuelve a ser la que abre**, también en las fichas.
+
+4. El 27 de octubre el autor pidió **una capa más**: «busca hasta encontrar algo que se te haya
+   pasado por alto, algo decente». Y había un hueco de verdad: **todo lo probado hasta entonces era
+   global** (OSM y sus derivados, Esri, el IGN estatal). Faltaba la cartografía **propia de
+   Euskadi**. Entró el **mapa topográfico del Gobierno Vasco (geoEuskadi)**.
+
+**Por qué el de Euskadi merece estar, mirado sobre el mismo trozo de Garai y Zengotitagane:** es la
+única carta de la lista que hace quien conoce el terreno. Rotula **los caseríos y los parajes uno a
+uno y en euskera** —Askako, Zazpiatxeta, Aretxerriaga, Urdaia, Sarrimendi, Gaztelumendi, Axmakurra,
+Iturrizuri, Zengotitagana, Kurutzetorri, Olatzamendi, Osmagain, Besoita, Galarraga—, que son
+literalmente los nombres de las rutas de esta web, y ninguno de los otros tres los saca. Las curvas
+de nivel son mucho más finas que las del IGN y van con sombreado del relieve.
+
+Datos del servicio, comprobados desde aquí y no leídos en su web:
+
+- WMTS con **`GoogleMapsCompatible`**, así que entra en Leaflet tal cual, sin reproyectar — y eso no
+  era de esperar, porque sus metadatos anuncian EPSG:25830. Probablemente sea la razón por la que
+  casi nadie lo usa fuera de su propio visor.
+  `https://www.geo.euskadi.eus/geoeuskadi/rest/services/U11/WMTS_TOPO/MapServer/WMTS/tile/1.0.0/U11_WMTS_TOPO/default/GoogleMapsCompatible/{z}/{y}/{x}.png`
+- Llega a **z18**. Teselas de 80-145 kB y 0,5-1 s: de las más pesadas, pero la tardanza ya no es un
+  criterio (ver abajo).
+- **Licencia CC BY**: «se permite cualquier uso si se menciona la autoría del siguiente modo: Eusko
+  Jaurlaritza / Gobierno Vasco». Es la más clara de todas las candidatas, mejor que la del IGN y que
+  la de CyclOSM.
+- **Cubre las 66 rutas enteras**, Gipuzkoa incluida: comprobadas tesela a tesela las cuatro esquinas
+  del conjunto (43,1234-43,3274 N, 2,6524-2,3561 O), todas con contenido.
+
+**Nombres sobre el satélite.** Lo pidió el autor: «el mapa sat, ¿pueden aparecer nombres?». Con el
+satélite se enciende además una capa transparente de rótulos, el **híbrido de geoEuskadi**, y se
+apaga al cambiar de capa. Va en `rotulos`, dentro del `layerDef` del satélite, y **se quita dentro
+de `listo()`, con su capa y no antes**: si se quitara en cuanto se pulsa otro botón, desaparecería
+mientras la capa nueva todavía está cargando. Se compararon dos sobre la ruta de Zengotitagane en
+1280x900:
+
+- **Esri «World Boundaries and Places»** pone sólo los nombres y no toca la imagen — pero es
+  escuetísimo: en ese encuadre saca **un solo rótulo** («Garai»).
+- **El híbrido de geoEuskadi** saca **treinta y tantos** —Askako, Sarrimendi, Urdaia, Axmakurra,
+  Iturrizu, Zengotitagana, Kurutzetorri, Olatzamendi, Gaztelumendi, Osmagain, Sallobente, Besoita,
+  Andikoa, Momoitio, Galarraga…— más los arroyos y los números de carretera.
+
+**Y al final se usan los dos, uno en cada mapa.** Sobre una ficha, con un solo track, el híbrido es
+el bueno: las carreteras las saca en amarillo, el track va más grueso y con flechas, y se
+distinguen. **Sobre la portada no**: con las 66 rutas a la vez, las carreteras amarillas se enredan
+con los trazados naranjas y verdes — «se lía buena», dijo el autor con la pantalla delante. Así que
+la portada lleva el de Esri (nombres y nada más) y la ficha y `agua.html` el de Euskadi. `agua.html`
+no dibuja ningún track, solo los puntos de agua, así que ahí no hay nada con lo que enredarse.
+
+Lo que se pierde en la portada: los rótulos de Esri **no están en euskera** (dice «Guipúzcoa», no
+«Gipuzkoa»). Es el mismo caso que el IGN y CyclOSM, que tampoco lo están.
+
+El híbrido pesa unos 10 kB por tesela y no añade ningún dominio nuevo. Cubre las cuatro esquinas del
+conjunto; la del noreste devuelve una tesela vacía de 192 bytes porque es **mar abierto al norte de
+Mutriku**, y es correcto que lo haga.
+
+**La línea de créditos ya no es un banderín blanco.** Con el satélite citando a Esri y a geoEuskadi
+se iba a **dos líneas** y cruzaba el mapa de lado a lado (390x34 px, medido en un móvil), con el
+fondo blanco al 80 % que trae Leaflet de serie — en una web oscura, un cartel. No se pueden
+esconder, son la atribución de quien sirve las teselas, así que se les puso el color de la web, 10,5
+px y una esquina redondeada, y los textos se acortaron a lo que cada licencia pide de verdad. Los
+rótulos de Esri van **sin `attribution` propia**: la foto de debajo ya cita a Esri y repetido salía
+«© Esri, Maxar, © Esri». Ahora son 125x15 px y una línea.
+
+**Cuatro botones ya no caben en una fila estrecha, y la pastilla pasa a dos filas.** A 320 px la
+pastilla mide 142 y el texto 182; en una ficha, con «Pendiente», tampoco entra a 360 ni a 390. Antes
+salían con puntos suspensivos, que es peor que partir: `.map-layers` lleva ahora `flex-wrap:wrap` y
+sólo crece cuando hace falta. Medido en las dos lenguas, en la portada y en una ficha, a
+320/360/390/768: **no se corta ningún rótulo en ninguna**.
+
+**La razón por la que la lentitud ya no cuenta** es que el autor la retiró con todas las letras: «no
+me preocupa lo que tarde en abrir en el monte, poca gente o ninguno; la ruta la organizo en casa».
+CyclOSM sigue siendo de las más pesadas (medido aquí, 125 ms y 41,3 kB por tesela frente a 122 ms y
+19,8 kB de HOT), pero eso ya no es un criterio. `ponerCapa()` tapa la capa vieja con la nueva, así
+que cambiar de capa no deja el mapa en blanco.
+
+**Por qué Bici gana, comparado sobre el mismo trozo de Zaldibar a zoom 14:** curvas de nivel con su
+altura, todas las cimas rotuladas con la suya, los arroyos con nombre (Zolduerreka), y cada pista y
+sendero dibujado con un trazo distinto según lo que sea. Ningún otro junta las cuatro cosas.
+
+**Los descartados, todos medidos y mirados, para no volver a probarlos:**
+
+| | por qué no |
+|---|---|
+| **HOT / Humanitarian** | rotula menos cimas que el OSM normal; el autor lo rechazó a la vista |
+| **Calles / OSM estándar** | menos información que Bici; lo quitó el autor |
+| **OSM Francia** | muchos topónimos pero **sin curvas de nivel** |
+| **OSM Alemania** | es el OSM de siempre con otro color; lento e irregular desde aquí |
+| ~~**OpenTopoMap**~~ | **entró el 28 de octubre en lugar de «Euskadi»** — ver arriba. Lo de las carreteras naranjas sigue siendo verdad |
+| **MTB Map** (mtbmap.cz) | el que más topónimos saca de todos, pero pinta las carreteras en rojo y amarillo chillón y lo sirve un servidor de aficionados **sin condiciones de uso publicadas** |
+| **CyclOSM-lite**, **4UMaps** | **muertos**: error en las doce teselas |
+| **Esri World Topo / Street**, **IGN Mapa Base** | limpios pero sin senderos: el monte sale vacío |
+| **CARTO Voyager** | ya no es libre: devuelve una tesela con «API KEY REQUIRED» estampado |
+| **Hike & Bike Map** | **muerto**: ni `tiles.wmflabs.org` ni `a.tiles.hikebikemap.org` responden |
+| **Strava / Garmin (mapa de calor)** | **no se puede**: desde 2018 sus teselas exigen sesión iniciada y sus condiciones no permiten usarlas fuera de su web. No es cuestión de buscar la vuelta |
+
+`scripts/check_site.py` exige que `map.js` declare **seis** `L.tileLayer` —cuatro de fondo más los
+dos juegos de rótulos del satélite— y que `js/agua.js` lleve las mismas seis URL (su copia existe porque `map.js`
+son 1.100 líneas atadas a los tracks). `test_ui.cjs` comprueba la lista de botones y que la que abre
+es la segunda, en la portada y en una ficha. **Al añadir o quitar una capa hay que tocar cuatro
+sitios**: `map.js`, `agua.js`, el número de `check_site.py` y las tres listas de `test_ui.cjs`.
+
+**Lo del ancho de los rótulos, que acabó arreglándose de otra manera:** en octubre, con cuatro
+botones, eran 144 px de texto en una pastilla de 142 y «Bici» y «Calles» salían con puntos
+suspensivos, y se resolvió quitando una capa. Al volver a cuatro en octubre se resolvió bien, con
+`flex-wrap`.
+
+**«Rutas»: el interruptor para ver el mapa a pelo.** Lo pidió el autor — sobre el satélite, y donde
+se juntan varias rutas, los trazados tapan justo lo que quiere mirar. Va **en la misma pastilla que
+las capas**, detrás de la raya, como el de la pendiente (`ponExtra`), y lo llevan la portada y las
+fichas. No borra nada: la clase `sin-rutas` en `[data-map-src]` esconde los trazados, sus rebordes y
+los marcadores (salida, puntos numerados, kilómetros), y **deja el trazado que se esté dibujando**,
+que lleva `.draw-line`.
+
+Dos cosas de sitio, medidas: por debajo de **420 px** el rótulo no cabe y el botón se queda en un
+ojo; por debajo de **360 px** no caben ni cinco botones en la pastilla (a 320 la caja del mapa mide
+238 px y la pastilla 142), así que ahí el ojo **se sale de la pastilla** y baja a la columna de la
+derecha, bajo el botón de ampliar, con el lápiz corrido a 94 px y las opciones de dibujo a 136.
+Ojo con `scripts/test_ui.cjs`: las comprobaciones de la barra cuentan **capas**, así que filtran
+`.map-rutas-btn`, y la portada ya sí tiene `.map-layers-sep` aunque no tenga «Pendiente».
+
+**El reborde oscuro de los tracks de la portada.** El autor avisó: «el color en el mapa index es
+pobre». Los tracks iban al 85 % de opacidad y 4 px **sin reborde** — el reborde blanco solo lo
+llevaban las fichas, y en la portada se había descartado por no dibujar 57 líneas más. Sin él, el
+verde lima de «a pie» se funde con el verde del campo del callejero y el naranja se confunde con las
+carreteras naranjas del IGN. Se compararon cuatro arreglos sobre el mismo trozo de mapa y las dos
+capas: subir la opacidad y el grosor (mejora poco), **el reborde oscuro**, y colores más vivos
+(`#FF6A00` / `#43D419`, que funciona pero obliga a elegir entre dos verdes distintos en la misma
+página o a cambiar la paleta entera). Se eligió el reborde: arregla las dos capas **sin tocar ni un
+color de la web**.
+
+Va en **su propio panel** (`map.createPane('rebordes')`, `z-index` 395, bajo el de los trazados en
+400): intercalado en el mismo panel, el reborde de una ruta taparía el track de otra. Y **se apaga
+con su trazado** en los tres sitios donde se apagan las líneas (filtro, abrir ficha, cerrar ficha);
+si no, al elegir una ruta quedarían 64 líneas oscuras marcando justo las que están apagadas. Los
+tracks suben a 4,5 px. La opacidad subió a 1 con el reborde y el autor la vio dura con los 66
+trazados a la vez sobre el mapa ciclista («hazlos un poco más suaves, solo un poquito»): **en la
+portada van al 0,85** y en una ficha, con un solo track y reborde blanco, se quedan en 1. Quien da
+la definición es el reborde, así que bajar la opacidad no devuelve el problema de antes. Medido: el mapa queda listo en **0,22 s** en escritorio y
+**0,75 s en un móvil con la CPU frenada 4x**, con 65 trazados y 65 rebordes.
+
+**El grosor de la portada va con el zoom** (`ajustaGrosor` / `pesosDeZoom` en `src/js/map.js`). El
+autor: «las líneas de las rutas en index que sean más estrechas, ocupan mucho en el mapa». Y es
+verdad de lejos —las 66 a la vez se juntan en una mancha— pero no de cerca, donde una línea fina
+cuesta de ver sobre el satélite y de acertarle con el dedo. Por eso no hay un número fijo: **2,5/4
+hasta el zoom 12**, **3,5/6 del 14 en adelante** y 3/5 en el escalón de en medio. (Arrancó en
+3/5–4,5/8 y el autor las quiso aún más finas: «así se verá mejor la información de fondo».) La portada
+abre en zoom 10, así que lo que se ve al entrar es la fina.
+
+**Y por debajo del 11 el reborde se va del todo** (grosor 0, que en SVG no dibuja nada): ahí las 66
+están tan enredadas que no separa nada, sólo engorda la mancha. Lo pidió el autor sabiendo lo que
+cuesta. Dos avisos medidos: se apaga **con el grosor y no con la opacidad**, porque la opacidad del
+reborde la llevan el filtro y la ficha abierta y se pisarían; y la salida temprana de
+`ajustaGrosor` **compara los dos pesos**, que entre el zoom 10 y el 12 el trazado mide igual (3) y
+lo único que cambia es el reborde. Sobre satélite y sobre el callejero queda limpio; **sobre el IGN
+se paga**, que es donde el naranja de los tracks y el de sus carreteras vuelven a competir — es
+justo el problema que el reborde arregló en octubre, y a zoom 10 reaparece. Se reengancha en `zoomend` y sale pronto
+si el peso no cambia, así que no recorre los 66 por cada rueda del ratón.
+
+Los pesos son ahora `pesoTrack`/`pesoReborde` y **no quedan literales**: el filtro, abrir ficha,
+cerrar ficha y el resalte del ratón los leen de ahí, que si no se pisan entre ellos. `ajustaGrosor`
+toca **sólo el grosor**, nunca la opacidad: ésa la llevan el filtro y la ficha abierta, y pisarla
+encendería rutas apagadas a propósito. Ojo al medir desde Playwright: los rebordes **no están en
+`.leaflet-overlay-pane`** sino en `.leaflet-rebordes-pane`, y buscarlos en el primero devuelve cero.
+
+**La ficha del mapa tapaba demasiado: panel sin foto y caja alta.** El autor, con la captura de su
+movil delante: «algún otro método que abra todo sin tapar tanto los mapas». Se midieron cuatro
+maneras sobre la misma ruta, en 393 px, contando el mapa que queda libre:
+
+| | mapa libre |
+|---|---|
+| **la caja crece a 72svh** | **68 %** |
+| **ficha sin foto** | 60 % |
+| ficha en un lateral | 43 % |
+| como estaba | 37 % |
+
+**El lateral se descartó en octubre y en noviembre se hizo, porque cambió la premisa.** Entonces se
+midió sobre la caja tal cual —**cuadrada**, no apaisada— y salía peor: un lateral de 177 px sobre
+311 deja una tira de 134 px en el móvil, y en el ordenador 54 % de mapa libre frente al 74 % de
+entonces, porque allí la caja también es cuadrada (718x718). Lo que faltaba era la otra mitad de la
+idea, que el autor dio después con la pantalla de AllTrails delante: **«el mapa ocupa la pantalla
+entera»**. Con eso el lateral deja de quitar sitio, porque la caja gana ancho en vez de perderlo.
+Medido en 1280x900: la caja pasa de 718x718 a **1280x824** y el mapa visible de 442.000 a
+**792.000 px²**, casi el doble que con la ficha abajo. La lección es la de siempre: la medida valía
+para la caja de entonces, no para siempre.
+
+**El mapa a pantalla completa, y la ficha a un lado en el ordenador.** Al abrir una ruta, `map.js`
+saca la caja de su columna centrada con un margen negativo y le da todo lo que queda bajo la
+cabecera pegajosa (y, en el movil, sobre la barra fija de abajo) — **es la misma mecanica de
+`encaja()` en `trazado.js`**, ya probada ahi, y el ancho sale de `clientWidth` y no de `100vw` por
+la barra de desplazamiento. Lo pidio el autor dos veces y con las mismas palabras: «el mapa ocupa
+la pantalla entera», «pantalla completa».
+
+**Lo que cambia con el ancho es solo donde va la ficha**: de 768 px en adelante a la izquierda, de
+arriba abajo, 320 px (280 entre 768 y 1023); por debajo, flotando sobre el mapa con 10 px de margen
+y esquinas redondeadas, y escueta, como el autor eligio en octubre.
+
+**En el movil la caja va `position:fixed; inset:0`** y se esconden la cabecera y la barra de abajo
+(`body.mapa-pleno`, `.route-map-box.ficha-pleno`), no el alto en linea que escribe `map.js` para el
+ordenador: asi no hay que calcular ningun desplazamiento para pegarla al borde de arriba —con la
+cabecera escondida la pagina se recoloca sola— y la caja sigue a la ventana visible cuando el
+navegador del movil esconde o saca su barra de direcciones. Se sale con la equis o tocando el mapa.
+
+Medido en 390x844, el porcentaje de **pantalla** que es mapa visible:
+
+| | |
+|---|---|
+| **asi, con la ficha flotando** | **86 %** |
+| la ficha pegada abajo, sin margen | 85 % |
+| solo sin cabecera, con la barra | 78 % |
+| como estaba (caja de 390x711 bajo la cabecera) | 69 % |
+| la ficha en un lateral, como AllTrails | **52 %** |
+
+**El lateral se volvio a medir en el movil, ya con pantalla completa y a peticion del autor, y
+vuelve a salir el peor**: 172 px de panel sobre 390 se comen casi la mitad. En el ordenador si gana.
+En 1280 el porcentaje apenas se mueve (74 → 75 %), pero ahi lo que cuenta es el absoluto: de
+442.000 a **792.000 px² de mapa**, casi el doble.
+
+Tres cosas que hay que mover con ella y que costaron una vuelta:
+
+- **Los botones de zoom y la escala** van en `.leaflet-left` y caen debajo del panel: se corren a
+  `left:var(--ficha-ancho)`. Los creditos vuelven a `bottom:0`, que ahi ya no los tapa nadie.
+- **La pastilla de las capas** va centrada entre `left:52px` y `right:52px` del mapa entero, asi que
+  con el panel delante «IGN» se quedaba medio tapado. Se corre lo mismo.
+- **El encuadre se hace dos fotogramas despues.** Al crecer la caja salta el `ResizeObserver` de
+  `fit()`, que llama a `invalidateSize()`, y eso **corta el vuelo en seco**: la ruta se quedaba sin
+  acercar, con el mapa en la vista de conjunto. El observador corre tras el calculo de estilos y
+  antes de pintar, asi que al segundo `requestAnimationFrame` ya ha pasado. El hueco que se le pasa
+  a `flyToBounds` es de **ancho** (`paddingTopLeft`), no de alto.
+
+Y en el lateral **vuelven la foto y el perfil**, que se habian quitado por falta de sitio: en una
+columna alta sobran, y ahi no repiten porque no se ve la tarjeta de la que salen. Con ellos va la
+linea de resumen de la tarjeta, clonada tal cual — el autor lo autorizo con todas las letras: «si
+hace falta clona cosas de la pagina». Todo se clona del DOM que ya esta en la pagina, asi que viene
+en el idioma correcto y el navegador no descarga nada nuevo. Son **dos versiones de la ficha**
+(`breve` y `amplia`) y manda el ancho; si la ventana cruza los 768 px con la ficha abierta, se
+cambia de una a otra sin cerrarla.
+
+La ficha del movil sigue siendo la escueta que el autor eligio en octubre, con las dos ganadoras
+de entonces (que por si solas daban **78 % libre en un movil de 393 px**):
+
+- **Sin foto ni perfil en la ficha** (`src/js/map.js`): solo nombre, datos y enlace. La foto se
+  clonaba de la tarjeta de la portada —donde el visitante ya la ha visto— y cuando no había foto
+  entraba el perfil de alturas en su lugar; entre las dos cosas, 195 px de ficha. Ahora son 134. En
+  escritorio tambien baja, de 184 a 102 px, y ahí el mapa libre sube del 74 al 86 %.
+- **La caja crece mientras hay una ficha abierta** (`.route-map-box.ficha-abierta`, **solo por
+  debajo de 768 px**): de 311x311 a 311x611. Por encima de 768 no se toca, que allí la caja ya mide
+  718x718 y ponerle 72svh la **encogería**. Va por clase y no por estilo en linea a propósito: el
+  modo de dibujar escribe el alto en linea y tiene que seguir mandando — comprobado, abrir el lápiz
+  con una ficha abierta la cierra y se queda con su propio alto, y al salir todo vuelve a 311x311.
+  Hay que llamar a `invalidateSize()` **antes** de encuadrar, o Leaflet encuadra sobre el alto viejo
+  y la ruta sale pequeña en la mitad de arriba.
+
+**La linea de creditos de Leaflet iba por encima de la ficha del mapa.** Lo vio el autor en su
+movil: al abrir una ruta en la portada, «© CyclOSM, © OpenStreetMap contributors» caia justo sobre el
+enlace naranja «Ver ruta completa» y lo dejaba ilegible. La causa es de libro: los controles de
+Leaflet van en **`z-index` 1000** y `.route-info-panel` estaba en **500**. Ahora el panel va en
+**1100** y, como los creditos **no se pueden esconder** —son la atribucion de OpenStreetMap y de
+quien sirve las teselas—, se corren hacia arriba lo que mide el panel
+(`[data-map-src].con-ficha .leaflet-bottom{ bottom:var(--ficha-alto) }`).
+
+La altura la escribe `map.js` en `--ficha-alto`, y **no basta con medirla al abrir**: la foto de la
+ficha todavia no ha colocado y el panel crece despues, con lo que los creditos se quedaban unos
+pixeles bajos y seguian metidos debajo. La vigila un `ResizeObserver` sobre el panel, que mide con
+`getBoundingClientRect` y **no con `contentRect`** —el panel lleva 16 px de relleno arriba y abajo y
+`contentRect` los deja fuera—. Comprobado a 320, 390, 768 y 1280 en los dos idiomas.
+
+**Ojo al verificar: `driver.py verifica` falla a veces por un 429 de Open-Meteo.** La comprobacion
+de «Lo mio» no admite errores de consola, y si el servicio del tiempo devuelve «429 Too Many
+Requests» —porque se han hecho muchas peticiones desde esta IP— la da por fallida sin que haya
+ninguna regresion. Se distingue mirando la lista de errores que imprime: si lo unico que sale es ese
+429, no es el codigo. A los visitantes no les afecta, que el limite es por IP.
+
+**La lectura del perfil de alturas se equivocaba hasta en 153 metros.** El perfil de cada ficha ya
+era interactivo desde antes (`map.js`: raya, bola, «12,3 km · 450 m» y un punto que se mueve por el
+track del mapa). Lo que estaba mal era devolver la `y` del dibujo a metros: usaba un **margen fijo
+de 8 px**, es decir daba por hecho que la `y` iba de 8 a 292 en todas las fichas.
+
+**No es así, y esto es lo que hay que recordar: las fichas publicadas usan seis convenciones
+distintas.** `scripts/rehaz_perfil.py` documenta 161 muestras con
+`y = 285 - (ele-min)/(max-min)*270`, pero lo que hay en la web son **160, 161, 163, 200 y 201**
+muestras, y la `y` va de `(0, 300)` en astarlokoatxa a `(47, 225)` en oiz. Medido sobre la web
+publicada, el error de la lectura llegaba a **153 m**: en zenarruza el punto más bajo decía 385 m
+donde su propio pie dice 232, y en oiz 547 donde dice 399.
+
+La escala se saca ahora **del propio trazado**: la `y` más alta es la altura mínima y la más baja la
+máxima, y esos dos números están escritos en `.elev-tags`. Se autocalibra, da igual con qué
+convención se dibujara la ficha y seguirá valiendo si mañana se dibuja de otra manera. Comprobado en
+18 fichas de todas las convenciones: el peor error pasa de 153 m a **6 m**, y lo que queda es la
+resolución del ratón sobre un pico estrecho, no la cuenta.
+
+**Y se dejan de contar los puntos en cuanto la x retrocede.** `axmakuriturrizuri` y
+`zengotitaosmagain` tenían la **línea** del perfil con el cierre del relleno pegado al final
+(`… L1000,300 L0,300`): era copia literal del trazado de relleno, cierre incluido, así que traían
+dos puntos de más pegados al suelo y **una raya naranja sobrante cruzando el fondo del recuadro**.
+Ya se ha quitado ese trozo del `d` del trazado con `fill="none"` (el relleno sigue igual, y no se ha
+tocado ningún número), pero la defensa se queda puesta: un perfil va siempre hacia la derecha, así
+que en cuanto la x retrocede se corta. Eso protege además la búsqueda binaria de `yAtX`, que da por
+hecho que la x es monótona.
+
+Ojo: esas dos se generaron con otra receta — el relleno lleva `fill="url(#lg)"` y el trazado de la
+línea va **primero**, al revés que en las demás. Si aparece una tercera así, es el mismo molde.
+
+**No hace falta escribir otro módulo para esto.** Se intentó (`src/js/perfil.js`, 26 de octubre de
+2026) sin haber mirado antes `map.js`, y salió un duplicado entero de algo que ya existía. Se
+retiró. Antes de dar por nueva una función del mapa o del perfil, buscar en `map.js`: son 1.400
+líneas y lleva dentro mucho más de lo que parece.
+
+**Al elegir una ruta, los kilometros de las demas desaparecen.** Con la ficha abierta seguian
+ahi las 64 etiquetas restantes, justo encima de lo que el visitante ha ido a mirar. `labelSoloHref`
+en `src/js/map.js` guarda el `href` de la elegida y `updateLabelVisibility()` deja ver solo esa;
+al cerrar la ficha vuelven todas. Lo pidio el autor: «quedarse solo en la ruta limpia». Ojo: si al
+encuadrar la ruta el mapa baja del zoom 12 no se ve ninguna, y es correcto — por debajo de ese zoom
+no hay etiquetas.
+
+**Las pastillas de kilómetros se agrupan cuando se pisan.** Idea del autor, con la pantalla de
+AllTrails delante: que el mapa de la portada sea un mapa de kilómetros por los que elegir, y que al
+tocar uno se abra esa ruta. «Los kilómetros los dejas donde están, por donde pasan» — en el punto
+medio del recorrido, no en la salida.
+
+**Por qué hacía falta agrupar, medido:** al zoom de apertura (10) los puntos medios de las 66 rutas
+caben **todos en un recuadro de 145x177 px**, y una pastilla de «32,46 km» mide 76x24. Son **717
+parejas pisándose**. No es un problema de código: las rutas viven en un valle de seis kilómetros y a
+esa escala caben en un sello. Por eso las etiquetas no salían por debajo del zoom 12.
+
+| zoom | sitio que ocupan las 66 | parejas que se pisan sin agrupar |
+|---|---|---|
+| 10 (al abrir) | 145x177 px | **717** |
+| 11 | 291x354 px | 245 |
+| 12 | 581x707 px | 69 |
+| 13 | 1163x1414 px | 23 |
+
+Con el agrupado, **cero solapamientos a cualquier zoom**: al abrir salen «38 rutas», «17 rutas»,
+«10 rutas» y un kilómetro suelto; al zoom 13, 15 grupos pequeños y 27 kilómetros sueltos. Suman
+siempre 66.
+
+Cómo está hecho, y las cuatro cosas que costaron:
+
+- **Agrupado codicioso por cercanía en píxeles** (`RADIO_GRUPO` 46) **más una segunda pasada que
+  funde los grupos cuyas pastillas aún se tocarían** (84x28 px). Sin esa segunda pasada quedaban 8
+  parejas solapadas al abrir: el radio junta *puntos*, pero lo que no puede pisarse es la *pastilla*.
+- **Se agrupa sólo lo que está en pantalla** (`map.getBounds().pad(0.15)`), y se recalcula también
+  en `moveend`. Lo pidió el autor: al moverse al norte salen las de allí. Si no, un grupo seguiría
+  diciendo «38 rutas» con cuatro en pantalla. Comprobado: en Markina salen 3 rutas, en Elorrio 7.
+- **`var grupoCapa` va declarada arriba, con el resto del estado de las etiquetas, no junto a su
+  función.** Estaba abajo con `= null`, y `updateLabelVisibility()` se llama durante el montaje,
+  **antes** de llegar a esa línea: la primera pasada creaba la capa y esa línea borraba después la
+  referencia, dejando los marcadores huérfanos para siempre. Se notó porque los grupos sumaban
+  **100 rutas** habiendo 66.
+- **`scripts/test_ui.cjs` usa un Leaflet de mentira** y no tenía `getBounds`, `containerPointToLatLng`,
+  `L.layerGroup`, `L.point` ni `L.latLngBounds`. Sin ellos el test moría con código 137 (parecía
+  falta de memoria y no lo era). Se le añadieron a la imitación, y `map.js` comprueba que existan
+  antes de usarlos.
+
+**La pastilla de grupo va en blanco y negro, no en naranja**, por la misma razón que la etiqueta
+«Nueva»: en esta web el naranja es «en bici» y el verde «a pie», y un grupo mezcla las dos. Se
+distingue de una de kilómetros por el tamaño y el peso. Crece con lo que agrupa (`es-media` a
+partir de 6, `es-grande` a partir de 20) — **esa idea sí es de Leaflet.markercluster**, pero la
+librería no se ha metido: son 66 puntos, lleva cinco años sin publicar versión y sería una
+dependencia nueva, que aquí no entra sin que lo diga el autor.
+
+**Y la salida sigue marcada en rojo, por encima de todo.** La pastilla de «38 rutas» cae justo
+sobre Trabakua: el marcador lleva `zIndexOffset: 2000` y la pastilla se sube 16 px sobre su centro,
+que señala una zona y no un punto exacto.
+
+**La tira de rutas que tienes delante, debajo del mapa.** Lo pidió el autor: «si no, es difícil
+saber si estoy en Mallabia, si estoy en Durango o dónde, cuando tengo el zoom aumentado». Con el
+mapa muy cerca sólo se ven dos trazados sin nombre y el fondo no siempre rotula el pueblo.
+
+Debajo del mapa van **las rutas que se están viendo** —las que tienen algún punto de su track
+dentro del encuadre—, **con foto, título, distancia y desnivel**, y **cambian solas al mover o al
+acercar**.
+
+**La regla costó dos intentos, y el bueno es éste.** Primero fueron «todas las que caen en
+pantalla», y el autor lo corrigió: «cuando aparecen los kilómetros de la ruta, si me aparecen 2 de
+ellos que aparezcan 2 plantillas». Se pasó a mirar la pastilla de kilómetros… y eso rompía otra
+cosa: **«no veo las plantillas de bajada a Unbe y a Ipurua; por mucho que veo la ruta trazada no me
+abre ni una»**. Tenía razón: Unbe e Ipurua no son rutas, son sitios por los que pasan galdaramiño y
+karabieta, y **la pastilla va en el punto medio del recorrido**, que mirando ese tramo queda fuera
+de la pantalla. La regla que vale las cumple las dos: **si se ve el trazado, hay ficha.**
+
+**Y sin tope.** Lo hubo y era el mismo fallo con otra cara. Comprobadas **las 66 rutas una a una**
+—centrando el mapa en un punto al 15 % de cada track, lejos de su punto medio, a zoom 15— con tope
+12 se quedaban **20** sin ficha teniendo el trazado delante, con 25 todavía **4**, y sin tope
+**ninguna**. Cuesta unas decenas de nodos y las fotos ya están cargadas. Van ordenadas por cercanía
+al centro, así que las que de verdad miras son las primeras. Las pidió así: «si son 7, aunque aparezcan
+las primeras 4, las demás se quedan ocultas abajo» — en columna, con cuatro a la vista y el resto
+desplazándose. **Tocar una encuadra la ruta entera y abre su ficha**, igual que tocar su pastilla:
+medido, de zoom 15 pasa a 12 para que quepa completa. Eso responde a «¿pueden aparecer las rutas
+enteras?» sin añadir nada.
+
+**Y los trazados NO se quitan del mapa.** Se planteó un mapa de sólo kilómetros y el autor lo
+paró: «yo no he dicho que no aparezcan los trazados». No volver a proponerlo.
+
+Cómo está hecho:
+
+- Se rellena desde `updateLabelVisibility()`, que ya corre en `zoomend` y en `moveend`: **el
+  conjunto que calcula para agrupar las pastillas es exactamente el que hace falta aquí**, así que
+  no se recorre nada dos veces.
+- Las primeras son las más cercanas al centro de lo que se mira (`map.distance`), sin tope.
+- El encuadre se comprueba contra **los puntos del track** (`rutasEnVista`), no contra la etiqueta.
+  Son 66 rutas de unos 220 puntos y sale en cuanto encuentra el primero dentro, así que no se nota.
+  Lo que no coge: un track que cruce la pantalla de lado a lado sin ningún punto dentro; a estos
+  zooms no pasa, los puntos van cada 10 m.
+- La foto es la que ya muestra su tarjeta en la lista, por `src`: el navegador la tiene cargada y
+  no descarga nada nuevo.
+- Se esconde con una ficha abierta o dibujando: ahí manda lo otro.
+
+**Y va DESPUÉS de la caja del mapa, no dentro.** Metida dentro queda recortada y no se ve, porque
+la caja tiene el alto fijo por `aspect-ratio`. Se inserta con `insertBefore` sobre el hermano
+siguiente.
+
+**Tres fallos propios al montarla, los tres del mismo tipo y por eso vale la pena recordarlos:**
+
+- **`var tiraCercanas` declarada debajo de su primer uso.** Es **exactamente** el fallo de
+  `grupoCapa` de unas horas antes, repetido: `pintaCercanas()` se llama durante el montaje, antes
+  de llegar a esa línea, así que la primera pasada creaba la tira y la línea borraba después la
+  referencia — y se creaba **una segunda tira**. Salían dos, una viva y otra congelada con 22
+  fichas. **Todo lo que se cree desde `updateLabelVisibility()` va declarado arriba, con
+  `labelSoloHref`.**
+- **La firma de «lo que ya está pintado» no puede ir en `dataset`.** El DOM de mentira de
+  `test_ui.cjs` devuelve un objeto **nuevo** en cada lectura de `dataset`, así que lo escrito se
+  perdía; y no tiene `childNodes`. Entre las dos cosas el test se colgaba **sin imprimir nada**.
+  Va en una variable del cierre.
+- **A ese DOM de mentira le faltaba `insertBefore`**, y el test moría con código 137, que parece
+  falta de memoria y no lo es. Se le añadieron `insertBefore`, `firstChild` y `nextSibling`, y
+  `map.js` comprueba que existan antes de usarlos.
+
+La lección, por tercera vez en el mismo día: **cuando el test de interfaz muere con 137 o se cuelga
+sin imprimir, no es memoria — es que `map.js` está usando algo que su Leaflet o su DOM de mentira
+no implementan.**
+
+**La vista de mapa de la portada se lleva la pantalla (móvil).** Lo pidió el autor con su captura
+delante: «¿cuándo se agranda el mapa? Es posible que ocupe más pantalla, más arriba, más ajustado,
+para que abajo haya más sitio para las plantillas. Quisiera aprovechar todo lo más posible. Sobre
+todo trazado, kilómetros y plantillas, lo que más se vea. Lo demás no tiene importancia mientras
+esté a pantalla completa el mapa».
+
+Entre la cabecera y el mapa había una franja muerta y la primera ficha salía cortada. Con
+`body.vista-mapa` (lo pone `filters.js` al cambiar de vista) se esconde la cabecera, la caja se
+pone **fija de borde a borde** y la tira se lleva una franja de verdad justo encima de la barra de
+abajo. Medido en 390x844: la caja pasa de **310x310 a 390x587** —casi el doble de superficie— y la
+tira de quedarse cortada a **200 px**, tres fichas enteras y la cuarta asomando. El reparto es un
+solo número, `--tira-alto`.
+
+Tres cosas de las que acordarse:
+
+- **La barra de abajo se queda.** Es por donde se vuelve a la lista y donde están A pie / E-bike /
+  Filtrar. En una primera pasada se escondió también el botón flotante y **se quedó sin salida**:
+  ése es precisamente «Lista».
+- **`:not(.ficha-pleno)`** en la regla de la caja: al abrir una ruta manda la otra regla, que es
+  `inset:0`, y sin eso no ganaría por especificidad.
+- `filters.js` llama a **`window.__avisaMapaTamano()`**, que `map.js` publica sólo en la portada:
+  la caja cambia de tamaño por CSS y Leaflet no se entera solo. **Lo llama también `trazado.js`**
+  al entrar y salir del lápiz: la tira se pinta desde `updateLabelVisibility()`, que corre en
+  `zoomend` y en `moveend`, y abrir el lápiz no dispara ninguno de los dos — sin el aviso la tira
+  se quedaba puesta mientras se dibujaba, y tocar una ficha abría una ruta encima del trazo.
+
+**Y el filtro de actividad, en una fila fina flotando sobre el mapa.** Lo pidió el autor: «muy
+disimulada, donde no ocupe; a pie o bicicleta o todas, arriba, en una fila horizontal muy fina, por
+color verde o naranja».
+
+Son 28 px translúcidos con desenfoque, como la pastilla de las capas, **encima del mapa y no antes
+de él**: así no le quita ni un píxel de alto ni al mapa ni a la tira de fichas — medido, la caja
+sigue siendo 390x587 y la tira 200 px. El color es el que pidió y es el de toda la web: **verde
+andando, naranja en bici**, y «Todas» en el color del texto, que no es ninguna de las dos
+actividades. Abajo quedan **Lista y Filtrar**, dos cajones anchos en vez de cinco estrechos.
+
+Cuatro cosas que costaron una vuelta:
+
+- **`.finder-toolbar` lleva `z-index:70`, o sea que es su propio contexto de apilamiento**, y el
+  `z-index` de la fila sólo cuenta dentro de él. Con la barra en 70 y la caja del mapa en 150, la
+  fila **se veía dibujada y no se podía pulsar**: todos los toques se los quedaba el mapa. Lo que
+  sube a 160 es la barra entera, no la fila.
+- En la barra `.activity-filter` es `display:contents` —se disuelve para que sus tres chips sean
+  celdas de la rejilla—, así que aquí vuelve a ser una caja de verdad y la rejilla baja a **dos
+  columnas**.
+- **La barra no se aparta en esta vista** (`transform:none`). Además de que no hay nada que
+  desplazar, un `transform` en ella la convertiría en el marco de referencia de la fila fija y ésta
+  dejaría de ir pegada a la ventana.
+- **Los mandos del mapa bajan los 28 px**: los de Leaflet por `.leaflet-top`, la pastilla de las
+  capas por su `top`, y la columna de la derecha (ampliar, lápiz, opciones y, por debajo de 360 px,
+  el ojo de «Rutas») con un `translateY` — cada uno tiene su propio `top` y por debajo de 360 todos
+  cambian, así que trasladarlos vale para los dos repartos sin repetir ni un número.
+
+Y **dibujando la caja se queda también con la franja de la tira** (390x787 en vez de 390x587), que
+ahí la tira no está. Lo marca `body.dibujando`, que pone `trazado.js`.
+
+**Ojo al mirar capturas de la portada en el móvil: hay un iframe de Google Maps detrás** (el de
+«Dónde aparcar», en el acordeón). Chromium lo compone en su propia capa y **en las capturas de
+Playwright el texto de alrededor aparece pintado por encima de la barra fija**, como si se
+transparentara. No es un fallo de CSS: `elementFromPoint` dice que arriba está la barra, y quitando
+el iframe del DOM la captura sale limpia. Se perdió un rato dándole vueltas a un `background`
+translúcido que no tenía nada que ver.
+
+**Los atajos a la información del final.** Lo levantó el autor: «no creo que nadie baje hasta
+abajo, así que es posible que nunca lleguen a leer dónde comer o dónde dormir». Y tenía razón,
+medido: **la portada mide 43 pantallas en un móvil** (36.506 px con 67 tarjetas) y el bloque de
+«Dónde aparcar» empieza en la **42**; en el ordenador, 15 pantallas y empieza en la 15. En vista de
+mapa sí queda cerca, porque el mapa ocupa una pantalla y la información viene detrás, y por eso él
+notaba la diferencia.
+
+Debajo de la cabecera va ahora una fila fina de cinco pastillas —**Aparcar, Comer, Dormir, Agua,
+Preguntas**— que lleva allí de un toque. Cuesta **30 px** y cabe entera a 390 px en los dos
+idiomas (con la letra a 9 px; ver abajo). Resuelve las dos mitades del problema: el viaje y, sobre
+todo, **saber que eso existe**.
+Las rutas siguen siendo lo primero; se descartó subir el bloque entero encima de la rejilla, que
+cuesta unos 300 px y pone «Dónde aparcar» antes que las rutas.
+
+**Y va la primera de `<main>`, pegada a la cabecera y encima de la foto. No es capricho: es el
+único sitio donde la barra fija de abajo no se la come.** Nació debajo del aviso de «Léelo antes de
+salir» y el autor lo vio en su móvil: «está pegado a la barra de abajo, deja un margen pequeño para
+que se vea el círculo entero de alrededor». Medido a 390 px de ancho, ahí las pastillas acaban
+**siempre** en el píxel 555, pase lo que pase, porque lo que tienen encima (cabecera, foto,
+titular, entradilla y totales) no cambia de alto con la ventana. Lo que cambia es dónde empieza la
+barra:
+
+| ventana útil | aire hasta la barra |
+|---|---|
+| 844 | 232 px |
+| 700 | 88 px |
+| 620 | **8 px** |
+| 580 | **tapadas 32 px** |
+| 540 | **tapadas 72 px** |
+
+Un margen no arregla eso: la barra es fija y lo único que sube las pastillas es quitarles alto por
+encima. Se probó moverlas delante de `#beforeYouGo` y salió **4 px peor**, porque ese bloque
+plegado no ocupa alto. Arriba del todo quedan en el píxel 97 y les sobran **479 px** a 620 y 399 a
+540. De paso se ven al entrar, que era justo lo que se buscaba.
+
+**Y llevan el margen lateral de la página, que no lo tenían**: 16 px en el móvil, 24 de 660 para
+arriba y `max-width:1100px` de 1024 en adelante, como los demás bloques. Iban sin ninguno, así que
+la primera pastilla nacía pegada al filo de la pantalla con el borde redondo cortado —la otra mitad
+de lo del «círculo entero»— y en el ordenador la fila arrancaba **90 px a la izquierda** del
+titular y de las tarjetas.
+
+**La letra son 9 px, no 10, y la fila entra entera de 360 px para arriba.** Lo pidio el autor:
+«minifica un poco la letra para que entren enteras horizontalmente». Medida la fila completa
+—pastillas, huecos y margenes laterales— iba en **403 px en castellano y 389 en euskera**, asi que a
+390 px el castellano se salía 13 px y había que arrastrarla con el dedo. Con 9 px, `letter-spacing`
+.08em, relleno de 10 y hueco de 5 quedan en **352 y 340**. Por debajo de 360 sigue arrastrándose, y
+se queda así: para que entrara a 320 habría que bajar a 8,5 px y ahí ya no se lee.
+
+Tres cosas del montaje:
+
+- **Cada atajo abre lo suyo y cierra los demás.** Antes solo abría el destino, así que pulsando
+  «Aparcar» y luego «Dormir» el bloque se encuadraba con «Aparcar» desplegado delante y «Dormir»
+  caía fuera de la pantalla. Medido antes de tocarlo, en 390x700: Aparcar aterrizaba en y 74,
+  Dormir en **780** y Agua en **1.229**. El autor: «cuando le doy a Dormir que abra esa
+  información; si le doy Agua, que abra esa. Cada cual la suya». Ahora los tres caen en 74, 175 y
+  226. Se cierran desde el propio manejador y **no con `name=` en los `<details>`**, que eso
+  cambiaría también lo que pasa al abrirlos a mano, y eso no lo ha pedido.
+- **El enlace solo no basta.** Ahí abajo hay `<details>` plegados, así que saltar al ancla deja al
+  visitante delante de un título cerrado. El bloque del final de `src/js/app.js` abre el que toca
+  antes de ir, y espera **dos fotogramas** antes de medir, como en las preguntas: al abrir el
+  `<details>` la página crece y la posición de antes ya no vale.
+- **El salto es instantáneo, no suave.** Son 35.000 px en un móvil; animarlos sería un viaje de
+  varios segundos.
+
+Ojo: la portada tiene **dos** `section.info-accordion`. La de arriba es `#beforeYouGo` («Léelo antes
+de salir») y la de abajo es `.practical-info`, que es ésta. Buscar por `info-accordion` a secas coge
+la de arriba.
+
+**Y una vez allí, saber dónde estás y cómo salir.** Lo levantó el autor en cuanto probó los atajos:
+«cuando uno abre dormir o aparcar no sabe en qué parte de la página está, ni cómo salir de ahí».
+Medido: caes en el **píxel 35.859 de 36.933**, la fila de atajos queda 35.332 px arriba y el bloque
+**no tenía título** — la cabecera es la misma en toda la web, así que no orienta. El botón redondo de
+«volver arriba» sí se ve ahí (comprobado, `y=720`, opacidad 1), pero él no lo registró como la salida,
+que para el caso es como si no estuviera.
+
+Dos cosas, las dos en el flujo y no flotando: un **título** al bloque («Información práctica») y un
+**«↑ Volver arriba» escrito al final**, que hace lo mismo que el botón redondo —se le engancha la
+misma función en `app.js`— para que no suba uno de golpe y el otro rodando.
+
+**Y el atajo encuadra el BLOQUE, no el apartado.** Con el apartado, saltando a «Dormir» el título se
+quedaba fuera de pantalla y seguías sin saber dónde habías caído. Los cinco plegados ocupan unos
+250 px, así que yendo al principio del bloque se ven el título, las cinco filas —puedes saltar de
+Dormir a Aparcar sin subir— y el que se acaba de abrir.
+
+**Se descartó una X**, que fue lo primero que él propuso: una X significa «cerrar lo que se ha abierto
+encima», aquí no hay nada encima —sólo has bajado— y al pulsarla seguirías en el píxel 36.000.
+También se descartó, de momento, repetir la fila de atajos dentro del bloque o dejarla pegada arriba.
+
+**Y un poco de color en esos desplegables.** El autor los vio en su móvil: todo gris, cinco filas
+iguales. Llevan ahora el mismo tratamiento que los de `preguntas.html` —un `--acento` con su versión
+suave— y el acento es **`var(--link)`**, que es el que esa página usa para lo que **no es una
+actividad**: el verde y el naranja están cogidos y aquí dirían algo que no es. Se enciende lo justo:
+el icono siempre teñido, y al abrir el círculo pasa a relleno, el título y el signo toman el acento y
+el cuerpo coge un lavado muy suave. Cerrado sigue siendo una lista tranquila.
+
+**La provincia volvió a la barra del móvil el 28 de octubre, y sin el punto.** Estuvo escondida por
+debajo de 480 px un día: el autor la vio apretada —«Bizkaia acaba justo donde empiezan los
+iconos»— y se midió **0 px de hueco a 360, a 390 y a 412**. Al verla desaparecer dijo lo otro:
+«**Bizkaia es importante que aparezca, pero sin punto**». Y cabe, con dos cosas y ninguna es
+esconderla:
+
+- **Fuera el « · »**, que son 14 px. El espacio entre «Mallabia» y «Bizkaia» lo pone ahora el CSS
+  (`.place-prov::before`, dos espacios duros), no el HTML.
+- **El apretado que ya existía por debajo de 360 px sube hasta 479**: letra de 10 px, espaciado
+  .06em, relleno de 11 y los iconos a 8. Estaba escrito para que «MALLABIA · BIZKAIA» no se
+  partiera en dos líneas a 320, y sirve igual aquí.
+
+Medido el hueco entre el rótulo y el primer botón, con las dos: **16 px a 360, 31 a 375, 46 a 390,
+68 a 412, 86 a 430**. Por debajo de 360 la barra entera se saldría (a 320 se pasa 21 px), así que
+ahí —y sólo ahí— la provincia sigue escondida. Las fichas de ruta no se tocan: tienen su propio
+rótulo en `route.css`, con menos botones al lado, y **conservan el punto**.
+
+**El filtro de actividad recentra el mapa de la portada.** Pasar de «A pie» a «E-bike» dejaba el
+encuadre donde estuviera — y si el visitante había arrastrado el mapa, podía quedarse mirando una
+zona sin ninguna de las rutas que el filtro deja. `encuadraVisibles()` en `src/js/map.js` reencuadra
+sobre las rutas visibles **aunque el visitante ya hubiera movido el mapa**, y marca `userMoved` para
+que el siguiente cambio de tamaño del contenedor no devuelva el encuadre general y lo deshaga. Solo
+se dispara **cuando el conjunto visible cambia de verdad** (la firma de los `href` visibles), para no
+dar un salto por cada tecla del buscador que no quita ninguna ruta; la primera vez solo se anota la
+firma, porque de ese encuadre inicial ya se ocupa `fit()`. Solo en la portada.
+
+**Compartir, también en la portada.** Lo pidió el autor: hasta ahora el botón sólo salía en las
+fichas y no había forma de pasarle la web entera a nadie desde la principal. Va en la misma barra de
+arriba y en el mismo sitio que en una ficha, delante del idioma. **Guardar no**, que ahí el corazón
+va en cada tarjeta y uno para «toda la web» no diría nada. El texto que comparte no sale del `h1`
+—que ya es «Trabakutik» y saldría repetido— sino de una línea propia con **las rutas contadas en el
+momento**, para que el número no se quede viejo: «Trabakutik · 66 rutas a pie y en e-bike por
+Mallabia y alrededores».
+
+Costó un arreglo de sitio: a **320 px** la barra ya iba al límite («ahí no sobran más que un par de
+píxeles», dice el comentario de `home.css`) y el botón la sacaba **30 px** de la pantalla. Por debajo
+de 360 px la portada deja el rótulo en **«Mallabia»** a secas (`.place-prov`, sólo en la portada):
+son 69 px que sobran de la provincia, de sobra para el botón y para la holgura que faltaba desde
+antes.
+
+**El número de rutas lo escribe el build, no la mano.** Las fuentes ponen `{{RUTAS}}` y
+`pon_cuantas_rutas()` lo cambia por `len(_trailhead())`, que es la lista de tracks del mapa de la
+portada — justo de lo que hablan esos textos («caminos grabados en alguna de las N rutas», «esconde
+los N trazados») y el mismo fichero del que sale el zip, así que las dos cifras no se pueden
+separar. Lo pidió el autor después de encontrárselo viejo: la página de preguntas decía «las 65
+rutas» con 66 publicadas, el euskera «65ak zip bakar batean» y el comentario de la 404 seguía en 61.
+Eran **ocho sitios** que había que recordar en cada ruta nueva.
+
+Va al final de la cadena de cada página, y **la 404 se escribe fuera de ese bucle**, así que
+`write_404_page` lo llama aparte. Las dos comprueban que no quede ninguna marca sin sustituir y
+**paran el build** si queda. Probado de verdad: con un track de más en `trailhead.json` las páginas
+pasan a decir 67, y al quitarlo vuelven a 66.
+
+**Cuando el autor escribe el texto, manda el que escriba primero — y puede ser el euskera.** En
+`zaldutrail` dio su versión en castellano, luego la reescribió entera en **euskera** y dijo: «el
+euskera prioriza; si quieres dale el mismo tono al castellano». Así que el euskera entró tal cual
+—sólo se le pusieron los `<b>` en los mismos nombres y se normalizó un guion que no se parte
+(U+2011) en «erritmo-aldaketetan»— y el **castellano se rehízo detrás** para ir en paralelo: los
+mismos nueve párrafos, el mismo tono. Es al revés de lo normal en esta web, donde el castellano es
+la fuente y `eu.py` la traducción, pero la tabla funciona igual: la clave es el castellano y el
+valor su párrafo en euskera.
+
+Lo que no funcionó, por si vuelve a pasar: su euskera agrupaba los párrafos de otra manera (nueve
+frente a once del castellano), y no hay correspondencia uno a uno. Se probó una clave única con el
+bloque entero —`make_eu` sustituye cadenas literales de más larga a más corta, así que entra la
+primera y vale—, pero deja un diccionario ilegible. **Lo que vale es rehacer el castellano con los
+mismos cortes que el euskera** y volver a emparejar párrafo a párrafo.
+
+Y **el título no se traduce, se escribe dos veces**: el suyo en euskera era «Zaldibarko mendietan
+barrena, gogorra eta ederra», y pasarlo al castellano como «por los montes de Zaldibar, dura y
+hermosa» le sonó **hortera**. El castellano volvió al que él había escrito, «una ruta exigente por
+los montes de Zaldibar», y el euskera se quedó con el suyo. Las dos lenguas pueden tener títulos
+distintos; lo que no puede es inventarse uno en castellano a partir del otro.
+
+**Preguntas frecuentes (`preguntas.html`).** Tercera pagina que no es una ruta, junto a `agua` y
+`aviso-legal`, y como ellas va en `PAGES` (build y make_eu), en `ROUTE_PAGES` de make_eu y en
+`NO_RUTA` de `check_site.py` — esa tupla es la que dice que no lleva tarjeta en la portada, y
+`preguntas` es ademas la segunda pagina sin mapa. Nueve preguntas y la guía, en `<details name="faq">` nativo:
+sin una linea de JavaScript, con teclado, y el propio navegador cierra la anterior al abrir otra
+(«que se cierren facil», lo pidio el autor). Si un navegador viejo no entiende `name`, lo unico que
+pasa es que se pueden quedar varias abiertas. El color sale de la actividad, como en todo el sitio:
+naranja las de bici (`data-tema="bici"`), verde las de andar (`data-tema="pie"`) y el color de
+enlace las generales, que no es ninguna de las dos y por eso no se lee como una actividad.
+**Sin JSON-LD de `FAQPage` a proposito**: desde agosto de 2023 Google solo muestra ese resultado
+enriquecido a webs oficiales de sanidad y administracion, asi que seria un segundo sitio donde
+mantener las mismas diez respuestas, en dos idiomas, a cambio de nada.
+
+**La guía paso a paso de «monta tu ruta»** es **un `<details>` más de la lista**, el último, con
+el mismo `name="faq"` que los demás: el autor no la quiere abierta de por vida ocupando media
+página. Va pegada a «¿Puedo montarme mi propia ruta?», que es su pregunta. Son siete pasos con su
+captura, del lápiz al GPX, incluido el ojo de «Rutas» para ver qué hay debajo (si por ahí pasa un
+camino que no es ninguna de las 65, o si el tramo enganchado cruza campo a través).
+
+**La lista de carreras de la pregunta «¿Por qué algunas rutas coinciden con carreras de
+montaña?» hay que tocarla al meter una ruta que sea una carrera.** Lo pilló el autor: «¿por qué
+algunas rutas coinciden con carreras de montaña? Falta zaldutrail». Van ahí el Asto Trail de
+Garai, la 7 Pago de Mallabia, la Amaraune de Berriz, la Ahuntzen de Elgeta, las Hiru Txikiak de
+Ermua y el **Zaldutrail de Zaldibar**. No hay script que lo rellene: es prosa, en el castellano y
+en su clave de `eu.py`.
+
+**Las preguntas van agrupadas por tema**, no por orden de llegada: las tres de bici, luego las tres
+de elegir ruta (Esfuerzo, niños, carreras), luego las dos de campo (agua, tracks) y al final las dos
+de montarse la ruta. Lo pidió el autor: «las que más se parecen, juntas».
+
+**Al abrir una pregunta, la página la pone a la vista** (el bloque del final de `src/js/app.js`).
+Hace falta porque `<details name="faq">` cierra la anterior en el mismo paso y la página se encoge
+de golpe: lo que acabas de tocar se va hacia arriba, a veces debajo de la cabecera pegajosa. Si la
+pregunta cabe entera en la pantalla se centra; si no cabe —la guía mide 3.303 px en un móvil— se
+lleva el título justo debajo de la cabecera, que es lo útil. Se esperan **dos fotogramas** antes de
+medir: en el primero el navegador todavía no ha recalculado el alto de la que se cierra.
+
+**Cada lengua tiene sus capturas.** Las de euskera son `img/guia/<paso>.eu.webp` y están hechas
+sobre `index.eu.html`, porque en el mapa cambian los rótulos (**Bizi**, **Kaleak**, **Satelitea**) y
+en la herramienta también. El cambio de ruta se hace con ocho claves de `img/guia/x.webp` a
+`img/guia/x.eu.webp` en el diccionario `PREGUNTAS`, y **los dos juegos miden exactamente lo mismo**,
+para que el `width`/`height` del marcado valga para ambos. Para rehacerlas: viewport de 390x844 y
+dpr 2 (la franja del perfil, a 800 de ancho, que es la proporción de 760x79), los puntos del trazado
+se meten con `window.__m.fire('click', {latlng})` y **no con el ratón** — traducir a coordenadas de
+pantalla falla en cuanto la página se desplaza un poco—, y el recorte se centra en el propio
+`.draw-line`. La lista de guardados se abre sola al pulsar «Gorde»: si además pulsas el botón de la
+lista, la cierras.
+
+El texto de la guía en euskera **lo escribió el autor entero**, y en el paso 6 lleva **dos viñetas**
+donde el castellano tiene una frase seguida. Ojo con eso: `.guia-pasos li::before` pintaba el número
+del paso también en las viñetas (salían «7» y «8»), así que el selector es **`.guia-pasos > li`**,
+sólo hijos directos. Y donde él escribió «Rutas botoia» va **«Ibilbideak»**: es como se llama el
+botón en la página en euskera, y además «Rutas» está en `SPANISH_TELLS` y tumbaría el build.
+
+Las capturas están en **`img/guia/`**, en WebP de 760 px y 545 kB en total, y **no pasan por el
+tren de imágenes**: `optimize_images.py` y compañía sólo miran los `.jpg` de `img/` y de `img/orig/`
+con `os.listdir`, así que una subcarpeta les es invisible, y eso es justo lo que se quiere — son
+pantallazos, no fotos, y reprocesarlos los estropearía. Se regeneran a mano con Playwright cuando la
+herramienta cambie de aspecto. Todas van `loading="lazy"` menos la primera, y se muestran **a su
+tamaño real como mucho** (`width:auto; max-width:100%`): estiradas a la columna entera se ven
+borrosas.
+
+**Dibujar un trazado propio, sobre los caminos de la web** (`src/js/trazado.js`, solo portada).
+Idea del autor: casi nadie se hace de una tirada una ruta de 37 km, y lo que pide la gente es unir
+dos, acortar una o montarse la suya. Dibujar a mano alzada se descartó — un garabato no va por los
+caminos y su kilometraje sería mentira —, así que **se dibuja tocando puntos y el camino entre dos
+toques se calcula sobre los tracks reales**.
+
+La red se construye en el navegador con los mismos tracks que la portada ya tiene
+(`data/trailhead.json`): los puntos se pegan a una rejilla de 15 m y cada celda es un nodo. Con los
+datos de hoy salen **8.418 nodos y 10.796 tramos, y forman una sola componente conexa** — desde
+cualquier punto de cualquier ruta se llega a cualquier otro sin salirse de terreno grabado —, así
+que **no hace falta ningún servicio de rutas de fuera**, que es la regla de esta web. Antes de pegar a la rejilla **cada tramo se rellena cada 5 m**: los puntos vienen simplificados a 10 m
+y dos caminos que se *cruzan* pueden caer en celdas distintas, con lo que el cruce no existe para la
+red y el cálculo se va a buscar la vuelta larga. Medido sobre 120 pares de puntos a 100-600 m, el
+rodeo mediano baja de 1,94 a 1,58 veces la línea recta y los rodeos de más de 3x pasan de 31 a 22.
+**Los que quedan son de verdad** — entre esos dos puntos no hay camino grabado —, y por eso cuando un
+tramo sale más de 2,5 veces la recta y se pasa de 300 m, el panel lo dice con los kilómetros que son.
+La red pasa de 8.375 a 46.226 nodos y se construye en 0,25 s medidos en el navegador. El camino se
+busca con Dijkstra sobre montículo binario; un toque tarda milisegundos.
+
+Las alturas van aparte, en **`data/alturas.json`** (56 kB), que escribe `scripts/make_alturas.py`
+cogiendo para cada punto de la portada la altura del punto más cercano del `data/<ruta>.json` de esa
+misma ruta (esos sí las llevan). **Hay que volver a pasarlo después de `make_map_data.py`.** El
+fichero se baja solo al abrir el modo de dibujo: el mapa de la portada no necesita alturas y no hay
+por qué cobrárselas a todo el que lo abre.
+
+Tres cosas que costaron una vuelta y conviene no volver a tropezar:
+
+- La clase `is-drawing` va en **`[data-map-src]`**, que es el `.leaflet-container`, no en el
+  `.route-map-box` de fuera. Con ella, los 65 tracks y sus marcadores pierden el `pointer-events`:
+  sin eso, tocar encima de una ruta abría su ficha y el toque nunca llegaba al mapa. Y se bajan al
+  30 % de opacidad para que el trazo azul se vea; el propio trazo lleva `.draw-line` y se libra.
+- **Todo vive dentro del mapa, y el mapa se lleva casi la pantalla entera.** Al entrar en modo
+  dibujo, `encaja()` le da a la caja el alto que queda tras la cabecera pegajosa y, en el móvil, la
+  barra fija de abajo («Lista / Todas / A pie…», que el autor quiere seguir viendo), y la saca de su
+  columna centrada con un margen negativo para que ocupe todo el ancho. **El ancho se toma de
+  `clientWidth`, no de `100vw`**: `100vw` incluye la barra de desplazamiento y dejaría la página
+  moviéndose de lado. Medido: 388x709 en un móvil de 390x844 y 1278x822 en 1280x900, sin desbordar.
+  Al salir se restaura todo.
+- **Un perfil pequeño en la pastilla**, en el sentido de la marcha, con una rayita en cada punto
+  tocado y **el último tramo sombreado**, más su propio «+69 / −52 m» debajo del total. Lo pidió el
+  autor: lo que quiere saber al enganchar un tramo es si lo coge de subida o de bajada, porque en
+  bici y andando no da igual. El desnivel se suma con el mismo umbral de 5 m que el total, para no
+  contar el ruido del GPS, y por eso va con un «aprox.» al lado.
+- Las opciones (deshacer, borrar, guardar, GPX, guardados) van **en columna dentro del mapa, justo
+  debajo del lápiz**, en la esquina de arriba a la derecha, y los totales en una pastilla pequeña
+  abajo a la izquierda. Se probaron antes dos sitios que el autor descartó: un panel flotante encima
+  del mapa (tapaba justo donde hay que tocar) y el mismo panel debajo del mapa, en el flujo de la
+  página (con el mapa grande se iba fuera de la pantalla y había que bajar a por «Deshacer» después
+  de cada toque). Mientras dura se esconden el botón flotante de «Lista» y el de «volver arriba»,
+  que caen encima de la columna y de la pastilla.
+- `map.js` no sabe nada de todo esto: al terminar de montar el mapa dispara un evento
+  **`mapa:listo`** con el mapa, Leaflet, los datos, la caja y `cerrarPanel`. Si `trazado.js` no está
+  cargado, no pasa nada.
+
+**«Cerrar el círculo», «Ida y vuelta» y arrastrar un punto ya puesto (31 oct 2026).** Lo pidió el
+autor: «el trazado, la ruta la pega entera, más fácil, más limpia; mira en otros navegadores y saca
+ideas». Los tres botones que tenía el lápiz para dar forma a un trazado eran Deshacer y Borrar, y
+con eso **para corregir el segundo toque de ocho había que deshacer los seis de después**.
+
+Las dos medidas que mandaron en la decisión:
+
+- **52 de las 68 rutas (el 76 %) empiezan y acaban a menos de 100 m**: el circuito es lo normal
+  aquí, y cerrarlo había que hacerlo a toques. Por eso «Cerrar el círculo» es lo primero. Lo
+  tienen igual Garmin Connect («Loop to Start»), HiiKER, Komoot y Bikemap.
+- Las 68 rutas abarcan un recuadro de **24 x 22,7 km** y sólo el **26 %** de él está a menos de
+  120 m (`MAX_ENGANCHE_M`) de un camino grabado: **74 de cada 100 toques no enganchan nada**. Eso
+  no lo arregla ningún botón — es el techo de la red, que sólo lleva los 68 tracks propios— y es
+  la razón por la que la idea grande que queda pendiente es **alimentar la red con los caminos de
+  OpenStreetMap de la zona**, en una instantánea estática como la de `scripts/osm/`.
+
+Cómo están hechos, y lo que hay que respetar si se tocan:
+
+- **El invariante de siempre**: `tramos[k]` va de `anclas[k-1]` a `anclas[k]`, y `tramos[0]` es
+  `[anclas[0]]`. `recorrido()` se apoya en él (del tramo 0 coge todo y de los demás se salta el
+  primer punto). Las tres funciones nuevas lo mantienen.
+- **Cerrar el círculo** añade `anclas[0]` otra vez al final, con su tramo calculado. El nodo
+  repetido es a propósito: así el invariante se cumple sin casos especiales. `pinta()` **no dibuja
+  la bola del último punto cuando coincide con la del primero**, que si no quedan dos superpuestas
+  y no se sabe cuál arrastras.
+- **Ida y vuelta no calcula nada**: copia los tramos en orden inverso y cada uno del revés.
+  Comprobado en el navegador: 1,22 km pasan a 2,45, el doble exacto.
+- **Arrastrar un punto recalcula sólo sus dos tramos vecinos**, y si alguno no sale no se toca
+  nada. Con el trazado cerrado, el primer punto y el último son el mismo nodo y se mueven los dos,
+  o el círculo se abre.
+- **Los dos botones nuevos salen sólo con dos puntos o más**: la columna vive dentro del mapa y
+  son siete botones; sin eso ocuparían sitio para no hacer nada. Medido con el lápiz abierto en
+  390x844, la columna va del píxel 95 al 370 y sobra sitio, porque dibujar agranda el mapa.
+- La bola mide 12 px y con el dedo no se agarra: el área sensible se estira a 28 px con un
+  `::after` transparente en `.draw-dot`, sin tocar cómo se ve.
+
+Probado en un navegador de verdad sobre la red real: tres anclas 1,22 km → ida y vuelta 2,45 → dos
+deshacer 1,22 → cerrar el círculo 1,42 → arrastrar la segunda bola 1,79, sin un solo error de
+consola y con el círculo intacto después de arrastrar.
+
+Lo que dibuja un visitante **no es una ruta de la web**: va en otro color (`--trazo`, que no es
+ninguna de las dos actividades a propósito), se llama «tu trazado», se guarda solo en su navegador
+(`localStorage`, hasta 12) y nunca aparece entre las 65. Se puede deshacer tramo a tramo, borrar,
+guardar, reabrir y bajar como GPX.
 
 **El tiempo de los proximos dias, en cada ficha.** `add_weather()` en `src/build.py` escribe debajo
 del mapa un bloque vacio y **oculto** (`<section class="weather" hidden>`) con las coordenadas del
@@ -318,10 +1206,51 @@ Las etiquetas que escribe el JavaScript (Hoy/Mañana, los dias de la semana, los
 viven en `eu.UI` como todas las demas y `build.py` se las pasa en un `data-textos` con JSON, en vez de
 duplicar las traducciones dentro del `.js` — que es uno solo para los dos idiomas.
 
-Esto suma **un tercero mas** a los que ya veian la IP de cada visitante al pintar el mapa; esta dicho
-en el aviso legal, en los dos idiomas, y al pie del propio bloque.
+**Y debajo de los cuatro dias, el texto oficial de Euskalmet.** Lo pidio el autor: «el tiempo creo
+que esta aplicacion no da una, busca otra alternativa». Se probaron las alternativas de verdad, no
+leyendo sus webs:
 
-**Map tiles are deliberately never cached.** They come from OpenStreetMap, CyclOSM and Spain's IGN —
+- **Euskalmet si se puede usar, y es el hallazgo bueno.** Hay un fichero abierto **sin clave**,
+  `opendata.euskadi.eus/contenidos/prevision_tiempo/met_forecast/opendata/met_forecast.xml`, que
+  responde `Access-Control-Allow-Origin: *` y se actualiza a las 06:00. Trae el texto de la
+  prevision **en castellano y en euskera**, escrito por quien pronostica este valle.
+- **Solo se enseña el de hoy.** Entraban hoy y manana y eran dos parrafos largos debajo de cada
+  ficha; el autor dijo «recorta». El de manana sigue llegando en el mismo fichero: volver a
+  ponerlo es cambiar `DIAS_LOCAL` de 1 a 2 en `src/js/weather.js`.
+- **Pero no sustituye a Open-Meteo**: solo da **hoy y manana**, sin probabilidad de lluvia, y sus
+  temperaturas son de seis ciudades (Bilbao, Donostia, Vitoria, Pamplona, Mondragon, Laguardia),
+  ninguna de por aqui. Por eso se **suma** debajo en vez de reemplazar la tira de cuatro dias.
+- **Dos trampas al leerlo**: el fichero viene en **ISO-8859-1**, asi que hay que decodificarlo a
+  mano (`arrayBuffer()` + `TextDecoder('iso-8859-1')`); con `response.text()` los acentos salen
+  rotos. Y `pideLocal()` se llama **tambien en la rama de la cache**, que ahi habia un `return`
+  temprano y si no el texto no salia al volver a una ficha.
+
+**Lo que NO se hizo, y por que.** Se compararon ocho modelos para el mismo punto y dia y la
+probabilidad de lluvia iba de **30 %** (lo que da la mezcla por defecto, que es lo que usa la web) a
+**88 %** (ECMWF, MET Norway, UK Met Office). Tentaba cambiar de modelo, pero **el texto oficial de
+Euskalmet para ese dia no mencionaba lluvia**, asi que el 30 % se le parecia mas que el 88 %.
+Cambiar de modelo a ciegas podia empeorarlo, y no hay manera de saber cual acierta sin seguirlo
+varios dias. Tampoco sirve **pasarle la altura real** a Open-Meteo: el modelo ya situa Trabakua a
+430 m frente a los 412 reales, 0,1 oC de diferencia. AEMET y met.no siguen descartados por lo de
+siempre (clave a la vista, cabecera que un navegador no deja poner).
+
+Esto suma **dos terceros mas** a los que ya veian la IP de cada visitante al pintar el mapa
+—geoEuskadi por las teselas y Open Data Euskadi por este texto—; esta dicho en el aviso legal, en
+los dos idiomas, y al pie del propio bloque. **El aviso legal se habia quedado atras** cuando entro
+la capa de geoEuskadi: nombraba solo al IGN, CyclOSM, Esri y Open-Meteo. Al anadir una capa o un
+servicio hay que tocarlo, y su clave en `eu.py`.
+
+**Y hay un iframe de Google Maps en la portada**, dentro del desplegable «Dónde aparcar»: marca el
+puerto de Trabakua, las mismas coordenadas que el marcador de aparcamiento del mapa propio. Va con
+`loading="lazy"`, así que sólo carga si alguien abre ese desplegable, pero cuando carga **Google
+pone sus cookies**, y eso contradecía dos frases del aviso legal: la lista cerrada de servicios
+externos (IGN, CyclOSM, geoEuskadi, Esri, Open-Meteo, Euskalmet) y el «esta web no usa cookies de
+rastreo ni analítica de ningún tipo». Se le planteó al autor quitarlo —el mapa de la web ya marca
+ese punto— y eligió dejarlo y declararlo, así que **el aviso legal lo nombra ahora en los dos
+idiomas** y la frase de las cookies dice «no pone ninguna cookie propia», con Google como única
+excepción. Si algún día entra otro contenido incrustado, lo mismo: mirar esas dos frases.
+
+**Map tiles are deliberately never cached.** They come from CyclOSM and Spain's IGN —
 volunteer-run servers whose usage policy forbids bulk caching. Without signal the track is drawn on an
 empty background, not on the map.
 
@@ -361,6 +1290,19 @@ them automatically; distance/elevation-gain figures in `.facts` are meant to ref
 invented numbers. `data/trailhead.json` holds every route's track for the home-page overview map.
 `src/js/map.js` reads waypoint labels straight from the page's already-rendered `.elev-legend` items
 (not duplicated in the JSON), and derives the route's compass heading itself.
+
+**Desde el 3 de noviembre de 2026 los GPX de esta zona salen y llegan a Trabakua, y lo garantiza
+el autor en origen.** Sus palabras: «los últimos GPX salen y llegan a Trabakua. A partir de ahora
+será así. Siempre que sean de esta zona, a Trabakua; ninguna saldrá de casa, si saliera os avisaré
+siempre». Comprobado el día que lo dijo: 54 de los 70 GPX arrancan a menos de 300 m de Trabakua, y
+los 16 restantes son de otras zonas (Ahuntzen a 9,5 km, Markina a 7,5), que es lo que él mismo
+acota con «de esta zona».
+
+**Qué cambia:** no hace falta pedirle que pase `por_la_general.py --revisa` cada vez que publica una
+ruta nueva. Lo estaba haciendo y es ruido: el problema se evita en origen. **Si el autor no dice nada, despreocúpate: no hay que comprobar nada ni pedirle que compruebe nada.** Él avisa si alguna sale de su casa; mientras no avise, se da por bueno. Son sus palabras: «si algunas saliera de mi casa lo avisaré, si no despreocuparos». **Qué NO cambia:** el
+script, la comprobación de `check_site.py` y el AVISO cuando falta `.punto-privado.json` se quedan
+tal cual. No cuestan nada y son la red por si algún día entra un track de otra procedencia -uno que
+le pasen, o uno viejo-. Si él avisa de que una ruta sale de casa, entonces sí: `por_la_general.py`.
 
 **A GPX must never start or end at the user's house, and must never go in front of it — always
 along the BI-633.** Standing instruction, for every route. Two earlier attempts at this got it wrong
@@ -457,7 +1399,9 @@ There's no automated test suite — verification is manual:
   para ir al monte, un tramo que en el mapa va por la recta en vez de por la curva no le cambia nada.
   No es un fallo que haya que arreglar ni que avisar. Lo que sí son fallos, y hay que seguir diciendo,
   son los datos que **contradicen** la realidad: una distancia que no cuadra con el GPX, un nombre de
-  sitio equivocado, una fuente que no existe.
+  sitio equivocado, una fuente que no existe. Esto vale igual para las **alturas**: un GPS tiene
+  error de hasta 15 m, así que si una cumbre aparece con 795, 791 y 783 m en tres sitios distintos,
+  es el mismo monte y no hay nada que contrastar ni que avisar. No descartes una fuente por eso.
 - **Los dos tracks que quedan con tramos rectos están decididos: no los vuelvas a plantear.**
   `intxorta` tiene un corte de grabación de 644 m al principio y **ninguna otra ruta recorre ese tramo
   entero**, así que cerrarlo exigiría inventarse el enlace. **El original de Wikiloc trae el mismo
@@ -467,6 +1411,39 @@ There's no automated test suite — verification is manual:
   **trazada en Wikiloc, no grabada** (81 puntos/km, sin `<time>`, cierra el círculo a 0,00 m exactos),
   y su descarga de Wikiloc es byte a byte la que ya está en `src/longa.gpx`, así que no hay original
   mejor que recuperar. Sus 52 tramos rectos son como se trazó. Déjalo estar salvo que él lo saque.
+- **`garaimaguna` nombra Maguna en su título y la ruta pasa a 329 m. Está medido y NO es un error:
+  no volver a sacarlo.** Se midieron los 96 lugares nombrados en los títulos de todas las rutas
+  contra su propio GPX (de cada nombre repetido, el más cercano): la mediana es **16 m**, pero
+  `argineta` nombra **Trabakua a 763 m**, `iturreta` y `exigente` nombran **Barinaga a 495 m**, y 16
+  de 96 pasan de 150 m. Los títulos de esta web nombran los sitios por los que la ruta **pasa**, no
+  sólo los que pisa, y 329 m queda dentro de lo normal. El punto numerado, que es donde el dato
+  tiene que ser exacto, ya dice «Cerca de Maguna». Esto se le planteó al autor tres veces como si
+  fuera un fallo antes de molestarse en medirlo.
+
+- **Si falta `scripts/.punto-privado.json`, `check_site.py` lo dice ahora.** Esa comprobación —la
+  única instrucción permanente del autor sobre los tracks— se saltaba **en silencio** cuando el
+  fichero no estaba, y las 14.023 comprobaciones salían correctas sin haberla hecho ni una vez.
+  Ahora imprime `AVISO:` y lo cuenta al pie. No tumba el build a propósito: sin el fichero no hay
+  nada que comprobar, y en GitHub Actions tampoco va a estar.
+
+- **Un nombre de sitio en la prosa tiene que estar donde dice el texto que pasamos, y el criterio ya
+  existe: el de `make_places.py`.** Un `locality` entra si el track pasa a menos de **70 m**, un
+  `hamlet` o un barrio a 200, una cima a 60. Montando la ficha de `zaldutrail` se colaron en el
+  cuerpo seis topónimos de OpenStreetMap que ese mismo criterio ya había rechazado — Arkatxe a
+  399 m, Zabaldiak a 335, Aginde a 244, Potzueta a 243, Aginaga a 224 y Berrenguren a 104 — y el
+  autor los sacó: «¿merece la pena meter estos nombres?». No. Un caserío suelto a 300 m no lo ve
+  quien va por el camino, no ayuda a orientarse y afirma algo que los datos no dan. Los nombres
+  eran reales; la afirmación, no. Para los **títulos** la regla es otra y más laxa (ver
+  `garaimaguna` más arriba): ahí se nombra por donde la ruta pasa, no sólo lo que pisa.
+
+- **Que un sitio no salga en `scripts/osm/` no quiere decir que no exista: la consulta sólo baja
+  PUNTOS.** El autor preguntó si el barrio del km 18,1 de `zaldutrail` podía ser **Gazaga**, y la
+  copia de OSM no tenía ningún Gazaga. Lo tenía, pero como **área administrativa**, y
+  `places.json`/`pois.json` sólo traen nodos. Se vio preguntándole a Nominatim por la ermita: su
+  dirección completa es «Ermita de San Lorenzo de Urizar, Bizkaiko Golkoko Autobidea, **Gatzaga**,
+  Zaldibar», y el mapa de Wikiloc rotula ahí mismo «Lugar Bo. Gazaga». Antes de dar un topónimo por
+  inexistente, preguntar a Nominatim por la dirección completa de algo que sí esté en ese punto.
+
 - Never invent route facts (distances, elevations, place names, waypoint order, water sources). This
   site documents real, personally-verified routes; when a detail is uncertain, ask rather than guess.
 - **Always tell the user about missing data or factual errors you notice, even when they didn't ask

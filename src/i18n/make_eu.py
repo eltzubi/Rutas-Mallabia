@@ -24,25 +24,26 @@ sys.path.insert(0, HERE)
 
 import eu  # noqa: E402
 
-PAGES = ["mallabia", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"]
+PAGES = ["mallabia", "lekeitio", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "artetaberanoarandono", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "trabakuadeba", "trabakuaondarroa", "askakosantakataline", "garaikanala", "aixolaintxorta", "zengotitamaguna", "zengotitagarai", "lejarreta", "zaldutrail", "preguntas", "agua", "aviso-legal"]
 # "aviso-legal" no es una ruta (sin facts/perfil/galeria), pero comparte el
 # mismo cascaron de pagina (masthead, back-link, footer, back-home) que las
 # rutas -- se mete aqui para heredar esas mismas cadenas compartidas (ROUTE)
 # y el swap de href a .eu.html, no porque sea una ruta real.
-ROUTE_PAGES = {"trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "longaurjauziak", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "agua", "aviso-legal"}
+ROUTE_PAGES = {"lekeitio", "trabakua", "iturrizuri", "zenarruza", "argineta", "gerea", "zengotitagane", "oiz", "arietzu", "urko", "sancristobal", "iturreta", "egoarbitza", "urregarai", "kalamua", "mundiokokoba", "iruzubieta", "mendibil", "arteta", "artetaberanoarandono", "goita", "hirutxikiak", "zaldibar", "maguna", "7pago", "7pago16", "barinaga", "muniozguren", "exigente", "potrera", "aixola", "intxorta", "artetaasuntza", "trabakuamallabia", "betzun", "sarrimendi", "longa", "zengotitaosmagain", "axmakuriturrizuri", "amaraune", "astarlokoatxa", "garaimaguna", "sanpedrobidarte", "sancristobaloiz", "axmakurandikoa", "markinabolibar", "asuntzabira", "gereaoculta", "sancristobalgaraiandikoa", "zengotitaiturzuri", "santamanazarandikoa", "markinakobau", "mallukitoko", "santaeufemia", "markinaurjauziak", "ahuntzen", "longaurjauziak", "astorkigane", "karabieta", "galdaraminio", "garaigaztelu", "ixuakalamua", "trabakuadeba", "trabakuaondarroa", "askakosantakataline", "garaikanala", "aixolaintxorta", "zengotitamaguna", "zengotitagarai", "lejarreta", "zaldutrail", "preguntas", "agua", "aviso-legal"}
 
 # Esta ficha se redactó ya en los dos idiomas durante su incorporación.
 # Hasta migrar sus textos al diccionario granular de eu.py, mantenemos su
 # tail EU como fuente explícita para que el generador no lo sobrescriba.
 # Vacio: las tres fichas que se mantenian a mano ya tienen sus textos en
 # eu.py, asi que todas las paginas en euskera se generan igual.
-MANUAL_EU_PAGES = set()
+MANUAL_EU_PAGES = {"lekeitio"}
 
 # es filename -> eu filename, for the cross-language links.
-# La portada en euskera es la raiz del sitio, o sea index.html mismo: el
-# castellano es el que se va a index.es.html (lo reapunta build.py al escribir
-# la salida ES). Por eso aqui index.html se queda como esta.
-EU_OF = {"index.html": "index.html"}
+# La portada en castellano es la raiz del sitio, o sea index.html; la de
+# euskera se va a index.eu.html como cualquier otra pagina. El conmutador de
+# idioma se escribe despues (ver mas abajo) y apunta a index.html, que ya es
+# la castellana, asi que build.py no tiene que tocar nada de esto.
+EU_OF = {"index.html": "index.eu.html"}
 for _p in ROUTE_PAGES:
     EU_OF[f"{_p}.html"] = f"{_p}.eu.html"
 

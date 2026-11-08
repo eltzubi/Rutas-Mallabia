@@ -3,6 +3,7 @@
 import hashlib
 import json
 import math
+import os
 import re
 from html.parser import HTMLParser
 from pathlib import Path
@@ -99,7 +100,7 @@ def text(node):
 
 # Las paginas que no son fichas de ruta: no tienen GPX, ni perfil, ni
 # formulario de incidencias, ni tarjeta en la portada.
-NO_RUTA = ('mallabia', 'agua', 'aviso-legal')
+NO_RUTA = ('mallabia', 'preguntas', 'agua', 'aviso-legal')
 
 
 def main():
@@ -110,6 +111,7 @@ def main():
     sys.path.insert(0, str(ROOT / 'src'))
     import build
     checks = 0
+    avisos = []
 
     def require(condition, message):
         nonlocal checks
@@ -122,7 +124,7 @@ def main():
             filename = build.out_name(page, lang)
             document = Document((ROOT / filename).read_text())
             nodes = document.nodes
-            if page != 'aviso-legal':   # la unica pagina sin mapa
+            if page not in ('aviso-legal', 'preguntas'):   # las dos paginas sin mapa
                 require(any('leaflet.css' in n['attrs'].get('href', '') for n in nodes),
                         f'{filename}: missing Leaflet stylesheet')
             theme = next(n for n in nodes if n['attrs'].get('id') == 'themeToggle')
@@ -140,7 +142,15 @@ def main():
                         yield n
                         for c in n['children']:
                             yield from walk(c)
-                names = [n for n in walk(section) if 'elev-legend-item' in n['attrs'].get('class', '').split()]
+                # El renglon del agua («Agua»/«Ura», gota azul) vive en la misma
+                # lista pero no es un punto numerado: lo pone add_agua_a_la_leyenda
+                # en src/build.py y no le corresponde ningun waypoint.
+                def _es_punto(n):
+                    if 'elev-legend-item' not in n['attrs'].get('class', '').split():
+                        return False
+                    return not any('gota' in c['attrs'].get('class', '').split()
+                                   for c in n['children'] if isinstance(c, dict))
+                names = [n for n in walk(section) if _es_punto(n)]
                 data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
                 require(len(names) == len(data.get('waypoints', [])), f'{filename}: waypoint/legend mismatch')
             elif page == 'mallabia':
@@ -150,6 +160,20 @@ def main():
                 # y ninguna de las dos tiene tarjeta.
                 rutas = [p for p in build.PAGES if p not in NO_RUTA]
                 require(len(cards) == len(rutas), f'{filename}: missing card')
+                def descendants(node):
+                    for child in node['children']:
+                        if isinstance(child, dict):
+                            yield child
+                            yield from descendants(child)
+                for card in cards:
+                    chart = next((n for n in descendants(card)
+                                  if 'route-card-chart' in n['attrs'].get('class', '').split()), None)
+                    require(chart is not None,
+                            f"{filename}: falta el perfil en la tarjeta {card['attrs'].get('href')}")
+                    require(any(n['tag'] == 'path' and len(n['attrs'].get('d', '')) > 200
+                                for n in descendants(chart)),
+                            f"{filename}: perfil vacio en {card['attrs'].get('href')}")
+
                 for slug in ('muniozguren', 'iruzubieta'):
                     card = next(n for n in cards if n['attrs'].get('href') == slug + suffix + '.html')
                     require(set(card['attrs']['data-activity'].split(',')) == {'bici', 'senderismo'}, slug)
@@ -167,6 +191,17 @@ def main():
             continue
         gpx = ROOT / 'src' / f'{page}.gpx'
         require(gpx.exists(), f'{page}: falta su GPX')
+        # El marcador de salida debe llevar {"at":[lat, lon],"color":"..."}.
+        # Si se guarda como una lista [lat, lon], Leaflet intenta acceder a
+        # marker.at (undefined), deja el mapa en blanco e impide bajar el perfil.
+        map_data = json.loads((ROOT / 'data' / f'{page}.json').read_text())
+        marker = map_data.get('marker')
+        if marker is not None:
+            require(isinstance(marker, dict) and isinstance(marker.get('at'), list)
+                    and len(marker['at']) == 2
+                    and all(isinstance(v, (int, float)) and math.isfinite(v)
+                            for v in marker['at']),
+                    f'{page}: marcador de salida invalido en data/{page}.json')
         km_real, alt_min, alt_max = datos_gpx(gpx)
         html = (ROOT / f'{page}.html').read_text()
 
@@ -247,7 +282,7 @@ def main():
         datos = json.loads((ROOT / nombre).read_text())
         for icono in datos['icons']:
             require((ROOT / icono['src']).exists(), f'{nombre}: falta {icono["src"]}')
-        require(datos['start_url'] in ('/', '/index.es.html'), f'{nombre}: start_url raro')
+        require(datos['start_url'] in ('/', '/index.eu.html'), f'{nombre}: start_url raro')
     for lang, (_, suffix) in build.LANGS.items():
         esperado = 'manifest.webmanifest' if lang == 'eu' else 'manifest.es.webmanifest'
         pagina = (ROOT / build.out_name('arteta', lang)).read_text()
@@ -449,6 +484,17 @@ def main():
                       for p in ET.fromstring(z.read(nombre)).findall('.//{*}trkpt')]
                 d = mas_cerca(ps)
                 require(d >= tope, f'ZIP/{nombre}: pasa a {d:.0f} m del domicilio')
+    else:
+        # Y si no esta, QUE SE SEPA. Antes se saltaba en silencio: las 14.023
+        # comprobaciones salian correctas sin haber mirado el domicilio ni una
+        # vez, que es la unica instruccion permanente del autor sobre los
+        # tracks. Un aviso no puede tumbar el build -- sin el fichero no hay
+        # nada que comprobar y en GitHub Actions tampoco va a estar -- pero
+        # callarse hacia creer que estaba comprobado.
+        avisos.append(
+            'NO se ha comprobado que ningun track pase por el domicilio: '
+            'falta scripts/.punto-privado.json (excluido de git a proposito). '
+            'Esta comprobacion solo corre en la maquina que lo tenga.')
 
     # --- la foto de vista previa existe y se publica -----------------------
     # El og:image es la foto que sale al compartir la pagina en WhatsApp o en
@@ -473,7 +519,7 @@ def main():
                     f'(img/orig esta excluido en _config.yml)')
 
     # --- las capas del mapa, iguales en los dos ficheros -------------------
-    # js/agua.js lleva su propia copia de las cuatro capas de teselas porque
+    # js/agua.js lleva su propia copia de las tres capas de teselas porque
     # js/map.js son 1.100 lineas atadas a los tracks y partirlo para compartir
     # treinta era arriesgar las 118 fichas por una pagina. La copia solo vale
     # si no se queda atras: si manana se cambia una URL en uno de los dos, esto
@@ -481,7 +527,7 @@ def main():
     mapa_js = (ROOT / 'src/js/map.js').read_text()
     agua_js = (ROOT / 'src/js/agua.js').read_text()
     plantillas = re.findall(r"L\.tileLayer\('([^']+)'", mapa_js)
-    require(len(plantillas) == 4, f'map.js: esperaba 4 capas, encuentro {len(plantillas)}')
+    require(len(plantillas) == 6, f'map.js: esperaba 6 capas (4 de fondo + los dos juegos de rotulos del satelite), encuentro {len(plantillas)}')
     for plantilla in plantillas:
         require(plantilla in agua_js,
                 f'js/agua.js no tiene la capa de map.js: {plantilla[:60]}')
@@ -499,7 +545,66 @@ def main():
             require(hashlib.sha256(gpx.read_bytes()).hexdigest() in hashes, f'ZIP omits {gpx.name}')
     for src, target in build.ASSETS.items():
         require((ROOT / 'src').joinpath(*src).read_bytes() == (ROOT / target).read_bytes(), f'Stale asset: {target}')
-    print(f'OK: {checks} comprobaciones de páginas, idiomas, marcadores, descargas y assets.')
+    # --- el navegador GPS lleva su propia copia de trailhead.json --------
+    # nuevo.html, en el repositorio trabakutik-gps-pruebas, resuelve el
+    # ?ruta=<slug> del boton «Navegar esta ruta» contra SU copia de
+    # data/trailhead.json, no contra la de la web. Al publicar zengotitagarai
+    # esa copia se quedo en 68 rutas, el slug no estaba y el boton se quedaba
+    # cargando para siempre. No lo avisaba nada: ni el build ni estas
+    # comprobaciones, porque el fallo vive en otro repositorio.
+    #
+    # Si la copia esta a mano, se compara; si no, se dice que no se ha mirado,
+    # igual que con el domicilio. En GitHub Actions no va a estar, y un aviso
+    # no puede tumbar el build por algo que no se puede comprobar alli.
+    gps = os.environ.get('TRABAKUTIK_GPS')
+    candidatos = [Path(gps)] if gps else []
+    candidatos += [ROOT.parent / 'trabakutik-gps-pruebas',
+                   ROOT.parent / 'trabakutik-gps']
+    copia = next((c / 'data' / 'trailhead.json' for c in candidatos
+                  if (c / 'data' / 'trailhead.json').is_file()), None)
+    if copia is not None:
+        aqui = json.loads((ROOT / 'data' / 'trailhead.json').read_text())
+        alli = json.loads(copia.read_text())
+        mias = {t['href'] for t in aqui['tracks'] if t.get('href')}
+        suyas = {t['href'] for t in alli['tracks'] if t.get('href')}
+        for falta in sorted(mias - suyas):
+            require(False,
+                    f'{copia}: le falta {falta}. El boton «Navegar esta ruta» '
+                    f'de esa ficha no va a cargar')
+        require(not mias - suyas,
+                f'{copia}: tiene {len(suyas)} rutas y la web {len(mias)}')
+        for sobra in sorted(suyas - mias):
+            avisos.append(f'{copia} tiene una ruta que la web no publica: {sobra}')
+        if copia.read_bytes() != (ROOT / 'data' / 'trailhead.json').read_bytes():
+            avisos.append(
+                f'{copia} no es copia exacta de data/trailhead.json aunque '
+                'lleve las mismas rutas: los puntos pueden estar viejos.')
+        # Lo mismo con rutas.json, que es de donde el navegador saca los
+        # titulos de la lista. Sin el enseñaba el nombre del archivo
+        # («zengotitagarai») y no se sabia de que ruta se trataba.
+        nombres = copia.parent / 'rutas.json'
+        if nombres.is_file():
+            suyos = json.loads(nombres.read_text()).get('es', {})
+            for slug in sorted(t['href'][:-5] for t in aqui['tracks'] if t.get('href')):
+                require(slug in suyos,
+                        f'{nombres}: no tiene el titulo de {slug}. La lista del '
+                        f'navegador enseñara el nombre del archivo')
+        else:
+            avisos.append(
+                f'{copia.parent}/rutas.json no existe: la lista del navegador '
+                'enseñara nombres de archivo en vez de titulos.')
+    else:
+        avisos.append(
+            'NO se ha comprobado la copia de trailhead.json del navegador GPS: '
+            'no encuentro el repositorio trabakutik-gps-pruebas al lado de este. '
+            'Si esa copia se queda atras, el boton «Navegar esta ruta» de las '
+            'fichas nuevas no carga. Se puede indicar con TRABAKUTIK_GPS=<ruta>.')
+
+    for aviso in avisos:
+        print(f'AVISO: {aviso}')
+    cola = f'  ({len(avisos)} aviso{"s" if len(avisos) != 1 else ""})' if avisos else ''
+    print(f'OK: {checks} comprobaciones de páginas, idiomas, marcadores, '
+          f'descargas y assets.{cola}')
 
 
 if __name__ == '__main__':

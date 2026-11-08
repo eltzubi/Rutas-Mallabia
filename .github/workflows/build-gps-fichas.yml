@@ -1,0 +1,38 @@
+name: Construir y verificar acceso GPS
+on:
+  push:
+    branches:
+      - feature/navegar-desde-fichas-20261030
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generar idiomas y páginas
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+      - name: Verificar estructura
+        run: |
+          python3 scripts/check_site.py
+          node scripts/test_ui.cjs
+      - name: Guardar páginas generadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Generar fichas bilingües con botón Navegar"
+            git push
+          fi

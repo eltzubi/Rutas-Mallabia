@@ -69,9 +69,9 @@ FUENTES = [
         # puerto que comparten 30 rutas: la fuente esta en el alto mismo.
         "coord": (43.210466, -2.546084),
         "punto": ("trabakua", "salida"),
-        "nota_es": "En el alto, junto al bar de arriba y los columpios.",
-        "nota_eu": "Mendatean bertan, goiko tabernaren eta kulunken ondoan.",
-        "rutas": ["mendibil", "urko", "hirutxikiak"],
+        "nota_es": "En el alto, junto al bar de arriba y el parque infantil.",
+        "nota_eu": "Mendatean bertan, goiko tabernaren eta haur-parke ondoan.",
+        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna", "zengotitagarai"],
     },
     {
         "id": "arteta",
@@ -81,7 +81,7 @@ FUENTES = [
         "punto": ("arteta", 3),
         "nota_es": "Agua todo el año. Brota de la roca y está algo escondida entre los árboles.",
         "nota_eu": "Ura urte osoan. Harkaitzetik sortzen da eta zuhaitzen artean ezkutatuta dago.",
-        "rutas": ["arteta", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
+        "rutas": ["arteta", "artetaberanoarandono", "artetaasuntza", "sanpedrobidarte", "sarrimendi", "karabieta", "egoarbitza"],
     },
     {
         "id": "mallabia",
@@ -106,7 +106,7 @@ FUENTES = [
         "nota_es": "Junto al refugio, en lo alto.",
         "nota_eu": "Aterpearen ondoan, goialdean.",
         "rutas": ["iturrizuri", "axmakuriturrizuri", "zengotitaiturzuri", "longa", "betzun",
-                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak", "7pago", "garaimaguna"],
+                  "sarrimendi", "oiz", "axmakurandikoa", "maguna", "sancristobal", "hirutxikiak", "7pago", "garaimaguna", "zengotitamaguna"],
     },
     {
         "id": "zengotita",
@@ -130,7 +130,23 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 1),
         "nota_es": "Arriba, junto a la ermita.",
         "nota_eu": "Goian, baselizaren ondoan.",
-        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane"],
+        "rutas": ["sancristobalgaraiandikoa", "garaigaztelu", "maguna", "potrera", "amaraune", "garaimaguna", "sancristobal", "sancristobaloiz", "sarrimendi", "zengotitagane", "askakosantakataline", "zengotitamaguna"],
+    },
+    {
+        "id": "besoita",
+        "zona": "zengotita",
+        "es": "Fuente de Besoita",
+        "eu": "Besoitako iturria",
+        # Coordenada medida por el autor, a 54 m del waypoint de Besoita y a
+        # 58 m del nucleo del barrio segun OpenStreetMap: la fuente esta en el
+        # barrio, no donde pasa el camino.
+        "coord": (43.189508, -2.574173),
+        "punto": ("askakosantakataline", 7),
+        "nota_es": "A la entrada del barrio, en un lateral.",
+        "nota_eu": "Auzoaren sarreran, alboan.",
+        "rutas": ["askakosantakataline", "amaraune", "garaimaguna", "santamanazarandikoa",
+                  "sancristobalgaraiandikoa", "betzun", "garaigaztelu", "sancristobal",
+                  "maguna", "zengotitagane", "zengotitagarai"],
     },
     {
         "id": "oiz",
@@ -154,7 +170,7 @@ FUENTES = [
         "punto": ("maguna", 3),
         "nota_es": "En el casco del barrio.",
         "nota_eu": "Auzoaren erdigunean.",
-        "rutas": ["maguna"],
+        "rutas": ["maguna", "zengotitamaguna"],
     },
     {
         "id": "garai",
@@ -166,7 +182,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
-        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal"],
+        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline"],
     },
     {
         "id": "errotatxo",
@@ -220,7 +236,7 @@ FUENTES = [
         "punto": ("aixola", 4),
         "nota_es": "Agua todo el año. Hay que desviarse unos metros a la izquierda al llegar al camino de la presa.",
         "nota_eu": "Ura urte osoan. Presako bidera iristean, metro batzuk ezkerrera jo behar da.",
-        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak", "aixola"],
+        "rutas": ["egoarbitza", "zaldibar", "hirutxikiak", "aixola", "zaldutrail"],
     },
     {
         "id": "zaldibar",
@@ -233,7 +249,7 @@ FUENTES = [
         "punto": ("zaldibar", None),
         "nota_es": "Junto al pol\u00edgono, de camino a Zaldibar.",
         "nota_eu": "Poligonoaren ondoan, Zaldibarrerako bidean.",
-        "rutas": ["aixola", "zaldibar"],
+        "rutas": ["aixola", "zaldibar", "zaldutrail"],
     },
     {
         "id": "eitzaga",
@@ -243,7 +259,7 @@ FUENTES = [
         "punto": ("zaldibar", 2),
         "nota_es": "En el barrio, antes de bajar hacia la presa de Aixola.",
         "nota_eu": "Auzoan, Aixolako presara jaitsi aurretik.",
-        "rutas": ["zaldibar", "hirutxikiak", "aixola"],
+        "rutas": ["zaldibar", "hirutxikiak", "aixola", "zaldutrail"],
     },
     {
         "id": "elgeta",
@@ -305,6 +321,56 @@ FUENTES = [
         "rutas": ["argineta", "aixola", "galdaraminio", "zaldibar"],
     },
     {
+        "id": "asentzio",
+        "zona": "aixola",
+        "es": "Fuente del lago de Asentzio",
+        "eu": "Asentzioko lakuko iturria",
+        # Coordenada medida por el autor, a 4 m del track de aixolaintxorta y a
+        # 53 m de la ermita de Asentzio segun OpenStreetMap. No va con numero
+        # de waypoint: el punto 4 de esa ruta (el lago) queda a 358 m, mas de
+        # lo que admite MAX_RUTA_M, porque la fuente esta en el merendero y no
+        # donde el perfil marca el lago.
+        "coord": (43.123432, -2.479129),
+        "punto": ("aixolaintxorta", None),
+        "nota_es": "En el merendero del lago, junto a las mesas.",
+        "nota_eu": "Lakuko merenderoan, mahaien ondoan.",
+        "rutas": ["aixolaintxorta"],
+    },
+    {
+        "id": "zeinka",
+        "zona": "markina",
+        "es": "Fuente de Zeinka",
+        "eu": "Zeinkako iturria",
+        # Coordenada dada por el autor, exacta: cae a 1 m del track de
+        # trabakuaondarroa, en el km 11,86. Mana todo el ano porque es el
+        # agua del deposito del barrio.
+        "aprox": False,
+        "coord": (43.257986, -2.555616),
+        "punto": ("trabakuaondarroa", 2),
+        "nota_es": "Junto al deposito de agua del barrio, justo antes de "
+                   "entrar en el nucleo de Zeinka.",
+        "nota_eu": "Auzoko ur-biltegiaren ondoan, Zeinkako gunean sartu "
+                   "aurretik.",
+        "rutas": ["trabakuaondarroa"],
+    },
+    {
+        "id": "arnoate",
+        "zona": "markina",
+        "es": "Fuente de Arnoate",
+        "eu": "Arnoateko iturria",
+        # El autor la marco en su track de Wikiloc: «Arnoate · Fuente ·
+        # Altitud 407 m», con foto del pilon de piedra. La coordenada es la
+        # del punto del track que esta a esa altura, en el km 21 de la
+        # travesia; la fuente queda justo al lado del camino, junto al
+        # caserio, asi que va como aproximada.
+        "aprox": True,
+        "coord": (43.26172, -2.42335),
+        "punto": ("trabakuadeba", None),
+        "nota_es": "Junto al camino, en Arnoate.",
+        "nota_eu": "Bidearen ondoan, Arnoaten.",
+        "rutas": ["trabakuadeba"],
+    },
+    {
         "id": "usartza",
         "zona": "markina",
         "es": "Fuente de Usartza",
@@ -315,7 +381,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino que sube a Kalamua.",
         "nota_eu": "Kalamuara igotzen den bidean.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "urkieta",
@@ -330,7 +396,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "En el camino a Kalamua, entre la de Usartza y la de Intxaurkorta.",
         "nota_eu": "Kalamuarako bidean, Usartzakoaren eta Intxaurkortakoaren artean.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "intxaurkorta",
@@ -345,7 +411,7 @@ FUENTES = [
         "punto": ("kalamua", None),
         "nota_es": "M\u00e1s arriba en el camino a Kalamua, pasada la de Usartza.",
         "nota_eu": "Kalamuarako bidean gorago, Usartzakoa pasata.",
-        "rutas": ["kalamua", "barinaga"],
+        "rutas": ["kalamua", "barinaga", "trabakuadeba"],
     },
     {
         "id": "drogeten",
@@ -448,7 +514,7 @@ FUENTES = [
         "punto": ("santaeufemia", 1),
         "nota_es": "Junto al camino, entre Markina-Xemein e Iruzubieta.",
         "nota_eu": "Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.",
-        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente"],
+        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente", "lekeitio"],
     },
     {
         "id": "atxagarai",
@@ -459,7 +525,7 @@ FUENTES = [
         "punto": ("santaeufemia", 2),
         "nota_es": "Frente al refugio y la bolera, en el collado de Urregarai.",
         "nota_eu": "Aterpearen eta bolatokiaren parean, Urregaraiko lepoan.",
-        "rutas": ["santaeufemia", "markinabolibar", "urregarai"],
+        "rutas": ["santaeufemia", "markinabolibar", "urregarai", "trabakuaondarroa", "lekeitio"],
     },
 ]
 

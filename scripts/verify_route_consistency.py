@@ -51,8 +51,8 @@ def duplicates(values: list[str]) -> list[str]:
 
 
 def main() -> int:
-    es_cards = parse_cards(ROOT / "index.es.html")
-    eu_cards = parse_cards(ROOT / "index.html")
+    es_cards = parse_cards(ROOT / "index.html")
+    eu_cards = parse_cards(ROOT / "index.eu.html")
     trailhead = json.loads((ROOT / "data" / "trailhead.json").read_text(encoding="utf-8"))
     tracks = trailhead.get("tracks", [])
 

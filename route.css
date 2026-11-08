@@ -340,6 +340,18 @@ main[data-activity] .hero-activity-badge svg{ color:var(--teal); }
   font-size:9px; font-weight:700;
   flex-shrink:0;
 }
+/* El agua en la lista de puntos: la misma gota azul que el mapa, al lado de
+   los circulos numerados, para saber que es el punto azul sin tener que
+   tocarlo. Sale sola en las fichas que declaran alguna fuente (add_agua_a_la
+   _leyenda en src/build.py), y el azul es el mismo #3B82F6 de src/js/map.js. */
+.elev-legend-item .gota{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:15px; height:15px; border-radius:50%;
+  background:#3B82F6; color:#fff;
+  flex-shrink:0;
+}
+.elev-legend-item .gota svg{ width:9px; height:9px; fill:currentColor; display:block; }
+
 /* La escala de la pendiente, debajo del mapa y con la misma letra y el mismo
    sitio que la lista de puntos numerados: aparece solo con el boton puesto. */
 .slope-legend{
@@ -745,4 +757,97 @@ footer a:hover{ color:var(--ink); }
 
 @media (max-width:659px){
   .agua-nota-general, .agua-zonas{ margin-left:16px; margin-right:16px; }
+}
+
+/* ---- Preguntas frecuentes (preguntas.html) -------------------------------
+   <details>/<summary> nativo: se abre y se cierra sin una linea de
+   JavaScript, funciona con el teclado y, si el navegador no entiende el
+   atributo name, lo unico que pasa es que se pueden quedar varias abiertas a
+   la vez. Con name="faq" el navegador cierra la anterior al abrir otra, que
+   es lo que pidio el autor: «que se cierren facil».
+   El color sale de la actividad, como en el resto del sitio: naranja las
+   preguntas de bici, verde las de andar, y el resto en el color de enlace,
+   que no es ninguna de las dos actividades y por eso no confunde. */
+.faq-list{ display:flex; flex-direction:column; gap:10px; margin:24px 0 30px; }
+.faq-item{
+  --acento: var(--link);
+  --acento-soft: color-mix(in srgb, var(--link) 12%, transparent);
+  border:1px solid var(--line); border-radius:16px;
+  background:var(--ground-raised); overflow:hidden;
+}
+.faq-item[data-tema="bici"]{ --acento: var(--teal); --acento-soft: var(--teal-soft); }
+.faq-item[data-tema="pie"]{ --acento: var(--violet); --acento-soft: var(--violet-soft); }
+.faq-item[open]{ border-color:color-mix(in srgb, var(--acento) 45%, transparent); }
+.faq-item summary{
+  display:flex; align-items:center; gap:14px;
+  padding:15px 18px; cursor:pointer; list-style:none;
+  font-weight:600; line-height:1.35; color:var(--ink);
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary:hover{ color:var(--acento); }
+.faq-item summary:focus-visible{ outline:3px solid var(--acento); outline-offset:-3px; border-radius:16px; }
+.faq-q{ flex:1 1 auto; }
+.faq-chevron{ flex:none; color:var(--acento); transition:transform .18s ease; }
+.faq-item[open] .faq-chevron{ transform:rotate(180deg); }
+.faq-item[open] summary{ color:var(--acento); }
+.faq-a{
+  padding:2px 18px 16px; background:var(--acento-soft);
+  border-top:1px solid color-mix(in srgb, var(--acento) 22%, transparent);
+}
+.faq-a p{ margin:14px 0 0; color:var(--ink); line-height:1.6; }
+.faq-a a{ color:var(--acento); text-decoration:underline; text-underline-offset:3px; }
+.faq-pie{ margin:0 0 8px; color:var(--ink-dim); font-size:15px; }
+@media (prefers-reduced-motion: reduce){
+  .faq-chevron{ transition:none; }
+}
+
+/* ---- Guia paso a paso de «monta tu ruta» (preguntas.html) ---------------
+   Siete pasos con su captura. El numero va en un circulo del color del
+   trazado, que es el de la herramienta, y no del de ninguna actividad.
+   Vive dentro de un <details> mas de la lista de preguntas: lo pidio el
+   autor, que ocupaba media pagina abierta de por vida. Por eso la entradilla
+   necesita ganarle a «.faq-a p», que si no le come el margen de abajo. */
+.faq-a .guia-intro{ margin:14px 0 20px; color:var(--ink-dim); }
+/* El paso del ojo lleva dos vinetas solo en euskera: asi lo escribio el autor. */
+.faq-a .guia-lista{ margin:10px 0 0; padding-left:22px; list-style:disc; color:var(--ink); line-height:1.6; }
+.faq-a .guia-lista li{ margin:5px 0; }
+.guia-pasos{ list-style:none; margin:0 0 6px; padding:0; counter-reset:paso;
+             display:flex; flex-direction:column; gap:26px; }
+.guia-pasos > li{ counter-increment:paso; position:relative; padding-left:42px; }
+.guia-pasos > li::before{
+  content:counter(paso);
+  position:absolute; left:0; top:1px; width:28px; height:28px;
+  display:grid; place-items:center; border-radius:50%;
+  background:var(--trazo); color:var(--ground);
+  font:700 14px 'IBM Plex Mono',monospace;
+}
+.guia-pasos h3{ margin:0 0 6px; font-size:16.5px; line-height:1.3; }
+.guia-pasos p{ margin:0 0 12px; color:var(--ink); line-height:1.6; }
+.guia-pasos img{
+  /* A su tamano real como mucho: las capturas son de 760 px y estirarlas a
+     la columna entera las deja borrosas. */
+  display:block; width:auto; max-width:100%; height:auto; border-radius:12px;
+  border:1px solid var(--line); background:var(--ground-raised);
+}
+/* El paso del ojo lleva dos: el primer plano del boton y el mapa. */
+.guia-pasos img + img{ margin-top:12px; }
+@media (max-width:480px){
+  .guia-pasos > li{ padding-left:36px; }
+  .guia-pasos > li::before{ width:25px; height:25px; font-size:13px; }
+  .guia h2{ font-size:19px; }
+  .guia-pasos h3{ font-size:15.5px; }
+}
+
+/* El texto oficial de Euskalmet, debajo de la tira de cuatro dias. Va en
+   parrafo normal y no en columnas: es prosa, la escribe un meteorologo y se
+   lee seguida. Solo aparece si el fichero llega y trae texto. */
+.weather-local:empty{ display:none; }
+.weather-local{ margin-top:14px; border-top:1px solid var(--line); padding-top:12px; }
+.weather-local-day{
+  margin:0 0 8px; font-size:13.5px; line-height:1.55; color:var(--ink-dim);
+}
+.weather-local-day b{ color:var(--ink); }
+.weather-local-credit{
+  margin:0; font-family:'IBM Plex Mono',monospace; font-size:11px;
+  color:var(--ink-dim); opacity:.8;
 }

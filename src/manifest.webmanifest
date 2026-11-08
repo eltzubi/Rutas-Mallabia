@@ -4,7 +4,7 @@
   "description": "Mallabia inguruko mendi eta herrietako ibilbideak, lekuan bertan dokumentatuak.",
   "lang": "eu",
   "dir": "ltr",
-  "start_url": "/",
+  "start_url": "/index.eu.html",
   "scope": "/",
   "id": "/",
   "display": "standalone",

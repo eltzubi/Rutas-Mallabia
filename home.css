@@ -346,12 +346,20 @@
   .filter-dialog{width:100%;max-width:520px;max-height:calc(100dvh - 16px);margin:auto auto 0;border-radius:28px 28px 0 0;padding:14px 24px max(24px,env(safe-area-inset-bottom));border-bottom:0;}
   .filter-dialog::before{content:"";display:block;width:36px;height:4px;margin:0 auto 20px;background:var(--line);border-radius:99px;}
   .filter-dialog .filter-controls{padding:0;border:0;margin:0;}
-  .filter-dialog .distance-filter{display:grid;grid-template-columns:1fr 1fr;}
-  .filter-dialog .distance-chip{min-height:48px;padding-inline:10px;}
-  .filter-dialog .distance-chip:first-child{grid-column:1 / -1;}
-  .filter-dialog .advanced-fields{grid-template-columns:1fr;gap:20px;}
+  /* El dialogo entero tiene que caber sin arrastrar, hasta «Restablecer»:
+     en un movil de 740 px de alto se salia 74, y en uno de 667, 147. Lo que
+     sobraba eran filas de mas, no contenido. Las cinco distancias pasan de
+     tres filas (una entera para «Todas» y dos de dos) a dos de tres, y los
+     dos desplegables se ponen uno al lado del otro. Se mantienen los 44 px
+     de alto minimo en todo lo que se toca. */
+  .filter-dialog .distance-filter{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+  .filter-dialog .distance-chip{min-height:44px;padding-inline:6px;font-size:11.5px;}
+  .filter-dialog .advanced-fields{grid-template-columns:1fr 1fr;gap:10px;}
   .filter-dialog .advanced-filters summary{display:none;}
-  .filter-dialog .advanced-filters{margin-top:24px;}
+  .filter-dialog .advanced-filters{margin-top:16px;}
+  .filter-dialog .dialog-activity-group{margin-bottom:14px;}
+  .filter-dialog .distance-group legend,
+  .filter-dialog .advanced-fields label{margin-bottom:8px;}
 }
 @media(prefers-reduced-motion:reduce){.activity-chip,.distance-chip,.open-filters{transition:none;}}
 .filter-empty{
@@ -445,6 +453,7 @@
 .route-card-tags{ font-size:11px; margin:0; color:var(--ink-dim); }
 .route-card-tags .v{ font-family:'IBM Plex Mono',monospace; font-weight:600; letter-spacing:.02em; text-transform:uppercase; }
 .route-card-tags .v:first-child{ color:var(--teal); }
+
 .route-card[data-activity="senderismo"] .route-card-tags .v:first-child{ color:var(--violet); }
 /* Tiempo estimado a pie: solo en tarjetas con actividad senderismo, ver
    estimate_time_range() en build.py -- no se calcula en bici/e-bike porque
@@ -486,6 +495,47 @@
    hay ratón, y en un gris suave: el naranja se queda para la e-bike. */
 @media (hover:hover){ .practical-info .info-details summary:hover{ background:color-mix(in srgb, var(--ink) 6%, transparent); } }
 .practical-info .info-details summary::after{ color:var(--ink-dim); }
+/* UN POCO DE VIDA EN LOS DESPLEGABLES DE ABAJO.
+   Lo pidio el autor viendolos en su movil: todo gris, cinco filas iguales,
+   el icono en un circulo apagado y el «+» del mismo color que el texto.
+   No se inventa ninguna paleta: es el mismo tratamiento que ya llevan los
+   desplegables de preguntas.html -- un --acento con su version suave -- y
+   el acento es var(--link), que es el que esa pagina usa para lo que NO es
+   una actividad. El verde y el naranja estan cogidos: significan «a pie» y
+   «en bici», y aqui dirian algo que no es.
+   Solo se enciende lo justo: el icono siempre, y el titulo, el signo y el
+   cuerpo cuando el desplegable esta abierto. Cerrado sigue siendo una lista
+   tranquila. */
+.practical-info{ --acento: var(--link); }
+.practical-info .info-icon{
+  background:color-mix(in srgb, var(--acento) 16%, transparent);
+  color:var(--acento);
+}
+/* El del abierto va relleno, no teñido: con el tinte solo, abierto y
+   cerrado se distinguian apenas y la fila seguia leyendose plana. */
+.practical-info .info-details[open] .info-icon{
+  background:var(--acento); color:var(--ground);
+}
+.practical-info .info-details[open] > summary{ color:var(--acento); }
+.practical-info .info-details[open] > summary::after{ color:var(--acento); }
+@media (hover:hover){
+  .practical-info .info-details > summary:hover .info-icon{
+    background:color-mix(in srgb, var(--acento) 26%, transparent);
+  }
+}
+.practical-info .info-details[open] > .info-details-body{
+  background:color-mix(in srgb, var(--acento) 7%, transparent);
+  border-top:1px solid color-mix(in srgb, var(--acento) 22%, transparent);
+  border-radius:0 0 12px 12px;
+  padding-top:14px;
+}
+.practical-info .info-details > summary:focus-visible{
+  outline:2px solid var(--acento); outline-offset:-2px; border-radius:10px;
+}
+@media (prefers-reduced-motion: no-preference){
+  .practical-info .info-icon{ transition:background .18s ease, color .18s ease; }
+}
+
 .info-summary-label{ display:flex; align-items:center; gap:10px; }
 .info-icon{
   display:inline-flex; align-items:center; justify-content:center;
@@ -584,6 +634,17 @@
 /* La foto va a sangre en la cabecera del panel: los margenes negativos son
    los rellenos del propio panel (16 arriba, 18 a la izquierda, 40 a la
    derecha por el boton de cerrar). */
+/* La caja del mapa crece mientras hay una ficha abierta, y solo en el movil.
+   Ahi es cuadrada y mide 311x311: con la ficha encima quedaba libre el 37 %
+   del mapa y el autor se quejo de que tapaba demasiado. Creciendo a 72svh la
+   caja pasa a 311x611 y queda libre el 68 %, con la ruta entera y los nombres
+   de los pueblos alrededor. Por encima de 768 px NO se toca: ahi la caja ya
+   mide 718x718, la ficha solo ocupa 184 px y deja libre el 74 % -- ponerle
+   72svh la encogeria. Va por clase y no por estilo en linea a proposito: el
+   modo de dibujar escribe el alto en linea y tiene que seguir mandando. */
+@media (max-width:767px){
+  .route-map-box.ficha-abierta{ aspect-ratio:auto; height:72svh; }
+}
 .route-popup-photo{ margin:-16px -40px 10px -18px; height:88px; overflow:hidden; }
 .route-popup-photo img{ width:100%; height:100%; object-fit:cover; display:block;
   filter:contrast(1.1) saturate(1.2); }
@@ -601,6 +662,161 @@
   color:var(--teal); text-decoration:none;
 }
 .route-popup a:hover{ text-decoration:underline; }
+/* VISTA DE MAPA EN EL MOVIL: el mapa se lleva la pantalla.
+   Lo pidio el autor con su captura delante: «¿cuando se agranda el mapa?
+   Es posible que ocupe mas pantalla, mas arriba, mas ajustado, para que
+   abajo haya mas sitio para las plantillas. Quisiera aprovechar todo lo mas
+   posible. Sobre todo trazado, kilometros y plantillas, lo que mas se vea.
+   Lo demas no tiene importancia mientras este a pantalla completa el mapa».
+
+   Entre la cabecera y el mapa habia una franja muerta y la primera ficha
+   salia cortada. Asi que en vista de mapa se esconde la cabecera, la caja
+   se pone fija de borde a borde y la tira se lleva una franja de verdad
+   justo encima de la barra de abajo -- que se queda, porque es por donde se
+   vuelve a la lista y donde estan A pie / E-bike / Filtrar.
+
+   Medido en 390x844: la caja pasa de 310x310 a 390x587 -- casi el doble de
+   superficie-- y la tira de quedarse cortada a 200 px, tres fichas enteras
+   y la cuarta asomando. El reparto es un solo numero, --tira-alto: subirlo
+   da mas fichas y menos mapa.
+
+   El :not(.ficha-pleno) es necesario: al abrir una ruta manda esa otra
+   regla, que es inset:0, y sin el no ganaria por especificidad. */
+@media (max-width:767px){
+  body.vista-mapa{ overflow:hidden; }
+  body.vista-mapa .masthead{ display:none !important; }
+  body.vista-mapa .route-map-box:not(.ficha-pleno){
+    position:fixed; left:0; right:0; top:0;
+    bottom:calc(var(--tira-alto, 200px) + var(--barra-alto, 57px));
+    width:auto !important; height:auto !important; margin:0 !important;
+    aspect-ratio:auto !important; border:0; border-radius:0; z-index:150;
+  }
+  /* Dibujando no hay tira, asi que la caja se queda tambien con su franja:
+     390x587 pasa a 390x787. La clase la pone trazado.js. */
+  body.vista-mapa.dibujando .route-map-box:not(.ficha-pleno){
+    bottom:var(--barra-alto, 57px);
+  }
+  body.vista-mapa .map-cercanas{
+    position:fixed; left:0; right:0; bottom:var(--barra-alto, 57px);
+    z-index:151; margin:0; padding:7px 10px;
+    max-height:var(--tira-alto, 200px);
+    background:var(--ground); border-top:1px solid var(--line);
+  }
+  /* La leyenda y el boton del zip se van detras del mapa fijo: en esta
+     vista estorban. El boton flotante NO se esconde: es «Lista», la vuelta
+     atras, y sin el no hay manera de salir del mapa. */
+  body.vista-mapa .map-legend,
+  body.vista-mapa .map-zip-row{ display:none; }
+
+  /* LA FILA FINA DE ARRIBA: Todas / A pie / E-bike.
+     Lo pidio el autor: «muy disimulada, donde no ocupe; a pie o bicicleta o
+     todas, arriba, en una fila horizontal muy fina, por color verde o
+     naranja». Asi que va FLOTANDO SOBRE EL MAPA, no encima de el: translucida
+     y con desenfoque, como la pastilla de las capas, de modo que no le quita
+     ni un pixel de alto al mapa ni a la tira de fichas. Lo que baja son los
+     mandos de Leaflet, que si estaban ahi.
+
+     En la barra de abajo .activity-filter es display:contents -- se disuelve
+     para que sus tres chips sean celdas de la rejilla--, asi que aqui vuelve
+     a ser una caja de verdad y la rejilla se queda con dos columnas: Lista y
+     Filtrar, que son los dos botones que no caben arriba. */
+  body.vista-mapa .activity-filter{
+    display:flex; position:fixed; top:0; left:0; right:0; z-index:1;
+    height:var(--fila-act, 28px);
+    margin:0; padding:0; gap:0; border:0; border-radius:0;
+    border-bottom:1px solid var(--line);
+    background:color-mix(in srgb, var(--ground) 82%, transparent);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  }
+  /* La barra sube POR ENCIMA DE LA CAJA DEL MAPA, y no basta con subir la
+     fila: .finder-toolbar lleva z-index:70, o sea que es su propio contexto
+     de apilamiento, y el 160 de la fila solo cuenta dentro de el. Con la
+     barra en 70 y la caja en 150, la fila salia dibujada pero el mapa se
+     quedaba con todos los toques: se veia y no se podia pulsar. */
+  body.vista-mapa .finder-toolbar{ z-index:160; grid-template-columns:repeat(2,1fr); }
+  /* La barra de abajo no se aparta aqui: no hay nada que desplazar con el
+     mapa a pantalla completa, y ademas un transform en ella la convertiria
+     en el marco de referencia de la fila fija de arriba, que dejaria de ir
+     pegada a la ventana. */
+  body.vista-mapa .finder-toolbar{ transform:none; }
+  body.vista-mapa .finder-toolbar .activity-chip{
+    flex:1 1 0; min-width:0;
+    flex-direction:row; gap:5px;
+    min-height:0; height:100%; padding:0;
+    border-radius:0;
+  }
+  body.vista-mapa .finder-toolbar .activity-chip::before{ width:13px; height:13px; }
+  /* El filo del activo pasa de ser una pestana de arriba a una raya de lado
+     a lado abajo: aqui la fila ES el filo. */
+  body.vista-mapa .finder-toolbar .activity-chip.active::after{
+    top:auto; bottom:0; left:0; transform:none;
+    width:100%; height:2px; border-radius:0;
+  }
+  /* El color que pidio: verde andando, naranja en bici -- los mismos de los
+     trazados del mapa y de toda la web. «Todas» no es ninguna actividad, asi
+     que va en el color del texto y no en uno de los dos. */
+  body.vista-mapa .finder-toolbar .activity-chip.active{ color:var(--ink); }
+  body.vista-mapa .finder-toolbar .activity-chip[data-activity="senderismo"].active{ color:var(--violet); }
+  body.vista-mapa .finder-toolbar .activity-chip[data-activity="bici"].active{ color:var(--teal); }
+  /* Los mandos de Leaflet (zoom, escala) y la pastilla de las capas bajan lo
+     que mide la fila, que si no se los come. */
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .leaflet-top{ top:var(--fila-act, 28px); }
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-layers{ top:calc(var(--fila-act, 28px) + 10px); }
+  /* La columna de la derecha (ampliar, lapiz y sus opciones) baja igual. Va
+     con translateY y no tocando su «top» porque cada uno tiene el suyo y por
+     debajo de 360 px todos cambian: asi vale para los dos repartos sin
+     repetir numeros. */
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-expand-btn,
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .map-draw-btn,
+  body.vista-mapa .route-map-box:not(.ficha-pleno) .draw-tools{
+    transform:translateY(var(--fila-act, 28px));
+  }
+  @media (max-width:360px){
+    /* Ahi el ojo de «Rutas» se sale de la pastilla y baja a esa columna. */
+    body.vista-mapa .route-map-box:not(.ficha-pleno) .map-rutas-btn{
+      transform:translateY(var(--fila-act, 28px));
+    }
+  }
+}
+
+/* La tira de rutas que se ven ahora, debajo del mapa. Lo pidio el autor:
+   con el zoom metido no se sabe si estas en Mallabia o en Durango, porque
+   solo se ven dos trazados sin nombre. Cambia sola al mover o al acercar.
+
+   Va FUERA del mapa y no flotando encima: dentro taparia justo lo que se ha
+   ido a mirar, que es el problema que ya se arreglo con la ficha. En columna,
+   con las cuatro primeras a la vista y el resto desplazandose -- «si son 7,
+   aunque aparezcan las primeras 4, las demas se quedan ocultas abajo». */
+.map-cercanas{
+  display:flex; flex-direction:column; gap:6px;
+  max-height:264px; overflow-y:auto; overflow-x:hidden;
+  margin-top:10px; padding-right:2px;
+  scrollbar-width:thin;
+}
+.map-cercanas[hidden]{ display:none; }
+.map-cercana{
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:6px 10px 6px 7px; border-radius:12px; cursor:pointer; text-align:left;
+  background:var(--ground-raised); border:1px solid var(--line);
+  border-left-width:3px;
+}
+.map-cercana.is-bici{ border-left-color:var(--teal); }
+.map-cercana.is-pie{ border-left-color:var(--violet); }
+.map-cercana:hover{ border-color:var(--ink-dim); }
+.map-cercana-foto{
+  flex:0 0 auto; width:52px; height:52px; border-radius:8px;
+  object-fit:cover; display:block;
+}
+.map-cercana-txt{ min-width:0; display:flex; flex-direction:column; gap:2px; }
+.map-cercana-nombre{
+  font-size:13px; line-height:1.3; color:var(--ink);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.map-cercana-datos{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim);
+}
+
 .route-dist-label{ background:none; border:none; opacity:0; transition:opacity .15s ease; }
 .route-dist-label-inner{
   position:absolute; left:0; top:0;
@@ -614,8 +830,100 @@
   cursor:pointer;
 }
 .route-dist-label-inner:hover{ border-color:var(--teal); color:var(--teal); }
+/* La pastilla de un grupo: «18 rutas». Va mas marcada que una de kilometros
+   porque no es un dato, es un boton -- al tocarla el mapa se acerca a las
+   que la forman. Se dibuja cuando varias se pisan; medidos los puntos medios
+   de las 66 rutas, al zoom de apertura caben todos en 145x177 px, asi que
+   sin agrupar serian 717 parejas encima unas de otras. */
+/* La base nace en opacity:0 y la sube map.js solo en las de kilometros; la
+   de grupo la pone el propio agrupador, asi que se queda visible de serie. */
+.route-group-label{ opacity:1; }
+.route-group-label .route-dist-label-inner{
+  /* En blanco y negro a proposito, NO en naranja: en esta web el naranja es
+     «en bici» y el verde «a pie», y un grupo mezcla las dos. Es la misma
+     razon por la que la pastilla «Nueva» de la portada va en neutro. Se
+     distingue de una de kilometros por el tamaño y el peso, no por el color. */
+  background:var(--ink); color:var(--ground); border-color:var(--ink);
+  font-weight:700; padding:4px 10px;
+  box-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+/* La pastilla de grupo se sube 16 px sobre su centro: la mas grande cae
+   justo encima de Trabakua, donde esta la marca roja de la salida, y el
+   punto quedaba clavado en medio del texto. Una pastilla de grupo señala una
+   zona, no un punto exacto, asi que moverla un poco no miente. */
+.route-group-label .route-dist-label-inner{ transform:translate(-50%, calc(-50% - 16px)); }
+.route-group-label.es-media .route-dist-label-inner{ font-size:12px; padding:5px 12px; }
+.route-group-label.es-grande .route-dist-label-inner{ font-size:13.5px; padding:7px 14px; }
+.route-group-label .route-dist-label-inner:hover{
+  color:var(--ground); filter:brightness(1.12);
+  border-color:var(--ink);
+}
+/* Por encima de los controles de Leaflet, que van en z-index 1000: con 500,
+   la linea de creditos caia justo sobre el enlace «Ver ruta completa» y lo
+   tapaba. Y como los creditos no se pueden esconder -- son la atribucion de
+   OpenStreetMap y de quien sirve las teselas -- se corren hacia arriba lo
+   que mide el panel, con la altura que le pasa map.js en --ficha-alto. */
+/* Los creditos de Leaflet venian con su fondo blanco al 80 %, que en una web
+   oscura es un banderin que canta -- y con el satelite, que cita a Esri y a
+   geoEuskadi, se iba a DOS lineas y cruzaba el mapa de lado a lado (390 px de
+   ancho y 34 de alto, medido en un movil). No se pueden esconder: son la
+   atribucion de quien sirve las teselas. Se les pone el color de la web, se
+   bajan de tamano y se redondea la esquina, y los textos se acortaron a lo
+   que cada licencia pide de verdad. Ahora caben en una linea. */
+.leaflet-control-attribution{
+  background:color-mix(in srgb, var(--ground) 82%, transparent) !important;
+  color:var(--ink-dim); font-size:10.5px; line-height:1.45;
+  padding:2px 7px; border-radius:8px 0 0 0;
+}
+.leaflet-control-attribution a{ color:var(--ink-dim); }
+
+[data-map-src].con-ficha .leaflet-bottom{
+  bottom:calc(var(--ficha-alto, 0px) + var(--ficha-hueco, 0px));
+  transition:bottom .25s ease;
+}
+
+/* PANTALLA COMPLETA EN EL MOVIL. Lo pidio el autor: «en el movil tambien lo
+   quiero a pantalla completa». Con una ruta abierta, la caja se pone fija
+   ocupando la ventana entera y se esconden la cabecera y la barra de abajo;
+   la ficha flota encima con margen, para que se vea mapa por los cuatro
+   lados. Se sale con la equis o tocando el mapa, que ya cerraba la ficha.
+
+   Medido en 390x844, mapa visible sobre el total de la pantalla:
+
+     asi, con la ficha flotando ...................... 84 %
+     igual pero la ficha pegada abajo ................ 85 %
+     solo sin cabecera, con la barra ................. 78 %
+     como estaba (caja de 390x711) ................... 69 %
+     la ficha en un lateral, como AllTrails .......... 52 %
+
+   El lateral se volvio a medir aqui a peticion del autor y vuelve a salir el
+   peor: 172 px de panel sobre 390 se comen casi la mitad de la pantalla. En
+   el ordenador si gana, y ahi esta puesto.
+
+   Se usa position:fixed y no el alto en linea que escribe map.js en el
+   ordenador: asi no hay que calcular ningun desplazamiento para pegar la
+   caja al borde de arriba, que con la cabecera escondida la pagina se
+   recoloca sola. */
+@media (max-width:767px){
+  body.mapa-pleno{ overflow:hidden; }
+  body.mapa-pleno .masthead,
+  body.mapa-pleno .finder-toolbar{ display:none !important; }
+  .route-map-box.ficha-pleno{
+    position:fixed; inset:0; z-index:200;
+    width:auto !important; height:auto !important;
+    margin:0 !important; aspect-ratio:auto !important;
+    border:0; border-radius:0;
+  }
+  .route-map-box.ficha-pleno .route-info-panel{
+    left:10px; right:10px; bottom:10px;
+    border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+  }
+  /* los creditos suben lo que mide la ficha mas su margen */
+  .route-map-box.ficha-pleno [data-map-src].con-ficha{ --ficha-hueco:10px; }
+}
 .route-info-panel{
-  position:absolute; left:0; right:0; bottom:0; z-index:500;
+  position:absolute; left:0; right:0; bottom:0; z-index:1100;
   max-height:85%; overflow-y:auto;
   background:var(--ground-raised); border-top:1px solid var(--line);
   box-shadow:0 -8px 24px rgba(0,0,0,.35);
@@ -633,6 +941,70 @@
 }
 .route-info-panel-close:hover{ border-color:var(--teal); color:var(--teal); }
 .route-info-panel .route-popup h3{ padding-right:24px; }
+
+/* El panel, en el ordenador, va en un lateral del mapa y no abajo, y el mapa
+   se lleva la pantalla entera. Lo pidio el autor con la pantalla de AllTrails
+   delante: «el mapa ocupa la pantalla entera». El lateral solo por si mismo se
+   habia medido peor que la ficha de abajo (54% de mapa libre frente al 86%),
+   porque la caja del mapa es cuadrada y un lateral deja una tira; con la caja
+   a pantalla completa eso deja de ser cierto -- el mapa gana ancho en vez de
+   perderlo. Quien saca la caja de su columna es map.js, que escribe el alto y
+   el ancho en linea, igual que el modo de dibujar.
+
+   Por debajo de 768 px no se toca nada: ahi manda lo que el autor eligio en
+   octubre, ficha abajo y caja a 72svh. */
+@media (min-width:768px){
+  .route-map-box{ --ficha-ancho:320px; }
+  /* El panel es hermano del contenedor del mapa, no hijo: map.js lo cuelga
+     de .route-map-box. Por eso el combinador ~ y no :has(). */
+  [data-map-src].ficha-lateral ~ .route-info-panel{
+    top:0; bottom:0; right:auto;
+    width:var(--ficha-ancho);
+    max-height:none;
+    border-top:0; border-right:1px solid var(--line);
+    box-shadow:8px 0 24px rgba(0,0,0,.35);
+    padding:18px;
+    transform:translateX(-100%);
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel.open{ transform:translateX(0); }
+  /* Los margenes negativos de la foto tienen que cuadrar con el relleno del
+     panel, que aqui es 18 por los cuatro lados y no 16/40/16/18. */
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-photo{
+    margin:-18px -18px 12px; height:150px;
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-chart{
+    height:72px; margin-bottom:12px;
+  }
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup h3{
+    font-size:19px; line-height:1.2; margin-bottom:10px;
+  }
+  /* En una columna estrecha los cuatro datos en fila se parten por donde
+     caen; en vertical cada uno ocupa su linea y se leen de un vistazo. */
+  [data-map-src].ficha-lateral ~ .route-info-panel .route-popup-facts{
+    flex-direction:column; gap:6px; margin-bottom:14px;
+  }
+  .route-popup-desc{
+    margin:0 0 12px; font-size:13.5px; line-height:1.5; color:var(--ink-dim);
+  }
+  /* Los creditos vuelven abajo del todo: con el panel a la izquierda ya no
+     los tapa nadie, asi que el desplazamiento vertical sobra. Lo que si cae
+     debajo del panel son los botones de zoom y la escala, que Leaflet pone
+     arriba y abajo a la izquierda: se corren a la derecha del panel. */
+  [data-map-src].con-ficha.ficha-lateral .leaflet-bottom{ bottom:0; }
+  [data-map-src].con-ficha.ficha-lateral .leaflet-left{
+    left:var(--ficha-ancho);
+    transition:left .25s ease;
+  }
+  /* Y la pastilla de las capas, que va centrada entre left:52 y right:52 del
+     mapa entero: con el panel delante, «IGN» se quedaba medio tapado. */
+  [data-map-src].ficha-lateral ~ .map-layers{
+    left:calc(var(--ficha-ancho) + 52px);
+    transition:left .25s ease;
+  }
+}
+@media (min-width:768px) and (max-width:1023px){
+  .route-map-box{ --ficha-ancho:280px; }
+}
 /* En el movil la caja del mapa es cuadrada y pequena (~294 px de alto): con la
    foto dentro, el nombre largo de una ruta hacia que el boton "Ver ruta" se
    saliera del panel. Foto mas baja, titulo mas apretado y menos relleno. */
@@ -1245,17 +1617,75 @@ footer a:hover{ text-decoration:underline; }
   .theme-toggle svg, .buscador-abrir svg, .mio-abrir svg{ width:13px; height:13px; }
 }
 /* Por debajo de 360 px «MALLABIA · BIZKAIA» se partia en dos lineas y la
-   barra crecia. Con una pizca menos de letra y de espaciado entra de una. */
+   barra crecia. El apretado que lo arreglaba -- letra de 10, espaciado .06em,
+   relleno de 11, hueco de 10 antes del rotulo y los iconos a 8-- vive ahora
+   mas abajo, en el bloque de 479 px, porque hace falta en todos los moviles
+   para que quepa «Bizkaia». Aqui solo queda lo propio de 320: para que la
+   onda del aviso no pise la «M», el aro baja a 42. */
 @media(max-width:359px){
-  /* En 320 px no caben los 22: la barra entera se salia -- ahi no sobran
-     mas que un par de pixeles. El hueco se queda en 10 y, para que la onda
-     no pise la «M», el aro baja a 42. */
-  .masthead .aviso-pulso + .place{ margin-left:10px; }
   .masthead .aviso-aro{ animation-name:avisoAroEstrecho; }
+}
+/* ORIENTARSE AHI ABAJO. Lo levanto el autor: «cuando uno abre dormir o
+   aparcar no sabe en que parte de la pagina esta, ni como salir de ahi».
+   Medido: al saltar desde un atajo caes en el pixel 35.859 de 36.933, la
+   fila de atajos queda 35.332 px arriba y el bloque NO TENIA TITULO -- la
+   cabecera es la misma en toda la web, asi que no dice nada.
+   Dos cosas, y las dos en el flujo, no flotando: un titulo que diga donde
+   has caido y una salida escrita al final. El boton redondo de la esquina
+   si se ve ahi (comprobado), pero el autor no lo registro como la manera de
+   volver, que para el caso es como si no estuviera.
+   Se descarto una X: una X significa «cerrar lo que se ha abierto encima»,
+   y aqui no hay nada encima, solo has bajado -- y al pulsarla seguirias en
+   el pixel 36.000. */
+.info-titulo{
+  margin:0 0 10px; padding:0 16px;
+  font:600 11px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-dim);
+}
+.volver-arriba{
+  display:inline-flex; align-items:center; gap:7px;
+  margin:16px 16px 0; padding:9px 16px;
+  border:1px solid var(--line); border-radius:999px;
+  font:600 10px/1 'IBM Plex Mono',monospace;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-dim); text-decoration:none;
+  transition:color .18s ease, border-color .18s ease;
+}
+.volver-arriba::before{ content:'\2191'; font-size:13px; line-height:1; }
+.volver-arriba:hover{ color:var(--ink); border-color:var(--ink-dim); }
+.volver-arriba:focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+
+
+/* LA PROVINCIA VUELVE AL MOVIL, Y SIN EL PUNTO.
+   Estuvo escondida por debajo de 480 px desde el 27 de octubre, porque
+   «Bizkaia» acababa justo donde empiezan los iconos: medido el hueco entre
+   el rotulo y el primer boton, 0 px a 360, a 390 y a 412 -- se tocaban--.
+   El autor: «Bizkaia es importante que aparezca, pero sin punto».
+   Se arregla con dos cosas y ninguna es esconderla. La primera, quitar el
+   « · »: son 14 px. La segunda, que el apretado que ya existia por debajo
+   de 360 px -- letra de 10, espaciado .06em, relleno de 11 y los iconos a 8--
+   suba hasta 479 en vez de quedarse en 359. Medido el hueco con las dos:
+
+     320  se sale 21 px      375  31 px      430  86 px
+     344   2 px              390  46 px      479 135 px
+     360  16 px              412  68 px
+
+   Asi que de 360 para arriba sobra sitio y se queda puesta; por debajo de
+   360 la barra entera se saldria, y ahi -- y solo ahi-- sigue escondida.
+   Ojo: el espacio entre «Mallabia» y «Bizkaia» lo pone el CSS
+   (.place-prov::before), no el HTML, para que no se pierda al plegar la
+   etiqueta. */
+@media (max-width:479px){
+  .masthead .aviso-pulso + .place{ margin-left:10px; }
   .masthead{ font-size:10px; letter-spacing:.06em; padding-inline:11px; }
   .masthead .place{ white-space:nowrap; }
   .masthead-right{ gap:8px; }
 }
+@media (max-width:359px){
+  .masthead .place-prov{ display:none; }
+}
+.place-prov::before{ content:"\00a0\00a0"; }
 /* Sin el resplandor. Medido sobre una captura de la barra: los dos circulos
    tienen el mismo radio, pero el del aviso se veia bastante mas gordo porque
    el halo que late detras desborda el filo hacia dentro y hacia fuera -- 55
@@ -1308,3 +1738,178 @@ footer a:hover{ text-decoration:underline; }
 .place-list .place-tel{ font-size:14px; color:var(--ink-dim); }
 .place-list .place-tel a{ color:var(--ink); text-decoration:none; }
 .place-list .place-tel a:hover{ text-decoration:underline; }
+
+/* Antes de salir: un único acceso; el contenido se mueve al diálogo con JS.
+   Sin JS siguen la fila de enlaces y los desplegables originales. */
+.trip-info-ready #beforeYouGo,
+.trip-info-ready .practical-info{ display:none; }
+.trip-info-dialog:not([open]){ display:none; }
+.trip-info-dialog{
+  width:calc(100% - 20px); max-width:660px;
+  max-height:calc(100dvh - 28px); height:calc(100dvh - 28px);
+  margin:auto auto 10px; padding:10px 0 0;
+  color:var(--ink); background:var(--ground-raised);
+  border:1px solid color-mix(in srgb, var(--link) 45%, var(--line));
+  border-radius:24px; overflow:hidden;
+  box-shadow:0 -8px 40px rgba(0,0,0,.24), inset 0 1px 0 color-mix(in srgb, var(--ink) 9%, transparent);
+}
+.trip-info-dialog[open]{ display:flex; flex-direction:column; animation:tripInfoIn .2s ease-out; }
+.trip-info-dialog::backdrop{
+  background:rgba(0,0,0,.64);
+  backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px);
+}
+.trip-info-handle{ width:34px; height:4px; border-radius:4px; background:var(--ink-dim); opacity:.5; margin:0 auto 5px; flex-shrink:0; }
+.trip-info-heading{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 17px 10px; flex-shrink:0; }
+.trip-info-heading h2{ margin:0; font:600 19px/1.3 'Fraunces',serif; }
+.trip-info-close{
+  width:44px; height:44px; padding:0; display:grid; place-items:center;
+  border:1px solid var(--line); border-radius:50%; color:var(--ink);
+  background:var(--ground); cursor:pointer; flex-shrink:0;
+}
+.trip-info-tabs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; padding:0 17px 14px; flex-shrink:0; }
+.trip-info-tab{
+  display:flex; align-items:center; gap:9px; min-height:46px; min-width:0; padding:10px 12px;
+  font:500 12px/1.3 'IBM Plex Mono',monospace; color:var(--ink-dim);
+  background:var(--ground); border:1px solid var(--line); border-radius:12px;
+  text-align:left; cursor:pointer;
+}
+.trip-info-tab svg{ flex-shrink:0; width:18px; height:18px; }
+.trip-info-tab[aria-selected="true"]{
+  color:var(--ink); border-color:var(--link);
+  background:color-mix(in srgb, var(--link) 12%, var(--ground));
+}
+.trip-info-tab[aria-controls="tripPanel-gps"]::after{
+  content:''; width:5px; height:5px; border-radius:50%; background:var(--violet); margin-left:auto; flex-shrink:0;
+}
+.trip-info-tab:focus-visible,.trip-info-close:focus-visible{ outline:2px solid var(--link); outline-offset:2px; }
+.trip-info-content{ display:flex; flex:1; min-height:0; border-top:1px solid var(--line); }
+.trip-info-panel{ flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:17px 17px max(20px, env(safe-area-inset-bottom)); font-family:'Karla',sans-serif; letter-spacing:normal; }
+.trip-info-panel[hidden]{ display:none; }
+.trip-info-panel .info-details-body{ padding:0; }
+.trip-info-panel .parada{ margin:0; border:0; border-radius:0; background:none; padding:0; box-shadow:none; }
+.trip-info-panel .parada + .parada{ margin-top:22px; border-top:1px solid var(--line); padding-top:18px; }
+.trip-info-panel .parada .k{ display:none; }
+.trip-info-panel .parada h2{ margin:0 0 11px; font-size:19px; }
+.trip-info-panel .parada p{ font-size:15px; line-height:1.65; max-width:none; }
+.trip-info-panel .map-box{ margin:0 0 12px; }
+.trip-info-panel .map-box iframe{ max-height:220px; }
+.trip-info-panel .map-note:first-child{ margin-top:0; }
+.trip-info-panel .map-note{ font-family:'Karla',sans-serif; font-size:15px; line-height:1.6; letter-spacing:normal; }
+.trip-info-panel .place-list{ margin-top:8px; }
+.trip-info-panel .notice-close{ margin-top:12px; }
+@keyframes tripInfoIn{ from{ transform:translateY(16px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+@media(min-width:600px){
+  .trip-info-dialog{ margin:auto; height:min(78dvh,680px); max-height:calc(100dvh - 64px); padding-top:12px; }
+  .trip-info-tabs{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .trip-info-handle{ display:none; }
+  .trip-info-heading{ padding-top:4px; }
+}
+@media(prefers-reduced-motion:reduce){ .trip-info-dialog[open]{ animation:none; } }
+
+/* Panel compacto en forma de cápsula: conserva el diálogo accesible y sus pestañas. */
+.trip-info-dialog{
+  width:min(94vw,620px);
+  height:calc(100dvh - 24px);
+  max-height:calc(100dvh - 24px);
+  margin:auto;
+  padding:8px 0 0;
+  background:color-mix(in srgb, var(--ground-raised) 89%, transparent);
+  border:1px solid color-mix(in srgb, var(--link) 37%, var(--line));
+  border-radius:30px;
+  box-shadow:0 24px 75px rgba(0,0,0,.42), inset 0 1px 0 color-mix(in srgb,var(--ink) 10%,transparent);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.trip-info-dialog::backdrop{
+  background:rgba(3,7,10,.56);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.trip-info-dialog[open]{animation:tripCapsuleIn .26s cubic-bezier(.2,.75,.2,1);}
+.trip-info-heading{
+  margin:0 10px 12px;
+  padding:10px 10px 10px 17px;
+  min-height:60px;
+  border:1px solid color-mix(in srgb,var(--link) 34%,var(--line));
+  border-radius:999px;
+  background:color-mix(in srgb,var(--ground) 76%,transparent);
+}
+.trip-info-heading::before{
+  content:'i';
+  width:28px;
+  height:28px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  font:700 20px/1 Georgia,serif;
+  color:var(--violet);
+  border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--violet) 55%,var(--line));
+  background:transparent;
+  box-shadow:0 0 12px color-mix(in srgb,var(--violet) 25%,transparent);
+}
+.trip-info-heading h2{flex:1;font-size:clamp(17px,4.5vw,22px);line-height:1.2;}
+.trip-info-close{width:40px;height:40px;background:transparent;}
+.trip-info-tabs{gap:7px;padding:0 13px 12px;}
+.trip-info-tab{
+  min-height:43px;
+  padding:8px 10px;
+  border-radius:15px;
+  background:color-mix(in srgb,var(--ground) 82%,transparent);
+  transition:background .16s ease,border-color .16s ease,transform .16s ease;
+}
+.trip-info-tab:active{transform:scale(.985);}
+.trip-info-tab[aria-selected="true"]{
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--link) 22%,transparent),0 0 12px color-mix(in srgb,var(--link) 10%,transparent);
+}
+.trip-info-content{margin:0 10px 10px;border:1px solid var(--line);border-radius:19px;overflow:hidden;background:color-mix(in srgb,var(--ground) 38%,transparent);}
+.trip-info-panel{padding:17px 17px max(20px,env(safe-area-inset-bottom));}
+.trip-info-panel .parada h2{font-size:20px;}
+@keyframes tripCapsuleIn{from{opacity:0;transform:translateY(-11px) scale(.975);}to{opacity:1;transform:translateY(0) scale(1);}}
+@media(min-width:600px){.trip-info-dialog{height:min(88dvh,860px);}.trip-info-heading{margin-top:5px;}}
+@media(prefers-reduced-motion:reduce){.trip-info-dialog[open]{animation:none;}.trip-info-tab{transition:none;}}
+
+
+/* Centro de mando: seis accesos táctiles en dos columnas. */
+.trip-info-dialog{
+  border-color:color-mix(in srgb,var(--link) 55%,var(--line));
+  box-shadow:0 24px 75px rgba(0,0,0,.42),0 0 22px color-mix(in srgb,var(--link) 10%,transparent),inset 0 1px 0 color-mix(in srgb,var(--ink) 12%,transparent);
+}
+.trip-info-heading{
+  background:color-mix(in srgb,var(--ground-raised) 64%,transparent);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--link) 15%,transparent);
+}
+.trip-info-tabs{grid-template-columns:repeat(2,minmax(0,1fr));}
+.trip-info-tab{
+  min-height:52px;
+  background:color-mix(in srgb,var(--ground-raised) 73%,transparent);
+  border-color:color-mix(in srgb,var(--ink) 13%,var(--line));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.trip-info-tab:hover{border-color:color-mix(in srgb,var(--link) 45%,var(--line));}
+.trip-info-tab[aria-controls="tripPanel-gps"]{
+  color:var(--ink);
+  border-color:color-mix(in srgb,var(--link) 64%,var(--line));
+  background:color-mix(in srgb,var(--link) 17%,var(--ground-raised));
+}
+.trip-info-tab[aria-controls="tripPanel-gps"]::after{
+  width:7px;height:7px;background:var(--link);
+  box-shadow:0 0 0 0 color-mix(in srgb,var(--link) 50%,transparent);
+  animation:tripGpsPulse 2.8s ease-out infinite;
+}
+@keyframes tripGpsPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--link) 40%,transparent);}55%{box-shadow:0 0 0 6px transparent;}}
+@media(prefers-reduced-motion:reduce){.trip-info-tab[aria-controls="tripPanel-gps"]::after{animation:none;}}
+
+/* Estado activo: el acceso abierto se reconoce a primera vista. */
+.trip-info-tab[aria-selected="true"],
+.trip-info-tab[aria-controls="tripPanel-gps"][aria-selected="true"]{
+  color:var(--ink);
+  background:color-mix(in srgb,var(--link) 24%,var(--ground-raised));
+  border:2px solid var(--link);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--link) 30%,transparent),
+             0 0 0 2px color-mix(in srgb,var(--link) 12%,transparent),
+             0 0 17px color-mix(in srgb,var(--link) 20%,transparent);
+  font-weight:700;
+}
+.trip-info-tab[aria-selected="true"] svg{color:var(--link);}
