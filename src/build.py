@@ -725,46 +725,6 @@ def add_tecnica(page_html, page, lang):
     return page_html[:marca.end()] + '\n    ' + dato + page_html[marca.end():]
 
 
-# La fecha de la proxima 7 Pago, que cuentan las dos fichas de su trazado.
-# Esta aqui, y no escrita en los _tail.html, porque una fecha a mano caduca
-# sola: el 23 de mayo de 2027 las cuatro paginas (dos fichas x dos idiomas)
-# seguirian anunciando una carrera que ya se corrio, y habria que acordarse de
-# borrarla en cuatro sitios. Poniendo esto a None desaparece de las cuatro a la
-# vez. Ademas no pasa por eu.py: la frase se inyecta sobre la pagina ya
-# construida, asi que cambiar la fecha no rompe ninguna clave de traduccion.
-# SE CAMBIA A MANO cuando la organizacion anuncia la fecha de la siguiente
-# edicion, y SE VACIA en cuanto la carrera se corre.
-CARRERA_7PAGO = {
-    "paginas": ("7pago", "7pago16"),
-    # Tal y como lo escribe el autor. Nada de "sabado" ni de frases hechas por
-    # aqui: si falta un idioma, esa ficha no lo cuenta y punto.
-    "es": "IV edici&oacute;n &middot; 22 de mayo de 2027",
-    "eu": "",
-}
-
-# El ancla es la frase entera, no "en Mallabia.": en 7pago eso sale dos veces
-# (tambien en el "para quien es") y la fecha acabaria en el parrafo que no es.
-_ANCLA_7PAGO = {
-    "es": "que se corre cada mayo en Mallabia.",
-    "eu": "maiatzero Mallabian jokatzen dena.",
-}
-
-
-def add_fecha_carrera(page_html, page, lang):
-    """La fecha de la proxima edicion, en las fichas de la 7 Pago (ver CARRERA_7PAGO)."""
-    if not CARRERA_7PAGO or page not in CARRERA_7PAGO["paginas"]:
-        return page_html
-    ancla = _ANCLA_7PAGO[lang]
-    i = page_html.find(ancla)
-    if i == -1:
-        return page_html
-    i += len(ancla)
-    texto = CARRERA_7PAGO.get(lang, "")
-    if not texto:
-        return page_html
-    return page_html[:i] + f' <b>{texto}</b>.' + page_html[i:]
-
-
 # La ultima ruta que entro en la web, y el dia que entro. Una sola fecha en
 # todo el sitio, en la portada: lo que dice es que esto sigue vivo, que es para
 # lo que sirve una fecha aqui. Se probo ponerla en cada ficha, sacada de la
@@ -1380,7 +1340,6 @@ def main():
             page_html = add_quick_bar(page_html, lang)
             page_html = add_mis_rutas(page_html, lang)
             page_html = add_tecnica(page_html, name, lang)
-            page_html = add_fecha_carrera(page_html, name, lang)
             page_html = add_ultima_entrada(page_html, cards[lang], lang)
             if name == HOME:
                 page_html = add_card_shapes(page_html)
