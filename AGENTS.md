@@ -2,7 +2,7 @@
 
 Sitio de rutas de montaña y bicicleta eléctrica por Mallabia (Bizkaia),
 bilingüe castellano/euskera, publicado en <https://trabakutik.com> desde la
-raíz de este repositorio con GitHub Pages. 61 rutas. HTML escrito a mano,
+raíz de este repositorio con GitHub Pages. 71 rutas. HTML escrito a mano,
 scripts de Python con la biblioteca estándar, nada de frameworks.
 
 **La documentación de verdad son dos ficheros de la raíz. Léelos antes de

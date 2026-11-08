@@ -1,7 +1,7 @@
 # Guía del proyecto — trabakutik.com
 
 Todo lo que hace falta para seguir trabajando en este sitio sin mí. Escrita el
-21 de octubre de 2026, con 61 rutas publicadas.
+21 de octubre de 2026 (entonces había 61 rutas publicadas; ahora hay 71).
 
 Si vas a pedirle ayuda a otra herramienta o a otra persona, dale este fichero
 entero. Está pensado para leerse de arriba abajo una vez y volver a él por
@@ -319,7 +319,7 @@ seguridad — eso lo cubre `check_site.py` —, pero no debería tocar
 
 Con el conector de GitHub puede leer el repositorio y explicarte cosas, y
 escribe bien. Pero **no ejecuta nada**: no construye, no verifica, no hace
-commit. Pegar fragmentos de un lado a otro con 61 páginas, dos idiomas y
+commit. Pegar fragmentos de un lado a otro con 71 páginas, dos idiomas y
 26.451 comprobaciones no acaba bien. Es exactamente lo mismo que pasa con
 Lovable (apartado 11). Para consultar y para escribir, bien; para construir,
 no.

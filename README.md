@@ -12,7 +12,7 @@ y sirviendo la raíz del repositorio.
 Sitio estático: HTML, CSS y JavaScript escritos a mano, montados por unos
 scripts de Python (solo biblioteca estándar). Sin framework, sin servidor y sin
 base de datos. Cada ruta es una página de verdad (`urko.html`, `kalamua.html`…),
-y hay 61.
+y hay 71.
 
 **Los `.html`, `.css` y `.js` de la raíz son generados: no se editan a mano.**
 Se editan los fuentes de `src/` y se vuelve a construir:
