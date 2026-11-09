@@ -40,13 +40,24 @@ CALIDAD_JPG = 80   # el respaldo: lo ve menos del 1% de las visitas
 
 # Las miniaturas de las tarjetas de la portada ya salen a 1100 px de
 # make_card_thumbs.py y se ven a 356 px como mucho, asi que no entran aqui.
-EXCLUIR = ("-card", "-800")
+# «mapa-» son las miniaturas de mapa de las tarjetas, que dibuja
+# make_card_maps.py: no son fotos de galeria y no llevan respaldo en JPEG.
+EXCLUIR = ("-card", "-800", "mapa-")
 
 
 def candidatas():
     # Los originales estan repartidos: los 57 de og:image siguen publicados en
     # img/ y el resto en img/orig/ (ver _config.yml).
     rutas = glob.glob(os.path.join(IMG, "*.jpg")) + glob.glob(os.path.join(ORIG, "*.jpg"))
+    # Las 25 fotos de lekeitio entraron solo en .webp, sin el JPEG original, y
+    # por eso este script no las veia: se quedaron sin el -800.jpg de respaldo
+    # y su ficha no tenia nada que ensenar a un navegador sin WebP. Se admite
+    # el .webp como original cuando no hay .jpg, que es lo unico que falta
+    # para que esas fotos entren por el mismo sitio que las demas.
+    vistos = {os.path.basename(r)[:-len(".jpg")] for r in rutas}
+    for ruta in glob.glob(os.path.join(IMG, "*.webp")) + glob.glob(os.path.join(ORIG, "*.webp")):
+        if os.path.basename(ruta)[:-len(".webp")] not in vistos:
+            rutas.append(ruta)
     for ruta in sorted(rutas, key=os.path.basename):
         nombre = os.path.basename(ruta)
         if any(x in nombre for x in EXCLUIR):
@@ -61,7 +72,8 @@ def main():
     bytes_originales = bytes_nuevos = 0
 
     for origen in candidatas():
-        base = os.path.join(IMG, os.path.basename(origen)[: -len(".jpg")])
+        raiz, ext = os.path.splitext(os.path.basename(origen))
+        base = os.path.join(IMG, raiz)
         destino = base + "-800.webp"
         respaldo = base + "-800.jpg"
 
@@ -81,10 +93,15 @@ def main():
                 # srcset -- la del tamano completo ya es esta -- pero si
                 # necesita su respaldo .jpg, que es lo unico que puede ver un
                 # navegador sin WebP ahora que el original no se publica.
-                if grande_de_verdad:
+                # Solo se escribe lo que falte. Importa cuando el original
+                # es un .webp: volver a comprimir un webp que ya esta hecho
+                # no lo mejora, lo degrada un poco mas y ademas cambia los
+                # bytes, asi que git lo ve modificado sin motivo.
+                if grande_de_verdad and (forzar or not os.path.exists(destino)):
                     im.save(destino, "WEBP", quality=CALIDAD, method=6)
-                im.save(respaldo, "JPEG", quality=CALIDAD_JPG,
-                        optimize=True, progressive=True)
+                if forzar or not os.path.exists(respaldo):
+                    im.save(respaldo, "JPEG", quality=CALIDAD_JPG,
+                            optimize=True, progressive=True)
         except OSError as e:
             # Un fichero truncado o corrupto no puede parar a los otros
             # quinientos: se avisa y se sigue.

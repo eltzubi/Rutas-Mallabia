@@ -239,6 +239,24 @@ def main():
                 f'{page}: numero de <picture> distinto entre idiomas')
         require('<picture' in es, f'{page}.html: ninguna imagen responsive')
 
+    # --- cada <picture> con su respaldo en JPEG ---------------------------
+    # El <img> de dentro de un <picture> es lo UNICO que ve un navegador que
+    # no entienda WebP: si tambien apunta a un .webp, esa foto no se ve. Paso
+    # con las 25 de lekeitio y con siete de sancristobalgaraiandikoa, que
+    # entraron sin su JPEG original y por eso make_wide_variants.py no les
+    # llego a escribir el -800.jpg (ahora admite tambien originales .webp).
+    for page in build.PAGES:
+        for lang in ('es', 'eu'):
+            fichero = build.out_name(page, lang)
+            yo = (ROOT / fichero).read_text()
+            for bloque in re.findall(r'<picture\b.*?</picture>', yo, re.S):
+                m = re.search(r'<img[^>]+src="([^"]+)"', bloque)
+                if not m:
+                    continue
+                require(m.group(1).split('?')[0].lower().endswith(('.jpg', '.jpeg')),
+                        f'{fichero}: el respaldo de un <picture> es {m.group(1)}, '
+                        f'y un navegador sin WebP no veria esa foto')
+
     # --- nada de terceros en el HTML --------------------------------------
     # Las tipografias y Leaflet se sirven desde aqui. Lo unico que sale fuera
     # son los tiles del mapa, y los pide el JS, no el HTML. Si algun dia se

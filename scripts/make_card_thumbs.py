@@ -127,6 +127,12 @@ def make(name):
     src = os.path.join(IMG_DIR, name + ".jpg")
     if not os.path.exists(src):
         src = os.path.join(ORIG_DIR, name + ".jpg")
+    # Hay fotos que entraron solo en .webp (las 25 de lekeitio): sin esto se
+    # quedaban sin miniatura y su tarjeta servia la foto entera de la galeria.
+    for alterna in (os.path.join(IMG_DIR, name + ".webp"),
+                    os.path.join(ORIG_DIR, name + ".webp")):
+        if not os.path.exists(src) and os.path.exists(alterna):
+            src = alterna
     if not os.path.exists(src):
         print("  falta %s.jpg" % name)
         return 0
