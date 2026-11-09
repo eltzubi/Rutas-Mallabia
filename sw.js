@@ -93,6 +93,17 @@ function guardar(nombreCache, peticion, respuesta, maximo) {
   return respuesta;
 }
 
+function refresca(peticion) {
+  // Vuelve a pedir una foto por detras y deja la copia al dia si ha cambiado.
+  // Va con el fetch normal, no con aLaRed(): asi la peticion pasa por la cache
+  // del propio navegador, que con el max-age=600 de GitHub Pages hace que lo
+  // normal sea no tocar la red siquiera, y cuando la toca sea un 304 de nada.
+  // Si no hay cobertura falla en silencio: la copia guardada ya se ha servido.
+  return fetch(peticion)
+    .then(function (r) { return guardar(CACHE_MEDIOS, peticion, r, MAX_MEDIOS); })
+    .catch(function () { return null; });
+}
+
 function aLaRed(peticion) {
   // «Primero la red» no basta: GitHub Pages manda cache-control: max-age=600
   // en el HTML, asi que el fetch del service worker se lo puede servir la
@@ -161,15 +172,36 @@ self.addEventListener('fetch', function (evento) {
     return;
   }
 
+  // Las FOTOS: se sirve la copia guardada -- al instante y sin cobertura, que
+  // es para lo que esta -- y ademas se vuelve a pedir por detras. Hace falta
+  // porque una foto cambiada se publica CON EL MISMO NOMBRE: los css y js
+  // llevan ?v=<hash> y al cambiar cambia su URL, pero img/loquesea.webp no.
+  // Con «primero lo guardado» a secas, quien ya tuviera la foto se quedaba con
+  // la vieja para siempre. Paso con la del amanecer de garaiurdaixa: el
+  // servidor ya daba la nueva y en el movil seguia saliendo la anterior.
+  // Refrescando por detras, la siguiente visita ya la ve bien.
+  const esMedio = MEDIO.test(url.pathname);
+  if (esMedio) {
+    // La peticion de fondo se lanza aqui, antes de nada, para poder pasarsela
+    // a waitUntil mientras el evento sigue vivo: hacerlo dentro de un .then
+    // posterior es tarde y algunos navegadores lo rechazan.
+    const red = refresca(peticion);
+    evento.waitUntil(red);
+    evento.respondWith(
+      caches.match(peticion).then(function (guardado) {
+        return guardado || red.then(function (r) { return r || fetch(peticion); });
+      })
+    );
+    return;
+  }
+
   // Lo demas: primero lo guardado. Los css y js llevan ?v=<hash> en la URL, de
   // modo que al cambiar el fichero cambia la URL y no hay copia vieja posible.
   evento.respondWith(
     caches.match(peticion).then(function (guardado) {
       if (guardado) return guardado;
       return fetch(peticion).then(function (r) {
-        const esMedio = MEDIO.test(url.pathname);
-        return guardar(esMedio ? CACHE_MEDIOS : CACHE_CONCHA, peticion, r,
-                       esMedio ? MAX_MEDIOS : 0);
+        return guardar(CACHE_CONCHA, peticion, r, 0);
       });
     })
   );

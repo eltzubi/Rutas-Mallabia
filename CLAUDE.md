@@ -309,7 +309,24 @@ their `?v=` hashes, the five `.woff2`, `offline.html` and the icon — about 210
 400 MB of images.
 
 Strategy: **network-first for pages** (whoever has signal always sees the latest; the stored copy is only
-the fallback), cache-first for everything else, since the CSS/JS carry a content hash in the URL. The
+the fallback), cache-first for everything else, since the CSS/JS carry a content hash in the URL.
+
+**Las fotos son la excepcion, y costo un fallo descubrirlo.** Una foto cambiada se publica CON EL
+MISMO NOMBRE -el `?v=<hash>` solo lo llevan el css y el js-, asi que con «primero lo guardado» a
+secas quien ya la tuviera se quedaba con la vieja **para siempre**. Lo noto el autor el 9 de
+noviembre de 2026 al cambiar la foto del amanecer de `garaiurdaixa`: el servidor ya daba la nueva
+y en su movil seguia saliendo la anterior. Ahora una foto se sirve de la cache -al instante y sin
+cobertura, que es para lo que esta- y **ademas se vuelve a pedir por detras** (`refresca()` en
+`src/js/sw.js`), de modo que la siguiente visita ya la ve bien. La peticion de fondo va con el
+`fetch` normal y no con `aLaRed()`: asi pasa por la cache del navegador y, con el `max-age=600`
+que manda GitHub Pages, lo normal es no tocar la red y cuando la toca es un 304. Se lanza
+**antes** del `respondWith`, no dentro de un `.then` posterior, porque `waitUntil` solo vale
+mientras el evento sigue vivo.
+
+Medido en un navegador de verdad, cambiando una foto en el servidor con el mismo nombre: con el
+service worker **anterior** la foto seguia siendo la vieja visita tras visita; con este, la
+primera visita la da vieja y **la segunda ya la nueva**. Los textos iban bien en los dos casos,
+que esos ya eran «primero la red». The
 shell cache is named after its own hash, so it is dropped whole when any asset changes; the page and
 photo caches survive, which is the point. `offline.html` (built from `src/offline.html`, bilingual) is
 what a never-visited page falls back to.
