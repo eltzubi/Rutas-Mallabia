@@ -6455,6 +6455,9 @@ ASKAKOSANTAKATALINE = {
 }
 
 GARAIURDAIXA = {
+    'Salimos temprano de <b>Garai</b>, con el amanecer recién encendido.':
+        'Goiz irten ginen <b>Garai</b>tik, egunsentia piztu berria zela.',
+
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Garai, los canales<br>de Arrierreka y la<br><em>ermita de Urdaixa</em></h1>':
