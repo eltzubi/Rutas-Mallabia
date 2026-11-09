@@ -24,6 +24,11 @@ const MAX_MEDIOS = 150;          // ~150 imagenes cacheadas; las mas viejas se v
 const FUERA = 'offline.html';
 
 const MEDIO = /\.(webp|jpg|jpeg|png|svg|woff2)$/i;
+// Solo las FOTOS se vuelven a pedir por detras. Las .woff2 entran en MEDIO
+// para guardarse en el mismo sitio, pero van en la lista de precarga y su
+// cache se tira entera al cambiar cualquier css o js: revalidarlas en cada
+// visita seria una peticion por tipografia para nada.
+const IMAGEN = /\.(webp|jpg|jpeg|png|svg)$/i;
 
 self.addEventListener('install', function (evento) {
   evento.waitUntil(
@@ -156,7 +161,7 @@ self.addEventListener('fetch', function (evento) {
   // servidor ya daba la nueva y en el movil seguia saliendo la anterior.
   // Refrescando por detras, la siguiente visita ya la ve bien.
   const esMedio = MEDIO.test(url.pathname);
-  if (esMedio) {
+  if (IMAGEN.test(url.pathname)) {
     // La peticion de fondo se lanza aqui, antes de nada, para poder pasarsela
     // a waitUntil mientras el evento sigue vivo: hacerlo dentro de un .then
     // posterior es tarde y algunos navegadores lo rechazan.
@@ -176,7 +181,8 @@ self.addEventListener('fetch', function (evento) {
     caches.match(peticion).then(function (guardado) {
       if (guardado) return guardado;
       return fetch(peticion).then(function (r) {
-        return guardar(CACHE_CONCHA, peticion, r, 0);
+        return guardar(esMedio ? CACHE_MEDIOS : CACHE_CONCHA, peticion, r,
+                       esMedio ? MAX_MEDIOS : 0);
       });
     })
   );
