@@ -845,8 +845,8 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua Aixolako presatik, Santama&ntilde;azar, Erdella, Intxorta, Asentzioko lakua, Elgeta eta Egoarbitza zeharkatuz</p>',
 
     # garaiurdaixa card
-    'alt="El cielo encendido del amanecer sobre el monte, antes de salir"':
-        'alt="Egunsentiko zeru gorria mendiaren gainean, irten aurretik"',
+    'alt="El cielo encendido del amanecer sobre los montes, antes de salir"':
+        'alt="Egunsentiko zeru gorria mendien gainean, irten aurretik"',
     '<h3 class="route-card-name">Garai, los canales de Arrierreka y la ermita de Urdaixa</h3>':
         '<h3 class="route-card-name">Garai, Arrierrekako kanalak eta Urdaixako ermita</h3>',
     '<p class="route-card-desc">Circuito desde Garai por el canal de arriba, el nacedero, la presa y la ermita de Urdaixa</p>':
@@ -6485,8 +6485,8 @@ GARAIURDAIXA = {
 
     'alt="La presa donde se recoge el agua del canal de arriba, con el monte al fondo"':
         'alt="Goiko kanaleko ura biltzen den presa, mendia atzealdean"',
-    'alt="El cielo encendido del amanecer sobre el monte, antes de salir"':
-        'alt="Egunsentiko zeru gorria mendiaren gainean, irten aurretik"',
+    'alt="El cielo encendido del amanecer sobre los montes, antes de salir"':
+        'alt="Egunsentiko zeru gorria mendien gainean, irten aurretik"',
     'alt="El camino de tierra subiendo entre helechos, con el monte y la torre eléctrica al fondo"':
         'alt="Lurrezko bidea iratzeen artean gora, mendia eta argindar-dorrea atzealdean"',
     'alt="El arroyo saltando entre rocas cubiertas de musgo, bajo los helechos"':
