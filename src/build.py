@@ -702,8 +702,6 @@ def add_jump_to_map(page_html, lang):
 # la pone el autor a mano, ruta por ruta, y la ficha solo la ensena cuando esta
 # aqui. Valores: "F&aacute;cil", "Media" o "Dif&iacute;cil".
 TECNICA = {
-    # Lo pone el autor, ruta por ruta: el terreno solo lo sabe quien lo ha pisado.
-    "garaiurdaixa": "F&aacute;cil",
 }
 
 
