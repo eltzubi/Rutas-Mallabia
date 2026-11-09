@@ -1420,6 +1420,23 @@ There's no automated test suite — verification is manual:
   tiene que ser exacto, ya dice «Cerca de Maguna». Esto se le planteó al autor tres veces como si
   fuera un fallo antes de molestarse en medirlo.
 
+- **«Los canales de Arrierreka» (garaiurdaixa) es correcto: no volver a dudarlo.** El autor
+  pregunto por que los dos canales llevan el mismo nombre si no son ramas de uno solo, y el nombre
+  resulto bueno: **los dos sacan el agua del Arrierreka**, medido sobre los datos de OpenStreetMap
+  en bruto -- la toma del canal de abajo esta a **12 m** del arroyo y el nacedero, que es la
+  cabecera del de arriba, a **2 m**; las dos tomas distan 553 m del mismo cauce. Son dos
+  conducciones independientes que acaban las dos en la central de Patala, no dos ramas de una,
+  y eso ya lo dice la ficha del canal de abajo.
+
+  **La trampa, y por eso se escribe aqui:** preguntar a Nominatim por «Arrierreka» devuelve **solo
+  el tramo de abajo** (way 678188830, de 43,1688 a 43,1979 N, Berriz y Abadino), que se acaba por
+  debajo de los canales, y con ese dato salen 650 m y 1,3 km y parece que el nombre esta mal. El
+  arroyo esta **partido en dos ways** y el de arriba (926638678) llega hasta 43,217 N. Para esto
+  no vale Nominatim: hay que bajar el recuadro entero con
+  `api.openstreetmap.org/api/0.6/map.json?bbox=...` y mirar la geometria. Overpass llevaba dias
+  sin responder cuando se comprobo. Los dos canales si estan en el mapa, como `waterway=ditch`,
+  pero **sin nombre**.
+
 - **Si falta `scripts/.punto-privado.json`, `check_site.py` lo dice ahora.** Esa comprobación —la
   única instrucción permanente del autor sobre los tracks— se saltaba **en silencio** cuando el
   fichero no estaba, y las 14.023 comprobaciones salían correctas sin haberla hecho ni una vez.
