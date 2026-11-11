@@ -1150,6 +1150,8 @@
         acumulado.push(total);
       }
       var CUANTAS = Math.max(6, Math.min(14, Math.round(total / 1500)));
+      var flechas = [];
+      var chevrones = 'M4 11 L12 4 L20 11 M4 19 L12 12 L20 19';
       for (var f = 1; f <= CUANTAS; f++) {
         var meta = total * f / (CUANTAS + 1);
         var j = 1;
@@ -1161,19 +1163,39 @@
         var dy = b[0] - a[0];
         if (!dx && !dy) continue;
         var giro = Math.atan2(dx, dy) * 180 / Math.PI;   // 0 = al norte
-        L.marker(b, {
+        flechas.push(L.marker(b, {
           interactive: false,
           keyboard: false,
+          zIndexOffset: -24, // Deja los puntos de referencia por encima.
           icon: L.divIcon({
             className: 'track-arrow',
-            html: '<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" ' +
-                  'style="transform:rotate(' + giro.toFixed(1) + 'deg)">' +
-                  '<path d="M12 3 L19 20 L12 16 L5 20 Z" fill="' + ground + '" ' +
-                  'stroke="' + ground + '" stroke-width="2" stroke-linejoin="round"/></svg>',
-            iconSize: [13, 13], iconAnchor: [6.5, 6.5]
+            html: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" ' +
+                  'style="display:block;transform:rotate(' + giro.toFixed(1) + 'deg)" ' +
+                  'fill="none" stroke-linecap="round" stroke-linejoin="round">' +
+                  '<path d="' + chevrones + '" stroke="#fff" stroke-width="7"/>' +
+                  '<path d="' + chevrones + '" stroke="#15171c" stroke-width="3.5"/></svg>',
+            iconSize: [20, 20], iconAnchor: [10, 10]
           })
-        }).addTo(map);
+        }));
       }
+      // En una vista general se juntan varios kilometros en pocos pixeles.
+      // Al acercar el mapa vuelven a salir las flechas de esos tramos.
+      var referencias = (data.waypoints || []).slice();
+      if (data.marker) referencias.push(data.marker.at);
+      function separaFlechas() {
+        var ocupados = referencias.map(function(at){ return map.latLngToLayerPoint(at); });
+        flechas.forEach(function(flecha){
+          var pixel = map.latLngToLayerPoint(flecha.getLatLng());
+          var cerca = ocupados.some(function(otro){ return otro.distanceTo(pixel) < 24; });
+          if (cerca) map.removeLayer(flecha);
+          else {
+            ocupados.push(pixel);
+            if (!map.hasLayer(flecha)) map.addLayer(flecha);
+          }
+        });
+      }
+      map.on('zoomend', separaFlechas);
+      map.whenReady(separaFlechas);
     }
 
     // Las fuentes de agua de esta ruta, en gota azul. El dato lo escribe

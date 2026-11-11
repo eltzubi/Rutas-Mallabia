@@ -96,7 +96,33 @@ function env(page='index.html', storage=new Map()) {
   const L={
     // El stub guarda los manejadores y deja fijar el zoom, para poder probar
     // que la portada cambia sola de capa al acercarse (map.js escucha zoomend).
-    map(el){const h={};const m={el,_z:10,on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},fire(ev){(h[ev]||[]).forEach(fn=>fn());},setZoom(z){this._z=z;this.fire('zoomend');},getContainer(){return el;},getZoom(){return this._z;},latLngToContainerPoint(){return {x:0,y:0};},containerPointToLatLng(){return [0,0];},getBounds(){return {pad(){return this;},contains(){return true;}};},invalidateSize(){},fitBounds(){},flyToBounds(){},removeLayer(){this.capas=(this.capas||0)-1;},remove(){this.removed=true;}};maps.push(m);return m;},
+    map(el){
+      const h={}, markers=new Set();
+      const m={
+        el,_z:10,
+        on(ev,fn){(h[ev]=h[ev]||[]).push(fn);return this;},
+        fire(ev){(h[ev]||[]).forEach(fn=>fn());},
+        setZoom(z){this._z=z;this.fire('zoomend');},
+        getContainer(){return el;},
+        getZoom(){return this._z;},
+        latLngToContainerPoint(){return {x:0,y:0};},
+        latLngToLayerPoint([lat,lng]){
+          const scale=2**this._z;
+          return {x:lng*scale,y:-lat*scale,
+            distanceTo(other){return Math.hypot(this.x-other.x,this.y-other.y);}};
+        },
+        containerPointToLatLng(){return [0,0];},
+        getBounds(){return {pad(){return this;},contains(){return true;}};},
+        invalidateSize(){},fitBounds(){},flyToBounds(){},
+        whenReady(fn){fn();return this;},
+        addLayer(layer){markers.add(layer);return this;},
+        hasLayer(layer){return markers.has(layer);},
+        removeLayer(layer){if(!markers.delete(layer))this.capas=(this.capas||0)-1;return this;},
+        remove(){this.removed=true;}
+      };
+      maps.push(m);
+      return m;
+    },
     // El stub cuenta las capas de teselas que tiene puesto el mapa: asi se
     // puede comprobar que los senderos señalizados se ponen ENCIMA del mapa de
     // fondo y no en su lugar.
@@ -350,6 +376,7 @@ test('la ficha de una ruta carga el mapa de inmediato, que ahi se ve desde el pr
   const caja=e.one('[data-map-src]');caja.clientWidth=800;caja.clientHeight=400;
   e.run('map.js');await settle();
   assert.equal(pedidas,1,'pide su track sin esperar a nadie');
+  assert.equal(e.errors.length,0);
   // Con «Bici», que vuelve a las fichas: es el mapa que el autor quiere y
   // la tardanza ya le da igual. La pendiente va en la misma pastilla,
   // detras de la raya, no en otra debajo.
