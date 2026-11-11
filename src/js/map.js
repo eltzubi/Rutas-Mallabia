@@ -1169,12 +1169,12 @@
           zIndexOffset: -24, // Deja los puntos de referencia por encima.
           icon: L.divIcon({
             className: 'track-arrow',
-            html: '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" ' +
+            html: '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" ' +
                   'style="display:block;transform:rotate(' + giro.toFixed(1) + 'deg)" ' +
                   'fill="none" stroke-linecap="round" stroke-linejoin="round">' +
                   '<path d="' + chevrones + '" stroke="#fff" stroke-width="7"/>' +
                   '<path d="' + chevrones + '" stroke="#15171c" stroke-width="3.5"/></svg>',
-            iconSize: [20, 20], iconAnchor: [10, 10]
+            iconSize: [14, 14], iconAnchor: [7, 7]
           })
         }));
       }
