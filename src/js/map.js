@@ -307,7 +307,7 @@
     // proyecto de voluntarios, igual que CyclOSM, y su licencia pide citar a
     // OpenTopoMap y a OpenStreetMap: eso hace la atribucion.
     var openTopoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      subdomains: 'abc', maxZoom: 17,
+      subdomains: 'abc', maxNativeZoom: 17, maxZoom: 20,
       attribution: '&copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA), &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
     });
     // La portada abre con las calles y las fichas con el IGN, que es como lo
