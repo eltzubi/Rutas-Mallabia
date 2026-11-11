@@ -427,10 +427,10 @@ test('sin diálogo nativo permanece la información original accesible',()=>{
 test('Topo mantiene el fondo mientras carga y vuelve a él si falla',async()=>{
   const e=env('trabakua.html');
   const layers=[];
-  e.context.L.tileLayer=(url)=>{
+  e.context.L.tileLayer=(url,options)=>{
     const handlers=new Map();
     const layer={
-      url,opacity:1,
+      url,options,opacity:1,
       addTo(map){map.addLayer(this);return this;},
       on(name,fn){handlers.set(name,fn);return this;},
       off(name){handlers.delete(name);return this;},
@@ -451,6 +451,8 @@ test('Topo mantiene el fondo mientras carga y vuelve a él si falla',async()=>{
   const map=e.maps[0];
   const bici=layers.find(l=>l.url.includes('cyc'));
   const topo=layers.find(l=>l.url.includes('tile.opentopomap'));
+  assert.equal(topo.options.maxNativeZoom,17);
+  assert.equal(topo.options.maxZoom,20);
   const biciBtn=e.all('.map-layer-btn').find(b=>b.textContent==='Bici');
   const topoBtn=e.all('.map-layer-btn').find(b=>b.textContent==='Topo');
   assert.ok(map.hasLayer(bici));
