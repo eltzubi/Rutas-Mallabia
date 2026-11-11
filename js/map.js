@@ -411,41 +411,57 @@
     // segundo: parecia roto. Leaflet pone la capa nueva por encima de la
     // vieja, asi que la va tapando segun llega.
     var quitarPendiente = null;
-    function ponerCapa(i){
-      if (i === layerIndex) return;
-      var vieja = layerDefs[layerIndex].layer;
-      var nueva = layerDefs[i].layer;
-      layerIndex = i;
+    function marcaCapa(cargando){
       layerBtns.forEach(function(b, j){
         b.classList.toggle('is-selected', j === layerIndex);
-        b.classList.toggle('is-loading', j === layerIndex);
+        b.classList.toggle('is-loading', cargando && j === layerIndex);
         b.setAttribute('aria-pressed', String(j === layerIndex));
       });
+    }
+    function ponerCapa(i){
+      if (i === layerIndex) return;
+      if (quitarPendiente) quitarPendiente();
+      if (i === layerIndex) return;
+      var anterior = layerIndex;
+      var nueva = layerDefs[i].layer;
+      layerIndex = i;
+      marcaCapa(capaPuesta);
       if (!capaPuesta) return;
-      if (quitarPendiente) { quitarPendiente(); quitarPendiente = null; }
-      nueva.addTo(map);
-      if (layerDefs[i].rotulos) layerDefs[i].rotulos.addTo(map);
-      var hecho = false;
-      function listo(){
-        if (hecho) return;
-        hecho = true;
+
+      // OpenTopoMap puede tardar varios segundos y Leaflet emite «load»
+      // incluso cuando todas sus teselas han fallado.
+      var esTopo = nueva === openTopoLayer;
+      var haFallado = false;
+      function errorTesela(){ haFallado = true; }
+      function iniciaTeselas(){ haFallado = false; }
+      function termina(confirmar){
         clearTimeout(reloj);
         nueva.off('load', listo);
+        if (esTopo) {
+          nueva.off('loading', iniciaTeselas);
+          nueva.off('tileerror', errorTesela);
+          nueva.setOpacity(1);
+        }
         quitarPendiente = null;
-        if (vieja !== nueva && map.hasLayer(vieja)) map.removeLayer(vieja);
-        // los rotulos se van con su capa y no antes: si se quitaran ya, al
-        // cambiar de capa desapareceran mientras la nueva aun carga.
+        layerIndex = confirmar ? i : anterior;
+        var sobrante = layerDefs[confirmar ? anterior : i].layer;
+        if (map.hasLayer(sobrante)) map.removeLayer(sobrante);
         layerDefs.forEach(function(d, j){
-        if (d.rotulos && j !== layerIndex && map.hasLayer(d.rotulos)) map.removeLayer(d.rotulos);
+          if (d.rotulos && j !== layerIndex && map.hasLayer(d.rotulos)) map.removeLayer(d.rotulos);
         });
-        layerBtns.forEach(function(b){ b.classList.remove('is-loading'); });
+        marcaCapa(false);
       }
-      // Y si las teselas no llegan nunca (sin cobertura en el monte), se
-      // quita igual pasados tres segundos: mejor el fondo vacio que dos
-      // mapas superpuestos para siempre.
-      var reloj = setTimeout(listo, 3000);
+      function listo(){ termina(!esTopo || !haFallado); }
+      var reloj = setTimeout(function(){ termina(!esTopo); }, esTopo ? 15000 : 3000);
+      quitarPendiente = function(){ termina(!esTopo); };
       nueva.on('load', listo);
-      quitarPendiente = listo;
+      if (esTopo) {
+        nueva.on('loading', iniciaTeselas);
+        nueva.on('tileerror', errorTesela);
+        nueva.setOpacity(0);
+      }
+      nueva.addTo(map);
+      if (layerDefs[i].rotulos) layerDefs[i].rotulos.addTo(map);
     }
     var layerBtns = layerDefs.map(function(def, i){
       var b = document.createElement('button');

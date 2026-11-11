@@ -423,3 +423,63 @@ test('sin diálogo nativo permanece la información original accesible',()=>{
   assert(e.one('#info-comer .info-details-body'));
   assert(e.one('#beforeYouGo .info-details-body'));
 });
+
+test('Topo mantiene el fondo mientras carga y vuelve a él si falla',async()=>{
+  const e=env('trabakua.html');
+  const layers=[];
+  e.context.L.tileLayer=(url)=>{
+    const handlers=new Map();
+    const layer={
+      url,opacity:1,
+      addTo(map){map.addLayer(this);return this;},
+      on(name,fn){handlers.set(name,fn);return this;},
+      off(name){handlers.delete(name);return this;},
+      fire(name){handlers.get(name)?.();},
+      setOpacity(opacity){this.opacity=opacity;return this;}
+    };
+    layers.push(layer);
+    return layer;
+  };
+  e.context.fetch=async()=>({ok:true,
+    json:async()=>JSON.parse(fs.readFileSync(path.join(root,'data/trabakua.json'),'utf8'))});
+  const caja=e.one('[data-map-src]');
+  caja.clientWidth=800;
+  caja.clientHeight=400;
+  e.run('map.js');
+  await settle();
+  assert.equal(e.errors.length,0);
+  const map=e.maps[0];
+  const bici=layers.find(l=>l.url.includes('cyc'));
+  const topo=layers.find(l=>l.url.includes('tile.opentopomap'));
+  const biciBtn=e.all('.map-layer-btn').find(b=>b.textContent==='Bici');
+  const topoBtn=e.all('.map-layer-btn').find(b=>b.textContent==='Topo');
+  assert.ok(map.hasLayer(bici));
+
+  topoBtn.click();
+  assert.ok(map.hasLayer(bici));
+  assert.equal(topo.opacity,0);
+  topo.fire('tileerror');
+  topo.fire('load');
+  assert.ok(map.hasLayer(bici));
+  assert.ok(!map.hasLayer(topo));
+  assert.equal(biciBtn.getAttribute('aria-pressed'),'true');
+
+  topoBtn.click();
+  const timer=[...e.timers.values()].find(t=>t.ms===15000);
+  assert.ok(timer);
+  timer.fn();
+  assert.ok(map.hasLayer(bici));
+  assert.ok(!map.hasLayer(topo));
+
+  topoBtn.click();
+  biciBtn.click();
+  assert.ok(map.hasLayer(bici));
+  assert.ok(!map.hasLayer(topo));
+
+  topoBtn.click();
+  topo.fire('load');
+  assert.ok(!map.hasLayer(bici));
+  assert.ok(map.hasLayer(topo));
+  assert.equal(topo.opacity,1);
+  assert.equal(topoBtn.getAttribute('aria-pressed'),'true');
+});
