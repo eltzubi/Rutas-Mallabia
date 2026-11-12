@@ -6693,6 +6693,56 @@ AIXOLAINTXORTA = {
 }
 
 PREGUNTAS = {
+    # SOBRE EL NAVEGADOR. Los nombres de los botones van en <kbd> y se dejan
+    # en castellano a proposito: el navegador GPS esta solo en castellano,
+    # asi que traducirlos seria mandar a buscar un boton que no existe.
+    '<h2 class="faq-grupo">Sobre el navegador</h2>':
+        '<h2 class="faq-grupo">Nabigatzaileari buruz</h2>',
+    '<span class="faq-q">&iquest;Qu&eacute; es el navegador de Trabakutik?</span>':
+        '<span class="faq-q">Zer da Trabakutiken nabigatzailea?</span>',
+    '<p>Un navegador hecho para estas rutas y para este monte. Te lleva por el track avisando <b>por voz</b> de los cruces, graba tu salida y te la devuelve en GPX. No pide cuenta, no tiene anuncios y no manda tus posiciones a ninguna parte.</p>':
+        '<p>Ibilbide hauetarako eta hemengo mendirako egindako nabigatzailea. Tracketik eramaten zaitu, bidegurutzeak <b>ahotsez</b> abisatuz, zure irteera grabatzen du eta GPXan itzultzen dizu. Ez du konturik eskatzen, ez du iragarkirik eta ez du zure kokapenik inora bidaltzen.</p>',
+    '<p>Se usa de dos maneras: <b>la p&aacute;gina</b>, que se abre en cualquier m&oacute;vil con el bot&oacute;n <kbd>Navegar esta ruta</kbd> de cada ficha, y <b>la aplicaci&oacute;n de Android</b>, que es la que sigue funcionando con la pantalla apagada y el m&oacute;vil en el bolsillo. En un navegador web, al bloquear el m&oacute;vil la p&aacute;gina se duerme y se callan los avisos: para salir al monte, la aplicaci&oacute;n. Est&aacute; solo en castellano. <a href="https://eltzubi.github.io/trabakutik-gps-pruebas/instalar.html">C&oacute;mo instalarla</a>.</p>':
+        '<p>Bi modutan erabil daiteke: <b>orria</b>, edozein mugikorretan irekitzen dena ibilbide bakoitzaren orriko <kbd>Navegar esta ruta</kbd> botoiarekin, eta <b>Androiderako aplikazioa</b>, pantaila itzalita eta mugikorra poltsikoan duzula lanean jarraitzen duena. Web-nabigatzaile batean, mugikorra blokeatzean orria lokartu egiten da eta abisuak isildu: mendira ateratzeko, aplikazioa. Gaztelaniaz bakarrik dago. <a href="https://eltzubi.github.io/trabakutik-gps-pruebas/instalar.html">Nola instalatu</a>.</p>',
+    '<span class="faq-q">&iquest;C&oacute;mo navego una ruta de esta web?</span>':
+        '<span class="faq-q">Nola nabigatzen dut web honetako ibilbide bat?</span>',
+    '<p>Desde la ficha de la ruta, con <kbd>Navegar esta ruta</kbd>: se abre con el track ya puesto. Dentro del navegador tambi&eacute;n est&aacute; <kbd>Elegir ruta</kbd>, con las {{RUTAS}} y un buscador por nombre, y dos atajos: <kbd>Cerca de m&iacute;</kbd>, que deja las que salen cerca de donde est&aacute;s, y <kbd>Ruta actual</kbd>.</p>':
+        '<p>Ibilbidearen orritik, <kbd>Navegar esta ruta</kbd> sakatuta: trackarekin zuzenean irekitzen da. Nabigatzailearen barruan ere badago <kbd>Elegir ruta</kbd>, {{RUTAS}} ibilbideak eta izenez bilatzeko laukia dituena, eta bi lasterbide: <kbd>Cerca de m&iacute;</kbd>, zauden tokitik gertu hasten direnak uzten dituena, eta <kbd>Ruta actual</kbd>.</p>',
+    '<p>Si la haces <b>al rev&eacute;s</b>, lo nota y te corrige los giros. No hay que darle la vuelta al track a mano.</p>':
+        '<p><b>Alderantziz</b> egiten baduzu, konturatu egiten da eta biraketak zuzentzen dizkizu. Ez dago trackari eskuz buelta eman beharrik.</p>',
+    '<span class="faq-q">&iquest;Puedo meter un GPX que no sea de esta web?</span>':
+        '<span class="faq-q">Web honetakoa ez den GPX bat sar dezaket?</span>',
+    '<p>S&iacute;: <kbd>Mis rutas</kbd> &rarr; <kbd>Importar GPX</kbd> y eliges el archivo del tel&eacute;fono. Vale el de Wikiloc, el de un Garmin o el que te pase alguien. Se queda <b>guardado en tu m&oacute;vil</b> y se navega como cualquier otra, con sus avisos de cruces.</p>':
+        '<p>Bai: <kbd>Mis rutas</kbd> &rarr; <kbd>Importar GPX</kbd> eta telefonoko fitxategia aukeratu. Balio du Wikilocekoak, Garmin batekoak edo norbaitek pasatzen dizunak. <b>Zure mugikorrean gordeta</b> geratzen da eta beste edozein bezala nabigatzen da, bere bidegurutzeen abisuekin.</p>',
+    '<p>Si el GPX viene partido en varios tramos sueltos, te avisa y se queda con el m&aacute;s largo: unirlos ser&iacute;a pintar l&iacute;neas rectas por donde no hay camino.</p>':
+        '<p>GPXa zati solte batzuetan banatuta badator, abisatu egiten dizu eta luzeenarekin geratzen da: haiek lotzeak marra zuzenak marraztea izango litzateke, biderik ez dagoen tokitik.</p>',
+    '<span class="faq-q">&iquest;Y hacerme una ruta ah&iacute; mismo?</span>':
+        '<span class="faq-q">Eta ibilbide bat bertan prestatzea?</span>',
+    '<p>Para eso est&aacute; <kbd>Crear</kbd>. Tocas un punto, tocas otro, y el camino entre los dos se calcula <b>por los caminos de verdad</b>, no en l&iacute;nea recta. Puedes cerrar el c&iacute;rculo, hacerla de ida y vuelta, mover un punto ya puesto o deshacer el &uacute;ltimo tramo, y vas viendo los kil&oacute;metros y el desnivel seg&uacute;n dibujas.</p>':
+        '<p>Horretarako dago <kbd>Crear</kbd>. Puntu bat ukitu, beste bat ukitu, eta bien arteko bidea <b>benetako bideetatik</b> kalkulatzen da, ez marra zuzenean. Zirkulua itxi dezakezu, joan-etorrikoa egin, jarritako puntu bat mugitu edo azken zatia desegin, eta kilometroak eta desnibela ikusiko dituzu marrazten duzun bitartean.</p>',
+    '<p>Se guarda en <kbd>Mis rutas</kbd>, se baja en GPX y <b>funciona sin cobertura</b>, porque los caminos los lleva guardados el propio m&oacute;vil.</p>':
+        '<p><kbd>Mis rutas</kbd> atalean gordetzen da, GPXan jaisten da eta <b>estaldurarik gabe ere funtzionatzen du</b>, bideak mugikorrak berak gordeta dituelako.</p>',
+    '<span class="faq-q">&iquest;De qu&eacute; me avisa por el camino?</span>':
+        '<span class="faq-q">Zertaz abisatzen dit bidean?</span>',
+    '<p>De los <b>cruces</b> en los que hay que dejar el camino que llevas &mdash;&laquo;en el cruce, sigue por la derecha&raquo;&mdash;, de las <b>curvas muy cerradas</b>, de cuando te <b>sales de la ruta</b>, del <b>principio de cada subida</b> larga, de las <b>fuentes</b> que hay junto al track y de cuando se <b>pierde la se&ntilde;al</b> del GPS.</p>':
+        '<p><b>Bidegurutzeez</b>, daramazun bidea utzi behar duzunean &mdash;<span lang="es">&laquo;en el cruce, sigue por la derecha&raquo;</span>&mdash;, <b>bihurgune oso itxiez</b>, <b>ibilbidetik ateratzen</b> zarenean, <b>igoera luze bakoitzaren hasieraz</b>, trackaren ondoan dauden <b>iturriez</b> eta GPSaren <b>seinalea galtzean</b>.</p>',
+    '<p>Cada giro se avisa tres veces seg&uacute;n te acercas, y con el bot&oacute;n del altavoz eliges entre <kbd>Voz</kbd>, <kbd>Pitidos</kbd> o <kbd>Silencio</kbd>.</p>':
+        '<p>Biraketa bakoitza hiru aldiz abisatzen da, hurbildu ahala, eta bozgorailuaren botoiarekin <kbd>Voz</kbd>, <kbd>Pitidos</kbd> edo <kbd>Silencio</kbd> aukeratzen duzu.</p>',
+    '<span class="faq-q">&iquest;Graba mi salida?</span>':
+        '<span class="faq-q">Nire irteera grabatzen du?</span>',
+    '<p>S&iacute;, con <kbd>Empezar</kbd>. Se puede <b>pausar y reanudar</b>, y al parar te deja guardarla en <kbd>Mis rutas</kbd>, exportar el <b>GPX</b> o descartarla. Te dice adem&aacute;s cu&aacute;nto ha durado, los kil&oacute;metros y <b>cu&aacute;nta bater&iacute;a ha gastado</b>.</p>':
+        '<p>Bai, <kbd>Empezar</kbd> sakatuta. <b>Geldiarazi eta berriz hasi</b> daiteke, eta amaitzean <kbd>Mis rutas</kbd> atalean gordetzen, <b>GPXa</b> esportatzen edo baztertzen uzten dizu. Zenbat iraun duen, zenbat kilometro eta <b>zenbat bateria gastatu duen</b> ere esaten dizu.</p>',
+    '<p>Y si el track se ha cortado por falta de se&ntilde;al, te lo dice en vez de disimularlo.</p>':
+        '<p>Eta trackak seinale faltagatik etenen bat badu, esan egiten dizu, ezkutatu beharrean.</p>',
+    '<span class="faq-q">&iquest;Funciona sin cobertura?</span>':
+        '<span class="faq-q">Estaldurarik gabe funtzionatzen du?</span>',
+    '<p>Las rutas, los cruces y los caminos van guardados en el m&oacute;vil, as&iacute; que s&iacute;. Lo &uacute;nico que necesita datos es <b>el fondo del mapa</b>, y para eso est&aacute; el bot&oacute;n <kbd>mapa &#10515;</kbd>: antes de salir se baja <b>el pasillo de mapa de esa ruta</b>, en IGN o en sat&eacute;lite, y luego se ve igual en mitad del monte.</p>':
+        '<p>Ibilbideak, bidegurutzeak eta bideak mugikorrean gordeta daude, beraz bai. Datuak behar dituen bakarra <b>maparen hondoa</b> da, eta horretarako dago <kbd>mapa &#10515;</kbd> botoia: atera aurretik <b>ibilbide horren mapa-pasabidea</b> jaisten du, IGNkoa edo sateliteko irudia, eta gero mendi erdian ere berdin ikusten da.</p>',
+    '<span class="faq-q">&iquest;Para qu&eacute; es el bot&oacute;n SOS?</span>':
+        '<span class="faq-q">Zertarako da SOS botoia?</span>',
+    '<p>Para decir <b>d&oacute;nde est&aacute;s</b>. Coge tu posici&oacute;n y prepara un mensaje con las coordenadas y un enlace al mapa, para mandarlo por donde quieras. No llama a nadie por su cuenta ni avisa a ning&uacute;n servicio: lo env&iacute;as t&uacute;.</p>':
+        '<p><b>Non zauden</b> esateko. Zure kokapena hartzen du eta koordenatuekin eta maparako esteka batekin mezu bat prestatzen du, nahi duzun bidetik bidaltzeko. Ez du inori bere kabuz deitzen, ez du inongo zerbitzuri abisatzen: zuk bidaltzen duzu.</p>',
+
     # Las capturas de la guia, rehechas sobre la portada en euskera: los
     # rotulos del mapa cambian (Bizi, Kaleak, Satelitea) y los de la
     # herramienta tambien.

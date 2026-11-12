@@ -108,6 +108,16 @@ def check_no_spanish(text, page):
     the hard way: "data-marker-title" survived untranslated once).
     """
     no_script = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S)
+    # Lo que va en <kbd> es el nombre de un boton del navegador GPS, y ese
+    # esta SOLO EN CASTELLANO: «Elegir ruta», «Mis rutas», «Empezar». En la
+    # pagina en euskera tiene que seguir diciendo lo que pone el boton, o no
+    # se encuentra. No es prosa sin traducir, asi que no se mira aqui.
+    no_script = re.sub(r"<kbd[^>]*>.*?</kbd>", " ", no_script, flags=re.S)
+    # Y lo que va marcado con lang="es" es castellano A PROPOSITO: lo que
+    # dice la voz del navegador, que habla en castellano. Citarlo en la
+    # pagina en euskera es lo correcto -y asi lo lee bien un lector de
+    # pantalla-, no un descuido de traduccion.
+    no_script = re.sub(r'<([a-z]+)[^>]*\blang="es"[^>]*>.*?</\1>', " ", no_script, flags=re.S)
     # Solo los atributos que lee una persona (o un lector de pantalla): mirar
     # tambien href/class/data-* de uso interno llenaba esto de falsos avisos
     # ("data-quick-preset=corto" no es texto, es una clave para el JS).

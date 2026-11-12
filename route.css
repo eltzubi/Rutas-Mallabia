@@ -769,6 +769,14 @@ footer a:hover{ color:var(--ink); }
    preguntas de bici, verde las de andar, y el resto en el color de enlace,
    que no es ninguna de las dos actividades y por eso no confunde. */
 .faq-list{ display:flex; flex-direction:column; gap:10px; margin:24px 0 30px; }
+/* Un apartado dentro de la lista de preguntas. Solo lo lleva el del
+   navegador: las demas preguntas van seguidas, como estaban. */
+.faq-grupo{ font-size:13px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-dim);
+  margin:22px 0 2px; padding-top:18px; border-top:1px solid var(--line); }
+/* Los botones del navegador, tal como estan escritos en el: la aplicacion
+   esta solo en castellano, asi que su nombre es literal en los dos idiomas. */
+.faq-a kbd{ font:inherit; font-weight:650; color:var(--ink); background:var(--ground-raised);
+  border:1px solid var(--line); border-radius:7px; padding:1px 6px; white-space:nowrap; }
 .faq-item{
   --acento: var(--link);
   --acento-soft: color-mix(in srgb, var(--link) 12%, transparent);
