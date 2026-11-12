@@ -42,5 +42,11 @@ jobs:
       - name: Check pages, downloads and assets
         run: python3 scripts/check_site.py
 
+      - name: Check the path network of the pencil
+        # Que no esté partida y que ningún trozo de las rutas sea una copia
+        # de un camino que ya estaba: eso dibujaba la línea al lado del
+        # camino. No corría en ninguna parte hasta ahora.
+        run: python3 scripts/check_caminos.py
+
       - name: Check interface behavior
         run: node scripts/test_ui.cjs
