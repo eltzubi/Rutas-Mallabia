@@ -115,6 +115,8 @@ it over a `<name>-card.jpg` used to overwrite that card's `.webp` with a worse, 
 than from its own previous output, so it is deterministic: re-running it rewrites byte-identical files and git sees no change.
 
 ```
+node scripts/test_lapiz.cjs            # el lapiz, en un navegador de verdad y con la red entera
+python3 scripts/check_caminos.py       # la red de caminos: en cuantos trozos esta y que cubre
 python3 scripts/check_site.py          # 9.236 comprobaciones sobre el sitio ya construido
 python3 scripts/make_icons.py          # icon-192.png / icon-512.png desde favicon.svg
 ```
@@ -1114,20 +1116,45 @@ borrosas.
 Idea del autor: casi nadie se hace de una tirada una ruta de 37 km, y lo que pide la gente es unir
 dos, acortar una o montarse la suya. Dibujar a mano alzada se descartó — un garabato no va por los
 caminos y su kilometraje sería mentira —, así que **se dibuja tocando puntos y el camino entre dos
-toques se calcula sobre los tracks reales**.
+toques se calcula sobre los caminos reales**.
 
-La red se construye en el navegador con los mismos tracks que la portada ya tiene
-(`data/trailhead.json`): los puntos se pegan a una rejilla de 15 m y cada celda es un nodo. Con los
-datos de hoy salen **8.418 nodos y 10.796 tramos, y forman una sola componente conexa** — desde
-cualquier punto de cualquier ruta se llega a cualquier otro sin salirse de terreno grabado —, así
-que **no hace falta ningún servicio de rutas de fuera**, que es la regla de esta web. Antes de pegar a la rejilla **cada tramo se rellena cada 5 m**: los puntos vienen simplificados a 10 m
-y dos caminos que se *cruzan* pueden caer en celdas distintas, con lo que el cruce no existe para la
-red y el cálculo se va a buscar la vuelta larga. Medido sobre 120 pares de puntos a 100-600 m, el
-rodeo mediano baja de 1,94 a 1,58 veces la línea recta y los rodeos de más de 3x pasan de 31 a 22.
-**Los que quedan son de verdad** — entre esos dos puntos no hay camino grabado —, y por eso cuando un
-tramo sale más de 2,5 veces la recta y se pasa de 300 m, el panel lo dice con los kilómetros que son.
-La red pasa de 8.375 a 46.226 nodos y se construye en 0,25 s medidos en el navegador. El camino se
-busca con Dijkstra sobre montículo binario; un toque tarda milisegundos.
+**Desde el 12 de noviembre de 2026 la red es la de OpenStreetMap, no la de los tracks.** Hasta
+entonces se construía en el navegador con `data/trailhead.json`, pegando los puntos a una rejilla de
+15 m, y tenía un techo medido: las rutas abarcan 24 x 22,7 km y sólo el 26 % de ese recuadro está a
+menos de 120 m de un camino grabado, así que **74 de cada 100 toques no enganchaban nada**. No era el
+código: es que la red sólo tenía lo grabado.
+
+Ahora el lápiz baja **`data/caminos-zona.json`** (lo escribe `scripts/make_caminos.py`): **41.632
+cruces, 52.567 tramos y 6.656 km de caminos**, 1,6 MB en el repositorio y **638 kB por el cable**, de
+la caja 43,10-43,42 por -2,72 a -2,34. El 98,9 % de la red es una sola pieza.
+
+**Y no es sólo OpenStreetMap.** Medido: el 93,4 % de los puntos de las 72 rutas publicadas está a
+menos de 25 m de un camino de OSM, pero el 6,6 % que falta es real y son sitios por los que se anda
+—gerea el 49 %, lejarreta el 55 %, 7pago el 64 %—. Así que al fichero se le suman **los 239 trozos de
+los tracks que OSM no tiene, 83 km**, y la cobertura sube al **99,8 %**: el lápiz no pierde nada de
+lo que ya sabía dibujar. `scripts/check_caminos.py` da esos dos números.
+
+**Por qué un grafo contraído.** Con 6.656 km, rellenar cada 5 m como hacía la red vieja son 1,3
+millones de nodos, y cada nodo y cada vecino era un array de JavaScript: en un móvil no cabe. En el
+fichero los nodos son **sólo los cruces** y la forma del camino va colgada de cada tramo; el cálculo
+corre sobre los cruces y la forma sólo se usa para dibujar. En el navegador las coordenadas y la
+adyacencia van en **arrays tipados** y la adyacencia en formato CSR —un array plano, no 41.632 arrays
+sueltos—. Medido en Chromium: la red queda lista en **0,3-0,5 s** desde que se pulsa el lápiz y el
+montón de la página se queda en **41 MB**.
+
+**El toque no se pega al cruce más cercano, sino al punto más cercano del camino.** Entre cruce y
+cruce hay 127 m de media, así que pegar al cruce movería el punto hasta 60 m de donde has tocado. Se
+proyecta el toque sobre el tramo y el cálculo arranca de ahí, con los dos extremos del tramo como
+primeros pasos. El camino se busca con Dijkstra sobre montículo binario, y cada metro pesa según la
+clase de vía (`COSTE_CLASE`): un sendero y una pista valen igual, una carretera pesa 1,35 y una
+nacional o un camino privado mucho más, para que no te mande por la nacional habiendo camino al lado.
+
+**Las alturas siguen saliendo de los tracks**, que OSM no trae cotas: se guardan en celdas de 50 m
+(`rejillaAlturas`) y un camino que pase por donde pasa una ruta hereda su altura. Fuera de las rutas
+no hay perfil, y es correcto que no lo haya: no hay de dónde sacarlo.
+
+Y por eso cuando un tramo sale más de 2,5 veces la recta y se pasa de 300 m, el panel lo dice con los
+kilómetros que son.
 
 Las alturas van aparte, en **`data/alturas.json`** (56 kB), que escribe `scripts/make_alturas.py`
 cogiendo para cada punto de la portada la altura del punto más cercano del `data/<ruta>.json` de esa
@@ -1174,11 +1201,10 @@ Las dos medidas que mandaron en la decisión:
 - **52 de las 68 rutas (el 76 %) empiezan y acaban a menos de 100 m**: el circuito es lo normal
   aquí, y cerrarlo había que hacerlo a toques. Por eso «Cerrar el círculo» es lo primero. Lo
   tienen igual Garmin Connect («Loop to Start»), HiiKER, Komoot y Bikemap.
-- Las 68 rutas abarcan un recuadro de **24 x 22,7 km** y sólo el **26 %** de él está a menos de
-  120 m (`MAX_ENGANCHE_M`) de un camino grabado: **74 de cada 100 toques no enganchan nada**. Eso
-  no lo arregla ningún botón — es el techo de la red, que sólo lleva los 68 tracks propios— y es
-  la razón por la que la idea grande que queda pendiente es **alimentar la red con los caminos de
-  OpenStreetMap de la zona**, en una instantánea estática como la de `scripts/osm/`.
+- Las 68 rutas abarcan un recuadro de **24 x 22,7 km** y sólo el **26 %** de él estaba a menos de
+  120 m (`MAX_ENGANCHE_M`) de un camino grabado: **74 de cada 100 toques no enganchaban nada**. Eso
+  no lo arreglaba ningún botón, era el techo de la red. **Resuelto el 12 de noviembre de 2026**
+  alimentando la red con los caminos de OpenStreetMap de la zona (ver arriba).
 
 Cómo están hechos, y lo que hay que respetar si se tocan:
 

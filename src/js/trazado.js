@@ -24,9 +24,6 @@
 (function(){
   'use strict';
 
-  var CELDA_M = 15;              // rejilla con la que se pegan los puntos
-  var PASO_M = 5;                // se rellenan los tramos cada 5 m (ver construyeRed)
-  var MAX_ENGANCHE_M = 120;      // mas lejos de esto, el toque no coge camino
   var UMBRAL_SUBIDA_M = 5;       // para no sumar el ruido del GPS como desnivel
   var ALMACEN = 'rutas-mallabia-trazados';
   var COLOR = '#38BDF8';
@@ -37,8 +34,8 @@
     es: {
       abrir: 'Dibujar un trazado', cerrar: 'Cerrar el dibujo',
       titulo: 'Tu trazado', arranque: 'Toca el mapa sobre un camino para empezar.',
-      sigue: 'Toca otro punto: el camino va por los senderos de las rutas.',
-      lejos: 'Ahi no pasa ninguna ruta. Toca mas cerca de un camino dibujado.',
+      sigue: 'Toca otro punto: el camino va por los senderos y pistas de OpenStreetMap.',
+      lejos: 'Ahi no hay ningun camino. Toca mas cerca de uno.',
       sinpaso: 'No hay camino hasta ahi dentro de la red.',
       deshacer: 'Deshacer', borrar: 'Borrar', guardar: 'Guardar', gpx: 'Bajar GPX',
       guardados: 'Guardados', abrirlo: 'Abrir', quitar: 'Quitar',
@@ -49,14 +46,14 @@
       mueve: 'Arrastra un punto para cambiar por d\u00f3nde va.',
       nombre: 'Trazado', aprox: 'aprox.', ultimo: '\u00daltimo tramo', cargando: 'Preparando la red de caminos…',
       fallo: 'No se ha podido preparar la red. Prueba a recargar.',
-      rodeo: 'Ese tramo da un rodeo de %s km: entre esos dos puntos no hay ning\u00fan camino grabado m\u00e1s corto. Deshazlo y prueba con un punto intermedio.',
-      aviso: 'Esto lo dibujas tu: va por caminos que salen en las rutas, pero no es ninguna de ellas.'
+      rodeo: 'Ese tramo da un rodeo de %s km: entre esos dos puntos no hay ning\u00fan camino m\u00e1s corto. Deshazlo y prueba con un punto intermedio.',
+      aviso: 'Esto lo dibujas tu: va por los caminos de OpenStreetMap y por las rutas de la web, pero no es ninguna de ellas.'
     },
     eu: {
       abrir: 'Marrazki bat egin', cerrar: 'Marrazkia itxi',
       titulo: 'Zure marrazkia', arranque: 'Ukitu mapa bide baten gainean hasteko.',
-      sigue: 'Ukitu beste puntu bat: bidea ibilbideetako bidexketatik doa.',
-      lejos: 'Hor ez da ibilbiderik pasatzen. Ukitu marraztutako bide batetik gertuago.',
+      sigue: 'Ukitu beste puntu bat: bidea OpenStreetMap-eko bidexka eta pistetatik doa.',
+      lejos: 'Hor ez dago biderik. Ukitu bide batetik gertuago.',
       sinpaso: 'Ez dago biderik hormaino sarearen barruan.',
       deshacer: 'Desegin', borrar: 'Ezabatu', guardar: 'Gorde', gpx: 'GPXa jaitsi',
       guardados: 'Gordeta', abrirlo: 'Ireki', quitar: 'Kendu',
@@ -67,8 +64,8 @@
       mueve: 'Arrastatu puntu bat nondik doan aldatzeko.',
       nombre: 'Marrazkia', aprox: 'gutxi gorabehera', ultimo: 'Azken tartea', cargando: 'Bideen sarea prestatzen…',
       fallo: 'Ezin izan da sarea prestatu. Saiatu orria berriro kargatzen.',
-      rodeo: 'Tarte horrek %s km-ko bira ematen du: bi puntu horien artean ez dago grabatutako bide laburragorik. Desegin eta saiatu tarteko puntu batekin.',
-      aviso: 'Hau zuk marrazten duzu: ibilbideetan agertzen diren bideetatik doa, baina ez da haietako bat.'
+      rodeo: 'Tarte horrek %s km-ko bira ematen du: bi puntu horien artean ez dago bide laburragorik. Desegin eta saiatu tarteko puntu batekin.',
+      aviso: 'Hau zuk marrazten duzu: OpenStreetMap-eko bideetatik eta webeko ibilbideetatik doa, baina ez da haietako bat.'
     }
   };
 
@@ -79,92 +76,205 @@
 
   // ---- la red ------------------------------------------------------------
 
-  function construyeRed(tracks, alturas){
-    var nodos = [], clave = Object.create(null), ady = [];
-    function id(p){
-      var k = Math.round(p[0] * 111320 / CELDA_M) + ':' +
-              Math.round(p[1] * KX / CELDA_M);
-      var i = clave[k];
-      if (i === undefined) { i = nodos.length; clave[k] = i; nodos.push([p[0], p[1], null]); ady.push([]); }
-      return i;
-    }
-    function une(a, b){
-      if (a === b) return;
-      var d = metros(nodos[a], nodos[b]);
-      var i, vs = ady[a];
-      for (i = 0; i < vs.length; i++) if (vs[i][0] === b) return;
-      ady[a].push([b, d]); ady[b].push([a, d]);
-    }
-    // Los puntos vienen simplificados a 10 m y dos caminos que se CRUZAN
-    // pueden caer en celdas distintas: el cruce no existe para la red y el
-    // calculo tiene que irse a buscar la vuelta larga. Rellenando cada tramo
-    // cada 5 m antes de pegar a la rejilla, el cruce cae en la misma celda.
-    // Medido sobre 120 pares de puntos a 100-600 m: el rodeo mediano baja de
-    // 1,94 a 1,58 veces la linea recta y los rodeos de mas de 3x pasan de 31
-    // a 22. Los que quedan son de verdad: solo hay caminos grabados.
-    tracks.forEach(function(t){
-      var pts = t.points || [];
-      var alt = (alturas && t.href) ? alturas[String(t.href).split('/').pop().replace('.html', '')] : null;
-      var prev = -1;
+  // ======================= LA RED DE CAMINOS =============================
+  // Hasta noviembre de 2026 esta red se hacia con los tracks de las rutas
+  // publicadas, pegados a una rejilla de 15 m. Tenia un techo medido: las
+  // rutas abarcan 24 x 22,7 km y solo el 26% de ese recuadro esta a menos de
+  // 120 m de un camino grabado, asi que 74 de cada 100 toques no enganchaban
+  // nada. No era el codigo: es que la red solo tenia lo grabado.
+  //
+  // Ahora la red se baja hecha (data/caminos-zona.json, de scripts/
+  // make_caminos.py): 41.632 cruces, 52.567 tramos y 6.656 km de caminos de
+  // OpenStreetMap, MAS los 239 trozos de las rutas publicadas que OSM no
+  // tiene -83 km-. Cubre el 99,8% de los puntos de las 72 rutas, asi que no
+  // se pierde nada de lo que el lapiz ya sabia dibujar.
+  //
+  // POR QUE UN GRAFO CONTRAIDO Y NO PUNTO A PUNTO. Con 6.656 km, rellenar
+  // cada 5 m como antes son 1,3 millones de nodos, y cada nodo y cada vecino
+  // es un array de JavaScript: no cabe en un movil. Aqui los nodos son solo
+  // los cruces y la forma del camino va colgada de cada tramo; el calculo
+  // corre sobre los cruces y la forma solo se usa para dibujar. Las
+  // coordenadas y la adyacencia van en arrays tipados -unos 10 MB en vez de
+  // 80- y la adyacencia en formato CSR, que es un array plano y no 41.632
+  // arrays sueltos.
+  //
+  // Y EL TOQUE NO SE PEGA AL CRUCE MAS CERCANO, sino al punto mas cercano
+  // DEL CAMINO. Entre cruce y cruce hay 127 m de media: pegar al cruce
+  // movería el punto hasta 60 m de donde has tocado. Lo que se hace es
+  // proyectar el toque sobre el tramo y arrancar el calculo desde ahi, con
+  // los dos extremos del tramo como primeros pasos.
+  var MAX_ENGANCHE_M = 120;      // mas lejos de esto, el toque no coge camino
+  var CELDA_BUSCA_M = 100;       // rejilla para encontrar el tramo de un toque
+  var PASO_CESTA_M = 40;         // cada cuanto se marca un tramo en la rejilla
+  var CELDA_ALTURA_M = 50;       // rejilla de alturas sacada de los tracks
+  var ALTURA_CERCA_M = 60;       // mas lejos que esto, un punto va sin altura
+  // Lo que cuesta un metro de cada clase de via. Un sendero y una pista
+  // valen igual; una carretera pesa mas para que no te mande por ella
+  // habiendo camino al lado, y una nacional o un camino privado, mucho mas.
+  //   0 sendero  1 pista  2 calle o servicio  3 carretera  4 bidegorri
+  //   5 nacional  6 privado  7 trozo grabado por el autor
+  var COSTE_CLASE = [1, 1, 1.05, 1.35, 1, 3, 5, 1];
+
+  function rejillaAlturas(alturas, tracks){
+    // Las alturas siguen saliendo de los tracks publicados, como antes: OSM
+    // no trae cotas. Se guardan en celdas de 50 m, asi que un camino que
+    // pase por donde pasa una ruta hereda su altura y el perfil funciona.
+    var rej = Object.create(null);
+    if (!alturas || !tracks) return rej;
+    tracks.forEach(function(tk){
+      var pts = tk.points || [];
+      var alt = tk.href ? alturas[String(tk.href).split('/').pop().replace('.html', '')] : null;
+      if (!alt) return;
       for (var i = 0; i < pts.length; i++) {
-        if (i > 0) {
-          var a = pts[i - 1], b = pts[i], largo = metros(a, b);
-          // La altura del punto de relleno se interpola entre los dos puntos
-          // grabados que tiene a los lados. Sin esto, el GPX que se baja
-          // salia con altura solo en uno de cada cinco puntos.
-          var ea = alt ? alt[i - 1] : null, eb = alt ? alt[i] : null;
-          var hayE = typeof ea === 'number' && typeof eb === 'number';
-          for (var k = 1; k * PASO_M < largo; k++) {
-            var f = k * PASO_M / largo;
-            var m = id([a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]);
-            if (hayE && nodos[m][2] === null) nodos[m][2] = Math.round(ea + (eb - ea) * f);
-            if (prev >= 0) une(prev, m);
-            prev = m;
-          }
-        }
-        var n = id(pts[i]);
-        if (alt && nodos[n][2] === null && typeof alt[i] === 'number') nodos[n][2] = alt[i];
-        if (prev >= 0) une(prev, n);
-        prev = n;
+        var e = alt[i];
+        if (typeof e !== 'number') continue;
+        var k = Math.round(pts[i][0] * 111320 / CELDA_ALTURA_M) + ':' +
+                Math.round(pts[i][1] * KX / CELDA_ALTURA_M);
+        if (rej[k] === undefined) rej[k] = e;
       }
     });
-    // rejilla de 100 m para buscar el nodo mas cercano a un toque
-    var cestas = Object.create(null);
-    nodos.forEach(function(n, i){
-      var k = Math.round(n[0] * 111320 / 100) + ':' + Math.round(n[1] * KX / 100);
-      (cestas[k] || (cestas[k] = [])).push(i);
-    });
-    return { nodos: nodos, ady: ady, cestas: cestas };
+    return rej;
   }
 
-  function nodoCerca(red, lat, lon){
-    var cx = Math.round(lat * 111320 / 100), cy = Math.round(lon * KX / 100);
-    var mejor = -1, mejorD = Infinity;
+  function alturaEn(red, lat, lon){
+    var cx = Math.round(lat * 111320 / CELDA_ALTURA_M);
+    var cy = Math.round(lon * KX / CELDA_ALTURA_M);
+    var salto = Math.ceil(ALTURA_CERCA_M / CELDA_ALTURA_M);
+    for (var r = 0; r <= salto; r++) {
+      for (var dx = -r; dx <= r; dx++) for (var dy = -r; dy <= r; dy++) {
+        if (r && Math.max(Math.abs(dx), Math.abs(dy)) !== r) continue;
+        var e = red.alturas[(cx + dx) + ':' + (cy + dy)];
+        if (e !== undefined) return e;
+      }
+    }
+    return null;
+  }
+
+  // Los puntos de un tramo, del extremo «ini» al «fin», forma incluida.
+  function puntosDe(red, k){
+    var g = red.geo[k], out = [[red.lat[red.ini[k]], red.lon[red.ini[k]]]], i;
+    for (i = 0; i < g.length; i += 2) out.push([g[i], g[i + 1]]);
+    out.push([red.lat[red.fin[k]], red.lon[red.fin[k]]]);
+    return out;
+  }
+
+  function construyeRed(datos, alturas, tracks){
+    var esc = datos.escala || 100000;
+    var dn = datos.nodos, n = dn.length / 2, i, k;
+    var lat = new Float64Array(n), lon = new Float64Array(n);
+    var x = 0, y = 0;
+    for (i = 0; i < n; i++) { x += dn[2 * i]; y += dn[2 * i + 1]; lat[i] = x / esc; lon[i] = y / esc; }
+    var t = datos.tramos, ini = [], fin = [], cls = [], lar = [], geo = [];
+    i = 0;
+    while (i + 4 < t.length) {
+      var a = t[i], b = t[i + 1], c = t[i + 2], largo = t[i + 3], kk = t[i + 4];
+      i += 5;
+      var g = new Float64Array(kk * 2);
+      var gx = Math.round(lat[a] * esc), gy = Math.round(lon[a] * esc);
+      for (k = 0; k < kk; k++) {
+        gx += t[i]; gy += t[i + 1]; i += 2;
+        g[2 * k] = gx / esc; g[2 * k + 1] = gy / esc;
+      }
+      ini.push(a); fin.push(b); cls.push(c); lar.push(largo); geo.push(g);
+    }
+    var m = ini.length;
+    var grado = new Int32Array(n);
+    for (k = 0; k < m; k++) { grado[ini[k]]++; grado[fin[k]]++; }
+    var arranque = new Int32Array(n + 1);
+    for (i = 0; i < n; i++) arranque[i + 1] = arranque[i] + grado[i];
+    var cursor = arranque.slice(0, n);
+    var vecino = new Int32Array(2 * m), porTramo = new Int32Array(2 * m);
+    for (k = 0; k < m; k++) {
+      vecino[cursor[ini[k]]] = fin[k]; porTramo[cursor[ini[k]]++] = k;
+      vecino[cursor[fin[k]]] = ini[k]; porTramo[cursor[fin[k]]++] = k;
+    }
+    var red = {
+      lat: lat, lon: lon, n: n, m: m,
+      ini: Int32Array.from(ini), fin: Int32Array.from(fin),
+      clase: Uint8Array.from(cls), largo: Float32Array.from(lar), geo: geo,
+      arranque: arranque, vecino: vecino, porTramo: porTramo,
+      alturas: rejillaAlturas(alturas, tracks), cestas: Object.create(null)
+    };
+    for (k = 0; k < m; k++) {
+      var pts = puntosDe(red, k), visto = null;
+      for (i = 1; i < pts.length; i++) {
+        var p = pts[i - 1], q = pts[i], d = metros(p, q);
+        var pasos = Math.max(1, Math.ceil(d / PASO_CESTA_M));
+        for (var j = 0; j <= pasos; j++) {
+          var f = j / pasos;
+          var cx = Math.round((p[0] + (q[0] - p[0]) * f) * 111320 / CELDA_BUSCA_M);
+          var cy = Math.round((p[1] + (q[1] - p[1]) * f) * KX / CELDA_BUSCA_M);
+          var key = cx + ':' + cy;
+          if (key === visto) continue;
+          visto = key;
+          var lista = red.cestas[key] || (red.cestas[key] = []);
+          if (lista[lista.length - 1] !== k) lista.push(k);
+        }
+      }
+    }
+    return red;
+  }
+
+  // El punto del camino mas cercano a un toque. Devuelve un ancla:
+  // {p:[lat,lon,altura], tr:tramo, seg:indice del trozo, t:fraccion}.
+  function engancha(red, lat, lon){
+    var cx = Math.round(lat * 111320 / CELDA_BUSCA_M);
+    var cy = Math.round(lon * KX / CELDA_BUSCA_M);
+    var kx = Math.cos(lat * Math.PI / 180) * 111195, ky = 111195;
+    var mejor = null, mejorD = MAX_ENGANCHE_M, mirados = Object.create(null);
     for (var dx = -2; dx <= 2; dx++) for (var dy = -2; dy <= 2; dy++) {
       var lista = red.cestas[(cx + dx) + ':' + (cy + dy)];
       if (!lista) continue;
-      for (var i = 0; i < lista.length; i++) {
-        var d = metros(red.nodos[lista[i]], [lat, lon]);
-        if (d < mejorD) { mejorD = d; mejor = lista[i]; }
+      for (var z = 0; z < lista.length; z++) {
+        var k = lista[z];
+        if (mirados[k]) continue;
+        mirados[k] = 1;
+        var pts = puntosDe(red, k);
+        for (var i = 1; i < pts.length; i++) {
+          var ax = (pts[i - 1][1] - lon) * kx, ay = (pts[i - 1][0] - lat) * ky;
+          var bx = (pts[i][1] - pts[i - 1][1]) * kx, by = (pts[i][0] - pts[i - 1][0]) * ky;
+          var nn = bx * bx + by * by;
+          var tt = nn ? Math.max(0, Math.min(1, -(ax * bx + ay * by) / nn)) : 0;
+          var d = Math.hypot(ax + tt * bx, ay + tt * by);
+          if (d < mejorD) {
+            mejorD = d;
+            mejor = { tr: k, seg: i - 1, t: tt,
+                      p: [pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * tt,
+                          pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * tt] };
+          }
+        }
       }
     }
-    return mejorD <= MAX_ENGANCHE_M ? mejor : -1;
+    if (!mejor) return null;
+    mejor.p.push(alturaEn(red, mejor.p[0], mejor.p[1]));
+    return mejor;
   }
 
-  // Dijkstra con monticulo binario. 8.418 nodos: sobra de rapido.
-  function camino(red, desde, hasta){
-    if (desde === hasta) return [desde];
-    var n = red.nodos.length;
+  // Del ancla hasta uno de los dos extremos de su tramo, con los puntos de
+  // la forma que queden por el camino. hacia = 1 al «fin», -1 al «ini».
+  function haciaExtremo(red, anc, hacia){
+    var pts = puntosDe(red, anc.tr), out = [anc.p.slice(0, 2)], i;
+    if (hacia > 0) for (i = anc.seg + 1; i < pts.length; i++) out.push(pts[i]);
+    else for (i = anc.seg; i >= 0; i--) out.push(pts[i]);
+    var largo = 0;
+    for (i = 1; i < out.length; i++) largo += metros(out[i - 1], out[i]);
+    return { pts: out, largo: largo };
+  }
+
+  // Dijkstra con monticulo binario sobre los cruces. 41.632 nodos y 52.567
+  // tramos: unos milisegundos.
+  function dijkstra(red, origenes){
+    var n = red.n;
     var dist = new Float64Array(n); dist.fill(Infinity);
     var antes = new Int32Array(n); antes.fill(-1);
+    var porDonde = new Int32Array(n); porDonde.fill(-1);
     var visto = new Uint8Array(n);
-    var heap = [[0, desde]];
-    dist[desde] = 0;
+    var heap = [];
     function sube(i){
       while (i > 0) {
         var p = (i - 1) >> 1;
         if (heap[p][0] <= heap[i][0]) break;
-        var t = heap[p]; heap[p] = heap[i]; heap[i] = t; i = p;
+        var tmp = heap[p]; heap[p] = heap[i]; heap[i] = tmp; i = p;
       }
     }
     function baja(i){
@@ -173,26 +283,92 @@
         if (l < heap.length && heap[l][0] < heap[m][0]) m = l;
         if (r < heap.length && heap[r][0] < heap[m][0]) m = r;
         if (m === i) break;
-        var t = heap[m]; heap[m] = heap[i]; heap[i] = t; i = m;
+        var tmp = heap[m]; heap[m] = heap[i]; heap[i] = tmp; i = m;
       }
     }
+    origenes.forEach(function(o){
+      if (o.coste < dist[o.nodo]) { dist[o.nodo] = o.coste; heap.push([o.coste, o.nodo]); sube(heap.length - 1); }
+    });
     while (heap.length) {
       var top = heap[0];
       heap[0] = heap[heap.length - 1]; heap.pop(); if (heap.length) baja(0);
       var u = top[1];
       if (visto[u]) continue;
       visto[u] = 1;
-      if (u === hasta) break;
-      var vs = red.ady[u];
-      for (var i = 0; i < vs.length; i++) {
-        var v = vs[i][0], nd = top[0] + vs[i][1];
-        if (nd < dist[v]) { dist[v] = nd; antes[v] = u; heap.push([nd, v]); sube(heap.length - 1); }
+      for (var e = red.arranque[u]; e < red.arranque[u + 1]; e++) {
+        var v = red.vecino[e], k = red.porTramo[e];
+        var nd = top[0] + red.largo[k] * COSTE_CLASE[red.clase[k]];
+        if (nd < dist[v]) {
+          dist[v] = nd; antes[v] = u; porDonde[v] = k;
+          heap.push([nd, v]); sube(heap.length - 1);
+        }
       }
     }
-    if (!visto[hasta]) return null;
-    var ruta = [], x = hasta;
-    while (x !== -1) { ruta.push(x); x = antes[x]; }
-    return ruta.reverse();
+    return { dist: dist, antes: antes, porDonde: porDonde, visto: visto };
+  }
+
+  // El camino entre dos anclas, ya en puntos [lat, lon, altura].
+  function rutaEntre(red, A, B){
+    if (!A || !B) return null;
+    var out, i;
+    if (A.tr === B.tr) {
+      // En el mismo tramo no hay nada que calcular: es el trozo de camino
+      // que va de uno a otro.
+      var pts = puntosDe(red, A.tr);
+      var delante = (B.seg > A.seg) || (B.seg === A.seg && B.t >= A.t);
+      out = [A.p.slice(0, 2)];
+      if (delante) for (i = A.seg + 1; i <= B.seg; i++) out.push(pts[i]);
+      else for (i = A.seg; i > B.seg; i--) out.push(pts[i]);
+      out.push(B.p.slice(0, 2));
+      return conAltura(red, out);
+    }
+    var aIni = haciaExtremo(red, A, -1), aFin = haciaExtremo(red, A, 1);
+    var bIni = haciaExtremo(red, B, -1), bFin = haciaExtremo(red, B, 1);
+    var fA = COSTE_CLASE[red.clase[A.tr]], fB = COSTE_CLASE[red.clase[B.tr]];
+    var res = dijkstra(red, [
+      { nodo: red.ini[A.tr], coste: aIni.largo * fA },
+      { nodo: red.fin[A.tr], coste: aFin.largo * fA }
+    ]);
+    var metas = [
+      { nodo: red.ini[B.tr], cola: bIni, coste: bIni.largo * fB },
+      { nodo: red.fin[B.tr], cola: bFin, coste: bFin.largo * fB }
+    ];
+    var mejor = null, mejorC = Infinity;
+    metas.forEach(function(mt){
+      if (!res.visto[mt.nodo]) return;
+      var c = res.dist[mt.nodo] + mt.coste;
+      if (c < mejorC) { mejorC = c; mejor = mt; }
+    });
+    if (!mejor) return null;
+    // Desde la meta hacia atras, apuntando por que tramo se llego.
+    var cadena = [], x = mejor.nodo;
+    while (x !== -1 && res.porDonde[x] >= 0) {
+      cadena.push({ hasta: x, tramo: res.porDonde[x] });
+      x = res.antes[x];
+    }
+    cadena.reverse();
+    // x es ahora el extremo de A por el que se salio.
+    var salida = x;
+    out = (salida === red.ini[A.tr] ? aIni : aFin).pts.slice();
+    cadena.forEach(function(paso){
+      var k = paso.tramo, pts = puntosDe(red, k);
+      if (paso.hasta === red.fin[k]) { for (i = 1; i < pts.length; i++) out.push(pts[i]); }
+      else { for (i = pts.length - 2; i >= 0; i--) out.push(pts[i]); }
+    });
+    var cola = mejor.cola.pts.slice().reverse();   // del extremo hasta B
+    for (i = 1; i < cola.length; i++) out.push(cola[i]);
+    return conAltura(red, out);
+  }
+
+  function conAltura(red, pts){
+    var out = [], i, ultimo = null;
+    for (i = 0; i < pts.length; i++) {
+      var p = pts[i];
+      if (ultimo && metros(ultimo, p) < 0.5) continue;
+      ultimo = p;
+      out.push([p[0], p[1], alturaEn(red, p[0], p[1])]);
+    }
+    return out.length > 1 ? out : null;
   }
 
   // ---- la herramienta ----------------------------------------------------
@@ -346,7 +522,7 @@
       if (!tramos.length && cargado) return cargado;
       var out = [];
       tramos.forEach(function(tr, i){
-        for (var k = (i ? 1 : 0); k < tr.length; k++) out.push(red.nodos[tr[k]]);
+        for (var k = (i ? 1 : 0); k < tr.length; k++) out.push(tr[k]);
       });
       return out;
     }
@@ -375,8 +551,8 @@
     // total. Es la pregunta del autor: «¿este tramo lo cojo de subida?».
     function desnivelDe(tr){
       var sub = 0, baj = 0, base = null, cima = null;
-      tr.forEach(function(id){
-        var e = red.nodos[id][2];
+      tr.forEach(function(p){
+        var e = p[2];
         if (typeof e !== 'number') return;
         if (base === null) { base = cima = e; return; }
         if (e > base + UMBRAL_SUBIDA_M) { sub += e - base; base = e; }
@@ -421,7 +597,7 @@
         if (!idx) return;
         inicioUltimo = llevo;
         for (var q = 1; q < tr.length; q++) {
-          llevo += metros(red.nodos[tr[q - 1]], red.nodos[tr[q]]);
+          llevo += metros(tr[q - 1], tr[q]);
         }
         var xm = (llevo / total * W).toFixed(1);
         marcas += '<line x1="' + xm + '" y1="0" x2="' + xm + '" y2="' + H + '"/>';
@@ -448,7 +624,7 @@
       if (anclas.length < 2) { elMsg.textContent = t.pocos; return; }
       var ini = anclas[0], fin = anclas[anclas.length - 1];
       if (ini === fin) { elMsg.textContent = t.yacerrado; return; }
-      var tr = camino(red, fin, ini);
+      var tr = rutaEntre(red, fin, ini);
       if (!tr) { elMsg.textContent = t.nocierra; return; }
       anclas.push(ini); tramos.push(tr); cargado = null; pinta();
     }
@@ -472,8 +648,8 @@
     // toca nada. Si el trazado esta cerrado, el primer punto y el ultimo son
     // el mismo nodo: hay que mover los dos o el circulo se abre.
     function mueveAncla(i, lat, lon){
-      var n = nodoCerca(red, lat, lon);
-      if (n < 0) { elMsg.textContent = t.lejos; pinta(); return; }
+      var n = engancha(red, lat, lon);
+      if (!n) { elMsg.textContent = t.lejos; pinta(); return; }
       var ult = anclas.length - 1;
       var cerrado = ult > 1 && anclas[0] === anclas[ult];
       var idx = (cerrado && i === ult) ? 0 : i;
@@ -485,11 +661,11 @@
       if (cerrado && idx === 0 && tocar.indexOf(ult) < 0) tocar.push(ult);
       for (k = 0; k < tocar.length; k++) {
         j = tocar[k];
-        tr = camino(red, na[j - 1], na[j]);
+        tr = rutaEntre(red, na[j - 1], na[j]);
         if (!tr) { elMsg.textContent = t.sinpaso; pinta(); return; }
         nt[j] = tr;
       }
-      if (idx === 0) nt[0] = [n];
+      if (idx === 0) nt[0] = [n.p];
       anclas = na; tramos = nt; cargado = null; pinta();
     }
 
@@ -503,9 +679,9 @@
       // primero: se dibuja uno solo, o quedarian dos bolas superpuestas y no
       // se sabria cual estas arrastrando.
       var cerrado = anclas.length > 2 && anclas[0] === anclas[anclas.length - 1];
-      anclas.forEach(function(id, i){
+      anclas.forEach(function(anc, i){
         if (cerrado && i === anclas.length - 1) return;
-        var n = red.nodos[id];
+        var n = anc.p;
         var m = L.marker([n[0], n[1]], {
           draggable: true, autoPan: true, keyboard: false,
           icon: L.divIcon({ className: 'draw-dot' + (i === 0 ? ' is-first' : ''),
@@ -532,19 +708,19 @@
 
     function alTocar(e){
       if (!activo || !red) return;
-      var n = nodoCerca(red, e.latlng.lat, e.latlng.lng);
+      var n = engancha(red, e.latlng.lat, e.latlng.lng);
       if (n < 0) { elMsg.textContent = t.lejos; return; }
-      if (!anclas.length) { cargado = null; anclas.push(n); tramos.push([n]); pinta(); return; }
+      if (!anclas.length) { cargado = null; anclas.push(n); tramos.push([n.p]); pinta(); return; }
       var ultimo = anclas[anclas.length - 1];
-      var tr = camino(red, ultimo, n);
+      var tr = rutaEntre(red, ultimo, n);
       if (!tr) { elMsg.textContent = t.sinpaso; return; }
       anclas.push(n); tramos.push(tr); pinta();
       // Un tramo puede salir disparado a un lado y no se entiende por que:
       // es que entre esos dos puntos no hay ningun camino grabado mas corto
       // y la red tiene que dar la vuelta. Se dice, con los metros de mas.
       var largo = 0, i;
-      for (i = 1; i < tr.length; i++) largo += metros(red.nodos[tr[i - 1]], red.nodos[tr[i]]);
-      var recto = metros(red.nodos[ultimo], red.nodos[n]);
+      for (i = 1; i < tr.length; i++) largo += metros(tr[i - 1], tr[i]);
+      var recto = metros(ultimo.p, n.p);
       if (recto > 30 && largo > recto * 2.5 && largo - recto > 300) {
         elMsg.textContent = t.rodeo.replace('%s', (largo / 1000).toFixed(2).replace('.', ','));
       }
@@ -696,14 +872,19 @@
       if (cargando) return;
       cargando = true;
       elMsg.textContent = t.cargando;
-      fetch('data/alturas.json').then(function(r){ return r.ok ? r.json() : null; })
-        .catch(function(){ return null; })
-        .then(function(alt){
-          red = construyeRed(d.datos.tracks || [], alt);
-          cargando = false;
-          pinta();
-        })
-        .catch(function(){ cargando = false; elMsg.textContent = t.fallo; });
+      // Dos ficheros: la red de caminos -638 KB por el cable- y las alturas.
+      // La red es lo unico imprescindible; si fallan las alturas se dibuja
+      // igual y lo que se pierde es el perfil, como antes.
+      Promise.all([
+        fetch('data/caminos-zona.json').then(function(r){ return r.ok ? r.json() : null; }),
+        fetch('data/alturas.json').then(function(r){ return r.ok ? r.json() : null; })
+          .catch(function(){ return null; })
+      ]).then(function(pareja){
+        if (!pareja[0] || !pareja[0].nodos || !pareja[0].tramos) throw new Error('sin red');
+        red = construyeRed(pareja[0], pareja[1], d.datos.tracks || []);
+        cargando = false;
+        pinta();
+      }).catch(function(){ cargando = false; elMsg.textContent = t.fallo; });
     }
 
     btn.addEventListener('click', function(){ activo ? apaga() : enciende(); });
