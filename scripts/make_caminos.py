@@ -78,6 +78,16 @@ CLASE_PRIVADO = 6
 # perderia justo eso, que hoy si puede dibujar. Asi que esos trozos se suman.
 CLASE_GRABADO = 7
 CUBIERTO_M = 25      # a esta distancia un punto de ruta ya tiene camino OSM
+# Y UN TROZO SOLO SE AÑADE SI SE VA DE VERDAD. Un GPS bajo los arboles se
+# desvia 15-30 m, asi que un trozo que nunca pasa de 40 m de un camino de OSM
+# no es un camino que falte: es EL MISMO camino con el error del GPS. Medido
+# sobre las 72 rutas: 96 de los 239 trozos que se añadian -10,2 km- no se
+# separaban nunca mas de 40 m, y lo que hacian era doblar el camino que ya
+# estaba, en paralelo, unos metros al lado. El lapiz podia coger esa copia, y
+# entonces la linea sale junto al camino en vez de por el camino. Lo vio el
+# autor en una captura, en Gaztelumendi: «esta marcando el camino pero se
+# sale, continua por fuera».
+DE_VERDAD_M = 40
 PEGA_M = 30          # a esta, el extremo de un trozo se engancha a la red
 CELDA_BUSCA = 0.0009  # unos 100 m
 
@@ -217,6 +227,30 @@ def rejilla_de(puntos, tramos):
     return rej
 
 
+def medio_de(pts):
+    """El punto de en medio de un trozo, para los que se guardan como una
+    recta entre dos cruces y no tienen forma propia."""
+    return pts[len(pts) // 2]
+
+
+def mete_en(rej, pts):
+    """Mete un trozo recien añadido en la rejilla de cobertura, relleno cada
+    20 m como los de OSM, para que lo que venga detras lo vea cubierto."""
+    for k in range(len(pts)):
+        p = pts[k]
+        rej.setdefault((math.floor(p[0] / CELDA_BUSCA),
+                        math.floor(p[1] / CELDA_BUSCA)), []).append(p)
+        if k == 0:
+            continue
+        q = pts[k - 1]
+        d = metros(q, p)
+        for j in range(1, int(d // 20) + 1):
+            f = j * 20.0 / d
+            r = (q[0] + (p[0] - q[0]) * f, q[1] + (p[1] - q[1]) * f)
+            rej.setdefault((math.floor(r[0] / CELDA_BUSCA),
+                            math.floor(r[1] / CELDA_BUSCA)), []).append(r)
+
+
 def cerca_de(rej, p):
     k0 = math.floor(p[0] / CELDA_BUSCA)
     k1 = math.floor(p[1] / CELDA_BUSCA)
@@ -233,6 +267,10 @@ def cerca_de(rej, p):
 def suma_lo_grabado(puntos, tramos):
     """Añade los trozos de las rutas publicadas que OSM no tiene."""
     rej = rejilla_de(puntos, tramos)
+    # La misma rejilla, pero congelada: solo OpenStreetMap. «rej» va creciendo
+    # con lo que se añade -para no meter dos veces el mismo trozo- y por eso
+    # no sirve para decidir si un trozo es una copia de un camino de OSM.
+    solo_osm = rejilla_de(puntos, tramos)
     # Para enganchar un extremo a un cruce que ya exista, y para que dos
     # rutas que comparten un trozo no cubierto compartan tambien sus nodos.
     cruces = {}
@@ -257,7 +295,7 @@ def suma_lo_grabado(puntos, tramos):
         cruces.setdefault((k0, k1), []).append(i)
         return i
 
-    metidos = km = 0
+    metidos = km = saltados = 0
     for f in sorted(glob.glob(os.path.join(ROOT, 'data', '*.json'))):
         nombre = os.path.basename(f)[:-5]
         if nombre in ('trailhead', 'alturas', 'rutas', 'cruces-zona',
@@ -286,16 +324,32 @@ def suma_lo_grabado(puntos, tramos):
             largo = sum(metros(trozo[k - 1], trozo[k])
                         for k in range(1, len(trozo)))
             # Un solo punto suelto es ruido del GPS, no un camino que falte.
-            if largo >= 30:
+            puesto = False
+            medio = simplifica(trozo, SIMPLIFICA_M)[1:-1] if largo >= 30 else []
+            # La prueba va sobre EL INTERIOR del trozo y contra el
+            # OpenStreetMap de partida. Los dos extremos no cuentan: estan
+            # pegados a la red a proposito -para que el trozo enganche-, asi
+            # que siempre estarian cerca de un camino. Es lo mismo que vuelve
+            # a mirar check_caminos.py, para que los dos digan igual.
+            dentro = medio or [medio_de(trozo)]
+            if largo >= 30 and max(cerca_de(solo_osm, q) for q in dentro) >= DE_VERDAD_M:
                 na, nb = nodo_para(trozo[0]), nodo_para(trozo[-1])
                 if na != nb:
-                    medio = simplifica(trozo, SIMPLIFICA_M)[1:-1]
                     tramos.append((na, nb, CLASE_GRABADO,
                                    int(round(largo)), medio))
                     metidos += 1
                     km += largo / 1000.
+                    puesto = True
+                    # Y SE METE EN LA REJILLA. Sin esto, el mismo trozo que
+                    # falta lo añadian TODAS las rutas que pasan por el, una
+                    # copia por ruta: dos lineas paralelas a cuatro metros.
+                    mete_en(rej, [puntos[na]] + medio + [puntos[nb]])
+            if not puesto:
+                saltados += 1
             i = j + 1
-    print('trozos de tus rutas que OSM no tiene: %d, %.0f km' % (metidos, km))
+    print('trozos de tus rutas que OSM no tiene: %d, %.0f km '
+          '(%d descartados por no separarse de un camino que ya estaba)'
+          % (metidos, km, saltados))
     return puntos, tramos
 
 
@@ -328,7 +382,55 @@ def escribe(puntos, tramos, fecha):
              os.path.getsize(salida) / 1024.))
 
 
+def lee_publicado():
+    """Lee data/caminos-zona.json y devuelve (puntos, tramos, fecha) SIN los
+    trozos grabados (clase 7), para poder rehacer solo esa parte sin volver a
+    bajar Overpass -que son 16 franjas y media hora-. Lo de OpenStreetMap se
+    queda exactamente como estaba."""
+    with io.open(os.path.join(ROOT, 'data', 'caminos-zona.json'),
+                 encoding='utf-8') as f:
+        doc = json.load(f)
+    e = doc['escala']
+    dif, nodos = doc['nodos'], []
+    x = y = 0
+    for i in range(0, len(dif), 2):
+        x += dif[i]
+        y += dif[i + 1]
+        nodos.append((x / e, y / e))
+    planos, tramos, i = doc['tramos'], [], 0
+    while i < len(planos):
+        a, b, cl, largo, n = planos[i:i + 5]
+        i += 5
+        forma = []
+        ax, ay = round(nodos[a][0] * e), round(nodos[a][1] * e)
+        for _ in range(n):
+            ax += planos[i]
+            ay += planos[i + 1]
+            i += 2
+            forma.append((ax / e, ay / e))
+        if cl != CLASE_GRABADO:
+            tramos.append((a, b, cl, largo, forma))
+    # Compactar: los nodos que solo sujetaban un trozo grabado sobran, y si se
+    # quedaran serian islas sueltas en la cuenta de componentes.
+    usados = sorted({n for t in tramos for n in (t[0], t[1])})
+    nuevo = {viejo: i for i, viejo in enumerate(usados)}
+    puntos = [nodos[i] for i in usados]
+    tramos = [(nuevo[a], nuevo[b], cl, largo, forma)
+              for a, b, cl, largo, forma in tramos]
+    return puntos, tramos, doc.get('fecha_osm', '')
+
+
 def main():
+    # Rehacer SOLO los trozos de las rutas, sobre el OpenStreetMap que ya esta
+    # publicado. Es lo que hace falta al cambiar la regla de que trozo se
+    # añade, y evita volver a bajar la zona entera.
+    if '--rehaz-lo-grabado' in sys.argv:
+        puntos, tramos, fecha = lee_publicado()
+        print('de OpenStreetMap, tal cual estaba: %d cruces, %d tramos'
+              % (len(puntos), len(tramos)))
+        puntos, tramos = suma_lo_grabado(puntos, tramos)
+        escribe(puntos, tramos, fecha)
+        return
     if len(sys.argv) < 2:
         print('Falta la respuesta de Overpass. Bajala por franjas de 0,02 de')
         print('latitud -la caja entera devuelve 504- con esta consulta:\n')
