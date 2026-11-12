@@ -6455,9 +6455,6 @@ ASKAKOSANTAKATALINE = {
 }
 
 GARAIURDAIXA = {
-    'Salimos temprano.':
-        'Goiz irten gara.',
-
     '<p class="eyebrow"><span>Pista y sendero</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Circuito</span></p>':
         '<p class="eyebrow"><span>Pista eta bidexka</span><span class="sep">/</span><span>Garai</span><span class="sep">/</span><span>Zirkuitua</span></p>',
     '<h1>Garai, los canales<br>de Arrierreka y la<br><em>ermita de Urdaixa</em></h1>':
@@ -6529,10 +6526,8 @@ GARAIURDAIXA = {
     'El primer tramo va junto al <a href="garaikanala.html">canal de abajo</a>, sencillo y bueno para ir en familia. Aun así, el canal va abierto al lado del camino durante todo el recorrido, sin ninguna protección. A partir del depósito, el camino sigue subiendo hasta el canal de arriba. Allí hay algunos puntos donde el sendero se estrecha y conviene avanzar con cuidado. En la bajada también hay pendientes pronunciadas, aunque el camino está limpio. Para niños muy pequeños puede resultar menos adecuado; es mejor para niños mayores acostumbrados a caminar o para adultos.':
         'Ibilaldiaren lehen zatia <a href="garaikanala.html">beheko kanalaren</a> ondotik doa, erraza eta familian egiteko modukoa. Hala ere, kanala bidearen alboan doa ibilbide osoan zehar, irekita eta inolako babesik gabe. Biltegitik aurrera, bideak gora egiten jarraitzen du goiko kanaleraino. Han, bidexka estutu egiten den puntu batzuk daude eta kontuz ibili behar da. Jaitsieran ere aldapa handiak daude, nahiz eta bidea garbi egon. Oso haur txikientzat desegokia izan daiteke; hobe da ibiltzen ohituta dauden haur nagusientzat edo helduentzat.',
 
-    'Después pasamos por la presa, bajamos hasta la ermita de <b>Urdaixa</b> y regresamos a <b>Garai</b>.':
-        'Ondoren, presa zeharkatu, <b>Urdaixa</b>ko ermitaraino jaitsi eta <b>Garai</b>ra itzuliko gara.',
-    'Salimos del aparcamiento de <b>Garai</b> por el camino que sube suavemente. Al medio kilómetro tomamos el desvío de la derecha, que baja hacia el canal. Más adelante hay que estar atentos para encontrar otro giro a la derecha, algo escondido entre la vegetación. El sendero se estrecha y nos lleva hasta la conducción de abajo.':
-        '<b>Garai</b>ako aparkalekutik irtengo gara, poliki igotzen den bidetik. Kilometro erdira, eskuineko bidea hartuko dugu, kanalera jaisten dena. Aurrerago, adi egon behar dugu beste bira bat aurkitzeko, landarediaren artean ezkutatuta dagoena. Bidea estutu egiten da eta beheko kanalera eramaten gaitu.',
+    'Salimos temprano del aparcamiento de <b>Garai</b> por el camino que sube suavemente. Al medio kilómetro tomamos el desvío de la derecha, que baja hacia el canal. Más adelante hay que estar atentos para encontrar otro giro a la derecha, algo escondido entre la vegetación. El sendero se estrecha y nos lleva hasta la conducción de abajo.':
+        'Goiz irten gara <b>Garai</b>ako aparkalekutik, poliki igotzen den bidetik. Kilometro erdira, eskuineko bidea hartuko dugu, kanalera jaisten dena. Aurrerago, adi egon behar dugu beste bira bat aurkitzeko, landarediaren artean ezkutatuta dagoena. Bidea estutu egiten da eta beheko kanalera eramaten gaitu.',
     'Al principio repetimos el tramo del canal de abajo que ya hicimos en <a href="garaikanala.html">la ruta corta</a>. Es un tramo sencillo y apto para hacer en familia. Seguimos el canal durante algo más de un kilómetro, por una zona tranquila donde hemos visto cangrejos.':
         'Hasieran, beheko kanalaren zatia errepikatuko dugu, <a href="garaikanala.html">ibilbide laburrean</a> egin genuena. Zati erraza da, eta familia osoak egin dezake. Kanalaren ondotik jarraituko dugu kilometro bat baino gehiago, eremu lasai batean, non karramarroak ikusi ditugun.',
     'Al llegar a la pista de piedra y al depósito, esta vez seguimos cuesta arriba alrededor de un kilómetro, en lugar de volver hacia <b>Garai</b>. Mientras subimos, casi sin esperarlo, vemos una conducción de agua a mano derecha. Conviene fijarse, porque también aparece otra a mano izquierda. Seguimos por esta última.':
