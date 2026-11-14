@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Wikiloc - https://www.wikiloc.com" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Wikiloc - Iglesia Andikoa, Ermita San Kristobal y Monasterio de Zenarruza desde Gerea</name>
+    <name>Wikiloc - Vuelta al monte Oiz Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza.</name>
     <author>
       <name>Eltzubi_Natura</name>
       <link href="https://www.wikiloc.com/wikiloc/user.do?id=159328">
         <text>Eltzubi_Natura on Wikiloc</text>
       </link>
     </author>
-    <link href="https://www.wikiloc.com/ebike-trails/iglesia-andikoa-ermita-san-kristobal-y-monasterio-de-zenarruza-desde-gerea-296313961">
-      <text>Iglesia Andikoa, Ermita San Kristobal y Monasterio de Zenarruza desde Gerea on Wikiloc</text>
+    <link href="https://www.wikiloc.com/ebike-trails/vuelta-al-monte-oiz-vuelta-en-e-bike-desde-trabakua-por-zengotita-andikoa-garai-san-kristobal-y-zen-296313961">
+      <text>Vuelta al monte Oiz Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza. on Wikiloc</text>
     </link>
     <time>2026-11-14T09:36:05Z</time>
   </metadata>
   <trk>
-    <name>Iglesia Andikoa, Ermita San Kristobal y Monasterio de Zenarruza desde Gerea - Wikiloc</name>
-    <cmt>Ruta circular desde Gerea pasando por:
-- Ermita de San Juan (2.8 km)
-- Iglesia Andikoa (7.5 km)
-- Ermita San Kristobal (21.1 km)
-- Monasterio de Zenarruza (30.3 km)</cmt>
-    <desc>Ruta circular desde Gerea pasando por:
-- Ermita de San Juan (2.8 km)
-- Iglesia Andikoa (7.5 km)
-- Ermita San Kristobal (21.1 km)
-- Monasterio de Zenarruza (30.3 km)</desc>
+    <name>Vuelta al monte Oiz Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza. - Wikiloc</name>
+    <cmt>Hoy damos la vuelta al Oiz y lo vamos viendo desde sus distintas caras. Salimos de Trabakua y pasamos por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza antes de volver al puerto. La mayor parte de la ruta va por pistas y carreteras de barrio, sin pasos complicados.</cmt>
+    <desc>Hoy damos la vuelta al Oiz y lo vamos viendo desde sus distintas caras. Salimos de Trabakua y pasamos por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza antes de volver al puerto. La mayor parte de la ruta va por pistas y carreteras de barrio, sin pasos complicados.</desc>
     <trkseg>
       <trkpt lat="43.209745" lon="-2.546280">
         <ele>408.615</ele>
