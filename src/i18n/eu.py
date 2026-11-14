@@ -7081,6 +7081,9 @@ ARTETABERANOARANDONO = {
 }
 
 VUELTAOIZ = {
+    'Una ruta larga en e-bike': 'Ibilbide luzea bizikleta elektrikoan',
+    'Para quien esté acostumbrado a hacer rutas largas en e-bike. La mayor parte va por pistas y carreteras de barrio, sin senderos técnicos ni bajadas complicadas. Lo más exigente son los kilómetros y el desnivel.':
+        'Bizikleta elektrikoarekin ibilbide luzeak egiten ohituta dagoenarentzat. Zatirik handiena pista eta auzo-errepideetatik doa, bidezidor teknikorik eta jaitsiera zailik gabe. Kilometroek eta desnibelak eskatzen dute ahaleginik handiena.',
     'Hay fuentes en el alto de Trabakua, a la entrada de Besoita y junto al antiguo lavadero de Garai.':
         'Trabakuko mendatean, Besoitako sarreran eta Garaiko garbitoki zaharraren ondoan daude iturriak.',
     '<span>Mixta</span>': '<span>Mistoa</span>',
