@@ -844,6 +844,10 @@ HOME = {
     '<p class="route-card-desc">Circuito desde la presa de Aixola por Santama&ntilde;azar, Erdella, Intxorta, el lago de Asentzio, Elgeta y Egoarbitza</p>':
         '<p class="route-card-desc">Zirkuitua Aixolako presatik, Santama&ntilde;azar, Erdella, Intxorta, Asentzioko lakua, Elgeta eta Egoarbitza zeharkatuz</p>',
 
+    # vueltaoiz card
+    'Bicicleta junto a San Kristobal y los aerogeneradores del Oiz': 'Bizikleta San Kristobalen ondoan, Oizko haize-sorgailuekin',
+    'Vuelta al monte Oiz': 'Oiz mendiari itzulia',
+    'Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza.': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena.',
     # garaiurdaixa card
     'alt="El cielo encendido del amanecer sobre los montes, antes de salir"':
         'alt="Egunsentiko zeru gorria mendien gainean, irten aurretik"',
@@ -3478,6 +3482,7 @@ DESCRIPTIONS = {
     'zengotitamaguna': '32 km-ko zirkuitua e-bikez Trabakuatik, Osma, Zengotitagane, Iturzurigainako eta Ama Birjinen Basoko trikuharriak, Maguna, San Kristobal Txiki eta Betzun zeharkatuz',
     'aixolaintxorta': '20 km-ko zirkuitua Aixolako presatik, Santamañazar, Erdella, Intxorta eta Egoarbitza zeharkatuz, Gerra Zibileko lubakiekin eta Asentzioko lakuarekin',
     'zaldutrail': '20 km-ko zirkuitua Zaldibartik, Egoarbitza, Aixolako urtegia eta Santamañazar zeharkatuz: Zaldutrail-eko ibilbide luzea, 1.178 metroko desnibelarekin',
+    'vueltaoiz': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena.',
     'garaiurdaixa': '7 km-ko zirkuitua Garaitik, Arrierrekako goiko kanalari jarraituz: iturburu ezkutua, Patalako jauziaren presa eta Urdaixako ermita',
     'garaikanala': '4 km-ko zirkuitu-ibilaldia Garaitik, mendian ezkutatutako antzinako ubide batetik, karramarroak ibilguan: laburra, desnibel gutxikoa eta haurrekin egiteko aproposa',
     'askakosantakataline': '30 km-ko zirkuitua e-bikez Trabakuatik, Garaiko Asto Traileko tarteetatik: Askako, Lasiarko aisialdi-gunea, Santa Kataline, Garai eta Andikoa',
@@ -3613,6 +3618,7 @@ TITLES = {
     'aixolaintxorta': 'Aixola, Santamañazar, Erdella, Intxorta eta Egoarbitza — Herriko ibilbideak',
     'zaldutrail': 'Zaldutrail: Zaldibarko mendietan barrena, gogorra eta ederra — Herriko ibilbideak',
     'zengotitamaguna': 'Zengotitagane, trikuharriak, Maguna eta San Kristobal Txiki — Herriko ibilbideak',
+    'vueltaoiz': 'Oiz mendiari itzulia · E-bike ibilbidea — Herriko ibilbideak',
     'garaiurdaixa': 'Garai, Arrierrekako kanalak eta Urdaixako ermita — Herriko ibilbideak',
     'garaikanala': 'Ibilaldia Garai eta antzinako ubidetik — Herriko ibilbideak',
     'askakosantakataline': 'Garaiko Asto Traileko tarteak: Santa Kataline eta Andikoa — Herriko ibilbideak',
@@ -7074,6 +7080,51 @@ ARTETABERANOARANDONO = {
         'Ibilbide honek merezi du bideen lasaitasunagatik eta auzoen edertasunagatik. Pistak, baso-zati txikiak, baserriak eta belardiak tartekatuz, Arteta, Berano eta Arandoñoko ingurua ezagutzeko eta paseatzeko toki atsegina aurkituko dugu. Landa-paisaiaren gozatzeko ibilbidea da, familian ere egiteko modukoa, txikienen erritmora egokituta.',
 }
 
+VUELTAOIZ = {
+    'Hay fuentes en el alto de Trabakua, a la entrada de Besoita y junto al antiguo lavadero de Garai.':
+        'Trabakuko mendatean, Besoitako sarreran eta Garaiko garbitoki zaharraren ondoan daude iturriak.',
+    '<span>Mixta</span>': '<span>Mistoa</span>',
+    '<span>Circuito</span>': '<span>Zirkuitua</span>',
+    '<span class="v">Mixta</span>': '<span class="v">Mistoa</span>',
+    'Hoy damos la vuelta al Oiz y lo vamos viendo desde sus distintas caras. Salimos de Trabakua y pasamos por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza antes de volver al puerto. La mayor parte de la ruta va por pistas y carreteras de barrio, sin pasos complicados.': 'Gaur Oiz mendiari itzulia emango diogu, bere alde ezberdinetatik ikusiz. Trabakuatik abiatu eta Zengotita, Andikoa, Garai, San Kristobal eta Zenarruza zeharkatuko ditugu, berriro ere mendatera itzuli aurretik. Ibilbidearen zatirik handiena pista eta auzo-errepideetatik igarotzen da, pasabide zailik gabe.',
+    'Desde Trabakua hacemos unos dos kilómetros y medio hasta coger la carretera vieja que baja hacia Berriz. Pasamos por el barrio de Zengotita, junto a la ermita de San Juan Bautista, y seguimos bajando. Abajo del todo giramos a la derecha y empezamos a subir hacia Besoita.': 'Trabakuatik bi kilometro eta erdi inguru egiten ditugu, Berrizera jaisten den errepide zaharra hartu arte. Zengotita auzotik igarotzen gara, San Juan Bataiatzailearen ermitaren ondotik, eta jaisten jarraitzen dugu. Behealdean, eskuinera biratu eta Besoitarantz igotzen hasten gara.',
+    'Desde Besoita seguimos por asfalto hasta Andikoa. Allí pasamos junto al santuario de Nuestra Señora de Andikoa y bajamos por una rampa. Después de varios giros a la derecha, pasamos por Sarria y vamos subiendo poco a poco hacia Garai. Es un tramo bonito, entre caseríos y prados, con buenas vistas del valle.': 'Besoitatik asfaltoz jarraitzen dugu Andikoara iritsi arte. Han, Andikoako Ama Birjinaren santutegiaren ondotik igarotzen gara eta arrapala batetik jaisten gara. Hainbat eskuinerako biraren ondoren, Sarria zeharkatzen dugu eta pixkanaka Garairantz igotzen goaz. Zati polita da, baserri eta zelai artean, haranaren ikuspegi ederrekin.',
+    'A la entrada de Garai paramos en la fuente para coger agua. Luego giramos a la derecha y dejamos el pueblo por una pista de piedra bien asentada. El suelo está cubierto de hojas y se notan los colores del otoño durante toda la subida.': 'Garaiko sarreran, iturrian gelditzen gara ura hartzeko. Ondoren, eskuinera biratu eta herria harrizko pista egonkor batetik uzten dugu. Lurzorua hostoz estalita dago eta udazkeneko koloreak nabaritzen dira igoera osoan zehar.',
+    'Salimos a la carretera que sube desde la zona de Garai hacia el Oiz, con buena parte del firme de cemento. Pasamos por el área recreativa y continuamos hasta toparnos con un cruce. A la derecha queda el camino de Zengotitagane e Iturzuri, que ya hemos cogido otras veces. Hoy tiramos a la izquierda hacia la ermita de San Kristobal de Oiz y su refugio.': 'Garaiko eremutik Oizera igotzen den errepidera ateratzen gara, zati handi batean zementuzko zorua duena. Aisialdirako eremua zeharkatzen dugu eta bidegurutze batera iritsi arte jarraitzen dugu. Eskuinaldean, Zengotitagane eta Iturzuriko bidea geratzen da, beste batzuetan hartu duguna. Gaur ezkerrera joko dugu, Oizko San Kristobal ermita eta babeslekura.',
+    'Arriba paramos un momento a disfrutar de las vistas a ambos lados del monte. Después bajamos por la parte de atrás, por carretera, y al llegar abajo giramos a la derecha hacia Kortaguren. El camino es bastante llano, con alguna bajada corta y algún repecho.': 'Goian, une batez gelditzen gara mendiaren bi aldeetako ikuspegiaz gozatzeko. Ondoren, atzeko aldetik jaisten gara, errepidez, eta behealdera iristean, eskuinera biratzen dugu Kortagurenerantz. Bidea nahiko laua da, jaitsiera labur batzuekin eta aldapa batzuekin.',
+    'Pasamos cerca de la granja y los caseríos de Kortaguren y empezamos a bajar hacia el monasterio de Santa María de Zenarruza, la antigua colegiata. Es un descenso largo por pista de piedra bien asentada, de los que da gusto hacer en bici.': 'Kortagurengo baserri eta etxaldeetatik gertu igarotzen gara eta Zenarruzako Santa Maria monasteriorantz jaisten hasten gara, antzinako kolegiata. Jaitsiera luzea da, harrizko pista egonkor batetik, bizikletaz egiteko atsegina den horietakoa.',
+    'Desde el monasterio seguimos bajando y enlazamos con un tramo corto de asfalto. Unas curvas más abajo giramos a la derecha y cogemos el camino de cemento que sube a Muniozguren. Desde allí nos quedan unos seis kilómetros hasta Trabakua. En ese último tramo todavía disfrutamos de las vistas hacia el barrio de Gerena, con los eólicos del Oiz al fondo, antes de cerrar la vuelta.': 'Monasteriotik jaisten jarraitzen dugu eta asfaltozko zati labur batekin lotzen dugu. Beherago, eskuinera biratu eta Muniozgurenera igotzen den zementuzko bidea hartzen dugu. Handik sei kilometro inguru geratzen zaizkigu Trabakuaraino. Azken zati horretan, oraindik ere Gerenako auzorako ikuspegiez gozatzen dugu, Oizko haize-sorgailuak atzealdean ditugula, itzulia itxi aurretik.',
+    'Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza.': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena.',
+    'Vuelta al monte Oiz': 'Oiz mendiari itzulia',
+    'Pistas y carreteras de barrio': 'Pistak eta auzo-errepideak',
+    'Camino mojado entre árboles, con hojas caídas': 'Bide bustia zuhaitz artean, hosto eroriekin',
+    'Montañas sobre un mar de niebla': 'Mendiak laino-itsasoaren gainetik',
+    'Caseríos y prados entre la niebla': 'Baserriak eta zelaiak laino artean',
+    'Prado cercado con niebla en el valle': 'Zelai hesitua eta lainoa haranean',
+    'Carretera de barrio junto a una iglesia de piedra': 'Auzo-errepidea harrizko eliza baten ondoan',
+    'Lavadero cubierto entre árboles de otoño': 'Garbitoki estalia udazkeneko zuhaitzen artean',
+    'Pista de bosque cubierta de hojas': 'Hostoz estalitako basoko pista',
+    'Área recreativa entre árboles de otoño': 'Aisialdi-gunea udazkeneko zuhaitzen artean',
+    'Cruce de pistas con los aerogeneradores del Oiz al fondo': 'Pista-gurutzea, Oizko haize-sorgailuak atzean',
+    'Pista de cemento hacia la ladera del Oiz': 'Zementuzko pista Oizko mendi-hegalerantz',
+    'Laderas de helechos con montañas y niebla al fondo': 'Iratzez betetako mendi-hegalak, mendiak eta lainoa atzean',
+    'Ermita de San Kristobal con los aerogeneradores del Oiz detrás': 'San Kristobal ermita, Oizko haize-sorgailuak atzean',
+    'Bicicleta junto a San Kristobal y los aerogeneradores del Oiz': 'Bizikleta San Kristobalen ondoan, Oizko haize-sorgailuekin',
+    'Prados y bosques entre bancos de niebla': 'Zelaiak eta basoak laino artean',
+    'Pequeña cascada entre rocas con musgo y helechos': 'Ur-jauzi txikia goroldioz estalitako harkaitz eta iratze artean',
+    'Paso canadiense en un camino junto a los prados': 'Abereentzako sareta zelai ondoko bidean',
+    'Pista de grava vista desde el manillar de la bici': 'Hartxintxarrezko pista, bizikletaren eskulekutik ikusita',
+    'Pista con hojas y edificios al fondo entre los árboles': 'Hostoz betetako pista eta eraikinak atzean, zuhaitz artean',
+    'Monasterio de Zenarruza junto a una hilera de cipreses': 'Zenarruzako monasterioa altzifre-ilararen ondoan',
+    'Escaleras y cruces de piedra en la entrada de Zenarruza': 'Harrizko eskailerak eta gurutzeak Zenarruzako sarreran',
+    'La distancia y el perfil se calculan a partir del GPX. El desnivel positivo es el registrado en Wikiloc.': 'Distantzia eta profila GPX fitxategitik kalkulatu dira. Igoerako desnibela Wikilocen jasotakoa da.',
+    'Foto ampliada de San Kristobal de Oiz': 'Oizko San Kristobalen argazki handitua',
+    'Circuito &mdash; vuelve casi al mismo punto': 'Zirkuitua &mdash; ia abiapuntu berera itzultzen da',
+    'San Juan Bautista (Zengotita)': 'San Joan Bataiatzailea (Zengotita)',
+    'Santuario de Andikoa': 'Andikoako santutegia',
+    'Monasterio de Zenarruza': 'Zenarruzako monasterioa',
+}
+
 PAGE_STRINGS = {
     'lekeitio': {},
     'ixuakalamua': IXUAKALAMUA,
@@ -7082,6 +7133,7 @@ PAGE_STRINGS = {
     'trabakuadeba': TRABAKUADEBA,
     'trabakuaondarroa': TRABAKUAONDARROA,
     'askakosantakataline': ASKAKOSANTAKATALINE,
+    'vueltaoiz': VUELTAOIZ,
     'garaiurdaixa': GARAIURDAIXA,
     'garaikanala': GARAIKANALA,
     'aixolaintxorta': AIXOLAINTXORTA,

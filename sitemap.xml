@@ -14,6 +14,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/index.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/vueltaoiz.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/vueltaoiz.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/vueltaoiz.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/vueltaoiz.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/vueltaoiz.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/vueltaoiz.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/garaiurdaixa.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/garaiurdaixa.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/garaiurdaixa.eu.html"/>
