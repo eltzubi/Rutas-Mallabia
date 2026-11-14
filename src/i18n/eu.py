@@ -845,7 +845,7 @@ HOME = {
         '<p class="route-card-desc">Zirkuitua Aixolako presatik, Santama&ntilde;azar, Erdella, Intxorta, Asentzioko lakua, Elgeta eta Egoarbitza zeharkatuz</p>',
 
     # vueltaoiz card
-    'Bicicleta junto a San Kristobal y los aerogeneradores del Oiz': 'Bizikleta San Kristobalen ondoan, Oizko haize-sorgailuekin',
+    'Prado cercado con niebla en el valle': 'Zelai hesitua eta lainoa haranean',
     'Vuelta al monte Oiz': 'Oiz mendiari itzulia',
     'En e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena',
     # garaiurdaixa card
