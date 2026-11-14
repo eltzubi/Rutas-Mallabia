@@ -7081,6 +7081,8 @@ ARTETABERANOARANDONO = {
 }
 
 VUELTAOIZ = {
+    'Hay fuentes en el alto de Trabakua, a la entrada de Besoita y junto al antiguo lavadero de Garai.':
+        'Trabakuko mendatean, Besoitako sarreran eta Garaiko garbitoki zaharraren ondoan daude iturriak.',
     '<span>Mixta</span>': '<span>Mistoa</span>',
     '<span>Circuito</span>': '<span>Zirkuitua</span>',
     '<span class="v">Mixta</span>': '<span class="v">Mistoa</span>',

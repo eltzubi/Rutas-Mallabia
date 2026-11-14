@@ -71,7 +71,7 @@ FUENTES = [
         "punto": ("trabakua", "salida"),
         "nota_es": "En el alto, junto al bar de arriba y el parque infantil.",
         "nota_eu": "Mendatean bertan, goiko tabernaren eta haur-parke ondoan.",
-        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna", "zengotitagarai"],
+        "rutas": ["mendibil", "urko", "hirutxikiak", "trabakuaondarroa", "zengotitamaguna", "zengotitagarai", "vueltaoiz"],
     },
     {
         "id": "arteta",
@@ -146,7 +146,7 @@ FUENTES = [
         "nota_eu": "Auzoaren sarreran, alboan.",
         "rutas": ["askakosantakataline", "amaraune", "garaimaguna", "santamanazarandikoa",
                   "sancristobalgaraiandikoa", "betzun", "garaigaztelu", "sancristobal",
-                  "maguna", "zengotitagane", "zengotitagarai"],
+                  "maguna", "zengotitagane", "zengotitagarai", "vueltaoiz"],
     },
     {
         "id": "oiz",
@@ -182,7 +182,7 @@ FUENTES = [
         "punto": ("sancristobalgaraiandikoa", 5),
         "nota_es": "Comparte sitio con un antiguo lavadero.",
         "nota_eu": "Antzinako garbitokiarekin batera dago.",
-        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline", "garaiurdaixa"],
+        "rutas": ["sancristobalgaraiandikoa", "garaimaguna", "garaigaztelu", "sancristobal", "askakosantakataline", "garaiurdaixa", "vueltaoiz"],
     },
     {
         "id": "errotatxo",
