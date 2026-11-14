@@ -1,0 +1,63 @@
+name: Preparar ficha de la vuelta al Oiz
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    if: github.head_ref == 'ruta/vuelta-oiz' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ruta/vuelta-oiz
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar Chromium
+        run: |
+          python3 -m pip install playwright pillow
+          python3 -m playwright install --with-deps chromium
+      - name: Dibujar la miniatura desde el GPX
+        run: |
+          python3 - <<'PY'
+          import runpy
+          import sys
+          from playwright.sync_api import sync_playwright
+          with sync_playwright() as p:
+              executable = p.chromium.executable_path
+          sys.argv.extend(['--solo', 'vueltaoiz'])
+          script = runpy.run_path('scripts/make_card_maps.py')
+          script['main'].__globals__['navegador'] = lambda: executable
+          script['main']()
+          PY
+          test -s img/mapa-vueltaoiz.webp
+      - name: Generar y comprobar la web
+        run: |
+          python3 src/i18n/make_eu.py
+          python3 scripts/bundle_gpx.py
+          python3 src/build.py
+          python3 scripts/check_site.py
+          python3 scripts/verify_route_consistency.py
+          node scripts/test_ui.cjs
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit vueltaoiz.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py audit vueltaoiz.eu.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa vueltaoiz.html
+          python3 .claude/skills/run-rutas-mallabia/driver.py mapa vueltaoiz.eu.html
+      - name: Guardar la ficha verificada en su rama
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/preparar-vuelta-oiz.yml
+          git add --update
+          git add img/mapa-vueltaoiz.webp vueltaoiz.html vueltaoiz.eu.html
+          git diff --cached --check
+          git commit -m 'Genera y verifica la vuelta al Oiz en ambos idiomas'
+          git push origin HEAD:refs/heads/ruta/vuelta-oiz
