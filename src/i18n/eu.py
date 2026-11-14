@@ -847,7 +847,7 @@ HOME = {
     # vueltaoiz card
     'Bicicleta junto a San Kristobal y los aerogeneradores del Oiz': 'Bizikleta San Kristobalen ondoan, Oizko haize-sorgailuekin',
     'Vuelta al monte Oiz': 'Oiz mendiari itzulia',
-    'Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza.': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena.',
+    'En e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena',
     # garaiurdaixa card
     'alt="El cielo encendido del amanecer sobre los montes, antes de salir"':
         'alt="Egunsentiko zeru gorria mendien gainean, irten aurretik"',
@@ -7097,7 +7097,7 @@ VUELTAOIZ = {
     'Arriba paramos un momento a disfrutar de las vistas a ambos lados del monte. Después bajamos por la parte de atrás, por carretera, y al llegar abajo giramos a la derecha hacia Kortaguren. El camino es bastante llano, con alguna bajada corta y algún repecho.': 'Goian, une batez gelditzen gara mendiaren bi aldeetako ikuspegiaz gozatzeko. Ondoren, atzeko aldetik jaisten gara, errepidez, eta behealdera iristean, eskuinera biratzen dugu Kortagurenerantz. Bidea nahiko laua da, jaitsiera labur batzuekin eta aldapa batzuekin.',
     'Pasamos cerca de la granja y los caseríos de Kortaguren y empezamos a bajar hacia el monasterio de Santa María de Zenarruza, la antigua colegiata. Es un descenso largo por pista de piedra bien asentada, de los que da gusto hacer en bici.': 'Kortagurengo baserri eta etxaldeetatik gertu igarotzen gara eta Zenarruzako Santa Maria monasteriorantz jaisten hasten gara, antzinako kolegiata. Jaitsiera luzea da, harrizko pista egonkor batetik, bizikletaz egiteko atsegina den horietakoa.',
     'Desde el monasterio seguimos bajando y enlazamos con un tramo corto de asfalto. Unas curvas más abajo giramos a la derecha y cogemos el camino de cemento que sube a Muniozguren. Desde allí nos quedan unos seis kilómetros hasta Trabakua. En ese último tramo todavía disfrutamos de las vistas hacia el barrio de Gerea, con los eólicos del Oiz al fondo, antes de cerrar la vuelta.': 'Monasteriotik jaisten jarraitzen dugu eta asfaltozko zati labur batekin lotzen dugu. Beherago, eskuinera biratu eta Muniozgurenera igotzen den zementuzko bidea hartzen dugu. Handik sei kilometro inguru geratzen zaizkigu Trabakuaraino. Azken zati horretan, oraindik ere Gerea auzorako ikuspegiez gozatzen dugu, Oizko eolikoak atzealdean ditugula, itzulia itxi aurretik.',
-    'Vuelta en e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza.': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena.',
+    'En e-bike desde Trabakua por Zengotita, Andikoa, Garai, San Kristobal y Zenarruza': 'E-bikez Trabakuatik abiatuta, Zengotita, Andikoa, Garai, San Kristobal eta Zenarruzatik barrena',
     'Vuelta al monte Oiz': 'Oiz mendiari itzulia',
     'Pistas y carreteras de barrio': 'Pistak eta auzo-errepideak',
     'Camino mojado entre árboles, con hojas caídas': 'Bide bustia zuhaitz artean, hosto eroriekin',
