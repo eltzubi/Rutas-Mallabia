@@ -3,6 +3,7 @@
 
     python3 scripts/make_cruces.py <respuesta-de-overpass.json> [mas.json ...]
     python3 scripts/make_cruces.py --fusiona <franja.json>
+    python3 scripts/make_cruces.py --rotondas <rotondas-de-overpass.json>
 
 Sin argumento solo dice la consulta que hay que bajar y se para.
 
@@ -75,6 +76,24 @@ separadores-, en base64 y en el mismo orden que "dif":
 Las ramas van ordenadas por camino, asi que con el bit 6 se sabe cuales van
 juntas sin guardar ningun identificador. Seis grados de resolucion sobran: lo
 que se decide con esto son desvios de 25 grados para arriba.
+
+LAS ROTONDAS, desde el 15 de noviembre de 2026, en "rotondas". El autor
+cruzo una rotonda siguiendo recto y el navegador le dijo «gira a la derecha»
+(y a la derecha habia una calle de direccion prohibida). La causa: en OSM la
+entrada y la salida de una rotonda son dos cruces, y cada uno, visto suelto,
+es un giro de 50-90 grados. Simulado sobre las rotondas de la zona con sus
+ramas reales: de 3.824 pasos siguiendo recto, en 3.473 se decia algun giro.
+Con la rotonda marcada, el navegador la trata como UN cruce: compara el rumbo
+con el que entras y con el que sales.
+
+    "rotondas": [dlat, dlon, radio, dlat, dlon, radio, ...]
+
+el centro en cienmilesimas de grado y en diferencias sobre el anterior, como
+"dif", y el radio en metros enteros (el nodo del anillo mas alejado del
+centro). Salen de way["junction"~"roundabout|circular"]; un anillo partido en
+varios caminos se junta por los nodos que comparten. --rotondas reescribe solo
+este campo y deja el resto del fichero como esta.
+
 """
 import base64
 import io
@@ -249,7 +268,75 @@ def escribe(cruces, fecha):
           % (len(cruces), total, os.path.getsize(salida) / 1024., fecha or "?"))
 
 
+ROTONDAS_CONSULTA = ('[out:json][timeout:90];way["junction"~"roundabout|circular"]'
+                     '(%.2f,%.2f,%.2f,%.2f);out geom;' % tuple(BBOX))
+ROTONDA_MAX_M = 60  # mas grande no es una rotonda que se cruce de un vistazo
+
+
+def rotondas_de(osm):
+    """[(lat, lon, radio_m)] de cada anillo, juntando los trozos."""
+    padre = {}
+
+    def raiz(x):
+        while padre[x] != x:
+            padre[x] = padre[padre[x]]
+            x = padre[x]
+        return x
+    xy = {}
+    for w in osm["elements"]:
+        if w.get("type") != "way" or not w.get("geometry"):
+            continue
+        ns = w["nodes"]
+        for n, g in zip(ns, w["geometry"]):
+            xy[n] = (g["lat"], g["lon"])
+            padre.setdefault(n, n)
+        for a, b in zip(ns, ns[1:]):
+            padre[raiz(a)] = raiz(b)
+    anillos = {}
+    for n in xy:
+        anillos.setdefault(raiz(n), []).append(xy[n])
+    out = []
+    for pts in anillos.values():
+        if len(pts) < 3:
+            continue
+        la = sum(p[0] for p in pts) / len(pts)
+        lo = sum(p[1] for p in pts) / len(pts)
+        k = math.cos(math.radians(la))
+        r = max(math.hypot((p[0] - la) * 111195, (p[1] - lo) * 111195 * k) for p in pts)
+        if r <= ROTONDA_MAX_M:
+            out.append((la, lo, max(1, int(round(r)))))
+    return sorted(out)
+
+
+def escribe_rotondas(fichero):
+    osm = json.load(io.open(fichero, encoding="utf-8"))
+    rot = rotondas_de(osm)
+    if not rot:
+        sys.exit("No ha salido ninguna rotonda: revisa la respuesta de Overpass.")
+    salida = os.path.join(ROOT, "data", "cruces-zona.json")
+    doc = json.load(io.open(salida, encoding="utf-8"))
+    plano, px, py = [], 0, 0
+    for la, lo, r in rot:
+        ex, ey = int(round(la * ESCALA)), int(round(lo * ESCALA))
+        plano += [ex - px, ey - py, r]
+        px, py = ex, ey
+    doc["rotondas"] = plano
+    doc["fecha_rotondas"] = osm.get("osm3s", {}).get("timestamp_osm_base", "")[:10]
+    with io.open(salida, "w", encoding="utf-8") as f:
+        json.dump(doc, f, separators=(",", ":"))
+    print("escrito data/cruces-zona.json: %d rotondas, %.0f KB"
+          % (len(rot), os.path.getsize(salida) / 1024.))
+
+
 def main():
+    if "--rotondas" in sys.argv[1:]:
+        f = [x for x in sys.argv[1:] if not x.startswith("--")]
+        if not f:
+            print("Bajalas asi:\n\n  curl -s --data-urlencode 'data=%s' \\" % ROTONDAS_CONSULTA)
+            print("    https://overpass.kumi.systems/api/interpreter > /tmp/rotondas.json")
+            sys.exit(1)
+        escribe_rotondas(f[0])
+        return
     if len(sys.argv) < 2:
         print("Falta la respuesta de Overpass. Bajala asi:\n")
         print("  curl -s --data-urlencode 'data=%s' \\" % CONSULTA)
