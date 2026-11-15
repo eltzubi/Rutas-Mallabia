@@ -20,6 +20,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Idioma: responde siempre en castellano**, incluidos los avisos intermedios, los mensajes de commit y
 las pull requests. El euskera solo para los textos de la web en euskera.
 
+**Cuando el autor pide un cambio, en cuanto esta resuelto y comprobado se sube sin volver a preguntar.** Lo pidio el 15 de noviembre de 2026: «si te pido cambios, subes; no tienes que estar pidiendo otra vez "sube", siempre que hayas solucionado algo y no te hayas inventado nada, sin avisarme». Vale para lo que el pide, no para cambios que se te ocurran a ti: esos se proponen y se espera.
+
 **Y al autor se le habla de tu, no de usted.** Lo pidio el 9 de noviembre de 2026 con esas
 palabras: «no me hables de usted». Vale para todo lo que el lee, no para los textos de la web,
 que tienen su propio tono.
