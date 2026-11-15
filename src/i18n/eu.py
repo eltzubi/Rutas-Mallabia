@@ -2373,8 +2373,8 @@ MENDIBIL = {
     'download="Trabakua Mendibil.kml"': 'download="Trabakua Mendibil.kml"',
     'alt="Foto ampliada del recorrido de Trabakua Mendibil"':
         'alt="Trabakua Mendibilgo ibilbidearen argazki handitua"',
-    'alt="Salida del eucaliptal a una loma pelada, con helechos y una alambrada al borde del camino"':
-        'alt="Eukaliptaditik magal soilera irteera, iratzeak eta hesi bat bidearen ertzean"',
+    'alt="Ni&ntilde;o caminando por la senda entre eucaliptos y helechos, con la loma al fondo"':
+        'alt="Haur bat bidexkan, eukalipto eta iratzeen artean, muinoa atzean"',
     'alt="Bifurcaci&oacute;n de la pista junto a un roble grande con las ra&iacute;ces al aire, rodeada de bosque"':
         'alt="Pistaren bidegurutzea haritz handi baten ondoan, sustraiak agerian, basoz inguratuta"',
     'alt="Senda estrecha subiendo entre helechos y zarzas, con el pinar al fondo"':
