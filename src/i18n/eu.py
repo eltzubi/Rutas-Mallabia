@@ -7108,7 +7108,7 @@ VUELTAOIZ = {
     'Lavadero cubierto entre árboles de otoño': 'Garbitoki estalia udazkeneko zuhaitzen artean',
     'Pista de bosque cubierta de hojas': 'Hostoz estalitako basoko pista',
     'Área recreativa entre árboles de otoño': 'Aisialdi-gunea udazkeneko zuhaitzen artean',
-    'Cruce de pistas con los aerogeneradores del Oiz al fondo': 'Pista-gurutzea, Oizko haize-sorgailuak atzean',
+    'Cruce de pistas: a la izquierda, San Kristobal; a la derecha, Zengotitagane e Iturzuri. Al fondo, los aerogeneradores del Oiz': 'Pista-gurutzea: ezkerretara San Kristobal, eskuinetara Zengotitagane eta Iturzuri. Atzean, Oizko eolikoak',
     'Pista de cemento hacia la ladera del Oiz': 'Zementuzko pista Oizko mendi-hegalerantz',
     'Laderas de helechos con montañas y niebla al fondo': 'Iratzez betetako mendi-hegalak, mendiak eta lainoa atzean',
     'Ermita de San Kristobal con los aerogeneradores del Oiz detrás': 'San Kristobal ermita, Oizko haize-sorgailuak atzean',
