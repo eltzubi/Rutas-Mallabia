@@ -514,7 +514,61 @@ def escribe_rotondas(ficheros):
           % (len(rot), sum(len(x[4]) for x in rot), os.path.getsize(salida) / 1024.))
 
 
+def marca_carreteras():
+    """Escribe "cruces_carretera": un bit por cruce (en el orden de "dif") que
+    dice si en el sigue una CARRETERA y sale un ramal MENOR.
+
+    Lo pidio el autor el 16 de noviembre de 2026 en el km 6,37 de recyde: el
+    navegador dijo «sigue recto por la izquierda» donde la carretera sigue y a
+    la izquierda solo esta la entrada a un caserio. «La carretera continua, y
+    un ramal a la izquierda no deberia influir en nada.» Con este bit, en esos
+    cruces el navegador comprueba en el propio cruce si la ruta va por la
+    carretera, y entonces se calla. En las horquillas de dos carreteras (o de
+    dos pistas) no se toca nada: ahi el «sigue recto por» si sirve.
+    Las clases salen de data/caminos-zona.json (make_caminos.py): 3 carretera
+    y 5 nacional son carretera; lo demas, menor.
+    """
+    import make_caminos as mk
+    nodos, tramos, _ = mk.lee_publicado()
+    clases = {}
+    for a, b, cl, largo, forma in tramos:
+        clases.setdefault(a, []).append(cl)
+        clases.setdefault(b, []).append(cl)
+    cel, rej = 0.0002, {}
+    for i, p in enumerate(nodos):
+        rej.setdefault((int(p[0] / cel), int(p[1] / cel)), []).append(i)
+    salida = os.path.join(ROOT, "data", "cruces-zona.json")
+    doc = json.load(io.open(salida, encoding="utf-8"))
+    esc, dif = doc.get("escala", ESCALA), doc["dif"]
+    bits, x, y, cuantos = bytearray((len(dif) // 2 + 7) // 8), 0, 0, 0
+    for k in range(0, len(dif) - 1, 2):
+        x += dif[k]
+        y += dif[k + 1]
+        p = (x / esc, y / esc)
+        c0 = (int(p[0] / cel), int(p[1] / cel))
+        mejor, md = None, 3.0
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                for i in rej.get((c0[0] + dx, c0[1] + dy), []):
+                    d = _m(p, nodos[i])
+                    if d < md:
+                        mejor, md = i, d
+        cls = clases.get(mejor, []) if mejor is not None else []
+        mayor = sum(1 for c in cls if c in (3, 5))
+        if mayor >= 2 and mayor < len(cls):
+            bits[(k // 2) // 8] |= 1 << ((k // 2) % 8)
+            cuantos += 1
+    doc["cruces_carretera"] = base64.b64encode(bytes(bits)).decode("ascii")
+    with io.open(salida, "w", encoding="utf-8") as f:
+        json.dump(doc, f, separators=(",", ":"))
+    print("escrito data/cruces-zona.json: %d cruces de carretera con un ramal menor, de %d"
+          % (cuantos, len(dif) // 2))
+
+
 def main():
+    if "--carreteras" in sys.argv[1:]:
+        marca_carreteras()
+        return
     if "--rotondas" in sys.argv[1:]:
         f = [x for x in sys.argv[1:] if not x.startswith("--")]
         if not f:
