@@ -268,13 +268,49 @@ def escribe(cruces, fecha):
           % (len(cruces), total, os.path.getsize(salida) / 1024., fecha or "?"))
 
 
-ROTONDAS_CONSULTA = ('[out:json][timeout:90];way["junction"~"roundabout|circular"]'
-                     '(%.2f,%.2f,%.2f,%.2f);out geom;' % tuple(BBOX))
+# Las rotondas CON LOS CAMINOS QUE LLEGAN A ELLAS: hacen falta sus etiquetas
+# (tipo de via y sentido unico) para contar las salidas. La caja entera no la
+# aguanta ningun servidor en 60 s: se baja en franjas y se pasan todas.
+ROTONDAS_CONSULTA = ('[out:json][timeout:55];way["junction"~"roundabout|circular"]'
+                     '(%.2f,%.2f,%.2f,%.2f);node(w);way(bn)["highway"];out tags geom;')
 ROTONDA_MAX_M = 60  # mas grande no es una rotonda que se cruce de un vistazo
+# Por donde un coche no sale de una rotonda: no cuentan como salida.
+SIN_SALIDA = {"footway", "path", "cycleway", "steps", "pedestrian", "bridleway",
+              "corridor", "construction", "proposed", "platform", "elevator",
+              "bus_stop"}
+
+
+def _anillo(w):
+    j = w.get("tags", {}).get("junction", "")
+    return "roundabout" in j or "circular" in j
 
 
 def rotondas_de(osm):
-    """[(lat, lon, radio_m)] de cada anillo, juntando los trozos."""
+    """[(lat, lon, radio_m, sentido, [rumbos de las salidas])] de cada anillo.
+
+    LAS SALIDAS, desde el 16 de noviembre de 2026. El autor: «la primera
+    salida, a la derecha, si la detecta; pero si es la segunda no sabe». Para
+    decir «toma la segunda salida» hay que contarlas, y contar las ramas a
+    ciegas falla: una carretera de dos calzadas llega con DOS ramas, una solo
+    de entrada y otra solo de salida, y se contaria dos veces. Por eso:
+    - se cuentan solo las vias por las que se puede SALIR (sentido unico
+      hacia el anillo no; oneway=-1 al reves);
+    - no cuentan senderos, aceras, bidegorris ni entradas de casas. Las
+      PISTAS si: andando o en bici una pista que sale de la rotonda se ve y se
+      cuenta como una salida mas.
+    Cada salida se guarda como el rumbo del CENTRO al nodo donde sale. El
+    «sentido» es 1 si el anillo gira al reves que el reloj (rumbo decreciente,
+    el de todas las de aqui) y -1 si no; sale del orden de los nodos del
+    anillo, que en OSM va en el sentido de la circulacion.
+    Los nodos se identifican por sus coordenadas: la consulta usa «out tags
+    geom», que no trae los ids, y un nodo compartido tiene las mismas.
+    """
+    vias = {}
+    for w in osm["elements"]:
+        if w.get("type") == "way" and w.get("geometry"):
+            w = dict(w)
+            w["nodos"] = [(round(g["lat"], 7), round(g["lon"], 7)) for g in w["geometry"]]
+            vias[w["id"]] = w
     padre = {}
 
     def raiz(x):
@@ -282,60 +318,107 @@ def rotondas_de(osm):
             padre[x] = padre[padre[x]]
             x = padre[x]
         return x
-    xy = {}
-    for w in osm["elements"]:
-        if w.get("type") != "way" or not w.get("geometry"):
+    pares = []
+    for w in vias.values():
+        if not _anillo(w):
             continue
-        ns = w["nodes"]
-        for n, g in zip(ns, w["geometry"]):
-            xy[n] = (g["lat"], g["lon"])
+        ns = w["nodos"]
+        for n in ns:
             padre.setdefault(n, n)
         for a, b in zip(ns, ns[1:]):
             padre[raiz(a)] = raiz(b)
+            pares.append((a, b))
     anillos = {}
-    for n in xy:
-        anillos.setdefault(raiz(n), []).append(xy[n])
-    out = []
-    for pts in anillos.values():
-        if len(pts) < 3:
+    for n in padre:
+        anillos.setdefault(raiz(n), []).append(n)
+    toca = {}
+    for w in vias.values():
+        if _anillo(w):
             continue
-        la = sum(p[0] for p in pts) / len(pts)
-        lo = sum(p[1] for p in pts) / len(pts)
+        for k, n in enumerate(w["nodos"]):
+            if n in padre:
+                toca.setdefault(n, []).append((w, k))
+    out = []
+    for ns in anillos.values():
+        if len(ns) < 3:
+            continue
+        la = sum(p[0] for p in ns) / len(ns)
+        lo = sum(p[1] for p in ns) / len(ns)
         k = math.cos(math.radians(la))
-        r = max(math.hypot((p[0] - la) * 111195, (p[1] - lo) * 111195 * k) for p in pts)
-        if r <= ROTONDA_MAX_M:
-            out.append((la, lo, max(1, int(round(r)))))
+        r = max(math.hypot((p[0] - la) * 111195, (p[1] - lo) * 111195 * k) for p in ns)
+        if r > ROTONDA_MAX_M:
+            continue
+        dentro = set(ns)
+        giro = 0.0
+        for a, b in pares:
+            if a in dentro and b in dentro:
+                ax, ay = (a[1] - lo) * k, a[0] - la
+                bx, by = (b[1] - lo) * k, b[0] - la
+                giro += ax * by - ay * bx
+        sentido = 1 if giro > 0 else -1
+        salidas = []
+        for n in ns:
+            for w, i in toca.get(n, []):
+                t = w.get("tags", {})
+                if (t.get("highway", "") in SIN_SALIDA or t.get("access") in ("private", "no")
+                        or t.get("service") in ("driveway", "parking_aisle")):
+                    continue
+                unico = t.get("oneway", "no")
+                for paso in (1, -1):
+                    j = i + paso
+                    if j < 0 or j >= len(w["nodos"]):
+                        continue
+                    if unico in ("yes", "1", "true") and paso < 0:
+                        continue
+                    if unico == "-1" and paso > 0:
+                        continue
+                    salidas.append(int(round(rumbo((la, lo), n))) % 360)
+        out.append((la, lo, max(1, int(round(r))), sentido, sorted(salidas)))
     return sorted(out)
 
 
-def escribe_rotondas(fichero):
-    osm = json.load(io.open(fichero, encoding="utf-8"))
-    rot = rotondas_de(osm)
+def escribe_rotondas(ficheros):
+    elementos, vistos, fechas = [], set(), []
+    for f in ficheros:
+        osm = json.load(io.open(f, encoding="utf-8"))
+        fechas.append(osm.get("osm3s", {}).get("timestamp_osm_base", "")[:10])
+        for e in osm.get("elements", []):
+            if (e.get("type"), e.get("id")) not in vistos:
+                vistos.add((e.get("type"), e.get("id")))
+                elementos.append(e)
+    rot = rotondas_de({"elements": elementos})
     if not rot:
-        sys.exit("No ha salido ninguna rotonda: revisa la respuesta de Overpass.")
+        sys.exit("No ha salido ninguna rotonda: revisa las respuestas de Overpass.")
     salida = os.path.join(ROOT, "data", "cruces-zona.json")
     doc = json.load(io.open(salida, encoding="utf-8"))
-    plano, px, py = [], 0, 0
-    for la, lo, r in rot:
+    plano, sal, px, py = [], [], 0, 0
+    for la, lo, r, sentido, salidas in rot:
         ex, ey = int(round(la * ESCALA)), int(round(lo * ESCALA))
         plano += [ex - px, ey - py, r]
+        sal.append([sentido] + salidas)
         px, py = ex, ey
     doc["rotondas"] = plano
-    doc["fecha_rotondas"] = osm.get("osm3s", {}).get("timestamp_osm_base", "")[:10]
+    # Una lista por rotonda, en el MISMO orden que "rotondas": el sentido de
+    # giro (1 o -1) y los rumbos, desde el centro, de los nodos por los que se
+    # puede salir.
+    doc["rotondas_salidas"] = sal
+    doc["fecha_rotondas"] = max(f for f in fechas if f) if any(fechas) else ""
     with io.open(salida, "w", encoding="utf-8") as f:
         json.dump(doc, f, separators=(",", ":"))
-    print("escrito data/cruces-zona.json: %d rotondas, %.0f KB"
-          % (len(rot), os.path.getsize(salida) / 1024.))
+    print("escrito data/cruces-zona.json: %d rotondas, %d salidas, %.0f KB"
+          % (len(rot), sum(len(x[4]) for x in rot), os.path.getsize(salida) / 1024.))
 
 
 def main():
     if "--rotondas" in sys.argv[1:]:
         f = [x for x in sys.argv[1:] if not x.startswith("--")]
         if not f:
-            print("Bajalas asi:\n\n  curl -s --data-urlencode 'data=%s' \\" % ROTONDAS_CONSULTA)
-            print("    https://overpass.kumi.systems/api/interpreter > /tmp/rotondas.json")
+            print("Bajalas en franjas (la caja entera no cabe en 60 s), por ejemplo:\n")
+            print("  curl -s --data-urlencode 'data=%s' \\" % (ROTONDAS_CONSULTA % (43.10, -2.72, 43.14, -2.625)))
+            print("    https://maps.mail.ru/osm/tools/overpass/api/interpreter > /tmp/rf_0.json")
+            print("\ny luego: python3 scripts/make_cruces.py --rotondas /tmp/rf_*.json")
             sys.exit(1)
-        escribe_rotondas(f[0])
+        escribe_rotondas(f)
         return
     if len(sys.argv) < 2:
         print("Falta la respuesta de Overpass. Bajala asi:\n")
