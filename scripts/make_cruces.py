@@ -268,16 +268,22 @@ def escribe(cruces, fecha):
           % (len(cruces), total, os.path.getsize(salida) / 1024., fecha or "?"))
 
 
-# Las rotondas CON LOS CAMINOS QUE LLEGAN A ELLAS: hacen falta sus etiquetas
-# (tipo de via y sentido unico) para contar las salidas. La caja entera no la
-# aguanta ningun servidor en 60 s: se baja en franjas y se pasan todas.
+# Las rotondas CON LAS CALLES DE ALREDEDOR: hacen falta sus etiquetas (tipo de
+# via, sentido unico) y las que desembocan cerca para contar las salidas como
+# las cuenta una persona. La caja entera no la aguanta ningun servidor en 60 s:
+# se baja en franjas y se pasan todas.
 ROTONDAS_CONSULTA = ('[out:json][timeout:55];way["junction"~"roundabout|circular"]'
-                     '(%.2f,%.2f,%.2f,%.2f);node(w);way(bn)["highway"];out tags geom;')
+                     '(%.2f,%.2f,%.2f,%.2f)->.r;way(around.r:30)["highway"];out tags geom;')
 ROTONDA_MAX_M = 60  # mas grande no es una rotonda que se cruce de un vistazo
-# Por donde un coche no sale de una rotonda: no cuentan como salida.
-SIN_SALIDA = {"footway", "path", "cycleway", "steps", "pedestrian", "bridleway",
-              "corridor", "construction", "proposed", "platform", "elevator",
-              "bus_stop"}
+# Lo que no es una boca de calle: por ahi no se sale ni se ve como salida.
+NO_ES_CALLE = {"footway", "path", "cycleway", "steps", "pedestrian", "bridleway",
+               "corridor", "construction", "proposed", "platform", "elevator",
+               "bus_stop"}
+BOCA_MARGEN_M = 15   # calles que desembocan a menos de radio+15 m del centro
+BOCA_LEJOS_M = 20    # el rumbo de cada boca, medido a radio+20 m del centro
+BOCA_MISMA = 10      # dos ramas a menos de 10 grados son la misma boca
+BOCA_CALZADAS = 35   # dos calzadas sin nombre, a menos de 35 grados
+BOCA_CALZADAS_NOMBRE = 90  # dos calzadas de la misma carretera
 
 
 def _anillo(w):
@@ -285,25 +291,68 @@ def _anillo(w):
     return "roundabout" in j or "circular" in j
 
 
-def rotondas_de(osm):
-    """[(lat, lon, radio_m, sentido, [rumbos de las salidas])] de cada anillo.
+def _es_calle(w):
+    t = w.get("tags", {})
+    return (bool(t.get("highway")) and t["highway"] not in NO_ES_CALLE
+            and t.get("access") not in ("private", "no")
+            and t.get("service") not in ("driveway", "parking_aisle"))
 
-    LAS SALIDAS, desde el 16 de noviembre de 2026. El autor: «la primera
-    salida, a la derecha, si la detecta; pero si es la segunda no sabe». Para
-    decir «toma la segunda salida» hay que contarlas, y contar las ramas a
-    ciegas falla: una carretera de dos calzadas llega con DOS ramas, una solo
-    de entrada y otra solo de salida, y se contaria dos veces. Por eso:
-    - se cuentan solo las vias por las que se puede SALIR (sentido unico
-      hacia el anillo no; oneway=-1 al reves);
-    - no cuentan senderos, aceras, bidegorris ni entradas de casas. Las
-      PISTAS si: andando o en bici una pista que sale de la rotonda se ve y se
-      cuenta como una salida mas.
-    Cada salida se guarda como el rumbo del CENTRO al nodo donde sale. El
-    «sentido» es 1 si el anillo gira al reves que el reloj (rumbo decreciente,
-    el de todas las de aqui) y -1 si no; sale del orden de los nodos del
-    anillo, que en OSM va en el sentido de la circulacion.
-    Los nodos se identifican por sus coordenadas: la consulta usa «out tags
-    geom», que no trae los ids, y un nodo compartido tiene las mismas.
+
+def _m(a, b):
+    return math.hypot((a[1] - b[1]) * 111195 * math.cos(math.radians(a[0])),
+                      (a[0] - b[0]) * 111195)
+
+
+def _dif(a, b):
+    return abs((a - b + 180) % 360 - 180)
+
+
+def _pierna(nodos, k, paso, c, lejos):
+    """Rumbo, desde el centro, del punto de la pierna a `lejos` m del centro."""
+    j, prev = k, nodos[k]
+    while 0 <= j + paso < len(nodos):
+        j += paso
+        p = nodos[j]
+        if _m(p, c) >= lejos:
+            d0, d1 = _m(prev, c), _m(p, c)
+            t = (lejos - d0) / (d1 - d0) if d1 > d0 else 1
+            return rumbo(c, (prev[0] + t * (p[0] - prev[0]), prev[1] + t * (p[1] - prev[1])))
+        prev = p
+    return rumbo(c, prev)
+
+
+def _sale(w, paso):
+    u = w.get("tags", {}).get("oneway", "no")
+    if u in ("yes", "1", "true") and paso < 0:
+        return False
+    if u == "-1" and paso > 0:
+        return False
+    return True
+
+
+def rotondas_de(osm):
+    """[(lat, lon, radio_m, sentido, [bocas])] de cada anillo.
+
+    LAS BOCAS, desde el 16 de noviembre de 2026. Para decir «toma la segunda
+    salida» hay que contar como cuenta una persona, y el autor lo dejo claro en
+    la rotonda del km 5 de recyde: la primera calle a la derecha es de
+    direccion prohibida, «seria la segunda». Esa calle ni toca el anillo:
+    desemboca en la carretera de salida a 13 m de la rotonda. Asi que:
+    - cuenta cada BOCA que se ve: las calles pegadas al anillo y las que
+      desembocan, a menos de BOCA_MARGEN_M del borde, en una pegada de doble
+      sentido; prohibidas incluidas (se marcan: por ahi no se sale, pero se
+      cuentan);
+    - una carretera de DOS CALZADAS (las dos pegadas al anillo, las dos de
+      sentido unico, una de entrada y otra de salida, de la misma carretera)
+      es una sola boca, con el rumbo de la de salida;
+    - una calle partida en OSM cerca del anillo es una sola boca (dos ramas a
+      menos de BOCA_MISMA grados);
+    - no son boca los senderos, aceras, bidegorris ni entradas de casas.
+    El rumbo de cada boca se mide a BOCA_LEJOS_M del borde, donde la calle ya
+    va hacia donde va, y no en el nodo del anillo. El «sentido» es 1 si el
+    anillo gira al reves que el reloj (rumbo decreciente; todas las de aqui).
+    Los nodos van por sus coordenadas: la consulta usa «out tags geom», que no
+    trae los ids, y un nodo compartido tiene las mismas.
     """
     vias = {}
     for w in osm["elements"]:
@@ -322,58 +371,112 @@ def rotondas_de(osm):
     for w in vias.values():
         if not _anillo(w):
             continue
-        ns = w["nodos"]
-        for n in ns:
+        for n in w["nodos"]:
             padre.setdefault(n, n)
-        for a, b in zip(ns, ns[1:]):
+        for a, b in zip(w["nodos"], w["nodos"][1:]):
             padre[raiz(a)] = raiz(b)
             pares.append((a, b))
     anillos = {}
     for n in padre:
         anillos.setdefault(raiz(n), []).append(n)
-    toca = {}
+    pornodo = {}
     for w in vias.values():
-        if _anillo(w):
+        if _anillo(w) or not _es_calle(w):
             continue
         for k, n in enumerate(w["nodos"]):
-            if n in padre:
-                toca.setdefault(n, []).append((w, k))
+            pornodo.setdefault(n, []).append((w, k))
     out = []
     for ns in anillos.values():
         if len(ns) < 3:
             continue
         la = sum(p[0] for p in ns) / len(ns)
         lo = sum(p[1] for p in ns) / len(ns)
-        k = math.cos(math.radians(la))
-        r = max(math.hypot((p[0] - la) * 111195, (p[1] - lo) * 111195 * k) for p in ns)
+        c = (la, lo)
+        r = max(_m(p, c) for p in ns)
         if r > ROTONDA_MAX_M:
             continue
         dentro = set(ns)
+        kx = math.cos(math.radians(la))
         giro = 0.0
         for a, b in pares:
             if a in dentro and b in dentro:
-                ax, ay = (a[1] - lo) * k, a[0] - la
-                bx, by = (b[1] - lo) * k, b[0] - la
+                ax, ay = (a[1] - lo) * kx, a[0] - la
+                bx, by = (b[1] - lo) * kx, b[0] - la
                 giro += ax * by - ay * bx
         sentido = 1 if giro > 0 else -1
-        salidas = []
+        lejos = r + BOCA_LEJOS_M
+        piernas, pegadas = [], set()
         for n in ns:
-            for w, i in toca.get(n, []):
-                t = w.get("tags", {})
-                if (t.get("highway", "") in SIN_SALIDA or t.get("access") in ("private", "no")
-                        or t.get("service") in ("driveway", "parking_aisle")):
-                    continue
-                unico = t.get("oneway", "no")
+            for w, k in pornodo.get(n, []):
+                pegadas.add(w["id"])
                 for paso in (1, -1):
-                    j = i + paso
-                    if j < 0 or j >= len(w["nodos"]):
-                        continue
-                    if unico in ("yes", "1", "true") and paso < 0:
-                        continue
-                    if unico == "-1" and paso > 0:
-                        continue
-                    salidas.append(int(round(rumbo((la, lo), n))) % 360)
-        out.append((la, lo, max(1, int(round(r))), sentido, sorted(salidas)))
+                    if 0 <= k + paso < len(w["nodos"]):
+                        piernas.append((_pierna(w["nodos"], k, paso, c, lejos), _sale(w, paso), w, True))
+        unico = lambda x: x.get("tags", {}).get("oneway", "no") in ("yes", "1", "true", "-1")
+        # Las calles que desembocan cerca, SOLO en una via de doble sentido
+        # pegada al anillo (como la del km 5). En los ramales de entrada o de
+        # salida de una carretera de dos calzadas, una calle que desemboca no
+        # se ve como una boca mas de la rotonda: sale de la carretera.
+        for w in [vias[i] for i in pegadas if not unico(vias[i])]:
+            for kk, n in enumerate(w["nodos"]):
+                if n in dentro or _m(n, c) > r + BOCA_MARGEN_M:
+                    continue
+                todas = pornodo.get(n, [])
+                otras = [(x, k) for x, k in todas if x["id"] != w["id"] and x["id"] not in pegadas]
+                # Un camino partido en dos (extremo de las dos vias) no es boca.
+                if (len(otras) == 1 and len(todas) == 2 and kk in (0, len(w["nodos"]) - 1)
+                        and otras[0][1] in (0, len(otras[0][0]["nodos"]) - 1)):
+                    continue
+                for x, k in otras:
+                    for paso in (1, -1):
+                        if 0 <= k + paso < len(x["nodos"]) and _m(x["nodos"][k + paso], c) > _m(n, c) - 2:
+                            piernas.append((_pierna(x["nodos"], k, paso, c, lejos), _sale(x, paso), x, False))
+        piernas.sort(key=lambda p: p[0])
+        nombre = lambda x: (x.get("tags", {}).get("ref") or "", x.get("tags", {}).get("name") or "")
+        # DOS CALZADAS: cada pierna de solo entrada pegada al anillo se junta
+        # con la de solo salida pegada mas cercana de la MISMA carretera (misma
+        # referencia o nombre) a menos de BOCA_CALZADAS_NOMBRE grados -las de
+        # una nacional llegan separadas hasta 66-, o a menos de BOCA_CALZADAS
+        # si ninguna tiene nombre.
+        usadas, pares_ = set(), []
+        for i, (r1, s1, v1, p1) in enumerate(piernas):
+            if s1 or not p1 or not unico(v1):
+                continue
+            mejor, md = None, None
+            for j, (r2, s2, v2, p2) in enumerate(piernas):
+                if j in usadas or not s2 or not p2 or not unico(v2):
+                    continue
+                d = _dif(r1, r2)
+                tope = BOCA_CALZADAS_NOMBRE if nombre(v1) == nombre(v2) and any(nombre(v1)) else BOCA_CALZADAS
+                if nombre(v1) != nombre(v2) and any(nombre(v1)) and any(nombre(v2)):
+                    continue
+                if d <= tope and (md is None or d < md):
+                    mejor, md = j, d
+            if mejor is not None:
+                usadas.update((i, mejor))
+                pares_.append((i, mejor))
+        juntas = {}
+        for i, j in pares_:
+            juntas[i] = j
+        bocas = []
+        for idx, (rumbo_, sale, via, pegada) in enumerate(piernas):
+            if idx in usadas and idx not in juntas:
+                continue  # la de salida de un par: va con su entrada
+            if idx in juntas:
+                rumbo_ = piernas[juntas[idx]][0]   # la boca, donde se SALE
+                sale = True
+            junta = None
+            for b in bocas:
+                if _dif(b["r"], rumbo_) <= BOCA_MISMA:
+                    junta = b
+                    break
+            if junta:
+                junta["sale"] = junta["sale"] or sale
+                junta["n"] += 1
+            else:
+                bocas.append({"r": rumbo_, "sale": sale, "via": via, "pegada": pegada, "n": 1})
+        out.append((la, lo, max(1, int(round(r))), sentido,
+                    sorted((int(round(b["r"])) % 360, b["sale"]) for b in bocas)))
     return sorted(out)
 
 
@@ -395,17 +498,19 @@ def escribe_rotondas(ficheros):
     for la, lo, r, sentido, salidas in rot:
         ex, ey = int(round(la * ESCALA)), int(round(lo * ESCALA))
         plano += [ex - px, ey - py, r]
-        sal.append([sentido] + salidas)
+        # Una boca prohibida (por ahi no se sale) va con 360 grados de mas: se
+        # cuenta igual, pero la ruta no puede salir por ella.
+        sal.append([sentido] + [g if libre else g + 360 for g, libre in salidas])
         px, py = ex, ey
     doc["rotondas"] = plano
     # Una lista por rotonda, en el MISMO orden que "rotondas": el sentido de
-    # giro (1 o -1) y los rumbos, desde el centro, de los nodos por los que se
-    # puede salir.
+    # giro (1 o -1) y el rumbo, desde el centro, de cada boca (+360 si por
+    # ella no se puede salir).
     doc["rotondas_salidas"] = sal
     doc["fecha_rotondas"] = max(f for f in fechas if f) if any(fechas) else ""
     with io.open(salida, "w", encoding="utf-8") as f:
         json.dump(doc, f, separators=(",", ":"))
-    print("escrito data/cruces-zona.json: %d rotondas, %d salidas, %.0f KB"
+    print("escrito data/cruces-zona.json: %d rotondas, %d bocas, %.0f KB"
           % (len(rot), sum(len(x[4]) for x in rot), os.path.getsize(salida) / 1024.))
 
 
