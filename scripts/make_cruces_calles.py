@@ -253,6 +253,7 @@ def main():
     px = py = 0
     total = 0
     clases = bytearray()
+    con_forma = []
     todas = sorted(set(cruces) | set(guardados))
     for clave in todas:
         if clave in guardados:
@@ -262,8 +263,10 @@ def main():
             lst = guardados[clave]
             for idx, (paso, mismo) in enumerate(lst):
                 crudo.append((paso & 63) | (64 if mismo else 0) | (128 if idx == len(lst) - 1 else 0))
-                lejos += bytes([0, 0]); clases.append(0); total += 1
+                clases.append(0); total += 1
+            con_forma.append(0)
             continue
+        con_forma.append(1)
         ex, ey = int(round(clave[0] * ESCALA)), int(round(clave[1] * ESCALA))
         dif_ += [ex - px, ey - py]
         px, py = ex, ey
@@ -298,8 +301,20 @@ def main():
     doc["fecha_osm"] = datetime.date.today().isoformat()
     doc["dif"] = dif_
     doc["ramas"] = base64.b64encode(bytes(crudo)).decode("ascii")
+    # COMPACTO (el navegador lo guarda en el movil, junto a las rutas del
+    # autor): la forma solo de los cruces que la tienen, marcados con un bit
+    # por cruce en «ramas_con_forma»; la clase en 2 bits por rama, 4 por byte.
+    bits = bytearray((len(con_forma) + 7) // 8)
+    for i, b in enumerate(con_forma):
+        if b:
+            bits[i >> 3] |= 1 << (i & 7)
+    cl = bytearray((len(clases) + 3) // 4)
+    for i, c in enumerate(clases):
+        cl[i >> 2] |= (c & 3) << ((i & 3) * 2)
+    doc["ramas_con_forma"] = base64.b64encode(bytes(bits)).decode("ascii")
     doc["ramas_lejos"] = base64.b64encode(bytes(lejos)).decode("ascii")
-    doc["ramas_clase"] = base64.b64encode(bytes(clases)).decode("ascii")
+    doc["ramas_clase2"] = base64.b64encode(bytes(cl)).decode("ascii")
+    doc.pop("ramas_clase", None)
     doc.pop("cruces_carretera", None)
     json.dump(doc, open(salida, "w"), separators=(",", ":"))
     print("cruces", len(todas), "ramas", total)
