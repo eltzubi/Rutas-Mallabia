@@ -284,6 +284,7 @@ BOCA_LEJOS_M = 20    # el rumbo de cada boca, medido a radio+20 m del centro
 BOCA_MISMA = 10      # dos ramas a menos de 10 grados son la misma boca
 BOCA_CALZADAS = 35   # dos calzadas sin nombre, a menos de 35 grados
 BOCA_CALZADAS_NOMBRE = 90  # dos calzadas de la misma carretera
+BOCA_ENTRADA = 15    # lo mismo que SAL_ENTRADA en el navegador
 
 
 def _anillo(w):
@@ -434,10 +435,11 @@ def rotondas_de(osm):
         piernas.sort(key=lambda p: p[0])
         nombre = lambda x: (x.get("tags", {}).get("ref") or "", x.get("tags", {}).get("name") or "")
         # DOS CALZADAS: cada pierna de solo entrada pegada al anillo se junta
-        # con la de solo salida pegada mas cercana de la MISMA carretera (misma
-        # referencia o nombre) a menos de BOCA_CALZADAS_NOMBRE grados -las de
-        # una nacional llegan separadas hasta 66-, o a menos de BOCA_CALZADAS
-        # si ninguna tiene nombre.
+        # con la de solo salida pegada mas cercana de la MISMA carretera (la
+        # misma pareja referencia-nombre) a menos de BOCA_CALZADAS_NOMBRE grados
+        # -las de una nacional llegan separadas hasta 66-; si solo una de las
+        # dos lleva nombre, o ninguna, a menos de BOCA_CALZADAS; dos con nombres
+        # distintos, nunca.
         usadas, pares_ = set(), []
         for i, (r1, s1, v1, p1) in enumerate(piernas):
             if s1 or not p1 or not unico(v1):
@@ -455,6 +457,17 @@ def rotondas_de(osm):
             if mejor is not None:
                 usadas.update((i, mejor))
                 pares_.append((i, mejor))
+        # UNA PAREJA AL REVES: la calzada de salida queda DELANTE de la de
+        # entrada en el sentido de giro (con circulacion por la derecha va
+        # detras). Entrando por esa carretera, su propia boca se contaria como
+        # la primera salida y el numero saldria uno de mas (lo encontro la
+        # revision con GPT; 3 de 367 parejas en la zona). Esa rotonda se queda
+        # SIN numero: mejor nada que una salida equivocada.
+        dudosa = False
+        for i, j in pares_:
+            tras = ((piernas[i][0] - piernas[j][0]) % 360) if sentido > 0 else ((piernas[j][0] - piernas[i][0]) % 360)
+            if BOCA_ENTRADA < tras < 180:
+                dudosa = True
         juntas = {}
         for i, j in pares_:
             juntas[i] = j
@@ -476,7 +489,7 @@ def rotondas_de(osm):
             else:
                 bocas.append({"r": rumbo_, "sale": sale, "via": via, "pegada": pegada, "n": 1})
         out.append((la, lo, max(1, int(round(r))), sentido,
-                    sorted((int(round(b["r"])) % 360, b["sale"]) for b in bocas)))
+                    [] if dudosa else sorted((int(round(b["r"])) % 360, b["sale"]) for b in bocas)))
     return sorted(out)
 
 
