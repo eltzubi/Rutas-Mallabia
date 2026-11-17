@@ -22,7 +22,7 @@ el aviso (recyde 4,49 y 14,79). Con las ramas de antes -solo su rumbo en el
 primer nodo, agrupadas por via de OSM- no se podian separar. Ahora cada rama
 lleva su CALLE (ref o nombre; sin nombre, la via y su continuacion en linea
 del mismo tipo), un punto a 25 m por su propia geometria (ramas_lejos) y su
-clase (ramas_clase: 1 carretera, 2 calle, 0 camino). El navegador reconoce asi
+clase (ramas_clase: 1 carretera, 2 calle, 0 camino, 3 sin salida). El navegador reconoce asi
 por que rama llegas y por cual sales, y si sigues la MISMA via que tuerce dice
 «sigue la carretera a la izquierda» en vez de «cruce a la izquierda».
 
@@ -82,8 +82,12 @@ CARRETERA = {"motorway", "trunk", "primary", "secondary", "tertiary", "unclassif
 CALLE = {"residential", "living_street", "pedestrian"}
 
 
+SIN_SALIDA_M = 300
+
+
 def clase_de(w):
-    """1 carretera, 2 calle, 0 camino (pista, sendero, servicio...)."""
+    """1 carretera, 2 calle, 0 camino (pista, sendero, servicio...). El 3 lo
+    pone main(): una rama SIN SALIDA (una entrada)."""
     h = w.get("tags", {}).get("highway")
     return 1 if h in CARRETERA else 2 if h in CALLE else 0
 
@@ -183,6 +187,30 @@ def main():
             w, k, paso = mejor
             visto.add(w["id"])
 
+    vecinos_de = {}
+    for w in vias.values():
+        ns = w["nodes"]
+        for i, x in enumerate(ns):
+            for q in (i - 1, i + 1):
+                if 0 <= q < len(ns) and ns[q] in coord:
+                    vecinos_de.setdefault(x, set()).add(ns[q])
+
+    def alcance(n0, primero):
+        """Metros de red a los que se llega por esa rama sin volver al cruce,
+        hasta SIN_SALIDA_M. Menos que eso es una entrada que se acaba: la del
+        fronton de Eltzubi (236 m), la casa de recyde 14,79 (107 m)."""
+        visto, tot, pila = {n0}, 0.0, [(n0, primero)]
+        while pila and tot < SIN_SALIDA_M:
+            a, b = pila.pop()
+            if b in visto:
+                continue
+            visto.add(b)
+            tot += m(coord[a], coord[b])
+            for c in vecinos_de.get(b, ()):
+                if c not in visto:
+                    pila.append((b, c))
+        return tot
+
     cruces = {}
     for n, lst in pornodo.items():
         if n not in coord:
@@ -206,7 +234,10 @@ def main():
         for w, k, paso in piernas:
             r = rumbo(p, coord[w["nodes"][k + paso]])
             lej = pierna_lejos(w, k, paso)
-            ramas.append({"r": r, "w": w, "lejos": lej, "extremo": k in (0, len(w["nodes"]) - 1), "clase": clase_de(w)})
+            cl = clase_de(w)
+            if alcance(n, w["nodes"][k + paso]) < SIN_SALIDA_M:
+                cl = 3
+            ramas.append({"r": r, "w": w, "lejos": lej, "extremo": k in (0, len(w["nodes"]) - 1), "clase": cl})
         # LA CALLE de cada rama: ref o nombre; sin nombre, la via, y dos vias sin
         # nombre del mismo tipo que se continuan casi en linea son la misma.
         for x in ramas:
