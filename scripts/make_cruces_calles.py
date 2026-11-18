@@ -92,6 +92,22 @@ def clase_de(w):
     return 1 if h in CARRETERA else 2 if h in CALLE else 0
 
 
+def prohibida(w, paso):
+    """True si salir del cruce por esta pierna es ir a contramano de una via de
+    sentido unico (la otra calzada de un doble carril, una rotonda al reves).
+    paso=+1 sale en el orden de los nodos de la via, -1 al reves. Con
+    oneway:bicycle=no no se cuenta: en bici se puede."""
+    t = w.get("tags", {})
+    if t.get("oneway:bicycle") == "no":
+        return False
+    o = t.get("oneway")
+    if o in ("yes", "true", "1") or (o is None and t.get("junction") in ("roundabout", "circular")):
+        return paso < 0
+    if o in ("-1", "reverse"):
+        return paso > 0
+    return False
+
+
 def cubierto(p, celdas):
     """Dentro de alguna celda bajada, con 40 m de margen hacia dentro."""
     mla, mlo = 40 / 111195.0, 40 / (111195.0 * math.cos(math.radians(p[0])))
@@ -237,7 +253,8 @@ def main():
             cl = clase_de(w)
             if alcance(n, w["nodes"][k + paso]) < SIN_SALIDA_M:
                 cl = 3
-            ramas.append({"r": r, "w": w, "lejos": lej, "extremo": k in (0, len(w["nodes"]) - 1), "clase": cl})
+            ramas.append({"r": r, "w": w, "lejos": lej, "extremo": k in (0, len(w["nodes"]) - 1), "clase": cl,
+                          "prohibida": prohibida(w, paso)})
         # LA CALLE de cada rama: ref o nombre; sin nombre, la via, y dos vias sin
         # nombre del mismo tipo que se continuan casi en linea son la misma.
         for x in ramas:
@@ -284,6 +301,7 @@ def main():
     px = py = 0
     total = 0
     clases = bytearray()
+    prohibidas = []
     con_forma = []
     todas = sorted(set(cruces) | set(guardados))
     for clave in todas:
@@ -294,7 +312,7 @@ def main():
             lst = guardados[clave]
             for idx, (paso, mismo) in enumerate(lst):
                 crudo.append((paso & 63) | (64 if mismo else 0) | (128 if idx == len(lst) - 1 else 0))
-                clases.append(0); total += 1
+                clases.append(0); prohibidas.append(0); total += 1
             con_forma.append(0)
             continue
         con_forma.append(1)
@@ -306,14 +324,15 @@ def main():
             paso = int(round(x["r"] / PASO)) % (360 // PASO)
             g = grupos.setdefault(x["calle"], {})
             if paso not in g:
-                g[paso] = (x["lejos"], x["clase"])
+                g[paso] = (x["lejos"], x["clase"], x["prohibida"])
         orden = sorted(grupos.values(), key=lambda g: min(g))
         plano = []
         for g in orden:
             for kk, paso in enumerate(sorted(g)):
                 plano.append((paso, kk > 0, g[paso]))
-        for idx, (paso, mismo, (lej, cl)) in enumerate(plano):
+        for idx, (paso, mismo, (lej, cl, pro)) in enumerate(plano):
             clases.append(cl)
+            prohibidas.append(1 if pro else 0)
             b = paso & 63
             if mismo:
                 b |= 64
@@ -343,6 +362,12 @@ def main():
     for i, c in enumerate(clases):
         cl[i >> 2] |= (c & 3) << ((i & 3) * 2)
     doc["ramas_con_forma"] = base64.b64encode(bytes(bits)).decode("ascii")
+    # Y un bit por rama: por ella se iria a contramano (ramas_prohibidas).
+    pb = bytearray((len(prohibidas) + 7) // 8)
+    for i, b in enumerate(prohibidas):
+        if b:
+            pb[i >> 3] |= 1 << (i & 7)
+    doc["ramas_prohibidas"] = base64.b64encode(bytes(pb)).decode("ascii")
     doc["ramas_lejos"] = base64.b64encode(bytes(lejos)).decode("ascii")
     doc["ramas_clase2"] = base64.b64encode(bytes(cl)).decode("ascii")
     doc.pop("ramas_clase", None)
