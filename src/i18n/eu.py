@@ -7394,3 +7394,8 @@ PAGE_STRINGS['baldaburuakarregi'].update({
     'Baldaburu, Akarregi y Bolibar': 'Baldaburu, Akarregi eta Bolibar',
     '<span>Circuito</span>': '<span>Zirkularra</span>',
 })
+
+PAGE_STRINGS["baldaburuakarregi"].update({
+    '<span class="k">La ruta</span>': '<span class="k">Ibilbidea</span>',
+    "<h2>Dos bajadas de enduro</h2>": "<h2>Enduroko bi jaitsiera</h2>",
+})
