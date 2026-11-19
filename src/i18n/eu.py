@@ -7399,3 +7399,7 @@ PAGE_STRINGS["baldaburuakarregi"].update({
     '<span class="k">La ruta</span>': '<span class="k">Ibilbidea</span>',
     "<h2>Dos bajadas de enduro</h2>": "<h2>Enduroko bi jaitsiera</h2>",
 })
+
+PAGE_STRINGS['baldaburuakarregi'].update({
+    'La bici llena de barro al terminar la ruta': 'Bizikleta lokatzez beteta ibilbidea amaitzean',
+})
