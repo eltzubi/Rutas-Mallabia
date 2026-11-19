@@ -71,62 +71,6 @@
     <p>Bizikleta elektrikoarekin ibilbide luzeak egiten ohituta dagoenarentzat. Zatirik handiena pista eta auzo-errepideetatik doa, bidezidor teknikorik eta jaitsiera zailik gabe. Kilometroek eta desnibelak eskatzen dute ahaleginik handiena.</p>
   </div>
 
-  <div class="wikiloc-row">
-    <a href="https://www.wikiloc.com/ebike-trails/iglesia-andikoa-ermita-san-kristobal-y-monasterio-de-zenarruza-desde-gerea-296313961" target="_blank" rel="noopener noreferrer" class="wikiloc-link" title="Ikusi ibilbide osoa Wikilocen" aria-label="Ikusi ibilbide osoa Wikilocen">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-      Wikiloc
-    </a>
-    <a href="src/vueltaoiz.gpx" download="Oiz mendiari itzulia.gpx" class="wikiloc-link ghost" title="Deskargatu GPX" aria-label="Deskargatu GPX">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-      GPX
-    </a>
-    <a href="src/vueltaoiz.kml" download="Oiz mendiari itzulia.kml" class="wikiloc-link ghost" title="Deskargatu KML" aria-label="Deskargatu KML">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
-      KML
-    </a>
-    <button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Arazoa jakinarazi
-    </button>
-  </div>
-
-  <div class="report-modal" id="reportModal" role="dialog" aria-modal="true" aria-label="Arazo bat jakinarazi">
-    <div class="report-modal-card">
-      <button type="button" class="report-modal-close" id="reportModalClose" aria-label="Itxi">&#10005;</button>
-      <span class="k">Jakinarazi</span>
-      <h2>Arazo bat jakinarazi</h2>
-      <p class="report-modal-intro">Zuhaitz bat erorita, bidea moztuta edo ibilbide honetan zerbait aldatuta ikusi duzu? Kontaidazu, eta neuk gainbegiratuko dut fitxa eguneratu aurretik.</p>
-      <form id="reportForm">
-        <input type="hidden" name="route">
-        <input type="hidden" name="_subject">
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        <label class="report-field">
-          <span>Arazo mota</span>
-          <select name="tipo" required>
-            <option value="Zuhaitza edo adarra erorita">Zuhaitza edo adarra erorita</option>
-            <option value="Bidea moztuta edo desbideratuta">Bidea moztuta edo desbideratuta</option>
-            <option value="Seinaleztapena hondatuta edo lausotuta">Seinaleztapena hondatuta edo lausotuta</option>
-            <option value="Beste bat">Beste bat</option>
-          </select>
-        </label>
-        <label class="report-field">
-          <span>Kokapen gutxi gorabeherakoa</span>
-          <input type="text" name="ubicacion" placeholder="adib. 8. km, iturritik gertu..." required>
-        </label>
-        <label class="report-field">
-          <span>Deskribapena</span>
-          <textarea name="descripcion" rows="4" placeholder="Kontaidazu zer ikusi duzun eta non zehazki" required></textarea>
-        </label>
-        <label class="report-field">
-          <span>Zure emaila (aukerakoa, zerbait galdetu behar badizut)</span>
-          <input type="email" name="email" placeholder="tu@email.com">
-        </label>
-        <button type="submit" class="report-submit">Bidali jakinarazpena</button>
-        <p class="report-status" id="reportStatus" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </div>
-
   <div class="gallery-grid">
     <button type="button" class="gallery-item" data-lightbox-src="img/vueltaoiz-01.webp" aria-haspopup="dialog">
       <picture><source srcset="img/vueltaoiz-01-800.webp 800w, img/vueltaoiz-01.webp 1536w" sizes="(min-width:1024px) 520px, (min-width:768px) 350px, 45vw" type="image/webp"><img src="img/vueltaoiz-01-800.jpg" alt="Bide bustia zuhaitz artean, hosto eroriekin" loading="lazy" decoding="async"></picture>
@@ -204,6 +148,62 @@
       <picture><source srcset="img/vueltaoiz-20-800.webp 800w, img/vueltaoiz-20.webp 1536w" sizes="(min-width:1024px) 520px, (min-width:768px) 350px, 45vw" type="image/webp"><img src="img/vueltaoiz-20-800.jpg" alt="Harrizko eskailerak eta gurutzeak Zenarruzako sarreran" loading="lazy" decoding="async"></picture>
       <span class="photo-zoom" aria-hidden="true">&#10530;</span>
     </button>
+  </div>
+
+  <div class="wikiloc-row">
+    <a href="https://www.wikiloc.com/ebike-trails/iglesia-andikoa-ermita-san-kristobal-y-monasterio-de-zenarruza-desde-gerea-296313961" target="_blank" rel="noopener noreferrer" class="wikiloc-link" title="Ikusi ibilbide osoa Wikilocen" aria-label="Ikusi ibilbide osoa Wikilocen">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      Wikiloc
+    </a>
+    <a href="src/vueltaoiz.gpx" download="Oiz mendiari itzulia.gpx" class="wikiloc-link ghost" title="Deskargatu GPX" aria-label="Deskargatu GPX">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      GPX
+    </a>
+    <a href="src/vueltaoiz.kml" download="Oiz mendiari itzulia.kml" class="wikiloc-link ghost" title="Deskargatu KML" aria-label="Deskargatu KML">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      KML
+    </a>
+    <button type="button" class="wikiloc-link ghost" id="reportTrigger" aria-haspopup="dialog">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Arazoa jakinarazi
+    </button>
+  </div>
+
+  <div class="report-modal" id="reportModal" role="dialog" aria-modal="true" aria-label="Arazo bat jakinarazi">
+    <div class="report-modal-card">
+      <button type="button" class="report-modal-close" id="reportModalClose" aria-label="Itxi">&#10005;</button>
+      <span class="k">Jakinarazi</span>
+      <h2>Arazo bat jakinarazi</h2>
+      <p class="report-modal-intro">Zuhaitz bat erorita, bidea moztuta edo ibilbide honetan zerbait aldatuta ikusi duzu? Kontaidazu, eta neuk gainbegiratuko dut fitxa eguneratu aurretik.</p>
+      <form id="reportForm">
+        <input type="hidden" name="route">
+        <input type="hidden" name="_subject">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <label class="report-field">
+          <span>Arazo mota</span>
+          <select name="tipo" required>
+            <option value="Zuhaitza edo adarra erorita">Zuhaitza edo adarra erorita</option>
+            <option value="Bidea moztuta edo desbideratuta">Bidea moztuta edo desbideratuta</option>
+            <option value="Seinaleztapena hondatuta edo lausotuta">Seinaleztapena hondatuta edo lausotuta</option>
+            <option value="Beste bat">Beste bat</option>
+          </select>
+        </label>
+        <label class="report-field">
+          <span>Kokapen gutxi gorabeherakoa</span>
+          <input type="text" name="ubicacion" placeholder="adib. 8. km, iturritik gertu..." required>
+        </label>
+        <label class="report-field">
+          <span>Deskribapena</span>
+          <textarea name="descripcion" rows="4" placeholder="Kontaidazu zer ikusi duzun eta non zehazki" required></textarea>
+        </label>
+        <label class="report-field">
+          <span>Zure emaila (aukerakoa, zerbait galdetu behar badizut)</span>
+          <input type="email" name="email" placeholder="tu@email.com">
+        </label>
+        <button type="submit" class="report-submit">Bidali jakinarazpena</button>
+        <p class="report-status" id="reportStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </div>
 
   <div class="body-copy">
