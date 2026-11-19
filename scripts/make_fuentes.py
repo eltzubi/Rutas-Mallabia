@@ -446,7 +446,7 @@ FUENTES = [
         "punto": ("exigente", 1),
         "nota_es": "Junto a la ermita.",
         "nota_eu": "Baselizaren ondoan.",
-        "rutas": ["exigente", "urregarai", "kalamua"],
+        "rutas": ["exigente", "urregarai", "kalamua", "baldaburuakarregi"],
     },
     {
         "id": "markina",
@@ -514,7 +514,7 @@ FUENTES = [
         "punto": ("santaeufemia", 1),
         "nota_es": "Junto al camino, entre Markina-Xemein e Iruzubieta.",
         "nota_eu": "Bidearen ondoan, Markina-Xemein eta Iruzubieta artean.",
-        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente", "lekeitio"],
+        "rutas": ["santaeufemia", "markinaurjauziak", "markinabolibar", "exigente", "lekeitio", "baldaburuakarregi"],
     },
     {
         "id": "atxagarai",
