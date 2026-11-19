@@ -115,10 +115,25 @@ def add_navigation_link(page_html, page, lang):
         "https://eltzubi.github.io/trabakutik-gps-pruebas/nuevo.html"
         f"?ruta={page}"
     )
+    # En Android el intent debe salir directamente del toque en la ficha.
+    # Si el navegador no puede abrir la app, usa la página de instalación.
+    from urllib.parse import quote
+    install = "https://eltzubi.github.io/trabakutik-gps-pruebas/instalar.html"
+    intent = (
+        f"intent://navegar?ruta={quote(page, safe='')}"
+        "#Intent;scheme=trabakutikgps;package=com.trabakutik.gps;"
+        f"S.browser_fallback_url={quote(install, safe='')};end"
+    )
+    open_app = (
+        "if (/Android/i.test(navigator.userAgent) && !window.TrabakutikAndroid) {"
+        f"event.preventDefault(); window.location.href='{intent}';"
+        "}"
+    )
     link = (
         '<div class="gps-nav-entry" style="padding:12px 15px 0;'
         'max-width:920px;margin:0 auto">'
         f'<a href="{destination}" class="gps-nav-launch" '
+        f'onclick="{html.escape(open_app, quote=True)}" '
         'style="display:inline-flex;align-items:center;gap:8px;'
         'border:1px solid #64dcf4;border-radius:999px;'
         'padding:11px 17px;background:#102d3b;color:#d7fbff;'
