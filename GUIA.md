@@ -196,8 +196,8 @@ Lo demás se arregla; esto no.
 
 - Los kilómetros de los puntos numerados de nueve fichas van sobre la base
   antigua. El autor lo ha mirado y los deja así.
-- `intxorta` tiene un corte de grabación de 644 m: **el original de Wikiloc
-  trae el mismo corte**, no hay nada que recuperar.
+- La descarga original de Wikiloc de `intxorta` tiene un corte de grabación de
+  unos 644 m. El GPX publicado incorpora el enlace reconstruido y aprobado por el autor.
 - `longa` no está grabada, está trazada en Wikiloc. Sus tramos rectos son como
   se trazó.
 

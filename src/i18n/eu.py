@@ -3696,8 +3696,8 @@ INTXORTA = {
         '<p class="full-name">Oinezko zirkuitu luzea Trabakuatik, Zengotitagane, Santama&ntilde;azar, Erdella, Intxorta, Elgeta eta Egoarbitzatik igarota</p>',
 
     # perfil: marcadores y leyenda
-    '<title>Presa de Aixola &middot; 26,0 km &middot; 314 m</title>':
-        '<title>Aixolako presa &middot; 26,0 km &middot; 314 m</title>',
+    '<title>Presa de Aixola &middot; 26,7 km &middot; 314 m</title>':
+        '<title>Aixolako presa &middot; 26,7 km &middot; 314 m</title>',
     '<span class="elev-legend-item"><span class="num">6</span>Presa de Aixola</span>':
         '<span class="elev-legend-item"><span class="num">6</span>Aixolako presa</span>',
 
@@ -3776,8 +3776,8 @@ INTXORTA = {
         'Goierritik GRa hartuko dugu berriro Zengotita aldera. Zengotita zeharkatu ondoren, Trabakuara itzultzeko azken zatia egingo dugu, bertan ibilbideari amaiera emanez.',
 
     # --- para quien es ---
-    'Son 37,31 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
-        '37,31 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
+    'Son 38,01 km y +1.750 m repartidos en cinco cimas, con mucha pista y camino ancho para rodar y tramos de sendero y monte en las subidas y bajadas de cada cumbre. No es una ruta t&eacute;cnica, pero es larga: la dificultad est&aacute; en encadenar una subida detr&aacute;s de otra sin que las piernas se queden por el camino.':
+        '38,01 km eta +1.750 m, bost tontorren artean banatuta: pista eta bide zabal ugari erritmoa hartzeko, eta bidezidor eta mendiko tarteak tontor bakoitzeko igoera-jaitsieretan. Ez da ibilbide teknikoa, baina luzea da: zailtasuna igoera bat bestearen atzetik kateatzean dago, hankak bidean gera ez daitezen.',
     'Funciona bien como salida larga de <b>trail running</b> o como jornada completa de monta&ntilde;a a pie. Hay tres fuentes repartidas por el recorrido &mdash; a la entrada de Zengotita, junto a la ermita de Goierri y en la ermita de San Salvador &mdash;, lo que permite salir sin cargar de m&aacute;s.':
         'Ibilbidea <b>trail running</b> irteera luze moduan, baita egun osoko mendi-ibilaldi moduan ere, oso ondo moldatzen da. Bidean hiru iturri daude &mdash; Zengotitako sarreran, Goierriko ermitaren ondoan eta San Salbador ermitan &mdash;, eta horri esker beharrezkoa baino gehiago kargatu gabe atera daiteke.',
 }
