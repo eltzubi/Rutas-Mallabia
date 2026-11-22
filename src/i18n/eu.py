@@ -7549,7 +7549,7 @@ PAGE_STRINGS['ugunaotzarreta'] = {'<p>Dejamos el coche en el alto de Barazar y c
 TITLES['ugunaotzarreta'] = 'Uguna ur-jauzia eta Otzarretako pagadia Barazarretik · Oinezko ibilbidea — Herriko ibilbideak'
 DESCRIPTIONS['ugunaotzarreta'] = 'Ibilaldi zirkularra Barazarretik, Saldropotik, Uguna ur-jauzitik eta Otzarretako pagaditik igarota.'
 PAGE_STRINGS["mallabia"]['<h3 class="route-card-name">Cascada de Uguna y hayedo de Otzarreta desde Barazar</h3>'] = '<h3 class="route-card-name">Uguna ur-jauzia eta Otzarretako pagadia Barazarretik</h3>'
-PAGE_STRINGS["mallabia"]['<p class="route-card-desc">Salimos del alto de Barazar por una pista entre prados con ganado. Cuando el camino se abre, asoma el Gorbea. Pasado Saldropo, el sendero se estrecha y empezamos a oír la cascada de Uguna antes de verla. De vuelta al puerto, hacemos una última parada junto al arroyo, bajo las hayas de Otzarreta.</p>'] = '<p class="route-card-desc">Barazarreko mendatetik abiatu, eta ganadua dabilen zelai arteko pista hartzen dugu. Bidea zabaltzen denean, Gorbeia agertzen da. Saldropo igarota, xendra estutu egiten da, eta Uguna ur-jauzia ikusi aurretik entzuten dugu. Mendatera bueltan, azken geldialdia egiten dugu erreka ondoan, Otzarretako pagoen azpian.</p>'
+PAGE_STRINGS["mallabia"]['<p class="route-card-desc">Circuito desde el alto de Barazar por Saldropo, la cascada de Uguna y el hayedo de Otzarreta.</p>'] = '<p class="route-card-desc">Zirkuitua Barazarreko mendatetik, Saldropotik, Uguna ur-jauzitik eta Otzarretako pagaditik igarota.</p>'
 PAGE_STRINGS["mallabia"]["Cascada de Uguna entre árboles"] = "Uguna ur-jauzia zuhaitzen artean"
 
 PAGE_STRINGS["ugunaotzarreta"].update({
