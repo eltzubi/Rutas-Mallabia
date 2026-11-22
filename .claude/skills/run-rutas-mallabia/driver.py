@@ -43,9 +43,20 @@ def paginas():
 
 def navegador():
     """Playwright busca una version de Chromium que aqui no esta; se le da la
-    que hay. Sin esto falla con 'Executable doesn't exist'."""
-    for patron in ("chromium-*/chrome-linux/chrome", "chromium/chrome-linux/chrome"):
-        for c in sorted(glob.glob(f"/opt/pw-browsers/{patron}")):
+    que hay. Sin esto falla con 'Executable doesn't exist'.
+
+    El empaquetado de Playwright ha cambiado de carpeta mas de una vez en este
+    contenedor: "chrome-linux" (version antigua) y "chrome-linux64" (version
+    nueva, desde noviembre de 2026). Se buscan las dos, de mas reciente a mas
+    antigua, para no volver a romperse la proxima vez que cambie."""
+    patrones = (
+        "chromium-*/chrome-linux64/chrome",
+        "chromium/chrome-linux64/chrome",
+        "chromium-*/chrome-linux/chrome",
+        "chromium/chrome-linux/chrome",
+    )
+    for patron in patrones:
+        for c in sorted(glob.glob(f"/opt/pw-browsers/{patron}"), reverse=True):
             if os.access(c, os.X_OK):
                 return c
     return None
