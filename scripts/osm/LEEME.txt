@@ -35,3 +35,10 @@ Desde el 17 de noviembre de 2026 los cruces de la zona de las rutas se rehacen
 ademas con scripts/make_cruces_calles.py, a partir de TODAS las vias de OSM con
 su geometria (bajadas de Overpass en recuadros; la consulta esta en la cabecera
 del script). Las respuestas no se guardan aqui: pesan decenas de MB.
+
+Y desde el 22 de noviembre de 2026, los cruces de TODA EUSKADI en cuadrados de
+0,1 grados (data/cruces/t_<lat*10>_<lon*10>.json e indice.json), para las rutas
+que se salen de la zona de Mallabia. Los escribe scripts/make_cruces_euskadi.py
+a partir del extracto de Euskadi de OpenStreetMap France
+(download.openstreetmap.fr/extracts/europe/spain/euskadi-latest.osm.pbf, 80 MB,
+no se guarda aqui) con el mismo calculo que make_cruces_calles.py.

@@ -145,10 +145,9 @@ def viejos(base):
     return out
 
 
-def main():
-    salida, base = sys.argv[1], sys.argv[2]
-    vias, coord = carga(sys.argv[3:])
-    print("vias", len(vias), "nodos", len(coord))
+def calcula_cruces(vias, coord):
+    """{(lat, lon) redondeados: [ramas]} de todos los nodos con tres vecinos o
+    mas. Cada rama: rumbo r, calle, punto a 25 m (lejos), clase y prohibida."""
     pornodo = {}
     for w in vias.values():
         ns = w["nodes"]
@@ -288,12 +287,12 @@ def main():
         clave = (round(p[0], 5), round(p[1], 5))
         cruces[clave] = ramas
 
-    celdas = celdas_de(sys.argv[3:])
-    nuevos = {k: v for k, v in cruces.items() if cubierto(k, celdas)}
-    antes = viejos(base)
-    guardados = {k: v for k, v in antes.items() if not cubierto(k, celdas)}
-    print("nuevos dentro", len(nuevos), "viejos fuera", len(guardados), "viejos dentro descartados", len(antes) - len(guardados))
-    cruces = nuevos
+    return cruces
+
+
+def codifica(cruces, guardados, doc):
+    """Escribe en «doc» los cruces (y los viejos «guardados», sin forma) en el
+    formato compacto que lee el navegador. Devuelve cuantos cruces y ramas."""
     # codificar en el formato de siempre + ramas_lejos y ramas_clase alineados
     crudo = bytearray()
     lejos = bytearray()
@@ -346,7 +345,6 @@ def main():
             else:
                 lejos += bytes([0, 0])
             total += 1
-    doc = json.load(open(base))
     import datetime
     doc["fecha_osm"] = datetime.date.today().isoformat()
     doc["dif"] = dif_
@@ -372,8 +370,23 @@ def main():
     doc["ramas_clase2"] = base64.b64encode(bytes(cl)).decode("ascii")
     doc.pop("ramas_clase", None)
     doc.pop("cruces_carretera", None)
+    return len(todas), total
+
+
+def main():
+    salida, base = sys.argv[1], sys.argv[2]
+    vias, coord = carga(sys.argv[3:])
+    print("vias", len(vias), "nodos", len(coord))
+    cruces = calcula_cruces(vias, coord)
+    celdas = celdas_de(sys.argv[3:])
+    nuevos = {k: v for k, v in cruces.items() if cubierto(k, celdas)}
+    antes = viejos(base)
+    guardados = {k: v for k, v in antes.items() if not cubierto(k, celdas)}
+    print("nuevos dentro", len(nuevos), "viejos fuera", len(guardados), "viejos dentro descartados", len(antes) - len(guardados))
+    doc = json.load(open(base))
+    n, total = codifica(nuevos, guardados, doc)
     json.dump(doc, open(salida, "w"), separators=(",", ":"))
-    print("cruces", len(todas), "ramas", total)
+    print("cruces", n, "ramas", total)
 
 
 if __name__ == "__main__":
