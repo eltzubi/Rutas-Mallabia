@@ -7551,3 +7551,13 @@ DESCRIPTIONS['ugunaotzarreta'] = 'Ibilaldi zirkularra Barazarretik, Saldropotik,
 PAGE_STRINGS["mallabia"]['<h3 class="route-card-name">Cascada de Uguna y hayedo de Otzarreta desde Barazar</h3>'] = '<h3 class="route-card-name">Uguna ur-jauzia eta Otzarretako pagadia Barazarretik</h3>'
 PAGE_STRINGS["mallabia"]['<p class="route-card-desc">Paseo circular desde Barazar por Saldropo, la cascada de Uguna y el hayedo de Otzarreta.</p>'] = '<p class="route-card-desc">Ibilaldi zirkularra Barazarretik, Saldropotik, Uguna ur-jauzitik eta Otzarretako pagaditik igarota.</p>'
 PAGE_STRINGS["mallabia"]["Cascada de Uguna entre árboles"] = "Uguna ur-jauzia zuhaitzen artean"
+
+PAGE_STRINGS["ugunaotzarreta"].update({
+    'Barazar (salida)': 'Barazar (irteera)',
+    '<title>Humedal de Saldropo &middot; 2,57 km</title>': '<title>Saldropoko hezegunea &middot; 2,57 km</title>',
+    '<span class="elev-legend-item"><span class="num">1</span>Humedal de Saldropo</span>': '<span class="elev-legend-item"><span class="num">1</span>Saldropoko hezegunea</span>',
+    '<title>Cascada de Uguna &middot; 4,25 km</title>': '<title>Uguna ur-jauzia &middot; 4,25 km</title>',
+    '<span class="elev-legend-item"><span class="num">2</span>Cascada de Uguna</span>': '<span class="elev-legend-item"><span class="num">2</span>Uguna ur-jauzia</span>',
+    '<title>Acceso al hayedo de Otzarreta &middot; 8,02 km</title>': '<title>Otzarretako pagadirako sarbidea &middot; 8,02 km</title>',
+    '<span class="elev-legend-item"><span class="num">3</span>Acceso al hayedo de Otzarreta</span>': '<span class="elev-legend-item"><span class="num">3</span>Otzarretako pagadirako sarbidea</span>',
+})
