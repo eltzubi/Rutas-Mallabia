@@ -7561,3 +7561,9 @@ PAGE_STRINGS["ugunaotzarreta"].update({
     '<title>Acceso al hayedo de Otzarreta &middot; 8,02 km</title>': '<title>Otzarretako pagadirako sarbidea &middot; 8,02 km</title>',
     '<span class="elev-legend-item"><span class="num">3</span>Acceso al hayedo de Otzarreta</span>': '<span class="elev-legend-item"><span class="num">3</span>Otzarretako pagadirako sarbidea</span>',
 })
+
+PAGE_STRINGS["ugunaotzarreta"].update({
+    '<span class="k">El recorrido</span>': '<span class="k">Ibilbidea</span>',
+    '<h2>De Barazar a Uguna y Otzarreta</h2>': '<h2>Barazarretik Uguna eta Otzarretara</h2>',
+    '<p>Salimos del alto de Barazar por una pista entre prados con ganado. Cuando el camino se abre, asoma el Gorbea. Pasado Saldropo, el sendero se estrecha y empezamos a oír la cascada de Uguna antes de verla. De vuelta al puerto, hacemos una última parada junto al arroyo, bajo las hayas de Otzarreta.</p>': '<p>Barazarreko mendatetik abiatu, eta ganadua dabilen zelai arteko pista hartzen dugu. Bidea zabaltzen denean, Gorbeia agertzen da. Saldropo igarota, xendra estutu egiten da, eta Uguna ur-jauzia ikusi aurretik entzuten dugu. Mendatera bueltan, azken geldialdia egiten dugu erreka ondoan, Otzarretako pagoen azpian.</p>',
+})
