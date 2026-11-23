@@ -7418,6 +7418,7 @@ PAGE_STRINGS['ugunaotzarreta'] = {'<div class="body-copy">\n    <p>La idea era e
  'alt="Caballos pastando en el prado"': 'alt="Zaldiak larrean bazkan"',
  'alt="Vaca pastando junto al bosque"': 'alt="Behia bazkan basoaren ondoan"',
  'alt="Pista junto a un prado cercado"': 'alt="Pista, hesitutako belardiaren ondoan"',
+ 'alt="Arroyo entre las hayas de Otzarreta"': 'alt="Erreka Otzarretako pagoen artean"',
  'Cascada de Uguna y hayedo de Otzarreta desde Barazar': 'Uguna ur-jauzia eta Otzarretako pagadia '
                                                          'Barazarretik',
  'Paseo circular desde Barazar por Saldropo, la cascada de Uguna y el hayedo de Otzarreta.': 'Ibilaldi '
