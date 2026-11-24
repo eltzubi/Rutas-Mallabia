@@ -7508,7 +7508,7 @@ PAGE_STRINGS['elgetabira'] = {
 }
 TITLES['elgetabira'] = 'Trabakua – Aixola – Elgeta – San Asentzio – Intxorta · E-bike ibilbidea — Herriko ibilbideak'
 DESCRIPTIONS['elgetabira'] = 'E-bike ibilbide zirkularra Trabakuatik, Aixola, Elgeta, San Asentzio eta Intxortako Ateko lubakietatik barrena.'
-PAGE_STRINGS["mallabia"].update({'Ruta circular en e-bike desde Trabakua por Aixola, Elgeta, San Asentzio y las trincheras de Intxortako Atea.': 'E-bike ibilbide zirkularra Trabakuatik, Aixola, Elgeta, San Asentzio eta Intxortako Ateko lubakietatik barrena.', 'Veleta en la cima de Intxorta': 'Haize-orratza Intxortako tontorrean'})
+PAGE_STRINGS["mallabia"].update({'Ruta circular en e-bike desde Trabakua por Aixola, Elgeta, San Asentzio y las trincheras de Intxortako Atea.': 'E-bike ibilbide zirkularra Trabakuatik, Aixola, Elgeta, San Asentzio eta Intxortako Ateko lubakietatik barrena.', 'Charca de San Asentzio': 'San Asentzioko putzua'})
 PAGE_STRINGS["elgetabira"].update({
     'Foto ampliada del recorrido de Trabakua – Aixola – Elgeta – San Asentzio – Intxorta':
         'Trabakua – Aixola – Elgeta – San Asentzio – Intxorta ibilbideko argazki handitua',
