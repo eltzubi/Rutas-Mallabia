@@ -100,14 +100,14 @@ COMMON = {
         '<h3 class="route-card-name">Zengotita, Iturzurigaina eta Betzun</h3>',
     '<p class="route-card-desc">Circuito desde Zengotita, por Iturzurigaina, Betzun, San Kristobal y Besoita</p>':
         '<p class="route-card-desc">Zirkuitua Zengotitatik, Iturzurigaina, Betzun, San Kristobal eta Besoitatik igarota</p>',
-    '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu y Mendibil</h3>':
-        '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietxu eta Mendibil</h3>',
+    '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietzu y Mendibil</h3>':
+        '<h3 class="route-card-name">Oiz, Sarrionamendia, Arietzu eta Mendibil</h3>',
     '<h3 class="route-card-name">Trabakua, Zengotitagane, Iturzuri y Longa</h3>':
         '<h3 class="route-card-name">Trabakua, Zengotitagane, Iturzuri eta Longa</h3>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Zengotitagane, el hayedo de Iturzuri y la bajada hacia Longa</p>':
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Zengotitagane, Iturzuriko pagadia eta Longarako jaitsieratik igarota</p>',
-    '<p class="route-card-desc">Circuito de trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietxu y Mallabia hasta Mendibil</p>':
-        '<p class="route-card-desc">Trail running zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita, Arietxu eta Mallabiatik igarota Mendibileraino</p>',
+    '<p class="route-card-desc">Circuito de trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietzu y Mallabia hasta Mendibil</p>':
+        '<p class="route-card-desc">Trail running zirkuitua Trabakuatik, Oiz, Sarrionamendia, Zengotita, Arietzu eta Mallabiatik igarota Mendibileraino</p>',
     '<p class="route-card-desc">Circuito de senderismo desde Trabakua por Osmagain y Arietzu, por tramos del 7 Pago Mendi Lasterketa</p>':
         '<p class="route-card-desc">Oinezko zirkuitua Trabakuatik, Osmagain eta Arietzutik igarota, 7 Pago Mendi Lasterketaren zati batzuetatik</p>',
     'alt="Arroyo entre helechos y hojarasca en un bosque de con&iacute;feras"':
@@ -1882,8 +1882,8 @@ EGOARBITZA = {
         'alt="Egoarbitzatik Aixolako urtegirako ikuspegia, baso eta baso-pisten artean"',
     'alt="Cruz de piedra en un mirador de Santama&ntilde;azar, con el valle y los caser&iacute;os al fondo"':
         'alt="Harrizko gurutzea Santama&ntilde;azarreko begiratoki batean, harana eta baserriak atzealdean"',
-    'alt="Cruz de piedra entre &aacute;rboles en Arietxu, con un perro junto a ella"':
-        'alt="Harrizko gurutzea zuhaitzen artean Arietxun, txakur bat ondoan duela"',
+    'alt="Cruz de piedra entre &aacute;rboles en Arietzu, con un perro junto a ella"':
+        'alt="Harrizko gurutzea zuhaitzen artean Arietzun, txakur bat ondoan duela"',
     'alt="Embalse de Aixola, con la caseta sobre el agua y el bosque alrededor"':
         'alt="Aixolako urtegia, etxola urearen gainean eta basoa inguruan"',
     'alt="Corredores subiendo un sendero entre helechos y un &aacute;rbol cubierto de musgo"':
@@ -1923,32 +1923,32 @@ EGOARBITZA = {
 
     'Luego bajamos hacia <b>Santa Marina</b>, donde hay una ermita y se puede volver a abastecer de '
     'agua. En la ermita se coge la GR, que sube poco a poco hacia '
-    '<b>Arietxu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de <a href="arietzu.html">Osmagain '
+    '<b>Arietzu</b> (km 28,8 &middot; 483 m), el mismo pico de la ruta de <a href="arietzu.html">Osmagain '
     'y Arietzu</a>, pero llegando por el lado contrario.':
         'Handik <b>Santa Marina</b>ra jaisten gara; han ermita dago eta ura berriz hartzeko aukera. '
-        'Ermitan GRa hartzen da, poliki-poliki <b>Arietxu</b>raino igotzen dena (28,8 km &middot; 483 m), '
+        'Ermitan GRa hartzen da, poliki-poliki <b>Arietzu</b>raino igotzen dena (28,8 km &middot; 483 m), '
         '<a href="arietzu.html">Osmagain-Arietzu</a> ibilbideko gailur berbera, baina beste aldetik '
         'iritsita.',
 
-    'Desde Arietxu seguimos por el cresterio hasta m&aacute;s o menos la mitad, y luego bajamos hacia el '
+    'Desde Arietzu seguimos por el cresterio hasta m&aacute;s o menos la mitad, y luego bajamos hacia el '
     'barrio de Zengotita, donde hay una fuente con agua '
     'todo el a&ntilde;o. Despu&eacute;s de la fuente empieza la subida hacia <b>Zengotitagane</b> '
     '(km 32,5 &middot; 811 m): todo en pista, subir y subir sin apenas tregua, pero bastante llevadera. '
     'Y de ah&iacute;, casi en vertical hacia Trabakua: la &uacute;ltima bajada tiene buena pendiente, unos 400 m de '
     'desnivel en poco m&aacute;s de 2 km, y se cierra el circuito.':
-        'Arietxutik krestan jarraitzen da erdi aldera arte, eta gero Zengotita auzora jaisten da, urte '
+        'Arietzutik krestan jarraitzen da erdi aldera arte, eta gero Zengotita auzora jaisten da, urte '
         'osoan ura duen iturri bat dagoen tokira. Iturriaren ondoren hasten da <b>Zengotitagane</b>rako '
         'igoera (32,5 km &middot; 811 m): dena pista, etenik ia gabe, baina nahiko eramangarria. Eta '
         'handik, ia bertikalki Trabakuara: azken jaitsierak malda handia dauka, 400 m desnibel 2 km '
         'eskasetan, eta zirkuitua ixten da.',
 
     '33,77 km y +2.201 m de desnivel en un solo circuito, con cuatro subidas importantes (Urko, '
-    'Egoarbitza, Arietxu y Zengotitagane) y tramos de media cresta exigentes. '
+    'Egoarbitza, Arietzu y Zengotitagane) y tramos de media cresta exigentes. '
     'Hay varios puntos para abastecerse de agua en el recorrido: una fuente junto a '
     'la presa de Aixola, otro en Santa Marina, y una fuente en el barrio de '
     'Zengotita.':
         '33,77 km eta +2.201 m-ko desnibela zirkuitu bakarrean, lau igoera garrantzitsurekin (Urko, '
-        'Egoarbitza, Arietxu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Hainbat '
+        'Egoarbitza, Arietzu eta Zengotitagane) eta gailurreko tarte eskatzaileekin. Hainbat '
         'puntutan har daiteke ura ibilbidean: iturri bat Aixolako presaren ondoan, beste bat '
         'Santa Marinan, eta iturri bat Zengotita auzoan.',
 }
@@ -4070,8 +4070,8 @@ SARRIMENDI = {
         'Itzulerako bide beretik iturriraino itzuliko gara eta eskuinera biratuko dugu <b>San Kristobal Txiki</b>rantz (13,0 km &middot; 497 m) jaisteko. Iritsi baino pixka bat lehenago, ezkerrera desbideratuko gara eta <b><a href="betzun.html">Betzun</a></b> baserrirantz igotzen hasiko gara. Baserria pasata, lurzoruaren joera aldatu eta <b>Zengotita</b>rantz (15,5 km &middot; 411 m) jaisten hasiko gara.',
     'En Zengotita tenemos otra fuente. Adem&aacute;s, es un buen punto para abandonar la ruta si vamos cansados o surge alg&uacute;n problema: desde aqu&iacute; podemos regresar a Trabakua por la carretera general en unos 2,5 kil&oacute;metros.':
         'Zengotitan beste iturri bat dugu. Gainera, nekatuta bagaude edo arazoren bat sortzen bada, ibilbidea bertan behera uzteko puntu egokia da: hemendik Trabakuara itzul gaitezke errepide nagusitik 2,5 kilometro ingurutan.',
-    'Pasada la ermita, no cogemos el camino habitual de la izquierda, sino que seguimos pr&aacute;cticamente de frente y subimos hacia la cresta situada entre Osmagain y Arietzu. Una vez arriba giramos a la izquierda y avanzamos hasta la cruz de <b><a href="arietzu.html">Arietxu</a></b> (km 17,4 &middot; 476 m). Desde all&iacute; descendemos hacia Aitzu y enlazamos con el camino que nos lleva a <b>Mallabia</b> (km 19,7 &middot; 254 m).':
-        'Baseliza pasata, ez dugu ohiko bidea hartuko, baizik eta ia zuzen jarraitu eta Osmagain eta Arietzu arteko gailurrerantz igoko gara. Goian, ezkerrera biratu eta <b><a href="arietzu.html">Arietxu</a></b>ko gurutzeraino (17,4 km &middot; 476 m) aurrera egingo dugu. Handik Aitzurantz jaitsi eta <b>Mallabia</b>ra eramango gaituen bidearekin bat egingo dugu (19,7 km &middot; 254 m).',
+    'Pasada la ermita, no cogemos el camino habitual de la izquierda, sino que seguimos pr&aacute;cticamente de frente y subimos hacia la cresta situada entre Osmagain y Arietzu. Una vez arriba giramos a la izquierda y avanzamos hasta la cruz de <b><a href="arietzu.html">Arietzu</a></b> (km 17,4 &middot; 476 m). Desde all&iacute; descendemos hacia Aitzu y enlazamos con el camino que nos lleva a <b>Mallabia</b> (km 19,7 &middot; 254 m).':
+        'Baseliza pasata, ez dugu ohiko bidea hartuko, baizik eta ia zuzen jarraitu eta Osmagain eta Arietzu arteko gailurrerantz igoko gara. Goian, ezkerrera biratu eta <b><a href="arietzu.html">Arietzu</a></b>ko gurutzeraino (17,4 km &middot; 476 m) aurrera egingo dugu. Handik Aitzurantz jaitsi eta <b>Mallabia</b>ra eramango gaituen bidearekin bat egingo dugu (19,7 km &middot; 254 m).',
     'Atravesamos Mallabia en direcci&oacute;n a la parte alta del pueblo, hacia San Pedro, aprovechando para coger agua en la plaza antes de continuar.':
         'Mallabia zeharkatuko dugu herriaren goialderantz, San Pedro aldera, plazan ura hartzeko aprobetxatuz.',
     'Desde San Pedro iniciamos el descenso y pronto nos desviamos a la izquierda por un sendero y una pista de piedra que sirven de atajo hacia la zona industrial. Tomamos como referencia las inmediaciones de Orbea y, tras recorrer unos metros junto a la empresa, cruzamos la carretera. Junto a un paseo encontramos la entrada de una pista que bordea un caser&iacute;o por detr&aacute;s.':
@@ -4082,15 +4082,15 @@ SARRIMENDI = {
         '<b>Artetako iturritik</b> (23,8 km &middot; 472 m) igaroko gara, ura hartzeko azken puntu argitik, eta <b><a href="mendibil.html">Mendibil</a></b>en tontorreraino jarraituko dugu (25,4 km &middot; 611 m). Goitik, eguneko azken panoramika onenetako bat dugu, eta zeharkatutako lurraldearen zati bat ikus dezakegu.',
     'Desde Mendibil tomamos el camino habitual de regreso a Trabakua, ya principalmente en descenso, para completar una vuelta larga y exigente, con bastante desnivel y continuos cambios de terreno, que recorre buena parte del entorno de Oiz, Zengotita, Mallabia, Arteta y Mendibil.':
         'Mendibiletik Trabakuara itzultzeko ohiko bidea hartuko dugu, jaitsiera nagusian, Oiz, Zengotita, Mallabia, Arteta eta Mendibileko ingurunearen zati handi bat zeharkatzen duen itzuli luze eta gogorra osatzeko, desnibel handiarekin eta etengabeko terreno-aldaketekin.',
-    'download="Oiz, Sarrionamendia, Arietxu y Mendibil.gpx"':
-        'download="Oiz, Sarrionamendia, Arietxu eta Mendibil.gpx"',
-    'download="Oiz, Sarrionamendia, Arietxu y Mendibil.kml"':
-        'download="Oiz, Sarrionamendia, Arietxu eta Mendibil.kml"',
+    'download="Oiz, Sarrionamendia, Arietzu y Mendibil.gpx"':
+        'download="Oiz, Sarrionamendia, Arietzu eta Mendibil.gpx"',
+    'download="Oiz, Sarrionamendia, Arietzu y Mendibil.kml"':
+        'download="Oiz, Sarrionamendia, Arietzu eta Mendibil.kml"',
     '<span>Pista, sendero y monte</span><span class="sep">/</span><span>Oiz, Sarrionamendia, Zengotita y Mendibil</span><span class="sep">/</span><span>Circuito</span>':
         '<span>Pista, bidezidorra eta mendia</span><span class="sep">/</span><span>Oiz, Sarrionamendia, Zengotita eta Mendibil</span><span class="sep">/</span><span>Zirkuitua</span>',
-    '<h1>Oiz, Sarrionamendia<br><em>Arietxu y Mendibil</em></h1>':
+    '<h1>Oiz, Sarrionamendia<br><em>Arietzu y Mendibil</em></h1>':
         '<h1>Oiz, Sarrionamendia<br><em>Arietzu eta Mendibil</em></h1>',
-    '<p class="full-name">Circuito de senderismo y trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietxu y Mallabia hasta Mendibil</p>':
+    '<p class="full-name">Circuito de senderismo y trail running desde Trabakua por Oiz, Sarrionamendia, Zengotita, Arietzu y Mallabia hasta Mendibil</p>':
         '<p class="full-name">Zirkuitua oinez eta trail running Trabakuatik, Oiz, Sarrionamendia, Zengotita, Arietzu eta Mallabiatik igarota Mendibileraino</p>',
     '28,35 km y +1.366 m de desnivel en un solo circuito, pensado principalmente para trail running o para senderismo de larga duraci&oacute;n. Recorremos parte del macizo del Oiz y buena parte de Mallabia, enlazando zonas altas, barrios, caminos de monte y algunos tramos menos habituales. Hay varios puntos para abastecerse de agua: Iturzuri, Zengotita, Mallabia y la fuente de Arteta, esta &uacute;ltima poco antes de la subida final hacia Mendibil.':
         '28,35 km eta +1.366 m-ko desnibela zirkuitu bakarrean. Ibilbide gogor hau trail running edo iraupen luzeko mendi-ibilietarako pentsatuta dago batez ere. Itzuli luze eta askotarikoa da, Oiz mendigunearen zati bat eta Mallabiako zati handi bat zeharkatuko ditugu, goi-eremuak, auzoak, mendi-bideak eta hain ohikoak ez diren zati batzuk lotuz. Ibilbidean zehar, ura hartzeko hainbat puntu izango ditugu: Iturzuri, Zengotita, Mallabia eta Artetako iturria, azken hau Mendibilera igotzen hasi aurretik.',
@@ -4098,13 +4098,13 @@ SARRIMENDI = {
         'Potrera',
     'San Kristobal Txiki':
         'San Kristobal Txiki',
-    'Arietxu':
+    'Arietzu':
         'Arietzu',
     'Fuente de Arteta':
         'Artetako iturria',
     'V&eacute;rtice geod&eacute;sico y cruz en la cumbre del Oiz, con los aerogeneradores del parque e&oacute;lico al fondo':
         'Bertize geodesikoa eta gurutzea Oizko gailurrean, parke eolikoko aerosorgailuak atzealdean',
-    'Foto ampliada del recorrido de Oiz, Sarrionamendia, Arietxu y Mendibil':
+    'Foto ampliada del recorrido de Oiz, Sarrionamendia, Arietzu y Mendibil':
         'Oiz, Sarrionamendia, Arietzu eta Mendibil ibilbidearen argazki handitua',
     'Hayedo con hojas ca&iacute;das en el suelo, en la subida hacia Iturzuri':
         'Pagadia hosto erorien artean, Iturzurirako igoeran',
@@ -4124,7 +4124,7 @@ SARRIMENDI = {
         'Ardi-taldea garo artean bidezidor batean',
     'Hito de Sarrionamendia, una figura de metal con una campana, atado con un lazo rojo, sobre una roca entre pinos y niebla':
         'Sarrionamendiko mugarria, kanpaia duen metalezko irudia, lazo gorriz lotuta, harri baten gainean, pinuen eta lainoaren artean',
-    'Foto ampliada del recorrido de Oiz, Sarrionamendia, Arietxu y Mendibil':
+    'Foto ampliada del recorrido de Oiz, Sarrionamendia, Arietzu y Mendibil':
         'Oiz, Sarrionamendia, Arietzu eta Mendibil ibilbidearen argazki handitua',
     'Hayedo con hojas ca&iacute;das en el suelo, en la subida hacia Iturzuri':
         'Pagadia hosto erorien artean, Iturzurirako igoeran',
@@ -4181,7 +4181,7 @@ LONGA = {
         'Ia beti bezala, Trabakuatik abiatzen gara iparralderantz eta <b>Zengotitagane</b> aldera igotzen hasten gara. Gutxi gorabehera 2 kilometroko igoera da, ia zuzen-zuzena, goian iritsi arte.',
     'Una vez en Zengotitagane, giramos hacia la derecha y continuamos subiendo junto a los e&oacute;licos, disfrutando de las vistas a ambos lados. Seguimos hasta meternos de frente en el hayedo en direcci&oacute;n a <b><a href="iturrizuri.html">Iturzuri</a></b>.':
         'Zengotitaganen, eskuinera biratzen dugu eta igotzen jarraitzen dugu, haize-sorgailuen ondotik, alde bietako ikuspegiaz gozatuz. <b><a href="iturrizuri.html">Iturzuri</a></b>rantz doan pagadian sartzen gara.',
-    'Atravesamos el hayedo hasta llegar a Iturzuri, donde encontramos el refugio y la fuente y podemos aprovechar para coger agua. Desde aqu&iacute; volvemos a meternos en el hayedo, por donde tambi&eacute;n pasa la ruta de <a href="sarrimendi.html">Oiz, Sarrionamendia, Arietxu y Mendibil</a>, y continuamos atraves&aacute;ndolo hasta salir por el otro lado.':
+    'Atravesamos el hayedo hasta llegar a Iturzuri, donde encontramos el refugio y la fuente y podemos aprovechar para coger agua. Desde aqu&iacute; volvemos a meternos en el hayedo, por donde tambi&eacute;n pasa la ruta de <a href="sarrimendi.html">Oiz, Sarrionamendia, Arietzu y Mendibil</a>, y continuamos atraves&aacute;ndolo hasta salir por el otro lado.':
         'Pagadia zeharkatzen dugu Iturzurira iritsi arte, non aterpea eta iturria aurkitzen ditugun, eta ura hartzeko aprobetxatzen dugu. Hemendik pagadian berriro sartzen gara, <a href="sarrimendi.html">Oiz, Sarrionamendia, Arietzu eta Mendibil</a> ibilbidea ere hemendik pasatzen baita, eta zeharkatzen jarraitzen dugu beste aldetik atera arte.',
     'Al salir del hayedo giramos hacia el este y comenzamos a bajar de forma bastante directa. Seguimos descendiendo por la parte baja del hayedo hasta encontrar una verja, que cruzamos para continuar por un sendero.':
         'Pagaditik ateratzen garenean, ekialderantz biratzen dugu eta nahiko zuzen jaisten hasten gara. Pagadiaren behealdetik jaisten jarraitzen dugu, hesi bat aurkitu arte, zeina gurutzatzen dugun bidezidor batetik jarraitzeko.',
