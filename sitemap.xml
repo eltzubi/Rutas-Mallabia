@@ -14,6 +14,16 @@
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/index.eu.html"/>
   </url>
   <url>
+    <loc>https://trabakutik.com/elgetabira.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/elgetabira.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/elgetabira.eu.html"/>
+  </url>
+  <url>
+    <loc>https://trabakutik.com/elgetabira.eu.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/elgetabira.html"/>
+    <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/elgetabira.eu.html"/>
+  </url>
+  <url>
     <loc>https://trabakutik.com/ugunaotzarreta.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://trabakutik.com/ugunaotzarreta.html"/>
     <xhtml:link rel="alternate" hreflang="eu" href="https://trabakutik.com/ugunaotzarreta.eu.html"/>
