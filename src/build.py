@@ -641,6 +641,9 @@ def similar_routes(slug, cards, count=2):
 
 def add_similar_routes(page_html, page, cards, lang):
     """Cierra la ficha con dos rutas parecidas sin repetir enlaces ya usados en el texto."""
+    if page == "ugunaotzarreta":
+        return page_html
+
     body_match = re.search(r'<div class="body-copy">([\s\S]*?)</div>', page_html)
     used_hrefs = set()
     if body_match:
