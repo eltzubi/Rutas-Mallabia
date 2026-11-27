@@ -377,6 +377,30 @@
 
   // ---- la herramienta ----------------------------------------------------
 
+  var enlaceCrear = document.querySelector('[data-abre-creador]');
+  var abrirEditor = null;
+  var abrirAlPrepararMapa = false;
+
+  function abreDesdePortada(){
+    var cajaMapa = document.getElementById('routeMapWrap');
+    if (cajaMapa && cajaMapa.hidden) document.querySelector('[data-view="map"]')?.click();
+    if (abrirEditor) abrirEditor();
+    else abrirAlPrepararMapa = true;
+  }
+
+  function abreSiHayEnlace(){
+    if (location.hash === '#crear-ruta') abreDesdePortada();
+    else abrirAlPrepararMapa = false;
+  }
+
+  if (enlaceCrear) {
+    window.addEventListener('hashchange', abreSiHayEnlace);
+    enlaceCrear.addEventListener('click', function(e){
+      if (e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      if (location.hash === '#crear-ruta') { e.preventDefault(); abreDesdePortada(); }
+    });
+  }
+
   document.addEventListener('mapa:listo', function(ev){
     var d = ev.detail;
     if (!d.esPortada || !d.map || !d.L) return;
@@ -1063,6 +1087,11 @@
       map.off('click', alTocar);
     }
 
+    function enfocaMapa(){
+      window.scrollTo({ top: Math.max(0, marco.getBoundingClientRect().top + window.pageYOffset - CABECERA),
+                        behavior: 'smooth' });
+    }
+
     function enciende(){
       activo = true;
       tools.hidden = false; readout.hidden = false;
@@ -1079,8 +1108,7 @@
       altoPrevio = marco.style.height || '';
       map.on('click', alTocar);
       encaja();
-      window.scrollTo({ top: Math.max(0, marco.getBoundingClientRect().top + window.pageYOffset - CABECERA),
-                        behavior: 'smooth' });
+      enfocaMapa();
       if (red) { pinta(); return; }
       if (cargando) return;
       cargando = true;
@@ -1104,5 +1132,12 @@
     }
 
     btn.addEventListener('click', function(){ activo ? apaga() : enciende(); });
+    abrirEditor = function(){ activo ? enfocaMapa() : enciende(); };
+    if (abrirAlPrepararMapa) {
+      abrirAlPrepararMapa = false;
+      abrirEditor();
+    }
   });
+
+  if (enlaceCrear) abreSiHayEnlace();
 })();

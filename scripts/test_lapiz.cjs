@@ -64,10 +64,17 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     p.on('pageerror', e => errores.push(e.message));
 
     await p.goto(base, { waitUntil: 'domcontentloaded' });
-    await p.evaluate(() => document.querySelector('[data-view="map"]').click());
-    await p.waitForSelector('.map-draw-btn', { timeout: 60000 });
+    const acceso = p.getByRole('link', {name:'Crear ruta',exact:true});
+    const posicion = await acceso.boundingBox();
+    assert(posicion && posicion.y >= 0 && posicion.y + posicion.height < 844,'el acceso se ve en la portada móvil');
     const t0 = Date.now();
-    await p.click('.map-draw-btn');
+    await acceso.click();
+    await p.waitForURL('**/#crear-ruta');
+    await p.locator('.draw-activity').waitFor();
+    await p.waitForFunction(() => {
+      const r = document.querySelector('.draw-activity').getBoundingClientRect();
+      return r.top >= 0 && r.bottom <= innerHeight;
+    });
     await p.waitForFunction(
       () => { const m = document.querySelector('.draw-readout');
               return m && !/Preparando|prestatzen/.test(m.textContent); },
@@ -144,6 +151,11 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     assert(perfiles.includes('routed-foot') && perfiles.includes('routed-car'));
     assert(perfiles.every(p => p === 'routed-foot' || p === 'routed-car'));
     assert.deepEqual(errores, [], 'errores JS');
+    const eu = await ctx.newPage();
+    await eu.setViewportSize({width:320,height:720});
+    await eu.goto(base + 'index.eu.html#crear-ruta', {waitUntil:'domcontentloaded'});
+    await eu.locator('.draw-activity').waitFor();
+    assert.deepEqual(await eu.locator('.draw-activity option').allTextContents(), ['Mendi-ibiliak','Autoa']);
     await ctx.close();
     console.log('PASS lapiz: red lista en %d ms · dibuja donde no hay ruta publicada ' +
                 '(%s) y sigue trayendo alturas sobre las rutas', tardo, LEJOS.length + ' toques');
