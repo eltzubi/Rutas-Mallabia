@@ -1913,3 +1913,25 @@ footer a:hover{ text-decoration:underline; }
   font-weight:700;
 }
 .trip-info-tab[aria-selected="true"] svg{color:var(--link);}
+
+/* Creador de rutas, junto al resumen del trazado. */
+.draw-plan-controls, .draw-choices{ display:grid; gap:6px; margin-bottom:5px; }
+.draw-plan-controls[hidden], .draw-choices[hidden]{ display:none; }
+.draw-plan-controls label{ display:flex; align-items:center; gap:8px; font-weight:650; }
+.draw-plan-controls select, .draw-plan-modes button, .draw-choices button{
+  min-width:0; min-height:44px; padding:5px 7px;
+  border:1px solid var(--line); border-radius:8px;
+  background:var(--ground-raised); color:var(--ink);
+  font:inherit; font-weight:650; line-height:1.2;
+}
+.draw-plan-controls select{ flex:1; font-size:16px; }
+.draw-plan-modes, .draw-choice-actions{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.draw-choice-colors{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:6px; }
+.draw-choice-colors button{ border-top:4px solid var(--choice-color); }
+.draw-choice-colors small{ display:block; margin-top:3px; }
+.draw-readout button[aria-pressed="true"], .draw-choice-actions button:last-child{
+  border-color:var(--teal); background:color-mix(in srgb,var(--teal) 18%, var(--ground-raised));
+}
+@media (min-width:650px){
+  .draw-plan-controls{ grid-template-columns:minmax(160px,1fr) minmax(240px,1.7fr); }
+}

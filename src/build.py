@@ -206,6 +206,7 @@ ASSETS = {
     ("js", "webmcp.js"): "js/webmcp.js",
     ("js", "weather.js"): "js/weather.js",
     ("js", "agua.js"): "js/agua.js",
+    ("js", "trazado-motor.js"): "js/trazado-motor.js",
     ("js", "trazado.js"): "js/trazado.js",
 }
 

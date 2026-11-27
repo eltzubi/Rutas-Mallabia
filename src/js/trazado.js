@@ -1,18 +1,5 @@
-// Dibujar un trazado propio sobre la red de caminos de la web (solo portada).
-//
-// La idea es del autor: casi nadie se hace de una tirada una ruta de 37 km, y
-// lo que pide la gente es unir dos, acortar una, o montarse la suya. Dibujar
-// a mano alzada no vale -- un garabato no va por los caminos y el kilometraje
-// que saldria seria mentira --, asi que aqui se dibuja TOCANDO PUNTOS y el
-// camino entre dos toques se calcula sobre los tracks reales de la web.
-//
-// La red sale de los 65 tracks que la portada ya se ha bajado (data/
-// trailhead.json): se pegan los puntos a una rejilla de 15 m, y cada punto
-// pegado es un nodo. Medido sobre los datos de hoy son 8.418 nodos y 10.796
-// tramos, y forman UNA SOLA componente conexa: desde cualquier punto de
-// cualquier ruta se llega a cualquier otro sin salirse de terreno grabado.
-// Por eso no hace falta ningun servicio de rutas de fuera, que es la regla de
-// esta web.
+// Creador de rutas en el mapa de la portada. El modo a pie punto a punto
+// usa la red local y los demás cálculos usan el motor de MallabiGPS.
 //
 // Las alturas van aparte, en data/alturas.json (56 kB), y se bajan solo al
 // abrir el modo de dibujo: el mapa de la portada no las necesita y no tiene
@@ -26,13 +13,22 @@
 
   var UMBRAL_SUBIDA_M = 5;       // para no sumar el ruido del GPS como desnivel
   var ALMACEN = 'rutas-mallabia-trazados';
+  var COLORES = ['#38bdf8', '#f69635', '#70b743'];
   var COLOR = '#38BDF8';
   var LAT0 = 43.2;
   var KX = 111320 * Math.cos(LAT0 * Math.PI / 180);
 
   var T = {
     es: {
-      abrir: 'Dibujar un trazado', cerrar: 'Cerrar el dibujo',
+      actividad: 'Actividad', pie: 'Senderismo', coche: 'Coche', puntos: 'Punto a punto',
+      extremos: 'Inicio y destino', inicio: 'Marca el inicio en el mapa.',
+      destino: 'Marca el destino en el mapa.', calculo: 'Calculando el recorrido…',
+      opciones: 'Ruta %n de %total', colores: ['Azul', 'Naranja', 'Verde'],
+      elegir: 'Elegir ruta', descartar: 'Descartar', sinruta: 'No se ha encontrado un recorrido. Prueba a mover los puntos.',
+      permiso: 'Para calcular la ruta se enviarán los puntos marcados a Valhalla y OSRM (FOSSGIS). ¿Continuar?',
+      reemplazar: '¿Sustituir el trazado actual por la ruta elegida?',
+      cambiar: '¿Cambiar de actividad y descartar el borrador actual?',
+      abrir: 'Crear ruta', cerrar: 'Cerrar el dibujo',
       titulo: 'Tu trazado', arranque: 'Toca el mapa sobre un camino para empezar.',
       sigue: 'Toca otro punto: el camino va por los senderos y pistas de OpenStreetMap.',
       lejos: 'Ahi no hay ningun camino. Toca mas cerca de uno.',
@@ -50,7 +46,15 @@
       aviso: 'Esto lo dibujas tu: va por los caminos de OpenStreetMap y por las rutas de la web, pero no es ninguna de ellas.'
     },
     eu: {
-      abrir: 'Marrazki bat egin', cerrar: 'Marrazkia itxi',
+      actividad: 'Jarduera', pie: 'Mendi-ibiliak', coche: 'Autoa', puntos: 'Puntuz puntu',
+      extremos: 'Hasiera eta helmuga', inicio: 'Markatu abiapuntua mapan.',
+      destino: 'Markatu helmuga mapan.', calculo: 'Ibilbidea kalkulatzen…',
+      opciones: '%n / %total ibilbide', colores: ['Urdina', 'Laranja', 'Berdea'],
+      elegir: 'Ibilbidea aukeratu', descartar: 'Baztertu', sinruta: 'Ez da ibilbiderik aurkitu. Saiatu puntuak lekuz aldatzen.',
+      permiso: 'Ibilbidea kalkulatzeko, markatutako puntuak Valhalla eta OSRM zerbitzuetara (FOSSGIS) bidaliko dira. Jarraitu?',
+      reemplazar: 'Oraingo marrazkia aukeratutako ibilbidearekin ordeztu?',
+      cambiar: 'Jarduera aldatu eta uneko zirriborroa baztertu?',
+      abrir: 'Ibilbidea sortu', cerrar: 'Marrazkia itxi',
       titulo: 'Zure marrazkia', arranque: 'Ukitu mapa bide baten gainean hasteko.',
       sigue: 'Ukitu beste puntu bat: bidea OpenStreetMap-eko bidexka eta pistetatik doa.',
       lejos: 'Hor ez dago biderik. Ukitu bide batetik gertuago.',
@@ -383,6 +387,8 @@
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
+    var actividad = 'foot', modo = 'puntos', inicio = null, peticion = null;
+    var permiso = false, rutas = [], elegida = 0, muestra = null, marcaInicio = null;
     // Un trazado reabierto de los guardados no tiene anclas ni tramos: solo
     // sus coordenadas. Sin esto, «Bajar GPX» no hacia nada despues de abrir
     // uno guardado, porque el recorrido se armaba solo desde los tramos.
@@ -439,12 +445,24 @@
     var readout = document.createElement('div');
     readout.className = 'draw-readout';
     readout.hidden = true;
-    readout.innerHTML = '<div class="draw-perfil-caja"></div>' +
+    readout.innerHTML = '<div class="draw-plan-controls">' +
+                        '<label>' + t.actividad + ' <select class="draw-activity"><option value="foot">' + t.pie +
+                        '</option><option value="car">' + t.coche + '</option></select></label>' +
+                        '<div class="draw-plan-modes"><button type="button" data-mode="puntos" aria-pressed="true">' +
+                        t.puntos + '</button><button type="button" data-mode="extremos" aria-pressed="false">' +
+                        t.extremos + '</button></div></div>' +
+                        '<div class="draw-choices" hidden></div>' +
+                        '<div class="draw-perfil-caja"></div>' +
                         '<div class="draw-cifras">' +
                         '<p class="draw-tot" hidden><span class="draw-km"></span><span class="draw-des"></span></p>' +
                         '<p class="draw-ult" hidden></p></div>' +
-                        '<p class="draw-msg"></p>';
+                        '<p class="draw-msg" role="status"></p>';
     marco.appendChild(readout);
+    L.DomEvent.disableClickPropagation(readout);
+    L.DomEvent.disableScrollPropagation(readout);
+    var selector = readout.querySelector('.draw-activity');
+    var panelModos = readout.querySelector('.draw-plan-controls');
+    var panelOpciones = readout.querySelector('.draw-choices');
 
     var saved = document.createElement('div');
     saved.className = 'draw-saved';
@@ -624,6 +642,16 @@
       if (anclas.length < 2) { elMsg.textContent = t.pocos; return; }
       var ini = anclas[0], fin = anclas[anclas.length - 1];
       if (ini === fin) { elMsg.textContent = t.yacerrado; return; }
+      if (actividad === 'car' || fin.tr == null || ini.tr == null){
+        conCalculo(async function(motor, signal){
+          var pts = await pideTramo(motor, fin.p, ini.p, signal, true);
+          if (signal.aborted) return;
+          if (metros(pts.at(-1), ini.p) > 2) throw new Error(t.nocierra);
+          pts[pts.length - 1] = ini.p;
+          anclas.push(ini); tramos.push(pts); pinta();
+        });
+        return;
+      }
       var tr = rutaEntre(red, fin, ini);
       if (!tr) { elMsg.textContent = t.nocierra; return; }
       anclas.push(ini); tramos.push(tr); cargado = null; pinta();
@@ -648,6 +676,37 @@
     // toca nada. Si el trazado esta cerrado, el primer punto y el ultimo son
     // el mismo nodo: hay que mover los dos o el circulo se abre.
     function mueveAncla(i, lat, lon){
+      if (peticion || modo !== 'puntos') { pinta(); return; }
+      if (actividad === 'car' && anclas.length === 1){
+        anclas[0] = {p:[lat, lon]}; tramos[0] = [anclas[0].p]; pinta(); return;
+      }
+      if (actividad === 'car' || anclas.some(function(a){ return a.tr == null; })){
+        pinta();
+        conCalculo(async function(motor, signal){
+          var na = anclas.slice(), nt = tramos.slice(), ultimo = na.length - 1;
+          var cerrado = ultimo > 1 && na[0] === na[ultimo];
+          var idx = cerrado && i === ultimo ? 0 : i;
+          na[idx] = {p:[lat, lon]};
+          if (cerrado && idx === 0) na[ultimo] = na[0];
+          var desde = idx > 0 ? idx : 1;
+          var afectados = [desde];
+          if (idx > 0 && idx < ultimo) afectados.push(idx + 1);
+          if (cerrado && idx === 0) afectados.push(ultimo);
+          for (var j of afectados){
+            var sale = na[j-1], llega = na[j];
+            var pts = await pideTramo(motor, sale.p, llega.p, signal, sale !== na[idx]);
+            if (signal.aborted) return;
+            if (sale === na[idx] && j === desde) sale.p = pts[0];
+            if (llega === na[idx] && j === desde) llega.p = pts.at(-1);
+            if (metros(pts[0], sale.p) > 2 || metros(pts.at(-1), llega.p) > 2) throw new Error(t.sinruta);
+            pts[0] = sale.p; pts[pts.length-1] = llega.p;
+            nt[j] = pts;
+          }
+          nt[0] = [na[0].p];
+          anclas = na; tramos = nt; pinta();
+        });
+        return;
+      }
       var n = engancha(red, lat, lon);
       if (!n) { elMsg.textContent = t.lejos; pinta(); return; }
       var ult = anclas.length - 1;
@@ -694,7 +753,7 @@
         puntitos.push(m);
       });
       if (btCirculo) btCirculo.hidden = anclas.length < 2;
-      if (btVaiven) btVaiven.hidden = anclas.length < 2;
+      if (btVaiven) btVaiven.hidden = actividad === 'car' || anclas.length < 2;
       var tt = totales();
       elTot.hidden = pts.length < 2;
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
@@ -703,16 +762,166 @@
       elPerfil.innerHTML = perfil();
       elUlt.textContent = tramos.length > 1 ? t.ultimo + ' ' + desnivelDe(tramos[tramos.length - 1]) : '';
       elUlt.hidden = tramos.length < 2;
-      elMsg.textContent = !anclas.length ? t.arranque : (anclas.length > 1 ? t.mueve : t.sigue);
+      elMsg.textContent = modo === 'extremos' ? (inicio ? t.destino : t.inicio)
+        : actividad === 'car' && anclas.length < 2 ? (anclas.length ? t.destino : t.inicio)
+        : !anclas.length ? t.arranque : (anclas.length > 1 ? t.mueve : t.sigue);
+    }
+
+    function cancelaCalculo(){
+      if (peticion) peticion.abort();
+      peticion = null;
+      if (muestra) map.removeLayer(muestra);
+      if (marcaInicio) map.removeLayer(marcaInicio);
+      muestra = marcaInicio = inicio = null;
+      rutas = [];
+      panelOpciones.hidden = true;
+      panelOpciones.replaceChildren();
+      panelModos.hidden = false;
+    }
+
+    function cambiaModo(nuevo){
+      cancelaCalculo();
+      modo = nuevo;
+      panelModos.querySelectorAll('[data-mode]').forEach(function(b){
+        b.setAttribute('aria-pressed', String(b.dataset.mode === modo));
+      });
+      pinta();
+    }
+
+    selector.addEventListener('change', function(){
+      if (selector.value === actividad) return;
+      if (recorrido().length > 1 && !window.confirm(t.cambiar)){
+        selector.value = actividad;
+        return;
+      }
+      actividad = selector.value;
+      anclas = []; tramos = []; cargado = null;
+      cambiaModo(modo);
+    });
+    panelModos.addEventListener('click', function(e){
+      var b = e.target.closest('[data-mode]');
+      if (b && b.dataset.mode !== modo) cambiaModo(b.dataset.mode);
+    });
+
+    async function conCalculo(fn){
+      if (peticion) return;
+      if (!permiso) {
+        permiso = window.confirm(t.permiso);
+        if (!permiso) return;
+      }
+      var ctl = new AbortController();
+      peticion = ctl;
+      elMsg.textContent = t.calculo;
+      try {
+        var motor = await import(document.querySelector('[data-trazado-motor]').href);
+        if (!ctl.signal.aborted) await fn(motor, ctl.signal);
+      } catch (error) {
+        if (!ctl.signal.aborted) { pinta(); elMsg.textContent = t.sinruta; }
+      } finally {
+        if (peticion === ctl) peticion = null;
+      }
+    }
+
+    function completaAlturas(pts){
+      return pts.map(function(p){
+        return [p[0], p[1], Number.isFinite(p[2]) ? p[2] : (red ? alturaEn(red, p[0], p[1]) : null)];
+      });
+    }
+
+    function previsualiza(i){
+      elegida = i;
+      if (muestra) map.removeLayer(muestra);
+      muestra = L.polyline(rutas[i].parts[0].map(function(p){ return p.slice(0,2); }), {
+        color: COLORES[i], weight: 6, interactive: false, className: 'draw-line'
+      }).addTo(map);
+      panelOpciones.querySelectorAll('[data-color]').forEach(function(b,j){
+        b.setAttribute('aria-pressed', String(i === j));
+      });
+      elMsg.textContent = t.opciones.replace('%n', i + 1).replace('%total', rutas.length);
+      map.fitBounds(muestra.getBounds(), { paddingTopLeft: [24, 24], paddingBottomRight: [24, readout.offsetHeight + 45] });
+    }
+
+    function botonOpcion(texto, accion){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = texto;
+      b.addEventListener('click', accion);
+      return b;
+    }
+
+    function compara(opciones){
+      if (!opciones.length) throw new Error(t.sinruta);
+      rutas = opciones;
+      var fila = document.createElement('div'), acciones = document.createElement('div');
+      fila.className = 'draw-choice-colors';
+      acciones.className = 'draw-choice-actions';
+      rutas.forEach(function(r,i){
+        var b = botonOpcion((i + 1) + ' · ' + t.colores[i], function(){ previsualiza(i); });
+        var d = document.createElement('small');
+        d.textContent = (r.comparison.distance / 1000).toFixed(2).replace('.', ',') + ' km';
+        b.dataset.color = String(i);
+        b.style.setProperty('--choice-color', COLORES[i]);
+        b.append(d);
+        fila.append(b);
+      });
+      acciones.append(botonOpcion(t.descartar, function(){ cambiaModo('puntos'); }),
+        botonOpcion(t.elegir, function(){
+          if (recorrido().length > 1 && !window.confirm(t.reemplazar)) return;
+          var pts = completaAlturas(rutas[elegida].parts[0]);
+          anclas = [{p:pts[0]}, {p:pts.at(-1)}]; tramos = [[pts[0]], pts]; cargado = null;
+          cambiaModo('puntos');
+        }));
+      panelOpciones.replaceChildren(fila, acciones);
+      panelModos.hidden = true;
+      panelOpciones.hidden = false;
+      previsualiza(0);
+    }
+
+    async function pideTramo(motor, a, b, signal, unir){
+      var opciones = await motor.fetchAlternatives(a, b, actividad, signal);
+      var r = opciones.find(function(c){ return !unir || metros(c.parts[0][0], a) <= 2; });
+      if (!r) throw new Error(t.sinruta);
+      var pts = completaAlturas(r.parts[0]);
+      if (unir) pts[0] = a;
+      return pts;
     }
 
     function alTocar(e){
-      if (!activo || !red) return;
-      var n = engancha(red, e.latlng.lat, e.latlng.lng);
-      if (n < 0) { elMsg.textContent = t.lejos; return; }
+      if (!activo || peticion || rutas.length) return;
+      var p = [e.latlng.lat, e.latlng.lng];
+      if (modo === 'extremos'){
+        if (!inicio){
+          inicio = p;
+          marcaInicio = L.circleMarker(inicio, {radius:6, color:COLOR, interactive:false}).addTo(map);
+          elMsg.textContent = t.destino;
+        } else if (metros(inicio, p) >= 10){
+          var salida = inicio, perfil = actividad;
+          conCalculo(async function(motor, signal){
+            var opciones = await motor.fetchAlternatives(salida, p, perfil, signal);
+            if (!signal.aborted) compara(opciones);
+          });
+        }
+        return;
+      }
+      if (actividad === 'car' || (anclas.length && anclas.at(-1).tr == null)){
+        if (!anclas.length) { cargado = null; anclas.push({p:p}); tramos.push([p]); pinta(); return; }
+        if (metros(anclas.at(-1).p, p) < 2) return;
+        conCalculo(async function(motor, signal){
+          var pts = await pideTramo(motor, anclas.at(-1).p, p, signal, anclas.length > 1);
+          if (signal.aborted) return;
+          if (anclas.length === 1) { anclas[0] = {p:pts[0]}; tramos[0] = [pts[0]]; }
+          anclas.push({p:pts.at(-1)}); tramos.push(pts); pinta();
+        });
+        return;
+      }
+      if (!red) return;
+      var n = engancha(red, p[0], p[1]);
+      if (!n) { elMsg.textContent = t.lejos; return; }
       if (!anclas.length) { cargado = null; anclas.push(n); tramos.push([n.p]); pinta(); return; }
       var ultimo = anclas[anclas.length - 1];
-      var tr = rutaEntre(red, ultimo, n);
+      var local = ultimo.tr == null ? engancha(red, ultimo.p[0], ultimo.p[1]) : ultimo;
+      if (!local || metros(local.p, ultimo.p) > 2) { elMsg.textContent = t.sinpaso; return; }
+      var tr = rutaEntre(red, local, n);
       if (!tr) { elMsg.textContent = t.sinpaso; return; }
       anclas.push(n); tramos.push(tr); pinta();
       // Un tramo puede salir disparado a un lado y no se entiende por que:
@@ -769,6 +978,7 @@
         var g = leeGuardados()[+b.dataset.i];
         if (!g) return;
         anclas = []; tramos = [];
+        cambiaModo('puntos');
         cargado = g.coords;
         quitaLinea();
         puntitos.forEach(function(m){ map.removeLayer(m); }); puntitos = [];
@@ -794,6 +1004,8 @@
       var b = e.target.closest('button');
       if (!b) return;
       var a = b.dataset.a;
+      if (a === 'undo' || a === 'clear') cambiaModo('puntos');
+      if (peticion || rutas.length) return;
       if (a === 'undo') { cargado = null; anclas.pop(); tramos.pop(); pinta(); }
       else if (a === 'circulo') { cierraCirculo(); }
       else if (a === 'vaiven') { idaYVuelta(); }
@@ -838,6 +1050,7 @@
 
     function apaga(){
       activo = false;
+      cancelaCalculo();
       tools.hidden = true; readout.hidden = true; saved.hidden = true;
       btn.classList.remove('is-active');
       btn.setAttribute('aria-label', t.abrir);
@@ -883,8 +1096,11 @@
         if (!pareja[0] || !pareja[0].nodos || !pareja[0].tramos) throw new Error('sin red');
         red = construyeRed(pareja[0], pareja[1], d.datos.tracks || []);
         cargando = false;
-        pinta();
-      }).catch(function(){ cargando = false; elMsg.textContent = t.fallo; });
+        if (activo && !peticion && !rutas.length) pinta();
+      }).catch(function(){
+        cargando = false;
+        if (activo && modo === 'puntos' && actividad === 'foot') elMsg.textContent = t.fallo;
+      });
     }
 
     btn.addEventListener('click', function(){ activo ? apaga() : enciende(); });

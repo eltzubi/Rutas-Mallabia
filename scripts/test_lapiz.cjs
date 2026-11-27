@@ -46,7 +46,7 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     await new Promise(r => server.listen(0, r));
     const base = 'http://127.0.0.1:' + server.address().port + '/';
     browser = await chromium.launch({
-      executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
+      executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
       args: ['--no-sandbox'] });
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     // Ni teselas ni tiempo: esto mide el lapiz, no la red del que lo prueba.
@@ -109,6 +109,40 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     assert(Number(cotas[1]) + Number(cotas[2]) > 20,
       'y no pueden ser cero: ' + texto);
 
+    p.on('dialog', d => d.accept());
+    const perfiles = [];
+    await ctx.route('https://valhalla1.openstreetmap.de/**', r => r.abort());
+    await ctx.route('https://routing.openstreetmap.de/**', r => {
+      const url = new URL(r.request().url());
+      perfiles.push(url.pathname.split('/')[1]);
+      const [a,b] = url.pathname.split('/').at(-1).split(';').map(pair => pair.split(',').map(Number));
+      const middle = [(a[0]+b[0])/2,(a[1]+b[1])/2];
+      const routes = [0,.002,-.002].map(offset => {
+        const m = [middle[0]+offset,middle[1]];
+        const distance = (Math.hypot((a[0]-m[0])*.73,a[1]-m[1]) + Math.hypot((b[0]-m[0])*.73,b[1]-m[1]))*111195;
+        return {distance,geometry:{coordinates:[a,m,b]},legs:[{steps:[]}]};
+      });
+      return r.fulfill({json:{routes},headers:{'Access-Control-Allow-Origin':'*'}});
+    });
+    const actividad = p.locator('.draw-activity');
+    assert.deepEqual(await actividad.locator('option').evaluateAll(os => os.map(o => o.value)), ['foot','car']);
+    for (const modo of ['foot','car']) {
+      await actividad.selectOption(modo);
+      await p.locator('[data-mode="extremos"]').click();
+      await toca(SOBRE_RUTA);
+      const opciones = p.locator('.draw-choice-colors button');
+      await opciones.nth(2).waitFor();
+      await opciones.nth(1).click();
+      await opciones.nth(0).click();
+      assert.equal(await opciones.nth(0).getAttribute('aria-pressed'), 'true');
+      if (modo === 'foot') await p.getByRole('button', {name:'Descartar',exact:true}).click();
+      else {
+        await p.getByRole('button', {name:'Elegir ruta',exact:true}).click();
+        assert.equal(await p.locator('.draw-dot').count(), 2);
+      }
+    }
+    assert(perfiles.includes('routed-foot') && perfiles.includes('routed-car'));
+    assert(perfiles.every(p => p === 'routed-foot' || p === 'routed-car'));
     assert.deepEqual(errores, [], 'errores JS');
     await ctx.close();
     console.log('PASS lapiz: red lista en %d ms · dibuja donde no hay ruta publicada ' +
