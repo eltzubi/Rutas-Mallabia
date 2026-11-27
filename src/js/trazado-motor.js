@@ -48,12 +48,10 @@ function validateDrawingLeg(origin, target, path, distance, steps=[]) {
   if (direct >= 250 && distance > direct * 5 && distance - direct > 1500)
     throw new Error('Rodeo excesivo. Añade un punto intermedio');
 }
-function routeRequest(origin,target,mode,context={}) {
+function routeRequest(origin,target) {
   const points=[origin,target].map(([lat,lon])=>lon+','+lat).join(';');
   const params=new URLSearchParams({overview:'full',geometries:'geojson',steps:'true',radiuses:'20;20',alternatives:'true',generate_hints:'true'});
-  if(context.hint) params.set('hints',context.hint+';');
-  if(mode!=='foot' && Number.isFinite(context.heading)) params.set('bearings',((Math.round(context.heading)%360+360)%360)+',65;');
-  return 'https://routing.openstreetmap.de/routed-'+mode+'/route/v1/driving/'+points+'?'+params;
+  return 'https://routing.openstreetmap.de/routed-foot/route/v1/driving/'+points+'?'+params;
 }
 function chooseNetworkRoute(payload,origin,target,context={},all=false) {
   const candidates=[], rejected=[];
@@ -71,10 +69,8 @@ function chooseNetworkRoute(payload,origin,target,context={},all=false) {
   if(!candidates.length) throw new Error(payload.code && payload.code!=='Ok'?'Red de caminos: '+payload.code:'Enlace rechazado: '+(rejected.join(' | ')||'sin geometría válida'));
   return all?candidates:candidates[0];
 }
-function valhallaRequest(points,mode,alternates=0) {
-  const costing={car:'auto',foot:'pedestrian'}[mode];
-  if(!costing)throw new Error('Perfil de ruta desconocido');
-  const options={locations:points.map(([lat,lon])=>({lat,lon,type:'break',radius:20})),costing,units:'kilometers',language:'es-ES',shape_format:'polyline6',roundabout_exits:true};
+function valhallaRequest(points,alternates=0) {
+  const options={locations:points.map(([lat,lon])=>({lat,lon,type:'break',radius:20})),costing:'pedestrian',units:'kilometers',language:'es-ES',shape_format:'polyline6',roundabout_exits:true};
   if(alternates && points.length===2)options.alternates=alternates;
   return 'https://valhalla1.openstreetmap.de/route?json='+encodeURIComponent(JSON.stringify(options));
 }
@@ -95,14 +91,14 @@ function valhallaStep(m,path) {
   else if([22,23,24].includes(m.type)){type='fork';modifier=m.type===23?'right':m.type===24?'left':'straight';}
   return {distance:m.length*1000,name:m.street_names?.[0],maneuver:{type,modifier,exit:m.roundabout_exit_count},geometry:{coordinates:path.slice(a,b+1).map(p=>[p[1],p[0]])}};
 }
-function valhallaLegs(payload,points,mode,locked=false) {
+function valhallaLegs(payload,points,locked=false) {
   const trip=payload.trip;if(!trip||trip.status!==0||trip.units!=='kilometers'||trip.legs?.length!==points.length-1)throw new Error('Valhalla: respuesta incompleta');
   const legs=trip.legs.map((l,i)=>{
     const path=decodeValhalla(l.shape),distance=l.summary?.length*1000;
     if(!Array.isArray(l.maneuvers)||!l.maneuvers.length)throw new Error('Valhalla: sin maniobras');
     const steps=l.maneuvers.map(m=>valhallaStep(m,path));
     validateDrawingLeg(points[i],points[i+1],path,distance,steps);
-    return {source:'network',provider:'Valhalla',mode,target:points[i+1],name:'Ruta por caminos',parts:[path],steps,networkDistance:distance,duration:l.summary.time};
+    return {source:'network',provider:'Valhalla',target:points[i+1],name:'Ruta por caminos',parts:[path],steps,networkDistance:distance,duration:l.summary.time};
   });
   if(locked&&meters(points[0],legs[0].parts[0][0])>2)throw new Error('Valhalla: cambia de vía anterior');
   for(let i=1;i<legs.length;i++)if(meters(legs[i-1].parts[0].at(-1),legs[i].parts[0][0])>.5)throw new Error('Valhalla: enlace discontinuo');
@@ -132,8 +128,7 @@ function uniqueAlternatives(candidates,origin,target){
   for(const c of candidates){try{const valid=alternativeModel(c,origin,target);if(!result.some(r=>similarAlternatives(r,valid)))result.push(valid);}catch{}}
   return result.slice(0,3);
 }
-export async function fetchAlternatives(origin,target,mode,signal){
-  if(mode!=='foot'&&mode!=='car')throw new Error('Perfil de ruta desconocido');
+export async function fetchAlternatives(origin,target,signal){
   async function json(url){
     const controller=new AbortController(),cancel=()=>controller.abort();
     const timer=setTimeout(cancel,10000);
@@ -144,11 +139,11 @@ export async function fetchAlternatives(origin,target,mode,signal){
   }
   const candidates=[],errors=[];
   async function attempt(label,fn){try{const items=await fn();if(!items.length)throw Error('Sin recorridos');for(const item of items){try{alternativeModel(item,origin,target);candidates.push(item);}catch(e){errors.push(label+': '+e.message);}}}catch(e){errors.push(label+': '+(e.name==='AbortError'?'Tiempo agotado':e.message));}}
-  async function valhalla(n){const payload=await json(valhallaRequest([origin,target],mode,n));const result=valhallaLegs(payload,[origin,target],mode);for(const alt of payload.alternates||[]){try{result.push(valhallaLegs(alt,[origin,target],mode)[0]);}catch(e){errors.push('Valhalla alternativa: '+e.message);}}return result;}
+  async function valhalla(n){const payload=await json(valhallaRequest([origin,target],n));const result=valhallaLegs(payload,[origin,target]);for(const alt of payload.alternates||[]){try{result.push(valhallaLegs(alt,[origin,target])[0]);}catch(e){errors.push('Valhalla alternativa: '+e.message);}}return result;}
   async function osrm(){
-    const payload=await json(routeRequest(origin,target,mode));
+    const payload=await json(routeRequest(origin,target));
     return chooseNetworkRoute(payload,origin,target,{},true).map(({r,path})=>({
-      provider:'OSRM',mode,networkDistance:r.distance,steps:r.legs.flatMap(l=>l.steps),parts:[path],
+      provider:'OSRM',networkDistance:r.distance,steps:r.legs.flatMap(l=>l.steps),parts:[path],
     }));
   }
   await Promise.all([attempt('Valhalla',()=>valhalla(0)),attempt('OSRM',osrm)]);

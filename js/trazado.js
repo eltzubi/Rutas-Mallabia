@@ -20,14 +20,13 @@
 
   var T = {
     es: {
-      actividad: 'Actividad', pie: 'Senderismo', coche: 'Coche', puntos: 'Punto a punto',
+      pie: 'Senderismo', puntos: 'Punto a punto',
       extremos: 'Inicio y destino', inicio: 'Marca el inicio en el mapa.',
       destino: 'Marca el destino en el mapa.', calculo: 'Calculando el recorrido…',
       opciones: 'Ruta %n de %total', colores: ['Azul', 'Naranja', 'Verde'],
       elegir: 'Elegir ruta', descartar: 'Descartar', sinruta: 'No se ha encontrado un recorrido. Prueba a mover los puntos.',
       permiso: 'Para calcular la ruta se enviarán los puntos marcados a Valhalla y OSRM (FOSSGIS). ¿Continuar?',
       reemplazar: '¿Sustituir el trazado actual por la ruta elegida?',
-      cambiar: '¿Cambiar de actividad y descartar el borrador actual?',
       abrir: 'Crear ruta', cerrar: 'Cerrar el dibujo',
       titulo: 'Tu trazado', arranque: 'Toca el mapa sobre un camino para empezar.',
       sigue: 'Toca otro punto: el camino va por los senderos y pistas de OpenStreetMap.',
@@ -46,14 +45,13 @@
       aviso: 'Esto lo dibujas tu: va por los caminos de OpenStreetMap y por las rutas de la web, pero no es ninguna de ellas.'
     },
     eu: {
-      actividad: 'Jarduera', pie: 'Mendi-ibiliak', coche: 'Autoa', puntos: 'Puntuz puntu',
+      pie: 'Mendi-ibiliak', puntos: 'Puntuz puntu',
       extremos: 'Hasiera eta helmuga', inicio: 'Markatu abiapuntua mapan.',
       destino: 'Markatu helmuga mapan.', calculo: 'Ibilbidea kalkulatzen…',
       opciones: '%n / %total ibilbide', colores: ['Urdina', 'Laranja', 'Berdea'],
       elegir: 'Ibilbidea aukeratu', descartar: 'Baztertu', sinruta: 'Ez da ibilbiderik aurkitu. Saiatu puntuak lekuz aldatzen.',
       permiso: 'Ibilbidea kalkulatzeko, markatutako puntuak Valhalla eta OSRM zerbitzuetara (FOSSGIS) bidaliko dira. Jarraitu?',
       reemplazar: 'Oraingo marrazkia aukeratutako ibilbidearekin ordeztu?',
-      cambiar: 'Jarduera aldatu eta uneko zirriborroa baztertu?',
       abrir: 'Ibilbidea sortu', cerrar: 'Marrazkia itxi',
       titulo: 'Zure marrazkia', arranque: 'Ukitu mapa bide baten gainean hasteko.',
       sigue: 'Ukitu beste puntu bat: bidea OpenStreetMap-eko bidexka eta pistetatik doa.',
@@ -411,7 +409,7 @@
     var anclas = [];     // nodos que ha tocado el visitante
     var tramos = [];     // un array de nodos por cada tramo calculado
     var linea = null, puntitos = [], activo = false;
-    var actividad = 'foot', modo = 'puntos', inicio = null, peticion = null;
+    var modo = 'puntos', inicio = null, peticion = null;
     var permiso = false, rutas = [], elegida = 0, muestra = null, marcaInicio = null;
     // Un trazado reabierto de los guardados no tiene anclas ni tramos: solo
     // sus coordenadas. Sin esto, «Bajar GPX» no hacia nada despues de abrir
@@ -470,8 +468,7 @@
     readout.className = 'draw-readout';
     readout.hidden = true;
     readout.innerHTML = '<div class="draw-plan-controls">' +
-                        '<label>' + t.actividad + ' <select class="draw-activity"><option value="foot">' + t.pie +
-                        '</option><option value="car">' + t.coche + '</option></select></label>' +
+                        '<p class="draw-plan-activity">' + t.pie + '</p>' +
                         '<div class="draw-plan-modes"><button type="button" data-mode="puntos" aria-pressed="true">' +
                         t.puntos + '</button><button type="button" data-mode="extremos" aria-pressed="false">' +
                         t.extremos + '</button></div></div>' +
@@ -484,7 +481,6 @@
     marco.appendChild(readout);
     L.DomEvent.disableClickPropagation(readout);
     L.DomEvent.disableScrollPropagation(readout);
-    var selector = readout.querySelector('.draw-activity');
     var panelModos = readout.querySelector('.draw-plan-controls');
     var panelOpciones = readout.querySelector('.draw-choices');
 
@@ -666,7 +662,7 @@
       if (anclas.length < 2) { elMsg.textContent = t.pocos; return; }
       var ini = anclas[0], fin = anclas[anclas.length - 1];
       if (ini === fin) { elMsg.textContent = t.yacerrado; return; }
-      if (actividad === 'car' || fin.tr == null || ini.tr == null){
+      if (fin.tr == null || ini.tr == null){
         conCalculo(async function(motor, signal){
           var pts = await pideTramo(motor, fin.p, ini.p, signal, true);
           if (signal.aborted) return;
@@ -701,10 +697,10 @@
     // el mismo nodo: hay que mover los dos o el circulo se abre.
     function mueveAncla(i, lat, lon){
       if (peticion || modo !== 'puntos') { pinta(); return; }
-      if (actividad === 'car' && anclas.length === 1){
+      if (anclas.length === 1 && anclas[0].tr == null){
         anclas[0] = {p:[lat, lon]}; tramos[0] = [anclas[0].p]; pinta(); return;
       }
-      if (actividad === 'car' || anclas.some(function(a){ return a.tr == null; })){
+      if (anclas.some(function(a){ return a.tr == null; })){
         pinta();
         conCalculo(async function(motor, signal){
           var na = anclas.slice(), nt = tramos.slice(), ultimo = na.length - 1;
@@ -777,7 +773,7 @@
         puntitos.push(m);
       });
       if (btCirculo) btCirculo.hidden = anclas.length < 2;
-      if (btVaiven) btVaiven.hidden = actividad === 'car' || anclas.length < 2;
+      if (btVaiven) btVaiven.hidden = anclas.length < 2;
       var tt = totales();
       elTot.hidden = pts.length < 2;
       elKm.textContent = tt.km.toFixed(2).replace('.', ',') + ' km';
@@ -787,7 +783,6 @@
       elUlt.textContent = tramos.length > 1 ? t.ultimo + ' ' + desnivelDe(tramos[tramos.length - 1]) : '';
       elUlt.hidden = tramos.length < 2;
       elMsg.textContent = modo === 'extremos' ? (inicio ? t.destino : t.inicio)
-        : actividad === 'car' && anclas.length < 2 ? (anclas.length ? t.destino : t.inicio)
         : !anclas.length ? t.arranque : (anclas.length > 1 ? t.mueve : t.sigue);
     }
 
@@ -812,16 +807,6 @@
       pinta();
     }
 
-    selector.addEventListener('change', function(){
-      if (selector.value === actividad) return;
-      if (recorrido().length > 1 && !window.confirm(t.cambiar)){
-        selector.value = actividad;
-        return;
-      }
-      actividad = selector.value;
-      anclas = []; tramos = []; cargado = null;
-      cambiaModo(modo);
-    });
     panelModos.addEventListener('click', function(e){
       var b = e.target.closest('[data-mode]');
       if (b && b.dataset.mode !== modo) cambiaModo(b.dataset.mode);
@@ -902,7 +887,7 @@
     }
 
     async function pideTramo(motor, a, b, signal, unir){
-      var opciones = await motor.fetchAlternatives(a, b, actividad, signal);
+      var opciones = await motor.fetchAlternatives(a, b, signal);
       var r = opciones.find(function(c){ return !unir || metros(c.parts[0][0], a) <= 2; });
       if (!r) throw new Error(t.sinruta);
       var pts = completaAlturas(r.parts[0]);
@@ -919,16 +904,15 @@
           marcaInicio = L.circleMarker(inicio, {radius:6, color:COLOR, interactive:false}).addTo(map);
           elMsg.textContent = t.destino;
         } else if (metros(inicio, p) >= 10){
-          var salida = inicio, perfil = actividad;
+          var salida = inicio;
           conCalculo(async function(motor, signal){
-            var opciones = await motor.fetchAlternatives(salida, p, perfil, signal);
+            var opciones = await motor.fetchAlternatives(salida, p, signal);
             if (!signal.aborted) compara(opciones);
           });
         }
         return;
       }
-      if (actividad === 'car' || (anclas.length && anclas.at(-1).tr == null)){
-        if (!anclas.length) { cargado = null; anclas.push({p:p}); tramos.push([p]); pinta(); return; }
+      if (anclas.length && anclas.at(-1).tr == null){
         if (metros(anclas.at(-1).p, p) < 2) return;
         conCalculo(async function(motor, signal){
           var pts = await pideTramo(motor, anclas.at(-1).p, p, signal, anclas.length > 1);
@@ -1127,7 +1111,7 @@
         if (activo && !peticion && !rutas.length) pinta();
       }).catch(function(){
         cargando = false;
-        if (activo && modo === 'puntos' && actividad === 'foot') elMsg.textContent = t.fallo;
+        if (activo && modo === 'puntos') elMsg.textContent = t.fallo;
       });
     }
 

@@ -70,9 +70,9 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     const t0 = Date.now();
     await acceso.click();
     await p.waitForURL('**/#crear-ruta');
-    await p.locator('.draw-activity').waitFor();
+    await p.locator('.draw-plan-activity').waitFor();
     await p.waitForFunction(() => {
-      const r = document.querySelector('.draw-activity').getBoundingClientRect();
+      const r = document.querySelector('.draw-plan-activity').getBoundingClientRect();
       return r.top >= 0 && r.bottom <= innerHeight;
     });
     await p.waitForFunction(
@@ -131,31 +131,27 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
       });
       return r.fulfill({json:{routes},headers:{'Access-Control-Allow-Origin':'*'}});
     });
-    const actividad = p.locator('.draw-activity');
-    assert.deepEqual(await actividad.locator('option').evaluateAll(os => os.map(o => o.value)), ['foot','car']);
-    for (const modo of ['foot','car']) {
-      await actividad.selectOption(modo);
-      await p.locator('[data-mode="extremos"]').click();
-      await toca(SOBRE_RUTA);
-      const opciones = p.locator('.draw-choice-colors button');
-      await opciones.nth(2).waitFor();
-      await opciones.nth(1).click();
-      await opciones.nth(0).click();
-      assert.equal(await opciones.nth(0).getAttribute('aria-pressed'), 'true');
-      if (modo === 'foot') await p.getByRole('button', {name:'Descartar',exact:true}).click();
-      else {
-        await p.getByRole('button', {name:'Elegir ruta',exact:true}).click();
-        assert.equal(await p.locator('.draw-dot').count(), 2);
-      }
-    }
-    assert(perfiles.includes('routed-foot') && perfiles.includes('routed-car'));
-    assert(perfiles.every(p => p === 'routed-foot' || p === 'routed-car'));
+    assert.equal(await p.locator('.draw-plan-activity').textContent(),'Senderismo');
+    assert.equal(await p.locator('.draw-plan-controls select').count(),0,'no hay selector de actividad');
+    await p.locator('[data-mode="extremos"]').click();
+    await toca(SOBRE_RUTA);
+    const opciones = p.locator('.draw-choice-colors button');
+    await opciones.nth(2).waitFor();
+    await opciones.nth(1).click();
+    await opciones.nth(0).click();
+    assert.equal(await opciones.nth(0).getAttribute('aria-pressed'), 'true');
+    await p.getByRole('button', {name:'Descartar',exact:true}).click();
+    await p.locator('[data-mode="extremos"]').click();
+    await toca(SOBRE_RUTA);
+    await p.getByRole('button', {name:'Elegir ruta',exact:true}).click();
+    assert.equal(await p.locator('.draw-dot').count(), 2);
+    assert(perfiles.length > 0 && perfiles.every(p => p === 'routed-foot'));
     assert.deepEqual(errores, [], 'errores JS');
     const eu = await ctx.newPage();
     await eu.setViewportSize({width:320,height:720});
     await eu.goto(base + 'index.eu.html#crear-ruta', {waitUntil:'domcontentloaded'});
-    await eu.locator('.draw-activity').waitFor();
-    assert.deepEqual(await eu.locator('.draw-activity option').allTextContents(), ['Mendi-ibiliak','Autoa']);
+    await eu.locator('.draw-plan-activity').waitFor();
+    assert.equal(await eu.locator('.draw-plan-activity').textContent(), 'Mendi-ibiliak');
     await ctx.close();
     console.log('PASS lapiz: red lista en %d ms · dibuja donde no hay ruta publicada ' +
                 '(%s) y sigue trayendo alturas sobre las rutas', tardo, LEJOS.length + ' toques');

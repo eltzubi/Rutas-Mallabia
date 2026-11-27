@@ -1917,14 +1917,13 @@ footer a:hover{ text-decoration:underline; }
 /* Creador de rutas, junto al resumen del trazado. */
 .draw-plan-controls, .draw-choices{ display:grid; gap:6px; margin-bottom:5px; }
 .draw-plan-controls[hidden], .draw-choices[hidden]{ display:none; }
-.draw-plan-controls label{ display:flex; align-items:center; gap:8px; font-weight:650; }
-.draw-plan-controls select, .draw-plan-modes button, .draw-choices button{
+.draw-plan-activity{ margin:0; align-self:center; font-weight:700; }
+.draw-plan-modes button, .draw-choices button{
   min-width:0; min-height:44px; padding:5px 7px;
   border:1px solid var(--line); border-radius:8px;
   background:var(--ground-raised); color:var(--ink);
   font:inherit; font-weight:650; line-height:1.2;
 }
-.draw-plan-controls select{ flex:1; font-size:16px; }
 .draw-plan-modes, .draw-choice-actions{ display:grid; grid-template-columns:1fr 1fr; gap:6px; }
 .draw-choice-colors{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:6px; }
 .draw-choice-colors button{ border-top:4px solid var(--choice-color); }
