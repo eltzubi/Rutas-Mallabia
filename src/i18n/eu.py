@@ -587,7 +587,6 @@ HOME = {
         'batekin"',
     'data-view="list">Lista</button>': 'data-view="list">Zerrenda</button>',
     'data-view="map">Mapa</button>': 'data-view="map">Mapa</button>',
-    '<a class="hero-create-route" href="#crear-ruta" data-abre-creador>Crear ruta</a>': '<a class="hero-create-route" href="#crear-ruta" data-abre-creador>Ibilbidea sortu</a>',
     'aria-label="Ver como mapa"': 'aria-label="Ikusi mapa gisa"',
     'D&oacute;nde aparcar': 'Non aparkatu',
     'D&oacute;nde comer': 'Non jan',

@@ -64,12 +64,11 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     p.on('pageerror', e => errores.push(e.message));
 
     await p.goto(base, { waitUntil: 'domcontentloaded' });
-    const acceso = p.getByRole('link', {name:'Crear ruta',exact:true});
-    const posicion = await acceso.boundingBox();
-    assert(posicion && posicion.y >= 0 && posicion.y + posicion.height < 844,'el acceso se ve en la portada móvil');
+    assert.equal(await p.locator('.hero-compact').getByRole('link',{name:'Crear ruta',exact:true}).count(),0);
+    await p.evaluate(() => document.querySelector('[data-view="map"]').click());
+    await p.waitForSelector('.map-draw-btn', {timeout:60000});
     const t0 = Date.now();
-    await acceso.click();
-    await p.waitForURL('**/#crear-ruta');
+    await p.click('.map-draw-btn');
     await p.locator('.draw-plan-activity').waitFor();
     await p.waitForFunction(() => {
       const r = document.querySelector('.draw-plan-activity').getBoundingClientRect();
@@ -151,6 +150,7 @@ const SOBRE_RUTA = [[43.18117, -2.53896], [43.17174, -2.52374]];
     await eu.setViewportSize({width:320,height:720});
     await eu.goto(base + 'index.eu.html#crear-ruta', {waitUntil:'domcontentloaded'});
     await eu.locator('.draw-plan-activity').waitFor();
+    assert.equal(await eu.locator('.hero-compact').getByRole('link',{name:'Ibilbidea sortu',exact:true}).count(),0);
     assert.equal(await eu.locator('.draw-plan-activity').textContent(), 'Mendi-ibiliak');
     await ctx.close();
     console.log('PASS lapiz: red lista en %d ms · dibuja donde no hay ruta publicada ' +

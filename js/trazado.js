@@ -375,7 +375,6 @@
 
   // ---- la herramienta ----------------------------------------------------
 
-  var enlaceCrear = document.querySelector('[data-abre-creador]');
   var abrirEditor = null;
   var abrirAlPrepararMapa = false;
 
@@ -391,13 +390,7 @@
     else abrirAlPrepararMapa = false;
   }
 
-  if (enlaceCrear) {
-    window.addEventListener('hashchange', abreSiHayEnlace);
-    enlaceCrear.addEventListener('click', function(e){
-      if (e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
-      if (location.hash === '#crear-ruta') { e.preventDefault(); abreDesdePortada(); }
-    });
-  }
+  window.addEventListener('hashchange', abreSiHayEnlace);
 
   document.addEventListener('mapa:listo', function(ev){
     var d = ev.detail;
@@ -1123,5 +1116,5 @@
     }
   });
 
-  if (enlaceCrear) abreSiHayEnlace();
+  abreSiHayEnlace();
 })();
