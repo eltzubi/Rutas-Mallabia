@@ -1,0 +1,29 @@
+name: Preparar descargas GPX corregidas
+on:
+  push:
+    branches: [fix/descargas-nombres-gpx]
+permissions:
+  contents: write
+jobs:
+  corregir-descargas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Corregir y verificar los GPX de cada ficha
+        run: |
+          git apply scripts/.mallabi-descargas.patch
+          python3 scripts/corrige-nombres-gpx.py
+          python3 scripts/bundle_gpx.py
+          python3 src/i18n/make_eu.py
+          python3 src/build.py
+          python3 scripts/check_site.py
+          python3 scripts/verify_route_consistency.py
+          node scripts/test_ui.cjs
+          git -c core.whitespace=cr-at-eol diff --check
+          git add -u
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Corregir títulos y descargas GPX de las 76 rutas'
+          git push
