@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Rutas Mallabia" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Markina-Xemein, Meabe, Iglesia de Santo Tomás y Gerea</name>
+    <name>Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea</name>
     <desc>Track real. La salida se lleva hasta Markina-Xemein empalmando el tramo ya grabado de la ruta de Mallukitoko (1.786 m): esos puntos llevan altitud real, y su hora es ESTIMADA. Eliminadas dos idas y vueltas junto a Astarloako atxa (errores de ruta), con las horas posteriores ajustadas.</desc>
   </metadata>
   <trk>
-    <name>Markina-Xemein, Meabe, Iglesia de Santo Tomás y Gerea</name>
+    <name>Markina-Xemein, Bolibar, Muniozguren y las cascadas de Gerea</name>
     <trkseg>
       <trkpt lat="43.268586" lon="-2.499590"><ele>80.019</ele><time>2026-09-23T06:56:13Z</time></trkpt>
       <trkpt lat="43.268544" lon="-2.499642"><ele>79.999</ele><time>2026-09-23T06:56:17Z</time></trkpt>

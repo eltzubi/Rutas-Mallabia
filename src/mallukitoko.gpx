@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="RutasMallabia-splice" xmlns="http://www.topografix.com/GPX/1/1">
-<trk><name>Markina-Xemein, Mallukitoko, Zapola eta Bolu Zubia</name><trkseg>
+  <metadata><name>Markina-Xemein, Mallukitoko, Zapola y Puente Bolu</name></metadata>
+<trk><name>Markina-Xemein, Mallukitoko, Zapola y Puente Bolu</name><trkseg>
 <trkpt lat="43.268586" lon="-2.49959"><ele>80.019</ele></trkpt>
 <trkpt lat="43.268544" lon="-2.499642"><ele>79.999</ele></trkpt>
 <trkpt lat="43.268496" lon="-2.499697"><ele>79.949</ele></trkpt>

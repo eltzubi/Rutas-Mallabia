@@ -5,13 +5,14 @@
   xmlns="http://www.topografix.com/GPX/1/1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
   <metadata>
+    <name>Asuntza bira por Aginaga</name>
     <link href="connect.garmin.com">
       <text>Garmin Connect</text>
     </link>
     <time>2026-08-16T16:26:13.000Z</time>
   </metadata>
   <trk>
-    <name>Mallabia Bicicleta eléctrica</name>
+    <name>Asuntza bira por Aginaga</name>
     <type>e_bike_fitness</type>
     <trkseg>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <trkpt lat="43.209236226975917816162109375" lon="-2.5471745431423187255859375">

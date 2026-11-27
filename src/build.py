@@ -941,6 +941,19 @@ def add_mis_rutas(page_html, lang):
     return page_html[:marca] + panel + page_html[marca:]
 
 
+def add_download_titles(page_html, slug, cards):
+    """Usa el título de la tarjeta en el nombre de archivo de cada descarga."""
+    if slug not in cards:
+        return page_html
+    title = html.unescape(cards[slug]["name"])
+    filename = html.escape(re.sub(r'[\\/:*?"<>|]', "", title).strip(), quote=True)
+    return re.sub(
+        rf'(<a href="src/{re.escape(slug)}\.(gpx|kml)" download=")[^"]*',
+        lambda m: m[1] + filename + "." + m[2],
+        page_html,
+    )
+
+
 def add_quick_bar(page_html, lang):
     """Mapa y GPX siempre a mano en el movil.
 
@@ -1355,6 +1368,7 @@ def main():
             page_html = add_similar_routes(page_html, name, cards[lang], lang)
             page_html = add_prev_next(page_html, name, cards[lang], lang)
             page_html = add_jump_to_map(page_html, lang)
+            page_html = add_download_titles(page_html, name, cards[lang])
             page_html = add_quick_bar(page_html, lang)
             page_html = add_mis_rutas(page_html, lang)
             page_html = add_tecnica(page_html, name, lang)

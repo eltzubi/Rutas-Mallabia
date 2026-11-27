@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Rutas Mallabia" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata><name>Gerea, las rutas desconocidas</name></metadata>
 <trk><name>Gerea, las rutas desconocidas</name><trkseg>
 <trkpt lat="43.210224" lon="-2.546539"><ele>408.033</ele></trkpt>
 <trkpt lat="43.210273" lon="-2.546515"><ele>407.823</ele></trkpt>
