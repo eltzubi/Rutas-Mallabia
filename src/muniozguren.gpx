@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx creator="Rutas Mallabia" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata><name>Trabakua, Longa, Muniozguren</name></metadata>
 <trk><name>Trabakua, Longa, Muniozguren</name><trkseg>
 <trkpt lat="43.210406" lon="-2.545978"><ele>410.777</ele></trkpt>
 <trkpt lat="43.210419" lon="-2.545960"><ele>410.772</ele></trkpt>

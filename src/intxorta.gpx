@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="Wikiloc - https://www.wikiloc.com" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Trabakua, Zengotitagane, Santamanazar, Erdella, Intxorta y Egoarbitza</name>
+    <name>Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</name>
     <desc>Tramo reconstruido cerca de Trabakua con cartografía de OpenStreetMap y cotas aproximadas de Open-Meteo. El enlace a pie es estimado e incluye un tramo de la BI-633.</desc>
     <author>
       <name>Eltzubi_Natura</name>
@@ -15,7 +15,7 @@
     <time>2023-07-02T06:12:08Z</time>
   </metadata>
   <trk>
-    <name>Trabakua, Zengotitagane, Santamanazar, Erdella, Intxorta y Egoarbitza</name>
+    <name>Trabakua, Zengotitagane, Erdella, Intxorta y Egoarbitza</name>
     <trkseg>
       <trkpt lat="43.21033" lon="-2.546123">
         <ele>409.469</ele>

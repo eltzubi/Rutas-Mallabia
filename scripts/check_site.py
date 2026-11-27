@@ -550,11 +550,23 @@ def main():
         require(plantilla in agua_js,
                 f'js/agua.js no tiene la capa de map.js: {plantilla[:60]}')
 
+    catalogo = json.loads((ROOT / 'data/rutas.json').read_text())
     for gpx in (ROOT / 'src').glob('*.gpx'):
+        titulo = catalogo['es'][gpx.stem]['n']
+        xml_gpx = ET.parse(gpx)
+        require(xml_gpx.findtext('./{*}metadata/{*}name') == titulo,
+                f'{gpx.name}: nombre de metadatos distinto de {titulo!r}')
+        tracks = xml_gpx.findall('./{*}trk')
+        require(bool(tracks) and all(t.findtext('./{*}name') == titulo for t in tracks),
+                f'{gpx.name}: nombre interno del track distinto de {titulo!r}')
         points = [(float(p.attrib['lon']), float(p.attrib['lat']), float(p.find('{*}ele').text))
-                  for p in ET.parse(gpx).findall('.//{*}trkpt')]
+                  for p in xml_gpx.findall('.//{*}trkpt')]
         kml = gpx.with_suffix('.kml')
-        coords = ET.parse(kml).find('.//{*}coordinates').text.split()
+        xml_kml = ET.parse(kml)
+        for elemento in ('./{*}Document', './{*}Document/{*}Placemark'):
+            require(xml_kml.findtext(f'{elemento}/{{*}}name') == titulo,
+                    f'{kml.name}: nombre interno distinto de {titulo!r}')
+        coords = xml_kml.find('.//{*}coordinates').text.split()
         require(points == [tuple(map(float, p.split(','))) for p in coords], f'{kml.name}: stale coordinates/elevations')
     with zipfile.ZipFile(ROOT / 'src/todas-las-rutas.zip') as archive:
         require(archive.testzip() is None, 'ZIP CRC failed')

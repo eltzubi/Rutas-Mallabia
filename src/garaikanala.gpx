@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gpx version="1.1" creator="https://www.komoot.de" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Caminata</name>
+    <name>Paseo por Garai y el antiguo canal de agua</name>
     <author>
       <link href="https://www.komoot.de">
         <text>komoot</text>
@@ -10,7 +10,7 @@
     </author>
   </metadata>
   <trk>
-    <name>Caminata</name>
+    <name>Paseo por Garai y el antiguo canal de agua</name>
     <type>hike</type>
     <trkseg>
       <trkpt lat="43.194739" lon="-2.611553">

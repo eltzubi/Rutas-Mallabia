@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creator="Rutas Mallabia" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <metadata>
-    <name>Trabakua, Zengotitagane, Axmakur y Andikoa</name>
+    <name>Zengotitagane, Axmakur y Andikoa</name>
     <time>2025-12-27T14:57:01.000Z</time>
   </metadata>
   <trk>
-    <name>Trabakua, Zengotitagane, Axmakur y Andikoa</name>
+    <name>Zengotitagane, Axmakur y Andikoa</name>
     <trkseg>
       <trkpt lat="43.209222" lon="-2.546971">
         <ele>400.659</ele>
